@@ -78,6 +78,13 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("colorLinks")]
         public Dictionary<string, string>? ColorLinks { get; private set; }
 
+
+        /// <summary>
+        /// Impstation: Porting PR #842: Markings now support shaders
+        /// </summary>
+        [DataField("shader")]
+        public string? Shader { get; private set; } = null;
+
         public Marking AsMarking()
         {
             return new Marking(ID, Sprites.Count);
