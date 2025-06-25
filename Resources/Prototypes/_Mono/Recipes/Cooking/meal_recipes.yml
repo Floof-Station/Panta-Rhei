@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2025 Blu
+# SPDX-FileCopyrightText: 2025 BlueHNT
+# SPDX-FileCopyrightText: 2025 monolith8319
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: microwaveMealRecipe
+  id: RecipeBiscuitSimple
+  name: simple cookie recipe
+  result: FoodBakedBiscuitSimple
+  resultCount: 4 # Frontier
+  time: 10 # Frontier - 5<10
+  group: BarsAndCookies
+  reagents:
+    Flour: 10
+    Milk: 5
+  solids:
+    FoodButterSlice: 1
+  recipeType: Oven # Frontier

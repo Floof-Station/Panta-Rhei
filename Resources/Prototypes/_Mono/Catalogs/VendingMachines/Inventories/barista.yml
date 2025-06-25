@@ -1,0 +1,33 @@
+# SPDX-FileCopyrightText: 2025 BlueHNT
+# SPDX-FileCopyrightText: 2025 monolith8319
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: vendingMachineInventory
+  id: BaristaVendInventory
+  startingInventory:
+    ReagentContainerBlackTeaPouch: 2
+    ReagentContainerGreenTeaPouch: 2
+    ReagentContainerChamomileTeaPouch: 2
+    ReagentContainerBerryTeaPouch: 2
+    ReagentContainerFruitTeaPouch: 2
+    ReagentContainerYorkshireTeaPouch: 2
+    ReagentContainerDecafBlackTeaPouch: 2
+    ReagentContainerCoffeePouch: 2
+    ReagentContainerDecafCoffeePouch: 2
+    PaperCup: 10
+    Teaspoon: 4
+    # TeaCup: 4 # TODO: Add an empty one...
+    # GlassTeaCupEmpty: 4 # TODO: Make it exist?
+    DrinkMug: 4
+    Kettle: 2
+    DrinkTeapot: 2
+    ChemistryHotplateFlatpack: 2
+    FoodBoxBiscuitSimple: 2
+    FoodBoxBiscuitOatmeal: 2
+    FoodBoxBiscuitSugar: 2
+  contrabandInventory:
+    DrinkMugRainbow: 1
+  emaggedInventory:
+    ReagentContainerSyndicateTeaPouch: 1
+    DrinkMugRed: 2
