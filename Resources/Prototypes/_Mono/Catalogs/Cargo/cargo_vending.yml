@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2024 Dvir
+# SPDX-FileCopyrightText: 2025 BlueHNT
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: cargoProduct
+  id: CrateVendingMachineRestockBarista
+  abstract: true
+  icon:
+    sprite: Objects/Specific/Service/vending_machine_restock.rsi
+    state: base
+  product: CrateVendingMachineRestockBaristaFilled
+  cost: 400
+  category: cargoproduct-category-name-service
+  group: market

@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: 2025 BlueHNT
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: CrateVendingMachineRestockBaristaFilled
+  parent: CratePlasticBiodegradable
+  name: BaristaVend Restock Crate
+  description: Contains a restock box for the BaristaVend.
+  components:
+  - type: StorageFill
+    contents:
+      - id: VendingMachineRestockBarista
+        amount: 2

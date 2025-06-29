@@ -1,5 +1,5 @@
+# SPDX-FileCopyrightText: 2025 Blu
 # SPDX-FileCopyrightText: 2025 BlueHNT
-# SPDX-FileCopyrightText: 2025 monolith8319
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -57,3 +57,36 @@
       amount: 5
   products:
     YorkshireTea: 5
+
+- type: reaction
+  id: DecafBlackTea
+  minTemp: 368.15 # 95C
+  reactants:
+    DecafBlackTeaPowder:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    DecafBlackTea: 5
+
+- type: reaction
+  id: SyndicateTea
+  minTemp: 343.15 # 70C, cheap freeze-dried powder
+  reactants:
+    SyndicateTeaPowder:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    SyndicateTea: 5
+
+- type: reaction
+  id: DecafCoffee
+  minTemp: 368.15 # 95C
+  reactants:
+    DecafCoffeePowder:
+      amount: 1
+    Water:
+      amount: 5
+  products:
+    DecafCoffee: 5
