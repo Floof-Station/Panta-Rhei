@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2025 BlueHNT
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: PaperWrittenTeaGuide
+  name: "How 2 Make Tea 4 Dorks"
+  description: "A quick guide to tea preparation."
+  parent: Paper
+  components:
+  - type: Paper
+    content: book-text-tea-guide
