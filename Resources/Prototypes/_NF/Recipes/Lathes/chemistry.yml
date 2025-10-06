@@ -1,0 +1,39 @@
+- type: latheRecipe
+  id: JugBluespace
+  result: JugBluespace
+  parent: BluespaceBeaker # same size, 1:1 recipe
+
+- type: latheRecipe
+  id: VialBluespace
+  result: VialBluespace
+  completetime: 2
+  materials:
+    Steel: 60
+    Plastic: 60
+    Plasma: 15
+    Silver: 15
+    Bluespace: 30 #DeltaV: Bluespace
+
+- type: latheRecipe
+  id: BlankMediPen
+  result: BlankMediPen
+  completetime: 2
+  materials:
+    Plastic: 25
+    Steel: 25
+
+- type: latheRecipe
+  id: ReinforcedJug
+  result: ReinforcedJug
+  completetime: 6
+  materials:
+    Plastic: 400
+    Steel: 100
+    Silver: 25
+
+- type: latheRecipe
+  id: MedicalPouch
+  result: MedicalPouch
+  completetime: 3
+  materials:
+    Plastic: 200
