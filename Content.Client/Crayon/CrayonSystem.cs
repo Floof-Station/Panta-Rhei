@@ -40,8 +40,10 @@ public sealed class CrayonSystem : SharedCrayonSystem
 
         public StatusControl(CrayonComponent parent)
         {
-            _parent = parent;
-            _label = new RichTextLabel { StyleClasses = { StyleNano.StyleClassItemStatus } };
+            _crayon = crayon;
+            _charges = charges;
+            _capacity = entityManage.GetComponent<LimitedChargesComponent>(_crayon.Owner).MaxCharges;
+            _label = new RichTextLabel { StyleClasses = { StyleClass.ItemStatus } };
             AddChild(_label);
 
             parent.UIUpdateNeeded = true;
