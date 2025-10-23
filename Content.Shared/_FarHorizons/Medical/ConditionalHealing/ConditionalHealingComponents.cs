@@ -48,9 +48,6 @@ public sealed partial class ConditionalHealingData
             SelfHealPenaltyMultiplier = SelfHealPenaltyMultiplier,
             HealingBeginSound = HealingBeginSound,
             HealingEndSound = HealingEndSound,
-            SolutionDrain = SolutionDrain,
-            ReagentsToDrain = ReagentsToDrain,
-            AdjustEyeDamage = AdjustEyeDamage
         };
 }
 

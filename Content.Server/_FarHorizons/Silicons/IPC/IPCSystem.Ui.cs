@@ -2,6 +2,8 @@ using Content.Shared._FarHorizons.Silicons.IPC;
 using Content.Shared.Body.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Mobs.Components;
@@ -84,4 +86,4 @@ public sealed partial class IPCSystem
             _ui.SetUiState(uid, IPCUiKey.Key,
                 new IPCBuiState(chargePercent, hasBattery, mobState.CurrentState, eyeDamage, bloodLevel, damage));
     }
-} 
+}

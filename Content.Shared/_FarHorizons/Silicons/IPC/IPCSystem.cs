@@ -23,7 +23,7 @@ public abstract partial class SharedIPCSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedPowerCellSystem _powerCell = default!;
+    [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 

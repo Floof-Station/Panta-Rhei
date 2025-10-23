@@ -5,13 +5,13 @@ using Content.Server.Hands.Systems;
 using Content.Server.Ninja.Systems;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
-using Content.Server.PowerCell;
 using Content.Shared._FarHorizons.Silicons.IPC;
 using Content.Shared.Alert;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Mind;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.PowerCell;
 using Content.Shared.Verbs;
 using Robust.Server.Audio;
 using Robust.Server.Containers;
@@ -22,7 +22,7 @@ using Robust.Shared.Player;
 namespace Content.Server._FarHorizons.Silicons.IPC;
 
 /// <inheritdoc/>
-public sealed partial class IPCSystem : SharedIPCSystem 
+public sealed partial class IPCSystem : SharedIPCSystem
 {
     [Dependency] private readonly ContainerSystem _container = default!;
     [Dependency] private readonly BatteryDrainerSystem _drainer = default!;
