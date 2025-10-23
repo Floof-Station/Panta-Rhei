@@ -113,6 +113,26 @@
     - Sheet
     - TiderAnvilParts #SL
     - ConstructionMaterial
+  - type: ConditionalHealing
+    healingDefinitions:
+      - allowedTags: [ IPC ]
+        healing:
+          damageContainers:
+            - Biological
+          delay: 1.6
+          damage:
+            groups:
+              Toxin: -40 # 20 each
+          healingBeginSound:
+            path: "/Audio/Items/Medical/ointment_begin.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+          healingEndSound:
+            path: "/Audio/Items/Medical/ointment_end.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
 
 - type: entity
   parent: SheetPlasma

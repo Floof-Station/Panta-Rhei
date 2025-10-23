@@ -1,0 +1,7 @@
+- type: alert
+  id: IPCBatteryCrit
+  icons:
+  - sprite: /Textures/_FarHorizons/Interface/Alerts/battery.rsi
+    state: battery-crit
+  name: alerts-battery-crit-name
+  description: alerts-battery-crit-desc

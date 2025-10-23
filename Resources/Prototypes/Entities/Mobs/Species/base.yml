@@ -314,6 +314,7 @@
   - type: FootPrints # Floof
   - type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
     revealTime: 1
+  - type: HumanoidEMPComposite # Far Horizons - just like HumanoidEMP, except the effect is combined from HumanoidEMPCompositeElement components on all limbs and organs
 
 - type: entity
   save: false

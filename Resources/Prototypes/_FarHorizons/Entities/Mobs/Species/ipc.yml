@@ -1,0 +1,224 @@
+- type: entity
+  parent: [MobBloodstream, MobFlammable, BaseMobSpecies]
+  id: BaseMobIPC
+  name: Urist McRobot
+  abstract: true
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - GalacticCommon
+    - Machine
+    - Trinary
+    understands:
+    - GalacticCommon
+    - Machine
+    - Trinary
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    layers:
+    - map: ["enum.BorgVisualLayers.Body"]
+      state: light
+      visible: false
+    - map: ["enum.BorgVisualLayers.Light"]
+      state: light
+      shader: unshaded
+      visible: false
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi # Would do a custom dog handcuff sprite but unfortunately handcuffs have their overlay baked-in to the cuff itself so this is mostly filler
+      state: body-overlay-2
+      visible: false
+    - map: ["enum.BorgVisualLayers.LightStatus"]
+      state: light
+      shader: unshaded
+      visible: false
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+  - type: WiresPanel
+  - type: ActivatableUIRequiresPanel
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#b67823"
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: MetalThud
+    damage:
+      groups:
+        Brute: 6
+  - type: Barotrauma
+    damage:
+      types:
+        Blunt: 0 #Metal can't decompress..
+        Heat: 0.5 #..But it can overheat!
+  - type: PassiveDamage # Need it here to disable it.
+    allowedStates:
+    - Alive
+    damageCap: 0
+    damage:
+      types:
+        Heat: 0
+      groups:
+        Brute: 0
+  - type: Tag
+    tags:
+      - CanPilot
+      - FootstepSound
+      - DoorBumpOpener
+      - AnomalyHost
+      - IPC
+  - type: Temperature
+    heatDamageThreshold: 1800
+    coldDamageThreshold: 260
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: IPC
+  - type: Bloodstream
+    bloodReagent: Oil
+  - type: Icon
+    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: full
+  - type: Body
+    prototype: IPC
+    requiredLegs: 2
+  - type: HumanoidAppearance
+    species: IPC
+  - type: ZombieImmune
+  - type: TypingIndicator
+    proto: robot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBorg
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+    allowedEmotes: ['BeepRobot', 'PingRobot', 'BuzzRobot', 'Buzz-TwoRobot', 'ChimeRobot', 'HonkRobot']
+  - type: Vocal
+    sounds:
+      Male: MaleIPC
+      Female: FemaleIPC
+      Unsexed: MaleIPC
+  # IPC slots
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
+      key_slots: !type:Container
+      borg_brain: !type:ContainerSlot { }
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  # Brain
+  - type: IPCBrainHolder
+  - type: ContainerFill
+    containers:
+      borg_brain: [ PositronicBrain ]
+  # Battery
+  - type: IPCBattery
+    dieWithoutPowerAfter: 20.0
+    numWarnings: 2 #warn player that they are about to die
+    warningText: ipc-warning-critical-charge
+#    warningSound: #Add sounds maybe? idk
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: PowerCellDraw
+    drawRate: 0.6
+  - type: BatteryDrainer
+    drainEfficiency: 0.005
+    drainTime: 0.8
+  # Radio
+  - type: IPCRadio
+    keysCapacity: 5
+    copyHeadsetKeys: true # Copy contents on headset when starting gear is equipped
+    removeHeadset: true # Delete headset when starting gear is equipped (after copying keys)
+  - type: ActiveRadio
+  - type: IntrinsicRadioTransmitter
+  - type: IntrinsicRadioReceiver
+  # Music player
+  - type: ActionGrant
+    actions:
+    - ActionPAIPlayMidi
+  - type: Instrument
+    allowPercussion: true
+    handheld: false
+  # Health
+  - type: Blindable
+  - type: IPCRevive
+    rebootButton: true
+    rebootTime: 5.0
+    defibBatteryDrain: true
+    defibDamage:
+      types:
+        Shock: 20 # It already does 5 shock to everyone, take that into account
+        Heat: 20 
+  - type: Repairable # So welder is just a special little snowflake in the code. I tried making healing with welder work through ConditionalHealing component, but it would require too many changes in too many places. So we will keep on the trend and have brute healing defined here. /shrug
+    doAfterDelay: 3
+    allowSelfRepair: true
+    fuelCost: 15
+    damage:
+      groups:
+        Brute: -60 # 20 for each type
+  - type: HumanoidEMP
+    effect:
+      stunAmount: 5.0
+      blindAmount: 10.0
+      knockdownAmount: 2.0
+      slowdownAmount: 15.0
+      walkSpeedModifier: 0.5
+      sprintSpeedModifier: 0.5
+      dropItemsFrom:
+        - body_part_slot_right hand
+        - body_part_slot_left hand
+      damageAmount:
+        types:
+          Shock: 30
+          Heat: 10
+  # Lock
+  - type: IPCLock
+    instantSelfUnlock: true
+    unlockTime: 5.0
+    # Just in case:
+    #instantSelfLock: true
+    #lockTime: 0.0
+    lockSoundsEnabled: true # beeps and boops during unlock doafter
+    lockSoundsCooldown: 0.9
+  - type: LockedWiresPanel
+  - type: Lock
+    locked: true
+    breakOnAccessBreaker: true # Access breaker instantly unlocks. It lock can be instantly locked right away by IPC and no lasting changes to lock are made. Disable if undesireable
+    useAccess: false # IPCLock handles this
+    unlockOnClick: false # IPCLock handles this
+    showLockVerbs: false # IPCLock handles this
+  - type: UserInterface
+    interfaces:
+      enum.IPCUiKey.Key:
+        type: IPCBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+  - type: ActivatableUI
+    key: enum.IPCUiKey.Key
+  - type: UIRequiresLock
+    userInterfaceKeys:
+    - enum.IPCUiKey.Key
+
+- type: entity
+  parent: BaseSpeciesDummy
+  id: MobIPCDummy
+  categories: [ HideSpawnMenu ]
