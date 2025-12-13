@@ -8,10 +8,6 @@
 # Server config files
 /Resources/ConfigPresets/ @m3739
 
-# YML files
-/Resources/*.yml @memeji @mnemotechnician @m3739 #@floof-station/yaml-maintainers
-/Resources/**/*.yml @memeji @mnemotechnician @m3739 #@floof-station/yaml-maintainers
-
 # Sprites - Maintainers in absence of a proper direction unit
 /Resources/Textures/ @memeji @mnemotechnician @m3739  # @floof-station/direction
 
@@ -26,6 +22,9 @@
 
 # Server rules - directors in absence of head administration.
 /Resources/ServerInfo/Guidebook/DeltaV/Rules/ @TechCoarse #@floof-station/directors
+
+# Wiki - Maintainers in absence of a proper direction unit
+/.wiki/ @memeji @mnemotechnician @m3739 # @floof-station/direction
 
 # Tools and scripts
 /Tools/ @m3739
