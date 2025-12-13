@@ -1,3 +1,3 @@
 @echo off
-start "DeltaVServer" cmd /k "runserver-Quick.bat"
-start "DeltaVClient" cmd /k "runclient-Quick.bat"
+start "EuphoriaServer" cmd /k "runserver-Quick.bat"
+start "EuphoriaClient" cmd /k "runclient-Quick.bat"

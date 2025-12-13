@@ -1,3 +1,3 @@
 @echo off
-start "DeltaVServer-Debug" cmd /k "runserver-Debug.bat"
-start "DeltaVClient-Debug" cmd /k "runclient-Debug.bat"
+start "EuphoriaServer-Debug" cmd /k "runserver-Debug.bat"
+start "EuphoriaClient-Debug" cmd /k "runclient-Debug.bat"
