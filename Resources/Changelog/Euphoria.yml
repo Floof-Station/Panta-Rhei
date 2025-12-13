@@ -1,7 +1,19 @@
-﻿Entries:
-  - author: M3739
-    changes:
+Entries:
+- author: M3739
+  changes:
     - message: Added the Euphoria Station changelog.
       type: Add
-    id: 1
-    time: '2025-12-13T04:23:58.0000000+00:00'
+  id: 1
+  time: '2025-12-13T04:23:58.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Add
+      message: Added the fact the change below this line is false.
+    - type: Remove
+      message: Removed the fact the change above this line is true.
+    - type: Tweak
+      message: Tweaked some stuff to create a logical paradox.
+    - type: Fix
+      message: Fixed changelog functionality. I hope?
+  id: 2
+  time: '2025-12-13T04:43:29.0000000+00:00'
