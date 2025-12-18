@@ -5,6 +5,7 @@ using Content.Server.Administration.Notes;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
+using Content.Server.Consent;
 using Content.Server.Database;
 using Content.Server._DV.FeedbackPopup; // DeltaV
 using Content.Server.Discord;
@@ -81,6 +82,7 @@ namespace Content.Server.IoC
 
             IoCManager.Register<DiscordLink>();
             IoCManager.Register<DiscordChatLink>();
+            IoCManager.Register<IServerConsentManager, ServerConsentManager>();
         }
     }
 }
