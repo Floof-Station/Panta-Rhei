@@ -481,4 +481,9 @@ public enum LogType
     /// Events relating to midi playback.
     /// </summary>
     Instrument = 103,
+
+    /// <summary>
+    /// Logs related to the consent system.
+    /// </summary>
+    Consent = 12489, // random high number to avoid conflict when upstream adds new log types
 }
