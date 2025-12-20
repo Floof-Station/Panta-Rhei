@@ -16,7 +16,7 @@ using NpgsqlTypes;
 namespace Content.Server.Database.Migrations.Postgres
 {
     [DbContext(typeof(PostgresServerDbContext))]
-    [Migration("20251220020701_CustomSpecieName")]
+    [Migration("20251220040422_CustomSpecieName")]
     partial class CustomSpecieName
     {
         /// <inheritdoc />

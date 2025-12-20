@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    [Migration("20251220020651_CustomSpecieName")]
+    [Migration("20251220040413_CustomSpecieName")]
     partial class CustomSpecieName
     {
         /// <inheritdoc />
