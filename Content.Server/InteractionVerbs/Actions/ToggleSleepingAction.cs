@@ -1,4 +1,4 @@
-using Content.Server.Bed;
+﻿using Content.Server.Bed;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.InteractionVerbs;
 using Content.Shared.Mobs.Components;

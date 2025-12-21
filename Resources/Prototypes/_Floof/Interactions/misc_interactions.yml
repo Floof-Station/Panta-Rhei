@@ -1,4 +1,4 @@
-- type: Interaction
+﻿- type: Interaction
   id: Bite
   parent: [BaseGlobal, BaseMouth]
   priority: -15 # Non-erp but generally not something you'd want to do to strangers
@@ -13,8 +13,8 @@
     - !type:EntityWhitelistRequirement
       whitelist:
         components: [MobState, Food] # Don't go around biting inanimate objects.
-    - #!type:SlotObstructionRequirement
-      #slot: MASK
+    - !type:SlotObstructionRequirement
+      slot: MASK
   action:
     !type:ComplexAction
     actions:

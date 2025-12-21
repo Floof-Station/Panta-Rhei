@@ -1,4 +1,4 @@
-//I had to comment out a lot here to let kissing and hugging work without mood being present
+﻿//I had to comment out a lot here to let kissing and hugging work without mood being present
 using Content.Shared.InteractionVerbs;
 //using Content.Shared.Mood;
 using Robust.Shared.Prototypes;

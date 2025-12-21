@@ -66,7 +66,7 @@
   components:
   - type: Polymorphable
   - type: StatusIcon
-# - type: LanguageSpeaker # Einstein Engines. This component is required to support speech, although it does not define known languages.
+  - type: LanguageSpeaker # Einstein Engines. This component is required to support speech, although it does not define known languages.
   - type: RequireProjectileTarget
     active: False
   - type: OwnInteractionVerbs
