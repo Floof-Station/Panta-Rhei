@@ -111,7 +111,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     private void OnExamined(EntityUid uid, HumanoidAppearanceComponent component, ExaminedEvent args)
     {
         var identity = Identity.Entity(uid, EntityManager);
-        var species = GetSpeciesRepresentation(component.Species).ToLower();
+        var species = GetSpeciesRepresentation(component.Species, component.CustomSpecieName).ToLower();
         var age = GetAgeRepresentation(component.Species, component.Age);
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));
@@ -464,6 +464,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         }
 
         humanoid.Age = profile.Age;
+        humanoid.CustomSpecieName = profile.Customspeciename;
         humanoid.Height = profile.Height; // CD - Character Records
 
         var appearanceEv = new AppearanceLoadedEvent(); // DeltaV
@@ -543,8 +544,11 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
     /// <summary>
     /// Takes ID of the species prototype, returns UI-friendly name of the species.
     /// </summary>
-    public string GetSpeciesRepresentation(string speciesId)
+    public string GetSpeciesRepresentation(string speciesId, string? customespeciename)
     {
+        if (!string.IsNullOrEmpty(customespeciename))
+            return Loc.GetString(customespeciename);
+
         if (_proto.TryIndex<SpeciesPrototype>(speciesId, out var species))
         {
             return Loc.GetString(species.Name);

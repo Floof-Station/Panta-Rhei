@@ -61,6 +61,9 @@
         acts: ["Destruction"]
   - type: Occluder
   - type: BlockWeather
+  - type: InteractionVerbs
+    allowedVerbs:
+      - KnockOn
 
 - type: entity
   parent: BaseMaterialDoor
@@ -242,7 +245,7 @@
     sprite: Structures/Doors/MineralDoors/card_door.rsi
   - type: Door
     openSound:
-      path: /Audio/Effects/card_drag.ogg 
+      path: /Audio/Effects/card_drag.ogg
     closeSound:
       path: /Audio/Effects/card_drag.ogg
   - type: MeleeSound
