@@ -13,8 +13,8 @@
     - !type:EntityWhitelistRequirement
       whitelist:
         components: [MobState, Food] # Don't go around biting inanimate objects.
-    - !type:SlotObstructionRequirement
-      slot: MASK
+    - #!type:SlotObstructionRequirement
+      #slot: MASK
   action:
     !type:ComplexAction
     actions:
