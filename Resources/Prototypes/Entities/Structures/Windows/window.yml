@@ -83,11 +83,6 @@
   - type: IconSmooth
     key: walls # Delta V - Make windows iconsmooth with walls
     base: window
-  - type: InteractionPopup
-    interactSuccessString: comp-window-knock
-    messagePerceivedByOthers: comp-window-knock
-    interactSuccessSound:
-      path: /Audio/Effects/glass_knock.ogg
   - type: Construction
     graph: Window
     node: window
@@ -101,6 +96,9 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
 
 - type: entity
   parent: Window
@@ -158,11 +156,6 @@
   - type: Icon
     sprite: _DV/Structures/Windows/directional.rsi #Delta V - Resprite windows
     state: window
-  - type: InteractionPopup
-    interactSuccessString: comp-window-knock
-    messagePerceivedByOthers: comp-window-knock
-    interactSuccessSound:
-      path: /Audio/Effects/glass_knock.ogg
   - type: Physics
   - type: Fixtures
     fixtures:
