@@ -7,19 +7,19 @@
   description: Translates speech.
   components:
   - type: Sprite
-    sprite: Objects/Devices/translator.rsi
+    sprite: _Floof/Objects/Devices/translator.rsi
     state: icon
     layers:
       - state: icon
       - state: translator
         shader: unshaded
         visible: false
-        map: [ "enum.ToggleVisuals.Layer", "enum.PowerDeviceVisualLayers.Powered" ]
+        map: [ "isActive", "enum.PowerDeviceVisualLayers.Powered" ]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
-      enum.ToggleVisuals.Toggled:
-        enum.ToggleVisuals.Layer:
+      enum.ToggleableVisuals.Enabled:
+        isActive:
           True: { visible: true }
           False: { visible: false }
   - type: HandheldTranslator

@@ -1,13 +1,13 @@
 - type: latheRecipePack
   id: BasicTranslation
   recipes:
+  - BasicTauCetiTranslatorImplanter
   - CanilunztTranslator
   - BubblishTranslator
   - NekomimeticTranslator
   - DraconicTranslator
   - SolCommonTranslator
   - RootSpeakTranslator
-  - BasicGalaticCommonTranslatorImplanter
   - MofficTranslator
   - ArachnicTranslator
   - VoxTranslator
@@ -22,7 +22,7 @@
   id: AdvancedTranslation
   recipes:
   - XenoTranslator
-  - AdvancedGalaticCommonTranslatorImplanter
+  - AdvancedTauCetiTranslatorImplanter
   - BubblishTranslatorImplanter
   - NekomimeticTranslatorImplanter
   - DraconicTranslatorImplanter
@@ -31,6 +31,6 @@
   - RootSpeakTranslatorImplanter
   - MofficTranslatorImplanter
   - ArachnicTranslatorImplanter
-  - ChittinTranslatorImplant
-  - AzazibaTranslatorImplant
-  - ValyrianStandardTranslatorImplant
+  - ChittinTranslatorImplanter
+  - AzazibaTranslatorImplanter
+  - ValyrianStandardTranslatorImplanter
