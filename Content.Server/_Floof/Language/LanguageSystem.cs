@@ -67,20 +67,26 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
     #region public api
 
-    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language)
+    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
+        languageId == UniversalPrototype || _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
+
+    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
-        if (language == UniversalPrototype || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
+        if (language == Universal || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
             return true;
 
-        return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language);
+        return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
     }
 
-    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language)
+    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
+        _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
+
+    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
         if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
-        return ent.Comp.SpokenLanguages.Contains(language);
+        return ent.Comp.SpokenLanguages.Contains(language.ID);
     }
 
     /// <summary>

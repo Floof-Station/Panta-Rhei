@@ -5,6 +5,8 @@ chat-manager-entity-subtle-wrap-message = [italic][color=#d3d3ff]{ PROPER($entit
 
 chat-manager-entity-subtle-looc-wrap-message = [italic][color=#ff7782]SOOC: [Name]{$entityName}[/Name]: {$message}[/color][/italic]
 
+chat-manager-language-requires-hands = You need free hands to speak this language!
+chat-manager-language-requires-speech = You are unable to speak right now!
 
 # todo move this wherever it belongs
 # Preferably create a separate file

@@ -1,8 +1,17 @@
+using System.Linq;
+using Content.Server._Floof.Language;
+using Content.Server.Hands.Systems;
+using Content.Shared._Floof.Language.Systems;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
+using Content.Shared.Language;
+using Content.Shared.Popups;
+using Content.Shared.Random.Helpers;
+using Content.Shared.Speech;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
+using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
 namespace Content.Server.Chat.Systems;
@@ -12,6 +21,10 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem
 {
+    [Dependency] private readonly LanguageSystem _languages = default!;
+    [Dependency] private readonly SharedPopupSystem _popups = default!;
+    [Dependency] private readonly HandsSystem _hands = default!;
+
     private void SendEntitySubtle(
         EntityUid source,
         string action,
@@ -90,5 +103,104 @@ public sealed partial class ChatSystem
     private bool CanObserverSeeSubtle(ICommonSession session)
     {
         return _adminManager.IsAdmin(session);
+    }
+
+    /// <summary>
+    /// Checks if the entity can currently speak its language. Returns the language it's speaking.
+    /// In certain cases this can cause a popup to appear over <paramref name="entity"/> unless <paramref name="silent"/> is true.
+    /// </summary>
+    private bool CanSpeakLanguage(EntityUid entity, out LanguagePrototype language, bool silent = false, bool ignoreActionBlocker = false)
+    {
+        language = _languages.GetLanguage(entity);
+        if (ignoreActionBlocker)
+            return true;
+
+        if (language.SpeechOverride.RequireSpeech && !_actionBlocker.CanSpeak(entity))
+        {
+            if (!silent)
+                _popups.PopupEntity(Loc.GetString("chat-manager-language-requires-speech"), entity, entity, PopupType.Medium);
+            return false;
+        }
+
+        // TODO harcoded 2 is bad but not like bad bad
+        if (language.SpeechOverride.RequireHands &&
+            (!_actionBlocker.CanComplexInteract(entity) || _hands.CountFreeHands(entity) < 2))
+        {
+            if (!silent)
+                _popups.PopupEntity(Loc.GetString("chat-manager-language-requires-hands"), entity, entity, PopupType.Medium);
+            return false;
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// Wraps a message into a wrapper string for display in UI. This particular method is meant to only be used in SendEntitySpeak.
+    /// </summary>
+    private (MessageWrapData normalMessage, MessageWrapData obfuscatedMessage) WrapEntitySpeech(
+        SpeechVerbPrototype speechProto,
+        string speakerName,
+        string message,
+        LanguagePrototype language)
+    {
+        ExtractSpeechInfo(speechProto, language, out var fontId, out var fontSize, out var verbs);
+        var locId = speechProto.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
+
+        var wrappedMessage = Loc.GetString(locId,
+            ("entityName", speakerName),
+            ("verb", Loc.GetString(_random.Pick(verbs))),
+            ("fontType", fontId),
+            ("fontSize", fontSize),
+            ("message", FormattedMessage.EscapeText(message)));
+
+        var obfuscated = _languages.ObfuscateSpeech(message, language);
+        var wrappedObfuscatedMessage = Loc.GetString(locId,
+            ("entityName", speakerName),
+            ("verb", Loc.GetString(_random.Pick(verbs))),
+            ("fontType", fontId),
+            ("fontSize", fontSize),
+            ("message", FormattedMessage.EscapeText(obfuscated)));
+
+        return (new(message, wrappedMessage, language), new(obfuscated, wrappedObfuscatedMessage, language));
+    }
+
+    private static void ExtractSpeechInfo(SpeechVerbPrototype speechProto, LanguagePrototype language, out string fontId, out int fontSize, out List<LocId> verbs)
+    {
+        fontId = language.SpeechOverride.FontId ?? speechProto.FontId;
+        fontSize = language.SpeechOverride.FontSize ?? speechProto.FontSize;
+        verbs = language.SpeechOverride.SpeechVerbOverrides ?? speechProto.SpeechVerbStrings;
+    }
+}
+
+public struct MessageWrapData
+{
+    /// <summary>
+    /// The original message being transmitted
+    /// </summary>
+    public string Original;
+    // /// <summary>
+    // /// The version of this message obfuscated via language obfuscation
+    // /// </summary>
+    public string Wrapped;
+
+    public LanguagePrototype Language;
+
+    public static readonly MessageWrapData Empty = new(string.Empty, string.Empty, SharedLanguageSystem.Universal);
+
+    public MessageWrapData(string original, string wrapped, LanguagePrototype language)
+    {
+        Original = original;
+        Wrapped = wrapped;
+        Language = language;
+    }
+
+    /// <summary>
+    /// Constructs a message wrap that is spoken in universal, for use in LOOC and other channels that require no language obfuscation.
+    /// </summary>
+    public MessageWrapData(string original, string wrapped)
+    {
+        Original = original;
+        Wrapped = wrapped;
+        Language = SharedLanguageSystem.Universal;
     }
 }

@@ -19,7 +19,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
 
     public override void Initialize()
     {
-        _playerManager.LocalPlayerAttached += NotifyUpdate;
+        _playerManager.LocalPlayerAttached += OnPlayerAttached;
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentHandleState>(OnHandleState);
     }
 
@@ -51,6 +51,20 @@ public sealed class LanguageSystem : SharedLanguageSystem
             return;
 
         RaiseNetworkEvent(new LanguagesSetMessage(language));
+    }
+
+    private void OnPlayerAttached(EntityUid entity)
+    {
+        // If the entity doesn't have a LanguageSpeakerComponent, create our own with some defaults
+        // Ideally this should be handled by the server, but meh, the server already provides some defaults in case the speaker has no LSC
+        if (!HasComp<LanguageSpeakerComponent>(entity))
+        {
+            var speaker = EnsureComp<LanguageSpeakerComponent>(entity);
+            speaker.CurrentLanguage = UniversalPrototype;
+            speaker.SpokenLanguages = new() { UniversalPrototype };
+        }
+
+        NotifyUpdate(entity);
     }
 
     private void NotifyUpdate(EntityUid localPlayer)
