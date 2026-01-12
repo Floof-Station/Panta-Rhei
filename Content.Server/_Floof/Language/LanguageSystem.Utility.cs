@@ -1,0 +1,42 @@
+using Content.Shared.Language;
+using Content.Shared.Language.Components;
+using Robust.Shared.Prototypes;
+
+namespace Content.Server._Floof.Language;
+
+public sealed partial class LanguageSystem
+{
+    /*
+     *      ><(((('>          ><>       ><(((('>   ><>
+     * ><(((('>              ><>                        ><(((('>
+     *               >--) ) ) )*>  ><>
+     */
+
+    /// <summary>
+    /// Temporarily replaces the current spoken language of the entity with the provided language.
+    /// Does not check if the entity can speak the provided language.<br/><br/>
+    ///
+    /// This method returns an IDisposable that will automatically revert the change when used in a "using..." block.
+    /// </summary>
+    /// <example><code>
+    /// private void SaySomething(EntityUid entity) {
+    ///     using var _ = _languageSystem.SubstituteEntityLanguage(entity, "Universal");
+    ///     _chatSystem.TrySendInGameICMessage(entity, "Hello world from universal");
+    ///     // At the end of the function (current block), the change will be automatically reverted by C#
+    /// }
+    /// </code></example>
+    public IDisposable? SubstituteEntityLanguage(Entity<LanguageSpeakerComponent?> entity, ProtoId<LanguagePrototype> language)
+    {
+        if (!Resolve(entity, ref entity.Comp))
+            return null;
+
+        var oldLanguage = entity.Comp.CurrentLanguage;
+        entity.Comp.CurrentLanguage = language; // We don't use SetLanguage here to avoid raising an event
+        return new LanguageReplacementDisposable(oldLanguage, entity!);
+    }
+
+    private struct LanguageReplacementDisposable(ProtoId<LanguagePrototype> oldLanguage, LanguageSpeakerComponent speaker) : IDisposable
+    {
+        public void Dispose() => speaker.CurrentLanguage = oldLanguage;
+    }
+}

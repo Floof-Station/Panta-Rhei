@@ -1,3 +1,8 @@
+// Floofstaiton section - those have been moved
+global using InGameICChatType = Content.Shared.Chat.InGameICChatType;
+global using InGameOOCChatType = Content.Shared.Chat.InGameOOCChatType;
+// Floofstation section end
+
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -1090,28 +1095,8 @@ public sealed class EntitySpokeEvent : EntityEventArgs
     }
 }
 
-/// <summary>
-///     InGame IC chat is for chat that is specifically ingame (not lobby) but is also in character, i.e. speaking.
-/// </summary>
-// ReSharper disable once InconsistentNaming
-public enum InGameICChatType : byte
-{
-    Speak,
-    Emote,
-    Whisper,
-    Telepathic, //Nyano - Summary: adds telepathic as a type of message users can receive.
-    Subtle, // Floofstation
-}
-
-/// <summary>
-///     InGame OOC chat is for chat that is specifically ingame (not lobby) but is OOC, like deadchat or LOOC.
-/// </summary>
-public enum InGameOOCChatType : byte
-{
-    Looc,
-    Dead,
-    SubtleLOOC, // Floofstation - unlike pre-rebase, this is an OOC channel
-}
+// Floofstation note: InGameICChatType and InGameOOCChatType have been moved to shared due to integration with the language system
+// See Content.Shared/Chat/ChatTypes.Floofstation.cs. Here they are replaced with global usings.
 
 /// <summary>
 ///     Controls transmission of chat.

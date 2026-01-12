@@ -1,6 +1,7 @@
 using Content.Server.Chat.Systems;
 using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Chat;
 
 namespace Content.Server._Floof.InteractionVerbs.Actions;
 

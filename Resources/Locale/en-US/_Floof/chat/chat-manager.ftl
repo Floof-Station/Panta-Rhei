@@ -4,3 +4,16 @@ chat-manager-entity-subtle-wrap-message = [italic][color=#d3d3ff]{ PROPER($entit
 }[/color][/italic]
 
 chat-manager-entity-subtle-looc-wrap-message = [italic][color=#ff7782]SOOC: [Name]{$entityName}[/Name]: {$message}[/color][/italic]
+
+
+# todo move this wherever it belongs
+# Preferably create a separate file
+chat-speech-verb-marish = Mars
+
+chat-speech-verb-name-oldvox = Old-Kin
+chat-speech-verb-oldvox-1 = croaks
+chat-speech-verb-oldvox-2 = rasps
+chat-speech-verb-oldvox-3 = wheezes
+chat-speech-verb-oldvox-4 = clicks
+chat-speech-verb-oldvox-5 = chirps
+chat-speech-verb-oldvox-6 = sings
