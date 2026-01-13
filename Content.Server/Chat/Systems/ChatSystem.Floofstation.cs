@@ -177,7 +177,7 @@ public sealed partial class ChatSystem
         var finalMsg = languageKnown ? message : _languages.ObfuscateSpeech(message, language);
         // If the listener doesn't have an LOs, further obfuscate it
         if (!canClearlyHear)
-            finalMsg = ObfuscateMessageReadability(message, 0.2f);
+            finalMsg = ObfuscateMessageReadability(finalMsg, 0.2f);
 
         var wrappedMessage = Loc.GetString(locId,
             ("entityName", name),

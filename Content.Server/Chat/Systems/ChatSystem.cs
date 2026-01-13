@@ -588,7 +588,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
             // Floofstation section: we don't cache the different whisper message wraps because most whispers will be heard by at most 2-3 people
             // Pre-computing 6 different message wraps is unnecessary
-            var canClearlyHear = data.Range <= WhisperClearRange || data.Observer;
+            var canClearlyHear = (data.Range <= WhisperClearRange && data.InLOS) || data.Observer;
             var knowsIdentity = data.InLOS;
             var canUnderstandLanguage = _languages.CanUnderstand(listener, language);
             var messageWrap = WrapEntityWhisper(name, message, canClearlyHear, knowsIdentity, canUnderstandLanguage, language);
