@@ -23,6 +23,8 @@ public sealed class LanguageSystem : SharedLanguageSystem
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentHandleState>(OnHandleState);
     }
 
+    #region Event handling
+
     private void OnHandleState(Entity<LanguageSpeakerComponent> ent, ref ComponentHandleState args)
     {
         if (args.Current is not LanguageSpeakerComponent.State state)
@@ -71,5 +73,21 @@ public sealed class LanguageSystem : SharedLanguageSystem
     {
         RaiseLocalEvent(localPlayer, new LanguagesUpdateEvent(), broadcast: true);
         OnLanguagesChanged?.Invoke();
+    }
+
+    #endregion
+
+    public bool CanLocalPlayerUnderstand(ProtoId<LanguagePrototype> language)
+    {
+        if (_playerManager.LocalEntity is not { } player)
+            return false;
+        return CanUnderstand(player, language);
+    }
+
+    public bool CanLocalPlayerSpeak(ProtoId<LanguagePrototype> language)
+    {
+        if (_playerManager.LocalEntity is not { } player)
+            return false;
+        return CanSpeak(player, language);
     }
 }
