@@ -56,6 +56,8 @@
   - type: MobMover
   - type: MovementSpeedModifier
   - type: LagCompensation
+  - type: OwnInteractionVerbs
+    allowedVerbs: [ ]
 
 - type: entity
   save: false
@@ -63,6 +65,12 @@
   abstract: true
   components:
   - type: Polymorphable
+  - type: StatusIcon
+  #- type: LanguageSpeaker # Einstein Engines. This component is required to support speech, although it does not define known languages.
+  - type: RequireProjectileTarget
+    active: False
+  - type: OwnInteractionVerbs
+    allowedVerbs: [] # TODO: define something here, or don't.
 
 # Used for mobs that have health and can take damage.
 - type: entity

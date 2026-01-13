@@ -11,6 +11,10 @@
 - type: statusEffect
   id: SlowedDown
 
+#This is NOT the right place to put this. KnockedDown should be part of the status effect system that was ported, however I am trying to limit my scope to just Interactions
+- type: statusEffect
+  id: KnockedDown
+
 - type: statusEffect
   id: Jitter
   alwaysAllowed: true

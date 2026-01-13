@@ -1,6 +1,10 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Timers;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
+using Content.Shared.Climbing.Components;
+using Content.Shared.Climbing.Systems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
@@ -37,6 +41,8 @@ public abstract partial class SharedStunSystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+    // Floofstation
+    [Dependency] private readonly ClimbSystem _climb = default!;
 
     public static readonly ProtoId<AlertPrototype> KnockdownAlert = "Knockdown";
 
@@ -365,8 +371,17 @@ public abstract partial class SharedStunSystem
         if (!TryStand(entity))
             return true;
 
-        if (!IntersectingStandingColliders(entity.Owner))
+        if (!IntersectingStandingColliders(entity.Owner, out var collider))
             return false;
+
+        // Floofstation - if colliding, try to climb it instead
+        if (TryComp<ClimbableComponent>(collider.Value, out var colliderClimb)
+            && _climb.CanVault(colliderClimb, entity, collider.Value, out _))
+        {
+            // Try to climb on the next tick. We have to finish standing up first.
+            Robust.Shared.Timing.Timer.Spawn(0, () => _climb.ForciblySetClimbing(entity, collider.Value));
+            return false;
+        }
 
         _popup.PopupClient(Loc.GetString("knockdown-component-stand-no-room"), entity, entity, PopupType.SmallCaution);
         SetAutoStand(entity.Owner);
@@ -444,8 +459,9 @@ public abstract partial class SharedStunSystem
     ///     Checks if standing would cause us to collide with something and potentially get stuck.
     ///     Returns true if we will collide with something, and false if we will not.
     /// </summary>
-    private bool IntersectingStandingColliders(Entity<TransformComponent?> entity)
+    private bool IntersectingStandingColliders(Entity<TransformComponent?> entity, [NotNullWhen(true)] out EntityUid? collider)
     {
+        collider = null; // Floofstation - added an output collider param
         if (!Resolve(entity, ref entity.Comp))
             return false;
 
@@ -478,7 +494,10 @@ public abstract partial class SharedStunSystem
                 {
                     var intersection = fixture.Shape.ComputeAABB(xform, i).IntersectPercentage(ourAABB);
                     if (intersection > 0.1f)
+                    {
+                        collider = ent; // Floofstation
                         return true;
+                    }
                 }
             }
         }

@@ -83,12 +83,21 @@ internal sealed class ChatManager : IChatManager
                 _consoleHost.ExecuteCommand($"tsay \"{CommandParsing.Escape(str)}\"");
                 break;
 
+            // Floofstation section
+            case ChatSelectChannel.Subtle:
+                _consoleHost.ExecuteCommand($"subtle \"{CommandParsing.Escape(str)}\"");
+                break;
+            case ChatSelectChannel.SubtleOOC:
+                _consoleHost.ExecuteCommand($"sooc \"{CommandParsing.Escape(str)}\"");
+                break;
+            // Floofstation section end
+
             default:
                 throw new ArgumentOutOfRangeException(nameof(channel), channel, null);
         }
     }
 
-    //Nyano - Summary: fires off the update permissions script. 
+    //Nyano - Summary: fires off the update permissions script.
     public void UpdatePermissions()
     {
         PermissionsUpdated?.Invoke();

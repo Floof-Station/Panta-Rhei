@@ -91,6 +91,9 @@ namespace Content.Shared.Preferences
         public Sex Sex { get; private set; } = Sex.Male;
 
         [DataField]
+        public string Customspeciename { get; private set; } = "";
+
+        [DataField]
         public Gender Gender { get; private set; } = Gender.Male;
 
         /// <summary>
@@ -144,6 +147,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            string customspeciename,
             int age,
             Sex sex,
             Gender gender,
@@ -163,6 +167,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
+            Customspeciename = customspeciename;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -198,6 +203,7 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
+                other.Customspeciename,
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -290,6 +296,7 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
+                Customspeciename = species,
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
                 Height = height,
             };
@@ -334,6 +341,11 @@ namespace Content.Shared.Preferences
         public HumanoidCharacterProfile WithSpawnPriorityPreference(SpawnPriorityPreference spawnPriority)
         {
             return new(this) { SpawnPriority = spawnPriority };
+        }
+
+        public HumanoidCharacterProfile WithCustomSpeciesName(string customspeciename)
+        {
+            return new(this) { Customspeciename = customspeciename };
         }
 
         // Begin CD - Character Records
@@ -587,6 +599,15 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
+            var customspeciename =
+                !speciesPrototype.CustomName
+                || string.IsNullOrEmpty(Customspeciename)
+                    ? ""
+                    : Customspeciename.Length > maxNameLength
+                        ? FormattedMessage.RemoveMarkup(Customspeciename)[..maxNameLength]
+                        : FormattedMessage.RemoveMarkup(Customspeciename);
+
+
             string flavortext;
             var maxFlavorTextLength = configManager.GetCVar(CCVars.MaxFlavorTextLength);
             if (FlavorText.Length > maxFlavorTextLength)
@@ -651,6 +672,7 @@ namespace Content.Shared.Preferences
                          .ToList();
 
             Name = name;
+            Customspeciename = customspeciename;
             FlavorText = flavortext;
             Age = age;
             Sex = sex;
@@ -781,6 +803,7 @@ namespace Content.Shared.Preferences
             hashCode.Add(Name);
             hashCode.Add(FlavorText);
             hashCode.Add(Species);
+            hashCode.Add(Customspeciename);
             hashCode.Add(Age);
             hashCode.Add((int)Sex);
             hashCode.Add((int)Gender);

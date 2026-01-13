@@ -1,0 +1,111 @@
+﻿# Hugging - improves the mood of the user
+- type: Interaction
+  id: Hug
+  parent: [BaseGlobal, BaseHands]
+  priority: 2
+  #icon: /Textures/Interface/Actions/hug.png
+  delay: 0.7
+  range: {max: 1}
+  hideByRequirement: true
+  requirement:
+    !type:MobStateRequirement
+    inverted: true
+  action:
+    # TODO: this should pull the target closer or sumth, but I need to code that action first
+    !type:MoodAction
+    effect: BeingHugged
+  effectFailure: null # Floof
+
+# Petting someone (people) - improves the mood of the target
+- type: Interaction
+  id: Pet
+  parent: [BaseGlobal, BaseHands]
+  priority: 1
+  #icon: /Textures/Interface/Actions/hug.png
+  delay: 0.4
+  range: {max: 1}
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:MobStateRequirement
+      inverted: true
+    - !type:EntityWhitelistRequirement
+      whitelist:
+        components: [HumanoidAppearance]
+  action:
+    !type:MoodAction
+    effect: BeingPet
+  effectFailure: null # Floof
+
+# Petting someone (animals) - improves the mood of the user and the target
+- type: Interaction
+  id: PetAnimal
+  parent: Pet
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:MobStateRequirement
+      allowedStates: [Alive]
+    - !type:EntityWhitelistRequirement
+      blacklist:
+        components: [HumanoidAppearance]
+  action:
+    !type:ComplexAction # TODO might wanna make a multiplexer action for situations like this
+    actions:
+    - !type:MoodAction
+      effect: BeingPet
+    - !type:OnUserAction
+      action:
+        !type:MoodAction
+        effect: PetAnimal
+  effectFailure: null # Floof
+
+# Kissing
+- type: Interaction
+  id: Kiss
+  parent: [BaseGlobal, BaseMouth]
+  priority: -1
+  delay: 0.4
+  range: {max: 1}
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:EntityWhitelistRequirement
+      whitelist:
+        components: [MobState] # Don't go around kissing inanimate objects.
+    - !type:SlotObstructionRequirement
+      slot: MASK
+  action:
+    !type:MoodAction
+    effect: BeingKissed
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/_Floof/Lewd/kiss.ogg}
+  effectFailure: null
+
+# Licking?
+- type: Interaction
+  id: Lick
+  parent: [BaseGlobal, BaseMouth]
+  priority: -2
+  delay: 0.7
+  range: {max: 1}
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:EntityWhitelistRequirement
+      whitelist:
+        components: [MobState, Anomaly, Food]
+        tags: [Window] # yes.
+    - !type:SlotObstructionRequirement
+      slot: MASK
+  action:
+    !type:MoodAction
+    effect: BeingLicked
+  effectSuccess:
+    popup: Obvious
+    sound: {path: /Audio/_Floof/Lewd/lick.ogg}
+  effectFailure: null

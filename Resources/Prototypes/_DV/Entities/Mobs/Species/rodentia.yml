@@ -111,8 +111,8 @@
     mouthProto: CheekStorage
     openStorageAction: ActionOpenMouthStorage
     spitDamageThreshold: 3
-  - type: CrawlUnderObjects
-    actionProto: ActionToggleSneakMode
+#  - type: CrawlUnderObjects # Floofstation - removed in favor of a universal system with a keybind
+#    actionProto: ActionToggleSneakMode
   - type: DrawDepthVisualizer
     key: enum.SneakingVisuals.Sneaking
     depth: SmallMobs

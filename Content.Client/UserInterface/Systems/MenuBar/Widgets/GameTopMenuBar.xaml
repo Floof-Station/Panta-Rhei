@@ -93,6 +93,16 @@
         HorizontalExpand="True"
         AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
         />
+    <ui:MenuButton
+        Name="ConsentButton"
+        Access="Internal"
+        Icon="{xe:Tex '/Textures/Interface/VerbIcons/settings.svg.192dpi.png'}"
+        BoundKey = "{x:Static is:ContentKeyFunctions.OpenConsentWindow}"
+        ToolTip="{Loc 'game-hud-open-consent-window-button-tooltip'}"
+        MinSize="42 64"
+        HorizontalExpand="True"
+        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+    />
     <!-- DeltaV - Add CHelp -->
     <ui:MenuButton
         Name="CHelpButton"

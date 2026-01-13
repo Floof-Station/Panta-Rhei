@@ -4,7 +4,7 @@ namespace Content.Shared.Chat
     ///     Represents chat channels that the player can filter chat tabs by.
     /// </summary>
     [Flags]
-    public enum ChatChannel : ushort
+    public enum ChatChannel : uint // Floofstation - expand to uint
     {
         None = 0,
 
@@ -91,9 +91,19 @@ namespace Content.Shared.Chat
         Telepathic = 1 << 15,
 
         /// <summary>
+        ///     Floofstation - Subtle messages. Added at a greater offset to avoid conflicting with future added channels.
+        /// </summary>
+        Subtle = 1u << 31,
+
+        /// <summary>
+        ///     Floofstation - Subtle OOC messages.
+        /// </summary>
+        SubtleOOC = 1u << 30,
+
+        /// <summary>
         ///     Channels considered to be IC.
         /// </summary>
-        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Telepathic | Notifications, //Nyano - Summary: Adds telepathic as an 'IC' labelled chat..
+        IC = Local | Whisper | Radio | Dead | Emotes | Damage | Visual | Telepathic | Notifications | Subtle, //Nyano - Summary: Adds telepathic as an 'IC' labelled chat.. // Floof - also add subtle
 
         AdminRelated = Admin | AdminAlert | AdminChat,
     }

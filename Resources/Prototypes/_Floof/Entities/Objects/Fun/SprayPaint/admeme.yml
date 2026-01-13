@@ -1,0 +1,28 @@
+# Admeme paint. Has no restrictions. Edit the color field using vv to enable other colors.
+- type: entity
+  parent: PaintBase
+  id: PaintAdmeme
+  name: super spray paint
+  description: A tin of spray paint. This one has a biohazard warning printed on its side.
+  suffix: Admeme, DO NOT MAP
+  components:
+  - type: ColorPaint
+    consumptionUnit: 1
+    whitelist: null
+    blacklist: null
+    color: "#ff2020"
+  - type: Item
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    heldPrefix: spray
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    state: death2_cap
+    layers:
+    - state: death2_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "death2"}
+          False: {state: "death2_cap"}

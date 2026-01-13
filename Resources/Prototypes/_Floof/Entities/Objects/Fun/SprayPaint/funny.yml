@@ -1,0 +1,41 @@
+- type: entity
+  parent: PaintBase
+  id: FunnyPaint
+  name: funny paint
+  description:  A tin of funny paint, manufactured by Honk! Co.
+  components:
+  - type: ColorPaint
+    color: "#fa74df"
+  - type: Item
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    heldPrefix: clown
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "clown"}
+          False: {state: "clown_cap"}
+
+- type: entity
+  parent: PaintBase
+  id: FunnyPaintYellow
+  name: funny paint
+  description:  A tin of funny paint, manufactured by Honk! Co.
+  components:
+  - type: ColorPaint
+    color: "#d5e028"
+  - type: Item
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    heldPrefix: clown
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    state: clown2_cap
+    layers:
+    - state: clown2_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "clown2"}
+          False: {state: "clown2_cap"}

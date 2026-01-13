@@ -1,0 +1,160 @@
+#Blue
+- type: entity
+  parent: PaintBase
+  id: SprayPaintBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#5890f7"
+  - type: ColorPaint
+    color: "#5890f7"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#5890f7"}
+          False: {state: "spray_cap_colors" , color: "#5890f7"}
+
+#Red
+- type: entity
+  parent: PaintBase
+  id: SprayPaintRed
+  suffix: Red
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#ff3b3b"
+  - type: ColorPaint
+    color: "#ff3b3b"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#ff3b3b"}
+          False: {state: "spray_cap_colors" , color: "#ff3b3b"}
+
+#Green
+- type: entity
+  parent: PaintBase
+  id: SprayPaintGreen
+  suffix: Green
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#73f170"
+  - type: ColorPaint
+    color: "#73f170"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#73f170"}
+          False: {state: "spray_cap_colors" , color: "#73f170"}
+
+#Black
+- type: entity
+  parent: PaintBase
+  id: SprayPaintBlack
+  suffix: Black
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#3a3a3a"
+  - type: ColorPaint
+    color: "#3a3a3a"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#3a3a3a"}
+          False: {state: "spray_cap_colors" , color: "#3a3a3a"}
+
+#Orange
+- type: entity
+  parent: PaintBase
+  id: SprayPaintOrange
+  suffix: Orange
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#f6a44b"
+  - type: ColorPaint
+    color: "#f6a44b"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#f6a44b"}
+          False: {state: "spray_cap_colors" , color: "#f6a44b"}
+
+#Purple
+- type: entity
+  parent: PaintBase
+  id: SprayPaintPurple
+  suffix: Purple
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#c063f5"
+  - type: ColorPaint
+    color: "#c063f5"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#c063f5"}
+          False: {state: "spray_cap_colors" , color: "#c063f5"}
+
+#White
+- type: entity
+  parent: PaintBase
+  id: SprayPaintWhite
+  suffix: White
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#f2f2f2"
+  - type: ColorPaint
+    color: "#f2f2f2"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#f2f2f2"}
+          False: {state: "spray_cap_colors" , color: "#f2f2f2"}

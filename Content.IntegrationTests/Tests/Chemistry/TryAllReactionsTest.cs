@@ -6,6 +6,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Chemistry.EntitySystems;
+using Robust.Shared.Log;
 
 namespace Content.IntegrationTests.Tests.Chemistry
 {
@@ -105,7 +106,16 @@ namespace Content.IntegrationTests.Tests.Chemistry
                         .ToDictionary(x => x, _ => false);
                     foreach (var (reagent, quantity) in solution.Contents)
                     {
-                        Assert.That(foundProductsMap.TryFirstOrNull(x => x.Key.Key == reagent.Prototype && x.Key.Value == quantity, out var foundProduct));
+                        // Floofstation section: log an error ffs
+                        if (!foundProductsMap.TryFirstOrNull(x => x.Key.Key == reagent.Prototype && x.Key.Value == quantity, out var foundProduct))
+                        {
+                            var expected = string.Join(", ", reactionPrototype.Products.Select((k, _) => $"{k.Key}: {k.Value} units"));
+                            var found = string.Join(", ", solution.Contents.Select(it => $"{it.Reagent}: {it.Quantity} units"));
+
+                            Logger.GetSawmill("reactions test").Error($"Reaction {reactionPrototype.ID} does not succeeded (conflict?): expected to produce [{expected}], but produced [{found}]");
+                            Assert.That(false);
+                        }
+                        // Floofstation section end
                         foundProductsMap[foundProduct.Value.Key] = true;
                     }
 
