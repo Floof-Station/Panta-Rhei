@@ -1,6 +1,8 @@
 using System.Text;
+using Content.Shared._Floof.Language.Components;
 using Content.Shared.GameTicking;
 using Content.Shared.Language;
+using Content.Shared.Language.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Floof.Language.Systems;
@@ -30,6 +32,72 @@ public abstract partial class SharedLanguageSystem : EntitySystem
         Universal = _prototype.Index(UniversalPrototype);
     }
 
+    #region public api
+
+    /// <summary>
+    /// Checks if an entity can understand a given language. Universal speakers are assumed to understand every language.
+    /// On the client side, this method is only guaranteed to work if the entity is the local player.
+    /// </summary>
+    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
+        languageId == UniversalPrototype || _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
+
+    /// <inheritdoc cref="CanUnderstand(Entity&lt;LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
+    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
+    {
+        if (language == Universal || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
+            return true;
+
+        return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
+    }
+
+    /// <summary>
+    /// Checks if an entity can speak a given language.
+    /// On the client side, this method is only guaranteed to work if the entity is the local player.
+    /// </summary>
+    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
+        _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
+
+    /// <inheritdoc cref="CanSpeak(Entity&lt;LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
+    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
+    {
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
+            return false;
+
+        return ent.Comp.SpokenLanguages.Contains(language.ID);
+    }
+
+    /// <summary>
+    ///     Returns the current language of the given entity, assumes Universal if it's not a language speaker.
+    /// </summary>
+    public LanguagePrototype GetLanguage(Entity<LanguageSpeakerComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, logMissing: false)
+            || string.IsNullOrEmpty(ent.Comp.CurrentLanguage)
+            || !_prototype.TryIndex<LanguagePrototype>(ent.Comp.CurrentLanguage, out var proto)
+        )
+            return Universal;
+
+        return proto;
+    }
+
+    /// <summary>
+    ///     Returns the list of languages this entity can speak.
+    /// </summary>
+    /// <remarks>This simply returns the value of <see cref="LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
+    public List<ProtoId<LanguagePrototype>> GetSpokenLanguages(EntityUid uid)
+    {
+        return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.SpokenLanguages : [];
+    }
+
+    /// <summary>
+    ///     Returns the list of languages this entity can understand.
+    /// </summary
+    /// <remarks>This simply returns the value of <see cref="LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
+    public List<ProtoId<LanguagePrototype>> GetUnderstoodLanguages(EntityUid uid)
+    {
+        return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.UnderstoodLanguages : [];
+    }
+
     public LanguagePrototype? GetLanguagePrototype(ProtoId<LanguagePrototype> id)
     {
         _prototype.TryIndex(id, out var proto);
@@ -46,6 +114,8 @@ public abstract partial class SharedLanguageSystem : EntitySystem
 
         return builder.ToString();
     }
+
+    #endregion
 
     /// <summary>
     ///     Generates a stable pseudo-random number in the range (min, max) (inclusively) for the given seed.

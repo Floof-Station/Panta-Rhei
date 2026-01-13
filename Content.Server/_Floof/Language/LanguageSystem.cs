@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Floof.Language.Components;
 using Content.Shared._Floof.Language.Systems;
 using Content.Shared.Language;
 using Content.Shared.Language.Components;
@@ -66,60 +67,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     #endregion
 
     #region public api
-
-    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
-        languageId == UniversalPrototype || _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
-
-    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
-    {
-        if (language == Universal || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
-            return true;
-
-        return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
-    }
-
-    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
-        _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
-
-    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
-    {
-        if (!Resolve(ent, ref ent.Comp, logMissing: false))
-            return false;
-
-        return ent.Comp.SpokenLanguages.Contains(language.ID);
-    }
-
-    /// <summary>
-    ///     Returns the current language of the given entity, assumes Universal if it's not a language speaker.
-    /// </summary>
-    public LanguagePrototype GetLanguage(Entity<LanguageSpeakerComponent?> ent)
-    {
-        if (!Resolve(ent, ref ent.Comp, logMissing: false)
-            || string.IsNullOrEmpty(ent.Comp.CurrentLanguage)
-            || !_prototype.TryIndex<LanguagePrototype>(ent.Comp.CurrentLanguage, out var proto)
-        )
-            return Universal;
-
-        return proto;
-    }
-
-    /// <summary>
-    ///     Returns the list of languages this entity can speak.
-    /// </summary>
-    /// <remarks>This simply returns the value of <see cref="LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
-    public List<ProtoId<LanguagePrototype>> GetSpokenLanguages(EntityUid uid)
-    {
-        return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.SpokenLanguages : [];
-    }
-
-    /// <summary>
-    ///     Returns the list of languages this entity can understand.
-    /// </summary
-    /// <remarks>This simply returns the value of <see cref="LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
-    public List<ProtoId<LanguagePrototype>> GetUnderstoodLanguages(EntityUid uid)
-    {
-        return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.UnderstoodLanguages : [];
-    }
 
     public void SetLanguage(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language)
     {
