@@ -1,7 +1,4 @@
-using Content.Shared.Language.Components.Translators;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
-
-namespace Content.Shared.Language.Components;
+namespace Content.Shared._Floof.Language.Components.Translators;
 
 /// <summary>
 ///     An implant that allows the implantee to speak and understand other languages.

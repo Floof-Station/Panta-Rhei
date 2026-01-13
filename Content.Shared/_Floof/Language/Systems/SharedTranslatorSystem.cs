@@ -1,6 +1,6 @@
 using System.Linq;
+using Content.Shared._Floof.Language.Components.Translators;
 using Content.Shared.Examine;
-using Content.Shared.Language.Components.Translators;
 using Content.Shared.Toggleable;
 
 namespace Content.Shared._Floof.Language.Systems;

@@ -1,4 +1,4 @@
-namespace Content.Shared.Language.Events;
+namespace Content.Shared._Floof.Language.Events;
 
 /// <summary>
 ///     Raised on an entity when its list of languages changes.

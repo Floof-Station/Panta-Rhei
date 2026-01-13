@@ -1,7 +1,7 @@
 using Content.Shared.Chat;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.Language;
+namespace Content.Shared._Floof.Language;
 
 [Prototype("language")]
 public sealed partial class LanguagePrototype : IPrototype

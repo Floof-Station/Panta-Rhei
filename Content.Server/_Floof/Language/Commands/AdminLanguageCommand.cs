@@ -1,8 +1,8 @@
 using Content.Server.Administration;
+using Content.Shared._Floof.Language;
+using Content.Shared._Floof.Language.Components;
 using Content.Shared._Floof.Language.Systems;
 using Content.Shared.Administration;
-using Content.Shared.Language;
-using Content.Shared.Language.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
 

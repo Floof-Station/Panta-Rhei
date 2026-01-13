@@ -1,5 +1,5 @@
-using Content.Shared.Language;
-using Content.Shared.Language.Components;
+using Content.Shared._Floof.Language;
+using Content.Shared._Floof.Language.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Floof.Language;

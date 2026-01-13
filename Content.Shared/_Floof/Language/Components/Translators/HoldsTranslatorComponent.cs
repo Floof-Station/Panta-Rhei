@@ -1,4 +1,4 @@
-namespace Content.Shared.Language.Components.Translators;
+namespace Content.Shared._Floof.Language.Components.Translators;
 
 /// <summary>
 ///     Applied internally to the holder of an entity with [HandheldTranslatorComponent].

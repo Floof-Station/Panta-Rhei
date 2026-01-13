@@ -1,8 +1,6 @@
 using System.Text;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared.GameTicking;
-using Content.Shared.Language;
-using Content.Shared.Language.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Floof.Language.Systems;
@@ -41,7 +39,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
         languageId == UniversalPrototype || _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
 
-    /// <inheritdoc cref="CanUnderstand(Entity&lt;LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
+    /// <inheritdoc cref="CanUnderstand(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
         if (language == Universal || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
@@ -57,7 +55,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
         _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
 
-    /// <inheritdoc cref="CanSpeak(Entity&lt;LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
+    /// <inheritdoc cref="CanSpeak(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
         if (!Resolve(ent, ref ent.Comp, logMissing: false))
@@ -83,7 +81,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <summary>
     ///     Returns the list of languages this entity can speak.
     /// </summary>
-    /// <remarks>This simply returns the value of <see cref="LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
+    /// <remarks>This simply returns the value of <see cref="Components.LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
     public List<ProtoId<LanguagePrototype>> GetSpokenLanguages(EntityUid uid)
     {
         return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.SpokenLanguages : [];
@@ -92,7 +90,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <summary>
     ///     Returns the list of languages this entity can understand.
     /// </summary
-    /// <remarks>This simply returns the value of <see cref="LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
+    /// <remarks>This simply returns the value of <see cref="Components.LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
     public List<ProtoId<LanguagePrototype>> GetUnderstoodLanguages(EntityUid uid)
     {
         return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.UnderstoodLanguages : [];

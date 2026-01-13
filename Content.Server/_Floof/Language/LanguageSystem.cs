@@ -1,9 +1,8 @@
 using System.Linq;
+using Content.Shared._Floof.Language;
 using Content.Shared._Floof.Language.Components;
+using Content.Shared._Floof.Language.Events;
 using Content.Shared._Floof.Language.Systems;
-using Content.Shared.Language;
-using Content.Shared.Language.Components;
-using Content.Shared.Language.Events;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 

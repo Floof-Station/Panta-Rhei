@@ -1,7 +1,7 @@
 using System.Text;
 using Content.Shared._Floof.Language.Systems;
 
-namespace Content.Shared.Language;
+namespace Content.Shared._Floof.Language;
 
 [ImplicitDataDefinitionForInheritors]
 public abstract partial class ObfuscationMethod

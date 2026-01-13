@@ -1,7 +1,6 @@
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
-namespace Content.Shared.Language.Components.Translators;
+namespace Content.Shared._Floof.Language.Components.Translators;
 
 public abstract partial class BaseTranslatorComponent : Component
 {

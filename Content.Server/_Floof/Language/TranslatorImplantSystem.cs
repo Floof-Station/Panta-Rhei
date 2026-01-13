@@ -1,6 +1,6 @@
+using Content.Shared._Floof.Language.Components.Translators;
+using Content.Shared._Floof.Language.Events;
 using Content.Shared.Implants.Components;
-using Content.Shared.Language.Components;
-using Content.Shared.Language.Events;
 using Robust.Shared.Containers;
 
 namespace Content.Server._Floof.Language;

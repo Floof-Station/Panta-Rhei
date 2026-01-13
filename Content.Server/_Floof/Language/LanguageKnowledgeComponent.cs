@@ -1,4 +1,4 @@
-using Content.Shared.Language;
+using Content.Shared._Floof.Language;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Floof.Language;

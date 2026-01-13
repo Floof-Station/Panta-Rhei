@@ -1,9 +1,8 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
-using Robust.Shared.Serialization.TypeSerializers.Implementations;
 
-namespace Content.Shared.Language.Components;
+namespace Content.Shared._Floof.Language.Components;
 
 /// <summary>
 ///     Stores the current state of the languages the entity can speak and understand.

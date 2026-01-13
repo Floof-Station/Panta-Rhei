@@ -1,6 +1,6 @@
 using Robust.Shared.Serialization;
 
-namespace Content.Shared.Language.Events;
+namespace Content.Shared._Floof.Language.Events;
 
 /// <summary>
 ///     Sent from the client to the server when it needs to want to set his currentLangauge.

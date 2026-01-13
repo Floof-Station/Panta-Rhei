@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared._Floof.Language;
 using Content.Shared.Administration;
-using Content.Shared.Language;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
 

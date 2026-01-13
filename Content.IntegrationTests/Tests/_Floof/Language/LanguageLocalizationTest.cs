@@ -1,6 +1,6 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Localization;
-using Content.Shared.Language;
+using Content.Shared._Floof.Language;
 using System.Linq;
 using System.Collections.Generic;
 

@@ -1,9 +1,8 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using Content.Shared._Floof.Language.Systems;
-using Content.Shared.Language;
 
-namespace Content.Shared.FloofStation.Language;
+namespace Content.Shared._Floof.Language;
 
 /// <summary>
 ///     Applies the Ratvarian language transformation to the original message.
