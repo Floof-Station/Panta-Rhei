@@ -162,6 +162,30 @@ public sealed partial class ChatSystem
         return (new(message, wrappedMessage, language), new(obfuscated, wrappedObfuscatedMessage, language));
     }
 
+    private MessageWrapData WrapEntityWhisper(string name,
+        string message,
+        bool canClearlyHear,
+        bool identityKnown,
+        bool languageKnown,
+        LanguagePrototype? language = null)
+    {
+        language ??= SharedLanguageSystem.Universal;
+        message = FormattedMessage.EscapeText(message);
+
+        var locId = identityKnown ? "chat-manager-entity-whisper-wrap-message" : "chat-manager-entity-whisper-unknown-wrap-message";
+        // If the language is unknown, obfuscate it
+        var finalMsg = languageKnown ? message : _languages.ObfuscateSpeech(message, language);
+        // If the listener doesn't have an LOs, further obfuscate it
+        if (!canClearlyHear)
+            finalMsg = ObfuscateMessageReadability(message, 0.2f);
+
+        var wrappedMessage = Loc.GetString(locId,
+            ("entityName", name),
+            ("message", finalMsg));
+
+        return new(finalMsg, wrappedMessage, language);
+    }
+
     private static void ExtractSpeechInfo(SpeechVerbPrototype speechProto, LanguagePrototype language, out string fontId, out int fontSize, out List<LocId> verbs)
     {
         fontId = language.SpeechOverride.FontId ?? speechProto.FontId;
