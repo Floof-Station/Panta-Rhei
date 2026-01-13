@@ -8,8 +8,14 @@
   abstract: true
   components:
   # Custom names
-  - type: ReplacementAccent
-    accent: scurret
+#  - type: ReplacementAccent # Floofstation
+#    accent: scurret
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Scurret
+    understands:
+    - Scurret
+    - TauCetiBasic
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]

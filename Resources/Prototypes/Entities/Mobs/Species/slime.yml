@@ -54,6 +54,14 @@
       Male: MaleSlime
       Female: FemaleSlime
       Unsexed: MaleSlime
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Bubblish
+    understands:
+    - TauCetiBasic
+    - Bubblish
+    naturalLanguage: Bubblish
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime

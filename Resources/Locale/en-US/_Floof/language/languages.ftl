@@ -55,8 +55,8 @@ language-Canilunzt-description =
 language-Moffic-name = Moffic
 language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
 
-language-RobotTalk-name = RobotTalk
-language-RobotTalk-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
+language-Binary-name = Binary
+language-Binary-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.
@@ -87,6 +87,9 @@ language-Kagebun-description =
 # Animal Languages
 
 # Floof - some of those are rebranded. Why do we have two sources of truth for language names?
+language-Bee-name = Bee
+language-Cat-description = Bzzzzzzz zzzz zzz bzzzz bzz b-bzzzzzz bzzz bzzzzzzzzzzzzzzz.
+
 language-Cat-name = Felidae
 language-Cat-description = The proto-language primarily utilized by felids, such as house cats or lions.
 
@@ -135,6 +138,9 @@ language-Hissing-description = Hiss!
 # Floof section begin
 language-ScugSign-name = ScugSign
 language-ScugSign-description = Wawa! The secret ScugSign making you able to understand your fellows scug!
+
+language-Scurret-name = Scurret
+language-Scurret-description = Wawa! A cute proto-language spoken by the scurrets.
 
 language-Arachnic-name = Arachnic
 language-Arachnic-description = The language of arachnids is composed of mostly clicks and hisses, it almost has a rhythmic character to it at times.

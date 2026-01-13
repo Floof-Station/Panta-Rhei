@@ -1,5 +1,17 @@
 # Languages spoken by various critters.
 - type: language
+  id: Bee
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 3
+    replacement:
+    - bz
+    - zz
+    - bzt
+    - bzz
+
+- type: language
   id: Cat
   isVisibleLanguage: true # Floofstation - can be picked via traits
   obfuscation:
@@ -203,3 +215,15 @@
     - won
     - wonk
     - wong
+
+- type: language
+  id: Scurret
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 4
+    replacement: # wa
+    - wa
+    - waa
+    - wawa
+    - aw

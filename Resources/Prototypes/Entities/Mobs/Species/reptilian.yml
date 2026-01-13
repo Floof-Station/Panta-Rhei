@@ -41,6 +41,14 @@
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Draconic
+    understands:
+    - TauCetiBasic
+    - Draconic
+    naturalLanguage: Draconic
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable

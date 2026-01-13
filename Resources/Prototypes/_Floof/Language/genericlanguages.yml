@@ -8,9 +8,9 @@
     replacement:
     - "*incomprehensible*" # Never actually used
 
-# Used by Robots.
+# Used by robots. Note: this used to be called RobotTalk pre-rebase. Update your references.
 - type: language
-  id: RobotTalk
+  id: Binary
   isVisibleLanguage: true
   speech:
     fontId: Monospace

@@ -69,6 +69,13 @@
     damageModifierSet: Ifrit
   - type: Speech
     speechSounds: Bass
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
   - type: Puller
     needsHands: false
   - type: Tag

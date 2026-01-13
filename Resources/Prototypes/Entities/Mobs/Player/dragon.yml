@@ -169,6 +169,14 @@
     speedModifier: 2.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Xeno
+    - TauCetiBasic
+    understands:
+    - Xeno
+    - TauCetiBasic
+    naturalLanguage: Xeno
 
 - type: entity
   parent: BaseMobDragon

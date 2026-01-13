@@ -23,6 +23,15 @@
       Male: UnisexVox
       Female: UnisexVox
       Unsexed: UnisexVox
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - NewKinPidgin
+    understands:
+    - TauCetiBasic
+    - NewKinPidgin
+    - OldKinPidgin
+    naturalLanguage: NewKinPidgin
   - type: Butcherable
     butcheringType: Spike
     spawned:
