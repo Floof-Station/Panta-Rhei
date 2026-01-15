@@ -88,7 +88,7 @@ language-Kagebun-description =
 
 # Floof - some of those are rebranded. Why do we have two sources of truth for language names?
 language-Bee-name = Bee
-language-Cat-description = Bzzzzzzz zzzz zzz bzzzz bzz b-bzzzzzz bzzz bzzzzzzzzzzzzzzz.
+language-Bee-description = Bzzzzzzz zzzz zzz bzzzz bzz b-bzzzzzz bzzz bzzzzzzzzzzzzzzz.
 
 language-Cat-name = Felidae
 language-Cat-description = The proto-language primarily utilized by felids, such as house cats or lions.
