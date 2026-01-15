@@ -101,7 +101,7 @@
         ToolTip="{Loc 'game-hud-open-consent-window-button-tooltip'}"
         MinSize="42 64"
         HorizontalExpand="True"
-        AppendStyleClass="{x:Static style:StyleBase.ButtonSquare}"
+        AppendStyleClass="{x:Static style:StyleClass.ButtonSquare}"
     />
     <!-- DeltaV - Add CHelp -->
     <ui:MenuButton
