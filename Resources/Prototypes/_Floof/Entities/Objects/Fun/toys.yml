@@ -1793,7 +1793,11 @@
   - type: Crayon
     color: white
     selectableColor: true
-    capacity: 500
+    deleteEmpty: false
+  - type: LimitedCharges
+    maxCharges: 100
+  - type: AutoRecharge
+    rechargeDuration: 2
   - type: Food
     utensilRequired: true # I ate my fucking paintbrush
   - type: SolutionContainerManager
