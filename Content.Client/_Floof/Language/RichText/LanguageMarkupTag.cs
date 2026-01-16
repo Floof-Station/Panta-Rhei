@@ -92,7 +92,7 @@ public sealed class LanguageMarkupTag : IMarkupTagHandler
             return "[ERROR: LANGUAGE SYSTEM HAS NOT BEEN LOADED. THIS IS A BUG.]";
 
         // Not checking for RequireSpeech because we may have written-only languages later
-        if (language.SpeechOverride is not { RequireHands: false } || language.ID == SharedLanguageSystem.UniversalPrototype)
+        if (language.SpeechOverride is not { RequireHands: false, AllowWriting: true })
             return "[ERROR: THIS LANGUAGE CANNOT BE WRITTEN]";
 
         return languageSys.CanLocalPlayerUnderstand(language) ? text : languageSys.ObfuscateSpeech(text, language);

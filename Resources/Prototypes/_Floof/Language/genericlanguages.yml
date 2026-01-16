@@ -7,6 +7,8 @@
     !type:ReplacementObfuscation
     replacement:
     - "*incomprehensible*" # Never actually used
+  speech:
+    allowWriting: false
 
 # Used by robots. Note: this used to be called RobotTalk pre-rebase. Update your references.
 - type: language
@@ -27,9 +29,10 @@
   id: Sign
   speech:
     allowRadio: false
+    allowWriting: false
     requireSpeech: false
-    requireHands: true # Floof
-    requireLOS: true # Floof
+    requireHands: true
+    requireLOS: true
     color: "#dddddd"
     messageWrapOverrides:
       Speak: chat-sign-language-message-wrap

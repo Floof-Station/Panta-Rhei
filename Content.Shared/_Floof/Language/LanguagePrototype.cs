@@ -62,7 +62,7 @@ public sealed partial class SpeechOverrideInfo
     public int? FontSize;
 
     [DataField]
-    public bool AllowRadio = true;
+    public bool AllowRadio = true, AllowWriting = true;
 
     /// <summary>
     ///     If true, the message will be relayed to the Empathy Chat and
