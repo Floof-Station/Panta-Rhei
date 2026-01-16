@@ -1,14 +1,16 @@
 using System.IO;
+using Content.Shared._Floof.Language;
 using JetBrains.Annotations;
 using Lidgren.Network;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Chat
 {
     [Serializable, NetSerializable]
-    public sealed class ChatMessage
+    public sealed record class ChatMessage // Floofstation - made a record
     {
         public ChatChannel Channel;
 
@@ -23,6 +25,15 @@ namespace Content.Shared.Chat
         /// formatting tags.
         /// </summary>
         public string WrappedMessage;
+
+        /// <summary>
+        /// Floofstation - language-obfuscated versions of Message and WrappedMessage. If its null then the upstream system needs to be updated to evaluate it.
+        /// </summary>
+        public string? ObfuscatedMessage, ObfuscatedWrappedMessage;
+        /// <summary>
+        /// Floofstation - ID of the language this was spoken in. Can be empty, in which case assume Universal.
+        /// </summary>
+        public ProtoId<LanguagePrototype> Language;
 
         public NetEntity SenderEntity;
 

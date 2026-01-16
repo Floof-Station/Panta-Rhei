@@ -103,7 +103,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Obfuscate a message using the given language.
+    ///     Obfuscates the message using the provided language prototype.
     /// </summary>
     public string ObfuscateSpeech(string message, LanguagePrototype language)
     {
@@ -111,6 +111,15 @@ public abstract partial class SharedLanguageSystem : EntitySystem
         language.Obfuscation.Obfuscate(builder, message, this);
 
         return builder.ToString();
+    }
+
+    /// <summary>
+    ///     Obfuscates the message using the current spoken language of the entity. Returns the obfuscated message and the language used.
+    /// </summary>
+    public string ObfuscateSpeechForEntity(string message, EntityUid entity, out LanguagePrototype language)
+    {
+        language = GetLanguage(entity);
+        return ObfuscateSpeech(message, language);
     }
 
     #endregion

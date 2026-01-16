@@ -64,8 +64,9 @@ public sealed class RadioImplantSystem : SharedRadioImplantSystem
     /// <summary>
     /// Handles receiving radio messages and forwarding them to the implantee.
     /// </summary>
-    private void OnRadioReceive(Entity<RadioImplantComponent> ent, ref RadioReceiveEvent args)
+    private void OnRadioReceive(Entity<RadioImplantComponent> ent, ref RadioReceiveEvent argsRaw)
     {
+        var args = _radio.ApplyLanguageUnderstanding(argsRaw, ent.Comp.Implantee); // Floofstation
         if (_actor.TryComp(ent.Comp.Implantee, out var actor))
             _net.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
     }
