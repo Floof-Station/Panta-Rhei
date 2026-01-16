@@ -111,7 +111,7 @@ public sealed partial class RadioSystem : EntitySystem
             ChatChannel.Radio,
             message,
             wrappedMessage,
-            radioSource,
+            messageSource,
             null,
             speech, channel, name, languageOverride);
         var chatMsg = new MsgChatMessage { Message = chat };
