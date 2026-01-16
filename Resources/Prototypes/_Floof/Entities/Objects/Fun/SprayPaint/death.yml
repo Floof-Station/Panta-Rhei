@@ -1,0 +1,43 @@
+- type: entity
+  parent: PaintBase
+  id: DeathPaint
+  components:
+  - type: ColorPaint
+    color: "#ff20c8"
+  - type: Item
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    heldPrefix: spray
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    state: death_cap
+    layers:
+    - state: death_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "death"}
+          False: {state: "death_cap"}
+
+- type: entity
+  parent: PaintBase
+  id: DeathPaintTwo
+  components:
+  - type: ColorPaint
+    color: "#ff2020"
+  - type: Item
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    heldPrefix: spray
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    state: death2_cap
+    layers:
+    - state: death2_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "death2"}
+          False: {state: "death2_cap"}

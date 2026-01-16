@@ -1,0 +1,47 @@
+- type: entity
+  parent: BaseItem
+  id: PaintBase
+  name: spray paint
+  description: A tin of spray paint.
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    state: clown_cap
+    layers:
+    - state: clown_cap
+      map: ["enum.OpenableVisuals.Layer"]
+  - type: ColorPaint
+    consumptionUnit: 10
+    whitelist:
+      components:
+      - Clothing
+      - Item
+      - Occluder # For walls
+      - Anchorable # Most anchorable things are valid paintables
+      - Construction # If something can be built, it's also likely paintable
+    blacklist:
+      components:
+      - CargoSellBlacklist
+      - HumanoidAppearance
+      - SubFloorHideComponent
+  - type: Item
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    heldPrefix: spray
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 50
+        reagents:
+        - ReagentId: SpaceGlue
+          Quantity: 50
+  - type: TrashOnSolutionEmpty
+    solution: drink
+  - type: Sealable
+  - type: Openable
+    sound:
+      path: /Audio/Effects/pop_high.ogg
+    closeable: true
+    closeSound:
+      path: /Audio/Effects/pop_high.ogg

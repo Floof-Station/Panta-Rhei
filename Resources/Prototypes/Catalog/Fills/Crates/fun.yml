@@ -374,12 +374,20 @@
       - id: CrazyGlue
         amount: 2
       - id: PlasticBanana
+      # Floofstation section - spray paint
+      - id: FunnyPaint
+        orGroup: Paint
+        prob: 0.5
+      - id: FunnyPaintYellow
+        orGroup: Paint
+        prob: 0.5
+      # Floofstation section end
       - id: WhoopieCushion
       - id: ToyHammer
       - id: MrChips
         orGroup: GiftPool
       - id: MrDips
-        orGroup: Giftpool
+        orGroup: GiftPool
       - id: RevolverCapGun
       - id: BalloonNT
       - id: ClothingShoesClownLarge
