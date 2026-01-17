@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Content.Server._Floof.Language;
 using Content.Server.Hands.Systems;
 using Content.Shared._Floof.Language;
@@ -141,7 +142,7 @@ public sealed partial class ChatSystem
         string message,
         LanguagePrototype language)
     {
-        ExtractSpeechInfo(speechProto, language, out var fontId, out var fontSize, out var verbs);
+        ExtractSpeechInfo(speechProto, language, Color.White, out var fontColor, out var fontId, out var fontSize, out var verbs);
         var locId = speechProto.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
 
         var wrappedMessage = Loc.GetString(locId,
@@ -149,6 +150,7 @@ public sealed partial class ChatSystem
             ("verb", Loc.GetString(_random.Pick(verbs))),
             ("fontType", fontId),
             ("fontSize", fontSize),
+            ("color", fontColor),
             ("message", FormattedMessage.EscapeText(message)));
 
         var obfuscated = _languages.ObfuscateSpeech(message, language);
@@ -157,6 +159,7 @@ public sealed partial class ChatSystem
             ("verb", Loc.GetString(_random.Pick(verbs))),
             ("fontType", fontId),
             ("fontSize", fontSize),
+            ("color", fontColor),
             ("message", FormattedMessage.EscapeText(obfuscated)));
 
         return (new(message, wrappedMessage, language), new(obfuscated, wrappedObfuscatedMessage, language));
@@ -175,19 +178,34 @@ public sealed partial class ChatSystem
         var locId = identityKnown ? "chat-manager-entity-whisper-wrap-message" : "chat-manager-entity-whisper-unknown-wrap-message";
         // If the language is unknown, obfuscate it
         var finalMsg = languageKnown ? message : _languages.ObfuscateSpeech(message, language);
-        // If the listener doesn't have an LOs, further obfuscate it
+        // If the listener doesn't have an LOS, further obfuscate it
         if (!canClearlyHear)
             finalMsg = ObfuscateMessageReadability(finalMsg, 0.2f);
 
+        ExtractSpeechColor(language, Color.Gray, out var fontColor);
         var wrappedMessage = Loc.GetString(locId,
             ("entityName", name),
-            ("message", finalMsg));
+            ("message", finalMsg),
+            ("color", fontColor));
 
         return new(finalMsg, wrappedMessage, language);
     }
 
-    private static void ExtractSpeechInfo(SpeechVerbPrototype speechProto, LanguagePrototype language, out string fontId, out int fontSize, out List<LocId> verbs)
+    public static void ExtractSpeechColor(LanguagePrototype language, Color defaultColor, out Color fontColor)
     {
+        var color = language.SpeechOverride.Color;
+        fontColor = color == null ? defaultColor : Color.Blend(color.Value, defaultColor, Color.BlendFactor.DstAlpha, Color.BlendFactor.OneMinusDstAlpha);
+    }
+
+    public static void ExtractSpeechInfo(SpeechVerbPrototype speechProto,
+        LanguagePrototype language,
+        Color defaultColor,
+        out Color fontColor,
+        out string fontId,
+        out int fontSize,
+        out List<LocId> verbs)
+    {
+        ExtractSpeechColor(language, defaultColor, out fontColor);
         fontId = language.SpeechOverride.FontId ?? speechProto.FontId;
         fontSize = language.SpeechOverride.FontSize ?? speechProto.FontSize;
         verbs = language.SpeechOverride.SpeechVerbOverrides ?? speechProto.SpeechVerbStrings;

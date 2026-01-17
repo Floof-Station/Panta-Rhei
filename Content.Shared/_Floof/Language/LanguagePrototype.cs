@@ -36,7 +36,7 @@ public sealed partial class LanguagePrototype : IPrototype
     /// <summary>
     ///     The in-world chat abbreviation of this language, localized.
     /// </summary>
-    public string ChatName => Loc.GetString($"chat-language-{ID}-name");
+    public string ChatName => Name;// Loc.GetString($"chat-language-{ID}-name");
 
     /// <summary>
     ///     The in-world description of this language, localized.
@@ -69,6 +69,8 @@ public sealed partial class SpeechOverrideInfo
     ///     anyone with that language will also hear Empathy Chat.
     ///     This is mostly only use for "Marish" but... fuckit modularity :p
     /// </summary>
+    /// TODO FLOOFSTATION REMOVE THIS
+    [Obsolete("DO NOT USE. This is terrible code. Make a special handler for this language.")]
     [DataField]
     public bool EmpathySpeech = false;
 
