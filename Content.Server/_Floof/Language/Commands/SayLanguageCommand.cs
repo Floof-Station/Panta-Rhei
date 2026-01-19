@@ -52,4 +52,11 @@ public sealed class SayLanguageCommand : IConsoleCommand
         using var _ = languages.SubstituteEntityLanguage(playerEntity, language.ID);
         chats.TrySendInGameICMessage(playerEntity, message, InGameICChatType.Speak, ChatTransmitRange.Normal, false, shell, player);
     }
+
+    public CompletionResult GetCompletion(IConsoleShell shell, string[] args) =>
+        args.Length switch
+        {
+            0 or 1 => SelectLanguageCommand.GetLanguageIdCompletions(shell, false), // Saylang doesn't support numeric arguments
+            _ => CompletionResult.FromHint("Message...")
+        };
 }

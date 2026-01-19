@@ -84,4 +84,34 @@ public sealed class SelectLanguageCommand : IConsoleCommand
             return false;
         }
     }
+
+    // Note: this is also used in saylang
+    public static CompletionResult GetLanguageIdCompletions(IConsoleShell shell, bool includeNumbers)
+    {
+        var helpStr = includeNumbers ? "Language index or ID" : "Language ID";
+        if (shell.Player is not { AttachedEntity: {} playerEntity })
+            return CompletionResult.FromHint(helpStr);
+
+        var languageSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<LanguageSystem>();
+        var languages = languageSystem.GetSpokenLanguages(playerEntity);
+
+        var options = new List<string>();
+        var idx = 1;
+        foreach (var language in languages)
+        {
+            if (includeNumbers)
+                options.Add((idx++).ToString());
+            options.Add(language);
+        }
+
+        return CompletionResult.FromHintOptions(options, helpStr);
+    }
+
+    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length is not (0 or 1))
+            return CompletionResult.Empty;
+
+        return GetLanguageIdCompletions(shell, true);
+    }
 }
