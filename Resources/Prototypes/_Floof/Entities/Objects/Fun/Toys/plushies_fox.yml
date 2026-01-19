@@ -1,0 +1,89 @@
+- type: entity
+  parent: BasePlushie
+  id: PlushieRedFox
+  name: red fox plushie
+  description: A cute plushie that look like a red foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: red
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePurpleFox
+  name: purple fox plushie
+  description: A cute plushie that look like a purple foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: purple
+
+- type: entity
+  parent: BasePlushie
+  id: PlushiePinkFox
+  name: pink fox plushie
+  description: A cute plushie that look like a pink foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: pink
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieOrangeFox
+  name: orange fox plushie
+  description: A cute plushie that look like a orange foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: orange
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieMarbleFox
+  name: marble fox plushie
+  description: A cute plushie that look like a marble foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: marble
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieCrimsonFox
+  name: crimson fox plushie
+  description: A cute plushie that look like a crimson foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: crimson
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieCoffeeFox
+  name: coffee fox plushie
+  description: A cute plushie that look like a coffee foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: coffee
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBlueFox
+  name: blue fox plushie
+  description: A cute plushie that look like a blue foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: blue
+
+- type: entity
+  parent: BasePlushie
+  id: PlushieBlackFox
+  name: black fox plushie
+  description: A cute plushie that look like a black foxxo!
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/foxplushie.rsi
+    state: black
