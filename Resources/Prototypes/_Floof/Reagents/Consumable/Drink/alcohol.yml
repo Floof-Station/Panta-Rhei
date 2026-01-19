@@ -687,20 +687,22 @@
         factor: 2
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Lamplight
           min: 1
-        - !type:OrganType
-          type: Moth # non-moths get standard effect
-          shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [Moth] # non-moths get standard effect
+          inverted: true
         reagent: Pomelustine
         amount: 0.5
       - !type:AdjustReagent
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: Lamplight
           min: 1
-        - !type:OrganType
-          type: Moth # Get them moffy fucks horny
-          shouldHave: true
+        - !type:MetabolizerTypeCondition
+          type: [Moth] # Get them moffy fucks horny
+          inverted: true
         reagent: Philterex
         amount: 0.5
 
@@ -864,11 +866,12 @@
       effects:
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: OpsShine
           min: 1
-        - !type:OrganType
-          type: Slime # Will poison non-slimes who ingest
-          shouldHave: false
+        - !type:MetabolizerTypeCondition
+          type: [Slime] # Will poison non-slimes who ingest
+          inverted: true
         damage:
           types:
             Poison: 0.5
@@ -1207,9 +1210,9 @@
       - !type:SatiateHunger
         factor: 2
         conditions:
-          - !type:OrganType
-            type: Slime # Feeds Slimes
-            shouldHave: true
+          - !type:MetabolizerTypeCondition
+            type: [Slime] # Feeds Slimes
+            inverted: true
       - !type:SatiateThirst
         factor: 2
       - !type:AdjustReagent
@@ -1217,11 +1220,12 @@
         amount: 0.2
       - !type:HealthChange
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: SlimesDelight
           min: 1
-        - !type:OrganType
-          type: Slime # Will heal slimes who ingest
-          shouldHave: true
+        - !type:MetabolizerTypeCondition
+          type: [Slime] # Will heal slimes who ingest
+          inverted: true
         damage:
           types:
             Bloodloss: -0.5
