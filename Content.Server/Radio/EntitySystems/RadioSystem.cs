@@ -96,13 +96,16 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
             : message;
 
         // Floofstation notice: if the below gets changed, make sure to update ConstructChatMessage too
+        var language = languageOverride ?? _language.GetLanguage(messageSource);
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
-            ("color", channel.Color),
-            ("fontType", speech.FontId),
-            ("fontSize", speech.FontSize),
+            ("channelColor", channel.Color), // Floofstation edit: renamed to channelColor
+            ("fontType", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation edit
+            ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize), // Floofstation edit
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
+            ("language", ChatSystem.LanguageNameForFluent(language)), // Floofstation
+            ("textColor", ChatSystem.LanguageColorForFluent(language, channel.Color)),
             ("message", content));
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
@@ -112,7 +115,7 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
             wrappedMessage,
             messageSource,
             null,
-            speech, channel, name, languageOverride);
+            speech, channel, name, language);
         var chatMsg = new MsgChatMessage { Message = chat };
         var ev = new RadioReceiveEvent(message, messageSource, channel, radioSource, chatMsg);
 

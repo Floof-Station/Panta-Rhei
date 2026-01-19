@@ -1,6 +1,8 @@
 # Chat window radio wrap (prefix and postfix)
-chat-radio-message-wrap = [color={$color}]{$channel} {$name} {$verb}, [font={$fontType} size={$fontSize}]"{$message}"[/font][/color]
-chat-radio-message-wrap-bold = [color={$color}]{$channel} {$name} {$verb}, [font={$fontType} size={$fontSize}][bold]"{$message}"[/bold][/font][/color]
+# Floosation - support for languages. Also, $color was renamed to $channelColor.
+# Notice that we explicitly DO NOT COLOR THE TEXT OF THE MESSAGE. The $textColor variable is used only in the language hint to make multilingual radio chatter more readable.
+chat-radio-message-wrap = [color={$channelColor}]{$channel} {$name} {$verb} [font={$fontType} size={$fontSize}]"{$message}"{chat-manager-language-hint}[/font][/color]
+chat-radio-message-wrap-bold = [color={$channelColor}]{$channel} {$name} {$verb} [font={$fontType} size={$fontSize}][bold]"{$message}"{chat-manager-language-hint}[/bold][/font][/color]
 
 examine-headset-default-channel = Use {$prefix} for the default channel ([color={$color}]{$channel}[/color]).
 

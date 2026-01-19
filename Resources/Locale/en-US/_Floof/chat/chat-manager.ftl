@@ -5,6 +5,17 @@ chat-manager-entity-subtle-wrap-message = [italic][color=#d3d3ff]{ PROPER($entit
 
 chat-manager-entity-subtle-looc-wrap-message = [italic][color=#ff7782]SOOC: [Name]{$entityName}[/Name]: {$message}[/color][/italic]
 
+# A hint about the language of this chat message, meant for embedded use in other Fluent strings related to the chat manager.
+# This evaluates to an empty string if the variable $language is the literal string "null" (handled by ChatSystem.LanguageNameForFluent)
+# If the variable $language contains anything else, it evaluates to the string "in $language"
+#
+# Example usage: `local-chat-wrap = {$name} says, "{$message}"{chat-manager-language-hint}.`
+# (notice the lack of space before the ref to this variable)
+chat-manager-language-hint = { $language ->
+    [null] {""}
+    *[other] {" "}in [color={$textColor}]{$language}[/color]
+}
+
 chat-manager-language-requires-hands = You need free hands to speak this language!
 chat-manager-language-requires-speech = You are unable to speak right now!
 

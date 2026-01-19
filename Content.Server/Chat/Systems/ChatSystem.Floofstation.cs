@@ -142,7 +142,7 @@ public sealed partial class ChatSystem
         string message,
         LanguagePrototype language)
     {
-        ExtractSpeechInfo(speechProto, language, Color.White, out var fontColor, out var fontId, out var fontSize, out var verbs);
+        ExtractSpeechInfo(speechProto, language, new(200, 200, 200), out var fontColor, out var fontId, out var fontSize, out var verbs);
         var locId = speechProto.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message";
 
         var wrappedMessage = Loc.GetString(locId,
@@ -150,8 +150,9 @@ public sealed partial class ChatSystem
             ("verb", Loc.GetString(_random.Pick(verbs))),
             ("fontType", fontId),
             ("fontSize", fontSize),
-            ("color", fontColor),
-            ("message", FormattedMessage.EscapeText(message)));
+            ("textColor", fontColor), // Notice it's $textColor instead of $color
+            ("message", FormattedMessage.EscapeText(message)),
+            ("language", LanguageNameForFluent(language)));
 
         var obfuscated = _languages.ObfuscateSpeech(message, language);
         var wrappedObfuscatedMessage = Loc.GetString(locId,
@@ -159,8 +160,9 @@ public sealed partial class ChatSystem
             ("verb", Loc.GetString(_random.Pick(verbs))),
             ("fontType", fontId),
             ("fontSize", fontSize),
-            ("color", fontColor),
-            ("message", FormattedMessage.EscapeText(obfuscated)));
+            ("textColor", fontColor), // Notice it's $textColor instead of $color
+            ("message", FormattedMessage.EscapeText(obfuscated)),
+            ("language", LanguageNameForFluent(language)));
 
         return (new(message, wrappedMessage, language), new(obfuscated, wrappedObfuscatedMessage, language));
     }
@@ -182,34 +184,46 @@ public sealed partial class ChatSystem
         if (!canClearlyHear)
             finalMsg = ObfuscateMessageReadability(finalMsg, 0.2f);
 
-        ExtractSpeechColor(language, Color.Gray, out var fontColor);
+        var fontColor = LanguageColorForFluent(language, new(0xA5, 0xA5, 0xA5));
         var wrappedMessage = Loc.GetString(locId,
             ("entityName", name),
             ("message", finalMsg),
-            ("color", fontColor));
+            ("textColor", fontColor), // Notice it's $textColor instead of $color
+            ("language", LanguageNameForFluent(language)));
 
         return new(finalMsg, wrappedMessage, language);
     }
 
-    public static void ExtractSpeechColor(LanguagePrototype language, Color defaultColor, out Color fontColor)
+    /// <summary>
+    ///     Returns the visible name of the language as a Fluent string for use in localization.
+    ///     It will be the literal string "null" if the language is not supposed to have a language hint.
+    /// </summary>
+    public static string LanguageNameForFluent(LanguagePrototype? language)
     {
-        var color = language.SpeechOverride.Color;
-        fontColor = color == null ? defaultColor : Color.Blend(color.Value, defaultColor, Color.BlendFactor.DstAlpha, Color.BlendFactor.OneMinusDstAlpha);
+        if (language is not { IsVisibleLanguage: true })
+            return "null"; // For use in Fluent case matching
+        return language.ChatName;
     }
 
     public static void ExtractSpeechInfo(SpeechVerbPrototype speechProto,
         LanguagePrototype language,
         Color defaultColor,
-        out Color fontColor,
+        out string fontColor,
         out string fontId,
         out int fontSize,
         out List<LocId> verbs)
     {
-        ExtractSpeechColor(language, defaultColor, out fontColor);
+        fontColor = LanguageColorForFluent(language, defaultColor);
         fontId = language.SpeechOverride.FontId ?? speechProto.FontId;
         fontSize = language.SpeechOverride.FontSize ?? speechProto.FontSize;
         verbs = language.SpeechOverride.SpeechVerbOverrides ?? speechProto.SpeechVerbStrings;
     }
+
+    /// <summary>
+    ///     Returns the font color language as a Fluent string for use in localization.
+    /// </summary>
+    public static string LanguageColorForFluent(LanguagePrototype language, Color defaultColor) =>
+        (language.SpeechOverride.Color ?? defaultColor).ToHex();
 }
 
 public struct MessageWrapData
