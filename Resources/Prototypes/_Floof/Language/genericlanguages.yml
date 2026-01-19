@@ -1,12 +1,12 @@
-# The universal language. This is technically used as a fallback for simulating the pre-languages
-# style of Chat, and is not normally accessible by players. It is however used by characters
-# with the Xenoglossy psionic power, as well as Ghosts, and AGhosts.
+# The universal language. This is used as a fallback language when the speaker/listener is supposed to bypass all language restrictctions.
+# This mainly applies to ghosts, but can also apply to entities such as the revenant, cortic borer, and others.
+# Everyone can understand a message if it is spoken in Universal.
 - type: language
   id: Universal
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
-    - "*incomprehensible*" # Never actually used
+    - "<something went horribly wrong; this is a bug!>" # Never actually used
   speech:
     allowWriting: false
 

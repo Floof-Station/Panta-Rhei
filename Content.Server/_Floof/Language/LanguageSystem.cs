@@ -5,6 +5,7 @@ using Content.Shared._Floof.Language.Events;
 using Content.Shared._Floof.Language.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server._Floof.Language;
 
@@ -50,7 +51,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             ev.SpokenLanguages.Add(UniversalPrototype);
     }
 
-
     private void OnClientSetLanguage(LanguagesSetMessage message, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { Valid: true } uid)
@@ -70,7 +70,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     public void SetLanguage(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language)
     {
         if (!CanSpeak(ent, language)
-            || !Resolve(ent, ref ent.Comp)
+            || !SpeakerQuery.Resolve(ent, ref ent.Comp)
             || ent.Comp.CurrentLanguage == language)
             return;
 
@@ -88,6 +88,8 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         bool addSpoken = true,
         bool addUnderstood = true)
     {
+        DebugTools.Assert(language != UniversalPrototype, "Don't do that, add a UniversalLanguageSpeakerComponent");
+
         EnsureComp<LanguageKnowledgeComponent>(uid, out var knowledge);
         EnsureComp<LanguageSpeakerComponent>(uid, out var speaker);
 
@@ -109,6 +111,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         bool removeSpoken = true,
         bool removeUnderstood = true)
     {
+        DebugTools.Assert(language != UniversalPrototype, "Don't do that, remove the UniversalLanguageSpeakerComponent");
         if (!Resolve(ent, ref ent.Comp, false))
             return;
 
@@ -129,7 +132,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// <returns>True if the current language was modified, false otherwise.</returns>
     public bool EnsureValidLanguage(Entity<LanguageSpeakerComponent?> ent)
     {
-        if (!Resolve(ent, ref ent.Comp, false))
+        if (!SpeakerQuery.Resolve(ent, ref ent.Comp, false))
             return false;
 
         if (!ent.Comp.SpokenLanguages.Contains(ent.Comp.CurrentLanguage))
@@ -148,7 +151,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     /// </summary>
     public void UpdateEntityLanguages(Entity<LanguageSpeakerComponent?> ent)
     {
-        if (!Resolve(ent, ref ent.Comp, false))
+        if (!SpeakerQuery.Resolve(ent, ref ent.Comp, false))
             return;
 
         var ev = new DetermineEntityLanguagesEvent();

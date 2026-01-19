@@ -7,6 +7,9 @@ namespace Content.Shared._Floof.Language.Systems;
 
 public abstract partial class SharedLanguageSystem : EntitySystem
 {
+    [Dependency] protected readonly IPrototypeManager _prototype = default!;
+    [Dependency] protected readonly SharedGameTicker _ticker = default!;
+
     /// <summary>
     ///     The language used as a fallback in cases where an entity suddenly becomes a language speaker (e.g. the usage of make-sentient)
     /// </summary>
@@ -22,12 +25,15 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// </summary>
     public static LanguagePrototype Universal { get; private set; } = default!;
 
-    [Dependency] protected readonly IPrototypeManager _prototype = default!;
-    [Dependency] protected readonly SharedGameTicker _ticker = default!;
+    protected EntityQuery<LanguageSpeakerComponent> SpeakerQuery = default!;
+    protected EntityQuery<UniversalLanguageSpeakerComponent> UniversalQuery = default!;
 
     public override void Initialize()
     {
         Universal = _prototype.Index(UniversalPrototype);
+
+        SpeakerQuery = GetEntityQuery<LanguageSpeakerComponent>();
+        UniversalQuery = GetEntityQuery<UniversalLanguageSpeakerComponent>();
     }
 
     #region public api
@@ -42,10 +48,10 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <inheritdoc cref="CanUnderstand(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
-        if (language == Universal || TryComp<UniversalLanguageSpeakerComponent>(ent, out var uni) && uni.Enabled)
+        if (language == Universal || UniversalQuery.TryComp(ent, out var uni) && uni.Enabled)
             return true;
 
-        return Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
+        return SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
     }
 
     /// <summary>
@@ -58,7 +64,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <inheritdoc cref="CanSpeak(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
-        if (!Resolve(ent, ref ent.Comp, logMissing: false))
+        if (!SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
         return ent.Comp.SpokenLanguages.Contains(language.ID);
@@ -69,7 +75,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// </summary>
     public LanguagePrototype GetLanguage(Entity<LanguageSpeakerComponent?> ent)
     {
-        if (!Resolve(ent, ref ent.Comp, logMissing: false)
+        if (!SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false)
             || string.IsNullOrEmpty(ent.Comp.CurrentLanguage)
             || !_prototype.TryIndex<LanguagePrototype>(ent.Comp.CurrentLanguage, out var proto)
         )
@@ -84,7 +90,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <remarks>This simply returns the value of <see cref="Components.LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
     public List<ProtoId<LanguagePrototype>> GetSpokenLanguages(EntityUid uid)
     {
-        return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.SpokenLanguages : [];
+        return SpeakerQuery.TryComp(uid, out var component) ? component.SpokenLanguages : [];
     }
 
     /// <summary>
@@ -93,7 +99,7 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <remarks>This simply returns the value of <see cref="Components.LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
     public List<ProtoId<LanguagePrototype>> GetUnderstoodLanguages(EntityUid uid)
     {
-        return TryComp<LanguageSpeakerComponent>(uid, out var component) ? component.UnderstoodLanguages : [];
+        return SpeakerQuery.TryComp(uid, out var component) ? component.UnderstoodLanguages : [];
     }
 
     public LanguagePrototype? GetLanguagePrototype(ProtoId<LanguagePrototype> id)

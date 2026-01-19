@@ -1,5 +1,6 @@
 using Content.Shared._Floof.Language;
 using Content.Shared._Floof.Language.Components;
+using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server._Floof.Language;
@@ -11,6 +12,23 @@ public sealed partial class LanguageSystem
      * ><(((('>              ><>                        ><(((('>
      *               >--) ) ) )*>  ><>
      */
+
+    /// <summary>
+    /// Ensures the entity has a LanguageSpeakerComponent with some defaults (speaking and understanding tau-ceti).
+    /// </summary>
+    public LanguageSpeakerComponent EnsureSpeaker(EntityUid entity)
+    {
+        if (SpeakerQuery.TryComp(entity, out var result))
+            return result;
+
+        result = new()
+        {
+            CurrentLanguage = FallbackLanguagePrototype,
+            SpokenLanguages = [FallbackLanguagePrototype],
+            UnderstoodLanguages = [FallbackLanguagePrototype],
+        };
+        return result;
+    }
 
     /// <summary>
     /// Temporarily replaces the current spoken language of the entity with the provided language.
@@ -25,13 +43,13 @@ public sealed partial class LanguageSystem
     ///     // At the end of the function (current block), the change will be automatically reverted by C#
     /// }
     /// </code></example>
-    public IDisposable? SubstituteEntityLanguage(Entity<LanguageSpeakerComponent?> entity, ProtoId<LanguagePrototype> language)
+    [MustDisposeResource]
+    public IDisposable SubstituteEntityLanguage(Entity<LanguageSpeakerComponent?> entity, ProtoId<LanguagePrototype> language)
     {
-        if (!Resolve(entity, ref entity.Comp))
-            return null;
+        entity.Comp = EnsureSpeaker(entity); // This method is generally used in places where a failure is unacceptable
 
         var oldLanguage = entity.Comp.CurrentLanguage;
-        entity.Comp.CurrentLanguage = language; // We don't use SetLanguage here to avoid raising an event
+        entity.Comp.CurrentLanguage = language; // We don't use SetLanguage here to avoid raising an event & notifying the client
         return new LanguageReplacementDisposable(oldLanguage, entity!);
     }
 
