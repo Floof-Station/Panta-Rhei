@@ -11,10 +11,10 @@ namespace Content.IntegrationTests.Tests._Floof.Language;
 /// </summary>
 [TestFixture]
 [TestOf(typeof(LanguagePrototype))]
-public sealed class LanguageLocalizationTest
+public sealed class LanguagePrototypeTest
 {
     [Test]
-    public async Task TestLanguageLocalization()
+    public async Task CheckLanguagePrototypes()
     {
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
