@@ -255,7 +255,7 @@
   parent: [BaseCircuitboardRecipe]
   id: SmartFridgeCircuitboard
   result: SmartFridgeCircuitboard
-  
+
 # Bar
 - type: latheRecipe
   parent: [ BaseCircuitboardRecipe, BaseServiceMachineRecipeCategory ]
@@ -357,13 +357,13 @@
 
 # Lathes
 - type: latheRecipe
-  abstract: true # DeltaV
+  #  abstract: true # DeltaV # Floofstation - no
   parent: [ BaseCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
   id: ProtolatheMachineCircuitboard
   result: ProtolatheMachineCircuitboard
 
 - type: latheRecipe
-  abstract: true # DeltaV
+  #  abstract: true # DeltaV # Floofstation - no
   parent: [ BaseGoldCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
   id: ProtolatheHyperConvectionMachineCircuitboard
   result: ProtolatheHyperConvectionMachineCircuitboard
@@ -374,7 +374,7 @@
   result: CircuitImprinterMachineCircuitboard
 
 - type: latheRecipe
-  abstract: true # DeltaV
+  #  abstract: true # DeltaV # Floofstation - no
   parent: [ BaseGoldCircuitboardRecipe, BaseResearchMachineRecipeCategory ]
   id: CircuitImprinterHyperConvectionMachineCircuitboard
   result: CircuitImprinterHyperConvectionMachineCircuitboard
@@ -405,13 +405,13 @@
   result: OreProcessorIndustrialMachineCircuitboard
 
 - type: latheRecipe
-  abstract: true # DeltaV
+  #  abstract: true # DeltaV # Floofstation - no
   parent: [ BaseCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
   id: AutolatheMachineCircuitboard
   result: AutolatheMachineCircuitboard
 
 - type: latheRecipe
-  abstract: true # DeltaV
+  #  abstract: true # DeltaV # Floofstation - no
   parent: [ BaseGoldCircuitboardRecipe, BaseGeneralMachineRecipeCategory ]
   id: AutolatheHyperConvectionMachineCircuitboard
   result: AutolatheHyperConvectionMachineCircuitboard
