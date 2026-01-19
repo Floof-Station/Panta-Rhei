@@ -6,10 +6,10 @@
   description: Your new and only best friend home!
   components:
   - type: Sprite
-    sprite: Objects/Storage/Happyhonk/rock_carrier.rsi
+    sprite: _Floof/Objects/Fun/rock_carrier.rsi
     state: box
   - type: Item
-    sprite: Objects/Storage/Happyhonk/rock_carrier.rsi
+    sprite: _Floof/Objects/Fun/rock_carrier.rsi
     heldPrefix: box
   - type: StorageFill
     contents:
@@ -62,7 +62,7 @@
   id: PetRock
   components:
   - type: Sprite
-    sprite: Objects/Fun/petrock.rsi
+    sprite: _Floof/Objects/Fun/petrock.rsi
     layers:
     - state: rock
 
@@ -72,7 +72,7 @@
   name: fred
   components:
   - type: Sprite
-    sprite: Objects/Fun/petrock.rsi
+    sprite: _Floof/Objects/Fun/petrock.rsi
     layers:
     - state: fred
 
@@ -82,6 +82,6 @@
   name: roxie
   components:
   - type: Sprite
-    sprite: Objects/Fun/petrock.rsi
+    sprite: _Floof/Objects/Fun/petrock.rsi
     layers:
     - state: roxie

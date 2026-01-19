@@ -1,0 +1,27 @@
+- type: entity
+  parent: PlushieVulp
+  id: PlushieCorgi
+  name: corgi plushie
+  description: The ian plushie edition!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/corgiplushie.rsi
+    state: corgi
+
+- type: entity
+  parent: PlushieVulp
+  id: PlushieGirlyCorgi
+  name: girly corgi plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/corgiplushie.rsi
+    state: girlycorgi
+
+- type: entity
+  parent: PlushieVulp
+  id: PlushieRobotCorgi
+  name: robot corgi plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/corgiplushie.rsi
+    state: robotcorgi

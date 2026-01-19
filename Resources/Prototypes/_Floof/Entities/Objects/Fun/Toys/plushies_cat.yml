@@ -1,32 +1,3 @@
-
-- type: entity
-  parent: PlushieVulp
-  id: PlushieCorgi
-  name: corgi plushie
-  description: The ian plushie edition!
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/corgiplushie.rsi
-    state: corgi
-
-- type: entity
-  parent: PlushieVulp
-  id: PlushieGirlyCorgi
-  name: girly corgi plushie
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/corgiplushie.rsi
-    state: girlycorgi
-
-- type: entity
-  parent: PlushieVulp
-  id: PlushieRobotCorgi
-  name: robot corgi plushie
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/corgiplushie.rsi
-    state: robotcorgi
-
 - type: entity
   parent: BasePlushie
   id: BasePlushieCat
@@ -52,7 +23,7 @@
   name: black cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: black
 
 - type: entity
@@ -61,7 +32,7 @@
   name: grey cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: grey
 
 - type: entity
@@ -70,7 +41,7 @@
   name: orange cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: orange
 
 - type: entity
@@ -79,7 +50,7 @@
   name: siames cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: siames
 
 - type: entity
@@ -88,7 +59,7 @@
   name: tabby cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: tabby
 
 - type: entity
@@ -97,7 +68,7 @@
   name: tuxedo cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: tuxedo
 
 - type: entity
@@ -106,5 +77,5 @@
   name: white cat plushie
   components:
   - type: Sprite
-    sprite: Objects/Fun/catplushie.rsi
+    sprite: _Floof/Objects/Fun/catplushie.rsi
     state: white

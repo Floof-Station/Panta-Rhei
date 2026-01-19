@@ -71,11 +71,11 @@
   suffix: DO NOT MAP
   components:
   - type: Sprite
-    sprite: Objects/Fun/bwoink_hammer.rsi
+    sprite: _Floof/Objects/Fun/bwoink_hammer.rsi
     state: icon
   - type: Item
     size: Small
-    sprite: Objects/Fun/bwoink_hammer.rsi
+    sprite: _Floof/Objects/Fun/bwoink_hammer.rsi
   - type: MeleeWeapon
     soundHit: &bwoink
       path: /Audio/Admin/adminhelp.ogg
