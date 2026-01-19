@@ -13,8 +13,10 @@ chat-manager-entity-subtle-looc-wrap-message = [italic][color=#ff7782]SOOC: [Nam
 # (notice the lack of space before the ref to this variable)
 chat-manager-language-hint = { $language ->
     [null] {""}
-    *[other] {" "}in [color={$textColor}]{$language}[/color]
+    *[other] {" "}in [BubbleLanguage][color={$textColor}]{$language}[/color][/BubbleLanguage]
 }
+# Simple ($language) wrapper.
+chat-manager-language-hint-ui = {" "}({$language})
 
 chat-manager-language-requires-hands = You need free hands to speak this language!
 chat-manager-language-requires-speech = You are unable to speak right now!

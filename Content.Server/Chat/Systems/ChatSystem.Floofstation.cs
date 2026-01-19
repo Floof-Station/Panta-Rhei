@@ -224,6 +224,9 @@ public sealed partial class ChatSystem
     /// </summary>
     public static string LanguageColorForFluent(LanguagePrototype language, Color defaultColor) =>
         (language.SpeechOverride.Color ?? defaultColor).ToHex();
+
+    public static string LanguageFontForFluent(LanguagePrototype? language) =>
+        language?.SpeechOverride.FontId ?? "null";
 }
 
 public struct MessageWrapData

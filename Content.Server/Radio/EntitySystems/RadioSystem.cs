@@ -104,8 +104,11 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
             ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
-            ("language", ChatSystem.LanguageNameForFluent(language)), // Floofstation
-            ("textColor", ChatSystem.LanguageColorForFluent(language, channel.Color)),
+            // Floofstation. Note that we explicitly don't use channel.Color here because this is only used for the language hint.
+            ("language", ChatSystem.LanguageNameForFluent(language)),
+            ("textColor", ChatSystem.LanguageColorForFluent(language, new(200, 200, 200))),
+            ("textFont", ChatSystem.LanguageFontForFluent(language)),
+            // Floofstation section end
             ("message", content));
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
