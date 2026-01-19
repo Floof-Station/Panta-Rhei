@@ -26,7 +26,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      80: Critical # -20 to Crit Threshold
+      100: Critical
       200: Dead
     stateAlertDict:
       Alive: BorgHealth
@@ -39,6 +39,8 @@
     fiberColor: fibers-red
   - type: AccessReader
     access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  - type: UnderTableCrawling
 
   radioChannels:
   - Science
@@ -64,7 +66,7 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: quadsec
-  spriteHasMindState: quadsec_l
+  spriteHasMindState: quadsec_e_r
   spriteNoMindState: quadsec_e_r
   spriteToggleLightState: quadsec_l
 
@@ -101,6 +103,8 @@
     fiberColor: fibers-brown
   - type: AccessReader
     access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  - type: UnderTableCrawling
 
   radioChannels:
   - Supply
@@ -126,7 +130,7 @@
       visible: false
   inventoryTemplateId: borgTall
   spriteBodyState: quadsalv
-  spriteHasMindState: quadsalv_l
+  spriteHasMindState: quadsalv_e_r
   spriteNoMindState: quadsalv_e_r
   spriteToggleLightState: quadsalv_l
 
@@ -181,6 +185,8 @@
     fiberColor: fibers-white
   - type: AccessReader # DeltaV - departmental access
     access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  - type: UnderTableCrawling
   - type: SurgeryTarget # Shitmed
   - type: Sanitized # Shitmed
 
@@ -204,7 +210,7 @@
       visible: false
   inventoryTemplateId: borgDutch
   spriteBodyState: quadmed
-  spriteHasMindState: quadmed_l
+  spriteHasMindState: quadmed_e_r
   spriteNoMindState: quadmed_e_r
   spriteToggleLightState: quadmed_l
 
@@ -246,6 +252,8 @@
   addComponents: # DeltaV - departmental access
   - type: AccessReader
     access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  - type: UnderTableCrawling
 
   # Visual
   clientComponents:
@@ -267,7 +275,7 @@
       visible: false
   inventoryTemplateId: borgTall
   spriteBodyState: quadserv
-  spriteHasMindState: quadserv_l
+  spriteHasMindState: quadserv_e_r
   spriteNoMindState: quadserv_e_r
   spriteToggleLightState: quadserv_l
 
