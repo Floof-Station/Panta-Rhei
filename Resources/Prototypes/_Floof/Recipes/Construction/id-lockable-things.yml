@@ -1,0 +1,19 @@
+- type: construction
+  name: secure-crate-id-lock
+  id: CrateSecureIdLockable
+  graph: CrateSecure
+  startNode: start
+  targetNode: idLockable
+  category: construction-category-storage
+  description: secure-crate-id-lock-descrption
+  objectType: Structure
+
+- type: construction
+  id: ClosetSteelSecureIdLockable
+  name: closet-Steel-ecure-id-lockable
+  graph: ClosetSteelSecure
+  startNode: start
+  targetNode: idLockable
+  category: construction-category-storage
+  description: closet-Steel-ecure-id-lockable-descrption
+  objectType: Structure

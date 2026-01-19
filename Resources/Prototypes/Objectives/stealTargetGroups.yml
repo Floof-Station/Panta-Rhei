@@ -242,6 +242,13 @@
     sprite: Objects/Misc/module.rsi
     state: cpuboard
 
+- type: stealTargetGroup #Floofstation
+  id: SalvageShuttleConsoleCircuitboard #Floofstation
+  name: salvshuttleboard #Floofstation
+  sprite:
+    sprite: Objects/Misc/module.rsi
+    state: cpuboard
+
 - type: stealTargetGroup
   id: ClothingEyesHudBeer
   name: steal-target-groups-clothing-eyes-hud-beer

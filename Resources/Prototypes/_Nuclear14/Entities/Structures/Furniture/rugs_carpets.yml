@@ -19,7 +19,8 @@
         behaviors:
           - !type:DoActsBehavior
             acts: [ "Destruction" ]
-
+            
+            
 - type: entity
   parent: N14CarpetSingleBase
   id: N14RugMat
@@ -28,7 +29,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs.rsi
     state: mat_blank
-
+    
 - type: entity
   parent: N14RugMat
   id: N14RugMatWelcome
@@ -36,7 +37,7 @@
   components:
   - type: Sprite
     state: mat_welcome
-
+    
 - type: entity
   parent: N14RugMat
   id: N14RugMatVulgar1
@@ -45,7 +46,7 @@
   components:
   - type: Sprite
     state: mat_vulgar
-
+    
 - type: entity
   parent: N14RugMatVulgar1
   id: N14RugMatVulgar2
@@ -53,7 +54,7 @@
   components:
   - type: Sprite
     state: mat_vulgar_2
-
+    
 - type: entity
   parent: N14RugMatVulgar1
   id: N14RugMatTown
@@ -61,7 +62,7 @@
   components:
   - type: Sprite
     state: mat_town
-
+    
 - type: entity
   parent: N14RugMatVulgar1
   id: N14RugMatNCR
@@ -69,7 +70,7 @@
   components:
   - type: Sprite
     state: mat_ncr
-
+    
 - type: entity
   parent: N14RugMatVulgar1
   id: N14RugMatBOS
@@ -79,6 +80,7 @@
     state: mat_bos
 
 # Rubber mats
+
 - type: entity
   parent: N14RugMat
   id: N14RugMatRubberSingle
@@ -87,28 +89,28 @@
   components:
   - type: Sprite
     state: rubber_single
-
+    
 - type: entity
   parent: N14RugMatRubberSingle
   id: N14RugMatRubber1
   components:
   - type: Sprite
     state: rubber_1
-
+    
 - type: entity
   parent: N14RugMatRubberSingle
   id: N14RugMatRubber2
   components:
   - type: Sprite
     state: rubber_2
-
+    
 - type: entity
   parent: N14RugMatRubberSingle
   id: N14RugMatRubber3
   components:
   - type: Sprite
     state: rubber_3
-
+    
 # 64x64 rugs
 - type: entity
   parent: N14CarpetSingleBase
@@ -119,7 +121,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_blue
-
+    
 - type: entity
   parent: N14RugBlue
   id: N14RugBlueShag
@@ -128,7 +130,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_blue_shag
-
+    
 - type: entity
   parent: N14RugBlue
   id: N14RugBrownFancy
@@ -137,7 +139,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_fancy
-
+    
 - type: entity
   parent: N14RugBlue
   id: N14RugRed
@@ -146,7 +148,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_red
-
+    
 - type: entity
   parent: N14RugBlue
   id: N14RugYellow
@@ -155,7 +157,7 @@
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/rugs64x64.rsi
     state: rug_yellow
-
+    
 - type: entity
   parent: N14RugBlue
   id: N14RugMatRubberLarge
