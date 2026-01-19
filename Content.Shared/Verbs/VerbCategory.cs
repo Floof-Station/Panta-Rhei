@@ -86,10 +86,13 @@ namespace Content.Shared.Verbs
 
         public static readonly VerbCategory PowerLevel = new("verb-categories-power-level", null);
 
+        // FLoofstation. TODO: MOVE TO THE SYSTEM! DO NOT POLLUTE UPSTREAM FILES!
         public static readonly VerbCategory Interaction = new("verb-categories-interaction", null);
 
         public static readonly VerbCategory Adjust =
             new("verb-categories-adjust", "/Textures/Interface/VerbIcons/screwdriver.png");
 
+        // Used by Starlight item switching verbs
+        public static readonly VerbCategory Switch = new("verb-categories-switch", null);
     }
 }

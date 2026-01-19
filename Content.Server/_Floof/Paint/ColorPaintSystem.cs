@@ -156,7 +156,7 @@ public sealed class ColorPaintSystem : EntitySystem
     /// </summary>
     public bool CanPaint(Entity<ColorPaintComponent> paint, EntityUid target, EntityUid user, out string? reason)
     {
-        if (!_openable.IsOpen(paint))
+        if (_openable.IsClosed(paint))
         {
             reason = Loc.GetString("paint-closed", ("used", paint));
             return false;
