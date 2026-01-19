@@ -193,7 +193,7 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector # Useless toys
-      weight: 0.4
+      weight: 0.25
       children:
       - id: ToyAi
     - !type:GroupSelector # Baloons
@@ -210,7 +210,7 @@
       - id: CrayonMagic
         weight: 0.5
     - !type:GroupSelector # Bwoink stuff
-      weight: 0.6
+      weight: 0.15
       children:
       - id: ToyHammer
       - id: BwoinkHammer
@@ -238,12 +238,15 @@
       - id: SnapPopBox
         weight: 2
     - !type:GroupSelector # Toys with unique properties
-      weight: 1
+      weight: 0.4
       children:
       - id: PonderingOrb
-      - id: SingularityToy
-      - id: TeslaToy
+        weight: 3
       - id: ToyNuke
+      - id: SingularityToy
+        weight: 0.03 # Annoying af
+      - id: TeslaToy
+        weight: 0.02 # Also annoying and potentially useful for momentary stuns
     - !type:GroupSelector # Whatever else
       weight: 0.3
       children:

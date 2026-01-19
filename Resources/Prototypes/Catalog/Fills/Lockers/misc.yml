@@ -189,10 +189,10 @@
     # Floofstation section - toys
     - !type:NestedSelector
       tableId: MaintenanceToysTable
-      prob: 0.6
+      prob: 0.45
       rolls: !type:RangeNumberSelector
         range: 0, 2
-    # TODO: when porting lewd toys, put them here
+    # TODO: when porting lewd toys, put them here or under MaintenanceToysTable
     # Floofstation section end
 
 - type: entity

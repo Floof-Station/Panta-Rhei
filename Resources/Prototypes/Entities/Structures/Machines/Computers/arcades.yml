@@ -72,8 +72,8 @@
   - type: PointLight
     color: "#e3a136"
   - type: SpaceVillainArcade
-    rewardMinAmount: 3
-    rewardMaxAmount: 15
+    rewardMinAmount: 0 # Note: this is the empty variant
+    rewardMaxAmount: 0
     possibleRewards: # Floofstation - old rewards removed and replaced with this.
     - PrizeBall
     - PrizeTicket10
@@ -115,8 +115,8 @@
   suffix: Filled
   components:
   - type: SpaceVillainArcade
-    rewardMinAmount: 5
-    rewardMaxAmount: 8
+    rewardMinAmount: 3
+    rewardMaxAmount: 15
 
 - type: entity
   id: BlockGameArcade
