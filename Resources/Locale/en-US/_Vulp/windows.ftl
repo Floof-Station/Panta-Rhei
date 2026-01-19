@@ -1,0 +1,10 @@
+﻿house-window-vertical-tan = House Window Vertical Tan
+house-window-tan = House Window Tan
+house-window-wood-vertical = House Window Wood Vertical
+house-window-wood = House Window Wood
+wood-window = "Wood Window"
+house-window-vertical-tan-descrption = A vertical tan house window for decoration!
+house-window-tan-descrption = A tan house window for decoration!
+house-window-wood-vertical-descrption = A vertical house window for decoration!
+house-window-wood-descrption = A house window for decoration!
+wood-window-descprtion = A house window for decoration!

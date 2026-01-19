@@ -1,0 +1,31 @@
+﻿# N14 Bar Counter Table
+
+- type: constructionGraph
+  id: BarCounter
+  start: start
+  graph:
+  - node: start
+    actions:
+    - !type:DestroyEntity { }
+    edges:
+    - to: barcounter
+      completed:
+      - !type:SnapToGrid { }
+      steps:
+      - material: WoodPlank
+        amount: 2
+        doAfter: 2
+
+  - node: barcounter
+    entity: N14TableCounterBar
+    edges:
+    - to: start
+      completed:
+      - !type:SpawnPrototype
+        prototype: MaterialWoodPlank1
+        amount: 2
+      steps:
+      - tool: Prying
+        doAfter: 2
+      - tool: Screwing
+        doAfter: 2

@@ -21,10 +21,6 @@
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -90
     soundHit:
@@ -54,10 +50,6 @@
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: EmitSoundOnTrigger
     sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -114,10 +106,6 @@
   - type: EmitSoundOnTrigger
     sound:
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -90
     soundHit:
@@ -147,10 +135,6 @@
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: EmitSoundOnTrigger
     sound:
-      path: /Audio/Weapons/Xeno/alien_spitacid.ogg
-  - type: Food
-    requiresSpecialDigestion: true
-    useSound:
       path: /Audio/Weapons/Xeno/alien_spitacid.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -90
@@ -633,9 +617,11 @@
       params:
         variation: 0.05
         volume: 1.2
-  - type: Drink
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
     solution: fleshlight
-    ignoreEmpty: true
   - type: SolutionContainerManager
     solutions:
       fleshlight:
@@ -1192,9 +1178,11 @@
         variation: 0.05
         volume: 4
   - type: MultiHandedItem
-  - type: Drink
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
     solution: fleshlight
-    ignoreEmpty: true
   - type: SolutionContainerManager
     solutions:
       fleshlight:
@@ -1793,9 +1781,12 @@
   - type: Crayon
     color: white
     selectableColor: true
-    capacity: 500
-  - type: Food
+  - type: LimitedCharges
+    maxCharges: 500
+  - type: Edible
     utensilRequired: true # I ate my fucking paintbrush
+    utensil: Fork
+    requiresSpecialDigestion: true # Stop eating my paintbrushes you evil mothroaches
   - type: SolutionContainerManager
     solutions:
       food:

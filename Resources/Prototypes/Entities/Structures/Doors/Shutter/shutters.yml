@@ -105,7 +105,7 @@
 
 - type: entity
   id: ShuttersNormal
-  parent: BaseShutter
+  parent: [BaseDeltaPressureGlass, BaseShutter]
   components:
   - type: Occluder
   - type: Construction
@@ -132,7 +132,7 @@
 
 - type: entity
   id: ShuttersRadiation
-  parent: BaseShutter
+  parent: [BaseDeltaPressureGlass, BaseShutter]
   name: radiation shutters
   description: Why did they make these shutters radioactive?
   components:
@@ -170,7 +170,7 @@
 
 - type: entity
   id: ShuttersWindow
-  parent: BaseShutter
+  parent: [BaseDeltaPressureGlass, BaseShutter]
   name: window shutters
   description: The Best (TM) place to see your friends explode!
   components:

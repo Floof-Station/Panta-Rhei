@@ -1,0 +1,54 @@
+#I don't know why this is here, we should probably move this at some point.
+- type: construction
+  name: woodenrailing
+  id: RailingWood
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWood
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: woodenrailingcorner
+  id: RailingWoodCorner
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWoodCorner
+  category: construction-category-structures
+  description: woodenrailingcorner-descprtion
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: woodenrailingcornersmall
+  id: RailingWoodCornerSmall
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWoodCornerSmall
+  category: construction-category-structures
+  description: woodenrailingcornersmall-descrption
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  name: woodenrailinground
+  id: RailingWoodRound
+  graph: RailingWood
+  startNode: start
+  targetNode: railingWoodRound
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

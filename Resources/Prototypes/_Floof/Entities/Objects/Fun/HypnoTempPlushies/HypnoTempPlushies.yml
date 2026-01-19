@@ -47,10 +47,11 @@
     transferAmount: 30
   - type: Spillable
     solution: absorbed
-  - type: Drink
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
     solution: absorbed
-    #examinable: false
-    ignoreEmpty: true
 
 - type: entity
   parent: BaseHypnoTempPlush

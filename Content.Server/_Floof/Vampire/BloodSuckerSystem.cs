@@ -13,6 +13,7 @@ using Content.Server.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Server.Popups;
 using Content.Server.DoAfter;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.HealthExaminable;
 using Robust.Shared.Prototypes;
