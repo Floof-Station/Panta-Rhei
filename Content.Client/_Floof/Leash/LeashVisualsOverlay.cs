@@ -88,24 +88,31 @@ public sealed class LeashVisualsOverlay : Overlay
             var posB = _xform.ToMapCoordinates(coordsB).Position;
             var diff = (posB - posA);
             var length = diff.Length();
-
-            // So basically, we find the midpoint, then create a box that describes the sprite boundaries, then rotate it
-            var midPoint = diff / 2f + posA;
             var angle = (posB - posA).ToWorldAngle();
-            var box = new Box2(-width / 2f, -length / 2f, width / 2f, length / 2f);
-            var rotate = new Box2Rotated(box.Translated(midPoint), angle, midPoint);
 
             // Source is always the leash as of now.
             // If it ever changes, make sure to change the visuals comp to include a reference to the leash.
             var color = _paintQuery.CompOrNull(source)?.Color;
 
             // We draw the leash as multiple segments
-            // First determine the maximum segment length and segment count based on the sprite height
+            // Disclaimer: the below was written with the help of an LLM, my original code could only handle drawing the leash as 1 segment.
             var maxSegmentLength = texture.Height / (float)EyeManager.PixelsPerMeter;
             int segmentCount = Math.Max(1, (int)Math.Ceiling(length / maxSegmentLength));
 
             var direction = diff / length;
-            worldHandle.DrawTextureRect(texture, rotate, color);
+            for (var i = 0; i < segmentCount; i++)
+            {
+                var segmentStart = posA + direction * maxSegmentLength * i;
+                var segmentLength = (i == segmentCount - 1) ? (length - maxSegmentLength * i) : maxSegmentLength;
+
+                // So basically, we find the midpoint, then create a box that describes the sprite boundaries, then rotate it
+                var segmentMidPoint = segmentStart + direction * (segmentLength / 2f);
+                var box = new Box2(-width / 2f, -segmentLength / 2f, width / 2f, segmentLength / 2f);
+                var rotate = new Box2Rotated(box.Translated(segmentMidPoint), angle, segmentMidPoint);
+
+                // Draw the segment
+                worldHandle.DrawTextureRect(texture, rotate, color);
+            }
         }
     }
 }
