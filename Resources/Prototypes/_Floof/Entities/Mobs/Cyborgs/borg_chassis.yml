@@ -5,10 +5,6 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: quadsecurity
-  - type: BorgTransponder
-    sprite:
-      sprite: _Floof/Mobs/Silicon/chassis.rsi
-      state: quadsec
 
 - type: entity
   id: QuadChassisMining
@@ -17,10 +13,6 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: quadmining
-  - type: BorgTransponder
-    sprite:
-      sprite: _Floof/Mobs/Silicon/chassis.rsi
-      state: quadsalv
 
 - type: entity
   id: QuadChassisMedical
@@ -29,10 +21,6 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: quadmedical
-  - type: BorgTransponder
-    sprite:
-      sprite: _Floof/Mobs/Silicon/chassis.rsi
-      state: quadmed
 
 - type: entity
   id: QuadChassisService
@@ -41,7 +29,3 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: quadservice
-  - type: BorgTransponder
-    sprite:
-      sprite: _Floof/Mobs/Silicon/chassis.rsi
-      state: quadserv
