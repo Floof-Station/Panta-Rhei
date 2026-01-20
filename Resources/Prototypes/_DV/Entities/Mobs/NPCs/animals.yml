@@ -11,8 +11,8 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: arcticfox
   - type: SpriteMovement # Floofstation - added here to remove movement sprites because delta-v foxes dont have those.
-    movementLayers: []
-    noMovementLayers: []
+    movementLayers: {}
+    noMovementLayers: {}
   - type: Physics
   - type: Fixtures
     fixtures:
