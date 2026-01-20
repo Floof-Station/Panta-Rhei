@@ -25,7 +25,7 @@
   components:
   - type: Leash
     length: 3
-    lengthConfigs: [1.5, 2.25, 3]
+    lengthConfigs: &leashConfigs [1, 1.5, 2, 2.5, 3, 4]
     maxDistance: 6
     attachDelay: 4
     detachDelay: 4
@@ -37,8 +37,8 @@
   name: advanced leash
   components:
   - type: Leash
-    lengthConfigs: [1, 1.5, 2.25, 3]
-    maxJoints: 3
+    lengthConfigs: *leashConfigs
+    maxJoints: 2
     attachDelay: 2.5
     detachDelay: 2
     selfDetachDelay: 15
@@ -51,7 +51,7 @@
   suffix: DEBUG, DO NOT MAP
   components:
   - type: Leash
-    lengthConfigs: [1, 1.5, 2.25, 3, 5, 10]
+    lengthConfigs: [1, 1.5, 2, 2.5, 3, 4, 5, 7.5, 10]
     maxDistance: 20
     maxJoints: 10
     attachDelay: 2.5
