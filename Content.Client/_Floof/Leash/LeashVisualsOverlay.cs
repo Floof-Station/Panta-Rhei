@@ -1,7 +1,6 @@
 using System.Numerics;
 using Content.Shared._Floof.Paint;
 using Content.Shared._Floof.Util;
-using Content.Shared.Floofstation.Leash.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
