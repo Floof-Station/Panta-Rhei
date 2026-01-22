@@ -20,8 +20,6 @@
       tableId: RandomGenericPlushieTable
     - !type:NestedSelector
       tableId: RandomPersonalPlushieTable
-    - !type:NestedSelector
-      tableId: RandomToyTable
 
 - type: entityTable
   id: RandomGenericPlushieTable
