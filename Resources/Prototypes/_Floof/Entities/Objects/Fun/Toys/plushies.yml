@@ -20,6 +20,8 @@
   - type: MeleeWeapon
     wideAnimationRotation: 180
     soundHit: *mar
+  - type: EmitSoundOnCollide
+    sound: *mar
 
 - type: entity
   parent: BasePlushie
@@ -64,8 +66,10 @@
     sound:
       path: /Audio/Voice/Human/womanlaugh.ogg
   - type: EmitSoundOnLand
-    sound:
+    sound: &arachneLand
       path: /Audio/Voice/Human/female_sigh.ogg
+  - type: EmitSoundOnCollide
+    sound: *arachneLand
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Voice/Human/womanlaugh.ogg

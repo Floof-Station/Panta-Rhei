@@ -41,14 +41,16 @@
       path: /Audio/Animals/mouse_squeak.ogg
       params:
         volume: 1
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Animals/mouse_squeak.ogg
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Animals/mouse_squeak.ogg
       params:
         volume: 1
+  - type: EmitSoundOnLand
+    sound: &landCentcom
+      path: /Audio/Animals/mouse_squeak.ogg
+  - type: EmitSoundOnCollide
+    sound: *landCentcom
 
 - type: entity
   parent: PlushieHuman
@@ -68,6 +70,8 @@
         volume: -1
         variation: 0.05
   - type: EmitSoundOnLand
+    sound: *yap
+  - type: EmitSoundOnCollide
     sound: *yap
   - type: EmitSoundOnActivate
     sound: *yap
@@ -91,8 +95,10 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landCaw
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
+  - type: EmitSoundOnCollide
+    sound: *landCaw
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/_DV/Voice/Harpy/chirp1.ogg
@@ -122,11 +128,13 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landCj
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
       params:
         volume: 2
         variation: 0.1
+  - type: EmitSoundOnCollide
+    sound: *landCj
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/_Floof/Voice/Reptilian/yip.ogg
@@ -156,8 +164,10 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landAvali
       path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+  - type: EmitSoundOnCollide
+    sound: *landAvali
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/_Floof/Voice/Avali/avali_1.ogg
@@ -199,10 +209,12 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landQm
       path: /Audio/Effects/kaching.ogg
       params:
         volume: 1
+  - type: EmitSoundOnCollide
+    sound: *landQm
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/Lighters/zippo_open.ogg
@@ -231,8 +243,10 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landDj
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
+  - type: EmitSoundOnCollide
+    sound: *landDj
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
@@ -262,8 +276,10 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landHos
       path: /Audio/Effects/egloves.ogg
+  - type: EmitSoundOnCollide
+    sound: *landHos
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/drink.ogg
@@ -293,8 +309,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landLo
       path: /Audio/_Floof/Voice/Rodentia/Rat_Scream_01.ogg
+  - type: EmitSoundOnCollide
+    sound: *landLo
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/Toys/mousesqueek.ogg
@@ -324,8 +342,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landCmo
       path: /Audio/_Floof/Voice/Rodentia/Rat_Scream_01.ogg
+  - type: EmitSoundOnCollide
+    sound: *landCmo
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/Toys/mousesqueek.ogg
@@ -355,8 +375,10 @@
       params:
         volume: 1
   - type: EmitSoundOnLand
-    sound:
+    sound: &landResomi
       path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+  - type: EmitSoundOnCollide
+    sound: *landResomi
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/_Floof/Voice/Avali/avali_1.ogg
@@ -387,8 +409,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landVox
       path: /Audio/Voice/Vox/shriek1.ogg
+  - type: EmitSoundOnCollide
+    sound: *landVox
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
@@ -418,8 +442,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landBunny
       path: /Audio/Animals/mouse_squeak.ogg
+  - type: EmitSoundOnCollide
+    sound: *landBunny
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/Toys/mousesqueek.ogg
@@ -481,6 +507,8 @@
         volume: 2
   - type: EmitSoundOnLand
     sound: *yap
+  - type: EmitSoundOnCollide
+    sound: *yap
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Items/hypospray.ogg
@@ -504,6 +532,8 @@
     sound: *yap
   - type: EmitSoundOnActivate
     sound: *yap
+  - type: EmitSoundOnCollide
+    sound: *yap
 
 - type: entity
   parent: PlushieHuman
@@ -522,8 +552,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landArachnid
       path: /Audio/Voice/Arachnid/arachnid_laugh.ogg
+  - type: EmitSoundOnCollide
+    sound: *landArachnid
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Voice/Human/womanlaugh.ogg
@@ -565,8 +597,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landTailedFox
       path: /Audio/Effects/sparks4.ogg
+  - type: EmitSoundOnCollide
+    sound: *landTailedFox
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Animals/fox_squeak.ogg
@@ -596,8 +630,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landTrueCap
       path: /Audio/Effects/picaxe2.ogg
+  - type: EmitSoundOnCollide
+    sound: *landTrueCap
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Effects/explosionfar.ogg
@@ -654,8 +690,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landTired
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+  - type: EmitSoundOnCollide
+    sound: *landTired
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
@@ -707,8 +745,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landCat
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_scream2.ogg
+  - type: EmitSoundOnCollide
+    sound: *landCat
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_scream2.ogg
@@ -738,8 +778,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landUrsine
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+  - type: EmitSoundOnCollide
+    sound: *landUrsine
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -769,8 +811,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landStealthy
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
+  - type: EmitSoundOnCollide
+    sound: *landStealthy
   - type: MeleeWeapon
     soundHit:
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
@@ -800,8 +844,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landMedical
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
+  - type: EmitSoundOnCollide
+    sound: *landMedical
   - type: MeleeWeapon
     soundHit:
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
@@ -831,8 +877,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landCuddly
       path: /Audio/Effects/sparks2.ogg
+  - type: EmitSoundOnCollide
+    sound: *landCuddly
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Effects/sparks2.ogg
@@ -862,8 +910,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landCuddly2
       path: /Audio/Voice/Talk/pai_ask.ogg
+  - type: EmitSoundOnCollide
+    sound: *landCuddly2
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Voice/Talk/pai_ask.ogg
@@ -894,6 +944,8 @@
         volume: 2
   - type: EmitSoundOnLand
     sound: *yap
+  - type: EmitSoundOnCollide
+    sound: *yap
   - type: MeleeWeapon
     soundHit: *yap
 
@@ -921,8 +973,10 @@
         variation: 0.2
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landTank
       path: /Audio/Effects/metal_thud2.ogg
+  - type: EmitSoundOnCollide
+    sound: *landTank
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Effects/metal_thud2.ogg
@@ -974,8 +1028,10 @@
   - type: UseDelay
     delay: 2.0
   - type: EmitSoundOnLand
-    sound:
+    sound: &landHarmless
       path: /Audio/Machines/scan_finish.ogg
+  - type: EmitSoundOnCollide
+    sound: *landHarmless
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Animals/fox8.ogg
@@ -1005,8 +1061,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &landScientist
       path: /Audio/Machines/scan_finish.ogg
+  - type: EmitSoundOnCollide
+    sound: *landScientist
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Machines/scan_finish.ogg
@@ -1026,24 +1084,21 @@
   - type: UseDelay
     delay: 2.0
   - type: EmitSoundOnActivate
-    sound:
+    sound: &reptYip
       path: /Audio/_Floof/Voice/Reptilian/yip.ogg
       params:
         volume: 2
   - type: EmitSoundOnUse
-    sound:
-      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
-      params:
-        volume: 2
+    sound: *reptYip
   - type: EmitSoundOnLand
-    sound:
-      path: /Audio/_DV/Voice/Kitsune/fox_scream1.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &foxScream
       path: /Audio/_DV/Voice/Kitsune/fox_scream1.ogg
       params:
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnCollide
+    sound: *foxScream
+  - type: MeleeWeapon
+    soundHit: *foxScream
 
 - type: entity
   parent: BasePlushie
@@ -1067,14 +1122,14 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
-      path: /Audio/_DV/Voice/Harpy/caw1.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &caw
       path: /Audio/_DV/Voice/Harpy/caw1.ogg
       params:
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnCollide
+    sound: *caw
+  - type: MeleeWeapon
+    soundHit: *caw
 
 - type: entity
   parent: BasePlushie
@@ -1088,24 +1143,16 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Animals/snake_hiss.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Animals/snake_hiss.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Animals/snake_hiss.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &hiss
       path: /Audio/Animals/snake_hiss.ogg
       params:
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnUse
+    sound: *hiss
+  - type: EmitSoundOnLand
+    sound: *hiss
+  - type: MeleeWeapon
+    soundHit: *hiss
 
 - type: entity
   parent: BasePlushie
@@ -1131,24 +1178,16 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/_DV/Voice/Talk/vulp.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/_DV/Voice/Talk/vulp.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/_DV/Voice/Talk/vulp.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &vulpTalk
       path: /Audio/_DV/Voice/Talk/vulp.ogg
       params:
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnUse
+    sound: *vulpTalk
+  - type: EmitSoundOnLand
+    sound: *vulpTalk
+  - type: MeleeWeapon
+    soundHit: *vulpTalk
 
 - type: entity
   parent: BasePlushie
@@ -1172,8 +1211,10 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound:
+    sound: &scream1
       path: /Audio/Voice/Human/femalescream_1.ogg
+  - type: EmitSoundOnCollide
+    sound: *scream1
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Voice/Human/femalescream_3.ogg
@@ -1205,24 +1246,19 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
+    sound: &mothScream
       path: /Audio/Voice/Moth/moth_scream.ogg
       params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Voice/Moth/moth_scream.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Voice/Moth/moth_scream.ogg
-  - type: MeleeWeapon
-    soundHit:
-      path: /Audio/Voice/Moth/moth_scream.ogg
-      params:
+        volume: -2
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnUse
+    sound: *mothScream
+  - type: EmitSoundOnLand
+    sound: *mothScream
+  - type: EmitSoundOnCollide
+    sound: *mothScream
+  - type: MeleeWeapon
+    soundHit: *mothScream
 
 - type: entity
   parent: BasePlushie
@@ -1236,24 +1272,17 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
+    sound: &ipcWhirr
       path: /Audio/_EE/Voice/IPC/whirr3.ogg
       params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/_EE/Voice/IPC/whirr3.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/_EE/Voice/IPC/whirr3.ogg
-  - type: MeleeWeapon
-    soundHit:
-      path: /Audio/_EE/Voice/IPC/whirr3.ogg
-      params:
+        volume: -4
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnUse
+    sound: *ipcWhirr
+  - type: EmitSoundOnLand
+    sound: *ipcWhirr
+  - type: MeleeWeapon
+    soundHit: *ipcWhirr
 
 - type: entity
   parent: BasePlushie
@@ -1267,24 +1296,17 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      collection: VulpkaninBarks
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      collection: VulpkaninBarks
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      collection: VulpkaninBarks
-  - type: MeleeWeapon
-    soundHit:
+    sound: &vulpBark
       collection: VulpkaninBarks
       params:
         variation: 0.05
-        volume: 4
+        volume: -5
+  - type: EmitSoundOnUse
+    sound: *vulpBark
+  - type: EmitSoundOnLand
+    sound: *vulpBark
+  - type: MeleeWeapon
+    soundHit: *vulpBark
 
 - type: entity
   parent: BasePlushie
@@ -1298,24 +1320,22 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/bottle_open1.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/bottle_open1.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Effects/glass_break1.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &bottleOpen
       path: /Audio/Items/bottle_open1.ogg
       params:
         variation: 0.05
-        volume: 4
+        volume: -5
+  - type: EmitSoundOnUse
+    sound: *bottleOpen
+  - type: EmitSoundOnLand
+    sound: &glassBreak
+      path: /Audio/Effects/glass_break1.ogg
+      params:
+        volume: -10
+  - type: EmitSoundOnCollide
+    sound: *glassBreak
+  - type: MeleeWeapon
+    soundHit: *bottleOpen
 
 - type: entity
   parent: BasePlushie
@@ -1329,24 +1349,18 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Animals/raccoon_chatter.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Animals/raccoon_chatter.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Animals/raccoon_chatter.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &racoonChatter
       path: /Audio/Animals/raccoon_chatter.ogg
       params:
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnUse
+    sound: *racoonChatter
+  - type: EmitSoundOnLand
+    sound: *racoonChatter
+  - type: EmitSoundOnCollide
+    sound: *racoonChatter
+  - type: MeleeWeapon
+    soundHit: *racoonChatter
 
 - type: entity
   parent: BasePlushie
@@ -1360,24 +1374,18 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-  - type: MeleeWeapon
-    soundHit:
+    sound: &toySqueak
       path: /Audio/Items/Toys/toysqueak1.ogg
       params:
         variation: 0.05
-        volume: 4
+  - type: EmitSoundOnUse
+    sound: *toySqueak
+  - type: EmitSoundOnLand
+    sound: *toySqueak
+  - type: EmitSoundOnCollide
+    sound: *toySqueak
+  - type: MeleeWeapon
+    soundHit: *toySqueak
 
 - type: entity
   parent: BasePlushie
@@ -1391,24 +1399,15 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
+    sound: *toySqueak
   - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
+    sound: *toySqueak
   - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
+    sound: *toySqueak
+  - type: EmitSoundOnCollide
+    sound: *toySqueak
   - type: MeleeWeapon
-    soundHit:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        variation: 0.05
-        volume: 4
+    soundHit: *toySqueak
 
 - type: entity
   parent: BasePlushie
@@ -1422,24 +1421,15 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
+    sound: *toySqueak
   - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
+    sound: *toySqueak
   - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
+    sound: *toySqueak
+  - type: EmitSoundOnCollide
+    sound: *toySqueak
   - type: MeleeWeapon
-    soundHit:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        variation: 0.05
-        volume: 4
+    soundHit: *toySqueak
 
 - type: entity
   parent: BasePlushie
@@ -1462,6 +1452,10 @@
   - type: EmitSoundOnLand
     sound:
       path: /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnCollide
+    sound: *yap
 
 - type: entity
   parent: BasePlushie
@@ -1488,6 +1482,8 @@
       params:
         volume: -100 # Effectively silent
   - type: EmitSoundOnLand
+    sound: *slipsSound
+  - type: EmitSoundOnCollide
     sound: *slipsSound
   - type: EmitSoundOnActivate
     sound: *slipsSound

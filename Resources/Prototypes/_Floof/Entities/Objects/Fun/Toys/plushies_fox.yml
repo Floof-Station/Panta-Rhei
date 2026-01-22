@@ -6,11 +6,17 @@
   - type: EmitSoundOnUse
     sound: &squeak
       path: /Audio/Animals/fox_squeak.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/_DV/Voice/Kitsune/fox_squeal1.ogg
+      params:
+        variation: 0.04
   - type: EmitSoundOnActivate
     sound: *squeak
+  - type: EmitSoundOnLand
+    sound: &scream
+      path: /Audio/_DV/Voice/Kitsune/fox_squeal1.ogg
+      params:
+        variation: 0.04
+  - type: EmitSoundOnCollide
+    sound: *scream
   - type: MeleeWeapon
     soundHit:
       path: /Audio/_DV/Voice/Kitsune/fox_growl1.ogg

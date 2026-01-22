@@ -5,17 +5,18 @@
   abstract: true
   components:
   - type: EmitSoundOnUse
-    sound:
+    sound: &meow
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+      params:
+        variation: 0.04
   - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+    sound: *meow
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+    sound: *meow
   - type: MeleeWeapon
-    soundHit:
-      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+    soundHit: *meow
+  - type: EmitSoundOnCollide
+    sound: *meow
 
 - type: entity
   parent: BasePlushieCat
