@@ -1,3 +1,4 @@
+using Content.Shared._Floof.Util;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
@@ -46,11 +47,8 @@ public sealed partial class LeashComponent : Component
     [DataField, AutoNetworkedField]
     public SpriteSpecifier? LeashSprite;
 
-    [DataField]
-    public TimeSpan NextPull = TimeSpan.Zero;
-
     [DataField, AutoNetworkedField]
-    public TimeSpan PullInterval = TimeSpan.FromSeconds(1.5f);
+    public Ticker PullInterval = new(TimeSpan.FromSeconds(1.5f));
 
     /// <summary>
     ///     List of all joints and their respective pulled entities created by this leash.

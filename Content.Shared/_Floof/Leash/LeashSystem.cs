@@ -2,8 +2,6 @@ using System.Linq;
 using Content.Shared.Clothing.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Examine;
-using Content.Shared.Floofstation.Leash;
-using Content.Shared.Floofstation.Leash.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
 using Content.Shared.Interaction;
@@ -340,7 +338,7 @@ public sealed class LeashSystem : EntitySystem
             || !player.IsValid()
             || !_hands.TryGetActiveItem(player, out var leash)
             || !TryComp<Components.LeashComponent>(leash, out var leashComp)
-            || leashComp.NextPull > _timing.CurTime)
+            || !leashComp.PullInterval.TryUpdate(_timing))
             return false;
 
         // find the entity closest to the target coords
@@ -361,8 +359,6 @@ public sealed class LeashSystem : EntitySystem
         var pullDir = _xform.ToMapCoordinates(playerCoords).Position - _xform.ToMapCoordinates(pulledCoords).Position;
 
         _throwing.TryThrow(pulled, pullDir * 0.6f, user: player, pushbackRatio: 1f, animated: false, recoil: false, playSound: false, doSpin: false);
-
-        leashComp.NextPull = _timing.CurTime + leashComp.PullInterval;
         return true;
     }
 

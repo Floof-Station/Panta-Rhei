@@ -1,9 +1,11 @@
 using System.Numerics;
 using Content.Shared._Floof.Paint;
+using Content.Shared._Floof.Util;
 using Content.Shared.Floofstation.Leash.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
+using Robust.Shared.Timing;
 
 namespace Content.Client._Floof.Leash;
 
@@ -12,6 +14,7 @@ public sealed class LeashVisualsOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
     private readonly IEntityManager _entMan;
+    private readonly IGameTiming _timing;
     private readonly SpriteSystem _sprites;
     private readonly SharedTransformSystem _xform;
 
@@ -19,9 +22,13 @@ public sealed class LeashVisualsOverlay : Overlay
     private readonly EntityQuery<SpriteComponent> _spriteQuery;
     private readonly EntityQuery<ColorPaintedComponent> _paintQuery;
 
+    private ISawmill Log => Logger.GetSawmill("leash-visuals");
+    private Ticker _logTicker = new(TimeSpan.FromSeconds(3));
+
     public LeashVisualsOverlay(IEntityManager entMan)
     {
         _entMan = entMan;
+        _timing = IoCManager.Resolve<IGameTiming>();
         _sprites = _entMan.System<SpriteSystem>();
         _xform = _entMan.System<SharedTransformSystem>();
         _xformQuery = _entMan.GetEntityQuery<TransformComponent>();
@@ -34,7 +41,7 @@ public sealed class LeashVisualsOverlay : Overlay
         var worldHandle = args.WorldHandle;
         worldHandle.SetTransform(Vector2.Zero, Angle.Zero);
 
-        var query = _entMan.EntityQueryEnumerator<LeashedVisualsComponent>();
+        var query = _entMan.EntityQueryEnumerator<Shared._Floof.Leash.Components.LeashedVisualsComponent>();
         while (query.MoveNext(out var visualsComp))
         {
             if (visualsComp.Source is not {Valid: true} source
@@ -98,6 +105,14 @@ public sealed class LeashVisualsOverlay : Overlay
             // Disclaimer: the below was written with the help of an LLM, my original code could only handle drawing the leash as 1 segment.
             var maxSegmentLength = texture.Height / (float)EyeManager.PixelsPerMeter;
             int segmentCount = Math.Max(1, (int)Math.Ceiling(length / maxSegmentLength));
+
+            // Sanity check
+            if (segmentCount > 16)
+            {
+                if (_logTicker.TryUpdate(_timing))
+                    Log.Warning("Tried to render a leash joint with absurd length.");
+                return;
+            }
 
             var direction = diff / length;
             for (var i = 0; i < segmentCount; i++)
