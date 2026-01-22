@@ -1,4 +1,4 @@
-namespace Content.Shared.Floofstation.Leash.Components;
+namespace Content.Shared._Floof.Leash.Components;
 
 [RegisterComponent]
 public sealed partial class LeashedComponent : Component

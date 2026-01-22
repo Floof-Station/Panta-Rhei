@@ -2,7 +2,7 @@ using System.Numerics;
 using Robust.Shared.GameStates;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Floofstation.Leash.Components;
+namespace Content.Shared._Floof.Leash.Components;
 
 /// <summary>
 ///     Draws a line between this entity and the target. Same as JointVisualsComponent.

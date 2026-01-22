@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace Content.Shared.Floofstation.Leash.Components;
+namespace Content.Shared._Floof.Leash.Components;
 
 /// <summary>
 ///     Indicates that this entity or the entity that wears this entity can be leashed.
