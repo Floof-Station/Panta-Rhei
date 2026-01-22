@@ -1464,16 +1464,6 @@
       path: /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
 
 - type: entity
-  parent: PlushieVulp
-  id: PlushieTrystan
-  name: office vulp plushie
-  description: The ones who yeeps!
-  components:
-  - type: Sprite
-    sprite: _Floof/Objects/Fun/toys.rsi
-    state: plushie_trystan
-
-- type: entity
   parent: BasePlushie
   id: PlushieJester #Weh!
   name: jester plushie
