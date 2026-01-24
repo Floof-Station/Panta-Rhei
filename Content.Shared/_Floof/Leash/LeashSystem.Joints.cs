@@ -65,7 +65,7 @@ public sealed partial class LeashSystem
         // Also do the same for all leashed entities
         foreach (var data in leash.Comp1.Leashed)
         {
-            if (!TryGetEntity(data.Anchor, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
+            if (!TryGetEntity(data.Pulled, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
                 continue;
 
             if (TryComp<JointComponent>(pulled, out var jointComp)
@@ -133,9 +133,9 @@ public sealed partial class LeashSystem
 
         joint.MinLength = 0f;
         joint.MaxLength = length;
-        joint.Stiffness = 1f;
+        joint.Stiffness = 0f;
         joint.CollideConnected = true; // This is just for performance reasons and doesn't actually make mobs collide.
-        joint.Damping = 1f;
+        joint.Damping = 0f;
 
         return joint;
     }
@@ -149,7 +149,7 @@ public sealed partial class LeashSystem
     {
         foreach (var data in leash.Comp.Leashed)
         {
-            if (!TryGetEntity(data.Anchor, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
+            if (!TryGetEntity(data.Pulled, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
                 continue;
 
             var shouldExist = CanCreateJoint(pulled.Value, leash);
@@ -165,7 +165,7 @@ public sealed partial class LeashSystem
             }
             else if (!exists && shouldExist)
             {
-                var jointId = $"leash-joint-{data.Anchor}";
+                var jointId = $"leash-joint-{data.Pulled}";
                 joint = CreateLeashJoint(jointId, leash, pulled.Value);
                 data.JointId = leashed.JointId = jointId;
 

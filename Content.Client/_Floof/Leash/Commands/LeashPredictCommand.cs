@@ -11,7 +11,8 @@ namespace Content.Client._Floof.Leash.Commands;
 public sealed class LeashPredictCommand : IConsoleCommand
 {
     public string Command => "leashpredict";
-    public string Description => "Toggle whether to predict leashes. This can cause visual artifacts when you are the one being leashed or holding the leash.";
+    public string Description => "Toggle whether to predict leashes. This can cause visual artifacts when you are the one being leashed or holding the leash." +
+                                 "You may have to recreate the leash joint in order to see the effects.";
     public string Help => Command;
 
     public void Execute(IConsoleShell shell, string argStr, string[] args)

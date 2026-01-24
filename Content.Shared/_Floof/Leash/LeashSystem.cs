@@ -87,7 +87,7 @@ public sealed partial class LeashSystem : EntitySystem
 
     private void UpdateLeash(LeashComponent.LeashData data, TransformComponent sourceXForm, LeashComponent leash, EntityUid leashEnt)
     {
-        if (data.Anchor == NetEntity.Invalid || !TryGetEntity(data.Anchor, out var target))
+        if (data.Pulled == NetEntity.Invalid || !TryGetEntity(data.Pulled, out var target))
             return;
 
         DistanceJoint? joint = null;
@@ -189,7 +189,7 @@ public sealed partial class LeashSystem : EntitySystem
 
         // find the entity closest to the target coords
         var candidates = leashComp.Leashed
-            .Select(it => GetEntity(it.Anchor))
+            .Select(it => GetEntity(it.Pulled))
             .Where(it => it != EntityUid.Invalid)
             .Select(it => (it, Transform(it).Coordinates.TryDistance(EntityManager, _xform, targetCoords, out var dist) ? dist : float.PositiveInfinity))
             .Where(it => it.Item2 < float.PositiveInfinity)
@@ -441,7 +441,7 @@ public sealed partial class LeashSystem : EntitySystem
         // Wake all leashed entities up
         _physics.WakeBody(leash);
         foreach (var data in leash.Comp.Leashed)
-            if (TryGetLeashTarget(GetEntity(data.Anchor), out var leashTarget))
+            if (TryGetLeashTarget(GetEntity(data.Pulled), out var leashTarget))
                 _physics.WakeBody(leashTarget);
     }
 

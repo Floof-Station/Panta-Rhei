@@ -67,10 +67,10 @@ public sealed partial class LeashComponent : Component
         public string? JointId = null;
 
         /// <summary>
-        ///     The anchor this leash is attached to. Use LeashSystem.GetLeashTarget to get the actual entity pulled by this leash.
+        ///     The entity attached to this leash. NOT the anchor.
         /// </summary>
         [DataField]
-        public NetEntity Anchor = NetEntity.Invalid;
+        public NetEntity Pulled = NetEntity.Invalid;
 
         /// <summary>
         ///     Entity used to visualize the leash. Created dynamically.
@@ -78,10 +78,10 @@ public sealed partial class LeashComponent : Component
         [DataField]
         public NetEntity? LeashVisuals = null;
 
-        public LeashData(string? jointId, NetEntity anchor)
+        public LeashData(string? jointId, NetEntity pulled)
         {
             JointId = jointId;
-            Anchor = anchor;
+            Pulled = pulled;
         }
     };
 }
