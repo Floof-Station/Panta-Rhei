@@ -57,6 +57,11 @@ public abstract class ClothingSystem : EntitySystem
 
             if (_invSystem.TryGetSlotEntity(userEnt, slotDef.Name, out var slotEntity, userEnt))
             {
+                // Floofstation: do not attempt to quick-equip clothing in pocket slots.
+                // Something something inventory system shitcode
+                if (slotDef.SlotFlags.HasFlag(SlotFlags.POCKET))
+                    continue;
+
                 // Item in slot has to be quick equipable as well
                 if (TryComp(slotEntity, out ClothingComponent? item) && !item.QuickEquip)
                     continue;
