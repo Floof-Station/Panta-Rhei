@@ -1,13 +1,18 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._Floof.Leash.Components;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class LeashedComponent : Component
 {
     public const string VisualsContainerName = "leashed-visuals";
 
-    [DataField]
+    /// <summary>
+    ///     The joint ID of the leash joint. CAN BE NULL.
+    /// </summary>
+    [DataField, AutoNetworkedField]
     public string? JointId = null;
 
-    [NonSerialized]
-    public EntityUid? Leash = null, Anchor = null;
+    [DataField, AutoNetworkedField]
+    public NetEntity? Leash = null, Anchor = null;
 }
