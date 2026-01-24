@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Floof.Leash.Components;
 using Content.Shared._Floof.Paint;
 using Content.Shared._Floof.Util;
 using Robust.Client.GameObjects;
@@ -45,47 +46,24 @@ public sealed class LeashVisualsOverlay : Overlay
         {
             if (visualsComp.Source is not {Valid: true} source
                 || visualsComp.Target is not {Valid: true} target
-                || !_xformQuery.TryGetComponent(source, out var xformComp)
-                || !_xformQuery.TryGetComponent(target, out var otherXformComp)
-                || xformComp.MapID != args.MapId
-                || otherXformComp.MapID != xformComp.MapID)
+                || !_xformQuery.TryGetComponent(source, out var sourceXform)
+                || !_xformQuery.TryGetComponent(target, out var targetXform)
+                || sourceXform.MapID != args.MapId
+                || targetXform.MapID != sourceXform.MapID)
                 continue;
 
             var texture = _sprites.Frame0(visualsComp.Sprite);
             var width = texture.Width / (float) EyeManager.PixelsPerMeter;
 
-            var coordsA = xformComp.Coordinates;
-            var coordsB = otherXformComp.Coordinates;
+            var coordsA = sourceXform.Coordinates;
+            var coordsB = targetXform.Coordinates;
 
             // If both coordinates are in the same spot (e.g. the leash is being held by the leashed), don't render anything
             if (coordsA.TryDistance(_entMan, _xform, coordsB, out var dist) && dist < 0.01f)
                 continue;
 
-            var rotA = xformComp.LocalRotation;
-            var rotB = otherXformComp.LocalRotation;
-            var offsetA = visualsComp.OffsetSource;
-            var offsetB = visualsComp.OffsetTarget;
-
-            // NoRotation sprites always have a zero rotation, and their "up" is always facing the viewport "up"
-            // Regular sprites on the other hand can have any rotation, and their rotation is described in world coordinates
-            if (_spriteQuery.TryGetComponent(source, out var spriteA))
-            {
-                offsetA *= spriteA.Scale;
-                offsetA += spriteA.Offset;
-                if (spriteA.NoRotation)
-                    rotA = -args.Viewport.Eye?.Rotation ?? Angle.Zero;
-                else
-                    rotA = spriteA.Rotation;
-            }
-            if (_spriteQuery.TryGetComponent(target, out var spriteB))
-            {
-                offsetB *= spriteB.Scale;
-                offsetB += spriteB.Offset;
-                if (spriteB.NoRotation)
-                    rotB = -args.Viewport.Eye?.Rotation ?? Angle.Zero;
-                else
-                    rotB = spriteB.Rotation;
-            }
+            ExtractAnchorData(args, (source, sourceXform), visualsComp, out var rotA, out var offsetA);
+            ExtractAnchorData(args, (target, targetXform), visualsComp, out var rotB, out var offsetB);
 
             coordsA = coordsA.Offset(rotA.RotateVec(offsetA));
             coordsB = coordsB.Offset(rotB.RotateVec(offsetB));
@@ -101,9 +79,8 @@ public sealed class LeashVisualsOverlay : Overlay
             var color = _paintQuery.CompOrNull(source)?.Color;
 
             // We draw the leash as multiple segments
-            // Disclaimer: the below was written with the help of an LLM, my original code could only handle drawing the leash as 1 segment.
             var maxSegmentLength = texture.Height / (float)EyeManager.PixelsPerMeter;
-            int segmentCount = Math.Max(1, (int)Math.Ceiling(length / maxSegmentLength));
+            var segmentCount = Math.Max(1, (int)Math.Ceiling(length / maxSegmentLength));
 
             // Sanity check
             if (segmentCount > 16)
@@ -113,20 +90,51 @@ public sealed class LeashVisualsOverlay : Overlay
                 return;
             }
 
+            // Note: we do not draw the last segment as part of this loop because it needs to be drawn partially.
             var direction = diff / length;
-            for (var i = 0; i < segmentCount; i++)
+            for (var i = 0; i < segmentCount - 1; i++)
             {
                 var segmentStart = posA + direction * maxSegmentLength * i;
-                var segmentLength = (i == segmentCount - 1) ? (length - maxSegmentLength * i) : maxSegmentLength;
 
                 // So basically, we find the midpoint, then create a box that describes the sprite boundaries, then rotate it
-                var segmentMidPoint = segmentStart + direction * (segmentLength / 2f);
-                var box = new Box2(-width / 2f, -segmentLength / 2f, width / 2f, segmentLength / 2f);
+                var segmentMidPoint = segmentStart + direction * (maxSegmentLength / 2f);
+                var box = new Box2(-width / 2f, -maxSegmentLength / 2f, width / 2f, maxSegmentLength / 2f);
                 var rotate = new Box2Rotated(box.Translated(segmentMidPoint), angle, segmentMidPoint);
 
                 // Draw the segment
                 worldHandle.DrawTextureRect(texture, rotate, color);
             }
+
+            // Draw the last segment partially.
+            // TODO: code duplication
+            {
+                var segmentStart = posA + direction * maxSegmentLength * (segmentCount - 1);
+                var segmentLength = length - maxSegmentLength * (segmentCount - 1);
+                var segmentMidPoint = segmentStart + direction * (segmentLength / 2f);
+                var box = new Box2(-width / 2f, -segmentLength / 2f, width / 2f, segmentLength / 2f);
+                var rotate = new Box2Rotated(box.Translated(segmentMidPoint), angle, segmentMidPoint);
+
+                var uv = new UIBox2(0, segmentLength * EyeManager.PixelsPerMeter, texture.Width, 0);
+                worldHandle.DrawTextureRectRegion(texture, rotate, color, uv);
+            }
+        }
+    }
+
+    private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset)
+    {
+        rotation = leashedEntity.Comp.LocalRotation;
+        offset = visualsComp.OffsetSource;
+
+        // NoRotation sprites always have a zero rotation, and their "up" is always facing the viewport "up"
+        // Regular sprites on the other hand can have any rotation, and their rotation is described in world coordinates
+        if (_spriteQuery.TryGetComponent(leashedEntity, out var sprite))
+        {
+            offset *= sprite.Scale;
+            offset += sprite.Offset;
+            if (sprite.NoRotation)
+                rotation = -args.Viewport.Eye?.Rotation ?? Angle.Zero;
+            else
+                rotation = sprite.Rotation;
         }
     }
 }
