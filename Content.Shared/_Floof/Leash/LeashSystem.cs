@@ -38,8 +38,6 @@ public sealed partial class LeashSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
-    public static readonly string LeashJointIdPrefix = "leash-joint-";
-
     #region Lifecycle
 
     public override void Initialize()
@@ -47,6 +45,8 @@ public sealed partial class LeashSystem : EntitySystem
         InitializeVerbs();
         InitializeContainerWorkarounds();
         InitializeJoints();
+        InitializePrediction();
+        StartThinkingWithPortals();
 
         UpdatesBefore.Add(typeof(SharedPhysicsSystem));
 
@@ -100,7 +100,7 @@ public sealed partial class LeashSystem : EntitySystem
         // Client: set max distance to infinity to prevent the client from ever predicting leashes.
         if (_net.IsClient)
         {
-            if (joint is not null)
+            if (joint is not null && !ShouldPredictLeashes())
                 joint.MaxLength = float.MaxValue;
 
             return;
@@ -213,33 +213,6 @@ public sealed partial class LeashSystem : EntitySystem
     #region private api
 
     /// <summary>
-    ///     Tries to find the entity that gets leashed for the given anchor entity.
-    /// </summary>
-    private bool TryGetLeashTarget(Entity<LeashAnchorComponent?> ent, out EntityUid leashTarget)
-    {
-        leashTarget = default;
-        if (!Resolve(ent, ref ent.Comp, false))
-            return false;
-
-        if (ent.Comp.Kind.HasFlag(LeashAnchorComponent.AnchorKind.Clothing)
-            && TryComp<ClothingComponent>(ent, out var clothing)
-            && clothing.InSlot != null
-            && _container.TryGetContainingContainer(ent.Owner, out var container))
-        {
-            leashTarget = container.Owner;
-            return true;
-        }
-
-        if (ent.Comp.Kind.HasFlag(LeashAnchorComponent.AnchorKind.Intrinsic))
-        {
-            leashTarget = ent.Owner;
-            return true;
-        }
-
-        return false;
-    }
-
-    /// <summary>
     ///     Tries to find the entity this anchor is attached to and returns it. May return EntityUid.Invalid.
     /// </summary>
     private Entity<LeashedComponent?> GetLeashed(Entity<LeashAnchorComponent> anchor)
@@ -266,6 +239,33 @@ public sealed partial class LeashSystem : EntitySystem
     #endregion
 
     #region public api
+
+    /// <summary>
+    ///     Tries to find the entity that gets leashed for the given anchor entity.
+    /// </summary>
+    public bool TryGetLeashTarget(Entity<LeashAnchorComponent?> anchor, out EntityUid leashTarget)
+    {
+        leashTarget = default;
+        if (!Resolve(anchor, ref anchor.Comp, false))
+            return false;
+
+        if (anchor.Comp.Kind.HasFlag(LeashAnchorComponent.AnchorKind.Clothing)
+            && TryComp<ClothingComponent>(anchor, out var clothing)
+            && clothing.InSlot != null
+            && _container.TryGetContainingContainer(anchor.Owner, out var container))
+        {
+            leashTarget = container.Owner;
+            return true;
+        }
+
+        if (anchor.Comp.Kind.HasFlag(LeashAnchorComponent.AnchorKind.Intrinsic))
+        {
+            leashTarget = anchor.Owner;
+            return true;
+        }
+
+        return false;
+    }
 
     public bool CanLeash(Entity<LeashAnchorComponent> anchor, Entity<LeashComponent> leash)
     {
@@ -439,6 +439,7 @@ public sealed partial class LeashSystem : EntitySystem
         _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", length)), leash.Owner, null);
 
         // Wake all leashed entities up
+        _physics.WakeBody(leash);
         foreach (var data in leash.Comp.Leashed)
             if (TryGetLeashTarget(GetEntity(data.Anchor), out var leashTarget))
                 _physics.WakeBody(leashTarget);

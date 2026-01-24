@@ -10,6 +10,8 @@ public sealed partial class LeashSystem
 {
     [Dependency] private readonly SharedJointSystem _joints = default!;
 
+    public static readonly string LeashJointIdPrefix = "leash-joint-";
+
     private List<(Entity<LeashComponent>, Entity<LeashedComponent>, Entity<LeashAnchorComponent>)> _pendingJointUpdates = new();
 
     private void InitializeJoints()
@@ -44,7 +46,7 @@ public sealed partial class LeashSystem
 
     private void RefreshRelays(Entity<LeashComponent, TransformComponent> leash)
     {
-        if (!_net.IsServer)
+        if (!ShouldPredictLeashes())
             return;
 
         // Server - ensure the holder of the leash is always correct

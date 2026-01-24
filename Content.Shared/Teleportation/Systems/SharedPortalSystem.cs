@@ -240,6 +240,7 @@ public abstract class SharedPortalSystem : EntitySystem
         LogTeleport(ent, subject, Transform(subject).Coordinates, target);
 
         _transform.SetCoordinates(subject, target);
+        RaiseLocalEvent(subject, new TeleportedEvent { Subject = subject }, true); // Floofstation. Note that this is raised broadcast.
 
         if (!playSound)
             return;
@@ -278,4 +279,11 @@ public abstract class SharedPortalSystem : EntitySystem
         EntityCoordinates target)
     {
     }
+}
+
+// Floofstation - remove when upstream adds something similar
+// This is needed to let the leash system know the entity has been teleported and break the leash joint if necessary
+public sealed class TeleportedEvent : EntityEventArgs
+{
+    public EntityUid Subject;
 }
