@@ -20,9 +20,9 @@ public sealed partial class LeashAnchorComponent : Component
     [Flags]
     public enum AnchorKind : int
     {
-        /// <summary>The entity is a clothing that, when equipped, can have a leash attached to.</summary>
+        /// <summary>This entity is a clothing that, when equipped, can have a leash attached to it.</summary>
         Clothing,
-        /// <summary>The entity can have a leash attached to normally.</summary>
+        /// <summary>This entity can have a leash attached to it normally.</summary>
         Intrinsic,
 
         Any = Clothing | Intrinsic

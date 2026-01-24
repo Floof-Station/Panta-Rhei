@@ -25,13 +25,11 @@ using Robust.Shared.Timing;
 namespace Content.Shared._Floof.Leash;
 
 // TODO this system is a nightmare
-// It should be split into client and server counterparts
-public sealed class LeashSystem : EntitySystem
+public sealed partial class LeashSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfters = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedJointSystem _joints = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly ThrowingSystem _throwing = default!;
@@ -40,33 +38,20 @@ public sealed class LeashSystem : EntitySystem
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
-    public static readonly VerbCategory LeashLengthConfigurationCategory =
-        new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
     public static readonly string LeashJointIdPrefix = "leash-joint-";
-
-    private List<(Entity<LeashComponent>, Entity<LeashedComponent>, Entity<LeashAnchorComponent>)> _pendingJointUpdates = new();
 
     #region Lifecycle
 
     public override void Initialize()
     {
+        InitializeVerbs();
+        InitializeContainerWorkarounds();
+        InitializeJoints();
+
         UpdatesBefore.Add(typeof(SharedPhysicsSystem));
 
         SubscribeLocalEvent<LeashAnchorComponent, BeingUnequippedAttemptEvent>(OnAnchorUnequipping);
         SubscribeLocalEvent<LeashAnchorComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
-        SubscribeLocalEvent<LeashedComponent, JointAddedEvent>(OnJointAdded);
-        SubscribeLocalEvent<LeashedComponent, JointRemovedEvent>(OnJointRemoved, after: [typeof(SharedJointSystem)]);
-        SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<InteractionVerb>>(OnGetLeashedVerbs);
-        SubscribeLocalEvent<LeashedComponent, EntGotInsertedIntoContainerMessage>(OnLeashedContainerChanged);
-        SubscribeLocalEvent<LeashedComponent, EntGotRemovedFromContainerMessage>(OnLeashedContainerChanged);
-
-        SubscribeLocalEvent<LeashComponent, ExaminedEvent>(OnLeashExamined);
-        SubscribeLocalEvent<LeashComponent, EntGotInsertedIntoContainerMessage>(OnLeashContainerChanged);
-        SubscribeLocalEvent<LeashComponent, EntGotRemovedFromContainerMessage>(OnLeashContainerChanged);
-        SubscribeLocalEvent<LeashComponent, GetVerbsEvent<AlternativeVerb>>(OnGetLeashVerbs);
-
-        SubscribeLocalEvent<LeashAnchorComponent, LeashAttachDoAfterEvent>(OnAttachDoAfter);
-        SubscribeLocalEvent<LeashedComponent, LeashDetachDoAfterEvent>(OnDetachDoAfter);
 
         CommandBinds.Builder
             .BindBefore(ContentKeyFunctions.MovePulledObject, new PointerInputCmdHandler(OnRequestPullLeash), before: [typeof(PullingSystem)])
@@ -141,59 +126,6 @@ public sealed class LeashSystem : EntitySystem
             joint.MaxLength = leash.Length;
     }
 
-    private void RefreshRelays(Entity<LeashComponent, TransformComponent> leash)
-    {
-        if (!_net.IsServer)
-            return;
-
-        // Server - ensure the holder of the leash is always correct
-        // I do not know why, perhaps because RobustToolbox joint tooling is shitty,
-        // but if the leash is inside a container that is inside another container (e.g. person inside a locker),
-        // and then the middle container leaves the outer (person leaves the locker),
-        // RobustToolbox won't update the joint between the leashed person and the leash (which should be relayed to the outer container - locker).
-        // This means the person will stay attached to the outer container (locker).
-        // To fix this, we force RT to update the joint relay
-        if (TryComp<JointComponent>(leash, out var leashJointComp)
-            && _container.TryGetOuterContainer(leash, leash.Comp2, out var jointRelayTarget)
-            && leashJointComp.Relay != null
-            && leashJointComp.Relay != jointRelayTarget.Owner)
-            _joints.RefreshRelay(leash);
-
-        // Also do the same for all leashed entities
-        foreach (var data in leash.Comp1.Leashed)
-        {
-            if (!TryGetEntity(data.Anchor, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
-                continue;
-
-            if (TryComp<JointComponent>(pulled, out var jointComp)
-                && _container.TryGetOuterContainer(pulled.Value, Transform(pulled.Value), out jointRelayTarget)
-                && jointComp.Relay != null
-                && jointComp.Relay != jointRelayTarget.Owner)
-                _joints.RefreshRelay(pulled.Value);
-        }
-    }
-
-    private void ProcessPendingJointUpdate(Entity<LeashComponent> leash,
-        Entity<LeashedComponent> leashed,
-        Entity<LeashAnchorComponent> anchor)
-    {
-        var canRestore = !TerminatingOrDeleted(leash) && !TerminatingOrDeleted(leashed) && !TerminatingOrDeleted(anchor);
-        if (canRestore)
-        {
-            var leashXform = Transform(leash);
-            var leashedXform = Transform(leashed);
-            canRestore &= leashXform.MapUid == leashedXform.MapUid
-                          && leashXform.Coordinates.TryDistance(EntityManager, leashedXform.Coordinates, out var dst)
-                          && dst <= leash.Comp.MaxDistance;
-            // The anchor must be either the entity itself or something parented to them (clothing)
-            canRestore &= anchor.Owner == leashed.Owner || _container.ContainsEntity(leashed, anchor);
-        }
-
-        RemoveLeash(leashed!, leash!, false);
-        if (canRestore)
-            DoLeash(anchor, leash, leashed, true);
-    }
-
     #endregion
 
     #region event handling
@@ -243,104 +175,6 @@ public sealed class LeashSystem : EntitySystem
             Act = () => TryUnleash((leashTarget, leashedComp), (leash, leashComp), user)
         };
         args.Verbs.Add(unleashVerb);
-    }
-
-    private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref GetVerbsEvent<InteractionVerb> args)
-    {
-        if (!args.CanAccess
-            || !args.CanInteract
-            || GetEntity(ent.Comp.Leash) is not { } leash
-            || !TryComp<LeashComponent>(leash, out var leashComp))
-            return;
-
-        var user = args.User;
-        args.Verbs.Add(new()
-        {
-            Text = Loc.GetString("verb-unleash-text"),
-            Act = () => TryUnleash(ent.Owner, (leash, leashComp), user)
-        });
-    }
-
-    private void OnGetLeashVerbs(Entity<LeashComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
-    {
-        if (!args.CanAccess
-            || !args.CanInteract
-            || ent.Comp.LengthConfigs is not { } configurations
-            || !CanInteractWithLeash(args.User, ent))
-            return;
-
-        // Add a menu listing each length configuration.
-        foreach (var length in configurations)
-        {
-            args.Verbs.Add(new()
-            {
-                Text = Loc.GetString("verb-leash-set-length-text", ("length", length)),
-                Act = () => SetLeashLength(ent, length),
-                Category = LeashLengthConfigurationCategory
-            });
-        }
-    }
-
-    private void OnJointAdded(Entity<LeashedComponent> ent, ref JointAddedEvent args)
-    {
-        // If we're on the client side, set the leash length to infinity to avoid predicting the leash
-        if (_net.IsClient && args.Joint.ID.StartsWith(LeashJointIdPrefix) && args.Joint is DistanceJoint dj)
-            dj.MaxLength = float.MaxValue;
-    }
-
-    private void OnJointRemoved(Entity<LeashedComponent> ent, ref JointRemovedEvent args)
-    {
-        // JointRemoved is called on both bodies, we only do this kinda check on the leashed
-        var id = args.Joint.ID;
-        if (_net.IsClient
-            || ent.Comp.LifeStage >= ComponentLifeStage.Removing
-            || GetEntity(ent.Comp.Leash) is not { } leashEnt
-            || GetEntity(ent.Comp.Anchor) is not { } anchorEnt
-            || ent.Comp.JointId != id
-            || TerminatingOrDeleted(leashEnt)
-            || !TryComp<LeashAnchorComponent>(anchorEnt, out var anchor)
-            || !TryComp<LeashComponent>(leashEnt, out var leash))
-            return;
-
-        _pendingJointUpdates.Add(((leashEnt, leash), ent, (anchorEnt, anchor)));
-    }
-
-    private void OnLeashedContainerChanged(EntityUid ent, LeashedComponent comp, ContainerModifiedMessage args)
-    {
-        // Note: we can't use the Entity<T> handler here because it doesn't support polymorphism
-        if (!_net.IsClient && GetEntity(comp.Leash) is { } leashEnt && TryComp<LeashComponent>(leashEnt, out var leash))
-            RefreshJoints((leashEnt, leash));
-    }
-
-    private void OnLeashExamined(Entity<LeashComponent> ent, ref ExaminedEvent args)
-    {
-        var length = ent.Comp.Length;
-        args.PushMarkup(Loc.GetString("leash-length-examine-text", ("length", length)));
-    }
-
-    private void OnLeashContainerChanged(EntityUid ent, LeashComponent comp, ContainerModifiedMessage args)
-    {
-        // Note: we can't use the Entity<T> handler here because it doesn't support polymorphism
-        if (!_net.IsClient)
-            RefreshJoints((ent, comp));
-    }
-
-    private void OnAttachDoAfter(Entity<LeashAnchorComponent> ent, ref LeashAttachDoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled
-            || !TryComp<LeashComponent>(args.Used, out var leash)
-            || !CanLeash(ent, (args.Used.Value, leash)))
-            return;
-
-        DoLeash(ent, (args.Used.Value, leash), EntityUid.Invalid);
-    }
-
-    private void OnDetachDoAfter(Entity<LeashedComponent> ent, ref LeashDetachDoAfterEvent args)
-    {
-        if (args.Cancelled || args.Handled || GetEntity(ent.Comp.Leash) is not { } leash)
-            return;
-
-        RemoveLeash(ent!, leash);
     }
 
     private bool OnRequestPullLeash(ICommonSession? session, EntityCoordinates targetCoords, EntityUid uid)
@@ -406,47 +240,6 @@ public sealed class LeashSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Returns true if a leash joint can be created between the two specified entities.
-    ///     This will return false if one of the entities is a parent of another, or if the entities are on different maps.
-    /// </summary>
-    public bool CanCreateJoint(EntityUid a, EntityUid b)
-    {
-        BaseContainer? aOuter = null, bOuter = null;
-
-        // Unless the entities are inside the same container, it should be safe to create a joint
-        var aXform = Transform(a);
-        var bXform = Transform(b);
-
-        if (aXform.MapUid != bXform.MapUid)
-            return false;
-
-        if (!_container.TryGetOuterContainer(a, aXform, out aOuter)
-            && !_container.TryGetOuterContainer(b, bXform, out bOuter))
-            return true;
-
-        // Otherwise, we need to make sure that neither of the entities contain the other, and that they are not in the same container.
-        return a != bOuter?.Owner && b != aOuter?.Owner && aOuter?.Owner != bOuter?.Owner;
-    }
-
-    private DistanceJoint CreateLeashJoint(string jointId, Entity<LeashComponent> leash, EntityUid leashTarget)
-    {
-        var joint = _joints.CreateDistanceJoint(leash, leashTarget, id: jointId);
-        // If the soon-to-be-leashed entity is too far away, we don't force it any closer.
-        // The system will automatically reduce the length of the leash once it gets closer.
-        var length = Transform(leashTarget).Coordinates.TryDistance(EntityManager, Transform(leash).Coordinates, out var dist)
-            ? MathF.Max(dist, leash.Comp.Length)
-            : leash.Comp.Length;
-
-        joint.MinLength = 0f;
-        joint.MaxLength = length;
-        joint.Stiffness = 1f;
-        joint.CollideConnected = true; // This is just for performance reasons and doesn't actually make mobs collide.
-        joint.Damping = 1f;
-
-        return joint;
-    }
-
-    /// <summary>
     ///     Tries to find the entity this anchor is attached to and returns it. May return EntityUid.Invalid.
     /// </summary>
     private Entity<LeashedComponent?> GetLeashed(Entity<LeashAnchorComponent> anchor)
@@ -483,6 +276,9 @@ public sealed class LeashSystem : EntitySystem
             && dst <= leash.Comp.Length;
     }
 
+    /// <summary>
+    ///     Start a do-after to try to leash the specified entity.
+    /// </summary>
     public bool TryLeash(Entity<LeashAnchorComponent> anchor, Entity<LeashComponent> leash, EntityUid user, bool popup = true)
     {
         if (!CanLeash(anchor, leash) || !TryGetLeashTarget(anchor!, out var leashTarget))
@@ -512,6 +308,9 @@ public sealed class LeashSystem : EntitySystem
         return result;
     }
 
+    /// <summary>
+    ///     Start a do-after to remove the leash from the specified entity.
+    /// </summary>
     public bool TryUnleash(Entity<LeashedComponent?> leashed, Entity<LeashComponent?> leash, EntityUid user, bool popup = true)
     {
         if (!Resolve(leashed, ref leashed.Comp, false)
@@ -643,39 +442,6 @@ public sealed class LeashSystem : EntitySystem
         foreach (var data in leash.Comp.Leashed)
             if (TryGetLeashTarget(GetEntity(data.Anchor), out var leashTarget))
                 _physics.WakeBody(leashTarget);
-    }
-
-    /// <summary>
-    ///     Refreshes all joints for the specified leash.
-    ///     This will remove all obsolete joints, such as those for which CanCreateJoint returns false,
-    ///     and re-add all joints that were previously removed for the same reason, but became valid later.
-    /// </summary>
-    public void RefreshJoints(Entity<LeashComponent> leash)
-    {
-        foreach (var data in leash.Comp.Leashed)
-        {
-            if (!TryGetEntity(data.Anchor, out var pulled) || !TryComp<LeashedComponent>(pulled, out var leashed))
-                continue;
-
-            var shouldExist = CanCreateJoint(pulled.Value, leash);
-            var exists = data.JointId != null;
-
-            if (exists && !shouldExist && TryComp<JointComponent>(pulled, out var jointComp) && jointComp.GetJoints.TryGetValue(data.JointId!, out var joint))
-            {
-                data.JointId = leashed.JointId = null;
-                _joints.RemoveJoint(joint);
-
-                Log.Debug($"Removed obsolete leash joint between {leash.Owner} and {pulled.Value}");
-            }
-            else if (!exists && shouldExist)
-            {
-                var jointId = $"leash-joint-{data.Anchor}";
-                joint = CreateLeashJoint(jointId, leash, pulled.Value);
-                data.JointId = leashed.JointId = jointId;
-
-                Log.Debug($"Added new leash joint between {leash.Owner} and {pulled.Value}");
-            }
-        }
     }
 
     #endregion
