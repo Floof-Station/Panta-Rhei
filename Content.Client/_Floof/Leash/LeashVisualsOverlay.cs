@@ -114,7 +114,9 @@ public sealed class LeashVisualsOverlay : Overlay
                 var box = new Box2(-width / 2f, -segmentLength / 2f, width / 2f, segmentLength / 2f);
                 var rotate = new Box2Rotated(box.Translated(segmentMidPoint), angle, segmentMidPoint);
 
-                var uv = new UIBox2(0, segmentLength * EyeManager.PixelsPerMeter, texture.Width, 0);
+                // Frankly I can't explain why we have to crop the texture from the bottom and not from the top
+                // Has something to do with how the texture tiles, it looks ugly otherwise
+                var uv = new UIBox2(0, texture.Height, texture.Width, segmentLength * EyeManager.PixelsPerMeter);
                 worldHandle.DrawTextureRectRegion(texture, rotate, color, uv);
             }
         }
