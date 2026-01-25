@@ -8,9 +8,11 @@
       Plastic: 100
   - type: StaticPrice
     price: 75
-  - type: Drink
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
     solution: fleshlight
-    ignoreEmpty: true
   - type: SolutionContainerManager
     solutions:
       fleshlight:

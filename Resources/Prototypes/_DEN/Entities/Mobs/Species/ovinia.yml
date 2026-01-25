@@ -77,6 +77,14 @@
       Male: MaleOvinia
       Female: FemaleOvinia
       Unsexed: MaleOvinia
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - TauCetiBasic
+    - Sheep # Fun fact: the sheep language was unused on EE.
+    understands:
+    - TauCetiBasic
+    - Sheep
+    naturalLanguage: Sheep
   - type: Tag
     tags:
     - CanPilot

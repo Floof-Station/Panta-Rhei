@@ -96,7 +96,7 @@
       types:
         Blunt: 10
   - type: CargoSellBlacklist # Frontier
-  - type: Food # Frontier - Moth food
+  - type: Edible # Frontier - Moth food
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
     solutions:
@@ -107,6 +107,12 @@
           Quantity: 1
   - type: StealTarget
     stealGroup: Mail
+  - type: LanguageSpeaker # Floofstation - mail is a speaker
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
 
 # This empty parcel is allowed to exist and evade the tests for the admin
 # mailto command.

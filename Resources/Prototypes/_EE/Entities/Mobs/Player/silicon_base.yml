@@ -15,7 +15,7 @@
         - reagents: [Water, SpaceCleaner]
           methods: [Touch]
           effects:
-            - !type:WashCreamPieReaction
+            - !type:WashCreamPie
     - type: DamageOnHighSpeedImpact
       damage:
         types:
@@ -318,6 +318,9 @@
     - type: Carriable
     - type: Targeting
     - type: SurgeryTarget
+    - type: ParcelWrapOverride
+      parcelPrototype: WrappedParcelHumanoid
+      wrapDelay: 5
     - type: Fiber # DeltaV - IPCs leave fibers instead of prints
       fiberMaterial: fibers-steel
     - type: Anesthesia # DeltaV - IPCs can be operated on without anesthesia
@@ -333,3 +336,12 @@
     - type: CosmicCenserTarget # DeltaV - Cosmic Cult
     - type: GrappleTarget # DeltaV - Allow targets to be grappled
     - type: CanDoCPR # DeltaV - Addition of CPR
+    - type: LanguageKnowledge # Floofstation - languages
+      speaks:
+      - TauCetiBasic
+      - Binary
+      understands:
+      - TauCetiBasic
+      - Binary
+      naturalLanguage: Binary
+

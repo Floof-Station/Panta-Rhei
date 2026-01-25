@@ -128,6 +128,11 @@
     removable: false
   - type: NightVision #Delta-v - Added nightvision
     color: "#808080"
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
 
 - type: entity
   name: praetorian
@@ -422,7 +427,8 @@
       task: SimpleHostileCompound
   - type: NpcFactionMember
     factions:
-    - SimpleHostile # DeltaV - Was Xeno
+    - Xeno
+    - SimpleHostile
   - type: MeleeWeapon
     angle: 0
     animation: WeaponArcBite
@@ -455,6 +461,13 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Xeno
+    - Hissing
+    understands:
+    - Xeno
+    - Hissing
 
 - type: entity
   name: space adder

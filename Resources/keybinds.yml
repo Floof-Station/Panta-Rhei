@@ -135,6 +135,9 @@ binds:
   type: State
   key: Slash
 # Floofstation section
+- function: OpenLanguageMenu
+  type: State
+  key: L
 - function: FocusSubtle
   key: Minus
 - function: FocusSubtleOOC
@@ -291,6 +294,18 @@ binds:
 - function: SmartEquipBelt
   type: State
   key: E
+  mod1: Shift
+- function: SmartEquipPocket1
+  type: State
+  key: F
+  mod1: Shift
+- function: SmartEquipPocket2
+  type: State
+  key: G
+  mod1: Shift
+- function: SmartEquipSuitStorage
+  type: State
+  key: H
   mod1: Shift
 - function: OpenBackpack
   type: State

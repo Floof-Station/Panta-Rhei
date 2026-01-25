@@ -27,7 +27,8 @@
           - "reagent-effect-aphrodisiac-mild5"
         probability: 0.02
         conditions:
-          - !type:ReagentThreshold
+          - !type:ReagentCondition
+            reagent: NikkosNaughtyNectar
             max: 50
   footstepSound:
     collection: FootstepSticky
@@ -51,7 +52,7 @@
         factor: 2
     Narcotic:
       effects:
-      - !type:MovespeedModifier
+      - !type:MovementSpeedModifier
         walkSpeedModifier: 1.15
         sprintSpeedModifier: 1.15
       - !type:GenericStatusEffect
@@ -66,7 +67,8 @@
       effects:
       - !type:ResetNarcolepsy
         conditions:
-        - !type:ReagentThreshold
+        - !type:ReagentCondition
+          reagent: BoykissersEnergy
           min: 20
   footstepSound:
     collection: FootstepSticky

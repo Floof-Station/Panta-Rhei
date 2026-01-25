@@ -102,6 +102,7 @@
           - !type:PlaySoundBehavior
             sound:
               collection: GlassBreak
+  - type: UniversalLanguageSpeaker # Floofstation
 
 - type: entity
   id: MobLuminousPerson
@@ -175,7 +176,6 @@
     maxCharge: 1000
     startingCharge: 1000
   - type: BatterySelfRecharger
-    autoRecharge: true
     autoRechargeRate: 50
   - type: Gun
     fireRate: 0.3

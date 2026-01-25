@@ -815,6 +815,39 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("consent_toggle", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.DVModel+SeenTip", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("dv_seen_tips_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DismissedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("dismissed_at");
+
+                    b.Property<Guid>("PlayerUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("player_user_id");
+
+                    b.Property<string>("TipProtoId")
+                        .IsRequired()
+                        .HasMaxLength(64)
+                        .HasColumnType("character varying(64)")
+                        .HasColumnName("tip_proto_id");
+
+                    b.HasKey("Id")
+                        .HasName("PK_dv_seen_tips");
+
+                    b.HasIndex("PlayerUserId", "TipProtoId")
+                        .IsUnique()
+                        .HasDatabaseName("IX_dv_seen_tips_player_user_id_tip_proto_id");
+
+                    b.ToTable("dv_seen_tips", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
                 {
                     b.Property<int>("Id")
@@ -1942,6 +1975,17 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasConstraintName("FK_consent_toggle_consent_settings_consent_settings_id");
 
                     b.Navigation("ConsentSettings");
+                });
+
+            modelBuilder.Entity("Content.Server.Database.DVModel+SeenTip", b =>
+                {
+                    b.HasOne("Content.Server.Database.Player", null)
+                        .WithMany()
+                        .HasForeignKey("PlayerUserId")
+                        .HasPrincipalKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_dv_seen_tips_player_player_id");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Job", b =>

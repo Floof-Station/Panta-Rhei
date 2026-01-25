@@ -72,102 +72,18 @@
   - type: PointLight
     color: "#e3a136"
   - type: SpaceVillainArcade
-    rewardMinAmount: 0
+    rewardMinAmount: 0 # Note: this is the empty variant
     rewardMaxAmount: 0
-    possibleRewards:
-    - Basketball
-    - BalloonNT
-    - BalloonCorgi
-    - BoxDonkSoftBox
-    - BoxCartridgeCap
-    - BeachBall
-    - CandyBucket
-    - CrayonBox
-    - ClothingHeadHatCowboyRed
-    - FoamCrossbow
-    - FoamBlade
-    - FoamCutlass
-    - Football
-    - GlowstickBase #green
-    - GlowstickBlue
-    - GlowstickYellow
-    - GlowstickPurple
-    - GlowstickRed
-    - HarmonicaInstrument
-    - OcarinaInstrument
-    - RecorderInstrument
-    - GunpetInstrument
-    - BirdToyInstrument
-    - MysteryFigureBox
-    - PlushieHampter
-    - PlushieLizard
-    - PlushieRainbowLizard
-    - PlushieAtmosian
-    - PlushieSpaceLizard
-    - PlushieNuke
-    - PlushieCarp
-    - PlushieMagicarp
-    - PlushieHolocarp
-    - PlushieRainbowCarp
-    - PlushieRatvar
-    - PlushieNar
-    - PlushieSnake
-    - PlushieArachind
-    - PlushieMoth
-    - PlushieHampter
-    - PlushiePenguin
-    - PlushieHuman
-    - PlushieRouny
-    - PlushieBee
-    - PlushieSlime
-    - PlushieGhost
-    - PlushieDiona
-    - PlushieSharkBlue
-    - PlushieVox
-    - PlushieXeno
-    # Begin DeltaV - see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
-    - PlushieMort
-    - PlushieIPC
-    - PlushieFelinid
-    - PlushieOni
-    - PlushieHarpy
-    - PlushieRodentia
-    - PlushieFeroxi
-    - PlushieChitinid
-    - PlushieKitsune
-    # End DeltaV
-    - PlushieThaven # IMP Port
-    - PlasticBanana
-    - RevolverCapGun
-    - SnapPopBox
-    - ToyMouse
-    - ToyAi
-    - ToyNuke
-    - ToyGriffin
-    - ToyHonk
-    - ToyIan
-    - ToyMarauder
-    - ToyMauler
-    - ToyGygax
-    - ToyOdysseus
-    - ToyOwlman
-    - ToyDeathRipley
-    - ToyPhazon
-    - ToyFireRipley
-    - ToyReticence
-    - ToyRipley
-    - ToySeraph
-    - ToyDurand
-    - ToySkeleton
-    - ToySword
-    - ToyAmongPequeno
-    - ToyRubberDuck
-    - ToyHammer
-    - ToyRenault # DeltaV Toy, see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
-    - ToySiobhan # DeltaV Toy, see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
-    - WeaponWaterPistol
-    - WhoopieCushion
-    - Whistle
+    possibleRewards: # Floofstation - old rewards removed and replaced with this.
+    - PrizeBall
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket10
+    - PrizeTicket30
+    - PrizeTicket30
+    - PrizeTicket60
   - type: WiresPanel
   - type: Wires
     layoutId: Arcade
@@ -199,8 +115,8 @@
   suffix: Filled
   components:
   - type: SpaceVillainArcade
-    rewardMinAmount: 5
-    rewardMaxAmount: 8
+    rewardMinAmount: 3
+    rewardMaxAmount: 15
 
 - type: entity
   id: BlockGameArcade

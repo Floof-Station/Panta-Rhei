@@ -1,0 +1,28 @@
+- type: entity
+  parent: BaseItem
+  id: BoomCradle
+  name: Boom cradle
+  description: A horrible shadekin repellent that emits noise capable of rupturing eardrums and deafening everything around it. Truly horrid
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/newton_cradle.rsi
+    state: icon-off
+  - type: Item
+    sprite: Objects/Fun/newton_cradle.rsi
+    storedRotation: -90
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: { state: icon }
+          False: { state: icon-off }
+  - type: ItemToggle
+  - type: UseDelay
+    delay: 1
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/_Euphoria/Effects/explosionQuickEarrape.ogg
+      params:
+        volume: 0
+        maxDistance: 3

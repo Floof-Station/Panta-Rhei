@@ -1,0 +1,38 @@
+- type: entity
+  name: Shadekin Haze
+  id: ShadekinShadow
+  parent: BaseShadow
+  placement:
+    mode: SnapgridCenter
+    snap:
+      - Wall
+  components:
+    - type: Appearance
+    - type: Transform
+      anchored: true
+    - type: EmitSoundOnSpawn
+      sound:
+        path: /Audio/_Floof/Effects/Shadowkin/shadeskip.ogg
+    - type: TimedDespawn
+      lifetime: 30
+    - type: Physics
+      canCollide: false
+    - type: Occluder
+    - type: Sprite
+      drawdepth: Effects
+      sprite: _Floof/Effects/spookysmoke.rsi
+      layers:
+        - state: spookysmoke
+          color: "#793a80dd"
+          map: [base]
+    - type: Tag
+      tags:
+        - HideContextMenu
+        - SpookyFog
+    - type: OptionsVisualizer
+      visuals:
+        base:
+          - options: Default
+            data: { state: spookysmoke }
+          - options: ReducedMotion
+            data: { state: spookysmoke_static }

@@ -1,4 +1,22 @@
-﻿- type: entity
+﻿#TODO: Change this to not make a BAG for no reason
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerRaisin
+  name: raisin bag
+  description: A big bag of raisins. Good for baking!
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Consumable/Food/ingredients.rsi
+    state: raisin-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Raisins
+          Quantity: 50
+
+- type: entity
   name: raw coffee beans
   parent: FoodProduceBase
   id: FoodCoffeeBeansRaw
@@ -7,7 +25,7 @@
   - type: FlavorProfile
     flavors:
     - bitter
-  - type: Food
+  - type: Edible
   - type: SolutionContainerManager
     solutions:
       food:
@@ -43,7 +61,7 @@
   - type: FlavorProfile
     flavors:
     - bitter
-  - type: Food
+  - type: Edible
   - type: SolutionContainerManager
     solutions:
       food:

@@ -51,6 +51,13 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Dog
+    - TauCetiBasic
+    understands:
+    - Dog
+    - TauCetiBasic
 
 
 - type: entity

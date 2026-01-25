@@ -26,6 +26,8 @@
     - Thaven
     # Den addition
     - Ovinia
+    # Euphoria addition
+    - Tajaran
 
 - type: guideEntry
   id: Arachnid
@@ -71,3 +73,8 @@
   id: IPC
   name: species-name-ipc
   text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+
+- type: guideEntry # Floof - Tajaran Update b7660b9
+  id: Tajaran
+  name: species-name-tajaran
+  text: "/ServerInfo/_Floof/Guidebook/Mobs/Tajaran.xml"

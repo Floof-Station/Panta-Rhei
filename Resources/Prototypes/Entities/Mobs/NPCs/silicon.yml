@@ -51,6 +51,13 @@
   - type: ProtectedFromStepTriggers
   - type: NoSlip
   - type: Insulated
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - TauCetiBasic # Tau-ceti comes first so it's spoken by default
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
 
 # Used for bots
 - type: entity
@@ -485,3 +492,40 @@
     - Supply
   - type: Puller
     needsHands: false
+
+- type: entity
+  parent: [ MobSiliconBase, MobCombat ]
+  id: MobHugBot
+  name: hugbot
+  description: Awww, who needs a hug?
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Bots/hugbot.rsi
+    state: hugbot
+  - type: Construction
+    graph: HugBot
+    node: bot
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 3
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/boxingpunch1.ogg
+    angle: 30
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Blunt: 2
+  - type: Anchorable
+  - type: Hands # This probably REALLY needs hand whitelisting, but we NEED hands for hugs, so...
+  - type: ComplexInteraction # Hugging is a complex interaction, apparently.
+  - type: HugBot
+  - type: Body
+    prototype: HugBot
+  - type: HTN
+    rootTask:
+      task: HugBotCompound
+  - type: InteractionPopup
+    interactSuccessString: hugging-success-generic
+    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+    messagePerceivedByOthers: hugging-success-generic-others

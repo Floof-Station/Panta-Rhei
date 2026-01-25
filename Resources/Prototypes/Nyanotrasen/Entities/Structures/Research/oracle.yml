@@ -21,8 +21,12 @@
     solutions:
       fountain:
         maxVol: 200
-  - type: Drink
+  - type: Edible
+    edible: Drink
     solution: fountain
+    destroyOnEmpty: false
+    utensil: None
+  - type: DnaSubstanceTrace
   - type: DrawableSolution
     solution: fountain
   - type: DrainableSolution
@@ -41,3 +45,4 @@
   - type: SpriteFade
   - type: Tag
     tags: []
+  - type: UniversalLanguageSpeaker # Floofstation

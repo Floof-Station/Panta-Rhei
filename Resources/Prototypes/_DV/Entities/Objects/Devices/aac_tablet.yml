@@ -42,3 +42,9 @@
     speechSounds: Alto
   - type: AACTablet
   - type: VoiceMask
+  - type: LanguageSpeaker # Floofstation - AAC tablet is a speaker
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic

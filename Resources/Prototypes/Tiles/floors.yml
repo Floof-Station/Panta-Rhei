@@ -774,7 +774,7 @@
   itemDrop: FloorTileItemMiningLight
   heatCapacity: 10000
 
-# Departamental
+# Departmental
 - type: tile
   id: FloorFreezer
   name: tiles-freezer
@@ -914,6 +914,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemConcrete
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorConcreteMono
@@ -932,6 +933,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemConcreteMono
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorConcreteSmooth
@@ -950,6 +952,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemConcreteSmooth
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorGrayConcrete
@@ -968,6 +971,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemGrayConcrete
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorGrayConcreteMono
@@ -986,6 +990,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemGrayConcreteMono
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorGrayConcreteSmooth
@@ -1004,6 +1009,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemGrayConcreteSmooth
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorOldConcrete
@@ -1022,6 +1028,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemOldConcrete
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorOldConcreteMono
@@ -1040,6 +1047,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemOldConcreteMono
   heatCapacity: 10000
+  weather: false # Vulp
 
 - type: tile
   id: FloorOldConcreteSmooth
@@ -1058,6 +1066,7 @@
     collection: FootstepTile
   itemDrop: FloorTileItemOldConcreteSmooth
   heatCapacity: 10000
+  weather: false # Vulp
 
 # Carpets (non smoothing)
 - type: tile
@@ -1993,6 +2002,24 @@
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemJungleAstroGrass
 
+- type: tile
+  parent: FloorGrassDark
+  id: FloorDarkAstroGrass
+  name: tiles-dark-astro-grass
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Cutting ]
+  itemDrop: FloorTileItemDarkAstroGrass
+
+- type: tile
+  parent: FloorGrassLight
+  id: FloorLightAstroGrass
+  name: tiles-light-astro-grass
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Cutting ]
+  itemDrop: FloorTileItemLightAstroGrass
+
 # Ice
 - type: tile
   id: FloorAstroIce
@@ -2035,6 +2062,16 @@
   isSubfloor: false
   deconstructTools: [ Prying ]
   itemDrop: FloorTileItemAstroAsteroidSand
+  weather: false
+
+- type: tile
+  parent: FloorDesert
+  id: FloorDesertAstroSand
+  name: tiles-desert-astro-sand
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  itemDrop: FloorTileItemDesertAstroSand
   weather: false
 
 - type: tile

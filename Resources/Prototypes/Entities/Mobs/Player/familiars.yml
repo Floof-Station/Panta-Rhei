@@ -38,6 +38,12 @@
   - type: Familiar
   - type: Psionic #Nyano - Summary: Makes psionic on creation.
     removable: false
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+    - TauCetiBasic
 
 - type: entity
   name: Cerberus
@@ -104,3 +110,10 @@
       Male: Cerberus
       Female: Cerberus
       Unsexed: Cerberus
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - Dog
+    - TauCetiBasic

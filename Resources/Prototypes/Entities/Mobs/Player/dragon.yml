@@ -108,7 +108,7 @@
     - RadiationProtection
     - Adrenaline
   - type: Temperature
-    heatDamageThreshold: 800
+    heatDamageThreshold: 2400
   - type: Metabolizer
     solutionOnBody: false
     updateInterval: 0.25
@@ -169,6 +169,14 @@
     speedModifier: 2.5 # fast because dragon strong
     useSound:
       path: /Audio/Items/crowbar.ogg
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Xeno
+    - TauCetiBasic
+    understands:
+    - Xeno
+    - TauCetiBasic
+    naturalLanguage: Xeno
 
 - type: entity
   parent: BaseMobDragon

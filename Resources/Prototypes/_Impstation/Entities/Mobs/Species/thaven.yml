@@ -66,6 +66,14 @@
       Unsexed: UnisexThaven
   - type: Speech
     speechSounds: Alto
+  - type: LanguageKnowledge # Floofstation. Idfk what a thaven is. Replace this with something if you care.
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    naturalLanguage: SolCommon
   - type: HumanoidAppearance
     species: Thaven
     hideLayersOnEquip:

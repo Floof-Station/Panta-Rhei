@@ -3,19 +3,12 @@
 - type: latheRecipePack
   id: ScienceBoardsStatic
   recipes:
-  #- ProtolatheMachineCircuitboard # DeltaV - departmental lathes
-  #- AutolatheMachineCircuitboard # DeltaV - departmental lathes
+  - ProtolatheMachineCircuitboard # DeltaV - departmental lathes # Floof - undone
+  - AutolatheMachineCircuitboard # DeltaV - departmental lathes # Floof - undone
   - CircuitImprinterMachineCircuitboard
   - ExosuitFabricatorMachineCircuitboard
   - CutterMachineCircuitboard
   - BorgChargerCircuitboard
-
-- type: latheRecipePack
-  id: CircuitFloorsStatic
-  recipes:
-  - FloorGreenCircuit
-  - FloorBlueCircuit
-  - FloorRedCircuit
 
 ## Dynamic
 
@@ -67,17 +60,7 @@
   #- WeaponTetherGun
   # End DeltaV Removals
   - WeaponGauntletGorilla
-
-- type: latheRecipePack
-  id: FauxTiles
-  recipes:
-  - FauxTileAstroGrass
-  - FauxTileMowedAstroGrass
-  - FauxTileJungleAstroGrass
-  - FauxTileAstroIce
-  - FauxTileAstroSnow
-  - FauxTileMowedAstroSnow # DeltaV
-  - FauxTileAstroAsteroidSand
+  - WeaponMicrowaveEmitter # DeltaV - Microwave emitter
 
 # Only contains parts for making basic modular grenades, no actual explosives
 - type: latheRecipePack
@@ -95,11 +78,11 @@
   id: ScienceBoards
   recipes:
   - TurboItemRechargerCircuitboard
-  # Begin DeltaV Removals - replaced by techfabs/upgrade kits
-  #- AutolatheHyperConvectionMachineCircuitboard
-  #- ProtolatheHyperConvectionMachineCircuitboard
-  #- CircuitImprinterHyperConvectionMachineCircuitboard
-  # End DeltaV Removals
+  # Begin DeltaV Removals - replaced by techfabs/upgrade kits # Floofstation section - undone
+  - AutolatheHyperConvectionMachineCircuitboard
+  - ProtolatheHyperConvectionMachineCircuitboard
+  - CircuitImprinterHyperConvectionMachineCircuitboard
+  # End DeltaV Removals # Floofstation section end
   - TechDiskComputerCircuitboard
   - FlatpackerMachineCircuitboard
   - SheetifierMachineCircuitboard

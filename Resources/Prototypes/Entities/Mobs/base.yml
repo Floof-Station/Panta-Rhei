@@ -40,6 +40,12 @@
     active: False
   - type: AnimatedEmotes # goob edit - animated emotes
   #- type: StunVisuals # DeltaV - No stars
+  - type: LanguageSpeaker # Floofstation - all mobs are language speakers
+  - type: LanguageKnowledge # Floofstation. Mobs by default understand tau-ceti. This should ideally be overridden for each kind of mob.
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
 
 # The progenitor. This should only container the most basic components possible.
 # Only put things on here if every mob *must* have it. This includes ghosts.

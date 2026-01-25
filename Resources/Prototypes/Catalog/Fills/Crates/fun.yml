@@ -2,6 +2,15 @@
   id: AllPlushiesTable
   table: !type:GroupSelector
     children:
+    # ================================================================
+    # Floofstation: this has been replaced with our own table        #
+    # See RandomPlushieTable in the _Floof namespace                 #
+    # In this table there's a 99% to spawn a plushie from that table #
+    # ================================================================
+    - !type:NestedSelector
+      tableId: RandomPlushieTable
+      weight: 400
+    # ============================================================== #
     - id: PlushieBee
     - id: PlushieNar
       weight: 0.5
@@ -40,11 +49,12 @@
     - id: PlushieXeno
     - id: PlushieHampter
     - id: PlushieMoth
-    - id: PlushieMothRandom # Nyano - random moth plushies
-    - id: PlushieMothRandom # Nyano - random moth plushies
     - id: PlushieArachind
     - id: PlushiePenguin
-    # Begin DeltaV,- see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
+    - id: PlushieVulp
+    # Begin DeltaV - see Resources/Prototypes/_DV/Entities/Objects/Fun/toys.yml
+    - id: PlushieMothRandom # Nyano - random moth plushies
+    - id: PlushieMothRandom # Nyano - random moth plushies
     - id: PlushieMort
     - id: PlushieIPC
     - id: PlushieFelinid
@@ -54,8 +64,8 @@
     - id: PlushieFeroxi
     - id: PlushieChitinid
     - id: PlushieKitsune
-    # End DeltaV
     - id: PlushieThaven # IMP port
+    # End DeltaV
 
 - type: entity
   id: CrateFunPlushie
@@ -86,6 +96,8 @@
         - id: PlushieSpaceLizard
           amount: !type:ConstantNumberSelector
             value: 3
+        - id: PlushieLizardJobMultiweh # the exceedingly rare multiweh!
+          prob: 0.01
 
 - type: entity
   id: CrateFunSharkPlushieBulk
@@ -215,6 +227,30 @@
       - id: BirdToyInstrument
       - id: MusicalLungInstrument
       - id: ReverseCymbalsInstrument
+
+- type: entity
+  id: CrateFunInstrumentsRandom
+  parent: CrateGenericSteel
+  name: random instrument collection
+  description: A box containing several randomly curated instruments, hand picked by Centcomm's top musicians!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: VarietyInstrumentTable # 200 speso max
+        - !type:NestedSelector
+          tableId: BrassInstrumentTable # 300 speso max
+        - !type:NestedSelector
+          tableId: StringInstrumentTable # 300 speso max
+        - !type:NestedSelector
+          tableId: WoodwindInstrumentTable # 200 speso max
+        - !type:NestedSelector
+          tableId: KeyedPercussionInstrumentTable # 300 speso max
+        - !type:NestedSelector
+          tableId: SpecialInstrumentTable # x2 200 speso max
+          rolls: 2
 
 - type: entity
   id: CrateFunArtSupplies
@@ -372,7 +408,7 @@
     contents:
       - id: SnapPopBox
       - id: CrazyGlue
-        amount: 2
+      - id: CrazyLube
       - id: PlasticBanana
       # Floofstation section - spray paint
       - id: FunnyPaint
@@ -393,6 +429,8 @@
       - id: ClothingShoesClownLarge
       - id: ClothingHeadHatMagician
       - id: BeachBall
+      - id: TennisBall
+        amount: 2
       - id: ClothingShoesSkates
       - id: RubberChicken
 

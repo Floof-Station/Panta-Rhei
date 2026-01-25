@@ -96,6 +96,14 @@
       Male: MaleVulpkanin
       Female: FemaleVulpkanin
       Unsexed: MaleVulpkanin
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Canilunzt
+    understands:
+    - TauCetiBasic
+    - Canilunzt
+    naturalLanguage: Canilunzt
   - type: DogVision
   - type: Temperature
     heatDamageThreshold: 315 # 10 lower than base

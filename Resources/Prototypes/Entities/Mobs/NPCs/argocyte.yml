@@ -50,6 +50,11 @@
   - type: Climbing
   - type: NameIdentifier
     group: GenericNumber
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
 
 - type: entity
   parent: BaseMobArgocyte

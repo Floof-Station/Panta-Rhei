@@ -49,6 +49,12 @@ public sealed class MappingCategoriesSystem : EntitySystem
         var insideContainer = _container.IsEntityInContainer(ent);
         foreach (var id in ent.Comp.Categories)
         {
+            // Floofstation section - I can't be fucked to fix delta-v mistakes, so I'm just going to disable it until they fix it
+            static bool IsIgnored(ProtoId<MappingCategoryPrototype> category) => category.Id is "Stamps";
+            if (IsIgnored(id))
+                continue;
+            // Floofstation section end
+
             if (insideContainer && IsIgnoredInsideContainer(id))
                 continue;
 

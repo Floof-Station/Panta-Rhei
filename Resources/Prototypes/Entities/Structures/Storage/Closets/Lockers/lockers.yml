@@ -48,7 +48,7 @@
 
 - type: entity
   id: LockerSalvageSpecialist
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: salvage specialist's equipment
   description: Nevermind the pickaxe.
   components:
@@ -104,7 +104,7 @@
 # Electrical supplies
 - type: entity
   id: LockerElectricalSupplies
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: electrical supplies locker
   components:
   - type: Appearance
@@ -118,7 +118,7 @@
 # Welding supplies
 - type: entity
   id: LockerWeldingSupplies
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: welding supplies locker
   components:
   - type: Appearance
@@ -132,7 +132,7 @@
 # Atmos tech
 - type: entity
   id: LockerAtmospherics
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: atmospheric technician's locker
   components:
   - type: Appearance
@@ -146,7 +146,7 @@
 # Engineer
 - type: entity
   id: LockerEngineer
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: engineer's locker
   components:
   - type: Appearance
@@ -236,7 +236,7 @@
 # Medical doctor
 - type: entity
   id: LockerMedical
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: medical doctor's locker
   components:
   - type: Appearance
@@ -250,7 +250,7 @@
 # Paramedic
 - type: entity
   id: LockerParamedic
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: paramedic's locker
   components:
   - type: Appearance
@@ -265,7 +265,7 @@
 # Chemical
 - type: entity
   id: LockerChemistry
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseLogistics] # Floof - added id lock parent
   name: chemical locker
   components:
   - type: Appearance
@@ -307,7 +307,7 @@
 
 - type: entity
   id: LockerScientist
-  parent: LockerBase
+  parent: [LockerBase, IdLockableBaseResearch] # Floof - added id lock parent
   name: scientist's locker
   components:
   - type: Appearance
@@ -429,6 +429,7 @@
         type: GenpopLockerBoundUserInterface
   - type: AccessReader # note! this access is for the UI, not the door. door access is handled on GenpopLocker
     access: [["Security"]]
+    examinationText: access-reader-examination-functionality-restricted
   - type: Lock
     locked: false
     useAccess: false
@@ -553,7 +554,7 @@
 - type: entity
   id: LockerSyndicatePersonal
   name: armory closet
-  parent: LockerBaseSecure
+  parent: [IdLockableBaseNoAccess, LockerBaseSecure] # Floof - added id lock parent
   description: It's a personal storage unit for operative gear.
   components:
   - type: Appearance
@@ -567,7 +568,7 @@
   id: LockerBluespaceStation
   name: bluespace locker
   suffix: once to station
-  parent: LockerSyndicatePersonal
+  parent: [IdLockableBaseNoAccess, LockerBaseSecure] # Floof - added id lock parent
   description: Advanced locker technology.
   components:
     - type: ArrivalsBlacklist

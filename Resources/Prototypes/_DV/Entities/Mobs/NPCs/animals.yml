@@ -1,5 +1,5 @@
 - type: entity
-  parent: SimpleMobBase
+  parent: MobFox # Floofstation - changed to be parented from MobFox
   id: MobArcticFox
   name: arctic fox
   description: Wears a regal coat of snowy elegance, belying its cold and resourceful nature.
@@ -10,6 +10,9 @@
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: arcticfox
+  - type: SpriteMovement # Floofstation - added here to remove movement sprites because delta-v foxes dont have those.
+    movementLayers: {}
+    noMovementLayers: {}
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -67,7 +70,7 @@
     - VimPilot
 
 - type: entity
-  parent: SimpleMobBase
+  parent: MobCorgiBase # Floofstation - changed to be parented from MobCorgiBase (MobDog when)
   id: MobSecDog
   name: security dog
   description: Funnily enough, this pig is actually a dog.

@@ -59,6 +59,16 @@
   group: market
 
 - type: cargoProduct
+  id: FunInstrumentsRandom
+  icon:
+    sprite: Objects/Fun/Instruments/h_synthesizer.rsi
+    state: supersynth
+  product: CrateFunInstrumentsRandom
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
   id: FunArtSupplies
   icon:
     sprite: Objects/Fun/crayons.rsi
@@ -104,7 +114,7 @@
     sprite: Objects/Fun/Plushies/human.rsi
     state: icon
   product: CrateFunPlushie
-  cost: 1000
+  cost: 1500 # Floofstation - slightly increased to accomodate for some plushies potentially containing chemicals
   category: cargoproduct-category-name-fun
   group: market
 

@@ -1,0 +1,19 @@
+- type: damageModifierSet
+  id: Resomi
+  coefficients: # Goobstation - natural cold resistance should reduce damage, but higher intolerance to heat should take more damage.
+    Heat: 1.1
+    Cold: 0.7
+  
+- type: damageModifierSet
+  id: Shadowkin
+  coefficients:
+    Blunt: 0.95
+    Slash: 1.2
+    Piercing: 1.1
+    Asphyxiation: 0
+    Cold: 0.75
+    Heat: 1.2
+    Cellular: 0.25
+    Bloodloss: 1.35
+    Shock: 1.25
+    Radiation: 1.3

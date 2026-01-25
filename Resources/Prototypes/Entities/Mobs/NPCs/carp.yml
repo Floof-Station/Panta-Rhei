@@ -95,6 +95,11 @@
       interfaces:
         enum.SurgeryUIKey.Key:
           type: SurgeryBui
+    - type: LanguageKnowledge # Floofstation. Fish don't speak tau ceti, but the dragon does.
+      speaks:
+      - Xeno
+      understands:
+      - Xeno
 
 - type: entity
   parent: BaseMobCarp
@@ -200,7 +205,11 @@
     - type: HTN
       rootTask:
         task: DragonCarpCompound
-
+    - type: Flammable
+      damage:
+       types: {}
+    - type: Temperature
+      heatDamageThreshold: 1200
 - type: entity
   id: MobCarpDungeon
   parent: MobCarp
