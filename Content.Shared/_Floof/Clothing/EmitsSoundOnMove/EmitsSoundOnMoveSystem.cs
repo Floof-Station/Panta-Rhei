@@ -73,7 +73,7 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
             ? 1.5f // The parent is a mob that is currently sprinting
             : 2f; // The parent is not a mob or is not sprinting
 
-        if (!coordinates.TryDistance(EntityManager, component.LastPosition, out var distance) || distance > distanceNeeded)
+        if (!coordinates.TryDistance(EntityManager, component.LastPosition, out var distance))
             component.SoundDistance = 0;
         else
             component.SoundDistance += distance;
@@ -81,7 +81,8 @@ public sealed class EmitsSoundOnMoveSystem : EntitySystem
         component.LastPosition = coordinates;
         if (component.SoundDistance < distanceNeeded)
             return;
-        component.SoundDistance -= distanceNeeded;
+        // Don't accumulate more than 2 sounds in a row
+        component.SoundDistance = Math.Min(component.SoundDistance - distanceNeeded, distanceNeeded * 0.9f);
 
         var sound = component.SoundCollection;
         var audioParams = sound.Params
