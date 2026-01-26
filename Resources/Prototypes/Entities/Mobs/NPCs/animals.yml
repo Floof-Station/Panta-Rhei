@@ -286,6 +286,8 @@
     - Chicken
     understands:
     - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -753,6 +755,8 @@
     - Duck
     understands:
     - Duck
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -988,6 +992,8 @@
     - Cow
     understands:
     - Cow
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: crab
@@ -1052,6 +1058,8 @@
     - Crab
     understands:
     - Crab
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Bloodstream
     bloodMaxVolume: 50
     bloodReagent: CopperBlood
@@ -1182,6 +1190,8 @@
     - Sheep
     understands:
     - Sheep
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1237,6 +1247,8 @@
     - Duck
     understands:
     - Duck
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: gorilla
@@ -1319,6 +1331,8 @@
     - Monkey
     understands:
     - Monkey
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: kangaroo
@@ -1360,6 +1374,8 @@
     - Kangaroo
     understands:
     - Kangaroo
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1580,6 +1596,8 @@
     understands:
     - Monkey
     - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 
 # DV - For ancestors without shitmed components (scurrets)
@@ -1707,6 +1725,8 @@
     understands:
     - Monkey
     - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: monkey
@@ -2070,6 +2090,8 @@
     - Mouse
     understands:
     - Mouse
+  - type: LeashAnchor # Floofstation - leash your mouse!
+    kind: Intrinsic
   - type: Tag
     tags:
     - Trash
@@ -2274,6 +2296,8 @@
     - Draconic
     understands:
     - Draconic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Speech # Impstation starts here
     speechSounds: Lizard
     speechVerb: Reptilian
@@ -2547,6 +2571,8 @@
     - TauCetiBasic # Sike, the parrot can speak tau-ceti but not understand it.
     understands:
     - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: parrot
@@ -2621,6 +2647,8 @@
     - Chicken
     understands:
     - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 # TODO: Make grenade penguin voice activated like the rest of the stealth items.
 - type: entity
@@ -2809,6 +2837,8 @@
     understands:
     - Arachnic
     - Xeno
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -3048,6 +3078,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: possum
@@ -3213,6 +3245,8 @@
     - Fox
     understands:
     - Fox
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   abstract: true
@@ -3263,6 +3297,8 @@
     - Dog
     understands:
     - Dog
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   parent: MobCorgiBase
@@ -3432,6 +3468,8 @@
     understands:
     - TauCetiBasic
     - Cat
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -3701,6 +3739,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: ferret
@@ -3761,6 +3801,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: hamster
@@ -3860,6 +3902,13 @@
       amount: 1
 #  - type: ReplacementAccent # Floofstation
 #    accent: mouse
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Tag
     tags:
     - VimPilot
@@ -3913,11 +3962,6 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
-  - type: LanguageKnowledge # Floofstation
-    speaks:
-    - Mouse
-    understands:
-    - Mouse
 
 - type: entity
   name: pig
@@ -3987,6 +4031,8 @@
     - Pig
     understands:
     - Pig
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
