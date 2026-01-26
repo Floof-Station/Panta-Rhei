@@ -336,3 +336,12 @@
     - type: CosmicCenserTarget # DeltaV - Cosmic Cult
     - type: GrappleTarget # DeltaV - Allow targets to be grappled
     - type: CanDoCPR # DeltaV - Addition of CPR
+    - type: LanguageKnowledge # Floofstation - languages
+      speaks:
+      - TauCetiBasic
+      - Binary
+      understands:
+      - TauCetiBasic
+      - Binary
+      naturalLanguage: Binary
+

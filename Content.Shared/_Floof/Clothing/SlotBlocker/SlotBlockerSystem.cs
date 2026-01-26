@@ -85,7 +85,7 @@ public sealed class SlotBlockerSystem : EntitySystem
     {
         if (args.Cancelled
             || !TryComp<InventoryComponent>(args.EquipTarget, out var inventory)
-            || !IsSlotObstructed((ent, inventory), ent!, CheckType.Equip, args.SlotFlags, out var reason))
+            || !IsSlotObstructed((args.EquipTarget, inventory), ent!, CheckType.Equip, args.SlotFlags, out var reason))
             return;
 
         args.Cancel();
@@ -96,7 +96,7 @@ public sealed class SlotBlockerSystem : EntitySystem
     {
         if (args.Cancelled
             || !TryComp<InventoryComponent>(args.UnEquipTarget, out var inventory)
-            || !IsSlotObstructed((ent, inventory), ent!, CheckType.Unequip, args.SlotFlags, out var reason))
+            || !IsSlotObstructed((args.UnEquipTarget, inventory), ent!, CheckType.Unequip, args.SlotFlags, out var reason))
             return;
 
         args.Cancel();

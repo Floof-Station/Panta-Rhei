@@ -18,6 +18,14 @@
       Male: RMCMaleAvali
       Unsexed: RMCMaleAvali
       Female: RMCFemaleAvali
+  - type: LanguageKnowledge # Floofstation - i don't care, this is a placeholder.
+    speaks:
+    - TauCetiBasic
+    - Schechi
+    understands:
+    - TauCetiBasic
+    - Schechi
+    naturalLanguage: Schechi
   - type: Speech
     speechVerb: Parrot # Didn't come with one
     speechSounds: MaleAvali

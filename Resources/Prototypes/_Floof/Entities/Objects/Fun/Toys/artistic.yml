@@ -1,0 +1,36 @@
+- type: entity
+  parent: Crayon
+  id: CrayonBrush
+  name: paintbrush
+  description: A paintbrush filled with paint, ready to cover a canvas!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/paintbrush.rsi
+    state: paintbrush
+  - type: Item
+    sprite: _Floof/Objects/Fun/paintbrush.rsi
+    heldPrefix: brush
+    size: Normal
+  - type: Crayon
+    color: white
+    selectableColor: true
+  - type: LimitedCharges
+    maxCharges: 500
+  - type: Edible
+    utensilRequired: true # I ate my fucking paintbrush
+    utensil: Fork
+    requiresSpecialDigestion: true # Stop eating my paintbrushes you evil mothroaches
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: MindbreakerToxin
+          Quantity: 10
+  - type: Tag
+    tags:
+    - Write
+    - Crayon
+    - Recyclable
+    - Trash

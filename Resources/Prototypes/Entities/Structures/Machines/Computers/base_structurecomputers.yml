@@ -81,6 +81,15 @@
   - type: Wires
     boardName: wires-board-name-computer
     layoutId: Computer
+  - type: LanguageSpeaker # Floofstation - machines need to be able to speak
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
 #
 #     This is overwritten by children, so needs to be defined there
 #  - type: UserInterface

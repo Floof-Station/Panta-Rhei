@@ -125,6 +125,12 @@
     proto: robot
   - type: Speech
     speechVerb: Robotic
+  - type: LanguageSpeaker # Floofstation - PDA is a speaker
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
 
 - type: entity
   parent: BasePDA

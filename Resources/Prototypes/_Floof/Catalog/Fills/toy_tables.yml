@@ -1,0 +1,288 @@
+- type: entityTable
+  id: MaintenanceToysTable
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomGenericPlushieTable
+      weight: 2
+    - !type:NestedSelector
+      tableId: RandomPersonalPlushieTable
+      weight: 0.3 # Personal plushies are rare to get from maints
+    - !type:NestedSelector
+      tableId: RandomToyTable
+      weight: 1
+
+- type: entityTable
+  id: RandomPlushieTable
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: RandomGenericPlushieTable
+    - !type:NestedSelector
+      tableId: RandomPersonalPlushieTable
+
+- type: entityTable
+  id: RandomGenericPlushieTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector # Critters
+      weight: 3
+      children:
+      - id: PlushieMothRandom
+      - id: PlushieBee
+      - id: PlushieHampter
+      - id: PlushieRouny
+      - id: PlushieSlime
+      - id: PlushieSnake
+      - id: ToyMouse
+      - id: ToyRubberDuck
+      - id: PlushiePenguin
+      - id: PlushieGnome
+      - id: PlushieLoveable
+      - id: PlushieDeer
+      - id: PlushieXeno
+    - !type:GroupSelector # Species
+      weight: 1
+      children:
+      - id: PlushieArachind
+      - id: PlushieArachne
+      - id: PlushieDiona
+      - id: PlushieHuman
+      - id: PlushieIpc
+      - id: PlushieKitsune
+      - id: PlushieShadowkin
+      - id: PlushieVox
+      - id: PlushieVulp
+    - !type:GroupSelector # Lizards
+      weight: 0.8
+      children:
+      - id: PlushieLizard
+      - id: PlushieLizardMirrored
+      - id: PlushieSpaceLizard
+        weight: 0.50
+    - !type:GroupSelector # Sharks
+      weight: 0.8
+      children:
+      - id: PlushieSharkBlue
+      - id: PlushieSharkPink
+      - id: PlushieSharkGrey
+    - !type:GroupSelector # Carps
+      weight: 0.8
+      children:
+      - id: PlushieCarp
+      - id: PlushieMagicarp
+      - id: PlushieHolocarp
+      - id: PlushieRainbowCarp
+        weight: 0.6
+    - !type:GroupSelector # Foxes..!
+      weight: 1
+      children:
+      - id: PlushieRedFox
+      - id: PlushiePurpleFox
+      - id: PlushiePinkFox
+      - id: PlushieOrangeFox
+      - id: PlushieMarbleFox
+      - id: PlushieCrimsonFox
+      - id: PlushieCoffeeFox
+      - id: PlushieBlueFox
+      - id: PlushieBlackFox
+    - !type:GroupSelector # Cats
+      weight: 1
+      children:
+      - id: PlushieCatBlack
+      - id: PlushieCatGrey
+      - id: PlushieCatOrange
+      - id: PlushieCatSiames
+      - id: PlushieCatTabby
+      - id: PlushieCatTuxedo
+      - id: PlushieCatWhite
+    - !type:GroupSelector # Corgis
+      weight: 0.8
+      children:
+      - id: PlushieCorgi
+      - id: PlushieGirlyCorgi
+      - id: PlushieRobotCorgi
+      - id: ToyIan
+    - !type:GroupSelector # Misc
+      weight: 0.5
+      children:
+      - id: PlushieAtmosian
+      - id: PlushieGrey
+      - id: PlushieLamp
+      - id: PlushieAbductor
+      - id: PlushieGhost
+      - id: PlushieRGBee
+      - id: PlushieRatvar
+      - id: PlushieNar
+      - id: ToyAmongPequeno
+      - id: PlushieAbductorAgent
+      - id: PlushieNuke
+
+- type: entityTable
+  id: RandomPersonalPlushieTable
+  table: !type:GroupSelector
+    children:
+    - id: PlushieSlimeTider
+    - id: PlushieKitsuneCaptain
+    - id: PlushieSapphicHarpyPlushie
+    - id: PlushieRatLogisticsOfficer
+    - id: PlushieBunnyChiefMedicalOfficer
+    - id: PlushieKoboldCefJustice
+    - id: PlushieAvaliHOP
+    - id: PlushieSlimeBartender
+    - id: PlushieGrumpyQuartermaster
+    - id: PlushieHardcoreDj
+    - id: PlushieHos
+    - id: PlushieSillyResomi
+    - id: PlushieAvianMysta
+    - id: PlushieBunnyStressRelief
+    - id: PlushieERTFox
+    - id: PlushieRescueFox
+    - id: PlushieArachneNobility
+    - id: PlushieEldritchCaptain
+    - id: PlushieLargeTailedFox
+    - id: PlushieTruePirateCaptain
+    - id: PlushieHawaiianShirtDoggo
+    - id: PlushieTiredCargoTechPlushie
+    - id: PlushieUnholyRed
+    - id: PlushieDetectiveKitty
+    - id: PlushieUrsineGal
+    - id: PlushieStealthyBird
+    - id: PlushieMedicalHarpy
+    - id: PlushieElectricIPC
+    - id: PlushieCuddlyIPC
+    - id: PlushieFluffyVulpkanin
+    - id: PlushieSecurityTank
+    - id: PlushieBrashKitsune
+    - id: PlushieHarmlessCaptain
+    - id: MadScientistPlushie
+    - id: NotASpiderPlushie
+    - id: NTUnathiPlushie
+    - id: HappyParamedicPlushie
+    - id: BraveCaptainPlushie
+    - id: BlueCorpsmanShadekinPlushie
+    - id: MedicalMothPlushie
+    - id: CheerfulQuadborgPlushie
+    - id: VampiricVulpkaninPlushie
+    - id: KindDetectivePlushie
+    - id: MusicianRaccoonPlushie
+    - id: SleepyHarpyPlushie
+    - id: GoblinPlushie
+    - id: MutantPlushie
+    - id: TwoTailedCommandPlushie
+    - id: PlushieDetectiveVulps
+    - id: PlushieJester
+    - id: PlushieSlips
+    - !type:GroupSelector # Hypnotemp
+      children:
+      - id: PlushieHypnoTempLO
+      - id: PlushieHypnoTempHoP
+      - id: PlushieHypnoTempCMO
+      - id: PlushieHypnoTempMysta
+        weight: 0.5
+      - id: PlushieHypnoTempHoS
+        weight: 0.5
+      - id: PlushieHypnoTempCap
+        weight: 0.30
+
+- type: entityTable
+  id: RandomToyTable
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector # Useless toys
+      weight: 0.25
+      children:
+      - id: ToyAi
+    - !type:GroupSelector # Baloons
+      weight: 0.6
+      children:
+      - id: BalloonNT
+      - id: BalloonCorgi
+      - id: BalloonSyn
+        weight: 0.5
+    - !type:GroupSelector # Crayons
+      children:
+      - id: CrayonBox
+      - id: CrayonBrush
+      - id: CrayonMagic
+        weight: 0.5
+    - !type:GroupSelector # Bwoink stuff
+      weight: 0.15
+      children:
+      - id: ToyHammer
+      - id: BwoinkHammer
+        weight: 0.3
+      - id: PlushieThrongler
+        weight: 0.03
+    - !type:GroupSelector # Clown
+      weight: 0.3
+      children:
+      - id: WhoopieCushion
+      - id: PlasticBanana
+      - id: CrazyGlue
+    - !type:GroupSelector # Toy weapons
+      weight: 0.6
+      children:
+      - id: FoamCrossbow
+      - id: RevolverCapGun
+      - id: WeaponWaterPistol
+        weight: 0.5
+      - id: WeaponWaterBlaster
+        weight: 0.5
+      - id: ToySword
+      - id: FoamBlade
+      - id: FoamCutlass
+      - id: SnapPopBox
+        weight: 2
+    - !type:GroupSelector # Toys with unique properties
+      weight: 0.4
+      children:
+      - id: PonderingOrb
+        weight: 3
+      - id: ToyNuke
+      - id: SingularityToy
+        weight: 0.03 # Annoying af
+      - id: TeslaToy
+        weight: 0.02 # Also annoying and potentially useful for momentary stuns
+    - !type:GroupSelector # Whatever else
+      weight: 0.3
+      children:
+      - id: MrChips
+      - id: MrDips
+      - id: PetRock
+      - id: NewtonCradle
+
+
+- type: entityTable
+  id: RandomPrizeTable
+  table: !type:GroupSelector
+    children:
+    # Tickets
+    - !type:GroupSelector
+      weight: 0.2
+      children:
+      - id: PrizeTicket10
+        weight: 1
+      - id: PrizeTicket30
+        weight: 3
+      - id: PrizeTicket60
+        weight: 1
+    # Nested prizes
+    - !type:NestedSelector
+      tableId: RandomGenericPlushieTable
+      weight: 2
+    - !type:NestedSelector
+      tableId: RandomPersonalPlushieTable
+      weight: 2
+    - !type:NestedSelector
+      tableId: RandomToyTable
+      weight: 2
+    # Recursive. Spawns an error plushie and several prizes.
+    - !type:AllSelector
+      weight: 0.01
+      children:
+      - id: Error
+      - !type:NestedSelector
+        tableId: RandomPrizeTable
+        rolls: !type:RangeNumberSelector
+          range: 3, 5

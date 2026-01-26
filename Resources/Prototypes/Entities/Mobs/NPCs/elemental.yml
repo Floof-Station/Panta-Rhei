@@ -40,6 +40,11 @@
   - type: ZombieImmune
   - type: ProtectedFromStepTriggers
   #- type: StunVisuals # DeltaV - No stars
+  - type: LanguageKnowledge # Floofstation - I don't care, this is only used for crabs.
+    speaks:
+    - Crab
+    understands:
+    - Crab
 
 - type: entity
   abstract: true

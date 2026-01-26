@@ -124,6 +124,14 @@
       Male: SoundsHarpyMale
       Female: SoundsHarpyFemale
       Unsexed: SoundsHarpy
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - ValyrianStandard
+    understands:
+    - TauCetiBasic
+    - ValyrianStandard
+    naturalLanguage: ValyrianStandard
   - type: InstrumentVisuals
   - type: GenericVisualizer
     visuals:

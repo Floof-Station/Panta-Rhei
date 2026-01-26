@@ -84,8 +84,13 @@
           Quantity: 5
   - type: MeleeChemicalInjector
     solution: melee
-  - type: ReplacementAccent
-    accent: genericAggressive
+#  - type: ReplacementAccent # Floofstation
+#    accent: genericAggressive
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
   - type: Speech
     speechVerb: SmallMob
   - type: NonSpreaderZombie

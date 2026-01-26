@@ -3,8 +3,8 @@
 - type: latheRecipePack
   id: ScienceBoardsStatic
   recipes:
-  #- ProtolatheMachineCircuitboard # DeltaV - departmental lathes
-  #- AutolatheMachineCircuitboard # DeltaV - departmental lathes
+  - ProtolatheMachineCircuitboard # DeltaV - departmental lathes # Floof - undone
+  - AutolatheMachineCircuitboard # DeltaV - departmental lathes # Floof - undone
   - CircuitImprinterMachineCircuitboard
   - ExosuitFabricatorMachineCircuitboard
   - CutterMachineCircuitboard
@@ -78,11 +78,11 @@
   id: ScienceBoards
   recipes:
   - TurboItemRechargerCircuitboard
-  # Begin DeltaV Removals - replaced by techfabs/upgrade kits
-  #- AutolatheHyperConvectionMachineCircuitboard
-  #- ProtolatheHyperConvectionMachineCircuitboard
-  #- CircuitImprinterHyperConvectionMachineCircuitboard
-  # End DeltaV Removals
+  # Begin DeltaV Removals - replaced by techfabs/upgrade kits # Floofstation section - undone
+  - AutolatheHyperConvectionMachineCircuitboard
+  - ProtolatheHyperConvectionMachineCircuitboard
+  - CircuitImprinterHyperConvectionMachineCircuitboard
+  # End DeltaV Removals # Floofstation section end
   - TechDiskComputerCircuitboard
   - FlatpackerMachineCircuitboard
   - SheetifierMachineCircuitboard

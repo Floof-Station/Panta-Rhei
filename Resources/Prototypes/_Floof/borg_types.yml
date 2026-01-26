@@ -1,0 +1,255 @@
+# Security quadborg
+- type: borgType
+  id: quadsecurity
+  # Description
+  dummyPrototype: QuadChassisSecurity
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+  defaultModules:
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+  lawset: SiliconPolice
+  job: SecurityOfficer
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: Fiber # red plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-red
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  - type: UnderTableCrawling
+  radioChannels:
+  - Science
+  - Security
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadsec
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadsec_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadsec_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadsec
+  spriteBodyMovementState: quadsec_m
+  spriteHasMindState: quadsec_e_r
+  spriteNoMindState: quadsec_e_r
+  spriteToggleLightState: quadsec_l
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+
+
+# Salvage quadborg
+- type: borgType
+  id: quadmining
+  # Description
+  dummyPrototype: QuadChassisMining
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  lawset: Salvage #DeltaV - Custom Lawset
+  job: SalvageSpecialist # DeltaV - borg job requirements
+  addComponents: # DeltaV - fibers, departmental access
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-brown
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  - type: UnderTableCrawling
+  radioChannels:
+  - Supply
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadsalv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadsalv_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadsalv_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadsalv
+  spriteBodyMovementState: quadsalv_m
+  spriteHasMindState: quadsalv_e_r
+  spriteNoMindState: quadsalv_e_r
+  spriteToggleLightState: quadsalv_l
+  # Pet
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg
+
+
+# Medical quadborg
+- type: borgType
+  id: quadmedical
+  # Description
+  dummyPrototype: QuadChassisMedical
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  lawset: Medical # DeltaV: Custom lawset
+  job: MedicalDoctor # DeltaV - borg job requirements
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical # DeltaV - Kitsune
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical # DeltaV - Kitsune
+  - type: FabricateCandy # DeltaV - The medical cyborg can generate candies filled with medicine.
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: Fiber # DeltaV - white plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-white
+  - type: AccessReader # DeltaV - departmental access
+    access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  - type: UnderTableCrawling
+  - type: SurgeryTarget # Shitmed
+  - type: Sanitized # Shitmed  
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadmed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadmed_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadmed_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadmed
+  spriteBodyMovementState: quadmed_m
+  spriteHasMindState: quadmed_e_r
+  spriteNoMindState: quadmed_e_r
+  spriteToggleLightState: quadmed_l
+  # Pet
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+
+
+# Service quadborg
+- type: borgType
+  id: quadservice
+  # Description
+  dummyPrototype: QuadChassisService
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - Science
+  - Service
+  job: Bartender # DeltaV - borg job requirements
+  addComponents: # DeltaV - departmental access
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  - type: UnderTableCrawling
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadserv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadserv_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadserv_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadserv
+  spriteBodyMovementState: quadserv_m
+  spriteHasMindState: quadserv_e_r
+  spriteNoMindState: quadserv_e_r
+  spriteToggleLightState: quadserv_l
+  # Pet
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg

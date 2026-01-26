@@ -2,6 +2,15 @@
   id: AllPlushiesTable
   table: !type:GroupSelector
     children:
+    # ================================================================
+    # Floofstation: this has been replaced with our own table        #
+    # See RandomPlushieTable in the _Floof namespace                 #
+    # In this table there's a 99% to spawn a plushie from that table #
+    # ================================================================
+    - !type:NestedSelector
+      tableId: RandomPlushieTable
+      weight: 400
+    # ============================================================== #
     - id: PlushieBee
     - id: PlushieNar
       weight: 0.5

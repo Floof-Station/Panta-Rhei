@@ -12,7 +12,7 @@
         Glass: 1
 
 - type: entity
-  abstract: true # DeltaV - departmental lathes
+  #  abstract: true # DeltaV - departmental lathes # Floofstation - undone
   parent: BaseMachineCircuitboard
   id: AutolatheHyperConvectionMachineCircuitboard
   name: hyper convection autolathe machine board
@@ -29,7 +29,7 @@
         defaultPrototype: Igniter
 
 - type: entity
-  categories: [ HideSpawnMenu ] # DeltaV - departmental lathes
+  # categories: [ HideSpawnMenu ] # DeltaV - departmental lathes # Floofstation - undone
   id: ProtolatheMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: protolathe machine board
@@ -47,7 +47,7 @@
         defaultPrototype: Beaker
 
 - type: entity
-  abstract: true # DeltaV - departmental lathes
+  # abstract: true # DeltaV - departmental lathes # Floofstation - undone
   parent: BaseMachineCircuitboard
   id: ProtolatheHyperConvectionMachineCircuitboard
   name: hyper convection protolathe machine board

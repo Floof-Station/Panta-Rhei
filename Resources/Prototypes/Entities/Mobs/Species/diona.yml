@@ -90,6 +90,14 @@
       Male: UnisexDiona
       Female: UnisexDiona
       Unsexed: UnisexDiona
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
+    naturalLanguage: RootSpeak
   - type: TypingIndicator
     proto: diona
   - type: BodyEmotes

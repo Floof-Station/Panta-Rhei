@@ -1,0 +1,10 @@
+﻿- type: entity # Floofstation
+  parent: SeedBase
+  name: packet of pomegranate seeds
+  description: "The Fruit of the Underworld"
+  id: PomegranateSeeds
+  components:
+  - type: Seed
+    seedId: pomegranate
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi

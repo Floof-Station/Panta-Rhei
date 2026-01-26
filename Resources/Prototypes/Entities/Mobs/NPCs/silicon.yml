@@ -51,6 +51,13 @@
   - type: ProtectedFromStepTriggers
   - type: NoSlip
   - type: Insulated
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - TauCetiBasic # Tau-ceti comes first so it's spoken by default
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
 
 # Used for bots
 - type: entity

@@ -50,6 +50,12 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalIan
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - TauCetiBasic
 
 - type: entity
   name: Old Ian
@@ -181,6 +187,12 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalNamedCat
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Cat
+    understands:
+    - Cat
+    - TauCetiBasic
 
 - type: entity
   name: Exception
@@ -362,8 +374,14 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
+#  - type: ReplacementAccent # Floofstation - why tf is this not inheriting from MobCorgi?
+#    accent: dog
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - TauCetiBasic
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -459,8 +477,14 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: dog
+#  - type: ReplacementAccent # Floofstation - why tf is this not inheriting from MobCorgi?
+#    accent: dog
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - TauCetiBasic
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-dog
@@ -622,6 +646,12 @@
     - VimPilot
   - type: StealTarget
     stealGroup: AnimalRenault
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti. RENNNIEEEE OMG I LOVE RENNIEEEEE
+    speaks:
+    - Fox
+    understands:
+    - Fox
+    - TauCetiBasic
 
 - type: entity
   name: Hamlet
@@ -675,6 +705,12 @@
     flavors:
     - meaty
     - sadness
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+    - TauCetiBasic
 
 - type: entity
   parent: MobHamsterHamlet
@@ -767,6 +803,12 @@
     - FootstepSound
   - type: StealTarget
     stealGroup: AnimalSecurity # DeltaV - Adjusts because we have multiple possible sec animals
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Arachnic
+    understands:
+    - Arachnic
+    - TauCetiBasic
 
 - type: entity
   name: Willow
@@ -798,6 +840,12 @@
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [ BoxingKangarooGear ]
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Kangaroo
+    understands:
+    - Kangaroo
+    - TauCetiBasic
 
 - type: entity
   name: Smile
@@ -881,6 +929,12 @@
     attributes:
       proper: true
       gender: female
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Bubblish
+    understands:
+    - Bubblish
+    - TauCetiBasic
 
 - type: entity
   name: Pun Pun
@@ -924,15 +978,15 @@
   id: MobCrabAtmos
   description: The noble and stalwart defender of Atmosia. Viva!
   components:
-#  - type: GhostRole
-#    prob: 1
-#    makeSentient: true
-#    allowSpeech: true
-#    allowMovement: true
-#    name: ghost-role-information-tropico-name
-#    description: ghost-role-information-tropico-description
-#    rules: ghost-role-information-nonantagonist-rules
-#  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    prob: 1
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-tropico-name
+    description: ghost-role-information-tropico-description
+    rules: ghost-role-information-nonantagonist-rules
+  - type: GhostTakeoverAvailable
   - type: Tag
     tags:
     - VimPilot
@@ -944,6 +998,12 @@
 #  - type: AlwaysRevolutionaryConvertible
   - type: StealTarget
     stealGroup: AnimalTropico
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Crab
+    understands:
+    - Crab
+    - TauCetiBasic
 
 - type: entity
   name: Polly the parrot

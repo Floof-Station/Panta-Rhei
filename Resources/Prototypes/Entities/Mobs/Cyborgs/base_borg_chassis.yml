@@ -169,6 +169,14 @@
     sounds:
       Unsexed: UnisexSilicon
     wilhelmProbability: 0.001 # DeltaV
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech
   - type: FootstepModifier
@@ -588,3 +596,11 @@
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: Fiber # DeltaV - xenoborgs have replicated plasteel fibers
     fiberMaterial: fibers-replicated-plasteel
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary

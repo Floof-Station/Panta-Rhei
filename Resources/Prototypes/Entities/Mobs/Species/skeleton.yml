@@ -53,6 +53,14 @@
       Male: Skeleton
       Female: Skeleton
       Unsexed: Skeleton
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - TauCetiBasic
+    - Freespeak
+    understands:
+    - TauCetiBasic
+    - Freespeak
+    naturalLanguage: Freespeak
   - type: SkeletonAccent
   - type: Fixtures
     fixtures:

@@ -33,7 +33,10 @@ public sealed class WeatherSystem : SharedWeatherSystem
         var ent = _playerManager.LocalEntity;
 
         if (ent == null)
+        {
+            weather.Stream = _audio.Stop(weather.Stream); // Vulpstation
             return;
+        }
 
         var mapUid = Transform(uid).MapUid;
         var entXform = Transform(ent.Value);
@@ -47,6 +50,10 @@ public sealed class WeatherSystem : SharedWeatherSystem
 
         if (!Timing.IsFirstTimePredicted || weatherProto.Sound == null)
             return;
+
+        // Vulpstation
+        if (weather.Stream is not null and not { Valid: true })
+            weather.Stream = null;
 
         weather.Stream ??= _audio.PlayGlobal(weatherProto.Sound, Filter.Local(), true)?.Entity;
 

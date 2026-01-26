@@ -21,6 +21,14 @@
     speechSounds: Tenor
     speechVerb: Feroxi
     allowedEmotes: [ "Gnash", "Thump" ]
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Nehina
+    understands:
+    - TauCetiBasic
+    - Nehina
+    naturalLanguage: Nehina
   - type: Vocal
     sounds:
       Male: MaleFeroxi

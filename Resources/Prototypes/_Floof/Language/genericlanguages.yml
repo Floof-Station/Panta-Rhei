@@ -1,0 +1,50 @@
+# The universal language. This is used as a fallback language when the speaker/listener is supposed to bypass all language restrictctions.
+# This mainly applies to ghosts, but can also apply to entities such as the revenant, cortic borer, and others.
+# Everyone can understand a message if it is spoken in Universal.
+- type: language
+  id: Universal
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - "<something went horribly wrong; this is a bug!>" # Never actually used
+  speech:
+    allowWriting: false
+
+# Used by robots. Note: this used to be called RobotTalk pre-rebase. Update your references.
+- type: language
+  id: Binary
+  isVisibleLanguage: true
+  speech:
+    fontId: Monospace
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 10 # Crazy
+    replacement:
+    - 0
+    - 1
+
+# Example of a sign language. Used by the Sign Language trait.
+- type: language
+  id: Sign
+  speech:
+    allowRadio: false
+    allowWriting: false
+    requireSpeech: false
+    requireHands: true
+    requireLOS: true
+    color: "#dddddd"
+    messageWrapOverrides:
+      Speak: chat-sign-language-message-wrap
+      Whisper: chat-sign-language-whisper-wrap
+    speechVerbOverrides:
+    - chat-speech-verb-sign-1
+    - chat-speech-verb-sign-2
+    - chat-speech-verb-sign-3
+  obfuscation:
+    !type:ReplacementObfuscation
+    replacement:
+    - something
+    - a cryptic message
+    - a signal
+    - a message

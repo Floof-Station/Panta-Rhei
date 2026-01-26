@@ -1,0 +1,112 @@
+- type: entity
+  parent: BasePlushie
+  id: BasePlushieFox
+  abstract: true
+  components:
+  - type: EmitSoundOnUse
+    sound: &squeak
+      path: /Audio/Animals/fox_squeak.ogg
+      params:
+        variation: 0.04
+  - type: EmitSoundOnActivate
+    sound: *squeak
+  - type: EmitSoundOnLand
+    sound: &scream
+      path: /Audio/_DV/Voice/Kitsune/fox_squeal1.ogg
+      params:
+        variation: 0.04
+  - type: EmitSoundOnCollide
+    sound: *scream
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_DV/Voice/Kitsune/fox_growl1.ogg
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieRedFox
+  name: red fox plushie
+  description: A cute plushie that look like a red foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: red
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushiePurpleFox
+  name: purple fox plushie
+  description: A cute plushie that look like a purple foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: purple
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushiePinkFox
+  name: pink fox plushie
+  description: A cute plushie that look like a pink foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: pink
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieOrangeFox
+  name: orange fox plushie
+  description: A cute plushie that look like a orange foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: orange
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieMarbleFox
+  name: marble fox plushie
+  description: A cute plushie that look like a marble foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: marble
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieCrimsonFox
+  name: crimson fox plushie
+  description: A cute plushie that look like a crimson foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: crimson
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieCoffeeFox
+  name: coffee fox plushie
+  description: A cute plushie that look like a coffee foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: coffee
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieBlueFox
+  name: blue fox plushie
+  description: A cute plushie that look like a blue foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: blue
+
+- type: entity
+  parent: BasePlushieFox
+  id: PlushieBlackFox
+  name: black fox plushie
+  description: A cute plushie that look like a black foxxo!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/foxplushie.rsi
+    state: black

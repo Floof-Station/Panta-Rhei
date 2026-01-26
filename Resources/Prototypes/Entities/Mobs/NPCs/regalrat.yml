@@ -133,6 +133,13 @@
   - type: PotentialPsionic # Nyano
   - type: NightVision #Delta-v - Added nightvision
     color: "#808080"
+  - type: LanguageKnowledge # Floofstation. Rat king speaks tau ceti.
+    speaks:
+    - Mouse
+    - TauCetiBasic
+    understands:
+    - Mouse
+    - TauCetiBasic
 
 - type: entity
   id: MobRatKingBuff
@@ -333,6 +340,12 @@
   - type: FireVisuals
     sprite: Mobs/Effects/onfire.rsi
     normalState: Mouse_burning
+  - type: LanguageKnowledge # Floofstation. Rakis need to understand tau-ceti so they can listen to the rat king.
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+    - TauCetiBasic
 
 - type: entityTable
   id: RatKingLoot

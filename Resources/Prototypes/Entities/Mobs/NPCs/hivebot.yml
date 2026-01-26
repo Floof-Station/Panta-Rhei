@@ -69,6 +69,11 @@
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Binary
+    understands:
+    - Binary
 
 - type: entity
   parent: MobHivebot

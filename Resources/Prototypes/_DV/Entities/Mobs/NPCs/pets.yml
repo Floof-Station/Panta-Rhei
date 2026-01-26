@@ -18,6 +18,12 @@
     tags:
     - CannotSuicide
     - VimPilot
+  - type: LanguageKnowledge # Floofstation - omg fox!
+    speaks:
+    - Fox
+    understands:
+    - Fox
+    - TauCetiBasic
 
 - type: entity
   name: Laika
@@ -62,6 +68,12 @@
     proneOnGrapple: true # Make sure Laika isn't shot by sprays
     grappleSound:
       collection: VulpkaninGrowls
+  - type: LanguageKnowledge # Floofstation - pets understand tau-ceti.
+    speaks:
+    - Dog
+    understands:
+    - Dog
+    - TauCetiBasic
 
 - type: entity
   parent: MobCarp
@@ -102,6 +114,12 @@
     description: "The real brains behind the Justice department. Your honour my client is not fishy!"
     job: RoleCarpy
   - type: GhostTakeoverAvailable
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - TauCetiBasic
   -  type: Body
      prototype: Human
   - type: Hands
@@ -282,3 +300,9 @@
       - FootstepSound
     - type: StealTarget
       stealGroup: AnimalSilvia
+    - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+      speaks:
+      - Hissing
+      understands:
+      - Hissing
+      - TauCetiBasic

@@ -67,6 +67,14 @@
       Male: UnisexChitinid
       Female: UnisexChitinid
       Unsexed: UnisexChitinid
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Chittin
+    understands:
+    - TauCetiBasic
+    - Chittin
+    naturalLanguage: Chittin
 
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
