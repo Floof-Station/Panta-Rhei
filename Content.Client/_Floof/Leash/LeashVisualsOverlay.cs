@@ -111,13 +111,12 @@ public sealed class LeashVisualsOverlay : Overlay
                 var segmentStart = posA + direction * maxSegmentLength * (segmentCount - 1);
                 var segmentLength = length - maxSegmentLength * (segmentCount - 1);
                 var segmentMidPoint = segmentStart + direction * (segmentLength / 2f);
+                // I can't really explain why things are done the way they are here, most of it was achieved by trial and error.
                 var box = new Box2(-width / 2f, -segmentLength / 2f, width / 2f, segmentLength / 2f);
-                var rotate = new Box2Rotated(box.Translated(segmentMidPoint), -angle, segmentMidPoint);
+                var rotate = new Box2Rotated(box.Translated(segmentMidPoint), angle + Angle.FromDegrees(180), segmentMidPoint);
 
-                // Frankly I can't explain why we have to crop the texture from the bottom and not from the top
-                // It just doesn't work otherwise and I can't explain why
-                // This is also the reason we have inverted rotation angle above
-                var uv = new UIBox2(0, texture.Height, texture.Width, segmentLength * EyeManager.PixelsPerMeter);
+                // The texture is mirrored by swapping left and right uv coordinates
+                var uv = new UIBox2(texture.Width, segmentLength * EyeManager.PixelsPerMeter, 0, 0);
                 worldHandle.DrawTextureRectRegion(texture, rotate, color, uv);
             }
         }
