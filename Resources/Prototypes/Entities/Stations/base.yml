@@ -62,7 +62,7 @@
 #          - /Maps/Shuttles/trading_outpost.yml
         mining: !type:GridSpawnGroup # Floofstation - salvage gets a roundstart shuttle
           paths:
-          - /Maps/Shuttles/pathfinder.yml
+          - /Maps/Floof/Shuttles/Salvage/pathfinder.yml
         # Spawn last
         ruins: !type:GridSpawnGroup
           hide: true

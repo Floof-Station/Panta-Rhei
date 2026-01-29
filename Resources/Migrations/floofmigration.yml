@@ -1,0 +1,209 @@
+#Pre-rebase
+
+# 2024-08-16 Floof Only Please message @FracturedSwords on discord if there are any merge conflicts upcoming
+#SpawnMobArcticFoxSiobhan: SpawnMobArcticFoxSeb
+#MobArcticFoxSiobhan: MobArcticFoxSeb
+
+# 2024-12-15: Leash now supports changing the length intrinsically
+#ShortLeash: LeashBasic
+
+# 2025-03-25
+Plushiegirlfailure: PlushieMothRandom
+PlushieFeistyBartender: PlushieMothRandom
+PlushieCoolVulp: PlushieMothRandom
+PlushieNoticeableSecurityOfficer: PlushieMothRandom
+PlushieTrystan: PlushieMothRandom
+
+##################################
+# Below is for the floof rebase. #
+##################################
+
+#Need to port over still
+SpawnMobArcticFoxSeb: MobArcticFoxSiobhan # do we want to bring seb over?
+CardBoxSyndicate: null
+CardBoxBlack: null
+CardBoxNanotrasen: null
+HandheldFax: null #this seems to be mapped to train in error need to remove this, but setting this to null till its removed
+AirlockNanotrasenRepresentativeCommandGlassLocked: AirlockCommandGlassLocked
+MaterialReclaimer: null
+SheetPGlass10: SheetPGlass1 # for some reaosn they removed stacks of ten for this material so we need to remake it
+Shower: null
+SignIceCream: null # i believe this was added during an arena update PR will have to pull this out of that
+SolidReinforcedSecretDoor: null # removed the Reinforced variant of this door, we will have to bring this over
+GeigerCounterWallMount: null
+ChairBarber: null
+BarberSignPole: null
+FitnessPunchingBagBopClown: N14FitnessPunchingBag #not sure where this is from but going to replace it with the n14 punching bag
+ClosetWallRadiationFilled: null
+WoodSecretDoor: null
+
+#Senior Roles
+SpawnPointSeniorEngineer: SpawnPointStationEngineer #setting to a standard till we add senior roles
+SpawnPointSeniorOfficer: SpawnPointSecurityOfficer #setting to a standard till we add senior roles
+SpawnPointSeniorSeniorPhyiscian: SpawnPointMedicalDoctor #setting to a standard till we add senior roles
+SpawnPointInventorySpecialist: null #setting to a standard till we add senior roles
+
+#paradox anoms
+SpawnPointGhostParadoxAnomaly: null
+
+#Command Roles
+SpawnPointAdminAssistant: null
+SpawnPointNanotrasenRepresentative: null
+
+#AI law board
+OverlordCircuitBoard: null
+JermovCircuitBoard: null
+
+#borgs
+Quadborgendoskeleton: null
+SpawnPointServiceQuadborg: null
+SpawnPointMedicalQuadborg: null
+BorgModulePka: null # this may be renamed
+
+#machines
+PrinterDoc: MachineFrameDestroyed # document priner
+CargoTechFab: MachineFrameDestroyed #i believe this is disbaled in a delta-v migration
+
+#vending machines:
+VendingMachineSolsnack: null # vending machine that we dont have over here yet
+VendingMachineFitness: null # vending machine that we dont have over here yet
+
+#circuit boards
+FaxMachineCircuitboard: null
+SurveillanceCameraWirelessRouterBase: null
+CargoTechFabCircuitboard: null
+
+#cigar
+CigarBluespace: CigarGold
+CigarBluespaceSpent: null
+
+#clothing
+ClothingHeadHatChefIdris: null
+ClothingHeadHatChefNt: null
+ClothingHeadHatChefOrion: null
+ClothingUniformJumpsuitChefOrion: null
+ClothingOuterJacketChefOrion: null
+ClothingUniformFlamenco: null
+ClothingUniformClassicalMaidDress: null
+ClothingClothWrap: null
+ClothingHeadHatSodaJerk: null
+ClothingNeckBlackBoetie: null
+ClothingNeckCollarPink: null
+ClothingNeckRedBoetie: null
+ClothingUniformStripedThongPurple: null
+ClothingUniformStripedThongRainbow: null
+ClothingUniformStripedThongWhite: null
+ClothingUniformThongPlain: null
+ClothingUnderSocksCoderValid: null
+ClothingUniformLoinClothWhite: null
+
+#lewd stuff
+CrateLewd: null
+CrateLewdKink: null
+LewdLootSpawnerAll: null
+StripperPole: null
+WhipTealCrotch: null
+LewdLootSpawnerKinky: null
+LewdLootSpawnerToys: null
+ClothingHandsSexCompGlovesBlue: null
+ClothingHandsSexCompGlovesRed: null
+ClothingHeadSexCompCirclet: null
+ClothingOuterSexCompBeltGold: null
+ClothingUnderSexCompBootsBlue: null
+ClothingUnderSexCompBootsRed: null
+ClothingUniformSexCompBlue: null
+ClothingUniformSexCompRed: null
+CrateLewdToys: null
+
+#insturments
+DrumkitInstrument: null
+
+#food
+FoodMealCarpSushi: null
+FoodSnackAncientPizza: null
+FoodSnackOortrocks: null
+HumpShroomSeeds: null
+SpesosTreeSeeds: null
+
+#drinks
+DrinkBoykisserEnergy: null
+DrinkEggnogBottleFull: null
+DrinkEggnogGlass: null
+DrinkSyndicateEggnogBottleFull: null
+DrinkKoboldKorkscrewGlass: null
+
+#lockers - need to bring these over all maps have these
+LockerBartenderFilled: LockerBoozeFilled
+LockerClownFilled: LockerClown
+LockerJanitorFilled: LockerJanitor
+LockerMimeFilled: LockerMime
+
+#books
+HyperlinkBookJusticeSop: null
+
+#Supermatter engine, till we get super matter replace it with the food item as a placeholder
+Supermatter: FoodCakeSuppermatter
+
+#shadowkin stuff
+PortalShadowkinSpawner: null #lets the shadowkin go to thier little station
+DarkTile: null #is the dark tile placed under the portals
+
+#paperwork - gonna set these to be just regualr paper till we bring these over
+PaperTemplateEpistemicsPsionicSelfIdentification: Paper
+PaperTemplateLogisticsCargoRequest: Paper
+
+#weapons
+WeaponBrassKnucklesWhoopie: null
+
+#xenos:
+DehydratedCCRouny: null
+
+#machine parts - seems deltav dose not use matter bins, maniuplators and capcitors anymore
+AdvancedCapacitorStockPart: MicroManipulatorStockPart
+AdvancedMatterBinStockPart: MicroManipulatorStockPart
+NanoManipulatorStockPart: MicroManipulatorStockPart
+
+#ammo
+MagazineLightRifleLowCapacity: MagazineLightRifle # delta-v does not have light capcity mags so we will have to use full size for now
+MagazineLightRifleLowCapacityEmpty: MagazineLightRifleEmpty # delta-v does not have light capcity mags so we will have to use full size for now
+
+#leashes
+LeashBasic: null
+LeashAdvanced: null
+
+#collar
+ClothingNeckCollarCC: null
+
+####################################################
+# Everything below here does not need to be ported #
+####################################################
+
+#Delta-v changed these names
+OracleSpawner: Oracle
+SophicScribeSpawner: SophicScribe
+BonfireLit: Bonfire
+BoxFolderMedical: BoxFolderWhite
+BoxFolderSecurity: BoxFolderRed
+BoxFolderHop: BoxFolderBlue
+BoxFolderJustice: BoxFolderBlue
+BoxFolderLogistics: BoxFolderYellow
+BoxMagazinePistolRubber:  MagazineBoxPistolRubber
+BoxLightbulbColorMixed:  BoxLightbulbColorfulMixed
+BoxLighttubeColorMixed: BoxLighttubeColorfulMixed
+Gauze10Lingering: Gauze # delta-v dosent have lingering gauze so replacing with regular gauze
+JetpackMicroFilled: JetpackMiniFilled # mini jetpacks got renamed
+
+#N14 from floof to floof rebase
+ClosetGrey2: N14ClosetGrey2
+DecorFloorGlass4: N14DecorFloorGlass4
+DecorFloorGlass6: N14DecorFloorGlass6
+SignBar2: N14SignBar
+Torch2: N14Torch
+TorchWall: N14TorchWall
+FitnessWeightsBench1: N14FitnessWeightsBench1
+FitnessWeightLifter: N14FitnessWeightLifter
+DecorFloorSkeleton: N14DecorFloorSkeleton
+DecorFloorPaper1: N14DecorFloorPaper1
+CrateFreezer2: N14CrateFreezer
+FitnessPunchingBag: N14FitnessPunchingBag
+DecorFloorTrashbags5: N14DecorFloorTrashbags5

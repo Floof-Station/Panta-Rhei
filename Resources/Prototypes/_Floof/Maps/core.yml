@@ -1,0 +1,87 @@
+- type: gameMap
+  id: Core
+  mapName: 'Core'
+  mapPath: /Maps/Floof/core.yml # Floofstation
+  minPlayers: 35
+  maxPlayers: 70
+  stations:
+    Core:
+      stationProto: StandardNanotrasenStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Core {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: '14'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/NTES_UCLB.yml
+        - type: StationJobs
+          availableJobs:
+            #Anomaly: [ 4, 4 ] # Floofstation
+            # Service
+            Bartender: [ 2, 3 ]
+            Botanist: [ 2, 4]
+            Chef: [ 1, 2 ]
+            Janitor: [ 2, 4 ]
+            Captain: [ 1, 1 ]
+            #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
+            #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
+            #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
+            HeadOfPersonnel: [ 1, 1 ]
+            ServiceWorker: [ 3, 6 ]
+            # Engineering
+            ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 6 ]
+            AtmosphericTechnician: [ 2, 3 ]
+            TechnicalAssistant: [ 2, 6 ]
+            #SeniorEngineer: [ 1, 1 ]
+            # Medical
+            ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 3, 6 ]
+            Chemist: [ 2, 3 ]
+            MedicalIntern: [ 2, 6 ]
+            Paramedic: [ 1, 2 ]
+            #SeniorPhysician: [ 1, 1 ]
+            Psychologist: [ 1, 1 ]
+            # Epistemics
+            ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 6 ]
+            ResearchAssistant: [ 3, 6 ]
+#            Roboticist: [ 1, 2 ] - not mapped
+            Chaplain: [ 1, 1 ]
+            Librarian: [ 1, 1 ]
+            ForensicMantis: [ 1, 1 ]
+            #SeniorResearcher: [ 1, 1 ]
+            # Security
+            HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 4, 6 ]
+            Warden: [ 1, 1 ]
+            Brigmedic: [ 1, 1 ]
+            SecurityCadet: [ 3, 6 ]
+            Detective: [ 1, 1 ]
+            Prisoner: [ 2, 3 ]
+            #SeniorOfficer: [ 1, 1 ]
+            # Logistics
+            CargoTechnician: [ 3, 6 ]
+            Quartermaster: [ 1, 1 ]
+            #InventorySpecialist: [ 1, 1 ] #FloofStation
+            SalvageSpecialist: [ 2, 4 ]
+            Courier: [ 1, 2 ]
+            # Civilian
+            Clown: [ 1, 2 ]
+            Mime: [ 1, 2 ]
+            Musician: [ 1, 3 ]
+            Boxer: [ 2, 4 ]
+            Reporter: [ 2, 2 ]
+            Passenger: [ -1, -1 ]
+            # Justice added by FloofStation
+            ChiefJustice: [ 1, 1 ] #FloofStation
+            Clerk: [ 1, 1 ] #FloofStation
+            Lawyer: [ 1, 1 ] #FloofStation
+            Prosecutor: [ 1, 1 ] #FloofStation
+            # Silicon
+            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]
+            #ServiceQuadBorg: [ 1, 2 ] #Floofstation
+            #MedicalQuadBorg: [ 1, 2 ] #Floofstation
