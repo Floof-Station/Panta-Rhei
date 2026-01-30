@@ -1,6 +1,7 @@
 using Content.Server._Floof.HeightAdjust.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Collision.Shapes;
 
 namespace Content.Server._Floof.HeightAdjust.Systems;
 
@@ -17,7 +18,31 @@ public sealed class FixturesAffectedByHeightSystem : BaseHeightAdjustSystem<Fixt
             return;
 
         var mod = Math.Clamp(args.Ratio, 0.1f, 10f);
-        foreach (var (key, fix) in fixtures.Fixtures)
-            _physics.SetRadius(ent, key, fix, fix.Shape, fix.Shape.Radius * mod);
+        TryAdjustFixtures((ent, fixtures), mod);
+    }
+
+    /// <summary>
+    ///     Multiplies the radii of all fixtures of the given entity by the specified value.
+    /// </summary>
+    /// <returns>How many fixtures were affected. If 0, this method had no effect.</returns>
+    public int TryAdjustFixtures(Entity<FixturesComponent?> ent, float multiplier)
+    {
+        if (multiplier <= 0)
+            throw new ArgumentException(nameof(multiplier));
+
+        if (!Resolve(ent, ref ent.Comp))
+            return 0;
+
+        var count = 0;
+        foreach (var (key, fix) in ent.Comp.Fixtures)
+        {
+            if (fix.Shape is not PhysShapeCircle circle || circle.Radius <= 0.01f)
+                continue;
+
+            _physics.SetRadius(ent, key, fix, fix.Shape, fix.Shape.Radius * multiplier);
+            count++;
+        }
+
+        return count;
     }
 }
