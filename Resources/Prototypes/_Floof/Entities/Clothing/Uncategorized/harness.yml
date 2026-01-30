@@ -9,9 +9,6 @@
     Can be equipped almost anywhere on your body, but does not include suit sensors or protection. A leash can be attached to it.
   components:
   - type: Clothing
-    equipDelay: 1
-    unequipDelay: 1
-    quickEquip: false # Would conflict due to having multiple allowed slots
     slots:
     - neck
     - innerClothing
