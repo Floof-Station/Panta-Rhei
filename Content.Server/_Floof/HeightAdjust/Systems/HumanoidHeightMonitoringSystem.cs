@@ -22,6 +22,9 @@ public sealed class HumanoidHeightMonitoringSystem : EntitySystem
 
         var oldScale = ent.Comp.LastHeight;
         var newScale = humanoid.Height;
+        // Ignore minor changes
+        if (MathHelper.CloseTo(oldScale, newScale, 0.005))
+            return;
 
         if (oldScale <= 0.001)
             oldScale = 1;
