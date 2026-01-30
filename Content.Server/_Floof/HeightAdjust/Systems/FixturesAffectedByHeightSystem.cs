@@ -30,7 +30,7 @@ public sealed class FixturesAffectedByHeightSystem : BaseHeightAdjustSystem<Fixt
         if (multiplier <= 0)
             throw new ArgumentException(nameof(multiplier));
 
-        if (!Resolve(ent, ref ent.Comp))
+        if (MathHelper.CloseTo(multiplier, 1f) || !Resolve(ent, ref ent.Comp))
             return 0;
 
         var count = 0;
@@ -39,7 +39,9 @@ public sealed class FixturesAffectedByHeightSystem : BaseHeightAdjustSystem<Fixt
             if (fix.Shape is not PhysShapeCircle circle || circle.Radius <= 0.01f)
                 continue;
 
-            _physics.SetRadius(ent, key, fix, fix.Shape, fix.Shape.Radius * multiplier);
+            // Can we avoid the costly SetRadius in batch fixture updates like this?
+            // Setting fixture.Radius and calling FixtureUpdate would be an option, but it's internal API
+            _physics.SetRadius(ent, key, fix, fix.Shape, fix.Shape.Radius * multiplier, ent);
             count++;
         }
 
