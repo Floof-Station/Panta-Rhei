@@ -1,4 +1,17 @@
 - type: entity
+  parent: ClothingOuterHardsuitSyndieMedic
+  id: ClothingOuterHardsuitSurgeonGeneral
+  name: Surgeon general hardsuit
+  description: A protective hardsuit worn by the Surgeon Generial, tailor by SESWC.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/Hardsuits/surgengeneralhardsuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/Hardsuits/surgengeneralhardsuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
+    
+- type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerPilot
   name: FL-02bt - "Pilot" Freelancer Softsuit
@@ -22,9 +35,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
-  - type: StaminaResistance
-    damageCoefficient: 0.60
-
+    
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerLegion
@@ -49,10 +60,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.90
     sprintModifier: 0.90
-  - type: StaminaResistance
-    damageCoefficient: 0.60
-
-
+    
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerNorthstar
@@ -68,14 +76,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.70
-        Slash: 0.70
+        Blunt: 0.7
+        Slash: 0.7
         Heat: 0.4
-        Piercing: 0.40
+        Piercing: 0.4
         Caustic: 0.8
         Radiation: 0.4
   - type: ClothingSpeedModifier
     walkModifier: 0.90
     sprintModifier: 0.90
-  - type: StaminaResistance
-    damageCoefficient: 0.40
