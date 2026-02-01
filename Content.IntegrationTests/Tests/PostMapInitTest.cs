@@ -587,11 +587,6 @@ namespace Content.IntegrationTests.Tests
                         }
                     };
 
-                    // Floofstation: log memory usage
-                    var memory = Process.GetCurrentProcess().WorkingSet64;
-                    TestContext.Out.WriteLine($"Memory usage: {memory / 1e6f:.2f}mb");
-                    TestContext.Progress.WriteLine($"Memory usage: {memory / 1e6f:.2f}mb");
-
                     HashSet<Entity<MapComponent>> maps;
                     foreach (var path in mapPaths)
                     {
@@ -603,6 +598,12 @@ namespace Content.IntegrationTests.Tests
                         {
                             throw new Exception($"Failed to load map {path}", ex);
                         }
+
+                        // Floofstation: log memory usage
+                        var memory = Process.GetCurrentProcess().PrivateMemorySize64;
+                        TestContext.Out.WriteLine($"Memory usage: {memory / 1e9f:.2} gb, entity count: {server.EntMan.EntityCount}");
+                        System.GC.Collect(1);
+                        server.RunTicks(1);
 
                         try
                         {
