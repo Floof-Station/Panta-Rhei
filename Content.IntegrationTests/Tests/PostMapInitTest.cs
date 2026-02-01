@@ -28,7 +28,6 @@ using Robust.Shared.Map.Events;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
-    [Explicit] // Floofstation - attempt to mitigate test runners running out of memory. Remove in production.
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;
@@ -538,6 +537,7 @@ namespace Content.IntegrationTests.Tests
         }
 
         [Test]
+        [Explicit] // Floofstation - attempt to mitigate test runners running out of memory. Remove in production.
         public async Task NonGameMapsLoadableTest()
         {
             await using var pair = await PoolManager.GetServerClient();
