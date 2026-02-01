@@ -20,8 +20,8 @@
     sprite: Clothing/Shoes/Boots/jackboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/jackboots.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
+  # - type: ClothingSlowOnDamageModifier # Euphoria - meant to be a vanity item
+  #   modifier: 0.5
 
 - type: entity
   parent: ClothingShoesBaseButcherable
@@ -58,8 +58,11 @@
     sprite: Clothing/Shoes/Boots/combatboots.rsi
   # Begin DeltaV additions
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
+    modifier: 0.75 # lowered from 0.5
   # End DeltaV additions
+  - type: Tag #Floofstation
+    tags:
+    - CombatBoots
 
 - type: entity
   parent: ClothingShoesMilitaryBase
@@ -81,6 +84,9 @@
       params:
         volume: -6
         variation: 0.09
+  - type: Tag #Floofstation
+    tags:
+    - HighHeelBoots
 
 - type: entity
   parent: [ ClothingShoesMilitaryBase ]
@@ -165,7 +171,7 @@
     sprite: _DV/Clothing/Shoes/Boots/winterbootssec.rsi # DeltaV - resprite boots to meet standards
   # Begin DeltaV additions
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.5
+    modifier: 0.75 # Euphoria - Lowered from 0.5
   # End DeltaV additions
 
 - type: entity
