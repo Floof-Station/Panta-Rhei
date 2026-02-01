@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -585,6 +586,11 @@ namespace Content.IntegrationTests.Tests
                             LogOrphanedGrids = false
                         }
                     };
+
+                    // Floofstation: log memory usage
+                    var memory = Process.GetCurrentProcess().WorkingSet64;
+                    TestContext.Out.WriteLine($"Memory usage: {memory / 1e6f:.2f}mb");
+                    TestContext.Progress.WriteLine($"Memory usage: {memory / 1e6f:.2f}mb");
 
                     HashSet<Entity<MapComponent>> maps;
                     foreach (var path in mapPaths)
