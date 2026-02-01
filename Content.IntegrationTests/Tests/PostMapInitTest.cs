@@ -29,7 +29,6 @@ using Robust.Shared.Map.Events;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
-    [NonParallelizable] // Floofstation - attempt to mitigate OOM issues
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;
@@ -574,8 +573,9 @@ namespace Content.IntegrationTests.Tests
 
             await server.WaitPost(() =>
             {
-                Assert.Multiple(() =>
-                {
+                // Floofstation - disabled multiple assertion
+                // Assert.Multiple(() =>
+                // {
                     // This bunch of files contains a random mixture of both map and grid files.
                     // TODO MAPPING organize files
                     var opts = MapLoadOptions.Default with
@@ -599,12 +599,6 @@ namespace Content.IntegrationTests.Tests
                             throw new Exception($"Failed to load map {path}", ex);
                         }
 
-                        // Floofstation: log memory usage
-                        var memory = Process.GetCurrentProcess().PrivateMemorySize64;
-                        TestContext.Out.WriteLine($"Memory usage: {memory / 1e9f:.2} gb, entity count: {server.EntMan.EntityCount}");
-                        System.GC.Collect(1);
-                        server.RunTicks(1);
-
                         try
                         {
                             foreach (var map in maps)
@@ -617,7 +611,7 @@ namespace Content.IntegrationTests.Tests
                             throw new Exception($"Failed to delete map {path}", ex);
                         }
                     }
-                });
+                // });
             });
 
             await server.WaitRunTicks(1);
