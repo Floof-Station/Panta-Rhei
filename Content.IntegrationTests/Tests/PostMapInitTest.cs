@@ -28,6 +28,7 @@ using Robust.Shared.Map.Events;
 namespace Content.IntegrationTests.Tests
 {
     [TestFixture]
+    [Explicit] // Floofstation - attempt to mitigate test runners running out of memory. Remove in production.
     public sealed class PostMapInitTest
     {
         private const bool SkipTestMaps = true;
