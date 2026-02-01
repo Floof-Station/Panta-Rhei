@@ -58,7 +58,7 @@
     sprite: Clothing/Shoes/Boots/combatboots.rsi
   # Begin DeltaV additions
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.75 # lowered from 0.5
+    modifier: 0.5
   # End DeltaV additions
   - type: Tag #Floofstation
     tags:
@@ -171,7 +171,7 @@
     sprite: _DV/Clothing/Shoes/Boots/winterbootssec.rsi # DeltaV - resprite boots to meet standards
   # Begin DeltaV additions
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.75 # Euphoria - Lowered from 0.5
+    modifier: 0.5
   # End DeltaV additions
 
 - type: entity
