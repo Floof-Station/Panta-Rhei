@@ -44,6 +44,7 @@
             Paramedic: [ 1, 2 ]
             MedicalDoctor: [ 2, 3 ]
             MedicalIntern: [ 2, 3 ]
+            Surgeon: [ 1, 1 ]
 #            SeniorPhysician: [ 1, 1 ]
           #science
             ResearchDirector: [ 1, 1 ]
@@ -77,7 +78,7 @@
             Lawyer: [ 2, 2 ] #FloofStation
 #            Prosecutor: [ 1, 1 ] #FloofStation - needs to be mapped to this map
             # Silicon
-            # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
             Borg: [ 1, 2 ]
             MedicalBorg: [ 1, 2 ]
 #            ServiceQuadBorg: [ 1, 2 ] #Floofstation
