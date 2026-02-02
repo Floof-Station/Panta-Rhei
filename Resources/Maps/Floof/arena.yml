@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/25/2026 02:25:40
-  entityCount: 30151
+  time: 01/29/2026 18:13:47
+  entityCount: 30157
 maps:
 - 1
 grids:
@@ -14631,6 +14631,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 82.5,-44.5
       parent: 6747
+- proto: AirlockExternalGlassShuttleMiningFilled
+  entities:
+  - uid: 8540
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -11.5,47.5
+      parent: 6747
 - proto: AirlockExternalLocked
   entities:
   - uid: 7375
@@ -15273,7 +15281,7 @@ entities:
       pos: -20.5,-15.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -198928.03
+      secondsUntilStateChange: -199174.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -25214,6 +25222,11 @@ entities:
     components:
     - type: Transform
       pos: 20.5,6.5
+      parent: 6747
+  - uid: 8888
+    components:
+    - type: Transform
+      pos: -11.5,46.5
       parent: 6747
   - uid: 8976
     components:
@@ -68707,7 +68720,7 @@ entities:
       pos: 26.5,-70.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -117228.984
+      secondsUntilStateChange: -117475.33
       state: Closing
 - proto: d4Dice
   entities:
@@ -132768,6 +132781,16 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: IntercomAll
+  entities:
+  - uid: 9213
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,-94.5
+      parent: 6747
+    - type: Fixtures
+      fixtures: {}
 - proto: IntercomElectronics
   entities:
   - uid: 16165
@@ -133856,11 +133879,6 @@ entities:
     - type: Transform
       pos: 22.5,-21.5
       parent: 6747
-  - uid: 26944
-    components:
-    - type: Transform
-      pos: 12.5,-29.5
-      parent: 6747
   - uid: 30221
     components:
     - type: Transform
@@ -133945,6 +133963,13 @@ entities:
     components:
     - type: Transform
       pos: -35.5,-6.5
+      parent: 6747
+- proto: LockerSurgeonFilled
+  entities:
+  - uid: 4326
+    components:
+    - type: Transform
+      pos: 12.5,-29.5
       parent: 6747
 - proto: LockerWallMedical
   entities:
@@ -135145,7 +135170,7 @@ entities:
       pos: 39.5,-36.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -115132.63
+      secondsUntilStateChange: -115378.98
       state: Opening
 - proto: MicroManipulatorStockPart
   entities:
@@ -141975,6 +142000,11 @@ entities:
     components:
     - type: Transform
       pos: -32.5,-28.5
+      parent: 6747
+  - uid: 10818
+    components:
+    - type: Transform
+      pos: 15.5,-94.5
       parent: 6747
   - uid: 10835
     components:
@@ -149161,6 +149191,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 25.5,-43.5
       parent: 6747
+  - uid: 9153
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -5.5,53.5
+      parent: 6747
   - uid: 16776
     components:
     - type: Transform
@@ -149334,12 +149370,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -5.5,54.5
-      parent: 6747
-  - uid: 28204
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,53.5
       parent: 6747
   - uid: 28205
     components:
@@ -167250,6 +167280,18 @@ entities:
     - type: Transform
       pos: 44.5,15.5
       parent: 6747
+- proto: SpawnPointSurgeon
+  entities:
+  - uid: 10819
+    components:
+    - type: Transform
+      pos: 22.5,-25.5
+      parent: 6747
+  - uid: 10820
+    components:
+    - type: Transform
+      pos: 12.5,-30.5
+      parent: 6747
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 18987
@@ -167381,6 +167423,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 14.5,-92.5
       parent: 6747
+    - type: AccessReader
+      accessListsOriginal:
+      - - ResearchDirector
 - proto: StationAnchor
   entities:
   - uid: 11816
@@ -191053,6 +191098,44 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -28.413864,1.7966745
       parent: 6747
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 4685
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-80.5
+      parent: 6747
+  - uid: 5375
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 16.5,-86.5
+      parent: 6747
+  - uid: 5553
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-86.5
+      parent: 6747
+  - uid: 6710
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 16.5,-80.5
+      parent: 6747
+  - uid: 7233
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-94.5
+      parent: 6747
+  - uid: 7277
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 16.5,-94.5
+      parent: 6747
 - proto: WeaponFlareGun
   entities:
   - uid: 7268
@@ -191128,40 +191211,10 @@ entities:
     - type: InsideEntityStorage
 - proto: WeaponTurretSyndicateBroken
   entities:
-  - uid: 15007
-    components:
-    - type: Transform
-      pos: 14.5,-80.5
-      parent: 6747
-  - uid: 16783
-    components:
-    - type: Transform
-      pos: 16.5,-86.5
-      parent: 6747
-  - uid: 18516
-    components:
-    - type: Transform
-      pos: 14.5,-86.5
-      parent: 6747
-  - uid: 21524
-    components:
-    - type: Transform
-      pos: 16.5,-80.5
-      parent: 6747
   - uid: 22876
     components:
     - type: Transform
       pos: 15.5,-89.5
-      parent: 6747
-  - uid: 22877
-    components:
-    - type: Transform
-      pos: 16.5,-94.5
-      parent: 6747
-  - uid: 22879
-    components:
-    - type: Transform
-      pos: 14.5,-94.5
       parent: 6747
 - proto: Welder
   entities:
@@ -191427,7 +191480,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -43399.125
+      secondsUntilStateChange: -43645.47
       state: Opening
   - uid: 3684
     components:
@@ -191439,7 +191492,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -43401.957
+      secondsUntilStateChange: -43648.3
       state: Opening
   - uid: 17483
     components:
@@ -191451,7 +191504,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -43416.324
+      secondsUntilStateChange: -43662.668
       state: Opening
   - uid: 17496
     components:

@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/25/2026 18:13:20
-  entityCount: 11081
+  time: 02/02/2026 01:42:10
+  entityCount: 11067
 maps:
 - 1
 grids:
@@ -6885,6 +6885,8 @@ entities:
       rot: 3.141592653589793 rad
       pos: -19.5,5.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 11061
     components:
     - type: Transform
@@ -13658,18 +13660,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 29.5,31.5
       parent: 2
-- proto: Beaker
-  entities:
-  - uid: 11067
-    components:
-    - type: Transform
-      pos: -23.603683,5.661628
-      parent: 2
-  - uid: 11068
-    components:
-    - type: Transform
-      pos: -23.273823,5.800614
-      parent: 2
 - proto: Bed
   entities:
   - uid: 1517
@@ -13876,11 +13866,6 @@ entities:
     components:
     - type: Transform
       pos: -14.5,5.5
-      parent: 2
-  - uid: 11063
-    components:
-    - type: Transform
-      pos: -23.5,3.5
       parent: 2
 - proto: BedsheetOrange
   entities:
@@ -29830,6 +29815,12 @@ entities:
       parent: 2
 - proto: ComputerMedicalRecords
   entities:
+  - uid: 1568
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -23.5,3.5
+      parent: 2
   - uid: 4577
     components:
     - type: Transform
@@ -30382,13 +30373,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 19.5,-25.5
       parent: 2
-- proto: CryoPod
-  entities:
-  - uid: 5771
-    components:
-    - type: Transform
-      pos: -21.5,5.5
-      parent: 2
 - proto: CyberPen
   entities:
   - uid: 4656
@@ -30531,13 +30515,6 @@ entities:
     components:
     - type: Transform
       pos: 7.5,-27.5
-      parent: 2
-- proto: DefaultStationBeaconCryonics
-  entities:
-  - uid: 11062
-    components:
-    - type: Transform
-      pos: -21.5,4.5
       parent: 2
 - proto: DefaultStationBeaconCryosleep
   entities:
@@ -35869,6 +35846,13 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 5764
+    components:
+    - type: Transform
+      pos: -22.5,4.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: FloorLavaEntity
   entities:
   - uid: 5482
@@ -36438,15 +36422,6 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: GasFilterFlipped
-  entities:
-  - uid: 5764
-    components:
-    - type: Transform
-      pos: -22.5,4.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
 - proto: GasMinerNitrogen
   entities:
   - uid: 5585
@@ -37553,39 +37528,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
-  - uid: 5765
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -22.5,6.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
-  - uid: 5832
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -23.5,6.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
-  - uid: 5834
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -19.5,4.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0335FCFF'
-  - uid: 6682
-    components:
-    - type: Transform
-      anchored: False
-      pos: -21.5,5.5
-      parent: 2
-    - type: Physics
-      canCollide: True
-      bodyType: Dynamic
   - uid: 6879
     components:
     - type: Transform
@@ -37594,18 +37536,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#00B3B7FF'
-  - uid: 7081
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -22.5,5.5
-      parent: 2
-  - uid: 10243
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -22.5,3.5
-      parent: 2
 - proto: GasPipeFourway
   entities:
   - uid: 5734
@@ -37859,6 +37789,12 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
+  - uid: 5771
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -22.5,6.5
+      parent: 2
   - uid: 5773
     components:
     - type: Transform
@@ -44874,13 +44810,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
-  - uid: 7449
-    components:
-    - type: Transform
-      pos: -23.5,5.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
   - uid: 7762
     components:
     - type: Transform
@@ -44905,16 +44834,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
-  - uid: 10064
-    components:
-    - type: Transform
-      anchored: False
-      rot: 3.141592653589793 rad
-      pos: -22.5,4.5
-      parent: 2
-    - type: Physics
-      canCollide: True
-      bodyType: Dynamic
   - uid: 11058
     components:
     - type: Transform
@@ -44933,12 +44852,6 @@ entities:
       color: '#FF1212FF'
 - proto: GasPipeTJunction
   entities:
-  - uid: 1568
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -21.5,4.5
-      parent: 2
   - uid: 5752
     components:
     - type: Transform
@@ -44947,14 +44860,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF5900FF'
-  - uid: 5760
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -23.5,4.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
   - uid: 5762
     components:
     - type: Transform
@@ -44962,12 +44867,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
-  - uid: 5772
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -21.5,3.5
-      parent: 2
   - uid: 6646
     components:
     - type: Transform
@@ -46168,14 +46067,6 @@ entities:
       parent: 2
 - proto: GasPressurePump
   entities:
-  - uid: 256
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -20.5,4.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#0335FCFF'
   - uid: 6846
     components:
     - type: Transform
@@ -46315,16 +46206,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 11.5,29.5
       parent: 2
-- proto: GasThermoMachineFreezerEnabled
-  entities:
-  - uid: 6971
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -20.5,3.5
-      parent: 2
-    - type: GasThermoMachine
-      targetTemperature: 73.15
 - proto: GasThermoMachineHeater
   entities:
   - uid: 6867
@@ -47129,6 +47010,12 @@ entities:
       color: '#0335FCFF'
 - proto: GasVentScrubber
   entities:
+  - uid: 5765
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -22.5,5.5
+      parent: 2
   - uid: 6972
     components:
     - type: Transform
@@ -47808,14 +47695,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 63
-    - type: AtmosPipeColor
-      color: '#FF1212FF'
-  - uid: 8774
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -23.5,3.5
-      parent: 2
     - type: AtmosPipeColor
       color: '#FF1212FF'
 - proto: GasVolumePump
@@ -50658,11 +50537,6 @@ entities:
     - type: Transform
       pos: -18.5,3.5
       parent: 2
-  - uid: 11065
-    components:
-    - type: Transform
-      pos: -23.5,3.5
-      parent: 2
 - proto: hydroponicsSoil
   entities:
   - uid: 7602
@@ -51222,6 +51096,13 @@ entities:
     - type: Transform
       pos: -14.5,-6.5
       parent: 2
+- proto: LockerSurgeonFilled
+  entities:
+  - uid: 5760
+    components:
+    - type: Transform
+      pos: -23.5,5.5
+      parent: 2
 - proto: LockerWardenFilledHardsuit
   entities:
   - uid: 7689
@@ -51609,11 +51490,6 @@ entities:
       parent: 2
 - proto: MedicalBed
   entities:
-  - uid: 7592
-    components:
-    - type: Transform
-      pos: -23.5,3.5
-      parent: 2
   - uid: 7749
     components:
     - type: Transform
@@ -51902,6 +51778,11 @@ entities:
       parent: 2
 - proto: OperatingTable
   entities:
+  - uid: 256
+    components:
+    - type: Transform
+      pos: -22.5,3.5
+      parent: 2
   - uid: 7792
     components:
     - type: Transform
@@ -60115,6 +59996,18 @@ entities:
     - type: Transform
       pos: 15.5,18.5
       parent: 2
+- proto: SpawnPointSurgeon
+  entities:
+  - uid: 5772
+    components:
+    - type: Transform
+      pos: -23.5,8.5
+      parent: 2
+  - uid: 5832
+    components:
+    - type: Transform
+      pos: -22.5,5.5
+      parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 9112
@@ -60208,6 +60101,11 @@ entities:
       parent: 2
 - proto: StasisBed
   entities:
+  - uid: 5834
+    components:
+    - type: Transform
+      pos: -20.5,3.5
+      parent: 2
   - uid: 6877
     components:
     - type: Transform
@@ -61561,11 +61459,6 @@ entities:
     components:
     - type: Transform
       pos: 30.5,16.5
-      parent: 2
-  - uid: 11066
-    components:
-    - type: Transform
-      pos: -23.5,5.5
       parent: 2
 - proto: TableCarpet
   entities:
