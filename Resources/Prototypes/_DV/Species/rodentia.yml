@@ -12,8 +12,11 @@
   femaleFirstNames: NamesRodentiaFemale
   lastNames: NamesRodentiaLast
   naming: LastFirst
-  baseScale: "0.8, 0.8"
-  minHeight: 0.95
+  # baseScale: "0.8, 0.8" # Floofstation
+  # minHeight: 0.95 # Floofstation
+  minHeight: 0.65 # Floofstation
+  maxHeight: 1.1 # Floofstation
+  defaultHeight: 0.8 # Floofstation
 
 - type: speciesBaseSprites
   id: MobRodentiaSprites

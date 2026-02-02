@@ -11,8 +11,10 @@
   femaleFirstNames: NamesOniFemale
   lastNames: NamesOniLocation
   naming: LastNoFirst
-  baseScale: "1.2, 1.2"
-  maxHeight: 1.05
+  # baseScale: "1.2, 1.2" # Floofstation
+  minHeight: 0.9 # Floofstation
+  maxHeight: 1.3 # Floofstation
+  defaultHeight: 1.2 # Floofstation
 
 - type: markingPoints
   id: MobOniMarkingLimits
