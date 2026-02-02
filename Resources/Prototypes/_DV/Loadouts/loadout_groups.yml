@@ -33,6 +33,7 @@
 
 - type: loadoutGroup
   id: BartenderNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-bartender-neck
   minLimit: 0
   loadouts:
@@ -42,6 +43,7 @@
 ## Librarian
 - type: loadoutGroup
   id: LibrarianNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-librarian-neck
   minLimit: 0
   loadouts:
@@ -51,6 +53,7 @@
 ## Janitor
 - type: loadoutGroup
   id: JanitorNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-janitor-neck
   minLimit: 0
   loadouts:
@@ -59,6 +62,7 @@
 ## Botanist
 - type: loadoutGroup
   id: BotanistNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-botanist-neck
   minLimit: 0
   loadouts:
@@ -76,6 +80,7 @@
 ## Mime
 - type: loadoutGroup
   id: MimeNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-mime-neck
   minLimit: 0
   loadouts:
@@ -85,6 +90,7 @@
 ## Musician
 - type: loadoutGroup
   id: MusicianNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-musician-neck
   minLimit: 0
   loadouts:
@@ -141,6 +147,7 @@
 
 - type: loadoutGroup
   id: CourierNeck
+  parent: [CargoTechnicianNeck] # Floofstation
   name: loadout-group-courier-neck
   minLimit: 0
   loadouts:
@@ -228,6 +235,7 @@
 ## Cargo Technician
 - type: loadoutGroup
   id: CargoTechnicianNeck
+  parent: [CargoCollars] # Floofstation
   name: loadout-group-cargo-technician-neck
   minLimit: 0
   loadouts:
@@ -236,6 +244,7 @@
 ## Salvage Specialist
 - type: loadoutGroup
   id: SalvageSpecialistNeck
+  parent: [CargoCollars] # Floofstation
   name: loadout-group-salvage-specialist-neck
   minLimit: 0
   loadouts:
@@ -262,6 +271,7 @@
 
 - type: loadoutGroup
   id: BrigMedicNeck
+  parent: [SecurityCollars] # Floofstation
   name: loadout-group-brig-medic-neck
   minLimit: 0
   loadouts:
@@ -439,6 +449,7 @@
 ## Security Officer
 - type: loadoutGroup
   id: SecurityNeck
+  parent: [SecurityCollars] # Floofstation
   name: loadout-group-security-neck
   minLimit: 0
   loadouts:
@@ -538,6 +549,7 @@
 ## Medical Doctor
 - type: loadoutGroup
   id: MedicalDoctorNeck
+  parent: [MedicalCollars] # Floofstation
   name: loadout-group-medical-doctor-neck
   minLimit: 0
   loadouts:
@@ -547,6 +559,7 @@
 ## Chemist
 - type: loadoutGroup
   id: ChemistNeck
+  parent: [MedicalCollars] # Floofstation
   name: loadout-group-chemist-neck
   minLimit: 0
   loadouts:
@@ -638,6 +651,7 @@
 
 - type: loadoutGroup
   id: ChiefJusticeNeck
+  parent: [ClerkNeck] # Floofstation
   name: loadout-group-chiefjustice-neck
   minLimit: 0
   loadouts:
@@ -662,6 +676,7 @@
 ## Station Engineer
 - type: loadoutGroup
   id: StationEngineerNeck
+  parent: [EngineeringCollars] # Floofstation
   name: loadout-group-station-engineer-neck
   minLimit: 0
   loadouts:
@@ -671,6 +686,7 @@
 ## Atmospheric Technician
 - type: loadoutGroup
   id: AtmosphericTechnicianNeck
+  parent: [EngineeringCollars] # Floofstation
   name: loadout-group-atmospheric-technician-neck
   minLimit: 0
   loadouts:
@@ -698,6 +714,7 @@
 
 - type: loadoutGroup
   id: ClerkNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-clerk-neck
   minLimit: 0
   loadouts:
@@ -742,6 +759,7 @@
 
 - type: loadoutGroup
   id: ProsecutorNeck
+  parent: [ClerkNeck] # Floofstation
   name: loadout-group-prosecutor-neck
   minLimit: 0
   loadouts:

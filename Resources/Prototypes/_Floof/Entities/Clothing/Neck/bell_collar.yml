@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingNeckCollarBase # Floof - reparented
+  id: ClothingNeckCollarBell
+  name: bell collar
+  description: A way to inform others about your presence, or just to annoy everyone around you!
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Neck/Collars/bellcollar.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Neck/Collars/bellcollar.rsi
+  - type: EmitsSoundOnMove
+    soundCollection:
+      collection: FootstepJester
+      params:
+        volume: -5

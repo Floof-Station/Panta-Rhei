@@ -234,6 +234,10 @@
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
   - type: Carriable # DeltaV
   - type: GrappleTarget # DeltaV - Allow targets to be grappled
+  # Floofstation section
+  - type: HumanoidHeightMonitoring # required for the below
+  - type: FixturesAffectedByHeight # scale fixtures with the size of the humanoid
+  # Floofstation section end
 
 - type: entity
   save: false
