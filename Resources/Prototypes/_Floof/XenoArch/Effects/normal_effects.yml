@@ -125,23 +125,24 @@
 #    - id: SpaceCash10000
 #      prob: 0.1
 
-- type: entity
-  id: XenoArtifactSupermatterSliver
-  parent: BaseOneTimeXenoArtifactEffect
-  components:
-  - type: XAEDetails # DeltaV
-    specificTip: xenoarch-effect-tip-specific-radioactive-strong
-    # no vague tip - players should know what they're messing with
-    allowLockedEffectHiding: false
-  - type: XAEApplyComponents
-    applyIfAlreadyHave: true
-    refreshOnReactivate: true
-    components:
-    - type: EntityTableSpawner
-      deleteSpawnerAfterSpawn: false
-      table: !type:AllSelector
-        children:
-        - id: SupermatterSliver
+# Reenable this when Supermatter Added
+#- type: entity
+#  id: XenoArtifactSupermatterSliver
+#  parent: BaseOneTimeXenoArtifactEffect
+#  components:
+#  - type: XAEDetails # DeltaV
+#    specificTip: xenoarch-effect-tip-specific-radioactive-strong
+#    # no vague tip - players should know what they're messing with
+#    allowLockedEffectHiding: false
+#  - type: XAEApplyComponents
+#    applyIfAlreadyHave: true
+#    refreshOnReactivate: true
+#    components:
+#    - type: EntityTableSpawner
+#      deleteSpawnerAfterSpawn: false
+#      table: !type:AllSelector
+#        children:
+#        - id: SupermatterSliver
 
 #- type: artifactEffect # Floof - A little radioactive gift
 #  id: EffectSupermatterSliver
@@ -199,23 +200,24 @@
 #    spawns:
 #    - id: MobBehonkerArtifact
 
-- type: entity
-  id: XenoArtifactSupermatter
-  parent: BaseOneTimeXenoArtifactEffect
-  components:
-  - type: XAEDetails # DeltaV
-    specificTip: xenoarch-effect-tip-specific-radioactive-strong
-    # no vague tip - players should know what they're messing with
-    allowLockedEffectHiding: false
-  - type: XAEApplyComponents
-    applyIfAlreadyHave: true
-    refreshOnReactivate: true
-    components:
-    - type: EntityTableSpawner
-      deleteSpawnerAfterSpawn: false
-      table: !type:AllSelector
-        children:
-        - id: Supermatter
+# Reenable this when Supermatter Added
+#- type: entity
+#  id: XenoArtifactSupermatter
+#  parent: BaseOneTimeXenoArtifactEffect
+#  components:
+#  - type: XAEDetails # DeltaV
+#    specificTip: xenoarch-effect-tip-specific-radioactive-strong
+#    # no vague tip - players should know what they're messing with
+#    allowLockedEffectHiding: false
+#  - type: XAEApplyComponents
+#    applyIfAlreadyHave: true
+#    refreshOnReactivate: true
+#    components:
+#    - type: EntityTableSpawner
+#      deleteSpawnerAfterSpawn: false
+#      table: !type:AllSelector
+#        children:
+#        - id: Supermatter
 
 #- type: artifactEffect # Floof - A Supermatter is still safer then a Singulo or a Tesla
 #  id: EffectSupermatter
