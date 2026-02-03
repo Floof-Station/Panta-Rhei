@@ -28,6 +28,7 @@
       types:
         Blunt: 35
         Structural: 70
+  - type: Dispellable
   - type: DamageOnDispel
     damage:
       types:
@@ -61,6 +62,7 @@
     thresholds:
       0: Alive
       350: Dead
+  - type: Dispellable
   - type: DamageOnDispel
     damage:
       types:
