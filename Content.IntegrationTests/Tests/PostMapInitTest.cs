@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -572,8 +573,9 @@ namespace Content.IntegrationTests.Tests
 
             await server.WaitPost(() =>
             {
-                Assert.Multiple(() =>
-                {
+                // Floofstation - disabled multiple assertion
+                // Assert.Multiple(() =>
+                // {
                     // This bunch of files contains a random mixture of both map and grid files.
                     // TODO MAPPING organize files
                     var opts = MapLoadOptions.Default with
@@ -609,7 +611,7 @@ namespace Content.IntegrationTests.Tests
                             throw new Exception($"Failed to delete map {path}", ex);
                         }
                     }
-                });
+                // });
             });
 
             await server.WaitRunTicks(1);

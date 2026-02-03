@@ -247,3 +247,24 @@ Entries:
         twice as many sounds as they are supposed to.
   id: 30
   time: '2026-01-29T14:45:15.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Ported organ changes from Floof
+  id: 31
+  time: '2026-01-30T07:38:48.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        The height of a humanoid now also affects the radius of their collision
+        fixture (sometimes wrongfully called a hitbox). There is now also an
+        extensible framework for adding more height-driven effects.
+  id: 32
+  time: '2026-01-30T21:16:07.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Toy markings
+  id: 33
+  time: '2026-01-31T09:51:00.0000000+00:00'
