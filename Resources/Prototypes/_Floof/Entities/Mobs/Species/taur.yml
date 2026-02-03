@@ -316,6 +316,7 @@
     noRot: true
     # TODO BODY Turn these into individual body parts?
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TaurBody" ]
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.TaurBodyConnector" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
