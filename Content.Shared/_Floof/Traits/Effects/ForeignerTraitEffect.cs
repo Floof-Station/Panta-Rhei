@@ -102,10 +102,15 @@ public sealed partial class ForeignerTraitEffect : BaseTraitEffect
             handheld.SetLanguageOnInteract = true;
         }
 
-        // Allows to speak the specified language and requires entities language.
-        handheld.SpokenLanguages = [translatorLanguage];
-        handheld.UnderstoodLanguages = [translatorLanguage];
-        handheld.RequiredLanguages = [entityLanguage];
+        // Just because using list = [value] is a sandbox violation on the client side
+        void Set<T>(List<T> list, T value)
+        {
+            list.Clear();
+            list.Add(value);
+        }
+        Set(handheld.SpokenLanguages, translatorLanguage);
+        Set(handheld.UnderstoodLanguages, translatorLanguage);
+        Set(handheld.RequiredLanguages, entityLanguage);
 
         // Try to put it in entities hand
         if (handsSys.TryPickupAnyHand(uid, translator, false, false, false))

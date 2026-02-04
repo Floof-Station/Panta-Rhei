@@ -1,11 +1,12 @@
 - type: traitCategory
   id: Languages
   name: trait-category-languages
-  priority: 2 # Just enough to afford a secondary language, but nothing else
+  priority: 1000 # At the bottom
   accentColor: "#418b60"
 
 - type: traitCategory
   id: NaturalLanguages
   name: trait-category-natural-languages
-  priority: 1 # Can only choose one.
+  maxTraits: 1 # Can only choose one.
+  priority: 1001 # At the bottom
   accentColor: "#4a8b31"
