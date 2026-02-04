@@ -1,0 +1,27 @@
+# Giving up your primary language gives you points to learn other languages
+- type: trait
+  id: ForeignerLight
+  name: trait-foreigner-light-name
+  description: trait-foreigner-light-desc
+  category: Languages
+  cost: -2
+  conditions:
+  - !type:HasCompCondition
+    component: LanguageKnowledge
+  effects:
+  - !type:ForeignerTraitEffect
+    cantUnderstand: false
+    baseTranslator: TranslatorForeigner
+
+- type: trait
+  id: Foreigner
+  name: trait-foreigner-name
+  description: trait-foreigner-desc
+  category: Languages
+  cost: -4
+  conditions:
+  - !type:HasCompCondition
+    component: LanguageKnowledge
+  effects:
+  - !type:ForeignerTraitEffect
+    baseTranslator: TranslatorForeigner
