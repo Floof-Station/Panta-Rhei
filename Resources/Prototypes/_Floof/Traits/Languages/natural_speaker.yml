@@ -7,7 +7,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Shadowkin
   effects:
@@ -21,7 +21,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Chitinid
     - Shadowkin
@@ -37,7 +37,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Feroxi
     - Shadowkin
@@ -53,7 +53,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Rodentia
     - Shadowkin
@@ -69,7 +69,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Vulpkanin
     - Shadowkin
@@ -78,20 +78,20 @@
     language: Canilunzt
 
 - type: trait
-  id: NaturalRobotTalk
-  name: trait-NaturalRobotTalk-name
-  description: trait-NaturalRobotTalk-desc
+  id: NaturalBinary
+  name: trait-NaturalBinary-name
+  description: trait-NaturalBinary-desc
   category: NaturalLanguages
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - IPC
     - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
-    language: RobotTalk
+    language: Binary
 
 - type: trait
   id: NaturalArachnic
@@ -101,7 +101,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     # Arachne they dont speak Arachind
     - Arachnid
@@ -118,7 +118,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Diona
     - Shadowkin
@@ -134,7 +134,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Human
     - Shadowkin
@@ -151,7 +151,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Harpy
     - Shadowkin
@@ -167,7 +167,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Moth
     - Shadowkin
@@ -183,7 +183,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Reptilian
     - Shadowkin
@@ -199,7 +199,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - SlimePerson
     - Shadowkin
@@ -215,7 +215,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Resomi
     - Shadowkin
@@ -231,7 +231,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Felinid
     - Shadowkin
@@ -247,7 +247,7 @@
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
-    inverted: true
+    invert: true
     species:
     - Kitsune
     - Oni
