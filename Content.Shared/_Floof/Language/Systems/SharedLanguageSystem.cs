@@ -108,6 +108,18 @@ public abstract partial class SharedLanguageSystem : EntitySystem
         return proto;
     }
 
+    /// <remarks>Does nothing on the client side.</remarks>
+    public virtual void SetLanguage(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> language) {}
+
+    /// <remarks>Does nothing on the client side.</remarks>
+    public virtual void AddLanguage(EntityUid uid, ProtoId<LanguagePrototype> language, bool addSpoken = true, bool addUnderstood = true) {}
+
+    /// <remarks>Does nothing on the client side.</remarks>
+    public virtual void RemoveLanguage(Entity<LanguageKnowledgeComponent?> ent, ProtoId<LanguagePrototype> language, bool removeSpoken = true, bool removeUnderstood = true) {}
+
+    /// <remarks>Does nothing on the client side.</remarks>
+    public virtual bool EnsureValidLanguage(Entity<LanguageSpeakerComponent?> ent) => true;
+
     /// <summary>
     ///     Obfuscates the message using the provided language prototype.
     /// </summary>

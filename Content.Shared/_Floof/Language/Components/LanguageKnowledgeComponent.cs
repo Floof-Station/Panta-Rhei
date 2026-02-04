@@ -1,7 +1,6 @@
-using Content.Shared._Floof.Language;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Floof.Language;
+namespace Content.Shared._Floof.Language.Components;
 
 /// <summary>
 ///     Stores data about entities' intrinsic language knowledge.
@@ -23,7 +22,7 @@ public sealed partial class LanguageKnowledgeComponent : Component
 
     /// <summary>
     ///     Traits can replace or reference natural given languages.
-    ///     The entity's base natural language. Not guaranteed the entity knows this, but this is the prototype default.
+    ///     This is the entity's natural language. Traits that replace the entity's natural language should update this field.
     /// </summary>
     [DataField("naturalLanguage", required: false)]
     public ProtoId<LanguagePrototype>? NaturalLanguage = default!;
