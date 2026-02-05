@@ -1,8 +1,22 @@
+# These add additional non-species-specific languages.
+- type: trait
+  id: SignLanguage
+  name: trait-SignLanguage-name
+  description: trait-SignLanguage-desc
+  category: Languages
+  cost: 2
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Sign
+    languagesUnderstood:
+    - Sign
+
 - type: trait
   id: Ratvarian
   name: trait-Ratvarian-name
   description: trait-Ratvarian-desc
-  category: NaturalLanguages
+  category: Languages
   cost: 1
   effects:
   - !type:ModifyLanguagesTraitEffect
@@ -11,12 +25,73 @@
     languagesUnderstood:
     - Ratvarian
 
+- type: trait
+  id: Tradeband
+  name: trait-Tradeband-name
+  description: trait-Tradeband-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Harpy
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Tradeband
+    languagesUnderstood:
+    - Tradeband
+
+- type: trait
+  id: Freespeak
+  name: trait-Freespeak-name
+  description: trait-Freespeak-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Freespeak
+    languagesUnderstood:
+    - Freespeak
+
+- type: trait
+  id: Elyran
+  name: trait-Elyran-name
+  description: trait-Elyran-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Elyran
+    languagesUnderstood:
+    - Elyran
+
+- type: trait
+  id: Azaziba
+  name: trait-Azaziba-name
+  description: trait-Azaziba-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Reptilian
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Azaziba
+    languagesUnderstood:
+    - Azaziba
+
 # Fox and dog languages, specific to the vulpkanin
 - type: trait
   id: FoxLanguage
   name: trait-FoxLanguage-name
   description: trait-FoxLanguage-desc
-  category: NaturalLanguages
+  category: Languages
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
@@ -34,7 +109,7 @@
   id: DogLanguage
   name: trait-DogLanguage-name
   description: trait-DogLanguage-desc
-  category: NaturalLanguages
+  category: Languages
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
@@ -51,7 +126,7 @@
   id: CatLanguage
   name: trait-CatLanguage-name
   description: trait-CatLanguage-desc
-  category: NaturalLanguages
+  category: Languages
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
@@ -70,7 +145,7 @@
   id: MonkeyLanguage
   name: trait-MonkeyLanguage-name
   description: trait-MonkeyLanguage-desc
-  category: NaturalLanguages
+  category: Languages
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
@@ -89,7 +164,7 @@
   id: KoboldLanguage
   name: trait-KoboldLanguage-name
   description: trait-KoboldLanguage-desc
-  category: NaturalLanguages
+  category: Languages
   cost: 1
   conditions:
   - !type:OneOfSpeciesCondition
