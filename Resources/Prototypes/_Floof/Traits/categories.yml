@@ -3,6 +3,7 @@
   name: trait-category-languages
   priority: 1000 # At the bottom
   accentColor: "#418b60"
+  defaultExpanded: false
 
 - type: traitCategory
   id: NaturalLanguages
@@ -10,3 +11,4 @@
   maxTraits: 1 # Can only choose one.
   priority: 1001 # At the bottom
   accentColor: "#4a8b31"
+  defaultExpanded: false
