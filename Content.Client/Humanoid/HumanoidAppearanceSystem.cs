@@ -10,6 +10,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Numerics; // CD - Character Records
+using Content.Shared._Floof.Sprite; // Floofstation
 using Robust.Client.Console; // CD - Character Records
 
 namespace Content.Client.Humanoid;
@@ -358,12 +359,44 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var humanoid = entity.Comp1;
         var sprite = entity.Comp2;
 
-        if (!_sprite.LayerMapTryGet((entity.Owner, sprite), markingPrototype.BodyPart, out var targetLayer, false))
-            return;
+        // Floofstation - this is done per-sprite, not per-marking
+        // if (!_sprite.LayerMapTryGet((entity.Owner, sprite), markingPrototype.BodyPart, out var targetLayer, false))
+        //     return;
 
         visible &= !IsHidden(humanoid, markingPrototype.BodyPart);
         visible &= humanoid.BaseLayers.TryGetValue(markingPrototype.BodyPart, out var setting)
            && setting.AllowsMarkings;
+
+        // FLOOF ADD START
+        // make a handy dict of sprite -> color
+        // cus we might need to access it by filename to link
+        // one sprite's colors to another
+        var colorDict = new Dictionary<string, Color>();
+        for (var i = 0; i < markingPrototype.Sprites.Count; i++)
+        {
+            var spriteName = markingPrototype.Sprites[i].GetFilename();
+            if (colors != null && i < colors.Count)
+                colorDict.Add(spriteName, colors[i]);
+            else
+                colorDict.Add(spriteName, colors is { Count: > 0 } ? colors[0] : Color.White);
+        }
+        // now, rearrange them, copying any parented colors to children set to
+        // inherit them
+        if (markingPrototype.ColorLinks != null)
+        {
+            foreach (var (child, parent) in markingPrototype.ColorLinks)
+            {
+                if (colorDict.TryGetValue(parent, out var color))
+                    colorDict[child] = color;
+                else
+                    Log.Error($"Invalid marking color link {parent}->{child} in {markingPrototype.ID}");
+            }
+        }
+        // and, since we can't rely on the iterator knowing where the heck to put
+        // each sprite when we have one marking setting multiple layers,
+        // lets just kinda sorta do that ourselves
+        var layerDict = new Dictionary<string, int>();
+        // FLOOF ADD END
 
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)
         {
@@ -372,11 +405,34 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             if (markingSprite is not SpriteSpecifier.Rsi rsi)
                 return;
 
+            // FLOOF CHANGE START. We can't just add layers sequentially as some of them may want to be placed on different layers.
+            var layerSlot = markingPrototype.BodyPart;
+            // first, try to see if there are any custom layers for this marking
+            if (markingPrototype.Layering != null)
+            {
+                var name = rsi.RsiState;
+                if (markingPrototype.Layering.TryGetValue(name, out var layerName))
+                    layerSlot = Enum.Parse<HumanoidVisualLayers>(layerName);
+            }
+            // update the layerDict
+            // if it doesnt have this, add it at 0, otherwise increment it
+            if (layerDict.TryGetValue(layerSlot.ToString(), out var layerIndex))
+                layerDict[layerSlot.ToString()] = layerIndex + 1;
+            else
+                layerDict.Add(layerSlot.ToString(), 0);
+
+            if (!sprite.LayerMapTryGet(layerSlot, out var targetLayer))
+                continue;
+            // FLOOF CHANGE END
+
             var layerId = $"{markingPrototype.ID}-{rsi.RsiState}";
 
             if (!_sprite.LayerMapTryGet((entity.Owner, sprite), layerId, out _, false))
             {
-                var layer = _sprite.AddLayer((entity.Owner, sprite), markingSprite, targetLayer + j + 1);
+                // Floofstation: for layers that are supposed to be behind everything,
+                // adding 1 to the layer index makes it not be behind the target (marker) layer.
+                var targetLayerAdj = targetLayer + layerDict[layerSlot.ToString()] + 1;
+                var layer = _sprite.AddLayer((entity.Owner, sprite), markingSprite, targetLayerAdj); // Was targetLayer + j + 1
                 _sprite.LayerMapSet((entity.Owner, sprite), layerId, layer);
                 _sprite.LayerSetSprite((entity.Owner, sprite), layerId, rsi);
             }
@@ -389,10 +445,15 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             // Okay so if the marking prototype is modified but we load old marking data this may no longer be valid
             // and we need to check the index is correct.
             // So if that happens just default to white?
-            if (colors != null && j < colors.Count)
-                _sprite.LayerSetColor((entity.Owner, sprite), layerId, colors[j]);
-            else
-                _sprite.LayerSetColor((entity.Owner, sprite), layerId, Color.White);
+            //if (colors != null && j < colors.Count)
+            //    _sprite.LayerSetColor((entity.Owner, sprite), layerId, colors[j]);
+            //else
+            //    _sprite.LayerSetColor((entity.Owner, sprite), layerId, Color.White);
+
+            // Floofstation - replaced the above
+            _sprite.LayerSetColor((entity.Owner, sprite),
+                layerId,
+                colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
 
             if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacementData) && markingPrototype.CanBeDisplaced)
                 _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), targetLayer + j + 1, layerId, out _);
