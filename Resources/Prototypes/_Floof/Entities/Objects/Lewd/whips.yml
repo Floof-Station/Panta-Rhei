@@ -8,10 +8,10 @@
     damage:
       types:
         Slash: 2
-    heavyRateModifier: 0.5
-    heavyDamageBaseModifier: 1.75
-    heavyStaminaCost: 10
-    maxTargets: 1
+    #heavyRateModifier: 0.5
+    #heavyDamageBaseModifier: 1.75
+    #heavyStaminaCost: 10
+    #maxTargets: 1
     angle: 120
     animation: WeaponArcSlash
     soundHit:
@@ -82,7 +82,7 @@
     damage:
       types:
         Blunt: 4
-    heavyDamageBaseModifier: 1.25
+    #heavyDamageBaseModifier: 1.25
 
 - type: entity
   parent: BaseWhip
@@ -98,4 +98,4 @@
     damage:
       types:
         Blunt: 4
-    heavyDamageBaseModifier: 1.25
+    #heavyDamageBaseModifier: 1.25
