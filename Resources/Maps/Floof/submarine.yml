@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/01/2026 22:50:02
+  time: 02/05/2026 16:11:08
   entityCount: 41689
 maps:
 - 18185
@@ -119483,6 +119483,13 @@ entities:
       parent: 19881
     - type: Physics
       canCollide: False
+- proto: EngineeringTechFab
+  entities:
+  - uid: 4652
+    components:
+    - type: Transform
+      pos: -49.5,18.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 39949
@@ -186633,6 +186640,13 @@ entities:
     - type: Transform
       pos: -25.5,-28.5
       parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 5658
+    components:
+    - type: Transform
+      pos: -15.5,-25.5
+      parent: 2
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 2232
@@ -186710,21 +186724,6 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 1218
-    components:
-    - type: Transform
-      pos: -67.5,1.5
-      parent: 2
-  - uid: 4127
-    components:
-    - type: Transform
-      pos: 26.5,28.5
-      parent: 2
-  - uid: 4652
-    components:
-    - type: Transform
-      pos: -49.5,18.5
-      parent: 2
   - uid: 7036
     components:
     - type: Transform
@@ -186749,11 +186748,6 @@ entities:
     components:
     - type: Transform
       pos: 19.5,-18.5
-      parent: 2
-  - uid: 15097
-    components:
-    - type: Transform
-      pos: -15.5,-25.5
       parent: 2
   - uid: 18861
     components:
@@ -201787,6 +201781,13 @@ entities:
     - type: Transform
       pos: -54.5,-27.5
       parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 4127
+    components:
+    - type: Transform
+      pos: 26.5,28.5
+      parent: 2
 - proto: PsychBed
   entities:
   - uid: 20469
@@ -215938,6 +215939,13 @@ entities:
     components:
     - type: Transform
       pos: 43.5,25.5
+      parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 1218
+    components:
+    - type: Transform
+      pos: -67.5,1.5
       parent: 2
 - proto: ShadowTree
   entities:

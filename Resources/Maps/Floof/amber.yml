@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/29/2026 18:19:16
-  entityCount: 24320
+  time: 02/05/2026 14:58:18
+  entityCount: 24323
 maps:
 - 1
 grids:
@@ -28112,6 +28112,13 @@ entities:
     components:
     - type: Transform
       pos: 0.5,4.5
+      parent: 2
+- proto: Autolathe
+  entities:
+  - uid: 4245
+    components:
+    - type: Transform
+      pos: 19.5,-28.5
       parent: 2
 - proto: BackgammonBoard
   entities:
@@ -66865,6 +66872,44 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 3.5,16.5
       parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 7379
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -10.5,-12.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 13020
+    components:
+    - type: Transform
+      pos: -39.5,-22.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 13209
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 19.5,-27.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 13236
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -24.5,4.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 13198
+    components:
+    - type: Transform
+      pos: 0.5,-39.5
+      parent: 2
 - proto: ComputerCloningConsole
   entities:
   - uid: 17865
@@ -76596,6 +76641,13 @@ entities:
     - type: Transform
       pos: 75.49805,-44.26112
       parent: 2
+- proto: EngineeringTechFab
+  entities:
+  - uid: 5913
+    components:
+    - type: Transform
+      pos: -12.5,-15.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 8462
@@ -79696,13 +79748,6 @@ entities:
     components:
     - type: Transform
       pos: -42.5,-5.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 24171
-    components:
-    - type: Transform
-      pos: -39.5,-22.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -113482,11 +113527,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -57.5,-31.5
       parent: 2
-  - uid: 13020
-    components:
-    - type: Transform
-      pos: -39.5,-22.5
-      parent: 2
   - uid: 14314
     components:
     - type: Transform
@@ -115630,6 +115670,13 @@ entities:
     - type: Transform
       pos: -25.5,19.5
       parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 12364
+    components:
+    - type: Transform
+      pos: 10.5,20.5
+      parent: 2
 - proto: LootSpawnerCableCoil
   entities:
   - uid: 10021
@@ -116064,11 +116111,6 @@ entities:
     - type: Transform
       pos: 44.5,-44.5
       parent: 2
-  - uid: 1813
-    components:
-    - type: Transform
-      pos: 1.5,-39.5
-      parent: 2
   - uid: 1890
     components:
     - type: Transform
@@ -116079,16 +116121,6 @@ entities:
     - type: Transform
       pos: -19.5,-13.5
       parent: 2
-  - uid: 4232
-    components:
-    - type: Transform
-      pos: 21.5,-28.5
-      parent: 2
-  - uid: 4245
-    components:
-    - type: Transform
-      pos: 19.5,-28.5
-      parent: 2
   - uid: 8672
     components:
     - type: Transform
@@ -116098,16 +116130,6 @@ entities:
     components:
     - type: Transform
       pos: 48.5,-56.5
-      parent: 2
-  - uid: 13860
-    components:
-    - type: Transform
-      pos: 8.5,20.5
-      parent: 2
-  - uid: 15772
-    components:
-    - type: Transform
-      pos: 7.5,20.5
       parent: 2
   - uid: 17269
     components:
@@ -124064,6 +124086,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,-40.5
       parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 4232
+    components:
+    - type: Transform
+      pos: 21.5,-28.5
+      parent: 2
 - proto: PsychBed
   entities:
   - uid: 15246
@@ -124692,11 +124721,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -58.5,-58.5
-      parent: 2
-  - uid: 15987
-    components:
-    - type: Transform
-      pos: 0.5,-39.5
       parent: 2
   - uid: 16012
     components:
@@ -131492,6 +131516,13 @@ entities:
     - type: Transform
       pos: 34.5,-34.5
       parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 1813
+    components:
+    - type: Transform
+      pos: 1.5,-39.5
+      parent: 2
 - proto: ShardGlass
   entities:
   - uid: 793
@@ -131798,6 +131829,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: SheetPlasma1
+  entities:
+  - uid: 13217
+    components:
+    - type: Transform
+      pos: -30.57592,-36.27622
+      parent: 2
 - proto: SheetPlasteel
   entities:
   - uid: 1758
@@ -131835,14 +131873,11 @@ entities:
     - type: Transform
       pos: 19.5265,-30.937439
       parent: 2
-  - uid: 7379
+  - uid: 13860
     components:
     - type: Transform
-      pos: 0.37066197,-39.386684
+      pos: 1.4939101,-41.349354
       parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
   - uid: 14888
     components:
     - type: Transform
@@ -131927,14 +131962,6 @@ entities:
     - type: Transform
       pos: 19.547344,-30.51006
       parent: 2
-  - uid: 5913
-    components:
-    - type: Transform
-      pos: 0.63718855,-39.408905
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
   - uid: 9657
     components:
     - type: Transform
@@ -131944,6 +131971,11 @@ entities:
     components:
     - type: Transform
       pos: 2.4604461,-55.406693
+      parent: 2
+  - uid: 13295
+    components:
+    - type: Transform
+      pos: 1.6084934,-41.42232
       parent: 2
   - uid: 14425
     components:

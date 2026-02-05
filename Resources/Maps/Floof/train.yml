@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/02/2026 01:38:47
+  time: 02/05/2026 16:12:48
   entityCount: 21607
 maps:
 - 1
@@ -5747,7 +5747,7 @@ entities:
             1: 44714
           -7,-63:
             1: 61184
-            5: 12
+            3: 12
           -7,-62:
             1: 64443
           -7,-61:
@@ -5755,14 +5755,14 @@ entities:
           -7,-60:
             1: 48063
           -7,-64:
-            3: 12
-            4: 3072
+            4: 12
+            5: 3072
           -6,-64:
-            3: 1
-            4: 256
+            4: 1
+            5: 256
             1: 17476
           -6,-63:
-            5: 1
+            3: 1
             1: 5956
           -6,-62:
             1: 4369
@@ -5775,7 +5775,7 @@ entities:
           -6,-65:
             1: 17476
             6: 1
-            3: 256
+            4: 256
           -7,-59:
             1: 251
           -6,-59:
@@ -5800,10 +5800,10 @@ entities:
           -7,-68:
             0: 60928
           -7,-66:
-            3: 3084
+            4: 3084
           -7,-65:
             6: 12
-            3: 3072
+            4: 3072
           -6,-68:
             0: 65024
             1: 2
@@ -5811,7 +5811,7 @@ entities:
             1: 18176
             0: 14
           -6,-66:
-            3: 257
+            4: 257
             1: 17476
           -6,-69:
             1: 8738
@@ -5909,15 +5909,15 @@ entities:
             Nitrogen: 102.419266
         - volume: 2500
           temperature: 293.15
+          moles:
+            Nitrogen: 6666.982
+        - volume: 2500
+          temperature: 293.15
           moles: {}
         - volume: 2500
           temperature: 293.15
           moles:
             Oxygen: 6666.982
-        - volume: 2500
-          temperature: 293.15
-          moles:
-            Nitrogen: 6666.982
         - volume: 2500
           temperature: 293.15
           moles:
@@ -7631,7 +7631,7 @@ entities:
       pos: 2.5,-274.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -63506.203
+      secondsUntilStateChange: -63593.82
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -7856,7 +7856,7 @@ entities:
       pos: 9.5,-248.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -63916.535
+      secondsUntilStateChange: -64004.152
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8933,7 +8933,7 @@ entities:
       pos: 5.5,-289.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -19377.955
+      secondsUntilStateChange: -19465.572
       state: Opening
     - type: DeviceLinkSource
       linkedPorts:
@@ -9114,7 +9114,7 @@ entities:
       pos: -1.5,-297.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42237.08
+      secondsUntilStateChange: -42324.695
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9303,7 +9303,7 @@ entities:
       pos: 11.5,-311.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -69208.04
+      secondsUntilStateChange: -69295.66
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11986,6 +11986,13 @@ entities:
     components:
     - type: Transform
       pos: -23.5,-259.5
+      parent: 2
+- proto: Autolathe
+  entities:
+  - uid: 12181
+    components:
+    - type: Transform
+      pos: -4.5,-299.5
       parent: 2
 - proto: BananaPhoneInstrument
   entities:
@@ -45307,7 +45314,7 @@ entities:
       pos: -12.5,-57.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10837.938
+      secondsUntilStateChange: -10925.557
       state: Closing
   - uid: 16778
     components:
@@ -45571,7 +45578,7 @@ entities:
       pos: -12.5,-54.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -10747.272
+      secondsUntilStateChange: -10834.891
       state: Closing
   - uid: 20477
     components:
@@ -45584,7 +45591,7 @@ entities:
       pos: -11.5,-51.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17109.184
+      secondsUntilStateChange: -17196.8
       state: Closing
   - uid: 20479
     components:
@@ -56330,6 +56337,13 @@ entities:
       parent: 7273
     - type: Physics
       canCollide: False
+- proto: EngineeringTechFab
+  entities:
+  - uid: 615
+    components:
+    - type: Transform
+      pos: 17.5,-245.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 7275
@@ -57701,7 +57715,7 @@ entities:
       pos: 1.5,-311.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -68942.82
+      secondsUntilStateChange: -69030.44
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -95360,6 +95374,13 @@ entities:
     - type: Transform
       pos: 3.5,-261.5
       parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 614
+    components:
+    - type: Transform
+      pos: 6.5,-271.5
+      parent: 2
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 11384
@@ -95426,21 +95447,6 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 614
-    components:
-    - type: Transform
-      pos: 6.5,-272.5
-      parent: 2
-  - uid: 615
-    components:
-    - type: Transform
-      pos: 17.5,-245.5
-      parent: 2
-  - uid: 616
-    components:
-    - type: Transform
-      pos: -5.5,-299.5
-      parent: 2
   - uid: 9528
     components:
     - type: Transform
@@ -95450,11 +95456,6 @@ entities:
     components:
     - type: Transform
       pos: 31.5,-260.5
-      parent: 2
-  - uid: 12181
-    components:
-    - type: Transform
-      pos: -4.5,-299.5
       parent: 2
   - uid: 20567
     components:
@@ -101869,6 +101870,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 17.5,-143.5
+      parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 616
+    components:
+    - type: Transform
+      pos: -5.5,-299.5
       parent: 2
 - proto: PsychBed
   entities:

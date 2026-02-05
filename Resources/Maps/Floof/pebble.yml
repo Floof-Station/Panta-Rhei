@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/02/2026 01:42:10
-  entityCount: 11067
+  time: 02/05/2026 15:57:59
+  entityCount: 11065
 maps:
 - 1
 grids:
@@ -13230,6 +13230,18 @@ entities:
     - type: Transform
       pos: 25.5,39.5
       parent: 2
+- proto: Autolathe
+  entities:
+  - uid: 1436
+    components:
+    - type: Transform
+      pos: -7.5,29.5
+      parent: 2
+  - uid: 4596
+    components:
+    - type: Transform
+      pos: 3.5,15.5
+      parent: 2
 - proto: Barricade
   entities:
   - uid: 1438
@@ -14281,11 +14293,6 @@ entities:
     components:
     - type: Transform
       pos: -14.78339,-15.451241
-      parent: 2
-  - uid: 1626
-    components:
-    - type: Transform
-      pos: -7.371512,26.705606
       parent: 2
   - uid: 1627
     components:
@@ -29884,6 +29891,12 @@ entities:
     - type: Transform
       pos: -12.5,33.5
       parent: 2
+  - uid: 6971
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -7.5,26.5
+      parent: 2
 - proto: ComputerShuttleCargo
   entities:
   - uid: 4559
@@ -29953,11 +29966,11 @@ entities:
       parent: 2
 - proto: ComputerTechnologyDiskTerminal
   entities:
-  - uid: 4596
+  - uid: 6682
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -7.5,29.5
+      pos: -0.5,28.5
       parent: 2
 - proto: ComputerTelevision
   entities:
@@ -33697,6 +33710,13 @@ entities:
     components:
     - type: Transform
       pos: -17.5,7.5
+      parent: 2
+- proto: EngineeringTechFab
+  entities:
+  - uid: 1437
+    components:
+    - type: Transform
+      pos: 13.5,14.5
       parent: 2
 - proto: ExosuitFabricator
   entities:
@@ -51110,6 +51130,13 @@ entities:
     - type: Transform
       pos: 14.5,-14.5
       parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 1626
+    components:
+    - type: Transform
+      pos: 13.5,-2.5
+      parent: 2
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 7690
@@ -51159,30 +51186,10 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 1436
-    components:
-    - type: Transform
-      pos: 13.5,14.5
-      parent: 2
-  - uid: 1437
-    components:
-    - type: Transform
-      pos: 13.5,-2.5
-      parent: 2
-  - uid: 6878
-    components:
-    - type: Transform
-      pos: 3.5,15.5
-      parent: 2
   - uid: 7697
     components:
     - type: Transform
       pos: 19.5,1.5
-      parent: 2
-  - uid: 8206
-    components:
-    - type: Transform
-      pos: -7.5,28.5
       parent: 2
 - proto: MagazineBoxPistol
   entities:
@@ -51885,11 +51892,6 @@ entities:
     - type: Transform
       pos: -12.540777,28.454374
       parent: 2
-  - uid: 7810
-    components:
-    - type: Transform
-      pos: -7.7048454,26.73688
-      parent: 2
   - uid: 7811
     components:
     - type: Transform
@@ -51909,11 +51911,6 @@ entities:
     components:
     - type: Transform
       pos: 4.5913434,-26.310644
-      parent: 2
-  - uid: 7815
-    components:
-    - type: Transform
-      pos: -7.4756784,26.517977
       parent: 2
   - uid: 7816
     components:
@@ -54646,6 +54643,13 @@ entities:
       parent: 2
     - type: ApcPowerReceiver
       powerLoad: 0
+- proto: Protolathe
+  entities:
+  - uid: 6878
+    components:
+    - type: Transform
+      pos: -7.5,28.5
+      parent: 2
 - proto: PsychBed
   entities:
   - uid: 8207
@@ -61415,11 +61419,6 @@ entities:
     components:
     - type: Transform
       pos: 15.5,-18.5
-      parent: 2
-  - uid: 9312
-    components:
-    - type: Transform
-      pos: -7.5,26.5
       parent: 2
   - uid: 9313
     components:

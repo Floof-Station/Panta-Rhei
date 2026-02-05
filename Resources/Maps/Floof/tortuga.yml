@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/01/2026 23:36:09
+  time: 02/05/2026 16:15:52
   entityCount: 30765
 maps:
 - 1
@@ -10980,8 +10980,8 @@ entities:
             0: 65535
           7,16:
             0: 255
-            4: 32768
-            6: 8192
+            3: 32768
+            4: 8192
           8,12:
             0: 30583
           8,13:
@@ -11448,8 +11448,8 @@ entities:
             0: 4359
           8,16:
             0: 255
-            3: 8192
-            5: 32768
+            5: 8192
+            6: 32768
           9,12:
             0: 14327
           9,13:
@@ -11462,7 +11462,7 @@ entities:
             0: 30583
           9,16:
             0: 255
-            5: 40960
+            6: 40960
           10,12:
             0: 2032
           10,13:
@@ -11475,7 +11475,7 @@ entities:
             0: 32624
           10,16:
             0: 255
-            5: 40960
+            6: 40960
           11,12:
             0: 30583
           11,13:
@@ -12007,11 +12007,11 @@ entities:
           23,13:
             0: 4369
           8,17:
-            3: 34
-            5: 136
+            5: 34
+            6: 136
           7,17:
-            4: 136
-            6: 34
+            3: 136
+            4: 34
           8,18:
             1: 61471
           7,18:
@@ -12025,7 +12025,7 @@ entities:
           9,19:
             1: 29936
           9,17:
-            5: 170
+            6: 170
           9,20:
             1: 62579
           10,18:
@@ -12033,7 +12033,7 @@ entities:
           10,19:
             1: 17532
           10,17:
-            5: 170
+            6: 170
           10,20:
             1: 29764
           11,18:
@@ -12693,18 +12693,18 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-            Plasma: 6666.982
-        - volume: 2500
-          temperature: 293.15
-          moles:
             Oxygen: 6666.982
-        - volume: 2500
-          temperature: 293.15
-          moles: {}
         - volume: 2500
           temperature: 293.15
           moles:
             Nitrogen: 6666.982
+        - volume: 2500
+          temperature: 293.15
+          moles:
+            Plasma: 6666.982
+        - volume: 2500
+          temperature: 293.15
+          moles: {}
         chunkSize: 4
     - type: BecomesStation
       id: Tortuga
@@ -20320,6 +20320,13 @@ entities:
     components:
     - type: Transform
       pos: 33.5,67.5
+      parent: 2
+- proto: Autolathe
+  entities:
+  - uid: 22209
+    components:
+    - type: Transform
+      pos: -65.5,-8.5
       parent: 2
 - proto: BalloonCorgi
   entities:
@@ -76609,6 +76616,13 @@ entities:
       parent: 11370
     - type: Physics
       canCollide: False
+- proto: EngineeringTechFab
+  entities:
+  - uid: 999
+    components:
+    - type: Transform
+      pos: 40.5,21.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 11386
@@ -134439,6 +134453,13 @@ entities:
     - type: Transform
       pos: 66.5,68.5
       parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 1002
+    components:
+    - type: Transform
+      pos: 21.5,-6.5
+      parent: 2
 - proto: Machete
   entities:
   - uid: 19473
@@ -134570,25 +134591,10 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 999
-    components:
-    - type: Transform
-      pos: 40.5,21.5
-      parent: 2
   - uid: 1000
     components:
     - type: Transform
       pos: -19.5,-1.5
-      parent: 2
-  - uid: 1001
-    components:
-    - type: Transform
-      pos: -19.5,27.5
-      parent: 2
-  - uid: 1002
-    components:
-    - type: Transform
-      pos: 21.5,-6.5
       parent: 2
   - uid: 1003
     components:
@@ -134599,11 +134605,6 @@ entities:
     components:
     - type: Transform
       pos: 45.5,-1.5
-      parent: 2
-  - uid: 22209
-    components:
-    - type: Transform
-      pos: -65.5,-8.5
       parent: 2
 - proto: MagazineBoxPistolRubber
   entities:
@@ -151117,6 +151118,13 @@ entities:
     - type: Transform
       pos: -49.371647,120.50405
       parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 22262
+    components:
+    - type: Transform
+      pos: -66.5,-8.5
+      parent: 2
 - proto: PsychBed
   entities:
   - uid: 22210
@@ -151415,11 +151423,6 @@ entities:
     components:
     - type: Transform
       pos: -82.5,21.5
-      parent: 2
-  - uid: 22262
-    components:
-    - type: Transform
-      pos: -66.5,-8.5
       parent: 2
   - uid: 22263
     components:
@@ -161200,6 +161203,13 @@ entities:
     - type: Transform
       pos: -48.5,77.5
       parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 1001
+    components:
+    - type: Transform
+      pos: -19.5,27.5
+      parent: 2
 - proto: ShardGlass
   entities:
   - uid: 24156
@@ -161584,7 +161594,7 @@ entities:
   - uid: 24226
     components:
     - type: Transform
-      pos: -66.47436,-8.434914
+      pos: -69.353096,-7.4477553
       parent: 2
   - uid: 24227
     components:

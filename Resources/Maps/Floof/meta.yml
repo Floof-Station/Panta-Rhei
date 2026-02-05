@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/29/2026 20:52:00
-  entityCount: 28494
+  time: 02/05/2026 15:56:23
+  entityCount: 28495
 maps:
 - 1
 grids:
@@ -12797,7 +12797,7 @@ entities:
       pos: -0.5,-58.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2217.0383
+      secondsUntilStateChange: -2315.1013
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15367,6 +15367,18 @@ entities:
     components:
     - type: Transform
       pos: 68.5,-28.5
+      parent: 2
+- proto: Autolathe
+  entities:
+  - uid: 900
+    components:
+    - type: Transform
+      pos: 15.5,-32.5
+      parent: 2
+  - uid: 27209
+    components:
+    - type: Transform
+      pos: -17.5,18.5
       parent: 2
 - proto: BananaPhoneInstrument
   entities:
@@ -66772,7 +66784,7 @@ entities:
       pos: 23.5,47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -12388.524
+      secondsUntilStateChange: -12486.587
       state: Opening
   - uid: 27810
     components:
@@ -75306,6 +75318,13 @@ entities:
       parent: 11517
     - type: Physics
       canCollide: False
+- proto: EngineeringTechFab
+  entities:
+  - uid: 901
+    components:
+    - type: Transform
+      pos: 52.5,14.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 11528
@@ -78039,7 +78058,7 @@ entities:
       pos: -3.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -39881.617
+      secondsUntilStateChange: -39979.68
       state: Closing
   - uid: 11888
     components:
@@ -125027,6 +125046,13 @@ entities:
     - type: Transform
       pos: 53.5,24.5
       parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 902
+    components:
+    - type: Transform
+      pos: -33.5,14.5
+      parent: 2
 - proto: LootSpawnerCableCoil
   entities:
   - uid: 27725
@@ -125144,42 +125170,6 @@ entities:
     - type: Transform
       pos: -32.5,1.5
       parent: 2
-  - uid: 900
-    components:
-    - type: Transform
-      pos: 14.5,-30.5
-      parent: 2
-    - type: MaterialStorage
-      storage: {}
-      materialWhiteList:
-      - Steel
-      - Plastic
-      - Wood
-      - Glass
-      - Cloth
-  - uid: 901
-    components:
-    - type: Transform
-      pos: 52.5,14.5
-      parent: 2
-  - uid: 902
-    components:
-    - type: Transform
-      pos: -33.5,14.5
-      parent: 2
-  - uid: 19557
-    components:
-    - type: Transform
-      pos: 15.5,-32.5
-      parent: 2
-    - type: MaterialStorage
-      storage: {}
-      materialWhiteList:
-      - Steel
-      - Glass
-      - Plastic
-      - Wood
-      - Gold
 - proto: MagazinePistolSubMachineGunTopMounted
   entities:
   - uid: 11527
@@ -134615,6 +134605,13 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,-60.5
+      parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 19557
+    components:
+    - type: Transform
+      pos: 14.5,-30.5
       parent: 2
 - proto: Rack
   entities:
