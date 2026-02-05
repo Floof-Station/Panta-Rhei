@@ -27,8 +27,6 @@
     drawdepth: Mobs
     layers:
       - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
-        # DEBUG ONLY REMOVE IN PROD
-      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
