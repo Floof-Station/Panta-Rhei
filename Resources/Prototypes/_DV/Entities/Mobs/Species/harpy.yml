@@ -40,6 +40,7 @@
   - type: Sprite
     scale: 0.9, 0.9
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -68,6 +69,7 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "back" ]
