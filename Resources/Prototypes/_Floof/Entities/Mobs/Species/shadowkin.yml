@@ -9,7 +9,7 @@
   name: Urist McShadow
   abstract: true
   components:
-  - type: Hunger  
+  - type: Hunger
   - type: Thirst
   - type: Perishable
   - type: Carriable
@@ -115,6 +115,14 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Marish
+    understands:
+    - TauCetiBasic
+    - Marish
+    naturalLanguage: Marish
 
 - type: entity
   save: false

@@ -5,14 +5,14 @@
   id: BaseMobResomi
   abstract: true
   components:
-  #- type: LanguageKnowledge
-  #  speaks:
-  #    - TauCetiBasic
-  #    - Schechi
-  #  understands:
-  #    - TauCetiBasic
-  #    - Schechi
-  #  naturalLanguage: Schechi # Floof: explicitly stated natural languages
+  - type: LanguageKnowledge
+    speaks:
+      - TauCetiBasic
+      - Schechi
+    understands:
+      - TauCetiBasic
+      - Schechi
+    naturalLanguage: Schechi
   - type: Fixtures
     fixtures:
       fix1:

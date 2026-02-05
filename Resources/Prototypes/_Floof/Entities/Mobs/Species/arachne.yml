@@ -37,6 +37,14 @@
            32:
              sprite: _Floof/Mobs/Species/Arachne/displacement.rsi
              state: jumpsuit
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    naturalLanguage: SolCommon
 
 - type: entity
   parent: BaseSpeciesDummyTaur
