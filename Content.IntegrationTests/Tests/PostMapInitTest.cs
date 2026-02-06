@@ -75,6 +75,8 @@ namespace Content.IntegrationTests.Tests
             "/Maps/Shuttles/AdminSpawn/**", // admin gaming
             "/Maps/Floof/centcomm.yml", // floofstation - our version of centcomm
             "/Maps/Floof/Shuttles/CentralCommand/**", // floofstation - admin shuttles
+            "/Maps/Floof/Shuttles/CentralCommand/CCShips/**", // floofstation - admin shuttles
+            "/Maps/Floof/Shuttles/Event/Syndicate/Stations", // floofstation - admin shuttles
             "/Maps/Floof/Shuttles/Event/**" // floofstation - admin shuttles
         };
 
