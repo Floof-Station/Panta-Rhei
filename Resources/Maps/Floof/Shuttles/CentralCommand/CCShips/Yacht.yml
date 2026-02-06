@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 02/06/2026 14:31:35
-  entityCount: 825
+  time: 02/06/2026 14:53:05
+  entityCount: 817
 maps: []
 grids:
 - 1
@@ -368,12 +368,6 @@ entities:
     - type: IFF
       color: '#32CD32FF'
     - type: ImplicitRoof
-- proto: ActionToggleLight
-  entities:
-  - uid: 699
-    components:
-    - type: Transform
-      parent: 698
 - proto: AdvancedTauCetiTranslatorImplanter
   entities:
   - uid: 770
@@ -1826,35 +1820,6 @@ entities:
     - type: Transform
       pos: 10.5,-0.5
       parent: 1
-- proto: ClothingMaskGasCentcom
-  entities:
-  - uid: 768
-    components:
-    - type: Transform
-      parent: 754
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingOuterHardsuitERTCentcomm
-  entities:
-  - uid: 761
-    components:
-    - type: Transform
-      parent: 754
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingShoesBootsMagAdv
-  entities:
-  - uid: 769
-    components:
-    - type: Transform
-      parent: 754
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ComfyChair
   entities:
   - uid: 258
@@ -2064,15 +2029,6 @@ entities:
     - type: Transform
       pos: -3.331945,-5.3793736
       parent: 1
-  - uid: 759
-    components:
-    - type: Transform
-      parent: 754
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: DoubleEmergencyOxygenTankFilled
   entities:
   - uid: 727
@@ -2085,15 +2041,6 @@ entities:
     - type: Transform
       pos: -3.31632,-4.3637486
       parent: 1
-  - uid: 762
-    components:
-    - type: Transform
-      parent: 754
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: DoubleEmergencyWaterVaporTankFilled
   entities:
   - uid: 731
@@ -2106,15 +2053,6 @@ entities:
     - type: Transform
       pos: -3.47257,-5.1137486
       parent: 1
-  - uid: 760
-    components:
-    - type: Transform
-      parent: 754
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: DresserFilled
   entities:
   - uid: 656
@@ -3433,29 +3371,6 @@ entities:
     - type: Transform
       pos: 4.5,0.5
       parent: 1
-- proto: LampGold
-  entities:
-  - uid: 698
-    components:
-    - type: Transform
-      pos: -8.829539,4.755734
-      parent: 1
-    - type: HandheldLight
-      toggleActionEntity: 699
-    - type: ContainerContainer
-      containers:
-        cell_slot: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 699
-    - type: Physics
-      canCollide: True
-    - type: ActionsContainer
 - proto: LockerFreezerBase
   entities:
   - uid: 221
@@ -4243,35 +4158,13 @@ entities:
     - type: Transform
       pos: 4.5,-6.5
       parent: 1
-- proto: SuitStorageBase
+- proto: SuitStorageEVAAlternate
   entities:
-  - uid: 754
+  - uid: 38
     components:
     - type: Transform
       pos: -7.5,1.5
       parent: 1
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 769
-          - 759
-          - 760
-          - 762
-          - 761
-          - 768
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-          Oxygen: 1.9122751
-          Nitrogen: 6.401964
-- proto: SuitStorageEVAAlternate
-  entities:
   - uid: 720
     components:
     - type: Transform
@@ -4528,7 +4421,7 @@ entities:
       parent: 1
 - proto: VendingMachineDinnerware
   entities:
-  - uid: 38
+  - uid: 643
     components:
     - type: Transform
       pos: 10.5,-1.5
