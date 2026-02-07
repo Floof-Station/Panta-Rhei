@@ -1,0 +1,116 @@
+- type: trait
+  id: CumProducer
+  category: Physical
+  slots: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: CumProducer
+      solutionname: "penis"
+    - type: SolutionContainerManager
+      solutions:
+        penis:
+          maxVol: 25
+          reagents:
+          - ReagentId: Cum
+            Quantity: 25
+
+- type: trait
+  id: MilkProducer
+  category: Physical
+  slots: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: MilkProducer
+      solutionname: "breasts"
+    - type: SolutionContainerManager
+      solutions:
+        breasts:
+          maxVol: 50
+          reagents:
+          - ReagentId: Milk
+            Quantity: 50
+
+- type: trait
+  id: SquirtProducer
+  category: Physical
+  slots: 0
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+  functions:
+  - !type:TraitAddComponent
+    components:
+    - type: SquirtProducer
+      solutionname: "vagina"
+    - type: SolutionContainerManager
+      solutions:
+        vagina:
+          maxVol: 25
+          reagents:
+          - ReagentId: NaturalLubricant
+            Quantity: 25
+
+- type: trait
+  id: EggLayer
+  category: Physical
+  points: 0
+  slots: 0
+  requirements:
+    - !type:CharacterJobRequirement # Weird if a borg could lay an egg
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitAddComponent
+      components:
+        - type: Sericulture
+          action: ActionLayEgg
+          productionLength: 3
+          entityProduced: FoodEgg
+          hungerCost: 4
+
+- type: trait
+  id: Succubus
+  category: Physical
+  points: -3
+  requirements:
+    - !type:CharacterJobRequirement
+      inverted: true
+      jobs:
+        - Borg
+        - MedicalBorg
+    - !type:CharacterSpeciesRequirement
+      inverted: true
+      species:
+        - IPC
+  functions:
+    - !type:TraitModifyMetabolism
+      add: true
+      types: [ Succubus ]
+      groups: [
+        Poison,
+        Food,
+        Drink,
+      ]
