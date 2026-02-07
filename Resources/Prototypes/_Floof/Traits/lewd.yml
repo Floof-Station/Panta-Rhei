@@ -1,5 +1,7 @@
 - type: trait
   id: CumProducer
+  name: trait-name-CumProducer
+  description: trait-description-CumProducer
   category: Medical
   cost: 0
   conditions:
@@ -11,16 +13,11 @@
     components:
     - type: CumProducer
       solutionname: "penis"
-    - type: SolutionContainerManager
-      solutions:
-        penis:
-          maxVol: 25
-          reagents:
-          - ReagentId: Cum
-            Quantity: 25
 
 - type: trait
   id: MilkProducer
+  name: trait-name-MilkProducer
+  description: trait-description-MilkProducer
   category: Medical
   cost: 0
   conditions:
@@ -32,16 +29,11 @@
     components:
     - type: MilkProducer
       solutionname: "breasts"
-    - type: SolutionContainerManager
-      solutions:
-        breasts:
-          maxVol: 50
-          reagents:
-          - ReagentId: Milk
-            Quantity: 50
 
 - type: trait
   id: SquirtProducer
+  name: trait-name-SquirtProducer
+  description: trait-description-SquirtProducer
   category: Medical
   cost: 0
   conditions:
@@ -53,10 +45,3 @@
     components:
     - type: SquirtProducer
       solutionname: "vagina"
-    - type: SolutionContainerManager
-      solutions:
-        vagina:
-          maxVol: 25
-          reagents:
-          - ReagentId: NaturalLubricant
-            Quantity: 25
