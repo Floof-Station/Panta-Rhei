@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.Traits;
 using Content.Shared._DV.Traits.Conditions;
@@ -54,13 +55,20 @@ public sealed class TraitSystem : EntitySystem
         var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.JobId, speciesId);
 
         // Apply valid traits
+        // Floofstation edit: first, sort valid traits by priority
+        var sortedPrototypes = new List<TraitPrototype>();
         foreach (var traitId in validTraits)
         {
             if (!_prototype.TryIndex(traitId, out var trait))
                 continue;
 
-            ApplyTrait(args.Mob, trait);
+            sortedPrototypes.Add(trait);
         }
+
+        sortedPrototypes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+        foreach (var trait in sortedPrototypes)
+            ApplyTrait(args.Mob, trait);
+        // Floofstation edit end
     }
 
     /// <summary>

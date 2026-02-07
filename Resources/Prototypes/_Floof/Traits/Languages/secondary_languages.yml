@@ -1,0 +1,305 @@
+# These traits give players the ability to take on additional species languages
+# God please someone nuke this code
+- type: trait
+  id: Chittin
+  name: trait-Chittin-name
+  description: trait-Chittin-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Chitinid
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Chittin
+    languagesUnderstood:
+    - Chittin
+
+- type: trait
+  id: Nehina
+  name: trait-Nehina-name
+  description: trait-Nehina-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Feroxi
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Nehina
+    languagesUnderstood:
+    - Nehina
+
+- type: trait
+  id: Mouse
+  name: trait-Mouse-name
+  description: trait-Mouse-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Rodentia
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Mouse
+    languagesUnderstood:
+    - Mouse
+
+- type: trait
+  id: Canilunzt
+  name: trait-Canilunzt-name
+  description: trait-Canilunzt-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Vulpkanin
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Canilunzt
+    languagesUnderstood:
+    - Canilunzt
+
+- type: trait
+  id: Binary
+  name: trait-Binary-name
+  description: trait-Binary-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Binary
+    languagesUnderstood:
+    - Binary
+
+- type: trait
+  id: Arachnic
+  name: trait-Arachnic-name
+  description: trait-Arachnic-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    # Arachne # they dont speak Arachnid
+    - Arachnid
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Arachnic
+    languagesUnderstood:
+    - Arachnic
+
+- type: trait
+  id: RootSpeak
+  name: trait-RootSpeak-name
+  description: trait-RootSpeak-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Diona
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - RootSpeak
+    languagesUnderstood:
+    - RootSpeak
+
+- type: trait
+  id: Moffic
+  name: trait-Moffic-name
+  description: trait-Moffic-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Moth
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Moffic
+    languagesUnderstood:
+    - Moffic
+
+- type: trait
+  id: Bubblish
+  name: trait-Bubblish-name
+  description: trait-Bubblish-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - SlimePerson
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Bubblish
+    languagesUnderstood:
+    - Bubblish
+
+- type: trait
+  id: Schechi
+  name: trait-Schechi-name
+  description: trait-Schechi-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Resomi
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Schechi
+    languagesUnderstood:
+    - Schechi
+
+- type: trait
+  id: Nekomimetic
+  name: trait-Nekomimetic-name
+  description: trait-Nekomimetic-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Felinid
+    - Oni
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Nekomimetic
+    languagesUnderstood:
+    - Nekomimetic
+
+- type: trait
+  id: Kagebun
+  name: trait-Kagebun-name
+  description: trait-Kagebun-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Kitsune
+    - Shadowkin
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Kagebun
+    languagesUnderstood:
+    - Kagebun
+
+- type: trait
+  id: SolCommon
+  name: trait-SolCommon-name
+  description: trait-SolCommon-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Human
+    - Felinid
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - SolCommon
+    languagesUnderstood:
+    - SolCommon
+
+- type: trait
+  id: ValyrianStandard
+  name: trait-ValyrianStandard-name
+  description: trait-ValyrianStandard-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - ValyrianStandard
+    languagesUnderstood:
+    - ValyrianStandard
+
+- type: trait
+  id: NalRasan
+  name: trait-NalRasan-name
+  description: trait-NalRasan-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Tajaran
+    - Felinid
+    - Vulpkanin
+    - Rodentia
+    - Kitsune
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - NalRasan
+    languagesUnderstood:
+    - NalRasan
+
+- type: trait
+  id: SiikTajr
+  name: trait-SiikTajr-name
+  description: trait-SiikTajr-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Tajaran
+    - Felinid
+    - Vulpkanin
+    - Rodentia
+    - Kitsune
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - SiikTajr
+    languagesUnderstood:
+    - SiikTajr

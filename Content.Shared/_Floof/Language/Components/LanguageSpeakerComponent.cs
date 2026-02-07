@@ -27,13 +27,13 @@ public sealed partial class LanguageSpeakerComponent : Component
     ///     List of languages this entity can speak at the current moment.
     /// </summary>
     [DataField]
-    public List<ProtoId<LanguagePrototype>> SpokenLanguages = [];
+    public List<ProtoId<LanguagePrototype>> SpokenLanguages = new();
 
     /// <summary>
     ///     List of languages this entity can understand at the current moment.
     /// </summary>
     [DataField]
-    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = [];
+    public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = new();
 
     [Serializable, NetSerializable]
     public sealed class State : ComponentState
