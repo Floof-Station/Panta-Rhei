@@ -56,7 +56,7 @@ language-Moffic-name = Moffic
 language-Moffic-description = The language of the mothpeople borders on complete unintelligibility.
 
 language-Binary-name = Binary
-language-Binary-description = A language consisting of harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
+language-Binary-description = A machine language transmitted acoustically via harsh binary chirps, whistles, hisses, and whines. Organic tongues cannot speak it without aid from special translators.
 
 language-Sign-name = Tau-Ceti Basic Sign Language
 language-Sign-description = TCB-SL for short, this sign language is prevalent among mute and deaf people.

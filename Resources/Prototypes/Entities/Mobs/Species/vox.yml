@@ -51,7 +51,7 @@
     #- trigger: # DeltaV - Sadly no KFV :(
     #    !type:DamageTypeTrigger
     #    damageType: Heat
-    #    damage: 1500 
+    #    damage: 1500
     #  behaviors:
     #  - !type:SpawnEntitiesBehavior
     #    spawnInContainer: true
@@ -109,6 +109,7 @@
         Slash: 5 # Reduce?
   - type: Sprite # Need to redefine the whole order to draw the tail over their gas tank
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -131,6 +132,7 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "suitstorage" ] # This is not in the default order

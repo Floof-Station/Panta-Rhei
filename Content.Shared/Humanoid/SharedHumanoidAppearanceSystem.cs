@@ -1,7 +1,8 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using Content.Shared._DV.Humanoid; // DeltaV
+using Content.Shared._DV.Humanoid;
+using Content.Shared._Floof.Humanoid; // DeltaV
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
@@ -78,6 +79,8 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         /*
          * Add custom handling here for forks / version numbers if you care.
          */
+        // Floofstation - migrations
+        RaiseLocalEvent(new HumanoidProfileImportedEvent(export, root));
 
         var profile = export.Profile;
         var collection = IoCManager.Instance;
