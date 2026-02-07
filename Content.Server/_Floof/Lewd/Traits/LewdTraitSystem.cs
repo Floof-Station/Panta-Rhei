@@ -12,7 +12,7 @@ using Content.Shared.FloofStation.Traits.Events;
 using Robust.Shared.Timing;
 using JetBrains.Annotations;
 
-namespace Content.Server._Floof.Traits;
+namespace Content.Server._Floof.Lewd.Traits;
 
 [UsedImplicitly]
 public sealed class LewdTraitSystem : EntitySystem

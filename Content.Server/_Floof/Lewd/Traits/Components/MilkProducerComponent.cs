@@ -4,7 +4,7 @@ using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Server._Floof.Traits;
+namespace Content.Server._Floof.Lewd.Traits;
 
 [RegisterComponent, Access(typeof(LewdTraitSystem))]
 public sealed partial class MilkProducerComponent : Component

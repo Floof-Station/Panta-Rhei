@@ -7,16 +7,16 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.GameStates;
 
-namespace Content.Server._Floof.Traits;
+namespace Content.Server._Floof.Lewd.Traits;
 
 [RegisterComponent, Access(typeof(LewdTraitSystem))]
-public sealed partial class CumProducerComponent : Component
+public sealed partial class SquirtProducerComponent : Component
 {
     [DataField("solutionname")]
-    public string SolutionName = "penis";
+    public string SolutionName = "vagina";
 
     [DataField]
-    public ProtoId<ReagentPrototype> ReagentId = "Cum";
+    public ProtoId<ReagentPrototype> ReagentId = "NaturalLubricant";
 
     [DataField]
     public FixedPoint2 MaxVolume = FixedPoint2.New(25);
