@@ -2,12 +2,10 @@
   id: CumProducer
   category: Medical
   cost: 0
-  #conditions:
-  #  - !type:CharacterJobRequirement
-  #    inverted: true
-  #    jobs:
-  #      - Borg
-  #      - MedicalBorg
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
   effects:
   - !type:AddCompsEffect
     components:
@@ -25,12 +23,10 @@
   id: MilkProducer
   category: Medical
   cost: 0
-  #conditions:
-  #  - !type:CharacterJobRequirement
-  #    inverted: true
-  #    jobs:
-  #      - Borg
-  #      - MedicalBorg
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
   effects:
   - !type:AddCompsEffect
     components:
@@ -48,12 +44,10 @@
   id: SquirtProducer
   category: Medical
   cost: 0
-  #conditions:
-  #  - !type:CharacterJobRequirement
-  #    inverted: true
-  #    jobs:
-  #      - Borg
-  #      - MedicalBorg
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
   effects:
   - !type:AddCompsEffect
     components:
