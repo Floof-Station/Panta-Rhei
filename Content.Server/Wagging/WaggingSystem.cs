@@ -24,7 +24,8 @@ public sealed class WaggingSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<WaggingComponent, ProfileLoadFinishedEvent>(OnProfileLoaded); // Floofstation - listen on profile load instead of map init
+        SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<WaggingComponent, ProfileLoadFinishedEvent>(OnMapInit); // Floofstation - listen on profile load as well as map init
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
         SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);
@@ -39,9 +40,13 @@ public sealed class WaggingSystem : EntitySystem
         EnsureComp<WaggingComponent>(args.CloneUid);
     }
 
-    // Floofstation - listen on profile load instead of map init
-    private void OnProfileLoaded(EntityUid uid, WaggingComponent component, ProfileLoadFinishedEvent args)
+    // Floofstation - listen on both profile load and map init
+    private void OnMapInit(EntityUid uid, WaggingComponent component, object args)
     {
+        // Floofstation - this event can run before CompInit, at which point AddAction would throw an exception.
+        if (!Initialized(uid))
+            return;
+
         // Floofstation - remove the old action and don't add the action if the entity can't wag
         _actions.RemoveAction(uid, component.ActionEntity);
         if (!CanWag((uid, component)))
