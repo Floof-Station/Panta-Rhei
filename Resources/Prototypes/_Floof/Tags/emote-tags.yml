@@ -1,0 +1,34 @@
+# The process of adding one of these tags is as follows:
+# 1. Define a new tag prototype
+# 2. Go to the species base mob prototype (e.g. BaseMobMoth)
+# 3. Check if it already has a TagComponent
+# 4.1. If it doesn't, then go to the parent of the mob (usually BaseMobSpeciesOrganic) and check if it has a TagComponent, repeat until you find it
+# 4.2. Copy the tag component from the first parent that defines it onto the base mob.
+# 5. Add the tag to the TagComponent
+#
+# I won't bother adding such tags for all species specifically because it requires overriding the parent's TagComponent,
+# and that can and WILL cause issues if upstream decides to add new tags to species mobs.
+
+- type: Tag
+  id: HarpyEmotes
+
+- type: Tag
+  id: VulpEmotes
+
+- type: Tag
+  id: ShadowkinEmotes
+
+- type: Tag
+  id: UnathiEmotes
+
+- type: Tag
+  id: MothEmotes
+
+- type: Tag
+  id: KitsuneEmotes
+
+- type: Tag
+  id: ResomiEmotes
+
+- type: Tag
+  id: SlimeEmotes
