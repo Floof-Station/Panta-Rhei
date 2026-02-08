@@ -12,7 +12,7 @@ namespace Content.Shared.Wagging;
 public sealed partial class WaggingComponent : Component
 {
     [DataField]
-    public EntProtoId Action = "ActionToggleWagging";
+    public EntProtoId Action = "ActionToggleWaggingVulpkanin"; // Floofstation - use the better version
 
     [DataField]
     public EntityUid? ActionEntity;

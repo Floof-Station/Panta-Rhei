@@ -82,7 +82,7 @@ namespace Content.IntegrationTests.Tests
             .Select(glob => new Regex(GlobToRegex(glob), RegexOptions.IgnoreCase | RegexOptions.Compiled))
             .ToArray();
 
-        private static readonly string[] GameMaps =
+        public static readonly string[] GameMaps = // Floofstation - made public
         {
             "Dev",
             "TestTeg",

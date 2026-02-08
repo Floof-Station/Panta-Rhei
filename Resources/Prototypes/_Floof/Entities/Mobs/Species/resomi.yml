@@ -173,7 +173,10 @@
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
   - type: Bloodstream # Goobstation - lore stuff
-    bloodReagent: AmmoniaBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: AmmoniaBlood
+        Quantity: 1
   - type: MeleeWeapon # Goobstation - aliem raptors probably use their claws
     soundHit:
       collection: AlienClaw
