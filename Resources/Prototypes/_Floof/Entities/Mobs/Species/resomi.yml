@@ -44,11 +44,11 @@
   - type: Speech
     speechVerb: Parrot
     speechSounds: MaleAvali
-  #- type: Vocal
-  #  sounds:
-  #    Male: MaleAvali
-  #    Unsexed: MaleAvali
-  #    Female: FemaleAvali
+  - type: Vocal # Floofstation - uncommented
+    sounds:
+      Male: RMCMaleAvali
+      Unsexed: RMCMaleAvali
+      Female: RMCFemaleAvali
   - type: Hands
     handDisplacement:
       sizeMaps:
