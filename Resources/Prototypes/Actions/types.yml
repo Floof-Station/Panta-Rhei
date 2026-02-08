@@ -375,7 +375,7 @@
     event: !type:ToggleEyesActionEvent
 
 - type: entity
-  parent: BaseToggleAction
+  parent: ActionToggleWaggingBase # Floofstation - made a new parent
   id: ActionToggleWagging
   name: Wagging Tail
   description: Start or stop wagging your tail.

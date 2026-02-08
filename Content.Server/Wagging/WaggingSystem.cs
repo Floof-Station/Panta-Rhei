@@ -107,6 +107,9 @@ public sealed class WaggingSystem : EntitySystem
                 humanoid: humanoid);
         }
 
+        // Floofstation - set action state
+        _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
+
         return true;
     }
 }
