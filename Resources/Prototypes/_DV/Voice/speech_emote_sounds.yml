@@ -78,6 +78,7 @@
 
 - type: emoteSounds
   id: SoundsHarpyMale
+  parent: [HarpyFloofstation] # Floofstation
   params:
     variation: 0.125
   sounds:
@@ -164,6 +165,7 @@
 
 - type: emoteSounds
   id: SoundsHarpyFemale
+  parent: [HarpyFloofstation] # Floofstation
   params:
     variation: 0.125
   sounds:
