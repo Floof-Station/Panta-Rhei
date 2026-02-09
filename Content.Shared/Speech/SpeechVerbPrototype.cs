@@ -16,7 +16,7 @@ public sealed partial class SpeechVerbPrototype : IPrototype
     ///     Picks one at random if there are multiple.
     /// </summary>
     [DataField("speechVerbStrings", required: true)]
-    public List<string> SpeechVerbStrings = default!;
+    public List<LocId> SpeechVerbStrings = default!;
 
     /// <summary>
     ///     Should use of this speech verb bold the corresponding message?

@@ -37,8 +37,16 @@
   parent: BaseEmotionalGhost
   abstract: true
   components:
-  - type: ReplacementAccent
-    accent: cat
+#  - type: ReplacementAccent # Floofstation
+#    accent: cat
+  - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
+    speaks:
+    - Cat
+    understands:
+    - Cat
+    - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Vocal
     sounds:
       Male: Cat

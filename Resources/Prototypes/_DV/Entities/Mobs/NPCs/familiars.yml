@@ -30,7 +30,10 @@
           layer:
             - FlyingMobLayer
   - type: Bloodstream
-    bloodReagent: Phlogiston
+    bloodReagents:
+      reagents:
+      - ReagentId: Phlogiston
+        Quantity: 1
     bloodMaxVolume: 0
   - type: TemperatureImmunity
   - type: MeleeWeapon
@@ -69,6 +72,13 @@
     damageModifierSet: Ifrit
   - type: Speech
     speechSounds: Bass
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
   - type: Puller
     needsHands: false
   - type: Tag

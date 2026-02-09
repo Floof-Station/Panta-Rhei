@@ -8,6 +8,7 @@
   - type: HumanoidAppearance
     species: Feroxi
   - type: Hunger
+  - type: Wagging
   - type: Inventory
     speciesId: feroxi
   - type: Thirst
@@ -21,6 +22,14 @@
     speechSounds: Tenor
     speechVerb: Feroxi
     allowedEmotes: [ "Gnash", "Thump" ]
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Nehina
+    understands:
+    - TauCetiBasic
+    - Nehina
+    naturalLanguage: Nehina
   - type: Vocal
     sounds:
       Male: MaleFeroxi
@@ -33,6 +42,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -63,6 +73,7 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "neck" ]

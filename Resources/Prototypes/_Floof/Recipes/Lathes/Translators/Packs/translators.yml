@@ -1,0 +1,36 @@
+- type: latheRecipePack
+  id: BasicTranslation
+  recipes:
+  - BasicTauCetiTranslatorImplanter
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - MofficTranslator
+  - ArachnicTranslator
+  - VoxTranslator
+  - ChittinTranslator
+  - AzazibaTranslator
+  - ValyrianStandardTranslator
+  - AnimalTranslator
+
+# Includes basic translation
+- type: latheRecipePack
+  parent: BasicTranslation
+  id: AdvancedTranslation
+  recipes:
+  - XenoTranslator
+  - AdvancedTauCetiTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - MofficTranslatorImplanter
+  - ArachnicTranslatorImplanter
+  - ChittinTranslatorImplanter
+  - AzazibaTranslatorImplanter
+  - ValyrianStandardTranslatorImplanter

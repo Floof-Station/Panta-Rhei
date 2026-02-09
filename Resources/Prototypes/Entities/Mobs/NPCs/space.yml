@@ -40,7 +40,10 @@
   - type: MovementAlwaysTouching
   - type: Bloodstream
     bloodMaxVolume: 300
-    bloodReagent: Cryoxadone
+    bloodReagents:
+      reagents:
+      - ReagentId: Cryoxadone
+        Quantity: 1
   - type: CombatMode
   - type: Temperature
     heatDamageThreshold: 500
@@ -67,6 +70,11 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: LargeMob
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
 
 - type: entity
   name: space bear
@@ -99,8 +107,8 @@
     - id: MaterialHideBear
       amount: 1
       prob: 0.3
-  - type: ReplacementAccent
-    accent: genericAggressive
+#  - type: ReplacementAccent # Floofstation
+#    accent: genericAggressive
   - type: Vocal
     sounds:
       Unsexed: Bear
@@ -162,8 +170,14 @@
   - type: Vocal
     sounds:
       Unsexed: Kangaroo
-  - type: ReplacementAccent
-    accent: kangaroo
+#  - type: ReplacementAccent # Floofstation
+#    accent: kangaroo
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - Kangaroo
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -213,7 +227,10 @@
       prob: 0.5
   - type: Bloodstream
     bloodMaxVolume: 250
-    bloodReagent: Cryoxadone
+    bloodReagents:
+      reagents:
+      - ReagentId: Cryoxadone
+        Quantity: 1
   - type: Fixtures
     fixtures:
       fix1:
@@ -243,8 +260,14 @@
   - type: MeleeChemicalInjector
     solution: melee
     transferAmount: 4
-  - type: ReplacementAccent
-    accent: xeno
+#  - type: ReplacementAccent
+#    accent: xeno
+  - type: LanguageKnowledge # Floofstation.
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
+    - Arachnic
   - type: InteractionPopup
     successChance: 0.20
     interactSuccessString: petting-success-tarantula
@@ -318,7 +341,10 @@
           prob: 0.3
     - type: Bloodstream
       bloodMaxVolume: 200
-      bloodReagent: Cryoxadone
+      bloodReagents:
+        reagents:
+        - ReagentId: Cryoxadone
+          Quantity: 1
     - type: Fixtures
       fixtures:
         fix1:
@@ -349,15 +375,21 @@
     - type: MeleeChemicalInjector
       solution: melee
       transferAmount: 6
-    - type: ReplacementAccent
-      accent: xeno
+#    - type: ReplacementAccent
+#      accent: xeno
+    - type: LanguageKnowledge # Floofstation.
+      speaks:
+      - Xeno
+      understands:
+      - Xeno
+      - Hissing
     - type: InteractionPopup
       successChance: 0.2
       interactSuccessString: petting-success-snake
       interactFailureString: petting-failure-generic
     - type: PointLight
       radius: 1.1
-      energy: 1.5
+      energy: 2.7
       color: "#4faffb"
 
 - type: entity
@@ -486,7 +518,10 @@
     combatToggleAction: ActionCombatModeToggleOff
   - type: Bloodstream
     bloodMaxVolume: 30
-    bloodReagent: Cryoxadone
+    bloodReagents:
+      reagents:
+      - ReagentId: Cryoxadone
+        Quantity: 1
   - type: CanEscapeInventory
   - type: MobPrice
     price: 50
@@ -512,6 +547,11 @@
         visualType: Large
         messages: [ "snail-hurt-by-salt-popup" ]
         probability: 0.66
+  - type: LanguageKnowledge # Floofstation - idfk what the snail says.
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   parent: MobSnail
@@ -582,3 +622,10 @@
         Base: snothdead
       Dead:
         Base: snothdead
+  - type: LanguageKnowledge # Floofstation - idfk what the snail says.
+    speaks:
+    - Moffic
+    - Hissing
+    understands:
+    - Moffic
+    - Hissing

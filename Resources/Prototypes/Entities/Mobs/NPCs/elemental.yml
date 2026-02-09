@@ -40,6 +40,11 @@
   - type: ZombieImmune
   - type: ProtectedFromStepTriggers
   #- type: StunVisuals # DeltaV - No stars
+  - type: LanguageKnowledge # Floofstation - I don't care, this is only used for crabs.
+    speaks:
+    - Crab
+    understands:
+    - Crab
 
 - type: entity
   abstract: true
@@ -349,7 +354,10 @@
     speedModifierThresholds:
       50: 0.4
   - type: Bloodstream
-    bloodReagent: Water
+    bloodReagents:
+      reagents:
+      - ReagentId: Water
+        Quantity: 1
     chemicalMaxVolume: 100
   - type: StatusEffects
     allowed:
@@ -418,7 +426,10 @@
   suffix: Beer
   components:
   - type: Bloodstream
-    bloodReagent: Beer
+    bloodReagents:
+      reagents:
+      - ReagentId: Beer
+        Quantity: 1
   - type: PointLight
     color: "#cfa85f"
   - type: Sprite
@@ -435,7 +446,10 @@
   suffix: Pax
   components:
   - type: Bloodstream
-    bloodReagent: Pax
+    bloodReagents:
+      reagents:
+      - ReagentId: Pax
+        Quantity: 1
   - type: PointLight
     color: "#AAAAAA"
   - type: Sprite
@@ -455,7 +469,10 @@
   suffix: Nocturine
   components:
   - type: Bloodstream
-    bloodReagent: Nocturine
+    bloodReagents:
+      reagents:
+      - ReagentId: Nocturine
+        Quantity: 1
   - type: PointLight
     color: "#128e80"
   - type: Sprite
@@ -475,7 +492,10 @@
   suffix: THC
   components:
   - type: Bloodstream
-    bloodReagent: THC
+    bloodReagents:
+      reagents:
+      - ReagentId: THC
+        Quantity: 1
   - type: PointLight
     color: "#808080"
   - type: Sprite
@@ -492,7 +512,10 @@
   suffix: Bicaridine
   components:
   - type: Bloodstream
-    bloodReagent: Bicaridine
+    bloodReagents:
+      reagents:
+      - ReagentId: Bicaridine
+        Quantity: 1
   - type: PointLight
     color: "#ffaa00"
   - type: Sprite
@@ -509,7 +532,10 @@
   suffix: Toxin
   components:
   - type: Bloodstream
-    bloodReagent: Toxin
+    bloodReagents:
+      reagents:
+      - ReagentId: Toxin
+        Quantity: 1
   - type: PointLight
     color: "#cf3600"
   - type: Sprite
@@ -526,7 +552,10 @@
   suffix: Napalm
   components:
   - type: Bloodstream
-    bloodReagent: Napalm
+    bloodReagents:
+      reagents:
+      - ReagentId: Napalm
+        Quantity: 1
   - type: PointLight
     color: "#FA00AF"
   - type: Sprite
@@ -543,7 +572,10 @@
   suffix: Omnizine
   components:
   - type: Bloodstream
-    bloodReagent: Omnizine
+    bloodReagents:
+      reagents:
+      - ReagentId: Omnizine
+        Quantity: 1
   - type: PointLight
     color: "#fcf7f9"
   - type: Sprite
@@ -560,7 +592,10 @@
   suffix: Mute Toxin
   components:
   - type: Bloodstream
-    bloodReagent: MuteToxin
+    bloodReagents:
+      reagents:
+      - ReagentId: MuteToxin
+        Quantity: 1
   - type: PointLight
     color: "#0f0f0f"
   - type: Sprite
@@ -577,7 +612,10 @@
   suffix: Norepinephric Acid
   components:
   - type: Bloodstream
-    bloodReagent: NorepinephricAcid
+    bloodReagents:
+      reagents:
+      - ReagentId: NorepinephricAcid
+        Quantity: 1
   - type: PointLight
     color: "#96a8b5"
   - type: Sprite
@@ -594,7 +632,10 @@
   suffix: Ephedrine
   components:
   - type: Bloodstream
-    bloodReagent: Ephedrine
+    bloodReagents:
+      reagents:
+      - ReagentId: Ephedrine
+        Quantity: 1
   - type: PointLight
     color: "#D2FFFA"
   - type: Sprite
@@ -611,7 +652,10 @@
   suffix: Robust Harvest
   components:
   - type: Bloodstream
-    bloodReagent: RobustHarvest
+    bloodReagents:
+      reagents:
+      - ReagentId: RobustHarvest
+        Quantity: 1
   - type: PointLight
     color: "#3e901c"
   - type: Sprite

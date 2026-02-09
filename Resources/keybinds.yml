@@ -135,6 +135,9 @@ binds:
   type: State
   key: Slash
 # Floofstation section
+- function: OpenLanguageMenu
+  type: State
+  key: L
 - function: FocusSubtle
   key: Minus
 - function: FocusSubtleOOC
@@ -317,6 +320,14 @@ binds:
 - function: InspectEntity
   type: State
   key: v
+  mod1: Alt
+- function: InspectServerComponent
+  type: State
+  key: b
+  mod1: Alt
+- function: InspectClientComponent
+  type: State
+  key: c
   mod1: Alt
 - function: MouseMiddle
   type: State

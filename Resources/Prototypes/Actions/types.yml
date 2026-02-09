@@ -256,6 +256,17 @@
 
 - type: entity
   parent: BaseAction
+  id: ActionShootWater
+  name: Spray water!
+  description: Spray water towards your enemies.
+  components:
+  - type: Action
+    icon: { sprite: Clothing/Neck/Misc/pins.rsi, state: flower }
+  - type: InstantAction
+    event: !type:SprayLiquidEvent
+
+- type: entity
+  parent: BaseAction
   id: ActionVendingThrow
   name: Dispense Item
   description: Randomly dispense an item from your stock.
@@ -375,7 +386,7 @@
     event: !type:ToggleEyesActionEvent
 
 - type: entity
-  parent: BaseToggleAction
+  parent: ActionToggleWaggingBase # Floofstation - made a new parent
   id: ActionToggleWagging
   name: Wagging Tail
   description: Start or stop wagging your tail.

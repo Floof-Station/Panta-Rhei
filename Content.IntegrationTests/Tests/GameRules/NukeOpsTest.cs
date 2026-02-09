@@ -234,7 +234,7 @@ public sealed class NukeOpsTest
         for (var tick = 0; tick < totalTicks; tick += increment)
         {
             await pair.RunTicksSync(increment);
-            if (!entMan.HasComponent<SiliconComponent>(player)) // Goobstation - IPC
+            if (!entMan.HasComponent<SiliconComponent>(player) && entMan.HasComponent<RespiratorComponent>(player)) // Goobstation - IPC // Floofstation - everything else
             {
                 var resp = entMan.GetComponent<RespiratorComponent>(player);
                 Assert.That(resp.SuffocationCycles, Is.LessThanOrEqualTo(resp.SuffocationCycleThreshold));

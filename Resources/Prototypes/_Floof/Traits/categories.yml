@@ -1,0 +1,15 @@
+- type: traitCategory
+  id: Languages
+  name: trait-category-languages
+  maxTraits: 2 # Either foreigner + additional language, or 2 additional languages. No multilingual traits yet.
+  priority: 1000 # At the bottom
+  accentColor: "#418b60"
+  defaultExpanded: false
+
+- type: traitCategory
+  id: NaturalLanguages
+  name: trait-category-natural-languages
+  maxTraits: 1 # Can only choose one.
+  priority: 1001 # At the bottom
+  accentColor: "#4a8b31"
+  defaultExpanded: false

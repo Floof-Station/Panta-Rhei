@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingNeckCollarBase
+  id: ClothingNeckShockCollarCivilian
+  name: shock collar
+  description: A collar that can deliver a weak electric shock on signal. This one is marked as safe for civilian use.
+  suffix: Civilian
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Neck/Collars/shock.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Neck/Collars/shock.rsi
+    equipDelay: 2
+    unequipDelay: 10 # It's a collar meant to be used on prisoners (or not), so it probably has some sort of safety.
+    stripDelay: 1.5
+  - type: UseDelay
+    delay: 3
+  - type: TriggerOnSignal
+  - type: ShockOnTrigger
+    damage: 1 # Way less damaging than the security variant
+    duration: 3
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+    - Trigger

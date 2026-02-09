@@ -16,6 +16,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using Content.Shared._CD.Records; // CD - Character Records
+using Content.Shared._DV.Traits; // DeltaV - Traits rework
 
 namespace Content.Shared.Preferences
 {
@@ -237,9 +238,12 @@ namespace Content.Shared.Preferences
         {
             species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+            var prototypeManager = IoCManager.Resolve<IPrototypeManager>(); // Floofstation
+            prototypeManager.Resolve<SpeciesPrototype>(species, out var speciesProto); // Floofstation
             return new()
             {
                 Species = species,
+                Height = speciesProto?.DefaultHeight ?? 1f, // Floofstation
                 Appearance = HumanoidCharacterAppearance.DefaultWithSpecies(species),
             };
         }
@@ -273,7 +277,7 @@ namespace Content.Shared.Preferences
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
-                // height = MathF.Round(random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight), 2); // CD - Character Records // DeltaV - don't generate random heights
+                height = MathF.Round(random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight), 2); // CD - Character Records // DeltaV - don't generate random heights // Floofstation - generate random heights
             }
 
             var gender = Gender.Epicene;
@@ -456,12 +460,12 @@ namespace Content.Shared.Preferences
             // Category not found so dump it.
             TraitCategoryPrototype? traitCategory = null;
 
-            if (category != null && !protoManager.Resolve(category, out traitCategory))
+            if (!protoManager.Resolve(category, out traitCategory)) // DeltaV 13/01/26 - Traits: Category is no longer nullable
                 return new(this);
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
 
-            if (traitCategory == null || traitCategory.MaxTraitPoints < 0)
+            if (traitCategory.MaxPoints < 0) // DeltaV 13/01/26 - Traits: Changed to MaxPoints
             {
                 return new(this)
                 {
@@ -482,7 +486,7 @@ namespace Content.Shared.Preferences
                 count += otherProto.Cost;
             }
 
-            if (count > traitCategory.MaxTraitPoints && traitProto.Cost != 0)
+            if (count > traitCategory.MaxPoints && traitProto.Cost != 0) // DeltaV 13/01/26 - Traits: Changed to MaxPoints
             {
                 return new(this);
             }
@@ -746,11 +750,11 @@ namespace Content.Shared.Preferences
                     continue;
 
                 // Always valid.
-                if (traitProto.Category == null)
-                {
-                    result.Add(trait);
-                    continue;
-                }
+                // if (traitProto.Category == null) // DeltaV 13/01/26 - Traits rework
+                // {
+                //     result.Add(trait);
+                //     continue;
+                // }
 
                 // No category so dump it.
                 if (!protoManager.Resolve(traitProto.Category, out var category))
@@ -760,7 +764,7 @@ namespace Content.Shared.Preferences
                 existing += traitProto.Cost;
 
                 // Too expensive.
-                if (existing > category.MaxTraitPoints)
+                if (existing > category.MaxPoints) // DeltaV 13/01/26 - Traits:  Was MaxTraitPoints
                     continue;
 
                 groups[category.ID] = existing;

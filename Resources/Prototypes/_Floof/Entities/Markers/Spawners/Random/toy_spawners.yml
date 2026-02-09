@@ -1,0 +1,44 @@
+- type: entity
+  parent: MarkerBase
+  id: PlushieSpawnerRandomGeneric
+  name: generic plushie spawner
+  description: Spawns a random generic plushie.
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _DV/Objects/Fun/Toys/plushies.rsi
+      state: kitsune
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomGenericPlushieTable
+
+- type: entity
+  parent: MarkerBase
+  id: PlushieSpawnerRandomPersonal
+  name: personal plushie spawner
+  description: Spawns a random personal plushie. These plushies are attributed to particular members of the community.
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Floof/Objects/Fun/floof_plush.rsi
+      state: ertfox
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: RandomPersonalPlushieTable
+
+- type: entity
+  parent: MarkerBase
+  id: PlushieSpawnerRandomToy
+  name: random toy or plushie spawner
+  description: Spawns a random toy or plushie, same as in maintenance closets.
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: Objects/Fun/Plushies/lizard.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: MaintenanceToysTable

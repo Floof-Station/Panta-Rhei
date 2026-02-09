@@ -1,0 +1,44 @@
+- type: trait
+  id: Lightweight
+  name: trait-weightlight-name
+  description: trait-weightlight-desc
+  category: Disabilities
+  cost: -2 # Has pros and cons, not sure
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    species:
+    - Felinid # They don't need to be lighter
+    - IPC
+    - Rodentia
+    - Kitsune # Floof - M3739 - #937 - They are light enough as it is.
+    invert: true
+  effects:
+  - !type:ModifyFixtureEffect
+    factor: 0.7746 # Square root of 0.6 as this modifies the radius
+  conflicts:
+    - Heavyweight
+
+- type: trait
+  id: Heavyweight
+  name: trait-weightheavy-name
+  description: trait-weightheavy-desc
+  category: Disabilities
+  cost: -2 # Has pros and cons, not sure
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Harpy # Doesn't really make sense with their wings and flight ability
+    - Diona # Trees are heavy as it is.
+    - Chitinid # Ants got weight.
+  conflicts:
+    - Lightweight
+  effects:
+  - !type:ModifyFixtureEffect
+    factor: 1.1832 # Square root of 1.4 as this affects the radius, opposite of lightweight.

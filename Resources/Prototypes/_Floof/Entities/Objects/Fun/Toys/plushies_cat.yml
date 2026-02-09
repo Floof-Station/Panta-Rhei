@@ -1,0 +1,82 @@
+- type: entity
+  parent: BasePlushie
+  id: BasePlushieCat
+  description: A stuffed toy that resembles a cute kitty!
+  abstract: true
+  components:
+  - type: EmitSoundOnUse
+    sound: &meow
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow1.ogg
+      params:
+        variation: 0.04
+  - type: EmitSoundOnLand
+    sound: *meow
+  - type: EmitSoundOnActivate
+    sound: *meow
+  - type: MeleeWeapon
+    soundHit: *meow
+  - type: EmitSoundOnCollide
+    sound: *meow
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatBlack
+  name: black cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: black
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatGrey
+  name: grey cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: grey
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatOrange
+  name: orange cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: orange
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatSiames
+  name: siames cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: siames
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatTabby
+  name: tabby cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: tabby
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatTuxedo
+  name: tuxedo cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: tuxedo
+
+- type: entity
+  parent: BasePlushieCat
+  id: PlushieCatWhite
+  name: white cat plushie
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/catplushie.rsi
+    state: white

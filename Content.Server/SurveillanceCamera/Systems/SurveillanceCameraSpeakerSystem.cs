@@ -1,3 +1,4 @@
+using Content.Server._Floof.Language;
 using Content.Server.Chat.Systems;
 using Content.Server.Speech;
 using Content.Shared.Speech;
@@ -16,6 +17,7 @@ public sealed class SurveillanceCameraSpeakerSystem : EntitySystem
     [Dependency] private readonly SpeechSoundSystem _speechSound = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly LanguageSystem _languages = default!; // Floofstation
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -36,7 +38,7 @@ public sealed class SurveillanceCameraSpeakerSystem : EntitySystem
 
         // this part's mostly copied from speech
         //     what is wrong with you?
-        if (time - component.LastSoundPlayed < cd
+        if (time - component.LastSoundPlayed > cd
             && TryComp<SpeechComponent>(args.Speaker, out var speech))
         {
             var sound = _speechSound.GetSpeechSound((args.Speaker, speech), args.Message);
@@ -50,6 +52,10 @@ public sealed class SurveillanceCameraSpeakerSystem : EntitySystem
 
         var name = Loc.GetString("speech-name-relay", ("speaker", Name(uid)),
             ("originalName", nameEv.VoiceName));
+
+        // Floofstation: cameras preserve languages. Since there's no delay between speaking and relaying this should be fine
+        // If a delay gets introduced, we'll have to log the speaker's original language.
+        using var _ = _languages.SubstituteEntityLanguage(uid, _languages.GetLanguage(args.Speaker));
 
         // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
         _chatSystem.TrySendInGameICMessage(uid, args.Message, InGameICChatType.Speak, ChatTransmitRange.GhostRangeLimit, nameOverride: name);

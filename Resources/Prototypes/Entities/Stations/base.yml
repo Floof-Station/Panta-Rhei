@@ -62,8 +62,13 @@
 #          - /Maps/Shuttles/trading_outpost.yml
         mining: !type:GridSpawnGroup # Floofstation - salvage gets a roundstart shuttle
           paths:
-          - /Maps/Shuttles/pathfinder.yml
+          - /Maps/Floof/Shuttles/Salvage/pathfinder.yml
         # Spawn last
+        salvageShuttle: !type:GridSpawnGroup # DeltaV - salvage gets their own ship
+          paths:
+          - /Maps/_DV/Shuttles/Misc/reclaimer_mk2.yml
+          nameGrid: true
+          name: Reclaimer Mk2
         ruins: !type:GridSpawnGroup
           hide: true
           nameGrid: true

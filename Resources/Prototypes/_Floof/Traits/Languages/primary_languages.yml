@@ -1,0 +1,258 @@
+# These traits replace your species' primary language.
+- type: trait
+  id: NaturalRatvarian
+  name: trait-NaturalRatvarian-name
+  description: trait-NaturalRatvarian-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Ratvarian
+
+- type: trait
+  id: NaturalChittin
+  name: trait-NaturalChittin-name
+  description: trait-NaturalChittin-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Chitinid
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Chittin
+
+- type: trait
+  id: NaturalNehina
+  name: trait-NaturalNehina-name
+  description: trait-NaturalNehina-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Feroxi
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Nehina
+
+- type: trait
+  id: NaturalMouse
+  name: trait-NaturalMouse-name
+  description: trait-NaturalMouse-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Rodentia
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Mouse
+
+- type: trait
+  id: NaturalCanilunzt
+  name: trait-NaturalCanilunzt-name
+  description: trait-NaturalCanilunzt-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Vulpkanin
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Canilunzt
+
+- type: trait
+  id: NaturalBinary
+  name: trait-NaturalBinary-name
+  description: trait-NaturalBinary-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Binary
+
+- type: trait
+  id: NaturalArachnic
+  name: trait-NaturalArachnic-name
+  description: trait-NaturalArachnic-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    # Arachne they dont speak Arachind
+    - Arachnid
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Arachnic
+
+- type: trait
+  id: NaturalRootSpeak
+  name: trait-NaturalRootSpeak-name
+  description: trait-NaturalRootSpeak-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Diona
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: RootSpeak
+
+- type: trait
+  id: NaturalSolCommon
+  name: trait-NaturalSolCommon-name
+  description: trait-NaturalSolCommon-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Human
+    - Shadowkin
+    - Felinid
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: SolCommon
+
+- type: trait
+  id: NaturalValyrianStanda
+  name: trait-NaturalValyrianStandard-name
+  description: trait-NaturalValyrianStandard-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Harpy
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: ValyrianStandard
+
+- type: trait
+  id: NaturalMoffic
+  name: trait-NaturalMoffic-name
+  description: trait-NaturalMoffic-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Moth
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Moffic
+
+- type: trait
+  id: NaturalDraconic
+  name: trait-NaturalDraconic-name
+  description: trait-NaturalDraconic-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Reptilian
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Draconic
+
+- type: trait
+  id: NaturalBubblish
+  name: trait-NaturalBubblish-name
+  description: trait-NaturalBubblish-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - SlimePerson
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Bubblish
+
+- type: trait
+  id: NaturalSchechi
+  name: trait-NaturalSchechi-name
+  description: trait-NaturalSchechi-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Resomi
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Schechi
+
+- type: trait
+  id: NaturalNekomimetic
+  name: trait-NaturalNekomimetic-name
+  description: trait-NaturalNekomimetic-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Felinid
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Nekomimetic
+
+- type: trait
+  id: NaturalKagebun
+  name: trait-NaturalKagebun-name
+  description: trait-NaturalKagebun-desc
+  category: NaturalLanguages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Kitsune
+    - Oni
+    - Shadowkin
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: Kagebun

@@ -1,0 +1,14 @@
+- type: entity
+  id: ArachneLegs
+  name: "Arachne Spider Body"
+  parent: PartTaur
+  components:
+  # Adjust sprite. Maybe
+  - type: Sprite
+    sprite: _Floof/Mobs/Species/Arachne/blank.rsi
+    state: "blank"
+  - type: BodyPart
+    partType: Leg
+    toolName: "spider legs" # Shitmed Change
+    slotId: legs
+  - type: MovementBodyPart

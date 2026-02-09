@@ -115,13 +115,13 @@
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
-  #- type: LanguageKnowledge # DeltaV - ee language port when
-  #  speaks:
-  #  - Draconic
-  #  - Azaziba
-  #  understands:
-  #  - Draconic
-  #  - Azaziba
+  - type: LanguageKnowledge # DeltaV - ee language port when # Floofstation - now
+    speaks:
+    - Draconic
+    - Azaziba
+    understands:
+    - Draconic
+    - Azaziba
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable

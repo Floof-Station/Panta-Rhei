@@ -27,6 +27,11 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Xeno
+    understands:
+    - Xeno
 
 - type: entity
   id: MobGoliath
@@ -340,6 +345,8 @@
   - type: Tag
     tags:
     - HivelordRemains
+    - Meat
+    - Raw
 
 - type: entity
   id: FoodHivelordRemainsInert
@@ -359,7 +366,8 @@
   - type: Tag
     tags:
     - HivelordRemains
-
+    - Meat
+    - Raw
 
 - type: entity
   id: MobBasilisk

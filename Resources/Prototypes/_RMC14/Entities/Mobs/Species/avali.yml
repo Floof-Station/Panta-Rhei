@@ -18,6 +18,14 @@
       Male: RMCMaleAvali
       Unsexed: RMCMaleAvali
       Female: RMCFemaleAvali
+  - type: LanguageKnowledge # Floofstation - i don't care, this is a placeholder.
+    speaks:
+    - TauCetiBasic
+    - Schechi
+    understands:
+    - TauCetiBasic
+    - Schechi
+    naturalLanguage: Schechi
   - type: Speech
     speechVerb: Parrot # Didn't come with one
     speechSounds: MaleAvali
@@ -76,7 +84,10 @@
         layer:
         - MobLayer
   - type: Bloodstream
-    bloodReagent: AmmoniaBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: AmmoniaBlood
+        Quantity: 1
   - type: BonusStaminaDamage
     multiplier: 0.85 # less melee stamina damage
   - type: BonusMeleeDamage # significantly weaker with melee

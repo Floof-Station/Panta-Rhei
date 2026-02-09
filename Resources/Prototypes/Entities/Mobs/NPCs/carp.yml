@@ -24,6 +24,8 @@
       - map: [ "enum.DamageStateVisualLayers.Base" ]
         state: alive
     - type: Carriable # DeltaV - this is for you, deltanedas o7
+    - type: LeashAnchor # Floofstation - also this :3
+      kind: Intrinsic
     - type: CombatMode
     - type: Physics
     - type: Fixtures
@@ -95,6 +97,11 @@
       interfaces:
         enum.SurgeryUIKey.Key:
           type: SurgeryBui
+    - type: LanguageKnowledge # Floofstation. Fish don't speak tau ceti, but the dragon does.
+      speaks:
+      - Xeno
+      understands:
+      - Xeno
 
 - type: entity
   parent: BaseMobCarp
@@ -156,7 +163,7 @@
   components:
   - type: PointLight
     radius: 1.5
-    energy: 0.5
+    energy: 2
   - type: RgbLightController
     layers: [ 0 ]
 

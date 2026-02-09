@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Floof.Language;
 using Content.Server.Chat.Systems;
 using Content.Server.Interaction;
 using Content.Server.Popups;
@@ -27,6 +28,7 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly LanguageSystem _languages = default!; // Floofstation
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid, RadioChannelPrototype)> _recentlySent = new();
@@ -179,6 +181,9 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
         var name = Loc.GetString("speech-name-relay",
             ("speaker", Name(uid)),
             ("originalName", nameEv.VoiceName));
+
+        // Floofstation: radio relays preserve languages. We don't use the cursed RadioSystem.ApplyLanguageUnderstanding here.
+        using var _ = _languages.SubstituteEntityLanguage(uid, args.ChatMsg.Message.Language);
 
         // log to chat so people can identity the speaker/source, but avoid clogging ghost chat if there are many radios
         _chat.TrySendInGameICMessage(uid, args.Message, InGameICChatType.Whisper, ChatTransmitRange.GhostRangeLimit, nameOverride: name, checkRadioPrefix: false);

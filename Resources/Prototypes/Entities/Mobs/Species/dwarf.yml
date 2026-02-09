@@ -45,6 +45,14 @@
       Male: UnisexDwarf
       Female: FemaleDwarf
       Unsexed: UnisexDwarf
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    naturalLanguage: SolCommon
   - type: ReplacementAccent
     accent: dwarf
   - type: Speech

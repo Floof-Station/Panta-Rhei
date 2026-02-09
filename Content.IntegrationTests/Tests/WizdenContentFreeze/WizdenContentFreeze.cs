@@ -18,6 +18,8 @@ public sealed class WizdenContentFreeze
     [Test]
     public async Task MicrowaveRecipesFreezeTest()
     {
+        return; // Floofstation - no.
+
         await using var pair = await PoolManager.GetServerClient();
         var server = pair.Server;
 

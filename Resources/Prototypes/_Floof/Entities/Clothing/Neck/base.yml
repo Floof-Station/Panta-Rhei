@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCollarBase
+  abstract: true
+  components:
+  - type: Clothing
+    equipDelay: 1.5
+    unequipDelay: 1.5
+  - type: LeashAnchor
+    offset: 0, 0.22
+    kind: Clothing

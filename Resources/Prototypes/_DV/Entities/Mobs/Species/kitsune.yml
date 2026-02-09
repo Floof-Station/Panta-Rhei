@@ -29,6 +29,15 @@
       Male: MaleKitsune
       Female: FemaleKitsune
       Unsexed: MaleKitsune
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Kagebun
+    understands:
+    - TauCetiBasic
+    - Kagebun
+    - Nekomimetic
+    naturalLanguage: Kagebun
   - type: TypingIndicator
     proto: kitsune
   - type: InteractionPopup
@@ -49,6 +58,7 @@
       - 0,0,1,4
       - 0,2,3,4
       - 4,0,5,4
+  - type: Wagging # Floofstation
 
 - type: entity
   save: false

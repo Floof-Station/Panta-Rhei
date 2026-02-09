@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Floof.Sprite;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -408,12 +409,27 @@ public sealed partial class MarkingPicker : Control
         List<ColorSelectorSliders> colorSliders = new();
         for (int i = 0; i < prototype.Sprites.Count; i++)
         {
+            // Floofstation edit: first, check if the coloration is parented to another marking
+            // and if so, just kinda sorta dont display it
+            var skipdraw = false;
+            if (prototype.ColorLinks?.Count > 0)
+            {
+                var name = prototype.Sprites[i].GetFilename();
+                if (prototype.ColorLinks.ContainsKey(name))
+                    skipdraw = true; // dont show it, cus its parented to another marking
+            }
+            // Floofstation edit end
             var colorContainer = new BoxContainer
             {
                 Orientation = LayoutOrientation.Vertical,
             };
 
-            CMarkingColors.AddChild(colorContainer);
+            // Floofstation: so, the color selector sliders decide which destination color to modify
+            // based on its index in the list of color selectors.
+            // This is a problem if we, say, want to *not* show a certain slider
+            // cus then it'll modify the wrong color, unless the color happened to be in index 0.
+            if(!skipdraw)
+                CMarkingColors.AddChild(colorContainer);
 
             ColorSelectorSliders colorSelector = new ColorSelectorSliders();
             colorSelector.SelectorType = ColorSelectorSliders.ColorSelectorType.Hsv; // defaults color selector to HSV

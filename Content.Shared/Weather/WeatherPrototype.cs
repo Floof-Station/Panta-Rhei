@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
 using Content.Shared.Whitelist;
+using Content.Shared._Vulp.Weather;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;

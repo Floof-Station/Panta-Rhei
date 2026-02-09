@@ -156,8 +156,8 @@
     children:
     - id: StrangePill
       prob: 0.20
-    - id: CrayonMagic # Delta V - Just another way to get it
-      prob: .01
+#    - id: CrayonMagic # Delta V - Just another way to get it # Floofstation - moved to the toy table
+#      prob: .01
     # Tools
     - !type:NestedSelector
       tableId: MaintToolsTable
@@ -186,6 +186,14 @@
     # Recursive
     - id: ClosetMaintenanceFilledRandom
       prob: 0.01
+    # Floofstation section - toys
+    - !type:NestedSelector
+      tableId: MaintenanceToysTable
+      prob: 0.45
+      rolls: !type:RangeNumberSelector
+        range: 0, 2
+    # TODO: when porting lewd toys, put them here or under MaintenanceToysTable
+    # Floofstation section end
 
 - type: entity
   id: ClosetMaintenanceFilledRandom

@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Chat.Managers;
+using Content.Shared._Floof.Language;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Speech;
@@ -7,6 +8,7 @@ using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -274,6 +276,14 @@ namespace Content.Client.Chat.UI
             //We'll be honest. *Yes* this is hacky. Doing this in a cleaner way would require a bottom-up refactor of how saycode handles sending chat messages. -Myr
             bubbleHeader.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleHeader", fontColor));
             bubbleContent.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
+            // Floofstation section - append the language hint if there's supposed to be one
+            if (SharedChatSystem.GetStringInsideTag(message, "BubbleLanguage") is { Length: not 0 } languageName)
+            {
+                var msg = bubbleHeader.GetFormattedMessage()!;
+                msg.AddMarkupPermissive(Loc.GetString("chat-manager-language-hint-ui", ("language", languageName)));
+                bubbleHeader.SetMessage(msg);
+            }
+            // Floofstation section end
 
             //As for below: Some day this could probably be converted to xaml. But that is not today. -Myr
             var mainPanel = new PanelContainer

@@ -1,0 +1,52 @@
+- type: technology
+  id: BasicTranslation
+  name: research-technology-basic-translation
+  icon:
+    sprite: _Floof/Objects/Devices/translator.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 2
+  cost: 10000
+  recipeUnlocks:
+  - CanilunztTranslator
+  - BubblishTranslator
+  - NekomimeticTranslator
+  - DraconicTranslator
+  - SolCommonTranslator
+  - RootSpeakTranslator
+  - BasicTauCetiTranslatorImplanter
+  - MofficTranslator
+  - ArachnicTranslator
+  - VoxTranslator
+  - ChittinTranslator
+  - AzazibaTranslator
+  - ValyrianStandardTranslator
+  - AnimalTranslator
+
+
+- type: technology
+  id: AdvancedTranslation
+  name: research-technology-advanced-translation
+  icon:
+    sprite: _Floof/Objects/Devices/translator.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 3
+  cost: 15000
+  technologyPrerequisites:
+  - BasicTranslation
+  recipeUnlocks:
+  - XenoTranslator
+  - AdvancedTauCetiTranslatorImplanter
+  - BubblishTranslatorImplanter
+  - NekomimeticTranslatorImplanter
+  - DraconicTranslatorImplanter
+  - CanilunztTranslatorImplanter
+  - SolCommonTranslatorImplanter
+  - RootSpeakTranslatorImplanter
+  - MofficTranslatorImplanter
+  - ArachnicTranslatorImplanter
+  - ChittinTranslatorImplanter
+  - AzazibaTranslatorImplanter
+  - ValyrianStandardTranslatorImplanter
+#  softCapContribution: 1.3 # Floofstation - reduced due to low utility # TODO

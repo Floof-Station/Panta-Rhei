@@ -31,6 +31,8 @@
     inherentRadioChannels:
     - Common
     - Binary
+  - type: LeashAnchor # Floofstation - allow to leash selectable borgs
+    kind: Intrinsic
 
 - type: entity
   id: BorgChassisGeneric

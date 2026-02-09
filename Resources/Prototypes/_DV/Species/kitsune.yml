@@ -7,9 +7,12 @@
   markingLimits: MobKitsuneMarkingLimits
   dollPrototype: MobKitsuneDummy
   skinColoration: HumanToned
-  baseScale: 1, 1
-  minHeight: .85
-  maxHeight: 1.05
+  # baseScale: 1, 1 # Floofstation
+  # minHeight: .85 # Floofstation
+  # maxHeight: 1.05 # Floofstation
+  minHeight: 0.65 # Floofstation
+  maxHeight: 1.1 # Floofstation
+  defaultHeight: 0.8 # Floofstation
 
 - type: markingPoints
   id: MobKitsuneMarkingLimits

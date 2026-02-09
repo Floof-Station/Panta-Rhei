@@ -52,8 +52,13 @@
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
     bloodMaxVolume: 50
-  - type: ReplacementAccent
-    accent: mouse
+#  - type: ReplacementAccent # Floofstation
+#    accent: mouse
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Effects/bite.ogg
@@ -141,7 +146,10 @@
     - Bee
     - Trash
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
@@ -163,6 +171,11 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
+  - type: LanguageKnowledge # Floofstation - I hate bees!
+    speaks:
+    - Bee
+    understands:
+    - Bee
 
 - type: entity
   name: bee
@@ -269,8 +282,15 @@
     eggSpawn:
     - id: FoodEgg
   - type: ExaminableHunger
-  - type: ReplacementAccent
-    accent: chicken
+#  - type: ReplacementAccent # Floofstation
+#    accent: chicken
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -391,7 +411,10 @@
       Dead:
         Base: cockroach_dead
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
     bloodMaxVolume: 20
   - type: Edible
   - type: FlavorProfile
@@ -445,6 +468,11 @@
     damage:
       types:
         Piercing: 0
+  - type: LanguageKnowledge # Floofstation. Technically roaches shouldn't be able to speak.
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: glockroach
@@ -556,7 +584,10 @@
     damageContainer: Biological
     damageModifierSet: Moth
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
   - type: Respirator
     damage:
       types:
@@ -574,8 +605,13 @@
       prob: 0.5
   - type: Extractable
     grindableSolutionName: food
-  - type: ReplacementAccent
-    accent: mothroach
+#  - type: ReplacementAccent # Floofstation
+#    accent: mothroach
+  - type: LanguageKnowledge # Floofstation - mothroach my beloved
+    speaks:
+    - Moffic
+    understands:
+    - Moffic
   - type: ZombieAccentOverride
     accent: zombieMoth
   - type: Vocal
@@ -721,8 +757,15 @@
     eggSpawn:
     - id: FoodEgg
   - type: ExaminableHunger
-  - type: ReplacementAccent
-    accent: duck
+#  - type: ReplacementAccent # Floofstation
+#    accent: duck
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Duck
+    understands:
+    - Duck
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -844,7 +887,10 @@
     tags:
     - Trash
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
@@ -858,6 +904,11 @@
       - !type:GibBehavior
         recursive: false
   - type: ZombieImmune
+  - type: LanguageKnowledge # Floofstation. I can't explain this one. Make a language yourself if you care.
+    speaks:
+    - Bee
+    understands:
+    - Bee
 
 - type: entity
   name: cow
@@ -948,6 +999,13 @@
     guides:
     - Chef
     - FoodRecipes
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Cow
+    understands:
+    - Cow
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: crab
@@ -1005,11 +1063,21 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
-  - type: ReplacementAccent
-    accent: crab
+#  - type: ReplacementAccent # Floofstation
+#    accent: crab
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Crab
+    understands:
+    - Crab
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Bloodstream
     bloodMaxVolume: 50
-    bloodReagent: CopperBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 1
   - type: Tag
     tags:
     - VimPilot
@@ -1132,6 +1200,13 @@
   - type: HTN
     rootTask:
       task: RuminantHostileCompound
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Sheep
+    understands:
+    - Sheep
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1182,6 +1257,13 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: LanguageKnowledge # Floofstation - idfk what the goose says.
+    speaks:
+    - Duck
+    understands:
+    - Duck
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: gorilla
@@ -1259,6 +1341,13 @@
       0: Alive
       200: Critical
       250: Dead
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: kangaroo
@@ -1293,8 +1382,15 @@
   - type: Inventory
     speciesId: kangaroo
     templateId: kangaroo
-  - type: ReplacementAccent
-    accent: kangaroo
+#  - type: ReplacementAccent # Floofstation
+#    accent: kangaroo
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Kangaroo
+    understands:
+    - Kangaroo
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1509,6 +1605,14 @@
       methods: [ Touch ]
       effects:
       - !type:WashCreamPie
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 
 # DV - For ancestors without shitmed components (scurrets)
@@ -1630,6 +1734,15 @@
       effects:
       - !type:WashCreamPie
   - type: Crawler
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Monkey
+    understands:
+    - Monkey
+    - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
+  - type: StatusIcon
 
 - type: entity
   name: monkey
@@ -1725,8 +1838,14 @@
   - type: NameIdentifier
     group: Kobold
   - type: LizardAccent
-  - type: ReplacementAccent
-    accent: kobold
+#  - type: ReplacementAccent # Floofstation
+#    accent: kobold
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Kobold
+    understands:
+    - Kobold
+    - Monkey
   # Shitmed Change Start
   - type: HumanoidAppearance
     species: Kobold
@@ -1980,8 +2099,15 @@
     spawned:
     - id: FoodMeatRat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+#  - type: ReplacementAccent # Floofstation
+#    accent: mouse
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  - type: LeashAnchor # Floofstation - leash your mouse!
+    kind: Intrinsic
   - type: Tag
     tags:
     - Trash
@@ -2154,7 +2280,10 @@
   - type: RadiationSource
     intensity: 0.3
   - type: Bloodstream
-    bloodReagent: UnstableMutagen
+    bloodReagents:
+      reagents:
+      - ReagentId: UnstableMutagen
+        Quantity: 1
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2179,9 +2308,16 @@
   id: MobLizard
   description: A harmless dragon.
   components:
-  - type: ReplacementAccent # Impstation starts here
-    accent: kobold
-  - type: Speech
+#  - type: ReplacementAccent # Floofstation
+#    accent: kobold
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Draconic
+    understands:
+    - Draconic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
+  - type: Speech # Impstation starts here
     speechSounds: Lizard
     speechVerb: Reptilian
     allowedEmotes: ['Hiss'] # Can't thump tail because no body component
@@ -2247,6 +2383,11 @@
   id: MobSlug
   description: And they called this a lizard?
   components:
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Draconic
+    understands:
+    - Draconic
   - type: MovementSpeedModifier
     baseWalkSpeed : 2
     baseSprintSpeed : 3
@@ -2296,6 +2437,11 @@
   id: MobFrog
   description: Hop hop hop. Lookin' moist.
   components:
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Draconic
+    understands:
+    - Draconic
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 6
@@ -2438,6 +2584,14 @@
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
     bloodMaxVolume: 50
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Chicken
+    - TauCetiBasic # Sike, the parrot can speak tau-ceti but not understand it.
+    understands:
+    - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: parrot
@@ -2507,6 +2661,13 @@
     heatDamage:
       types:
         Heat : 0.2 #per second, scales with temperature & other constants
+  - type: LanguageKnowledge # Floofstation - idk man
+    speaks:
+    - Chicken
+    understands:
+    - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 # TODO: Make grenade penguin voice activated like the rest of the stealth items.
 - type: entity
@@ -2632,6 +2793,11 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Scale
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 # Code unique spider prototypes or combine them all into one spider and get a
 # random sprite state when you spawn it.
@@ -2682,8 +2848,16 @@
   - type: MeleeChemicalInjector
     transferAmount: 0.75
     solution: melee
-  - type: ReplacementAccent
-    accent: xeno
+#  - type: ReplacementAccent # Floofstation
+#    accent: xeno
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Arachnic
+    understands:
+    - Arachnic
+    - Xeno
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -2698,7 +2872,10 @@
   - type: IgnoreSpiderWeb
   - type: Bloodstream
     bloodMaxVolume: 150
-    bloodReagent: CopperBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 1
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
@@ -2844,8 +3021,10 @@
       speechVerb: Cluwne
     - type: Bloodstream
       bloodMaxVolume: 150
-      bloodReagent: Laughter
-
+      bloodReagents:
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 1
 - type: entity
   name: wizard spider
   parent: MobGiantSpider
@@ -2857,6 +3036,14 @@
     removes:
     - type: ReplacementAccent
       accent: xeno  #let this wizard speak
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Arachnic
+    understands:
+    - TauCetiBasic
+    - Arachnic
+    - Xeno
 
 - type: entity
   name: possum
@@ -2910,6 +3097,13 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: possum
@@ -2985,6 +3179,11 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
 
 - type: entity
   name: fox
@@ -3065,6 +3264,13 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge # Floofstation - FOX!!!!! garryap yipruff!!!!!
+    speaks:
+    - Fox
+    understands:
+    - Fox
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   abstract: true
@@ -3110,6 +3316,13 @@
   - type: MobPrice
     price: 200
   - type: MessyDrinker
+  - type: LanguageKnowledge # Floofstation - why is there no MobDog?
+    speaks:
+    - Dog
+    understands:
+    - Dog
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   parent: MobCorgiBase
@@ -3127,8 +3340,14 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
+#  - type: ReplacementAccent # Floofstation
+#    accent: dog
+  - type: LanguageKnowledge # Floofstation - this one is usually a pet so they understand tau ceti
+    speaks:
+    - Dog
+    understands:
+    - TauCetiBasic
+    - Dog
   - type: Tag
     tags:
     - VimPilot
@@ -3179,7 +3398,10 @@
     attributes:
       gender: epicene
   - type: Bloodstream
-    bloodReagent: DemonsBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: DemonsBlood
+        Quantity: 1
   - type: Damageable
     damageContainer: BiologicalMetaphysical
     damageModifierSet: Infernal
@@ -3265,8 +3487,16 @@
     spawned:
     - id: FoodMeat
       amount: 3
-  - type: ReplacementAccent
-    accent: cat
+#  - type: ReplacementAccent # Floofstation
+#    accent: cat
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Cat
+    understands:
+    - TauCetiBasic
+    - Cat
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -3531,6 +3761,13 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge # Floofstation - idfk what the sloth says! have you ever seen a sloth irl?! me neither!
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: ferret
@@ -3586,6 +3823,13 @@
   - type: Tag
     tags:
     - VimPilot
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Hissing
+    understands:
+    - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: hamster
@@ -3683,8 +3927,15 @@
     spawned:
     - id: FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+#  - type: ReplacementAccent # Floofstation
+#    accent: mouse
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Tag
     tags:
     - VimPilot
@@ -3800,8 +4051,15 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/pig_oink.ogg
-  - type: ReplacementAccent
-    accent: pig
+#  - type: ReplacementAccent # Floofstation
+#    accent: pig
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Pig
+    understands:
+    - Pig
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -3840,7 +4098,10 @@
     speciesId: cat
     templateId: pet
   - type: Bloodstream
-    bloodReagent: Sap
+    bloodReagents:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 1
     bloodMaxVolume: 60
   - type: DamageStateVisuals
     states:
@@ -3907,6 +4168,12 @@
         Toxin: -0.1
         Airloss: -0.1
     darkMovementSpeedMultiplier: 0.7
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
 
 - type: entity
   parent: MobDionaNymph

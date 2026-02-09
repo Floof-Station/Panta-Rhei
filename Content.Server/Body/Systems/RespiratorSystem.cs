@@ -95,7 +95,7 @@ public sealed class RespiratorSystem : EntitySystem
                 multiplier *= lung.SaturationLoss;
             }
             // End DeltaV Additions
-            UpdateSaturation(uid, multiplier * (float) respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
+            UpdateSaturation(uid, multiplier * (float)respirator.UpdateInterval.TotalSeconds, respirator); // DeltaV: use multiplier instead of negating
 
             if ((!_mobState.IsIncapacitated(uid)
                 || TryComp<AffectedByCPRComponent>(uid, out var cprComp) && cprComp.IsActive) // DeltaV - Addition of CPR
@@ -203,7 +203,7 @@ public sealed class RespiratorSystem : EntitySystem
         if (_mobState.IsIncapacitated(ent))
             return false;
 
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
         return (ent.Comp.Saturation > ent.Comp.SuffocationThreshold);
@@ -216,7 +216,7 @@ public sealed class RespiratorSystem : EntitySystem
     /// <returns>Returns true only if the air is not toxic, and it wouldn't suffocate.</returns>
     public bool CanMetabolizeInhaledAir(Entity<RespiratorComponent?> ent)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
         // Get the gas at our location but don't actually remove it from the gas mixture.
@@ -240,7 +240,7 @@ public sealed class RespiratorSystem : EntitySystem
     /// <returns>Returns true only if the gas mixture is not toxic, and it wouldn't suffocate.</returns>
     public bool CanMetabolizeInhaledAir(Entity<RespiratorComponent?> ent, GasMixture gas)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return false;
 
         var ev = new CanMetabolizeGasEvent(gas);

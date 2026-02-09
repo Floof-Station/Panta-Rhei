@@ -1,0 +1,31 @@
+- type: entity
+  id: QuadChassisSecurity
+  parent: BorgChassisSelectable
+  name: security quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadsecurity
+
+- type: entity
+  id: QuadChassisMining
+  parent: BorgChassisSelectable
+  name: salvage quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadmining
+
+- type: entity
+  id: QuadChassisMedical
+  parent: BorgChassisSelectable
+  name: medical quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadmedical
+
+- type: entity
+  id: QuadChassisService
+  parent: BorgChassisSelectable
+  name: service cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadservice

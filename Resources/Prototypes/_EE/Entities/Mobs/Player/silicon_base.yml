@@ -156,7 +156,10 @@
       bounds: -0.5,-0.5,0.5,0.5
     #- type: Bloodstream
     #  damageBleedModifiers: BloodlossIPC
-    #  bloodReagent: Oil
+    #  bloodReagents:
+    #    reagents:
+    #    - ReagentId: Oil
+    #      Quantity: 1
     #  bleedReductionAmount: 0
     #  bloodMaxVolume: 100
     #  chemicalMaxVolume: 0
@@ -336,3 +339,12 @@
     - type: CosmicCenserTarget # DeltaV - Cosmic Cult
     - type: GrappleTarget # DeltaV - Allow targets to be grappled
     - type: CanDoCPR # DeltaV - Addition of CPR
+    - type: LanguageKnowledge # Floofstation - languages
+      speaks:
+      - TauCetiBasic
+      - Binary
+      understands:
+      - TauCetiBasic
+      - Binary
+      naturalLanguage: Binary
+

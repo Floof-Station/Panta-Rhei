@@ -85,7 +85,7 @@ public sealed class SlotBlockerSystem : EntitySystem
     {
         if (args.Cancelled
             || !TryComp<InventoryComponent>(args.EquipTarget, out var inventory)
-            || !IsSlotObstructed((ent, inventory), ent!, CheckType.Equip, args.SlotFlags, out var reason))
+            || !IsSlotObstructed((args.EquipTarget, inventory), ent!, CheckType.Equip, args.SlotFlags, out var reason))
             return;
 
         args.Cancel();
@@ -96,7 +96,7 @@ public sealed class SlotBlockerSystem : EntitySystem
     {
         if (args.Cancelled
             || !TryComp<InventoryComponent>(args.UnEquipTarget, out var inventory)
-            || !IsSlotObstructed((ent, inventory), ent!, CheckType.Unequip, args.SlotFlags, out var reason))
+            || !IsSlotObstructed((args.UnEquipTarget, inventory), ent!, CheckType.Unequip, args.SlotFlags, out var reason))
             return;
 
         args.Cancel();
@@ -168,7 +168,7 @@ public sealed class SlotBlockerSystem : EntitySystem
             // If there's an equipment whitelist, then equipment must be present to consider this blocker.
             || blocks.Whitelist != null && (whitelistTarget == null || _whitelist.IsWhitelistFail(blocks.Whitelist, whitelistTarget.Value))
             // Blacklist however always passes if there's no equipment.
-            || blocks.Blacklist != null && whitelistTarget != null && _whitelist.IsBlacklistPass(blocks.Blacklist, whitelistTarget.Value)
+            || blocks.Blacklist != null && whitelistTarget != null && _whitelist.IsWhitelistPass(blocks.Blacklist, whitelistTarget.Value)
         )
             return false;
 
