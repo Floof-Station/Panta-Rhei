@@ -1,0 +1,56 @@
+# These are additions to upstream sounds.
+# Upstream sound collections are set to inherit from these.
+- type: emoteSounds
+  id: KitsuneFloofstation
+  abstract: true
+  sounds:
+    Whine:
+      collection: VulpkaninWhines
+    Whimper:
+      collection: VulpkaninWhimpers
+    Gekker:
+      collection: VulpkaninGekker
+    Yap:
+      collection: VulpkaninYap
+    Yip:
+      collection: VulpkaninYips
+
+- type: emoteSounds
+  id: VulpkaninFloofstation
+  abstract: true
+  sounds:
+    Scream:
+      collection: VulpkaninScreams
+    Whine:
+      collection: VulpkaninWhines
+    Whimper:
+      collection: VulpkaninWhimpers
+    Gekker:
+      collection: VulpkaninGekker
+    Yap:
+      collection: VulpkaninYap
+    Yip:
+      collection: VulpkaninYips
+
+- type: emoteSounds
+  id: HarpyFloofstation
+  abstract: true
+  sounds:
+    Coo:
+      collection: HarpyCoos
+
+- type: emoteSounds
+  id: ReptilianFloofstation
+  abstract: true
+  sounds:
+    Yip:
+      collection: ReptilianYip
+
+- type: emoteSounds
+  id: ResomiFloofstation
+  abstract: true
+  sounds:
+    Coo:
+      collection: HarpyCoos
+    Chirp:
+      collection: ResomiChirps

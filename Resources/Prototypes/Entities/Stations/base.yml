@@ -131,7 +131,9 @@
   abstract: true
   components:
     - type: StationCentcomm
-    - type: StationSecondaryCentcomm # DeltaV - midpoint station
+      map: /Maps/Floof/centcomm.yml
+    #- type: StationSecondaryCentcomm # DeltaV - midpoint station # floofstation - disabled because we do not currently need midpoint
+      #path: /Maps/_DV/midpoint.yml # going to leave this here incase we want to bring midpoint back
 
 - type: entity
   id: BaseStationEvacuation

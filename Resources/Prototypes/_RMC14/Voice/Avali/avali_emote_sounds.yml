@@ -10,6 +10,7 @@
 - type: emoteSounds
   #parent: [RMCUnisexAvali, RMCMaleHuman] # DeltaV - no inheritence
   id: RMCMaleAvali
+  parent: [ResomiFloofstation] # Floofstation
   # Begin DeltaV Additions
   sounds:
     Scream:
@@ -45,6 +46,7 @@
 - type: emoteSounds
   #parent: [RMCUnisexAvali, RMCFemaleHuman] # DeltaV - no inheritence
   id: RMCFemaleAvali
+  parent: [ResomiFloofstation] # Floofstation
   # Begin DeltaV Additions
   sounds:
     Scream:
