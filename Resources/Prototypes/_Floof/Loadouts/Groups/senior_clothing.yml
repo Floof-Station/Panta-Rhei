@@ -9,7 +9,8 @@
 - type: loadoutGroup
   id: StationEngineerGloves
   name: loadout-group-engineering-gloves
-  minLimit: 1
+  minLimit: 0
+  maxLimit: 1
   loadouts:
   - InsulatedGloves
   - CombatGloves

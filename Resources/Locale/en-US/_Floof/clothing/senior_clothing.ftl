@@ -3,4 +3,4 @@ loadout-group-senior-physician-jumpsuit = Senior Physician jumpsuit
 loadout-group-senior-researcher-jumpsuit = Senior Researcher jumpsuit
 loadout-group-senior-officer-jumpsuit =  Senior Officer jumpsuit
 loadout-group-engineering-gloves = Engineering gloves
-InventorySpecialistMisc = Inventory Specialist misc
+loadout-group-invspec-misc = Inventory Specialist misc
