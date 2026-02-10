@@ -301,6 +301,8 @@ namespace Content.Server.Administration.Managers
             if (_res.TryContentFileRead(new ResPath("/toolshedEngineCommandPerms.yml"), out var toolshedPerms))
             {
                 _toolshedCommandPermissions.LoadPermissionsFromStream(toolshedPerms);
+                // Floofstation - mirror command perms
+                _commandPermissions.LoadPermissionsFromStream(toolshedPerms);
             }
 
             _toolshed.ActivePermissionController = this;
