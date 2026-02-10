@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 15:24:50
-  entityCount: 26603
+  time: 02/10/2026 00:33:49
+  entityCount: 26609
 maps:
 - 1
 grids:
@@ -13741,7 +13741,7 @@ entities:
       pos: -39.5,1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3579.9614
+      secondsUntilStateChange: -4521.0728
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14731,7 +14731,7 @@ entities:
       pos: 14.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3276.9292
+      secondsUntilStateChange: -4218.0405
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14744,7 +14744,7 @@ entities:
       pos: 19.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3273.3958
+      secondsUntilStateChange: -4214.507
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -59015,6 +59015,59 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -48.5,-36.5
       parent: 2
+  - uid: 21350
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,-0.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 22199
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -48.5,3.5
+      parent: 2
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 26548
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 92.5,6.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 26549
+    components:
+    - type: Transform
+      pos: 65.5,-6.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 26037
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,46.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 26550
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 74.5,10.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 26551
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 8.5,-13.5
+      parent: 2
 - proto: ComputerCloningConsole
   entities:
   - uid: 8716
@@ -60605,7 +60658,7 @@ entities:
       pos: 14.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3283.546
+      secondsUntilStateChange: -4224.657
       state: Opening
   - uid: 8635
     components:
@@ -60614,7 +60667,7 @@ entities:
       pos: 14.5,-10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3290.5957
+      secondsUntilStateChange: -4231.707
       state: Opening
   - uid: 8651
     components:
@@ -60623,7 +60676,7 @@ entities:
       pos: 14.5,-8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3284.3125
+      secondsUntilStateChange: -4225.424
       state: Opening
   - uid: 17438
     components:
@@ -60632,7 +60685,7 @@ entities:
       pos: 15.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3281.846
+      secondsUntilStateChange: -4222.957
       state: Opening
   - uid: 17442
     components:
@@ -60641,7 +60694,7 @@ entities:
       pos: 16.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3281.3125
+      secondsUntilStateChange: -4222.424
       state: Opening
   - uid: 17797
     components:
@@ -60650,7 +60703,7 @@ entities:
       pos: 14.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3282.4292
+      secondsUntilStateChange: -4223.5405
       state: Opening
   - uid: 19053
     components:
@@ -60659,7 +60712,7 @@ entities:
       pos: 14.5,-6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3282.9624
+      secondsUntilStateChange: -4224.0737
       state: Opening
   - uid: 19054
     components:
@@ -60668,7 +60721,7 @@ entities:
       pos: 14.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3290.796
+      secondsUntilStateChange: -4231.907
       state: Opening
   - uid: 19056
     components:
@@ -60677,7 +60730,7 @@ entities:
       pos: 20.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3280.7458
+      secondsUntilStateChange: -4221.857
       state: Opening
   - uid: 19057
     components:
@@ -60686,7 +60739,7 @@ entities:
       pos: 14.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3279.7292
+      secondsUntilStateChange: -4220.8403
       state: Opening
   - uid: 26594
     components:
@@ -145392,12 +145445,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -4.5,0.5
-      parent: 2
-  - uid: 21350
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -4.5,-0.5
       parent: 2
   - uid: 21351
     components:

@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 15:28:51
-  entityCount: 22740
+  time: 02/10/2026 00:50:16
+  entityCount: 22747
 maps:
 - 1
 grids:
@@ -10095,7 +10095,7 @@ entities:
       pos: -49.5,31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -24883.492
+      secondsUntilStateChange: -25175.879
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -44512,11 +44512,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -6.5,33.5
       parent: 2
-  - uid: 6058
-    components:
-    - type: Transform
-      pos: -40.5,3.5
-      parent: 2
   - uid: 6059
     components:
     - type: Transform
@@ -45288,7 +45283,7 @@ entities:
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 2.5,-32.5
+      pos: 2.5268238,-32.449806
       parent: 2
   - uid: 6188
     components:
@@ -45307,12 +45302,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -28.5,-3.5
-      parent: 2
-  - uid: 6191
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,7.5
       parent: 2
   - uid: 6192
     components:
@@ -48620,6 +48609,11 @@ entities:
       parent: 2
 - proto: ComputerCargoOrders
   entities:
+  - uid: 6058
+    components:
+    - type: Transform
+      pos: -40.5,3.5
+      parent: 2
   - uid: 6677
     components:
     - type: Transform
@@ -48636,6 +48630,63 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -41.5,-1.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 15156
+    components:
+    - type: Transform
+      pos: 8.5,-44.5
+      parent: 2
+  - uid: 15158
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -14.5,-27.5
+      parent: 2
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 15160
+    components:
+    - type: Transform
+      pos: 6.5,22.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 15162
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -5.5,42.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 15159
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -21.5,-5.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 15161
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,39.5
+      parent: 2
+  - uid: 15163
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,29.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 6191
+    components:
+    - type: Transform
+      pos: -3.5,7.5
       parent: 2
 - proto: ComputerCloningConsole
   entities:

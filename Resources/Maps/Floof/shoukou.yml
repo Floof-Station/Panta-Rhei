@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 16:09:01
-  entityCount: 26947
+  time: 02/10/2026 01:30:26
+  entityCount: 26953
 maps:
 - 1
 grids:
@@ -8649,7 +8649,7 @@ entities:
       pos: 34.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -42733.4
+      secondsUntilStateChange: -43001.633
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8689,7 +8689,7 @@ entities:
       pos: -36.5,-36.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -73503.33
+      secondsUntilStateChange: -73771.56
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9077,7 +9077,7 @@ entities:
       pos: -32.5,-41.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -72932.15
+      secondsUntilStateChange: -73200.38
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9273,7 +9273,7 @@ entities:
       pos: -20.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -99189.79
+      secondsUntilStateChange: -99458.02
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9722,7 +9722,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -127039.7
+      secondsUntilStateChange: -127307.94
       state: Opening
   - uid: 7972
     components:
@@ -9917,7 +9917,7 @@ entities:
       pos: 13.5,12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -78395.555
+      secondsUntilStateChange: -78663.79
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10021,7 +10021,7 @@ entities:
       pos: -4.5,-3.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -83250.984
+      secondsUntilStateChange: -83519.22
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -10505,7 +10505,7 @@ entities:
       pos: 19.5,10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -1981.2964
+      secondsUntilStateChange: -2249.5293
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11206,7 +11206,7 @@ entities:
       pos: 81.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -121508.16
+      secondsUntilStateChange: -121776.39
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11377,7 +11377,7 @@ entities:
       pos: 6.5,19.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -87600.24
+      secondsUntilStateChange: -87868.48
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -11609,7 +11609,7 @@ entities:
       pos: 10.5,18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -87423.78
+      secondsUntilStateChange: -87692.016
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14538,11 +14538,6 @@ entities:
       parent: 2
 - proto: Autolathe
   entities:
-  - uid: 9243
-    components:
-    - type: Transform
-      pos: -18.5,6.5
-      parent: 2
   - uid: 15737
     components:
     - type: Transform
@@ -14564,11 +14559,6 @@ entities:
     components:
     - type: Transform
       pos: -23.5,-72.5
-      parent: 2
-  - uid: 16693
-    components:
-    - type: Transform
-      pos: -16.5,-54.5
       parent: 2
   - uid: 16699
     components:
@@ -59205,6 +59195,68 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -16.5,-56.5
       parent: 2
+  - uid: 9243
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,-54.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 19134
+    components:
+    - type: Transform
+      pos: -39.5,-25.5
+      parent: 2
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 19142
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -24.5,-18.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 19143
+    components:
+    - type: Transform
+      pos: 4.5,-31.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 16693
+    components:
+    - type: Transform
+      pos: 76.5,-9.5
+      parent: 2
+  - uid: 19141
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -44.5,-19.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 19144
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 21.5,-19.5
+      parent: 2
+  - uid: 19149
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 26.5,-5.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 9994
+    components:
+    - type: Transform
+      pos: -17.5,6.5
+      parent: 2
 - proto: ComputerCloningConsole
   entities:
   - uid: 4939
@@ -71061,7 +71113,7 @@ entities:
       pos: 9.5,27.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -134442.92
+      secondsUntilStateChange: -134711.16
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -71331,7 +71383,7 @@ entities:
       pos: -36.5,-22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -348820.9
+      secondsUntilStateChange: -349089.12
       state: Closing
   - uid: 5912
     components:
@@ -71965,7 +72017,7 @@ entities:
       pos: -40.5,-0.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -279049.8
+      secondsUntilStateChange: -279318.03
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -72941,7 +72993,7 @@ entities:
       desc: Cracked and dusty. Never used again after the incident.
       name: Shiva's Food Bowl
     - type: Transform
-      pos: 26.570406,-5.5294776
+      pos: 27.512537,-4.609623
       parent: 2
     missingComponents:
     - SpaceGarbage
@@ -121875,7 +121927,7 @@ entities:
       pos: -48.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -3263.8618
+      secondsUntilStateChange: -3532.0947
       state: Opening
   - uid: 10197
     components:
@@ -123370,11 +123422,6 @@ entities:
     - type: Transform
       pos: -77.5,1.5
       parent: 2
-  - uid: 19345
-    components:
-    - type: Transform
-      pos: -17.5,6.5
-      parent: 2
   - uid: 19346
     components:
     - type: Transform
@@ -123946,12 +123993,6 @@ entities:
     components:
     - type: Transform
       pos: -26.5,4.5
-      parent: 2
-  - uid: 9994
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 76.5,-9.5
       parent: 2
   - uid: 15813
     components:
@@ -126059,7 +126100,7 @@ entities:
       pos: -1.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -93584.81
+      secondsUntilStateChange: -93853.05
       state: Opening
   - uid: 23486
     components:
@@ -126067,7 +126108,7 @@ entities:
       pos: -2.5,2.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -83267.65
+      secondsUntilStateChange: -83535.88
       state: Opening
   - uid: 26933
     components:
@@ -131101,6 +131142,11 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-33.5
+      parent: 2
+  - uid: 2061
+    components:
+    - type: Transform
+      pos: -13.5,4.5
       parent: 2
   - uid: 2254
     components:
@@ -139440,10 +139486,10 @@ entities:
       parent: 2
 - proto: ServiceTechFab
   entities:
-  - uid: 2061
+  - uid: 19133
     components:
     - type: Transform
-      pos: -13.5,4.5
+      pos: -18.5,6.5
       parent: 2
 - proto: ShardGlass
   entities:
@@ -139888,12 +139934,12 @@ entities:
   - uid: 15740
     components:
     - type: Transform
-      pos: -13.3971,3.5325685
+      pos: -13.557146,4.5843954
       parent: 2
   - uid: 15743
     components:
     - type: Transform
-      pos: -13.49085,5.6731935
+      pos: -13.30696,4.6000204
       parent: 2
   - uid: 25464
     components:
@@ -171195,7 +171241,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -205307.77
+      secondsUntilStateChange: -205576
       state: Opening
   - uid: 10028
     components:
@@ -171610,7 +171656,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -113429.01
+      secondsUntilStateChange: -113697.24
       state: Opening
   - uid: 26858
     components:

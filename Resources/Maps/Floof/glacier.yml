@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 15:19:09
-  entityCount: 20323
+  time: 02/09/2026 23:42:49
+  entityCount: 20331
 maps:
 - 1
 grids:
@@ -16128,13 +16128,6 @@ entities:
     components:
     - type: Transform
       pos: -12.5,40.5
-      parent: 2
-- proto: Autolathe
-  entities:
-  - uid: 525
-    components:
-    - type: Transform
-      pos: -19.5,1.5
       parent: 2
 - proto: BalloonCorgi
   entities:
@@ -52456,11 +52449,70 @@ entities:
       parent: 2
 - proto: ComputerCargoOrders
   entities:
+  - uid: 15499
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 39.5,10.5
+      parent: 2
   - uid: 15810
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 41.5,10.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 13383
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 13.5,44.5
+      parent: 2
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 14590
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -64.5,12.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 11551
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 18.5,-5.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 14706
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 36.5,-23.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 12161
+    components:
+    - type: Transform
+      pos: -16.5,35.5
+      parent: 2
+  - uid: 13188
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -19.5,17.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 15500
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -19.5,0.5
       parent: 2
 - proto: ComputerCloningConsole
   entities:
@@ -109905,6 +109957,13 @@ entities:
     components:
     - type: Transform
       pos: -26.5,13.5
+      parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 525
+    components:
+    - type: Transform
+      pos: -19.5,1.5
       parent: 2
 - proto: ShardGlass
   entities:

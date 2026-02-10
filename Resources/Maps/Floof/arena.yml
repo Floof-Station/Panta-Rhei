@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/04/2026 22:17:37
-  entityCount: 30157
+  time: 02/09/2026 22:28:46
+  entityCount: 30168
 maps:
 - 1
 grids:
@@ -15281,7 +15281,7 @@ entities:
       pos: -20.5,-15.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -199254.06
+      secondsUntilStateChange: -199835.19
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -21756,13 +21756,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -52.609257,3.6116536
-      parent: 6747
-- proto: BannerCargo
-  entities:
-  - uid: 22333
-    components:
-    - type: Transform
-      pos: 26.5,13.5
       parent: 6747
 - proto: BannerEngineering
   entities:
@@ -63075,6 +63068,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: 59.5,-3.5
       parent: 6747
+  - uid: 10917
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -16.516193,1.6609919
+      parent: 6747
   - uid: 11115
     components:
     - type: Transform
@@ -63316,6 +63315,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: -25.5,-34.5
       parent: 6747
+  - uid: 3836
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 45.447277,10.833041
+      parent: 6747
   - uid: 4360
     components:
     - type: Transform
@@ -63360,6 +63365,17 @@ entities:
     components:
     - type: Transform
       pos: 54.5,0.5
+      parent: 6747
+  - uid: 12617
+    components:
+    - type: Transform
+      pos: 44.80617,10.536166
+      parent: 6747
+  - uid: 13661
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 45.461365,12.971112
       parent: 6747
   - uid: 13672
     components:
@@ -63785,6 +63801,12 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-2.5
+      parent: 6747
+  - uid: 3920
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 19.70406,-5.4861865
       parent: 6747
   - uid: 4038
     components:
@@ -66849,11 +66871,10 @@ entities:
     - type: Transform
       pos: -24.5,-46.5
       parent: 6747
-  - uid: 8447
+  - uid: 11755
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 43.5,9.5
+      pos: 45.5,13.5
       parent: 6747
   - uid: 17614
     components:
@@ -66924,11 +66945,66 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 14.5,18.5
       parent: 6747
+  - uid: 1678
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.5,13.5
+      parent: 6747
   - uid: 6649
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 26.5,15.5
+      parent: 6747
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 3120
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 46.5,10.5
+      parent: 6747
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 10924
+    components:
+    - type: Transform
+      pos: -4.5,-41.5
+      parent: 6747
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 10922
+    components:
+    - type: Transform
+      pos: 24.5,-21.5
+      parent: 6747
+    - type: AccessReader
+      accessListsOriginal:
+      - - Medical
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 13699
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 22.5,-50.5
+      parent: 6747
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 10911
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,1.5
+      parent: 6747
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 6908
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 20.5,-5.5
       parent: 6747
 - proto: ComputerCloningConsole
   entities:
@@ -68727,7 +68803,7 @@ entities:
       pos: 26.5,-70.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -117555.01
+      secondsUntilStateChange: -118136.13
       state: Closing
 - proto: d4Dice
   entities:
@@ -80839,7 +80915,7 @@ entities:
   - uid: 30224
     components:
     - type: Transform
-      pos: 24.410004,-21.452919
+      pos: 21.98037,-23.399254
       parent: 6747
 - proto: Emitter
   entities:
@@ -81380,11 +81456,6 @@ entities:
       parent: 6747
 - proto: filingCabinetRandom
   entities:
-  - uid: 1678
-    components:
-    - type: Transform
-      pos: 43.5,12.5
-      parent: 6747
   - uid: 4777
     components:
     - type: Transform
@@ -131876,7 +131947,7 @@ entities:
   - uid: 19084
     components:
     - type: Transform
-      pos: 46.595142,11.06011
+      pos: 46.383015,13.674956
       parent: 6747
   - uid: 19806
     components:
@@ -135166,7 +135237,7 @@ entities:
       pos: 39.5,-36.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -115458.66
+      secondsUntilStateChange: -116039.78
       state: Opening
 - proto: MicroManipulatorStockPart
   entities:
@@ -143910,11 +143981,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.5,51.5
       parent: 6747
-  - uid: 3920
-    components:
-    - type: Transform
-      pos: 20.5,-5.5
-      parent: 6747
   - uid: 3921
     components:
     - type: Transform
@@ -143952,11 +144018,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 27.5,22.5
       parent: 6747
-  - uid: 6670
-    components:
-    - type: Transform
-      pos: 46.5,10.5
-      parent: 6747
   - uid: 6887
     components:
     - type: Transform
@@ -143991,6 +144052,17 @@ entities:
     components:
     - type: Transform
       pos: 17.5,-25.5
+      parent: 6747
+  - uid: 10919
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 15.5,-5.5
+      parent: 6747
+  - uid: 12105
+    components:
+    - type: Transform
+      pos: 44.5,13.5
       parent: 6747
   - uid: 17769
     components:
@@ -170700,11 +170772,6 @@ entities:
     - type: Transform
       pos: 17.5,-25.5
       parent: 6747
-  - uid: 3836
-    components:
-    - type: Transform
-      pos: 20.5,-5.5
-      parent: 6747
   - uid: 5887
     components:
     - type: Transform
@@ -170756,6 +170823,12 @@ entities:
     components:
     - type: Transform
       pos: -1.5,-53.5
+      parent: 6747
+  - uid: 10916
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 15.5,-5.5
       parent: 6747
   - uid: 11040
     components:
@@ -171265,6 +171338,12 @@ entities:
     - type: Transform
       pos: 48.5,16.5
       parent: 6747
+  - uid: 6670
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 44.5,13.5
+      parent: 6747
   - uid: 6698
     components:
     - type: Transform
@@ -171279,11 +171358,6 @@ entities:
     components:
     - type: Transform
       pos: 46.5,18.5
-      parent: 6747
-  - uid: 6908
-    components:
-    - type: Transform
-      pos: 46.5,10.5
       parent: 6747
   - uid: 6909
     components:
@@ -171334,6 +171408,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 18.5,15.5
+      parent: 6747
+  - uid: 8447
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 43.5,9.5
       parent: 6747
   - uid: 8469
     components:
@@ -171425,6 +171505,12 @@ entities:
     components:
     - type: Transform
       pos: -44.5,-3.5
+      parent: 6747
+  - uid: 11411
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 46.5,13.5
       parent: 6747
   - uid: 11569
     components:
@@ -171901,12 +171987,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -17.5,2.5
-      parent: 6747
-  - uid: 3120
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,1.5
       parent: 6747
   - uid: 3315
     components:
@@ -173428,7 +173508,7 @@ entities:
   - uid: 19085
     components:
     - type: Transform
-      pos: 46.518604,10.138919
+      pos: 43.49024,9.62808
       parent: 6747
 - proto: TrialTimer
   entities:
@@ -191490,7 +191570,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -43725.15
+      secondsUntilStateChange: -44306.273
       state: Opening
   - uid: 3684
     components:
@@ -191502,7 +191582,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -43727.98
+      secondsUntilStateChange: -44309.105
       state: Opening
   - uid: 17483
     components:
@@ -191514,7 +191594,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -43742.348
+      secondsUntilStateChange: -44323.473
       state: Opening
   - uid: 17496
     components:

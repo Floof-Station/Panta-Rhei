@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 15:14:25
-  entityCount: 36294
+  time: 02/09/2026 23:13:30
+  entityCount: 36298
 maps:
 - 1
 grids:
@@ -17901,7 +17901,7 @@ entities:
       pos: 90.5,-29.5
       parent: 13329
     - type: Door
-      secondsUntilStateChange: -12098.027
+      secondsUntilStateChange: -12605.894
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -19492,7 +19492,7 @@ entities:
       pos: -15.5,-4.5
       parent: 13329
     - type: Door
-      secondsUntilStateChange: -17255.3
+      secondsUntilStateChange: -17763.168
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -90875,12 +90875,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 58.5,27.5
       parent: 13329
-  - uid: 29464
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 58.5,26.5
-      parent: 13329
   - uid: 29465
     components:
     - type: Transform
@@ -96962,6 +96956,58 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 59.5,49.5
+      parent: 13329
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 36298
+    components:
+    - type: Transform
+      pos: 73.5,-12.5
+      parent: 13329
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 13345
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 58.5,26.5
+      parent: 13329
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 36083
+    components:
+    - type: Transform
+      pos: 12.5,49.5
+      parent: 13329
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 29464
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 50.5,-19.5
+      parent: 13329
+  - uid: 36296
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 32.5,-20.5
+      parent: 13329
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 36295
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 33.5,21.5
+      parent: 13329
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 36297
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -4.5,31.5
       parent: 13329
 - proto: ComputerCloningConsole
   entities:
@@ -111618,11 +111664,6 @@ entities:
     components:
     - type: Transform
       pos: 15.5,-12.5
-      parent: 13329
-  - uid: 36083
-    components:
-    - type: Transform
-      pos: 50.5,-19.5
       parent: 13329
   - uid: 36084
     components:
@@ -198280,11 +198321,6 @@ entities:
     components:
     - type: Transform
       pos: 11.5,49.5
-      parent: 13329
-  - uid: 13345
-    components:
-    - type: Transform
-      pos: 12.5,49.5
       parent: 13329
   - uid: 14363
     components:

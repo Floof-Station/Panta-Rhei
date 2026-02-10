@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 15:22:10
-  entityCount: 42501
+  time: 02/10/2026 00:15:33
+  entityCount: 42507
 maps:
 - 1
 grids:
@@ -14167,9 +14167,11 @@ entities:
           -13,-12:
             0: 65102
           -12,-11:
-            0: 4087
+            0: 3831
+            4: 256
           -13,-11:
-            0: 3822
+            0: 3814
+            4: 8
           -12,-10:
             0: 63931
           -13,-10:
@@ -15455,7 +15457,7 @@ entities:
           -27,-13:
             0: 57344
             3: 48
-            4: 136
+            5: 136
           -26,-12:
             0: 4095
           -26,-11:
@@ -15464,8 +15466,8 @@ entities:
             0: 61168
           -26,-13:
             0: 61440
-            4: 17
-            5: 204
+            5: 17
+            6: 204
           -25,-13:
             0: 62702
           -40,-1:
@@ -16027,7 +16029,7 @@ entities:
           -28,-17:
             0: 65391
           -28,-15:
-            6: 7
+            7: 7
             3: 1792
           -28,-14:
             3: 7
@@ -16904,6 +16906,11 @@ entities:
           temperature: 293.15
           moles: {}
         - volume: 2500
+          temperature: 293.14975
+          moles:
+            Oxygen: 20.078888
+            Nitrogen: 75.53487
+        - volume: 2500
           temperature: 293.15
           moles:
             Nitrogen: 6666.982
@@ -16922,6 +16929,7 @@ entities:
       id: Hammurabi
     - type: SpreaderGrid
     - type: ImplicitRoof
+    - type: NavMap
 - proto: AirAlarm
   entities:
   - uid: 3
@@ -20829,7 +20837,7 @@ entities:
       pos: -102.5,-28.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -6226.1743
+      secondsUntilStateChange: -8131.856
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -87754,22 +87762,80 @@ entities:
       parent: 2
 - proto: ComputerCargoOrders
   entities:
+  - uid: 1413
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -38.5,28.5
+      parent: 2
   - uid: 12925
     components:
     - type: Transform
       pos: -29.5,41.5
-      parent: 2
-  - uid: 12926
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -38.5,28.5
       parent: 2
   - uid: 12927
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -16.5,39.5
+      parent: 2
+  - uid: 41626
+    components:
+    - type: Transform
+      pos: -38.5,26.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 41627
+    components:
+    - type: Transform
+      pos: -103.5,-15.5
+      parent: 2
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 12926
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -82.5,11.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 41624
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -68.5,-25.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 36157
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -18.5,-40.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 41625
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -50.5,-45.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 30137
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -55.5,16.5
+      parent: 2
+  - uid: 41629
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -53.5,-3.5
       parent: 2
 - proto: ComputerCloningConsole
   entities:
@@ -188268,7 +188334,7 @@ entities:
   - uid: 27429
     components:
     - type: Transform
-      pos: -55.511494,16.599483
+      pos: -55.61449,15.817317
       parent: 2
   - uid: 35364
     components:
@@ -190496,6 +190562,14 @@ entities:
     - type: Transform
       pos: -47.5,-41.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -190544,6 +190618,14 @@ entities:
     - type: Transform
       pos: -48.5,-43.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -190904,11 +190986,6 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 1413
-    components:
-    - type: Transform
-      pos: -52.5,16.5
-      parent: 2
   - uid: 1415
     components:
     - type: Transform
@@ -204425,11 +204502,6 @@ entities:
     components:
     - type: Transform
       pos: -88.5,11.5
-      parent: 2
-  - uid: 30137
-    components:
-    - type: Transform
-      pos: -82.5,11.5
       parent: 2
   - uid: 30138
     components:
@@ -228497,6 +228569,13 @@ entities:
     - type: Transform
       pos: -34.5,-15.5
       parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 41628
+    components:
+    - type: Transform
+      pos: -52.5,16.5
+      parent: 2
 - proto: ShardGlass
   entities:
   - uid: 34559
@@ -242870,11 +242949,6 @@ entities:
     - type: Transform
       pos: -54.5,15.5
       parent: 2
-  - uid: 36157
-    components:
-    - type: Transform
-      pos: -55.5,16.5
-      parent: 2
   - uid: 36158
     components:
     - type: Transform
@@ -246138,7 +246212,7 @@ entities:
   - uid: 36747
     components:
     - type: Transform
-      pos: -55.532326,16.213799
+      pos: -55.458126,15.551692
       parent: 2
   - uid: 36748
     components:

@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 15:04:34
-  entityCount: 25262
+  time: 02/09/2026 22:48:50
+  entityCount: 25265
 maps:
 - 1
 grids:
@@ -9740,7 +9740,8 @@ entities:
           -2,-2:
             1: 65535
           -2,-5:
-            0: 65535
+            0: 65279
+            3: 256
           -1,-5:
             0: 56605
           -4,-8:
@@ -9870,22 +9871,22 @@ entities:
             0: 65535
           5,-2:
             1: 240
-            3: 4096
-            4: 16384
+            4: 4096
+            5: 16384
           5,-1:
-            3: 17
+            4: 17
             0: 61440
-            4: 68
+            5: 68
           6,-3:
             0: 65535
           6,-2:
             1: 240
-            4: 4096
-            5: 16384
+            5: 4096
+            6: 16384
           6,-1:
-            4: 17
+            5: 17
             0: 28672
-            5: 68
+            6: 68
           7,-3:
             0: 51
             1: 59528
@@ -10114,11 +10115,11 @@ entities:
             0: 65535
           -8,1:
             0: 797
-            6: 52224
+            7: 52224
           -9,1:
             0: 65527
           -8,2:
-            6: 238
+            7: 238
             0: 63488
           -9,2:
             0: 57598
@@ -10172,7 +10173,7 @@ entities:
             0: 63344
           6,-13:
             1: 57344
-            4: 200
+            5: 200
           7,-12:
             0: 13104
           7,-11:
@@ -10181,7 +10182,7 @@ entities:
             0: 64307
           7,-13:
             1: 4096
-            4: 16
+            5: 16
             0: 8
           8,-11:
             1: 48896
@@ -10452,7 +10453,7 @@ entities:
             0: 64441
           15,-9:
             0: 57344
-            4: 4
+            5: 4
           16,-8:
             0: 12834
           16,-7:
@@ -10601,13 +10602,13 @@ entities:
             0: 35071
             1: 12288
           -12,5:
-            4: 32768
+            5: 32768
             1: 8
           -11,5:
             1: 35019
-            4: 12544
+            5: 12544
           -11,6:
-            4: 1
+            5: 1
             1: 8840
             0: 2048
           -11,7:
@@ -11408,7 +11409,7 @@ entities:
           6,-15:
             0: 132
           6,-14:
-            4: 64
+            5: 64
           7,-15:
             0: 12816
             1: 3072
@@ -11496,7 +11497,7 @@ entities:
           10,-13:
             0: 2
           11,-14:
-            4: 64
+            5: 64
           11,-13:
             0: 134
           12,-15:
@@ -11666,6 +11667,11 @@ entities:
           moles:
             Nitrogen: 6666.982
         - volume: 2500
+          temperature: 293.14975
+          moles:
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
+        - volume: 2500
           temperature: 293.15
           moles:
             Oxygen: 6666.982
@@ -11687,6 +11693,7 @@ entities:
     - type: BecomesStation
       id: Core
     - type: ImplicitRoof
+    - type: NavMap
   - uid: 22389
     components:
     - type: MetaData
@@ -14610,7 +14617,7 @@ entities:
       pos: -36.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -29017.195
+      secondsUntilStateChange: -29579.371
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -67182,12 +67189,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -40.5,-61.5
       parent: 2
-  - uid: 8861
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,3.5
-      parent: 2
   - uid: 8862
     components:
     - type: Transform
@@ -67351,6 +67352,61 @@ entities:
     components:
     - type: Transform
       pos: 25.5,15.5
+      parent: 2
+  - uid: 18439
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 22.5,13.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 8963
+    components:
+    - type: Transform
+      pos: -7.5,-17.5
+      parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Engineering
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 15594
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -69.5,-30.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 8861
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,3.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 22667
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 57.5,-13.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 22381
+    components:
+    - type: Transform
+      pos: -5.5,34.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 15480
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -27.5,-9.5
       parent: 2
 - proto: ComputerCloningConsole
   entities:
@@ -67871,11 +67927,6 @@ entities:
       parent: 2
 - proto: CrateEngineeringGear
   entities:
-  - uid: 8963
-    components:
-    - type: Transform
-      pos: -7.5,-17.5
-      parent: 2
   - uid: 8964
     components:
     - type: Transform
@@ -82720,7 +82771,7 @@ entities:
       pos: -68.5,-34.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -17247.076
+      secondsUntilStateChange: -17809.252
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -120386,14 +120437,6 @@ entities:
       parent: 2
 - proto: PlushieSpaceLizard
   entities:
-  - uid: 15480
-    components:
-    - type: Transform
-      pos: 39.526054,-4.447722
-      parent: 2
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
   - uid: 15481
     components:
     - type: Transform
@@ -121058,11 +121101,6 @@ entities:
     components:
     - type: Transform
       pos: -31.5,-17.5
-      parent: 2
-  - uid: 15594
-    components:
-    - type: Transform
-      pos: 57.5,-13.5
       parent: 2
   - uid: 15595
     components:
@@ -132511,6 +132549,13 @@ entities:
     - type: Transform
       pos: -31.5,17.5
       parent: 2
+- proto: SentientSmileCore
+  entities:
+  - uid: 15933
+    components:
+    - type: Transform
+      pos: 68.5,-27.5
+      parent: 2
 - proto: ServiceTechFab
   entities:
   - uid: 1111
@@ -137323,13 +137368,6 @@ entities:
     components:
     - type: Transform
       pos: -20.5,-18.5
-      parent: 2
-- proto: SpawnMobSmile
-  entities:
-  - uid: 15933
-    components:
-    - type: Transform
-      pos: 68.5,-27.5
       parent: 2
 - proto: SpawnPointAtmos
   entities:
@@ -142259,12 +142297,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 22.5,14.5
-      parent: 2
-  - uid: 18439
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 22.5,13.5
       parent: 2
   - uid: 18440
     components:
@@ -166244,6 +166276,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -55.5,-41.5
+      parent: 2
+  - uid: 22666
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -7.5,-17.5
       parent: 2
   - uid: 22757
     components:

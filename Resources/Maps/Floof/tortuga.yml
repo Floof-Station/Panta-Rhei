@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 267.3.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 16:15:52
-  entityCount: 30765
+  time: 02/10/2026 02:01:05
+  entityCount: 30772
 maps:
 - 1
 grids:
@@ -63498,6 +63498,59 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 16.5,-11.5
+      parent: 2
+  - uid: 30743
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 14.5,-9.5
+      parent: 2
+- proto: ComputerCargoOrdersEngineering
+  entities:
+  - uid: 30744
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 30.5,19.5
+      parent: 2
+- proto: ComputerCargoOrdersJustice
+  entities:
+  - uid: 30746
+    components:
+    - type: Transform
+      pos: -26.5,33.5
+      parent: 2
+- proto: ComputerCargoOrdersMedical
+  entities:
+  - uid: 30747
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -50.5,10.5
+      parent: 2
+- proto: ComputerCargoOrdersScience
+  entities:
+  - uid: 30745
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -66.5,-13.5
+      parent: 2
+- proto: ComputerCargoOrdersSecurity
+  entities:
+  - uid: 30748
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -25.5,62.5
+      parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 30749
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -18.5,25.5
       parent: 2
 - proto: ComputerCloningConsole
   entities:
