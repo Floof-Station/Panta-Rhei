@@ -93,6 +93,7 @@
   - ChiefEngineer
   - StationEngineer
   - TechnicalAssistant
+  - SeniorEngineer
 
 - type: department
   id: Medical
@@ -107,7 +108,8 @@
   - Psychologist
   - Paramedic
   - MedicalBorg # Delta V - Medical Borg, see Resources/Prototypes/_DV/Roles/Jobs/Medical/medicalborg.yml
-  - Surgeon # Delta V - Surgeon, see Resources/Prototypes/_DV/Roles/Jobs/Medical/surgeon.yml
+  - Surgeon # Delta V - Surgeon, see Resources/Prototypes/_DV/Roles/Jobs/Medical/surgeon.yml3
+  - SeniorPhysician
 
 - type: department
   id: Security
@@ -124,6 +126,7 @@
   - PrisonGuard # Nyanotrasen - PrisonGuard, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Security/prisonguard.yml
   - Brigmedic # DeltaV - Brigmedic, see Resources/Prototypes/_DV/Roles/Jobs/Security/brigmedic.yml
   - SecurityBorg # Delta-V : Security Borg
+  - SeniorOfficer
 
 - type: department
   id: Epistemics # DeltaV - Epistemics Department replacing Science
@@ -138,6 +141,7 @@
   - ForensicMantis # Nyanotrasen - ForensicMantis, see Resources/Prototypes/Nyanotrasen/Roles/Jobs/Epistemics/forensicmantis.yml
   - Roboticist # DeltaV: Roboticist job
   - Librarian # DeltaV - Move Librarian into epistemics as curator
+  - SeniorResearcher
 
 - type: department
   id: Silicon
