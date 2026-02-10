@@ -71,3 +71,21 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
   - SecurityFirearmAmmo # DeltaV - loadouts
+
+- type: roleLoadout
+  id: JobInventorySpecialist
+  groups:
+  - GroupTankHarness
+  - CargoTechnicianHead
+  - CargoTechnicianNeck # DeltaV
+  - CargoTechnicianJumpsuit # floofstation - there are no special jumpsuits/skirts for inventory spec so we will use cargo techs to make it easier
+  - InventorySpecialistMisc # floofstation
+  - CargoTechnicianBackpack
+  - CargoTechnicianOuterClothing
+  - CargoPDADelta # DeltaV
+  - CargoTechnicianShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - CargoTechnicianJobTrinkets
+  - GroupSpeciesBreathTool

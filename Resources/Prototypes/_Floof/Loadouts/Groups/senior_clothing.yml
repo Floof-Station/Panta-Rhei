@@ -3,8 +3,6 @@
   parent: StationEngineerJumpsuit
   name: loadout-group-senior-engineer-jumpsuits
   loadouts:
-  #- SeniorEngineerJumpsuit2
-  #- SeniorEngineerJumpskirt2
   - SeniorEngineerJumpsuit
   - SeniorEngineerJumpskirt
 
@@ -39,3 +37,20 @@
   loadouts:
   - SeniorOfficerJumpsuit
   - SeniorOfficerJumpskirt
+
+- type: loadoutGroup
+  id: InventorySpecialistJumpsuits
+  parent: CargoTechnicianJumpsuit
+  name: loadout-group-invspec-jumpsuit
+  loadouts:
+  - LoadoutInventorySpecialistJumpsuit
+  - LoadoutInventorySpecialistJumpskirt
+
+- type: loadoutGroup
+  id: InventorySpecialistMisc
+  name: loadout-group-invspec-misc
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutInventorySpecialistStampApproved
+  - LoadoutInventorySpecialistStampDenied
