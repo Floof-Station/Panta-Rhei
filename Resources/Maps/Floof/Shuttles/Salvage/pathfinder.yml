@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/11/2026 15:02:31
+  time: 02/11/2026 15:20:27
   entityCount: 441
 maps: []
 grids:
@@ -410,6 +410,8 @@ entities:
   entities:
   - uid: 70
     components:
+    - type: MetaData
+      name: Pathfinder AME controller
     - type: Transform
       pos: 3.5,-2.5
       parent: 1
