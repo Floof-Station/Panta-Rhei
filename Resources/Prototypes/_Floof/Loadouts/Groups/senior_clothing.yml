@@ -16,12 +16,31 @@
   - CombatGloves
 
 - type: loadoutGroup
+  id: StationEngineerBelts
+  name: loadout-group-engineering-belts
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltUtility
+  - ClothingBeltUtilityAdvancedToolsEngineering
+  - ClothingBeltUtilityAdvancedToolsAtmos
+
+- type: loadoutGroup
   id: SeniorPhysicianJumpsuits
   parent: MedicalDoctorJumpsuit
   name: loadout-group-senior-physician-jumpsuit
   loadouts:
   - SeniorPhysicianJumpsuit
   - SeniorPhysicianJumpskirt
+
+- type: loadoutGroup
+  id: MedicalDoctorBelts
+  name: loadout-group-medical-doctor-belts
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltMedical
+  - ClothingBeltMedicalAdvancedFilled
 
 - type: loadoutGroup
   id: SeniorResearcherJumpsuits

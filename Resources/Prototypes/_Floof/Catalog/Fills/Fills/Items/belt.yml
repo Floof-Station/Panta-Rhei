@@ -1,0 +1,54 @@
+- type: entity
+  id: ClothingBeltMedicalAdvancedFilled
+  parent: ClothingBeltMedical
+  suffix: Filled
+  name: advanced medical belt
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MedicatedSuture
+          amount: 2
+        - id: RegenerativeMesh
+        - id: Bloodpack
+        - id: Gauze
+        - id: EmergencyMedipen #You never know what people are going to latejoin into
+        - id: BruteAutoInjector
+        - id: BurnAutoInjector
+
+- type: entity
+  id: ClothingBeltUtilityAdvancedToolsEngineering
+  parent: ClothingBeltUtility
+  suffix: Engineering
+  name: utility belt advanced tools
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: PowerDrill
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: CableApcStack
+        - id: trayScanner
+
+- type: entity
+  id: ClothingBeltUtilityAdvancedToolsAtmos
+  parent: ClothingBeltUtility
+  suffix: Engineering
+  name: utility belt advanced tools atmos
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: PowerDrill
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: GasAnalyzer
+        - id: trayScanner
