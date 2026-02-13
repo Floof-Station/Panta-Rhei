@@ -1,0 +1,39 @@
+- type: loadoutGroup
+  id: PassengerOutfits
+  parent: PassengerJumpsuit
+  name: loadout-group-passenger-jumpsuits
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingThongCoder
+  - ClothingThongBee
+  - ClothingThongRainbow
+
+- type: loadoutGroup
+  id: PassengerGlovesAndArmwarmers
+  parent: PassengerGloves
+  name: loadout-group-passenger-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingArmwarmersCoder
+  - ClothingArmwarmersBee
+  - ClothingArmwarmersRainbow
+
+- type: loadoutGroup
+  id: PassengerShoesSocks
+  parent: PassengerShoes
+  name: loadout-group-passenger-shoes
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingSocksRainbow
+  - ClothingSocksAce
+  - ClothingSocksAro
+  - ClothingSocksBi
+  - ClothingSocksGay
+  - ClothingSocksLesbian
+  - ClothingSocksNon
+  - ClothingSocksPan
+  - ClothingSocksTrans
+
