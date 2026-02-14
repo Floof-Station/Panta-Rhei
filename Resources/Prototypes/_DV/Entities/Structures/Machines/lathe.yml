@@ -30,8 +30,11 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
   - type: EmagLatheRecipes
+
     emagStaticPacks:
     - SecurityAmmoStatic
+    # Floof (Why the fuck is this not a thing?)
+    - SyndieGunAmmoFloof
     emagDynamicPacks:
     - SecurityAmmo
     - SecurityExplosives

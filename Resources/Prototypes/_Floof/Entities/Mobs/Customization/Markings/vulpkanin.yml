@@ -1,0 +1,138 @@
+# These markings have been reworked to appear on multiple layers to mitigate the effects of the "cookie-cut" technic of the original sprites
+- type: marking
+  id: VulpTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Oni, Felinid, Rodentia, Kitsune]
+  layering: # Floof
+    vulp: TailOversuit
+    vulp-fade: TailOversuit
+    vulp_BACK: TailBehind
+    vulp-fade_BACK: TailBehind
+  colorLinks:
+    vulp_BACK: vulp
+    vulp-fade_BACK: vulp-fade
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-fade
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_BACK
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-fade_BACK
+
+- type: marking
+  id: VulpTailAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering: # Floof
+    vulp_wag: TailOversuit
+    vulp_wag-fade: TailOversuit
+    vulp_wag_BACK: TailBehind
+    vulp_wag-fade_BACK: TailBehind
+  colorLinks:
+    vulp_wag_BACK: vulp_wag
+    vulp_wag-fade_BACK: vulp_wag-fade
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag-fade
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag_BACK
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag-fade_BACK
+
+- type: marking
+  id: VulpTailTip
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Oni, Felinid, Rodentia, Kitsune]
+  layering: # Floof
+    vulp: TailOversuit
+    tip: TailOversuit
+    vulp_BACK: TailBehind
+    tip_BACK: TailBehind
+  colorLinks:
+    vulp_BACK: vulp
+    vulp-tip_BACK: vulp-tip
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-tip
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_BACK
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp-tip_BACK
+
+- type: marking
+  id: VulpTailTipAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: []
+  layering: # Floof
+    vulp_wag: TailOversuit
+    vulp_wag-tip: TailOversuit
+    vulp_wag_BACK: TailBehind
+    vulp_wag-tip_BACK: TailBehind
+  colorLinks:
+    vulp_wag_BACK: vulp_wag
+    vulp_wag-tip_BACK: vulp_wag-tip
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag-tip
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag_BACK
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_wag-tip_BACK
+
+- type: marking
+  id: VulpTailAlt
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Oni, Felinid, Rodentia, Kitsune]
+  layering: # Floof
+    vulp_alt: TailOversuit
+    vulp_alt-fade: TailOversuit
+    vulp_alt_BACK: TailBehind
+    vulp_alt-fade_BACK: TailBehind
+  colorLinks:
+    vulp_alt_BACK: vulp_alt
+    vulp_alt-fade_BACK: vulp_alt-fade
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt-fade
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt_BACK
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt-fade_BACK
+
+- type: marking
+  id: VulpTailAltTip
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [Vulpkanin, Human, SlimePerson, IPC, Oni, Felinid, Rodentia, Kitsune]
+  layering: # Floof
+    vulp_alt: TailOversuit
+    vulp_alt-tip: TailOversuit
+    vulp_alt_BACK: TailBehind
+    vulp_alt-tip_BACK: TailBehind
+  colorLinks:
+    vulp_alt_BACK: vulp_alt
+    vulp_alt-tip_BACK: vulp_alt-tip
+  sprites:
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt-tip
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt_BACK
+  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+    state: vulp_alt-tip_BACK

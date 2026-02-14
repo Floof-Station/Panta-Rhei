@@ -276,3 +276,171 @@ Entries:
         that of Floofstation.
   id: 34
   time: '2026-02-03T07:00:02.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Add
+      message: Added abstract Taur species prototype
+    - type: Add
+      message: Arachne species
+    - type: Add
+      message: >-
+        Added markings for arachne lower body and connector part (required due
+        to sprites being wonky)
+    - type: Fix
+      message: Fixed shadowkin status effect errors and other mismatching components
+  id: 35
+  time: '2026-02-04T09:00:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Added back lathes to each department
+    - type: Add
+      message: Added surgeon role to every station
+    - type: Add
+      message: Added AI jobslot to most stations
+    - type: Add
+      message: Added lava land shuttles to most stations
+  id: 36
+  time: '2026-02-05T19:22:23.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Ported foreigner traits, natural speaker traits, and optional language
+        traits.
+  id: 37
+  time: '2026-02-06T04:48:00.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Dildos, Whips, Vibrators, and Eggs.
+  id: 38
+  time: '2026-02-06T09:28:13.0000000+00:00'
+- author: Pharaz4
+  changes:
+    - type: Add
+      message: Added clothes from floof
+  id: 39
+  time: '2026-02-07T04:41:21.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed layering of vulpkanin tails.
+    - type: Fix
+      message: >-
+        Fixed certain markings failing to preserve their coloring when imported
+        from Floofstation.
+    - type: Fix
+      message: >-
+        Added a humanoid profile migration system. Humanoid profiles explicitly
+        imported via the character editor GUI should now preserve their heights
+        and traits (at least those that have already been implemented).
+  id: 40
+  time: '2026-02-07T04:48:46.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Cumming, Squirting, and Lactating
+  id: 41
+  time: '2026-02-07T10:41:13.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Ported improved wagging action from Floofstation and made so that your
+        character doesn't receive the "toggle wagging" action unless they have
+        an animatable tail.
+  id: 42
+  time: '2026-02-08T01:56:01.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Merged upstream changes up to 2026-02-07.
+  id: 43
+  time: '2026-02-08T04:45:39.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Weight change traits restored!
+  id: 44
+  time: '2026-02-08T08:50:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Ported most unique emote sounds from floofstation.
+  id: 45
+  time: '2026-02-10T04:36:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Add back Floof's version of centcomm
+    - type: Add
+      message: Add back all the admin spawnable shuttles and stations for events
+  id: 46
+  time: '2026-02-10T08:36:38.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Add
+      message: Added new sprites and muzzleflash effect for the cobra pistol
+    - type: Add
+      message: >-
+        Added .25 caseless subsonic as ammo packet, pistol magazine and uplink
+        purchase option
+    - type: Add
+      message: Added .60 cal and .25 caseless subsonic to emagged lathe recipes
+    - type: Tweak
+      message: Changed Hristov sound
+  id: 47
+  time: '2026-02-11T05:25:30.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Ported Senior Roles
+    - type: Add
+      message: Ported Inventory Specialist
+  id: 48
+  time: '2026-02-11T07:32:42.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Fixed a command permission bug that prevented admins from executing any
+        toolshed commands. Apparently this is a 2 year old bug from wizden.
+  id: 49
+  time: '2026-02-11T07:58:36.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: >-
+        Changed Tajaran, Shadowkin and Resomi to use hsv colors instead of
+        skintones.
+  id: 50
+  time: '2026-02-12T03:43:42.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Mutton
+  id: 51
+  time: '2026-02-12T07:15:32.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the AME on the pathfinder so fuel level notifications get sent
+        over Logi radio not Engi.
+    - type: Tweak
+      message: >-
+        Disabled Delta-vs salvage shuttle from spawning since we use the
+        pathfinder.
+  id: 52
+  time: '2026-02-12T07:34:17.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Add some floof clothing back to departmental drobes
+    - type: Add
+      message: Add some floof clothing back to the pride drobe
+    - type: Add
+      message: Add vapes to the shady cidgs vendor & entity spawn panel
+  id: 53
+  time: '2026-02-12T07:35:15.0000000+00:00'

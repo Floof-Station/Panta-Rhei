@@ -1,0 +1,9 @@
+- type: entity
+  id: CartridgeCaselessRifleSubsonic
+  name: cartridge (.25 caseless Subsonic)
+  parent: BaseCartridgeCaselessRifle
+  description: A small caliber utilizing caseless technology, omitting conventional brass casing in favor of hardened propellant. Specifically built for stealth purposes
+  components:
+  - type: CartridgeAmmo
+    muzzleFlash: MuzzleFlashEffectSuppressed
+    proto: BulletCaselessRifleSubsonic

@@ -1,0 +1,47 @@
+- type: trait
+  id: CumProducer
+  name: trait-name-CumProducer
+  description: trait-description-CumProducer
+  category: Medical
+  cost: 0
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: CumProducer
+      solutionname: "penis"
+
+- type: trait
+  id: MilkProducer
+  name: trait-name-MilkProducer
+  description: trait-description-MilkProducer
+  category: Medical
+  cost: 0
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MilkProducer
+      solutionname: "breasts"
+
+- type: trait
+  id: SquirtProducer
+  name: trait-name-SquirtProducer
+  description: trait-description-SquirtProducer
+  category: Medical
+  cost: 0
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SquirtProducer
+      solutionname: "vagina"

@@ -1,4 +1,48 @@
 - type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatCatEarsCosmetic
+  name: cosmetic cat ears
+  description: All the cuteness with none of the effects!
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/catears.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/catears.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatDogEarsCosmetic
+  name: cosmetic doggy ears
+  description: All the cuteness with none of the effects!
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hats/dogears.rsi
+  - type: Clothing
+    sprite: Clothing/Head/Hats/dogears.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSexCompCirclet
+  name: sex competition circlet
+  description: It looks like it should be part of a competition.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/sexcompcirclet.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/sexcompcirclet.rsi
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodMarsHoodieHood
+  categories: [ HideSpawnMenu ]
+  name: pink hoodie hood
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/hoodmarshoodie.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/hoodmarshoodie.rsi
+
+- type: entity
   parent: ClothingHeadEVAHelmetBase
   id: ClothingHeadHelmetPilot
   name: Freelancer "Pilot" Helmet
@@ -54,3 +98,28 @@
         Slash: 0.9
         Piercing: 0.9
         Heat: 0.9
+
+- type: entity
+  parent: ClothingHeadHatChef
+  id: ClothingHeadHatSodaJerk
+  name: soda jerk hat
+  description: A old world styled hat commonly used by purveyors of Ice Cream and Soda Drinks.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/sodajerkhat.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/sodajerkhat.rsi
+
+- type: entity
+  parent: ClothingHeadHatMagician
+  id: ClothingHeadHatMagicianSyndie
+  name: magician's tophat
+  description: "A magician's tophat."
+  suffix: syndicate
+  components:
+  - type: Item
+    size: Ginormous # Must be bigger than the items it can fit inside, to prevent players from creating a fucking singularity with these.
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,5,4

@@ -47,6 +47,7 @@
           MedicalDoctor: [ 3, 4 ]
           MedicalIntern: [ 2, 3 ]
 #          SeniorPhysician: [ 1, 1 ]
+          Surgeon: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
           Chaplain: [ 1, 1 ]
@@ -75,7 +76,7 @@
         #civilian
           Passenger: [ -1, -1 ]
           # Silicon
-#          StationAi: [ 1, 1 ]
+          StationAi: [ 1, 1 ]
         # Justice added by FloofStation
           ChiefJustice: [ 1, 1 ] #FloofStation
           Clerk: [ 1, 1 ] #FloofStation

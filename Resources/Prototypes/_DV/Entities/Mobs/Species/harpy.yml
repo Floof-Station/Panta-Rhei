@@ -40,6 +40,7 @@
   - type: Sprite
     scale: 0.9, 0.9
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -68,6 +69,7 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "back" ]
@@ -118,7 +120,7 @@
   - type: Speech
     speechSounds: Harpy
     speechVerb: Harpy
-    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl', 'Bark', 'Snarl', 'Whine', 'Howl', 'Awoo', 'Honk', 'HarpyRing', 'HarpyPew', 'HarpyBang', 'Beep', 'HarpyRev', 'HarpyCaw', 'Squish', 'Chitter', 'Chirp', 'Squeak', 'Click', 'Gnash', 'HarpyQuack', 'HarpySquawk', 'Moo', 'Baa']
+    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl', 'Bark', 'Snarl', 'Whine', 'Howl', 'Awoo', 'Honk', 'HarpyRing', 'HarpyPew', 'HarpyBang', 'Beep', 'HarpyRev', 'HarpyCaw', 'Squish', 'Chitter', 'Chirp', 'Squeak', 'Click', 'Gnash', 'HarpyQuack', 'HarpySquawk']
   - type: Vocal
     sounds:
       Male: SoundsHarpyMale
@@ -159,6 +161,7 @@
     - DoorBumpOpener
     - AnomalyHost
     - OviniaEmotes
+    - HarpyEmotes # Floofstation
   - type: FootPrints # DeltaV port from EE, blood splatter
     leftBarePrint: "footprint-left-bare-lizard" # DeltaV port from EE, blood splatter
     rightBarePrint: "footprint-right-bare-lizard" # DeltaV port from EE, blood splatter

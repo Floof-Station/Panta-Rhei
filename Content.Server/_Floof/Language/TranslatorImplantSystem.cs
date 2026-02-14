@@ -1,3 +1,4 @@
+using Content.Shared._Floof.Language.Components;
 using Content.Shared._Floof.Language.Components.Translators;
 using Content.Shared._Floof.Language.Events;
 using Content.Shared.Implants.Components;

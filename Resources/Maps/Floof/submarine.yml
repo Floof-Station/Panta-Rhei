@@ -4,8 +4,8 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/22/2026 16:00:10
-  entityCount: 41709
+  time: 02/05/2026 16:11:08
+  entityCount: 41689
 maps:
 - 18185
 grids:
@@ -18586,6 +18586,8 @@ entities:
     - type: Transform
       pos: 55.5,42.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
   - uid: 21062
     components:
     - type: Transform
@@ -19622,6 +19624,14 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -35.5,-51.5
+      parent: 2
+- proto: AirlockExternalGlassShuttleMiningFilled
+  entities:
+  - uid: 1220
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -33.5,-52.5
       parent: 2
 - proto: AirlockExternalLocked
   entities:
@@ -60282,11 +60292,6 @@ entities:
     components:
     - type: Transform
       pos: 78.5,71.5
-      parent: 2
-  - uid: 33518
-    components:
-    - type: Transform
-      pos: 55.5,44.5
       parent: 2
   - uid: 33519
     components:
@@ -119478,6 +119483,13 @@ entities:
       parent: 19881
     - type: Physics
       canCollide: False
+- proto: EngineeringTechFab
+  entities:
+  - uid: 4652
+    components:
+    - type: Transform
+      pos: -49.5,18.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 39949
@@ -186576,6 +186588,24 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: LockerWallSurgeonFilled
+  entities:
+  - uid: 5585
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -24.5,-1.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 5638
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -18.5,-1.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: LockerWardenFilled
   entities:
   - uid: 22316
@@ -186609,6 +186639,13 @@ entities:
     components:
     - type: Transform
       pos: -25.5,-28.5
+      parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 5658
+    components:
+    - type: Transform
+      pos: -15.5,-25.5
       parent: 2
 - proto: MachineAnomalyGenerator
   entities:
@@ -186687,21 +186724,6 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 1218
-    components:
-    - type: Transform
-      pos: -67.5,1.5
-      parent: 2
-  - uid: 4127
-    components:
-    - type: Transform
-      pos: 26.5,28.5
-      parent: 2
-  - uid: 4652
-    components:
-    - type: Transform
-      pos: -49.5,18.5
-      parent: 2
   - uid: 7036
     components:
     - type: Transform
@@ -186726,11 +186748,6 @@ entities:
     components:
     - type: Transform
       pos: 19.5,-18.5
-      parent: 2
-  - uid: 15097
-    components:
-    - type: Transform
-      pos: -15.5,-25.5
       parent: 2
   - uid: 18861
     components:
@@ -201757,6 +201774,20 @@ entities:
           ent: 36878
     - type: ApcPowerReceiver
       powerLoad: 0
+- proto: PrizeCounter
+  entities:
+  - uid: 539
+    components:
+    - type: Transform
+      pos: -54.5,-27.5
+      parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 4127
+    components:
+    - type: Transform
+      pos: 26.5,28.5
+      parent: 2
 - proto: PsychBed
   entities:
   - uid: 20469
@@ -215909,6 +215940,13 @@ entities:
     - type: Transform
       pos: 43.5,25.5
       parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 1218
+    components:
+    - type: Transform
+      pos: -67.5,1.5
+      parent: 2
 - proto: ShadowTree
   entities:
   - uid: 669
@@ -224821,6 +224859,18 @@ entities:
     - type: Transform
       pos: -48.5,17.5
       parent: 2
+- proto: SpawnPointSurgeon
+  entities:
+  - uid: 4259
+    components:
+    - type: Transform
+      pos: -23.5,-2.5
+      parent: 2
+  - uid: 5116
+    components:
+    - type: Transform
+      pos: -17.5,-2.5
+      parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 30232
@@ -226194,6 +226244,29 @@ entities:
       parent: 2
 - proto: SurveillanceCameraCommand
   entities:
+  - uid: 243
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 66.5,38.5
+      parent: 2
+  - uid: 538
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 54.5,41.5
+      parent: 2
+  - uid: 1793
+    components:
+    - type: Transform
+      pos: 67.5,46.5
+      parent: 2
+  - uid: 1794
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 62.5,33.5
+      parent: 2
   - uid: 7855
     components:
     - type: Transform
@@ -226450,6 +226523,22 @@ entities:
       id: Engineering Locker Room
 - proto: SurveillanceCameraGeneral
   entities:
+  - uid: 1803
+    components:
+    - type: Transform
+      pos: 51.5,-13.5
+      parent: 2
+  - uid: 1804
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 26.5,-14.5
+      parent: 2
+  - uid: 2568
+    components:
+    - type: Transform
+      pos: -9.5,-16.5
+      parent: 2
   - uid: 12052
     components:
     - type: Transform
@@ -256110,6 +256199,32 @@ entities:
     - type: Transform
       pos: -32.582024,43.751965
       parent: 2
+- proto: WeaponEnergyTurretAI
+  entities:
+  - uid: 523
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 65.5,44.5
+      parent: 2
+  - uid: 529
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 61.5,44.5
+      parent: 2
+  - uid: 536
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 61.5,40.5
+      parent: 2
+  - uid: 1792
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 69.5,42.5
+      parent: 2
 - proto: WeaponFlareGun
   entities:
   - uid: 6073
@@ -256239,21 +256354,6 @@ entities:
     components:
     - type: Transform
       pos: -111.5,44.5
-      parent: 2
-  - uid: 30143
-    components:
-    - type: Transform
-      pos: 61.5,44.5
-      parent: 2
-  - uid: 30144
-    components:
-    - type: Transform
-      pos: 65.5,44.5
-      parent: 2
-  - uid: 30159
-    components:
-    - type: Transform
-      pos: 61.5,40.5
       parent: 2
   - uid: 35405
     components:

@@ -1,0 +1,14 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingShrimpFishermanSuit
+  name: shrimp fisherman suit
+  description: A special shrimp trawling suit, a madman must've made this.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/Suits/shrimpfishermansuit.rsi
+  - type: Item
+    size: Normal
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/Suits/shrimpfishermansuit.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatShrimpFishermanHood

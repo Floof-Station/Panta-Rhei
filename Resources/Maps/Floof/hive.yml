@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 01/22/2026 15:47:06
+  time: 02/05/2026 15:24:50
   entityCount: 26603
 maps:
 - 1
@@ -9890,7 +9890,7 @@ entities:
           17,-4:
             0: 65262
           17,-3:
-            0: 57599
+            0: 57583
           17,-2:
             0: 25327
           17,-5:
@@ -11500,13 +11500,13 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-            Oxygen: 23.903439
-            Nitrogen: 80.02455
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
           temperature: 235
           moles:
-            Oxygen: 29.818268
-            Nitrogen: 99.82637
+            Oxygen: 27.225372
+            Nitrogen: 102.419266
         - volume: 2500
           immutable: True
           moles: {}
@@ -13741,7 +13741,7 @@ entities:
       pos: -39.5,1.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2948.09
+      secondsUntilStateChange: -3579.9614
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14520,6 +14520,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 81.5,-30.5
       parent: 2
+- proto: AirlockExternalGlassShuttleMiningFilled
+  entities:
+  - uid: 17651
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -35.5,-46.5
+      parent: 2
 - proto: AirlockExternalLocked
   entities:
   - uid: 251
@@ -14723,7 +14731,7 @@ entities:
       pos: 14.5,-12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2645.0579
+      secondsUntilStateChange: -3276.9292
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14736,7 +14744,7 @@ entities:
       pos: 19.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2641.5244
+      secondsUntilStateChange: -3273.3958
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -17690,6 +17698,50 @@ entities:
     - type: Transform
       pos: 89.22352,24.777706
       parent: 2
+- proto: AtmosDeviceFanDirectional
+  entities:
+  - uid: 727
+    components:
+    - type: Transform
+      pos: 8.5,-52.5
+      parent: 2
+  - uid: 728
+    components:
+    - type: Transform
+      pos: 1.5,-52.5
+      parent: 2
+  - uid: 729
+    components:
+    - type: Transform
+      pos: 27.5,-53.5
+      parent: 2
+  - uid: 730
+    components:
+    - type: Transform
+      pos: 25.5,-53.5
+      parent: 2
+  - uid: 731
+    components:
+    - type: Transform
+      pos: 19.5,-53.5
+      parent: 2
+  - uid: 732
+    components:
+    - type: Transform
+      pos: 17.5,-53.5
+      parent: 2
+  - uid: 743
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -52.5,-39.5
+      parent: 2
+  - uid: 744
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -52.5,-41.5
+      parent: 2
 - proto: AtmosDeviceFanTiny
   entities:
   - uid: 722
@@ -17716,36 +17768,6 @@ entities:
     components:
     - type: Transform
       pos: -68.5,-2.5
-      parent: 2
-  - uid: 727
-    components:
-    - type: Transform
-      pos: 1.5,-52.5
-      parent: 2
-  - uid: 728
-    components:
-    - type: Transform
-      pos: 8.5,-52.5
-      parent: 2
-  - uid: 729
-    components:
-    - type: Transform
-      pos: 17.5,-53.5
-      parent: 2
-  - uid: 730
-    components:
-    - type: Transform
-      pos: 19.5,-53.5
-      parent: 2
-  - uid: 731
-    components:
-    - type: Transform
-      pos: 25.5,-53.5
-      parent: 2
-  - uid: 732
-    components:
-    - type: Transform
-      pos: 27.5,-53.5
       parent: 2
   - uid: 733
     components:
@@ -17796,16 +17818,6 @@ entities:
     components:
     - type: Transform
       pos: -52.5,-38.5
-      parent: 2
-  - uid: 743
-    components:
-    - type: Transform
-      pos: -52.5,-39.5
-      parent: 2
-  - uid: 744
-    components:
-    - type: Transform
-      pos: -52.5,-41.5
       parent: 2
   - uid: 745
     components:
@@ -18286,6 +18298,13 @@ entities:
     components:
     - type: Transform
       pos: -47.5,32.5
+      parent: 2
+- proto: Autolathe
+  entities:
+  - uid: 17657
+    components:
+    - type: Transform
+      pos: 3.5,47.5
       parent: 2
 - proto: BananaPhoneInstrument
   entities:
@@ -42586,6 +42605,11 @@ entities:
       parent: 2
 - proto: CableMV
   entities:
+  - uid: 840
+    components:
+    - type: Transform
+      pos: -75.5,4.5
+      parent: 2
   - uid: 5598
     components:
     - type: Transform
@@ -48981,10 +49005,25 @@ entities:
     - type: Transform
       pos: -59.5,10.5
       parent: 2
+  - uid: 17944
+    components:
+    - type: Transform
+      pos: -74.5,4.5
+      parent: 2
   - uid: 17963
     components:
     - type: Transform
       pos: -59.5,11.5
+      parent: 2
+  - uid: 18965
+    components:
+    - type: Transform
+      pos: -72.5,4.5
+      parent: 2
+  - uid: 19045
+    components:
+    - type: Transform
+      pos: -73.5,4.5
       parent: 2
 - proto: CableMVStack
   entities:
@@ -60566,7 +60605,7 @@ entities:
       pos: 14.5,-7.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2651.6746
+      secondsUntilStateChange: -3283.546
       state: Opening
   - uid: 8635
     components:
@@ -60575,7 +60614,7 @@ entities:
       pos: 14.5,-10.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2658.7244
+      secondsUntilStateChange: -3290.5957
       state: Opening
   - uid: 8651
     components:
@@ -60584,7 +60623,7 @@ entities:
       pos: 14.5,-8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2652.4412
+      secondsUntilStateChange: -3284.3125
       state: Opening
   - uid: 17438
     components:
@@ -60593,7 +60632,7 @@ entities:
       pos: 15.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2649.9746
+      secondsUntilStateChange: -3281.846
       state: Opening
   - uid: 17442
     components:
@@ -60602,7 +60641,7 @@ entities:
       pos: 16.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2649.4412
+      secondsUntilStateChange: -3281.3125
       state: Opening
   - uid: 17797
     components:
@@ -60611,7 +60650,7 @@ entities:
       pos: 14.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2650.5579
+      secondsUntilStateChange: -3282.4292
       state: Opening
   - uid: 19053
     components:
@@ -60620,7 +60659,7 @@ entities:
       pos: 14.5,-6.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2651.091
+      secondsUntilStateChange: -3282.9624
       state: Opening
   - uid: 19054
     components:
@@ -60629,7 +60668,7 @@ entities:
       pos: 14.5,-11.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2658.9246
+      secondsUntilStateChange: -3290.796
       state: Opening
   - uid: 19056
     components:
@@ -60638,7 +60677,7 @@ entities:
       pos: 20.5,-5.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2648.8745
+      secondsUntilStateChange: -3280.7458
       state: Opening
   - uid: 19057
     components:
@@ -60647,7 +60686,7 @@ entities:
       pos: 14.5,-13.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -2647.858
+      secondsUntilStateChange: -3279.7292
       state: Opening
   - uid: 26594
     components:
@@ -71789,6 +71828,13 @@ entities:
       parent: 10829
     - type: Physics
       canCollide: False
+- proto: EngineeringTechFab
+  entities:
+  - uid: 20389
+    components:
+    - type: Transform
+      pos: -46.5,4.5
+      parent: 2
 - proto: ExosuitFabricator
   entities:
   - uid: 10845
@@ -122103,6 +122149,13 @@ entities:
     - type: Transform
       pos: 79.5,22.5
       parent: 2
+- proto: LockerSurgeonFilled
+  entities:
+  - uid: 17650
+    components:
+    - type: Transform
+      pos: 80.5,-20.5
+      parent: 2
 - proto: LockerWallMedicalDoctorFilled
   entities:
   - uid: 17741
@@ -122171,6 +122224,13 @@ entities:
     components:
     - type: Transform
       pos: -38.376858,-14.443105
+      parent: 2
+- proto: LogisticsTechFab
+  entities:
+  - uid: 842
+    components:
+    - type: Transform
+      pos: -6.5,-9.5
       parent: 2
 - proto: MachineAnomalyGenerator
   entities:
@@ -122268,25 +122328,10 @@ entities:
       parent: 2
 - proto: MachineFrameDestroyed
   entities:
-  - uid: 839
-    components:
-    - type: Transform
-      pos: 0.5,-17.5
-      parent: 2
-  - uid: 840
-    components:
-    - type: Transform
-      pos: -46.5,4.5
-      parent: 2
   - uid: 841
     components:
     - type: Transform
       pos: 55.5,-1.5
-      parent: 2
-  - uid: 842
-    components:
-    - type: Transform
-      pos: -6.5,-9.5
       parent: 2
   - uid: 17768
     components:
@@ -122312,11 +122357,6 @@ entities:
     components:
     - type: Transform
       pos: 46.5,16.5
-      parent: 2
-  - uid: 18965
-    components:
-    - type: Transform
-      pos: 3.5,47.5
       parent: 2
 - proto: MachineParticleAcceleratorEndCapCircuitboard
   entities:
@@ -123186,13 +123226,6 @@ entities:
     components:
     - type: Transform
       pos: 104.43841,27.457258
-      parent: 2
-- proto: MedkitCombatFilled
-  entities:
-  - uid: 17929
-    components:
-    - type: Transform
-      pos: 80.54103,-20.498425
       parent: 2
 - proto: MedkitFilled
   entities:
@@ -125664,6 +125697,13 @@ entities:
     components:
     - type: Transform
       pos: -41.5,-36.5
+      parent: 2
+- proto: PlayerStationAi
+  entities:
+  - uid: 17653
+    components:
+    - type: Transform
+      pos: 130.5,3.5
       parent: 2
 - proto: Plunger
   entities:
@@ -129528,6 +129568,11 @@ entities:
       parent: 2
 - proto: PoweredLightPostSmallRed
   entities:
+  - uid: 17656
+    components:
+    - type: Transform
+      pos: -35.5,-47.5
+      parent: 2
   - uid: 18753
     components:
     - type: Transform
@@ -129537,11 +129582,6 @@ entities:
     components:
     - type: Transform
       pos: -42.5,-52.5
-      parent: 2
-  - uid: 26610
-    components:
-    - type: Transform
-      pos: -35.5,-46.5
       parent: 2
   - uid: 26611
     components:
@@ -130647,6 +130687,13 @@ entities:
     components:
     - type: Transform
       pos: 64.5,-24.5
+      parent: 2
+- proto: Protolathe
+  entities:
+  - uid: 17929
+    components:
+    - type: Transform
+      pos: 5.5,47.5
       parent: 2
 - proto: PsychBed
   entities:
@@ -131836,6 +131883,11 @@ entities:
       parent: 2
 - proto: RadiationCollectorNoTank
   entities:
+  - uid: 17654
+    components:
+    - type: Transform
+      pos: -93.5,7.5
+      parent: 2
   - uid: 17866
     components:
     - type: Transform
@@ -138113,10 +138165,10 @@ entities:
       parent: 2
 - proto: ReverseEngineeringMachine
   entities:
-  - uid: 20389
+  - uid: 21975
     components:
     - type: Transform
-      pos: 5.5,47.5
+      pos: 3.5,43.5
       parent: 2
 - proto: RightLegBorg
   entities:
@@ -138603,6 +138655,13 @@ entities:
     components:
     - type: Transform
       pos: 11.5,44.5
+      parent: 2
+- proto: ServiceTechFab
+  entities:
+  - uid: 839
+    components:
+    - type: Transform
+      pos: 0.5,-17.5
       parent: 2
 - proto: ShardGlass
   entities:
@@ -145044,6 +145103,13 @@ entities:
     - type: Transform
       pos: 11.5,-48.5
       parent: 2
+- proto: SpawnPointSurgeon
+  entities:
+  - uid: 17652
+    components:
+    - type: Transform
+      pos: 79.5,-20.5
+      parent: 2
 - proto: SpawnPointTechnicalAssistant
   entities:
   - uid: 21307
@@ -145231,6 +145297,14 @@ entities:
     components:
     - type: Transform
       pos: -61.51701,-0.9163426
+      parent: 2
+- proto: StationAiUploadComputer
+  entities:
+  - uid: 17655
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 127.5,5.5
       parent: 2
 - proto: StationAnchor
   entities:
@@ -149394,11 +149468,6 @@ entities:
     - type: Transform
       pos: 69.5,-22.5
       parent: 2
-  - uid: 21975
-    components:
-    - type: Transform
-      pos: 80.5,-20.5
-      parent: 2
   - uid: 21976
     components:
     - type: Transform
@@ -150769,13 +150838,6 @@ entities:
     components:
     - type: Transform
       pos: 40.4923,-38.35749
-      parent: 2
-- proto: ToyAi
-  entities:
-  - uid: 22199
-    components:
-    - type: Transform
-      pos: 130.02727,4.142705
       parent: 2
 - proto: ToyGygax
   entities:

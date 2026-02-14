@@ -1,0 +1,22 @@
+- type: constructionGraph
+  id: ClothingShoesCombatHighheelBoots
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: shoes
+          steps:
+            - tag: HighHeelBoots
+              name: construction-graph-tag-high-heel-boots
+              icon:
+                sprite: Clothing/Shoes/Boots/highheelboots.rsi
+                state: icon
+              doAfter: 1
+            - tag: CombatBoots
+              name: construction-graph-tag-combat-boots
+              icon:
+                sprite: Clothing/Shoes/Boots/jackboots.rsi
+                state: icon
+              doAfter: 1
+    - node: shoes
+      entity: ClothingShoesCombatHighheelBoots

@@ -26,6 +26,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -61,6 +62,7 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "back" ]
@@ -108,6 +110,13 @@
   - type: Temperature
     heatDamageThreshold: 315 # 10 lower than base
     coldDamageThreshold: 220 # 40 lower than base, very insulating fur
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - VulpEmotes # Added
 
 - type: entity
   save: false

@@ -576,6 +576,7 @@ namespace Content.Client.Lobby.UI
             }
 
             Traits.SetSelectedTraits(selectedTraits);
+            Traits.UpdateConditions(Profile);
         }
         // End DeltaV - Traits Integration
 
@@ -1380,11 +1381,13 @@ namespace Content.Client.Lobby.UI
         }
         // End CD - Character Records
 
+        // Floofstation section - custom specie names
         private void SetCustomSpecieName(string customname)
         {
             Profile = Profile?.WithCustomSpeciesName(customname);
             IsDirty = true;
         }
+        // Floofstation section end
 
         private void SetSpawnPriority(SpawnPriorityPreference newSpawnPriority)
         {
@@ -1411,6 +1414,7 @@ namespace Content.Client.Lobby.UI
         }
 
 
+        // Floofstation section - custom specie names
         private void UpdateCustomSpecieNameEdit()
         {
             if (Profile == null)
@@ -1423,6 +1427,7 @@ namespace Content.Client.Lobby.UI
 
             _ccustomspecienamecontainerEdit.Visible = speciesProto.CustomName;
         }
+        // Floofstation section end
 
         private void UpdateFlavorTextEdit()
         {

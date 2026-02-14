@@ -14,8 +14,9 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.deltav.gay/"
-FORK_ID = "delta-v"
+# Floofstation - changed to accept actions variables
+ROBUST_CDN_URL = os.environ["CDN_URL"]
+FORK_ID = os.environ["FORK_ID"]
 
 def main():
     session = requests.Session()

@@ -5,14 +5,14 @@
   id: BaseMobResomi
   abstract: true
   components:
-  #- type: LanguageKnowledge
-  #  speaks:
-  #    - TauCetiBasic
-  #    - Schechi
-  #  understands:
-  #    - TauCetiBasic
-  #    - Schechi
-  #  naturalLanguage: Schechi # Floof: explicitly stated natural languages
+  - type: LanguageKnowledge
+    speaks:
+      - TauCetiBasic
+      - Schechi
+    understands:
+      - TauCetiBasic
+      - Schechi
+    naturalLanguage: Schechi
   - type: Fixtures
     fixtures:
       fix1:
@@ -44,11 +44,11 @@
   - type: Speech
     speechVerb: Parrot
     speechSounds: MaleAvali
-  #- type: Vocal
-  #  sounds:
-  #    Male: MaleAvali
-  #    Unsexed: MaleAvali
-  #    Female: FemaleAvali
+  - type: Vocal # Floofstation - uncommented
+    sounds:
+      Male: RMCMaleAvali
+      Unsexed: RMCMaleAvali
+      Female: RMCFemaleAvali
   - type: Hands
     handDisplacement:
       sizeMaps:
@@ -173,7 +173,10 @@
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
   - type: Bloodstream # Goobstation - lore stuff
-    bloodReagent: AmmoniaBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: AmmoniaBlood
+        Quantity: 1
   - type: MeleeWeapon # Goobstation - aliem raptors probably use their claws
     soundHit:
       collection: AlienClaw
@@ -203,12 +206,13 @@
   #- type: DamageForceSay # Floofstation - added unqiue pain messages
   #  forceSayStringPrefix: damage-force-say-resomi-
   #  forceSayStringCount: 4 # Default is 7. I was not creative enough to come up with 7 right now. Send help.
-  #- type: Tag
-  #  tags:
-  #    - CanPilot
-  #    - FootstepSound
-  #    - DoorBumpOpener
-  #    - ResomiEmotes
+  - type: Tag # Floofstation - uncommented
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ResomiEmotes
 
 
 - type: entity
