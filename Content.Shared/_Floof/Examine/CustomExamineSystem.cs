@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared._Common.Consent;
 using Content.Shared.ActionBlocker;
@@ -21,6 +22,19 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     public static int AbsolutelyMaxLength = 1024;
 
     private static readonly Regex BadMarkupRegex = new("\\[.*?head.*?\\]", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(5));
+
+    private static readonly string[] AllowedTags = // This sucks, shared markup when
+    [
+        "bolditalic",
+        "bold",
+        "bullet",
+        "color",
+        "heading",
+        "italic",
+        "mono",
+        "scramble", // Some people abuse it in funny ways
+        "language",
+    ];
 
     [Dependency] private readonly SharedConsentSystem _consent = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
@@ -56,10 +70,10 @@ public abstract class SharedCustomExamineSystem : EntitySystem
                  publicRangeHidden = hasPublic && (!hasSubtle || subtleRangeHidden) && !_examine.InRangeUnOccluded(args.Examiner, args.Examined, publicData.VisibilityRange);
 
             if (hasPublic && !publicConsentHidden && !publicRangeHidden)
-                args.PushMarkup(publicData.Content!);
+                args.PushMessage(SanitizeMarkup(publicData.Content!));
 
             if (hasSubtle && !subtleConsentHidden && !subtleRangeHidden)
-                args.PushMarkup(subtleData.Content!);
+                args.PushMessage(SanitizeMarkup(subtleData.Content!));
 
             // If something is hidden due to consent preferences, add a note (but only if in range)
             if (hasPublic && !publicRangeHidden && publicConsentHidden || hasSubtle && !subtleRangeHidden && subtleConsentHidden)
@@ -122,4 +136,30 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     protected int LengthWithoutMarkup(string text) => FormattedMessage.RemoveMarkupPermissive(text).Length;
 
     protected int MarkupLength(string text) => text.Length - LengthWithoutMarkup(text);
+
+    /// <summary>
+    ///     Removes disallowed tags from the formatted message.
+    /// </summary>
+    protected FormattedMessage SanitizeMarkup(string text)
+    {
+        var msg = FormattedMessage.FromMarkupPermissive(text);
+        return SanitizeMarkup(msg, AllowedTags);
+    }
+
+    /// <summary>
+    ///     Removes all markup tags from this message that are not included in <paramref name="allowedTags"/>.
+    /// </summary>
+    public static FormattedMessage SanitizeMarkup(FormattedMessage msg, IEnumerable<string> allowedTags)
+    {
+        var sanitized = new FormattedMessage(msg.Count);
+        foreach (var node in msg.Nodes)
+        {
+            // Null name means it's a text node
+            if (node.Name != null && !AllowedTags.Contains(node.Name.ToLower()))
+                continue;
+            sanitized.PushTag(node);
+        }
+
+        return sanitized;
+    }
 }
