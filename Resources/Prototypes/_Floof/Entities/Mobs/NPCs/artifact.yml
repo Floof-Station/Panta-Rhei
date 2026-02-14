@@ -54,7 +54,7 @@
     baseWalkSpeed: 1
     baseSprintSpeed: 2
     weightlessModifier: 1.5
-  - type: HitscanBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: RedLightLaser # Weaker Laser
     fireCost: 62.5
   - type: MobThresholds
