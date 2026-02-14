@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text.RegularExpressions;
 using Content.Shared._Common.Consent;
+using Content.Shared._Floof.Util;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Examine;
@@ -20,8 +21,6 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     public static int PublicMaxLength = 256, SubtleMaxLength = 256;
     /// <summary>Max length of any content field, INCLUDING markup.</summary>
     public static int AbsolutelyMaxLength = 1024;
-
-    private static readonly Regex BadMarkupRegex = new("\\[.*?head.*?\\]", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(5));
 
     private static readonly string[] AllowedTags = // This sucks, shared markup when
     [
@@ -119,9 +118,6 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         if (data.Content is null)
             return;
 
-        // Exclude forbidden markup. Unlike ss14's chat cleanup code, this should also remove nested markup.
-        data.Content = BadMarkupRegex.Replace(data.Content, "<bad markup>").Trim();
-
         // Shitty way to preserve and ignore markup while trimming
         var markupLength = MarkupLength(data.Content);
         if (data.Content.Length > AbsolutelyMaxLength)
@@ -143,23 +139,6 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     protected FormattedMessage SanitizeMarkup(string text)
     {
         var msg = FormattedMessage.FromMarkupPermissive(text);
-        return SanitizeMarkup(msg, AllowedTags);
-    }
-
-    /// <summary>
-    ///     Removes all markup tags from this message that are not included in <paramref name="allowedTags"/>.
-    /// </summary>
-    public static FormattedMessage SanitizeMarkup(FormattedMessage msg, IEnumerable<string> allowedTags)
-    {
-        var sanitized = new FormattedMessage(msg.Count);
-        foreach (var node in msg.Nodes)
-        {
-            // Null name means it's a text node
-            if (node.Name != null && !AllowedTags.Contains(node.Name.ToLower()))
-                continue;
-            sanitized.PushTag(node);
-        }
-
-        return sanitized;
+        return FormattedMessageHelpers.SanitizeMarkup(msg, AllowedTags, "<bad markup>");
     }
 }
