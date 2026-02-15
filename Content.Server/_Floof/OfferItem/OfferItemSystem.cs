@@ -27,14 +27,11 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<OfferItemComponent>();
-        while (query.MoveNext(out var uid, out var offerItem))
+        var query = EntityQueryEnumerator<OfferItemComponent, HandsComponent>();
+        while (query.MoveNext(out var uid, out var offerItem, out var hands))
         {
-            if (!TryComp<HandsComponent>(uid, out var hands) || hands.ActiveHand == null)
-                continue;
-
-            if (offerItem.Hand != null &&
-                hands.Hands[offerItem.Hand].HeldEntity == null)
+            // If the mob no longer holds an item in the original offering hand, clear offering mode
+            if (offerItem.Hand != null && !_hands.TryGetHeldItem((uid, hands), offerItem.Hand, out _))
             {
                 if (offerItem.Target != null)
                 {
