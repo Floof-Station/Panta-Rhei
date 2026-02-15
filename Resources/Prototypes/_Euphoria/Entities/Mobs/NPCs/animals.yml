@@ -7,6 +7,9 @@
   parent: MobHamster
   id: MobHamsterPet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -36,6 +39,9 @@
   parent: MobMouse
   id: MobMousePet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -65,6 +71,9 @@
   parent: MobMothroach
   id: MobMothroachPet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Moffic
@@ -96,6 +105,9 @@
   parent: MobFrog
   id: MobFrogPet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Draconic
@@ -131,6 +143,9 @@
   parent: MobSnake
   id: MobSnakePet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Draconic
@@ -166,6 +181,9 @@
   parent: MobFerret
   id: MobFerretPet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -199,6 +217,9 @@
   parent: MobCorticalBorer
   id: MobCorticalBorerPet
   components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
   - type: LanguageKnowledge
     speaks:
     - Xeno
