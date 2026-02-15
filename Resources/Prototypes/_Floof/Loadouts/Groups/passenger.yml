@@ -1,3 +1,4 @@
+# jumpsuits
 - type: loadoutGroup
   id: PassengerOutfits
   parent: PassengerJumpsuit
@@ -52,6 +53,7 @@
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
 
+# gloves
 - type: loadoutGroup
   id: PassengerGlovesAndArmwarmers
   parent: PassengerGloves
@@ -62,7 +64,16 @@
   - ClothingArmwarmersCoder
   - ClothingArmwarmersBee
   - ClothingArmwarmersRainbow
+  - ClothingArmwarmersAce
+  - ClothingArmwarmersAro
+  - ClothingArmwarmersBi
+  - ClothingArmwarmersGay
+  - ClothingArmwarmersLesbian
+  - ClothingArmwarmersNon
+  - ClothingArmwarmersPan
+  - ClothingArmwarmersTrans
 
+ #shoes
 - type: loadoutGroup
   id: PassengerShoesSocks
   parent: PassengerShoes
@@ -87,3 +98,11 @@
   - ClothingSocksPan
   - ClothingSocksTrans
 
+# backpacks
+- type: loadoutGroup
+  id: MoreBackpacks
+  parent: CommonBackpack
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - BackpackSatchelLeather
