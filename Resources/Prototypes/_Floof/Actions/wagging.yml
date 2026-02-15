@@ -1,0 +1,22 @@
+# Base wagging action
+- type: entity
+  id: ActionToggleWaggingBase
+  parent: BaseToggleAction
+  name: Wagging Tail
+  description: Start or stop wagging your tail.
+  categories: [ HideSpawnMenu ]
+  abstract: true
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    checkCanInteract: false # obviously you can wag while cuffed, duh.
+
+# Vulpkanin
+- type: entity
+  id: ActionToggleWaggingVulpkanin
+  parent: ActionToggleWaggingBase
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Floof/Interface/Actions/wagging.rsi, state: icon-vulp }
+    iconOn: { sprite: _Floof/Interface/Actions/wagging.rsi, state: icon-on-vulp }

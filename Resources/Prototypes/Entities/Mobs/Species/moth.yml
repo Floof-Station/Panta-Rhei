@@ -33,7 +33,10 @@
     - id: FoodMeat
       amount: 5
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -184,6 +187,13 @@
             state: shoes
   - type: CosmicMarkVisuals # DeltaV - cosmic cult
     subtleState: moth
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - MothEmotes # Added
 
 - type: entity
   parent: BaseSpeciesDummy

@@ -1,0 +1,49 @@
+- type: loadoutGroup
+  id: SeniorEngineerJumpsuit
+  parent: StationEngineerJumpsuit
+  name: loadout-group-senior-engineer-jumpsuits
+  loadouts:
+  - SeniorEngineerJumpsuit
+  - SeniorEngineerJumpskirt
+
+- type: loadoutGroup
+  id: StationEngineerGloves
+  name: loadout-group-engineering-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - InsulatedGloves
+  - CombatGloves
+
+- type: loadoutGroup
+  id: SeniorPhysicianJumpsuits
+  parent: MedicalDoctorJumpsuit
+  name: loadout-group-senior-physician-jumpsuit
+  loadouts:
+  - SeniorPhysicianJumpsuit
+  - SeniorPhysicianJumpskirt
+
+- type: loadoutGroup
+  id: SeniorResearcherJumpsuits
+  parent: ScientistJumpsuit
+  name: loadout-group-senior-researcher-jumpsuit
+  loadouts:
+  - SeniorResearcherJumpsuit
+  - SeniorResearcherJumpskirt
+
+- type: loadoutGroup
+  id: SeniorOfficerJumpsuits
+  parent: SecurityJumpsuit
+  name: loadout-group-senior-officer-jumpsuit
+  loadouts:
+  - SeniorOfficerJumpsuit
+  - SeniorOfficerJumpskirt
+
+- type: loadoutGroup
+  id: InventorySpecialistMisc
+  name: loadout-group-invspec-misc
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - LoadoutInventorySpecialistStampApproved
+  - LoadoutInventorySpecialistStampDenied

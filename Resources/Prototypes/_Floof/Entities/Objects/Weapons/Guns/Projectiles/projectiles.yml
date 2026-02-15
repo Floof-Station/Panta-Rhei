@@ -1,0 +1,12 @@
+- type: entity
+  parent: MuzzleFlashEffect
+  id: MuzzleFlashEffectSuppressed
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: BelowMobs
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _Floof/Objects/Weapons/Guns/Projectiles/muzzleflashes.rsi # floof
+      state: kineticSuppressed # floof

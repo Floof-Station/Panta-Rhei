@@ -98,7 +98,7 @@
     requirements:
     - !type:EntityWhitelistRequirement
       whitelist:
-        components: [MobState, Anomaly, Food]
+        components: [MobState, Anomaly, Edible] # TODO check if can be metabolized
         tags: [Window] # yes.
     - !type:SlotObstructionRequirement
       slot: MASK

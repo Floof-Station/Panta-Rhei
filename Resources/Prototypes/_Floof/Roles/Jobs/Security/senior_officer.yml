@@ -1,0 +1,42 @@
+- type: job
+  id: SeniorOfficer
+  name: job-name-senior-officer
+  description: job-description-senior-officer
+  playTimeTracker: JobSeniorOfficer
+  setPreference: true # DeltaV - Disable Senior Roles round start selection #floof - toggle to true to reenable
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 40.0h # Floofstation 40 hrs
+  startingGear: SeniorOfficerGear
+  icon: "JobIconSeniorOfficer"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  #- Brig # Delta V: Removed
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SeniorOfficerGear
+  equipment:
+    #eyes: ClothingEyesGlassesSecurity # DeltaV - loadouts
+    ears: ClothingHeadsetSecurity
+    #pocket1: WeaponPistolMk58Nonlethal # DeltaV - loadouts
+  storage:
+    back:
+    - Flash
+    #- MagazinePistol # DeltaV - loadouts
+
+- type: chameleonOutfit
+  id: SeniorOfficerChameleonOutfit
+  job: SeniorOfficer
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    eyes: ClothingEyesGlassesSecurity
+    outerClothing: ClothingOuterArmorPlateCarrier

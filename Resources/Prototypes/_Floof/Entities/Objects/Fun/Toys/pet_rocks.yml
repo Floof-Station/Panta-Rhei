@@ -11,17 +11,14 @@
   - type: Item
     sprite: _Floof/Objects/Fun/rock_carrier.rsi
     heldPrefix: box
-  - type: StorageFill
-    contents:
-    - id: PetRock
-      prob: 0.8
-      orGroup: Rock
-    - id: PetRockFred
-      prob: 0.1
-      orGroup: Rock
-    - id: PetRockRoxie
-      prob: 0.1
-      orGroup: Rock
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:GroupSelector
+        children:
+        - id: PetRock
+        - id: PetRockFred
+        - id: PetRockRoxie
+          weight: 0.2
 
 - type: entity
   parent: [BaseItem, MrChips]

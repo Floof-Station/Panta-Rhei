@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 266.0.0
+  engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 01/15/2026 16:42:02
-  entityCount: 442
+  time: 02/11/2026 15:20:27
+  entityCount: 441
 maps: []
 grids:
 - 1
@@ -305,48 +305,14 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-          - 21.824879
-          - 82.10312
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
           temperature: 293.15
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+          moles: {}
         - volume: 2500
           immutable: True
-          moles:
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+          moles: {}
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -444,10 +410,13 @@ entities:
   entities:
   - uid: 70
     components:
+    - type: MetaData
+      name: Pathfinder AME controller
     - type: Transform
       pos: 3.5,-2.5
       parent: 1
     - type: AmeController
+      alertChannel: Supply
       injecting: True
     - type: ContainerContainer
       containers:
@@ -1722,7 +1691,6 @@ entities:
   - uid: 211
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 1.5,0.5
       parent: 1
     - type: AtmosPipeColor
@@ -1859,14 +1827,6 @@ entities:
       parent: 1
     - type: AtmosPipeColor
       color: '#990000FF'
-  - uid: 252
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,0.5
-      parent: 1
-    - type: AtmosPipeColor
-      color: '#0055CCFF'
   - uid: 320
     components:
     - type: Transform
@@ -2456,115 +2416,83 @@ entities:
     - type: Transform
       pos: -7.5,-1.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 85
     components:
     - type: Transform
       pos: 11.5,-6.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 271
     components:
     - type: Transform
       pos: 11.5,-4.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 289
     components:
     - type: Transform
       pos: -1.5,3.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 323
     components:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 326
     components:
     - type: Transform
       pos: -2.5,2.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 327
     components:
     - type: Transform
       pos: 11.5,-5.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 332
     components:
     - type: Transform
       pos: -0.5,3.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 391
     components:
     - type: Transform
       pos: 6.5,-8.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 394
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 3.5,-9.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 398
     components:
     - type: Transform
       pos: -4.5,-8.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 421
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -2.5,-9.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 442
     components:
     - type: Transform
       pos: 0.5,-4.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 468
     components:
     - type: Transform
       pos: -5.5,-8.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 469
     components:
     - type: Transform
       pos: 5.5,-8.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 490
     components:
     - type: Transform
       pos: 2.5,3.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
 - proto: ReinforcedWindowDiagonal
   entities:
   - uid: 287
@@ -2572,15 +2500,11 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 328
     components:
     - type: Transform
       pos: -3.5,2.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
 - proto: SalvageMagnet
   entities:
   - uid: 169
@@ -3103,7 +3027,7 @@ entities:
       pos: 0.5,-0.5
       parent: 1
     - type: WarpPoint
-      location: NTSP Bulwark
+      location: Pathfinder
   - uid: 359
     components:
     - type: Transform
@@ -3217,8 +3141,6 @@ entities:
     - type: Transform
       pos: 6.5,-3.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
 - proto: Window
   entities:
   - uid: 282
@@ -3226,13 +3148,9 @@ entities:
     - type: Transform
       pos: 7.5,-4.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
   - uid: 331
     components:
     - type: Transform
       pos: 7.5,-5.5
       parent: 1
-    - type: DeltaPressure
-      gridUid: 1
 ...

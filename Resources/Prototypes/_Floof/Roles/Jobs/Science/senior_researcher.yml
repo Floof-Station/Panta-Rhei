@@ -1,0 +1,33 @@
+- type: job
+  id: SeniorResearcher
+  name: job-name-senior-researcher #localized to mystic
+  description: job-description-senior-researcher
+  playTimeTracker: JobSeniorResearcher
+  setPreference: true #floof - this toggle allows players to ready up / create loadouts as senior roles. false disables it from the job list.
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Epistemics # DeltaV - Epistemics Department replacing Science
+      time: 40.0h # Floofstation 40 hrs
+  startingGear: SeniorResearcherGear
+  icon: "JobIconSeniorResearcher"
+  supervisors: job-supervisors-rd
+  access:
+  - Research
+  - Maintenance
+
+- type: startingGear
+  id: SeniorResearcherGear
+  equipment:
+    ears: ClothingHeadsetScience
+    #storage:
+    #back:
+    #- Stuff
+
+- type: chameleonOutfit
+  id: SeniorResearcherChameleonOutfit
+  job: SeniorResearcher
+  equipment:
+    head: ClothingHeadHatBeretRND
+    eyes: ClothingEyesGlasses
+    outerClothing: ClothingOuterCoatLabSeniorResearcher
+    gloves: ClothingHandsGlovesLatex

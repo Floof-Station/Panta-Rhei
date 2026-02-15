@@ -1,0 +1,39 @@
+- type: job
+  id: InventorySpecialist
+  name: job-name-invspec
+  description: job-description-invspec
+  playTimeTracker: JobInventorySpecialist
+  setPreference: true #floof - this toggle allows players to ready up / create loadouts as senior roles. false disables it from the job
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Logistics
+      time: 40.0h # Floofstation 40 hrs
+  startingGear: InventorySpecialistGear
+  icon: "JobIconInventorySpecialist"
+  supervisors: job-supervisors-qm
+  access:
+  - Cargo
+  - Maintenance
+  - Orders
+  - Salvage
+  - Mail
+
+- type: startingGear
+  id: InventorySpecialistGear
+  equipment:
+    #id: CargoPDA # DeltaV: different PDAs in loadouts
+    ears: ClothingHeadsetCargo
+    pocket1: AppraisalTool
+    #storage:
+    #back:
+    #- Stuff
+
+- type: chameleonOutfit
+  id: InventorySpecialistChameleonOutfit
+  job: InventorySpecialist
+  equipment:
+    head: ClothingHeadHatCargosoft
+    eyes: ClothingEyesGlassesCheapSunglasses
+    outerClothing: ClothingOuterWinterCargo
+    neck: ClothingNeckScarfStripedBrown
+    gloves: ClothingHandsGlovesFingerless

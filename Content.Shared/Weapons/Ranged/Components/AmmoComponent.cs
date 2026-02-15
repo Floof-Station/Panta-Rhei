@@ -11,7 +11,7 @@ namespace Content.Shared.Weapons.Ranged.Components;
 public partial class AmmoComponent : Component, IShootable
 {
     // Muzzle flash stored on ammo because if we swap a gun to whatever we may want to override it.
-
+    // Floof change: Changed this datafield to have a name so it could actually be changed. Before muzzleflash couldnt be changed due to no datafield existing that allowed this.
     [DataField]
     public EntProtoId? MuzzleFlash = "MuzzleFlashEffect";
 }

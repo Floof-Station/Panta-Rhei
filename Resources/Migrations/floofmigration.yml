@@ -25,6 +25,8 @@ CardBoxBlack: null
 CardBoxNanotrasen: null
 HandheldFax: null #this seems to be mapped to train in error need to remove this, but setting this to null till its removed
 AirlockNanotrasenRepresentativeCommandGlassLocked: AirlockCommandGlassLocked
+AirlockMagistrateCommandLocked: AirlockChiefJusticeLocked #delta-v dose no thave amgistrate so replacing with a cj airlock
+AirlockBlueshieldOfficerCommandLocked: AirlockCommandGlassLocked #delta-v dosent have bso so replacing with locked command airlock
 MaterialReclaimer: null
 SheetPGlass10: SheetPGlass1 # for some reaosn they removed stacks of ten for this material so we need to remake it
 Shower: null
@@ -49,6 +51,7 @@ SpawnPointGhostParadoxAnomaly: null
 #Command Roles
 SpawnPointAdminAssistant: null
 SpawnPointNanotrasenRepresentative: null
+SpawnPointCentralCommand: null # was a part of centcomm, this dosent need to be ported
 
 #AI law board
 OverlordCircuitBoard: null
@@ -89,7 +92,6 @@ CrateLewd: null
 CrateLewdKink: null
 LewdLootSpawnerAll: null
 StripperPole: null
-WhipTealCrotch: null
 LewdLootSpawnerKinky: null
 LewdLootSpawnerToys: null
 ClothingHandsSexCompGlovesBlue: null
@@ -124,9 +126,15 @@ LockerBartenderFilled: LockerBoozeFilled
 LockerClownFilled: LockerClown
 LockerJanitorFilled: LockerJanitor
 LockerMimeFilled: LockerMime
+LockerSurgeonGeneralFilled: LockerChiefMedicalOfficerFilled #a centcomm specific job for admins on floof replacing with a cmo locker for now
+LockerMagistrateFilled: LockerChiefJusticeFilled  #a centcomm specific job for admins on floof replacing with a cj locker for now
+LockerCentCommFilled: N14ClosetGrey2 # delta-v dose not have centcomm offical lockers for this admin role, replacing with regular n14 closet for now
+LockerCentComm: N14ClosetGrey2 # delta-v dose not have centcomm offical lockers for this admin role, replacing with regular n14 closet for now
+LockerSyndicateAgentLocker: N14ClosetGrey2 # settings this to a standard locker till i see if we have a replacment
 
-#books
+#books/manuals
 HyperlinkBookJusticeSop: null
+BSOManual: null # we dont have bso
 
 #Supermatter engine, till we get super matter replace it with the food item as a placeholder
 Supermatter: FoodCakeSuppermatter
@@ -141,9 +149,12 @@ PaperTemplateLogisticsCargoRequest: Paper
 
 #weapons
 WeaponBrassKnucklesWhoopie: null
+WeaponEnergyHalberd: null
+WeaponBrassKnuckles: null
+TelescopicBaton: null
 
 #xenos:
-DehydratedCCRouny: null
+DehydratedCCRouny: null # from the friendly xenos crate
 
 #machine parts - seems deltav dose not use matter bins, maniuplators and capcitors anymore
 AdvancedCapacitorStockPart: MicroManipulatorStockPart
@@ -151,12 +162,24 @@ AdvancedMatterBinStockPart: MicroManipulatorStockPart
 NanoManipulatorStockPart: MicroManipulatorStockPart
 
 #ammo
-MagazineLightRifleLowCapacity: MagazineLightRifle # delta-v does not have light capcity mags so we will have to use full size for now
+MagazineLightRifleLowCapacity: MagazineLightRifle # delta-v does not have light capcity mags so we will have to use full size for nowthe forks are likely misclick
 MagazineLightRifleLowCapacityEmpty: MagazineLightRifleEmpty # delta-v does not have light capcity mags so we will have to use full size for now
+
+#penlights:
+PenLightBase: null #part of the medical pen lights
+
+#canisters:
+NitrousOxideMixCanister: NitrousOxideCanister #delta-v dosent have a save mix canister so just going to replace that with a regular oxide canister
+
+#mechs:
+SpawnMechSeraphFilled: null # we do not have mechs
 
 ####################################################
 # Everything below here does not need to be ported #
 ####################################################
+
+#we renamed in the rebase
+AdvancedGalaticCommonTranslatorImplanter: AdvancedTauCetiTranslatorImplanter
 
 #Delta-v changed these names
 OracleSpawner: Oracle
@@ -172,6 +195,11 @@ BoxLightbulbColorMixed:  BoxLightbulbColorfulMixed
 BoxLighttubeColorMixed: BoxLighttubeColorfulMixed
 Gauze10Lingering: Gauze # delta-v dosent have lingering gauze so replacing with regular gauze
 JetpackMicroFilled: JetpackMiniFilled # mini jetpacks got renamed
+CrateERTSurgery: CrateMedicalSurgery #delta-v doesn't have an ert specific crate, a regular filed surgery crate for medical should do just fine
+WeaponEnergyGunPistolSecurity: WeaponEnergyGunPistol #delta-v renamed
+WeaponSubMachineGunWt550HoS: MagazinePistolSubMachineGunTopMounted #delta-v renamed
+MegaSprayBottleSpaceCleaner: MegaSprayBottle # delta-v doesn't have a pre-filled one but this is fine since these are not normally mapped anyway
+MaterialSilo: MachineMaterialSilo # was renamed
 
 #N14 from floof to floof rebase
 ClosetGrey2: N14ClosetGrey2
@@ -185,5 +213,6 @@ FitnessWeightLifter: N14FitnessWeightLifter
 DecorFloorSkeleton: N14DecorFloorSkeleton
 DecorFloorPaper1: N14DecorFloorPaper1
 CrateFreezer2: N14CrateFreezer
-FitnessPunchingBag: N14FitnessPunchingBag
+FitnessPunchingBag: N14FitnessPunchingBag # we don't have this but can just replace it with the n14 one for now
+FitnessPunchingBagCaptain: N14FitnessPunchingBag # we don't have this but can just replace it with the n14 one for now
 DecorFloorTrashbags5: N14DecorFloorTrashbags5

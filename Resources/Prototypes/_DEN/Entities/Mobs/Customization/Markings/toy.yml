@@ -37,7 +37,7 @@
   id: OverlayPlushSeamsHeadSmallSnout
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Rodentia, Tajaran, Ovinia, Kitsune,  ] # Floof - M3739 - #1063 - Add Kitsune
+  speciesRestriction: [ Rodentia, Tajaran, Kitsune,  ] # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -97,7 +97,7 @@
   markingCategory: Overlay
   speciesRestriction:
     [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin,
-      Ovinia, Shadowkin, Arachne, Kitsune, ] # Floof - M3739 - #1063 - Add Kitsune
+      Shadowkin, Arachne, Kitsune, ] # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -106,34 +106,6 @@
   sprites:
   - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
     state: hands
-
-- type: marking
-  id: OverlayPlushSeamsOvinia
-  bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [ Ovinia ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
-  sprites:
-  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
-    state: ovinia
-
-- type: marking
-  id: OverlayPlushSeamsOviniaFeet
-  bodyPart: RFoot
-  markingCategory: Overlay
-  speciesRestriction: [ Ovinia ]
-  coloring:
-    default:
-      type:
-        !type:TattooColoring
-      fallbackColor: "#666666"
-  sprites:
-  - sprite: _DEN/Mobs/Customization/Body/Toy/seams.rsi
-    state: ovinia_feet
 
 - type: marking
   id: OverlayPlushSeamsShadowkin
