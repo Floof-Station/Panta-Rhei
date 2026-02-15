@@ -1,0 +1,227 @@
+# Changelog - 
+# Removed Cockroaches
+# Pets understand Tau Ceti but can't speak it
+# added 4 new pets including cortical borer for kink reasons
+
+- type: entity
+  parent: MobHamster
+  id: MobHamsterPet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - TauCetiBasic
+    - Mouse
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-hamster-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  parent: MobMouse
+  id: MobMousePet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - TauCetiBasic
+    - Mouse
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-mouse-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  parent: MobMothroach
+  id: MobMothroachPet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Moffic
+    understands:
+    - TauCetiBasic
+    - Moffic
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-mothroach-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+# New Stuff -
+
+- type: entity
+  parent: MobFrog
+  id: MobFrogPet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Draconic
+    - Azaziba
+    - Kobold
+    understands:
+    - TauCetiBasic
+    - Draconic
+    - Azaziba
+    - Kobold
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-frog-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Normal
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  parent: MobSnake
+  id: MobSnakePet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Draconic
+    - Azaziba
+    - Kobold
+    understands:
+    - TauCetiBasic
+    - Draconic
+    - Azaziba
+    - Kobold
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-snake-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Normal
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  parent: MobFerret
+  id: MobFerretPet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    - Scurret
+    understands:
+    - TauCetiBasic
+    - Mouse   
+    - Scurret
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-ferret-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Normal
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
+
+- type: entity
+  parent: MobCorticalBorer
+  id: MobCorticalBorerPet
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xenos
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-pet-cortical-borer-name
+    description: ghost-role-information-pet-kinky-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Tiny
+  - type: HTN
+    rootTask:
+      task: FollowCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        2.0
