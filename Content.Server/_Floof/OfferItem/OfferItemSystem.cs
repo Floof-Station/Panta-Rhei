@@ -20,6 +20,8 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
     public override void Initialize()
     {
         base.Initialize();
+
+        SubscribeLocalEvent<OfferItemComponent, AcceptOfferAlertEvent>(OnAcceptOffer);
         InitializeTransfers();
     }
 
@@ -53,47 +55,51 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
         }
     }
 
+    private void OnAcceptOffer(Entity<OfferItemComponent> ent, ref AcceptOfferAlertEvent args)
+    {
+        Receive(ent, ent);
+    }
+
     /// <summary>
     /// Accepting the offer and receive item
     /// </summary>
-    public void Receive(EntityUid uid, OfferItemComponent? component = null)
+    public void Receive(EntityUid receiver, OfferItemComponent? receiverComponent = null)
     {
-        // Floofstation note: (uid, component) is the receiver. (component.Target, offerItem) is the offerer. Why? I don't fucking know.
-        if (!Resolve(uid, ref component) ||
-            !TryComp<OfferItemComponent>(component.Target, out var offerItem) ||
-            offerItem.Hand == null ||
-            component.Target == null ||
-            !TryComp<HandsComponent>(uid, out var hands))
+        if (!Resolve(receiver, ref receiverComponent) ||
+            !TryComp<OfferItemComponent>(receiverComponent.Target, out var offerItemSender) ||
+            offerItemSender.Hand == null ||
+            receiverComponent.Target is not {} sender ||
+            !TryComp<HandsComponent>(receiver, out var hands))
             return;
 
-        if (offerItem.Item != null)
+        if (offerItemSender.Item != null)
         {
             // Floof - check if there's something else handling it first
-            var realItem = offerItem.GetRealEntity(EntityManager);
-            if (!TryHandleExtendedTransfer(component.Target.Value, uid, offerItem.Item.Value, realItem)
-                && !_hands.TryPickup(uid, offerItem.Item.Value, handsComp: hands))
+            var realItem = offerItemSender.GetRealEntity(EntityManager);
+            if (!TryHandleExtendedTransfer(sender, receiver, offerItemSender.Item.Value, realItem)
+                && !_hands.TryPickup(receiver, offerItemSender.Item.Value, handsComp: hands))
             {
-                _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), uid, uid);
+                _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), receiver, receiver);
                 return;
             }
 
             _popup.PopupEntity(
                 Loc.GetString("offer-item-give",
                     ("item", Identity.Entity(realItem, EntityManager)), // FLoof - resolve virtual items
-                    ("target", Identity.Entity(uid, EntityManager))),
-                component.Target.Value,
-                component.Target.Value);
+                    ("target", Identity.Entity(receiver, EntityManager))),
+                sender,
+                sender);
             _popup.PopupEntity(
                 Loc.GetString("offer-item-give-other",
-                    ("user", Identity.Entity(component.Target.Value, EntityManager)),
+                    ("user", Identity.Entity(receiverComponent.Target.Value, EntityManager)),
                     ("item", Identity.Entity(realItem, EntityManager)), // FLoof - resolve virtual items
-                    ("target", Identity.Entity(uid, EntityManager))),
-                component.Target.Value,
-                Filter.PvsExcept(component.Target.Value, entityManager: EntityManager),
+                    ("target", Identity.Entity(receiver, EntityManager))),
+                sender,
+                Filter.PvsExcept(sender, entityManager: EntityManager),
                 true);
         }
 
-        offerItem.Item = null;
-        UnReceive(uid, component, offerItem);
+        offerItemSender.Item = null;
+        UnReceive(receiver, receiverComponent, offerItemSender);
     }
 }
