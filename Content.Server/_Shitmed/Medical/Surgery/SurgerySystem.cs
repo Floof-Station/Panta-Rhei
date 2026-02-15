@@ -24,6 +24,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
 using Content.Shared.Verbs;
+using Content.Shared._Goobstation.CCVar;
 
 namespace Content.Server._Shitmed.Medical.Surgery;
 
