@@ -1,0 +1,36 @@
+using Content.Shared.Alert;
+using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.OfferItem;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared._Floof.OfferItem;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState(true)]
+[Access(typeof(SharedOfferItemSystem))]
+public sealed partial class OfferItemComponent : Component
+{
+    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
+    public bool IsInOfferMode;
+
+    [DataField, AutoNetworkedField]
+    public bool IsInReceiveMode;
+
+    [DataField, AutoNetworkedField]
+    public string? Hand;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? Item;
+
+    [DataField, AutoNetworkedField]
+    public EntityUid? Target;
+
+    [DataField]
+    public float MaxOfferDistance = 2f;
+
+    [DataField]
+    public ProtoId<AlertPrototype> OfferAlert = "Offer";
+
+    public EntityUid GetRealEntity(EntityManager entityManager) =>
+        entityManager.GetComponentOrNull<VirtualItemComponent>(Item)?.BlockingEntity ?? Item ?? EntityUid.Invalid;
+}
