@@ -144,7 +144,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     private void OnSurgeryDamageChange(Entity<SurgeryDamageChangeEffectComponent> ent, ref SurgeryStepDamageChangeEvent args)
     {
         var damageChange = ent.Comp.Damage;
-        if (HasComp<ForcedSleepingComponent>(args.Body))
+        if (HasComp<SleepingComponent>(args.Body))
             damageChange = damageChange * ent.Comp.SleepModifier;
 
         SetDamage(args.Body, damageChange, 0.5f, args.User, args.Part);
@@ -163,7 +163,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     private void OnStepScreamComplete(Entity<SurgeryStepEmoteEffectComponent> ent, ref SurgeryStepEvent args)
     {
-        if (HasComp<ForcedSleepingComponent>(args.Body))
+        if (HasComp<SleepingComponent>(args.Body))
             return;
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);
