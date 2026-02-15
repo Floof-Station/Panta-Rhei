@@ -126,6 +126,10 @@
   - type: DrawDepthVisualizer
     key: enum.SneakingVisuals.Sneaking
     depth: SmallMobs
+  - type: NightVision # Euphoria change
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   save: false
