@@ -111,6 +111,7 @@
 - type: loadoutGroup
   id: FloofOuterClothing
   parent: PassengerOuterClothing
+  name: loadout-group-passenger-outerclothing
   minLimit: 0
   maxLimit: 1
   loadouts:
@@ -128,3 +129,18 @@
   - OuterDenimJacket
   - OuterCorporateJacket
   - OuterCoatHyenhSweater
+
+# hats
+- type: loadoutGroup
+  id: FloofHats
+  parent: AssistantHead
+  name: loadout-group-assistant-head
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - HeadHatHairflower
+  - HeadHatLilly
+  - HeadHatFlowerWreath
+  - HeadHatCatEarsCosmetic
+  - HeadHatDogEarsCosmetic
+  - HeadFishCap
