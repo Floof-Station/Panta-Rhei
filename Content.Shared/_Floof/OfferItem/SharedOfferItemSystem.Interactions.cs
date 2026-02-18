@@ -53,7 +53,7 @@ public abstract partial class SharedOfferItemSystem
                 return;
             }
 
-            if (offerItem.Hand == null || offerItem.Target == null)
+            if (offerItem.Hand == null || offerItem.TargetOrOfferer == null)
             {
                 offerItem.IsInOfferMode = true;
                 offerItem.Hand = activeHandName;
@@ -63,9 +63,9 @@ public abstract partial class SharedOfferItemSystem
             }
         }
 
-        if (offerItem.Target != null)
+        if (offerItem.TargetOrOfferer != null)
         {
-            UnReceive(offerItem.Target.Value, offerItem: offerItem);
+            UnReceive(offerItem.TargetOrOfferer.Value, offererComp: offerItem);
             offerItem.IsInOfferMode = false;
             Dirty(uid, offerItem);
             return;

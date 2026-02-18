@@ -9,9 +9,16 @@ namespace Content.Shared._Floof.OfferItem;
 [Access(typeof(SharedOfferItemSystem))]
 public sealed partial class OfferItemComponent : Component
 {
+    /// <summary>
+    ///     Apparently this indicates whether the entity is currently choosing an entity to offer (right after pressing F).
+    /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public bool IsInOfferMode;
 
+    /// <summary>
+    ///     If this is true, then someone is currently offering an item to this entity, and <see cref="TargetOrOfferer"/>
+    ///     stores the ID of that entity.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public bool IsInReceiveMode;
 
@@ -21,8 +28,18 @@ public sealed partial class OfferItemComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? Item;
 
+    /// <summary>
+    ///     Floofstation note. So, this is EE shitcode, so prepare for an emotional rollercoaster.
+    ///     This field can mean TWO things. It's either the target entity this entity is offering an item to,
+    ///     or an entity that is offering an item to this entity.
+    ///     Whether it's one or the other is distinguished by <see cref="IsInReceiveMode"/>.<br/><br/>
+    ///
+    ///     In rare cases it can be both. According to my research, if entity A offers an item to entity B, and entity B offers to entity A,
+    ///     then both entities will end up in receive mode, and they will have each other as targets. There's a check preventing offer loops
+    ///     of length more than 2.
+    /// </summary>
     [DataField, AutoNetworkedField]
-    public EntityUid? Target;
+    public EntityUid? TargetOrOfferer;
 
     [DataField]
     public float MaxOfferDistance = 2f;

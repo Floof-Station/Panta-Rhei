@@ -34,9 +34,9 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
             // If the mob no longer holds an item in the original offering hand, clear offering mode
             if (offerItem.Hand != null && !_hands.TryGetHeldItem((uid, hands), offerItem.Hand, out _))
             {
-                if (offerItem.Target != null)
+                if (offerItem.TargetOrOfferer != null)
                 {
-                    UnReceive(offerItem.Target.Value, offerItem: offerItem);
+                    UnReceive(offerItem.TargetOrOfferer.Value, offererComp: offerItem);
                     offerItem.IsInOfferMode = false;
                     Dirty(uid, offerItem);
                 }
@@ -65,18 +65,18 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
     public void Receive(EntityUid receiver, OfferItemComponent? receiverComponent = null)
     {
         if (!Resolve(receiver, ref receiverComponent) ||
-            !TryComp<OfferItemComponent>(receiverComponent.Target, out var offerItemSender) ||
-            offerItemSender.Hand == null ||
-            receiverComponent.Target is not {} sender ||
+            !TryComp<OfferItemComponent>(receiverComponent.TargetOrOfferer, out var offererComponent) ||
+            offererComponent.Hand == null ||
+            receiverComponent.TargetOrOfferer is not {} sender ||
             !TryComp<HandsComponent>(receiver, out var hands))
             return;
 
-        if (offerItemSender.Item != null)
+        if (offererComponent.Item != null)
         {
             // Floof - check if there's something else handling it first
-            var realItem = offerItemSender.GetRealEntity(EntityManager);
-            if (!TryHandleExtendedTransfer(sender, receiver, offerItemSender.Item.Value, realItem)
-                && !_hands.TryPickup(receiver, offerItemSender.Item.Value, handsComp: hands))
+            var realItem = offererComponent.GetRealEntity(EntityManager);
+            if (!TryHandleExtendedTransfer(sender, receiver, offererComponent.Item.Value, realItem)
+                && !_hands.TryPickup(receiver, offererComponent.Item.Value, handsComp: hands))
             {
                 _popup.PopupEntity(Loc.GetString("offer-item-full-hand"), receiver, receiver);
                 return;
@@ -90,7 +90,7 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
                 sender);
             _popup.PopupEntity(
                 Loc.GetString("offer-item-give-other",
-                    ("user", Identity.Entity(receiverComponent.Target.Value, EntityManager)),
+                    ("user", Identity.Entity(receiverComponent.TargetOrOfferer.Value, EntityManager)),
                     ("item", Identity.Entity(realItem, EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(receiver, EntityManager))),
                 sender,
@@ -98,7 +98,7 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
                 true);
         }
 
-        offerItemSender.Item = null;
-        UnReceive(receiver, receiverComponent, offerItemSender);
+        offererComponent.Item = null;
+        UnReceive(receiver, receiverComponent, offererComponent);
     }
 }

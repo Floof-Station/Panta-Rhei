@@ -5,6 +5,13 @@ using Content.Shared.Interaction;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
+// Dear contributor.
+// This system is fucking unmaintainable.
+// If you ever happen to touch this again, please do your best to document your changes and try to resolve mysteries surrounding this code.
+// I did what I could to document the parts I manage to understand, but there is still more truth to be unveiled.
+//
+// HOURS_WASTED_HERE_FLOOFSTATION = 8
+
 namespace Content.Shared._Floof.OfferItem;
 
 public abstract partial class SharedOfferItemSystem : EntitySystem
@@ -22,38 +29,46 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         InitializeInteractions();
     }
 
-    private void SetInReceiveMode(EntityUid uid, OfferItemComponent component, InteractUsingEvent args)
+    private void SetInReceiveMode(EntityUid receiver, OfferItemComponent receiverComponent, InteractUsingEvent args)
     {
         if (!_timing.IsFirstTimePredicted || _timing.ApplyingState)
             return;
 
-        if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
+        if (!TryComp<OfferItemComponent>(args.User, out var offererComponent))
             return;
 
-        if (args.User == uid || component.IsInReceiveMode || !offerItem.IsInOfferMode ||
-            (offerItem.IsInReceiveMode && offerItem.Target != uid))
+        var offerer = args.User;
+        if (offerer == receiver || receiverComponent.IsInReceiveMode || !offererComponent.IsInOfferMode ||
+            (offererComponent.IsInReceiveMode && offererComponent.TargetOrOfferer != receiver))
             return;
 
-        component.IsInReceiveMode = true;
-        component.Target = args.User;
+        receiverComponent.IsInReceiveMode = true;
+        receiverComponent.TargetOrOfferer = args.User;
 
-        Dirty(uid, component);
+        Dirty(receiver, receiverComponent);
 
-        offerItem.Target = uid;
-        offerItem.IsInOfferMode = false;
+        offererComponent.TargetOrOfferer = receiver;
+        offererComponent.IsInOfferMode = false; // FLOOFSTATION - WHAT????? WHY????
 
-        Dirty(args.User, offerItem);
+        Dirty(args.User, offererComponent);
 
-        if (offerItem.Item == null)
+        if (offererComponent.Item == null)
             return;
 
-        // Floof - if the held item is a pseudo-item, show the underlying item in the popup
-        _popup.PopupPredicted(Loc.GetString("offer-item-try-give",
-            ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
-            ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-        _popup.PopupPredicted(Loc.GetString("offer-item-try-give-target",
-            ("user", Identity.Entity(component.Target.Value, EntityManager)),
-            ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid); // FLoof - resolve virtual items
+        // Sender popup (client-side only)
+        _popup.PopupClient(
+            Loc.GetString("offer-item-try-give",
+                ("item", Identity.Entity(offererComponent.GetRealEntity(EntityManager), EntityManager)),
+                ("target", Identity.Entity(receiver, EntityManager))),
+            offerer,
+            offerer);
+        // Receiver popup (server side only, not predicted because recipient != local player)
+        _popup.PopupEntity(
+            Loc.GetString("offer-item-try-give-target",
+                ("user", Identity.Entity(receiverComponent.TargetOrOfferer.Value, EntityManager)),
+                ("item", Identity.Entity(offererComponent.GetRealEntity(EntityManager), EntityManager))),
+            offerer,
+            receiver);
 
         args.Handled = true;
     }
@@ -63,9 +78,9 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (_net.IsClient) // Client often mispredicts movement, we cant trust it here
             return;
 
-        if (component.Target == null ||
+        if (component.TargetOrOfferer == null ||
             args.NewPosition.InRange(EntityManager, _transform,
-                Transform(component.Target.Value).Coordinates, component.MaxOfferDistance))
+                Transform(component.TargetOrOfferer.Value).Coordinates, component.MaxOfferDistance))
             return;
 
         UnOffer(uid, component);
@@ -74,92 +89,110 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     /// <summary>
     /// Resets the <see cref="_Floof.OfferItem.OfferItemComponent"/> of the user and the target
     /// </summary>
-    protected void UnOffer(EntityUid uid, OfferItemComponent component)
+    protected void UnOffer(EntityUid thisEntity, OfferItemComponent offererComp)
     {
-        if (!TryComp<HandsComponent>(uid, out var hands) || _hands.GetActiveHand((uid, hands)) is null)
+        if (!TryComp<HandsComponent>(thisEntity, out var hands) || _hands.GetActiveHand((thisEntity, hands)) is null)
             return;
 
-        if (TryComp<OfferItemComponent>(component.Target, out var offerItem) && component.Target != null)
+        if (offererComp.TargetOrOfferer is {} otherEntity && TryComp<OfferItemComponent>(otherEntity, out var otherOfferer))
         {
-
-            if (component.Item != null)
+            // So this tries to figure out which of these entities do what...
+            // if A.OfferItemComponent.Item != null, then A is currently offering an item to A.OfferItemComponent.TargetOrOfferer
+            // If it is null, then it is ONLY being offered an item TO.
+            if (offererComp.Item != null && _net.IsServer)
             {
-                _popup.PopupPredicted(Loc.GetString("offer-item-no-give",
-                    ("item", Identity.Entity(component.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
-                    ("target", Identity.Entity(component.Target.Value, EntityManager))), uid, uid);
-                _popup.PopupPredicted(Loc.GetString("offer-item-no-give-target",
-                    ("user", Identity.Entity(uid, EntityManager)),
-                    ("item", Identity.Entity(component.GetRealEntity(EntityManager), EntityManager))), uid, component.Target.Value); // FLoof - resolve virtual items
+                _popup.PopupEntity(
+                    Loc.GetString("offer-item-no-give",
+                        ("item", Identity.Entity(offererComp.GetRealEntity(EntityManager), EntityManager)), // Floof - resolve virtual items
+                        ("target", Identity.Entity(otherEntity, EntityManager))),
+                    thisEntity,
+                    thisEntity);
+                _popup.PopupEntity(
+                    Loc.GetString("offer-item-no-give-target",
+                        ("user", Identity.Entity(thisEntity, EntityManager)),
+                        ("item", Identity.Entity(offererComp.GetRealEntity(EntityManager), EntityManager))),
+                    thisEntity,
+                    otherEntity);
             }
 
-            else if (offerItem.Item != null)
+            else if (otherOfferer.Item != null && _net.IsServer)
             {
-                _popup.PopupPredicted(Loc.GetString("offer-item-no-give",
-                    ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
-                    ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-                _popup.PopupPredicted(Loc.GetString("offer-item-no-give-target",
-                    ("user", Identity.Entity(component.Target.Value, EntityManager)),
-                    ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid); // FLoof - resolve virtual items
+                _popup.PopupEntity(
+                    Loc.GetString("offer-item-no-give",
+                        ("item", Identity.Entity(otherOfferer.GetRealEntity(EntityManager), EntityManager)), // Floof - resolve virtual items
+                        ("target", Identity.Entity(thisEntity, EntityManager))),
+                    otherEntity,
+                    otherEntity);
+                _popup.PopupEntity(
+                    Loc.GetString("offer-item-no-give-target",
+                        ("user", Identity.Entity(otherEntity, EntityManager)),
+                        ("item", Identity.Entity(otherOfferer.GetRealEntity(EntityManager), EntityManager))),
+                    otherEntity,
+                    thisEntity);
             }
 
-            offerItem.IsInOfferMode = false;
-            offerItem.IsInReceiveMode = false;
-            offerItem.Hand = null;
-            offerItem.Target = null;
-            offerItem.Item = null;
+            otherOfferer.IsInOfferMode = false;
+            otherOfferer.IsInReceiveMode = false;
+            otherOfferer.Hand = null;
+            otherOfferer.TargetOrOfferer = null;
+            otherOfferer.Item = null;
 
-            Dirty(component.Target.Value, offerItem);
+            Dirty(otherEntity, otherOfferer);
         }
 
-        component.IsInOfferMode = false;
-        component.IsInReceiveMode = false;
-        component.Hand = null;
-        component.Target = null;
-        component.Item = null;
+        offererComp.IsInOfferMode = false;
+        offererComp.IsInReceiveMode = false;
+        offererComp.Hand = null;
+        offererComp.TargetOrOfferer = null;
+        offererComp.Item = null;
 
-        Dirty(uid, component);
+        Dirty(thisEntity, offererComp);
     }
 
 
     /// <summary>
     /// Cancels the transfer of the item
     /// </summary>
-    protected void UnReceive(EntityUid uid, OfferItemComponent? component = null, OfferItemComponent? offerItem = null)
+    protected void UnReceive(EntityUid receiver, OfferItemComponent? receiverComp = null, OfferItemComponent? offererComp = null)
     {
-        if (component == null && !TryComp(uid, out component))
+        if (!Resolve(receiver, ref receiverComp)
+            || receiverComp.TargetOrOfferer is not {} offerer
+            || !Resolve(offerer, ref offererComp))
             return;
 
-        if (offerItem == null && !TryComp(component.Target, out offerItem))
+        // Idk why this check is here
+        if (!TryComp<HandsComponent>(receiver, out var hands) || _hands.GetActiveHand((receiver, hands)) == null || receiverComp.TargetOrOfferer == null)
             return;
 
-        if (!TryComp<HandsComponent>(uid, out var hands) || _hands.GetActiveHand((uid, hands)) == null || component.Target == null)
-            return;
-
-        if (offerItem.Item != null)
+        // If offererComp.Item != null, then they are actively offering to TargetOrOfferer
+        // Normally this method is called right after a transfer is done and item is set to false, so this is never called ig?
+        if (offererComp.Item != null)
         {
-            _popup.PopupEntity(Loc.GetString("offer-item-no-give",
-                ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // Floof - resolve virtual items
-                ("target", Identity.Entity(uid, EntityManager))),
-                component.Target.Value,
-                component.Target.Value);
-            _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
-                ("user", Identity.Entity(component.Target.Value, EntityManager)), // Floof - resolve virtual items
-                ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))),
-                component.Target.Value,
-                uid);
+            _popup.PopupEntity(
+                Loc.GetString("offer-item-no-give",
+                    ("item", Identity.Entity(offererComp.GetRealEntity(EntityManager), EntityManager)), // Floof - resolve virtual items
+                    ("target", Identity.Entity(receiver, EntityManager))),
+                offerer,
+                offerer);
+            _popup.PopupEntity(
+                Loc.GetString("offer-item-no-give-target",
+                    ("user", Identity.Entity(receiverComp.TargetOrOfferer.Value, EntityManager)), // Floof - resolve virtual items
+                    ("item", Identity.Entity(offererComp.GetRealEntity(EntityManager), EntityManager))),
+                offerer,
+                receiver);
         }
 
-        if (!offerItem.IsInReceiveMode)
+        if (!offererComp.IsInReceiveMode)
         {
-            offerItem.Target = null;
-            component.Target = null;
+            offererComp.TargetOrOfferer = null;
+            receiverComp.TargetOrOfferer = null;
         }
 
-        offerItem.Item = null;
-        offerItem.Hand = null;
-        component.IsInReceiveMode = false;
+        offererComp.Item = null;
+        offererComp.Hand = null;
+        receiverComp.IsInReceiveMode = false;
 
-        Dirty(uid, component);
+        Dirty(receiver, receiverComp);
     }
 
     /// <summary>
