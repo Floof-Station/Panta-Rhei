@@ -1,6 +1,6 @@
 # jumpsuits
 - type: loadoutGroup
-  id: PassengerOutfits
+  id: FloofJumpsuits
   parent: PassengerJumpsuit
   name: loadout-group-passenger-jumpsuits
   minLimit: 0
@@ -55,7 +55,7 @@
 
 # gloves
 - type: loadoutGroup
-  id: PassengerGlovesAndArmwarmers
+  id: FloofGloves
   parent: PassengerGloves
   name: loadout-group-passenger-gloves
   minLimit: 0
@@ -75,7 +75,7 @@
 
  #shoes
 - type: loadoutGroup
-  id: PassengerShoesSocks
+  id: FloofShoes
   parent: PassengerShoes
   name: loadout-group-passenger-shoes
   minLimit: 0
@@ -100,7 +100,7 @@
 
 # backpacks
 - type: loadoutGroup
-  id: MoreBackpacks
+  id: FloofBackpacks
   parent: CommonBackpack
   minLimit: 0
   maxLimit: 1
