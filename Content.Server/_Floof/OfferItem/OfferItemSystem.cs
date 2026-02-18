@@ -8,7 +8,6 @@ using Robust.Shared.Player;
 
 namespace Content.Server._Floof.OfferItem;
 
-// Floofstation - partial
 public sealed partial class OfferItemSystem : SharedOfferItemSystem
 {
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;

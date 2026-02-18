@@ -26,16 +26,19 @@ public abstract partial class SharedOfferItemSystem
         CommandBinds.Unregister<SharedOfferItemSystem>();
     }
 
-    private void SetInOfferMode(ICommonSession? session)
+    /// <summary>
+    ///     This sets IsInOfferMode to true, allowing the player to select whom to offer an item to with interaction.
+    /// </summary>
+    private void SetInOfferMode(ICommonSession? offerer)
     {
-        if (session is not { } playerSession)
+        if (offerer is not { } playerSession)
             return;
 
         if ((playerSession.AttachedEntity is not { Valid: true } uid || !Exists(uid)) ||
             !_actionBlocker.CanInteract(uid, null))
             return;
 
-        if (!TryComp<_Floof.OfferItem.OfferItemComponent>(uid, out var offerItem))
+        if (!TryComp<OfferItemComponent>(uid, out var offerItem))
             return;
 
         if (!TryComp<HandsComponent>(uid, out var hands)
@@ -45,7 +48,7 @@ public abstract partial class SharedOfferItemSystem
 
         offerItem.Item = heldItem;
 
-        if (offerItem.IsInOfferMode == false)
+        if (!offerItem.IsInOfferMode)
         {
             if (offerItem.Item == null)
             {
@@ -63,6 +66,7 @@ public abstract partial class SharedOfferItemSystem
             }
         }
 
+        // If we're already offering an item to someone, cancel that offer
         if (offerItem.TargetOrOfferer != null)
         {
             UnReceive(offerItem.TargetOrOfferer.Value, offererComp: offerItem);

@@ -3,12 +3,13 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
 // Dear contributor.
 // This system is fucking unmaintainable.
 // If you ever happen to touch this again, please do your best to document your changes and try to resolve mysteries surrounding this code.
-// I did what I could to document the parts I manage to understand, but there is still more truth to be unveiled.
+// I did what I could to document the parts I managed to understand, but there is still more truth to be unveiled.
 //
 // HOURS_WASTED_HERE_FLOOFSTATION = 8
 
@@ -165,10 +166,10 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
             return;
 
         // If offererComp.Item != null, then they are actively offering to TargetOrOfferer
-        // Normally this method is called right after a transfer is done and item is set to false, so this is never called ig?
+        // Normally this method is called right after a transfer is done, but this part can be called from SetInOfferMode when the player presses F again to cancel an ongoing offer
         if (offererComp.Item != null)
         {
-            _popup.PopupEntity(
+            _popup.PopupClient(
                 Loc.GetString("offer-item-no-give",
                     ("item", Identity.Entity(offererComp.GetRealEntity(EntityManager), EntityManager)), // Floof - resolve virtual items
                     ("target", Identity.Entity(receiver, EntityManager))),
