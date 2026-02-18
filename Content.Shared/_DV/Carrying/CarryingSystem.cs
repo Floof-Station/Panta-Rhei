@@ -181,14 +181,15 @@ public sealed class CarryingSystem : EntitySystem
     /// </summary>
     private void OnInteractionAttempt(Entity<BeingCarriedComponent> ent, ref InteractionAttemptEvent args)
     {
-        if (args.Target is not {} target)
-            return;
-
-        var targetParent = Transform(target).ParentUid;
-
-        var carrier = ent.Comp.Carrier;
-        if (target != carrier && targetParent != carrier && targetParent != ent.Owner)
-            args.Cancelled = true;
+        // Floofstation - no - this prevents the person from escaping and more.
+        // if (args.Target is not {} target)
+        //     return;
+        //
+        // var targetParent = Transform(target).ParentUid;
+        //
+        // var carrier = ent.Comp.Carrier;
+        // if (target != carrier && targetParent != carrier && targetParent != ent.Owner)
+        //     args.Cancelled = true;
     }
 
     private void OnMoveAttempt(Entity<BeingCarriedComponent> ent, ref UpdateCanMoveEvent args)
@@ -203,8 +204,9 @@ public sealed class CarryingSystem : EntitySystem
 
     private void OnInteractedWith(Entity<BeingCarriedComponent> ent, ref GettingInteractedWithAttemptEvent args)
     {
-        if (args.Uid != ent.Comp.Carrier)
-            args.Cancelled = true;
+        // Floofstation - why?
+        // if (args.Uid != ent.Comp.Carrier)
+        //     args.Cancelled = true;
     }
 
     private void OnPullAttempt(Entity<BeingCarriedComponent> ent, ref PullAttemptEvent args)
@@ -242,7 +244,8 @@ public sealed class CarryingSystem : EntitySystem
         args.Handled = true;
     }
 
-    private void StartCarryDoAfter(EntityUid carrier, Entity<CarriableComponent> carried)
+    // Floofstation - made public
+    public void StartCarryDoAfter(EntityUid carrier, Entity<CarriableComponent> carried)
     {
         TimeSpan length = GetPickupDuration(carrier, carried);
 
