@@ -2,6 +2,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
+using Content.Shared.Nutrition.EntitySystems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -11,50 +12,84 @@ using Robust.Shared.Timing;
 // If you ever happen to touch this again, please do your best to document your changes and try to resolve mysteries surrounding this code.
 // I did what I could to document the parts I managed to understand, but there is still more truth to be unveiled.
 //
-// HOURS_WASTED_HERE_FLOOFSTATION = 8
+// HOURS_WASTED_HERE_FLOOFSTATION = 9
 
 namespace Content.Shared._Floof.OfferItem;
 
 public abstract partial class SharedOfferItemSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<OfferItemComponent, InteractUsingEvent>(SetInReceiveMode);
+        SubscribeLocalEvent<OfferItemComponent, InteractUsingEvent>(OnInteractWithReceiver, before: [typeof(IngestionSystem)]);
+        SubscribeLocalEvent<OfferItemComponent, RangedInteractEvent>(OnRangedInteractWithReceiver);
         SubscribeLocalEvent<OfferItemComponent, MoveEvent>(OnMove);
 
         InitializeInteractions();
     }
 
-    private void SetInReceiveMode(EntityUid receiver, OfferItemComponent receiverComponent, InteractUsingEvent args)
+    private void OnInteractWithReceiver(Entity<OfferItemComponent> receiver, ref InteractUsingEvent args)
     {
-        if (!_timing.IsFirstTimePredicted || _timing.ApplyingState)
+        if (!_timing.IsFirstTimePredicted || _timing.ApplyingState || args.Handled)
             return;
 
         if (!TryComp<OfferItemComponent>(args.User, out var offererComponent))
             return;
 
-        var offerer = args.User;
-        if (offerer == receiver || receiverComponent.IsInReceiveMode || !offererComponent.IsInOfferMode ||
-            (offererComponent.IsInReceiveMode && offererComponent.TargetOrOfferer != receiver))
+        args.Handled = CreateOffer(receiver, (args.User, offererComponent));
+    }
+
+    private void OnRangedInteractWithReceiver(Entity<OfferItemComponent> receiver, ref RangedInteractEvent args)
+    {
+        // If the entity being offered is a virtual item, InteractUsing will not be raised
+        // because virtual items exclude themselves from being marked as used
+        // If this is the case, InteractHand will be raised instead, which we can use anyway because OfferItem.Item stores the offered item
+
+        // We also can't check Handled here because VirtualItemSystem handles it, ffs
+        // This shouldn't lead you to accidentally offering someone your gun (unless you are in offer mode midcombat ig?)
+        if (!_timing.IsFirstTimePredicted || _timing.ApplyingState)
             return;
 
+        var offerer = args.UserUid;
+        if (!TryComp<OfferItemComponent>(offerer, out var offererComponent) || offererComponent.Item == null)
+            return;
+
+        // Since this is ranged, we must also check distance, because the interaction system wont check it for us in this case
+        if (!Transform(offerer).Coordinates.TryDistance(EntityManager, _transform, Transform(receiver).Coordinates, out var dst)
+            || dst > offererComponent.MaxOfferDistance)
+            return;
+
+        args.Handled = CreateOffer(receiver, (offerer, offererComponent));
+    }
+
+    /// <summary>
+    ///     Attempts to create an offer. Expects offerer.Item to already be set to the offered item, offererComponent.InReceiveMode == true.
+    ///     Will fail if offerer == receiver or if receiver already has a set TargetOrOfferer, and that person is not the current offerer
+    /// </summary>
+    private bool CreateOffer(Entity<OfferItemComponent> receiver, Entity<OfferItemComponent> offerer)
+    {
+        var offererComponent = offerer.Comp;
+        var receiverComponent = receiver.Comp;
+        if (offerer == receiver || receiverComponent.IsInReceiveMode || !offererComponent.IsInOfferMode ||
+            (offererComponent.IsInReceiveMode && offererComponent.ReceivingFrom != receiver))
+            return false;
+
         receiverComponent.IsInReceiveMode = true;
-        receiverComponent.TargetOrOfferer = args.User;
+        receiverComponent.ReceivingFrom = offerer;
 
         Dirty(receiver, receiverComponent);
 
-        offererComponent.TargetOrOfferer = receiver;
-        offererComponent.IsInOfferMode = false; // FLOOFSTATION - WHAT????? WHY????
+        offererComponent.ReceivingFrom = receiver; // TODO this is ee shitcode, may not be necessary?
+        offererComponent.IsInOfferMode = false;
 
-        Dirty(args.User, offererComponent);
+        Dirty(offerer, offererComponent);
 
         if (offererComponent.Item == null)
-            return;
+            return false;
 
         // Sender popup (client-side only)
         _popup.PopupClient(
@@ -66,12 +101,12 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         // Receiver popup (server side only, not predicted because recipient != local player)
         _popup.PopupEntity(
             Loc.GetString("offer-item-try-give-target",
-                ("user", Identity.Entity(receiverComponent.TargetOrOfferer.Value, EntityManager)),
+                ("user", Identity.Entity(receiverComponent.ReceivingFrom.Value, EntityManager)),
                 ("item", Identity.Entity(offererComponent.GetRealEntity(EntityManager), EntityManager))),
             offerer,
             receiver);
 
-        args.Handled = true;
+        return true;
     }
 
     private void OnMove(EntityUid uid, OfferItemComponent component, MoveEvent args)
@@ -79,9 +114,9 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (_net.IsClient) // Client often mispredicts movement, we cant trust it here
             return;
 
-        if (component.TargetOrOfferer == null ||
+        if (component.ReceivingFrom == null ||
             args.NewPosition.InRange(EntityManager, _transform,
-                Transform(component.TargetOrOfferer.Value).Coordinates, component.MaxOfferDistance))
+                Transform(component.ReceivingFrom.Value).Coordinates, component.MaxOfferDistance))
             return;
 
         UnOffer(uid, component);
@@ -95,7 +130,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         if (!TryComp<HandsComponent>(thisEntity, out var hands) || _hands.GetActiveHand((thisEntity, hands)) is null)
             return;
 
-        if (offererComp.TargetOrOfferer is {} otherEntity && TryComp<OfferItemComponent>(otherEntity, out var otherOfferer))
+        if (offererComp.ReceivingFrom is {} otherEntity && TryComp<OfferItemComponent>(otherEntity, out var otherOfferer))
         {
             // So this tries to figure out which of these entities do what...
             // if A.OfferItemComponent.Item != null, then A is currently offering an item to A.OfferItemComponent.TargetOrOfferer
@@ -135,7 +170,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
             otherOfferer.IsInOfferMode = false;
             otherOfferer.IsInReceiveMode = false;
             otherOfferer.Hand = null;
-            otherOfferer.TargetOrOfferer = null;
+            otherOfferer.ReceivingFrom = null;
             otherOfferer.Item = null;
 
             Dirty(otherEntity, otherOfferer);
@@ -144,7 +179,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
         offererComp.IsInOfferMode = false;
         offererComp.IsInReceiveMode = false;
         offererComp.Hand = null;
-        offererComp.TargetOrOfferer = null;
+        offererComp.ReceivingFrom = null;
         offererComp.Item = null;
 
         Dirty(thisEntity, offererComp);
@@ -157,12 +192,12 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     protected void UnReceive(EntityUid receiver, OfferItemComponent? receiverComp = null, OfferItemComponent? offererComp = null)
     {
         if (!Resolve(receiver, ref receiverComp)
-            || receiverComp.TargetOrOfferer is not {} offerer
+            || receiverComp.ReceivingFrom is not {} offerer
             || !Resolve(offerer, ref offererComp))
             return;
 
         // Idk why this check is here
-        if (!TryComp<HandsComponent>(receiver, out var hands) || _hands.GetActiveHand((receiver, hands)) == null || receiverComp.TargetOrOfferer == null)
+        if (!TryComp<HandsComponent>(receiver, out var hands) || _hands.GetActiveHand((receiver, hands)) == null || receiverComp.ReceivingFrom == null)
             return;
 
         // If offererComp.Item != null, then they are actively offering to TargetOrOfferer
@@ -177,7 +212,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
                 offerer);
             _popup.PopupEntity(
                 Loc.GetString("offer-item-no-give-target",
-                    ("user", Identity.Entity(receiverComp.TargetOrOfferer.Value, EntityManager)), // Floof - resolve virtual items
+                    ("user", Identity.Entity(receiverComp.ReceivingFrom.Value, EntityManager)), // Floof - resolve virtual items
                     ("item", Identity.Entity(offererComp.GetRealEntity(EntityManager), EntityManager))),
                 offerer,
                 receiver);
@@ -185,8 +220,8 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
         if (!offererComp.IsInReceiveMode)
         {
-            offererComp.TargetOrOfferer = null;
-            receiverComp.TargetOrOfferer = null;
+            offererComp.ReceivingFrom = null;
+            receiverComp.ReceivingFrom = null;
         }
 
         offererComp.Item = null;

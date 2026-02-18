@@ -33,9 +33,9 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
             // If the mob no longer holds an item in the original offering hand, clear offering mode
             if (offerItem.Hand != null && !_hands.TryGetHeldItem((uid, hands), offerItem.Hand, out _))
             {
-                if (offerItem.TargetOrOfferer != null)
+                if (offerItem.ReceivingFrom != null)
                 {
-                    UnReceive(offerItem.TargetOrOfferer.Value, offererComp: offerItem);
+                    UnReceive(offerItem.ReceivingFrom.Value, offererComp: offerItem);
                     offerItem.IsInOfferMode = false;
                     Dirty(uid, offerItem);
                 }
@@ -64,9 +64,9 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
     public void Receive(EntityUid receiver, OfferItemComponent? receiverComponent = null)
     {
         if (!Resolve(receiver, ref receiverComponent) ||
-            !TryComp<OfferItemComponent>(receiverComponent.TargetOrOfferer, out var offererComponent) ||
+            !TryComp<OfferItemComponent>(receiverComponent.ReceivingFrom, out var offererComponent) ||
             offererComponent.Hand == null ||
-            receiverComponent.TargetOrOfferer is not {} sender ||
+            receiverComponent.ReceivingFrom is not {} sender ||
             !TryComp<HandsComponent>(receiver, out var hands))
             return;
 
@@ -89,7 +89,7 @@ public sealed partial class OfferItemSystem : SharedOfferItemSystem
                 sender);
             _popup.PopupEntity(
                 Loc.GetString("offer-item-give-other",
-                    ("user", Identity.Entity(receiverComponent.TargetOrOfferer.Value, EntityManager)),
+                    ("user", Identity.Entity(receiverComponent.ReceivingFrom.Value, EntityManager)),
                     ("item", Identity.Entity(realItem, EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(receiver, EntityManager))),
                 sender,

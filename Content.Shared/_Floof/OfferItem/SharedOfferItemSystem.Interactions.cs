@@ -56,7 +56,7 @@ public abstract partial class SharedOfferItemSystem
                 return;
             }
 
-            if (offerItem.Hand == null || offerItem.TargetOrOfferer == null)
+            if (offerItem.Hand == null || offerItem.ReceivingFrom == null)
             {
                 offerItem.IsInOfferMode = true;
                 offerItem.Hand = activeHandName;
@@ -67,9 +67,9 @@ public abstract partial class SharedOfferItemSystem
         }
 
         // If we're already offering an item to someone, cancel that offer
-        if (offerItem.TargetOrOfferer != null)
+        if (offerItem.ReceivingFrom != null)
         {
-            UnReceive(offerItem.TargetOrOfferer.Value, offererComp: offerItem);
+            UnReceive(offerItem.ReceivingFrom.Value, offererComp: offerItem);
             offerItem.IsInOfferMode = false;
             Dirty(uid, offerItem);
             return;

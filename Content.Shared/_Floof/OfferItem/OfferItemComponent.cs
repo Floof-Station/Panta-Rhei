@@ -16,7 +16,7 @@ public sealed partial class OfferItemComponent : Component
     public bool IsInOfferMode;
 
     /// <summary>
-    ///     If this is true, then someone is currently offering an item to this entity, and <see cref="TargetOrOfferer"/>
+    ///     If this is true, then someone is currently offering an item to this entity, and <see cref="ReceivingFrom"/>
     ///     stores the ID of that entity.
     /// </summary>
     [DataField, AutoNetworkedField]
@@ -39,7 +39,7 @@ public sealed partial class OfferItemComponent : Component
     ///     of length more than 2.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public EntityUid? TargetOrOfferer;
+    public EntityUid? ReceivingFrom;
 
     [DataField]
     public float MaxOfferDistance = 2f;
