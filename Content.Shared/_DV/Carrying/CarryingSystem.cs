@@ -28,6 +28,7 @@ using Robust.Shared.Network;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 using Content.Shared._DV.Polymorph;
+using Content.Shared._Floof.OfferItem;
 using Content.Shared.Hands.EntitySystems;
 
 namespace Content.Shared._DV.Carrying;
@@ -300,8 +301,12 @@ public sealed class CarryingSystem : EntitySystem
         if (_net.IsClient) // no spawning prediction
             return;
 
-        _virtualItem.TrySpawnVirtualItemInHand(carried, carrier);
-        _virtualItem.TrySpawnVirtualItemInHand(carried, carrier);
+        // Floofstation - store virtual items and add a special component to them
+        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out var virt))
+            EnsureComp<OfferableVirtualItemComponent>(virt.Value);
+        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out virt))
+            EnsureComp<OfferableVirtualItemComponent>(virt.Value);
+        // Floofstation section end
     }
 
     public bool TryCarry(EntityUid carrier, Entity<CarriableComponent?> toCarry)
