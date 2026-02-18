@@ -1,11 +1,11 @@
-using Content.Shared.Popups;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Input;
 using Content.Shared.Hands.Components;
+using Content.Shared.Input;
+using Content.Shared.Popups;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 
-namespace Content.Shared.OfferItem;
+namespace Content.Shared._Floof.OfferItem;
 
 public abstract partial class SharedOfferItemSystem
 {

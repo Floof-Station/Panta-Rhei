@@ -1,6 +1,5 @@
 using Content.Shared.Alert;
 using Content.Shared.Inventory.VirtualItem;
-using Content.Shared.OfferItem;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 

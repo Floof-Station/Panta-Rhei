@@ -1,6 +1,6 @@
 using Content.Shared._Floof.CCVar;
+using Content.Shared._Floof.OfferItem;
 using Content.Shared.CCVar;
-using Content.Shared.OfferItem;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Player;

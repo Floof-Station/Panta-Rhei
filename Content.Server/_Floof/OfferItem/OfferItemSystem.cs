@@ -4,7 +4,6 @@ using Content.Shared.Alert;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.IdentityManagement;
-using Content.Shared.OfferItem;
 using Robust.Shared.Player;
 
 namespace Content.Server._Floof.OfferItem;

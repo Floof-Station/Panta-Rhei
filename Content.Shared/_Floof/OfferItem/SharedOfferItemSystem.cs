@@ -1,19 +1,18 @@
-using Content.Shared._Floof.OfferItem;
-using Content.Shared.Interaction;
-using Content.Shared.IdentityManagement;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Inventory.VirtualItem;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Interaction;
+using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
-
-namespace Content.Shared.OfferItem;
+namespace Content.Shared._Floof.OfferItem;
 
 public abstract partial class SharedOfferItemSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
     public override void Initialize()
     {
@@ -25,6 +24,9 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
     private void SetInReceiveMode(EntityUid uid, OfferItemComponent component, InteractUsingEvent args)
     {
+        if (!_timing.IsFirstTimePredicted || _timing.ApplyingState)
+            return;
+
         if (!TryComp<OfferItemComponent>(args.User, out var offerItem))
             return;
 
@@ -46,10 +48,10 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
             return;
 
         // Floof - if the held item is a pseudo-item, show the underlying item in the popup
-        _popup.PopupEntity(Loc.GetString("offer-item-try-give",
+        _popup.PopupPredicted(Loc.GetString("offer-item-try-give",
             ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
             ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-        _popup.PopupEntity(Loc.GetString("offer-item-try-give-target",
+        _popup.PopupPredicted(Loc.GetString("offer-item-try-give-target",
             ("user", Identity.Entity(component.Target.Value, EntityManager)),
             ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid); // FLoof - resolve virtual items
 
@@ -58,7 +60,7 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
     private void OnMove(EntityUid uid, OfferItemComponent component, MoveEvent args)
     {
-        if (!_timing.IsFirstTimePredicted)
+        if (_net.IsClient) // Client often mispredicts movement, we cant trust it here
             return;
 
         if (component.Target == null ||
@@ -82,20 +84,20 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
 
             if (component.Item != null)
             {
-                _popup.PopupEntity(Loc.GetString("offer-item-no-give",
+                _popup.PopupPredicted(Loc.GetString("offer-item-no-give",
                     ("item", Identity.Entity(component.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(component.Target.Value, EntityManager))), uid, uid);
-                _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
+                _popup.PopupPredicted(Loc.GetString("offer-item-no-give-target",
                     ("user", Identity.Entity(uid, EntityManager)),
                     ("item", Identity.Entity(component.GetRealEntity(EntityManager), EntityManager))), uid, component.Target.Value); // FLoof - resolve virtual items
             }
 
             else if (offerItem.Item != null)
             {
-                _popup.PopupEntity(Loc.GetString("offer-item-no-give",
+                _popup.PopupPredicted(Loc.GetString("offer-item-no-give",
                     ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager)), // FLoof - resolve virtual items
                     ("target", Identity.Entity(uid, EntityManager))), component.Target.Value, component.Target.Value);
-                _popup.PopupEntity(Loc.GetString("offer-item-no-give-target",
+                _popup.PopupPredicted(Loc.GetString("offer-item-no-give-target",
                     ("user", Identity.Entity(component.Target.Value, EntityManager)),
                     ("item", Identity.Entity(offerItem.GetRealEntity(EntityManager), EntityManager))), component.Target.Value, uid); // FLoof - resolve virtual items
             }
