@@ -1,0 +1,10 @@
+- type: listing
+  id: UplinkMagazinePistolCaselessRifleSubsonic
+  name: uplink-pistol-magazine-caseless-name-subsonic
+  description: uplink-pistol-magazine-caseless-desc-subsonic
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/CaselessRifle/caseless_pistol_mag.rsi, state: red-icon }
+  productEntity: MagazinePistolCaselessRifleSubsonic
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo

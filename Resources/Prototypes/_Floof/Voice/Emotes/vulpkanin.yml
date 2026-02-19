@@ -1,0 +1,96 @@
+- type: emote
+  id: Gekker
+  name: chat-emote-name-gekker
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - KitsuneEmotes
+  blacklist:
+    tags:
+    - SiliconEmotes
+    components:
+    - BorgChassis
+  chatMessages: [ chat-emote-msg-gekker ]
+  chatTriggers:
+  - gekkers
+
+- type: emote
+  id: Yip
+  name: chat-emote-name-yip
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    tags: # Note: under the hood, it is used by both vulps and kitsunes.
+    - UnathiEmotes
+    - VulpEmotes
+    - KitsuneEmotes
+  blacklist:
+    tags:
+    - SiliconEmotes
+    components:
+    - BorgChassis
+  chatMessages: [ chat-emote-msg-yip ]
+  chatTriggers:
+  - yip
+  - yips
+
+- type: emote
+  id: Yap
+  name: chat-emote-name-yap
+  category: Vocal
+  icon: Interface/Emotes/laugh.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - KitsuneEmotes
+  blacklist:
+    tags:
+    - SiliconEmotes
+    components:
+    - BorgChassis
+  chatMessages: [ chat-emote-msg-yap ]
+  chatTriggers:
+  - yap
+  - yaps
+
+# This is a new whine. The old one was renamed to @whimper. For comparison, the old whine (whimper) is a long dog whine, while this is a short fox whine.
+- type: emote
+  id: Whine
+  name: chat-emote-name-whine
+  category: Vocal
+  icon: _DV/Interface/Emotes/whine.png
+  whitelist:
+    tags:
+    - VulpEmotes
+    - KitsuneEmotes
+    - HarpyEmotes
+  blacklist:
+    tags:
+    - SiliconEmotes
+    components:
+    - BorgChassis
+  chatMessages: [ chat-emote-msg-whine ]
+  chatTriggers:
+  - whines
+  - whine
+
+- type: emote
+  id: Whimper
+  name: chat-emote-name-whimper
+  icon: _DV/Interface/Emotes/whine.png
+  category: Vocal
+  whitelist:
+    tags:
+    - VulpEmotes
+    - HarpyEmotes
+    - KitsuneEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-whimper"]
+  chatTriggers:
+  - whimpers
+  - whimper
+

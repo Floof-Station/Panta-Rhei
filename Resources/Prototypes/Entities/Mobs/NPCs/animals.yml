@@ -3264,6 +3264,11 @@
   - type: Tag
     tags:
     - VimPilot
+    - VulpEmotes # Floofstation
+  - type: Emoting # Floofstation
+  - type: Vocal # Floofstation
+    sounds:
+      Unsexed: Fox
   - type: LanguageKnowledge # Floofstation - FOX!!!!! garryap yipruff!!!!!
     speaks:
     - Fox
@@ -3342,6 +3347,10 @@
       amount: 2
 #  - type: ReplacementAccent # Floofstation
 #    accent: dog
+  - type: Emoting # Floofstation
+  - type: Vocal # Floofstation
+    sounds:
+      Unsexed: Dog
   - type: LanguageKnowledge # Floofstation - this one is usually a pet so they understand tau ceti
     speaks:
     - Dog
@@ -3351,6 +3360,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - VulpEmotes # Floof
 
 - type: entity
   name: corrupted corgi
