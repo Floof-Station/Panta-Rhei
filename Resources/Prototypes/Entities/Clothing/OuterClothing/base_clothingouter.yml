@@ -107,6 +107,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
       storagebase: !type:Container
         ents: []
 
@@ -144,6 +145,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
   - type: GroupExamine
   - type: Tag
     tags:
@@ -157,6 +159,9 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  - type: HideLayerClothing
+    slots:
+    - Tail
   - type: CosmicTransmutable # DeltaV
     transmutesTo: ClothingOuterHardsuitCosmicCult
     requiredGlyphType: CosmicGlyphWarding
@@ -200,6 +205,9 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  - type: HideLayerClothing
+    slots:
+    - Tail
   - type: CosmicTransmutable # DeltaV
     transmutesTo: ClothingOuterHardsuitCosmicCult
     requiredGlyphType: CosmicGlyphWarding
@@ -224,6 +232,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
       storagebase: !type:Container
         ents: []
 

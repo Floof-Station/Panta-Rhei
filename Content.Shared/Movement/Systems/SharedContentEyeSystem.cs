@@ -1,10 +1,13 @@
 using System.Numerics;
+using Content.Shared._Floof.CCVar;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Camera;
+using Content.Shared.CCVar;
 using Content.Shared.Ghost;
 using Content.Shared.Input;
 using Content.Shared.Movement.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
 using Robust.Shared.Serialization;
@@ -17,13 +20,19 @@ namespace Content.Shared.Movement.Systems;
 public abstract class SharedContentEyeSystem : EntitySystem
 {
     [Dependency] private readonly ISharedAdminManager _admin = default!;
+    [Dependency] private readonly INetConfigurationManager _netConf = default!; // Floofstation
+    [Dependency] private readonly ISharedPlayerManager _playerMan = default!; // Floofstation
 
     // Admin flags required to ignore normal eye restrictions.
     public const AdminFlags EyeFlag = AdminFlags.Debug;
 
-    public const float ZoomMod = 1.5f;
+    // Floofstation edit
     public static readonly Vector2 DefaultZoom = Vector2.One;
-    public static readonly Vector2 MinZoom = DefaultZoom * (float)Math.Pow(ZoomMod, -3);
+    public static Vector2 MinZoom { get; private set; } = DefaultZoom * (float)Math.Pow(1.5, -3); // Has to stay the same regardless of zoom mods
+    public float ZoomInMod { get; private set; } = 1f;
+    public float ZoomOutMod { get; private set; } = 1f;
+    public int ZoomLevels { get; private set; } = 1;
+    // Floofstation section end
 
     [Dependency] private readonly SharedEyeSystem _eye = default!;
 
@@ -59,14 +68,22 @@ public abstract class SharedContentEyeSystem : EntitySystem
 
     private void ZoomOut(ICommonSession? session)
     {
+        // Floofstation
+        var channel = session?.Channel ?? _playerMan.LocalSession?.Channel;
+        var mod = channel != null ? Math.Clamp(_netConf.GetClientCVar(channel, FloofCCVars.ZoomOutStep), 1.05f, 2f) : 1.2f;
+
         if (TryComp(session?.AttachedEntity, out ContentEyeComponent? eye))
-            SetZoom(session.AttachedEntity.Value, eye.TargetZoom * ZoomMod, eye: eye);
+            SetZoom(session.AttachedEntity.Value, eye.TargetZoom * mod, eye: eye);
     }
 
     private void ZoomIn(ICommonSession? session)
     {
+        // Floofstation
+        var channel = session?.Channel ?? _playerMan.LocalSession?.Channel;
+        var mod = channel != null ? Math.Clamp(_netConf.GetClientCVar(channel, FloofCCVars.ZoomInStep), 0.25f, 0.97f) : 1.2f;
+
         if (TryComp(session?.AttachedEntity, out ContentEyeComponent? eye))
-            SetZoom(session.AttachedEntity.Value, eye.TargetZoom / ZoomMod, eye: eye);
+            SetZoom(session.AttachedEntity.Value, eye.TargetZoom * mod, eye: eye);
     }
 
     private Vector2 Clamp(Vector2 zoom, ContentEyeComponent component)

@@ -1,13 +1,10 @@
-using Content.Shared.FixedPoint;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
-using Content.Shared.FloofStation.Traits;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Robust.Shared.GameStates;
 
-namespace Content.Server._Floof.Lewd.Traits;
+namespace Content.Server._Floof.Lewd.Traits.Components;
 
 [RegisterComponent, Access(typeof(LewdTraitSystem))]
 public sealed partial class CumProducerComponent : Component

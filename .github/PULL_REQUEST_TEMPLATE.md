@@ -10,9 +10,8 @@
 
 ## Media
 <details> <summary><h3>Click to show</h3></summary> <p>
+
 <!-- This is default collapsed, readers click to expand it and see all your media -->
-<!-- Attach media if the PR makes ingame changes (clothing, items, features, etc).
-Small fixes/refactors are exempt. -->
 ![Example Media Embed](https://example.com/thisimageisntreal.png)
 
 </p></details>
@@ -24,9 +23,9 @@ Small fixes/refactors are exempt. -->
 <!-- You should understand that not following the above may get your PR closed at maintainer’s discretion -->
 
 ## Licensing:
-<!-- This is for the benefit of other forks wishing to port features from FloofStation/Panta-Rhei.
+<!-- This is for the benefit of other forks wishing to port features from DeltaV
 Our repository is AGPL, meaning projects using the MIT license would have to ask for permission from the PR author (ideally that's you, reading this) before being allowed to port it over
-This just saves them the trouble -->
+This just saves them the trouble. Note that AGPL or MIT licensing is only applicable to SOFTWARE, and that assets such as textures and audio have their own licensing scheme that is defined in the codebase itself. -->
 - [ ] I confirm that I am the creator of the content in this PR, and allow licensing it under the following license(s), or that the original author has given me permission to do so:
   - [X] AGPL (https://github.com/Floof-Station/Panta-Rhei/blob/master/LICENSE-AGPLv3.txt) <!-- This one is required to contribute to Floofstation -->
   - [ ] MIT (https://github.com/Floof-Station/Panta-Rhei/blob/master/LICENSE-MIT.txt)

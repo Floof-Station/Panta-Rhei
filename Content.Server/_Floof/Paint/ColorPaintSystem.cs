@@ -121,7 +121,7 @@ public sealed class ColorPaintSystem : EntitySystem
     public void Paint(EntityWhitelist? whitelist, EntityWhitelist? blacklist, EntityUid target, Color color)
     {
         if (_whitelist.IsWhitelistFail(whitelist, target)
-            || _whitelist.IsBlacklistPass(blacklist, target))
+            || _whitelist.IsWhitelistPass(blacklist, target))
             return;
 
         EnsureComp<ColorPaintedComponent>(target, out var paint);
@@ -137,7 +137,7 @@ public sealed class ColorPaintSystem : EntitySystem
             {
                 if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt)
                     || _whitelist.IsWhitelistFail(whitelist, slotEnt.Value)
-                    || _whitelist.IsBlacklistPass(blacklist, slotEnt.Value))
+                    || _whitelist.IsWhitelistPass(blacklist, slotEnt.Value))
                     continue;
 
                 EnsureComp<ColorPaintedComponent>(slotEnt.Value, out var slotToPaint);
@@ -175,7 +175,7 @@ public sealed class ColorPaintSystem : EntitySystem
         }
 
         if (_whitelist.IsWhitelistFail(paint.Comp.Whitelist, target)
-            || _whitelist.IsBlacklistPass(paint.Comp.Blacklist, target))
+            || _whitelist.IsWhitelistPass(paint.Comp.Blacklist, target))
         {
             reason = Loc.GetString("paint-failure", ("target", target));
             return false;

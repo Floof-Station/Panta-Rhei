@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Server.Popups;
-using Content.Server.PowerCell;
 using Content.Shared._Floof.Language;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared._Floof.Language.Components.Translators;

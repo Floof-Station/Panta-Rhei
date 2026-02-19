@@ -29,8 +29,9 @@ public sealed partial class ModifyHealthAction : InteractionAction
 
     public override bool Perform(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps)
     {
-        var damage = Damage * RandomFactor.Random(deps.Random); // Floof
-        return deps.EntMan.System<DamageableSystem>()
-            .TryChangeDamage(args.Target, damage, IgnoreResistance, origin: args.User) is not false; // Floof - changed Damage to damage
+        var damage = Damage * RandomFactor.Random(deps.Random);
+        deps.EntMan.System<DamageableSystem>()
+            .TryChangeDamage(args.Target, damage, IgnoreResistance, origin: args.User);
+        return true; // For some reason TryChangeDamage always returns false even when damage was done
     }
 }

@@ -1,16 +1,17 @@
-using Content.Server.Chemistry.Containers.EntitySystems;
+using Content.Server._Floof.Lewd.Traits.Components;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.DoAfter;
+using Content.Shared.FloofStation.Traits.Events;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Content.Shared.FloofStation.Traits.Events;
-using Robust.Shared.Timing;
 using JetBrains.Annotations;
+using Robust.Shared.Timing;
 
 namespace Content.Server._Floof.Lewd.Traits;
 
@@ -22,7 +23,7 @@ public sealed class LewdTraitSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly SolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
 
     public override void Initialize()
     {
@@ -47,25 +48,25 @@ public sealed class LewdTraitSystem : EntitySystem
     #region event handling
     private void OnComponentInitCum(Entity<CumProducerComponent> entity, ref ComponentStartup args)
     {
-        var solutionCum = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        if (!_solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solutionCum))
+            return;
         solutionCum.MaxVolume = entity.Comp.MaxVolume;
-
         solutionCum.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionCum.Volume);
     }
 
     private void OnComponentInitMilk(Entity<MilkProducerComponent> entity, ref ComponentStartup args)
     {
-        var solutionMilk = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        if (!_solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solutionMilk))
+            return;
         solutionMilk.MaxVolume = entity.Comp.MaxVolume;
-
         solutionMilk.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionMilk.Volume);
     }
 
     private void OnComponentInitSquirt(Entity<SquirtProducerComponent> entity, ref ComponentStartup args)
     {
-        var solutionSquirt = _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        if (!_solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solutionSquirt))
+            return;
         solutionSquirt.MaxVolume = entity.Comp.MaxVolume;
-
         solutionSquirt.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionSquirt.Volume);
     }
 
@@ -77,7 +78,7 @@ public sealed class LewdTraitSystem : EntitySystem
              !EntityManager.HasComponent<RefillableSolutionComponent>(args.Using.Value)) //see if removing this part lets you milk on the ground.
             return;
 
-        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out _);
 
         var user = args.User;
         var used = args.Using.Value;
@@ -99,7 +100,7 @@ public sealed class LewdTraitSystem : EntitySystem
              !EntityManager.HasComponent<RefillableSolutionComponent>(args.Using.Value)) //see if removing this part lets you milk on the ground.
             return;
 
-        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out _);
 
         var user = args.User;
         var used = args.Using.Value;
@@ -120,7 +121,7 @@ public sealed class LewdTraitSystem : EntitySystem
              !EntityManager.HasComponent<RefillableSolutionComponent>(args.Using.Value)) //see if removing this part lets you milk on the ground.
             return;
 
-        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName);
+        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out _);
 
         var user = args.User;
         var used = args.Using.Value;
