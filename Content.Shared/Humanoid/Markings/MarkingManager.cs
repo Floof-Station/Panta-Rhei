@@ -179,8 +179,45 @@ namespace Content.Shared.Humanoid.Markings
             }
 
             if (proto.MarkingCategory != category ||
-                // Floofstation - invertable restrictions
-                !proto.AllowsSpecies(species))
+                proto.SpeciesRestrictions != null && !proto.SpeciesRestrictions.Contains(species) ||
+                proto.SexRestriction != null && proto.SexRestriction != sex)
+            {
+                return false;
+            }
+
+            if (marking.MarkingColors.Count != proto.Sprites.Count)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void OnPrototypeReload(PrototypesReloadedEventArgs args)
+        {
+            if (args.WasModified<MarkingPrototype>())
+                CachePrototypes();
+        }
+
+        public bool CanBeApplied(string species, Sex sex, Marking marking, IPrototypeManager? prototypeManager = null)
+        {
+            IoCManager.Resolve(ref prototypeManager);
+
+            var speciesProto = prototypeManager.Index<SpeciesPrototype>(species);
+            var onlyWhitelisted = prototypeManager.Index(speciesProto.MarkingPoints).OnlyWhitelisted;
+
+            if (!TryGetMarking(marking, out var prototype))
+            {
+                return false;
+            }
+
+            if (onlyWhitelisted && prototype.SpeciesRestrictions == null)
+            {
+                return false;
+            }
+
+            // Floofstation - invertable restrictions
+            if (!prototype.AllowsSpecies(species))
             {
                 return false;
             }
