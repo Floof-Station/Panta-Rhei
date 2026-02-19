@@ -1973,24 +1973,31 @@
   name: loadout-group-breath-tool
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathTool
+  - LoadoutClothingMaskAuralis #euphoria change for vox masks
+  - LoadoutClothingMaskEnforcerLARP #euphoria change for vox masks
+  - LoadoutClothingMaskVoxSpecial #euphoria change for vox masks
+
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
   name: loadout-group-breath-tool
+  parent: GroupSpeciesBreathTool #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolMedical
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
   name: loadout-group-breath-tool
+  parent: GroupSpeciesBreathTool #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+  - LoadoutClothingMaskEnforcer #euphoria change for vox masks
