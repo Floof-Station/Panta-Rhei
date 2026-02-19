@@ -2,7 +2,8 @@
   id: GauzeLefteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -16,7 +17,8 @@
   id: GauzeLefteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -30,7 +32,8 @@
   id: GauzeRighteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -44,7 +47,8 @@
   id: GauzeRighteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -58,7 +62,8 @@
   id: GauzeBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Harpy, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -72,7 +77,8 @@
   id: GauzeShoulder
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Avali] # Delta V - Felinid-Avali
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Avali
   coloring:
     default:
       type:
@@ -86,7 +92,8 @@
   id: GauzeStomach
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Thaven, Feroxi] # Delta V - Felinid-Feroxi
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -100,7 +107,8 @@
   id: GauzeUpperArmRight
   bodyPart: RArm
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -114,7 +122,8 @@
   id: GauzeLowerArmRight
   bodyPart: RArm, RHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -128,7 +137,8 @@
   id: GauzeLeftArm
   bodyPart: LArm, LHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -142,7 +152,8 @@
   id: GauzeLowerLegLeft
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -156,7 +167,8 @@
   id: GauzeUpperLegLeft
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune, Avali] # DeltaV - Felinid-Avali
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   coloring:
     default:
       type:
@@ -170,7 +182,8 @@
   id: GauzeUpperLegRight
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune, Avali] # DeltaV - Felinid-Avali
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   coloring:
     default:
       type:
@@ -184,7 +197,8 @@
   id: GauzeLowerLegRight
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -198,7 +212,8 @@
   id: GauzeBoxerWrapRight
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -212,7 +227,8 @@
   id: GauzeBoxerWrapLeft
   bodyPart: LHand
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, SlimePerson, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -226,7 +242,8 @@
   id: GauzeHead
   bodyPart: Head
   markingCategory: Overlay
-  speciesRestriction: [Dwarf, Human, Reptilian, Arachnid, Moth, Chitinid, Thaven, Feroxi] # Delta V - Chitinid-Feroxi
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Chitinid-Feroxi
   coloring:
     default:
       type:
