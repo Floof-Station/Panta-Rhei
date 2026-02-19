@@ -1971,14 +1971,12 @@
 - type: loadoutGroup
   id: GroupSpeciesBreathTool
   name: loadout-group-breath-tool
+  parent: GroupSpeciesBreathToolTheShoalBase #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
   hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathTool
-  - LoadoutClothingMaskAuralis #euphoria change for vox masks
-  - LoadoutClothingMaskEnforcerLARP #euphoria change for vox masks
-  - LoadoutClothingMaskVoxSpecial #euphoria change for vox masks
 
 
 - type: loadoutGroup
@@ -1994,10 +1992,9 @@
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
   name: loadout-group-breath-tool
-  parent: GroupSpeciesBreathTool #euphoria change for vox masks
+  parent: [GroupSpeciesBreathTool, GroupSpeciesBreathToolTheShoalArmored] #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
   hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
-  - LoadoutClothingMaskEnforcer #euphoria change for vox masks
