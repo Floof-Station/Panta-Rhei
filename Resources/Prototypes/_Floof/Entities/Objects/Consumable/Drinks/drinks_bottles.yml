@@ -1,5 +1,5 @@
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkAnisetteBottleFull
   name: anisette bottle
   description: Liquor made of anise and sugar, typically used as a sweeter form of absinthe.
@@ -17,7 +17,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkCumBottleFull
   name: bottle'o'cum  # you're welcome azzy
   description: Straight nard nectar. 100% Ethically Sourced Guaranteed! Boneless.
@@ -35,7 +35,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkEggnogBottleFull
   name: eggnog bottle
   description: A fancy looking bottle of eggnog, with a festive label and sealed cap.
@@ -56,7 +56,7 @@
     fillBaseName: fill-
     
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkSyndicateEggnogBottleFull
   name: syndicate eggnog bottle
   description: A bottle of eggnog, with a festive label and sealed cap.
@@ -77,7 +77,7 @@
     fillBaseName: fill-
 
 - type: entity
-  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkVBLongneckFull
   name: Viktoria Bitter Longneck
   description: A long glass bottle of VB, best drunk 20 to 8 in the morning.
