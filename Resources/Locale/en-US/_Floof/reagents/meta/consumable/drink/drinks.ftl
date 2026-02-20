@@ -9,4 +9,4 @@ reagent-desc-boykisser-energy = Bubbly, bright magenta, and smells suspiciously 
 
 reagent-name-VB-beer = Viktoria Bitter
 reagent-desc-VB-beer = Bubbly, hazy light golden, with a distinct bitterness that reminds you of Australia.
-flavor-complex-VB-beer = like you've finally sat down after a long hot days work at your blue collar 9 to 5 job
+flavor-complex-vbbeer = like you've finally sat down after a long hot days work at your blue collar 9 to 5 job
