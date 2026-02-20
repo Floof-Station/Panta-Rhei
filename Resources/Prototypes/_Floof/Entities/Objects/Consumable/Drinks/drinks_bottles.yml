@@ -77,7 +77,7 @@
     fillBaseName: fill-
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: DrinkBottleGlassBaseFull
   id: DrinkVBLongneckFull
   name: Viktoria Bitter Longneck
   description: A long glass bottle of VB, best drunk 20 to 8 in the morning.
@@ -92,6 +92,8 @@
   - type: Sprite
     sprite: _Floof/Objects/Consumable/Drinks/vblongneck.rsi
     layers:
+    - state: icon_empty
+      map: ["enum.OpenableVisuals.Layer"]
     - state: fill-6
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Sealable
