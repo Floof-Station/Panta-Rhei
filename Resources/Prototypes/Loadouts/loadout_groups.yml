@@ -259,6 +259,7 @@
 # Civilian
 - type: loadoutGroup
   id: PassengerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-passenger-jumpsuit
   loadouts:
   - GreyJumpsuit
@@ -341,6 +342,7 @@
 
 - type: loadoutGroup
   id: PassengerGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-passenger-gloves
   minLimit: 0
   loadouts:
@@ -362,6 +364,7 @@
 
 - type: loadoutGroup
   id: CommonBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-backpack
   loadouts:
   - CommonBackpack
@@ -378,6 +381,7 @@
 
 - type: loadoutGroup
   id: PassengerOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-passenger-outerclothing
   minLimit: 0
   loadouts:
@@ -406,6 +410,7 @@
 
 - type: loadoutGroup
   id: PassengerShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-passenger-shoes
   loadouts:
   - BlackShoes
@@ -427,6 +432,7 @@
 
 - type: loadoutGroup
   id: PassengerJobTrinkets
+  parent: [FloofTrinkets] # Floofstation
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
