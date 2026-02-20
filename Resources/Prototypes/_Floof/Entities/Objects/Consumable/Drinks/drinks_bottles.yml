@@ -19,8 +19,7 @@
 - type: entity
   parent: [DrinkBottleVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkCumBottleFull
-  name: bottle'o'cum
-                                                                      # you're welcome azzy
+  name: bottle'o'cum  # you're welcome azzy
   description: Straight nard nectar. 100% Ethically Sourced Guaranteed! Boneless.
   components:
   - type: SolutionContainerManager
@@ -55,6 +54,7 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
+    
 - type: entity
   parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
   id: DrinkSyndicateEggnogBottleFull
@@ -74,4 +74,24 @@
   - type: Sealable
   - type: SolutionContainerVisuals
     maxFillLevels: 3
+    fillBaseName: fill-
+
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: DrinkVBLongneckFull
+  name: Viktoria Bitter Longneck
+  description: A long glass bottle of VB, best drunk 20 to 8 in the morning.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+      maxVol: 75
+        reagents:
+        - ReagentId: SyndicateEggnog
+          Quantity: 75
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/vblongneck.rsi
+  - type: Sealable
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
     fillBaseName: fill-
