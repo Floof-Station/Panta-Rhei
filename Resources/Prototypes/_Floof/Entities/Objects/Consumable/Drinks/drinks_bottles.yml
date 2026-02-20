@@ -1,5 +1,5 @@
 - type: entity
-  parent: DrinkVisualsOpenable
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkAnisetteBottleFull
   name: anisette bottle
   description: Liquor made of anise and sugar, typically used as a sweeter form of absinthe.
@@ -17,7 +17,7 @@
   - type: Sealable
 
 - type: entity
-  parent: DrinkVisualsOpenable
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkCumBottleFull
   name: bottle'o'cum  # you're welcome azzy
   description: Straight nard nectar. 100% Ethically Sourced Guaranteed! Boneless.
@@ -35,7 +35,7 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkEggnogBottleFull
   name: eggnog bottle
   description: A fancy looking bottle of eggnog, with a festive label and sealed cap.
@@ -56,7 +56,7 @@
     fillBaseName: fill-
     
 - type: entity
-  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
   id: DrinkSyndicateEggnogBottleFull
   name: syndicate eggnog bottle
   description: A bottle of eggnog, with a festive label and sealed cap.
@@ -91,6 +91,9 @@
           Quantity: 75
   - type: Sprite
     sprite: _Floof/Objects/Consumable/Drinks/vblongneck.rsi
+    layers:
+    - state: fill-6
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: Sealable
   - type: SolutionContainerVisuals
     maxFillLevels: 6
