@@ -462,7 +462,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (proto != null)
         {
             ent.Comp.RemoteEntity = SpawnAtPosition(proto, coords.Value);
-            _languages.SetupLanguageRelay(ent.Comp.RemoteEntity.Value, ent.Owner); // Floofstation
+            _languages.SetupLanguageRelay(ent.Comp.RemoteEntity.Value, ent.Owner); // Floofstation. SetupEye is called right after an ai is inserted into the core, so this is fine.
             Dirty(ent);
         }
 

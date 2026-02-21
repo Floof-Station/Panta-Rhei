@@ -1,4 +1,4 @@
-namespace Content.Server._Floof.Language;
+namespace Content.Server._Floof.Language.Components;
 
 [RegisterComponent]
 public sealed partial class LanguageRelayComponent : Component

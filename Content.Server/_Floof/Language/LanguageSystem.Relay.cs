@@ -1,5 +1,7 @@
+using Content.Server._Floof.Language.Components;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared._Floof.Language.Events;
+using Robust.Shared.Containers;
 
 namespace Content.Server._Floof.Language;
 
@@ -11,6 +13,9 @@ public sealed partial class LanguageSystem
     {
         SubscribeLocalEvent<LanguageRelayComponent, DetermineEntityLanguagesEvent>(OnRelayDetermineLanguages);
         SubscribeLocalEvent<LanguageRelaySourceComponent, LanguagesUpdateEvent>(OnRelayedUpdated);
+
+        SubscribeLocalEvent<ContainerLanguageRelayComponent, EntInsertedIntoContainerMessage>(OnContainerRelayInsert);
+        SubscribeLocalEvent<ContainerLanguageRelayComponent, EntRemovedFromContainerMessage>(OnContainerRelayRemove);
     }
 
     private void OnRelayDetermineLanguages(Entity<LanguageRelayComponent> ent, ref DetermineEntityLanguagesEvent args)
@@ -45,6 +50,22 @@ public sealed partial class LanguageSystem
         }
     }
 
+    private void OnContainerRelayInsert(Entity<ContainerLanguageRelayComponent> ent, ref EntInsertedIntoContainerMessage args)
+    {
+        if (ent.Comp.ContainerName != args.Container.ID)
+            return;
+
+        SetupLanguageRelay(ent, args.Entity);
+    }
+
+    private void OnContainerRelayRemove(Entity<ContainerLanguageRelayComponent> ent, ref EntRemovedFromContainerMessage args)
+    {
+        if (ent.Comp.ContainerName != args.Container.ID)
+            return;
+
+        SetupLanguageRelay(ent, null);
+    }
+
     #region public api
 
     public override void SetupLanguageRelay(EntityUid relayTarget, Entity<LanguageKnowledgeComponent?>? relaySourceEnt)
@@ -59,10 +80,6 @@ public sealed partial class LanguageSystem
             }
             return;
         }
-
-        // Just to log an error if someone passes an entity without knowledge here
-        if (!Resolve(relaySource, ref relaySource.Comp))
-            return;
 
         if (!TryComp<LanguageRelayComponent>(relayTarget, out var relay))
             relay = AddComp<LanguageRelayComponent>(relayTarget);

@@ -1,4 +1,4 @@
-namespace Content.Server._Floof.Language;
+namespace Content.Server._Floof.Language.Components;
 
 /// <summary>
 ///     Added to an entity when their languages are being relayed.
