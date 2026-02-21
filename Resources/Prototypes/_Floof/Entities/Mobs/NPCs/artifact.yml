@@ -1,0 +1,70 @@
+# Altered Hellspawn to be Spawned by Artifact, much slower and doesn't hit as hard. Enough for Epi to scream "SEC TO ART SCI"
+
+- type: entity
+  name: lesser hellspawn
+  parent: MobHellspawn
+  id: MobHellspawnArtifact
+  description: An unstoppable force of carnage.
+  suffix: Artifact
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 1
+    baseSprintSpeed: 2
+  - type: Reflect
+    reflectProb: 0.3
+    reflects:
+      - Energy
+  - type: Butcherable
+    spawned:
+      - id: ArtifactFragment1
+        amount: 12
+  - type: MeleeWeapon
+    attackRate: 0.6
+    hidden: true
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    damage:
+      types:
+        Blunt: 35
+        Structural: 70
+  - type: Dispellable
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 100
+  - type: Body
+    prototype: Goliath
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker
+
+- type: entity
+  name: lesser behonker
+  parent: BaseMobBehonker
+  id: MobBehonkerArtifact
+  description: A floating demon aspect of the honkmother.
+  suffix: Artifact
+  components:
+  - type: Butcherable
+    spawned:
+      - id: ArtifactFragment1
+        amount: 12
+      - id: WeaponBehonkerLaser
+        amount: 1
+  - type: MovementSpeedModifier # Slower
+    baseWalkSpeed: 1
+    baseSprintSpeed: 2
+    weightlessModifier: 1.5
+  - type: BatteryAmmoProvider
+    proto: RedLightLaser # Weaker Laser
+    fireCost: 62.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      350: Dead
+  - type: Dispellable
+  - type: DamageOnDispel
+    damage:
+      types:
+        Heat: 100
+  - type: LanguageSpeaker
+  - type: UniversalLanguageSpeaker

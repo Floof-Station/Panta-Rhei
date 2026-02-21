@@ -367,9 +367,9 @@
   - type: SlavedBorg # DeltaV: NT borgs are enslaved to the AI by default
     law: ObeyAI
   - type: ShowJobIcons
-  - type: InteractionPopup
-    interactSuccessSound:
-      path: /Audio/Ambience/Objects/periodic_beep.ogg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    interactSuccessSound:
+#      path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   id: BaseBorgChassisSyndicate
@@ -591,9 +591,9 @@
   - type: AccessReader
     access: [["Xenoborg"]]
   - type: ShowJobIcons # not sure if it is needed
-  - type: InteractionPopup
-    interactSuccessSound:
-      path: /Audio/Ambience/Objects/periodic_beep.ogg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    interactSuccessSound:
+#      path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: Fiber # DeltaV - xenoborgs have replicated plasteel fibers
     fiberMaterial: fibers-replicated-plasteel
   - type: LanguageKnowledge # Floofstation.

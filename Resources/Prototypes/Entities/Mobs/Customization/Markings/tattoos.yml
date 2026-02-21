@@ -2,7 +2,8 @@
   id: TattooHiveChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, SlimePerson, Felinid, Oni, Kitsune, Avali] # DeltaV - SlimePerson-Avali
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - SlimePerson-Avali
   sexRestriction: [Male] # DeltaV: Splitting the scars and tattoos
   coloring:
     default:
@@ -17,7 +18,8 @@
   id: TattooNightlingChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, SlimePerson, Felinid, Oni, Kitsune, Avali] # DeltaV - SlimePerson-Avali
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - SlimePerson-Avali
   sexRestriction: [Male] # DeltaV: Splitting the scars and tattoos
   coloring:
     default:
@@ -116,7 +118,8 @@
   id: TattooEyeRight
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Vulpkanin, Oni, Harpy, Rodentia, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -130,7 +133,8 @@
   id: TattooEyeLeft
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf, Felinid, Vulpkanin, Oni, Harpy, Rodentia, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:

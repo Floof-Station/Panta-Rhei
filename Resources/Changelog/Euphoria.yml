@@ -408,3 +408,149 @@ Entries:
         toolshed commands. Apparently this is a 2 year old bug from wizden.
   id: 49
   time: '2026-02-11T07:58:36.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: >-
+        Changed Tajaran, Shadowkin and Resomi to use hsv colors instead of
+        skintones.
+  id: 50
+  time: '2026-02-12T03:43:42.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Mutton
+  id: 51
+  time: '2026-02-12T07:15:32.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the AME on the pathfinder so fuel level notifications get sent
+        over Logi radio not Engi.
+    - type: Tweak
+      message: >-
+        Disabled Delta-vs salvage shuttle from spawning since we use the
+        pathfinder.
+  id: 52
+  time: '2026-02-12T07:34:17.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Add some floof clothing back to departmental drobes
+    - type: Add
+      message: Add some floof clothing back to the pride drobe
+    - type: Add
+      message: Add vapes to the shady cidgs vendor & entity spawn panel
+  id: 53
+  time: '2026-02-12T07:35:15.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Changed Kitsune colour schemes to hues
+  id: 54
+  time: '2026-02-15T05:36:57.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: The ability to have an arm that acts like a crowbar.
+  id: 55
+  time: '2026-02-15T06:13:35.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Ported the custom examine system.
+  id: 56
+  time: '2026-02-15T06:33:15.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Ported the Floof Artifact effects that everyone loves
+    - type: Tweak
+      message: changed somethings about the friend who shows up
+  id: 57
+  time: '2026-02-15T06:37:47.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Rodentia can eat chocolate and drink tea
+  id: 58
+  time: '2026-02-15T09:34:41.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Gave rodentia special eyes
+  id: 59
+  time: '2026-02-15T09:34:57.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Remove
+      message: >-
+        Removed interaction popups from most playable species, windows, etc.
+        These things are replaced by interaction verbs.
+  id: 60
+  time: '2026-02-19T07:24:24.0000000+00:00'
+- author: jack-thedragon95
+  changes:
+    - type: Add
+      message: VOX MASKS RETURN GLORY TO THE SHOAL
+  id: 61
+  time: '2026-02-20T07:21:01.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Ported clothing equip delays.
+  id: 62
+  time: '2026-02-20T07:22:47.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Tweak Mystagogues lockers so they start with a binary encryption key.
+  id: 63
+  time: '2026-02-20T07:24:16.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Mass mindswap now requires consent opt-in and shouldn't cause chain
+        mindswaps
+  id: 64
+  time: '2026-02-20T07:25:08.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: >-
+        whoops forgot vending machine fills almost left the station without cum
+        bottles
+    - type: Tweak
+      message: increased default stock of soda machines
+    - type: Add
+      message: VB longggg neck
+  id: 65
+  time: '2026-02-20T22:23:34.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Ported item offering.
+    - type: Tweak
+      message: Ported some carrying and pseudo-item changes from floofstation.
+  id: 66
+  time: '2026-02-20T22:36:43.0000000+00:00'
+- author: MidnightFoxx
+  changes:
+    - type: Add
+      message: 'Added: Jermov Lawset for Station AI'
+  id: 67
+  time: '2026-02-21T04:09:57.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Borers from spawning until consent can be worked out
+  id: 68
+  time: '2026-02-21T06:24:37.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Most markings are now usable on all human-like species.
+  id: 69
+  time: '2026-02-21T07:06:16.0000000+00:00'

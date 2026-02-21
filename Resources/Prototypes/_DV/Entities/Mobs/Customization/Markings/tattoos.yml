@@ -2,7 +2,8 @@
   id: TattooHiveChestFemale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, SlimePerson, Felinid, Oni, Kitsune]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sexRestriction: [Female]
   coloring:
     default:
@@ -17,7 +18,8 @@
   id: TattooNightlingChestFemale
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, SlimePerson, Felinid, Oni, Kitsune]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sexRestriction: [Female]
   coloring:
     default:
@@ -32,7 +34,8 @@
   id: TattooNanotrasenChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, SlimePerson]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   coloring:
     default:
       type:

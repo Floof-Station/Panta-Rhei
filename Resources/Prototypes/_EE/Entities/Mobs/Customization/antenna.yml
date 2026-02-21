@@ -1,5 +1,6 @@
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaTv
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -8,7 +9,8 @@
       state: ipc_antenna_tv
 
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaTesla
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -35,7 +37,8 @@
 #       state: ipc_antenna_light
 
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaCyberhead
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -53,7 +56,8 @@
 #       state: ipc_antenna_sidelights
 
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaAntlers
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -62,7 +66,8 @@
       state: ipc_antenna_antlers
 
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaDroneeyes
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -71,7 +76,8 @@
       state: ipc_antenna_droneeyes
 
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaCrowned
   bodyPart: HeadTop
   markingCategory: HeadTop
@@ -80,7 +86,8 @@
       state: ipc_antenna_crowned
 
 - type: marking
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   id: RobotAntennaTowers
   bodyPart: HeadTop
   markingCategory: HeadTop

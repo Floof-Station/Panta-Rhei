@@ -1,0 +1,68 @@
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskAuralis
+  name: auralis worship mask
+  description: An Auralis worship mask frequently worn by vox zealots going on holy wars. It's unsure if the black tears mean something possitive or not.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Mask/voxcorpsepaint.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Mask/voxcorpsepaint.rsi
+  - type: Tag
+    tags: []
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
+  parent: [ClothingMaskGasSecurity, BaseSecurityContraband]
+  id: ClothingMaskEnforcer
+  name: Coercialis gasmask
+  description: The mask of the dreaded Shoal Coercialis. Strike the foul outlaws down in the name of the Auralis!
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Mask/enforcer.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Mask/enforcer.rsi
+  - type: Tag
+    tags: []
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskEnforcerLARP
+  name: Coercialis LARP gasmask
+  description: The mask of the dreaded Shoal Coercialis. This mask has it's armored plating and any other Shoal issued attactchments removed and has been modified for civilian use.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Mask/enforcer.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Mask/enforcer.rsi
+  - type: Tag
+    tags: []
+  - type: BreathMask
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Snout
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskVoxSpecial
+  name: specialized vox gasmask
+  description: An old Nanotrasen standard issue vox gasmask made to fit on a beak. it has dents and markings from the previous owner.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Mask/specvoxmask.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Mask/specvoxmask.rsi
+  - type: Tag
+    tags: []
+  - type: BreathMask
+  - type: HideLayerClothing
+    slots:
+    - Snout

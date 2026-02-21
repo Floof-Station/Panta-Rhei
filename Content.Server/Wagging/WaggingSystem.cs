@@ -150,8 +150,8 @@ public sealed class WaggingSystem : EntitySystem
         // Check if any tail marking can be toggled on or off
         for (var idx = 0; idx < markings.Count; idx++)
         {
-            if (TryGetNewMarkingId(ent, markings[idx].MarkingId, out _, false, isWagging: false)
-                || TryGetNewMarkingId(ent, markings[idx].MarkingId, out _, false, isWagging: true))
+            if (TryGetNewMarkingId(ent, markings[idx].MarkingId, out _, true, isWagging: false)
+                || TryGetNewMarkingId(ent, markings[idx].MarkingId, out _, true, isWagging: true))
                 return true;
         }
 

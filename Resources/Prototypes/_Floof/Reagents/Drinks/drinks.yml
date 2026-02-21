@@ -74,3 +74,25 @@
     collection: FootstepSticky
     params:
       volume: 3
+
+- type: reagent
+  id: VBBeer
+  name: reagent-name-VB-beer
+  parent: BaseAlcohol
+  desc: reagent-desc-VB-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: vbbeer
+  color: "#e3e77b"
+  recognizable: true
+  fizziness: 0.6
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.06
+      - !type:AdjustReagent # Will find a way to make it so only someone with the Australian Accent component heals later
+        reagent: Ichor
+        amount: 0.2

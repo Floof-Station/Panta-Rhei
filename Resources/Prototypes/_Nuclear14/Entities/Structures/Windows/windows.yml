@@ -101,11 +101,11 @@
   components:
   - type: Airtight
   - type: Repairable
-  - type: InteractionPopup
-    interactSuccessString: comp-window-knock
-    messagePerceivedByOthers: comp-window-knock
-    interactSuccessSound:
-      path: /Audio/Effects/glass_knock.ogg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    interactSuccessString: comp-window-knock
+#    messagePerceivedByOthers: comp-window-knock
+#    interactSuccessSound:
+#      path: /Audio/Effects/glass_knock.ogg
   - type: DamageVisuals
     thresholds: [4, 8, 12]
     damageDivisor: 2

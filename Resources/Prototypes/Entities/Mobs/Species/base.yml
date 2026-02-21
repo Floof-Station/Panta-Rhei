@@ -150,6 +150,7 @@
   - type: Identity
   - type: IdExaminable
   - type: Hands
+  - type: OfferItem # Floofstation
   - type: ComplexInteraction
   - type: Internals
   - type: FloatingVisuals
@@ -180,11 +181,11 @@
   - type: MindContainer
     showExamineInfo: true
   - type: CanEnterCryostorage
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    successChance: 1
+#    interactSuccessString: hugging-success-generic
+#    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+#    messagePerceivedByOthers: hugging-success-generic-others
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:
