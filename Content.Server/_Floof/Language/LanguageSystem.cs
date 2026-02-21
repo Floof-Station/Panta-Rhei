@@ -147,6 +147,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         return false;
     }
 
+    /// <summary>
+    ///     Immediately refreshes the cached lists of spoken and understood languages for the given entity.
+    /// </summary>
     public void UpdateEntityLanguages(Entity<LanguageSpeakerComponent?> ent)
     {
         if (!SpeakerQuery.Resolve(ent, ref ent.Comp, false))
