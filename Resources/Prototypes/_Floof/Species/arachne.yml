@@ -28,7 +28,8 @@
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
     Chest: MobTaurTorso
-    Eyes: MobHumanoidEyes
+    TaurBodyConnector: TaurBodyConnector
+    Eyes: MobArachneEyes
     HeadTop: MobHumanoidAnyMarking
     LArm: MobHumanLArm
     RArm: MobHumanRArm
@@ -103,3 +104,15 @@
   baseSprite:
     sprite: _Floof/Mobs/Species/Taur/parts.rsi
     state: torso_f
+
+- type: humanoidBaseSprite
+  id: TaurBodyConnector
+  baseSprite:
+    sprite: _Floof/Mobs/Species/Arachne/parts.rsi
+    state: "spider_body_front"
+
+- type: humanoidBaseSprite
+  id: MobArachneEyes
+  baseSprite:
+    sprite: _Floof/Mobs/Species/Arachne/eyes.rsi
+    state: eyes
