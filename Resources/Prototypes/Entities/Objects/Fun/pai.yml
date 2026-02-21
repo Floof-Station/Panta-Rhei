@@ -102,6 +102,17 @@
   - type: Tag
     tags:
     - SiliconEmotes
+  # Floofstation section
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
+  # Floofstation section end
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]
