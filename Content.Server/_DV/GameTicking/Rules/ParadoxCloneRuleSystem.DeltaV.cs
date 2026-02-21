@@ -24,7 +24,7 @@ public sealed partial class ParadoxCloneRuleSystem
         // no picking other antags or non-crew
         minds.RemoveWhere(mind => _role.MindIsAntagonist(mind) ||
             !_role.MindHasRole<JobRoleComponent>((mind, mind), out var role) ||
-            role?.Comp1.JobPrototype == null || _consent.HasConsent(mind.Comp.CurrentEntity!.Value, ParadoxOptOutConsent));
+            role?.Comp1.JobPrototype == null || _consent.HasConsent(mind.Comp.CurrentEntity!.Value, ParadoxOptOutConsent)); // Floofstation - paradox opt out 
     }
 
     private void PostClone(EntityUid mob)
