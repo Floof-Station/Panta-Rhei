@@ -14,6 +14,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
     public override void Initialize()
     {
         base.Initialize();
+        InitializeRelay();
 
         SubscribeLocalEvent<LanguageSpeakerComponent, MapInitEvent>(OnInitLanguageSpeaker);
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentGetState>(OnGetLanguageState);
@@ -146,9 +147,6 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         return false;
     }
 
-    /// <summary>
-    ///     Immediately refreshes the cached lists of spoken and understood languages for the given entity.
-    /// </summary>
     public void UpdateEntityLanguages(Entity<LanguageSpeakerComponent?> ent)
     {
         if (!SpeakerQuery.Resolve(ent, ref ent.Comp, false))
@@ -156,7 +154,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
         var ev = new DetermineEntityLanguagesEvent();
         // We add the intrinsically known languages first so other systems can manipulate them easily
-        if (TryComp<LanguageKnowledgeComponent>(ent, out var knowledge))
+        if (KnowledgeQuery.TryComp(ent, out var knowledge))
         {
             foreach (var spoken in knowledge.SpokenLanguages)
                 ev.SpokenLanguages.Add(spoken);
