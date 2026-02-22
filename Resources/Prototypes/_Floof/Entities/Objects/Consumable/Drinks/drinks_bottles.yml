@@ -1,0 +1,102 @@
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: DrinkAnisetteBottleFull
+  name: anisette bottle
+  description: Liquor made of anise and sugar, typically used as a sweeter form of absinthe.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Anisette
+          Quantity: 100
+  - type: Label
+    currentLabel: anisette
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/anisettebottle.rsi
+  - type: Sealable
+
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: DrinkCumBottleFull
+  name: bottle'o'cum  # you're welcome azzy
+  description: Straight nard nectar. 100% Ethically Sourced Guaranteed! Boneless.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Cum
+          Quantity: 100
+  - type: Label
+    currentLabel: bottle'o'cum
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/bottleocum.rsi
+  - type: Sealable
+
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: DrinkEggnogBottleFull
+  name: eggnog bottle
+  description: A fancy looking bottle of eggnog, with a festive label and sealed cap.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Eggnog
+          Quantity: 100
+  - type: Label
+    currentLabel: eggnog
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
+  - type: Sealable
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+    
+- type: entity
+  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
+  id: DrinkSyndicateEggnogBottleFull
+  name: syndicate eggnog bottle
+  description: A bottle of eggnog, with a festive label and sealed cap.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: SyndicateEggnog
+          Quantity: 100
+  - type: Label
+    currentLabel: syndicate eggnog
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
+  - type: Sealable
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    fillBaseName: fill-
+
+- type: entity
+  parent: DrinkBottleGlassBaseFull
+  id: DrinkVBLongneckFull
+  name: Viktoria Bitter Longneck
+  description: A long glass bottle of VB, best drunk 20 to 8 in the morning.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 75
+        reagents:
+        - ReagentId: VBBeer
+          Quantity: 75
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/vblongneck.rsi
+    layers:
+    - state: icon_empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fill-6
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Sealable
+  - type: SolutionContainerVisuals
+    maxFillLevels: 6
+    fillBaseName: fill-

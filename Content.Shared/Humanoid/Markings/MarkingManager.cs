@@ -77,7 +77,8 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                // Floofstation - invertable restrictions
+                if (!marking.AllowsSpecies(species))
                 {
                     continue;
                 }
@@ -140,7 +141,8 @@ namespace Content.Shared.Humanoid.Markings
                     continue;
                 }
 
-                if (marking.SpeciesRestrictions != null && !marking.SpeciesRestrictions.Contains(species))
+                // Floofstation - invertable restrictions
+                if (!marking.AllowsSpecies(species))
                 {
                     continue;
                 }
@@ -214,8 +216,8 @@ namespace Content.Shared.Humanoid.Markings
                 return false;
             }
 
-            if (prototype.SpeciesRestrictions != null
-                && !prototype.SpeciesRestrictions.Contains(species))
+            // Floofstation - invertable restrictions
+            if (!prototype.AllowsSpecies(species))
             {
                 return false;
             }
@@ -240,8 +242,7 @@ namespace Content.Shared.Humanoid.Markings
                 return false;
             }
 
-            if (prototype.SpeciesRestrictions != null &&
-                !prototype.SpeciesRestrictions.Contains(species))
+            if (!prototype.AllowsSpecies(species))
             {
                 return false;
             }

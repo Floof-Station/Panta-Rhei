@@ -1,0 +1,21 @@
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathToolTheShoalBase
+  name: Vox-only-masks
+  minLimit: 1
+  maxLimit: 1
+  hidden: True
+  loadouts:
+  - LoadoutClothingMaskAuralis
+  - LoadoutClothingMaskEnforcerLARP
+  - LoadoutClothingMaskVoxSpecial
+
+- type: loadoutGroup
+  id: GroupSpeciesBreathToolTheShoalArmored
+  name: Vox-only-armored-masks
+  parent: GroupSpeciesBreathTool #euphoria change for vox masks
+  minLimit: 1
+  maxLimit: 1
+  hidden: True
+  loadouts:
+  - LoadoutClothingMaskEnforcer

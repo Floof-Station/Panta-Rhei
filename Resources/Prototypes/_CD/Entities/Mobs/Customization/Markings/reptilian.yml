@@ -4,7 +4,8 @@
   id: LizardTailSnake
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _CD/Mobs/Customization/snaketail.rsi
     state: tail_snake_primary
@@ -15,7 +16,8 @@
   id: LizardTailSnakeStripe
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _CD/Mobs/Customization/snaketailstripe.rsi
     state: tail_snake_primary
@@ -26,7 +28,8 @@
   id: LizardTailSnakeUnder
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _CD/Mobs/Customization/snaketailunder.rsi
     state: tail_snake_primary
@@ -37,7 +40,8 @@
   id: LizardTailSnakeDual
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Reptilian]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _CD/Mobs/Customization/snaketaildual.rsi
     state: tail_snake_primary

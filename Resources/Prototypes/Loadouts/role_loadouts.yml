@@ -48,18 +48,18 @@
   groups:
   - Scarfs # DeltaV
   - GroupTankHarness
-  - AssistantHead # DeltaV
-  - PassengerJumpsuit
-  - CommonBackpack
+  - FloofHats # Floofstation
+  - FloofJumpsuits # Floofstation
+  - FloofBackpacks # Floofstation
   - PassengerNeck
   - PassengerFace
-  - PassengerGloves
-  - PassengerOuterClothing
+  - FloofGloves # Floofstation
+  - FloofOuterClothing # Floofstation
   - PassengerPDADelta # DeltaV
-  - PassengerShoes
+  - FloofShoes # Floofstation
   - Glasses
   - Survival
-  - Trinkets
+  - FloofTrinkets # Floofstation
   - PassengerJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -323,6 +323,7 @@
   - StationEngineerNeck # DeltaV
   - StationEngineerJumpsuit
   - StationEngineerGloves # floostation
+  - StationEngineerBelts # floofstation
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
@@ -339,6 +340,8 @@
   - AtmosphericTechnicianNeck # DeltaV
   - GroupTankHarness
   - AtmosphericTechnicianJumpsuit
+  - StationEngineerGloves # floostation
+  - StationEngineerBelts # floofstation
   - AtmosphericTechnicianBackpack
   - AtmosphericTechnicianOuterClothing
   - AtmosPDADelta # DeltaV
@@ -494,6 +497,7 @@
   - MedicalMask
   - ChiefMedicalOfficerJumpsuit
   - MedicalGloves
+  - MedicalDoctorBelts #floofstation
   - MedicalBackpack
   - ChiefMedicalOfficerOuterClothing
   - ChiefMedicalOfficerNeck
@@ -513,6 +517,7 @@
   - MedicalMask
   - MedicalDoctorJumpsuit
   - MedicalGloves
+  - MedicalDoctorBelts #floofstation
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes

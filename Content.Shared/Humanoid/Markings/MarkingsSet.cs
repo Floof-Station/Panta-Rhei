@@ -169,8 +169,8 @@ public sealed partial class MarkingSet
                     toRemove.Add((category, marking.MarkingId));
                 }
 
-                if (prototype.SpeciesRestrictions != null
-                    && !prototype.SpeciesRestrictions.Contains(species))
+                // Floofstation - invertable restrictions
+                if (!prototype.AllowsSpecies(species))
                 {
                     toRemove.Add((category, marking.MarkingId));
                 }

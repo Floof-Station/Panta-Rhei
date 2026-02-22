@@ -1,0 +1,198 @@
+# jumpsuits
+- type: loadoutGroup
+  id: FloofJumpsuits
+  parent: PassengerJumpsuit
+  name: loadout-group-passenger-jumpsuits
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingUniformJumpsuitTacticool
+  - ClothingUniformJumpskirtTacticool
+  - ClothingUniformJumpsuitHawaiBlack
+  - ClothingUniformJumpsuitHawaiBlue
+  - ClothingUniformJumpsuitHawaiRed
+  - ClothingUniformJumpsuitHawaiYellow
+  - ClothingUniformJumpsuitColorBlack
+  - ClothingUniformJumpsuitJeansBrown
+  - ClothingUniformJumpsuitSuitBlackAlt
+  - ClothingUniformJumpsuitFlannel
+  - ClothingUniformJumpsuitSuitBrownMob
+  - ClothingUniformJumpsuitKimono
+  - ClothingUniformJumpsuitLostTourist
+  - ClothingUniformJumpsuitLoungewear
+  - ClothingUniformJumpsuitSuitWhiteMob
+  - ClothingUniformJumpsuitSuitWhiteAlt
+  - ClothingUniformJumpsuitTshirtJeansPeach
+  - ClothingUniformJumpsuitJeansRed
+  - ClothingUniformJumpsuitSober
+  - ClothingUniformJumpsuitDameDane
+  - ClothingUniformJumpsuitWorkvest
+  - ClothingUniformJumpsuitDameDane
+  - ClothingUniformSkirtTurtle
+  - ClothingUniformSchoolGakuranBlack
+  - UniformSchoolgirlBlack
+  - UniformSchoolgirlBlue
+  - UniformSchoolgirlCyan
+  - UniformSchoolgirlGreen
+  - UniformSchoolgirlOrange
+  - UniformSchoolgirlPink
+  - UniformSchoolgirlPurple
+  - UniformSchoolgirlDusk
+  - UniformGeisha
+  - ClothingKimonoBlue
+  - ClothingKimonoPurple
+  - ClothingKimonoPink
+  - ClothingKimonoSky
+  - ClothingKimonoGreen
+  - ClothingCostumeMioSkirt
+  - ClothingCostumeNaota
+  - ClothingThongCoder
+  - ClothingThongBee
+  - ClothingThongRainbow
+  - ClothingUniformJumpsuitCatsuit
+  - ClothingUniformJumpsuitCatsuitShiny
+  - ClothingCostumeBunnySuit
+
+# gloves
+- type: loadoutGroup
+  id: FloofGloves
+  parent: PassengerGloves
+  name: loadout-group-passenger-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingArmwarmersCoder
+  - ClothingArmwarmersBee
+  - ClothingArmwarmersRainbow
+  - ClothingArmwarmersAce
+  - ClothingArmwarmersAro
+  - ClothingArmwarmersBi
+  - ClothingArmwarmersGay
+  - ClothingArmwarmersLesbian
+  - ClothingArmwarmersNon
+  - ClothingArmwarmersPan
+  - ClothingArmwarmersTrans
+
+ #shoes
+- type: loadoutGroup
+  id: FloofShoes
+  parent: PassengerShoes
+  name: loadout-group-passenger-shoes
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesBootsJack
+  - ClothingShoesBootsCowboyBlack
+  - ClothingShoesBootsCowboyBrown
+  - ClothingShoesBootsCowboyFancy
+  - ClothingShoesBootsCowboyWhite
+  - ClothingShoesHighheelBoots
+  - ClothingClothWrap
+  - ClothingSocksRainbow
+  - ClothingSocksAce
+  - ClothingSocksAro
+  - ClothingSocksBi
+  - ClothingSocksGay
+  - ClothingSocksLesbian
+  - ClothingSocksNon
+  - ClothingSocksPan
+  - ClothingSocksTrans
+
+# backpacks
+- type: loadoutGroup
+  id: FloofBackpacks
+  parent: CommonBackpack
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - BackpackSatchelLeather
+
+# outer clothing
+- type: loadoutGroup
+  id: FloofOuterClothing
+  parent: PassengerOuterClothing
+  name: loadout-group-passenger-outerclothing
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - OuterCoatBomber
+  - OuterCoatMNKWhiteHoodie
+  - OuterHoodieBlack
+  - OuterHoodieGrey
+  - OuterMarsHoodie
+  - CoatMNKBlackJacket
+  - CoatLettermanBlue
+  - CoatLettermanRed
+  - OuterCyberJacketWhite
+  - OuterCyberJacketPurple
+  - OuterCyberJacketYellow
+  - OuterDenimJacket
+  - OuterCorporateJacket
+  - OuterCoatHyenhSweater
+
+# hats
+- type: loadoutGroup
+  id: FloofHats
+  parent: AssistantHead
+  name: loadout-group-assistant-head
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - HeadHatHairflower
+  - HeadHatLilly
+  - HeadHatFlowerWreath
+  - HeadHatCatEarsCosmetic
+  - HeadHatDogEarsCosmetic
+  - HeadFishCap
+  - HeadRastaHat
+  - HeadHatUshanka
+  - HeadHatTophat
+  - HeadHatPirateTricord
+  - HeadPaperSack
+  - HeadPaperSackSmile
+  - HeadHatAnimalHeadslime
+  - HeadHatBrownFlatcap
+  - HeadHatGreyFlatcap
+  - HeadHatBlacksoft
+
+# trinkets
+- type: loadoutGroup
+  id: FloofTrinkets
+  parent: Trinkets
+  name: loadout-group-trinkets
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - GuitarInstrument
+  - BassGuitarInstrument
+  - ElectricGuitarInstrument
+  - RockGuitarInstrument
+  - HarmonicaInstrument
+  - TrumpetInstrument
+  - Blunt
+  - Joint
+  - CrowbarRed
+  - DoubleEmergencyOxygenTankFilled
+  - DoubleEmergencyNitrogenTankFilled
+  - DoubleEmergencyWaterVaporTankFilled
+  - MedkitFilled
+  - LunchboxGenericFilledRandom
+  - CrayonBrush
+  - AvianDildo
+  - CanineDildo
+  - CanineDildoRed
+  - NormalDildo
+  - DoubleDildo
+  - DragonDildo
+  - HorseDildo
+  - TentacleDildo
+  - LewdVibeRed
+  - LewdVibePink
+  - LewdVibeTeal
+  - LewdVibeGreen
+  - LewdVibeYellow
+  - LewdFleshlightGreen
+  - LewdFleshlightPink
+  - LewdFleshlightRed
+  - LewdFleshlightTeal
+  - LewdFleshlightYellow
