@@ -1,9 +1,8 @@
-using Robust.Shared.Map.Components;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Shared.Physics;
+namespace Content.Shared._EE.Physics;
 
 public sealed class FrictionRemoverSystem : EntitySystem
 {

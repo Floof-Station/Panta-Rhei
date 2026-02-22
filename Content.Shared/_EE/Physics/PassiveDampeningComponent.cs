@@ -1,4 +1,4 @@
-namespace Content.Shared.Physics;
+namespace Content.Shared._EE.Physics;
 
 /// <summary>
 ///     A component that allows an entity to have friction (linear and angular dampening)

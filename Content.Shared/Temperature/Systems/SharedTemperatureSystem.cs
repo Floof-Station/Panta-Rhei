@@ -106,6 +106,10 @@ public abstract class SharedTemperatureSystem : EntitySystem
             return Atmospherics.MinimumHeatCapacity;
         }
 
+        // EE/floofstation - if the entity is below 5kg, just assume 5kg. Otherwise you get tiny humanoids ashing in 1 tick.
+        if (physics.FixturesMass < 5)
+            return comp.SpecificHeat * 5;
+
         return comp.SpecificHeat * physics.FixturesMass;
     }
 }

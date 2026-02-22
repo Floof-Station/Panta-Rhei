@@ -24,7 +24,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.25
-        density: 10
+        density: 0.8 # EE - space wind - animal weight rebalance
         mask:
         - FlyingMobMask
         layer:
@@ -107,7 +107,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.1
-        density: 30
+        density: 0.1 # EE - space wind - animal weight rebalance
         mask:
         - FlyingMobMask
         layer:
@@ -386,7 +386,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 100
+        density: 0.07 # EE - space wind - animal weight rebalance
         mask:
         - SmallMobMask
         layer:
@@ -521,7 +521,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 120
+        density: 0.07 # EE - space wind - animal weight rebalance
         mask:
         - SmallMobMask
         layer:
@@ -2021,7 +2021,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 100
+        density: 0.76 # EE - space wind - animal weight rebalance
         mask:
         - SmallMobMask
         layer:
@@ -3041,7 +3041,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 50
+        density: 25.5 # EE - space wind - animal weight rebalance
         mask:
         - MobMask
         layer:
@@ -3188,7 +3188,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 50 #They actually are pretty light, I looked it up
+        density: 16.66
         mask:
         - MobMask
         layer:
@@ -3437,7 +3437,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 15
+        density: 9 # EE - space wind - animal weight rebalance
         mask:
         - MobMask
         layer:
@@ -3641,6 +3641,17 @@
         Base: caracal_dead
       Dead:
         Base: caracal_dead
+  - type: Fixtures # EE - space wind - animal weight rebalance
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 30
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   name: kitten
@@ -3676,6 +3687,17 @@
     thresholds:
       0: Alive
       25: Dead
+  - type: Fixtures # EE - space wind - animal weight rebalance
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 2
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
 
 - type: entity
   name: sloth
@@ -3762,7 +3784,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 5
+        density: 4 # EE - space wind - animal weight rebalance
         mask:
         - MobMask
         layer:
@@ -3846,7 +3868,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.2
-        density: 120
+        density: 0.8 # EE - space wind - animal weight rebalance
         mask:
         - SmallMobMask
         layer:
@@ -3982,7 +4004,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 250
+        density: 750 # EE - space wind - animal weight rebalance
         mask:
         - MobMask
         layer:
@@ -4062,7 +4084,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.35
-        density: 100 # High, because wood is heavy.
+        density: 15 # EE - space wind - animal weight rebalance
         mask:
         - MobMask
         layer:

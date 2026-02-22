@@ -5,8 +5,11 @@ using Content.Server.Doors.Systems;
 using Content.Shared.Atmos;
 using Content.Shared.Atmos.Components;
 using Content.Shared.Database;
+using Content.Shared.Maps;
+using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -137,7 +140,7 @@ namespace Content.Server.Atmos.EntitySystems
             var logN = MathF.Log2(tileCount);
 
             // Optimization - try to spread gases using an O(n log n) algorithm that has a chance of not working first to avoid O(n^2)
-            if (giverTilesLength > logN && takerTilesLength > logN)
+            if (!MonstermosUseExpensiveAirflow && giverTilesLength > logN && takerTilesLength > logN) // EE - add check for expensive airflow
             {
                 // Even if it fails, it will speed up the next part.
                 Array.Sort(_equalizeTiles, 0, tileCount, _monstermosComparer);
@@ -550,7 +553,8 @@ namespace Content.Server.Atmos.EntitySystems
                 }
 
                 InvalidateVisuals(ent, otherTile);
-                HandleDecompressionFloorRip((owner, mapGrid), otherTile, otherTile.MonstermosInfo.CurrentTransferAmount);
+                if (otherTile.PressureDifference > MonstermosRipTilesMinimumPressure) // EE - check
+                    HandleDecompressionFloorRip((owner, mapGrid), otherTile, otherTile.PressureDifference);
             }
 
             if (GridImpulse && tileCount > 0)
@@ -695,6 +699,16 @@ namespace Content.Server.Atmos.EntitySystems
         {
             if (!MonstermosRipTiles)
                 return;
+
+            // EE section - tiles can dictite resistance
+            if (_mapSystem.TryGetTileRef(mapGrid, mapGrid, tile.GridIndices, out var tileRef))
+            {
+                var tileref = tileRef.Tile;
+                var tileDef = (ContentTileDefinition)_tileDefinitionManager[tileref.TypeId];
+                if (!tileDef.Reinforced && tileDef.TileRipResistance < sum * MonstermosRipTilesPressureOffset)
+                    PryTile(mapGrid, tile.GridIndices);
+                return;
+            }
 
             var chance = MathHelper.Clamp(0.01f + (sum / SpacingMaxWind) * 0.3f, 0.003f, 0.3f);
 

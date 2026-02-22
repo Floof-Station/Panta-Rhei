@@ -126,5 +126,19 @@ namespace Content.Shared.Maps
         {
             TileId = id;
         }
+
+        // EE section
+        /// <summary>
+        ///     If true, this tile is resistent to tile ripping by atmospherics.
+        /// </summary>
+        [DataField]
+        public bool Reinforced = false;
+
+        /// <summary>
+        ///     How much this tile resists tile ripping.
+        /// </summary>
+        [DataField]
+        public float TileRipResistance = 125f;
+        // EE section end
     }
 }

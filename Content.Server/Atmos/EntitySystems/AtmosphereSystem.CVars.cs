@@ -1,3 +1,4 @@
+using Content.Shared._EE.CCVars;
 using Content.Shared.CCVar;
 using Robust.Shared.Configuration;
 
@@ -30,6 +31,15 @@ namespace Content.Server.Atmos.EntitySystems
         public int DeltaPressureParallelProcessPerIteration { get; private set; }
         public int DeltaPressureParallelBatchSize { get; private set; }
 
+        // EE section - space wind
+        public float SpaceWindMinimumCalculatedMass { get; private set; }
+        public float SpaceWindMaximumCalculatedInverseMass { get; private set; }
+        public bool MonstermosUseExpensiveAirflow { get; private set; }
+        public float MonstermosRipTilesMinimumPressure { get; private set; }
+        public float MonstermosRipTilesPressureOffset { get; private set; }
+        public float HumanoidThrowMultiplier { get; private set; }
+        // EE section end
+
         /// <summary>
         /// Time between each atmos sub-update.  If you are writing an atmos device, use AtmosDeviceUpdateEvent.dt
         /// instead of this value, because atmos devices do not update each are sub-update and sometimes are skipped to
@@ -61,6 +71,17 @@ namespace Content.Server.Atmos.EntitySystems
             Subs.CVar(_cfg, CCVars.DeltaPressureDamage, value => DeltaPressureDamage = value, true);
             Subs.CVar(_cfg, CCVars.DeltaPressureParallelToProcessPerIteration, value => DeltaPressureParallelProcessPerIteration = value, true);
             Subs.CVar(_cfg, CCVars.DeltaPressureParallelBatchSize, value => DeltaPressureParallelBatchSize = value, true);
+
+            // EE section
+            // Note that SOME of the above CVars are now unused. Idk which ones. Fuck me.
+            Subs.CVar(_cfg, EECVars.SpaceWindMinimumCalculatedMass, value => SpaceWindMinimumCalculatedMass = value, true);
+            Subs.CVar(_cfg, EECVars.SpaceWindMaximumCalculatedInverseMass, value => SpaceWindMaximumCalculatedInverseMass = value, true);
+            Subs.CVar(_cfg, EECVars.MonstermosUseExpensiveAirflow, value => MonstermosUseExpensiveAirflow = value, true);
+            Subs.CVar(_cfg, EECVars.MonstermosRipTilesMinimumPressure, value => MonstermosRipTilesMinimumPressure = value, true);
+            Subs.CVar(_cfg, EECVars.MonstermosRipTilesPressureOffset, value => MonstermosRipTilesPressureOffset = value, true);
+            // Note sure if this is used either.
+            Subs.CVar(_cfg, EECVars.AtmosHumanoidThrowMultiplier, value => HumanoidThrowMultiplier = value, true);
+            // EE section end
         }
     }
 }
