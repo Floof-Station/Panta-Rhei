@@ -20,9 +20,20 @@ namespace Content.Shared.Humanoid.Markings
         NeckFluff,
         UndergarmentTop,
         UndergarmentBottom,
+        Underwear,
+        Undershirt,
         Arms,
+        LeftArm,
+        RightArm,
+        LeftHand,
+        RightHand,
         Legs,
+        LeftLeg,
+        RightLeg,
+        LeftFoot,
+        RightFoot,
         Tail,
+        Wings,
         Overlay
     }
 
