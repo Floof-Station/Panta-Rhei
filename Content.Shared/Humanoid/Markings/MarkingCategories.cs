@@ -14,6 +14,7 @@ namespace Content.Shared.Humanoid.Markings
         HeadTop,
         HeadSide,
         Eyes, // DeltaV - Add Eyes Category for IPCs
+        Face,
         Snout,
         SnoutCover,
         Chest,
