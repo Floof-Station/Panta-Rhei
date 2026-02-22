@@ -1,0 +1,11 @@
+- type: entity
+  parent: MeteorSwarmScheduler
+  id: MeteorSwarmCalmScheduler
+  components:
+  - type: BasicStationEventScheduler
+    minimumTimeUntilFirstEvent: 1200 # 20 min
+    minMaxEventTiming:
+      min: 900 # 15 min
+      max: 4500 # 75 min
+    scheduledGameRules: !type:EntSelector # DeltaV: use old event
+      id: MeteorSwarm
