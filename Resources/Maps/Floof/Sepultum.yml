@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/15/2026 21:13:09
-  entityCount: 43139
+  time: 02/22/2026 11:07:12
+  entityCount: 43168
 maps:
 - 1
 grids:
@@ -5593,9 +5593,6 @@ entities:
             3286: -55,14
             3287: -54,14
             3288: -53,14
-            3289: -52,14
-            3290: -51,14
-            3291: -51,14
             3292: -50,14
             3293: -49,14
             3294: -48,14
@@ -5618,6 +5615,8 @@ entities:
             7516: -47,6
             7835: -83,38
             7836: -83,39
+            8013: -52,14
+            8014: -51,14
         - node:
             color: '#D4D4D428'
             id: QuarterTileOverlayGreyscale270
@@ -12737,7 +12736,7 @@ entities:
     - type: DeviceLinkSink
       invokeCounter: 1
     - type: Door
-      secondsUntilStateChange: -237080.02
+      secondsUntilStateChange: -237917.11
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13023,7 +13022,7 @@ entities:
       pos: -7.5,67.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -191041.98
+      secondsUntilStateChange: -191879.08
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13307,7 +13306,7 @@ entities:
       pos: 7.5,4.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -245310.53
+      secondsUntilStateChange: -246147.62
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13369,7 +13368,7 @@ entities:
       pos: 16.5,93.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130238.25
+      secondsUntilStateChange: -131075.34
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13381,7 +13380,7 @@ entities:
       pos: 16.5,89.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130237.65
+      secondsUntilStateChange: -131074.75
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13392,7 +13391,7 @@ entities:
       pos: -60.5,-47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130488.016
+      secondsUntilStateChange: -131325.11
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13403,7 +13402,7 @@ entities:
       pos: -56.5,-47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130488.445
+      secondsUntilStateChange: -131325.55
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13414,7 +13413,7 @@ entities:
       pos: -52.5,-47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130488.984
+      secondsUntilStateChange: -131326.08
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13425,7 +13424,7 @@ entities:
       pos: -48.5,-47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -130489.72
+      secondsUntilStateChange: -131326.81
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -13496,7 +13495,7 @@ entities:
       pos: -60.5,77.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -18507.51
+      secondsUntilStateChange: -19344.61
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -13897,7 +13896,7 @@ entities:
       pos: -43.5,-15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -22596.621
+      secondsUntilStateChange: -23433.72
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -49392,6 +49391,71 @@ entities:
     components:
     - type: Transform
       pos: -111.5,10.5
+      parent: 2
+  - uid: 43154
+    components:
+    - type: Transform
+      pos: -111.5,1.5
+      parent: 2
+  - uid: 43155
+    components:
+    - type: Transform
+      pos: -111.5,0.5
+      parent: 2
+  - uid: 43156
+    components:
+    - type: Transform
+      pos: -114.5,0.5
+      parent: 2
+  - uid: 43157
+    components:
+    - type: Transform
+      pos: -115.5,0.5
+      parent: 2
+  - uid: 43158
+    components:
+    - type: Transform
+      pos: -116.5,0.5
+      parent: 2
+  - uid: 43159
+    components:
+    - type: Transform
+      pos: -119.5,0.5
+      parent: 2
+  - uid: 43160
+    components:
+    - type: Transform
+      pos: -119.5,1.5
+      parent: 2
+  - uid: 43161
+    components:
+    - type: Transform
+      pos: -121.5,2.5
+      parent: 2
+  - uid: 43162
+    components:
+    - type: Transform
+      pos: -121.5,6.5
+      parent: 2
+  - uid: 43163
+    components:
+    - type: Transform
+      pos: -121.5,10.5
+      parent: 2
+  - uid: 43164
+    components:
+    - type: Transform
+      pos: -121.5,14.5
+      parent: 2
+  - uid: 43165
+    components:
+    - type: Transform
+      pos: -119.5,16.5
+      parent: 2
+  - uid: 43166
+    components:
+    - type: Transform
+      pos: -119.5,15.5
       parent: 2
 - proto: CableApcStack
   entities:
@@ -88061,6 +88125,11 @@ entities:
     - type: Transform
       pos: -35.392452,71.46787
       parent: 2
+  - uid: 43152
+    components:
+    - type: Transform
+      pos: -46.582787,59.596653
+      parent: 2
 - proto: ClothingUniformJumpskirtDetectiveGrey
   entities:
   - uid: 14641
@@ -88077,6 +88146,19 @@ entities:
     - type: Transform
       pos: -4.6403465,27.712038
       parent: 2
+- proto: ClothingUniformJumpskirtPrisoner
+  entities:
+  - uid: 43148
+    components:
+    - type: Transform
+      parent: 22916
+    - type: Clothing
+      inSlotFlag: INNERCLOTHING
+      inSlot: jumpsuit
+    - type: SuitSensor
+      user: 22916
+    - type: Physics
+      canCollide: False
 - proto: ClothingUniformJumpskirtWaitstaffFormal
   entities:
   - uid: 14650
@@ -88109,6 +88191,19 @@ entities:
     - type: Transform
       pos: -4.4059715,27.649538
       parent: 2
+- proto: ClothingUniformJumpsuitPrisoner
+  entities:
+  - uid: 43149
+    components:
+    - type: Transform
+      parent: 22917
+    - type: Clothing
+      inSlotFlag: INNERCLOTHING
+      inSlot: jumpsuit
+    - type: SuitSensor
+      user: 22917
+    - type: Physics
+      canCollide: False
 - proto: ClothingUniformJumpsuitReporter
   entities:
   - uid: 14643
@@ -90117,7 +90212,7 @@ entities:
       pos: -24.5,66.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -40064.81
+      secondsUntilStateChange: -40901.906
       state: Closing
 - proto: CurtainsPurple
   entities:
@@ -90132,7 +90227,7 @@ entities:
       pos: -122.5,47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -142428.7
+      secondsUntilStateChange: -143265.8
       state: Opening
   - uid: 14940
     components:
@@ -99044,6 +99139,13 @@ entities:
     - type: Transform
       pos: -16.5,77.5
       parent: 2
+- proto: DresserChiefJusticeFilled
+  entities:
+  - uid: 43167
+    components:
+    - type: Transform
+      pos: -30.5,55.5
+      parent: 2
 - proto: DresserChiefMedicalOfficerFilledDV
   entities:
   - uid: 16473
@@ -99861,12 +99963,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -46.5,58.5
       parent: 2
-  - uid: 16618
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -51.5,62.5
-      parent: 2
   - uid: 16619
     components:
     - type: Transform
@@ -100289,6 +100385,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -3.5,-5.5
+      parent: 2
+  - uid: 43150
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -51.5,61.5
       parent: 2
 - proto: EmergencyRollerBed
   entities:
@@ -105512,12 +105614,6 @@ entities:
     - type: Transform
       pos: -10.5,-16.5
       parent: 2
-  - uid: 17296
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -24.5,-31.5
-      parent: 2
   - uid: 17297
     components:
     - type: Transform
@@ -105577,6 +105673,11 @@ entities:
     components:
     - type: Transform
       pos: -110.5,3.5
+      parent: 2
+  - uid: 42550
+    components:
+    - type: Transform
+      pos: -22.5,-27.5
       parent: 2
 - proto: FlashlightLantern
   entities:
@@ -142710,6 +142811,9 @@ entities:
     - type: Transform
       pos: -79.5,49.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Armory
 - proto: HandheldHealthAnalyzer
   entities:
   - uid: 22426
@@ -142991,6 +143095,13 @@ entities:
     components:
     - type: Transform
       pos: -6.5,17.5
+      parent: 2
+- proto: HolopadJusticeClerk
+  entities:
+  - uid: 43168
+    components:
+    - type: Transform
+      pos: -31.5,58.5
       parent: 2
 - proto: HolopadMedicalBreakroom
   entities:
@@ -145673,6 +145784,13 @@ entities:
     - type: Transform
       pos: -68.5,23.5
       parent: 2
+- proto: MagazineBoxMagnum
+  entities:
+  - uid: 43153
+    components:
+    - type: Transform
+      pos: -85.49581,58.478947
+      parent: 2
 - proto: MagazinePistolHighCapacity
   entities:
   - uid: 22833
@@ -146165,18 +146283,91 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -51.5,69.5
       parent: 2
+    - type: ContainerContainer
+      containers:
+        jumpsuit: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: 43148
+        outerClothing: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        neck: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        mask: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        eyes: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        head: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        suitstorage: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        back: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
   - uid: 22917
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -55.5,69.5
       parent: 2
+    - type: ContainerContainer
+      containers:
+        jumpsuit: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: 43149
+        outerClothing: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        neck: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        mask: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        eyes: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        head: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        suitstorage: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
+        back: !type:ContainerSlot
+          showEnts: False
+          occludes: False
+          ent: null
 - proto: MaterialCloth
   entities:
   - uid: 22918
     components:
     - type: Transform
       pos: -7.558275,24.514294
+      parent: 2
+  - uid: 43151
+    components:
+    - type: Transform
+      pos: -51.52775,65.59738
       parent: 2
 - proto: MaterialDiamond1
   entities:
@@ -151556,6 +151747,12 @@ entities:
       parent: 2
 - proto: PoweredSmallLight
   entities:
+  - uid: 16618
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -51.5,62.5
+      parent: 2
   - uid: 23822
     components:
     - type: Transform
@@ -159929,6 +160126,16 @@ entities:
     - type: Transform
       pos: -93.5,42.5
       parent: 2
+  - uid: 27572
+    components:
+    - type: Transform
+      pos: -6.5,5.5
+      parent: 2
+  - uid: 27573
+    components:
+    - type: Transform
+      pos: -6.5,3.5
+      parent: 2
 - proto: ReinforcedUraniumWindow
   entities:
   - uid: 25378
@@ -166915,6 +167122,48 @@ entities:
     components:
     - type: Transform
       pos: -24.5,40.5
+      parent: 2
+- proto: SpawnPointCargoAssistant
+  entities:
+  - uid: 43140
+    components:
+    - type: Transform
+      pos: -17.5,-31.5
+      parent: 2
+  - uid: 43141
+    components:
+    - type: Transform
+      pos: -16.5,-31.5
+      parent: 2
+  - uid: 43142
+    components:
+    - type: Transform
+      pos: -15.5,-31.5
+      parent: 2
+  - uid: 43143
+    components:
+    - type: Transform
+      pos: -14.5,-31.5
+      parent: 2
+  - uid: 43144
+    components:
+    - type: Transform
+      pos: -13.5,-31.5
+      parent: 2
+  - uid: 43145
+    components:
+    - type: Transform
+      pos: -12.5,-31.5
+      parent: 2
+  - uid: 43146
+    components:
+    - type: Transform
+      pos: -11.5,-31.5
+      parent: 2
+  - uid: 43147
+    components:
+    - type: Transform
+      pos: -10.5,-31.5
       parent: 2
 - proto: SpawnPointCargoTechnician
   entities:
@@ -174826,16 +175075,6 @@ entities:
     - type: InsideEntityStorage
 - proto: TintedWindow
   entities:
-  - uid: 27572
-    components:
-    - type: Transform
-      pos: -6.5,5.5
-      parent: 2
-  - uid: 27573
-    components:
-    - type: Transform
-      pos: -6.5,3.5
-      parent: 2
   - uid: 27574
     components:
     - type: Transform
@@ -250426,6 +250665,11 @@ entities:
       parent: 2
 - proto: WaterCooler
   entities:
+  - uid: 17296
+    components:
+    - type: Transform
+      pos: -24.5,-31.5
+      parent: 2
   - uid: 42548
     components:
     - type: Transform
@@ -250435,11 +250679,6 @@ entities:
     components:
     - type: Transform
       pos: -41.5,-6.5
-      parent: 2
-  - uid: 42550
-    components:
-    - type: Transform
-      pos: -22.5,-27.5
       parent: 2
   - uid: 42551
     components:
