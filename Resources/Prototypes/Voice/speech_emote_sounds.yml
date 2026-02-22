@@ -167,13 +167,14 @@
 
 - type: emoteSounds
   id: MaleSlime
+  parent: SlimeMaleFloofstation # Floofstation
   sounds:
     Squish:
       collection: Squishes
-    Scream:
-      collection: MaleScreams
-    Laugh:
-      collection: MaleLaugh
+#    Scream: # Floofstation - replaced in parent
+#      collection: MaleScreams
+#    Laugh:
+#      collection: MaleLaugh
     Sneeze:
       collection: MaleSneezes
     Cough:
@@ -213,13 +214,14 @@
 
 - type: emoteSounds
   id: FemaleSlime
+  parent: SlimeFemaleFloofstation # Floofstation
   sounds:
     Squish:
       collection: Squishes
-    Scream:
-      collection: FemaleScreams
-    Laugh:
-      collection: FemaleLaugh
+#    Scream: # Floofstation - replaced in parent
+#      collection: FemaleScreams
+#    Laugh:
+#      collection: FemaleLaugh
     Sneeze:
       collection: FemaleSneezes
     Cough:

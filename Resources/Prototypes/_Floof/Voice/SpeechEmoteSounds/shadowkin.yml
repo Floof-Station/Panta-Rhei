@@ -1,0 +1,66 @@
+- type: emoteSounds
+  id: ShadowkinBase
+  abstract: true
+  params:
+    variation: 0.125
+  sounds:
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hiss:
+      collection: FelinidHisses
+    Meow:
+      collection: FelinidMeows
+    Mew:
+      collection: FelinidMews
+    Growl:
+      collection: FelinidGrowls
+    Purr:
+      collection: FelinidPurrs
+    Mars:
+      collection: Mars
+    Wurble:
+      collection: Wurble
+
+- type: emoteSounds
+  id: MaleShadowkin
+  parent: ShadowkinBase
+  sounds:
+    Scream:
+      collection: SlimeMaleScreams
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+
+- type: emoteSounds
+  id: FemaleShadowkin
+  parent: ShadowkinBase
+  sounds:
+    Scream:
+      collection: SlimeFemaleScreams
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
