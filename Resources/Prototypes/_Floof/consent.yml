@@ -1,0 +1,14 @@
+- type: consentToggle
+  id: NSFWDescriptions
+  name: NSFW character descriptions
+  description: Toggling this on allows you to see explicit examine messages added by other players.
+
+- type: consentToggle
+  id: MassMindswap
+  name: Mass mindswap
+  description: Allow yourself to be chosen as the target for the "mass mindswap" gamerule. You will be warned before it happens.
+
+- type: consentToggle
+  id: NoClone
+  name: Opt out from paradox anomalies
+  description: Toggle this on to disallow yourself from being cloned via paradox anomalies.

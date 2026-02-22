@@ -1,3 +1,4 @@
+using Content.Shared._Floof.OfferItem;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;
@@ -68,6 +69,7 @@ public sealed class PullingSystem : EntitySystem
         SubscribeLocalEvent<PullableComponent, EntGotInsertedIntoContainerMessage>(OnPullableContainerInsert);
         SubscribeLocalEvent<PullableComponent, ModifyUncuffDurationEvent>(OnModifyUncuffDuration);
         SubscribeLocalEvent<PullableComponent, StopBeingPulledAlertEvent>(OnStopBeingPulledAlert);
+        SubscribeLocalEvent<PullableComponent, GetInteractingEntitiesEvent>(OnGetInteractingEntities);
 
         SubscribeLocalEvent<PullerComponent, UpdateMobStateEvent>(OnStateChanged, after: [typeof(MobThresholdSystem)]);
         SubscribeLocalEvent<PullerComponent, AfterAutoHandleStateEvent>(OnAfterState);
@@ -115,10 +117,11 @@ public sealed class PullingSystem : EntitySystem
         if (TryComp(args.PullerUid, out PullerComponent? pullerComp) && !pullerComp.NeedsHands)
             return;
 
-        if (!_virtual.TrySpawnVirtualItemInHand(args.PulledUid, uid))
+        if (!_virtual.TrySpawnVirtualItemInHand(args.PulledUid, uid, out var virt)) // Floofstation - store item
         {
             DebugTools.Assert("Unable to find available hand when starting pulling??");
         }
+        EnsureComp<OfferableVirtualItemComponent>(virt.Value); // Floofstation - add a special component to allow offering it
     }
 
     private void HandlePullStopped(EntityUid uid, HandsComponent component, PullStoppedMessage args)
@@ -159,6 +162,12 @@ public sealed class PullingSystem : EntitySystem
     private void OnGotBuckled(Entity<PullableComponent> ent, ref BuckledEvent args)
     {
         StopPulling(ent, ent);
+    }
+
+    private void OnGetInteractingEntities(Entity<PullableComponent> ent, ref GetInteractingEntitiesEvent args)
+    {
+        if (ent.Comp.Puller != null)
+            args.InteractingEntities.Add(ent.Comp.Puller.Value);
     }
 
     private void OnAfterState(Entity<PullerComponent> ent, ref AfterAutoHandleStateEvent args)

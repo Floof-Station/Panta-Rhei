@@ -5,36 +5,38 @@
   parent: CratePlastic
   suffix: Spray Paint
   components:
-  - type: StorageFill
-    contents:
-    - id: SprayPaintBlue
-      amount: 2
-      prob: 0.33
-    - id: SprayPaintRed
-      amount: 2
-      prob: 0.33
-    - id: SprayPaintOrange
-      amount: 2
-      prob: 0.33
-    - id: SprayPaintBlack
-      amount: 2
-      prob: 0.33
-    - id: SprayPaintGreen
-      amount: 2
-      prob: 0.33
-    - id: SprayPaintPurple
-      amount: 2
-      prob: 0.33
-    - id: SprayPaintWhite
-      amount: 2
-      prob: 0.33
-    - id: DeathPaint
-      amount: 2
-    - id: DeathPaintTwo
-      amount: 2
-  - type: EntityTableContainerFill # Some additional loot from the maint table
+  - type: EntityTableContainerFill
     containers:
-      entity_storage: !type:NestedSelector
-        rolls: !type:RangeNumberSelector
-          range: 3, 6
-        tableId: SprayPaintTable
+      entity_storage: !type:AllSelector
+        children:
+        # Guaranteed loot
+        - id: DeathPaint
+          rolls: 2
+        - id: DeathPaintTwo
+          rolls: 2
+        # Occasional pairs of other colors
+        - id: SprayPaintBlue
+          rolls: 2
+          prob: 0.33
+        - id: SprayPaintRed
+          rolls: 2
+          prob: 0.33
+        - id: SprayPaintOrange
+          rolls: 2
+          prob: 0.33
+        - id: SprayPaintBlack
+          rolls: 2
+          prob: 0.33
+        - id: SprayPaintGreen
+          rolls: 2
+          prob: 0.33
+        - id: SprayPaintPurple
+          rolls: 2
+          prob: 0.33
+        - id: SprayPaintWhite
+          rolls: 2
+          prob: 0.33
+        # Some additional loot from the maint table
+        - !type:NestedSelector
+          rolls: 3, 6
+          tableId: SprayPaintTable

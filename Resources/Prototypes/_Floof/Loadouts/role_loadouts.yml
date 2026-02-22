@@ -1,0 +1,93 @@
+- type: roleLoadout
+  id: JobSeniorEngineer
+  groups:
+  - GroupTankHarness
+  - StationEngineerHead
+  - StationEngineerNeck # DeltaV
+  - SeniorEngineerJumpsuit # floofstation
+  - StationEngineerGloves # floostation
+  - StationEngineerBelts # floofstation
+  - StationEngineerBackpack
+  - StationEngineerOuterClothing
+  - StationEngineerShoes
+  - StationEngineerID
+  - SurvivalExtended
+  - Trinkets
+  - StationEngineerJobTrinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSeniorPhysician
+  groups:
+  - GroupTankHarness
+  - MedicalDoctorHead
+  - MedicalDoctorNeck # DeltaV
+  - MedicalMask
+  - SeniorPhysicianJumpsuits #floofstation
+  - MedicalDoctorBelts #floofstation
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - MedicalDoctorPDA
+  - MedicalEyewear
+  - SurvivalMedical
+  - Trinkets
+  - MedicalDoctorJobTrinkets
+  - GroupSpeciesBreathToolMedical
+
+- type: roleLoadout
+  id: JobSeniorResearcher
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - ScientistNeck
+  - SeniorResearcherJumpsuits #floofstation
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - ScientistPDA
+  - Glasses
+  - Survival
+  - Trinkets
+  - ScientistJobTrinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSeniorOfficer
+  groups:
+  - SecurityHead
+  - SecurityNeck # DeltaV
+  - SeniorOfficerJumpsuits # floofstation
+  - SecurityBackpack
+  - SecurityOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was SecurityOuterClothing
+  - SecurityGloves # DeltaV - Security can start with gloves
+  - SecurityShoes
+  - SecurityPDA
+  - SecurityBelt
+  - SecurityEyewear # DeltaV - Security eyewear with prescription options
+  - SurvivalSecurity
+  - Trinkets
+  - SecurityJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+  - SecurityFirearm # DeltaV - loadouts
+  - SecurityFirearmAmmo # DeltaV - loadouts
+
+- type: roleLoadout
+  id: JobInventorySpecialist
+  groups:
+  - GroupTankHarness
+  - CargoTechnicianHead
+  - CargoTechnicianNeck # DeltaV
+  - CargoTechnicianJumpsuit # floofstation - there are no special jumpsuits/skirts for inventory spec so we will use cargo techs to make it easier
+  - InventorySpecialistMisc # floofstation
+  - CargoTechnicianBackpack
+  - CargoTechnicianOuterClothing
+  - CargoPDADelta # DeltaV
+  - CargoTechnicianShoes
+  - Glasses
+  - Survival
+  - Trinkets
+  - CargoTechnicianJobTrinkets
+  - GroupSpeciesBreathTool

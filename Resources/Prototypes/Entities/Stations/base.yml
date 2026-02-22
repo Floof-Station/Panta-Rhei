@@ -60,10 +60,17 @@
 #          - type: TradeStation
 #          paths:
 #          - /Maps/Shuttles/trading_outpost.yml
-        mining: !type:GridSpawnGroup # Floofstation - salvage gets a roundstart shuttle
+        mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
           paths:
-          - /Maps/Shuttles/pathfinder.yml
+          - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - salvage gets the pathfinder as their shuttle
+          nameGrid: true
+          name: Pathfinder
         # Spawn last
+        #salvageShuttle: !type:GridSpawnGroup # DeltaV - salvage gets their own ship # flooftation - disable delta-vs salvage shuttle
+          #paths: # flooftation - disable delta-vs salvage shuttle
+          #- /Maps/_DV/Shuttles/Misc/reclaimer_mk2.yml # flooftation - disable delta-vs salvage shuttle
+          #nameGrid: true # flooftation - disable delta-vs salvage shuttle
+          #name: Reclaimer Mk2 # flooftation - disable delta-vs salvage shuttle
         ruins: !type:GridSpawnGroup
           hide: true
           nameGrid: true
@@ -126,7 +133,9 @@
   abstract: true
   components:
     - type: StationCentcomm
-    - type: StationSecondaryCentcomm # DeltaV - midpoint station
+      map: /Maps/Floof/centcomm.yml
+    #- type: StationSecondaryCentcomm # DeltaV - midpoint station # floofstation - disabled because we do not currently need midpoint
+      #path: /Maps/_DV/midpoint.yml # going to leave this here incase we want to bring midpoint back
 
 - type: entity
   id: BaseStationEvacuation

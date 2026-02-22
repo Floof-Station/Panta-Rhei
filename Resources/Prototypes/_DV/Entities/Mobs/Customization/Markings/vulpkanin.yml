@@ -270,71 +270,72 @@
       state: slash
 
 # Tail Markings
-- type: marking
-  id: VulpTail
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp-fade
-
-- type: marking
-  id: VulpTailTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp-tip
-
-- type: marking
-  id: VulpTailWag
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag-tip #fade
-
-- type: marking
-  id: VulpTailWagTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_wag-tip
-
-- type: marking
-  id: VulpTailAlt
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Felinid]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt-fade
-
-- type: marking
-  id: VulpTailAltTip
-  bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [Vulpkanin, Felinid]
-  sprites:
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt
-    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
-      state: vulp_alt-tip
+# Floofstation - moved to the _Floof namespace
+#- type: marking
+#  id: VulpTail
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
+#  sprites:
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp-fade
+#
+#- type: marking
+#  id: VulpTailTip
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
+#  sprites:
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp-tip
+#
+#- type: marking
+#  id: VulpTailWag
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
+#  sprites:
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_wag
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_wag-tip #fade
+#
+#- type: marking
+#  id: VulpTailWagTip
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vulpkanin, Felinid, Kitsune]
+#  sprites:
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_wag
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_wag-tip
+#
+#- type: marking
+#  id: VulpTailAlt
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vulpkanin, Felinid]
+#  sprites:
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_alt
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_alt-fade
+#
+#- type: marking
+#  id: VulpTailAltTip
+#  bodyPart: Tail
+#  markingCategory: Tail
+#  speciesRestriction: [Vulpkanin, Felinid]
+#  sprites:
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_alt
+#    - sprite: _DV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+#      state: vulp_alt-tip
 
 - type: marking
   id: VulpTailLong

@@ -1,0 +1,179 @@
+# These add additional non-species-specific languages.
+- type: trait
+  id: SignLanguage
+  name: trait-SignLanguage-name
+  description: trait-SignLanguage-desc
+  category: Languages
+  cost: 2
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Sign
+    languagesUnderstood:
+    - Sign
+
+- type: trait
+  id: Ratvarian
+  name: trait-Ratvarian-name
+  description: trait-Ratvarian-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Ratvarian
+    languagesUnderstood:
+    - Ratvarian
+
+- type: trait
+  id: Tradeband
+  name: trait-Tradeband-name
+  description: trait-Tradeband-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Harpy
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Tradeband
+    languagesUnderstood:
+    - Tradeband
+
+- type: trait
+  id: Freespeak
+  name: trait-Freespeak-name
+  description: trait-Freespeak-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Freespeak
+    languagesUnderstood:
+    - Freespeak
+
+- type: trait
+  id: Elyran
+  name: trait-Elyran-name
+  description: trait-Elyran-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Elyran
+    languagesUnderstood:
+    - Elyran
+
+- type: trait
+  id: Azaziba
+  name: trait-Azaziba-name
+  description: trait-Azaziba-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Reptilian
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Azaziba
+    languagesUnderstood:
+    - Azaziba
+
+# Fox and dog languages, specific to the vulpkanin
+- type: trait
+  id: FoxLanguage
+  name: trait-FoxLanguage-name
+  description: trait-FoxLanguage-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Vulpkanin
+    - Kitsune
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Fox
+    languagesUnderstood:
+    - Fox
+
+- type: trait
+  id: DogLanguage
+  name: trait-DogLanguage-name
+  description: trait-DogLanguage-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species: [Vulpkanin]
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Dog
+    languagesUnderstood:
+    - Dog
+
+# Cat language, specific to felinids and tajarans
+- type: trait
+  id: CatLanguage
+  name: trait-CatLanguage-name
+  description: trait-CatLanguage-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Felinid
+    - Tajaran
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Cat
+    languagesUnderstood:
+    - Cat
+
+# Monkey language, specific to primate descendants
+- type: trait
+  id: MonkeyLanguage
+  name: trait-MonkeyLanguage-name
+  description: trait-MonkeyLanguage-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Human
+    - Felinid # According to TG lore, felinids were creating due to a sabotage of cloning
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Monkey
+    languagesUnderstood:
+    - Monkey
+
+# Kobold language, specific to lizards and humans
+- type: trait
+  id: KoboldLanguage
+  name: trait-KoboldLanguage-name
+  description: trait-KoboldLanguage-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Human
+    - Reptilian
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Kobold
+    languagesUnderstood:
+    - Kobold

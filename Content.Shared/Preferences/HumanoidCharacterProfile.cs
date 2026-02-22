@@ -238,9 +238,12 @@ namespace Content.Shared.Preferences
         {
             species ??= SharedHumanoidAppearanceSystem.DefaultSpecies;
 
+            var prototypeManager = IoCManager.Resolve<IPrototypeManager>(); // Floofstation
+            prototypeManager.Resolve<SpeciesPrototype>(species, out var speciesProto); // Floofstation
             return new()
             {
                 Species = species,
+                Height = speciesProto?.DefaultHeight ?? 1f, // Floofstation
                 Appearance = HumanoidCharacterAppearance.DefaultWithSpecies(species),
             };
         }
@@ -274,7 +277,7 @@ namespace Content.Shared.Preferences
             {
                 sex = random.Pick(speciesPrototype.Sexes);
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
-                // height = MathF.Round(random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight), 2); // CD - Character Records // DeltaV - don't generate random heights
+                height = MathF.Round(random.NextFloat(speciesPrototype.MinHeight, speciesPrototype.MaxHeight), 2); // CD - Character Records // DeltaV - don't generate random heights // Floofstation - generate random heights
             }
 
             var gender = Gender.Epicene;

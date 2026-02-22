@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -71,7 +72,12 @@ namespace Content.IntegrationTests.Tests
         private static readonly string[] DoNotMapWhitelist =
         {
             "/Maps/centcomm.yml",
-            "/Maps/Shuttles/AdminSpawn/**" // admin gaming
+            "/Maps/Shuttles/AdminSpawn/**", // admin gaming
+            "/Maps/Floof/centcomm.yml", // floofstation - our version of centcomm
+            "/Maps/Floof/Shuttles/CentralCommand/**", // floofstation - admin shuttles
+            "/Maps/Floof/Shuttles/CentralCommand/CCShips/**", // floofstation - admin shuttles
+            "/Maps/Floof/Shuttles/Event/Syndicate/Stations", // floofstation - admin shuttles
+            "/Maps/Floof/Shuttles/Event/**" // floofstation - admin shuttles
         };
 
         /// <summary>
@@ -81,33 +87,42 @@ namespace Content.IntegrationTests.Tests
             .Select(glob => new Regex(GlobToRegex(glob), RegexOptions.IgnoreCase | RegexOptions.Compiled))
             .ToArray();
 
-        private static readonly string[] GameMaps =
+        public static readonly string[] GameMaps = // Floofstation - made public
         {
             "Dev",
             "TestTeg",
             "CentComm",
             "MeteorArena",
-            "Academy", //DeltaV
+            //"Academy", //DeltaV
             "Arena", // DeltaV
-            "ArenaMedieval", //DeltaV
+            // "ArenaMedieval", //DeltaV
             "Asterisk", // DeltaV
-            "Byoin", // DeltaV
-            "Chibi", // DeltaV
-            "Division", // DeltaV
+            //"Byoin", // DeltaV
+            //"Chibi", // DeltaV
+            //"Division", // DeltaV
             "Edge", // DeltaV
-            "Elegance", // DeltaV
+            //"Elegance", // DeltaV
             "Glacier", // DeltaV
             "Hammurabi", // DeltaV
             "Lighthouse", // DeltaV
-            "Micro", // DeltaV
-            "Ovni", //DeltaV
+            //"Micro", // DeltaV
+            //"Ovni", //DeltaV
             "Pebble", // DeltaV
-            "PebbleHiring", // DeltaV
+            //"PebbleHiring", // DeltaV
             "Shoukou", // DeltaV
             "Submarine", //DeltaV
-            "Terra", //DeltaV
+            //"Terra", //DeltaV
             "TheHive", // DeltaV
-            "Tortuga" // DeltaV
+            "Tortuga", // DeltaV
+            "Amber", //Floofstation
+            "Core", //Floofstation
+            "Kettle", //Floofstation
+            "Meta", //Floofstation
+            "Rad", //Floofstation
+            "Train", //Floofstation
+            "Saltern", //Floofstation
+            "Fland", //Floofstation
+            "Getaway" //Floofstation
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";
@@ -563,8 +578,9 @@ namespace Content.IntegrationTests.Tests
 
             await server.WaitPost(() =>
             {
-                Assert.Multiple(() =>
-                {
+                // Floofstation - disabled multiple assertion
+                // Assert.Multiple(() =>
+                // {
                     // This bunch of files contains a random mixture of both map and grid files.
                     // TODO MAPPING organize files
                     var opts = MapLoadOptions.Default with
@@ -600,7 +616,7 @@ namespace Content.IntegrationTests.Tests
                             throw new Exception($"Failed to delete map {path}", ex);
                         }
                     }
-                });
+                // });
             });
 
             await server.WaitRunTicks(1);

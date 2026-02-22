@@ -1,6 +1,8 @@
 using Content.IntegrationTests.Tests.Movement;
 using Content.Server.NPC.HTN;
+using Content.Shared.Clothing.EntitySystems;
 using Content.Shared.Damage.Components;
+using Content.Shared.Inventory;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs;
@@ -138,9 +140,14 @@ public sealed class MousetrapHumanMoveOverTest : MovementTest
         var afterStepDamage = damageComp.TotalDamage;
 
         // Give the player some shoes
-        await PlaceInHands(ShoesProtoId);
+        var shoesNetEnt = await PlaceInHands(ShoesProtoId);
         // Thanks to quick-equip, using the shoes will wear them
-        await UseInHand();
+        // await UseInHand();
+        // Floofstation: the above sucks
+        var playerEnt = SEntMan.GetEntity(Player);
+        var shoesEnt = SEntMan.GetEntity(shoesNetEnt);
+        Server.EntMan.System<InventorySystem>().TryEquip(playerEnt, shoesEnt, "shoes", true, true, false, checkDoafter: false);
+        // Floofstation section end
 
         // Move back over the trap
         await Move(DirectionFlag.West, 1f);

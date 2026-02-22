@@ -4,11 +4,11 @@ language-SiikMaas-description =
 
 language-NalRasan-name = Nal'rasan
 language-NalRasan-description =
-    A body-language-heavy dialect created for stealth.
+    A body-focused language, Nal'rasan was developed to communicate discreetly between parties.
 
 language-SiikTajr-name = Siik'tajr
 language-SiikTajr-description =
-    Language native to the Tajara, it employs both verbal and non-verbal elements.
+    A modern language for those with expressive ears and tails, combining vocalizations with body language.
 
 language-YaSsa-name = Ya'ssa
 language-YaSsa-description =

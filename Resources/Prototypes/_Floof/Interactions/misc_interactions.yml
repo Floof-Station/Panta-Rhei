@@ -12,7 +12,7 @@
     requirements:
     - !type:EntityWhitelistRequirement
       whitelist:
-        components: [MobState, Food] # Don't go around biting inanimate objects.
+        components: [MobState, Edible] # Don't go around biting inanimate objects.
     - !type:SlotObstructionRequirement
       slot: MASK
   action:

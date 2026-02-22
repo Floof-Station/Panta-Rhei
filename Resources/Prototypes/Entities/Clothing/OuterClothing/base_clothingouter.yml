@@ -107,6 +107,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
       storagebase: !type:Container
         ents: []
 
@@ -144,6 +145,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
   - type: GroupExamine
   - type: Tag
     tags:
@@ -157,6 +159,9 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  - type: HideLayerClothing
+    slots:
+    - Tail
   - type: CosmicTransmutable # DeltaV
     transmutesTo: ClothingOuterHardsuitCosmicCult
     requiredGlyphType: CosmicGlyphWarding
@@ -168,6 +173,9 @@
       - LEGS
       - FEET
       blacklist: {} # Clear the parent blacklist
+  - type: Clothing # Floofstation - equip delays are greater on hardsuits
+    equipDelay: 2.5
+    unequipDelay: 2.5
 
 - type: entity
   abstract: true
@@ -200,6 +208,9 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  - type: HideLayerClothing
+    slots:
+    - Tail
   - type: CosmicTransmutable # DeltaV
     transmutesTo: ClothingOuterHardsuitCosmicCult
     requiredGlyphType: CosmicGlyphWarding
@@ -211,6 +222,9 @@
       - LEGS
       - FEET
       blacklist: {} # Clear the parent blacklist
+  - type: Clothing # Floofstation
+    equipDelay: 1.25 # Softsuits are easier to put on and off
+    unequipDelay: 1
 
 - type: entity
   parent: ClothingOuterBase
@@ -224,6 +238,7 @@
   - type: ContainerContainer
     containers:
       toggleable-clothing: !type:ContainerSlot {}
+      toggleable-under-clothing: !type:ContainerSlot {} # DeltaV - Allow hats under toggleable clothing
       storagebase: !type:Container
         ents: []
 

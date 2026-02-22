@@ -1,0 +1,60 @@
+# Those are all abstract. You're supposed to make existing neck loadout groups inherit from these.
+- type: loadoutGroup
+  id: CommonCollars
+  abstract: true
+  name: loadout-group-common-collars
+  loadouts:
+  - ClothingNeckCollarBlack
+  - ClothingNeckCollarPink
+  - ClothingNeckCollarBlue
+  - ClothingNeckCollarSyndi
+  - ClothingNeckCollarBell
+  - ClothingNeckShockCollarCivilian
+
+- type: loadoutGroup
+  id: MedicalCollars
+  parent: CommonCollars
+  abstract: true
+  name: loadout-group-medical-collars
+  loadouts:
+  - ClothingNeckCollarMed
+
+- type: loadoutGroup
+  id: EngineeringCollars
+  parent: CommonCollars
+  abstract: true
+  name: loadout-group-engineering-collars
+  loadouts:
+  - ClothingNeckCollarEngi
+
+- type: loadoutGroup
+  id: ScienceCollars
+  parent: CommonCollars
+  abstract: true
+  name: loadout-group-science-collars
+  loadouts:
+  - ClothingNeckCollarEpi
+
+- type: loadoutGroup
+  id: CargoCollars
+  parent: CommonCollars
+  abstract: true
+  name: loadout-group-cargo-collars
+  loadouts:
+  - ClothingNeckCollarLogi
+
+- type: loadoutGroup
+  id: SecurityCollars
+  parent: CommonCollars
+  abstract: true
+  name: loadout-group-security-collars
+  loadouts:
+  - ClothingNeckCollarSec
+
+- type: loadoutGroup
+  id: CommandCollars
+  parent: CommonCollars
+  abstract: true
+  name: loadout-group-command-collars
+  loadouts:
+  - ClothingNeckCollarSec

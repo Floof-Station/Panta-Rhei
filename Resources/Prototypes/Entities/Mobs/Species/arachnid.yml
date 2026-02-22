@@ -43,7 +43,10 @@
       - !type:WashCreamPie
   # Damage (Self)
   - type: Bloodstream
-    bloodReagent: CopperBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 1
   # Damage (Others)
   - type: MeleeWeapon
     animation: WeaponArcBite
@@ -81,6 +84,7 @@
     proto: spider
   - type: Sprite # I'd prefer if these maps were better. Insert map pun here.
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -101,6 +105,7 @@
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Tail" ] # Mentioned in moth code: This needs renaming lol.
       - map: [ "back" ]
       - map: [ "neck" ]

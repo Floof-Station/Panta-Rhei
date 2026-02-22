@@ -174,24 +174,25 @@
     - snarled
     - snarling
 
-- type: emote
-  id: Whine
-  name: delta-chat-emote-name-whine
-  icon: _DV/Interface/Emotes/whine.png
-  category: Vocal
-  available: false
-  whitelist:
-    components:
-    - Vocal
-  blacklist:
-    components:
-    - BorgChassis
-  chatMessages: ["chat-emote-msg-whine"]
-  chatTriggers:
-    - whine
-    - whines
-    - whined
-    - whining
+# Moved to Floofstation namespace
+#- type: emote
+#  id: Whine
+#  name: delta-chat-emote-name-whine
+#  icon: _DV/Interface/Emotes/whine.png
+#  category: Vocal
+#  available: false
+#  whitelist:
+#    components:
+#    - Vocal
+#  blacklist:
+#    components:
+#    - BorgChassis
+#  chatMessages: ["chat-emote-msg-whine"]
+#  chatTriggers:
+#    - whine
+#    - whines
+#    - whined
+#    - whining
 
 - type: emote
   id: Howl

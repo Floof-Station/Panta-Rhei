@@ -1,0 +1,14 @@
+- type: entity
+  id: BulletCaselessRifleSubsonic
+  name: bullet (.25 caseless subsonic)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/Projectiles/projectileSubsonic.rsi
+    layers:
+    - shader: shaded
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 19

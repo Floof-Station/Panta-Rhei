@@ -52,7 +52,10 @@
       amount: 5
 
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
 
   - type: DamageVisuals
     damageOverlayGroups:
@@ -110,6 +113,7 @@
     noRot: true
     drawdepth: Mobs
     layers:
+      - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
       - map: [ "enum.HumanoidVisualLayers.Chest" ]
       - map: [ "enum.HumanoidVisualLayers.Head" ]
       - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -134,6 +138,7 @@
       - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
+      - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
       - map: [ "belt" ]
       - map: [ "id" ]

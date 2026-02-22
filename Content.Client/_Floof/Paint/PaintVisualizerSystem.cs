@@ -39,6 +39,7 @@ public sealed class ColorPaintedVisualizerSystem : VisualizerSystem<ColorPainted
             if (layer.Shader == null || layer.Shader == shader)
             {
                 layer.Shader = shader;
+                layer.ShaderPrototype = component.ShaderName;
                 layer.Color = component.Color;
             }
         }
@@ -48,7 +49,6 @@ public sealed class ColorPaintedVisualizerSystem : VisualizerSystem<ColorPainted
     {
         if (!TryComp(uid, out SpriteComponent? sprite))
             return;
-        component.BeforeColor = sprite.Color;
 
         if (Terminating(uid))
             return;
@@ -59,9 +59,13 @@ public sealed class ColorPaintedVisualizerSystem : VisualizerSystem<ColorPainted
                 continue;
 
             if (layer.ShaderPrototype == component.ShaderName)
+            {
                 layer.Shader = null;
-            if (layer.Color == component.Color)
-                layer.Color = component.BeforeColor;
+                layer.ShaderPrototype = null;
+
+                if (layer.Color == component.Color)
+                    layer.Color = component.BeforeColor != default ? component.BeforeColor : Color.White;
+            }
         }
     }
 
@@ -93,10 +97,10 @@ public sealed class ColorPaintedVisualizerSystem : VisualizerSystem<ColorPainted
 
         foreach (var revealed in layers)
         {
-            if (!sprite.LayerMapTryGet(revealed, out var layer))
+            if (!sprite.LayerMapTryGet(revealed, out var layer) || !sprite.TryGetLayer(layer, out var layerDatum))
                 continue;
 
-            if (!string.IsNullOrEmpty(component.ShaderName))
+            if (!string.IsNullOrEmpty(component.ShaderName) && layerDatum.Shader is null)
                 sprite.LayerSetShader(layer, component.ShaderName);
             sprite.LayerSetColor(layer, component.Color);
         }

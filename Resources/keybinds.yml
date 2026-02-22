@@ -321,6 +321,14 @@ binds:
   type: State
   key: v
   mod1: Alt
+- function: InspectServerComponent
+  type: State
+  key: b
+  mod1: Alt
+- function: InspectClientComponent
+  type: State
+  key: c
+  mod1: Alt
 - function: MouseMiddle
   type: State
   key: MouseMiddle
@@ -552,6 +560,11 @@ binds:
   type: State
   key: MouseMiddle
   mod1: Shift
+# Floofstation section
+- function: OfferItem
+  type: State
+  key: F
+# Floofstation section end
 - function: ArcadeUp
   type: State
   key: Up

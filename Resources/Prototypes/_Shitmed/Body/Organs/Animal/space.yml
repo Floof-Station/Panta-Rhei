@@ -24,6 +24,7 @@
   - type: Organ
     onAdd:
     - type: GoliathTentacle
+    - type: PressureImmunity #Euphoria
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Space/Goliath/organs.rsi
     state: heart-on
@@ -38,6 +39,7 @@
     - type: ActionGun
       action: ActionDragonsBreath
       gunProto: DragonsBreathGun
+    - type: BreathingImmunity #Euphoria
 
 - type: entity
   parent: OrganHumanEyes
@@ -46,11 +48,10 @@
   components:
   - type: Organ
     onAdd:
-    - type: HitscanBatteryAmmoProvider
+    - type: BatteryAmmoProvider
       proto: RedLightLaser
       fireCost: 50
     - type: BatterySelfRecharger
-      autoRecharge: true
       autoRechargeRate: 25
     - type: Battery
       maxCharge: 100
@@ -76,6 +77,7 @@
     - type: StealthOnMove
       passiveVisibilityRate: -0.25
       movementVisibilityRate: 0.25
+    - type: PressureImmunity #Euphoria
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/Space/Cobra/organs.rsi
     state: heart-on

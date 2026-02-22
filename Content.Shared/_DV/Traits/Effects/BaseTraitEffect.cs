@@ -9,6 +9,10 @@ namespace Content.Shared._DV.Traits.Effects;
 [ImplicitDataDefinitionForInheritors, UsedImplicitly(ImplicitUseTargetFlags.WithInheritors)]
 public abstract partial class BaseTraitEffect
 {
+    // Floofstation - utility property
+    protected ISawmill Log => Logger.GetSawmill("trait." + GetType().Name);
+    // Floofstation section end
+
     /// <summary>
     /// Applies the effect to the target entity.
     /// </summary>

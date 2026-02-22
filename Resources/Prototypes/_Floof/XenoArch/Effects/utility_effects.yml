@@ -1,0 +1,62 @@
+- type: entity
+  id: XenoArtifactBigGun
+  parent: BaseOneTimeXenoArtifactEffect
+  components:
+  - type: XAEDetails # DeltaV
+    specificTip: xenoarch-effect-tip-specific-gun
+    vagueTip: xenoarch-effect-tip-vague-pattern
+  - type: XAEApplyComponents
+    applyIfAlreadyHave: true
+    refreshOnReactivate: true
+    components:
+    - type: RevolverAmmoProvider
+      whitelist:
+        tags:
+        - CartridgeAntiMateriel
+      proto: CartridgeAntiMateriel
+      capacity: 7
+      chambers: [ True, True, True, True, True, True, True ]
+      ammoSlots: [ null, null, null, null, null, null, null ]
+      soundEject:
+        path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+      soundInsert:
+        path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+    - type: Gun
+      selectedMode: SemiAuto
+      fireRate: 1
+      availableModes:
+      - SemiAuto
+      - FullAuto # no alien revolver in buildings
+      soundGunshot:
+        path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
+        
+#- type: artifactEffect # Floof - Eh Silly
+#  id: EffectHugeIron
+#  targetDepth: 6
+#  effectHint: artifact-effect-hint-gun
+#  whitelist:
+#    components:
+#    - Item
+#  permanentComponents:
+#  - type: ContainerContainer
+#    containers:
+#      revolver-ammo: !type:Container
+#  - type: RevolverAmmoProvider
+#    whitelist:
+#      tags:
+#      - CartridgeAntiMateriel
+#    proto: CartridgeAntiMateriel
+#    capacity: 7
+#    chambers: [ True, True, True, True, True, True, True ]
+#    ammoSlots: [ null, null, null, null, null, null, null ]
+#    soundEject:
+#      path: /Audio/Weapons/Guns/MagOut/revolver_magout.ogg
+#    soundInsert:
+#      path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
+#  - type: Gun
+#    selectedMode: SemiAuto
+#    fireRate: 1
+#    availableModes:
+#    - SemiAuto
+#    soundGunshot:
+#      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg

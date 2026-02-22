@@ -52,6 +52,11 @@ public abstract class ClothingSystem : EntitySystem
     {
         foreach (var slotDef in userEnt.Comp1.Slots)
         {
+            // Floofstation: do not attempt to quick-equip clothing in pocket slots.
+            // Something something inventory system shitcode
+            if (slotDef.SlotFlags.HasFlag(SlotFlags.POCKET))
+                continue;
+
             if (!_invSystem.CanEquip(userEnt, toEquipEnt, slotDef.Name, out _, slotDef, userEnt, toEquipEnt))
                 continue;
 

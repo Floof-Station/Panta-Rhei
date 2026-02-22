@@ -89,6 +89,7 @@
 
 - type: emoteSounds
   id: MaleReptilian
+  parent: [ReptilianFloofstation] # Floofstation
   params:
     variation: 0.125
   sounds:
@@ -127,6 +128,7 @@
 
 - type: emoteSounds
   id: FemaleReptilian
+  parent: [ReptilianFloofstation] # Floofstation
   params:
     variation: 0.125
   sounds:
@@ -154,7 +156,7 @@
     Sigh:
       collection: FemaleSigh
     Yawn:
-      collection: FemaleYawn 
+      collection: FemaleYawn
     # End DeltaV Additions
     Gasp:
       collection: FemaleGasp
@@ -280,7 +282,7 @@
       collection: Weh
     Hew:
       collection: Hew
-    Gasp: 
+    Gasp:
       collection: VoxGasp # DeltaV - Combined upstream and our sounds
     DefaultDeathgasp:
       collection: VoxDeathgasp # DeltaV - Combined upstream and our sounds
@@ -495,7 +497,7 @@
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
     Boop: # DeltaV (EE)
-      path: /Audio/_EE/Voice/IPC/beep_500.ogg      
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
     Whirr: # DeltaV (EE)
       collection: IPCWhirrs
       params:
@@ -523,7 +525,7 @@
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
     Boop: # DeltaV (EE)
-      path: /Audio/_EE/Voice/IPC/beep_500.ogg      
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
     Whirr: # DeltaV (EE)
       collection: IPCWhirrs
       params:
@@ -551,7 +553,7 @@
     Ping:
       collection: XenoborgPing
     Boop: # DeltaV (EE)
-      path: /Audio/_EE/Voice/IPC/beep_500.ogg      
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
     Whirr: # DeltaV (EE)
       collection: IPCWhirrs
       params:

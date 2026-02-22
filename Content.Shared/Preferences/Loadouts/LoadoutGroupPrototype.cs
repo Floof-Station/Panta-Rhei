@@ -32,7 +32,7 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
     /// </summary>
     [DataField]
     public int MinLimit = 1;
-    
+
     /// <summary>
     /// Number of loadouts that are selected by default.
     /// </summary>
@@ -51,7 +51,8 @@ public sealed partial class LoadoutGroupPrototype : IPrototype, IInheritingProto
     [DataField]
     public bool Hidden;
 
+    // Floofstation - changed to a hashset to avoid duplicates due to parenting.
     [AlwaysPushInheritance]
     [DataField(required: true)]
-    public List<ProtoId<LoadoutPrototype>> Loadouts = new();
+    public HashSet<ProtoId<LoadoutPrototype>> Loadouts = new();
 }

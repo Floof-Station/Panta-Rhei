@@ -45,6 +45,7 @@
     - id: ClothingBeltSheathFilled
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
+    - id: ClothingOuterWinterCapArmored #DeltaV
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
     #- id: MedalCase # DeltaV - Moved to dresser
@@ -223,10 +224,8 @@
       tableId: LockerFillChiefMedicalOfficerDeltaV
     - id: BoxEncryptionKeyMedical
     - id: ClothingBackpackDuffelSurgeryFilled
-    #- id: ClothingCloakCmo # DeltaV - Moved to dresser
     - id: ClothingEyesHudMedical
     #- id: ClothingHandsGlovesNitrile # DeltaV - Moved to dresser
-    #- id: ClothingHeadHatBeretCmo # DeltaV - Moved to dresser
     - id: ClothingHeadsetAltMedical
     #- id: ClothingMaskSterile # DeltaV - Moved to ClothingBackpackDuffelSurgeryFilled
     - id: DoorRemoteMedical
@@ -288,6 +287,7 @@
     - id: HandTeleporter
     - id: RubberStampRd
     - id: BibleMystagogue  # DeltaV - steal objective and source of abilities
+    - id: EncryptionKeyBinary # Floofstation - give mystagouge the binary key to spek to borgs an AI
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -340,7 +340,6 @@
     - id: ClothingBeltSecurityFilled
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
-    #- id: ClothingMaskNeckGaiter # DeltaV - Moved to dresser
     #- id: ClothingOuterCoatHoSTrench # DeltaV - Moved to dresser
     #- id: ClothingShoesBootsJack # DeltaV - Moved to dresser
     - id: FlashlightSeclite

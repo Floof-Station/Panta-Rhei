@@ -146,7 +146,10 @@
     - Bee
     - Trash
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
@@ -286,6 +289,8 @@
     - Chicken
     understands:
     - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -406,7 +411,10 @@
       Dead:
         Base: cockroach_dead
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
     bloodMaxVolume: 20
   - type: Edible
   - type: FlavorProfile
@@ -576,7 +584,10 @@
     damageContainer: Biological
     damageModifierSet: Moth
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
   - type: Respirator
     damage:
       types:
@@ -753,6 +764,8 @@
     - Duck
     understands:
     - Duck
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -874,7 +887,10 @@
     tags:
     - Trash
   - type: Bloodstream
-    bloodReagent: InsectBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: InsectBlood
+        Quantity: 1
     bloodMaxVolume: 0.1
   - type: MobPrice
     price: 50
@@ -988,6 +1004,8 @@
     - Cow
     understands:
     - Cow
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: crab
@@ -1052,9 +1070,14 @@
     - Crab
     understands:
     - Crab
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Bloodstream
     bloodMaxVolume: 50
-    bloodReagent: CopperBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 1
   - type: Tag
     tags:
     - VimPilot
@@ -1182,6 +1205,8 @@
     - Sheep
     understands:
     - Sheep
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 # Note that we gotta make this bitch vomit someday when you feed it anthrax or sumthin. Needs to be a small item thief too and aggressive if attacked.
 - type: entity
@@ -1237,6 +1262,8 @@
     - Duck
     understands:
     - Duck
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: gorilla
@@ -1319,6 +1346,8 @@
     - Monkey
     understands:
     - Monkey
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: kangaroo
@@ -1360,6 +1389,8 @@
     - Kangaroo
     understands:
     - Kangaroo
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -1580,6 +1611,8 @@
     understands:
     - Monkey
     - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 
 # DV - For ancestors without shitmed components (scurrets)
@@ -1707,6 +1740,9 @@
     understands:
     - Monkey
     - TauCetiBasic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
+  - type: StatusIcon
 
 - type: entity
   name: monkey
@@ -2070,6 +2106,8 @@
     - Mouse
     understands:
     - Mouse
+  - type: LeashAnchor # Floofstation - leash your mouse!
+    kind: Intrinsic
   - type: Tag
     tags:
     - Trash
@@ -2242,7 +2280,10 @@
   - type: RadiationSource
     intensity: 0.3
   - type: Bloodstream
-    bloodReagent: UnstableMutagen
+    bloodReagents:
+      reagents:
+      - ReagentId: UnstableMutagen
+        Quantity: 1
   - type: SolutionContainerManager
     solutions:
       food:
@@ -2274,6 +2315,8 @@
     - Draconic
     understands:
     - Draconic
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Speech # Impstation starts here
     speechSounds: Lizard
     speechVerb: Reptilian
@@ -2547,6 +2590,8 @@
     - TauCetiBasic # Sike, the parrot can speak tau-ceti but not understand it.
     understands:
     - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: parrot
@@ -2621,6 +2666,8 @@
     - Chicken
     understands:
     - Chicken
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 # TODO: Make grenade penguin voice activated like the rest of the stealth items.
 - type: entity
@@ -2809,6 +2856,8 @@
     understands:
     - Arachnic
     - Xeno
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-tarantula
@@ -2823,7 +2872,10 @@
   - type: IgnoreSpiderWeb
   - type: Bloodstream
     bloodMaxVolume: 150
-    bloodReagent: CopperBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: CopperBlood
+        Quantity: 1
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
@@ -2969,8 +3021,10 @@
       speechVerb: Cluwne
     - type: Bloodstream
       bloodMaxVolume: 150
-      bloodReagent: Laughter
-
+      bloodReagents:
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 1
 - type: entity
   name: wizard spider
   parent: MobGiantSpider
@@ -3048,6 +3102,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: possum
@@ -3208,11 +3264,18 @@
   - type: Tag
     tags:
     - VimPilot
+    - VulpEmotes # Floofstation
+  - type: Emoting # Floofstation
+  - type: Vocal # Floofstation
+    sounds:
+      Unsexed: Fox
   - type: LanguageKnowledge # Floofstation - FOX!!!!! garryap yipruff!!!!!
     speaks:
     - Fox
     understands:
     - Fox
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   abstract: true
@@ -3263,6 +3326,8 @@
     - Dog
     understands:
     - Dog
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   parent: MobCorgiBase
@@ -3282,6 +3347,10 @@
       amount: 2
 #  - type: ReplacementAccent # Floofstation
 #    accent: dog
+  - type: Emoting # Floofstation
+  - type: Vocal # Floofstation
+    sounds:
+      Unsexed: Dog
   - type: LanguageKnowledge # Floofstation - this one is usually a pet so they understand tau ceti
     speaks:
     - Dog
@@ -3291,6 +3360,7 @@
   - type: Tag
     tags:
     - VimPilot
+    - VulpEmotes # Floof
 
 - type: entity
   name: corrupted corgi
@@ -3338,7 +3408,10 @@
     attributes:
       gender: epicene
   - type: Bloodstream
-    bloodReagent: DemonsBlood
+    bloodReagents:
+      reagents:
+      - ReagentId: DemonsBlood
+        Quantity: 1
   - type: Damageable
     damageContainer: BiologicalMetaphysical
     damageModifierSet: Infernal
@@ -3432,6 +3505,8 @@
     understands:
     - TauCetiBasic
     - Cat
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-cat
@@ -3701,6 +3776,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: ferret
@@ -3761,6 +3838,8 @@
     - Hissing
     understands:
     - Hissing
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   name: hamster
@@ -3860,6 +3939,13 @@
       amount: 1
 #  - type: ReplacementAccent # Floofstation
 #    accent: mouse
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - Mouse
+    understands:
+    - Mouse
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: Tag
     tags:
     - VimPilot
@@ -3913,11 +3999,6 @@
       behaviors:
       - !type:GibBehavior
         recursive: false
-  - type: LanguageKnowledge # Floofstation
-    speaks:
-    - Mouse
-    understands:
-    - Mouse
 
 - type: entity
   name: pig
@@ -3987,6 +4068,8 @@
     - Pig
     understands:
     - Pig
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: NpcFactionMember
@@ -4025,7 +4108,10 @@
     speciesId: cat
     templateId: pet
   - type: Bloodstream
-    bloodReagent: Sap
+    bloodReagents:
+      reagents:
+      - ReagentId: Sap
+        Quantity: 1
     bloodMaxVolume: 60
   - type: DamageStateVisuals
     states:

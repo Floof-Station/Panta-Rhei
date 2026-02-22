@@ -111,6 +111,13 @@
   - type: FootPrints # DeltaV port from EE, blood splatter
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - UnathiEmotes # Added
 
 - type: entity
   parent: BaseSpeciesDummy

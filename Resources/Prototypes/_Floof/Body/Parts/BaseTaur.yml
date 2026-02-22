@@ -1,0 +1,34 @@
+- type: entity
+  id: PartTaur
+  parent: [BaseItem, BasePart]
+  name: "Taur Body Part"
+  abstract: true
+  components:
+  #Adjust
+  - type: Icon # Shitmed Change
+    sprite: _Floof/Mobs/Species/Arachne/blank.rsi
+    state: "blank"
+  - type: BodyPart # Shitmed Change
+    species: BaseTaur
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TaurLegs
+  name: "Taur Legs"
+  parent: PartTaur
+  components:
+  # Adjust sprite. Maybe
+  - type: Sprite
+    sprite: _Floof/Mobs/Species/Arachne/blank.rsi
+    state: "blank"
+  - type: BodyPart
+    partType: Leg
+    toolName: "taur Legs" # Shitmed Change
+    slotId: legs
+  - type: MovementBodyPart

@@ -67,7 +67,10 @@
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
-    bloodReagent: FluorosulfuricAcid
+    bloodReagents:
+      reagents:
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 1
     bloodMaxVolume: 650
   - type: MeleeWeapon
     altDisarm: false
@@ -133,6 +136,8 @@
     - Xeno
     understands:
     - Xeno
+  - type: LeashAnchor # Floofstation - if you dare
+    kind: Intrinsic
 
 - type: entity
   name: praetorian
@@ -534,7 +539,10 @@
   - type: Stamina
     critThreshold: 200
   - type: Bloodstream
-    bloodReagent: FluorosulfuricAcid
+    bloodReagents:
+      reagents:
+      - ReagentId: FluorosulfuricAcid
+        Quantity: 1
     bloodMaxVolume: 300
   - type: MeleeWeapon
     altDisarm: false

@@ -133,7 +133,7 @@
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
-  - type: ProjectileBatteryAmmoProvider
+  - type: BatteryAmmoProvider
     proto: BulletPistol
     fireCost: 100
   - type: Battery
@@ -172,7 +172,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazinePistolCaselessRifle
+        startingItem: MagazinePistolCaselessRifleSubsonic
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
@@ -182,11 +182,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeCaselessRifle
+        startingItem: CartridgeCaselessRifleSubsonic
         priority: 1
         whitelist:
           tags:
-            - CartridgeCaselessRifle
+            - CartridgeCaselessRifleSubsonic
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

@@ -169,8 +169,8 @@ public sealed partial class MarkingSet
                     toRemove.Add((category, marking.MarkingId));
                 }
 
-                if (prototype.SpeciesRestrictions != null
-                    && !prototype.SpeciesRestrictions.Contains(species))
+                // Floofstation - invertable restrictions
+                if (!prototype.AllowsSpecies(species))
                 {
                     toRemove.Add((category, marking.MarkingId));
                 }
@@ -254,7 +254,21 @@ public sealed partial class MarkingSet
 
                 if (marking.Sprites.Count != list[i].MarkingColors.Count)
                 {
-                    list[i] = new Marking(marking.ID, marking.Sprites.Count);
+                    // Floofstation section - don't replace the whole color list, just add or remove colors
+                    // list[i] = new Marking(marking.ID, marking.Sprites.Count);
+                    List<Color> colors = list[i].MarkingColors.ToList();
+                    if (list[i].MarkingColors.Count > marking.Sprites.Count)
+                        colors = colors.Take(marking.Sprites.Count).ToList();
+                    else
+                    {
+                        // If the new marking has more colors, try to fill them in with the first color from the old marking.
+                        // This helps migrate some old markings that used to have just 1 layer.
+                        var substitute = list[i].MarkingColors.Count > 0 ? list[i].MarkingColors.First() : Color.White;
+                        for (var j = list[i].MarkingColors.Count; j < marking.Sprites.Count; j++)
+                            colors.Add(substitute);
+                    }
+                    list[i] = new(marking.ID, colors);
+                    // Floofstation section end
                 }
             }
 

@@ -1,0 +1,44 @@
+- type: job
+  id: SeniorPhysician
+  name: job-name-senior-physician
+  description: job-description-senior-physician
+  playTimeTracker: JobSeniorPhysician
+  setPreference: true #floof - this toggle allows players to ready up / create loadouts as senior roles. false disables it from the job list.
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 40.0h # Floofstation 40 hrs
+  startingGear: SeniorPhysicianGear
+  icon: "JobIconSeniorPhysician"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Maintenance
+  - Chemistry
+# Floof section - Senior physicians get paramedic and external access
+  - Paramedic
+  - External
+# Floof section end
+
+- type: startingGear
+  id: SeniorPhysicianGear
+  equipment:
+    ears: ClothingHeadsetMedical
+    #belt: ClothingBeltMedicalFilled # Floofstation - disabled this since they can choose between belts in loadout
+  # Begin DeltaV additions
+  storage:
+    back:
+    #- Stuff
+    - Syringe
+  # End DeltaV additions
+
+- type: chameleonOutfit
+  id: SeniorPhysicianChameleonOutfit
+  job: SeniorPhysician
+  equipment:
+    head: ClothingHeadHatBeretSeniorPhysician
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    neck: ClothingNeckStethoscope
+    outerClothing: ClothingOuterCoatLabSeniorPhysician
+    gloves: ClothingHandsGlovesLatex

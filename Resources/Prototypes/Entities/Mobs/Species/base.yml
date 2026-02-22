@@ -11,6 +11,7 @@
   components:
   - type: Sprite
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -33,6 +34,7 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]
@@ -136,8 +138,7 @@
     # Begin DeltaV additions
     - Addicted # Psych med addictions system
     - SuppressAddiction # Psych med addictions system
-    - InPain # Pain system
-    - SuppressPain # Pain system
+    - ChronicPain # Pain system
     - Anesthesia # Anesthesia
     - PainNumbness # Pain numbness status effect
     - ScrambledSpeech
@@ -149,6 +150,7 @@
   - type: Identity
   - type: IdExaminable
   - type: Hands
+  - type: OfferItem # Floofstation
   - type: ComplexInteraction
   - type: Internals
   - type: FloatingVisuals
@@ -179,11 +181,11 @@
   - type: MindContainer
     showExamineInfo: true
   - type: CanEnterCryostorage
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    successChance: 1
+#    interactSuccessString: hugging-success-generic
+#    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+#    messagePerceivedByOthers: hugging-success-generic-others
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:
@@ -223,10 +225,10 @@
   - type: CanEscapeInventory # Carrying system from nyanotrasen.
   - type: Tag
     tags:
-    - CanPilot
+    - CanPilot # MAKE SURE TO UPDATE FLOOFSTATION SPECIES TAGS IF THESE EVER CHANGE
     - FootstepSound
     - DoorBumpOpener
-    - AnomalyHost
+    - AnomalyHost # MAKE SURE TO UPDATE FLOOFSTATION SPECIES TAGS IF THESE EVER CHANGE
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # DeltaV port from EE, blood splatter
   - type: Targeting # Shitmed Change
@@ -234,6 +236,12 @@
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
   - type: Carriable # DeltaV
   - type: GrappleTarget # DeltaV - Allow targets to be grappled
+  # Floofstation section
+  - type: HumanoidHeightMonitoring # required for the below
+  - type: FixturesAffectedByHeight # scale fixtures with the size of the humanoid
+  - type: Wagging # This won't add the action unless the entity has a tail marking that can be toggled
+    action: ActionToggleWaggingVulpkanin
+  # Floofstation section end
 
 - type: entity
   save: false
@@ -322,6 +330,7 @@
     noRot: true
     # TODO BODY Turn these into individual body parts?
     layers:
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
@@ -349,6 +358,7 @@
     - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "enum.HumanoidVisualLayers.SnoutCover" ]

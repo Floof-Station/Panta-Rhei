@@ -2,7 +2,8 @@
   id: ScarEyeRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Rodentia, Feroxi, Vulpkanin, Kitsune, SlimePerson] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -12,7 +13,8 @@
   id: ScarEyeLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Harpy, Oni, Rodentia, Feroxi, Vulpkanin, Kitsune, SlimePerson] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -22,7 +24,8 @@
   id: ScarTopSurgeryShort
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Avali, Reptilian, SlimePerson, Moth, Arachnid, Diona,] # DeltaV - Felinid-Avali
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -33,7 +36,8 @@
   id: ScarTopSurgeryLong
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Avali, Reptilian, SlimePerson, Moth, Arachnid, Diona] # DeltaV - Felinid-Avali
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   sexRestriction: [Male]
   followSkinColor: true
   sprites:
@@ -44,7 +48,8 @@
   id: ScarChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Avali, Reptilian, SlimePerson, Moth, Arachnid, Diona] # DeltaV - Felinid-Avali
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -54,7 +59,8 @@
   id: ScarNeck
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Avali, Reptilian, SlimePerson] # DeltaV - Felinid-Avali
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -64,7 +70,8 @@
   id: ScarChestBullets
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Avali, Reptilian, SlimePerson, Moth, Arachnid] # DeltaV - Felinid-Avali
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -74,7 +81,8 @@
   id: ScarStomachBullets
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Reptilian, SlimePerson, Moth, Arachnid] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -84,7 +92,8 @@
   id: ScarFace1
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Reptilian, SlimePerson, Moth] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   sprites:
   - sprite: Mobs/Customization/scars.rsi
     state: scar_face_1
@@ -93,7 +102,8 @@
   id: ScarFace2
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Feroxi, Vulpkanin, Kitsune, Reptilian, SlimePerson, Moth] # DeltaV - Felinid-Kitsune
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -103,7 +113,8 @@
   id: ScarEyeRightSmall
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson]
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi
@@ -113,7 +124,8 @@
   id: ScarEyeLeftSmall
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Human, Dwarf, Reptilian, SlimePerson]
+  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/scars.rsi

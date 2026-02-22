@@ -40,13 +40,13 @@
     naturalLanguage: Kagebun
   - type: TypingIndicator
     proto: kitsune
-  - type: InteractionPopup
-    successChance: 0.5
-    interactSuccessString: petting-success-soft-floofy-kitsune
-    interactFailureString: petting-failure-generic
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/fox_squeak.ogg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    successChance: 0.5
+#    interactSuccessString: petting-success-soft-floofy-kitsune
+#    interactFailureString: petting-failure-generic
+#    interactSuccessSpawn: EffectHearts
+#    interactSuccessSound:
+#      path: /Audio/Animals/fox_squeak.ogg
   - type: Kitsune
   - type: PsionicBonusChance
     flatBonus: 0.5
@@ -58,6 +58,7 @@
       - 0,0,1,4
       - 0,2,3,4
       - 4,0,5,4
+  - type: Wagging # Floofstation
 
 - type: entity
   save: false

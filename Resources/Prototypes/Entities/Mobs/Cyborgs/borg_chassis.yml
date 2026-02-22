@@ -24,13 +24,15 @@
       sprite: Mobs/Silicon/chassis.rsi
       state: robot
     name: cyborg
-  - type: InteractionPopup
-    interactSuccessString: petting-success-generic-cyborg
-    interactFailureString: petting-failure-generic-cyborg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    interactSuccessString: petting-success-generic-cyborg
+#    interactFailureString: petting-failure-generic-cyborg
   - type: BorgSwitchableType
     inherentRadioChannels:
     - Common
     - Binary
+  - type: LeashAnchor # Floofstation - allow to leash selectable borgs
+    kind: Intrinsic
 
 - type: entity
   id: BorgChassisGeneric
@@ -107,11 +109,11 @@
           - BorgModuleSyndicateAssault
       hasMindState: synd_sec_e
       noMindState: synd_sec
-    - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
-      interactSuccessSound:
-        path: /Audio/Ambience/Objects/periodic_beep.ogg
+#    - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#      interactSuccessString: petting-success-syndicate-cyborg
+#      interactFailureString: petting-failure-syndicate-cyborg
+#      interactSuccessSound:
+#        path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   id: BorgChassisSyndicateMedical
@@ -143,11 +145,11 @@
       damageContainers: # DeltaV
       - Biological
       - BiologicalMetaphysical # Kitsune
-    - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
-      interactSuccessSound:
-        path: /Audio/Ambience/Objects/periodic_beep.ogg
+#    - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#      interactSuccessString: petting-success-syndicate-cyborg
+#      interactFailureString: petting-failure-syndicate-cyborg
+#      interactSuccessSound:
+#        path: /Audio/Ambience/Objects/periodic_beep.ogg
     - type: SolutionScanner
     - type: FootstepModifier
       footstepSoundCollection:
@@ -185,11 +187,11 @@
       damageContainers:
       - Inorganic
       - Silicon
-    - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
-      interactSuccessSound:
-        path: /Audio/Ambience/Objects/periodic_beep.ogg
+#    - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#      interactSuccessString: petting-success-syndicate-cyborg
+#      interactFailureString: petting-failure-syndicate-cyborg
+#      interactSuccessSound:
+#        path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   id: BorgChassisDerelict
@@ -217,11 +219,11 @@
     noMindState: derelict_e_r
   - type: Construction
     node: derelictcyborg
-  - type: InteractionPopup
-    interactSuccessString: petting-success-derelict-cyborg
-    interactFailureString: petting-failure-derelict-cyborg
-    interactSuccessSound:
-      path: /Audio/Ambience/Objects/periodic_beep.ogg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    interactSuccessString: petting-success-derelict-cyborg
+#    interactFailureString: petting-failure-derelict-cyborg
+#    interactSuccessSound:
+#      path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
   parent: BaseBorgChassisDerelict

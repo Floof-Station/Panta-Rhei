@@ -2,7 +2,8 @@
   id: CyberLimbsMarkingHesphiastosHead
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_monitor.rsi
     state: head-1
@@ -13,7 +14,8 @@
   id: CyberLimbsMarkingHesphiastosHeadAlt
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [IPC]
+  speciesRestriction: [] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_alt1.rsi
     state: head-1
@@ -26,7 +28,8 @@
   id: CyberLimbsMarkingHesphiastosChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [IPC]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: torso-1
@@ -37,7 +40,8 @@
   id: CyberLimbsMarkingHesphiastosLArm
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: l_arm-1
@@ -48,7 +52,8 @@
   id: CyberLimbsMarkingHesphiastosLHand
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: l_hand-1
@@ -59,7 +64,8 @@
   id: CyberLimbsMarkingHesphiastosLLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: l_leg-1
@@ -71,7 +77,8 @@
   id: CyberLimbsMarkingHesphiastosLFoot
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: l_foot-1
@@ -84,7 +91,8 @@
   id: CyberLimbsMarkingHesphiastosRArm
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: r_arm-1
@@ -96,7 +104,8 @@
   id: CyberLimbsMarkingHesphiastosRHand
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: r_hand-1
@@ -108,7 +117,8 @@
   id: CyberLimbsMarkingHesphiastosRLeg
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy, Vox] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: r_leg-1
@@ -120,7 +130,8 @@
   id: CyberLimbsMarkingHesphiastosRFoot
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [IPC, Moth, Dwarf, Human, Arachnid, Felinid, Oni, Vulpkanin, HumanoidFoxes, Reptilian]
+  speciesRestriction: [Resomi, Avali, Harpy] # Floofstation
+  invertedRestrictions: true # Floofstation - invert restrictions
   sprites:
   - sprite: _Shitmed/Mobs/Species/Cybernetics/hesphiastos/hesphiastos_main.rsi
     state: r_foot-1

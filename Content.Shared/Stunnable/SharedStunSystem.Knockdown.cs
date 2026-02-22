@@ -386,6 +386,7 @@ public abstract partial class SharedStunSystem
         if (!TryStand(entity))
             return true;
 
+        // Floofstation - add out arg
         if (!IntersectingStandingColliders(entity.Owner, out var collider))
             return false;
 

@@ -1,0 +1,35 @@
+﻿- type: trait
+  id: LeftBionicPryArm
+  name: trait-name-LeftBionicPryArm
+  description: trait-description-BionicPryArm
+  category: Disabilities
+  conflicts:
+  - ArmAmputeeRight
+  - ArmAmputeeLeft
+  - RightBionicPryArm
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Amputee
+      removeBodyPart: Arm
+      partSymmetry: Left
+      protoId: JawsOfLifeLeftArm
+      slotId: "left arm"
+
+- type: trait
+  id: RightBionicPryArm
+  name: trait-name-RightBionicPryArm
+  description: trait-description-BionicPryArm
+  category: Disabilities
+  conflicts:
+  - ArmAmputeeRight
+  - ArmAmputeeLeft
+  - LeftBionicPryArm
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Amputee
+      removeBodyPart: Arm
+      partSymmetry: Right
+      protoId: JawsOfLifeLeftArm
+      slotId: "right arm"

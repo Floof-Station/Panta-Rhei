@@ -19,7 +19,7 @@
     - type: HTN
       rootTask:
         task: SimpleRangedHostileCompound
-    - type: HitscanBatteryAmmoProvider
+    - type: BatteryAmmoProvider
       proto: RedLaser
       fireCost: 62.5
     - type: Battery
@@ -113,14 +113,17 @@
           volume: 5
     - type: Input
       context: "human"
-    - type: Bloodstream
-      bloodMaxVolume: 300
-      bloodReagent: Laughter
     - type: LanguageKnowledge # Floofstation
       speaks:
       - Eldritch
       understands:
       - Eldritch
+    - type: Bloodstream
+      bloodMaxVolume: 300
+      bloodReagents:
+        reagents:
+        - ReagentId: Laughter
+          Quantity: 1
 
 - type: entity
   name: behonker

@@ -1,0 +1,53 @@
+#Winter coats
+- type: entity
+  parent: ClothingOuterWinterCoatToggleable
+  id: ClothingOuterWinterSurgeonGeneral
+  name: surgeon general winter coat
+  description: surgeon general winter coat. Tailor by SESWC
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/coatsg.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/coatsg.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodWinterSurgeonGeneral
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.95
+        Heat: 0.90
+        Caustic: 0.75
+    priceMultiplier: 0.15
+
+- type: entity
+  parent: ClothingHeadHatHoodWinterBase
+  id: ClothingHeadHatHoodWinterSurgeonGeneral
+  categories: [ HideSpawnMenu ]
+  name: surgeon general hood
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/Hoods/surgeongeneralhood.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/Hoods/surgeongeneralhood.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterExpressBuffCourierCoat
+  name: Express "buff" courier coat
+  description: Don't know why they packed extra into the sleeves, but it makes it look funnier.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/expressbuffcuriercoat.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/expressbuffcuriercoat.rsi
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterWarmWornoutCoat
+  name: Warm wornout coat
+  description: An old warm coat. Its color washed out a few years ago.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/warmwornoutcoat.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/WinterCoats/warmwornoutcoat.rsi

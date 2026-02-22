@@ -1,6 +1,7 @@
 # Miscellaneous
 - type: loadoutGroup
   id: Trinkets
+  parent: [TrinketsFloofstation] # Floofstation
   name: loadout-group-trinkets
   minLimit: 0
   maxLimit: 3
@@ -157,6 +158,7 @@
 
 - type: loadoutGroup
   id: CaptainNeck
+  parent: [CommandCollars] # Floofstation
   name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
@@ -177,7 +179,9 @@
   name: loadout-group-captain-outerclothing
   loadouts:
   - CaptainOuterClothing
+  - CaptainLongcoat # DeltaV - Longcoats
   - CaptainWintercoat
+  - CaptainWintercoatArmored #DeltaV
 
 - type: loadoutGroup
   id: CaptainJobTrinkets
@@ -210,6 +214,7 @@
 
 - type: loadoutGroup
   id: HoPNeck
+  parent: [CommandCollars] # Floofstation
   name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
@@ -240,6 +245,7 @@
   - HoPFormalCoat
   - HoPArmoredCoat
   - DuraVest
+  - HoPLongcoat
   # End DeltaV additions
   - HoPWintercoat
 
@@ -364,6 +370,7 @@
 
 - type: loadoutGroup
   id: PassengerNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-passenger-neck
   minLimit: 0
   loadouts:
@@ -376,6 +383,9 @@
   loadouts:
   - PassengerWintercoat
   # Begin DeltaV additions
+  - LongcoatBlack
+  - LongcoatBrown
+  - LongcoatNanoTrasen
   - BlackWinterCoat
   - PurpleWinterCoat
   - RedWinterCoat
@@ -546,6 +556,7 @@
 
 - type: loadoutGroup
   id: LawyerNeck
+  parent: [CommonCollars] # Floofstation
   name: loadout-group-lawyer-neck
   minLimit: 0
   loadouts:
@@ -607,6 +618,7 @@
 
 - type: loadoutGroup
   id: ChaplainNeck
+  parent: [ScientistNeck] # Floofstation
   name: loadout-group-chaplain-neck
   minLimit: 0
   loadouts:
@@ -768,6 +780,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieClown
+  - FlowerWaterClown
 
 - type: loadoutGroup
   id: MimeHead
@@ -921,6 +934,7 @@
 
 - type: loadoutGroup
   id: QuartermasterNeck
+  parent: [CargoCollars] # Floofstation
   name: loadout-group-quartermaster-neck
   minLimit: 0
   loadouts:
@@ -933,6 +947,7 @@
   name: loadout-group-quartermaster-outerclothing
   minLimit: 0
   loadouts:
+  - QuartermasterLongcoat # DeltaV - Longcoats
   - QuartermasterWintercoat
 
 - type: loadoutGroup
@@ -1048,6 +1063,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
+  parent: [EngineeringCollars] # Floofstation
   name: loadout-group-chief-engineer-neck
   minLimit: 0
   loadouts:
@@ -1065,6 +1081,7 @@
   name: loadout-group-chief-engineer-outerclothing
   minLimit: 0
   loadouts:
+  - ChiefEngineerLongcoat # DeltaV - Longcoats
   - ChiefEngineerWintercoat
 
 - type: loadoutGroup
@@ -1240,6 +1257,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
+  parent: [ScientistNeck] # Floofstation
   name: loadout-group-research-director-neck
   minLimit: 0
   loadouts:
@@ -1264,6 +1282,7 @@
   loadouts:
   - ResearchDirectorLabCoat
   - MystaLabCoat # DeltaV
+  - ResearchDirectorLongcoat # DeltaV - Longcoats
   - ResearchDirectorWintercoat
 
 - type: loadoutGroup
@@ -1292,6 +1311,7 @@
 
 - type: loadoutGroup
   id: ScientistNeck
+  parent: [ScienceCollars] # Floofstation
   name: loadout-group-scientist-neck
   minLimit: 0
   loadouts:
@@ -1409,6 +1429,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
+  parent: [SecurityCollars] # Floofstation
   name: loadout-group-head-of-security-neck
   minLimit: 0
   loadouts:
@@ -1471,6 +1492,7 @@
   id: WardenOuterClothing
   name: loadout-group-warden-outerclothing
   loadouts:
+  - WardenLongcoat # DeltaV - Longcoats
   - WardenCoat
   - WardenArmoredWinterCoat
 
@@ -1570,6 +1592,7 @@
 
 - type: loadoutGroup
   id: DetectiveNeck
+  parent: [SecurityCollars] # Floofstation
   name: loadout-group-detective-neck
   minLimit: 0
   loadouts:
@@ -1651,10 +1674,12 @@
   minLimit: 0
   loadouts:
   - ChiefMedicalOfficerLabCoat
+  - ChiefMedicalOfficerLongcoat # DeltaV - Longcoats
   - ChiefMedicalOfficerWintercoat
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
+  parent: [MedicalCollars] # Floofstation
   name: loadout-group-chief-medical-officer-neck
   minLimit: 0
   loadouts:
@@ -1946,26 +1971,30 @@
 - type: loadoutGroup
   id: GroupSpeciesBreathTool
   name: loadout-group-breath-tool
+  parent: GroupSpeciesBreathToolTheShoalBase #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathTool
+
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
   name: loadout-group-breath-tool
+  parent: GroupSpeciesBreathTool #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolMedical
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolSecurity
   name: loadout-group-breath-tool
+  parent: [GroupSpeciesBreathTool, GroupSpeciesBreathToolTheShoalArmored] #euphoria change for vox masks
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
