@@ -18,6 +18,7 @@
 
 - type: emoteSounds
   id: SlimeMaleFloofstation
+  parent: SlimeBaseFloofstation
   abstract: true
   sounds:
     Scream:
@@ -27,6 +28,7 @@
 
 - type: emoteSounds
   id: SlimeFemaleFloofstation
+  parent: SlimeBaseFloofstation
   abstract: true
   sounds:
     Scream:
