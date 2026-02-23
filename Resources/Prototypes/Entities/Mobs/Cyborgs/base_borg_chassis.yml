@@ -163,14 +163,16 @@
     sounds:
       Unsexed: UnisexSilicon
     wilhelmProbability: 0.001 # DeltaV
-  - type: LanguageKnowledge # Floofstation.
+  # Floofstation section
+  - type: LanguageKnowledge # The borg doesn't understand much unless they have a brain
     speaks:
-    - TauCetiBasic
     - Binary
     understands:
-    - TauCetiBasic
     - Binary
     naturalLanguage: Binary
+  - type: ContainerLanguageRelay
+    containerName: borg_brain
+  # Floofstation section end
   - type: DamagedSiliconAccent
   - type: UnblockableSpeech
   - type: FootstepModifier

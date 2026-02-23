@@ -27,6 +27,7 @@ public sealed partial class LanguageSystem
             SpokenLanguages = [FallbackLanguagePrototype],
             UnderstoodLanguages = [FallbackLanguagePrototype],
         };
+        AddComp(entity, result);
         return result;
     }
 
