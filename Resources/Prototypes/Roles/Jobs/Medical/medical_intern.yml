@@ -7,7 +7,7 @@
     - !type:DepartmentTimeRequirement
       department: Medical
       time: 5h
-      inverted: true # stop playing intern if you're good at med!
+      inverted: false # floofstation - let people choose how they want to play their character
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine

@@ -9,7 +9,7 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 5h
-      inverted: true # stop playing intern if you're good at security!
+      inverted: false # floofstation - let people choose how they want to play their character
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
