@@ -2,7 +2,6 @@
   id: FaceBindi
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -16,9 +15,7 @@
   id: FaceFullblush
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -31,7 +28,6 @@
   id: FaceCheekspotRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -45,7 +41,6 @@
   id: FaceCheekspotLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -59,9 +54,7 @@
   id: FaceChesireRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -74,9 +67,7 @@
   id: FaceChesireLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -89,7 +80,6 @@
   id: FaceCrowRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -103,7 +93,6 @@
   id: FaceCrowLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -117,9 +106,7 @@
   id: FaceEarRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -132,9 +119,7 @@
   id: FaceEarLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -147,7 +132,6 @@
   id: FaceEyebrowRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -162,7 +146,6 @@
   id: FaceEyebrowLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -177,7 +160,6 @@
   id: FaceEyebrows
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -191,7 +173,6 @@
   id: FaceEyecornerRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -205,7 +186,6 @@
   id: FaceEyecornerLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -219,7 +199,6 @@
   id: FaceEyelashRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -233,7 +212,6 @@
   id: FaceEyelashLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -247,9 +225,7 @@
   id: FaceEyestripe
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -262,7 +238,6 @@
   id: FaceLipcornerRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -276,7 +251,6 @@
   id: FaceLipcornerLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -290,7 +264,6 @@
   id: FaceGlabella
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -304,7 +277,6 @@
   id: FaceLowercheekRight
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -318,7 +290,6 @@
   id: FaceLowercheekLeft
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -332,9 +303,7 @@
   id: FaceNosetape
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -347,9 +316,7 @@
   id: FaceNosetip
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -363,9 +330,7 @@
   id: FaceNosestripe
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -378,7 +343,6 @@
   id: FaceUnibrow
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   coloring:
     default:
       type:
@@ -392,7 +356,6 @@
   id: FaceNeckSlim
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -402,7 +365,6 @@
   id: FaceNeckWide
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -412,7 +374,6 @@
   id: FaceNeckSlimThick
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -422,7 +383,6 @@
   id: FaceNeckWideThick
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: [] # FLOOF CHANGE IPCs get furry parts
   followSkinColor: true
   sprites:
   - sprite: Mobs/Customization/face.rsi
@@ -432,9 +392,7 @@
   id: IronJaw
   bodyPart: Face
   markingCategory: Face
-  speciesRestriction: []
-
-  invertedRestrictions: true  coloring:
+  coloring:
     default:
       type:
         !type:EyeColoring
