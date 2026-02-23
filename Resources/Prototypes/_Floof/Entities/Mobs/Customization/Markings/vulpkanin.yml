@@ -22,7 +22,7 @@
 #Left Leg
 - type: marking
   id: VulpPointsFadeLegL
-  markingCategory: LeftLeg
+  markingCategory: LLeg
   bodyPart: LLeg
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -31,7 +31,7 @@
 
 - type: marking
   id: VulpPointsSharpLegL
-  markingCategory: LeftLeg
+  markingCategory: LLeg
   bodyPart: LLeg
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -40,7 +40,7 @@
 
 - type: marking
   id: VulpPointsCrestLegL
-  markingCategory: LeftLeg
+  markingCategory: LLeg
   bodyPart: LLeg
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -49,7 +49,7 @@
 #Right Leg
 - type: marking
   id: VulpPointsFadeLegR
-  markingCategory: RightLeg
+  markingCategory: RLeg
   bodyPart: RLeg
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -58,7 +58,7 @@
 
 - type: marking
   id: VulpPointsSharpLegR
-  markingCategory: RightLeg
+  markingCategory: RLeg
   bodyPart: RLeg
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -67,7 +67,7 @@
 
 - type: marking
   id: VulpPointsCrestLegR
-  markingCategory: RightLeg
+  markingCategory: RLeg
   bodyPart: RLeg
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -76,7 +76,7 @@
 #Left Arm
 - type: marking
   id: VulpPointsFadeArmL
-  markingCategory: LeftArm
+  markingCategory: LArm
   bodyPart: LArm
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -85,7 +85,7 @@
 
 - type: marking
   id: VulpPointsSharpArmL
-  markingCategory: LeftArm
+  markingCategory: LArm
   bodyPart: LArm
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -94,7 +94,7 @@
 
 - type: marking
   id: VulpPointsCrestArmL
-  markingCategory: LeftArm
+  markingCategory: LArm
   bodyPart: LArm
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -103,7 +103,7 @@
 #Right Arm
 - type: marking
   id: VulpPointsFadeArmR
-  markingCategory: RightArm
+  markingCategory: RArm
   bodyPart: RArm
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -112,7 +112,7 @@
 
 - type: marking
   id: VulpPointsSharpArmR
-  markingCategory: RightArm
+  markingCategory: RArm
   bodyPart: RArm
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -121,7 +121,7 @@
 
 - type: marking
   id: VulpPointsCrestArmR
-  markingCategory: RightArm
+  markingCategory: RArm
   bodyPart: RArm
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -130,7 +130,7 @@
 #Right Hand
 - type: marking
   id: VulpPointsHandsRight
-  markingCategory: RightHand
+  markingCategory: RHand
   bodyPart: RHand
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
@@ -139,7 +139,7 @@
 #Left Hand
 - type: marking
   id: VulpPointsHandsLeft
-  markingCategory: LeftHand
+  markingCategory: LHand
   bodyPart: LHand
   speciesRestriction: [Vulpkanin, SlimePerson, IPC, Kitsune]
   sprites:
