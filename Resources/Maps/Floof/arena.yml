@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/17/2026 16:15:14
-  entityCount: 30288
+  time: 02/23/2026 16:53:59
+  entityCount: 30289
 maps:
 - 1
 grids:
@@ -15295,7 +15295,7 @@ entities:
       pos: -20.5,-15.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -202965.05
+      secondsUntilStateChange: -203010.64
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -68893,7 +68893,7 @@ entities:
       pos: 26.5,-70.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -121265.984
+      secondsUntilStateChange: -121311.58
       state: Closing
 - proto: d4Dice
   entities:
@@ -133209,6 +133209,16 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
+- proto: IntercomAll
+  entities:
+  - uid: 30289
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 15.5,-95.5
+      parent: 6747
+    - type: Fixtures
+      fixtures: {}
 - proto: IntercomElectronics
   entities:
   - uid: 16165
@@ -135588,7 +135598,7 @@ entities:
       pos: 39.5,-36.5
       parent: 6747
     - type: Door
-      secondsUntilStateChange: -119169.63
+      secondsUntilStateChange: -119215.23
       state: Opening
 - proto: MicroManipulatorStockPart
   entities:
@@ -192554,7 +192564,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -47436.13
+      secondsUntilStateChange: -47481.723
       state: Opening
   - uid: 3684
     components:
@@ -192566,7 +192576,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -47438.96
+      secondsUntilStateChange: -47484.555
       state: Opening
   - uid: 17483
     components:
@@ -192578,7 +192588,7 @@ entities:
       lastSignals:
         DoorStatus: True
     - type: Door
-      secondsUntilStateChange: -47453.33
+      secondsUntilStateChange: -47498.92
       state: Opening
   - uid: 17496
     components:

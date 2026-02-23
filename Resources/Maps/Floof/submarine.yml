@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/19/2026 17:36:13
+  time: 02/23/2026 18:00:38
   entityCount: 41754
 maps:
 - 18185
@@ -221354,18 +221354,6 @@ entities:
     - type: Transform
       pos: 6.5396366,-18.413843
       parent: 2
-- proto: SMESAdvanced
-  entities:
-  - uid: 23121
-    components:
-    - type: Transform
-      pos: 59.5,37.5
-      parent: 2
-  - uid: 28073
-    components:
-    - type: Transform
-      pos: 59.5,38.5
-      parent: 2
 - proto: SMESBasic
   entities:
   - uid: 215
@@ -221489,6 +221477,16 @@ entities:
       name: AME SMES 4
     - type: Transform
       pos: -60.5,35.5
+      parent: 2
+  - uid: 23121
+    components:
+    - type: Transform
+      pos: 59.5,38.5
+      parent: 2
+  - uid: 28073
+    components:
+    - type: Transform
+      pos: 59.5,37.5
       parent: 2
 - proto: SMESMachineCircuitboard
   entities:
@@ -256460,6 +256458,10 @@ entities:
     - type: Transform
       pos: -20.5,41.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - StationAi
+      - - Security
     - type: DeviceNetwork
       deviceLists:
       - 28400
