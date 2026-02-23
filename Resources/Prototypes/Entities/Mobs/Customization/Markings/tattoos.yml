@@ -34,7 +34,7 @@
   id: TattooSilverburghLeftLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Kitsune, Tajaran] # DeltaV - Felinid-Kitsune | Floof - Tajaran
+  speciesRestriction: [] # DeltaV - Felinid-Kitsune | Floof - Tajaran
   coloring:
     default:
       type:
@@ -48,7 +48,7 @@
   id: TattooSilverburghRightLeg
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Kitsune, Tajaran] # DeltaV - Felinid-Kitsune | Floof - Tajaran
+  speciesRestriction: [] # DeltaV - Felinid-Kitsune | Floof - Tajaran
   coloring:
     default:
       type:
@@ -62,7 +62,7 @@
   id: TattooCampbellLeftArm
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Kitsune, Tajaran] # DeltaV - Felinid-Kitsune | Floof - Tajaran
+  speciesRestriction: [] # DeltaV - Felinid-Kitsune | Floof - Tajaran
   coloring:
     default:
       type:
@@ -76,7 +76,7 @@
   id: TattooCampbellRightArm
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Kitsune, Tajaran] # DeltaV - Felinid-Kitsune | Floof - Tajaran
+  speciesRestriction: [] # DeltaV - Felinid-Kitsune | Floof - Tajaran
   coloring:
     default:
       type:
@@ -90,7 +90,7 @@
   id: TattooCampbellLeftLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Kitsune, Tajaran] # DeltaV - Felinid-Kitsune | Floof - Tajaran
+  speciesRestriction: [] # DeltaV - Felinid-Kitsune | Floof - Tajaran
   coloring:
     default:
       type:
@@ -104,7 +104,7 @@
   id: TattooCampbellRightLeg
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [Human, Dwarf, Felinid, Oni, Kitsune, Tajaran] # DeltaV - Felinid-Kitsune | Floof - Tajaran
+  speciesRestriction: [] # DeltaV - Felinid-Kitsune | Floof - Tajaran
   coloring:
     default:
       type:
@@ -148,8 +148,9 @@
   id: TattooEyeMothRight
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:EyeColoring
@@ -162,8 +163,9 @@
   id: TattooEyeMothLeft
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:EyeColoring
@@ -181,8 +183,9 @@
   # some of these limitations could possibly be removed with better control over how the marking can be customized - possibly removing stacking, allowing recoloring & clamping higher-end colors for the eyeshadow, etc.
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf]
-  forcedColoring: true
+  speciesRestriction: []
+
+  invertedRestrictions: true  forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: eyeshadow_upper
@@ -191,8 +194,9 @@
   id: TattooEyeshadowLower
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Human, SlimePerson, Reptilian, Dwarf]
-  forcedColoring: true
+  speciesRestriction: []
+
+  invertedRestrictions: true  forcedColoring: true
   sprites:
   - sprite: Mobs/Customization/tattoos.rsi
     state: eyeshadow_lower

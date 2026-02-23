@@ -2,7 +2,7 @@
   id: GauzeLefteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
@@ -17,7 +17,7 @@
   id: GauzeLefteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
@@ -32,7 +32,7 @@
   id: GauzeRighteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
@@ -47,7 +47,7 @@
   id: GauzeRighteyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
@@ -62,7 +62,7 @@
   id: GauzeBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
   coloring:
     default:
@@ -107,7 +107,7 @@
   id: GauzeUpperArmRight
   bodyPart: RArm
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
@@ -122,7 +122,7 @@
   id: GauzeLowerArmRight
   bodyPart: RArm, RHand
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
   coloring:
     default:
@@ -242,7 +242,7 @@
   id: GauzeHead
   bodyPart: Head
   markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
+  speciesRestriction: [] # Floofstation
   invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Chitinid-Feroxi
   coloring:
     default:
@@ -258,8 +258,9 @@
   id: GauzeLizardLefteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Reptilian]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -272,8 +273,9 @@
   id: GauzeLizardRighteyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Reptilian]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -286,8 +288,9 @@
   id: GauzeLizardFootRight
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [Reptilian]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -300,8 +303,9 @@
   id: GauzeLizardFootLeft
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [Reptilian]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -314,8 +318,9 @@
   id: GauzeLizardBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Reptilian]
-  coloring:
+  speciesRestriction: []
+
+  invertedRestrictions: true  coloring:
     default:
       type:
         !type:SimpleColoring
@@ -329,7 +334,7 @@
   id: GauzeMothBlindfold
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -343,7 +348,7 @@
   id: GauzeMothShoulder
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -357,7 +362,7 @@
   id: GauzeMothStomach
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -371,7 +376,7 @@
   id: GauzeMothLeftEyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -385,7 +390,7 @@
   id: GauzeMothLeftEyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -399,7 +404,7 @@
   id: GauzeMothRightEyePatch
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -413,7 +418,7 @@
   id: GauzeMothRightEyePad
   bodyPart: Eyes
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -427,7 +432,7 @@
   id: GauzeMothUpperArmRight
   bodyPart: RArm
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -441,7 +446,7 @@
   id: GauzeMothUpperArmLeft
   bodyPart: LArm
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -455,7 +460,7 @@
   id: GauzeMothUpperLegRight
   bodyPart: RLeg
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -469,7 +474,7 @@
   id: GauzeMothUpperLegLeft
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -483,7 +488,7 @@
   id: GauzeMothLowerLegRight
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -497,7 +502,7 @@
   id: GauzeMothLowerLegLeft
   bodyPart: LFoot
   markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  speciesRestriction: [] # DeltaV - Chitinid
   coloring:
     default:
       type:

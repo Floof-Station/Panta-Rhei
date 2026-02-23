@@ -1,0 +1,140 @@
+# Head
+- type: marking
+  id: ThavenCheekBarbels
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven.rsi
+    state: cheek_barbels
+
+- type: marking
+  id: ThavenEyebrowBarbels
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven.rsi
+    state: eyebrow_barbels
+
+- type: marking
+  id: ThavenUnderbellyFace
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven.rsi
+    state: underbelly_face
+
+# Torso
+- type: marking
+  id: ThavenUnderbellyTorso
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven.rsi
+    state: underbelly_torso
+
+- type: marking
+  id: ThavenCarpSpots
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _DV/Mobs/Customization/thaven.rsi
+    state: carp_spots
+
+- type: marking
+  id: ThavenEars1
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: ears1
+
+- type: marking
+  id: ThavenEars2
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: ears2
+
+- type: marking
+  id: ThavenEars3
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: ears3
+
+- type: marking
+  id: ThavenEars4
+  bodyPart: HeadSide
+  markingCategory: HeadSide
+  forcedColoring: true
+  followSkinColor: true
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: ears4
+
+- type: marking
+  id: ThavenPiercings
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: piercings
+
+- type: marking
+  id: ThavenPiercings2
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  forcedColoring: false
+  followSkinColor: false
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: piercings2
+
+- type: marking
+  id: ThavenChestTattoo1
+  bodyPart: Chest
+  markingCategory: Chest
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: chesttat1
+
+- type: marking
+  id: ThavenLArmTattoo1
+  bodyPart: LArm
+  markingCategory: Arms
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: larmtat1
+
+- type: marking
+  id: ThavenRArmTattoo1
+  bodyPart: RArm
+  markingCategory: Arms
+  coloring:
+    default:
+      type:
+        !type:TattooColoring
+      fallbackColor: "#666666"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/thaven/thaven.rsi
+    state: rarmtat1

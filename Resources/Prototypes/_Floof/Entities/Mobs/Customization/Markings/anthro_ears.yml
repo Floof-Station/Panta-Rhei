@@ -4,7 +4,6 @@
   id: EarsFox
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: ears_fox_primary
@@ -15,7 +14,6 @@
   id: EarsAntennaFuzzball
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_antenna_fuzzball_ADJ_secondary: m_ears_antenna_fuzzball_FRONT_secondary
     m_ears_antenna_fuzzball_ADJ_tertiary: m_ears_antenna_fuzzball_FRONT_tertiary
@@ -33,7 +31,6 @@
   id: EarsAntennaFuzzballv2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_antenna_fuzzballv2_ADJ_primary: m_ears_antenna_fuzzballv2_FRONT_primary
     m_ears_antenna_fuzzballv2_ADJ_tertiary: m_ears_antenna_fuzzballv2_FRONT_tertiary
@@ -51,7 +48,6 @@
   id: EarsAntennaSimple1
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_antenna_simple1_ADJ_primary: m_ears_antenna_simple1_FRONT_primary
   sprites:
@@ -64,7 +60,6 @@
   id: EarsAntennaSimple1v2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_antenna_simple1v2_ADJ_primary: m_ears_antenna_simple1v2_FRONT_primary
   sprites:
@@ -76,8 +71,7 @@
 - type: marking
   id: EarsAntennaSimple2
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
+  markingCategory: HeadTop 
   colorLinks:
     m_ears_antenna_simple2_ADJ_primary: m_ears_antenna_simple2_FRONT_primary
   sprites:
@@ -90,7 +84,6 @@
   id: EarsAntennaSimple2v2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_antenna_simple2v2_ADJ_primary: m_ears_antenna_simple2v2_FRONT_primary
   sprites:
@@ -103,7 +96,6 @@
   id: EarsAxolotl
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_axolotl_ADJ: m_ears_axolotl_FRONT
   sprites:
@@ -116,7 +108,6 @@
   id: EarsBat
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_bat_ADJ_primary
@@ -127,7 +118,6 @@
   id: EarsBear
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Kitsune]
   colorLinks:
     m_ears_bear_ADJ: m_ears_bear_FRONT
   sprites:
@@ -142,7 +132,7 @@
 #  id: EarsBigWolf
 #  bodyPart: HeadTop
 #  markingCategory: HeadTop
-#  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Kitsune]
+#  speciesRestriction: []
 #  colorLinks:
 #    m_ears_bigwolf_ADJ_primary: m_ears_bigwolf_FRONT_primary
 #    m_ears_bigwolfinner_ADJ: m_ears_bigwolfinner_FRONT
@@ -164,7 +154,7 @@
 #  id: EarsBigWolfDark
 #  bodyPart: HeadTop
 #  markingCategory: HeadTop
-#  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Kitsune]
+#  speciesRestriction: []
 #  colorLinks:
 #    m_ears_bigwolfdark_ADJ_primary: m_ears_bigwolfdark_FRONT_primary
 #    m_ears_bigwolfinnerdark_ADJ: m_ears_bigwolfinnerdark_FRONT
@@ -186,7 +176,6 @@
   id: EarsBunny
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_bunny_ADJ_primary: m_ears_bunny_FRONT_primary
   sprites:
@@ -200,8 +189,7 @@
 - type: marking
   id: EarsBunnyAlt
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
+  markingCategory: HeadTop 
   colorLinks:
     m_ears_bunnyalt_ADJ_primary: m_ears_bunnyalt_FRONT_primary
     m_ears_bunnyalt_ADJ_secondary: m_ears_bunnyalt_FRONT_secondary
@@ -219,7 +207,6 @@
   id: EarsCatBig
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_catbig_ADJ_primary: m_ears_catbig_FRONT_primary
     m_ears_catbig_ADJ_secondary: m_ears_catbig_FRONT_secondary
@@ -237,7 +224,6 @@
   id: EarsCatNormal
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_catnormal_ADJ_primary: m_ears_catnormal_FRONT_primary
     m_ears_catnormal_ADJ_secondary: m_ears_catnormal_FRONT_secondary
@@ -255,7 +241,6 @@
   id: EarsCobraEars
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_cobraears_ADJ_primary
@@ -266,7 +251,6 @@
   id: EarsCobraHood
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_cobrahood_ADJ_primary
@@ -277,7 +261,6 @@
   id: EarsCow
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_cow_ADJ: m_ears_cow_FRONT
   sprites:
@@ -290,7 +273,6 @@
   id: EarsDeer
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_cow_ADJ: m_ears_cow_FRONT
   sprites:
@@ -303,7 +285,6 @@
   id: EarsDeer2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_cow_ADJ: m_ears_cow_FRONT
   sprites:
@@ -316,7 +297,6 @@
   id: EarsDeerEar
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_deerear_ADJ_primary: m_ears_deerear_FRONT_primary
     m_ears_deerear_ADJ_secondary: m_ears_deerear_FRONT_secondary
@@ -334,7 +314,6 @@
   id: EarsEvolox
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_evolox_ADJ_primary: m_ears_evolox_FRONT_primary
     m_ears_evolox_ADJ_secondary: m_ears_evolox_FRONT_secondary
@@ -352,7 +331,6 @@
   id: EarsEvoloxAlt
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_evolox_alt_ADJ_primary: m_ears_evolox_alt_FRONT_primary
     m_ears_evolox_alt_ADJ_secondary: m_ears_evolox_alt_FRONT_secondary
@@ -370,7 +348,6 @@
   id: EarsElephant
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_elephant_ADJ: m_ears_elephant_FRONT
   sprites:
@@ -383,7 +360,6 @@
   id: EarsElf
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_elf_ADJ: m_ears_elf_FRONT
   sprites:
@@ -396,7 +372,6 @@
   id: EarsElfBroad
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_elfbroad_ADJ: m_ears_elfbroad_FRONT
   sprites:
@@ -409,7 +384,6 @@
   id: EarsElfLonger
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_elflonger_ADJ: m_ears_elflonger_FRONT
   sprites:
@@ -422,7 +396,6 @@
   id: EarsElfWide
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_elfwide_ADJ: m_ears_elfwide_FRONT
   sprites:
@@ -435,7 +408,6 @@
   id: EarsSabresuneExtra
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_extra_sabresune_ADJ: m_ears_extra_sabresune_FRONT
   sprites:
@@ -448,7 +420,6 @@
   id: EarsFennec
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_fennec_ADJ_primary: m_ears_fennec_FRONT_primary
     m_ears_fennec_ADJ_tertiary: m_ears_fennec_FRONT_tertiary
@@ -466,7 +437,6 @@
   id: EarsFish
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_fish_ADJ: m_ears_fish_FRONT
   sprites:
@@ -479,7 +449,6 @@
   id: EarsFourEars2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_four_ears_2_ADJ_primary: m_ears_four_ears_2_FRONT_primary
   sprites:
@@ -494,7 +463,6 @@
   id: MEarsFox
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_fox_ADJ_primary: m_ears_fox_FRONT_primary
     m_ears_fox_ADJ_secondary: m_ears_fox_FRONT_secondary
@@ -512,7 +480,6 @@
   id: EarsHammerhead
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_hammerhead_FRONT_primary
@@ -523,7 +490,6 @@
   id: EarsHawk
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_hawk_ADJ_primary: m_ears_hawk_FRONT_primary
   sprites:
@@ -536,7 +502,6 @@
   id: EarsHorn1
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_horn1_FRONT
@@ -545,7 +510,6 @@
   id: EarsJellyfish
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_jellyfish_ADJ: m_ears_jellyfish_FRONT
   sprites:
@@ -558,7 +522,6 @@
   id: EarsKangaroo
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_kangaroo_ADJ_primary: m_ears_kangaroo_FRONT_primary
     m_ears_kangaroo_ADJ_secondary: m_ears_kangaroo_FRONT_secondary
@@ -575,8 +538,7 @@
 - type: marking
   id: EarsLab
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
+  markingCategory: HeadTop 
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_lab_FRONT
@@ -587,7 +549,6 @@
   id: EarsLunasune
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_lunasune_ADJ_primary: m_ears_lunasune_FRONT_primary
     m_ears_lunasune_ADJ_secondary: m_ears_lunasune_FRONT_secondary
@@ -605,7 +566,6 @@
   id: EarsMiqote
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_miqote_ADJ_primary: m_ears_miqote_FRONT_primary
     m_ears_miqote_ADJ_secondary: m_ears_miqote_FRONT_secondary
@@ -623,7 +583,6 @@
   id: EarsMouse
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_mouse_ADJ_primary: m_ears_mouse_FRONT_primary
     m_ears_mouse_ADJ_secondary: m_ears_mouse_FRONT_secondary
@@ -643,7 +602,6 @@
   id: EarsMouse2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_mouse_two_ADJ_primary: m_ears_mouse_two_FRONT_primary
     m_ears_mouse_two_ADJ_secondary: m_ears_mouse_two_FRONT_secondary
@@ -663,7 +621,6 @@
   id: EarsMurid
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_murid_ADJ_primary: m_ears_murid_FRONT_primary
     m_ears_murid_ADJ_secondary: m_ears_murid_FRONT_secondary
@@ -680,8 +637,7 @@
 - type: marking
   id: EarsOtie
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
+  markingCategory: HeadTop  
   colorLinks:
     m_ears_otie_ADJ_primary: m_ears_otie_FRONT_primary
     m_ears_otie_ADJ_secondary: m_ears_otie_FRONT_secondary
@@ -699,7 +655,6 @@
   id: EarsPede
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_pede_ADJ_primary: m_ears_pede_FRONT_primary
     m_ears_pede_ADJ_secondary: m_ears_pede_FRONT_secondary
@@ -717,7 +672,6 @@
   id: EarsPerky
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_perky_ADJ_primary: m_ears_perky_FRONT_primary
     m_ears_perky_ADJ_secondary: m_ears_perky_FRONT_secondary
@@ -735,7 +689,6 @@
   id: EarsPossum
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_possum_ADJ_primary: m_ears_possum_FRONT_primary
     m_ears_possum_ADJ_secondary: m_ears_possum_FRONT_secondary
@@ -749,29 +702,28 @@
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_ears_possum_ADJ_secondary
 
-#- type: marking
-#  id: EarsProtogen
-#  bodyPart: HeadTop
-#  markingCategory: HeadTop
-#  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Kitsune]
-#  colorLinks:
-#    m_ears_protogen_ADJ_primary: m_ears_protogen_FRONT_primary
-#    m_ears_protogen_ADJ_secondary: m_ears_protogen_FRONT_secondary
-#  sprites:
-#  - sprite: _Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_FRONT_primary
-#  - sprite: _Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_FRONT_secondary
-#  - sprite: _Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_ADJ_primary
-#  - sprite: _Floof/Mobs/Customization/skyratears.rsi
-#    state: m_ears_protogen_ADJ_secondary
+# - type: marking
+#   id: EarsProtogen
+#   bodyPart: HeadTop
+#   markingCategory: HeadTop
+#   speciesRestriction: []
+#   colorLinks:
+#     m_ears_protogen_ADJ_primary: m_ears_protogen_FRONT_primary
+#     m_ears_protogen_ADJ_secondary: m_ears_protogen_FRONT_secondary
+#   sprites:
+#   - sprite: _Floof/Mobs/Customization/skyratears.rsi
+#     state: m_ears_protogen_FRONT_primary
+#   - sprite: _Floof/Mobs/Customization/skyratears.rsi
+#     state: m_ears_protogen_FRONT_secondary
+#   - sprite: _Floof/Mobs/Customization/skyratears.rsi
+#     state: m_ears_protogen_ADJ_primary
+#   - sprite: _Floof/Mobs/Customization/skyratears.rsi
+#     state: m_ears_protogen_ADJ_secondary
 
 - type: marking
   id: EarsRabbit
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_rabbit_ADJ_primary: m_ears_rabbit_FRONT_primary
     m_ears_rabbit_ADJ_secondary: m_ears_rabbit_FRONT_secondary
@@ -789,7 +741,6 @@
   id: EarsRabbitAlt
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_rabbitalt_ADJ_primary: m_ears_rabbitalt_FRONT_primary
     m_ears_rabbitalt_ADJ_secondary: m_ears_rabbitalt_FRONT_secondary
@@ -807,7 +758,6 @@
   id: EarsRabbitLop
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_rabbitlop_ADJ_primary: m_ears_rabbitlop_FRONT_primary
     m_ears_rabbitlop_ADJ_secondary: m_ears_rabbitlop_FRONT_secondary
@@ -825,7 +775,6 @@
   id: EarsRaccoon
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_raccoon_ADJ_primary: m_ears_raccoon_FRONT_primary
     m_ears_raccoon_ADJ_secondary: m_ears_raccoon_FRONT_secondary
@@ -843,7 +792,6 @@
   id: EarsSabresune
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_sabresune_ADJ_primary: m_ears_sabresune_FRONT_primary
     m_ears_sabresune_ADJ_secondary: m_ears_sabresune_FRONT_secondary
@@ -861,7 +809,6 @@
   id: EarsSergal
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_sergal_ADJ_primary: m_ears_sergal_FRONT_primary
   sprites:
@@ -876,7 +823,6 @@
   id: EarsSkunk
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_skunk_ADJ_primary: m_ears_skunk_FRONT_primary
     m_ears_skunk_ADJ_secondary: m_ears_skunk_FRONT_secondary
@@ -893,8 +839,7 @@
 - type: marking
   id: EarsSquirrel
   bodyPart: HeadTop
-  markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
+  markingCategory: HeadTop 
   colorLinks:
     m_ears_squirrel_ADJ_primary: m_ears_squirrel_FRONT_primary
     m_ears_squirrel_ADJ_secondary: m_ears_squirrel_FRONT_secondary
@@ -915,7 +860,6 @@
   id: EarsWolf
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Kitsune]
   colorLinks:
     m_ears_wolf_ADJ_primary: m_ears_wolf_FRONT_primary
     m_ears_wolf_ADJ_tertiary: m_ears_wolf_FRONT_tertiary
@@ -933,7 +877,6 @@
   id: EarsVirtuasaurHorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Reptilian, Kitsune]
   sprites:
   - sprite: _Floof/Mobs/Customization/skyratears.rsi
     state: m_horns_virtuasaur
