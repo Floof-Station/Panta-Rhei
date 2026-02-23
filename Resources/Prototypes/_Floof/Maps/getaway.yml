@@ -22,9 +22,6 @@
           Passenger: [ -1, -1 ]
 #          Anomaly: [ 4, 4 ] # Floofstation
           Captain: [ 1, 1 ]
-          #BlueshieldOfficer: [ 1, 1] #Floof - uncomment once implemented on Floof maps
-          #NanotrasenRepresentative: [ 1, 1 ] #Floof - uncomment once implemented on Floof maps
-          #AdministrativeAssistant: [ 1, 1 ] #Floof - uncomment once implemented on Floof maps
           # Service
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 2, 2 ]
@@ -56,7 +53,7 @@
           MedicalDoctor: [ 5, 6 ]
           MedicalIntern: [ 2, 3 ]
           Surgeon: [ 1, 1 ]
-#          SeniorPhysician: [ 1, 1 ]
+          SeniorPhysician: [ 1, 1 ]
           # Science (Epistemics)
           ResearchDirector: [ 1, 1 ]
           Chaplain: [ 1, 1 ]
@@ -65,7 +62,7 @@
           ResearchAssistant: [ 2, 3 ]
           Roboticist: [ 2, 2 ]
           Librarian: [ 1, 1 ]
-#          SeniorResearcher: [ 1, 1 ]
+          SeniorResearcher: [ 1, 1 ]
           # Security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
@@ -75,16 +72,14 @@
           Brigmedic: [ 1, 1 ]
           Prisoner: [ 2, 3 ]
           PrisonGuard: [ 2, 2 ]
-#          SeniorOfficer: [ 1, 1 ]
+          SeniorOfficer: [ 1, 1 ]
           # Logistics
           Quartermaster: [ 1, 1 ]
-#          InventorySpecialist: [ 1, 1 ] #FloofStation
+          InventorySpecialist: [ 1, 1 ] #FloofStation
           Courier: [ 2, 2 ]
           SalvageSpecialist: [ 4, 5 ]
           CargoTechnician: [ 3, 4 ]
           # Silicon
           StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
           Borg: [ 2, 3 ]
-          MedicalBorg: [ 1, 2 ]
-#          ServiceQuadBorg: [ 2, 3 ] #Floofstation
-#          MedicalQuadBorg: [ 2, 3 ] #Floofstation
+          MedicalBorg: [ 2, 3 ]
