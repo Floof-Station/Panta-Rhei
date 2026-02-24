@@ -1456,7 +1456,7 @@
   - 1.0
   - 1.0
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: FootstepTile
   heatCapacity: 10000
@@ -1467,7 +1467,7 @@
   name: tiles-planet-grass-floor
   sprite: /Textures/Tiles/grass.png
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: FootstepGrass
   itemDrop: FloorTileItemGrass
@@ -1479,7 +1479,7 @@
   name: tiles-jungle-grass-floor
   sprite: /Textures/Tiles/grassjungle.png
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: FootstepGrass
   itemDrop: FloorTileItemGrassJungle
@@ -1497,7 +1497,7 @@
   - 1.0
   - 1.0
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
@@ -1514,7 +1514,7 @@
   - 1.0
   - 1.0
   baseTurf: FloorDirt
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: FootstepGrass
   heatCapacity: 10000
