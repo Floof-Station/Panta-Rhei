@@ -6,7 +6,6 @@
 #  id: FullID
 #  bodyPart: Part
 #  markingCategory: Category
-#  speciesRestriction: [Species, Species]
 #  youre on your own for figuring out the coloring system, my friend
 #  sprites:
 #  - sprite: _Impstation/Mobs/Customization/filelocation.rsi
@@ -17,7 +16,6 @@
   id: Gills
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -28,7 +26,6 @@
   id: ThavenChestScales
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -39,7 +36,6 @@
   id: ThavenHeadScales
   bodyPart: Head
   markingCategory: HeadTop
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -50,7 +46,6 @@
   id: ThavenLArmScales
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -61,7 +56,6 @@
   id: ThavenRArmScales
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -72,7 +66,6 @@
   id: ThavenLLegScales
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -83,7 +76,6 @@
   id: ThavenRLegScales
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -94,7 +86,6 @@
 #  id: ThavenLHandScales
 #  bodyPart: LHand
 #  markingCategory: Arms
-#  speciesRestriction: [ Thaven ]
 #  forcedColoring: false
 #  followSkinColor: false
 #  sprites:
@@ -105,7 +96,6 @@
 #  id: ThavenRHandScales
 #  bodyPart: RHand
 #  markingCategory: Arms
-#  speciesRestriction: [ Thaven ]
 #  forcedColoring: false
 #  followSkinColor: false
 #  sprites:
@@ -116,7 +106,6 @@
 #  id: Thiddies
 #  bodyPart: Chest
 #  markingCategory: Chest
-#  speciesRestriction: [ Thaven ]
 #  forcedColoring: true
 #  followSkinColor: true
 #  sprites:
@@ -129,7 +118,6 @@
   id: ThavenTopSurgery
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -140,7 +128,6 @@
   id: ThavenFishEars
   bodyPart: HeadSide
   markingCategory: Headside
-  speciesRestriction: [ Thaven ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -151,7 +138,6 @@
   id: ThavenTattooVines
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -162,7 +148,6 @@
   id: ThavenSpines
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -173,7 +158,6 @@
   id: ThavenBiteMark
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -184,7 +168,6 @@
   id: ThavenTattooWave
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -195,7 +178,6 @@
   id: SharkminnowEyeliner
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -206,7 +188,6 @@
   id: ThavenTiger
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -219,7 +200,6 @@
   id: ThavenTigerRArm
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -230,7 +210,6 @@
   id: ThavenTigerLArm
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -241,7 +220,6 @@
   id: ThavenHeadStripes
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -252,7 +230,6 @@
   id: ThavenBodyStripes
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -263,7 +240,6 @@
   id: ThavenEarsBigFins
   bodyPart: HeadSide
   markingCategory: HeadSide
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -276,7 +252,6 @@
   id: ThavenHeadCap
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Thaven ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -289,7 +264,6 @@
   id: DionaLivingNymph
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/animatedmarkings.rsi
     state: dionalivingnymph
@@ -298,7 +272,6 @@
   id: DionaMossChest
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -309,7 +282,6 @@
   id: DionaMoonBloom
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Diona ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -321,7 +293,6 @@
   id: DionaBigFirefly
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Diona ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -333,7 +304,6 @@
   id: DionaFirefly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Diona ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -345,7 +315,6 @@
   id: DionaPollenDust
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Diona ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -356,7 +325,6 @@
   id: SpiderMirror
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Arachnid ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -368,7 +336,6 @@
   id: SpiderGlowEyes
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -380,7 +347,6 @@
   id: SpiderEyesMulti
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Arachnid ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -397,7 +363,6 @@
   id: MothTrueButterfly
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -412,7 +377,6 @@
   id: MothRhinoBeetle
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth, Chitinid]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -427,7 +391,6 @@
   id: MothGlasswing
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -442,7 +405,6 @@
   id: MothBee
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -457,7 +419,6 @@
   id: MothGlowAntenna
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Moth, Chitinid]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -469,7 +430,6 @@
   id: MothFireflyOverlay
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -481,7 +441,6 @@
   id: MothFirefly
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -492,7 +451,6 @@
   id: MothBeetleTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth, Chitinid]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -507,7 +465,6 @@
   id: MothBeetleHorn1
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Moth]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -518,7 +475,6 @@
   id: MothBeetleHorn2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [ Moth]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -529,7 +485,6 @@
   id: MothBiggerEyes
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [ Moth, Chitinid]
   coloring:
     default:
       type:
@@ -542,7 +497,6 @@
   id: MothSnoth
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Moth ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -555,7 +509,6 @@
   id: VoxCocktail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -572,7 +525,6 @@
   id: VoxTailBalled
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Vox ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -585,7 +537,6 @@
   id: VoxTailStripes
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -598,7 +549,6 @@
   id: VoxLArmProsthetic
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   coloring:
@@ -614,7 +564,6 @@
   id: VoxRArmProsthetic
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   coloring:
@@ -630,7 +579,6 @@
   id: VoxBeakColor
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -641,7 +589,6 @@
   id: VoxBeakSplit
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -654,7 +601,6 @@
   id: VoxBeakTipped
   bodyPart: Snout
   markingCategory: Snout
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -665,7 +611,6 @@
   id: VoxChestPlumage
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -676,7 +621,6 @@
   id: VoxFootSpines
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -687,7 +631,6 @@
   id: VoxFootGradientLFoot
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -698,7 +641,6 @@
   id: VoxFootGradientRFoot
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -709,7 +651,6 @@
   id: VoxLegGradientLLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -720,7 +661,6 @@
   id: VoxLegGradientRLeg
   bodyPart: RLeg
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -731,7 +671,6 @@
   id: VoxHandGradientRHand
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -746,7 +685,6 @@
   id: VoxHandGradientLHand
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -761,7 +699,6 @@
   id: VoxHeadGradient
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -776,7 +713,6 @@
   id: VoxTailBell
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -789,7 +725,6 @@
   id: VoxTailBack
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Vox ]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -800,7 +735,6 @@
   id: VoxTailLantern
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -812,7 +746,6 @@
   id: VoxTailSingleStripe
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -823,7 +756,6 @@
   id: VoxTailSmallPlume
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -834,7 +766,6 @@
   id: VoxTailSpines
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -845,7 +776,6 @@
   id: VoxArmsStripesLHand
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -856,7 +786,6 @@
   id: VoxArmsStripesRHand
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -867,7 +796,6 @@
   id: VoxLegsStripesLLeg
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -878,7 +806,6 @@
   id: VoxLegsStripesRLeg
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -889,7 +816,6 @@
   id: VoxChains
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -900,7 +826,6 @@
   id: VoxSunAndMoon
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -911,7 +836,6 @@
   id: VoxCheeks
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -922,7 +846,6 @@
   id: VoxBelly
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Vox ]
   forcedColoring: false
   followSkinColor: false
   sprites:
@@ -933,7 +856,6 @@
   id: VitiligoHeadL
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human,  Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -948,7 +870,6 @@
   id: VitiligoHeadR
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -963,7 +884,6 @@
   id: VitiligoHeadJaw
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -978,7 +898,6 @@
   id: VitiligoChestF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -993,7 +912,6 @@
   id: VitiligoChestSpots
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1008,7 +926,6 @@
   id: VitiligoArmR
   bodyPart: RArm
   markingCategory: Arms
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1023,7 +940,6 @@
   id: VitiligoArmL
   bodyPart: LArm
   markingCategory: Arms
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1038,7 +954,6 @@
   id: VitiligoHandR
   bodyPart: RHand
   markingCategory: Arms
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1053,7 +968,6 @@
   id: VitiligoHandL
   bodyPart: LHand
   markingCategory: Arms
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1068,7 +982,6 @@
   id: VitiligoLegR
   bodyPart: RLeg
   markingCategory: Legs
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1083,7 +996,6 @@
   id: VitiligoLegL
   bodyPart: LLeg
   markingCategory: Legs
-  speciesRestriction: [ Human, Oni ]
   forcedColoring: true
   coloring:
     default:
@@ -1098,7 +1010,6 @@
   id: ChitinidBeetleHorn1
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Chitinid]
   forcedColoring: true
   followSkinColor: true
   sprites:
@@ -1109,7 +1020,6 @@
   id: ChitinidBeetleHorn2
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Chitinid]
   forcedColoring: true
   followSkinColor: true
   sprites:
