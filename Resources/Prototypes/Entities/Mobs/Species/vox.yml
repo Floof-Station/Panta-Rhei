@@ -97,7 +97,7 @@
         Cold: 0 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5 #floof/euphoria changes start here
+        Heat: 1.5 #floof/euphoria changes end here
   - type: PassiveDamage
     # Augment normal health regen to be able to tank some Poison damage
     # This allows Vox to take their mask off temporarily to eat something without needing a trip to medbay afterwards.
