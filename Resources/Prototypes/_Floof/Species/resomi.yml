@@ -17,14 +17,23 @@
   id: MobResomiSprites
   sprites:
     Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
+    TailBehind: MobHumanoidAnyMarking # Floofstation
+    TailOversuit: MobHumanoidAnyMarking # Floofstation
+    Head: MobHumanHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
     HeadTop: MobHumanoidAnyMarking
-    Head: MobResomiHead
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
-    Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobResomiTorso
+    Wings: MobHumanoidAnyMarking
     Eyes: MobResomiEyes
     LArm: MobResomiLArm
     RArm: MobResomiRArm
@@ -34,27 +43,37 @@
     RLeg: MobResomiRLeg
     LFoot: MobResomiLFoot
     RFoot: MobResomiRFoot
-    Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
-
 - type: markingPoints
   id: MobResomiMarkingLimits
   points:
     Special:
-      points: 0
-      required: false
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
-      required: false
-    Snout:
       points: 1
       required: false
     Tail:
       points: 2
       required: false
+    Head:
+      points: 1
+      required: false
+    Face:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
+      required: false
+    HeadSide:
+      points: 4
+      required: false
     HeadTop:
+      points: 4
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
       points: 1
       required: false
     UndergarmentTop:
@@ -63,14 +82,26 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
+      required: false
     Chest:
+      points: 10
+      required: false
+    Wings:
       points: 1
       required: false
     Legs:
-      points: 6 # DeltaV - was 2
+      points: 10
       required: false
     Arms:
-      points: 6 # DeltaV - was 2
+      points: 10
       required: false
 
 - type: humanoidBaseSprite

@@ -4,7 +4,7 @@
   roundStart: false
   prototype: MobGingerbread
   sprites: MobGingerbreadSprites
-  markingLimits: MobHumanMarkingLimits
+  markingLimits: MobGingerbreadMarkingLimits
   dollPrototype: MobGingerbreadDummy
   skinColoration: HumanToned
   defaultSkinTone: "#9a7c5a"
@@ -12,12 +12,24 @@
 - type: speciesBaseSprites
   id: MobGingerbreadSprites
   sprites:
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobGingerbreadHead
-    HeadTop: MobHumanoidAnyMarking
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobGingerbreadTorso
+    Wings: MobHumanoidAnyMarking
     Eyes: MobGingerbreadEyes
     LArm: MobGingerbreadLArm
     RArm: MobGingerbreadRArm
@@ -27,6 +39,67 @@
     RLeg: MobGingerbreadRLeg
     LFoot: MobGingerbreadLFoot
     RFoot: MobGingerbreadRFoot
+
+- type: markingPoints
+  id: MobGingerbreadMarkingLimits
+  points:
+    Special:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
+    Head:
+      points: 4
+      required: false
+    Face:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
+      required: false
+    HeadSide:
+      points: 4
+      required: false
+    HeadTop:
+      points: 4
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
+      required: false
+    Chest:
+      points: 10
+      required: false
+    Wings:
+      points: 1
+      required: false
+    Legs:
+      points: 10
+      required: false
+    Arms:
+      points: 10
+      required: false
 
 - type: humanoidBaseSprite
   id: MobGingerbreadEyes
