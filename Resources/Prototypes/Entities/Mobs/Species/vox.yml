@@ -78,7 +78,7 @@
         damage: 40
       behaviors:
       - !type:VomitBehavior
-  - type: Barotrauma
+  - type: Barotrauma #floof/euphoria changes start here
     damage:
       types:
         blunt: 0.0 #this is a bandaid fix to keep new vox consistant with old ee vox. if this gets removed and if there's vox armors and hardsuits pleasae also add pressure protection to said suits so vox players dont suddenly realize their suits dont work cuz of some ipc mains mald pr
@@ -97,7 +97,7 @@
         Cold: 0 #per second, scales with temperature & other constants
     heatDamage:
       types:
-        Heat: 1.5 #per second, scales with temperature & other constants
+        Heat: 1.5 #floof/euphoria changes start here
   - type: PassiveDamage
     # Augment normal health regen to be able to tank some Poison damage
     # This allows Vox to take their mask off temporarily to eat something without needing a trip to medbay afterwards.
