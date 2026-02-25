@@ -76,17 +76,17 @@ marking-MothRhinoBeetle-rhinobeetle2 = Shine
 marking-MothRhinoBeetle-rhinobeetle3 = Wings
 
 # slimes
-marking-fizz = Fizz
-marking-fizz-fizz = Fizz
-marking-bubble = Bubbles
-marking-bubble-bubble = Bubbles
-marking-fishbowl = Fishbowl
-marking-fishbowl-fishbowl1 = Fish
-marking-fishbowl-fishbowl2 = Fish bubbles
-marking-FadingStars = Fading Starlight
-marking-FadingStars-fadingstars1 = Brightest
-marking-FadingStars-fadingstars2 = Middling
-marking-FadingStars-fadingstars3 = Darkest
+# marking-fizz = Fizz
+# marking-fizz-fizz = Fizz
+# marking-bubble = Bubbles
+# marking-bubble-bubble = Bubbles
+# marking-fishbowl = Fishbowl
+# marking-fishbowl-fishbowl1 = Fish
+# marking-fishbowl-fishbowl2 = Fish bubbles
+# marking-FadingStars = Fading Starlight
+# marking-FadingStars-fadingstars1 = Brightest
+# marking-FadingStars-fadingstars2 = Middling
+# marking-FadingStars-fadingstars3 = Darkest
 
 # vox
 marking-VoxCocktail = Cocktail
