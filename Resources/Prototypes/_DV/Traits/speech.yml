@@ -5,7 +5,7 @@
   name: trait-pirate-accent-name
   description: trait-pirate-accent-desc
   category: Accents
-  cost: 2
+  cost: 0
   effects:
   - !type:AddCompsEffect
     components:
@@ -16,7 +16,7 @@
   name: trait-southern-name
   description: trait-southern-desc
   category: Accents
-  cost: 2
+  cost: 0
   effects:
   - !type:AddCompsEffect
     components:
@@ -27,7 +27,7 @@
   name: trait-cowboy-name
   description: trait-cowboy-desc
   category: Accents
-  cost: 2
+  cost: 0
   effects:
   - !type:AddCompsEffect
     components:
@@ -39,7 +39,7 @@
   name: trait-italian-name
   description: trait-italian-desc
   category: Accents
-  cost: 2
+  cost: 0
   effects:
   - !type:AddCompsEffect
     components:
@@ -51,7 +51,7 @@
   name: trait-muted-name
   description: trait-muted-desc
   category: Accents
-  cost: 2
+  cost: 0
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -180,7 +180,7 @@
   name: trait-anglish-name
   description: trait-anglish-desc
   category: Accents
-  cost: 2
+  cost: 0
   effects:
   - !type:AddCompsEffect
     components:
