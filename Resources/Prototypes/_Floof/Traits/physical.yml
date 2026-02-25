@@ -45,10 +45,13 @@
     species: IPC
     invert: true
   - !type:HasCompCondition
-    component: 
-    - Synth
-    - Silicon
-    - BorgChassis
+    component: Synth
+    invert: true
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
     invert: true
   effects:
   - !type:OverrideCompsEffect
