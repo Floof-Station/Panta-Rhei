@@ -28,8 +28,8 @@ marking-SlimeEyesCyclopsGlowing-cyclopsglow = Cyclops Glowing Eye
 # marking-SlimeCore-core = Core
 # marking-SlimeCore = Core
 
-marking-SlimeLungs-lungs = Lungs
-marking-SlimeLungs = Lungs
+# marking-SlimeLungs-lungs = Lungs
+# marking-SlimeLungs = Lungs
 
 marking-SlimeBonehead-bonehead = Floating Skull
 # marking-SlimeBonehead = Floating Skull
