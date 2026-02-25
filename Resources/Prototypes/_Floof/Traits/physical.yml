@@ -144,18 +144,20 @@
   conditions:
   - !type:HasJobCondition
     inverted: true
-    job:
-    - Prisoner 
+    job: Prisoner 
 #  - !type:HasCompCondition
 #    component:
 #    - EyeProtection
 #    - FlashImmunity
   - !type:IsSpeciesCondition
-    species:
-    - Felinid
-    - Tajaran
-    - Rodentia
     invert: true
+    species: Felinid
+  - !type:IsSpeciesCondition
+    invert: true
+    species: Tajaran
+  - !type:IsSpeciesCondition
+    invert: true
+    species: Rodentia
   effects:
   - !type:AddCompsEffect
     components:
@@ -170,8 +172,7 @@
   conditions:
   - !type:HasJobCondition
     inverted: true
-    job:
-    - Prisoner 
+    job: Prisoner 
 #  - !type:HasCompCondition
 #    component:
 #    - EyeProtection
