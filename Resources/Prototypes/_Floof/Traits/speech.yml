@@ -5,8 +5,8 @@
   name: trait-dog-accent-name
   description: trait-dog-accent-desc
   category: Accents
-  slots: 0
-  functions:
+  cost: 0
+  effects:
   - !type:AddCompsEffect
     components:
     - type: BarkAccent
