@@ -4,7 +4,7 @@ marking-SlimeNose = Nose (Profile)
 marking-SlimeMouth-mouth = Mouth
 marking-SlimeMouth = Mouth
 
-marking-SlimeBrain-brain = Brain
+# marking-SlimeBrain-brain = Brain
 # marking-SlimeBrain = Brain
 
 marking-SlimeEyesDefault = Eyes
