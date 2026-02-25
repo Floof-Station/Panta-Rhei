@@ -4,7 +4,7 @@
   roundStart: true
   prototype: MobFelinid
   sprites: MobHumanSprites
-  markingLimits: MobFelinidMarkingLimits
+  markingLimits: MobHumanMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: Hues
   # baseScale: "0.8, 0.8" # Floofstation
@@ -12,29 +12,30 @@
   maxHeight: 1.1 # Floofstation
   defaultHeight: 0.8 # Floofstation
 
-- type: markingPoints
-  id: MobFelinidMarkingLimits
-  points:
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
-      required: false
-    Tail:
-      points: 1
-      required: true
-      defaultMarkings: [ FelinidTailBasic ]
-    HeadTop:
-      points: 1
-      required: true
-      defaultMarkings: [ FelinidEarsBasic ]
-    Chest:
-      points: 2
-      required: false
-    Legs:
-      points: 6
-      required: false
-    Arms:
-      points: 6
-      required: false
+# Not required with altered Human marking limits
+# - type: markingPoints
+#   id: MobFelinidMarkingLimits
+#   points:
+#     Hair:
+#       points: 1
+#       required: false
+#     FacialHair:
+#       points: 1
+#       required: false
+#     Tail:
+#       points: 1
+#       required: true
+#       defaultMarkings: [ FelinidTailBasic ]
+#     HeadTop:
+#       points: 1
+#       required: true
+#       defaultMarkings: [ FelinidEarsBasic ]
+#     Chest:
+#       points: 2
+#       required: false
+#     Legs:
+#       points: 6
+#       required: false
+#     Arms:
+#       points: 6
+#       required: false

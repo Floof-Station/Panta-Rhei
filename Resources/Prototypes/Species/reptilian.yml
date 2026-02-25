@@ -18,18 +18,24 @@
 - type: speciesBaseSprites
   id: MobReptilianSprites
   sprites:
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # Floof
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobReptilianHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking # Floof
+    HeadTop: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking # DeltaV - unbaldify reptilians
     FacialHair: MobHumanoidAnyMarking # DeltaV - unbaldify reptilians
-    Snout: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobReptilianTorso
-    HeadTop: MobHumanoidAnyMarking
-    HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
+    Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     LArm: MobReptilianLArm
     RArm: MobReptilianRArm
@@ -44,25 +50,37 @@
   id: MobReptilianMarkingLimits
   onlyWhitelisted: false # DeltaV - unbaldify reptilians
   points:
+    Special:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: true
+      defaultMarkings: [ LizardTailSmooth ]
     Hair:
       points: 1 # DeltaV - unbaldify reptilians
       required: false
     FacialHair:
       points: 1 # DeltaV - unbaldify reptilians
       required: false
-    Tail:
+    Head:
       points: 1
-      required: true
-      defaultMarkings: [ LizardTailSmooth ]
+      required: false
+    Face:
+      points: 1
+      required: false
     Snout:
       points: 1
       required: true
       defaultMarkings: [ LizardSnoutRound ]
-    HeadTop:
-      points: 2
+    SnoutCover:
+      points: 1
       required: false
     HeadSide:
-      points: 1
+      points: 4
+      required: false
+    HeadTop:
+      points: 2
       required: false
     UndergarmentTop:
       points: 1
@@ -70,14 +88,26 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
+      required: false
     Chest:
-      points: 3
+      points: 10
+      required: false
+    Wings:
+      points: 1
       required: false
     Legs:
-      points: 6
+      points: 10
       required: false
     Arms:
-      points: 6
+      points: 10
       required: false
 
 - type: humanoidBaseSprite

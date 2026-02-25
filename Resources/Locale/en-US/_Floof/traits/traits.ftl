@@ -32,9 +32,6 @@ trait-machine-regeneration-desc =
     Your body is reinforced with an expensive advanced repair system that will automatically repair wear and tear.
     The system is powered by it's own internal generator and will continue to work even if the unit has run out of power or suffered disabiling damage.
 
-trait-name-CPRTraining = CPR Training
-trait-description-CPRTraining = At some point in your life, you have received training in how to perform CPR.
-
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with modular cybernetic optical implants.
@@ -50,3 +47,6 @@ trait-name-CyberEyesThermoVision = Cyber-Eyes: Thermographic Scanner Module
 trait-description-CyberEyesThermoVision = 
     Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
+    
+trait-dog-accent-name = Dog accent
+trait-dog-accent-desc = Bork.

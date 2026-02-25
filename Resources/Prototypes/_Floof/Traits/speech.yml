@@ -1,0 +1,17 @@
+## If you add a new trait, make sure to add the corresponding component to the whitelist in \Resources\Prototypes\Entities\Mobs\Player\clone.yml so it gets copied to clones correctly!
+
+- type: trait
+  id: DogAccent
+  name: trait-dog-accent-name
+  description: trait-dog-accent-desc
+  category: Accents
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BarkAccent
+  - !type:OverrideCompsEffect
+    components:
+    - type: Speech
+      speechSounds: Dog
+      speechVerb: Canine

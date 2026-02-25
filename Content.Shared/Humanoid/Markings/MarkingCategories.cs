@@ -14,15 +14,27 @@ namespace Content.Shared.Humanoid.Markings
         HeadTop,
         HeadSide,
         Eyes, // DeltaV - Add Eyes Category for IPCs
+        Face,
         Snout,
         SnoutCover,
         Chest,
         NeckFluff,
         UndergarmentTop,
         UndergarmentBottom,
+        Underwear,
+        Undershirt,
         Arms,
+        LArm,
+        RArm,
+        LHand,
+        RHand,
         Legs,
+        LLeg,
+        RLeg,
+        LFoot,
+        RFoot,
         Tail,
+        Wings,
         Overlay
     }
 
