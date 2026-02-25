@@ -97,25 +97,25 @@
               Toxin: -0.35
               Electronic: -0.1
 
-- type: trait
-  id: CPRTraining
-  name: trait-name-CPRTraining
-  description: trait-description-CPRTraining
-  category: Mental
-  cost: 3
-  requirements:
-  - !type:InDepartmentCondition
-    invert: true
-    department:
-    - Medical
-  - !type:HasJobCondition
-    invert: true
-    job:
-    - Brigmedic
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: CPRTraining
+#- type: trait
+#  id: CPRTraining
+#  name: trait-name-CPRTraining
+#  description: trait-description-CPRTraining
+#  category: Mental
+#  cost: 3
+#  requirements:
+#  - !type:InDepartmentCondition
+#    invert: true
+#    department:
+#    - Medical
+#  - !type:HasJobCondition
+#    invert: true
+#    job:
+#    - Brigmedic
+#  effects:
+#  - !type:AddCompsEffect
+#    components:
+#    - type: CPRTraining
 
 - type: trait
   id: CyberEyes
