@@ -40,7 +40,7 @@
   description: trait-regeneration-desc
   category: Medical
   cost: 10
-  requirements:
+  conditions:
   - !type:IsSpeciesCondition
     species: IPC
     invert: true
@@ -72,7 +72,7 @@
   description: trait-machine-regeneration-desc
   category: Medical
   cost: 10
-  requirements:
+  conditions:
   - !type:IsSpeciesCondition
     species: IPC
   - !type:HasCompCondition
@@ -103,7 +103,7 @@
 #  description: trait-description-CPRTraining
 #  category: Mental
 #  cost: 3
-#  requirements:
+#  conditions:
 #  - !type:InDepartmentCondition
 #    invert: true
 #    department:
@@ -138,7 +138,7 @@
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
   cost: 4
-  requirements:
+  conditions:
   - !type:HasJobCondition
     inverted: true
     job:
@@ -164,7 +164,7 @@
   name: trait-name-CyberEyesThermoVision
   description: trait-description-CyberEyesThermoVision
   cost: 8
-  requirements:
+  conditions:
   - !type:HasJobCondition
     inverted: true
     job:
