@@ -33,3 +33,149 @@
       partSymmetry: Right
       protoId: JawsOfLifeLeftArm
       slotId: "right arm"
+
+- type: trait
+  id: TraitRegeneration
+  name: trait-regeneration-name
+  description: trait-regeneration-desc
+  category: Medical
+  cost: 10
+  requirements:
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+  - !type:HasCompCondition
+    component: 
+    - Synth
+    - Silicon
+    - BorgChassis
+    invert: true
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      - Critical
+      damageCap: 1000
+      damage:
+        groups:
+          Brute: -0.35
+          Burn: -0.35
+          Airloss: -0.25
+          Toxin: -0.35
+          Genetic: -0.25
+
+- type: trait
+  id: MachineRegeneration
+  name: trait-machine-regeneration-name
+  description: trait-machine-regeneration-desc
+  category: Medical
+  cost: 10
+  requirements:
+  - !type:IsSpeciesCondition
+    species: IPC
+  - !type:HasCompCondition
+    component: Synth
+  - !type:HasCompCondition
+    component: Silicon
+  - !type:HasCompCondition
+    component: BorgChassis
+  effects:
+  - !type:OverrideCompsEffect
+      components:
+        - type: PassiveDamage
+          allowedStates:
+          - Alive
+          - Critical
+          - Dead
+          damageCap: 1000
+          damage:
+            groups:
+              Brute: -0.35
+              Burn: -0.35
+              Toxin: -0.35
+              Electronic: -0.1
+
+- type: trait
+  id: CPRTraining
+  name: trait-name-CPRTraining
+  description: trait-description-CPRTraining
+  category: Mental
+  cost: 3
+  requirements:
+  - !type:InDepartmentCondition
+    invert: true
+    department:
+    - Medical
+  - !type:HasJobCondition
+    invert: true
+    job:
+    - Brigmedic
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: CPRTraining
+
+- type: trait
+  id: CyberEyes
+  name: trait-name-CyberEyes
+  description: trait-description-CyberEyes
+  category: Medical
+  cost: 4
+  conflicts:
+  - Blindness
+  - PoorVision
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: FlashImmunity
+    - type: EyeProtection
+
+- type: trait
+  id: CyberEyesNightVision
+  category: Medical
+  name: trait-name-CyberEyesNightVision
+  description: trait-description-CyberEyesNightVision
+  cost: 4
+  requirements:
+  - !type:HasJobCondition
+    inverted: true
+    job:
+    - Prisoner 
+#  - !type:HasCompCondition
+#    component:
+#    - EyeProtection
+#    - FlashImmunity
+  - !type:IsSpeciesCondition
+    species:
+    - Felinid
+    - Tajaran
+    - Rodentia
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: NightVision
+
+- type: trait
+  id: CyberEyesThermoVision
+  category: Medical
+  name: trait-name-CyberEyesThermoVision
+  description: trait-description-CyberEyesThermoVision
+  cost: 8
+  requirements:
+  - !type:HasJobCondition
+    inverted: true
+    job:
+    - Prisoner 
+#  - !type:HasCompCondition
+#    component:
+#    - EyeProtection
+#    - FlashImmunity
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ThermalVision
+      pulseTime: 2
+      toggleAction: PulseThermalVision
