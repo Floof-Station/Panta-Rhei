@@ -67,6 +67,7 @@ public sealed class PassiveDamageSystem : EntitySystem
                 if(allowedState == mobState.CurrentState)
                     _damageable.ChangeDamage((uid, damage), comp.Damage, true, false);
             }
+        }
         while (queryB.MoveNext(out var uid, out var comp, out var damage, out var mobState))
         {
             if (comp.NextDamage > curTime)
@@ -83,6 +84,7 @@ public sealed class PassiveDamageSystem : EntitySystem
                 if(allowedState == mobState.CurrentState)
                     _damageable.ChangeDamage((uid, damage), comp.Damage, true, false);
             }
+        }    
         while (queryC.MoveNext(out var uid, out var comp, out var damage, out var mobState))
         {
             if (comp.NextDamage > curTime)
@@ -98,6 +100,7 @@ public sealed class PassiveDamageSystem : EntitySystem
                 if(allowedState == mobState.CurrentState)
                     _damageable.ChangeDamage((uid, damage), comp.Damage, true, false);
             }
+        }    
         while (queryD.MoveNext(out var uid, out var comp, out var damage, out var mobState))
         {
             if (comp.NextDamage > curTime)
