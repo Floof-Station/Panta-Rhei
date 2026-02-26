@@ -2,6 +2,7 @@
 ## Mail Carrier
 - type: loadoutGroup
   id: MailCarrierHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-mail-carrier-head
   minLimit: 0
   loadouts:
@@ -9,6 +10,7 @@
 
 - type: loadoutGroup
   id: MailCarrierJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-mail-carrier-jumpsuit
   loadouts:
   - MailCarrierJumpsuit
@@ -16,6 +18,7 @@
 
 - type: loadoutGroup
   id: MailCarrierOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-mail-carrier-outerclothing
   minLimit: 0
   loadouts:
@@ -25,6 +28,7 @@
 ## Forensic Mantis
 - type: loadoutGroup
   id: MantisHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-mantis-head
   minLimit: 0
   loadouts:
@@ -32,6 +36,7 @@
 
 - type: loadoutGroup
   id: MantisJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-mantis-jumpsuit
   loadouts:
   - MantisJumpsuit
@@ -39,6 +44,7 @@
 
 - type: loadoutGroup
   id: MantisOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-mantis-outerclothing
   minLimit: 0
   loadouts:
@@ -47,12 +53,14 @@
 
 - type: loadoutGroup
   id: MantisShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-mantis-shoes
   loadouts:
   - MantisBoots
 
 - type: loadoutGroup
   id: MantisGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-mantis-gloves
   minLimit: 0
   loadouts:
@@ -62,6 +70,7 @@
 ## Prison Guard
 - type: loadoutGroup
   id: PrisonGuardHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-prison-guard-head
   minLimit: 0
   loadouts:
@@ -69,6 +78,7 @@
 
 - type: loadoutGroup
   id: PrisonGuardJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-prison-guard-jumpsuit
   loadouts:
   - PrisonGuardJumpsuit
@@ -78,6 +88,7 @@
 ## Prisoner
 - type: loadoutGroup
   id: PrisonerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-prisoner-jumpsuit
   loadouts:
   - PrisonerJumpsuit
@@ -86,6 +97,7 @@
 ## Martial Artist
 - type: loadoutGroup
   id: MartialArtistJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-martial-artist-jumpsuit
   loadouts:
   - MartialArtistJumpsuit
@@ -99,6 +111,7 @@
 
 - type: loadoutGroup
   id: MartialArtistShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-martial-artist-shoes
   loadouts:
   - MartialArtistShoes
@@ -106,6 +119,7 @@
 ## Gladiator
 - type: loadoutGroup
   id: GladiatorJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-gladiator-jumpsuit
   loadouts:
   - GladiatorJumpsuit
@@ -113,6 +127,7 @@
 
 - type: loadoutGroup
   id: GladiatorOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-gladiator-outerclothing
   loadouts:
   - ClothingOuterArmorGladiator

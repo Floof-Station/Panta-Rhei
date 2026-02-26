@@ -1,9 +1,11 @@
+# Those are all abstract. You're supposed to make existing neck loadout groups inherit from these.
+
 # jumpsuits
 - type: loadoutGroup
   id: FloofJumpsuits
-  parent: PassengerJumpsuit
+  abstract: true
   name: loadout-group-passenger-jumpsuits
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - ClothingUniformJumpsuitTacticool
@@ -56,7 +58,7 @@
 # gloves
 - type: loadoutGroup
   id: FloofGloves
-  parent: PassengerGloves
+  abstract: true
   name: loadout-group-passenger-gloves
   minLimit: 0
   maxLimit: 1
@@ -76,9 +78,9 @@
  #shoes
 - type: loadoutGroup
   id: FloofShoes
-  parent: PassengerShoes
+  abstract: true
   name: loadout-group-passenger-shoes
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - ClothingShoesBootsJack
@@ -101,8 +103,8 @@
 # backpacks
 - type: loadoutGroup
   id: FloofBackpacks
-  parent: CommonBackpack
-  minLimit: 0
+  abstract: true
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - BackpackSatchelLeather
@@ -110,7 +112,7 @@
 # outer clothing
 - type: loadoutGroup
   id: FloofOuterClothing
-  parent: PassengerOuterClothing
+  abstract: true
   name: loadout-group-passenger-outerclothing
   minLimit: 0
   maxLimit: 1
@@ -133,7 +135,7 @@
 # hats
 - type: loadoutGroup
   id: FloofHats
-  parent: AssistantHead
+  abstract: true
   name: loadout-group-assistant-head
   minLimit: 0
   maxLimit: 1
@@ -154,45 +156,3 @@
   - HeadHatBrownFlatcap
   - HeadHatGreyFlatcap
   - HeadHatBlacksoft
-
-# trinkets
-- type: loadoutGroup
-  id: FloofTrinkets
-  parent: Trinkets
-  name: loadout-group-trinkets
-  minLimit: 0
-  maxLimit: 3
-  loadouts:
-  - GuitarInstrument
-  - BassGuitarInstrument
-  - ElectricGuitarInstrument
-  - RockGuitarInstrument
-  - HarmonicaInstrument
-  - TrumpetInstrument
-  - Blunt
-  - Joint
-  - CrowbarRed
-  - DoubleEmergencyOxygenTankFilled
-  - DoubleEmergencyNitrogenTankFilled
-  - DoubleEmergencyWaterVaporTankFilled
-  - MedkitFilled
-  - LunchboxGenericFilledRandom
-  - CrayonBrush
-  - AvianDildo
-  - CanineDildo
-  - CanineDildoRed
-  - NormalDildo
-  - DoubleDildo
-  - DragonDildo
-  - HorseDildo
-  - TentacleDildo
-  - LewdVibeRed
-  - LewdVibePink
-  - LewdVibeTeal
-  - LewdVibeGreen
-  - LewdVibeYellow
-  - LewdFleshlightGreen
-  - LewdFleshlightPink
-  - LewdFleshlightRed
-  - LewdFleshlightTeal
-  - LewdFleshlightYellow

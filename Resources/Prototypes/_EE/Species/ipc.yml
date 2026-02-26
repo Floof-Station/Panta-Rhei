@@ -27,15 +27,25 @@
 - type: speciesBaseSprites
   id: MobIPCSprites
   sprites:
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floofstation
+    TailOversuit: MobHumanoidAnyMarking # Floofstation
     Head: MobIPCHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
-    Tail: MobHumanoidAnyMarking
-    # Begin DeltaV Additions - Adds new layer types for markings-sake
-    Eyes: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
-    # End DeltaV Additions
+    FacialHair: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
+    Eyes: MobHumanoidAnyMarking
     Chest: MobIPCTorso
+    Wings: MobHumanoidAnyMarking
     LArm: MobIPCLArm
     RArm: MobIPCRArm
     LHand: MobIPCLHand
@@ -48,41 +58,68 @@
 - type: markingPoints
   id: MobIPCMarkingLimits
   points:
+    Special:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
+    Head:
+      points: 1
+      required: true
+      defaultMarkings: [ MobIPCHeadDefault ]
+    Face:
+      points: 1
+      required: false
+    Snout: # DeltaV - Adds ability to use more marking types
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
+      required: false
+    HeadSide:
+      points: 4
+      required: false
+    HeadTop:
+      points: 4
+      required: false
     Hair:
       points: 1 # DeltaV - Fixes hair not displaying
       required: false
     FacialHair:
       points: 1 # DeltaV - Fixes hair not displaying
       required: false
-    Tail: # DeltaV - Adds ability to use more marking types
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
       points: 1
       required: false
     Eyes: # DeltaV - Moves screen to the eyes layer
       points: 1
       required: true
       defaultMarkings: [ MobIPCEyesDefault ]
-    Head:
-      points: 1
-      required: true
-      defaultMarkings: [ MobIPCHeadDefault ]
     Chest:
-      points: 1
+      points: 10
       required: true
       defaultMarkings: [ MobIPCTorsoDefault ]
+    Wings:
+      points: 1
+      required: false
     Legs:
-      points: 4
+      points: 10
       required: true
       defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
     Arms:
-      points: 4
+      points: 10
       required: true
       defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
-    Snout: # DeltaV - Adds ability to use more marking types
-        points: 1
-        required: false
-    HeadSide:
-      points: 1
-      required: false
 
 - type: humanoidBaseSprite
   id: MobIPCMarkingFollowSkin

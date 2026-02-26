@@ -1,3 +1,4 @@
+using Content.Shared._Floof.Language.Systems;
 using Content.Shared.Access.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions;
@@ -64,6 +65,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly StationAiVisionSystem _vision = default!;
     [Dependency] private readonly IPrototypeManager _protoManager = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedLanguageSystem _languages = default!; // Floofstation
 
     // StationAiHeld is added to anything inside of an AI core.
     // StationAiHolder indicates it can hold an AI positronic brain (e.g. holocard / core).
@@ -460,6 +462,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
         if (proto != null)
         {
             ent.Comp.RemoteEntity = SpawnAtPosition(proto, coords.Value);
+            _languages.SetupLanguageRelay(ent.Comp.RemoteEntity.Value, ent.Owner); // Floofstation. SetupEye is called right after an ai is inserted into the core, so this is fine.
             Dirty(ent);
         }
 

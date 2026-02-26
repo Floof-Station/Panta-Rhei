@@ -21,14 +21,25 @@
 - type: speciesBaseSprites
   id: MobThavenSprites
   sprites:
-    Hair: MobHumanoidAnyMarking
-    Eyes: MobThavenEyes
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
+    TailBehind: MobHumanoidAnyMarking # Floofstation
+    TailOversuit: MobHumanoidAnyMarking # Floofstation
     Head: MobThavenHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobThavenTorso
+    Wings: MobHumanoidAnyMarking
+    Eyes: MobThavenEyes
     LArm: MobThavenLArm
     RArm: MobThavenRArm
     LHand: MobThavenLHand
@@ -40,32 +51,64 @@
 
 - type: markingPoints
   id: MobThavenMarkingLimits
-  onlyWhitelisted: true
   points:
-    Hair:
+    Special: # the cat ear joke
       points: 1
       required: false
-    HeadTop:
-      points: 4 # DeltaV - was previously 2, more markings require more space
+    Tail: # the cat tail joke
+      points: 1
+      required: false
+    Head:
+      points: 1
+      required: false
+    Face:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
       required: false
     HeadSide:
       points: 1
       required: true
       defaultMarkings: [ ThavenEars1 ]
-    Head:
+    HeadTop:
       points: 4
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
       required: false
     Chest:
-      points: 4
+      points: 10
+      required: false
+    Wings:
+      points: 1
+      required: false
+    Legs:
+      points: 10
       required: false
     Arms:
-      points: 4
-      required: false
-    Overlay:
-      points: 6
-      required: false
-    Snout:
-      points: 1
+      points: 10
       required: false
 
 - type: humanoidBaseSprite

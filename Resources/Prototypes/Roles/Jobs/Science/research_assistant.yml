@@ -7,7 +7,7 @@
     - !type:DepartmentTimeRequirement
       department: Epistemics # DeltaV
       time: 5h
-      inverted: true # stop playing intern if you're good at science!
+      inverted: false # floofstation - let people choose how they want to play their character
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science

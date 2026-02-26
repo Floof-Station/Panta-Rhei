@@ -140,6 +140,7 @@
 # Command
 - type: loadoutGroup
   id: CaptainHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-captain-head
   minLimit: 0
   loadouts:
@@ -149,6 +150,7 @@
 
 - type: loadoutGroup
   id: CaptainJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-captain-jumpsuit
   loadouts:
   - CaptainJumpsuit
@@ -168,6 +170,7 @@
 
 - type: loadoutGroup
   id: CaptainBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-captain-backpack
   loadouts:
   - CaptainBackpack
@@ -176,6 +179,7 @@
 
 - type: loadoutGroup
   id: CaptainOuterClothing
+  parent: [FloofOuterClothing] # floofstation
   name: loadout-group-captain-outerclothing
   loadouts:
   - CaptainOuterClothing
@@ -192,6 +196,7 @@
 
 - type: loadoutGroup
   id: HoPHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-hop-head
   minLimit: 0
   loadouts:
@@ -200,6 +205,7 @@
 
 - type: loadoutGroup
   id: HoPJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-hop-jumpsuit
   loadouts:
   - HoPJumpsuit
@@ -224,6 +230,7 @@
 
 - type: loadoutGroup
   id: HoPBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-hop-backpack
   loadouts:
   # Start DeltaV changes
@@ -238,6 +245,7 @@
 
 - type: loadoutGroup
   id: HoPOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-hop-outerclothing
   minLimit: 0
   loadouts:
@@ -259,6 +267,7 @@
 # Civilian
 - type: loadoutGroup
   id: PassengerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-passenger-jumpsuit
   loadouts:
   - GreyJumpsuit
@@ -341,6 +350,7 @@
 
 - type: loadoutGroup
   id: PassengerGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-passenger-gloves
   minLimit: 0
   loadouts:
@@ -362,6 +372,7 @@
 
 - type: loadoutGroup
   id: CommonBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-backpack
   loadouts:
   - CommonBackpack
@@ -378,6 +389,7 @@
 
 - type: loadoutGroup
   id: PassengerOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-passenger-outerclothing
   minLimit: 0
   loadouts:
@@ -406,6 +418,7 @@
 
 - type: loadoutGroup
   id: PassengerShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-passenger-shoes
   loadouts:
   - BlackShoes
@@ -434,6 +447,7 @@
 
 - type: loadoutGroup
   id: BartenderHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-bartender-head
   minLimit: 0
   loadouts:
@@ -442,6 +456,7 @@
 
 - type: loadoutGroup
   id: BartenderJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-bartender-jumpsuit
   loadouts:
   - BartenderJumpsuit
@@ -456,6 +471,7 @@
 
 - type: loadoutGroup
   id: BartenderOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-bartender-outerclothing
   minLimit: 0
   loadouts:
@@ -480,6 +496,7 @@
 
 - type: loadoutGroup
   id: ChefHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-chef-head
   minLimit: 0
   loadouts:
@@ -494,6 +511,7 @@
 
 - type: loadoutGroup
   id: ChefJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-chef-jumpsuit
   loadouts:
   - ChefJumpsuit
@@ -501,6 +519,7 @@
 
 - type: loadoutGroup
   id: ChefOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-chef-outerclothing
   minLimit: 0
   loadouts:
@@ -517,6 +536,7 @@
 
 - type: loadoutGroup
   id: LibrarianJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-librarian-jumpsuit
   loadouts:
   - LibrarianJumpsuit
@@ -537,6 +557,7 @@
 
 - type: loadoutGroup
   id: LawyerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-lawyer-jumpsuit
   loadouts:
   - LawyerJumpsuit
@@ -577,6 +598,7 @@
 
 - type: loadoutGroup
   id: ChaplainHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-chaplain-head
   minLimit: 0
   loadouts:
@@ -595,6 +617,7 @@
 
 - type: loadoutGroup
   id: ChaplainJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-chaplain-jumpsuit
   loadouts:
   - ChaplainJumpsuit
@@ -608,6 +631,7 @@
 
 - type: loadoutGroup
   id: ChaplainOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-chaplain-outerclothing
   minLimit: 0
   loadouts:
@@ -646,6 +670,7 @@
 
 - type: loadoutGroup
   id: JanitorHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-janitor-head
   minLimit: 0
   loadouts:
@@ -653,6 +678,7 @@
 
 - type: loadoutGroup
   id: JanitorJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-janitor-jumpsuit
   loadouts:
   - JanitorJumpsuit
@@ -660,6 +686,7 @@
 
 - type: loadoutGroup
   id: JanitorGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-janitor-gloves
   minLimit: 0
   loadouts:
@@ -669,6 +696,7 @@
 
 - type: loadoutGroup
   id: JanitorOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-janitor-outerclothing
   minLimit: 0
   loadouts:
@@ -684,6 +712,7 @@
 
 - type: loadoutGroup
   id: BotanistHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-botanist-head
   minLimit: 0
   loadouts:
@@ -692,6 +721,7 @@
 
 - type: loadoutGroup
   id: BotanistJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-botanist-jumpsuit
   loadouts:
   - BotanistJumpsuit
@@ -701,6 +731,7 @@
 
 - type: loadoutGroup
   id: BotanistBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-botanist-backpack
   loadouts:
   - BotanistBackpack
@@ -709,6 +740,7 @@
 
 - type: loadoutGroup
   id: BotanistOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-botanist-outerclothing
   minLimit: 0
   loadouts:
@@ -724,6 +756,7 @@
 
 - type: loadoutGroup
   id: ClownHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-clown-head
   minLimit: 0
   loadouts:
@@ -732,6 +765,7 @@
 
 - type: loadoutGroup
   id: ClownJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-clown-jumpsuit
   loadouts:
   - ClownSuit
@@ -741,6 +775,7 @@
 
 - type: loadoutGroup
   id: ClownBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-clown-backpack
   loadouts:
   - ClownBackpack
@@ -749,6 +784,7 @@
 
 - type: loadoutGroup
   id: ClownOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-clown-outerclothing
   minLimit: 0
   loadouts:
@@ -757,6 +793,7 @@
 
 - type: loadoutGroup
   id: ClownShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-clown-shoes
   loadouts:
   - ClownShoes
@@ -784,6 +821,7 @@
 
 - type: loadoutGroup
   id: MimeHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-mime-head
   minLimit: 0
   loadouts:
@@ -802,6 +840,7 @@
 
 - type: loadoutGroup
   id: MimeJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-mime-jumpsuit
   loadouts:
   - MimeJumpsuit
@@ -809,6 +848,7 @@
 
 - type: loadoutGroup
   id: MimeBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-mime-backpack
   loadouts:
   - MimeBackpack
@@ -817,6 +857,7 @@
 
 - type: loadoutGroup
   id: MimeOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-mime-outerclothing
   minLimit: 0
   loadouts:
@@ -853,6 +894,7 @@
 
 - type: loadoutGroup
   id: MusicianJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-musician-jumpsuit
   loadouts:
   - MusicianJumpsuit
@@ -864,6 +906,7 @@
 
 - type: loadoutGroup
   id: MusicianOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-musician-outerclothing
   minLimit: 0
   loadouts:
@@ -914,6 +957,7 @@
 # Cargo
 - type: loadoutGroup
   id: QuartermasterHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-quartermaster-head
   minLimit: 0
   loadouts:
@@ -923,6 +967,7 @@
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-quartermaster-jumpsuit
   loadouts:
   - QuartermasterJumpsuit
@@ -944,6 +989,7 @@
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-quartermaster-outerclothing
   minLimit: 0
   loadouts:
@@ -952,6 +998,7 @@
 
 - type: loadoutGroup
   id: QuartermasterShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-quartermaster-shoes
   loadouts:
   - BrownShoes
@@ -967,6 +1014,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-cargo-technician-head
   minLimit: 0
   loadouts:
@@ -974,6 +1022,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
+  parent: [FloofHats] # floofstation
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - ClothingUniformJumpsuitCargoTechPants # DeltaV
@@ -984,6 +1033,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-cargo-technician-backpack
   loadouts:
   - CargoTechnicianBackpack
@@ -992,6 +1042,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-cargo-technician-outerclothing
   minLimit: 0
   loadouts:
@@ -999,6 +1050,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
@@ -1013,6 +1065,7 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-salvage-specialist-backpack
   loadouts:
   - SalvageSpecialistBackpack
@@ -1021,6 +1074,7 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-salvage-specialist-outerclothing
   minLimit: 0
   loadouts:
@@ -1028,6 +1082,7 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-salvage-specialist-shoes
   loadouts:
   - SalvageBoots
@@ -1046,6 +1101,7 @@
 # Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-chief-engineer-head
   minLimit: 0
   loadouts:
@@ -1054,6 +1110,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
+  parent: [FloofHats] # floofstation
   name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
@@ -1078,6 +1135,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-chief-engineer-outerclothing
   minLimit: 0
   loadouts:
@@ -1086,6 +1144,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-chief-engineer-shoes
   loadouts:
   #- BrownShoes # DeltaV - Engi loadout rework
@@ -1124,6 +1183,7 @@
 
 - type: loadoutGroup
   id: StationEngineerHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-station-engineer-head
   minLimit: 0
   loadouts:
@@ -1134,6 +1194,7 @@
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-station-engineer-jumpsuit
   loadouts:
   - StationEngineerJumpsuit
@@ -1144,6 +1205,7 @@
 
 - type: loadoutGroup
   id: StationEngineerBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-station-engineer-backpack
   loadouts:
   - StationEngineerBackpack
@@ -1152,6 +1214,7 @@
 
 - type: loadoutGroup
   id: StationEngineerOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-station-engineer-outerclothing
   minLimit: 0
   loadouts:
@@ -1160,6 +1223,7 @@
 
 - type: loadoutGroup
   id: StationEngineerShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-station-engineer-shoes
   loadouts:
   - WorkBoots
@@ -1199,6 +1263,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianOuterClothing
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-atmospheric-technician-outerclothing
   minLimit: 0
   loadouts:
@@ -1206,6 +1271,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-atmospheric-technician-backpack
   loadouts:
   - AtmosphericTechnicianBackpack
@@ -1214,6 +1280,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-atmospheric-technician-shoes
   loadouts:
   #- WhiteShoes # DeltaV - Engi loadout rework
@@ -1248,6 +1315,7 @@
 # Science
 - type: loadoutGroup
   id: ResearchDirectorHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-research-director-head
   minLimit: 0
   loadouts:
@@ -1270,6 +1338,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-research-director-jumpsuit
   loadouts:
   - ResearchDirectorJumpsuit
@@ -1277,6 +1346,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-research-director-outerclothing
   minLimit: 0
   loadouts:
@@ -1287,6 +1357,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-research-director-shoes
   loadouts:
   - BrownShoes
@@ -1302,6 +1373,7 @@
 
 - type: loadoutGroup
   id: ScientistHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
@@ -1320,6 +1392,7 @@
 
 - type: loadoutGroup
   id: ScientistJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-scientist-jumpsuit
   loadouts:
   - ScientistJumpsuit
@@ -1335,6 +1408,7 @@
 
 - type: loadoutGroup
   id: ScientistBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-scientist-backpack
   loadouts:
   - ScientistBackpack
@@ -1343,6 +1417,7 @@
 
 - type: loadoutGroup
   id: ScientistOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-scientist-outerclothing
   minLimit: 0
   loadouts:
@@ -1353,6 +1428,7 @@
 
 - type: loadoutGroup
   id: ScientistGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-scientist-gloves
   minLimit: 0
   loadouts:
@@ -1362,6 +1438,7 @@
 
 - type: loadoutGroup
   id: ScientistShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-scientist-shoes
   loadouts:
   - WhiteShoes
@@ -1387,6 +1464,7 @@
 
 - type: loadoutGroup
   id: ResearchAssistantJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-research-assistant-jumpsuit
   loadouts:
   - WhiteJumpsuit
@@ -1402,6 +1480,7 @@
 # Security
 - type: loadoutGroup
   id: HeadofSecurityHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-head-of-security-head
   minLimit: 0
   loadouts:
@@ -1410,6 +1489,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-head-of-security-jumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
@@ -1441,6 +1521,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-head-of-security-outerclothing
   loadouts:
   - HeadofSecurityCoat
@@ -1448,6 +1529,7 @@
 
 - type: loadoutGroup # DeltaV
   id: HeadofSecurityShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-head-of-security-shoes
   loadouts:
   # Begin DeltaV changes
@@ -1467,6 +1549,7 @@
 
 - type: loadoutGroup
   id: WardenHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-warden-head
   minLimit: 0
   loadouts:
@@ -1475,6 +1558,7 @@
 
 - type: loadoutGroup
   id: WardenJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-warden-jumpsuit
   loadouts:
   - WardenJumpsuit
@@ -1490,6 +1574,7 @@
 
 - type: loadoutGroup
   id: WardenOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-warden-outerclothing
   loadouts:
   - WardenLongcoat # DeltaV - Longcoats
@@ -1506,6 +1591,7 @@
 
 - type: loadoutGroup
   id: SecurityHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-security-head
   minLimit: 0
   loadouts:
@@ -1516,6 +1602,7 @@
 
 - type: loadoutGroup
   id: SecurityJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
@@ -1537,6 +1624,7 @@
 
 - type: loadoutGroup
   id: SecurityBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-security-backpack
   loadouts:
   - SecurityBackpack
@@ -1552,6 +1640,7 @@
 
 - type: loadoutGroup
   id: SecurityOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-security-outerclothing
   loadouts:
   - ArmorVest
@@ -1560,6 +1649,7 @@
 
 - type: loadoutGroup
   id: SecurityShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-security-shoes
   loadouts:
   - CombatBoots # DeltaV
@@ -1583,6 +1673,7 @@
 
 - type: loadoutGroup
   id: DetectiveHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-detective-head
   minLimit: 0
   loadouts:
@@ -1611,6 +1702,7 @@
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-detective-outerclothing
   loadouts:
   - DetectiveArmorVest
@@ -1626,6 +1718,7 @@
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
   - RedJumpsuit
@@ -1653,6 +1746,7 @@
 # Medical
 - type: loadoutGroup
   id: ChiefMedicalOfficerHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-chief-medical-officer-head
   minLimit: 0
   loadouts:
@@ -1661,6 +1755,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-chief-medical-officer-jumpsuit
   loadouts:
   - ChiefMedicalOfficerJumpsuit
@@ -1670,6 +1765,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-chief-medical-officer-outerclothing
   minLimit: 0
   loadouts:
@@ -1690,6 +1786,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-chief-medical-officer-shoes
   loadouts:
   - BrownShoes
@@ -1705,6 +1802,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-medical-doctor-head
   minLimit: 0
   loadouts:
@@ -1718,6 +1816,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-medical-doctor-jumpsuit
   loadouts:
   - MedicalDoctorJumpsuit
@@ -1730,6 +1829,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-medical-doctor-outerclothing
   minLimit: 0
   loadouts:
@@ -1739,6 +1839,7 @@
 
 - type: loadoutGroup
   id: MedicalBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-medical-doctor-backpack
   loadouts:
   - MedicalDoctorBackpack
@@ -1747,6 +1848,7 @@
 
 - type: loadoutGroup
   id: MedicalShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
@@ -1763,6 +1865,7 @@
 
 - type: loadoutGroup
   id: MedicalGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-medical-gloves
   minLimit: 0
   loadouts:
@@ -1785,6 +1888,7 @@
 
 - type: loadoutGroup
   id: MedicalInternJumpsuit
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-medical-intern-jumpsuit
   loadouts:
   - MedicalBlueScrubs # DeltaV
@@ -1800,6 +1904,7 @@
 
 - type: loadoutGroup
   id: ChemistJumpsuit
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-chemist-jumpsuit
   loadouts:
   - ChemistJumpsuit
@@ -1809,6 +1914,7 @@
 
 - type: loadoutGroup
   id: ChemistOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-chemist-outerclothing
   minLimit: 0
   loadouts:
@@ -1819,6 +1925,7 @@
 
 - type: loadoutGroup
   id: ChemistBackpack
+  parent: [FloofBackpacks] # Floofstation
   name: loadout-group-chemist-backpack
   loadouts:
   - ChemistBackpack
@@ -1834,6 +1941,7 @@
 
 - type: loadoutGroup
   id: ParamedicHead
+  parent: [FloofHats] # floofstation
   name: loadout-group-paramedic-head
   minLimit: 0
   loadouts:
@@ -1841,6 +1949,7 @@
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-paramedic-jumpsuit
   loadouts:
   - ParamedicJumpsuit
@@ -1848,6 +1957,7 @@
 
 - type: loadoutGroup
   id: ParamedicOuterClothing
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-paramedic-outerclothing
   minLimit: 0
   loadouts:
@@ -1856,6 +1966,7 @@
 
 - type: loadoutGroup
   id: ParamedicShoes
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-paramedic-shoes
   loadouts:
   - BlueShoes
@@ -1897,6 +2008,7 @@
 # Wildcards
 - type: loadoutGroup
   id: ReporterJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-reporter-jumpsuit
   loadouts:
   - ReporterJumpsuit
@@ -1913,6 +2025,7 @@
 
 - type: loadoutGroup
   id: PsychologistJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-psychologist-jumpsuit
   loadouts:
   - PsychologistJumpsuit
@@ -1927,6 +2040,7 @@
 
 - type: loadoutGroup
   id: BoxerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-boxer-jumpsuit
   loadouts:
   - BoxerShorts
@@ -1934,6 +2048,7 @@
 
 - type: loadoutGroup
   id: BoxerGloves
+  parent: [FloofGloves] # Floofstation
   name: loadout-group-boxer-gloves
   loadouts:
   - RedBoxingGloves

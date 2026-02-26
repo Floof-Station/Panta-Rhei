@@ -17,15 +17,24 @@
 - type: speciesBaseSprites
   id: MobVoxSprites
   sprites:
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking
     TailOversuit: MobHumanoidAnyMarking
     Head: MobVoxHead
+    Face: MobHumanoidAnyMarking
     Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobVoxTorso
+    Wings: MobHumanoidAnyMarking
     Eyes: MobVoxEyes
     LArm: MobVoxLArm
     RArm: MobVoxRArm
@@ -35,21 +44,23 @@
     RLeg: MobVoxRLeg
     LFoot: MobVoxLFoot
     RFoot: MobVoxRFoot
-    Tail: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobVoxMarkingLimits
-  onlyWhitelisted: true
   points:
-    Hair:
+    Special: # the cat ear joke
       points: 1
       required: false
-    FacialHair:
+    Tail:
       points: 1
-      required: false
+      required: true
+      defaultMarkings: [ VoxTail ]
     Head:
       points: 4
-      required: true
+      required: false
+    Face:
+      points: 1
+      required: false
     Snout:
       points: 1
       required: true
@@ -57,27 +68,47 @@
     SnoutCover:
       points: 1
       required: false
-    Arms:
-      points: 8 # DeltaV - was 4
-      required: true
-      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
-    Legs:
+    HeadSide:
       points: 4
-      required: true
-      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+      required: false
+    HeadTop:
+      points: 2
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
+      points: 1
+      required: false
     UndergarmentTop:
       points: 1
       required: false
     UndergarmentBottom:
       points: 1
       required: false
-    Chest:
-      points: 2
-      required: false
-    Tail:
+    Underwear:
       points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
+      required: false
+    Chest:
+      points: 10
+      required: false
+    Wings:
+      points: 1
+      required: false
+    Arms:
+      points: 10
       required: true
-      defaultMarkings: [ VoxTail ]
+      defaultMarkings: [ VoxLArmScales, VoxRArmScales, VoxRHandScales, VoxLHandScales ]
+    Legs:
+      points: 10
+      required: true
+      defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
 
 - type: humanoidBaseSprite
   id: MobVoxEyes

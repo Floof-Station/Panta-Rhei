@@ -32,7 +32,7 @@
             AtmosphericTechnician: [ 3, 3 ]
             StationEngineer: [ 5, 5 ]
             TechnicalAssistant: [ 4, 4 ]
-#            SeniorEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 3, 3 ]
@@ -41,7 +41,7 @@
             MedicalIntern: [ 4, 4 ]
             Psychologist: [ 1, 1 ]
             Surgeon: [ 1, 1 ]
-#            SeniorPhysician: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 5, 5 ]
@@ -50,7 +50,7 @@
             Librarian: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             Roboticist: [ 1, 1 ]
-#            SeniorResearcher: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -60,10 +60,10 @@
             Brigmedic: [ 1, 1 ]
             Prisoner: [ 2, 3 ] # has a small perma so less prisoners
             PrisonGuard: [ 1, 2 ]
-#            SeniorOfficer: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
-#            InventorySpecialist: [ 1, 1 ] #FloofStation
+            InventorySpecialist: [ 1, 1 ] #FloofStation
             SalvageSpecialist: [ 3, 3 ]
             CargoTechnician: [ 4, 4 ]
             Courier: [ 2, 3 ]
@@ -82,5 +82,3 @@
             StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
             Borg: [ 1, 2 ]
             MedicalBorg: [ 1, 2 ]
-#            ServiceQuadBorg: [ 1, 2 ] #Floofstation
-#            MedicalQuadBorg: [ 1, 2 ] #Floofstation

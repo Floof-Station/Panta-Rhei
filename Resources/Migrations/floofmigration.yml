@@ -39,12 +39,6 @@ FitnessPunchingBagBopClown: N14FitnessPunchingBag #not sure where this is from b
 ClosetWallRadiationFilled: null
 WoodSecretDoor: null
 
-#Senior Roles
-SpawnPointSeniorEngineer: SpawnPointStationEngineer #setting to a standard till we add senior roles
-SpawnPointSeniorOfficer: SpawnPointSecurityOfficer #setting to a standard till we add senior roles
-SpawnPointSeniorSeniorPhyiscian: SpawnPointMedicalDoctor #setting to a standard till we add senior roles
-SpawnPointInventorySpecialist: null #setting to a standard till we add senior roles
-
 #paradox anoms
 SpawnPointGhostParadoxAnomaly: null
 
@@ -215,3 +209,12 @@ CrateFreezer2: N14CrateFreezer
 FitnessPunchingBag: N14FitnessPunchingBag # we don't have this but can just replace it with the n14 one for now
 FitnessPunchingBagCaptain: N14FitnessPunchingBag # we don't have this but can just replace it with the n14 one for now
 DecorFloorTrashbags5: N14DecorFloorTrashbags5
+
+#fix rotation of sofas & benches
+BenchSofaCorpRight: BenchSofaCorpLeft
+BenchSofaCorpLeft: BenchSofaCorpRight
+BenchParkLeft: BenchParkRight
+BenchParkRight: BenchParkLeft
+BenchParkBambooRight: BenchParkBambooLeft
+BenchParkBambooLeft: BenchParkBambooRight
+BenchSofaRight: BenchSofaLeft

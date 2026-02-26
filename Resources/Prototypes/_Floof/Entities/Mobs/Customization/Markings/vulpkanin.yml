@@ -1,10 +1,156 @@
-# These markings have been reworked to appear on multiple layers to mitigate the effects of the "cookie-cut" technic of the original sprites
+# Snout
+- type: marking
+  id: VulpSnoutSwiftWhite
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine-lines-white
+
+- type: marking
+  id: VulpSnoutVulpineWhite
+  bodyPart: Snout
+  markingCategory: Snout
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/head_markings.rsi
+      state: vulpine-lines-white
+
+#Left Leg
+- type: marking
+  id: VulpPointsFadeLegL
+  markingCategory: LLeg
+  bodyPart: LLeg
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-legsL
+
+- type: marking
+  id: VulpPointsSharpLegL
+  markingCategory: LLeg
+  bodyPart: LLeg
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-legsL
+
+- type: marking
+  id: VulpPointsCrestLegL
+  markingCategory: LLeg
+  bodyPart: LLeg
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-legsL
+#Right Leg
+- type: marking
+  id: VulpPointsFadeLegR
+  markingCategory: RLeg
+  bodyPart: RLeg
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-legsR
+
+- type: marking
+  id: VulpPointsSharpLegR
+  markingCategory: RLeg
+  bodyPart: RLeg
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-legsR
+
+- type: marking
+  id: VulpPointsCrestLegR
+  markingCategory: RLeg
+  bodyPart: RLeg
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-legsR
+#Left Arm
+- type: marking
+  id: VulpPointsFadeArmL
+  markingCategory: LArm
+  bodyPart: LArm
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-armsL
+
+- type: marking
+  id: VulpPointsSharpArmL
+  markingCategory: LArm
+  bodyPart: LArm
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-armsL
+
+- type: marking
+  id: VulpPointsCrestArmL
+  markingCategory: LArm
+  bodyPart: LArm
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-armsL
+#Right Arm
+- type: marking
+  id: VulpPointsFadeArmR
+  markingCategory: RArm
+  bodyPart: RArm
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_fade-armsR
+
+- type: marking
+  id: VulpPointsSharpArmR
+  markingCategory: RArm
+  bodyPart: RArm
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_sharp-armsR
+
+- type: marking
+  id: VulpPointsCrestArmR
+  markingCategory: RArm
+  bodyPart: RArm
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_crest-armsR
+#Right Hand
+- type: marking
+  id: VulpPointsHandsRight
+  markingCategory: RHand
+  bodyPart: RHand
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_handR
+#Left Hand
+- type: marking
+  id: VulpPointsHandsLeft
+  markingCategory: LHand
+  bodyPart: LHand
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_handL
+#Right Foot
+- type: marking
+  id: VulpPointsFeetRight
+  markingCategory: RFoot
+  bodyPart: RFoot
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_feetR
+#Left Foot
+- type: marking
+  id: VulpPointsFeetLeft
+  markingCategory: LFoot
+  bodyPart: LFoot
+  sprites:
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/body_markings.rsi
+      state: points_feetL
+
+# Tail Markings
 - type: marking
   id: VulpTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
   layering: # Floof
     vulp: TailOversuit
     vulp-fade: TailOversuit
@@ -14,20 +160,19 @@
     vulp_BACK: vulp
     vulp-fade_BACK: vulp-fade
   sprites:
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp-fade
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_BACK
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp-fade_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-fade
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-fade_BACK
 
 - type: marking
   id: VulpTailAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
   layering: # Floof
     vulp_wag: TailOversuit
     vulp_wag-fade: TailOversuit
@@ -37,21 +182,19 @@
     vulp_wag_BACK: vulp_wag
     vulp_wag-fade_BACK: vulp_wag-fade
   sprites:
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag-fade
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag_BACK
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag-fade_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-fade
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-fade_BACK
 
 - type: marking
   id: VulpTailTip
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
   layering: # Floof
     vulp: TailOversuit
     tip: TailOversuit
@@ -61,20 +204,19 @@
     vulp_BACK: vulp
     vulp-tip_BACK: vulp-tip
   sprites:
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp-tip
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_BACK
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp-tip_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-tip
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp-tip_BACK
 
 - type: marking
   id: VulpTailTipAnimated
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: []
   layering: # Floof
     vulp_wag: TailOversuit
     vulp_wag-tip: TailOversuit
@@ -84,21 +226,19 @@
     vulp_wag_BACK: vulp_wag
     vulp_wag-tip_BACK: vulp_wag-tip
   sprites:
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag-tip
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag_BACK
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_wag-tip_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-tip
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_wag-tip_BACK
 
 - type: marking
   id: VulpTailAlt
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
   layering: # Floof
     vulp_alt: TailOversuit
     vulp_alt-fade: TailOversuit
@@ -108,21 +248,19 @@
     vulp_alt_BACK: vulp_alt
     vulp_alt-fade_BACK: vulp_alt-fade
   sprites:
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt-fade
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt_BACK
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt-fade_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt-fade
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt-fade_BACK
 
 - type: marking
   id: VulpTailAltTip
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
   layering: # Floof
     vulp_alt: TailOversuit
     vulp_alt-tip: TailOversuit
@@ -132,11 +270,79 @@
     vulp_alt_BACK: vulp_alt
     vulp_alt-tip_BACK: vulp_alt-tip
   sprites:
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt-tip
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt_BACK
-  - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
-    state: vulp_alt-tip_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt-tip
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt_BACK
+    - sprite: _Floof/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: vulp_alt-tip_BACK
+
+- type: marking
+  id: VulpTailFoxAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag-fade
+
+- type: marking
+  id: VulpTailFoxTipAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: fox_wag-tip
+
+- type: marking
+  id: VulpTailBushyAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: bushfluff_wag
+
+- type: marking
+  id: VulpTailCoyoteAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: coyote_wag
+
+- type: marking
+  id: VulpTailCorgi
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: corgi
+
+- type: marking
+  id: VulpTailCorgiAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: corgi_wag
+
+- type: marking
+  id: VulpTailDalmatian
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: dalmatian
+
+- type: marking
+  id: VulpTailDalmatianAnimated
+  bodyPart: Tail
+  markingCategory: Tail
+  sprites:
+    - sprite: DeltaV/Mobs/Customization/Vulpkanin/tail_markings.rsi
+      state: dalmatian_wag
