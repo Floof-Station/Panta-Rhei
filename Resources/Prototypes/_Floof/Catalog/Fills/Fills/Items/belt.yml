@@ -69,3 +69,40 @@
       - id: Multitool
       - id: GasAnalyzer
       - id: HolofanProjector
+
+- type: entity
+  id: ClothingHarnessSafetyAdvancedToolsEngineering
+  parent: ClothingUncategorizedHarnessSafety
+  suffix: Engineering
+  name: saftey harness belt advanced tools
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: PowerDrill
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: CableApcStack
+        - id: trayScanner
+
+- type: entity
+  id: ClothingHarnessSafetyAdvancedToolsAtmos
+  parent: ClothingUncategorizedHarnessSafety
+  suffix: Engineering
+  name: saftey harness advanced tools atmos
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: PowerDrill
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: GasAnalyzer
+        - id: trayScanner
+        - id: HolofanProjector
