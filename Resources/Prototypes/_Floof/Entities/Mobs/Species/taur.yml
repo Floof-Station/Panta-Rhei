@@ -13,8 +13,16 @@
     layers:
     - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
     - map: [ "enum.HumanoidVisualLayers.TaurBody" ]
+      # color: "#ffffff"
+      # sprite: _Floof/Mobs/Species/Arachne/parts.rsi
+      # state: "spider_body"
+      # visible: true
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
     - map: [ "enum.HumanoidVisualLayers.TaurBodyConnector" ]
+      # color: "#ffffff"
+      # sprite: _Floof/Mobs/Species/Arachne/parts.rsi
+      # state: "spider_body_front"
+      # visible: true
     - map: [ "enum.HumanoidVisualLayers.Head" ]
     - map: [ "enum.HumanoidVisualLayers.Snout" ]
     - map: [ "enum.HumanoidVisualLayers.Eyes" ]
@@ -142,7 +150,7 @@
     # End DeltaV additions
   - type: Body
     prototype: BaseTaur
-    requiredLegs: 1
+    requiredLegs: 0
   - type: Identity
   - type: IdExaminable
   - type: Hands

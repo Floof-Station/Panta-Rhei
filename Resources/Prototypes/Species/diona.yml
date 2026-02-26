@@ -16,14 +16,24 @@
 - type: speciesBaseSprites
   id: MobDionaSprites
   sprites:
-    TailBehind: MobHumanoidAnyMarking
-    TailOversuit: MobHumanoidAnyMarking
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking # Nyanotrasen - Felinid
+    TailBehind: MobHumanoidAnyMarking # Floofstation
+    TailOversuit: MobHumanoidAnyMarking # Floofstation
     Head: MobDionaHead
-    HeadTop: MobHumanoidAnyMarking
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobDionaTorso
+    Wings: MobHumanoidAnyMarking
     Eyes: MobDionaEyes
     LArm: MobDionaLArm
     RArm: MobDionaRArm
@@ -36,15 +46,32 @@
 
 - type: markingPoints
   id: MobDionaMarkingLimits
-  onlyWhitelisted: true
   points:
-    Head:
-      points: 2
+    Special:
+      points: 1
       required: false
-    HeadTop:
+    Head:
+      points: 4
+      required: false
+    Face:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    SnoutCover:
       points: 1
       required: false
     HeadSide:
+      points: 4
+      required: false
+    HeadTop:
+      points: 4
+      required: false
+    Hair:
+      points: 1
+      required: false
+    FacialHair:
       points: 1
       required: false
     UndergarmentTop:
@@ -53,14 +80,26 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
+      required: false
     Chest:
-      points: 2
+      points: 10
+      required: false
+    Wings:
+      points: 1
       required: false
     Legs:
-      points: 2
+      points: 10
       required: false
     Arms:
-      points: 2
+      points: 10
       required: false
     Overlay:
       points: 1

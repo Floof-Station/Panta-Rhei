@@ -36,7 +36,7 @@
     - id: DragonSpawn
     - id: ColossusSpawn # DeltaV
     #- id: ClosetSkeleton # DeltaV - replaced with MenaceSkeleton
-    #- id: KingRatMigration # DeltaV - disabled
+    - id: KingRatMigration # DeltaV - disabled # Floofstation - enabled
     - id: RevenantSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
@@ -49,7 +49,7 @@
     - id: NinjaSpawn
     - id: ParadoxCloneSpawn
     - id: SleeperAgents
-    - id: ZombieOutbreak
+#    - id: ZombieOutbreak # Floofstation - no
     - id: LoneOpsSpawn
     #- id: WizardSpawn # DeltaV - Disabled until overhauled
     - !type:NestedSelector

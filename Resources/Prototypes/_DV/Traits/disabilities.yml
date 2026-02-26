@@ -5,6 +5,7 @@
   name: trait-blindness-name
   description: trait-blindness-desc
   category: Disabilities
+  cost: -10 #floof
   conditions:
   - !type:HasCompCondition
     component: Blindable
@@ -20,6 +21,7 @@
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
   category: Disabilities
+  cost: -1 #floof
   conditions:
   - !type:HasCompCondition
     component: Blindable
@@ -36,6 +38,7 @@
   name: trait-monochromacy-name
   description: trait-monochromacy-desc
   category: Disabilities
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -46,6 +49,7 @@
   name: trait-deuteranopia-name
   description: trait-deuteranopia-desc
   category: Disabilities
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -56,6 +60,7 @@
   name: trait-ultravision-name
   description: trait-ultravision-desc
   category: Disabilities
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -66,6 +71,7 @@
   name: trait-impaired-mobility-name
   description: trait-impaired-mobility-desc
   category: Disabilities
+  cost: -3 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -78,6 +84,7 @@
   name: trait-amputee-left-arm-name
   description: trait-amputee-left-arm-desc
   category: Disabilities
+  cost: -3 #floof
   conflicts:
   - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
   effects:
@@ -92,6 +99,7 @@
   name: trait-amputee-right-arm-name
   description: trait-amputee-right-arm-desc
   category: Disabilities
+  cost: -3 #floof
   conflicts:
   - ArmAmputeeLeft
   effects:
@@ -106,6 +114,7 @@
   name: trait-dysgraphia-name
   description: trait-dysgraphia-desc
   category: Disabilities
+  cost: -2 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -126,6 +135,7 @@
   name: trait-hemophilia-name
   description: trait-hemophilia-desc
   category: Disabilities
+  cost: -2 #floof
   effects:
   - !type:AddCompsEffect
     components:
