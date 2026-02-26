@@ -1022,7 +1022,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
-  parent: [FloofHats] # floofstation
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - ClothingUniformJumpsuitCargoTechPants # DeltaV
@@ -1110,7 +1110,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
-  parent: [FloofHats] # floofstation
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
@@ -1333,6 +1333,7 @@
   # Begin DeltaV changes
   #- ResearchDirectorCloak
   - MystagogueCloak # Replaced RD cloak with MG
+  - ClothingNeckCloakRd # Floofstation
   - ScarfPurple
   # End DeltaV changes
 
