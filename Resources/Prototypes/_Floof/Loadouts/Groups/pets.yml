@@ -1,0 +1,14 @@
+- type: loadoutGroup
+  id: Pets
+  abstract: true
+  name: loadout-group-pets
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - MobHamsterPet
+  - MobMousePet
+  - MobMothroachPet
+  - MobFrogPet
+  - MobSnakePet
+  - MobFerretPet
+  - MobCorticalBorerPet
