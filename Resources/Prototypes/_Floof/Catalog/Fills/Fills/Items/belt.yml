@@ -61,7 +61,7 @@
   components:
   - type: StorageFill
     contents:
-      - id: Crowbar
+      - id: CrowbarYellow
       - id: Wrench
       - id: Screwdriver
       - id: Wirecutter
@@ -74,7 +74,7 @@
   id: ClothingHarnessSafetyAdvancedToolsEngineering
   parent: ClothingUncategorizedHarnessSafety
   suffix: Engineering
-  name: saftey harness belt advanced tools
+  name: saftey harness advanced tools
   components:
   - type: EntityTableContainerFill
     containers:
@@ -106,3 +106,52 @@
         - id: GasAnalyzer
         - id: trayScanner
         - id: HolofanProjector
+
+- type: entity
+  id: ClothingBeltUtilitySalvage
+  parent: ClothingBeltUtility
+  name: salvage utility belt
+  suffix: Salvage
+  components:
+  - type: StorageFill
+    contents:
+    - id: Crowbar
+    - id: Wrench
+    - id: Wirecutter
+    - id: Screwdriver
+    - id: Welder
+    - id: NetworkConfigurator
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingSalvage
+  parent: ClothingBeltMilitaryWebbing
+  suffix: Salvage
+  name: salvage chest rig
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Crowbar
+        - id: Wrench
+        - id: Wirecutter
+        - id: Screwdriver
+        - id: Welder
+        - id: NetworkConfigurator
+
+- type: entity
+  id: ClothingBeltMercWebbingSalvage
+  parent: ClothingBeltMercWebbing
+  suffix: Salvage
+  name: salvage chest rig
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: Crowbar
+        - id: Wrench
+        - id: Wirecutter
+        - id: Screwdriver
+        - id: Welder
+        - id: NetworkConfigurator
