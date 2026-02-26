@@ -14,8 +14,6 @@
   - type: ColorPainted
     color: "#ff0000"
     enabled: true
-  - type: Appearance
-    painted: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -24,6 +22,7 @@
   components:
   - type: ColorPainted
     color: "#ff7f00"
+    enabled: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -32,6 +31,7 @@
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -40,6 +40,7 @@
   components:
   - type: ColorPainted
     color: "#00ff00"
+    enabled: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -48,6 +49,7 @@
   components:
   - type: ColorPainted
     color: "#0000ff"
+    enabled: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -56,6 +58,7 @@
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -64,6 +67,7 @@
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: KitchenKnife
@@ -80,18 +84,18 @@
   - type: PointLight
     enabled: true
     radius: 3
-    energy: 2
+    energy: 5
     color: "#ff0000"
 
 - type: entity
   parent: GamblingKitchenKnifeEpic
   id: GamblingKitchenKnifeEpicBlue
-  suffix: Red Glow
+  suffix: Blue Glow
   components:
   - type: PointLight
     enabled: true
     radius: 3
-    energy: 2
+    energy: 5
     color: "#0000ff"
 
 - type: entity
@@ -102,7 +106,7 @@
   - type: PointLight
     enabled: true
     radius: 3
-    energy: 2
+    energy: 5
     color: "#00ff00"
 
 - type: entity
@@ -120,31 +124,34 @@
   - type: PointLight
     enabled: true
     radius: 3
-    energy: 2
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingKitchenKnifeLegendary
   id: GamblingKitchenKnifeLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
     enabled: true
     radius: 3
-    energy: 2
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingKitchenKnifeLegendary
   id: GamblingKitchenKnifeLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
     enabled: true
     radius: 3
-    energy: 2
+    energy: 5
     color: "#419ba3"
 
 # Butcher Knife
@@ -162,6 +169,7 @@
   components:
   - type: ColorPainted
     color: "#ff0000"
+    enabled: true
 
 - type: entity
   parent: GamblingButchCleaverRare
@@ -170,41 +178,52 @@
   components:
   - type: ColorPainted
     color: "#ff7f00"
+    enabled: true
 
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareYellow
+  suffix: Yellow
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
 
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareGreen
+  suffix: Green
   components:
   - type: ColorPainted
     color: "#00ff00"
+    enabled: true
 
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareBlue
+  suffix: Blue
   components:
   - type: ColorPainted
     color: "#0000ff"
+    enabled: true
 
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareIndigo
+  suffix: Indigo
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareViolet
+  suffix: Violet
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: ButchCleaver
@@ -216,28 +235,34 @@
 - type: entity
   parent: GamblingButchCleaverEpic
   id: GamblingButchCleaverEpicRed
+  suffix: Red Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ff0000"
 
 - type: entity
   parent: GamblingButchCleaverEpic
   id: GamblingButchCleaverEpicBlue
+  suffix: Blue Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#0000ff"
 
 - type: entity
   parent: GamblingButchCleaverEpic
   id: GamblingButchCleaverEpicGreen
+  suffix: Green Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#00ff00"
 
 - type: entity
@@ -250,31 +275,41 @@
 - type: entity
   parent: GamblingButchCleaverLegendary
   id: GamblingButchCleaverLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingButchCleaverLegendary
   id: GamblingButchCleaverLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingButchCleaverLegendary
   id: GamblingButchCleaverLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
+    
 
 #Combat Knife
 - type: entity
@@ -291,6 +326,7 @@
   components:
   - type: ColorPainted
     color: "#ff0000"
+    enabled: true
 
 - type: entity
   parent: GamblingCombatKnifeRare
@@ -299,41 +335,52 @@
   components:
   - type: ColorPainted
     color: "#ff7f00"
+    enabled: true
 
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareYellow
+  suffix: Yellow
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
 
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareGreen
+  suffix: Green
   components:
   - type: ColorPainted
     color: "#00ff00"
+    enabled: true
 
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareBlue
+  suffix: Blue
   components:
   - type: ColorPainted
     color: "#0000ff"
+    enabled: true
 
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareIndigo
+  suffix: Indigo
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareViolet
+  suffix: Violet
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: CombatKnife
@@ -345,28 +392,34 @@
 - type: entity
   parent: GamblingCombatKnifeEpic
   id: GamblingCombatKnifeEpicRed
+  suffix: Red Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ff0000"
 
 - type: entity
   parent: GamblingCombatKnifeEpic
   id: GamblingCombatKnifeEpicBlue
+  suffix: Blue Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#0000ff"
 
 - type: entity
   parent: GamblingCombatKnifeEpic
   id: GamblingCombatKnifeEpicGreen
+  suffix: Green Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#00ff00"
 
 - type: entity
@@ -379,32 +432,41 @@
 - type: entity
   parent: GamblingCombatKnifeLegendary
   id: GamblingCombatKnifeLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingCombatKnifeLegendary
   id: GamblingCombatKnifeLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingCombatKnifeLegendary
   id: GamblingCombatKnifeLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
-
+    
 #Survival Knife
 - type: entity
   parent: SurvivalKnife
@@ -420,48 +482,61 @@
   components:
   - type: ColorPainted
     color: "#ff0000"
+    enabled: true
 
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareOrange
+  suffix: Orange
   components:
   - type: ColorPainted
     color: "#ff7f00"
+    enabled: true
 
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareYellow
+  suffix: Yellow
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
 
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareGreen
+  suffix: Green
   components:
   - type: ColorPainted
     color: "#00ff00"
+    enabled: true
 
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareBlue
+  suffix: Blue
   components:
   - type: ColorPainted
     color: "#0000ff"
+    enabled: true
 
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareIndigo
+  suffix: Indigo
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareViolet
+  suffix: Violet
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: SurvivalKnife
@@ -473,28 +548,34 @@
 - type: entity
   parent: GamblingSurvivalKnifeEpic
   id: GamblingSurvivalKnifeEpicRed
+  suffix: Red Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ff0000"
 
 - type: entity
   parent: GamblingSurvivalKnifeEpic
   id: GamblingSurvivalKnifeEpicBlue
+  suffix: Blue Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#0000ff"
 
 - type: entity
   parent: GamblingSurvivalKnifeEpic
   id: GamblingSurvivalKnifeEpicGreen
+  suffix: Green Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#00ff00"
 
 - type: entity
@@ -507,30 +588,39 @@
 - type: entity
   parent: GamblingSurvivalKnifeLegendary
   id: GamblingSurvivalKnifeLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingSurvivalKnifeLegendary
   id: GamblingSurvivalKnifeLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingSurvivalKnifeLegendary
   id: GamblingSurvivalKnifeLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
 
 #Kukri
@@ -548,48 +638,61 @@
   components:
   - type: ColorPainted
     color: "#ff0000"
+    enabled: true
 
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareOrange
+  suffix: Orange
   components:
   - type: ColorPainted
     color: "#ff7f00"
+    enabled: true
 
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareYellow
+  suffix: Yellow
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
 
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareGreen
+  suffix: Green
   components:
   - type: ColorPainted
     color: "#00ff00"
+    enabled: true
 
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareBlue
+  suffix: Blue
   components:
   - type: ColorPainted
     color: "#0000ff"
+    enabled: true
 
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareIndigo
+  suffix: Indigo
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareViolet
+  suffix: Violet
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: KukriKnife
@@ -601,28 +704,34 @@
 - type: entity
   parent: GamblingKukriKnifeEpic
   id: GamblingKukriKnifeEpicRed
+  suffix: Red Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ff0000"
 
 - type: entity
   parent: GamblingKukriKnifeEpic
   id: GamblingKukriKnifeEpicBlue
+  suffix: Blue Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#0000ff"
 
 - type: entity
   parent: GamblingKukriKnifeEpic
   id: GamblingKukriKnifeEpicGreen
+  suffix: Green Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#00ff00"
 
 - type: entity
@@ -635,30 +744,39 @@
 - type: entity
   parent: GamblingKukriKnifeLegendary
   id: GamblingKukriKnifeLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingKukriKnifeLegendary
   id: GamblingKukriKnifeLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingKukriKnifeLegendary
   id: GamblingKukriKnifeLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
 
 #Throwing Knife
@@ -676,48 +794,61 @@
   components:
   - type: ColorPainted
     color: "#ff0000"
+    enabled: true
 
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareOrange
+  suffix: Orange
   components:
   - type: ColorPainted
     color: "#ff7f00"
+    enabled: true
 
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareYellow
+  suffix: Yellow
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
 
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareGreen
+  suffix: Green
   components:
   - type: ColorPainted
     color: "#00ff00"
+    enabled: true
 
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareBlue
+  suffix: Blue
   components:
   - type: ColorPainted
     color: "#0000ff"
+    enabled: true
 
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareIndigo
+  suffix: Indigo
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareViolet
+  suffix: Violet
   components:
   - type: ColorPainted
     color: "#4b0082"
+    enabled: true
 
 - type: entity
   parent: ThrowingKnife
@@ -729,28 +860,34 @@
 - type: entity
   parent: GamblingThrowingKnifeEpic
   id: GamblingThrowingKnifeEpicRed
+  suffix: Red Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ff0000"
 
 - type: entity
   parent: GamblingThrowingKnifeEpic
   id: GamblingThrowingKnifeEpicBlue
+  suffix: Blue Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#0000ff"
 
 - type: entity
   parent: GamblingThrowingKnifeEpic
   id: GamblingThrowingKnifeEpicGreen
+  suffix: Green Glow
   components:
   - type: PointLight
-    radius: 1
-    energy: 1
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#00ff00"
 
 - type: entity
@@ -763,30 +900,38 @@
 - type: entity
   parent: GamblingThrowingKnifeLegendary
   id: GamblingThrowingKnifeLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingThrowingKnifeLegendary
   id: GamblingThrowingKnifeLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingThrowingKnifeLegendary
   id: GamblingThrowingKnifeLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
 
 # Misc Legendary
@@ -801,30 +946,39 @@
 - type: entity
   parent: GamblingCaptainSabreLegendary
   id: GamblingCaptainSabreLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingCaptainSabreLegendary
   id: GamblingCaptainSabreLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingCaptainSabreLegendary
   id: GamblingCaptainSabreLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
 
 - type: entity
@@ -837,30 +991,39 @@
 - type: entity
   parent: GamblingWeaponHFKatanaLegendary
   id: GamblingWeaponHFKatanaLegendaryRGB
+  suffix: RGB Glow
   components:
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
   - type: RgbLightController
 
 - type: entity
   parent: GamblingWeaponHFKatanaLegendary
   id: GamblingWeaponHFKatanaLegendaryGolden
+  suffix: Golden
   components:
   - type: ColorPainted
     color: "#ffff00"
+    enabled: true
   - type: PointLight
-    radius: 1.5
-    energy: 2
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#ffff00"
 
 - type: entity
   parent: GamblingWeaponHFKatanaLegendary
   id: GamblingWeaponHFKatanaLegendaryMirage
+  suffix: Mirage
   components:
   - type: Stealth
     lastVisibility: 0.66
   - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
     color: "#419ba3"
 
 # Lootbox - I wasn't sure where i'd place this.
