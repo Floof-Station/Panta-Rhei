@@ -78,6 +78,26 @@
         damage: 40
       behaviors:
       - !type:VomitBehavior
+  - type: Barotrauma #floof/euphoria changes start here
+    damage:
+      types:
+        blunt: 0.0 #this is a bandaid fix to keep new vox consistant with old ee vox. if this gets removed and if there's vox armors and hardsuits pleasae also add pressure protection to said suits so vox players dont suddenly realize their suits dont work cuz of some ipc mains mald pr
+        heat: 0.0 # and to said ipc mains sorry yall got left out should have done your prs when you had the chance. us vox players have been in the dust for a while especially upstream so we went ahead in terms of the infamous phrase "when you code it". consider it revenge for the lack of attention since they were playable
+  #- type: PressureProtection #alot of this component is here as a left over for when i was trying to keep it ballenced ie still die from high pressures and not low pressures this is all still here incase later down the line me or someone else tries to fix it and get a vauge idea on what to do
+  #  highpressuremultiplier: 0.6 
+  #  lowpressuremodifier: 1
+  #  lowpressuremultiplier: 1000
+  - type: Temperature 
+    heatDamageThreshold: 325 # still gotta wear a firesuit
+    coldDamageThreshold: -200 # Floof: Space-fairing chickens
+    currentTemperature: 310.15
+    specificHeat: 42
+    coldDamage:
+      types:
+        Cold: 0 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 #floof/euphoria changes end here
   - type: PassiveDamage
     # Augment normal health regen to be able to tank some Poison damage
     # This allows Vox to take their mask off temporarily to eat something without needing a trip to medbay afterwards.

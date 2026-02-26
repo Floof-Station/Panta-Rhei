@@ -15,18 +15,11 @@
         nameGenerator:
           !type:NanotrasenNameGenerator
           prefixCreator: 'NY'
-      # uncomment when planets arent fucked sideways
-      #- type: StationSurface
-      #  mapPath: /Maps/Nonstations/glacier_surface.yml
-      #  biome: Snow
       - type: StationJobs
         availableJobs:
           Passenger: [ -1, -1 ]
 #          Anomaly: [ 4, 4 ] # Floofstation
           Captain: [ 1, 1 ]
-          #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
-          #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
-          #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
         #service
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 2, 2 ]
@@ -44,7 +37,7 @@
           AtmosphericTechnician: [ 1, 2 ]
           StationEngineer: [ 2, 3 ]
           TechnicalAssistant: [ 2, 2 ]
-#          SeniorEngineer: [ 1, 1 ]
+          SeniorEngineer: [ 1, 1 ]
         #justice added by FloofStation
           ChiefJustice: [ 1, 1 ] #FloofStation
           Clerk: [ 1, 1 ] #FloofStation
@@ -58,7 +51,7 @@
           MedicalDoctor: [ 2, 3 ]
           MedicalIntern: [ 2, 2 ]
           Surgeon: [ 1, 1 ]
-#          SeniorPhysician: [ 1, 1 ]
+          SeniorPhysician: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
           Chaplain: [ 1, 1 ]
@@ -67,7 +60,7 @@
           ResearchAssistant: [ 2, 2 ]
           Roboticist: [ 1, 1 ]
           Librarian: [ 1, 1 ]
-#         SeniorResearcher: [ 1, 1 ]
+          SeniorResearcher: [ 1, 1 ]
         #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
@@ -76,16 +69,14 @@
           SecurityCadet: [ 1, 2 ]
           Brigmedic: [ 1, 1 ]
           Prisoner: [ 2, 3 ]
-          #SeniorOfficer: [ 1, 1 ]
+          SeniorOfficer: [ 1, 1 ]
         #logistics
           Quartermaster: [ 1, 1 ]
-#         InventorySpecialist: [ 1, 1 ] #FloofStation
+          InventorySpecialist: [ 1, 1 ] #FloofStation
           Courier: [ 2, 3 ]
           SalvageSpecialist: [ 2, 3 ]
           CargoTechnician: [ 2, 3 ]
         # Silicon
-#          StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+          StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
           Borg: [ 1, 2 ]
           MedicalBorg: [ 1, 2 ]
-#          ServiceQuadBorg: [ 1, 2 ] #Floofstation
-#          MedicalQuadBorg: [ 1, 2 ] #Floofstation

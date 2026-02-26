@@ -13,5 +13,5 @@ public sealed partial class ConsentSystemCCVars : CVars
     /// How many characters the consent text can be.
     /// </summary>
     public static readonly CVarDef<int> ConsentFreetextMaxLength =
-        CVarDef.Create("consent.freetext_max_length", 500, CVar.REPLICATED | CVar.SERVER);
+        CVarDef.Create("consent.freetext_max_length", 2048, CVar.REPLICATED | CVar.SERVER);
 }

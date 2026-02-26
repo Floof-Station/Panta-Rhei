@@ -10,7 +10,7 @@
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 5h
-      inverted: true # stop playing intern if you're good at engineering!
+      inverted: false # floofstation - let people choose how they want to play their character
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering

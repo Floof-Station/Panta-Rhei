@@ -22,15 +22,12 @@
             Librarian: [ 1, 1 ]
           #command
             Captain: [ 1, 1 ]
-            #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
-            #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
-            #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
           #engineering
             AtmosphericTechnician: [ 2, 4 ]
             ChiefEngineer: [ 1, 1 ]
             StationEngineer: [ 4, 6 ]
             TechnicalAssistant: [ 2, 3 ]
-#            SeniorEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
           #medical
             Chemist: [ 2, 2 ]
             ChiefMedicalOfficer: [ 1, 1 ]
@@ -38,7 +35,7 @@
             MedicalIntern: [ 2, 3 ]
             Paramedic: [ 2, 3 ]
             Psychologist: [ 1, 2 ]
-#            SeniorPhysician: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
             Surgeon: [ 1, 1 ]
           #security
             Brigmedic: [ 1, 1 ]
@@ -49,7 +46,7 @@
             SecurityOfficer: [ 4, 6 ]
             SecurityCadet: [ 3, 4 ]
             Warden: [ 1, 1 ]
-#            SeniorOfficer: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
           #service
             Bartender: [ 2, 3 ]
             Botanist: [ 2, 4 ]
@@ -70,19 +67,17 @@
             ResearchAssistant: [ 2, 3 ]
             ResearchDirector: [ 1, 1 ]
             Scientist: [ 3, 4 ]
-#            SeniorResearcher: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
           #supply
             CargoTechnician: [ 4, 6 ]
             Courier: [ 1, 2 ]
             SalvageSpecialist: [ 3, 5 ]
             Quartermaster: [ 1, 1 ]
-#            InventorySpecialist: [ 1, 1 ] #FloofStation
+            InventorySpecialist: [ 1, 1 ] #FloofStation
           #Silicon
             StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
             Borg: [ 2, 3 ]
             MedicalBorg: [ 2, 3 ]
-#            ServiceQuadBorg: [ 2, 3 ] #Floofstation
-#            MedicalQuadBorg: [ 2, 3 ] #Floofstation
           # Justice added by FloofStation
             ChiefJustice: [ 1, 1 ] #FloofStation
             Clerk: [ 1, 1 ] #FloofStation

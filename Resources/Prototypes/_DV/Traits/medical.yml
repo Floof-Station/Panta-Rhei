@@ -5,6 +5,7 @@
   name: trait-narcolepsy-name
   description: trait-narcolepsy-desc
   category: Medical
+  cost: -2 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -31,6 +32,7 @@
   name: trait-lightweight-name
   description: trait-lightweight-desc
   category: Medical
+  cost: -1 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -42,6 +44,7 @@
   name: trait-unrevivable-name
   description: trait-unrevivable-desc
   category: Medical
+  cost: -6 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -53,6 +56,7 @@
   name: trait-uncloneable-name
   description: trait-uncloneable-desc
   category: Medical
+  cost: -1 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -63,6 +67,7 @@
   name: trait-unborgable-name
   description: trait-unborgable-desc
   category: Medical
+  cost: -1 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -73,6 +78,7 @@
   name: trait-redshirt-name
   description: trait-redshirt-desc
   category: Medical
+  cost: -6 #floof
   effects:
   - !type:AddCompsEffect
     components:

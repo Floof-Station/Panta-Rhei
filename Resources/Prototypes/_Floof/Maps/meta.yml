@@ -19,9 +19,6 @@
         availableJobs:
           #service
           Captain: [ 1, 1 ]
-          #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
-          #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
-          #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 2, 2 ]
           Botanist: [ 2, 3 ]
@@ -35,7 +32,7 @@
           AtmosphericTechnician: [ 3, 3 ]
           StationEngineer: [ 5, 7 ]
           TechnicalAssistant: [ 3, 6 ]
-#          SeniorEngineer: [ 1, 1 ]
+          SeniorEngineer: [ 1, 1 ]
           #medical
           ChiefMedicalOfficer: [ 1, 1 ]
           Chemist: [ 3, 3 ]
@@ -43,7 +40,7 @@
           MedicalIntern: [ 3, 6 ]
           Paramedic: [ 1, 3 ]
           Surgeon: [ 1, 1 ]
-#          SeniorPhysician: [ 1, 1 ]
+          SeniorPhysician: [ 1, 1 ]
           #science
           ResearchDirector: [ 1, 1 ]
           Scientist: [ 5, 7 ]
@@ -51,7 +48,7 @@
           Chaplain: [ 1, 1 ]
           Roboticist: [ 1, 2 ]
           ForensicMantis: [ 1, 1 ]
-#          SeniorResearcher: [ 1, 1 ]
+          SeniorResearcher: [ 1, 1 ]
           #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
@@ -61,13 +58,13 @@
           Brigmedic: [ 1, 1 ]
           Prisoner: [ 2, 3 ]
           PrisonGuard: [ 1, 1 ]
-#          SeniorOfficer: [ 1, 1 ]
+          SeniorOfficer: [ 1, 1 ]
           #supply
           Quartermaster: [ 1, 1 ]
           SalvageSpecialist: [ 3, 3 ]
           CargoTechnician: [ 3, 3 ]
           Courier: [ 1, 2 ]
-#          InventorySpecialist: [ 1, 1 ] #FloofStation
+          InventorySpecialist: [ 1, 1 ] #FloofStation
           #civilian
           Passenger: [ -1, -1 ]
           Clown: [ 1, 1 ]
@@ -78,8 +75,6 @@
           StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
           Borg: [ 1, 2 ]
           MedicalBorg: [ 1, 2 ]
-#          ServiceQuadBorg: [ 1, 2 ] #Floofstation
-#          MedicalQuadBorg: [ 1, 2 ] #Floofstation
           #justice added by FloofStation
           ChiefJustice: [ 1, 1 ] #FloofStation
           Clerk: [ 1, 1 ] #FloofStation

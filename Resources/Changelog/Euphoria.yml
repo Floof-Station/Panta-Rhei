@@ -610,3 +610,85 @@ Entries:
       message: Added AI to Glacier.
   id: 77
   time: '2026-02-23T19:42:44.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Made some more N14 tiles and upstream tiles not subfloor so they will
+        properly hide pipes and wires.
+    - type: Tweak
+      message: Sofas and benches should be rotated properly on most maps now.
+  id: 78
+  time: '2026-02-25T04:41:29.0000000+00:00'
+- author: jack-thedragon95
+  changes:
+    - type: Add
+      message: THE SHOAL HAS RE-ENABLED VOX SPACE-PROOFING, PRAISE THE AURALIS!!!
+  id: 79
+  time: '2026-02-25T04:43:10.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Mappers no longer have to make sure to add spawnpoints for every job on
+        every map. Now only a cryosleep/latejoin spawnpoint is necessary.
+    - type: Tweak
+      message: >-
+        Let players play intern roles even if they are well above the play time
+        amount.
+  id: 80
+  time: '2026-02-25T06:38:23.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Onivia guidebook entry
+  id: 81
+  time: '2026-02-25T06:49:50.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Costs of traits currently present.
+  id: 82
+  time: '2026-02-25T21:30:16.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Fixed Arachne layering bug
+    - type: Fix
+      message: Fixed Urist McArachne nugget problem (markings didnt apply before)
+    - type: Add
+      message: Added Arachne multi eyes sprite
+    - type: Add
+      message: Basically every marking
+  id: 83
+  time: '2026-02-25T21:56:11.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Ports Dog Accent
+  id: 84
+  time: '2026-02-25T21:57:25.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added filled belts to relevant lockers
+    - type: Add
+      message: Added the free bodybag to medicine locker
+    - type: Add
+      message: Added access configurator to engineering lockers
+  id: 85
+  time: '2026-02-25T21:58:28.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: more characters to consent
+  id: 86
+  time: '2026-02-25T22:59:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked some event rates, disabled zombies, and more. See the PR 118 for
+        details.
+  id: 87
+  time: '2026-02-26T04:25:19.0000000+00:00'

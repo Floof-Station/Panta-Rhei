@@ -680,7 +680,7 @@
   thermalConductivity: 0.04
   heatCapacity: 10000
   weather: false #floofstation
-  
+
 - type: tile
   id: FloorMS13CarpetFancyRedDiamond
   name: red carpet fancy diamond
@@ -724,7 +724,7 @@
   thermalConductivity: 0.04
   heatCapacity: 10000
   weather: false #floofstation
-  
+
 - type: tile
   id: FloorMS13CarpetFancyBlueDiamond
   name: blue carpet fancy diamond
@@ -783,7 +783,7 @@
   thermalConductivity: 0.04
   heatCapacity: 10000
   weather: false #floofstation
-  
+
 - type: tile
   id: FloorMS13CarpetVioletDiamond
   name: carpet violet diamond
@@ -807,7 +807,7 @@
   variants: 6
   placementVariants: [0, 1, 2, 3, 4, 5]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -821,7 +821,7 @@
   sprite: /Textures/_Nuclear14/Tiles/concrete-goon.png
   variants: 1
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -835,7 +835,7 @@
   sprite: /Textures/_Nuclear14/Tiles/concrete-bay.png
   variants: 1
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -849,7 +849,7 @@
   sprite: /Textures/_Nuclear14/Tiles/hexacrete.png
   variants: 1
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -862,7 +862,7 @@
   name: concrete hexacrete dark
   sprite: /Textures/_Nuclear14/Tiles/hexacrete_dark.png
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -877,7 +877,7 @@
   variants: 6
   placementVariants: [0, 1, 2, 3, 4, 5]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -892,7 +892,7 @@
   variants: 6
   placementVariants: [0, 1, 2, 3, 4, 5]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -908,7 +908,7 @@
   variants: 9
   placementVariants: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcreteBroken
   friction: 0.30
@@ -923,7 +923,7 @@
   variants: 9
   placementVariants: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcreteBroken
   friction: 0.30
@@ -937,7 +937,7 @@
   variants: 9
   placementVariants: [0, 1, 2, 3, 4, 5, 6, 7, 8]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcreteBroken
   friction: 0.30
@@ -950,7 +950,7 @@
   name: ms13 concrete
   sprite: /Textures/_Nuclear14/Tiles/ms13/Concrete/concrete_big.png
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -963,7 +963,7 @@
   name: ms13 concrete industrial
   sprite: /Textures/_Nuclear14/Tiles/ms13/Concrete/concrete_industrial.png
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -976,7 +976,7 @@
   name: ms13 concrete industrial alt
   sprite: /Textures/_Nuclear14/Tiles/ms13/Concrete/concrete_industrial_alt.png
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -989,7 +989,7 @@
   name: ms13 concrete industrial split
   sprite: /Textures/_Nuclear14/Tiles/ms13/Concrete/concrete_industrial_split.png
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30
@@ -1004,7 +1004,7 @@
   variants: 3
   placementVariants: [0, 1, 2]
   baseTurf: Plating #Floofstation
-  isSubfloor: true
+  isSubfloor: false # floofstation
   footstepSounds:
     collection: N14FootstepConcrete
   friction: 0.30

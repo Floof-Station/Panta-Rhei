@@ -14,6 +14,7 @@
       amount: !type:ConstantNumberSelector
         value: 2
     - id: Gauze
+    - id: BodyBagFolded # Euphoria
 
 - type: entity
   parent: LockerMedicine
@@ -47,6 +48,7 @@
     - id: ClothingHandsGlovesLatex
     - id: ClothingHeadsetMedical
     - id: ClothingEyesHudMedical
+    - id: ClothingBeltMedicalFilled # Euphoria
     - !type:GroupSelector
       children:
       - !type:NestedSelector # DeltaV - Add our surgery caps. See Resources/Prototypes/_DV/Catalog/Fills/Lockers/medical.yml
@@ -142,6 +144,7 @@
     - id: MedkitFilled
       prob: 0.3
     - id: JetInjector
+    - id: ClothingBeltMedicalEMTFilled # Euphoria
 
 - type: entity
   parent: LockerParamedic
