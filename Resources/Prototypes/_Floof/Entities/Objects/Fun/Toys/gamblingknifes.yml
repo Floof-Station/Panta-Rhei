@@ -13,9 +13,9 @@
   components:
   - type: ColorPainted
     color: "#ff0000"
-  - type: Appearance
-    color: "#ff0000"
     enabled: true
+  - type: Appearance
+    painted: true
 
 - type: entity
   parent: GamblingKitchenKnifeRare
@@ -158,6 +158,7 @@
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareRed
+  suffix: Red
   components:
   - type: ColorPainted
     color: "#ff0000"
@@ -165,6 +166,7 @@
 - type: entity
   parent: GamblingButchCleaverRare
   id: GamblingButchCleaverRareOrange
+  suffix: Orange
   components:
   - type: ColorPainted
     color: "#ff7f00"
@@ -285,6 +287,7 @@
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareRed
+  suffix: Red
   components:
   - type: ColorPainted
     color: "#ff0000"
@@ -292,6 +295,7 @@
 - type: entity
   parent: GamblingCombatKnifeRare
   id: GamblingCombatKnifeRareOrange
+  suffix: Orange
   components:
   - type: ColorPainted
     color: "#ff7f00"
@@ -412,6 +416,7 @@
 - type: entity
   parent: GamblingSurvivalKnifeRare
   id: GamblingSurvivalKnifeRareRed
+  suffix: Red
   components:
   - type: ColorPainted
     color: "#ff0000"
@@ -539,6 +544,7 @@
 - type: entity
   parent: GamblingKukriKnifeRare
   id: GamblingKukriKnifeRareRed
+  suffix: Red
   components:
   - type: ColorPainted
     color: "#ff0000"
@@ -666,6 +672,7 @@
 - type: entity
   parent: GamblingThrowingKnifeRare
   id: GamblingThrowingKnifeRareRed
+  suffix: Red
   components:
   - type: ColorPainted
     color: "#ff0000"
