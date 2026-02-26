@@ -24,16 +24,16 @@
     name: ghost-role-information-hamster-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
 
 - type: entity
   parent: MobMouse
@@ -56,16 +56,16 @@
     name: ghost-role-information-mouse-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
 
 - type: entity
   parent: MobMothroach
@@ -88,16 +88,16 @@
     name: ghost-role-information-mothroach-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
 
 # New Stuff -
 
@@ -128,16 +128,16 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
 
 - type: entity
   parent: MobSnake
@@ -166,16 +166,16 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
 
 - type: entity
   parent: MobFerret
@@ -202,16 +202,16 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
 
 - type: entity
   parent: MobCorticalBorer
@@ -236,13 +236,13 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Tiny
-  - type: HTN
-    rootTask:
-      task: FollowCompound
-    blackboard:
-      IdleRange: !type:Single
-        1.5
-      FollowCloseRange: !type:Single
-        1.0
-      FollowRange: !type:Single
-        2.0
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
