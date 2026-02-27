@@ -146,7 +146,7 @@
   category: Medical
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
-  cost: 4
+  cost: 5
   conditions:
   - !type:HasJobCondition
     invert: true
@@ -174,7 +174,7 @@
   category: Medical
   name: trait-name-CyberEyesThermoVision
   description: trait-description-CyberEyesThermoVision
-  cost: 4
+  cost: 5
   conditions:
   - !type:HasJobCondition
     invert: true
@@ -189,3 +189,84 @@
     - type: ThermalVision
       pulseTime: 2
       toggleAction: PulseThermalVision
+
+- type: trait
+  id: CyberEyesSecurity
+  category: Physical
+  points: -2
+  conflicts:
+  - CyberEyesOmni
+  requirements:
+  - !type:InDepartmentCondition
+    department:
+    - Security
+#  - !type:HasCompCondition
+#    component:
+#    - EyeProtection
+#    - FlashImmunity
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+
+# Folded Diagnoisic eyes into Medical
+- type: trait
+  id: CyberEyesMedical
+  category: Physical
+  points: -2
+  conflicts:
+    - CyberEyesOmni
+  requirements:
+#  - !type:HasCompCondition
+#    component:
+#    - EyeProtection
+#    - FlashImmunity
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SolutionScanner
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+      - Inorganic
+      - Silicon
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+
+- type: trait
+  id: CyberEyesOmni
+  category: Physical
+  points: -4
+  conflicts:
+  - CyberEyesMedical
+  - CyberEyesSecurity
+  requirements:
+  - !type:InDepartmentCondition
+    department:
+    - Command
+#  - !type:HasCompCondition
+#    component:
+#    - EyeProtection
+#    - FlashImmunity
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: SolutionScanner
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+      - Inorganic
+      - Silicon
