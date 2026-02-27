@@ -192,14 +192,15 @@
 
 - type: trait
   id: CyberEyesSecurity
-  category: Physical
-  points: -2
+  category: Medical
+  name: trait-name-CyberEyesSecurity
+  description: trait-description-CyberEyesSecurity
+  cost: -2
   conflicts:
   - CyberEyesOmni
-  requirements:
+  conditions:
   - !type:InDepartmentCondition
-    department:
-    - Security
+    department: Security
 #  - !type:HasCompCondition
 #    component:
 #    - EyeProtection
@@ -214,11 +215,13 @@
 # Folded Diagnoisic eyes into Medical
 - type: trait
   id: CyberEyesMedical
-  category: Physical
-  points: -2
+  category: Medical
+  name: trait-name-CyberEyesMedical
+  description: trait-description-CyberEyesMedical
+  cost: -2
   conflicts:
     - CyberEyesOmni
-  requirements:
+  conditions:
 #  - !type:HasCompCondition
 #    component:
 #    - EyeProtection
@@ -240,15 +243,16 @@
 
 - type: trait
   id: CyberEyesOmni
-  category: Physical
-  points: -4
+  category: Medical
+  name: trait-name-CyberEyesOmni
+  description: trait-description-CyberEyesOmni
+  cost: -3
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
-  requirements:
+  conditions:
   - !type:InDepartmentCondition
-    department:
-    - Command
+    department: Command
 #  - !type:HasCompCondition
 #    component:
 #    - EyeProtection
