@@ -1,0 +1,45 @@
+- type: entity
+  parent: MonkeyCube
+  id: VulpkaninCube
+  name: vulpkanin cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobVulpkaninRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: TajaranCube
+  name: tajaran cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobTajaranRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: FelinidCube
+  name: Felinid cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobFelinidRandom
+
+- type: entity
+  parent: MonkeyCube
+  id: FelinidMaidCube
+  name: Felinid Maid cube
+  components:
+  - type: Rehydratable
+    possibleSpawns:
+    - MobFelinidMaidRandom
+    
+# Currently Working on having random spawn allowing for forced gender
+#- type: entity
+#  parent: MonkeyCube
+#  id: FelinidFemaleCube
+#  name: catgirl girlfriend cube
+#  components:
+#  - type: Rehydratable
+#    possibleSpawns:
+#    - MobFelinidRandom
