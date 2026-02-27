@@ -7,8 +7,8 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - names_tajaran_first
-    - names_tajaran_last
+    - names-first-dataset-
+    - names-last-dataset-
 
 - type: entity
   parent: MobVulpkanin
@@ -19,9 +19,9 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - names_vulpkanin_male
-    - names_vulpkanin_last
-
+    - names-first-dataset-
+    - names-last-dataset-
+    
 - type: entity
   parent: MobFelinid
   id: MobFelinidRandom
@@ -31,8 +31,8 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - names_first
-    - names_last
+    - names-first-dataset-
+    - names-last-dataset-
 
 - type: entity
   parent: MobFelinid
@@ -43,7 +43,7 @@
   - type: RandomHumanoidAppearance
   - type: RandomMetadata
     nameSegments:
-    - names_first
-    - names_last
+    - names-first-dataset-
+    - names-last-dataset-
   - type: Loadout
     prototypes: [ MaidOutfit ]
