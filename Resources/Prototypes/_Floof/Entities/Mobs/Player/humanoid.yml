@@ -1,0 +1,49 @@
+- type: entity
+  parent: MobTajaran
+  id: MobTajaranRandom
+  name: Urist McTajaran
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - names_tajaran_first
+    - names_tajaran_last
+
+- type: entity
+  parent: MobVulpkanin
+  id: MobVulpkaninRandom
+  name: Urist McVulp
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - names_vulpkanin_male
+    - names_vulpkanin_last
+
+- type: entity
+  parent: MobFelinid
+  id: MobFelinidRandom
+  name: Urist McFelinid
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - names_first
+    - names_last
+
+- type: entity
+  parent: MobFelinid
+  id: MobFelinidMaidRandom
+  name: Urist McFelinid
+  suffix: Random Appearance
+  components:
+  - type: RandomHumanoidAppearance
+  - type: RandomMetadata
+    nameSegments:
+    - names_first
+    - names_last
+  - type: Loadout
+    prototypes: [ MaidOutfit ]
