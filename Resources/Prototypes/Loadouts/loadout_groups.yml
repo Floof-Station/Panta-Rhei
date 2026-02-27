@@ -1254,6 +1254,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-atmospheric-technician-jumpsuit
   loadouts:
   - AtmosphericTechnicianJumpsuit
@@ -1263,7 +1264,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianOuterClothing
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofOuterClothing] # floofstation
   name: loadout-group-atmospheric-technician-outerclothing
   minLimit: 0
   loadouts:
