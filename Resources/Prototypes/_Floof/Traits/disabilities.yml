@@ -60,8 +60,10 @@
   - !type:OverrideCompsEffect
     components:
     - type: NightVision
-      color: "#FFFFFF"
       drawOverlay: false
+      Strength: 0
+      Noise: 0
+      Tint: 0,0,0
       activateSound: null
       deactivateSound: null
 
