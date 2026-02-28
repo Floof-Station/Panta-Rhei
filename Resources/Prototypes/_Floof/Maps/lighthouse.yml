@@ -20,9 +20,6 @@
 #          Anomaly: [ 4, 4 ] # Floofstation
         #service
           Captain: [ 1, 1 ]
-          #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
-          #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
-          #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
           HeadOfPersonnel: [ 1, 1 ]
           Bartender: [ 1, 2 ]
           Botanist: [ 2, 2 ]
@@ -38,7 +35,7 @@
           AtmosphericTechnician: [ 1, 2 ]
           StationEngineer: [ 3, 4 ]
           TechnicalAssistant: [ 2, 3 ]
-#          SeniorEngineer: [ 1, 1 ]
+          SeniorEngineer: [ 1, 1 ]
         #medical
           ChiefMedicalOfficer: [ 1, 1 ]
           Chemist: [ 1, 2 ]
@@ -46,7 +43,7 @@
           Psychologist: [ 1, 1 ]
           MedicalDoctor: [ 3, 4 ]
           MedicalIntern: [ 2, 3 ]
-#          SeniorPhysician: [ 1, 1 ]
+          SeniorPhysician: [ 1, 1 ]
           Surgeon: [ 1, 1 ]
         #science
           ResearchDirector: [ 1, 1 ]
@@ -57,7 +54,7 @@
           ResearchAssistant: [ 2, 3 ]
           Borg: [ 1, 2 ]
           Librarian: [ 1, 1 ]
-#          SeniorResearcher: [ 1, 1 ]
+          SeniorResearcher: [ 1, 1 ]
         #security
           HeadOfSecurity: [ 1, 1 ]
           Warden: [ 1, 1 ]
@@ -66,10 +63,10 @@
           SecurityCadet: [ 1, 4 ]
           Brigmedic: [ 1, 1 ]
           Prisoner: [ 2, 3 ]
-#          SeniorOfficer: [ 1, 1 ]
+          SeniorOfficer: [ 1, 1 ]
         #supply
           Quartermaster: [ 1, 1 ]
-#          InventorySpecialist: [ 1, 1 ] #FloofStation
+          InventorySpecialist: [ 1, 1 ] #FloofStation
           Courier: [ 2, 2 ]
           SalvageSpecialist: [ 2, 3 ]
           CargoTechnician: [ 2, 4 ]

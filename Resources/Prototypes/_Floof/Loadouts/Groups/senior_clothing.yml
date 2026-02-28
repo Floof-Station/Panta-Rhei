@@ -9,7 +9,7 @@
 - type: loadoutGroup
   id: StationEngineerGloves
   name: loadout-group-engineering-gloves
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - InsulatedGloves
@@ -18,12 +18,14 @@
 - type: loadoutGroup
   id: StationEngineerBelts
   name: loadout-group-engineering-belts
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - ClothingBeltUtility
   - ClothingBeltUtilityAdvancedToolsEngineering
   - ClothingBeltUtilityAdvancedToolsAtmos
+  - ClothingHarnessSafetyAdvancedToolsEngineering
+  - ClothingHarnessSafetyAdvancedToolsAtmos
 
 - type: loadoutGroup
   id: SeniorPhysicianJumpsuits
@@ -36,7 +38,7 @@
 - type: loadoutGroup
   id: MedicalDoctorBelts
   name: loadout-group-medical-doctor-belts
-  minLimit: 0
+  minLimit: 1
   maxLimit: 1
   loadouts:
   - ClothingBeltMedical

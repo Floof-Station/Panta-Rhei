@@ -1,0 +1,37 @@
+# These are also abstract and set as parents to upstream slime emote prototypes, I just made them into a separate file because there's a need to make more than 1
+- type: emoteSounds
+  id: SlimeBaseFloofstation
+  abstract: true
+  sounds:
+    Bubble:
+      collection: Bubbles # imp
+    Pop:
+      collection: Pops # imp
+    CatMeow:
+      collection: CatMeows
+    CatHisses:
+      collection: CatHisses
+    MonkeyScreeches:
+      collection: MonkeyScreeches
+    RobotBeep:
+      collection: RobotBeeps # Idk why this is here but it was on floof
+
+- type: emoteSounds
+  id: SlimeMaleFloofstation
+  parent: SlimeBaseFloofstation
+  abstract: true
+  sounds:
+    Scream:
+      collection: SlimeMaleScreams
+    Laugh:
+      collection: SlimeMaleLaughs
+
+- type: emoteSounds
+  id: SlimeFemaleFloofstation
+  parent: SlimeBaseFloofstation
+  abstract: true
+  sounds:
+    Scream:
+      collection: SlimeFemaleScreams
+    Laugh:
+      collection: SlimeFemaleLaughs

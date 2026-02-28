@@ -8,9 +8,12 @@
   requirements:
   - !type:RoleTimeRequirement
     role: JobBorg
-    time: 5h
+    time: 10h
+  - !type:DepartmentTimeRequirement # Floofstation - add command requirement
+    department: Command
+    time: 10h
   canBeAntag: false
-  whitelisted: true # DeltaV - ai must be whitelisted
+  whitelisted: true # DeltaV - ai must be whitelisted # Floofstation - not yet
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain

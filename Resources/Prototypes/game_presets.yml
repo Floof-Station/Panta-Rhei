@@ -89,7 +89,7 @@
   description: extended-description
   rules:
   - BasicStationEventScheduler
-  - MeteorSwarmScheduler
+  - MeteorSwarmCalmScheduler # Floofstation - greenshift has calmer meteors
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
@@ -106,6 +106,7 @@
   - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
+  - MeteorSwarmCalmScheduler # Floofstation - greenshift has calmer meteors
 
 - type: gamePreset
   id: Dynamic

@@ -20,9 +20,6 @@
 #            Anomaly: [ 4, 4 ] # Floofstation
           #service
             Captain: [ 1, 1 ]
-            #BlueshieldOfficer: [ 1, 1] Floof - uncomment once implemented on Floof maps
-            #NanotrasenRepresentative: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
-            #AdministrativeAssistant: [ 1, 1 ] Floof - uncomment once implemented on Floof maps
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 3 ]
@@ -38,7 +35,7 @@
             AtmosphericTechnician: [ 1, 2 ]
             StationEngineer: [ 3, 5 ]
             TechnicalAssistant: [ 2, 5 ]
-#            SeniorEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
           #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 1, 2 ]
@@ -47,7 +44,7 @@
             MedicalDoctor: [ 3, 5 ]
             MedicalIntern: [ 2, 4 ]
             Surgeon: [ 1, 1 ]
-#            SeniorPhysician: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
           #science
             ResearchDirector: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
@@ -56,7 +53,7 @@
             ResearchAssistant: [ 2, 4 ]
             Librarian: [ 1, 1 ]
             Roboticist: [ 1, 1 ]
-#            SeniorResearcher: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
           #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
@@ -65,10 +62,10 @@
             SecurityCadet: [ 1, 4 ]
             Brigmedic: [ 1, 1 ]
             Prisoner: [ 2, 3 ]
-#            SeniorOfficer: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
           #supply
             Quartermaster: [ 1, 1 ]
-#            InventorySpecialist: [ 1, 1 ] #FloofStation
+            InventorySpecialist: [ 1, 1 ] #FloofStation
             Courier: [ 1, 2 ]
             SalvageSpecialist: [ 2, 3 ]
             CargoTechnician: [ 2, 4 ]
@@ -83,5 +80,3 @@
             StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
             Borg: [ 1, 2 ]
             MedicalBorg: [ 1, 2 ]
-#            ServiceQuadBorg: [ 1, 2 ] #Floofstation
-#            MedicalQuadBorg: [ 1, 2 ] #Floofstation

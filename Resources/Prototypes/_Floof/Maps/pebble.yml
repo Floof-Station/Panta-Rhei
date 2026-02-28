@@ -18,9 +18,6 @@
 #            Anomaly: [ 4, 4 ] # Floofstation
           #service
             Captain: [ 1, 1 ]
-            #BlueshieldOfficer: [ 1, 1]
-            #NanotrasenRepresentative: [ 1, 1 ]
-            #AdministrativeAssistant: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 2 ]
@@ -35,7 +32,7 @@
             AtmosphericTechnician: [ 1, 1]
             StationEngineer: [ 2, 3 ]
             TechnicalAssistant: [ 2, 2 ]
-#            SeniorEngineer: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
           #medical
             ChiefMedicalOfficer: [ 1, 1 ]
             Chemist: [ 1, 1 ]
@@ -44,24 +41,24 @@
             Paramedic: [ 1, 1 ]
             Psychologist: [ 1, 1 ]
             Surgeon: [ 1, 1 ]
-#            SeniorPhysician: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
           #science
             ResearchDirector: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             ForensicMantis: [ 1, 1 ]
             Scientist: [ 2, 3 ]
             ResearchAssistant: [ 2, 2 ]
-#            SeniorResearcher: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
           #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 2, 2 ]
             SecurityCadet: [ 1, 1 ]
-#            SeniorOfficer: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
           #supply
             Quartermaster: [ 1, 1 ]
-#            InventorySpecialist: [ 1, 1 ] #FloofStation
+            InventorySpecialist: [ 1, 1 ] #FloofStation
             Courier: [ 1, 2 ]
             SalvageSpecialist: [ 2, 2 ]
             CargoTechnician: [ 2, 3 ]
@@ -74,7 +71,5 @@
 #            Prosecutor: [ 1, 1 ] #FloofStation - not mapped
           # Silicon
             # StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
-            Borg: [ 1, 1 ]
-            MedicalBorg: [ 1, 1 ]
-#           ServiceQuadBorg: [ 1, 1 ] #Floofstation
-#            MedicalQuadBorg: [ 1, 1 ] #Floofstation
+            Borg: [ 1, 2 ]
+            MedicalBorg: [ 1, 2 ]

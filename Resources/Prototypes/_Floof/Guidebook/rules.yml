@@ -1,0 +1,109 @@
+﻿- type: guideEntry
+  id: FloofstationRuleset
+  name: guide-entry-rules
+  priority: -3
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/FloofstationCoreRules.xml"
+  children:
+    - CoreRules
+    - RoleTypes
+  # TODO: Add silicon and roleplay rules here if they get approved for floofstation
+
+#- type: guideEntry
+#  id: RoleTypes
+#  name: guide-entry-rules-role-types
+#  text: "/ServerInfo/_Floof/Guidebook/ServerRules/RoleTypes.xml"
+#  ruleEntry: true
+
+- type: guideEntry
+  id: CoreRules
+  name: guide-entry-rules-core
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC0.xml"
+  children:
+    - RuleC1
+    - RuleC2
+    - RuleC3
+    - RuleC4
+    - RuleC5
+    - RuleC6
+    - RuleC7
+    - RuleC8
+    - RuleC9
+    - RuleC10
+    - RuleC11
+
+- type: guideEntry
+  id: RuleC1
+  name: guide-entry-rules-c1
+  priority: 1
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC1OutofCharacter.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC2
+  name: guide-entry-rules-c2
+  priority: 2
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC2Consent.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC3
+  name: guide-entry-rules-c3
+  priority: 3
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC3Metagaming.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC4
+  name: guide-entry-rules-c4
+  priority: 4
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC4Powergaming.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC5
+  name: guide-entry-rules-c5
+  priority: 5
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC5RoleplayandCharacters.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC6
+  name: guide-entry-rules-c6
+  priority: 6
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC6EroticRoleplayandNSFW.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC7
+  name: guide-entry-rules-c7
+  priority: 7
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC7DeathandNewLife.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC8
+  name: guide-entry-rules-c8
+  priority: 8
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC8EndofRoundandEvacuation.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC9
+  name: guide-entry-rules-c9
+  priority: 9
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC9GeneralRolesandJobs.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC10
+  name: guide-entry-rules-c10
+  priority: 10
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC10CommandandSecurity.xml"
+  ruleEntry: true
+
+- type: guideEntry
+  id: RuleC11
+  name: guide-entry-rules-c11
+  priority: 11
+  text: "/ServerInfo/Guidebook/_Floof/ServerRules/CoreRules/RuleC11Antagonists.xml"
+  ruleEntry: true

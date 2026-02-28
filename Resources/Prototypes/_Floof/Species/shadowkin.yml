@@ -17,14 +17,23 @@
   id: MobShadowkinSprites
   sprites:
     Special: MobHumanoidAnyMarking
-    HeadTop: MobShadowkinAnyMarking
+    Tail: MobShadowkinAnyMarking
+    TailBehind: MobHumanoidAnyMarking # Floofstation
+    TailOversuit: MobHumanoidAnyMarking # Floofstation
     Head: MobShadowkinHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobShadowkinAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking # Einstein Engines - Oni
+    HeadTop: MobShadowkinAnyMarking
     Hair: MobHumanoidAnyMarking
     FacialHair: MobHumanoidAnyMarking
-    Snout: MobShadowkinAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobShadowkinTorso
+    Wings: MobHumanoidAnyMarking
     Eyes: MobShadowkinEyes
     LArm: MobShadowkinLArm
     RArm: MobShadowkinRArm
@@ -34,48 +43,68 @@
     RLeg: MobShadowkinRLeg
     LFoot: MobShadowkinLFoot
     RFoot: MobShadowkinRFoot
-    Tail: MobShadowkinAnyMarking
 
 - type: markingPoints
   id: MobShadowkinMarkingLimits
   points:
-    #Underwear:
-    #  points: 2 # FLOOF CHANGE
-    #  required: false # Floof, add underwear
-    #Undershirt:
-    #  points: 2 # FLOOF CHANGE
-    #  required: false # Floof, add underwear
+    Special:
+      points: 1
+      required: false
     Tail:
       points: 1
       required: true
       defaultMarkings: [TailShadowkin]
-    HeadTop:
+    Head:
       points: 1
+      required: false
+    Face:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
+      required: false
+    HeadSide:
+      points: 4
+      required: false
+    HeadTop:
+      points: 4
       required: true
       defaultMarkings: [EarsShadowkin]
-    UndergarmentTop:
-      points: 1
-      required: false
-    UndergarmentBottom:
-      points: 1
-      required: false
     Hair:
       points: 1
       required: false
     FacialHair:
       points: 1
       required: false
-    Snout:
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
       points: 1
       required: false
     Chest:
-      points: 6
+      points: 10
+      required: false
+    Wings:
+      points: 1
       required: false
     Legs:
-      points: 6 # DeltaV - was 2
+      points: 10
       required: false
     Arms:
-      points: 6 # DeltaV - was 2
+      points: 10
       required: false
 
 - type: humanoidBaseSprite

@@ -10,6 +10,18 @@
   - ClothingNeckCollarSyndi
   - ClothingNeckCollarBell
   - ClothingNeckShockCollarCivilian
+  - NeckNeckerchief
+  - MothCloak
+  - CloakWitchCloak
+  - NeckCloakRedHood
+  - NeckCloakRedHood
+  - NeckTieBlack
+  - NeckTieBlue
+  - NeckTieBrown
+  - NeckTieGreen
+  - NeckTieOrange
+  - NeckTieRed
+  - NeckTiePurple
 
 - type: loadoutGroup
   id: MedicalCollars
@@ -18,6 +30,7 @@
   name: loadout-group-medical-collars
   loadouts:
   - ClothingNeckCollarMed
+  - NeckNeckerchiefMedical
 
 - type: loadoutGroup
   id: EngineeringCollars
@@ -26,6 +39,7 @@
   name: loadout-group-engineering-collars
   loadouts:
   - ClothingNeckCollarEngi
+  - NeckNeckerchiefEngineering
 
 - type: loadoutGroup
   id: ScienceCollars
@@ -34,6 +48,7 @@
   name: loadout-group-science-collars
   loadouts:
   - ClothingNeckCollarEpi
+  - NeckNeckerchiefScience
 
 - type: loadoutGroup
   id: CargoCollars
@@ -42,6 +57,7 @@
   name: loadout-group-cargo-collars
   loadouts:
   - ClothingNeckCollarLogi
+  - NeckNeckerchiefCargo
 
 - type: loadoutGroup
   id: SecurityCollars
@@ -50,6 +66,7 @@
   name: loadout-group-security-collars
   loadouts:
   - ClothingNeckCollarSec
+  - NeckNeckerchiefSecurity
 
 - type: loadoutGroup
   id: CommandCollars
@@ -58,3 +75,4 @@
   name: loadout-group-command-collars
   loadouts:
   - ClothingNeckCollarSec
+  - NeckNeckerchiefCommand

@@ -110,6 +110,11 @@
     jumpsuit: ClothingUniformJumpsuitDameDane
 
 - type: loadout
+  id: UniformJumpskirtNurse
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtNurse
+
+- type: loadout
   id: ClothingUniformSkirtTurtle
   equipment:
     jumpsuit: ClothingUniformSkirtTurtle
@@ -235,6 +240,11 @@
   equipment:
     jumpsuit: ClothingUniformStripedThongRainbow
 
+- type: loadout
+  id: ClothingThongCoderValid
+  equipment:
+    jumpsuit: ClothingUniformThongCoderValid
+
 # socks
 - type: loadout
   id: ClothingSocksRainbow
@@ -280,6 +290,11 @@
   id: ClothingSocksTrans
   equipment:
     shoes: ClothingUnderSocksPrideTrans
+
+- type: loadout
+  id: ClothingSocksCoderValid
+  equipment:
+    shoes: ClothingUnderSocksCoderValid
 
 # shoes
 - type: loadout
@@ -372,6 +387,11 @@
   id: ClothingArmwarmersTrans
   equipment:
     gloves: ClothingHandsPrideTrans
+
+- type: loadout
+  id: ClothingArmwarmersValid
+  equipment:
+    gloves: ClothingHandsCoderValidWarmers
 
 # backpacks
 - type: loadout
@@ -531,6 +551,62 @@
   equipment:
     head: ClothingHeadHatBlacksoft
 
+#neck
+- type: loadout
+  id: MothCloak
+  equipment:
+    neck: ClothingNeckCloakMoth
+
+- type: loadout
+  id: CloakWitchCloak
+  equipment:
+    neck: ClothingNeckCloakWitchCloak
+
+- type: loadout
+  id: NeckCloakRedHood
+  equipment:
+    neck: ClothingNeckCloakRedHood
+
+- type: loadout
+  id: NeckTieBlack
+  equipment:
+    neck: ClothingNeckTieBlack
+
+- type: loadout
+  id: NeckTieBlue
+  equipment:
+    neck: ClothingNeckTieBlue
+
+- type: loadout
+  id: NeckTieBrown
+  equipment:
+    neck: ClothingNeckTieBrown
+
+- type: loadout
+  id: NeckTieGreen
+  equipment:
+    neck: ClothingNeckTieGreen
+
+- type: loadout
+  id: NeckTieOrange
+  equipment:
+    neck: ClothingNeckTieChem
+
+- type: loadout
+  id: NeckTieRed
+  equipment:
+    neck: ClothingNeckTieRed
+
+- type: loadout
+  id: NeckTiePurple
+  equipment:
+    neck: ClothingNeckTieSci
+
+- type: loadout
+  id: NeckNeckerchief
+  equipment:
+    neck: ClothingNeckNeckerchief
+
 # trinkets
 - type: loadout
   id: GuitarInstrument
@@ -606,6 +682,11 @@
   id: CrayonBrush
   equipment:
     back: CrayonBrush
+
+- type: loadout
+  id: FlashlightLantern
+  equipment:
+    back: FlashlightLantern
 
 #lewd trinkets
 - type: loadout

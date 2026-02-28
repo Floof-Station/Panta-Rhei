@@ -12,14 +12,24 @@
 - type: speciesBaseSprites
   id: MobSlimeSprites
   sprites:
+    Special: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
     TailBehind: MobHumanoidAnyMarking # Floofstation
     TailOversuit: MobHumanoidAnyMarking # Floofstation
     Head: MobSlimeHead
+    Face: MobHumanoidAnyMarking
+    Snout: MobHumanoidAnyMarking
+    SnoutCover: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    HeadTop: MobHumanoidAnyMarking
     Hair: MobSlimeMarkingFollowSkin
     FacialHair: MobSlimeMarkingFollowSkin
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobSlimeTorso
+    Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
     LArm: MobSlimeLArm
     RArm: MobSlimeRArm
@@ -33,20 +43,62 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
+    Special: # the cat ear joke
+      points: 1
+      required: false
+    Tail: # the cat tail joke
+      points: 3
+      required: false
+    Head:
+      points: 1
+      required: false
+    Face:
+      points: 1
+      required: false
+    Snout:
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
+      required: false
+    HeadSide:
+      points: 4
+      required: false
+    HeadTop:
+      points: 4
+      required: false
     Hair:
       points: 1
       required: false
     FacialHair:
       points: 1
       required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    UndergarmentBottom:
+      points: 1
+      required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
+    Eyes:
+      points: 1
+      required: false
     Chest:
-      points: 2
+      points: 10
+      required: false
+    Wings:
+      points: 1
       required: false
     Legs:
-      points: 4
+      points: 10 # Floof - was 4
       required: false
     Arms:
-      points: 4
+      points: 10 # Floof - was 4
       required: false
 
 - type: humanoidBaseSprite

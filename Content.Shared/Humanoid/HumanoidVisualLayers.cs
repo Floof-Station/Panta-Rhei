@@ -16,8 +16,11 @@ namespace Content.Shared.Humanoid
         FacialHair,
         UndergarmentTop,
         UndergarmentBottom,
+        Underwear,
+        Undershirt,
         Chest,
         Head,
+        Face,
         Snout,
         SnoutCover, // things layered over snouts (i.e. noses)
         HeadSide, // side parts (i.e., frills)
@@ -25,6 +28,7 @@ namespace Content.Shared.Humanoid
         NeckFluff, // TheDen - Ovinia, for fluff on necks
         TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
+        Wings,
         Eyes,
         RArm,
         LArm,
