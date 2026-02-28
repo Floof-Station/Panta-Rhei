@@ -41,7 +41,8 @@ public sealed partial class RoleLoadoutPrototype : IPrototype, IInheritingProtot
     /// <summary>
     /// Groups that comprise this role loadout.
     /// </summary>
-    [DataField]
+    [DataField(required: true)]
+    [AlwaysPushInheritance]
     public List<ProtoId<LoadoutGroupPrototype>> Groups = new();
 
     /// <summary>
