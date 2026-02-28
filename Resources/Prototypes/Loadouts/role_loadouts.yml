@@ -1,6 +1,14 @@
+# Used to parent for Universal parent: JobBaseLoadout
+- type: roleLoadout
+  id: JobBaseLoadout
+  groups:
+  - Trinkets
+  - Smokeables
+
 # Command
 - type: roleLoadout
   id: JobCaptain
+  parent: JobBaseLoadout
   groups:
   - CaptainHead
   - CaptainNeck
@@ -10,13 +18,12 @@
   - CaptainGloves # DeltaV
   - CaptainShoes # DeltaV
   - Survival
-  - Trinkets
-  - Smokeables # Euphoria
   - CaptainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - HoPHead
@@ -28,8 +35,6 @@
   - HoPShoes # DeltaV
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - HoPJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -47,6 +52,7 @@
 # Civilian
 - type: roleLoadout
   id: JobPassenger
+  parent: JobBaseLoadout
   groups:
   - Scarfs # DeltaV
   - GroupTankHarness
@@ -61,13 +67,12 @@
   - PassengerShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - PassengerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBartender
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - BartenderHead
@@ -78,13 +83,12 @@
   - BartenderPDADelta # DeltaV
   - BartenderGlasses # DeltaV - replaces Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobServiceWorker
+  parent: JobBaseLoadout
   groups:
   - ServiceWorkerHead # DeltaV
   - Scarfs # DeltaV
@@ -93,13 +97,12 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobChef
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ChefHead
@@ -110,13 +113,12 @@
   - ChefPDADelta # DeltaV
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobLibrarian
+  parent: JobBaseLoadout
   groups:
   - LibrarianNeck # DeltaV
   - GroupTankHarness
@@ -124,13 +126,12 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - LibrarianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobLawyer
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - LawyerNeck
@@ -138,13 +139,12 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - LawyerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobChaplain
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ChaplainHead
@@ -156,13 +156,12 @@
   - ChaplainBible
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ChaplainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobJanitor
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - JanitorHead
@@ -174,13 +173,12 @@
   - JanitorOuterClothing
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBotanist
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - BotanistHead
@@ -190,14 +188,13 @@
   - BotanistOuterClothing
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - BotanistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobClown
   canCustomizeName: true
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ClownHead
@@ -209,14 +206,13 @@
   - ClownPDADelta # DeltaV
   - ClownShoes
   - Glasses
-  - Trinkets
-  - Smokeables
   - SurvivalClown
   - ClownJobTrinkets
 
 - type: roleLoadout
   id: JobMime
   canCustomizeName: true
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - MimeHead
@@ -228,13 +224,12 @@
   - MimeBelt
   - Glasses
   - SurvivalMime
-  - Trinkets
-  - Smokeables
   - MimeJobTrinkets
 
 - type: roleLoadout
   id: JobMusician
   canCustomizeName: true
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
@@ -243,8 +238,6 @@
   - MusicianOuterClothing
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
@@ -252,6 +245,7 @@
 # Cargo
 - type: roleLoadout
   id: JobQuartermaster
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - QuartermasterHead
@@ -262,13 +256,12 @@
   - QuartermasterShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobCargoTechnician
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
@@ -280,13 +273,12 @@
   - CargoTechnicianShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobSalvageSpecialist
+  parent: JobBaseLoadout
   groups:
   - SalvageSpecialistNeck # DeltaV
   - SalvageSpecialistJumpsuit # DeltaV - more jumpskirts
@@ -298,14 +290,13 @@
   - SalvageSpecialistShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
 
 # Engineering
 - type: roleLoadout
   id: JobChiefEngineer
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ChiefEngineerHead
@@ -316,13 +307,12 @@
   - ChiefEngineerGloves # DeltaV
   - ChiefEngineerShoes
   - SurvivalExtended
-  - Trinkets
-  - Smokeables
   - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobTechnicalAssistant
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - StationEngineerNeck # DeltaV
@@ -330,13 +320,12 @@
   - StationEngineerBackpack
   - StationEngineerShoes # DeltaV
   - SurvivalExtended
-  - Trinkets
-  - Smokeables
   - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobStationEngineer
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - StationEngineerHead
@@ -349,13 +338,12 @@
   - StationEngineerShoes
   - StationEngineerID
   - SurvivalExtended
-  - Trinkets
-  - Smokeables
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
+  parent: JobBaseLoadout
   groups:
   - AtmosphericTechnicianHead # DeltaV
   - AtmosphericTechnicianNeck # DeltaV
@@ -368,14 +356,13 @@
   - AtmosPDADelta # DeltaV
   - AtmosphericTechnicianShoes
   - SurvivalExtended
-  - Trinkets
-  - Smokeables
   - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 # Science
 - type: roleLoadout
   id: JobResearchDirector
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ResearchDirectorHead
@@ -387,13 +374,12 @@
   - ResearchDirectorShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobScientist
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ScientistHead
@@ -406,27 +392,25 @@
   - ScientistPDA
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobResearchAssistant
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ResearchAssistantJumpsuit
   - ScientistBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 # Security
 - type: roleLoadout
   id: JobHeadOfSecurity
+  parent: JobBaseLoadout
   groups:
   - HeadofSecurityHead
   - HeadofSecurityNeck
@@ -437,8 +421,6 @@
   - HeadofSecurityShoes # DeltaV - winter boots
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
-  - Smokeables
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
@@ -446,6 +428,7 @@
 
 - type: roleLoadout
   id: JobWarden
+  parent: JobBaseLoadout
   groups:
   - WardenHead
   - SecurityNeck # DeltaV
@@ -457,8 +440,6 @@
   - SecurityShoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
-  - Smokeables
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
@@ -466,6 +447,7 @@
 
 - type: roleLoadout
   id: JobSecurityOfficer
+  parent: JobBaseLoadout
   groups:
   - SecurityHead
   - SecurityNeck # DeltaV
@@ -478,8 +460,6 @@
   - SecurityBelt
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
-  - Smokeables
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
@@ -487,6 +467,7 @@
 
 - type: roleLoadout
   id: JobDetective
+  parent: JobBaseLoadout
   groups:
   - DetectiveHead
   - SecurityNeck # DeltaV - replace DetectiveNeck for incongruence
@@ -496,8 +477,6 @@
   - SecurityShoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
-  - Smokeables
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityRevolverFirearm # DeltaV - loadouts
@@ -505,6 +484,7 @@
 
 - type: roleLoadout
   id: JobSecurityCadet
+  parent: JobBaseLoadout
   groups:
   - SecurityHead # DeltaV
   - SecurityNeck # DeltaV
@@ -513,14 +493,13 @@
   - SecurityBackpack
   - SurvivalSecurity
   - Glasses # DeltaV
-  - Trinkets
-  - Smokeables
   - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
 
 # Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ChiefMedicalOfficerHead
@@ -534,13 +513,12 @@
   - ChiefMedicalOfficerShoes
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
-  - Smokeables
   - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalDoctor
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
@@ -555,13 +533,12 @@
   - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
-  - Smokeables
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalIntern
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - MedicalInternJumpsuit
@@ -569,13 +546,12 @@
   - MedicalInternPDADelta # DeltaV
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
-  - Smokeables
   - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - MedicalMask
@@ -587,13 +563,12 @@
   - ChemistOuterClothing
   - ChemistShoes # DeltaV, replaces MedicalShoes
   - SurvivalMedical
-  - Trinkets
-  - Smokeables
   - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobParamedic
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ParamedicHead
@@ -606,39 +581,36 @@
   - ParamedicShoes
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
-  - Smokeables
   - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 # Wildcards
 - type: roleLoadout
   id: JobZookeeper
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobReporter
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ReporterJumpsuit
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - ReporterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobPsychologist
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - PsychologistJumpsuit
@@ -653,13 +625,12 @@
   - PsychologistBelt
   # End DeltaV additions
   - Glasses
-  - Trinkets
-  - Smokeables
   - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBoxer
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - BoxerJumpsuit
@@ -667,8 +638,6 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
 
