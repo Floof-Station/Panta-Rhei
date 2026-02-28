@@ -5,6 +5,7 @@
   groups:
   - Trinkets
   - Smokeables
+  - Pets
 
 # Command
 - type: roleLoadout
@@ -21,7 +22,6 @@
   - Survival
   - CaptainJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -39,7 +39,6 @@
   - Survival
   - HoPJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 # Silicons
 - type: roleLoadout
@@ -72,7 +71,6 @@
   - Survival
   - PassengerJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobBartender
@@ -89,7 +87,6 @@
   - Survival
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -104,7 +101,6 @@
   - Survival
   - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobChef
@@ -121,7 +117,6 @@
   - Survival
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobLibrarian
@@ -135,7 +130,6 @@
   - Survival
   - LibrarianJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobLawyer
@@ -149,7 +143,6 @@
   - Survival
   - LawyerJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobChaplain
@@ -167,7 +160,6 @@
   - Survival
   - ChaplainJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobJanitor
@@ -185,7 +177,6 @@
   - Survival
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobBotanist
@@ -201,7 +192,6 @@
   - Survival
   - BotanistJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobClown
@@ -220,7 +210,6 @@
   - Glasses
   - SurvivalClown
   - ClownJobTrinkets
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobMime
@@ -238,7 +227,6 @@
   - Glasses
   - SurvivalMime
   - MimeJobTrinkets
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobMusician
@@ -255,7 +243,6 @@
   - MusicianJobTrinkets
   - Instruments
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 # Cargo
 - type: roleLoadout
@@ -273,7 +260,6 @@
   - Survival
   - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -291,7 +277,6 @@
   - Survival
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -309,8 +294,7 @@
   - Survival
   - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
-
+  
 # Engineering
 - type: roleLoadout
   id: JobChiefEngineer
@@ -327,7 +311,6 @@
   - SurvivalExtended
   - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -341,7 +324,6 @@
   - SurvivalExtended
   - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -360,7 +342,6 @@
   - SurvivalExtended
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -379,7 +360,6 @@
   - SurvivalExtended
   - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 # Science
 - type: roleLoadout
@@ -398,7 +378,6 @@
   - Survival
   - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobScientist
@@ -417,7 +396,6 @@
   - Survival
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -430,7 +408,6 @@
   - Survival
   - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 # Security
 - type: roleLoadout
@@ -450,7 +427,6 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
   - SecurityAllAmmo # DeltaV - loadouts
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobWarden
@@ -470,7 +446,6 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
   - SecurityAllAmmo # DeltaV - loadouts
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -491,7 +466,6 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
   - SecurityFirearmAmmo # DeltaV - loadouts
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobDetective
@@ -509,7 +483,6 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityRevolverFirearm # DeltaV - loadouts
   - SecurityRevolverAmmo # DeltaV - loadouts
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -524,7 +497,6 @@
   - Glasses # DeltaV
   - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
-  - Pets # Euphoria
 
 # Medical
 - type: roleLoadout
@@ -545,7 +517,6 @@
   - SurvivalMedical
   - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -566,7 +537,6 @@
   - SurvivalMedical
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -580,7 +550,6 @@
   - SurvivalMedical
   - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobChemist
@@ -598,7 +567,6 @@
   - SurvivalMedical
   - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobParamedic
@@ -617,7 +585,6 @@
   - SurvivalMedical
   - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
-  - Pets # Euphoria
 
 # Wildcards
 - type: roleLoadout
@@ -630,7 +597,6 @@
   - Survival
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobReporter
@@ -643,7 +609,6 @@
   - Survival
   - ReporterJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobPsychologist
@@ -664,7 +629,6 @@
   - Glasses
   - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 - type: roleLoadout
   id: JobBoxer
@@ -678,7 +642,6 @@
   - Survival
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
-  - Pets # Euphoria
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
