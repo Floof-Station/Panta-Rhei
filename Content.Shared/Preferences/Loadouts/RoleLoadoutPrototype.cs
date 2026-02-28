@@ -20,6 +20,10 @@ public sealed partial class RoleLoadoutPrototype : IPrototype
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<RoleLoadoutPrototype>))]
     public string[]? Parents { get; private set; }
 
+    [NeverPushInheritance]
+    [AbstractDataFieldAttribute]
+    public bool Abstract { get; private set; }
+
     /// <summary>
     /// Can the user edit their entity name for this role loadout?
     /// </summary>
