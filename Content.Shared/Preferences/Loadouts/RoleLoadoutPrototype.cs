@@ -16,6 +16,10 @@ public sealed partial class RoleLoadoutPrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = string.Empty;
 
+    /// <inheritdoc/>
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<RoleLoadoutPrototype>))]
+    public string[]? Parents { get; private set; }
+
     /// <summary>
     /// Can the user edit their entity name for this role loadout?
     /// </summary>
