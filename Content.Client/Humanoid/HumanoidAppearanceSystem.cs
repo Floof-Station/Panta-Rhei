@@ -388,14 +388,14 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             {
                 if (colorDict.TryGetValue(parent, out var color))
                     colorDict[child] = color;
-                else
-                    Log.Error($"Invalid marking color link {parent}->{child} in {markingPrototype.ID}");
+                // We can't log an error here because the layer may be deliberately missing because of togglable tail wagging or sumth
             }
         }
         // and, since we can't rely on the iterator knowing where the heck to put
         // each sprite when we have one marking setting multiple layers,
         // lets just kinda sorta do that ourselves
         var layerDict = new Dictionary<string, int>();
+        visible &= !humanoid.HiddenMarkings.Contains(markingPrototype.ID); // FLOOF ADD
         // FLOOF ADD END
 
         for (var j = 0; j < markingPrototype.Sprites.Count; j++)

@@ -38,7 +38,7 @@ public sealed partial class CCVars
     ///     See vote.enabled, but specific to map votes
     /// </summary>
     public static readonly CVarDef<bool> VoteMapEnabled =
-        CVarDef.Create("vote.map_enabled", false, CVar.SERVERONLY);
+        CVarDef.Create("vote.map_enabled", true, CVar.SERVERONLY); // Floof
 
     /// <summary>
     ///     The required ratio of the server that must agree for a restart round vote to go through.
@@ -74,7 +74,7 @@ public sealed partial class CCVars
     ///     Sets the duration of the gamemode/preset vote timer.
     /// </summary>
     public static readonly CVarDef<int>
-        VoteTimerPreset = CVarDef.Create("vote.timerpreset", 30, CVar.SERVERONLY);
+        VoteTimerPreset = CVarDef.Create("vote.timerpreset", 60, CVar.SERVERONLY);
 
     /// <summary>
     ///     Sets the duration of the map vote timer when ALONE.

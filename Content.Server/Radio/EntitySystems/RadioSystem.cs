@@ -97,6 +97,9 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
 
         // Floofstation notice: if the below gets changed, make sure to update ConstructChatMessage too
         var language = languageOverride ?? _language.GetLanguage(messageSource);
+        if (!language.SpeechOverride.AllowRadio)
+            return;
+        // Floofstation section end
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
             ("channelColor", channel.Color), // Floofstation edit: renamed to channelColor
             ("fontType", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation edit

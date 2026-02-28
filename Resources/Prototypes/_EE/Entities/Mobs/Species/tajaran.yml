@@ -75,6 +75,14 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - SiikTajr
+    understands:
+    - TauCetiBasic
+    - SiikTajr
+    naturalLanguage: SiikTajr
   - type: Felinid # real
   - type: NoShoesSilentFootsteps
   - type: Tag

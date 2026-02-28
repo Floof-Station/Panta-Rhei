@@ -29,8 +29,6 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking # Floofstation
-    Undershirt: MobHumanoidAnyMarking # Floofstation
     Chest: MobFeroxiTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
@@ -80,12 +78,6 @@
       points: 1
       required: false
     UndergarmentBottom:
-      points: 1
-      required: false
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
       points: 1
       required: false
     Eyes:
