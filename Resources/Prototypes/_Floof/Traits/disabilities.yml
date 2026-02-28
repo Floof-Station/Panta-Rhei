@@ -42,3 +42,25 @@
   effects:
   - !type:ModifyFixtureEffect
     factor: 1.1832 # Square root of 1.4 as this affects the radius, opposite of lightweight.
+
+- type: trait
+  id: NaturalNightvisionFilter
+  name: trait-natural-nightvision-filter-name
+  description: trait-natural-nightvision-filter-desc
+  category: Disabilities
+  cost: 0
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Felinid
+    - Shadowkin
+    - Rodentia
+    - Tajaran
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: NightVision
+    drawOverlay: false
+    activateSound: null
+    deactivateSound: null
+
