@@ -167,6 +167,9 @@
   - !type:IsSpeciesCondition
     invert: true
     species: Rodentia
+  - !type:IsSpeciesCondition
+    invert: true
+    species: Shadowkin
   effects:
   - !type:AddCompsEffect
     components:
