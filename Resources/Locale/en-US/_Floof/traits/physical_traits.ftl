@@ -9,4 +9,4 @@ trait-weightheavy-desc =
     Note: [color=red]this will not display in the character creation menu, and will only have effect in-game.[/color]
 
 trait-natural-nightvision-filter-name = Natural Nightvision Filter Removal
-trait-natural-nightvision-filter-desc = This removes the colored filter for player species based nightvision for player visual disabilities, eyestrain and quality of life.
+trait-natural-nightvision-filter-desc = This removes the colored filter for player species based nightvision for player visual accessibility and quality of life.
