@@ -8,7 +8,7 @@ namespace Content.Shared.Preferences.Loadouts;
 /// Corresponds to a Job / Antag prototype and specifies loadouts
 /// </summary>
 [Prototype]
-public sealed partial class RoleLoadoutPrototype : IPrototype
+public sealed partial class RoleLoadoutPrototype : IPrototype, IInheritingPrototype
 {
     /*
      * Separate to JobPrototype / AntagPrototype as they are turning into messy god classes.
