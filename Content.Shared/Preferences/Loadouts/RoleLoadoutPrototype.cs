@@ -18,6 +18,7 @@ public sealed partial class RoleLoadoutPrototype : IPrototype, IInheritingProtot
     public string ID { get; private set; } = string.Empty;
 
     /// <inheritdoc/>
+    /// Euphoria - Made Role Prototype into one capable of parenting.
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<RoleLoadoutPrototype>))]
     public string[]? Parents { get; private set; }
 
