@@ -24,7 +24,7 @@
       types:
         Bloodloss: 10 # DeltaV # Euphoria - Reverted
         #Slash: 12 # DeltaV
-    sleepModifier: 0.5
+    sleepModifier: 0
   - type: SurgeryStepEmoteEffect
 
 - type: entity
@@ -81,11 +81,11 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/circular-saw.rsi
     state: circular-saw
   - type: SurgeryStepEmoteEffect
-  #- type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
-  #  sleepModifier: 0.25 # Highly invasive, large damage if the patient is wriggling around
-  #  damage:
-  #    types:
-  #      Slash: 20
+  - type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
+    sleepModifier: 0 # Highly invasive, large damage if the patient is wriggling around
+    damage:
+      types:
+        Slash: 10
 
 - type: entity
   parent: SurgeryStepBase
@@ -102,7 +102,7 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/retractor.rsi
     state: retractor
   - type: SurgeryDamageChangeEffect # DeltaV
-    sleepModifier: 0.25 # Highly invasive, large damage if the patient is wriggling around
+    sleepModifier: 0 # Highly invasive, large damage if the patient is wriggling around
     damage:
       types:
         Blunt: 5
@@ -174,11 +174,11 @@
   - type: Sprite
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/bone-gel.rsi
     state: bone-gel
-  #- type: SurgeryDamageChangeEffect # DeltaV: Reverse damage from SurgeryStepSawBones # Euphoria - Disabled
-  #  damage:
-  #    types:
-  #      Slash: -5
-  #  sleepModifier: 2
+  - type: SurgeryDamageChangeEffect # DeltaV: Reverse damage from SurgeryStepSawBones # Euphoria - Disabled
+    damage:
+      types:
+        Slash: -5
+    sleepModifier: 2
 
 - type: entity
   parent: SurgeryStepBase
@@ -313,11 +313,11 @@
     state: circular-saw
   - type: SurgeryRemovePartStep
   - type: SurgeryStepEmoteEffect
-  #- type: SurgeryDamageChangeEffect # DeltaV: Traumatic amputation is traumatic # Euphoria - Disabled
-  #  sleepModifier: 0.25
-  #  damage:
-  #    types:
-  #      Slash: 30
+  - type: SurgeryDamageChangeEffect # DeltaV: Traumatic amputation is traumatic # Euphoria - Disabled
+    sleepModifier: 0
+    damage:
+      types:
+        Slash: 10
   - type: SurgeryStepDirtiness # DeltaV - surgery cross contamination # Euphoria - 1/3
     toolDirtiness: 2.5 
     gloveDirtiness: 2.5
@@ -339,11 +339,11 @@
     sprite: _Shitmed/Objects/Specific/Medical/Surgery/scalpel.rsi
     state: scalpel
   - type: SurgeryStepEmoteEffect
-  #- type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
-  #  sleepModifier: 0
-  #  damage:
-  #    types:
-  #      Slash: 4
+  - type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
+    sleepModifier: 0
+    damage:
+      types:
+        Slash: 1
 
 - type: entity
   parent: SurgeryStepBase
@@ -428,11 +428,11 @@
   - type: SurgeryStepCavityEffect
     action: Insert
   - type: SurgeryStepEmoteEffect
-  #- type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
-  #  sleepModifier: 0.25 # Highly invasive, huge damage if the patient is wriggling around
-  #  damage:
-  #    types:
-  #      Blunt: 40
+  - type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
+    sleepModifier: 0 # Highly invasive, huge damage if the patient is wriggling around
+    damage:
+      types:
+        Blunt: 15
 
 - type: entity
   parent: SurgeryStepBase
@@ -464,11 +464,11 @@
     state: hemostat
   - type: SurgeryRemoveOrganStep
   - type: SurgeryStepEmoteEffect
-  #- type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
-  #  sleepModifier: 0.15 # Maints organ transplants are BAD
-  #  damage:
-  #    types:
-  #      Slash: 50
+  - type: SurgeryDamageChangeEffect # DeltaV # Euphoria - Disabled
+    sleepModifier: 0 # Maints organ transplants are BAD
+    damage:
+      types:
+        Slash: 10
   - type: SurgeryStepDirtiness # DeltaV - surgery cross contamination # Euphoria - 1/3
     toolDirtiness: 2.5
     gloveDirtiness: 2.5
