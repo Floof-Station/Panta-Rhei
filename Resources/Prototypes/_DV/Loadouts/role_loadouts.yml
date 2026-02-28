@@ -1,6 +1,7 @@
 # Logistics
 - type: roleLoadout
   id: JobCourier
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - CourierHead
@@ -12,12 +13,11 @@
   - CourierShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobCargoAssistant
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - CargoAssistantHead
@@ -27,13 +27,12 @@
   - CargoAssistantShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathTool
 
 # Security
 - type: roleLoadout
   id: JobBrigmedic
+  parent: JobBaseLoadout
   groups:
   - BrigMedicHead
   - BrigMedicNeck
@@ -44,8 +43,6 @@
   - MedicalGloves
   - CorpsmanEyewear
   - SurvivalSecurity
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathToolCorpsman
   - SecurityFirearm
   - SecurityFirearmAmmo
@@ -53,6 +50,7 @@
 # Medical
 - type: roleLoadout
   id: JobSurgeon
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - SurgeonHead
@@ -66,13 +64,12 @@
   - SurgeonPDA
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathToolMedical
 
 # Justice
 - type: roleLoadout
   id: JobChiefJustice
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ChiefJusticeHead
@@ -83,12 +80,11 @@
   - ChiefJusticeShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobClerk
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ClerkJumpsuit
@@ -98,12 +94,11 @@
   - ClerkShoes
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobProsecutor
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ProsecutorJumpsuit
@@ -112,13 +107,12 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathTool
 
 # Epistemics
 - type: roleLoadout
   id: JobRoboticist
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - RoboticistHead
@@ -131,6 +125,4 @@
   - RoboticistPDA
   - RoboticistGlasses
   - Survival
-  - Trinkets
-  - Smokeables
   - GroupSpeciesBreathTool
