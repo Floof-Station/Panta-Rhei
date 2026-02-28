@@ -110,6 +110,7 @@
     - id: ClothingOuterArmorPlateCarrier # DeltaV - ClothingOuterArmorBasic replaced in favour of plate carrier and stabproof vest
     - id: ClothingOuterArmorDuraVest # DeltaV
     - id: ClothingOuterArmorBasicSlim # DeltaV - Only armor from ClothingOuterArmorBasic we are keeping
+    - id: ClothingBeltSecurityFilled # Euphoria
 
 - type: entity
   id: LockerBrigmedicFilled
@@ -166,6 +167,7 @@
     #  prob: 0.15
     - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
       prob: 0.3
+    - id: ClothingBeltSecurityFilled # Euphoria
 
 # DeltaV - adding corpsman locker w/ hardsuit
 - type: entityTable
@@ -215,6 +217,7 @@
     - id: BoxTapeRecorder # DeltaV
     - id: LunchboxSecurityFilledRandom # Delta-v Lunchboxes!
       prob: 0.3
+    - id: ClothingBeltSecurityFilled # Euphoria
 
 - type: entity
   id: ClosetBombFilled

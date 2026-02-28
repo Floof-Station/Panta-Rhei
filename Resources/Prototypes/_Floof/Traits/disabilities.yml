@@ -3,7 +3,7 @@
   name: trait-weightlight-name
   description: trait-weightlight-desc
   category: Disabilities
-  cost: -2 # Has pros and cons, not sure
+  cost: 2 # Has pros and cons, not sure
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -26,7 +26,7 @@
   name: trait-weightheavy-name
   description: trait-weightheavy-desc
   category: Disabilities
-  cost: -2 # Has pros and cons, not sure
+  cost: 2 # Has pros and cons, not sure
   conditions:
   - !type:HasCompCondition
     component: BorgChassis

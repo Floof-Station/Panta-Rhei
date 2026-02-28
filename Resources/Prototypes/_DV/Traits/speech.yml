@@ -5,7 +5,7 @@
   name: trait-pirate-accent-name
   description: trait-pirate-accent-desc
   category: Accents
-  cost: 2
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -16,7 +16,7 @@
   name: trait-southern-name
   description: trait-southern-desc
   category: Accents
-  cost: 2
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -27,7 +27,7 @@
   name: trait-cowboy-name
   description: trait-cowboy-desc
   category: Accents
-  cost: 2
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -39,7 +39,7 @@
   name: trait-italian-name
   description: trait-italian-desc
   category: Accents
-  cost: 2
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -51,7 +51,7 @@
   name: trait-muted-name
   description: trait-muted-desc
   category: Accents
-  cost: 2
+  cost: 0 #floof
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -67,7 +67,7 @@
   name: trait-french-accent-name
   description: trait-french-accent-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -78,7 +78,7 @@
   name: trait-spanish-accent-name
   description: trait-spanish-accent-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -89,7 +89,7 @@
   name: trait-irish-accent-name
   description: trait-irish-accent-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -100,7 +100,7 @@
   name: trait-mobster-accent-name
   description: trait-mobster-accent-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -111,7 +111,7 @@
   name: trait-scottish-accent-name
   description: trait-scottish-accent-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -122,7 +122,7 @@
   name: trait-accentless-name
   description: trait-accentless-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -138,7 +138,7 @@
   name: trait-socialanxiety-name
   description: trait-socialanxiety-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -153,7 +153,7 @@
   name: trait-frontal-lisp-name
   description: trait-frontal-lisp-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -164,7 +164,7 @@
   name: trait-hushed-name
   description: trait-hushed-desc
   category: Accents
-  cost: 0
+  cost: 0 #floof
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -180,7 +180,7 @@
   name: trait-anglish-name
   description: trait-anglish-desc
   category: Accents
-  cost: 2
+  cost: 0 #floof
   effects:
   - !type:AddCompsEffect
     components:

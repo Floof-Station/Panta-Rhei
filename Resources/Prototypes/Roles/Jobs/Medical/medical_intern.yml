@@ -4,10 +4,9 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 5h
-      inverted: false # floofstation - let people choose how they want to play their character
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+    inverted: false # floofstation - let people choose how they want to play their character
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"
   supervisors: job-supervisors-medicine

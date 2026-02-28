@@ -8,8 +8,6 @@
   id: OverlayPlushSeamsHuman
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: # Floof - M3739 - #1063 - Add Kitsune
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune, ]
   coloring:
     default:
       type:
@@ -23,8 +21,6 @@
   id: OverlayPlushSeamsHeadHuman
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -38,8 +34,6 @@
   id: OverlayPlushSeamsHeadSmallSnout
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -53,8 +47,6 @@
   id: OverlayPlushSeamsHeadLongSnout
   bodyPart: HeadTop
   markingCategory: Head
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -68,8 +60,6 @@
   id: OverlayPlushSeamsHandsFeet
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction: # Floof - M3739 - #1063 - Add Kitsune
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune, ]
   coloring:
     default:
       type:
@@ -83,8 +73,6 @@
   id: OverlayPlushSeamsFeet
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: # Floof - M3739 - #1063 - Add Kitsune
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune, ]
   coloring:
     default:
       type:
@@ -98,9 +86,6 @@
   id: OverlayPlushSeamsHands
   bodyPart: RHand
   markingCategory: Overlay
-  speciesRestriction:
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin,
-      Shadowkin, Arachne, Kitsune, ] # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -114,7 +99,6 @@
   id: OverlayPlushSeamsShadowkin
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Shadowkin ]
   coloring:
     default:
       type:
@@ -128,7 +112,6 @@
   id: OverlayPlushSeamsShadowkinFeet
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [ Shadowkin ]
   coloring:
     default:
       type:
@@ -142,7 +125,6 @@
   id: OverlayPlushSeamsBuggy
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Moth, Chitinid ]
   coloring:
     default:
       type:
@@ -156,7 +138,6 @@
   id: OverlayPlushSeamsBuggyFeet
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [ Moth, Chitinid ]
   coloring:
     default:
       type:
@@ -170,7 +151,6 @@
   id: OverlayPlushSeamsArachne
   bodyPart: LArm
   markingCategory: Overlay
-  speciesRestriction: [ Arachne ]
   coloring:
     default:
       type:
@@ -184,7 +164,6 @@
   id: OverlayPlushSeamsHarpy
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Harpy ]
   coloring:
     default:
       type:
@@ -198,7 +177,6 @@
   id: OverlayPlushSeamsHarpyFeet
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [ Harpy ]
   coloring:
     default:
       type:
@@ -212,7 +190,6 @@
   id: OverlayPlushSeamsVox
   bodyPart: LLeg
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   coloring:
     default:
       type:
@@ -226,7 +203,6 @@
   id: OverlayPlushSeamsVoxFeet
   bodyPart: RFoot
   markingCategory: Overlay
-  speciesRestriction: [ Vox ]
   coloring:
     default:
       type:
@@ -244,10 +220,6 @@
   id: ChestZipper
   bodyPart: LLeg
   markingCategory: Overlay
-  # Floof - M3739 - #1063 - speciesRestriction was originally Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
@@ -261,10 +233,6 @@
   id: ChestWindupKeyGold
   bodyPart: LLeg
   markingCategory: Overlay
-  # Floof - M3739 - #1063 - speciesRestriction was originally Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
@@ -278,10 +246,6 @@
   id: ChestWindupKeySilver
   bodyPart: LLeg
   markingCategory: Overlay
-  # Floof - M3739 - #1063 - speciesRestriction was originally Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
@@ -297,10 +261,6 @@
   id: ChestWindupKeyGoldAnimated
   bodyPart: LLeg
   markingCategory: Overlay
-  # Floof - M3739 - #1063 - speciesRestriction was originally Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
@@ -314,10 +274,6 @@
   id: ChestWindupKeySilverAnimated
   bodyPart: LLeg
   markingCategory: Overlay
-  # Floof - M3739 - #1063 - speciesRestriction was originally Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
@@ -333,8 +289,6 @@
   id: OverlayPlushTorsoHumanM
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -347,8 +301,6 @@
   id: OverlayPlushTorsoHumanF
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Floof - M3739 - #1063 - Add Kitsune
   coloring:
     default:
       type:
@@ -361,8 +313,6 @@
   id: OverlayPlushFootLeft
   bodyPart: LFoot
   markingCategory: Legs
-  speciesRestriction: # Floof - M3739 - #1063 - Add Kitsune
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune, ]
   coloring:
     default:
       type:
@@ -376,8 +326,6 @@
   id: OverlayPlushFootRight
   bodyPart: RFoot
   markingCategory: Legs
-  speciesRestriction: # Floof - M3739 - #1063 - Add Kitsune
-    [ Arachnid, Canid, Felinid, Feroxi, Human, IPC, Oni, Reptilian, Rodentia, SlimePerson, Tajaran, Vulpkanin, Kitsune, ]
   coloring:
     default:
       type:
@@ -391,10 +339,6 @@
   id: OverlayPlushBellyF
   bodyPart: Chest
   markingCategory: Chest
-  # Floof - M3739 - #1063 - speciesRestriction was originally Diona and Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
@@ -408,10 +352,6 @@
   id: OverlayPlushBellyM
   bodyPart: Chest
   markingCategory: Chest
-  # Floof - M3739 - #1063 - speciesRestriction was originally Diona and Resomi, intended as blacklist rather than a whitelist.
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
-  #invertSpeciesRestriction: true | Floof - M3739 - #1063 - We have yet to bear this feature.
   coloring:
     default:
       type:
