@@ -158,18 +158,13 @@
 #    component:
 #    - EyeProtection
 #    - FlashImmunity
-  - !type:IsSpeciesCondition
+  - !type:OneOfSpeciesCondition
     invert: true
-    species: Felinid
-  - !type:IsSpeciesCondition
-    invert: true
-    species: Tajaran
-  - !type:IsSpeciesCondition
-    invert: true
-    species: Rodentia
-  - !type:IsSpeciesCondition
-    invert: true
-    species: Shadowkin
+    species:
+    - Felinid
+    - Shadowkin
+    - Rodentia
+    - Tajaran
   effects:
   - !type:AddCompsEffect
     components:
