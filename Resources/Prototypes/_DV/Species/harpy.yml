@@ -29,8 +29,6 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
     Chest: MobHarpyTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
@@ -86,12 +84,6 @@
     UndergarmentBottom:
       points: 1
       required: false
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
-      points: 1
-      required: false
     Eyes:
       points: 1
       required: false
@@ -107,8 +99,8 @@
       required: false
     Arms:
       points: 10
-      required: false
-      defaultMarkings: [ HarpyWingDefaultHuescale ]
+      required: true
+      # defaultMarkings: [ HarpyWingDefaultHuescale ] # breaks the layering if kept. Is ugly but the way this stuff is implemented makes it impossible to do anything else
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

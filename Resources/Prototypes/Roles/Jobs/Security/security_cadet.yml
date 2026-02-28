@@ -5,10 +5,7 @@
   playTimeTracker: JobSecurityCadet
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 10h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 5h
+      time: 1h
       inverted: false # floofstation - let people choose how they want to play their character
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"

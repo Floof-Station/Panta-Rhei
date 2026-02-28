@@ -10,9 +10,8 @@
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-security
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 6h
+      - !type:OverallPlaytimeRequirement
+        time: 1h
   special:
   - !type:AddImplantSpecial
     implants: [ TrackingImplant ]

@@ -1,4 +1,4 @@
-# Those are all abstract. You're supposed to make existing neck loadout groups inherit from these.
+# Those are all abstract. You're supposed to make existing loadout groups inherit from these.
 
 # jumpsuits
 - type: loadoutGroup
@@ -29,7 +29,7 @@
   - ClothingUniformJumpsuitSober
   - ClothingUniformJumpsuitDameDane
   - ClothingUniformJumpsuitWorkvest
-  - ClothingUniformJumpsuitDameDane
+  - UniformJumpskirtNurse
   - ClothingUniformSkirtTurtle
   - ClothingUniformSchoolGakuranBlack
   - UniformSchoolgirlBlack
@@ -51,6 +51,7 @@
   - ClothingThongCoder
   - ClothingThongBee
   - ClothingThongRainbow
+  - ClothingThongCoderValid
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
@@ -74,6 +75,7 @@
   - ClothingArmwarmersNon
   - ClothingArmwarmersPan
   - ClothingArmwarmersTrans
+  - ClothingArmwarmersValid
 
  #shoes
 - type: loadoutGroup
@@ -99,6 +101,7 @@
   - ClothingSocksNon
   - ClothingSocksPan
   - ClothingSocksTrans
+  - ClothingSocksCoderValid
 
 # backpacks
 - type: loadoutGroup

@@ -62,8 +62,8 @@ public sealed class LeashVisualsOverlay : Overlay
             if (coordsA.TryDistance(_entMan, _xform, coordsB, out var dist) && dist < 0.01f)
                 continue;
 
-            ExtractAnchorData(args, (source, sourceXform), visualsComp, out var rotA, out var offsetA);
-            ExtractAnchorData(args, (target, targetXform), visualsComp, out var rotB, out var offsetB);
+            ExtractAnchorData(args, (source, sourceXform), visualsComp, out var rotA, out var offsetA, true);
+            ExtractAnchorData(args, (target, targetXform), visualsComp, out var rotB, out var offsetB, false);
 
             coordsA = coordsA.Offset(rotA.RotateVec(offsetA));
             coordsB = coordsB.Offset(rotB.RotateVec(offsetB));
@@ -122,10 +122,10 @@ public sealed class LeashVisualsOverlay : Overlay
         }
     }
 
-    private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset)
+    private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset, bool entityIsSource)
     {
         rotation = leashedEntity.Comp.LocalRotation;
-        offset = visualsComp.OffsetSource;
+        offset = entityIsSource ? visualsComp.OffsetSource : visualsComp.OffsetTarget;
 
         // NoRotation sprites always have a zero rotation, and their "up" is always facing the viewport "up"
         // Regular sprites on the other hand can have any rotation, and their rotation is described in world coordinates

@@ -1,6 +1,7 @@
 # Logistics
 - type: roleLoadout
   id: JobCourier
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - CourierHead
@@ -12,12 +13,12 @@
   - CourierShoes
   - Glasses
   - Survival
-  - Trinkets
   - GroupSpeciesBreathTool
   - Pets # Euphoria
 
 - type: roleLoadout
   id: JobCargoAssistant
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - CargoAssistantHead
@@ -27,13 +28,13 @@
   - CargoAssistantShoes
   - Glasses
   - Survival
-  - Trinkets
   - GroupSpeciesBreathTool
   - Pets # Euphoria
 
 # Security
 - type: roleLoadout
   id: JobBrigmedic
+  parent: JobBaseLoadout
   groups:
   - BrigMedicHead
   - BrigMedicNeck
@@ -44,7 +45,6 @@
   - MedicalGloves
   - CorpsmanEyewear
   - SurvivalSecurity
-  - Trinkets
   - GroupSpeciesBreathToolCorpsman
   - SecurityFirearm
   - SecurityFirearmAmmo
@@ -53,6 +53,7 @@
 # Medical
 - type: roleLoadout
   id: JobSurgeon
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - SurgeonHead
@@ -66,13 +67,13 @@
   - SurgeonPDA
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
   - GroupSpeciesBreathToolMedical
   - Pets # Euphoria
 
 # Justice
 - type: roleLoadout
   id: JobChiefJustice
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ChiefJusticeHead
@@ -83,12 +84,12 @@
   - ChiefJusticeShoes
   - Glasses
   - Survival
-  - Trinkets
   - GroupSpeciesBreathTool
   - Pets # Euphoria
 
 - type: roleLoadout
   id: JobClerk
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ClerkJumpsuit
@@ -98,12 +99,12 @@
   - ClerkShoes
   - Glasses
   - Survival
-  - Trinkets
   - GroupSpeciesBreathTool
   - Pets # Euphoria
 
 - type: roleLoadout
   id: JobProsecutor
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - ProsecutorJumpsuit
@@ -112,13 +113,13 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - GroupSpeciesBreathTool
   - Pets # Euphoria
 
 # Epistemics
 - type: roleLoadout
   id: JobRoboticist
+  parent: JobBaseLoadout
   groups:
   - GroupTankHarness
   - RoboticistHead
@@ -131,6 +132,5 @@
   - RoboticistPDA
   - RoboticistGlasses
   - Survival
-  - Trinkets
   - GroupSpeciesBreathTool
   - Pets # Euphoria

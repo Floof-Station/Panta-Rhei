@@ -56,7 +56,7 @@
   storage:
     back:
     - Lighter
-  groupBy: "smokeables"
+  groupBy: "lighters"
 
 - type: loadout
   id: CigPackGreen
@@ -88,9 +88,6 @@
 
 - type: loadout
   id: CigarCase
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Command
   storage:
     back:
     - CigarCase
@@ -98,9 +95,6 @@
 
 - type: loadout
   id: CigarGold
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: Command
   storage:
     back:
     - CigarGold
