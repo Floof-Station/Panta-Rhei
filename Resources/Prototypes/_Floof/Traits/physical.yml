@@ -131,7 +131,7 @@
   name: trait-name-CyberEyes
   description: trait-description-CyberEyes
   category: Medical
-  cost: 4
+  cost: 3
   conflicts:
   - Blindness
   - PoorVision
@@ -146,7 +146,10 @@
   category: Medical
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
-  cost: 5
+  cost: 3
+  conflicts:
+  - Blindness
+  - PoorVision
   conditions:
   - !type:HasJobCondition
     invert: true
@@ -174,7 +177,10 @@
   category: Medical
   name: trait-name-CyberEyesThermoVision
   description: trait-description-CyberEyesThermoVision
-  cost: 5
+  cost: 3
+  conflicts:
+  - Blindness
+  - PoorVision
   conditions:
   - !type:HasJobCondition
     invert: true
@@ -195,7 +201,7 @@
   category: Medical
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
-  cost: -2
+  cost: -1
   conflicts:
   - CyberEyesOmni
   conditions:
@@ -218,7 +224,7 @@
   category: Medical
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
-  cost: -2
+  cost: -1
   conflicts:
     - CyberEyesOmni
 #  conditions:
@@ -246,7 +252,7 @@
   category: Medical
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
-  cost: -3
+  cost: -2
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
