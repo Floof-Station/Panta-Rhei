@@ -639,14 +639,72 @@
     back: TrumpetInstrument
 
 - type: loadout
+  id: CheapLighter
+  storage:
+    back:
+    - CheapLighter
+  groupBy: "lighters"
+
+- type: loadout
+  id: FlippoLighter
+  storage:
+    back:
+    - FlippoLighter
+  groupBy: "lighters"
+
+- type: loadout
+  id: FlippoEngravedLighter
+  storage:
+    back:
+    - FlippoEngravedLighter
+  groupBy: "lighters"
+
+- type: loadout
+  id: CybersunFlippo
+  storage:
+    back:
+    - CybersunFlippo
+  groupBy: "lighters"
+
+- type: loadout
+  id: InterdyneFlippo
+  storage:
+    back:
+    - InterdyneFlippo
+  groupBy: "lighters"
+
+- type: loadout
+  id: NanotrasenFlippo
+  storage:
+    back:
+    - NanotrasenFlippo
+  groupBy: "lighters"
+
+- type: loadout
   id: Blunt
   equipment:
     back: Blunt
+  groupBy: "smokeables"
 
 - type: loadout
   id: Joint
   equipment:
     back: Joint
+  groupBy: "smokeables"
+
+- type: loadout
+  id: CigPackSyndicate
+  storage:
+    back:
+    - CigPackSyndicate
+  groupBy: "smokeables"
+
+- type: loadout
+  id: CigPackMixed
+  storage:
+    back:
+    - CigPackMixed
+  groupBy: "smokeables"
 
 - type: loadout
   id: CrowbarRed
