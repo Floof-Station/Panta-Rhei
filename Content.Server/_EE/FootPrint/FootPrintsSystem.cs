@@ -9,6 +9,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Humanoid;
+using Content.Shared.Standing;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Prototypes;
@@ -28,6 +29,7 @@ public sealed class FootPrintsSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedFlightSystem _flight = default!; // DeltaV
     [Dependency] private readonly EntityLookupSystem _lookup = default!; // Floofstation
+    [Dependency] private readonly StandingStateSystem _standingState = default!; // Floofstation
 
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<MobThresholdsComponent> _mobThresholdQuery;
@@ -81,7 +83,7 @@ public sealed class FootPrintsSystem : EntitySystem
             || !_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
+        var dragging = _standingState.IsDown(uid); // Floofstation - replaced: mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
         var distance = (transform.LocalPosition - component.StepPos).Length();
         var stepSize = dragging ? component.DragSize : component.StepSize;
 

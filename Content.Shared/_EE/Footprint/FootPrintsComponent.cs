@@ -102,6 +102,6 @@ public sealed partial class FootPrintsComponent : Component
     ///     Amount of reagents used per footprint.
     /// </summary>
     [DataField]
-    public FixedPoint2 FootprintVolume = 0.5f;
+    public FixedPoint2 FootprintVolume = 0.75f;
     // Floofstation section end
 }

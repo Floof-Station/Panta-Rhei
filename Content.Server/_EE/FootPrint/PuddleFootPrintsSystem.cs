@@ -36,10 +36,10 @@ public sealed class PuddleFootPrintsSystem : EntitySystem
             || !_solutionContainer.ResolveSolution((uid, solutionManager), puddle.SolutionName, ref puddle.Solution, out var solutions))
             return;
 
-        var totalSolutionQuantity = solutions.Contents.Sum(sol => (float) sol.Quantity);
-        var waterQuantity = (from sol in solutions.Contents where sol.Reagent.Prototype == "Water" select (float) sol.Quantity).FirstOrDefault();
-
         // Floofstation section - replaced the below
+        // var totalSolutionQuantity = solutions.Contents.Sum(sol => (float) sol.Quantity);
+        // var waterQuantity = (from sol in solutions.Contents where sol.Reagent.Prototype == "Water" select (float) sol.Quantity).FirstOrDefault();
+        //
         // if (waterQuantity / (totalSolutionQuantity / 100f) > component.OffPercent || solutions.Contents.Count <= 0)
         //     return;
         //
