@@ -241,6 +241,7 @@
   - type: FixturesAffectedByHeight # scale fixtures with the size of the humanoid
   - type: Wagging # This won't add the action unless the entity has a tail marking that can be toggled
     action: ActionToggleWaggingVulpkanin
+  - type: ModifyUndies
   # Floofstation section end
 
 - type: entity

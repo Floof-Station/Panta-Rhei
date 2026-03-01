@@ -754,3 +754,75 @@ Entries:
         welcome Mr. Pall)
   id: 93
   time: '2026-02-28T04:58:08.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Remove
+      message: Removed harpy default marking
+  id: 94
+  time: '2026-02-28T21:22:49.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Tajaran know their own language again.
+  id: 95
+  time: '2026-02-28T21:25:11.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Ported organ rotting, anomaly scanner copying, underwear toggles, expand
+        command, faction commands (admin-only), random map vote
+    - type: Fix
+      message: >-
+        Fixed marking duplication on humanoids, subtle OOC not having a speech
+        bubble, foxes not having speech, "make lay down" not knocking the person
+        down, secret weights being wrong (oops, we had zombies!), leash rope
+        visuals having incorrect offset, and sign language being usable on radio
+    - type: Remove
+      message: >-
+        dragon will no longer die when not creating rifts for too long, replaced
+        underwear and undershirt with upstream undergarment marking layers.
+  id: 96
+  time: '2026-02-28T21:33:25.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Kitsune can now use kitsune emotes.
+  id: 97
+  time: '2026-02-28T21:34:28.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Nightvision to Shadowkin and Felinids
+  id: 98
+  time: '2026-02-28T22:25:04.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked Surgery to no longer deal 500 damage on steps, you aren't an all
+        thumbs clown.
+    - type: Tweak
+      message: Tuned the dirtiness mechanic to half it's normal rate.
+    - type: Tweak
+      message: Organ transplants now once again fix poison, airloss and rot.
+  id: 99
+  time: '2026-02-28T22:26:21.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: >-
+        Added a smokables tab to the loadout (max 2 - ideally a lighter and a
+        smoko)
+    - type: Tweak
+      message: >-
+        Changed herbals recipe to the one from old floof, so they no longer have
+        nicotine but still heal around the same.
+  id: 100
+  time: '2026-02-28T22:27:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed leash visuals AGAIN.
+  id: 101
+  time: '2026-03-01T09:48:39.0000000+00:00'

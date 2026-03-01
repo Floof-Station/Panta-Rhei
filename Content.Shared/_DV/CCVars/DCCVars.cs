@@ -132,7 +132,7 @@ public sealed partial class DCCVars
     /// Maximum number of traits that can be selected globally.
     /// </summary>
     public static readonly CVarDef<int> MaxTraitCount =
-        CVarDef.Create("traits.max_count", 10, CVar.SERVER | CVar.REPLICATED);
+        CVarDef.Create("traits.max_count", 20, CVar.SERVER | CVar.REPLICATED);
 
     /// <summary>
     /// Maximum trait points available to spend.

@@ -1,0 +1,33 @@
+# Base for organs that can rot and perish
+- type: entity
+  id: BaseOrganRotting
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Perishable
+    rotAfter: 7.5m # 7.5 minutes outside a body until rotting, 22.5 to completely perish
+  - type: RotInto
+    entity: AshOrganic
+    stage: 2
+
+- type: entity
+  id: BioSynthOrganBase
+  parent: BaseOrganRotting
+  abstract: true
+  components:
+  - type: Perishable
+    rotAfter: 25m # 5 times more than normal organs, more than enough to put them in a freezer or something.
+
+- type: entity
+  id: NonRottingOrganBase
+  parent: BaseOrganRotting
+  abstract: true
+  components:
+  - type: Perishable
+    rotAfter: 10h # Whatever
+
+# Simply to distinguish from normal ash.
+- type: entity
+  id: AshOrganic
+  parent: Ash
+  name: perished remains
