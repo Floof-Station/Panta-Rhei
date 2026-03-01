@@ -256,9 +256,9 @@
   - type: Puddle
     solution: step
   - type: Appearance
-  - type: SpawnOnDespawn
-    prototype: PuddleSparkle
     # Floofstation - no
+#  - type: SpawnOnDespawn
+#    prototype: PuddleSparkle
 #  - type: TimedDespawn
 #    lifetime: 60 # DeltaV End updates from EE Blood Puddle
 #  - type: SpeedModifierContacts
@@ -266,14 +266,15 @@
 #      components:
 #      - InputMover
   # Floof section - components that puddles have and footprints should also have. Why are we not inheriting from Puddle again?
-  - type: Drink
-    delay: 3
-    transferAmount: 1
-    solution: step
-    examinable: false
   - type: ExaminableSolution
     solution: step
   - type: DrawableSolution
     solution: step
   - type: BadDrink
-# Floof section end
+  - type: Edible
+    edible: Drink
+    delay: 3
+    transferAmount: 1
+    solution: step
+    utensil: Spoon
+  # Floof section end
