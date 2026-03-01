@@ -41,7 +41,7 @@ public sealed class LeashVisualsOverlay : Overlay
         var worldHandle = args.WorldHandle;
         worldHandle.SetTransform(Vector2.Zero, Angle.Zero);
 
-        var query = _entMan.EntityQueryEnumerator<Shared._Floof.Leash.Components.LeashedVisualsComponent>();
+        var query = _entMan.EntityQueryEnumerator<LeashedVisualsComponent>();
         while (query.MoveNext(out var visualsComp))
         {
             if (visualsComp.Source is not {Valid: true} source
@@ -125,18 +125,18 @@ public sealed class LeashVisualsOverlay : Overlay
     private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset, bool entityIsSource)
     {
         rotation = leashedEntity.Comp.LocalRotation;
-        offset = entityIsSource ? visualsComp.OffsetSource : visualsComp.OffsetTarget;
+        offset = -(entityIsSource ? visualsComp.OffsetSource : visualsComp.OffsetTarget);
 
-        // NoRotation sprites always have a zero rotation, and their "up" is always facing the viewport "up"
-        // Regular sprites on the other hand can have any rotation, and their rotation is described in world coordinates
+        // NoRotation sprites dont rotate with the transform it seems, and their "up" is always facing the viewport "up" when Rotation = 0
+        // Idfk what's going on anymore
         if (_spriteQuery.TryGetComponent(leashedEntity, out var sprite))
         {
             offset *= sprite.Scale;
             offset += sprite.Offset;
             if (sprite.NoRotation)
-                rotation = -args.Viewport.Eye?.Rotation ?? Angle.Zero;
+                rotation = (-args.Viewport.Eye?.Rotation ?? Angle.Zero) + sprite.Rotation;
             else
-                rotation = sprite.Rotation;
+                rotation = leashedEntity.Comp.WorldRotation + sprite.Rotation; // idfk man
         }
     }
 }
