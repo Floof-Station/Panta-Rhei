@@ -19,6 +19,6 @@ public partial class ChangePassiveHealingEffect : BaseTraitEffect
         passiveDamage.Damage += AddedDamage;
 
         if (NewDamageCap is not null)
-          damage.DamageCap = Math.Max(damage.DamageCap, NewDamageCap.Value);
+          passiveDamage.DamageCap = Math.Max(passiveDamage.DamageCap, NewDamageCap.Value);
     }
 }
