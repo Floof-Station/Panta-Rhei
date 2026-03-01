@@ -38,7 +38,7 @@ public sealed partial class RadioSystem
             msg.ObfuscatedMessage = _language.ObfuscateSpeech(message, _language.GetLanguagePrototype(language)!);
             // Copy-pasted from SendRadioMessage, make sure to update accordingly
             msg.ObfuscatedWrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
-                ("color", radioChannel.Color),
+                ("channelColor", radioChannel.Color),
                 ("fontType", speech.FontId),
                 ("fontSize", speech.FontSize),
                 ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
