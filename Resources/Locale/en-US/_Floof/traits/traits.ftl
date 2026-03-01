@@ -24,3 +24,13 @@ trait-description-BionicPryArm =
 
 trait-dog-accent-name = Dog accent
 trait-dog-accent-desc = Bork.
+
+trait-regeneration-name = Regeneration
+trait-regeneration-desc = 
+    Your body through various possible circumstances has gained limited regeneration.
+    You can regenerate through most injuries with exception of massive haemorrhaging, loss of limbs, supernatural forces and near instant death.
+
+trait-machine-regeneration-name = Automated Repair System
+trait-machine-regeneration-desc = 
+    Your body is reinforced with an expensive advanced repair system that will automatically repair wear and tear.
+    The system is powered by it's own internal generator and will continue to work even if the unit has run out of power or suffered disabiling damage.
