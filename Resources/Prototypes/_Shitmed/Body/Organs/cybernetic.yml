@@ -1,11 +1,11 @@
 - type: entity
-  parent: OrganHumanEyes
+  parent: [NonRottingOrganBase, OrganHumanEyes] # Floofstation - non-rotting organ on robotic eyes
   abstract: true
   id: BaseCyberneticEyes
   components:
   - type: Cybernetics
   - type: Edible # DeltaV - can't eat it no more
-    requiresSpecialDigestion: true 
+    requiresSpecialDigestion: true
   - type: Sprite
     sprite: _Shitmed/Mobs/Species/IPC/organs.rsi
     state: "eyes"

@@ -29,8 +29,6 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
     Chest: MobMothTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobMothEyes
@@ -52,10 +50,10 @@
 - type: markingPoints
   id: MobMothMarkingLimits
   points:
-    Special: 
+    Special:
       points: 1
       required: false
-    Tail: 
+    Tail:
       points: 1
       required: false
     Head:
@@ -86,12 +84,6 @@
       points: 1
       required: false
     UndergarmentBottom:
-      points: 1
-      required: false
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
       points: 1
       required: false
     Eyes:
