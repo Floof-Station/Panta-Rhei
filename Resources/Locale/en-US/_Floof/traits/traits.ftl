@@ -44,7 +44,7 @@ trait-description-CyberEyesThermoVision =
 trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
 trait-description-CyberEyesSecurity =
     Your Cyber-Eyes have been upgraded to include a built-in Security Hud. Note that this augmentation is considered Contraband
-    for anyone not under the employ of station Security personel, and may be disabled by your employer before dispatch to the station.
+    for anyone not under the employ of station Security personnel, and may be disabled by your employer before dispatch to the station.
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
@@ -53,5 +53,5 @@ trait-description-CyberEyesMedical =
 trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
 trait-description-CyberEyesOmni =
     This expensive implant provides the combined benefits of a SecHud and MedHud.
-    Note that this augmentation is considered Contraband for anyone not under the employ of command personel,
+    Note that this augmentation is considered Contraband for anyone not under the employ of command personnel,
     and may be disabled by your employer before dispatch to the station.
