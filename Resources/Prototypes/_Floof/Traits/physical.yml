@@ -60,7 +60,7 @@
   effects:
   - !type:ChangePassiveHealingEffect
     damageCap: 1000
-    damage:
+    addedDamage:
       groups:
         Brute: -0.3
         Burn: -0.4
@@ -88,7 +88,7 @@
   effects:
   - !type:ChangePassiveHealingEffect 
     damageCap: 1000
-    damage:
+    addedDamage:
       groups:
         Brute: -0.3
         Burn: -0.4
