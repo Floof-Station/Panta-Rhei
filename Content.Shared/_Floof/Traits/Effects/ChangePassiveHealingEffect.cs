@@ -1,6 +1,7 @@
 ﻿using Content.Shared._DV.Traits.Effects;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
+using Content.Shared.FixedPoint;
 
 namespace Content.Shared._Floof.Traits.Effects;
 
