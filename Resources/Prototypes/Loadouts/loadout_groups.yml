@@ -16,13 +16,6 @@
   - PlushieBee
   # End DeltaV Additions
   - ThreeCandles
-  - Lighter
-  - CigPackGreen
-  - CigPackRed
-  - CigPackBlue
-  - CigPackBlack
-  - CigarCase
-  - CigarGold
   - BoxFolderBaseThreePapers
   - BoxFolderPlasticClipboardThreePapers
   - BoxFolderClipboardThreePapers
@@ -2115,3 +2108,27 @@
   hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
+
+- type: loadoutGroup # Euphoria - Seperated Smokables from Trinkets
+  id: Smokeables
+  name: loadout-group-smokables
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - Lighter
+  - CheapLighter
+  - FlippoLighter
+  - FlippoEngravedLighter
+  - CybersunFlippo
+  - InterdyneFlippo
+  - NanotrasenFlippo
+  - CigPackGreen
+  - CigPackRed
+  - CigPackBlue
+  - CigPackBlack
+  - CigarCase
+  - CigarGold
+  - CigPackSyndicate
+  - CigPackMixed
+  - Blunt
+  - Joint
