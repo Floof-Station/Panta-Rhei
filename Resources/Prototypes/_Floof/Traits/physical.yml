@@ -35,3 +35,69 @@
       partSymmetry: Right
       protoId: JawsOfLifeRightArm
       slotId: "right arm"
+
+- type: trait
+  id: TraitRegeneration
+  name: trait-regeneration-name
+  description: trait-regeneration-desc
+  category: Medical
+  cost: 10
+  conflicts:
+  - MachineRegeneration
+  conditions:
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
+  - !type:HasCompCondition
+    component: Synth
+    invert: true
+  - !type:HasCompCondition
+    component: Silicon
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ChangePassiveHealingEffect
+    allowedStates:
+    - Alive
+    - Critical
+    damageCap: 1000
+    damage:
+      groups:
+        Brute: -0.3
+        Burn: -0.4
+        Airloss: -0.25
+        Toxin: -0.4
+        Genetic: -0.2
+
+- type: trait
+  id: MachineRegeneration
+  name: trait-machine-regeneration-name
+  description: trait-machine-regeneration-desc
+  category: Medical
+  cost: 10
+  conflicts:
+  - TraitRegeneration
+  conditions:
+  - !type:IsSpeciesCondition
+    species: IPC
+  - !type:HasCompCondition
+    component: Synth
+  - !type:HasCompCondition
+    component: Silicon
+  - !type:HasCompCondition
+    component: BorgChassis
+  effects:
+  - !type:ChangePassiveHealingEffect 
+    allowedStates:
+    - Alive
+    - Critical
+    - Dead
+    damageCap: 1000
+    damage:
+      groups:
+        Brute: -0.3
+        Burn: -0.4
+        Toxin: -0.4
+        Electronic: -0.1
