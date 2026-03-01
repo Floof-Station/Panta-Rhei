@@ -8,6 +8,8 @@ public partial class ChangePassiveHealingEffect : BaseTraitEffect
 {
     [DataField(required: true)] public DamageSpecifier AddedDamage = default!;
 
+    [DataField] public float? NewDamageCap = null;
+    
     // I forgor the signature
     public override void Apply(TraitEffectContext args)
     {
@@ -15,5 +17,8 @@ public partial class ChangePassiveHealingEffect : BaseTraitEffect
             return;
 
         passiveDamage.Damage += AddedDamage;
+
+        if (NewDamageCap is not null)
+          damage.DamageCap = Math.Max(damage.DamageCap, NewDamageCap.Value);
     }
 }
