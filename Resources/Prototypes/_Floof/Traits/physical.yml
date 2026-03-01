@@ -101,7 +101,7 @@
   category: Medical
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
-  cost: -1
+  cost: 1
   conflicts:
   - CyberEyesOmni
   conditions:
@@ -119,7 +119,7 @@
   category: Medical
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
-  cost: -1
+  cost: 1
   conflicts:
     - CyberEyesOmni
   effects:
@@ -142,7 +142,7 @@
   category: Medical
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
-  cost: -2
+  cost: 2
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
