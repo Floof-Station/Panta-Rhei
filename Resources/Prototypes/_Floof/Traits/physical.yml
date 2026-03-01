@@ -59,9 +59,6 @@
     invert: true
   effects:
   - !type:ChangePassiveHealingEffect
-    allowedStates:
-    - Alive
-    - Critical
     damageCap: 1000
     damage:
       groups:
@@ -90,10 +87,6 @@
     component: BorgChassis
   effects:
   - !type:ChangePassiveHealingEffect 
-    allowedStates:
-    - Alive
-    - Critical
-    - Dead
     damageCap: 1000
     damage:
       groups:
