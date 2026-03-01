@@ -57,7 +57,7 @@
     - Rodentia
     - Tajaran
   effects:
-  - !type:AddCompsEffect
+  - !type:OverrideCompsEffect
     components:
     - type: NightVision
       drawOverlay: false
