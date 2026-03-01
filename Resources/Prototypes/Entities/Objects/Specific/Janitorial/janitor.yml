@@ -41,6 +41,9 @@
     storedRotation: 45
   - type: Absorbent
     useAbsorberSolution: true
+  - type: AreaAbsorbent # Floofstation - gives mops AOE effect. Regular mops have a limited range.
+    cleaningRange: 0.5
+    maxCleanedEntities: 25
   - type: SolutionContainerManager
     solutions:
       absorbed:
@@ -78,6 +81,9 @@
       sprite: Objects/Specific/Janitorial/advmop.rsi
     - type: Absorbent
       pickupAmount: 100
+    - type: AreaAbsorbent # Floofstation - gives mops AOE effect. Regular mops have a limited range.
+      cleaningRange: 0.75
+      maxCleanedEntities: 25
     - type: SolutionRegeneration
       solution: absorbed
       generated:
@@ -322,6 +328,9 @@
     - type: Absorbent
       pickupAmount: 15
       useAbsorberSolution: true
+    - type: AreaAbsorbent # Floofstation - gives mops AOE effect.
+      cleaningRange: 0.35
+      maxCleanedEntities: 10
     - type: Construction
       graph: Rag
       node: rag
