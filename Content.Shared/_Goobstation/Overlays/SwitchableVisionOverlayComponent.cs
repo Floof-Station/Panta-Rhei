@@ -19,7 +19,7 @@ public abstract partial class SwitchableVisionOverlayComponent : BaseVisionOverl
 
     [DataField]
     public virtual bool DrawOverlay { get; set; } = true;
-    
+
     /// <summary>
     /// Whether it should grant equipment enhanced vision or is it mob vision
     /// </summary>
