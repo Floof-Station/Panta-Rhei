@@ -1,1 +1,1 @@
-marking-TallStraightBunnyEars = Tall straight bunny ears
+marking-TallStraightBunnyEars = Bunny ears (Straight Tall)
