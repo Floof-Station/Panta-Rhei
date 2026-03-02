@@ -47,10 +47,10 @@
       children:
       - !type:NestedSelector
         tableId: SalvageTreasureLegendary
-        weight: 75
+        weight: 90
       - !type:NestedSelector
         tableId: SyndieFishingLoot
-        weight: 25
+        weight: 10
 
 # All types of the rare and unique fishes
 - type: entityTable
