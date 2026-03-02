@@ -8,28 +8,49 @@
   id: BasicFishingLootTable
   table: !type:GroupSelector
     children:
-    # 75% chance of scrap of some kind
+    # 75% chance of scrap of some kind - Euphoria 65% added larger scrap
     - !type:GroupSelector
-      weight: 75
+      weight: 65
       children:
       - !type:NestedSelector
         tableId: SalvageScrapLowValue
-        weight: 65
+        weight: 40
       - !type:NestedSelector
         tableId: SalvageScrapHighValue
         weight: 35
-    # 15% chance of some trash
+      - !type:NestedSelector
+        tableId: SalvageScrapLarge
+        weight: 25
+    # 15% chance of some trash - Euphoria 10%
     - !type:NestedSelector
       tableId: GenericTrashItems
-      weight: 15
-    # 10% chance of low-value treasure or maintenance tools
-    - !type:GroupSelector
       weight: 10
+    # 10% chance of low-value treasure or maintenance tools - Euphoria 20% added higher value loot
+    - !type:GroupSelector
+      weight: 20
       children:
       - !type:NestedSelector
         tableId: SalvageTreasureCommon
+        weight: 40
+      - !type:NestedSelector
+        tableId: SalvageTreasureUncommon
+        weight: 30
+      - !type:NestedSelector
+        tableId: SalvageTreasureRare
+        weight: 15
       - !type:NestedSelector
         tableId: MaintToolsTable
+        weight: 15
+    # Euphoria 5% chance of rare shit or contraband
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - !type:NestedSelector
+        tableId: SalvageTreasureLegendary
+        weight: 75
+      - !type:NestedSelector
+        tableId: SyndieFishingLoot
+        weight: 25
 
 # All types of the rare and unique fishes
 - type: entityTable
@@ -107,3 +128,20 @@
       - !type:NestedSelector
         tableId: WaterFishTable
         weight: 20
+
+# Euphoria rare contraband loot
+
+- type: entityTable
+  id: SyndieFishingLoot
+  table: !type:GroupSelector
+    children:
+    - id: ClothingBackpackDuffelSyndicate
+    - id: CyberPen
+    - id: CigCartonSyndicate
+    - id: ClothingBeltMilitaryWebbing
+    - id: ClothingShoesBootsCombatFilled
+    - id: ToolboxSyndicateFilled
+    - id: WeaponSniperMosin
+    - id: ClothingHandsKnuckleDustersSyndicate
+    - id: MedkitCombatFilled
+    - id: WeaponRevolverPython
