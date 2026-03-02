@@ -26,6 +26,8 @@
       types:
         Piercing: 4
   - type: FishingRod
+    efficiency: 1.3
+  
 
 # Variation of a normal rod
 - type: entity
@@ -57,7 +59,7 @@
     size: Normal
   - type: FishingRod
     floatPrototype: FishingLureMakeshift
-    efficiency: 0.9
+    efficiency: 0.95
   - type: Construction
     graph: FishingRodMakeshift
     node: makeshiftRod
@@ -76,7 +78,7 @@
     sprite: _Goobstation/Objects/Specific/Fishing/golden_rod.rsi
     size: Normal
   - type: FishingRod
-    efficiency: 1.3
+    efficiency: 2
   - type: MeleeWeapon
     wideAnimationRotation: 45
     attackRate: 1.0
