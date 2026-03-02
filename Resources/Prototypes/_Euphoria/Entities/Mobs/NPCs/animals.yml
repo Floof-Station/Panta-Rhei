@@ -232,6 +232,12 @@
     rules: ghost-role-information-cortical-borer-familiar-rules
   - type: Item
     size: Tiny
+  - type: CorticalBorer
+    eggProto: "CorticalBorerEggPet"
+    addOnInfest:
+    - type: PressureImmunity
+    removeOnInfest:
+    - type: CanEscapeInventory
 #  - type: HTN
 #    rootTask:
 #      task: FollowCompound
@@ -242,3 +248,23 @@
 #        1.0
 #      FollowRange: !type:Single
 #        2.0
+
+- type: entity
+  parent: BaseItem
+  id: CorticalBorerEggPet
+  name: cortical borer egg
+  description: This egg is so nice and wet and soft...
+  components:
+  - type: Sprite
+    sprite: _Mono/Mobs/Aliens/cortical_borer_egg.rsi
+    state: icon
+  - type: Item
+    size: Tiny
+  - type: GhostRole
+    name: ghost-role-information-pet-cortical-borer-name
+    description: ghost-role-information-pet-kinky-description
+    rules: ghost-role-information-cortical-borer-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: GhostRoleMobSpawner
+    prototype: MobCorticalBorerPet
