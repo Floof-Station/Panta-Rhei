@@ -1,0 +1,1253 @@
+# Kitchen Knife
+- type: entity
+  parent: KitchenKnife
+  id: GamblingKitchenKnifeRare
+  name: rare kitchen knife
+  abstract: true
+  description: A general purpose kitchen knife. Looks kinda rare.
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareRed
+  suffix: Red
+  components:
+  - type: ColorPainted
+    color: "#ff0000"
+    enabled: true
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareOrange
+  suffix: Orange
+  components:
+  - type: ColorPainted
+    color: "#ff7f00"
+    enabled: true
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareYellow
+  suffix: Yellow
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareGreen
+  suffix: Green
+  components:
+  - type: ColorPainted
+    color: "#00ff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareBlue
+  suffix: Blue
+  components:
+  - type: ColorPainted
+    color: "#0000ff"
+    enabled: true
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareIndigo
+  suffix: Indigo
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: GamblingKitchenKnifeRare
+  id: GamblingKitchenKnifeRareViolet
+  suffix: Violet
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: KitchenKnife
+  id: GamblingKitchenKnifeEpic
+  name: epic kitchen knife
+  abstract: true
+  description: A general purpose kitchen knife. Looks very rare.
+
+- type: entity
+  parent: GamblingKitchenKnifeEpic
+  id: GamblingKitchenKnifeEpicRed
+  suffix: Red Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ff0000"
+
+- type: entity
+  parent: GamblingKitchenKnifeEpic
+  id: GamblingKitchenKnifeEpicBlue
+  suffix: Blue Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#0000ff"
+
+- type: entity
+  parent: GamblingKitchenKnifeEpic
+  id: GamblingKitchenKnifeEpicGreen
+  suffix: Green Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#00ff00"
+
+- type: entity
+  parent: KitchenKnife
+  id: GamblingKitchenKnifeLegendary
+  name: legendary kitchen knife
+  abstract: true
+  description: A general purpose kitchen knife. We're fucking cooking.
+
+- type: entity
+  parent: GamblingKitchenKnifeLegendary
+  id: GamblingKitchenKnifeLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingKitchenKnifeLegendary
+  id: GamblingKitchenKnifeLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingKitchenKnifeLegendary
+  id: GamblingKitchenKnifeLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+
+# Butcher Knife
+- type: entity
+  parent: ButchCleaver
+  id: GamblingButchCleaverRare
+  name: rare butcher's cleaver
+  abstract: true
+  description: A huge blade used for chopping and chopping up meat. Looks kinda rare.
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareRed
+  suffix: Red
+  components:
+  - type: ColorPainted
+    color: "#ff0000"
+    enabled: true
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareOrange
+  suffix: Orange
+  components:
+  - type: ColorPainted
+    color: "#ff7f00"
+    enabled: true
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareYellow
+  suffix: Yellow
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareGreen
+  suffix: Green
+  components:
+  - type: ColorPainted
+    color: "#00ff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareBlue
+  suffix: Blue
+  components:
+  - type: ColorPainted
+    color: "#0000ff"
+    enabled: true
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareIndigo
+  suffix: Indigo
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: GamblingButchCleaverRare
+  id: GamblingButchCleaverRareViolet
+  suffix: Violet
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: ButchCleaver
+  id: GamblingButchCleaverEpic
+  name: epic butcher's cleaver
+  abstract: true
+  description: A huge blade used for chopping and chopping up meat. Looks very rare.
+
+- type: entity
+  parent: GamblingButchCleaverEpic
+  id: GamblingButchCleaverEpicRed
+  suffix: Red Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ff0000"
+
+- type: entity
+  parent: GamblingButchCleaverEpic
+  id: GamblingButchCleaverEpicBlue
+  suffix: Blue Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#0000ff"
+
+- type: entity
+  parent: GamblingButchCleaverEpic
+  id: GamblingButchCleaverEpicGreen
+  suffix: Green Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#00ff00"
+
+- type: entity
+  parent: ButchCleaver
+  id: GamblingButchCleaverLegendary
+  name: legendary butcher's cleaver
+  abstract: true
+  description: A huge blade used for chopping and chopping up meat. Butcher's in business.
+
+- type: entity
+  parent: GamblingButchCleaverLegendary
+  id: GamblingButchCleaverLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingButchCleaverLegendary
+  id: GamblingButchCleaverLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingButchCleaverLegendary
+  id: GamblingButchCleaverLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+    
+
+#Combat Knife
+- type: entity
+  parent: CombatKnife
+  id: GamblingCombatKnifeRare
+  name: rare combat knife
+  abstract: true
+  description: A deadly knife intended for melee confrontations. Looks kinda rare.
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareRed
+  suffix: Red
+  components:
+  - type: ColorPainted
+    color: "#ff0000"
+    enabled: true
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareOrange
+  suffix: Orange
+  components:
+  - type: ColorPainted
+    color: "#ff7f00"
+    enabled: true
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareYellow
+  suffix: Yellow
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareGreen
+  suffix: Green
+  components:
+  - type: ColorPainted
+    color: "#00ff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareBlue
+  suffix: Blue
+  components:
+  - type: ColorPainted
+    color: "#0000ff"
+    enabled: true
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareIndigo
+  suffix: Indigo
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: GamblingCombatKnifeRare
+  id: GamblingCombatKnifeRareViolet
+  suffix: Violet
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: CombatKnife
+  id: GamblingCombatKnifeEpic
+  name: epic combat knife
+  abstract: true
+  description: A deadly knife intended for melee confrontations. Looks very rare.
+
+- type: entity
+  parent: GamblingCombatKnifeEpic
+  id: GamblingCombatKnifeEpicRed
+  suffix: Red Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ff0000"
+
+- type: entity
+  parent: GamblingCombatKnifeEpic
+  id: GamblingCombatKnifeEpicBlue
+  suffix: Blue Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#0000ff"
+
+- type: entity
+  parent: GamblingCombatKnifeEpic
+  id: GamblingCombatKnifeEpicGreen
+  suffix: Green Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#00ff00"
+
+- type: entity
+  parent: CombatKnife
+  id: GamblingCombatKnifeLegendary
+  name: legendary combat knife
+  abstract: true
+  description: A deadly knife intended for melee confrontations. Nah, I'd win.
+
+- type: entity
+  parent: GamblingCombatKnifeLegendary
+  id: GamblingCombatKnifeLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingCombatKnifeLegendary
+  id: GamblingCombatKnifeLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingCombatKnifeLegendary
+  id: GamblingCombatKnifeLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+    
+#Survival Knife
+- type: entity
+  parent: SurvivalKnife
+  id: GamblingSurvivalKnifeRare
+  name: rare survival knife
+  abstract: true
+  description: Weapon of first and last resort for combatting space carp. Looks kinda rare.
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareRed
+  suffix: Red
+  components:
+  - type: ColorPainted
+    color: "#ff0000"
+    enabled: true
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareOrange
+  suffix: Orange
+  components:
+  - type: ColorPainted
+    color: "#ff7f00"
+    enabled: true
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareYellow
+  suffix: Yellow
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareGreen
+  suffix: Green
+  components:
+  - type: ColorPainted
+    color: "#00ff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareBlue
+  suffix: Blue
+  components:
+  - type: ColorPainted
+    color: "#0000ff"
+    enabled: true
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareIndigo
+  suffix: Indigo
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: GamblingSurvivalKnifeRare
+  id: GamblingSurvivalKnifeRareViolet
+  suffix: Violet
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: SurvivalKnife
+  id: GamblingSurvivalKnifeEpic
+  name: epic survival knife
+  abstract: true
+  description: Weapon of first and last resort for combatting space carp. Looks very rare.
+
+- type: entity
+  parent: GamblingSurvivalKnifeEpic
+  id: GamblingSurvivalKnifeEpicRed
+  suffix: Red Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ff0000"
+
+- type: entity
+  parent: GamblingSurvivalKnifeEpic
+  id: GamblingSurvivalKnifeEpicBlue
+  suffix: Blue Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#0000ff"
+
+- type: entity
+  parent: GamblingSurvivalKnifeEpic
+  id: GamblingSurvivalKnifeEpicGreen
+  suffix: Green Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#00ff00"
+
+- type: entity
+  parent: SurvivalKnife
+  id: GamblingSurvivalKnifeLegendary
+  name: legendary survival knife
+  abstract: true
+  description: Weapon of first and last resort for combatting space carp. You'll live forever.
+
+- type: entity
+  parent: GamblingSurvivalKnifeLegendary
+  id: GamblingSurvivalKnifeLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingSurvivalKnifeLegendary
+  id: GamblingSurvivalKnifeLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingSurvivalKnifeLegendary
+  id: GamblingSurvivalKnifeLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+
+#Kukri
+- type: entity
+  parent: KukriKnife
+  id: GamblingKukriKnifeRare
+  name: rare kukri knife
+  abstract: true
+  description: Professionals have standards. Be polite. Be efficient. Looks kinda rare.
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareRed
+  suffix: Red
+  components:
+  - type: ColorPainted
+    color: "#ff0000"
+    enabled: true
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareOrange
+  suffix: Orange
+  components:
+  - type: ColorPainted
+    color: "#ff7f00"
+    enabled: true
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareYellow
+  suffix: Yellow
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareGreen
+  suffix: Green
+  components:
+  - type: ColorPainted
+    color: "#00ff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareBlue
+  suffix: Blue
+  components:
+  - type: ColorPainted
+    color: "#0000ff"
+    enabled: true
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareIndigo
+  suffix: Indigo
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: GamblingKukriKnifeRare
+  id: GamblingKukriKnifeRareViolet
+  suffix: Violet
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: KukriKnife
+  id: GamblingKukriKnifeEpic
+  name: epic kukri knife
+  abstract: true
+  description: Professionals have standards. Be polite. Be efficient. Looks very rare.
+
+- type: entity
+  parent: GamblingKukriKnifeEpic
+  id: GamblingKukriKnifeEpicRed
+  suffix: Red Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ff0000"
+
+- type: entity
+  parent: GamblingKukriKnifeEpic
+  id: GamblingKukriKnifeEpicBlue
+  suffix: Blue Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#0000ff"
+
+- type: entity
+  parent: GamblingKukriKnifeEpic
+  id: GamblingKukriKnifeEpicGreen
+  suffix: Green Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#00ff00"
+
+- type: entity
+  parent: KukriKnife
+  id: GamblingKukriKnifeLegendary
+  name: legendary kukri knife
+  abstract: true
+  description: Professionals have standards. Be polite. Be efficient. You call that a knife? This is a knife.
+
+- type: entity
+  parent: GamblingKukriKnifeLegendary
+  id: GamblingKukriKnifeLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingKukriKnifeLegendary
+  id: GamblingKukriKnifeLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingKukriKnifeLegendary
+  id: GamblingKukriKnifeLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+
+#Throwing Knife
+- type: entity
+  parent: ThrowingKnife
+  id: GamblingThrowingKnifeRare
+  name: rare throwing knife
+  abstract: true
+  description: This knife is very aerodynamic and easy to throw. Looks kinda rare.
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareRed
+  suffix: Red
+  components:
+  - type: ColorPainted
+    color: "#ff0000"
+    enabled: true
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareOrange
+  suffix: Orange
+  components:
+  - type: ColorPainted
+    color: "#ff7f00"
+    enabled: true
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareYellow
+  suffix: Yellow
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareGreen
+  suffix: Green
+  components:
+  - type: ColorPainted
+    color: "#00ff00"
+    enabled: true
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareBlue
+  suffix: Blue
+  components:
+  - type: ColorPainted
+    color: "#0000ff"
+    enabled: true
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareIndigo
+  suffix: Indigo
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: GamblingThrowingKnifeRare
+  id: GamblingThrowingKnifeRareViolet
+  suffix: Violet
+  components:
+  - type: ColorPainted
+    color: "#4b0082"
+    enabled: true
+
+- type: entity
+  parent: ThrowingKnife
+  id: GamblingThrowingKnifeEpic
+  name: epic throwing knife
+  abstract: true
+  description: This knife is very aerodynamic and easy to throw. Looks very rare.
+
+- type: entity
+  parent: GamblingThrowingKnifeEpic
+  id: GamblingThrowingKnifeEpicRed
+  suffix: Red Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ff0000"
+
+- type: entity
+  parent: GamblingThrowingKnifeEpic
+  id: GamblingThrowingKnifeEpicBlue
+  suffix: Blue Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#0000ff"
+
+- type: entity
+  parent: GamblingThrowingKnifeEpic
+  id: GamblingThrowingKnifeEpicGreen
+  suffix: Green Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#00ff00"
+
+- type: entity
+  parent: ThrowingKnife
+  id: GamblingThrowingKnifeLegendary
+  name: legendary throwing knife
+  abstract: true
+  description: This knife is very aerodynamic and easy to throw. You're not sure if you should throw this.
+
+- type: entity
+  parent: GamblingThrowingKnifeLegendary
+  id: GamblingThrowingKnifeLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingThrowingKnifeLegendary
+  id: GamblingThrowingKnifeLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingThrowingKnifeLegendary
+  id: GamblingThrowingKnifeLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+
+# Misc Legendary
+
+- type: entity
+  parent: CaptainSabre
+  id: GamblingCaptainSabreLegendary
+  name: legendary sabre
+  abstract: true
+  description: A ceremonial sword. Look at me, I'm the captain now.
+
+- type: entity
+  parent: GamblingCaptainSabreLegendary
+  id: GamblingCaptainSabreLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingCaptainSabreLegendary
+  id: GamblingCaptainSabreLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingCaptainSabreLegendary
+  id: GamblingCaptainSabreLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+
+- type: entity
+  parent: WeaponHFKatana
+  id: GamblingWeaponHFKatanaLegendary
+  name: legendary high-frequency katana
+  abstract: true
+  description: A high-frequency blade. MY SWORD IS A TOOL OF JUSTICE! I think it's time for Jack... to LET 'ER RIP!
+
+- type: entity
+  parent: GamblingWeaponHFKatanaLegendary
+  id: GamblingWeaponHFKatanaLegendaryRGB
+  suffix: RGB Glow
+  components:
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+  - type: RgbLightController
+
+- type: entity
+  parent: GamblingWeaponHFKatanaLegendary
+  id: GamblingWeaponHFKatanaLegendaryGolden
+  suffix: Golden
+  components:
+  - type: ColorPainted
+    color: "#ffff00"
+    enabled: true
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#ffff00"
+
+- type: entity
+  parent: GamblingWeaponHFKatanaLegendary
+  id: GamblingWeaponHFKatanaLegendaryMirage
+  suffix: Mirage
+  components:
+  - type: Stealth
+    lastVisibility: 0.66
+  - type: PointLight
+    enabled: true
+    radius: 3
+    energy: 5
+    color: "#419ba3"
+
+# Lootbox - I wasn't sure where i'd place this.
+
+- type: entity
+  parent: PresentRandom
+  id: MysteryKnifeLootbox
+  name: mystery knife lootbox
+  description: A box containing a mystery knife. Gambling addiction is a slippery slope.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/figurines.rsi
+    layers:
+      - state: fig_box
+  - type: SpawnItemsOnUse
+    items:
+      - id: MysteryFigureBoxTrash
+      - id: GamblingKitchenKnifeRareRed
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeRareOrange
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeRareYellow
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeRareGreen
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeRareBlue
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeRareIndigo
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeRareViolet
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareRed
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareOrange
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareYellow
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareGreen
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareBlue
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareIndigo
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverRareViolet
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareRed
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareOrange
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareYellow
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareGreen
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareBlue
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareIndigo
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeRareViolet
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareRed
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareOrange
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareYellow
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareGreen
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareBlue
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareIndigo
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeRareViolet
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareRed
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareOrange
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareYellow
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareGreen
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareBlue
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareIndigo
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeRareViolet
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareRed
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareOrange
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareYellow
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareGreen
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareBlue
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareIndigo
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeRareViolet
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeEpicRed
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeEpicBlue
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeEpicGreen
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverEpicRed
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverEpicBlue
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverEpicGreen
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeEpicRed
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeEpicBlue
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeEpicGreen
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeEpicRed
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeEpicBlue
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeEpicGreen
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeEpicRed
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeEpicBlue
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeEpicGreen
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeEpicRed
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeEpicBlue
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeEpicGreen
+        prob: 0.50
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeLegendaryRGB
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeLegendaryGolden
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingKitchenKnifeLegendaryMirage
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverLegendaryRGB
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverLegendaryGolden
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingButchCleaverLegendaryMirage
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeLegendaryRGB
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeLegendaryGolden
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingCombatKnifeLegendaryMirage
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeLegendaryRGB
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeLegendaryGolden
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingSurvivalKnifeLegendaryMirage
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeLegendaryRGB
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeLegendaryGolden
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingKukriKnifeLegendaryMirage
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeLegendaryRGB
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeLegendaryGolden
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingThrowingKnifeLegendaryMirage
+        prob: 0.15
+        orGroup: MysteryKnife
+      - id: GamblingCaptainSabreLegendaryRGB
+        prob: 0.01
+        orGroup: MysteryKnife
+      - id: GamblingCaptainSabreLegendaryGolden
+        prob: 0.01
+        orGroup: MysteryKnife
+      - id: GamblingCaptainSabreLegendaryMirage
+        prob: 0.01
+        orGroup: MysteryKnife
+      - id: GamblingWeaponHFKatanaLegendaryRGB
+        prob: 0.01
+        orGroup: MysteryKnife
+      - id: GamblingWeaponHFKatanaLegendaryGolden
+        prob: 0.01
+        orGroup: MysteryKnife
+      - id: GamblingWeaponHFKatanaLegendaryMirage
+        prob: 0.01
+        orGroup: MysteryKnife
