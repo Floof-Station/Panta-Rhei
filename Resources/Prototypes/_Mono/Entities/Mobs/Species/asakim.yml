@@ -206,8 +206,16 @@
   #  - Asakim
   #  # WWDP-Edit-End
   # Begin DeltaV Additions
-  - type: SyllableObfuscationAccent # unintelligable language
-    accent: draconian
+  # Begin floof edit
+#  - type: SyllableObfuscationAccent # unintelligable language
+#    accent: draconian
+  - type: LanguageKnowledge
+    speaks:
+    - Draconic
+    understands:
+    - Draconic
+    naturalLanguage: Draconic
+  # End floof edit
   - type: BlockWriting # can't speak common can't write common. better get an AAC tablet
   # End DeltaV Additions
 
