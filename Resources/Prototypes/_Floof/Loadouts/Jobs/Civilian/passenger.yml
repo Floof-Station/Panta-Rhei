@@ -224,6 +224,31 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitWorkvest
 
+- type: loadout
+  id: ClothingUniformClassicalMaidDress
+  equipment:
+    jumpsuit: ClothingUniformClassicalMaidDress
+
+- type: loadout
+  id: ClothingUniformJumpskirtJanimaid
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaid
+
+- type: loadout
+  id: ClothingUniformJumpskirtJanimaidmini
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtJanimaidmini
+
+- type: loadout
+  id: UniformMaid
+  equipment:
+    jumpsuit: UniformMaid
+
+- type: loadout
+  id: ClothingUniformJumpskirtTacticalMaid
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtTacticalMaid
+
 # thongs
 - type: loadout
   id: ClothingThongCoder
@@ -244,6 +269,41 @@
   id: ClothingThongCoderValid
   equipment:
     jumpsuit: ClothingUniformThongCoderValid
+
+- type: loadout
+  id: ClothingUniformMNKDressBlack
+  equipment:
+    jumpsuit: ClothingUniformMNKDressBlack
+
+- type: loadout
+  id: ClothingUniformMNKOfficeSkirt
+  equipment:
+    jumpsuit: ClothingUniformMNKOfficeSkirt
+
+- type: loadout
+  id: ClothingUniformMNKGymBra
+  equipment:
+    jumpsuit: ClothingUniformMNKGymBra
+
+- type: loadout
+  id: ClothingUniformMNKUnderGarment
+  equipment:
+    jumpsuit: ClothingUniformMNKUnderGarment
+
+- type: loadout
+  id: ClothingUniformMNKBlackOveralls
+  equipment:
+    jumpsuit: ClothingUniformMNKBlackOveralls
+
+- type: loadout
+  id: ClothingUniformMNKBlackShoulder
+  equipment:
+    jumpsuit: ClothingUniformMNKBlackShoulder
+
+- type: loadout
+  id: UniformNudityPermit
+  equipment:
+    jumpsuit: ClothingUniformNudityPermit
 
 # socks
 - type: loadout
@@ -303,34 +363,24 @@
     shoes: ClothingShoesBootsJack
 
 - type: loadout
-  id: ClothingShoesBootsCowboyBlack
-  equipment:
-    shoes: ClothingShoesBootsCowboyBlack
-
-- type: loadout
   id: ClothingShoesBootsCowboyFancy
   equipment:
     shoes: ClothingShoesBootsCowboyFancy
 
 - type: loadout
-  id: ClothingShoesBootsCowboyWhite
-  equipment:
-    shoes: ClothingShoesBootsCowboyWhite
-
-- type: loadout
-  id: ClothingShoesBootsCowboyBrown
-  equipment:
-    shoes: ClothingShoesBootsCowboyBrown
-
-- type: loadout
-  id: ClothingShoesHighheelBoots
-  equipment:
-    shoes: ClothingShoesHighheelBoots
-
-- type: loadout
   id: ClothingClothWrap
   equipment:
     shoes: ClothingClothWrap
+
+- type: loadout
+  id: ClothingShoesBootsWork
+  equipment:
+    shoes: ClothingShoesBootsWork
+
+- type: loadout
+  id: ClothingShoesBootsWinter
+  equipment:
+    shoes: ClothingShoesBootsWinter
 
 # arm warmers
 - type: loadout
@@ -392,6 +442,11 @@
   id: ClothingArmwarmersValid
   equipment:
     gloves: ClothingHandsCoderValidWarmers
+
+- type: loadout
+  id: ClothingHandsGlovesLeather
+  equipment:
+    gloves: ClothingHandsGlovesLeather
 
 # backpacks
 - type: loadout
@@ -551,6 +606,11 @@
   equipment:
     head: ClothingHeadHatBlacksoft
 
+- type: loadout
+  id: HeadHatCorpsoft
+  equipment:
+    head: ClothingHeadHatCorpsoft
+
 #neck
 - type: loadout
   id: MothCloak
@@ -609,34 +669,60 @@
 
 # trinkets
 - type: loadout
+  id: LuxuryPen
+  storage:
+    back:
+    - LuxuryPen
+  groupBy: "writing"
+
+- type: loadout
+  id: Paper
+  storage:
+    back:
+    - Paper
+  groupBy: "writing"
+
+- type: loadout
   id: GuitarInstrument
-  equipment:
-    back: AcousticGuitarInstrument
+  storage:
+    back:
+    - AcousticGuitarInstrument
+  groupBy: "instrument"
 
 - type: loadout
   id: BassGuitarInstrument
-  equipment:
-    back: BassGuitarInstrument
+  storage:
+    back:
+    - BassGuitarInstrument
+  groupBy: "instrument"
 
 - type: loadout
   id: ElectricGuitarInstrument
-  equipment:
-    back: ElectricGuitarInstrument
+  storage:
+    back:
+    - ElectricGuitarInstrument
+  groupBy: "instrument"
 
 - type: loadout
   id: RockGuitarInstrument
-  equipment:
-    back: RockGuitarInstrument
+  storage:
+    back:
+    - RockGuitarInstrument
+  groupBy: "instrument"
 
 - type: loadout
   id: HarmonicaInstrument
-  equipment:
-    back: HarmonicaInstrument
+  storage:
+    back:
+    - HarmonicaInstrument
+  groupBy: "instrument"
 
 - type: loadout
   id: TrumpetInstrument
-  equipment:
-    back: TrumpetInstrument
+  storage:
+    back:
+    - TrumpetInstrument
+  groupBy: "instrument"
 
 - type: loadout
   id: CheapLighter
@@ -708,131 +794,185 @@
 
 - type: loadout
   id: CrowbarRed
-  equipment:
-    back: CrowbarRed
+  storage:
+    back:
+    - CrowbarRed
 
 - type: loadout
   id: DoubleEmergencyOxygenTankFilled
-  equipment:
-    back: DoubleEmergencyOxygenTankFilled
+  storage:
+    back:
+    - DoubleEmergencyOxygenTankFilled
+  groupBy: "air tanks"
 
 - type: loadout
   id: DoubleEmergencyNitrogenTankFilled
-  equipment:
-    back: DoubleEmergencyNitrogenTankFilled
+  storage:
+    back:
+    - DoubleEmergencyNitrogenTankFilled
+  groupBy: "air tanks"
 
 - type: loadout
   id: DoubleEmergencyWaterVaporTankFilled
-  equipment:
-    back: DoubleEmergencyWaterVaporTankFilled
+  storage:
+    back:
+    - DoubleEmergencyWaterVaporTankFilled
+  groupBy: "air tanks"
 
 - type: loadout
   id: MedkitFilled
-  equipment:
-    back: MedkitFilled
+  storage:
+    back:
+    - MedkitFilled
 
 - type: loadout
   id: LunchboxGenericFilledRandom
-  equipment:
-    back: LunchboxGenericFilledRandom
+  storage:
+    back:
+    - LunchboxGenericFilledRandom
 
 - type: loadout
   id: CrayonBrush
-  equipment:
-    back: CrayonBrush
+  storage:
+    back:
+    - CrayonBrush
 
 - type: loadout
   id: FlashlightLantern
-  equipment:
-    back: FlashlightLantern
+  storage:
+    back:
+    - FlashlightLantern
 
 #lewd trinkets
 - type: loadout
   id: AvianDildo
-  equipment:
-    back: AvianDildo
+  storage:
+    back:
+    - AvianDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: CanineDildo
-  equipment:
-    back: CanineDildo
+  storage:
+    back:
+    - CanineDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: CanineDildoRed
-  equipment:
-    back: CanineDildoRed
+  storage:
+    back:
+    - CanineDildoRed
+  groupBy: "lewd"
 
 - type: loadout
   id: NormalDildo
-  equipment:
-    back: NormalDildo
+  storage:
+    back:
+    - NormalDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: DoubleDildo
-  equipment:
-    back: DoubleDildo
+  storage:
+    back:
+    - DoubleDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: DragonDildo
-  equipment:
-    back: DragonDildo
+  storage:
+    back:
+    - DragonDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: HorseDildo
-  equipment:
-    back: HorseDildo
+  storage:
+    back:
+    - HorseDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: TentacleDildo
-  equipment:
-    back: TentacleDildo
+  storage:
+    back:
+    - TentacleDildo
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdVibeRed
-  equipment:
-    back: LewdVibeRed
+  storage:
+    back:
+    - LewdVibeRed
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdVibePink
-  equipment:
-    back: LewdVibePink
+  storage:
+    back:
+    - LewdVibePink
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdVibeTeal
-  equipment:
-    back: LewdVibeTeal
+  storage:
+    back:
+    - LewdVibeTeal
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdVibeGreen
-  equipment:
-    back: LewdVibeGreen
+  storage:
+    back:
+    - LewdVibeGreen
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdVibeYellow
-  equipment:
-    back: LewdVibeYellow
+  storage:
+    back:
+    - LewdVibeYellow
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdFleshlightGreen
-  equipment:
-    back: LewdFleshlightGreen
+  storage:
+    back:
+    - LewdFleshlightGreen
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdFleshlightPink
-  equipment:
-    back: LewdFleshlightPink
+  storage:
+    back:
+    - LewdFleshlightPink
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdFleshlightRed
-  equipment:
-    back: LewdFleshlightRed
+  storage:
+    back:
+    - LewdFleshlightRed
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdFleshlightTeal
-  equipment:
-    back: LewdFleshlightTeal
+  storage:
+    back:
+    - LewdFleshlightTeal
+  groupBy: "lewd"
 
 - type: loadout
   id: LewdFleshlightYellow
-  equipment:
-    back: LewdFleshlightYellow
+  storage:
+    back:
+    - LewdFleshlightYellow
+  groupBy: "lewd"
+
+- type: loadout
+  id: LewdWand
+  storage:
+    back:
+    - LewdWand
+  groupBy: "lewd"

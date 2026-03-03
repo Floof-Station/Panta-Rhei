@@ -75,13 +75,15 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
-  - type: LanguageKnowledge # Floofstation
+  - type: LanguageKnowledge #Euphoria - Languages
     speaks:
     - TauCetiBasic
     - SiikTajr
+    - Cat
     understands:
     - TauCetiBasic
     - SiikTajr
+    - Cat
     naturalLanguage: SiikTajr
   - type: Felinid # real
   - type: NoShoesSilentFootsteps

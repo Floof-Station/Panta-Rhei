@@ -61,6 +61,16 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
+  - type: LanguageKnowledge #Euphoria - Languages
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    - Nekomimetic
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Nekomimetic
+    naturalLanguage: SolCommon
   - type: ItemCougher
     item: Hairball
     action: ActionHairball

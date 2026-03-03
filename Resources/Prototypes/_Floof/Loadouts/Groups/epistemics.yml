@@ -1,0 +1,24 @@
+﻿#below addtions are for mysta
+- type: loadoutGroup
+  id: FloofMystaThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformEpiHeadThong
+
+- type: loadoutGroup
+  id: FloofMystaGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsEpiHeadWarmers
+
+- type: loadoutGroup
+  id: FloofMystaSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksEpiHead
