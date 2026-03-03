@@ -125,7 +125,7 @@ public sealed class LeashVisualsOverlay : Overlay
     private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset, bool entityIsSource)
     {
         rotation = leashedEntity.Comp.LocalRotation;
-        offset = -(entityIsSource ? visualsComp.OffsetSource : visualsComp.OffsetTarget);
+        offset = (entityIsSource ? visualsComp.OffsetSource : visualsComp.OffsetTarget);
 
         // NoRotation sprites dont rotate with the transform it seems, and their "up" is always facing the viewport "up" when Rotation = 0
         // Idfk what's going on anymore
