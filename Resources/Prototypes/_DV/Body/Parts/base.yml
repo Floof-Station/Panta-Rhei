@@ -2,14 +2,14 @@
   abstract: true
   id: BaseHeadDV
   components:
-  - type: BodyPart
+  - type: BodyPart # Euphoria - makes it so explosives don't blow your head off and round remove you too easily
     severThresholds:
     - types:
-        Piercing: 100
+        Piercing: 300
     - types:
-        Slash: 100
+        Slash: 150
     - types:
-        Blunt: 100
+        Blunt: 300
 
 - type: entity
   abstract: true
