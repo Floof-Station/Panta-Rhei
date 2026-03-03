@@ -1,0 +1,37 @@
+﻿# Security Guns - is abstract use this to parent off of the delta-v group
+- type: loadoutGroup
+  id: FloofSecurityFirearm
+  abstract: true
+  name: loadout-group-security-gun
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SecurityFirearmWeaponRevolverDeckard
+  - SecurityRevolverInspector
+  - FloofSecurityWeaponRevolverPython
+  - FloofWeaponLaserSvalinn
+  - FloofPlasteelArmingSword
+  - FloofWeaponEnergyGunMini
+
+- type: loadoutGroup
+  id: FloofSecurityFirearmAmmo
+  abstract: true
+  name: loadout-group-security-gun-ammo
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - FloofSecurityFirearmMagazinePistol
+  - FloofSecurityFirearmMagazinePistolRubber
+  - FloofSecurityFirearmSpeedLoaderMagnumRubber
+  - FloofSecurityFirearmSpeedLoaderMagnum
+  - FloofSecurityFirearmPowerCellHigh
+
+- type: loadoutGroup
+  id: FloofSecurityRevolvers
+  abstract: true
+  name: loadout-group-security-gun
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SecurityFirearmWeaponRevolverDeckard
+  - FloofSecurityWeaponRevolverPython

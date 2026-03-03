@@ -1,0 +1,24 @@
+﻿#below addtions are for logistics officer
+- type: loadoutGroup
+  id: FloofLoThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformLOLogisThong
+
+- type: loadoutGroup
+  id: FloofLoGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsLOLogisWarmers
+
+- type: loadoutGroup
+  id: FloofLoSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksLOLogis
