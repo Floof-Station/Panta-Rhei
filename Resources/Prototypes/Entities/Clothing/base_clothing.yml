@@ -17,7 +17,7 @@
   - type: FlavorProfile #yes not every peice of clothing is edible, but this way every edible piece of clothing should have the flavor without me having to track down what specific clothing can and cannot be eaten.
     flavors:
     - fiber
-  - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
     sound:
       path: /Audio/SimpleStation14/Items/Handling/cloth_pickup.ogg
       params:
