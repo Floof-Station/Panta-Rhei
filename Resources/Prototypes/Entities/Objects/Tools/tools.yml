@@ -6,17 +6,17 @@
   components:
   - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/wirecutter_pickup.ogg
+      path: /Audio/_EE/Items/Handling/wirecutter_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/wirecutter_drop.ogg
+      path: /Audio/_EE/Items/Handling/wirecutter_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/wirecutter_drop.ogg
+      path: /Audio/_EE/Items/Handling/wirecutter_drop.ogg
       params:
         volume: -4
   - type: Tag
@@ -77,12 +77,12 @@
   components:
   - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/screwdriver_pickup.ogg
+      path: /Audio/_EE/Items/Handling/screwdriver_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/screwdriver_drop.ogg
+      path: /Audio/_EE/Items/Handling/screwdriver_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand
@@ -142,12 +142,12 @@
   components:
   - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/wrench_pickup.ogg
+      path: /Audio/_EE/Items/Handling/wrench_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/wrench_drop.ogg
+      path: /Audio/_EE/Items/Handling/wrench_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand
@@ -196,12 +196,12 @@
   components:
   - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/multitool_pickup.ogg
+      path: /Audio/_EE/Items/Handling/multitool_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/multitool_drop.ogg
+      path: /Audio/_EE/Items/Handling/multitool_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand

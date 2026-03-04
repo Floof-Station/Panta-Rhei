@@ -4,14 +4,14 @@
   id: Welder
   description: "Melts anything as long as it's fueled, don't forget your eye protection!"
   components:
-  - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/welder_pickup.ogg
+      path: /Audio/_EE/Items/Handling/welder_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/welder_drop.ogg
+      path: /Audio/_EE/Items/Handling/welder_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand

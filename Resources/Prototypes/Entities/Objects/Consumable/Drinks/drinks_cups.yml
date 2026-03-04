@@ -15,19 +15,19 @@
     maxTransferAmount: 10
   - type: StaticPrice
     price: 10
-  - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+      path: /Audio/_EE/Items/Handling/drinkglass_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      path: /Audio/_EE/Items/Handling/drinkglass_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      path: /Audio/_EE/Items/Handling/drinkglass_drop.ogg
       params:
         volume: -4
 
@@ -46,17 +46,17 @@
     inHandsFillBaseName: null
   - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/drinkglass_pickup.ogg
+      path: /Audio/_EE/Items/Handling/drinkglass_pickup.ogg
       params:
         volume: -4
   - type: EmitSoundOnDrop
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      path: /Audio/_EE/Items/Handling/drinkglass_drop.ogg
       params:
         volume: -4
   - type: EmitSoundOnLand
     sound:
-      path: /Audio/SimpleStation14/Items/Handling/drinkglass_drop.ogg
+      path: /Audio/_EE/Items/Handling/drinkglass_drop.ogg
       params:
         volume: -4
 
