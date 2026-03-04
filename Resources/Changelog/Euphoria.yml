@@ -934,3 +934,15 @@ Entries:
       message: Pebble now has its mining PC.
   id: 115
   time: '2026-03-03T08:24:06.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Removed syllable obfuscation accent from asakim.
+    - type: Fix
+      message: >-
+        Consent settings should now be correctly saved when using the Postgres
+        database MS.
+    - type: Fix
+      message: Fixed some of the prior fixes.
+  id: 116
+  time: '2026-03-03T22:44:20.0000000+00:00'
