@@ -132,7 +132,7 @@
   - !type:OneOfSpeciesCondition
     species:
     - Felinid
-    - Tajaran
+    #- Tajaran | Euphoria - Tajaran have cat by default
   effects:
   - !type:ModifyLanguagesTraitEffect
     languagesSpoken:

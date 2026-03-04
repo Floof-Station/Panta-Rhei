@@ -67,7 +67,7 @@
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Face:
-      points: 1
+      points: 10
       required: false
     Snout: # DeltaV - Adds ability to use more marking types
       points: 1
@@ -76,10 +76,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 4
+      points: 6
       required: false
     HeadTop:
-      points: 4
+      points: 6
       required: false
     Hair:
       points: 1 # DeltaV - Fixes hair not displaying
@@ -105,11 +105,11 @@
       points: 1
       required: false
     Legs:
-      points: 10
+      points: 24
       required: true
       defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
     Arms:
-      points: 10
+      points: 24
       required: true
       defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
 

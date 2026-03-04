@@ -274,7 +274,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobClown
+      role: JobPassenger # Floofstation - swap to passenger so more have access to it
       time: 3600 # 1hr
   storage:
     back:

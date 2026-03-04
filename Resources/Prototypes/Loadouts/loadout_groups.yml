@@ -75,6 +75,7 @@
 
 - type: loadoutGroup
   id: Glasses
+  parent: [FloofGlasses]
   name: loadout-group-glasses
   minLimit: 0
   loadouts:
@@ -1137,7 +1138,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofCeGloves, FloofShoes] # Floofstation
   name: loadout-group-chief-engineer-shoes
   loadouts:
   #- BrownShoes # DeltaV - Engi loadout rework
@@ -1688,6 +1689,7 @@
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-detective-jumpsuit
   loadouts:
   - DetectiveJumpsuit
@@ -1697,7 +1699,7 @@
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofOuterClothing] # Floofstation
   name: loadout-group-detective-outerclothing
   loadouts:
   - DetectiveArmorVest
@@ -1899,7 +1901,7 @@
 
 - type: loadoutGroup
   id: ChemistJumpsuit
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-chemist-jumpsuit
   loadouts:
   - ChemistJumpsuit

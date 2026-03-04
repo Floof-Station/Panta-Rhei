@@ -302,6 +302,9 @@
     flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Absorbent
     pickupAmount: 10
+  - type: AreaAbsorbent # Floofstation - gives janibots AOE effect. Weaker than a regular mop.
+    cleaningRange: 0.25
+    maxCleanedEntities: 5
   - type: UseDelay
     delay: 2
   - type: SolutionRegeneration

@@ -418,6 +418,7 @@
 
 - type: loadoutGroup
   id: SecurityAllFirearm
+  parent: [FloofSecurityFirearm] # Floofstation
   name: loadout-group-all-gun
   minLimit: 0
   maxLimit: 1
@@ -436,6 +437,7 @@
 - type: loadoutGroup
   id: SecurityAllAmmo
   name: loadout-group-all-ammo
+  parent: [FloofSecurityFirearmAmmo] # Floofstation
   minLimit: 0
   maxLimit: 2
   loadouts:

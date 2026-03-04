@@ -44,6 +44,15 @@
         - MobLayer
   - type: Stamina
     critThreshold: 115
+  - type: LanguageKnowledge #Euphoria - Languages
+    speaks:
+    - TauCetiBasic
+    - Kagebun
+    understands:
+    - TauCetiBasic
+    - Kagebun
+    - Nekomimetic
+    naturalLanguage: Kagebun
 
 - type: entity
   save: false

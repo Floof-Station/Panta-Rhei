@@ -51,9 +51,13 @@
   parent: JobBaseLoadout
   groups:
   - GroupTankHarness
+  - AssistantHead # floofstation - give prisoners access to other clothing options
+  - PassengerFace # floofstation - give prisoners access to other clothing options
   - PrisonerJumpsuit
   - CommonBackpack
+  - PassengerGloves # floofstation - give prisoners access to other clothing options
   - PassengerShoes
+  - PassengerOuterClothing # floofstation - give prisoners access to other clothing options
   - Glasses # DeltaV
   - Survival
   - GroupSpeciesBreathTool

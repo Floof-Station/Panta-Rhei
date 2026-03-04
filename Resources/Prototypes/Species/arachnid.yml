@@ -64,7 +64,7 @@
       points: 4
       required: false
     Face:
-      points: 1
+      points: 10
       required: false
     Snout:
       points: 1
@@ -73,11 +73,11 @@
       points: 1
       required: false
     HeadSide:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ ArachnidCheliceraeDownwards ]
     HeadTop:
-      points: 4
+      points: 6
       required: false
     Hair:
       points: 1
@@ -92,7 +92,7 @@
       points: 1
       required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10
@@ -101,10 +101,10 @@
       points: 1
       required: false
     Legs:
-      points: 10
+      points: 24
       required: false
     Arms:
-      points: 10
+      points: 24
       required: false
 
 - type: humanoidBaseSprite

@@ -58,10 +58,10 @@
       required: true
       defaultMarkings: [ RodentiaTailDefault ]
     Head:
-      points: 1
+      points: 6
       required: false
     Face:
-      points: 1
+      points: 10
       required: false
     Snout:
       points: 1
@@ -70,11 +70,11 @@
       points: 1
       required: false
     HeadTop:
-      points: 4
+      points: 6 # This could backfire due to shitty rendering bug not removing default markings
       required: true
       defaultMarkings: [ RodentiaHeadTopEarDefault ]
     HeadSide:
-      points: 4
+      points: 6
       required: false
     Hair:
       points: 1
@@ -89,7 +89,7 @@
       points: 1
       required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10
@@ -98,10 +98,10 @@
       points: 1
       required: false
     Legs:
-      points: 10
+      points: 24
       required: false
     Arms:
-      points: 10
+      points: 24
       required: false
 
 - type: humanoidBaseSprite

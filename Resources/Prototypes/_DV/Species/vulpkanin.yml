@@ -52,10 +52,10 @@
       required: true
       defaultMarkings: [ VulpTail ]
     Head:
-      points: 3
+      points: 6
       required: false
     Face:
-      points: 1
+      points: 10
       required: false
     Snout:
       points: 1
@@ -64,10 +64,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 4
+      points: 6
       required: false
     HeadTop:
-      points: 1
+      points: 6 # This could also backfire
       required: true
       defaultMarkings: [ VulpEar ]
     Hair:
@@ -83,7 +83,7 @@
       points: 1
       required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10
@@ -92,10 +92,10 @@
       points: 1
       required: false
     Legs:
-      points: 10
+      points: 24
       required: false
     Arms:
-      points: 10
+      points: 24
       required: false
 
 

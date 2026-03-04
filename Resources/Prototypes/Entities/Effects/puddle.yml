@@ -224,29 +224,31 @@
   description: Trace of liquid
   components:
   - type: Clickable
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepWater
-      params:
-        volume: 3
+    # Floofstation - no
+#  - type: FootstepModifier
+#    footstepSoundCollection:
+#      collection: FootstepWater
+#      params:
+#        volume: 3
   - type: Transform
     noRot: false
   - type: Sprite
     drawdepth: FloorObjects
     color: "#FFFFFF80"
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      slipFixture:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.4,-0.4,0.4,0.4"
-        mask:
-        - ItemMask
-        layer:
-        - SlipLayer
-        hard: false
+    # Floofstation - no
+#  - type: Physics
+#    bodyType: Static
+#  - type: Fixtures
+#    fixtures:
+#      slipFixture:
+#        shape:
+#          !type:PhysShapeAabb
+#          bounds: "-0.4,-0.4,0.4,0.4"
+#        mask:
+#        - ItemMask
+#        layer:
+#        - SlipLayer
+#        hard: false
   - type: SolutionContainerManager
     solutions:
       step: { maxVol: 2 }
@@ -254,11 +256,25 @@
   - type: Puddle
     solution: step
   - type: Appearance
-  - type: SpawnOnDespawn
-    prototype: PuddleSparkle
-  - type: TimedDespawn
-    lifetime: 60 # DeltaV End updates from EE Blood Puddle
-  - type: SpeedModifierContacts
-    ignoreWhitelist:
-      components:
-      - InputMover
+    # Floofstation - no
+#  - type: SpawnOnDespawn
+#    prototype: PuddleSparkle
+#  - type: TimedDespawn
+#    lifetime: 60 # DeltaV End updates from EE Blood Puddle
+#  - type: SpeedModifierContacts
+#    ignoreWhitelist:
+#      components:
+#      - InputMover
+  # Floof section - components that puddles have and footprints should also have. Why are we not inheriting from Puddle again?
+  - type: ExaminableSolution
+    solution: step
+  - type: DrawableSolution
+    solution: step
+  - type: BadDrink
+  - type: Edible
+    edible: Drink
+    delay: 3
+    transferAmount: 1
+    solution: step
+    utensil: Spoon
+  # Floof section end
