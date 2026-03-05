@@ -408,6 +408,7 @@
 
 - type: loadoutGroup
   id: SecurityRevolverAmmo
+  parent: [FloofSecurityRevolverAmmo] # Floofstation
   name: loadout-group-revolver-ammo
   minLimit: 0
   maxLimit: 2
