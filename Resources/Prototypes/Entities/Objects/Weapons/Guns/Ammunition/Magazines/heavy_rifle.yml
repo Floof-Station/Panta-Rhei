@@ -89,7 +89,7 @@
 - type: entity
   id: MagazineHVSubMachineGunPractice
   name: PDW magazine (.10 high-velocity practice)
-  parent: BaseMagazineHVSubMachineGun
+  parent: BaseMagazineHighVelocitySubMachineGun
   description: 24-round double-stack magazine for PDWs. Intended to hold non-harmful chalk ammunition.
   components:
   - type: BallisticAmmoProvider
