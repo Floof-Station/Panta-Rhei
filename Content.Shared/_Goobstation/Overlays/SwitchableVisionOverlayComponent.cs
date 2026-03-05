@@ -15,28 +15,28 @@ namespace Content.Shared._Goobstation.Overlays;
 public abstract partial class SwitchableVisionOverlayComponent : BaseVisionOverlayComponent
 {
     [DataField]
-    public bool IsActive;
+    public virtual bool IsActive { get; set; }
 
     [DataField]
-    public bool DrawOverlay = true;
+    public virtual bool DrawOverlay { get; set; } = true;
 
     /// <summary>
     /// Whether it should grant equipment enhanced vision or is it mob vision
     /// </summary>
     [DataField]
-    public bool IsEquipment;
+    public virtual bool IsEquipment { get; set; }
 
     /// <summary>
     /// If it is greater than 0, overlay isn't toggled but pulsed instead
     /// </summary>
     [DataField]
-    public float PulseTime;
+    public virtual float PulseTime { get; set; }
 
     [ViewVariables(VVAccess.ReadOnly)]
     public float PulseAccumulator;
 
     [DataField]
-    public float FlashDurationMultiplier = 1f;
+    public virtual float FlashDurationMultiplier { get; set; } = 1f; // ! goober
 
     [DataField]
     public SoundSpecifier? ActivateSound = new SoundPathSpecifier("/Audio/_White/Items/Goggles/activate.ogg");

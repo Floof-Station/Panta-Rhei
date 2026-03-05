@@ -5,5 +5,19 @@
 
 - type: loadout
   id: ClothingBeltMedicalAdvancedFilled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofBeltMedicalAdvancedTimer
   equipment:
     belt: ClothingBeltMedicalAdvancedFilled
+
+
+# timers for special options
+- type: loadoutEffectGroup
+  id: FloofBeltMedicalAdvancedTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobMedicalDoctor
+      time: 40h # for workin extra hard to save people

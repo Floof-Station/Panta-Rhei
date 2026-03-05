@@ -946,3 +946,118 @@ Entries:
       message: Fixed some of the prior fixes.
   id: 116
   time: '2026-03-03T22:44:20.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: >-
+        Two toggles for melee and range attacks that allows for auto
+        attacks/shooting
+  id: 117
+  time: '2026-03-04T08:19:44.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Fixed Shadekin ear marking overlay issue
+  id: 118
+  time: '2026-03-04T08:20:19.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Cyber-Eyes Traits.
+  id: 119
+  time: '2026-03-04T08:34:28.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        A lot of loadout fixes and additions, see #174 for a full list of
+        changes.
+  id: 120
+  time: '2026-03-04T08:37:55.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: Port the PTL from Goobstation.
+    - type: Add
+      message: >-
+        PTL flatpacks available from logistics and one free one in the CE's
+        locker.
+  id: 121
+  time: '2026-03-04T08:44:26.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Fixed marking points differing from Floof server
+  id: 122
+  time: '2026-03-04T09:54:03.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Increased Arachne and IPC head, headside, headtop and eyes markings
+  id: 123
+  time: '2026-03-04T18:42:15.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed a couple issues with footprints. See PR 197 for more details.
+  id: 124
+  time: '2026-03-05T03:27:36.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: Added new sounds for airlocks from Funky and closets from Goob.
+    - type: Add
+      message: >-
+        Item interaction sounds make a return! Objects such as paper, tools,
+        clothing, and more now have sound effects for being picked up and put
+        down.
+  id: 125
+  time: '2026-03-05T03:44:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Reduced head (top) marking points back down to 1. Please report if there
+        are any other marking points with a limit greater than 1 and forced
+        default markings.
+  id: 126
+  time: '2026-03-05T03:46:58.0000000+00:00'
+- author: TheRealMasterChief117
+  changes:
+    - type: Tweak
+      message: >-
+        Tweaked the sprites of the skyrat snake tails. They should look more
+        in-line with the main art style now.
+  id: 127
+  time: '2026-03-05T07:06:07.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        The reason why gloves got dirtier faster during surgery was discovered
+        (you used them with every surgery step without swapping unlike tools),
+        so now they been changed get dirtier slower.
+  id: 128
+  time: '2026-03-05T07:06:45.0000000+00:00'
+- author: ItsDzordz
+  changes:
+    - type: Add
+      message: Added 2 new plushies
+    - type: Tweak
+      message: Updated the slimetender texture
+  id: 129
+  time: '2026-03-05T07:22:25.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Ported pets (please understand they won't follow you yet)
+    - type: Add
+      message: Added 4 new pets.
+    - type: Remove
+      message: Removed pet cockroach
+    - type: Tweak
+      message: >-
+        Made it so pets understand Tau Ceti (can't speak it) so you can talk to
+        them.
+  id: 130
+  time: '2026-03-05T09:15:22.0000000+00:00'

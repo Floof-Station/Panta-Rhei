@@ -4,9 +4,6 @@
   id: CrowbarMakeshift
   description: Barely better than nothing. Could be made into something greater with a welder, though..
   components:
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/crowbar_drop.ogg  
   - type: Sprite
     sprite: _Starlight/Objects/Tools/makeshift_omnitool.rsi
     state: base
@@ -33,6 +30,17 @@
   - type: Tag
     tags:
       - Crowbar
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound:
+        path: /Audio/_EE/Items/Handling/crowbar_pickup.ogg
+        params:
+          volume: -2
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_EE/Items/Handling/crowbar_drop.ogg
+      params:
+        volume: -2
+  - type: EmitSoundOnLand
 
 - type: entity
   name: improvised crowbar

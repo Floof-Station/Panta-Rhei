@@ -1516,3 +1516,59 @@
         density: 10
         mask:
         - ItemMask
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieWizard
+  name: Wizard plushie
+  description: A Wizard Plushie with glowing Purple and Blue eyes, This one has a not-so-evil aura to it, smells like violets.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: wizard
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &womanlaugh
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *womanlaugh
+  - type: EmitSoundOnLand
+    sound: &cat_scream2
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_scream2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *cat_scream2
+  - type: MeleeWeapon
+    soundHit: *cat_scream2
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieGrumpyCmoKitty
+  name: Grumpy CMO kitty plushie
+  description: Feels soft, but looks so angry... and smells like vanilla?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: grumpycmo
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &cat_meow2
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *cat_meow2
+  - type: EmitSoundOnLand
+    sound: &cat_hiss2
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *cat_hiss2
+  - type: MeleeWeapon
+    soundHit: *cat_hiss2

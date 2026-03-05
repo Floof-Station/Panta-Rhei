@@ -190,3 +190,24 @@
     damage:
       types:
         Blunt: 20000
+
+- type: entity # Euphoria Port from Goobstation
+  parent: BasicHitscan
+  id: PTL
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 70 # Euphoria - was 30. Normally its supposed to scale with power input but because goob refactored their energy system its harder to integrate the scaling damage.
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _Goobstation/Structures/Machines/PTL/pt_beam.rsi
+      state: ptl_beam
+    travelFlash:
+      sprite: _Goobstation/Structures/Machines/PTL/pt_beam.rsi
+      state: ptl_beam
+    impactFlash:
+      sprite: _Goobstation/Structures/Machines/PTL/pt_beam.rsi
+      state: ptl_beam
+

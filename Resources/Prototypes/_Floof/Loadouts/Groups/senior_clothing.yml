@@ -62,10 +62,11 @@
 
 - type: loadoutGroup
   id: InventorySpecialistMisc
-  parent: CargoTechnicianJumpsuit
   name: loadout-group-invspec-misc
   minLimit: 0
   maxLimit: 2
   loadouts:
   - LoadoutInventorySpecialistStampApproved
   - LoadoutInventorySpecialistStampDenied
+  - ClipboardThreePapers
+  - BoxFolderPlasticClipboardThreePapers

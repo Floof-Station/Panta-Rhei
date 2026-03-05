@@ -13,21 +13,25 @@
   id: ClothingUniformJumpsuitHawaiBlack
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiBlack
+  groupBy: "hawain"
 
 - type: loadout
   id: ClothingUniformJumpsuitHawaiBlue
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiBlue
+  groupBy: "hawain"
 
 - type: loadout
   id: ClothingUniformJumpsuitHawaiRed
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiRed
+  groupBy: "hawain"
 
 - type: loadout
   id: ClothingUniformJumpsuitHawaiYellow
   equipment:
     jumpsuit: ClothingUniformJumpsuitHawaiYellow
+  groupBy: "hawain"
 
 - type: loadout
   id: ClothingUniformJumpsuitColorBlack
@@ -53,6 +57,11 @@
   id: ClothingUniformJumpsuitSuitBrownMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBrownMob
+
+- type: loadout
+  id: ClothingUniformJumpsuitSuitBlackMob
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSuitBlackMob
 
 - type: loadout
   id: ClothingUniformJumpsuitKimono
@@ -128,51 +137,61 @@
   id: ClothingUniformSchoolGakuranBlack
   equipment:
     jumpsuit: ClothingUniformSchoolGakuranBlack
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlBlack
   equipment:
     jumpsuit: UniformSchoolgirlBlack
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlBlue
   equipment:
     jumpsuit: UniformSchoolgirlBlue
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlCyan
   equipment:
     jumpsuit: UniformSchoolgirlCyan
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlGreen
   equipment:
     jumpsuit: UniformSchoolgirlGreen
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlOrange
   equipment:
     jumpsuit: UniformSchoolgirlOrange
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlPink
   equipment:
     jumpsuit: UniformSchoolgirlPink
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlPurple
   equipment:
     jumpsuit: UniformSchoolgirlPurple
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlRed
   equipment:
     jumpsuit: UniformSchoolgirlRed
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: UniformSchoolgirlDusk
   equipment:
     jumpsuit: UniformSchoolgirlDusk
+  groupBy: "schoolgirl"
 
 - type: loadout
   id: ClothingCostumeBunnySuit
@@ -183,31 +202,37 @@
   id: UniformGeisha
   equipment:
     jumpsuit: UniformGeisha
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingKimonoBlue
   equipment:
     jumpsuit: ClothingKimonoBlue
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingKimonoPurple
   equipment:
     jumpsuit: ClothingKimonoPurple
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingKimonoPink
   equipment:
     jumpsuit: ClothingKimonoPink
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingKimonoSky
   equipment:
     jumpsuit: ClothingKimonoSky
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingKimonoGreen
   equipment:
     jumpsuit: ClothingKimonoGreen
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingCostumeMioSkirt
@@ -228,47 +253,56 @@
   id: ClothingUniformClassicalMaidDress
   equipment:
     jumpsuit: ClothingUniformClassicalMaidDress
+  groupBy: "maid"
 
 - type: loadout
   id: ClothingUniformJumpskirtJanimaid
   equipment:
     jumpsuit: ClothingUniformJumpskirtJanimaid
+  groupBy: "maid"
 
 - type: loadout
   id: ClothingUniformJumpskirtJanimaidmini
   equipment:
     jumpsuit: ClothingUniformJumpskirtJanimaidmini
+  groupBy: "maid"
 
 - type: loadout
   id: UniformMaid
   equipment:
     jumpsuit: UniformMaid
+  groupBy: "maid"
 
 - type: loadout
   id: ClothingUniformJumpskirtTacticalMaid
   equipment:
     jumpsuit: ClothingUniformJumpskirtTacticalMaid
+  groupBy: "maid"
 
 # thongs
 - type: loadout
   id: ClothingThongCoder
   equipment:
     jumpsuit: ClothingUniformThongCoder
+  groupBy: "thongs"
 
 - type: loadout
   id: ClothingThongBee
   equipment:
     jumpsuit: ClothingUniformThongBee
+  groupBy: "thongs"
 
 - type: loadout
   id: ClothingThongRainbow
   equipment:
     jumpsuit: ClothingUniformStripedThongRainbow
+  groupBy: "thongs"
 
 - type: loadout
   id: ClothingThongCoderValid
   equipment:
     jumpsuit: ClothingUniformThongCoderValid
+  groupBy: "thongs"
 
 - type: loadout
   id: ClothingUniformMNKDressBlack
@@ -279,26 +313,31 @@
   id: ClothingUniformMNKOfficeSkirt
   equipment:
     jumpsuit: ClothingUniformMNKOfficeSkirt
+  groupBy: "mnk"
 
 - type: loadout
   id: ClothingUniformMNKGymBra
   equipment:
     jumpsuit: ClothingUniformMNKGymBra
+  groupBy: "mnk"
 
 - type: loadout
   id: ClothingUniformMNKUnderGarment
   equipment:
     jumpsuit: ClothingUniformMNKUnderGarment
+  groupBy: "mnk"
 
 - type: loadout
   id: ClothingUniformMNKBlackOveralls
   equipment:
     jumpsuit: ClothingUniformMNKBlackOveralls
+  groupBy: "mnk"
 
 - type: loadout
   id: ClothingUniformMNKBlackShoulder
   equipment:
     jumpsuit: ClothingUniformMNKBlackShoulder
+  groupBy: "mnk"
 
 - type: loadout
   id: UniformNudityPermit
@@ -310,51 +349,61 @@
   id: ClothingSocksRainbow
   equipment:
     shoes: ClothingUnderSocksStripedRainbow
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksAce
   equipment:
     shoes: ClothingUnderSocksPrideAce
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksAro
   equipment:
     shoes: ClothingUnderSocksPrideAro
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksBi
   equipment:
     shoes: ClothingUnderSocksPrideBi
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksGay
   equipment:
     shoes: ClothingUnderSocksPrideGay
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksLesbian
   equipment:
     shoes: ClothingUnderSocksPrideLesbian
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksNon
   equipment:
     shoes: ClothingUnderSocksPrideNon
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksPan
   equipment:
     shoes: ClothingUnderSocksPridePan
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksTrans
   equipment:
     shoes: ClothingUnderSocksPrideTrans
+  groupBy: "thigh highs"
 
 - type: loadout
   id: ClothingSocksCoderValid
   equipment:
     shoes: ClothingUnderSocksCoderValid
+  groupBy: "thigh highs"
 
 # shoes
 - type: loadout
@@ -366,6 +415,29 @@
   id: ClothingShoesBootsCowboyFancy
   equipment:
     shoes: ClothingShoesBootsCowboyFancy
+
+- type: loadout
+  id: ClothingShoesBootsCowboyBlack
+  equipment:
+    shoes: ClothingShoesBootsCowboyBlack
+  groupBy: "cowboy boots"
+
+- type: loadout
+  id: ClothingShoesBootsCowboyBrown
+  equipment:
+    shoes: ClothingShoesBootsCowboyBrown
+  groupBy: "cowboy boots"
+
+- type: loadout
+  id: ClothingShoesBootsCowboyWhite
+  equipment:
+    shoes: ClothingShoesBootsCowboyWhite
+  groupBy: "cowboy boots"
+
+- type: loadout
+  id: ClothingShoesHighheelBoots
+  equipment:
+    shoes: ClothingShoesHighheelBoots
 
 - type: loadout
   id: ClothingClothWrap
@@ -387,61 +459,73 @@
   id: ClothingArmwarmersCoder
   equipment:
     gloves: ClothingHandsCoderWarmers
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersBee
   equipment:
     gloves: ClothingHandsBeeWarmers
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersRainbow
   equipment:
     gloves: ClothingHandsStripeRainbowWarmers
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersAce
   equipment:
     gloves: ClothingHandsPrideAce
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersAro
   equipment:
     gloves: ClothingHandsPrideAro
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersBi
   equipment:
     gloves: ClothingHandsPrideBi
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersGay
   equipment:
     gloves: ClothingHandsPrideGay
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersLesbian
   equipment:
     gloves: ClothingHandsPrideLesbian
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersNon
   equipment:
     gloves: ClothingHandsPrideNon
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersPan
   equipment:
     gloves: ClothingHandsPridePan
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersTrans
   equipment:
     gloves: ClothingHandsPrideTrans
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingArmwarmersValid
   equipment:
     gloves: ClothingHandsCoderValidWarmers
+  groupBy: "arm warmers"
 
 - type: loadout
   id: ClothingHandsGlovesLeather
@@ -455,6 +539,29 @@
     back: ClothingBackpackSatchelLeather
 
 # outer clothing (jackets)
+- type: loadout
+  id: OuterCoatPirate
+  equipment:
+    outerClothing: ClothingOuterCoatPirate
+
+- type: loadout
+  id: OuterFlannelBlue
+  equipment:
+    outerClothing: ClothingOuterFlannelBlue
+  groupBy: "flannel"
+
+- type: loadout
+  id: OuterFlannelRed
+  equipment:
+    outerClothing: ClothingOuterFlannelRed
+  groupBy: "flannel"
+
+- type: loadout
+  id: OuterFlannelGreen
+  equipment:
+    outerClothing: ClothingOuterFlannelGreen
+  groupBy: "flannel"
+
 - type: loadout
   id: OuterCoatBomber
   equipment:
@@ -524,6 +631,11 @@
   id: OuterCoatHyenhSweater
   equipment:
     outerClothing: ClothingOuterCoatHyenhSweater
+
+- type: loadout
+  id: ShrimpFishermanSuit
+  equipment:
+    outerClothing: ClothingShrimpFishermanSuit
 
 # hats
 - type: loadout
@@ -669,10 +781,44 @@
 
 # trinkets
 - type: loadout
+  id: HandheldStationMap
+  storage:
+    back:
+    - HandheldStationMap
+
+- type: loadout
+  id: FishingRodGoon
+  storage:
+    back:
+    - FishingRodGoon
+  groupBy: "fishing"
+
+- type: loadout
+  id: FishingRod
+  storage:
+    back:
+    - FishingRod
+  groupBy: "fishing"
+
+- type: loadout
+  id: FishingRodMakeshift
+  storage:
+    back:
+    - FishingRodMakeshift
+  groupBy: "fishing"
+
+- type: loadout
   id: LuxuryPen
   storage:
     back:
     - LuxuryPen
+  groupBy: "writing"
+
+- type: loadout
+  id: BookBase
+  storage:
+    back:
+    - BookBase
   groupBy: "writing"
 
 - type: loadout
@@ -768,14 +914,16 @@
 
 - type: loadout
   id: Blunt
-  equipment:
-    back: Blunt
+  storage:
+    back:
+    - Blunt
   groupBy: "smokeables"
 
 - type: loadout
   id: Joint
-  equipment:
-    back: Joint
+  storage:
+    back:
+    - Joint
   groupBy: "smokeables"
 
 - type: loadout
@@ -836,6 +984,14 @@
   storage:
     back:
     - CrayonBrush
+  groupBy: "art"
+
+- type: loadout
+  id: CrayonMagic
+  storage:
+    back:
+    - CrayonMagic
+  groupBy: "art"
 
 - type: loadout
   id: FlashlightLantern
@@ -976,3 +1132,60 @@
     back:
     - LewdWand
   groupBy: "lewd"
+
+- type: loadout
+  id: WhipPinkCrotch
+  storage:
+    back:
+    - WhipPinkCrotch
+  groupBy: "lewd"
+
+- type: loadout
+  id: WhipPink
+  storage:
+    back:
+    - WhipPink
+  groupBy: "lewd"
+
+- type: loadout
+  id: WhipTealCrotch
+  storage:
+    back:
+    - WhipTealCrotch
+  groupBy: "lewd"
+
+- type: loadout
+  id: WhipTeal
+  storage:
+    back:
+    - WhipTeal
+  groupBy: "lewd"
+
+# eyes/glasses
+- type: loadout
+  id: ClothingEyesBlindfold
+  equipment:
+    eyes: ClothingEyesBlindfold
+
+- type: loadout
+  id: ClothingEyesEyepatch
+  equipment:
+    eyes: ClothingEyesEyepatch
+
+- type: loadout
+  id: ClothingEyesGlassesGar
+  equipment:
+    eyes: ClothingEyesGlassesGar
+  groupBy: "silly glasses"
+
+- type: loadout
+  id: ClothingEyesGlassesGarGiga
+  equipment:
+    eyes: ClothingEyesGlassesGarGiga
+  groupBy: "silly glasses"
+
+- type: loadout
+  id: ClothingEyesGlassesGarOrange
+  equipment:
+    eyes: ClothingEyesGlassesGarOrange
+  groupBy: "silly glasses"

@@ -35,3 +35,135 @@
       partSymmetry: Right
       protoId: JawsOfLifeRightArm
       slotId: "right arm"
+
+- type: trait
+  id: CyberEyes
+  name: trait-name-CyberEyes
+  description: trait-description-CyberEyes
+  category: Medical
+  cost: 3
+  conflicts:
+  - Blindness
+  - PoorVision
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: FlashImmunity
+      showInExamine: false
+    - type: EyeProtection
+
+- type: trait
+  id: CyberEyesNightVision
+  category: Medical
+  name: trait-name-CyberEyesNightVision
+  description: trait-description-CyberEyesNightVision
+  cost: 3
+  conflicts:
+  - Blindness
+  - PoorVision
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: Prisoner
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Felinid
+    - Shadowkin
+    - Rodentia
+    - Tajaran
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: NightVision
+
+- type: trait
+  id: CyberEyesThermoVision
+  category: Medical
+  name: trait-name-CyberEyesThermoVision
+  description: trait-description-CyberEyesThermoVision
+  cost: 3
+  conflicts:
+  - Blindness
+  - PoorVision
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: Prisoner 
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ThermalVision
+      pulseTime: 2
+      toggleAction: PulseThermalVision
+
+- type: trait
+  id: CyberEyesSecurity
+  category: Medical
+  name: trait-name-CyberEyesSecurity
+  description: trait-description-CyberEyesSecurity
+  cost: 1
+  conflicts:
+  - CyberEyesOmni
+  conditions:
+  - !type:InDepartmentCondition
+    department: Security
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    
+- type: trait
+  id: CyberEyesMedical
+  category: Medical
+  name: trait-name-CyberEyesMedical
+  description: trait-description-CyberEyesMedical
+  cost: 1
+  conflicts:
+    - CyberEyesOmni
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SolutionScanner
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+      - Inorganic
+      - Silicon
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+
+- type: trait
+  id: CyberEyesOmni
+  category: Medical
+  name: trait-name-CyberEyesOmni
+  description: trait-description-CyberEyesOmni
+  cost: 2
+  conflicts:
+  - CyberEyesMedical
+  - CyberEyesSecurity
+  conditions:
+  - !type:InDepartmentCondition
+    department: Command
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    - type: SolutionScanner
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+      - Inorganic
+      - Silicon
