@@ -22,7 +22,7 @@
 
 # High-Velocity
 - type: entity
-  id: BulletHV
+  id: BulletHighVelocity
   name: bullet (.10 high-velocity)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
@@ -33,9 +33,9 @@
         Piercing: 5
 
 - type: entity
-  id: BulletHVPractice
+  id: BulletHighVelocityPractice
   name: bullet (.10 high-velocity practice)
-  parent: BulletHV
+  parent: BulletHighVelocity
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -44,9 +44,9 @@
         Blunt: 1
 
 - type: entity
-  id: BulletHVUranium
+  id: BulletHighVelocityUranium
   name: bullet (.10 high-velocity uranium)
-  parent: BulletHV
+  parent: BulletHighVelocity
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
@@ -56,9 +56,9 @@
         Radiation: 5
 
 - type: entity
-  id: BulletHVAP
+  id: BulletHighVelocityAP
   name: bullet (.10 high-velocity Armor-Piercing)
-  parent: BulletHV
+  parent: BulletHighVelocity
   categories: [ HideSpawnMenu ]
   components:
   - type: Projectile
