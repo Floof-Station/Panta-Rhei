@@ -1016,7 +1016,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofCargotechJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - ClothingUniformJumpsuitCargoTechPants # DeltaV
@@ -1044,7 +1044,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofCargotechShoes, FloofShoes] # Floofstation
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes

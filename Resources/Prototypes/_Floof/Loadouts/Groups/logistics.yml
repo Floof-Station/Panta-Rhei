@@ -69,3 +69,29 @@
   maxLimit: 1
   loadouts:
   - ClothingHandsCourierWarmers
+
+# cargotech additions
+- type: loadoutGroup
+  id: FloofCargotechJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformLogisThong
+
+- type: loadoutGroup
+  id: FloofCargotechGloves
+  name: loadout-group-logistics-cargotech-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsLogisWarmers
+
+- type: loadoutGroup
+  id: FloofCargotechShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksLogis

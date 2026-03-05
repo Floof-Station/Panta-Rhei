@@ -215,7 +215,7 @@
 
 - type: loadoutGroup
   id: CargoAssistantJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofCargotechJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-cargo-assistant-jumpsuit
   loadouts:
   - CargoTechnicianJumpsuit
@@ -240,7 +240,7 @@
 
 - type: loadoutGroup
   id: CargoAssistantShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofCargotechShoes, FloofShoes] # Floofstation
   name: loadout-group-cargo-assistant-shoes
   loadouts:
   - BlackShoes
