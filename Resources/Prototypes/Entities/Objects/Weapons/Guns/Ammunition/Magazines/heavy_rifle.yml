@@ -68,7 +68,7 @@
   description: 24-round double-stack magazine for PDWs. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeHV
+    proto: CartridgeHighVelocity
   - type: Sprite
     layers:
     - state: red
