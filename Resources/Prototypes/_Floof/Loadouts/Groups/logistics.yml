@@ -8,11 +8,13 @@
   - UniformLOLogisThong
 
 - type: loadoutGroup
-  id: FloofLoGloves
-  abstract: true
+  id: FloofLoGloves # this is the group to give LO so they have their gloves
+  name: loadout-group-logistics-officer-gloves
+  parent: [PassengerGloves]
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ClothingHandsGlovesPapercutProof
   - HandsLOLogisWarmers
 
 - type: loadoutGroup
