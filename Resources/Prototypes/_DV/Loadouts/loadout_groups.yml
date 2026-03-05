@@ -161,7 +161,7 @@
 
 - type: loadoutGroup
   id: CourierJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofCourierJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-courier-jumpsuit
   loadouts:
   - CourierJumpsuit
@@ -171,7 +171,7 @@
 
 - type: loadoutGroup
   id: CourierOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [FloofCourierOuterclothing, FloofOuterClothing] # Floofstation
   name: loadout-group-courier-outerclothing
   minLimit: 0
   loadouts:
@@ -180,7 +180,7 @@
 
 - type: loadoutGroup
   id: CourierBackpack
-  parent: [FloofBackpacks] # Floofstation
+  parent: [FloofCourierBackpack, FloofBackpacks] # Floofstation
   name: loadout-group-courier-backpack
   loadouts:
   - CargoTechnicianBackpack

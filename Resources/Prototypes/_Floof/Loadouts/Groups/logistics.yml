@@ -24,3 +24,28 @@
   maxLimit: 1
   loadouts:
   - UnderSocksLOLogis
+
+- type: loadoutGroup
+  id: FloofCourierJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformCourierDevy
+
+- type: loadoutGroup
+  id: FloofCourierOuterclothing
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingOuterDevy
+  - ClothingOuterExpressBuffCourierCoat
+
+- type: loadoutGroup
+  id: FloofCourierBackpack
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingBackpackDuffelCourierDevy
