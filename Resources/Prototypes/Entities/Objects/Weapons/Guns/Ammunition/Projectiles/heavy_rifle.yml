@@ -44,7 +44,7 @@
         Blunt: 1
 
 - type: entity
-  id: BulletHighVelocityUranium
+  id: BulletHighVelocityUranium # Was inially added due to debugging, but is left as it could be used in other weapons made with the new ammo type, possibly
   name: bullet (.10 high-velocity uranium)
   parent: BulletHighVelocity
   categories: [ HideSpawnMenu ]
@@ -53,7 +53,7 @@
     damage:
       types:
         Piercing: 2
-        Radiation: 5
+        Radiation: 3
 
 - type: entity
   id: BulletHighVelocityAP
@@ -64,7 +64,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 2 # Should be pretty balanced due to the firerate expected of these weapons.
+        Piercing: 2 # Should be pretty balanced due to the firerate expected of these weapons. Does base 50 damage on a full hit (basically has to hit all shots at point blank)
     ignoreResistances: true
 
 - type: entity
@@ -76,5 +76,5 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 3
+        Blunt: 2 # Should also be pretty balanced due to the extreme lack of effectivity against armor, but should be useful against those without.
         Slash: 6
