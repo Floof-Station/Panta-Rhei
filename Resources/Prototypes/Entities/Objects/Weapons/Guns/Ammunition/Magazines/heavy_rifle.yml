@@ -64,7 +64,7 @@
 - type: entity
   id: MagazineHVSubMachineGun
   name: PDW magazine (.10 high-velocity)
-  parent: BaseMagazineHVSubMachineGun
+  parent: BaseMagazineHighVelocitySubMachineGun
   description: 24-round double-stack magazine for PDWs. Intended to hold general-purpose kinetic ammunition.
   components:
   - type: BallisticAmmoProvider
