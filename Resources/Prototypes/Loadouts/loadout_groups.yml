@@ -450,7 +450,7 @@
 
 - type: loadoutGroup
   id: BartenderJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofBartenderJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-bartender-jumpsuit
   loadouts:
   - BartenderJumpsuit
@@ -505,7 +505,7 @@
 
 - type: loadoutGroup
   id: ChefJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofChefJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chef-jumpsuit
   loadouts:
   - ChefJumpsuit
@@ -672,7 +672,7 @@
 
 - type: loadoutGroup
   id: JanitorJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofJanitorJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-janitor-jumpsuit
   loadouts:
   - JanitorJumpsuit
@@ -680,7 +680,7 @@
 
 - type: loadoutGroup
   id: JanitorGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofJanitorGloves, FloofGloves] # Floofstation
   name: loadout-group-janitor-gloves
   minLimit: 0
   loadouts:
@@ -715,7 +715,7 @@
 
 - type: loadoutGroup
   id: BotanistJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofBotanistJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-botanist-jumpsuit
   loadouts:
   - BotanistJumpsuit
@@ -888,7 +888,7 @@
 
 - type: loadoutGroup
   id: MusicianJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofMusicianJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-musician-jumpsuit
   loadouts:
   - MusicianJumpsuit
