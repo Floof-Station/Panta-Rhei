@@ -544,17 +544,16 @@
   - type: NextEvent # DeltaV: Queue Event for precognition
   - type: RampingStationEventScheduler
     timeKeyPoints: # DeltaV
-    - 10, 10
-    - 10, 6
-    - 10, 1
-    - 10, 3
-    - 15, 5
-    - 15, 4
-    - 20, 2
-    - 10, 1
-    - 10, 4
-    - 10, 3
-    - 70, 4
+    # Floofstation section - replaced
+    - 30, 10 # First 30m, 3 events on average
+    - 30, 8  # 30-60m, 3.5 events
+    - 30, 6  # 60-90m, 5 events
+    - 45, 10 # 90-135m, back to 4.5 events
+    - 35, 6  # 135-170m, back to 5 events
+    - 70, 5  # 170-240m, 12 events/hour past the 3 hour mark
+    - 30, 4  # 240-270, some actual chaos
+    - 180, 8 # past the 4.5 hour mark, calmness
+    # Floofstation section end
     scheduledGameRules: !type:NestedSelector
       tableId: BasicGameRulesTable
 

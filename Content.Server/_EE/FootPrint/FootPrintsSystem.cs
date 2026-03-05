@@ -1,4 +1,5 @@
-﻿using Content.Server.Atmos.Components;
+﻿using System.Linq;
+using Content.Server.Atmos.Components;
 using Content.Shared._EE.Flight; // DeltaV
 using Content.Shared._EE.FootPrint;
 using Content.Shared.Inventory;
@@ -7,7 +8,11 @@ using Content.Shared.Mobs.Components;
 // using Content.Shared.Standing;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Humanoid;
+using Content.Shared.Standing;
 using Robust.Shared.Map;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._EE.FootPrint;
@@ -17,16 +22,19 @@ public sealed class FootPrintsSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly IMapManager _map = default!;
+    [Dependency] private readonly IPrototypeManager _protoMan = default!; // Floofstation
 
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedFlightSystem _flight = default!; // DeltaV
+    [Dependency] private readonly EntityLookupSystem _lookup = default!; // Floofstation
+    [Dependency] private readonly StandingStateSystem _standingState = default!; // Floofstation
 
     private EntityQuery<TransformComponent> _transformQuery;
     private EntityQuery<MobThresholdsComponent> _mobThresholdQuery;
     private EntityQuery<AppearanceComponent> _appearanceQuery;
-    
+
 //    private EntityQuery<LayingDownComponent> _layingQuery;
 
     public override void Initialize()
@@ -45,20 +53,37 @@ public sealed class FootPrintsSystem : EntitySystem
     private void OnStartupComponent(EntityUid uid, FootPrintsComponent component, ComponentStartup args)
     {
         component.StepSize = Math.Max(0f, component.StepSize + _random.NextFloat(-0.05f, 0.05f));
+        // Floofstation - multiply by humanoid height
+        if (TryComp<HumanoidAppearanceComponent>(uid, out var hum))
+            component.StepSize *= hum.Height;
     }
 
     private void OnMove(EntityUid uid, FootPrintsComponent component, ref MoveEvent args)
     {
+        #if DEBUG // Floof - do not create footprints on debug, nor in CI tests
+                return;
+        #endif // Floof section end
         if (_flight.IsFlying(uid)) // DeltaV - Flying players won't make footprints
             return;
 
-        if (component.PrintsColor.A <= 0f
+        // Floofstation section - extra checks
+        if (component.ContainedSolution.Volume <= 0
+            || TryComp<PhysicsComponent>(uid, out var physics) && physics.BodyStatus != BodyStatus.OnGround) // Floof: do not create footprints if the entity is flying
+            return;
+
+        // are we on a puddle? we exit, ideally we would exchange liquid and DNA with the puddle but meh, too lazy to do that now.
+        var entities = _lookup.GetEntitiesIntersecting(uid, LookupFlags.All);
+        if (entities.Any(HasComp<PuddleFootPrintsComponent>))
+            return;
+        // Floofstation section end
+
+        if (false//component.PrintsColor.A <= 0f // Floofstation - no such thing
             || !_transformQuery.TryComp(uid, out var transform)
             || !_mobThresholdQuery.TryComp(uid, out var mobThreshHolds)
             || !_map.TryFindGridAt(_transform.GetMapCoordinates((uid, transform)), out var gridUid, out _))
             return;
 
-        var dragging = mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
+        var dragging = _standingState.IsDown(uid); // Floofstation - replaced: mobThreshHolds.CurrentThresholdState is MobState.Critical or MobState.Dead;
         var distance = (transform.LocalPosition - component.StepPos).Length();
         var stepSize = dragging ? component.DragSize : component.StepSize;
 
@@ -75,8 +100,17 @@ public sealed class FootPrintsSystem : EntitySystem
 
         if (_appearanceQuery.TryComp(entity, out var appearance))
         {
+            // Floofstation section - replaced the below
+
+            // _appearance.SetData(entity, FootPrintVisualState.State, PickState(uid, dragging), appearance);
+            // _appearance.SetData(entity, FootPrintVisualState.Color, component.PrintsColor, appearance);
+
+            var color = component.ContainedSolution.GetColor(_protoMan);
+            color.A = Math.Max(0.3f, component.ContainedSolution.FillFraction);
+
             _appearance.SetData(entity, FootPrintVisualState.State, PickState(uid, dragging), appearance);
-            _appearance.SetData(entity, FootPrintVisualState.Color, component.PrintsColor, appearance);
+            _appearance.SetData(entity, FootPrintVisualState.Color, color, appearance);
+            // Floofstation section end
         }
 
         if (!_transformQuery.TryComp(entity, out var stepTransform))
@@ -86,15 +120,25 @@ public sealed class FootPrintsSystem : EntitySystem
             ? (transform.LocalPosition - component.StepPos).ToAngle() + Angle.FromDegrees(-90f)
             : transform.LocalRotation + Angle.FromDegrees(180f);
 
-        component.PrintsColor = component.PrintsColor.WithAlpha(Math.Max(0f, component.PrintsColor.A - component.ColorReduceAlpha));
+        // Floofstation - replaced the below
+        // component.PrintsColor = component.PrintsColor.WithAlpha(Math.Max(0f, component.PrintsColor.A - component.ColorReduceAlpha));
         component.StepPos = transform.LocalPosition;
+        //
+        // if (!TryComp<SolutionContainerManagerComponent>(entity, out var solutionContainer)
+        //     || !_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution)
+        //     || string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
+        //     return;
+        //
+        // _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 0.01, out _); //was 1
 
         if (!TryComp<SolutionContainerManagerComponent>(entity, out var solutionContainer)
-            || !_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution)
-            || string.IsNullOrWhiteSpace(component.ReagentToTransfer) || solution.Volume >= 1)
+            || !_solution.ResolveSolution((entity, solutionContainer), footPrintComponent.SolutionName, ref footPrintComponent.Solution, out var solution))
             return;
 
-        _solution.TryAddReagent(footPrintComponent.Solution.Value, component.ReagentToTransfer, 0.01, out _); //was 1
+        // Transfer from the component to the footprint
+        var removedReagents = component.ContainedSolution.SplitSolution(component.FootprintVolume);
+        _solution.ForceAddSolution(footPrintComponent.Solution.Value, removedReagents);
+        // Floofstation section end
     }
 
     private EntityCoordinates CalcCoords(EntityUid uid, FootPrintsComponent component, TransformComponent transform, bool state)

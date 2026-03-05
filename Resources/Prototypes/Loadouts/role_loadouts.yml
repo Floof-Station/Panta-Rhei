@@ -5,6 +5,7 @@
   groups:
   - Trinkets
   - Smokeables
+  - Pets
 
 # Command
 - type: roleLoadout
@@ -111,6 +112,8 @@
   - ChefJumpsuit
   - CommonBackpack
   - ChefOuterClothing
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - ChefPDADelta # DeltaV
   - Glasses
   - Survival
@@ -124,6 +127,8 @@
   - LibrarianNeck # DeltaV
   - GroupTankHarness
   - LibrarianJumpsuit
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - CommonBackpack
   - Glasses
   - Survival
@@ -137,6 +142,8 @@
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - CommonBackpack
   - Glasses
   - Survival
@@ -153,6 +160,8 @@
   - ChaplainNeck
   - ChaplainJumpsuit
   - CommonBackpack
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - ChaplainOuterClothing
   - ChaplainBible
   - Glasses
@@ -236,6 +245,8 @@
   - MusicianJumpsuit
   - MusicianNeck
   - CommonBackpack
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - MusicianOuterClothing
   - Glasses
   - Survival
@@ -269,6 +280,8 @@
   - CargoTechnicianNeck # DeltaV
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - CargoTechnicianOuterClothing
   - CargoPDADelta # DeltaV
   - CargoTechnicianShoes
@@ -286,6 +299,8 @@
   - GroupTankHarness
   - SalvageSpecialistBackpack
   - FloofSalvageSpecialistBelts # Floofstation
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - SalvageSpecialistOuterClothing
   - SalvagePDADelta # DeltaV
   - SalvageSpecialistShoes
@@ -318,6 +333,7 @@
   - GroupTankHarness
   - StationEngineerNeck # DeltaV
   - TechnicalAssistantJumpsuit
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - StationEngineerBackpack
   - StationEngineerShoes # DeltaV
   - SurvivalExtended
@@ -401,8 +417,12 @@
   parent: JobBaseLoadout
   groups:
   - GroupTankHarness
+  - AssistantHead # floofstation - give prisoners access to other clothing options
+  - PassengerFace # floofstation - give prisoners access to other clothing options
   - ResearchAssistantJumpsuit
   - ScientistBackpack
+  - PassengerGloves # floofstation - give prisoners access to other clothing options
+  - PassengerOuterClothing # floofstation - give prisoners access to other clothing options
   - Glasses
   - Survival
   - ResearchAssistantJobTrinkets
@@ -602,7 +622,13 @@
   parent: JobBaseLoadout
   groups:
   - GroupTankHarness
+  - AssistantHead # Floofstation let reporters have drip
+  - PassengerNeck # Floofstation let reporters have drip
+  - PassengerFace # Floofstation let reporters have drip
+  - PassengerGloves # Floofstation let reporters have drip
   - ReporterJumpsuit
+  - PassengerOuterClothing # Floofstation let reporters have drip
+  - PassengerShoes # Floofstation let reporters have drip
   - CommonBackpack
   - Glasses
   - Survival

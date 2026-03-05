@@ -1,0 +1,24 @@
+﻿#below addtions are for ce
+- type: loadoutGroup
+  id: FloofCeThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformChiefEngiThong
+
+- type: loadoutGroup
+  id: FloofCeGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsChiefEngiWarmers
+
+- type: loadoutGroup
+  id: FloofCeSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksChiefEngi

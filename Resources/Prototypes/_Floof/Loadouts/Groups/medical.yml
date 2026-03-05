@@ -1,0 +1,44 @@
+﻿# paramed backpacks
+- type: loadoutGroup
+  id: FloofParamedBackpacks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BackpackParamedic
+  - BackpackDuffelParamed
+  - BackpackSatchelParamed
+
+# outer clothing for all of medical not just paramed
+- type: loadoutGroup
+  id: FloofMedicalOuterClothing
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - OuterCoatCybersunWindbreaker
+
+#below addtions are for cmo
+- type: loadoutGroup
+  id: FloofCmoThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformCMOThong
+
+- type: loadoutGroup
+  id: FloofCmoGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsCMOWarmers
+
+- type: loadoutGroup
+  id: FloofCmoSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksCMO
