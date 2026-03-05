@@ -23,7 +23,7 @@
 - type: startingGear
   id: ChaplainGear
   equipment:
-    shoes: ClothingShoesColorBlack
+    #shoes: ClothingShoesColorBlack # Floofstation - do not give them these shoes, let loadouts be the default
     id: ChaplainPDA
     ears: ClothingHeadsetScience # DeltaV - Move Chaplain into Epistemics
   storage:

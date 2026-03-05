@@ -453,7 +453,7 @@
 ## Security Gloves
 - type: loadoutGroup
   id: SecurityGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofSecurityOfficerGloves, FloofGloves] # Floofstation
   name: loadout-group-security-gloves
   minLimit: 0
   loadouts:
@@ -527,7 +527,7 @@
 ## Detective
 - type: loadoutGroup
   id: DetectiveJumpsuitDeltaV
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofDetectiveJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-detective-jumpsuit
   loadouts:
   - ForensicSpecJumpsuit

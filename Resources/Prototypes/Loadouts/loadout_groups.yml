@@ -1555,7 +1555,7 @@
 
 - type: loadoutGroup
   id: WardenJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-warden-jumpsuit
   loadouts:
   - WardenJumpsuit
@@ -1599,7 +1599,7 @@
 
 - type: loadoutGroup
   id: SecurityJumpsuit
-  parent: [FloofSecurityJumpsuits, FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityJumpsuits, FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
@@ -1646,7 +1646,7 @@
 
 - type: loadoutGroup
   id: SecurityShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofSecurityOfficerShoes, FloofShoes] # Floofstation
   name: loadout-group-security-shoes
   loadouts:
   - CombatBoots # DeltaV
@@ -1690,7 +1690,7 @@
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofDetectiveJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-detective-jumpsuit
   loadouts:
   - DetectiveJumpsuit
@@ -1716,7 +1716,7 @@
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
   - RedJumpsuit

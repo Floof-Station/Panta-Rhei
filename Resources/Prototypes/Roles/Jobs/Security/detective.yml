@@ -29,7 +29,7 @@
   equipment:
     #eyes: ClothingEyesGlassesSecurity # DeltaV - loadouts
     id: DetectivePDA
-    gloves: ClothingHandsGlovesForensic # DeltaV - roundstart detective forensic gloves
+    #gloves: ClothingHandsGlovesForensic # Floofstation - we will put the gloves in their bag for character customization
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltHolster # DeltaV - loadouts
   storage:
@@ -37,6 +37,7 @@
     - Flash
     - ForensicPad
     - ForensicScanner
+    - ClothingHandsGlovesForensic # Floofstation - give the gloves in bag instead of on hands
 
 - type: chameleonOutfit
   id: DetectiveChameleonOutfit
