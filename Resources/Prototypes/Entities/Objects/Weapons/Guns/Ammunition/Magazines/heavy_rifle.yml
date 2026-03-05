@@ -140,7 +140,7 @@
   id: MagazineHVSubMachineGunRubber
   name: PDW magazine (.10 high-velocity rubber)
   description: 24-round double-stack magazine for PDWs. Intended to hold less-lethal rubber ammunition.
-  parent: BaseMagazinePistolHighCapacity
+  parent: BaseMagazineHighVelocitySubMachineGun
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeHighVelocityRubber
