@@ -70,7 +70,6 @@
   - TapeRecorder
   - ClothingHeadHatUshanka
   - Eyepatch
-  - SuperSynthesizerInstrument #Delta-V - Ports Super Synth Trinket from Starlight
   # End DeltaV Additions
 
 - type: loadoutGroup
@@ -940,6 +939,7 @@
   - PanFlute
   - Ocarina
   - Bagpipe
+  - SuperSynthesizerInstrument
 
 - type: loadoutGroup
   id: MusicianJobTrinkets
@@ -2090,7 +2090,6 @@
   loadouts:
   - LoadoutSpeciesBreathTool
 
-
 - type: loadoutGroup
   id: GroupSpeciesBreathToolMedical
   name: loadout-group-breath-tool
@@ -2128,9 +2127,12 @@
   - CigPackRed
   - CigPackBlue
   - CigPackBlack
+  - CigPackPurple
+  - CigPackCandy
   - CigarCase
   - CigarGold
   - CigPackSyndicate
   - CigPackMixed
   - Blunt
   - Joint
+  - Vape
