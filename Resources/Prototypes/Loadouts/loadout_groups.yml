@@ -1163,6 +1163,7 @@
 
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
+  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
   name: loadout-group-technical-assistant-jumpsuit
   loadouts:
   - YellowJumpsuit
@@ -1188,7 +1189,7 @@
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofEngineeringJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-station-engineer-jumpsuit
   loadouts:
   - StationEngineerJumpsuit
@@ -1217,7 +1218,7 @@
 
 - type: loadoutGroup
   id: StationEngineerShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
   name: loadout-group-station-engineer-shoes
   loadouts:
   - WorkBoots
@@ -1275,7 +1276,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
   name: loadout-group-atmospheric-technician-shoes
   loadouts:
   #- WhiteShoes # DeltaV - Engi loadout rework
