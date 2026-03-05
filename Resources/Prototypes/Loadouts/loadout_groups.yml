@@ -1813,7 +1813,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofMedicalDoctorJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-medical-doctor-jumpsuit
   loadouts:
   - MedicalDoctorJumpsuit
@@ -1845,7 +1845,7 @@
 
 - type: loadoutGroup
   id: MedicalShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofMedicalShoes, FloofShoes] # Floofstation
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
@@ -1862,7 +1862,7 @@
 
 - type: loadoutGroup
   id: MedicalGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofMedicalDoctorGloves, FloofGloves] # Floofstation
   name: loadout-group-medical-gloves
   minLimit: 0
   loadouts:
@@ -1901,7 +1901,7 @@
 
 - type: loadoutGroup
   id: ChemistJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofChemistJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chemist-jumpsuit
   loadouts:
   - ChemistJumpsuit
@@ -1946,7 +1946,7 @@
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofParamedJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-paramedic-jumpsuit
   loadouts:
   - ParamedicJumpsuit
@@ -1963,7 +1963,7 @@
 
 - type: loadoutGroup
   id: ParamedicShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofParamedShoes, FloofShoes] # Floofstation
   name: loadout-group-paramedic-shoes
   loadouts:
   - BlueShoes

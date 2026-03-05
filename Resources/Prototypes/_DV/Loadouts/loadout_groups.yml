@@ -615,7 +615,7 @@
 
 - type: loadoutGroup
   id: ChemistGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofChemistGloves, FloofGloves] # Floofstation
   name: loadout-group-chemist-gloves
   minLimit: 0
   loadouts:
@@ -625,7 +625,7 @@
 
 - type: loadoutGroup
   id: ChemistShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofChemistShoes, FloofShoes] # Floofstation
   name: loadout-group-chemist-shoes
   loadouts:
   - WhiteShoes
