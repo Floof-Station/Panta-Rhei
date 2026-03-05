@@ -26,3 +26,217 @@
     steps: 2
     zeroVisible: false
   - type: Appearance
+
+# High-Velocity (Seperate files seem to not work)
+- type: entity
+  id: BaseMagazineHV
+  name: magazine (.10 high-velocity)
+  parent: [ BaseItem, BaseSecurityContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineHV
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeHV
+    capacity: 12
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
+    layers:
+    - state: base
+      map: [ "enum.GunVisualLayers.Base" ]
+    - state: mag-1
+      map: [ "enum.GunVisualLayers.Mag" ]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: BaseMagazineHVSubMachineGun
+  name: PDW magazine (.10 high-velocity)
+  parent: [ BaseItem, BaseSecurityContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - MagazineHVSubMachineGun
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeHV
+    capacity: 24
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/high_velocity_PDW_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineHVSubMachineGun
+  name: PDW magazine (.10 high-velocity)
+  parent: BaseMagazineHVSubMachineGun
+  description: 24-round double-stack magazine for PDWs. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHV
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#9b0000"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#9b0000"
+
+- type: entity
+  id: MagazineHVSubMachineGunPractice
+  name: PDW magazine (.10 high-velocity practice)
+  parent: BaseMagazineHVSubMachineGun
+  description: 24-round double-stack magazine for PDWs. Intended to hold non-harmful chalk ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHVPractice
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#ea5800"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#ea5800"
+
+- type: entity
+  id: MagazineHVSubMachineGunAP
+  name: PDW magazine (.10 high-velocity Armor-Piercing)
+  parent: BaseMagazineHVSubMachineGun
+  description: 24-round double-stack magazine for PDWs. Intended to hold armor-piercing kenetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHVAP
+  - type: Sprite
+    layers:
+    - state: piercing
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#540000"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#540000"
+
+- type: entity
+  id: MagazineHVSubMachineGunRubber
+  name: PDW magazine (.10 high-velocity rubber)
+  description: 24-round double-stack magazine for PDWs. Intended to hold less-lethal rubber ammunition.
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHVRubber
+  - type: Sprite
+    layers:
+    - state: practice
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#ea5800"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#ea5800"
+
+- type: entity
+  id: MagazineHVSubMachineGunUranium # Only really added to fix an temporary issue.
+  name: PDW magazine (.10 high-velocity uranium)
+  description: 24-round double-stack magazine for PDWs. Intended to hold exotic uranium-core ammunition.
+  parent: BaseMagazinePistolHighCapacity
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeHVUranium
+  - type: Sprite
+    layers:
+    - state: uranium
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      - state: inhand-left-stripe
+        color: "#00cd42"
+      right:
+      - state: inhand-right-mag
+      - state: inhand-right-stripe
+        color: "#00cd42"
+
+- type: entity
+  id: MagazineHVSubMachineGunEmpty
+  name: PDW magazine (.10 high-velocity any)
+  suffix: empty
+  parent: BaseMagazineHVSubMachineGun
+  description: 24-round double-stack magazine for PDWs.
+  components:
+  - type: BallisticAmmoProvider
+    proto: null
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag
