@@ -118,7 +118,7 @@
   description: 24-round double-stack magazine for PDWs. Intended to hold armor-piercing kenetic ammunition.
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeHVAP
+    proto: CartridgeHighVelocityAP
   - type: Sprite
     layers:
     - state: piercing
