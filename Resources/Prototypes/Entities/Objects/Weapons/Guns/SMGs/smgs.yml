@@ -493,26 +493,23 @@
     minAngle: 30
     maxAngle: 60
     fireRate: 24
-    burstFireRate: 48
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/vector.ogg
     selectedMode: FullAuto
     availableModes:
     - FullAuto
     - SemiAuto
-    shotsPerBurst: 2
-    burstCooldown: 0.255
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineTestHV
+        startingItem: MagazineHighVelocity
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - HVtestmagazine
+            - MagazineHighVelocity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -520,7 +517,7 @@
         priority: 1
         whitelist:
           tags:
-          - CartridgeHV
+          - CartridgeHighVelocity
   - type: MagazineVisuals
     magState: mag
     steps: 1
