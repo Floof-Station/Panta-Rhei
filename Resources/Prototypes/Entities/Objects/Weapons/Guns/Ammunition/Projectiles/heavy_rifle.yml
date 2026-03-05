@@ -66,3 +66,15 @@
       types:
         Piercing: 2 # Should be pretty balanced due to the firerate expected of these weapons.
     ignoreResistances: true
+
+- type: entity
+  id: BulletHighVelocityJHP
+  name: bullet (.10 high-velocity Hollow-Point)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Slash: 6
