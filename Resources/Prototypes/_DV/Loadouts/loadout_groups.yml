@@ -190,7 +190,7 @@
 
 - type: loadoutGroup
   id: CourierShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofCourierShoes, FloofShoes] # Floofstation
   name: loadout-group-courier-shoes
   loadouts:
   - BlackShoes

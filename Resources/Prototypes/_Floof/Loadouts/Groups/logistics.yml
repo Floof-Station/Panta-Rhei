@@ -25,6 +25,7 @@
   loadouts:
   - UnderSocksLOLogis
 
+# courier additions
 - type: loadoutGroup
   id: FloofCourierJumpsuit
   abstract: true
@@ -32,11 +33,12 @@
   maxLimit: 1
   loadouts:
   - UniformCourierDevy
+  - UniformCourierThong
 
 - type: loadoutGroup
   id: FloofCourierOuterclothing
   abstract: true
-  minLimit: 1
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - ClothingOuterDevy
@@ -49,3 +51,21 @@
   maxLimit: 1
   loadouts:
   - ClothingBackpackDuffelCourierDevy
+
+- type: loadoutGroup
+  id: FloofCourierShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesCourierDevy
+  - ClothingUnderSocksCourier
+
+- type: loadoutGroup
+  id: FloofCourierGloves
+  name: loadout-group-logistics-courier-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsCourierWarmers
