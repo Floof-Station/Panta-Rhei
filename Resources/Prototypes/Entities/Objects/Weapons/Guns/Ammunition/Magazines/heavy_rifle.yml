@@ -114,7 +114,7 @@
 - type: entity
   id: MagazineHVSubMachineGunAP
   name: PDW magazine (.10 high-velocity Armor-Piercing)
-  parent: BaseMagazineHVSubMachineGun
+  parent: BaseMagazineHighVelocitySubMachineGun
   description: 24-round double-stack magazine for PDWs. Intended to hold armor-piercing kenetic ammunition.
   components:
   - type: BallisticAmmoProvider
