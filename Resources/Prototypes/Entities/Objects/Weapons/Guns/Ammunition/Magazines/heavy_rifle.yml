@@ -210,16 +210,15 @@
 
   # High-Velocity test:
 - type: entity
-  id: MagazineHVSubMachineGunTEST
-  name: SMG magazine (.45 magnum)
-  parent: [ BaseItem, BaseSecurityContraband ]
+  id: BaseMagazineTestHV
+  name: PDW Testing Magazine
+  parent: BaseItem
   abstract: true
   components:
   - type: Tag
     tags:
-    - testmagazine
+    - MagazineTestHV
   - type: BallisticAmmoProvider
-    proto: null
     mayTransfer: true
     whitelist:
       tags:
@@ -231,18 +230,12 @@
     containers:
       ballistic-ammo: !type:Container
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Magnum/magnum_smg_mag.rsi
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/high_velocity_PDW_mag.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-left-mag
-      right:
-      - state: inhand-right-mag
   - type: MagazineVisuals
     magState: mag
     steps: 2
