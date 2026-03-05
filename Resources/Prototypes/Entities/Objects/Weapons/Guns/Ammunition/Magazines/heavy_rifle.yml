@@ -165,7 +165,7 @@
   id: MagazineHVSubMachineGunUranium # Only really added to fix an temporary issue.
   name: PDW magazine (.10 high-velocity uranium)
   description: 24-round double-stack magazine for PDWs. Intended to hold exotic uranium-core ammunition.
-  parent: BaseMagazinePistolHighCapacity
+  parent: BaseMagazineHighVelocitySubMachineGun
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeHighVelocityUranium
