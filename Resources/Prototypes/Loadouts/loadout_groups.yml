@@ -961,7 +961,7 @@
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
-  parent: [FloofLoThong, FloofJumpsuits] # Floofstation
+  parent: [FloofLoThong, CargoTechnicianJumpsuit] # Floofstation
   name: loadout-group-quartermaster-jumpsuit
   loadouts:
   - QuartermasterJumpsuit
@@ -1104,7 +1104,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
-  parent: [StationEngineerJumpsuit, FloofCeThong, FloofJumpsuits] # Floofstation
+  parent: [FloofCeThong, SeniorEngineerJumpsuit] # Floofstation
   name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
@@ -1334,7 +1334,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
-  parent: [FloofMystaThong, FloofJumpsuits] # Floofstation
+  parent: [FloofMystaThong, SeniorResearcherJumpsuits] # Floofstation
   name: loadout-group-research-director-jumpsuit
   loadouts:
   - ResearchDirectorJumpsuit
@@ -1485,7 +1485,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
-  parent: [FloofSecurityJumpsuits, FloofHosThong, FloofJumpsuits] # Floofstation
+  parent: [FloofHosThong, FloofSecurityJumpsuits, SeniorOfficerJumpsuits, ] # Floofstation
   name: loadout-group-head-of-security-jumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
@@ -1752,7 +1752,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
-  parent: [FloofCmoThong, FloofJumpsuits] # Floofstation
+  parent: [FloofCmoThong, SeniorPhysicianJumpsuits] # Floofstation
   name: loadout-group-chief-medical-officer-jumpsuit
   loadouts:
   - ChiefMedicalOfficerJumpsuit
