@@ -19,3 +19,50 @@
     damage:
       types:
         Piercing: 5
+
+# High-Velocity
+- type: entity
+  id: BulletHV
+  name: bullet (.10 high-velocity)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+
+- type: entity
+  id: BulletHVPractice
+  name: bullet (.10 high-velocity practice)
+  parent: BulletHV
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+
+- type: entity
+  id: BulletHVUranium
+  name: bullet (.10 high-velocity uranium)
+  parent: BulletHV
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 2
+        Radiation: 5
+
+- type: entity
+  id: BulletHVAP
+  name: bullet (.10 high-velocity Armor-Piercing)
+  parent: BulletHV
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 2 # Should be pretty balanced due to the firerate expected of these weapons.
+    ignoreResistances: true
