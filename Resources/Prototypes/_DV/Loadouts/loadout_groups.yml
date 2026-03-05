@@ -299,7 +299,7 @@
 
 - type: loadoutGroup
   id: BrigMedicJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofCorpsmanJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-brig-medic-jumpsuit
   loadouts:
   - BrigMedicJumpsuit
