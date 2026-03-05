@@ -996,3 +996,29 @@ Entries:
       message: Increased Arachne and IPC head, headside, headtop and eyes markings
   id: 123
   time: '2026-03-04T18:42:15.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed a couple issues with footprints. See PR 197 for more details.
+  id: 124
+  time: '2026-03-05T03:27:36.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: Added new sounds for airlocks from Funky and closets from Goob.
+    - type: Add
+      message: >-
+        Item interaction sounds make a return! Objects such as paper, tools,
+        clothing, and more now have sound effects for being picked up and put
+        down.
+  id: 125
+  time: '2026-03-05T03:44:46.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Reduced head (top) marking points back down to 1. Please report if there
+        are any other marking points with a limit greater than 1 and forced
+        default markings.
+  id: 126
+  time: '2026-03-05T03:46:58.0000000+00:00'

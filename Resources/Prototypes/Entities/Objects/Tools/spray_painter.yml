@@ -7,6 +7,19 @@
   - type: Sprite
     sprite: Objects/Tools/spray_painter.rsi
     state: spray_painter
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound:
+      path: /Audio/_EE/Items/Handling/welder_pickup.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_EE/Items/Handling/welder_drop.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/welder_drop.ogg
   - type: Item
     sprite: Objects/Tools/spray_painter.rsi
   - type: ActivatableUI
