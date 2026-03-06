@@ -2,13 +2,13 @@ using Content.Server.Polymorph.Systems;
 using Content.Shared.Zombies;
 using Content.Server.Actions;
 using Content.Server.Popups;
-using Content.Shared.Geras;
+using Content.Shared._Floof.Geras;
 using Robust.Shared.Player;
 
-namespace Content.Server.Geras;
+namespace Content.Server._Floof.Geras;
 
 /// <inheritdoc/>
-public sealed class GerasSystem : SharedGerasSystem
+public sealed class GerasSystem : EntitySystem
 {
     [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
     [Dependency] private readonly ActionsSystem _actionsSystem = default!;
