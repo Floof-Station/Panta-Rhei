@@ -43,6 +43,8 @@ namespace Content.Shared.Humanoid
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         Genital, // Floof: Attempting to port coyotes marking system. its not going well
+        Boobs,
+        Butt,
         TaurBodyConnector,// Floof: Required as "Mini-framework" for tauric species
         TaurBody// Floof: Required as "Mini-framework" for tauric species
     }
