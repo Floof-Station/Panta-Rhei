@@ -112,16 +112,16 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
+        Blunt: 0.6
+        Slash: 0.6
         Piercing: 0.6
         Heat: 0.5
         Caustic: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: ClothingSpeedModifier
-    walkModifier: 0.85
-    sprintModifier: 0.85
+    walkModifier: 0.9
+    sprintModifier: 0.9
   - type: HeldSpeedModifier
   - type: GroupExamine
   - type: StaminaResistance # DeltaV
