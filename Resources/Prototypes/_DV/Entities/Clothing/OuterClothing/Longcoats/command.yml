@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingOuterArmorCaptainCarapace, BaseCommandContraband, ClothingOuterStorageBase] #floofstation give pockets
+  parent: [BaseCommandContraband, ClothingOuterStorageBase] #floofstation give pockets
   id: ClothingLongcoatCaptainArmored
   name: captain's armored longcoat
   description: A navy blue double-breasted longcoat with gold embelleshments, specifically designed for the captain. It's been reinforced with a special alloy for some added protection.
@@ -11,6 +11,14 @@
   - type: TemperatureProtection # Doesn't inherit ClothingOuterWinterCoat because we don't want pockets on this
     heatingCoefficient: 1.1
     coolingCoefficient: 0.1
+  - type: Armor # Give armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Caustic: 0.7
 
 - type: entity
   parent: [ClothingOuterWinterCoat, BaseCommandContraband]
