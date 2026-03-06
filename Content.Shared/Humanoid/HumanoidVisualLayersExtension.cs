@@ -84,8 +84,9 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.RFoot;
                     break;
                 // Shitmed Change End
-                case HumanoidVisualLayers.Gential:
-                    yield return HumanoidVisualLayers.Gential;
+                // Floof change, porting coyote markings. Not sure what this even does but the guide tells me to do it
+                case HumanoidVisualLayers.Genital:
+                    yield return HumanoidVisualLayers.Genital;
                     break;
                 default:
                     yield break;
