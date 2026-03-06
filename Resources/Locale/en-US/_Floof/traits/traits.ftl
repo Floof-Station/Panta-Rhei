@@ -55,3 +55,37 @@ trait-description-CyberEyesOmni =
     This expensive implant provides the combined benefits of a SecHud and MedHud.
     Note that this augmentation is considered Contraband for anyone not under the employ of command personnel,
     and may be disabled by your employer before dispatch to the station.
+
+trait-dispel-name = Normality Projection
+trait-dispel-desc = 
+    Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
+    This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
+    or to immediately end psychic effects.
+
+trait-metapsionic-name = Metapsion
+trait-metapsionic-desc = 
+    You are able to intuitively sense the activation of psionic abilities, as well as send out a 'scanning' pulse
+    to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
+    scan individual entities. Still, it is better than being blind.
+
+trait-precognition-name = Prophecy
+trait-precognition-desc =
+    You are able to glimpse the future in the form of vague and cryptic messages.
+    This rare power gave form to many religions on primitive worlds, carriers of such a gift were granted titles like prophet.
+    Modern psicence disproves this as a psionic gift rather then any divinity.
+
+trait-psychokinetic-scream-name = Psychokinetic Scream
+trait-psychokinetic-scream-desc =
+    You are able to emit a psychokinetic burst, similiar to a scream to disorientate people and shatter lights.
+    Such screams are reminiscent of mythological creatures known as Banshees, which are known as harbingers of grief and death.
+    There are rumors that exist of an alien military in the outer rim which fields soldiers with this power as melee shock troops.
+
+trait-psionic-regeneration-name = Psionic Regeneration
+trait-psionic-regeneration-desc =
+    Your body and more importantly heart is capable channelling φ into limited regeneration.
+    After a short delay your body creates a chemical known as Prometheum which rapidly burns through your energy reserves to heal you.
+
+trait-religious-name = Religious
+trait-religous-desc = 
+    You are deeply religious, and a holy book in your hands is capable of miracles.
+    (Bible not included)
