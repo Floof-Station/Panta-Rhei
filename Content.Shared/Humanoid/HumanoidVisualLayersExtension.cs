@@ -84,6 +84,9 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.RFoot;
                     break;
                 // Shitmed Change End
+                case HumanoidVisualLayers.Gential:
+                    yield return HumanoidVisualLayers.Gential;
+                    break;
                 default:
                     yield break;
             }

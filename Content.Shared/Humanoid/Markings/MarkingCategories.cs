@@ -5,6 +5,7 @@ namespace Content.Shared.Humanoid.Markings
     [Serializable, NetSerializable]
     public enum MarkingCategories : byte
     {
+        Gential,
         TaurBody,
         TaurBodyConnector,
         Special,
@@ -70,6 +71,7 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.LArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer
                 HumanoidVisualLayers.TaurBodyConnector => MarkingCategories.TaurBodyConnector, // Floof: species-specific layer
                 HumanoidVisualLayers.TaurBody => MarkingCategories.TaurBody, // Floof: species-specific layer
+                HumanoidVisualLayers.Gential => MarkingCategories.Gential,
                 _ => MarkingCategories.Overlay
             };
         }
