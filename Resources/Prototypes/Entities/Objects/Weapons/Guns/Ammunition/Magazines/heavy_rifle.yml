@@ -89,6 +89,7 @@
 - type: entity
   id: MagazineHighVelocityRubber
   name: "magazine (.10 high-velocity Rubber)"
+  description: A 24 round magazine designed to handle the speed of rapid fire weaponry. Carries Non-Lethal rubber rounds.
   parent: BaseMagazineHighVelocity
   components:
   - type: BallisticAmmoProvider
@@ -113,6 +114,7 @@
 - type: entity
   id: MagazineHighVelocityJHP
   name: "magazine (.10 high-velocity Hollow-Point)"
+  description: A 24 round magazine designed to handle the speed of rapid fire weaponry. With Hollow-point, it loses out on penetration power for more slashing, not super effective against armor.
   parent: BaseMagazineHighVelocity
   components:
   - type: BallisticAmmoProvider
@@ -137,6 +139,7 @@
 - type: entity
   id: MagazineHighVelocityPractice
   name: "magazine (.10 high-velocity Practice)"
+  description: A 24 round magazine designed to handle the speed of rapid fire weaponry. Carries non-lethal chalk rounds for training.
   parent: BaseMagazineHighVelocity
   components:
   - type: BallisticAmmoProvider
@@ -161,6 +164,7 @@
 - type: entity
   id: MagazineHighVelocityUranium
   name: "magazine (.10 high-velocity Uranium)"
+  description: A 24 round magazine designed to handle the speed of rapid fire weaponry. Loses potenial penetration power for the damage done through radiation.
   parent: BaseMagazineHighVelocity
   components:
   - type: BallisticAmmoProvider
@@ -185,6 +189,7 @@
 - type: entity
   id: MagazineHighVelocityAP
   name: "magazine (.10 high-velocity Armor-Piercing)"
+  description: A 24 round magazine designed to handle the speed of rapid fire weaponry. Carries Armor-Piercing ammo, though loses out on kenetic damage.
   parent: BaseMagazineHighVelocity
   components:
   - type: BallisticAmmoProvider

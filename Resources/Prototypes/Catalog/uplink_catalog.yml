@@ -190,8 +190,8 @@
 
 - type: listing
   id: UplinkVectorG3sBundle
-  name: uplink-G3s-bundle-name
-  description: uplink-c20r-bundle-desc
+  name: "Vector G3s Bundle"
+  description: "A modified version of the legal G2 varient. We've cut off the stock, added a suppressor, but dont expect it to help all that much, its mostly there so you don't burst your eardrums."
   icon: { sprite: /Textures/Objects/Weapons/Guns/SMGs/vectormod.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateFilledVector
   discountCategory: veryRareDiscounts
@@ -615,33 +615,43 @@
 # For the Vector
 - type: listing
   id: UplinkVectorAmmo
-  name: uplink-vector-ammo-name
-  description: uplink-vector-ammo-desc
+  name: ".10 High-Velocity Magazine"
+  description: "A 24 round magazine designed to handle the speed of rapid fire weaponry."
   productEntity: MagazineHighVelocity
   cost:
-    Telecrystal: 2
+    Telecrystal: 1
   categories:
   - UplinkAmmo
 
-#  - type: listing
-#    id: UplinkVectorBoxJHP
-#    name: Placeholder
-#    description: Placeholder
-#    productEntity: Placeholder
-#    cost:
-#      Telecrystal: 4
-#    categories:
-#    - UplinkAmmo
+  - type: listing
+    id: UplinkVectorBoxAP
+    name: ".10 High-Velocity Armor Piercing Magazine"
+    description: "A 24 round magazine designed to handle the speed of rapid fire weaponry. Loses out on total damage in turn for it's piercing capibilities."
+    productEntity: MagazineHighVelocityAP
+    cost:
+      Telecrystal: 2
+    categories:
+    - UplinkAmmo
 
-#  - type: listing
-#    id: UplinkVectorBoxAP
-#    name: Placeholder
-#    description: Placeholder
-#    productEntity: Placeholder
-#    cost:
-#      Telecrystal: 4
-#    categories:
-#    - UplinkAmmo
+  - type: listing
+    id: UplinkVectorAmmoRubber
+    name: ".10 High-Velocity Rubber Magazine"
+    description: "A 24 round magazine designed to handle the speed of rapid fire weaponry. A non-lethal option with rubber tipped rounds."
+    productEntity: MagazineHighVelocityPractice
+    cost:
+      Telecrystal: 2
+    categories:
+    - UplinkAmmo
+
+  - type: listing
+    id: UplinkVectorAmmoJHP
+    name: ".10 High-Velocity Hollow-Point Magazine"
+    description: "A 24 round magazine designed to handle the speed of rapid fire weaponry. Loses out it's penetration power for more damage against skin and scales."
+    productEntity: MagazineHighVelocityJHP
+    cost:
+      Telecrystal: 3
+    categories:
+    - UplinkAmmo
 
 # for the hristov
 - type: listing
