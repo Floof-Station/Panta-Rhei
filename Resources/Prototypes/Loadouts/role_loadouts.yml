@@ -84,6 +84,8 @@
   - BartenderJumpsuit
   - CommonBackpack
   - BartenderOuterClothing
+  - FloofBartenderGloves # Floofstation - give bartender gloves
+  - FloofBartenderShoes # Floofstation - give bartender shoes
   - BartenderPDADelta # DeltaV
   - BartenderGlasses # DeltaV - replaces Glasses
   - Survival
@@ -114,8 +116,8 @@
   - ChefJumpsuit
   - CommonBackpack
   - ChefOuterClothing
-  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
-  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
+  - FloofChefGloves # Floofstation - give chef gloves
+  - FloofChefShoes # Floofstation, give chef shoes
   - ChefPDADelta # DeltaV
   - Glasses
   - Survival
@@ -162,8 +164,8 @@
   - ChaplainNeck
   - ChaplainJumpsuit
   - CommonBackpack
-  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
-  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
+  - FloofChaplainGloves # Floofstation -  this job dosent get to pick shoes for some reason
+  - FloofChaplainShoes # Floofstation, give them access to basic gloves from passengers
   - ChaplainOuterClothing
   - ChaplainBible
   - Glasses
@@ -180,6 +182,7 @@
   - JanitorNeck # DeltaV
   - JanitorJumpsuit
   - JanitorGloves
+  - FloofJanitorShoes # Floofstation - let janitors pick their shoes
   - JanitorPDADelta # DeltaV
   - CommonBackpack
   - JanitorOuterClothing
@@ -198,6 +201,8 @@
   - BotanistJumpsuit
   - BotanistBackpack
   - BotanistOuterClothing
+  - FloofBotanistGloves # Floofstation - give botanists gloves
+  - FloofBotanistShoes # Floofstation - give botanists shoes
   - Glasses
   - Survival
   - BotanistJobTrinkets
@@ -247,8 +252,8 @@
   - MusicianJumpsuit
   - MusicianNeck
   - CommonBackpack
-  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
-  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
+  - FloofMusicianGloves # Floofstation -  give musician access to gloves
+  - FloofMusicianShoes # Floofstation - give musician access to shoes
   - MusicianOuterClothing
   - Glasses
   - Survival
@@ -265,6 +270,7 @@
   - QuartermasterNeck
   - QuartermasterJumpsuit
   - CargoTechnicianBackpack
+  - FloofLoGloves # Floofstation let lo have gloves
   - QuartermasterOuterClothing
   - QuartermasterShoes
   - Glasses
@@ -281,8 +287,7 @@
   - CargoTechnicianNeck # DeltaV
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
-  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
-  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
+  - FloofCargotechGloves # Floofstation, give them access to basic gloves from passengers
   - CargoTechnicianOuterClothing
   - CargoPDADelta # DeltaV
   - CargoTechnicianShoes
@@ -300,7 +305,6 @@
   - GroupTankHarness
   - SalvageSpecialistBackpack
   - FloofSalvageSpecialistBelts # Floofstation
-  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
   - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - SalvageSpecialistOuterClothing
   - SalvagePDADelta # DeltaV
@@ -496,7 +500,8 @@
   - DetectiveJumpsuitDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveJumpsuit
   - SecurityBackpack
   - DetectiveOuterClothingDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveOuterClothing
-  - SecurityShoes
+  - FloofDetectiveGloves # Floofstation - detective gloves
+  - FloofDetectiveShoes # Floofstation - detective shoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
   - DetectiveJobTrinkets
@@ -597,7 +602,7 @@
   - MedicalMask
   - MedicalDoctorNeck # DeltaV
   - ParamedicJumpsuit
-  - MedicalGloves
+  - FloofParamedGloves # Floofstation
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes

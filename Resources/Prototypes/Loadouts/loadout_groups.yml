@@ -449,7 +449,7 @@
 
 - type: loadoutGroup
   id: BartenderJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofBartenderJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-bartender-jumpsuit
   loadouts:
   - BartenderJumpsuit
@@ -504,7 +504,7 @@
 
 - type: loadoutGroup
   id: ChefJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofChefJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chef-jumpsuit
   loadouts:
   - ChefJumpsuit
@@ -610,7 +610,7 @@
 
 - type: loadoutGroup
   id: ChaplainJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofChaplainJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chaplain-jumpsuit
   loadouts:
   - ChaplainJumpsuit
@@ -671,7 +671,7 @@
 
 - type: loadoutGroup
   id: JanitorJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofJanitorJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-janitor-jumpsuit
   loadouts:
   - JanitorJumpsuit
@@ -679,7 +679,7 @@
 
 - type: loadoutGroup
   id: JanitorGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofJanitorGloves, FloofGloves] # Floofstation
   name: loadout-group-janitor-gloves
   minLimit: 0
   loadouts:
@@ -714,7 +714,7 @@
 
 - type: loadoutGroup
   id: BotanistJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofBotanistJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-botanist-jumpsuit
   loadouts:
   - BotanistJumpsuit
@@ -887,7 +887,7 @@
 
 - type: loadoutGroup
   id: MusicianJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofMusicianJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-musician-jumpsuit
   loadouts:
   - MusicianJumpsuit
@@ -961,7 +961,7 @@
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
-  parent: [FloofLoThong, FloofJumpsuits] # Floofstation
+  parent: [FloofLoThong, CargoTechnicianJumpsuit] # Floofstation
   name: loadout-group-quartermaster-jumpsuit
   loadouts:
   - QuartermasterJumpsuit
@@ -1016,7 +1016,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofCargotechJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-cargo-technician-jumpsuit
   loadouts:
   - ClothingUniformJumpsuitCargoTechPants # DeltaV
@@ -1044,7 +1044,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofCargotechShoes, FloofShoes] # Floofstation
   name: loadout-group-cargo-technician-shoes
   loadouts:
   - BlackShoes
@@ -1095,7 +1095,7 @@
 # Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
-  parent: [FloofHats] # floofstation
+  parent: [AtmosphericTechnicianHead, FloofHats] # floofstation
   name: loadout-group-chief-engineer-head
   minLimit: 0
   loadouts:
@@ -1104,7 +1104,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
-  parent: [FloofCeThong, FloofJumpsuits] # Floofstation
+  parent: [FloofCeThong, SeniorEngineerJumpsuit] # Floofstation
   name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
@@ -1129,7 +1129,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [StationEngineerOuterClothing, FloofOuterClothing] # Floofstation
   name: loadout-group-chief-engineer-outerclothing
   minLimit: 0
   loadouts:
@@ -1138,7 +1138,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
-  parent: [FloofCeGloves, FloofShoes] # Floofstation
+  parent: [FloofCeSocks, FloofShoes] # Floofstation
   name: loadout-group-chief-engineer-shoes
   loadouts:
   #- BrownShoes # DeltaV - Engi loadout rework
@@ -1163,6 +1163,7 @@
 
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
+  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
   name: loadout-group-technical-assistant-jumpsuit
   loadouts:
   - YellowJumpsuit
@@ -1188,7 +1189,7 @@
 
 - type: loadoutGroup
   id: StationEngineerJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofEngineeringJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-station-engineer-jumpsuit
   loadouts:
   - StationEngineerJumpsuit
@@ -1217,7 +1218,7 @@
 
 - type: loadoutGroup
   id: StationEngineerShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
   name: loadout-group-station-engineer-shoes
   loadouts:
   - WorkBoots
@@ -1248,7 +1249,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [StationEngineerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-atmospheric-technician-jumpsuit
   loadouts:
   - AtmosphericTechnicianJumpsuit
@@ -1258,7 +1259,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianOuterClothing
-  parent: [FloofOuterClothing] # floofstation
+  parent: [StationEngineerOuterClothing, FloofOuterClothing] # floofstation
   name: loadout-group-atmospheric-technician-outerclothing
   minLimit: 0
   loadouts:
@@ -1275,7 +1276,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
   name: loadout-group-atmospheric-technician-shoes
   loadouts:
   #- WhiteShoes # DeltaV - Engi loadout rework
@@ -1334,7 +1335,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
-  parent: [FloofMystaThong, FloofJumpsuits] # Floofstation
+  parent: [FloofMystaThong, SeniorResearcherJumpsuits] # Floofstation
   name: loadout-group-research-director-jumpsuit
   loadouts:
   - ResearchDirectorJumpsuit
@@ -1388,7 +1389,7 @@
 
 - type: loadoutGroup
   id: ScientistJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofScientistJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-scientist-jumpsuit
   loadouts:
   - ScientistJumpsuit
@@ -1424,7 +1425,7 @@
 
 - type: loadoutGroup
   id: ScientistGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofScientistGloves, FloofGloves] # Floofstation
   name: loadout-group-scientist-gloves
   minLimit: 0
   loadouts:
@@ -1434,7 +1435,7 @@
 
 - type: loadoutGroup
   id: ScientistShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofScientistShoes, FloofShoes] # Floofstation
   name: loadout-group-scientist-shoes
   loadouts:
   - WhiteShoes
@@ -1485,7 +1486,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
-  parent: [FloofSecurityJumpsuits, FloofHosThong, FloofJumpsuits] # Floofstation
+  parent: [FloofHosThong, FloofSecurityJumpsuits, SeniorOfficerJumpsuits, ] # Floofstation
   name: loadout-group-head-of-security-jumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
@@ -1554,7 +1555,7 @@
 
 - type: loadoutGroup
   id: WardenJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-warden-jumpsuit
   loadouts:
   - WardenJumpsuit
@@ -1598,7 +1599,7 @@
 
 - type: loadoutGroup
   id: SecurityJumpsuit
-  parent: [FloofSecurityJumpsuits, FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityJumpsuits, FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
@@ -1645,7 +1646,7 @@
 
 - type: loadoutGroup
   id: SecurityShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofSecurityOfficerShoes, FloofShoes] # Floofstation
   name: loadout-group-security-shoes
   loadouts:
   - CombatBoots # DeltaV
@@ -1689,7 +1690,7 @@
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofDetectiveJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-detective-jumpsuit
   loadouts:
   - DetectiveJumpsuit
@@ -1715,7 +1716,7 @@
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-security-cadet-jumpsuit
   loadouts:
   - RedJumpsuit
@@ -1752,7 +1753,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
-  parent: [FloofCmoThong, FloofJumpsuits] # Floofstation
+  parent: [FloofCmoThong, SeniorPhysicianJumpsuits] # Floofstation
   name: loadout-group-chief-medical-officer-jumpsuit
   loadouts:
   - ChiefMedicalOfficerJumpsuit
@@ -1813,7 +1814,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofMedicalDoctorJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-medical-doctor-jumpsuit
   loadouts:
   - MedicalDoctorJumpsuit
@@ -1845,7 +1846,7 @@
 
 - type: loadoutGroup
   id: MedicalShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofMedicalShoes, FloofShoes] # Floofstation
   name: loadout-group-medical-doctor-shoes
   loadouts:
   - WhiteShoes
@@ -1862,7 +1863,7 @@
 
 - type: loadoutGroup
   id: MedicalGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofMedicalDoctorGloves, FloofGloves] # Floofstation
   name: loadout-group-medical-gloves
   minLimit: 0
   loadouts:
@@ -1901,7 +1902,7 @@
 
 - type: loadoutGroup
   id: ChemistJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofChemistJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chemist-jumpsuit
   loadouts:
   - ChemistJumpsuit
@@ -1946,7 +1947,7 @@
 
 - type: loadoutGroup
   id: ParamedicJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofParamedJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-paramedic-jumpsuit
   loadouts:
   - ParamedicJumpsuit
@@ -1963,7 +1964,7 @@
 
 - type: loadoutGroup
   id: ParamedicShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofParamedShoes, FloofShoes] # Floofstation
   name: loadout-group-paramedic-shoes
   loadouts:
   - BlueShoes

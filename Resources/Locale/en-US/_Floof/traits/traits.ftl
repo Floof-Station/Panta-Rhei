@@ -32,12 +32,16 @@ trait-description-CyberEyes =
     The functionality of these implants can be extended with a variety of commercially available upgrades.
     This provides immunity from most bright flashes of light, such as those from welding arcs.
 
+trait-name-CyberEyesFlare = Cyber-Eyes: Flare Protection Module
+trait-description-CyberEyesFlare = Your Cyber-Eyes have been upgraded with a set of photochromic lenses that automatically darken in response to intense light.
+    This helps prevent optical damage caused by events such as exposure to welding arcs.
+
 trait-name-CyberEyesNightVision = Cyber-Eyes: Light Amplification Module
-trait-description-CyberEyesNightVision = 
+trait-description-CyberEyesNightVision =
     Your Cyber-Eyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
 
 trait-name-CyberEyesThermoVision = Cyber-Eyes: Thermographic Scanner Module
-trait-description-CyberEyesThermoVision = 
+trait-description-CyberEyesThermoVision =
     Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
     biological life forms. It can even detect individuals through the walls of a station.
 
@@ -48,7 +52,7 @@ trait-description-CyberEyesSecurity =
 
 trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
 trait-description-CyberEyesMedical =
-    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of most organisms, and discern the chemicals in any solution.
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud allowing you to track the relative health condition of most organisms.
 
 trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
 trait-description-CyberEyesOmni =

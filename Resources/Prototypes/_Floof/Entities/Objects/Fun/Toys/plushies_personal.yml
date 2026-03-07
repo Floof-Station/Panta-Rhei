@@ -1572,3 +1572,59 @@
     sound: *cat_hiss2
   - type: MeleeWeapon
     soundHit: *cat_hiss2
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieExpieMobster
+  name: Expie mobster plushie
+  description: The weight of this plushie’s gaze makes you want to hand over all of your money. Why does the moff have a crown? IS THAT A GU—”
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mobster
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &ltrifle_cock
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *ltrifle_cock
+  - type: EmitSoundOnLand
+    sound: &moth_chitter
+      path: /Audio/_DV/Voice/Chitinid/moth_chitter.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *moth_chitter
+  - type: MeleeWeapon
+    soundHit: *moth_chitter
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieMailTech 
+  name: Mail tech plushie
+  description: Cargo's strongest soldiers, for when Delivery Must Complete. #the text is a refrence and its intended to be like that
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mailtech
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &skates
+      path: /Audio/Items/Toys/skates.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *skates
+  - type: EmitSoundOnLand
+    sound: &hit_kick
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *hit_kick
+  - type: MeleeWeapon
+    soundHit: *hit_kick
