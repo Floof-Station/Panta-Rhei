@@ -37,7 +37,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly SurgeryCleanSystem _clean = default!; // DeltaV
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // DeltaV - surgery cross contamination
-    [Dependency] private readonly RottingSystem _rot = default!;
+    [Dependency] private readonly RottingSystem _rot = default!; // Euphoria
 
     private readonly HashSet<string> _dirtyDnas = new(); // DeltaV
 
@@ -239,7 +239,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
 
     private void OnSurgerySpecialDamageChange(Entity<SurgerySpecialDamageChangeEffectComponent> ent, ref SurgeryStepDamageChangeEvent args)
     {
-        // Im killing this shit soon too, inshallah.
+        // Im killing this shit soon too, inshallah. // Euphoria - it stays for now
         if (ent.Comp.DamageType == "Rot")
              _rot.ReduceAccumulator(args.Body, TimeSpan.FromSeconds(2147483648)); // BEHOLD, SHITCODE THAT I JUST COPY PASTED. I'll redo it at some point, pinky swear :) 
         /*else if (ent.Comp.DamageType == "Eye"
