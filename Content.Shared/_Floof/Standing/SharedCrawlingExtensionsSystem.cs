@@ -47,7 +47,9 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
             || session.AttachedEntity is not {} uid
             || !TryComp<StandingStateComponent>(uid, out var standingState)
             || !TryComp<CrawlingExtensionsComponent>(uid, out var ext)
-            || !_actionBlocker.CanConsciouslyPerformAction(uid)) // Floof - replaced CanInteract with consciousness
+            || !_actionBlocker.CanConsciouslyPerformAction(uid)
+            || !_timing.IsFirstTimePredicted
+            || !ext.CanCrawlUnderTables)
             return;
 
         var newState = !ext.IsCrawlingUnder;
@@ -66,7 +68,9 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
             || !TryComp<StandingStateComponent>(uid, out var standingState)
             || !TryComp<CrawlingExtensionsComponent>(uid, out var ext)
             || !TryComp<AppearanceComponent>(uid, out var appearence)
-            || !_actionBlocker.CanConsciouslyPerformAction(uid))
+            || !_actionBlocker.CanConsciouslyPerformAction(uid)
+            || !_timing.IsFirstTimePredicted
+            || !ext.CanChangeDirections)
             return;
 
         ext.InvertedCrawlingDirection = !ext.InvertedCrawlingDirection;

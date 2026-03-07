@@ -9,7 +9,7 @@ namespace Content.Shared._Floof.Standing;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CrawlingExtensionsComponent : Component
 {
-    [DataField]
+    [DataField, AutoNetworkedField]
     public bool CanCrawlUnderTables = true, CanChangeDirections = true;
 
     #region Under-table crawling
