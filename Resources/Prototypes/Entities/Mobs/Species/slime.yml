@@ -65,6 +65,7 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime
+  - type: Geras # Euphoria - Readded this component to allow Geras to work.
   - type: PassiveDamage # Around 8 damage a minute healed
     allowedStates:
     - Alive

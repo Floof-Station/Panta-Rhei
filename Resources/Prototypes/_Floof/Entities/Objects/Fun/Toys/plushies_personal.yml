@@ -1516,3 +1516,115 @@
         density: 10
         mask:
         - ItemMask
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieWizard
+  name: Wizard plushie
+  description: A Wizard Plushie with glowing Purple and Blue eyes, This one has a not-so-evil aura to it, smells like violets.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: wizard
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &womanlaugh
+      path: /Audio/Voice/Human/womanlaugh.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *womanlaugh
+  - type: EmitSoundOnLand
+    sound: &cat_scream2
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_scream2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *cat_scream2
+  - type: MeleeWeapon
+    soundHit: *cat_scream2
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieGrumpyCmoKitty
+  name: Grumpy CMO kitty plushie
+  description: Feels soft, but looks so angry... and smells like vanilla?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: grumpycmo
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &cat_meow2
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow2.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *cat_meow2
+  - type: EmitSoundOnLand
+    sound: &cat_hiss2
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *cat_hiss2
+  - type: MeleeWeapon
+    soundHit: *cat_hiss2
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieExpieMobster
+  name: Expie mobster plushie
+  description: The weight of this plushie’s gaze makes you want to hand over all of your money. Why does the moff have a crown? IS THAT A GU—”
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mobster
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &ltrifle_cock
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *ltrifle_cock
+  - type: EmitSoundOnLand
+    sound: &moth_chitter
+      path: /Audio/_DV/Voice/Chitinid/moth_chitter.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *moth_chitter
+  - type: MeleeWeapon
+    soundHit: *moth_chitter
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieMailTech 
+  name: Mail tech plushie
+  description: Cargo's strongest soldiers, for when Delivery Must Complete. #the text is a refrence and its intended to be like that
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mailtech
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &skates
+      path: /Audio/Items/Toys/skates.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *skates
+  - type: EmitSoundOnLand
+    sound: &hit_kick
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *hit_kick
+  - type: MeleeWeapon
+    soundHit: *hit_kick

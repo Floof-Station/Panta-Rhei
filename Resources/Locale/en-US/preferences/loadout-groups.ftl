@@ -20,6 +20,9 @@ loadout-group-vox-tank = Vox-specific gas tank
 loadout-group-pocket-tank-double = Species-specific double emergency tank in pocket
 loadout-group-survival-mime = Mime Survival Box
 loadout-group-smokables = Smokables
+loadout-group-pets = Pets
+loadout-group-sex-toys = Sex Toys
+loadout-group-plushies = Plushies
 
 # Command
 loadout-group-captain-head = Captain head

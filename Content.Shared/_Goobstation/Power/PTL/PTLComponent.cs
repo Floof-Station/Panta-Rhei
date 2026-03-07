@@ -17,8 +17,8 @@ public sealed partial class PTLComponent : Component
 
     [DataField, AutoNetworkedField] public double SpesosHeld = 0f;
 
-    [DataField] public double MinShootPower = 1e6; // 1 MJ
-    [DataField] public double MaxEnergyPerShot = 1e7; // 100 MJ
+    [DataField] public double MinShootPower = 5e6f; // 1 MJ
+    [DataField] public double MaxEnergyPerShot = 5e6; // 5 MJ
 
     [DataField, AutoNetworkedField] public float ShootDelay = 15f;
     [DataField, AutoNetworkedField] public MinMax ShootDelayThreshold = new MinMax(15, 20);

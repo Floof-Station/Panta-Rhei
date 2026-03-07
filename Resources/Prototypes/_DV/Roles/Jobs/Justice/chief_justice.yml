@@ -4,9 +4,9 @@
   description: job-description-chief-justice
   playTimeTracker: JobChiefJustice
   requirements:
-#    - !type:RoleTimeRequirement # DeltaV - Comment out clerk time till more people have clerk time. Maybe a week or so.
-#      role: JobClerk
-#      time: 10h
+    - !type:RoleTimeRequirement # Floofstation - detla-v disabled but we want our CJ to have clerk time
+      role: JobClerk
+      time: 5h # Floofstatoin - lowering the time requirement from 10 to 5 hours becuase clerk is one job slot
     - !type:RoleTimeRequirement
       role: JobLawyer
       time: 10h
@@ -21,7 +21,7 @@
   requireAdminNotify: true
   supervisors: job-supervisors-captain
   canBeAntag: false
-  whitelisted: true # DeltaV: whitelist requirement because I don't want any dingus judges
+  whitelisted: false # floofstation - we don't want CJ to be whitelisted like delta-v had it
   access:
   - Command
   - ChiefJustice

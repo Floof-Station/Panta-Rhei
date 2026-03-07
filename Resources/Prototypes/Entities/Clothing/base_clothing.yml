@@ -17,6 +17,21 @@
   - type: FlavorProfile #yes not every peice of clothing is edible, but this way every edible piece of clothing should have the flavor without me having to track down what specific clothing can and cannot be eaten.
     flavors:
     - fiber
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound:
+      path: /Audio/_EE/Items/Handling/cloth_pickup.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_EE/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_EE/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -4
 
 - type: entity
   abstract: true
@@ -30,6 +45,23 @@
   id: AllowSuitStorageClothing
   components:
   - type: AllowSuitStorage
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound:
+      path: /Audio/_EE/Items/Handling/cloth_pickup.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_EE/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_EE/Items/Handling/cloth_drop.ogg
+      params:
+        volume: -4
+
+
 
 - type: entity
   abstract: true

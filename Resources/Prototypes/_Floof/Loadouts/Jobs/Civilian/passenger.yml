@@ -415,6 +415,7 @@
   id: ClothingShoesBootsCowboyFancy
   equipment:
     shoes: ClothingShoesBootsCowboyFancy
+  groupBy: "cowboy boots"
 
 - type: loadout
   id: ClothingShoesBootsCowboyBlack
@@ -453,6 +454,11 @@
   id: ClothingShoesBootsWinter
   equipment:
     shoes: ClothingShoesBootsWinter
+
+- type: loadout
+  id: ShoesBootsFishing
+  equipment:
+    shoes: ClothingShoesBootsFishing
 
 # arm warmers
 - type: loadout
@@ -638,6 +644,11 @@
     outerClothing: ClothingShrimpFishermanSuit
 
 # hats
+- type: loadout
+  id: HeadHatSolidHeadband
+  equipment:
+    head: ClothingHeadHatSolidHeadband
+
 - type: loadout
   id: HeadHatHairflower
   equipment:

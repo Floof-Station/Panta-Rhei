@@ -63,7 +63,7 @@
       points: 1
       required: false
     Head:
-      points: 1
+      points: 6
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Face:
@@ -94,7 +94,7 @@
       points: 1
       required: false
     Eyes: # DeltaV - Moves screen to the eyes layer
-      points: 1
+      points: 10
       required: true
       defaultMarkings: [ MobIPCEyesDefault ]
     Chest:

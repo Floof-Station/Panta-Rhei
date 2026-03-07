@@ -1,0 +1,102 @@
+- type: marking
+  id: TailSnakeDual
+  bodyPart: Tail
+  markingCategory: Tail
+  layering:
+    m_tail_snakedual_BEHIND_primary: TailBehind
+    m_tail_snakedual_BEHIND_secondary: TailBehind
+    m_tail_snakedual_FRONT_primary: Tail
+    m_tail_snakedual_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakedual_BEHIND_primary: m_tail_snakedual_FRONT_primary
+    m_tail_snakedual_BEHIND_secondary: m_tail_snakedual_FRONT_secondary
+  sprites:
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakedual_FRONT_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakedual_FRONT_secondary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakedual_BEHIND_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakedual_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeStripe
+  bodyPart: Tail
+  markingCategory: Tail
+  layering:
+    m_tail_snakestripe_BEHIND_primary: TailBehind
+    m_tail_snakestripe_BEHIND_secondary: TailBehind
+    m_tail_snakestripe_FRONT_primary: Tail
+    m_tail_snakestripe_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakestripe_BEHIND_primary: m_tail_snakestripe_FRONT_primary
+    m_tail_snakestripe_BEHIND_secondary: m_tail_snakestripe_FRONT_secondary
+  sprites:
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripe_FRONT_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripe_FRONT_secondary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripe_BEHIND_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripe_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeStripeAlt
+  bodyPart: Tail
+  markingCategory: Tail
+  layering:
+    m_tail_snakestripealt_BEHIND_primary: TailBehind
+    m_tail_snakestripealt_BEHIND_secondary: TailBehind
+    m_tail_snakestripealt_FRONT_primary: Tail
+    m_tail_snakestripealt_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakestripealt_BEHIND_primary: m_tail_snakestripealt_FRONT_primary
+    m_tail_snakestripealt_BEHIND_secondary: m_tail_snakestripealt_FRONT_secondary
+  sprites:
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripealt_FRONT_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripealt_FRONT_secondary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripealt_BEHIND_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakestripealt_BEHIND_secondary
+
+- type: marking
+  id: TailSnakeTail
+  bodyPart: Tail
+  markingCategory: Tail
+  layering:
+    m_tail_snaketail_BEHIND: TailBehind
+    m_tail_snaketail_FRONT: Tail
+  colorLinks:
+    m_tail_snaketail_BEHIND: m_tail_snaketail_FRONT
+  sprites:
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snaketail_FRONT
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snaketail_BEHIND
+
+- type: marking
+  id: TailSnakeUnder
+  bodyPart: Tail
+  markingCategory: Tail
+  layering:
+    m_tail_snakeunder_BEHIND_primary: TailBehind
+    m_tail_snakeunder_BEHIND_secondary: TailBehind
+    m_tail_snakeunder_FRONT_primary: Tail
+    m_tail_snakeunder_FRONT_secondary: Tail
+  colorLinks:
+    m_tail_snakeunder_BEHIND_primary: m_tail_snakeunder_FRONT_primary
+    m_tail_snakeunder_BEHIND_secondary: m_tail_snakeunder_FRONT_secondary
+  sprites:
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakeunder_FRONT_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakeunder_FRONT_secondary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakeunder_BEHIND_primary
+  - sprite: _Euphoria/Mobs/Customization/fixedskyrattails.rsi
+    state: m_tail_snakeunder_BEHIND_secondary
