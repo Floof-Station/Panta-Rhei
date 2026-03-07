@@ -7,8 +7,11 @@ namespace Content.Shared._Floof.Standing;
 /// Allows the entity to toggle between crawling under and over furniture with a keybind.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public sealed partial class UnderTableCrawlingComponent : Component
+public sealed partial class CrawlingExtensionsComponent : Component
 {
+    [DataField]
+    public bool CanCrawlUnderTables = true, CanChangeDirections = true;
+
     [DataField, AutoNetworkedField]
     public float CrawlingUnderSpeedModifier = 0.5f;
 

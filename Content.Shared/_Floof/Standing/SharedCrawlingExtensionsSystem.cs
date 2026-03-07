@@ -9,10 +9,12 @@ using Robust.Shared.Timing;
 namespace Content.Shared._Floof.Standing;
 
 /// <summary>
+/// Floofstation extensions to the upstream crawling systems.
+///
 /// Handles requests to change whether a mob is currently "crawling under furniture".
 /// The draw depth is actually changed in the client-side counterpart.
 /// </summary>
-public sealed class SharedUnderTableCrawlingSystem : EntitySystem
+public sealed class SharedCrawlingExtensionsSystem : EntitySystem
 {
     [Dependency] private readonly MovementSpeedModifierSystem _speed = default!;
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
@@ -22,17 +24,18 @@ public sealed class SharedUnderTableCrawlingSystem : EntitySystem
     public override void Initialize()
     {
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.ToggleCrawlingUnder, InputCmdHandler.FromDelegate(HandleCrawlUnderRequest, handle: false))
-            .Register<SharedUnderTableCrawlingSystem>();
+            .Bind(ContentKeyFunctions.ToggleCrawlingUnder, InputCmdHandler.FromDelegate(HandleCrawlUnderRequest, handle: true))
+            .Bind(ContentKeyFunctions.ToggleCrawlingDirection, InputCmdHandler.FromDelegate(HandleCrawlingToggleRequest, handle: true))
+            .Register<SharedCrawlingExtensionsSystem>();
 
-        SubscribeLocalEvent<UnderTableCrawlingComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
-        SubscribeLocalEvent<UnderTableCrawlingComponent, DownedEvent>(OnDowned);
+        SubscribeLocalEvent<CrawlingExtensionsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
+        SubscribeLocalEvent<CrawlingExtensionsComponent, DownedEvent>(OnDowned);
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
-        CommandBinds.Unregister<UnderTableCrawlingComponent>();
+        CommandBinds.Unregister<CrawlingExtensionsComponent>();
     }
 
     private void HandleCrawlUnderRequest(ICommonSession? session)
@@ -40,7 +43,7 @@ public sealed class SharedUnderTableCrawlingSystem : EntitySystem
         if (session == null
             || session.AttachedEntity is not {} uid
             || !TryComp<StandingStateComponent>(uid, out var standingState)
-            || !TryComp<UnderTableCrawlingComponent>(uid, out var underCrawl)
+            || !TryComp<CrawlingExtensionsComponent>(uid, out var underCrawl)
             || !_actionBlocker.CanConsciouslyPerformAction(uid)) // Floof - replaced CanInteract with consciousness
             return;
 
@@ -53,16 +56,26 @@ public sealed class SharedUnderTableCrawlingSystem : EntitySystem
         Dirty(uid, underCrawl);
     }
 
-    private void OnRefreshMovementSpeed(EntityUid uid, UnderTableCrawlingComponent component, RefreshMovementSpeedModifiersEvent args)
+    private void HandleCrawlingToggleRequest(ICommonSession? session)
     {
-        if (!_standing.IsDown(uid))
+        if (session == null
+            || session.AttachedEntity is not {} uid
+            || !TryComp<StandingStateComponent>(uid, out var standingState)
+            || !TryComp<CrawlingExtensionsComponent>(uid, out var underCrawl)
+            || !_actionBlocker.CanConsciouslyPerformAction(uid)) // Floof - replaced CanInteract with consciousness
+            return;
+    }
+
+    private void OnRefreshMovementSpeed(Entity<CrawlingExtensionsComponent> ent, ref RefreshMovementSpeedModifiersEvent args)
+    {
+        if (!_standing.IsDown(ent.Owner))
             return;
 
-        var modifier = component.IsCrawlingUnder ? component.CrawlingUnderSpeedModifier : 1f;
+        var modifier = ent.Comp.IsCrawlingUnder ? ent.Comp.CrawlingUnderSpeedModifier : 1f;
         args.ModifySpeed(modifier, modifier);
     }
 
-    private void OnDowned(Entity<UnderTableCrawlingComponent> ent, ref DownedEvent args)
+    private void OnDowned(Entity<CrawlingExtensionsComponent> ent, ref DownedEvent args)
     {
         // By default, after downing, a mob should NOT be drawn under furniture
         if (_timing is { ApplyingState: false, IsFirstTimePredicted: true })

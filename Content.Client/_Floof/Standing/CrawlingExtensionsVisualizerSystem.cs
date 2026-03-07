@@ -5,15 +5,15 @@ using Robust.Client.GameObjects;
 namespace Content.Client._Floof.Standing;
 
 /// <summary>
-/// Handles updating the draw depths of mobs.
+/// Handles updating the draw depths of mobs and other crawling extensions.
 /// </summary>
-public sealed class UnderTableCrawlingSystem : EntitySystem
+public sealed class CrawlingExtensionsVisualizerSystem : EntitySystem
 {
     [Dependency] private readonly SpriteSystem _sprites = default!;
 
     public override void Update(float frameTime)
     {
-        var query = EntityQueryEnumerator<UnderTableCrawlingComponent, StandingStateComponent, SpriteComponent>();
+        var query = EntityQueryEnumerator<CrawlingExtensionsComponent, StandingStateComponent, SpriteComponent>();
         while (query.MoveNext(out var uid, out var underTable, out var standing, out var sprite))
         {
             // Do not modify the entities draw depth if it's modified externally

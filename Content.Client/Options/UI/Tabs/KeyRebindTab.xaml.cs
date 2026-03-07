@@ -173,6 +173,7 @@ namespace Content.Client.Options.UI.Tabs
             InitToggleWalk();
             AddButton(ContentKeyFunctions.ToggleKnockdown);
             AddButton(ContentKeyFunctions.ToggleCrawlingUnder); // Floofstation - under-table crawling
+            AddButton(ContentKeyFunctions.ToggleCrawlingDirection); // Floofstation - changeable crawling directions
 
             AddHeader("ui-options-header-camera");
             AddButton(EngineKeyFunctions.CameraRotateLeft);
