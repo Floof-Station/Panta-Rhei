@@ -159,12 +159,12 @@
     tags:
     - Wrench
   - type: Sprite
-    sprite: Objects/Tools/wrench.rsi
+    sprite: _EE/Objects/Tools/wrench.rsi # Euphoria - Bring back old EE tool sprites, they're FAR better.
     state: icon
   - type: Item
-    sprite: Objects/Tools/wrench.rsi
+    sprite: _EE/Objects/Tools/wrench.rsi # Euphoria - Bring back old EE tool sprites, they're FAR better.
     storedSprite:
-      sprite: Objects/Tools/wrench.rsi
+      sprite: _EE/Objects/Tools/wrench.rsi # Euphoria - Bring back old EE tool sprites, they're FAR better.
       state: storage
   - type: MeleeWeapon
     wideAnimationRotation: 135
@@ -210,7 +210,7 @@
       params:
         volume: -4
   - type: Sprite
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _EE/Objects/Tools/multitool.rsi # Euphoria - Bring back old EE tool sprites, they're FAR better.
     layers:
     - state: icon
     - state: green-unlit
@@ -218,7 +218,7 @@
   - type: Item
     size: Small
   - type: Clothing
-    sprite: Objects/Tools/multitool.rsi
+    sprite: _EE/Objects/Tools/multitool.rsi # Euphoria - Bring back old EE tool sprites, they're FAR better.
     quickEquip: false
     slots:
     - Belt
