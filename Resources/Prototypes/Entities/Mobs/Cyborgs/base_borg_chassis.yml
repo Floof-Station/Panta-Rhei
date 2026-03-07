@@ -38,6 +38,7 @@
   - type: Sprite
     sprite: Mobs/Silicon/chassis.rsi
   - type: RotationVisuals
+    defaultRotation: 90 # Floofstation - borgs had it at 0 by default?
     horizontalRotation: 90
   - type: MobState
     allowedStates:
