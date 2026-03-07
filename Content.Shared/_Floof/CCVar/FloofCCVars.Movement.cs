@@ -8,5 +8,5 @@ public sealed partial class FloofCCVars
     ///     Whether to walk by default instead of running. Set on the client side and replicated to server.
     /// </summary>
     public static readonly CVarDef<bool> DefaultWalk =
-        CVarDef.Create("game.default_walk", true, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
+        CVarDef.Create("game.default_walk", false, CVar.CLIENT | CVar.ARCHIVE | CVar.REPLICATED);
 }
