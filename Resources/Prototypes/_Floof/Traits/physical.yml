@@ -36,7 +36,6 @@
       protoId: JawsOfLifeRightArm
       slotId: "right arm"
 
-
 - type: trait # Gives the effect of printable cybernetic eyes except no one has coded organ replacements yet
   id: CyberEyes
   name: trait-name-CyberEyes
@@ -140,7 +139,7 @@
   description: trait-description-CyberEyesMedical
   cost: 3
   conflicts:
-    - CyberEyesOmni
+  - CyberEyesOmni
   effects:
   - !type:AddCompsEffect
     components:
@@ -149,13 +148,28 @@
       damageContainers:
       - Biological
       - BiologicalMetaphysical
-      - Inorganic
-      - Silicon
-      - HumanoidSilicon
     - type: ShowHealthIcons
       damageContainers:
       - Biological
       - BiologicalMetaphysical
+
+#- type: trait
+#  id: CyberEyesDiagnostic
+#  category: Medical
+#  name: trait-name-CyberEyesDiagnostic
+#  description: trait-description-CyberEyesDiagnostic
+#  cost: 3
+#  conflicts:
+#  - CyberEyesOmni
+#  effects:
+#  - !type:AddCompsEffect
+#    components:
+#    - type: ShowHealthBars
+#      damageContainers:
+#      - Inorganic
+#      - Silicon
+#      - HumanoidSilicon
+#    - type: ShowAccessReaderSettings
 
 - type: trait
   id: CyberEyesOmni
@@ -166,6 +180,7 @@
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
+  #- CyberEyesDiagnostic
   conditions:
   - !type:InDepartmentCondition
     department: Command
