@@ -76,7 +76,7 @@ trait-precognition-desc =
 
 trait-psychokinetic-scream-name = Psychokinetic Scream
 trait-psychokinetic-scream-desc =
-    You are able to emit a psychokinetic burst, similiar to a scream to disorientate people and shatter lights.
+    You are able to emit a psychokinetic burst, similiar to a haunting scream to shatter lights and morale.
     Such screams are reminiscent of mythological creatures known as Banshees, which are known as harbingers of grief and death.
     There are rumors that exist of an alien military in the outer rim which fields soldiers with this power as melee shock troops.
 
