@@ -553,15 +553,27 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         // Otherwise patch (edit) it
         if (existingEmbed.Id == null)
         {
-            var request = await _httpClient.PostAsync($"{_webhookUrl}?wait=true",
-                new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
-
+            // Floof: Replaced with Try/Catch for network issues and Simple Retry Logic.
+            HttpResponseMessage request;
+            try
+            {
+                request = await _httpClient.PostAsync($"{_webhookUrl}?wait=true",
+                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Exception thrown when trying to post message to Discord webhook: {e}");
+                _relayMessages.Remove(userId);
+                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
+                return;
+            }
             var content = await request.Content.ReadAsStringAsync();
             if (!request.IsSuccessStatusCode)
             {
                 Log.Error(
                     $"Discord returned bad status code when posting message (perhaps the message is too long?): {request.StatusCode}\nResponse: {content}");
                 _relayMessages.Remove(userId);
+                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
                 return;
             }
 
@@ -578,15 +590,26 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         }
         else
         {
-            var request = await _httpClient.PatchAsync($"{_webhookUrl}/messages/{existingEmbed.Id}",
-                new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
-
+            HttpResponseMessage request;
+            try
+            {
+                request = await _httpClient.PatchAsync($"{_webhookUrl}/messages/{existingEmbed.Id}",
+                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Exception thrown when trying to patch message to Discord webhook: {e}");
+                _relayMessages.Remove(userId);
+                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
+                return;
+            }
             if (!request.IsSuccessStatusCode)
             {
                 var content = await request.Content.ReadAsStringAsync();
                 Log.Error(
                     $"Discord returned bad status code when patching message (perhaps the message is too long?): {request.StatusCode}\nResponse: {content}");
                 _relayMessages.Remove(userId);
+                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
                 return;
             }
         }
