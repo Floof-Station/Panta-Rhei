@@ -75,6 +75,7 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
             return;
 
         ext.InvertedCrawlingDirection = !ext.InvertedCrawlingDirection;
+        Dirty(uid, ext);
 
         // +90deg = default horizontal rotation, -90deg = opposite
         var rotVisuals = EnsureComp<RotationVisualsComponent>(uid);
