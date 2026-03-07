@@ -1,6 +1,7 @@
 using Content.Shared.ActionBlocker;
 using Content.Shared.Input;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Rotation;
 using Content.Shared.Standing;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Player;
@@ -20,12 +21,13 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedRotationVisualsSystem _rotVisuals = default!;
 
     public override void Initialize()
     {
         CommandBinds.Builder
-            .Bind(ContentKeyFunctions.ToggleCrawlingUnder, InputCmdHandler.FromDelegate(HandleCrawlUnderRequest, handle: true))
-            .Bind(ContentKeyFunctions.ToggleCrawlingDirection, InputCmdHandler.FromDelegate(HandleCrawlingToggleRequest, handle: true))
+            .Bind(ContentKeyFunctions.ToggleCrawlingUnder, InputCmdHandler.FromDelegate(HandleCrawlUnderRequest, handle: false))
+            .Bind(ContentKeyFunctions.ToggleCrawlingDirection, InputCmdHandler.FromDelegate(HandleDirectionToggleRequest, handle: false))
             .Register<SharedCrawlingExtensionsSystem>();
 
         SubscribeLocalEvent<CrawlingExtensionsComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeed);
@@ -43,27 +45,33 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
         if (session == null
             || session.AttachedEntity is not {} uid
             || !TryComp<StandingStateComponent>(uid, out var standingState)
-            || !TryComp<CrawlingExtensionsComponent>(uid, out var underCrawl)
+            || !TryComp<CrawlingExtensionsComponent>(uid, out var ext)
             || !_actionBlocker.CanConsciouslyPerformAction(uid)) // Floof - replaced CanInteract with consciousness
             return;
 
-        var newState = !underCrawl.IsCrawlingUnder;
+        var newState = !ext.IsCrawlingUnder;
         if (standingState.Standing)
             newState = false; // If the entity is already standing, this function only serves a fallback method to fix its draw depth
 
-        underCrawl.IsCrawlingUnder = newState;
+        ext.IsCrawlingUnder = newState;
         _speed.RefreshMovementSpeedModifiers(uid);
-        Dirty(uid, underCrawl);
+        Dirty(uid, ext);
     }
 
-    private void HandleCrawlingToggleRequest(ICommonSession? session)
+    private void HandleDirectionToggleRequest(ICommonSession? session)
     {
         if (session == null
             || session.AttachedEntity is not {} uid
             || !TryComp<StandingStateComponent>(uid, out var standingState)
-            || !TryComp<CrawlingExtensionsComponent>(uid, out var underCrawl)
-            || !_actionBlocker.CanConsciouslyPerformAction(uid)) // Floof - replaced CanInteract with consciousness
+            || !TryComp<CrawlingExtensionsComponent>(uid, out var ext)
+            || !_actionBlocker.CanConsciouslyPerformAction(uid))
             return;
+
+        ext.InvertedCrawlingDirection = !ext.InvertedCrawlingDirection;
+
+        // +90deg = default horizontal rotation, -90deg = opposite
+        var rotVisuals = EnsureComp<RotationVisualsComponent>(uid);
+        _rotVisuals.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation + (ext.InvertedCrawlingDirection ? 0 : Angle.FromDegrees(180)));
     }
 
     private void OnRefreshMovementSpeed(Entity<CrawlingExtensionsComponent> ent, ref RefreshMovementSpeedModifiersEvent args)

@@ -597,6 +597,10 @@ binds:
   type: State
   mod1: Shift
   key: R
+- function: ToggleCrawlingDirection # Floofstation
+  type: State
+  mod1: Control
+  key: R
 - function: OpenAbilitiesMenu
   type: State
   key: K

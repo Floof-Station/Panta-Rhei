@@ -12,6 +12,8 @@ public sealed partial class CrawlingExtensionsComponent : Component
     [DataField]
     public bool CanCrawlUnderTables = true, CanChangeDirections = true;
 
+    #region Under-table crawling
+
     [DataField, AutoNetworkedField]
     public float CrawlingUnderSpeedModifier = 0.5f;
 
@@ -24,4 +26,13 @@ public sealed partial class CrawlingExtensionsComponent : Component
     [DataField, AutoNetworkedField]
     public int NormalDrawDepth = (int) DrawDepth.DrawDepth.Mobs,
         CrawlingUnderDrawDepth = (int) DrawDepth.DrawDepth.SmallMobs;
+
+    #endregion
+
+    #region Togglable crawling direction
+
+    [DataField, AutoNetworkedField]
+    public bool InvertedCrawlingDirection = false;
+
+    #endregion
 }
