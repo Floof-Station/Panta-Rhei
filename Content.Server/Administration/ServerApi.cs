@@ -89,7 +89,7 @@ public sealed partial class ServerApi : IPostInjectInit
 
         RegisterHandler(HttpMethod.Post, "/admin/actions/send_bwoink", ActionSendBwoink); // Frontier - Discord Ahelp Reply
 
-        RegisterHandler(HttpMethod.Post, "/admin/actions/send_cwoink", ActionSendCwoink);
+        RegisterHandler(HttpMethod.Post, "/admin/actions/send_cwoink", ActionSendCwoink); // Floof: Cwoink API
     }
 
     public void Initialize()
@@ -405,7 +405,7 @@ public sealed partial class ServerApi : IPostInjectInit
     }
     #endregion
 
-    #region
+    #region Floof API
 
     private async Task ActionSendCwoink(IStatusHandlerContext context)
     {

@@ -659,24 +659,27 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         }
     }
 
-        public void OnWebhookCwoinkTextMessage(CwoinkTextMessage message, BwoinkActionBody body)
-        {
-            // Note for forks:
-            AdminData webhookAdminData = new();
+    #region Floof Cwoink
+    public void OnWebhookCwoinkTextMessage(CwoinkTextMessage message, BwoinkActionBody body)
+    {
+        // Note for forks:
+        AdminData webhookAdminData = new();
 
-            var bwoinkParams = new CwoinkParams(
-                message,
-                SystemUserId,
-                webhookAdminData,
-                body.Username,
-                null,
-                body.UserOnly,
-                body.WebhookUpdate,
-                true,
-                body.RoleName,
-                body.RoleColor);
-            OnCwoinkInternal(bwoinkParams);
-        }
+        var bwoinkParams = new CwoinkParams(
+            message,
+            SystemUserId,
+            webhookAdminData,
+            body.Username,
+            null,
+            body.UserOnly,
+            body.WebhookUpdate,
+            true,
+            body.RoleName,
+            body.RoleColor);
+        OnCwoinkInternal(bwoinkParams);
+    }
+
+    #endregion
 
     protected override void OnCwoinkTextMessage(CwoinkTextMessage message, EntitySessionEventArgs eventArgs)
     {
