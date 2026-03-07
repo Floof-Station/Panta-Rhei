@@ -76,5 +76,16 @@
   - type: Projectile
     damage:
       types:
-        Blunt: 2 # Should also be pretty balanced due to the extreme lack of effectivity against armor, but should be useful against those without.
+        Piercing: 1 # Should also be pretty balanced due to the extreme lack of effectivity against armor, but should be useful against those without.
         Slash: 6
+
+- type: entity
+  id: BulletHighVelocityRubber
+  name: bullet (.10 high-velocity Rubber)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2

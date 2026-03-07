@@ -189,6 +189,20 @@
   - UplinkWeaponry
 
 - type: listing
+  id: UplinkVectorG3sBundle
+  name: uplink-G3s-bundle-name
+  description: uplink-c20r-bundle-desc
+  icon: { sprite: /Textures/Objects/Weapons/Guns/SMGs/vectormod.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledVector
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWeaponry
+
+- type: listing
   id: UplinkC20RBundle
   name: uplink-c20r-bundle-name
   description: uplink-c20r-bundle-desc
@@ -597,6 +611,37 @@
     Telecrystal: 2
   categories:
   - UplinkAmmo
+
+# For the Vector
+- type: listing
+  id: UplinkVectorAmmo
+  name: uplink-vector-ammo-name
+  description: uplink-vector-ammo-desc
+  productEntity: MagazineHighVelocity
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+#  - type: listing
+#    id: UplinkVectorBoxJHP
+#    name: Placeholder
+#    description: Placeholder
+#    productEntity: Placeholder
+#    cost:
+#      Telecrystal: 4
+#    categories:
+#    - UplinkAmmo
+
+#  - type: listing
+#    id: UplinkVectorBoxAP
+#    name: Placeholder
+#    description: Placeholder
+#    productEntity: Placeholder
+#    cost:
+#      Telecrystal: 4
+#    categories:
+#    - UplinkAmmo
 
 # for the hristov
 - type: listing

@@ -31,6 +31,7 @@
 - type: entity
   id: BaseMagazineHighVelocity
   name: "magazine (.10 high-velocity)"
+  description: A 24 round magazine designed to handle the speed of rapid fire weaponry.
   parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
