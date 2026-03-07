@@ -16,7 +16,7 @@ public sealed class MovementExtensionsSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<InputMoverComponent, UpdateMovementCVarsEvent>(OnUpdateCvars);
+        SubscribeNetworkEvent<UpdateMovementCVarsEvent>(OnUpdateCvars);
         // This may be unsafe, change this if SharedMoverController decides to subscribe on MindAdded/RemovedEvent
         // AFAIK upstream has events in the MindSystem that get raised whenever any mind gets attached or detached
         SubscribeLocalEvent<InputMoverComponent, MindAddedMessage>(OnMindAdded);
@@ -27,10 +27,13 @@ public sealed class MovementExtensionsSystem : EntitySystem
             Subs.CVar(_cfg, FloofCCVars.DefaultWalk, _ => RaiseNetworkEvent(new UpdateMovementCVarsEvent()));
     }
 
-    private void OnUpdateCvars(Entity<InputMoverComponent> ent, ref UpdateMovementCVarsEvent args)
+    private void OnUpdateCvars(UpdateMovementCVarsEvent msg, EntitySessionEventArgs args)
     {
-        ent.Comp.DefaultWalk = GetDefaultWalk(ent.Owner);
-        Dirty(ent);
+        if (args.SenderSession.AttachedEntity is not { } uid || !TryComp<InputMoverComponent>(uid, out var mover))
+            return;
+
+        mover.DefaultWalk = GetDefaultWalk(uid);
+        Dirty(uid, mover);
     }
 
     private void OnMindAdded(Entity<InputMoverComponent> ent, ref MindAddedMessage args)
