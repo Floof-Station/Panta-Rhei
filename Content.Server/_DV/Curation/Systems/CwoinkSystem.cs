@@ -5,6 +5,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Content.Server._NF.Administration;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
@@ -657,6 +658,25 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
             ProcessQueue(userId, queue);
         }
     }
+
+        public void OnWebhookCwoinkTextMessage(CwoinkTextMessage message, BwoinkActionBody body)
+        {
+            // Note for forks:
+            AdminData webhookAdminData = new();
+
+            var bwoinkParams = new CwoinkParams(
+                message,
+                SystemUserId,
+                webhookAdminData,
+                body.Username,
+                null,
+                body.UserOnly,
+                body.WebhookUpdate,
+                true,
+                body.RoleName,
+                body.RoleColor);
+            OnCwoinkInternal(bwoinkParams);
+        }
 
     protected override void OnCwoinkTextMessage(CwoinkTextMessage message, EntitySessionEventArgs eventArgs)
     {
