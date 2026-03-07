@@ -77,18 +77,22 @@
   - type: SolutionContainerManager
     solutions:
       smokable:
-        maxVol: 40
+        maxVol: 45
         reagents:
-          - ReagentId: Nicotine
-            Quantity: 10
-          - ReagentId: Omnizine
-            Quantity: 30
+          - ReagentId: Ichor # Euphoria - Changed to the Floof Herbals but rebalanced since DV had 30 Omnizine in theirs so it should heal around the same
+            Quantity: 15
+          - ReagentId: Omnizine # Euphoria - Down from 30 to 15
+            Quantity: 15
+          - ReagentId: Dylovene 
+            Quantity: 15
     # Begin DeltaV additions
       omnizinecigarette:
         reagents:
-          - ReagentId: Nicotine
-            Quantity: 10
-          - ReagentId: Omnizine
+          - ReagentId: Ichor
+            Quantity: 3
+          - ReagentId: Omnizine 
+            Quantity: 3
+          - ReagentId: Dylovene 
             Quantity: 3
   - type: Extractable
     grindableSolutionName: omnizinecigarette

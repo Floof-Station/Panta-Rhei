@@ -1,0 +1,49 @@
+﻿#below addtions are for hop
+- type: loadoutGroup
+  id: FloofHopThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformCommandThong
+
+- type: loadoutGroup
+  id: FloofHopGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsCommandWarmers
+
+- type: loadoutGroup
+  id: FloofHopSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksCommand
+
+#below addtions are for captain
+- type: loadoutGroup
+  id: FloofCaptainThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformCaptainThong
+
+- type: loadoutGroup
+  id: FloofCaptainGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsCaptainWarmers
+
+- type: loadoutGroup
+  id: FloofCaptainSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksCaptain

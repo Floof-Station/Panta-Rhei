@@ -1,0 +1,33 @@
+﻿# jumpsuits
+- type: loadoutGroup
+  id: FloofSecurityJumpsuits
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformJumpsuitSecSummer
+
+# hos stuff
+- type: loadoutGroup
+  id: FloofHosThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformHeadSecurityThong
+
+- type: loadoutGroup
+  id: FloofHosGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsHeadSecurityWarmers
+
+- type: loadoutGroup
+  id: FloofHosSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksHeadSecurity

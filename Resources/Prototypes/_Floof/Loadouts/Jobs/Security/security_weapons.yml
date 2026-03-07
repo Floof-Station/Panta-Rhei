@@ -1,0 +1,67 @@
+﻿# Firearms
+- type: loadout
+  id: FloofSecurityWeaponRevolverPython
+  equipment:
+    pocket1: WeaponRevolverPython
+
+- type: loadout
+  id: FloofWeaponLaserSvalinn
+  equipment:
+    pocket1: WeaponLaserSvalinn
+
+# Ammo
+- type: loadout
+  id: FloofSecurityFirearmMagazinePistolRubber
+  storage:
+    back:
+    - MagazinePistolRubber
+
+- type: loadout
+  id: FloofSecurityFirearmMagazinePistol
+  storage:
+    back:
+    - MagazinePistol
+
+- type: loadout
+  id: FloofSecurityFirearmSpeedLoaderMagnumRubber
+  storage:
+    back:
+    - SpeedLoaderMagnumRubber
+
+- type: loadout
+  id: FloofSecurityFirearmSpeedLoaderMagnum
+  storage:
+    back:
+    - SpeedLoaderMagnum
+
+- type: loadout
+  id: FloofSecurityFirearmPowerCellHigh
+  storage:
+    back:
+    - PowerCellHigh
+
+# securtiy oni weapons
+- type: loadout
+  id: FloofPlasteelArmingSword
+  storage:
+    back:
+    - PlasteelArmingSword
+
+# Special options (these will require timers see the timer section below)
+- type: loadout
+  id: FloofWeaponEnergyGunMini
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofEnergyGunMiniTimer
+  equipment:
+    pocket1: WeaponEnergyGunMini
+
+# timers for special options
+- type: loadoutEffectGroup
+  id: FloofEnergyGunMiniTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 40h # for workin extra hard to protect the station

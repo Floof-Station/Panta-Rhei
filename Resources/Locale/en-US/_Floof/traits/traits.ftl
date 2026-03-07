@@ -24,3 +24,34 @@ trait-description-BionicPryArm =
 
 trait-dog-accent-name = Dog accent
 trait-dog-accent-desc = Bork.
+
+trait-name-CyberEyes = Cyber-Eyes Basic System
+trait-description-CyberEyes =
+    One or more of your eyes have been replaced with modular cybernetic optical implants.
+    Their most basic functionality is to ameliorate weaknesses in the wearer's natural eyes.
+    The functionality of these implants can be extended with a variety of commercially available upgrades.
+    This provides immunity from most bright flashes of light, such as those from welding arcs.
+
+trait-name-CyberEyesNightVision = Cyber-Eyes: Light Amplification Module
+trait-description-CyberEyesNightVision = 
+    Your Cyber-Eyes have been enhanced with a light amplifier module, enabling the user to toggle between standard sight and "Night Vision" mode.
+
+trait-name-CyberEyesThermoVision = Cyber-Eyes: Thermographic Scanner Module
+trait-description-CyberEyesThermoVision = 
+    Your Cyber-Eyes have been enhanced with a Thermographic Scanner. When enabled, it captures a snapshot of the user's surroundings, while highlighting all
+    biological life forms. It can even detect individuals through the walls of a station.
+
+trait-name-CyberEyesSecurity = Cyber-Eyes: SecHud Module
+trait-description-CyberEyesSecurity =
+    Your Cyber-Eyes have been upgraded to include a built-in Security Hud. Note that this augmentation is considered Contraband
+    for anyone not under the employ of station Security personnel, and may be disabled by your employer before dispatch to the station.
+
+trait-name-CyberEyesMedical = Cyber-Eyes: MedHud Module
+trait-description-CyberEyesMedical =
+    Your Cyber-Eyes have been upgraded to include a built-in Medical Hud, and a Chemical Analysis Hud, allowing you to track the relative health condition of most organisms, and discern the chemicals in any solution.
+
+trait-name-CyberEyesOmni = Cyber-Eyes: Premium Suite Module
+trait-description-CyberEyesOmni =
+    This expensive implant provides the combined benefits of a SecHud and MedHud.
+    Note that this augmentation is considered Contraband for anyone not under the employ of command personnel,
+    and may be disabled by your employer before dispatch to the station.

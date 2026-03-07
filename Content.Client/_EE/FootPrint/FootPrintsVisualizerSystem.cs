@@ -1,4 +1,5 @@
 ﻿using Content.Shared._EE.FootPrint;
+using Content.Shared._Floof.Util;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Random;
@@ -47,7 +48,7 @@ public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintCompo
             FootPrintVisuals.BareFootPrint => printsComponent.RightStep ? printsComponent.RightBarePrint : printsComponent.LeftBarePrint,
             FootPrintVisuals.ShoesPrint => printsComponent.ShoesPrint,
             FootPrintVisuals.SuitPrint => printsComponent.SuitPrint,
-            FootPrintVisuals.Dragging => _random.Pick(printsComponent.DraggingPrint),
+            FootPrintVisuals.Dragging => DeterministicRandom.Pick(printsComponent.DraggingPrint, uid.Id), // Floofstation - use deterministic random
             _ => throw new ArgumentOutOfRangeException($"Unknown {printVisuals} parameter.")
         }), printsComponent.RsiPath);
 

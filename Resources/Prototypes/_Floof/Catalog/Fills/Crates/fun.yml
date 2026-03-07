@@ -40,3 +40,28 @@
         - !type:NestedSelector
           rolls: 3, 6
           tableId: SprayPaintTable
+
+- type: entity
+  id: CrateMysteryKnifeLootbox
+  parent: CrateGenericSteel
+  name: mystery knife lootbox crate
+  description: A crate containing a mystery knife lootbox.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: MysteryKnifeLootbox
+
+- type: entity
+  id: CrateMysteryKnifeLootboxBulk
+  parent: CrateGenericSteel
+  name: bulk mystery knife lootbox crate
+  description: A crate containing 10 mystery knife lootboxs.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: MysteryKnifeLootbox
+          amount: 10

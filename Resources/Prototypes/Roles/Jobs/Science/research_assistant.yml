@@ -4,10 +4,9 @@
   description: job-description-research-assistant
   playTimeTracker: JobResearchAssistant
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Epistemics # DeltaV
-      time: 5h
-      inverted: false # floofstation - let people choose how they want to play their character
+  - !type:OverallPlaytimeRequirement
+    time: 1h
+    inverted: false # floofstation - let people choose how they want to play their character
   startingGear: ResearchAssistantGear
   icon: "JobIconResearchAssistant"
   supervisors: job-supervisors-science

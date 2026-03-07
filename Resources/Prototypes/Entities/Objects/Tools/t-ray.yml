@@ -25,3 +25,18 @@
       Glass: 150
   - type: StaticPrice
     price: 85
+  - type: EmitSoundOnPickup # Euphoria - New interaction SFX from Funky
+    sound:
+      path: /Audio/_EE/Items/Handling/multitool_pickup.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_EE/Items/Handling/multitool_drop.ogg
+      params:
+        volume: -4
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/multitool_drop.ogg
+      params:
+        volume: -4

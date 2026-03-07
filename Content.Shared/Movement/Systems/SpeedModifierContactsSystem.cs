@@ -58,7 +58,7 @@ public sealed class SpeedModifierContactsSystem : EntitySystem
 
     public void ChangeSpeedModifiers(EntityUid uid, float walkSpeed, float sprintSpeed, SpeedModifierContactsComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, logMissing: false)) // Floof - dont log missing
             return;
 
         component.WalkSpeedModifier = walkSpeed;
