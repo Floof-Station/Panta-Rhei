@@ -39,7 +39,7 @@ public sealed partial class CrawlingExtensionsComponent : Component
     ///     An interval between direction changes to prevent people from spamming rotation animations.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Ticker CrawlingDirectionChangeCooldown = new(TimeSpan.FromSeconds(1.5f));
+    public Ticker CrawlingDirectionChangeCooldown = new(TimeSpan.FromSeconds(1f));
 
     #endregion
 }
