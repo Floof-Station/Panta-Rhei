@@ -335,10 +335,10 @@ binds:
   canFocus: true
 - function: RotateObjectClockwise
   type: State
-  key: R
+  key: MouseMiddle # Floof - conflicts with laying down
 - function: RotateObjectCounterclockwise
   type: State
-  key: R
+  key: MouseMiddle # Floof - conflicts with laying down
   mod1: Shift
 - function: FlipObject
   type: State
