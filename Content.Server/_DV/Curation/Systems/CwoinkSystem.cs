@@ -665,7 +665,7 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         // Note for forks:
         AdminData webhookAdminData = new();
 
-        var bwoinkParams = new CwoinkParams(
+        var cwoinkParams = new CwoinkParams(
             message,
             SystemUserId,
             webhookAdminData,
@@ -676,7 +676,7 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
             true,
             body.RoleName,
             body.RoleColor);
-        OnCwoinkInternal(bwoinkParams);
+        OnCwoinkInternal(cwoinkParams);
     }
 
     #endregion
