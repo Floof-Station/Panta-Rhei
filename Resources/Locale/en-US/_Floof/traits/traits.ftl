@@ -86,6 +86,6 @@ trait-psionic-regeneration-desc =
     After a short delay your body creates a chemical known as Prometheum which rapidly burns through your energy reserves to heal you.
 
 trait-religious-name = Religious
-trait-religous-desc = 
+trait-religious-desc = 
     You are deeply religious, and a holy book in your hands is capable of miracles.
     (Bible not included)
