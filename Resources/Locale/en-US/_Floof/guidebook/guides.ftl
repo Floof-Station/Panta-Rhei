@@ -27,6 +27,7 @@ guide-entry-botanical = Botanicals
 guide-entry-ss14 = Space Station 14
 guide-entry-janitorial = Janitorial
 guide-entry-bartender = Bartender
+guide-entry-salvage = Salvage
 guide-entry-chef = Chef
 guide-entry-foodrecipes = Food Recipes
 guide-entry-medical = Medical
@@ -58,7 +59,6 @@ guide-entry-species = Species
 guide-entry-references = Tables & References
 
 guide-entry-chemicals = Chemicals
-guide-entry-salvage = Salvage
 guide-entry-survival = Survival
 guide-entry-elements = Elements
 guide-entry-narcotics = Narcotics
