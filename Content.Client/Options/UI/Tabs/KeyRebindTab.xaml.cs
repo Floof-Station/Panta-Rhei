@@ -1,5 +1,6 @@
 using System.Numerics;
 using Content.Client.Stylesheets;
+using Content.Shared._Floof.CCVar;
 using Content.Shared._Goobstation.CCVar; // GoobStation
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -169,6 +170,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveDown);
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
+            AddToggleCvarCheckBox("ui-options-default-walk", FloofCCVars.DefaultWalk);
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
             InitToggleWalk();
             AddButton(ContentKeyFunctions.ToggleKnockdown);
