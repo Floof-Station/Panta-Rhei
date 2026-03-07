@@ -47,7 +47,7 @@
   name: trait-psychokinetic-scream-name
   description: trait-psychokinetic-scream-desc
   category: Mental
-  cost: 8
+  cost: 6
   effects:
   - !type:AddCompsEffect
     components:
@@ -83,3 +83,4 @@
   - !type:AddCompsEffect
     components:
     - type: BibleUser
+
