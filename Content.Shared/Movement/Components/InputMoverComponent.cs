@@ -80,7 +80,7 @@ namespace Content.Shared.Movement.Components
         public const float WalkingSoundModifier = 1.5f;
 
         [DataField]
-        public bool DefaultWalk = true; // Floofstation
+        public bool DefaultWalk = false; // Floofstation
         public bool Sprinting => ((HeldMoveButtons & MoveButtons.Walk) == 0x0) ^ DefaultWalk; // Floofstation
 
         [ViewVariables(VVAccess.ReadWrite)]

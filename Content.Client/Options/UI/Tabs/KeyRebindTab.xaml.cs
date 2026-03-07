@@ -170,7 +170,7 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveDown);
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
-            AddToggleCvarCheckBox("ui-options-default-walk", FloofCCVars.DefaultWalk);
+            AddToggleCvarCheckBox("ui-options-default-walk", FloofCCVars.DefaultWalk); // Floofstation - default walk
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
             InitToggleWalk();
             AddButton(ContentKeyFunctions.ToggleKnockdown);
