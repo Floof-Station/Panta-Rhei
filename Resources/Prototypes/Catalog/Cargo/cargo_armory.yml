@@ -78,12 +78,13 @@
   category: cargoproduct-category-name-armory
   group: market
 
-  - type: cargoProduct
-    id: ArmorySmgVector
-    icon:
-      sprite: Objects/Weapons/Guns/SMGs/vector.rsi
-      state: icon
-    product: CrateArmoryVector
-    cost: 12000
-    category: cargoproduct-category-name-armory
-    group: market
+- type: cargoProduct
+  id: ArmorySMGVector
+  icon:
+    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
+    state: icon
+  product: CrateArmoryVector
+  cost: 12000
+  category: cargoproduct-category-name-armory
+  group: market
+

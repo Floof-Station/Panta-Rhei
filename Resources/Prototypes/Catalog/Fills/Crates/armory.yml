@@ -118,7 +118,7 @@
 - type: entity
   id: CrateArmoryVector
   parent: [ CrateWeaponSecure, BaseSecurityContraband ]
-  name: Vector crate
+  name: vector crate
   description: Contains two Gen-2 Vectors with four mags. Requires Armory access to open.
   components:
   - type: EntityTableContainerFill
