@@ -15,7 +15,6 @@ guide-entry-sm = Supermatter Engine (SM)
 guide-entry-singularity = Singularity / Tesla
 guide-entry-teg = Thermo-electric Generator (TEG)
 guide-entry-rtg = RTG
-guide-entry-controls = Controls
 guide-entry-radio = Radio
 guide-entry-jobs = Jobs
 guide-entry-cargo = Logistics
@@ -50,22 +49,32 @@ guide-entry-machine-upgrading = Machine Upgrading
 guide-entry-robotics = Robotics
 guide-entry-cyborgs = Cyborgs
 guide-entry-quadborgs = Quadborgs
+guide-entry-command = Command
 guide-entry-security = Security
 guide-entry-forensics = Forensics
 guide-entry-defusal = Large Bomb Defusal
 guide-entry-criminal-records = Criminal Records
+guide-entry-justice = Justice
+guide-entry-service = Service
+guide-entry-whitelist = Whitelist
+
+guide-entry-newplayer = New? Start here!
+guide-entry-charactercreation = Creating Characters
 guide-entry-species = Species
+guide-entry-yourfirstcharacter = Your First Character
+guide-entry-controls = Controls
+guide-entry-radio = Radio and Speech
 
 guide-entry-references = Tables & References
-
 guide-entry-chemicals = Chemicals
+guide-entry-drinks = Drinks
+
 guide-entry-survival = Survival
 guide-entry-elements = Elements
 guide-entry-narcotics = Narcotics
 guide-entry-pyrotechnics = Pyrotechnic
+guide-entry-special = Special
 guide-entry-toxins = Toxins
-
-guide-entry-drinks = Drinks
 
 guide-entry-pizza-recipes = Pizzas
 guide-entry-savory-recipes = Savory Foods
@@ -82,8 +91,10 @@ guide-entry-salad-recipes = Salads
 guide-entry-medicinal-recipes = Medicinal
 guide-entry-other-recipes = Other
 guide-entry-secret-recipes = Secret
+guide-entry-deepfried-recipes = Deepfried
 
 guide-entry-lawsets = Silicon Lawsets
+guide-entry-alert-levels = Alert Levels
 
 guide-entry-antagonists = Antagonists
 guide-entry-nuclear-operatives = Nuclear Operatives
@@ -93,6 +104,9 @@ guide-entry-revolutionaries = Revolutionaries
 guide-entry-minor-antagonists = Minor Antagonists
 guide-entry-space-ninja = Space Ninja
 guide-entry-blood-cult = Blood Cult
+guide-entry-thieves = Thieves
+guide-entry-wizard = Wizard
+guide-entry-xenoborgs = Xenoborgs
 
 guide-entry-rules = Server Rules
 guide-entry-rules-core = Core Rules
