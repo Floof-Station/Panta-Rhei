@@ -615,43 +615,43 @@
 # For the Vector
 - type: listing
   id: UplinkVectorAmmo
-  name: ".10 High-Velocity Magazine"
-  description: "A 24 round magazine designed to handle the speed of rapid fire weaponry."
+  name: uplink-highvelocity-ammo-name
+  description: uplink-highvelocity-ammo-desc
   productEntity: MagazineHighVelocity
   cost:
     Telecrystal: 1
   categories:
   - UplinkAmmo
 
-  - type: listing
-    id: UplinkVectorBoxAP
-    name: ".10 High-Velocity Armor Piercing Magazine"
-    description: "A 24 round magazine designed to handle the speed of rapid fire weaponry. Loses out on total damage in turn for it's piercing capibilities."
-    productEntity: MagazineHighVelocityAP
-    cost:
-      Telecrystal: 2
-    categories:
-    - UplinkAmmo
+- type: listing
+  id: UplinkVectorAmmoAP
+  name: uplink-highvelocityap-ammo-name
+  description: uplink-highvelocity-ammo-desc
+  productEntity: MagazineHighVelocityAP
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
 
-  - type: listing
-    id: UplinkVectorAmmoRubber
-    name: ".10 High-Velocity Rubber Magazine"
-    description: "A 24 round magazine designed to handle the speed of rapid fire weaponry. A non-lethal option with rubber tipped rounds."
-    productEntity: MagazineHighVelocityPractice
-    cost:
-      Telecrystal: 2
-    categories:
-    - UplinkAmmo
+- type: listing
+  id: UplinkVectorAmmoRubber
+  name: uplink-highvelocityrubber-ammo-name
+  description: uplink-highvelocity-ammo-desc
+  productEntity: MagazineHighVelocityPractice
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
 
-  - type: listing
-    id: UplinkVectorAmmoJHP
-    name: ".10 High-Velocity Hollow-Point Magazine"
-    description: "A 24 round magazine designed to handle the speed of rapid fire weaponry. Loses out it's penetration power for more damage against skin and scales."
-    productEntity: MagazineHighVelocityJHP
-    cost:
-      Telecrystal: 3
-    categories:
-    - UplinkAmmo
+- type: listing
+  id: UplinkVectorAmmoJHP
+  name: uplink-highvelocityjhp-ammo-name
+  description: uplink-highvelocity-ammo-desc
+  productEntity: MagazineHighVelocityJHP
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
 
 # for the hristov
 - type: listing
