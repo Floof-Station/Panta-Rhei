@@ -67,10 +67,11 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
             || session.AttachedEntity is not {} uid
             || !TryComp<StandingStateComponent>(uid, out var standingState)
             || !TryComp<CrawlingExtensionsComponent>(uid, out var ext)
-            || !TryComp<AppearanceComponent>(uid, out var appearence)
+            || !TryComp<AppearanceComponent>(uid, out var appearance)
             || !_actionBlocker.CanConsciouslyPerformAction(uid)
             || !_timing.IsFirstTimePredicted
-            || !ext.CanChangeDirections)
+            || !ext.CanChangeDirections
+            || !ext.CrawlingDirectionChangeCooldown.TryUpdate(_timing))
             return;
 
         ext.InvertedCrawlingDirection = !ext.InvertedCrawlingDirection;
@@ -79,7 +80,7 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
         var rotVisuals = EnsureComp<RotationVisualsComponent>(uid);
         _rotVisuals.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation + (ext.InvertedCrawlingDirection ? 0 : Angle.FromDegrees(180)));
         // Have to queue an appearance update so the RotationVisualizerSystem can play an animation if the entity is already laying
-        _appearence.QueueUpdate(uid, appearence);
+        Dirty(uid, appearance);
     }
 
     private void OnRefreshMovementSpeed(Entity<CrawlingExtensionsComponent> ent, ref RefreshMovementSpeedModifiersEvent args)

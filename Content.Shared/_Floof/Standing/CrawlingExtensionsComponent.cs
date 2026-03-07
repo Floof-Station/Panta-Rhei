@@ -1,3 +1,4 @@
+using Content.Shared._Floof.Util;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -33,6 +34,12 @@ public sealed partial class CrawlingExtensionsComponent : Component
 
     [DataField, AutoNetworkedField]
     public bool InvertedCrawlingDirection = false;
+
+    /// <summary>
+    ///     An interval between direction changes to prevent people from spamming rotation animations.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Ticker CrawlingDirectionChangeCooldown = new(TimeSpan.FromSeconds(1.5f));
 
     #endregion
 }
