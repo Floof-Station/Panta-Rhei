@@ -1261,6 +1261,21 @@
     soundHit: *mothScream
 
 - type: entity
+  parent: PlushieMoth
+  id: EngimothPlushie
+  name: engimoth plushie
+  description: It's blueberry scented! It also has a tag underneath a wing... "Do not bring this moth into visual contact with the supermatter!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/engimoth.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/engimoth.rsi
+    slots:
+    - HEAD
+
+- type: entity
   parent: BasePlushie
   id: CheerfulQuadborgPlushie
   name: Cheerful Quadborg Plushie

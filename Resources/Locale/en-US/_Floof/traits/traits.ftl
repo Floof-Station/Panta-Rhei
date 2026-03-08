@@ -35,6 +35,13 @@ trait-machine-regeneration-desc =
     Your body is reinforced with an expensive advanced repair system that will automatically repair wear and tear.
     The system is powered by it's own internal generator and will continue to work even if the unit has run out of power or suffered disabiling damage.
 
+trait-marked-remove-name = Marked for Removal
+trait-marked-remove-desc = Someone or something wants you REMOVED. Antags can recieve objectives to kill you and keep you dead.
+
+trait-marked-teach-name = Marked for Death
+trait-marked-teach-desc = Someone or something wants you taught a lesson. Antags can recieve objectives to kill you.
+
+
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with modular cybernetic optical implants.

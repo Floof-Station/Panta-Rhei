@@ -39,10 +39,12 @@
 - type: weightedRandom
   id: TraitorObjectiveGroupKill
   weights:
-    # KillRandomPersonObjective: 1 # DeltaV Replaced for Teach Lesson
+    KillRandomPersonObjective: 1 # Euphoria | Activated for Marked traits
     TeachLessonRandomPersonObjective: 1
     KillRandomHeadObjective: 0.25
+    TeachRandomHeadObjective: 0.25 # Euphoria
     KillRandomTraitorObjective: 0.2 # DeltaV
+    TeachRandomTraitorObjective: 0.2 # Euphoria
 
 - type: weightedRandom
   id: TraitorObjectiveGroupState
