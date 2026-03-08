@@ -45,16 +45,12 @@
         doAfter: 4
 
 - type: construction
-  name: Stripper Pole
+  name: ent-StripperPole
   id: FurnStripPole
   graph: Lewd
   startNode: start
   targetNode: FurnStripPole
   category: construction-category-furniture
-  description: A long pole on a pedestal used for showing off your great 'assets'.
-  icon:
-    sprite: _Floof/Structures/Lewd/pole.rsi
-    state: pole
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
