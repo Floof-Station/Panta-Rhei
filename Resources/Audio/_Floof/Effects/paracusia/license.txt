@@ -6,9 +6,19 @@ Under Section 107 of the U.S. Copyright Act, parody and commentary may qualify a
 
 This project is not created for commercial profit. All rights to the original material belong to their respective copyright owners. No copyright infringement is intended.
 
-discord_ping.ogg - From Discord
-knocking1.ogg - Owner Unknown
-knocking2.ogg
-knocking3.ogg
-knocking4.ogg
-badtothebone.ogg - Bad To The Bone by George Thorogood & The Destroyers
+# This is in the txt file because the yml won't accept unknown license
+
+- files: ["knocking1.ogg", "knocking2.ogg","knocking3.ogg","knocking4.ogg"]
+  license: Unknown
+  copyright: "Original sound unknown - cut into 4 parts and converted to ogg."
+  source: "https://www.myinstants.com/en/instant/door-knocking-sound-effect-614/"
+
+- files: ["badtothebone.ogg"]
+  license: Unknown
+  copyright: "Original sound from Bad To The Bone by George Thorogood And The Destroyers - cut down further and converted to ogg."
+  source: "https://www.myinstants.com/en/instant/bad-to-the-bone-riff-10536/"
+
+- files: ["discord_ping.ogg"]
+  license: Unknown
+  copyright: "Original sound by Discord - converted to ogg."
+  source: "https://www.myinstants.com/en/instant/discord-ping-17250/"
