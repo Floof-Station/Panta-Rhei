@@ -67,6 +67,14 @@
   - UniformDetectiveThong
 
 - type: loadoutGroup
+  id: FloofDetectiveOuterClothing
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - OuterCoatDetective
+
+- type: loadoutGroup
   id: FloofDetectiveGloves
   name: loadout-group-security-detective-gloves
   parent: [SecurityGloves]

@@ -19,6 +19,20 @@
     sprite: Clothing/OuterClothing/Coats/detective.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Coats/detective.rsi
+  # Floofstation section start
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75
+        Heat: 0.75
+  - type: StaminaResistance
+    damageCoefficient: 0.75
+  - type: TemperatureProtection
+    coolingCoefficient: 0.1
+    heatingCoefficient: 1.1
+  # Floofstation section end
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
