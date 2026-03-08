@@ -20,6 +20,18 @@
     - type: Loadout
       prototypes:
         - FriendlyPlayerMob
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: ghost-role-information-friendly-beast-name
+      description: ghost-role-information-friendly-beast-description # DeltaV - Dragons despawn in 10 minutes
+      rules: ghost-role-information-friendly-beast-rules
+      mindRoles:
+      - MindRoleGhostRoleFreeAgentHarmless
+      raffle:
+        settings: short
+    - type: GhostTakeoverAvailable
 
 - type: entity
   name: laser raptor
