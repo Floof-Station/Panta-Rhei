@@ -15,7 +15,6 @@ guide-entry-sm = Supermatter Engine (SM)
 guide-entry-singularity = Singularity / Tesla
 guide-entry-teg = Thermo-electric Generator (TEG)
 guide-entry-rtg = RTG
-guide-entry-radio = Radio
 guide-entry-jobs = Jobs
 guide-entry-cargo = Logistics
 guide-entry-cargo-bounties = Cargo Bounties
