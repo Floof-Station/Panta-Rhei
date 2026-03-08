@@ -31,6 +31,8 @@
     capacity: 40
   - type: Item
     size: Small
+    shape:
+    - 0,0,0,2
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container
