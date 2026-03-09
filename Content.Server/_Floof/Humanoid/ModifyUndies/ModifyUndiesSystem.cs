@@ -75,10 +75,10 @@ public sealed class ModifyUndiesSystem : EntitySystem
             {
                 HumanoidVisualLayers.UndergarmentTop => new(new("/Textures/_Floof/Interface/VerbIcons/bra.png")),
                 HumanoidVisualLayers.UndergarmentBottom => new(new("/Textures/_Floof/Interface/VerbIcons/underpants.png")),
-                _ => new SpriteSpecifier.Texture(new("/Textures/_Floof/Interface/VerbIcons/undies.png")),
                 HumanoidVisualLayers.Genital => new(new("/Textures/_Floof/Interface/VerbIcons/bra.png")),
                 HumanoidVisualLayers.Boobs => new(new("/Textures/_Floof/Interface/VerbIcons/bra.png")),
                 HumanoidVisualLayers.Butt =>new(new("/Textures/_Floof/Interface/VerbIcons/bra.png")),
+                _ => new SpriteSpecifier.Texture(new("/Textures/_Floof/Interface/VerbIcons/undies.png"))
             };
             // add the verb
             Verb verb = new()
