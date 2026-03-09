@@ -59,6 +59,15 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      collection: SMGPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: SMGDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: SMGDrop
 
 - type: entity
   name: Atreides

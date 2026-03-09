@@ -70,6 +70,15 @@
   - type: StaticPrice
     price: 500
   - type: FireOnLand # DeltaV - gun safety
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      collection: PistolsPickUp
+  - type: EmitSoundOnDrop
+    sound:
+      collection: PistolsDrop
+  - type: EmitSoundOnLand
+    sound:
+      collection: PistolsDrop
 
 - type: entity
   name: viper
