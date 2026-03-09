@@ -17,16 +17,15 @@
       collection: GenericPickup
       params:
         volume: -7
+        maxDistance: 10
   - type: EmitSoundOnDrop
-    sound:
+    sound: &itemDropSound
       collection: GenericDrop
       params:
         volume: -7
+        maxDistance: 10
   - type: EmitSoundOnLand
-    sound:
-      collection: GenericDrop
-      params:
-        volume: -7
+    sound: *itemDropSound
   - type: DamageOnHighSpeedImpact
     damage:
       types:
