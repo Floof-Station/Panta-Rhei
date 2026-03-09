@@ -28,7 +28,7 @@
     children:
     - id: FlashlightSeclite
     - id: WeaponDisabler
-    - id: WeaponTaser
+    #- id: WeaponTaser #NO WE ARE NOT GIVING SEC TASERS, THEY HAVE ENOUGH GOODIES ALREADY
     - id: ClothingBeltSecurityFilled
     - id: Flash
     - id: ClothingEyesGlassesSecurity
@@ -85,7 +85,7 @@
     - id: FlashlightSeclite
       prob: 0.8
     - id: WeaponDisabler
-    - id: WeaponTaser
+    #- id: WeaponTaser #NO WE ARE NOT GIVING SEC TASERS, THEY HAVE ENOUGH GOODIES ALREADY
     #- id: ClothingUniformJumpsuitSecGrey # DeltaV - remove uniforms from sec lockers
     #  prob: 0.3
     - id: ClothingHeadHelmetBasic
@@ -126,7 +126,7 @@
   id: FillLockerBrigmedic
   table: !type:AllSelector
     children:
-    - id: WeaponTaser
+    #- id: WeaponTaser #NO WE ARE NOT GIVING SEC TASERS, THEY HAVE ENOUGH GOODIES ALREADY
     - id: ClothingEyesGlassesCorpsman
     - id: WeaponDisabler
     - id: TrackingImplanter
