@@ -22,13 +22,13 @@
       path: /Audio/_EE/Items/Handling/cloth_pickup.ogg
       params:
         volume: -4
-        maxDistance: 5
+        maxDistance: 3
   - type: EmitSoundOnDrop
     sound: &clothingDropSound
       path: /Audio/_EE/Items/Handling/cloth_drop.ogg
       params:
         volume: -4
-        maxDistance: 5
+        maxDistance: 3
   - type: EmitSoundOnLand
     sound: *clothingDropSound
 
