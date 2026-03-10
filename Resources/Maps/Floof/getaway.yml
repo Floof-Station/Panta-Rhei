@@ -196293,6 +196293,24 @@ entities:
     - type: Transform
       pos: -13.5,8.5
       parent: 2
+- proto: N14JunkArcade
+  entities:
+  - uid: 5921
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 25.5,95.5
+      parent: 2
+  - uid: 24185
+    components:
+    - type: Transform
+      pos: 29.5,95.5
+      parent: 2
+  - uid: 24186
+    components:
+    - type: Transform
+      pos: 27.5,95.5
+      parent: 2
 - proto: N14JunkBed1
   entities:
   - uid: 18450
@@ -196310,6 +196328,21 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 57.5,23.5
+      parent: 2
+- proto: N14JunkJukebox
+  entities:
+  - uid: 18447
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 58.5,23.5
+      parent: 2
+- proto: N14JunkMicrowave
+  entities:
+  - uid: 33134
+    components:
+    - type: Transform
+      pos: -43.5,14.5
       parent: 2
 - proto: N14JunkTable
   entities:
