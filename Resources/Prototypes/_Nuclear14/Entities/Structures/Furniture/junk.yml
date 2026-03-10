@@ -155,24 +155,6 @@
         - LowImpassable
 
 - type: entity
-  parent: N14JunkMachine
-  id: N14JunkMicrowave
-  name: broken microwave
-  description: Dirty old microwave. Now it's junk.
-  components:
-  - type: Sprite
-    state: junk_micro
-
-- type: entity
-  parent: N14JunkMachine
-  id: N14JunkJukebox
-  name: broken jukebox
-  description: An old destroyed jukebox. Now it's junk.
-  components:
-  - type: Sprite
-    state: junk_jukebox
-
-- type: entity
   parent: N14JunkMetalBase
   id: N14JunkBed1
   name: broken bed
@@ -189,33 +171,6 @@
   components:
   - type: Sprite
     state: junk_bed2
-
-- type: entity
-  parent: N14JunkMachine
-  id: N14JunkTV
-  name: broken TV
-  description: An old television. Now it's junk.
-  components:
-  - type: Sprite
-    state: junk_tv
-
-- type: entity
-  parent: N14JunkMachine
-  id: N14JunkArcade
-  name: broken arcade game
-  description: An old arcade machine. Now it's junk.
-  components:
-  - type: Sprite
-    state: junk_arcade
-
-- type: entity
-  parent: N14JunkMetalBase
-  id: N14JunkUrinal
-  name: broken urinal
-  description: A broken stinky urinal.
-  components:
-  - type: Sprite
-    state: junk_urinal
 
 - type: entity
   parent: Mirror

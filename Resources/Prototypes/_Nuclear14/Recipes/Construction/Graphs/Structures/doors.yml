@@ -127,17 +127,6 @@
           steps:
             - tool: Anchoring
               doAfter: 15
-    - node: MetalFence
-      entity: N14DoorMetalFenceSlanted
-      edges:
-        - to: start
-          completed:
-            - !type:SpawnPrototype
-              prototype: SheetSteel1
-              amount: 4
-          steps:
-            - tool: Anchoring
-              doAfter: 15
     - node: WoodDoor
       entity: N14DoorWoodSlanted
       edges:
