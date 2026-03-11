@@ -29,6 +29,7 @@ public readonly partial record struct CargoBountyData
         Id = $"{bounty.IdPrefix}{uniqueIdentifier:D3}";
     }
 	
+	//imp edit start - cargo bounty claiming & status
     [DataField]
     public string ClaimedBy { get; init; } = string.Empty;
 
@@ -42,3 +43,4 @@ public enum CargoBountyStatus
     Waiting,
     OnShuttle,
 }
+//imp edit end

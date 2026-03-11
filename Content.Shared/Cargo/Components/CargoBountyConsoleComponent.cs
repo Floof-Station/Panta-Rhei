@@ -95,6 +95,7 @@ public sealed class BountySkipMessage : BoundUserInterfaceMessage
     }
 }
 
+//imp edit start - cargo bounty claiming & status
 [Serializable, NetSerializable]
 public sealed class BountyClaimedMessage : BoundUserInterfaceMessage
 {
@@ -118,3 +119,4 @@ public sealed class BountySetStatusMessage : BoundUserInterfaceMessage
         Status = status;
     }
 }
+//imp edit end

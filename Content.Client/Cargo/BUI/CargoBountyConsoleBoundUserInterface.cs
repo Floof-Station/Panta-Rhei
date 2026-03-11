@@ -30,7 +30,7 @@ public sealed class CargoBountyConsoleBoundUserInterface : BoundUserInterface
         {
             SendMessage(new BountySkipMessage(id));
         };
-		
+		//imp edit start - bounty claiming & statuses
         _menu.OnClaimButtonPressed += id =>
         {
             SendMessage(new BountyClaimedMessage(id));
@@ -40,6 +40,7 @@ public sealed class CargoBountyConsoleBoundUserInterface : BoundUserInterface
         {
             SendMessage(new BountySetStatusMessage(id, status));
         };
+		//imp edit end
     }
 
     protected override void UpdateState(BoundUserInterfaceState message)
