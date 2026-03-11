@@ -115,6 +115,7 @@ namespace Content.Shared.Movement.Systems
             entity.Comp.TargetRelativeRotation = state.TargetRelativeRotation;
             entity.Comp.CanMove = state.CanMove;
             entity.Comp.RelativeEntity = EnsureEntity<InputMoverComponent>(state.RelativeEntity, entity.Owner);
+            entity.Comp.DefaultWalk = state.DefaultWalk; // Floofstation
 
             // Reset
             entity.Comp.LastInputTick = GameTick.Zero;
@@ -141,6 +142,7 @@ namespace Content.Shared.Movement.Systems
                 HeldMoveButtons = entity.Comp.HeldMoveButtons,
                 RelativeRotation = entity.Comp.RelativeRotation,
                 TargetRelativeRotation = entity.Comp.TargetRelativeRotation,
+                DefaultWalk = entity.Comp.DefaultWalk, // Floofstation
             };
         }
 
@@ -480,7 +482,6 @@ namespace Content.Shared.Movement.Systems
         public virtual void SetSprinting(Entity<InputMoverComponent> entity, ushort subTick, bool walking)
         {
             // Logger.Info($"[{_gameTiming.CurTick}/{subTick}] Sprint: {enabled}");
-
             SetMoveInput(entity, subTick, walking, MoveButtons.Walk);
         }
 

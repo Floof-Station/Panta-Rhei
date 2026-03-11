@@ -1,0 +1,49 @@
+- type: job
+  id: SecurityTechnician
+  name: job-name-sectech
+  description: job-description-sectech
+  playTimeTracker: JobSecurityTechnician
+  setPreference: true
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobSecurityOfficer
+      time: 4h
+    - !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 4h
+    - !type:RoleTimeRequirement
+      role: JobRoboticist
+      time: 4h
+  startingGear: SecTechGear
+  icon: "JobIconSecurityTechnician"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Maintenance
+  - External
+  - GenpopEnter
+  - GenpopLeave
+  - Robotics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SecTechGear
+  equipment:
+    ears: ClothingHeadsetSecurity
+    eyes: ClothingEyesHudDiagnostic
+    head: ClothingHeadHelmetSecTech
+
+- type: chameleonOutfit
+  id: SecurityTechnicianChameleonOutfit
+  job: SecurityTechnician
+  hasMindShield: true
+  equipment:
+    eyes: ClothingEyesHudDiagnostic
+    ears: ClothingHeadsetSecurity
+    belt: ClothingBeltUtilityEngineering
+    mask: ClothingMaskGasSecurity
+    gloves: ClothingHandsGlovesCombat
+    head: ClothingHeadHelmetSecTech

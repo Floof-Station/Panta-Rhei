@@ -42,3 +42,79 @@
   maxLimit: 1
   loadouts:
   - UnderSocksCMO
+
+# paramed additions
+- type: loadoutGroup
+  id: FloofParamedJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformParaMedicThong
+
+- type: loadoutGroup
+  id: FloofParamedGloves
+  name: loadout-group-medical-paramedic-gloves
+  parent: [MedicalGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsParaMedicWarmers
+
+- type: loadoutGroup
+  id: FloofParamedShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksParaMedic
+
+# medical doctor additions
+- type: loadoutGroup
+  id: FloofMedicalDoctorJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformMedicThong
+
+- type: loadoutGroup
+  id: FloofMedicalDoctorGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsMedicWarmers
+
+- type: loadoutGroup
+  id: FloofMedicalShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksMedic
+
+# chemist additions
+- type: loadoutGroup
+  id: FloofChemistJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformChemistsThong
+
+- type: loadoutGroup
+  id: FloofChemistGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsChemistsWarmers
+
+- type: loadoutGroup
+  id: FloofChemistShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksChemists

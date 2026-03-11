@@ -5,21 +5,24 @@
   playTimeTracker: JobHeadOfPersonnel
   antagAdvantage: 6 # DeltaV - Reduced TC: Head of Staff
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Engineering
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Medical
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Epistemics # DeltaV
-      time: 2.5h
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 2.5h
+    # Floofstation changes start
+    # Make hop have only command time as a requirement
+    #- !type:DepartmentTimeRequirement
+    #  department: Engineering
+    #  time: 2.5h
+    #- !type:DepartmentTimeRequirement
+    #  department: Medical
+    #  time: 2.5h
+    #- !type:DepartmentTimeRequirement
+    #  department: Epistemics # DeltaV
+    #  time: 2.5h
+    #- !type:DepartmentTimeRequirement
+    #  department: Security
+    #  time: 2.5h
+    # Floofstation changes end
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 2.5h
+      time: 5h # Floofstation changed from 2.5h to 5h
   weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

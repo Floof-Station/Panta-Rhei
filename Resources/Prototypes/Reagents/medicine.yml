@@ -841,6 +841,7 @@
             Heat: -0.33
             Shock: -0.33
             Cold: -0.33
+            Radiation: -0.05 # Floof - Stops Medibots from constantly injecting people for 0.01 rads
 
 - type: reagent
   id: Lipozine

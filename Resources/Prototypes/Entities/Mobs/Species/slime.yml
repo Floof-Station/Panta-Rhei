@@ -20,9 +20,16 @@
     maxItemSize: Large
     storageInsertSound:
       path: /Audio/Voice/Slime/slime_squish.ogg
+    storageRemoveSound: # Euphoria: add removal sound
+      path: /Audio/Voice/Slime/slime_squish.ogg
     blacklist: # DeltaV - add blacklist
       components:
       - NukeDisk
+  - type: StorageBlockedByClothing # Euphoria: Adding the component and tags
+    slots:
+    - INNERCLOTHING
+    allowedTags:
+    - ShirtlessClothing
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -65,6 +72,7 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime
+  - type: Geras # Euphoria - Readded this component to allow Geras to work.
   - type: PassiveDamage # Around 8 damage a minute healed
     allowedStates:
     - Alive

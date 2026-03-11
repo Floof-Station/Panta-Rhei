@@ -27,6 +27,18 @@
   - FloofSecurityFirearmPowerCellHigh
 
 - type: loadoutGroup
+  id: FloofSecurityRevolverAmmo
+  abstract: true
+  name: loadout-group-security-gun-ammo
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - SecurityFirearmSpeedLoaderMagnumRubber
+  - SecurityFirearmSpeedLoaderMagnum
+  - SecurityFirearmSpeedLoaderSpecialRubber
+  - SecurityFirearmSpeedLoaderSpecial
+
+- type: loadoutGroup
   id: FloofSecurityRevolvers
   abstract: true
   name: loadout-group-security-gun
