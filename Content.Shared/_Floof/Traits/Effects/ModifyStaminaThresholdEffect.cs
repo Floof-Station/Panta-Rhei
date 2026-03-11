@@ -22,6 +22,7 @@ public sealed partial class ModifyStaminaThresholdEffect : BaseTraitEffect
 
         stamina.CritThreshold *= Multiplier;
         stamina.Decay *= Multiplier;
+        stamina.AnimationThreshold *= Multiplier;
 
         // There are several stamina thresholds at which the mob is slowed down, all of which need to be updated
         var newThresholds = new Dictionary<FixedPoint2, float>();

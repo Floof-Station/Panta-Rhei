@@ -96,7 +96,7 @@ public sealed partial class StaminaComponent : Component
     /// Threshold at which low stamina animations begin playing. This should be set to a value that means something.
     /// At 50, it is aligned so when you hit 60 stun the entity will be breathing once per second (well above hyperventilation).
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Floofstation - networked
     public float AnimationThreshold = 50;
 
     /// <summary>
