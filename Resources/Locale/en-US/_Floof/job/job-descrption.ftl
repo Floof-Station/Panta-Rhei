@@ -3,3 +3,4 @@ job-description-senior-researcher = Teach new scientists the basics of item prin
 job-description-senior-physician = Teach new medics the basics of tending to the wounded, chemistry, diagnosing the diseased and disposing of the dead.
 job-description-senior-officer = Teach new officers the basics of searches, performing arrests, prison times and how to properly shoot a firearm.
 job-description-invspec = Oversee requests and deliveries, lead and train Cargo Technicians, and make sure your cash goes to the right place. Gambling and donk-pockets await!
+job-description-sectech = Handle maitenance and upgrades of security department silicons. Work closely with Security borgs and ensure their laws are followed within the security SOP.

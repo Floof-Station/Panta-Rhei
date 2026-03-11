@@ -1217,3 +1217,129 @@ Entries:
       message: Return of the Marked traits.
   id: 150
   time: '2026-03-08T00:07:27.0000000+00:00'
+- author: TheRealMasterChief117
+  changes:
+    - type: Fix
+      message: >-
+        Fixed some guidebook entries appearing with the wrong text. (no
+        localization)
+  id: 151
+  time: '2026-03-08T02:35:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added an ability to flip your body orientation while lying. The default
+        keybind is Ctrl-R.
+    - type: Add
+      message: >-
+        Added a "default walk" toggle to the settings. The setting inverts your
+        walking state.
+    - type: Tweak
+      message: >-
+        The "rotate in world" command is now bound to Middle Mouse Button by
+        default. It used to be bound to R, which conflicted with "toggle
+        knockdown" and would sometimes cause you to rotate nearby furniture
+        while trying to lay down.
+    - type: Fix
+      message: All borgs should be able to crawl now.
+  id: 152
+  time: '2026-03-08T02:37:17.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Fix
+      message: Slimefolk now have an anti-theft system called wearing clothes
+    - type: Add
+      message: Removal sound for taking things out of Slimefolk internal storage.
+  id: 153
+  time: '2026-03-09T09:40:45.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Security Technician and associated gear.
+  id: 154
+  time: '2026-03-09T11:55:43.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Lo's Digiboard can be linked to cargo telepads again.
+  id: 155
+  time: '2026-03-10T08:10:56.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Tweak
+      message: Added more marking points to shadowkin
+  id: 156
+  time: '2026-03-10T14:12:44.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: >-
+        Added handling sounds to almost every single item in the game. This
+        isn't as bad as you think, it's more-so pickup/drop sounds!
+    - type: Add
+      message: >-
+        Unique handling sounds for swords, knives, ammo boxes, normal boxes,
+        machine components, signalers, etc.
+    - type: Add
+      message: >-
+        Firearms now have unique handling sounds for each type! Be it an SMG,
+        laser weapon, or a minigun! You can finally hear security arming up in
+        *real time!* Wow! Traitors and the like should be mindful of how loud
+        they're being too with their own firearms.
+    - type: Remove
+      message: Removed some unused sounds.
+    - type: Fix
+      message: >-
+        Fixed tool belts, ID cards, and toolboxes not playing the correct sounds
+        or just not playing sounds at all.
+  id: 157
+  time: '2026-03-10T23:29:45.0000000+00:00'
+- author: friendofbugs
+  changes:
+    - type: Tweak
+      message: >-
+        Humans and Harpies can now have any skin color, rather than being
+        limited to human tones.
+  id: 158
+  time: '2026-03-11T05:16:45.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Centcomm ran out of floor polish, so certain station floors won't be as
+        slippery anymore.
+  id: 159
+  time: '2026-03-11T05:18:32.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Fix
+      message: Geras get emotes now
+    - type: Fix
+      message: >-
+        Kitsune Foxform and Geras now understand what they could before
+        morphing!
+    - type: Fix
+      message: >-
+        Geras emotes now have sound...It's only male sounds though. Admittedly a
+        band-aid fix for now.
+  id: 160
+  time: '2026-03-11T05:25:48.0000000+00:00'
+- author: LadyDeathsHead
+  changes:
+    - type: Add
+      message: Reimplemented german 🇩🇪
+  id: 161
+  time: '2026-03-11T08:09:54.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Playing cards are back so we must gamble.
+  id: 162
+  time: '2026-03-11T08:11:02.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added round start psionics traits
+  id: 163
+  time: '2026-03-11T08:16:02.0000000+00:00'

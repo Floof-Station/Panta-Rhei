@@ -20,9 +20,6 @@ PlushieTrystan: PlushieMothRandom
 
 #Need to port over still
 SpawnMobArcticFoxSeb: MobArcticFoxSiobhan # do we want to bring seb over?
-CardBoxSyndicate: null
-CardBoxBlack: null
-CardBoxNanotrasen: null
 HandheldFax: null #this seems to be mapped to train in error need to remove this, but setting this to null till its removed
 AirlockNanotrasenRepresentativeCommandGlassLocked: AirlockCommandGlassLocked
 AirlockMagistrateCommandLocked: AirlockChiefJusticeLocked #delta-v dose no thave amgistrate so replacing with a cj airlock
@@ -84,9 +81,9 @@ ClothingOuterJacketChefOrion: null
 CrateLewd: null
 CrateLewdKink: null
 LewdLootSpawnerAll: null
-StripperPole: null
 LewdLootSpawnerKinky: null
 LewdLootSpawnerToys: null
+StripperPole: null
 ClothingHandsSexCompGlovesBlue: null
 ClothingHandsSexCompGlovesRed: null
 ClothingHeadSexCompCirclet: null
@@ -210,11 +207,11 @@ FitnessPunchingBag: N14FitnessPunchingBag # we don't have this but can just repl
 FitnessPunchingBagCaptain: N14FitnessPunchingBag # we don't have this but can just replace it with the n14 one for now
 DecorFloorTrashbags5: N14DecorFloorTrashbags5
 
-#fix rotation of sofas & benches
-BenchSofaCorpRight: BenchSofaCorpLeft
-BenchSofaCorpLeft: BenchSofaCorpRight
-BenchParkLeft: BenchParkRight
-BenchParkRight: BenchParkLeft
-BenchParkBambooRight: BenchParkBambooLeft
-BenchParkBambooLeft: BenchParkBambooRight
-BenchSofaRight: BenchSofaLeft
+# Irrelevant, delta-v has its own migrations now
+# BenchSofaCorpRight: BenchSofaCorpLeft
+# BenchSofaCorpLeft: BenchSofaCorpRight
+# BenchParkLeft: BenchParkRight
+# BenchParkRight: BenchParkLeft
+# BenchParkBambooRight: BenchParkBambooLeft
+# BenchParkBambooLeft: BenchParkBambooRight
+# BenchSofaRight: BenchSofaLeft

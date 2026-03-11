@@ -1,7 +1,7 @@
 # Logistics
 - type: roleLoadout
   id: JobCourier
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CourierHead
@@ -18,7 +18,7 @@
 
 - type: roleLoadout
   id: JobCargoAssistant
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CargoAssistantHead
@@ -33,7 +33,7 @@
 # Security
 - type: roleLoadout
   id: JobBrigmedic
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - BrigMedicHead
   - BrigMedicNeck
@@ -51,7 +51,7 @@
 # Medical
 - type: roleLoadout
   id: JobSurgeon
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - SurgeonHead
@@ -65,12 +65,13 @@
   - SurgeonPDA
   - MedicalEyewear
   - SurvivalMedical
+  - MedicalDoctorJobTrinkets # Euphoria
   - GroupSpeciesBreathToolMedical
 
 # Justice
 - type: roleLoadout
   id: JobChiefJustice
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefJusticeHead
@@ -86,7 +87,7 @@
 
 - type: roleLoadout
   id: JobClerk
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ClerkJumpsuit
@@ -100,7 +101,7 @@
 
 - type: roleLoadout
   id: JobProsecutor
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ProsecutorJumpsuit
@@ -114,7 +115,7 @@
 # Epistemics
 - type: roleLoadout
   id: JobRoboticist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - RoboticistHead

@@ -1,5 +1,17 @@
+# Used as a parent for all other role loadouts. Includes things that all jobs should have access to.
+- type: roleLoadout
+  id: JobBaseLoadout
+  abstract: true
+  groups:
+  - Trinkets
+  - Smokeables
+  - Pets
+  - Instruments
+  - SexToys # Floofstation
+
 - type: roleLoadout
   id: JobSeniorEngineer
+  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - StationEngineerHead
@@ -19,6 +31,7 @@
 
 - type: roleLoadout
   id: JobSeniorPhysician
+  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
@@ -40,6 +53,7 @@
 
 - type: roleLoadout
   id: JobSeniorResearcher
+  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - ScientistHead
@@ -59,6 +73,7 @@
 
 - type: roleLoadout
   id: JobSeniorOfficer
+  parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
   - SecurityNeck # DeltaV
@@ -80,6 +95,7 @@
 
 - type: roleLoadout
   id: JobInventorySpecialist
+  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
@@ -96,3 +112,24 @@
   - Smokeables
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobSecurityTechnician
+  groups:
+  - SecurityHead
+  - SecurityNeck
+  - SecurityJumpsuit
+  - SecurityBackpack
+  - SecurityOuterClothingDeltaV
+  - StationEngineerGloves
+  - SecurityShoes
+  - SecurityPDA
+  - StationEngineerBelts
+  - RoboticistGlasses
+  - SurvivalSecurity
+  - Trinkets
+  - Smokeables
+  - SecurityJobTrinkets
+  - GroupSpeciesBreathToolSecurity
+  - SecurityFirearm
+  - SecurityFirearmAmmo
