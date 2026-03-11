@@ -79,7 +79,7 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
 
         // +90deg = default horizontal rotation, -90deg = opposite
         var rotVisuals = EnsureComp<RotationVisualsComponent>(uid);
-        _rotVisuals.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation + (ext.InvertedCrawlingDirection ? 0 : Angle.FromDegrees(180)));
+        _rotVisuals.SetHorizontalAngle((uid, rotVisuals), rotVisuals.DefaultRotation + (!ext.InvertedCrawlingDirection ? 0 : Angle.FromDegrees(180)));
         // Have to queue an appearance update so the RotationVisualizerSystem can play an animation if the entity is already laying
         Dirty(uid, appearance);
     }
