@@ -16,16 +16,16 @@ public sealed partial class CumProducerComponent : Component
     public ProtoId<ReagentPrototype> ReagentId = "Cum";
 
     [DataField]
-    public FixedPoint2 MaxVolume = FixedPoint2.New(25);
+    public FixedPoint2 MaxVolume = FixedPoint2.New(100);
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;
 
     [DataField]
-    public FixedPoint2 QuantityPerUpdate = 5;
+    public FixedPoint2 QuantityPerUpdate = 10;
 
     [DataField]
-    public float HungerUsage = 10f;
+    public float HungerUsage = 5f;
 
     [DataField]
     public TimeSpan GrowthDelay = TimeSpan.FromSeconds(10);
