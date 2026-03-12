@@ -114,7 +114,6 @@ DrinkKoboldKorkscrewGlass: null
 #lockers - need to bring these over all maps have these
 LockerBartenderFilled: LockerBoozeFilled
 LockerClownFilled: LockerClown
-LockerJanitorFilled: LockerJanitor
 LockerMimeFilled: LockerMime
 LockerSurgeonGeneralFilled: LockerChiefMedicalOfficerFilled #a centcomm specific job for admins on floof replacing with a cmo locker for now
 LockerMagistrateFilled: LockerChiefJusticeFilled  #a centcomm specific job for admins on floof replacing with a cj locker for now
@@ -190,6 +189,7 @@ WeaponEnergyGunPistolSecurity: WeaponEnergyGunPistol #delta-v renamed
 WeaponSubMachineGunWt550HoS: MagazinePistolSubMachineGunTopMounted #delta-v renamed
 MegaSprayBottleSpaceCleaner: MegaSprayBottle # delta-v doesn't have a pre-filled one but this is fine since these are not normally mapped anyway
 MaterialSilo: MachineMaterialSilo # was renamed
+LockerJanitor: ClosetJanitorFilled # delta-v renamed
 
 #N14 from floof to floof rebase
 ClosetGrey2: N14ClosetGrey2
