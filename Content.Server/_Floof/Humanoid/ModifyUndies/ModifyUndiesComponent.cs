@@ -16,9 +16,7 @@ public sealed partial class ModifyUndiesComponent : Component
     [
         HumanoidVisualLayers.UndergarmentBottom,
         HumanoidVisualLayers.UndergarmentTop,
-        HumanoidVisualLayers.Genital,
-        HumanoidVisualLayers.Boobs,
-        HumanoidVisualLayers.Butt
+        HumanoidVisualLayers.Genital
     ];
 }
 

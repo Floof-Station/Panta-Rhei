@@ -46,6 +46,7 @@
     RLeg: MobRodentiaRLeg
     LFoot: MobRodentiaLFoot
     RFoot: MobRodentiaRFoot
+    Genital: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobRodentiaMarkingLimits
@@ -101,6 +102,9 @@
       points: 10
       required: false
     Arms:
+      points: 10
+      required: false
+    Genital:
       points: 10
       required: false
 

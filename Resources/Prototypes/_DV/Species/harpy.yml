@@ -41,6 +41,7 @@
     LFoot: MobHarpyLFoot
     RFoot: MobHarpyRFoot
     RArmExtension: MobHumanoidAnyMarking # Frontier
+    Genital: MobHumanoidAnyMarking
 
 
 - type: markingPoints
@@ -101,6 +102,9 @@
       points: 10
       required: true
       # defaultMarkings: [ HarpyWingDefaultHuescale ] # breaks the layering if kept. Is ugly but the way this stuff is implemented makes it impossible to do anything else
+    Genital:
+      points: 10
+      required: false
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

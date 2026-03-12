@@ -40,6 +40,7 @@
     RLeg: MobMothRLeg
     LFoot: MobMothLFoot
     RFoot: MobMothRFoot
+    Genital: MobHumanoidAnyMarking
 
 - type: humanoidBaseSprite
   id: MobMothEyes
@@ -99,6 +100,9 @@
       points: 10
       required: false
     Arms:
+      points: 10
+      required: false
+    Genital:
       points: 10
       required: false
 

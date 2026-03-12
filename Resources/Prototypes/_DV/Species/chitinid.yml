@@ -40,6 +40,7 @@
     RLeg: MobChitinidRLeg
     LFoot: MobChitinidLFoot
     RFoot: MobChitinidRFoot
+    Genital: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobChitinidMarkingLimits
@@ -96,6 +97,9 @@
       points: 10
       required: false
     Arms:
+      points: 10
+      required: false
+    Genital:
       points: 10
       required: false
 

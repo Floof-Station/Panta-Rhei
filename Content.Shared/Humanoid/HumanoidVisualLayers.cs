@@ -14,6 +14,7 @@ namespace Content.Shared.Humanoid
         Tail,
         Hair,
         FacialHair,
+        Genital, // Floof: Attempting to port coyotes marking system. its not going well
         UndergarmentTop,    // Floofstation note: Undershirt has been changed to this
         UndergarmentBottom, // Floofstation note: Underwear has been changed to this
         Chest,
@@ -42,9 +43,6 @@ namespace Content.Shared.Humanoid
         Fire,
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
-        Genital, // Floof: Attempting to port coyotes marking system. its not going well
-        Boobs,
-        Butt,
         TaurBodyConnector,// Floof: Required as "Mini-framework" for tauric species
         TaurBody// Floof: Required as "Mini-framework" for tauric species
     }

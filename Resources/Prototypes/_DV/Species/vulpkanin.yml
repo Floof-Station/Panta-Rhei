@@ -40,6 +40,7 @@
     RLeg: MobVulpkaninRLeg
     LFoot: MobVulpkaninLFoot
     RFoot: MobVulpkaninRFoot
+    Genital: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobVulpkaninMarkingLimits
@@ -97,6 +98,9 @@
     Arms:
       points: 10
       required: false
+    Genital:
+      points: 10
+      required: false      
 
 
 - type: humanoidBaseSprite

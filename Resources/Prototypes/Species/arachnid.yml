@@ -42,6 +42,7 @@
     RLeg: MobArachnidRLeg
     LFoot: MobArachnidLFoot
     RFoot: MobArachnidRFoot
+    Genital: MobHumanoidAnyMarking
 
 - type: humanoidBaseSprite
   id: MobArachnidEyes
@@ -104,6 +105,9 @@
       points: 10
       required: false
     Arms:
+      points: 10
+      required: false
+    Genital:
       points: 10
       required: false
 

@@ -40,6 +40,7 @@
     RArm: MobHumanRArm
     LHand: MobHumanLHand
     RHand: MobHumanRHand
+    Genital: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobArachneMarkingLimits
@@ -101,6 +102,9 @@
       points: 10
       required: false
     Arms:
+      points: 10
+      required: false
+    Genital:
       points: 10
       required: false
 

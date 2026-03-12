@@ -6,8 +6,6 @@ namespace Content.Shared.Humanoid.Markings
     public enum MarkingCategories : byte
     {
         Genital,
-        Boobs,
-        Butt,
         TaurBody,
         TaurBodyConnector,
         Special,
@@ -72,8 +70,6 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.RArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer
                 HumanoidVisualLayers.LArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer
                 HumanoidVisualLayers.Genital => MarkingCategories.Genital,
-                HumanoidVisualLayers.Boobs => MarkingCategories.Boobs,
-                HumanoidVisualLayers.Butt=> MarkingCategories.Butt,
                 HumanoidVisualLayers.TaurBodyConnector => MarkingCategories.TaurBodyConnector, // Floof: species-specific layer
                 HumanoidVisualLayers.TaurBody => MarkingCategories.TaurBody, // Floof: species-specific layer
                 _ => MarkingCategories.Overlay

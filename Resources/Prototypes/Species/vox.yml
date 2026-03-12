@@ -42,6 +42,7 @@
     RLeg: MobVoxRLeg
     LFoot: MobVoxLFoot
     RFoot: MobVoxRFoot
+    Genital: MobHumanoidAnyMarking
 
 - type: markingPoints
   id: MobVoxMarkingLimits
@@ -101,6 +102,9 @@
       points: 10
       required: true
       defaultMarkings: [ VoxLLegScales, VoxRLegScales, VoxRFootScales, VoxLFootScales ]
+    Genital:
+      points: 10
+      required: false
 
 - type: humanoidBaseSprite
   id: MobVoxEyes
