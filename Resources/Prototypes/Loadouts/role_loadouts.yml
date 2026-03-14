@@ -506,11 +506,16 @@
   - SecurityNeck # DeltaV
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityCadetJumpsuit
+  - SecurityOuterClothingDeltaV # Floofstation - Let cadets customize their outer clothing
+  - SecurityShoes  # Floofstation - Let cadets customize their shoes
   - SecurityBackpack
+  - SecurityEyewear # Floofstation - let cadets customize their eye wear
   - SurvivalSecurity
   - Glasses # DeltaV
   - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - SecurityFirearm # Floofstation - let cadets choose their fire arm
+  - SecurityFirearmAmmo # Floofstation - let cadets choose their ammo
 
 # Medical
 - type: roleLoadout
@@ -559,7 +564,12 @@
   - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
+  - MedicalMask # Floofstation
+  - MedicalDoctorOuterClothing # Floofstation
   - MedicalInternPDADelta # DeltaV
+  - MedicalGloves # Floofstation
+  - MedicalDoctorBelts # Floofstation
+  - MedicalShoes # Floofstation
   - MedicalEyewear
   - SurvivalMedical
   - MedicalInternJobTrinkets
