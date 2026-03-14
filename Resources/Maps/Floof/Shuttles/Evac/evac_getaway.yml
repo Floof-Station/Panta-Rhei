@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/14/2026 00:59:40
+  time: 03/14/2026 01:01:33
   entityCount: 1799
 maps: []
 grids:
@@ -1400,27 +1400,27 @@ entities:
       fixtures: {}
 - proto: BenchParkLeftDV
   entities:
-  - uid: 803
+  - uid: 401
     components:
     - type: Transform
-      pos: 14.5,7.5
+      pos: 12.5,7.5
       parent: 1
-  - uid: 804
+  - uid: 402
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 12.5,3.5
+      pos: 14.5,3.5
       parent: 1
-  - uid: 807
+  - uid: 483
+    components:
+    - type: Transform
+      pos: -11.5,7.5
+      parent: 1
+  - uid: 484
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: -11.5,3.5
-      parent: 1
-  - uid: 808
-    components:
-    - type: Transform
-      pos: -9.5,7.5
+      pos: -9.5,3.5
       parent: 1
 - proto: BenchParkMiddle
   entities:
@@ -1448,47 +1448,47 @@ entities:
       parent: 1
 - proto: BenchParkRightDV
   entities:
-  - uid: 715
-    components:
-    - type: Transform
-      pos: 12.5,7.5
-      parent: 1
-  - uid: 800
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 14.5,3.5
-      parent: 1
-  - uid: 805
-    components:
-    - type: Transform
-      pos: -11.5,7.5
-      parent: 1
-  - uid: 806
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,3.5
-      parent: 1
-- proto: BenchSofaLeftDV
-  entities:
-  - uid: 483
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-13.5
-      parent: 1
   - uid: 485
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.5,-11.5
+      pos: 14.5,7.5
+      parent: 1
+  - uid: 486
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 12.5,3.5
       parent: 1
   - uid: 487
     components:
     - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -11.5,3.5
+      parent: 1
+  - uid: 488
+    components:
+    - type: Transform
+      pos: -9.5,7.5
+      parent: 1
+- proto: BenchSofaLeftDV
+  entities:
+  - uid: 715
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 2.5,-13.5
+      parent: 1
+  - uid: 803
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,-12.5
+      parent: 1
+  - uid: 806
+    components:
+    - type: Transform
       rot: -1.5707963267948966 rad
-      pos: 3.5,-12.5
+      pos: 3.5,-11.5
       parent: 1
 - proto: BenchSofaMiddle
   entities:
@@ -1500,23 +1500,23 @@ entities:
       parent: 1
 - proto: BenchSofaRightDV
   entities:
-  - uid: 484
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 3.5,-11.5
-      parent: 1
-  - uid: 486
+  - uid: 800
     components:
     - type: Transform
       rot: 3.141592653589793 rad
-      pos: 2.5,-13.5
+      pos: 0.5,-13.5
       parent: 1
-  - uid: 488
+  - uid: 804
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,-12.5
+      parent: 1
+  - uid: 805
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
-      pos: -0.5,-12.5
+      pos: -0.5,-11.5
       parent: 1
 - proto: BoozeDispenser
   entities:
@@ -5251,7 +5251,7 @@ entities:
       parent: 1
 - proto: GasMinerNitrogen
   entities:
-  - uid: 401
+  - uid: 807
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
@@ -5259,7 +5259,7 @@ entities:
       parent: 1
 - proto: GasMinerOxygen
   entities:
-  - uid: 402
+  - uid: 808
     components:
     - type: Transform
       pos: 15.5,-6.5
