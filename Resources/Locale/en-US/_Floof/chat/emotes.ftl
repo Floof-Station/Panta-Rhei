@@ -33,4 +33,4 @@ chat-emote-msg-felinetrill = trills.
 
 # Reptilian
 chat-emote-name-rattle = Rattle
-chat-emote-msg-rattle = rattles!
+chat-emote-msg-rattle = rattles {POSS-ADJ($entity)} tail!
