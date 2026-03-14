@@ -7,15 +7,6 @@ trait-description-MilkProducer = You have a pair of large mammaries.
 trait-name-SquirtProducer = Pussy
 trait-description-SquirtProducer = You have a slit between your legs.
 
-trait-name-BigCumProducer = Cock - Fire Hose
-trait-description-BigCumProducer = You have a schlong between your legs. It contains a massive amount of cum.
-
-trait-name-BigMilkProducer = Boobs - Milk Truck
-trait-description-BigMilkProducer = You have a pair of large mammaries. They contain a massive amount of milk.
-
-trait-name-BigSquirtProducer = Pussy - Water Feature
-trait-description-BigSquirtProducer = You have a slit between your legs. It contains a massive amount of squirt.
-
 trait-name-EggLayer = Egg Layer
 trait-description-EggLayer = Your body through either mutation, oviposition, cybernetic or noospheric influence has the ability to lay eggs.
 
@@ -108,3 +99,12 @@ trait-religious-name = Religious
 trait-religious-desc = 
     You are deeply religious, and a holy book in your hands is capable of miracles.
     (Bible not included)
+
+trait-name-BigCumProducer = Cock - Fire Hose
+trait-description-BigCumProducer = You have a schlong between your legs. It contains a massive amount of cum.
+
+trait-name-BigMilkProducer = Boobs - Milk Truck
+trait-description-BigMilkProducer = You have a pair of large mammaries. They contain a massive amount of milk.
+
+trait-name-BigSquirtProducer = Pussy - Water Feature
+trait-description-BigSquirtProducer = You have a slit between your legs. It contains a massive amount of squirt.
