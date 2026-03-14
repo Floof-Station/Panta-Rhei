@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 03/14/2026 00:33:47
+  time: 03/14/2026 00:50:51
   entityCount: 1287
 maps: []
 grids:
@@ -759,7 +759,7 @@ entities:
       pos: 2.5,-8.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -2888.4978
+      secondsUntilStateChange: -3912.344
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1054,6 +1054,12 @@ entities:
     - type: Transform
       pos: 8.5,1.5
       parent: 1
+  - uid: 335
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,9.5
+      parent: 1
   - uid: 363
     components:
     - type: Transform
@@ -1081,21 +1087,20 @@ entities:
   - uid: 1122
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 8.5,9.5
-      parent: 1
-  - uid: 1136
-    components:
-    - type: Transform
       pos: 3.5,14.5
       parent: 1
-  - uid: 1137
+  - uid: 1123
     components:
     - type: Transform
       pos: 7.5,13.5
       parent: 1
 - proto: BenchSofaRightDV
   entities:
+  - uid: 313
+    components:
+    - type: Transform
+      pos: 4.5,14.5
+      parent: 1
   - uid: 331
     components:
     - type: Transform
@@ -1145,14 +1150,9 @@ entities:
   - uid: 442
     components:
     - type: Transform
-      pos: 4.5,14.5
-      parent: 1
-  - uid: 1123
-    components:
-    - type: Transform
       pos: 8.5,13.5
       parent: 1
-  - uid: 1138
+  - uid: 1136
     components:
     - type: Transform
       rot: 3.141592653589793 rad
@@ -4197,19 +4197,20 @@ entities:
     - type: Transform
       pos: 4.48827,-17.450796
       parent: 1
-- proto: GasMinerNitrogenStationLarge
+- proto: GasMinerNitrogen
   entities:
-  - uid: 335
+  - uid: 1138
     components:
     - type: Transform
+      rot: 1.5707963267948966 rad
       pos: 7.5,-21.5
       parent: 1
-- proto: GasMinerOxygenStationLarge
+- proto: GasMinerOxygen
   entities:
-  - uid: 313
+  - uid: 1137
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
+      rot: 1.5707963267948966 rad
       pos: 7.5,-18.5
       parent: 1
 - proto: GasMixerFlipped
