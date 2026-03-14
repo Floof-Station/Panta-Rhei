@@ -16,7 +16,7 @@ public sealed partial class SquirtProducerComponent : Component
     public ProtoId<ReagentPrototype> ReagentId = "NaturalLubricant";
 
     [DataField]
-    public FixedPoint2 MaxVolume = FixedPoint2.New(50);
+    public FixedPoint2 MaxVolume = FixedPoint2.New(30);
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;
@@ -25,7 +25,7 @@ public sealed partial class SquirtProducerComponent : Component
     public FixedPoint2 QuantityPerUpdate = 5;
 
     [DataField]
-    public float HungerUsage = 5f;
+    public float HungerUsage = 10f;
 
     [DataField]
     public TimeSpan GrowthDelay = TimeSpan.FromSeconds(10);
