@@ -13,7 +13,7 @@ trait-description-BigCumProducer = You have a schlong between your legs. It cont
 trait-name-BigMilkProducer = Boobs - Milk Truck
 trait-description-BigMilkProducer = You have a pair of large mammaries. They contain a massive amount of milk.
 
-trait-name-BigSquirtProducer = Pussy - Fire Hose
+trait-name-BigSquirtProducer = Pussy - Water Feature
 trait-description-BigSquirtProducer = You have a slit between your legs. It contains a massive amount of squirt.
 
 trait-name-EggLayer = Egg Layer
