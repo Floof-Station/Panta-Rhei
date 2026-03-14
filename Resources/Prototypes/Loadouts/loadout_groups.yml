@@ -1984,6 +1984,7 @@
 
 - type: loadoutGroup
   id: MedicalEyewear
+  parent: [FloofChemistEyeWear] # Floofstation
   name: loadout-group-medical-glasses
   minLimit: 0
   loadouts:

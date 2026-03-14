@@ -15,3 +15,27 @@
   id: ClothingUnderSocksChemists
   equipment:
     shoes: ClothingUnderSocksChemists
+
+# eyes
+- type: loadout
+  id: EyesGlassesChemical
+  equipment:
+    eyes: ClothingEyesGlassesChemical
+
+- type: loadout
+  id: EyesGlassesChemicalInterdyne
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofChemistGoggles
+  equipment:
+    eyes: ClothingEyesGlassesChemicalInterdyne
+
+# timers for special options
+- type: loadoutEffectGroup
+  id: FloofChemistGoggles
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChemist
+      time: 20h # for extra hard work making chemicals for medical
