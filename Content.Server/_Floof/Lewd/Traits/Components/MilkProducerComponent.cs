@@ -16,16 +16,16 @@ public sealed partial class MilkProducerComponent : Component
     public ProtoId<ReagentPrototype> ReagentId = "Milk";
 
     [DataField]
-    public FixedPoint2 MaxVolume = FixedPoint2.New(200);
+    public FixedPoint2 MaxVolume = FixedPoint2.New(50);
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;
 
     [DataField]
-    public FixedPoint2 QuantityPerUpdate = 10;
+    public FixedPoint2 QuantityPerUpdate = 5;
 
     [DataField]
-    public float HungerUsage = 5f;
+    public float HungerUsage = 10f;
 
     [DataField]
     public TimeSpan GrowthDelay = TimeSpan.FromSeconds(10);
