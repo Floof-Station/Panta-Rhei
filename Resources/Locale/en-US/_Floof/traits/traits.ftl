@@ -7,7 +7,7 @@ trait-description-MilkProducer = You have a pair of large mammaries.
 trait-name-SquirtProducer = Pussy
 trait-description-SquirtProducer = You have a slit between your legs.
 
-﻿trait-name-BigCumProducer = Cock - Fire Hose
+trait-name-BigCumProducer = Cock - Fire Hose
 trait-description-BigCumProducer = You have a schlong between your legs. It contains a massive amount of cum.
 
 trait-name-BigMilkProducer = Boobs - Milk Truck
