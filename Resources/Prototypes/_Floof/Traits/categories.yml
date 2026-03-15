@@ -1,3 +1,15 @@
+- type: traitCategory # Euphoria - Split Between Physical and Mental
+  id: DisabilitiesPhysical
+  name: trait-category-disabilitiesphysical
+  priority: 1
+  accentColor: "#64748b"  # Slate / muted gray
+
+- type: traitCategory # Euphoria
+  id: DisabilitiesMental
+  name: trait-category-disabilitiesmental
+  priority: 5
+  accentColor: "#7A687F"  # purplish grey
+
 - type: traitCategory # Euphoria
   id: Cybernetics
   name: trait-category-cybernetics
