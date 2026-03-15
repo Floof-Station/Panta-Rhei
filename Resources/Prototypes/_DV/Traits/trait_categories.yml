@@ -1,4 +1,4 @@
-- type: traitCategory # Euphoria
+- type: traitCategory # Euphoria - Split Between Physical and Mental
   id: DisabilitiesPhysical
   name: trait-category-disabilitiesphysical
   priority: 0
@@ -11,10 +11,10 @@
   accentColor: "#7A687F"  # purplish grey
 
 - type: traitCategory
-  id: Feats
+  id: Feats # Euphoria - Previously Mental - Like a DnD Feat
   name: trait-category-feats
   priority: 20
-  accentColor: "#a855f7"  # Purple
+  accentColor: "#d4af37"  # golden
 
 - type: traitCategory
   id: Accents
