@@ -1,8 +1,14 @@
-- type: traitCategory
-  id: Disabilities
-  name: trait-category-disabilities
+- type: traitCategory # Euphoria
+  id: DisabilitiesPhysical
+  name: trait-category-disabilitiesphysical
   priority: 0
   accentColor: "#64748b"  # Slate / muted gray
+
+- type: traitCategory # Euphoria
+  id: DisabilitiesMental
+  name: trait-category-disabilitiesmental
+  priority: 5
+  accentColor: "#7A687F"  # purplish grey
 
 - type: traitCategory
   id: Mental
