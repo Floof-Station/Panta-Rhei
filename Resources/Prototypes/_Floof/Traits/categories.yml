@@ -1,3 +1,15 @@
+- type: traitCategory # Euphoria
+  id: Cybernetics
+  name: trait-category-cybernetics
+  priority: 10
+  accentColor: "#5F081F"  # royal red
+  
+- type: traitCategory # Euphoria
+  id: Psionics
+  name: trait-category-psionic
+  priority: 15
+  accentColor: "#a855f7" # purple
+
 - type: traitCategory
   id: Languages
   name: trait-category-languages
@@ -19,3 +31,9 @@
   name: trait-category-skills
   priority: 45 # Under Medical
   accentColor: "#3242ef"
+
+- type: traitCategory
+  id: Lewd
+  name: trait-category-lewd
+  priority: 50 # Under Medical
+  accentColor: "#6e304b" # pink
