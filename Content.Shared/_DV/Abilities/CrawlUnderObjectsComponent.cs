@@ -9,7 +9,7 @@ namespace Content.Shared._DV.Abilities;
 /// Gives the player an action to sneak under tables at a slower move speed.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-[Obsolete("Floofstation: use UnderTableCrawlingComponent instead")]
+[Obsolete("Floofstation: use CrawlingExtensionsComponent instead")]
 public sealed partial class CrawlUnderObjectsComponent : Component
 {
     [DataField]

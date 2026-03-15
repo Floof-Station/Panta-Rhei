@@ -4,6 +4,14 @@
   id: BaseMagazineBoxCaselessRifle
   name: ammunition box (.25 caseless)
   components:
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: &magBoxDropSound
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound: *magBoxDropSound
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:

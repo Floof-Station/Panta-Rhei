@@ -1,0 +1,18 @@
+# species
+- type: emoteSounds
+  id: MaleTajaran
+  parent: MaleFelinid
+  sounds:
+    SoftTrill:
+      collection: SoftTrills
+    FelineTrill:
+      collection: FelineTrills
+
+- type: emoteSounds
+  id: FemaleTajaran
+  parent: FemaleFelinid
+  sounds:
+    SoftTrill:
+      collection: SoftTrills
+    FelineTrill:
+      collection: FelineTrills

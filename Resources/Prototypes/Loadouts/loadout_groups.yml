@@ -939,7 +939,7 @@
   - PanFlute
   - Ocarina
   - Bagpipe
-  - SuperSynthesizerInstrument
+  - SuperSynthesizerInstrument # Floofstation
 
 - type: loadoutGroup
   id: MusicianJobTrinkets
@@ -1512,9 +1512,12 @@
   loadouts:
   - HeadofSecurityCloak
   - HeadofSecurityMantle
-  - ScarfRed # DeltaV
-  - ScarfBlack # DeltaV
-  - SecurityPoncho # DeltaV
+  # Begin DeltaV changes
+  - ScarfRed
+  - ScarfBlack
+  - SecurityPoncho
+  - HeadOfSecurityRobe
+  # End DeltaV changes
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1700,7 +1703,7 @@
 
 - type: loadoutGroup
   id: DetectiveOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [FloofDetectiveOuterClothing, FloofOuterClothing] # Floofstation
   name: loadout-group-detective-outerclothing
   loadouts:
   - DetectiveArmorVest
@@ -2110,30 +2113,3 @@
   hidden: False #euphoria change for vox masks
   loadouts:
   - LoadoutSpeciesBreathToolSecurity
-
-- type: loadoutGroup # Euphoria - Seperated Smokables from Trinkets
-  id: Smokeables
-  name: loadout-group-smokables
-  minLimit: 0
-  maxLimit: 2
-  loadouts:
-  - Lighter
-  - CheapLighter
-  - FlippoLighter
-  - FlippoEngravedLighter
-  - CybersunFlippo
-  - InterdyneFlippo
-  - NanotrasenFlippo
-  - CigPackGreen
-  - CigPackRed
-  - CigPackBlue
-  - CigPackBlack
-  - CigPackPurple
-  - CigPackCandy
-  - CigarCase
-  - CigarGold
-  - CigPackSyndicate
-  - CigPackMixed
-  - Blunt
-  - Joint
-  - Vape

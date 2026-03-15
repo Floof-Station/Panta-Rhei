@@ -72,9 +72,9 @@
   - type: Vocal
     wilhelm: "/Audio/Nyanotrasen/Voice/Felinid/cat_wilhelm.ogg"
     sounds:
-      Male: MaleFelinid
-      Female: FemaleFelinid
-      Unsexed: MaleFelinid
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
   - type: LanguageKnowledge #Euphoria - Languages
     speaks:
     - TauCetiBasic
@@ -92,6 +92,8 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - AnomalyHost #Euphoria
+    - TajaranEmotes #Euphoria
   - type: FootPrints
   - type: Temperature
     coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal

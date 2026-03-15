@@ -1,0 +1,37 @@
+- type: trait
+  id: MarkedForDeath
+  name: trait-marked-teach-name
+  description: trait-marked-teach-desc
+  category: Meta
+  cost: 0
+  conditions:
+  - !type:InDepartmentCondition
+    department: Command
+    invert: true
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
+  - !type:HasCompCondition
+    component: TargetObjectiveImmune
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Marked
+      targetType: Teach
+
+- type: trait
+  id: MarkedForRemoval
+  name: trait-marked-remove-name
+  description: trait-marked-remove-desc
+  category: Meta
+  cost: 0
+  conditions:
+  - !type:HasCompCondition
+    component: TargetObjectiveImmune
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Marked
+      targetType: Remove

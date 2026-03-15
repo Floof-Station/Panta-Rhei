@@ -1,18 +1,7 @@
-# Euphoria - Used to parent for Universal parent: JobBaseLoadout
-- type: roleLoadout
-  id: JobBaseLoadout
-  abstract: true
-  groups:
-  - Trinkets
-  - Smokeables
-  - Pets
-  - Instruments
-  - SexToys
-
 # Command
 - type: roleLoadout
   id: JobCaptain
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - CaptainHead
   - CaptainNeck
@@ -27,7 +16,7 @@
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - HoPHead
@@ -56,7 +45,7 @@
 # Civilian
 - type: roleLoadout
   id: JobPassenger
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - Scarfs # DeltaV
   - GroupTankHarness
@@ -76,7 +65,7 @@
 
 - type: roleLoadout
   id: JobBartender
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - BartenderHead
@@ -94,7 +83,7 @@
 
 - type: roleLoadout
   id: JobServiceWorker
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - ServiceWorkerHead # DeltaV
   - Scarfs # DeltaV
@@ -108,7 +97,7 @@
 
 - type: roleLoadout
   id: JobChef
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChefHead
@@ -126,7 +115,7 @@
 
 - type: roleLoadout
   id: JobLibrarian
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - LibrarianNeck # DeltaV
   - GroupTankHarness
@@ -141,7 +130,7 @@
 
 - type: roleLoadout
   id: JobLawyer
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - LawyerNeck
@@ -156,7 +145,7 @@
 
 - type: roleLoadout
   id: JobChaplain
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChaplainHead
@@ -175,7 +164,7 @@
 
 - type: roleLoadout
   id: JobJanitor
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - JanitorHead
@@ -193,7 +182,7 @@
 
 - type: roleLoadout
   id: JobBotanist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - BotanistHead
@@ -211,7 +200,7 @@
 - type: roleLoadout
   id: JobClown
   canCustomizeName: true
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ClownHead
@@ -229,7 +218,7 @@
 - type: roleLoadout
   id: JobMime
   canCustomizeName: true
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MimeHead
@@ -246,7 +235,7 @@
 - type: roleLoadout
   id: JobMusician
   canCustomizeName: true
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
@@ -263,7 +252,7 @@
 # Cargo
 - type: roleLoadout
   id: JobQuartermaster
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - QuartermasterHead
@@ -280,7 +269,7 @@
 
 - type: roleLoadout
   id: JobCargoTechnician
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
@@ -298,7 +287,7 @@
 
 - type: roleLoadout
   id: JobSalvageSpecialist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - SalvageSpecialistNeck # DeltaV
   - SalvageSpecialistJumpsuit # DeltaV - more jumpskirts
@@ -317,7 +306,7 @@
 # Engineering
 - type: roleLoadout
   id: JobChiefEngineer
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefEngineerHead
@@ -333,7 +322,7 @@
 
 - type: roleLoadout
   id: JobTechnicalAssistant
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - StationEngineerNeck # DeltaV
@@ -347,7 +336,7 @@
 
 - type: roleLoadout
   id: JobStationEngineer
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - StationEngineerHead
@@ -365,7 +354,7 @@
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - AtmosphericTechnicianHead # DeltaV
   - AtmosphericTechnicianNeck # DeltaV
@@ -384,7 +373,7 @@
 # Science
 - type: roleLoadout
   id: JobResearchDirector
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ResearchDirectorHead
@@ -401,7 +390,7 @@
 
 - type: roleLoadout
   id: JobScientist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ScientistHead
@@ -419,7 +408,7 @@
 
 - type: roleLoadout
   id: JobResearchAssistant
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - AssistantHead # floofstation - give prisoners access to other clothing options
@@ -436,7 +425,7 @@
 # Security
 - type: roleLoadout
   id: JobHeadOfSecurity
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - HeadofSecurityHead
   - HeadofSecurityNeck
@@ -454,7 +443,7 @@
 
 - type: roleLoadout
   id: JobWarden
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - WardenHead
   - SecurityNeck # DeltaV
@@ -473,7 +462,7 @@
 
 - type: roleLoadout
   id: JobSecurityOfficer
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - SecurityHead
   - SecurityNeck # DeltaV
@@ -493,7 +482,7 @@
 
 - type: roleLoadout
   id: JobDetective
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - DetectiveHead
   - SecurityNeck # DeltaV - replace DetectiveNeck for incongruence
@@ -511,7 +500,7 @@
 
 - type: roleLoadout
   id: JobSecurityCadet
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - SecurityHead # DeltaV
   - SecurityNeck # DeltaV
@@ -526,7 +515,7 @@
 # Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefMedicalOfficerHead
@@ -545,7 +534,7 @@
 
 - type: roleLoadout
   id: JobMedicalDoctor
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
@@ -565,7 +554,7 @@
 
 - type: roleLoadout
   id: JobMedicalIntern
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MedicalInternJumpsuit
@@ -578,7 +567,7 @@
 
 - type: roleLoadout
   id: JobChemist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MedicalMask
@@ -595,7 +584,7 @@
 
 - type: roleLoadout
   id: JobParamedic
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ParamedicHead
@@ -614,7 +603,7 @@
 # Wildcards
 - type: roleLoadout
   id: JobZookeeper
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CommonBackpack
@@ -625,7 +614,7 @@
 
 - type: roleLoadout
   id: JobReporter
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - AssistantHead # Floofstation let reporters have drip
@@ -643,7 +632,7 @@
 
 - type: roleLoadout
   id: JobPsychologist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - PsychologistJumpsuit
@@ -663,7 +652,7 @@
 
 - type: roleLoadout
   id: JobBoxer
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - BoxerJumpsuit

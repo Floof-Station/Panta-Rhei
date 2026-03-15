@@ -541,7 +541,7 @@
 
 - type: loadoutGroup
   id: DetectiveOuterClothingDeltaV
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [FloofDetectiveOuterClothing, FloofOuterClothing] # Floofstation
   name: loadout-group-detective-outerclothing
   loadouts:
   - LongcoatSecurity
@@ -855,6 +855,10 @@
   - RoboticistJumpskirt
   - ScientistJumpsuit
   - ScientistJumpskirt
+  # Floofstation section start
+  - InterfacingRoboticistAltJumpsuit
+  - InterfacingRoboticistJumpsuit
+  # Floofstation section end
 
 - type: loadoutGroup
   id: RoboticistOuterClothing
@@ -877,6 +881,7 @@
   - LatexGloves
   - PurpleGloves
   - RobohandsGloves
+  - IntRoboHands # Floofstation
 
 - type: loadoutGroup
   id: RoboticistShoes
