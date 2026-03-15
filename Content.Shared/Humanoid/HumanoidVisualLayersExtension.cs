@@ -84,6 +84,8 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.RFoot;
                     break;
                 // Shitmed Change End
+                default:
+                    yield break;
             }
         }
 
