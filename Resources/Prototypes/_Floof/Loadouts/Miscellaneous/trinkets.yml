@@ -33,21 +33,25 @@
   storage:
     back:
     - CardBoxBase
+  groupBy: "cardbox"
 
 - type: loadout
   id: CardBoxNanotrasen
   storage:
     back:
     - CardBoxNanotrasen
+  groupBy: "cardbox"
     
 - type: loadout
   id: CardBoxSyndicate
   storage:
     back:
     - CardBoxSyndicate
+  groupBy: "cardbox"
 
 - type: loadout
   id: CardBoxBlack
   storage:
     back:
     - CardBoxBlack
+  groupBy: "cardbox"
