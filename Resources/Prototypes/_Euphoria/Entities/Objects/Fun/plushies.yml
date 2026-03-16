@@ -5,21 +5,22 @@
   description: Each plushie is given its soul by pressing it to a supermatter sliver, if you listen closely you can hear yourself getting cancer in real-time!
   components:
   - type: Sprite
-    sprite: _Euphoria/Objects/Fun/flickplushie.rsi
-    state: flick
+    sprite: _Euphoria/Objects/Fun/Plushies/flickplushie.rsi
+    state: icon
   - type: Item
+    sprite: _Euphoria/Objects/Fun/Plushies/flickplushie.rsi
     inhandVisuals:
       left:
-      - state: flick-inhand-left
+      - state: inhand-left
         shader: shaded
       right:
-      - state: flick-inhand-right
+      - state: inhand-right
         shader: shaded
     heldPrefix: plushielizard
   - type: Clothing
     clothingVisuals:
       head:
-      - state: flick-equipped-HELMET
+      - state: equipped-HELMET
         shader: shaded
     quickEquip: false
     sprite: Objects/Fun/toys.rsi
