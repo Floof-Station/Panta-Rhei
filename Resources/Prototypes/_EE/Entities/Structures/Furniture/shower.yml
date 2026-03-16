@@ -13,7 +13,7 @@
       layers:
       - state: shower
       - state: shower_on
-        map: [ "enum.ToggleVisuals.Layer" ] # Euphoria - Change showers to use item toggle
+        map: [ "enum.ToggleableVisuals.Layer" ] # Euphoria - Change showers to use item toggle
     - type: Appearance
     - type: Rotatable
     - type: Transform
@@ -22,12 +22,12 @@
     # - type: Shower; Euphoria - Change showers to use item toggle
     - type: ItemToggle
       soundActivate:
-        path: /Audio/_EE/Ambience/Shower/shower_enable.ogg
+        path: /Audio/_EE/Ambience/Objects/shower_enable.ogg
       soundDeactivate:
-        path: /Audio/_EE/Ambience/Shower/shower_enable.ogg
+        path: /Audio/_EE/Ambience/Objects/shower_enable.ogg
     - type: ItemToggleActiveSound
       activeSound:
-        path: /Audio/_EE/Ambience/Shower/shower_running.ogg
+        path: /Audio/_EE/Ambience/Objects/shower_running.ogg
     - type: UseDelay
       delay: 1.0
     - type: ItemToggleRandomToggle
@@ -52,7 +52,7 @@
           acts: [ "Destruction" ]
     - type: GenericVisualizer
       visuals:
-        enum.ToggleVisuals.Toggled:
-          enum.ToggleVisuals.Layer:
+        enum.ToggleableVisuals.Enabled:
+          enum.ToggleableVisuals.Layer:
             True: { visible: true }
             False: { visible: false }
