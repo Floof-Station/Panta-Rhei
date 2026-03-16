@@ -1,13 +1,14 @@
 # Logistics
 - type: roleLoadout
   id: JobCourier
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CourierHead
   - CourierNeck
   - CourierJumpsuit
   - CourierOuterClothing
+  - FloofCourierGloves # Floofstation give couriers gloves
   - CourierPDA
   - CourierBackpack
   - CourierShoes
@@ -17,7 +18,7 @@
 
 - type: roleLoadout
   id: JobCargoAssistant
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CargoAssistantHead
@@ -32,15 +33,15 @@
 # Security
 - type: roleLoadout
   id: JobBrigmedic
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - BrigMedicHead
   - BrigMedicNeck
   - BrigMedicJumpsuit
   - BrigMedicBack
-  - SecurityShoes
+  - FloofCorpsmanGloves # Floofstation give corpsman gloves
   - BrigMedicOuterClothing
-  - MedicalGloves
+  - FloofCorpsmanShoes # Floofstation give corpsman shoes
   - CorpsmanEyewear
   - SurvivalSecurity
   - GroupSpeciesBreathToolCorpsman
@@ -50,7 +51,7 @@
 # Medical
 - type: roleLoadout
   id: JobSurgeon
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - SurgeonHead
@@ -64,18 +65,20 @@
   - SurgeonPDA
   - MedicalEyewear
   - SurvivalMedical
+  - MedicalDoctorJobTrinkets # Euphoria
   - GroupSpeciesBreathToolMedical
 
 # Justice
 - type: roleLoadout
   id: JobChiefJustice
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefJusticeHead
   - ChiefJusticeJumpsuit
   - ChiefJusticeNeck
   - ChiefJusticeOuterClothing
+  - PassengerGloves
   - CommonBackpack
   - ChiefJusticeShoes
   - Glasses
@@ -84,7 +87,7 @@
 
 - type: roleLoadout
   id: JobClerk
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ClerkJumpsuit
@@ -98,7 +101,7 @@
 
 - type: roleLoadout
   id: JobProsecutor
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ProsecutorJumpsuit
@@ -112,7 +115,7 @@
 # Epistemics
 - type: roleLoadout
   id: JobRoboticist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - RoboticistHead

@@ -7,9 +7,14 @@
     layers:
       - map: [ base ]
         state: icon
-  - type: EmitSoundOnLand
+  - type: EmitSoundOnPickup # Euphoria - dunno why toolboxes dont have their pickup sound, weird.
     sound:
+      path: /Audio/_Goobstation/Items/handling/toolbox_pickup.ogg
+  - type: EmitSoundOnDrop # Euphoria - ..or why they didnt have a drop sound- who did this??
+    sound: &toolboxDropSound
       path: /Audio/Items/toolbox_drop.ogg
+  - type: EmitSoundOnLand
+    sound: *toolboxDropSound
   - type: Storage
     maxItemSize: Normal
     grid:

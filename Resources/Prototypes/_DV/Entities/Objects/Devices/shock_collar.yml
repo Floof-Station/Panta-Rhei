@@ -25,6 +25,7 @@
     access:
     - - Security
   - type: ShockOnTrigger
+    targetContainer: true # Floofstation - so the shock collar shocks the wearer
     damage: 5
     duration: 3
   - type: TriggerOnSignal

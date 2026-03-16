@@ -19,6 +19,7 @@
   - ClothingUniformJumpsuitSuitBlackAlt
   - ClothingUniformJumpsuitFlannel
   - ClothingUniformJumpsuitSuitBrownMob
+  - ClothingUniformJumpsuitSuitBlackMob
   - ClothingUniformJumpsuitKimono
   - ClothingUniformJumpsuitLostTourist
   - ClothingUniformJumpsuitLoungewear
@@ -102,8 +103,13 @@
   loadouts:
   - ClothingShoesBootsJack
   - ClothingShoesBootsCowboyFancy
+  - ClothingShoesBootsCowboyBlack
+  - ClothingShoesBootsCowboyBrown
+  - ClothingShoesBootsCowboyWhite
+  - ClothingShoesHighheelBoots
   - ClothingShoesBootsWork
   - ClothingShoesBootsWinter
+  - ShoesBootsFishing
   - ClothingClothWrap
   - ClothingSocksRainbow
   - ClothingSocksAce
@@ -141,12 +147,17 @@
   - CoatMNKBlackJacket
   - CoatLettermanBlue
   - CoatLettermanRed
+  - OuterFlannelBlue
+  - OuterFlannelRed
+  - OuterFlannelGreen
   - OuterCyberJacketWhite
   - OuterCyberJacketPurple
   - OuterCyberJacketYellow
   - OuterDenimJacket
   - OuterCorporateJacket
   - OuterCoatHyenhSweater
+  - ShrimpFishermanSuit
+  - OuterCoatPirate
 
 # hats
 - type: loadoutGroup
@@ -173,3 +184,18 @@
   - HeadHatGreyFlatcap
   - HeadHatBlacksoft
   - HeadHatCorpsoft
+  - HeadHatSolidHeadband
+
+# glasses/eyewear
+- type: loadoutGroup
+  id: FloofGlasses
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingEyesBlindfold
+  - ClothingEyesEyepatch
+  - ClothingEyesGlassesGar
+  - ClothingEyesGlassesGarGiga
+  - ClothingEyesGlassesGarOrange
+  - GlassesJamjar

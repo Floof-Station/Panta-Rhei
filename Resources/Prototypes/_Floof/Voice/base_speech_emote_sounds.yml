@@ -45,6 +45,14 @@
   sounds:
     Yip:
       collection: ReptilianYip
+    Hiss:
+      collection: ReptilianHiss
+    Purr:
+      path: /Audio/_Floof/Voice/Reptilian/lizard_purr.ogg
+      params:
+        volume: -3
+    Rattle:
+      path: /Audio/_Floof/Voice/Reptilian/lizard_rattle.ogg
 
 - type: emoteSounds
   id: ResomiFloofstation

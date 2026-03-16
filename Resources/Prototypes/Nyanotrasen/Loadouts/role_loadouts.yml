@@ -1,7 +1,7 @@
 # Logistics
 - type: roleLoadout
   id: JobMailCarrier
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MailCarrierHead
@@ -14,7 +14,7 @@
 # Epistemics
 - type: roleLoadout
   id: JobForensicMantis
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MantisHead
@@ -29,7 +29,7 @@
 # Security
 - type: roleLoadout
   id: JobPrisonGuard
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - PrisonGuardHead
   - SecurityNeck # DeltaV
@@ -48,19 +48,23 @@
 # Wildcards
 - type: roleLoadout
   id: JobPrisoner
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # floofstation - give prisoners access to other clothing options
+  - PassengerFace # floofstation - give prisoners access to other clothing options
   - PrisonerJumpsuit
   - CommonBackpack
+  - PassengerGloves # floofstation - give prisoners access to other clothing options
   - PassengerShoes
+  - PassengerOuterClothing # floofstation - give prisoners access to other clothing options
   - Glasses # DeltaV
   - Survival
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobMartialArtist
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MartialArtistJumpsuit
@@ -74,7 +78,7 @@
 
 - type: roleLoadout
   id: JobGladiator
-  parent: JobBaseLoadout
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - GladiatorJumpsuit
