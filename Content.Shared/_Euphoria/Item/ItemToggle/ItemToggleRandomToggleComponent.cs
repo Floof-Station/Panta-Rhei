@@ -12,5 +12,5 @@ public sealed partial class ItemToggleRandomToggleComponent : Component
     ///     The chance that the item will be toggled on map init.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float Chance = 0.5f;
+    public float Chance = 0.1f;
 }
