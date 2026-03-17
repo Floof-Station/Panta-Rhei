@@ -60,29 +60,26 @@
     Medicine:
       metabolismRate: 0.2
       effects:
-      - !type:HealthChange
+      - !type:EvenHealthChange # Euphoria: EvenHealthChange<HealthChange
         conditions:
         - !type:TotalDamageCondition
           max: 30
         damage:
-          groups:
-            Brute: -0.6
-      - !type:HealthChange
+          Brute: -0.4 # Euphoria: -0.4<-0.6  with transition to EvenHealthChange
+      - !type:EvenHealthChange # Euphoria: EvenHealthChange<HealthChange
         conditions:
         - !type:TotalDamageCondition
           min: 30
         damage:
-          groups:
-            Brute: -2.4
-      - !type:HealthChange
+          Brute: -1.8 # Euphoria: -1.8<-2.4  with transition to EvenHealthChange
+      - !type:EvenHealthChange # Euphoria: EvenHealthChange<HealthChange
         conditions:
         - !type:ReagentCondition
           reagent: SalicylicAcid
           min: 15.5
         damage: # ODing causes damage but heals brute
-          groups:
-            Burn: 2 # will cause minor caustic damage
-            Brute: -2.4
+          Burn: 2 # will cause minor caustic damage
+          Brute: -1.8 # Euphoria: -1.8<-2.4  with transition to EvenHealthChange
       - !type:Jitter
         conditions:
         - !type:ReagentCondition
