@@ -3,11 +3,13 @@
   id: ClothingUniformJumpsuitTacticool
   equipment:
     jumpsuit: ClothingUniformJumpsuitTacticool
+  groupBy: "tacticool"
 
 - type: loadout
   id: ClothingUniformJumpskirtTacticool
   equipment:
     jumpsuit: ClothingUniformJumpskirtTacticool
+  groupBy: "tacticool"
 
 - type: loadout
   id: ClothingUniformJumpsuitHawaiBlack
@@ -230,36 +232,43 @@
   id: ClothingUniformJumpsuitColorBlack
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitJeansBrown
   equipment:
     jumpsuit: ClothingUniformJumpsuitJeansBrown
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBlack
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBlack
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBlackAlt
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBlackAlt
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitFlannel
   equipment:
     jumpsuit: ClothingUniformJumpsuitFlannel
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBrownMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBrownMob
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBlackMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBlackMob
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitKimono
@@ -271,66 +280,85 @@
   id: ClothingUniformJumpsuitCatsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCatsuit
+  groupBy: "lewdsuit"
 
 - type: loadout
   id: ClothingUniformJumpsuitCatsuitShiny
   equipment:
     jumpsuit: ClothingUniformJumpsuitCatsuitShiny
+  groupBy: "lewdsuit"
 
 - type: loadout
   id: ClothingUniformJumpsuitLostTourist
   equipment:
     jumpsuit: ClothingUniformJumpsuitLostTourist
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitLoungewear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLoungewear
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitWhiteMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitWhiteMob
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitWhiteAlt
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitWhiteAlt
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitTshirtJeansPeach
   equipment:
     jumpsuit: ClothingUniformJumpsuitTshirtJeansPeach
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitJeansRed
   equipment:
     jumpsuit: ClothingUniformJumpsuitJeansRed
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSober
   equipment:
     jumpsuit: ClothingUniformJumpsuitSober
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitDameDane
   equipment:
     jumpsuit: ClothingUniformJumpsuitDameDane
+  groupBy: "costume"
+
+- type: loadout
+  id: ClothingUniformLittleGuyOveralls
+  equipment:
+    jumpsuit: ClothingUniformLittleGuyOveralls
+  groupBy: "costume"
 
 - type: loadout
   id: UniformJumpskirtNurse
   equipment:
     jumpsuit: ClothingUniformJumpskirtNurse
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformSkirtTurtle
   equipment:
     jumpsuit: ClothingUniformSkirtTurtle
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformBlackTurtleneck
   equipment:
     jumpsuit: ClothingUniformBlackTurtleneck
+  groupBy: "turtleneck"
 
 - type: loadout
   id: ClothingUniformSchoolGakuranBlack
@@ -396,6 +424,7 @@
   id: ClothingCostumeBunnySuit
   equipment:
     jumpsuit: ClothingCostumeBunnySuit
+  groupBy: "lewdsuit"
 
 - type: loadout
   id: UniformGeisha
@@ -437,16 +466,19 @@
   id: ClothingCostumeMioSkirt
   equipment:
     jumpsuit: ClothingCostumeMioSkirt
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingCostumeNaota
   equipment:
     jumpsuit: ClothingCostumeNaota
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitWorkvest
   equipment:
     jumpsuit: ClothingUniformJumpsuitWorkvest
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformClassicalMaidDress
@@ -507,6 +539,7 @@
   id: ClothingUniformMNKDressBlack
   equipment:
     jumpsuit: ClothingUniformMNKDressBlack
+  groupBy: "mnk"
 
 - type: loadout
   id: ClothingUniformMNKOfficeSkirt
@@ -542,6 +575,7 @@
   id: UniformNudityPermit
   equipment:
     jumpsuit: ClothingUniformNudityPermit
+  groupBy: "lewdsuit"
 
 # socks
 - type: loadout
