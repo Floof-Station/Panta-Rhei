@@ -11,8 +11,6 @@ bounty-console-manifest-entry =
     }
 bounty-console-manifest-reward = Reward: ${$reward}
 bounty-console-description-label = [color=gray]{$description}[/color]
-# imp edit start - cargo bounty claiming & status
-# imp edit end
 bounty-console-id-label = ID#{$id}
 
 bounty-console-flavor-left = Bounties sourced from local unscrupulous dealers.
