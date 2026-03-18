@@ -44,6 +44,11 @@
     jumpsuit: ClothingUniformJumpsuitJeansBrown
 
 - type: loadout
+  id: ClothingUniformJumpsuitSuitBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSuitBlack
+
+- type: loadout
   id: ClothingUniformJumpsuitSuitBlackAlt
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBlackAlt
@@ -67,6 +72,7 @@
   id: ClothingUniformJumpsuitKimono
   equipment:
     jumpsuit: ClothingUniformJumpsuitKimono
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingUniformJumpsuitCatsuit
@@ -612,16 +618,19 @@
   id: OuterCyberJacketWhite
   equipment:
     outerClothing: ClothingOuterCyberJacketWhite
+  groupBy: "CyberJacket"
 
 - type: loadout
   id: OuterCyberJacketPurple
   equipment:
     outerClothing: ClothingOuterCyberJacketPurple
+  groupBy: "CyberJacket"
 
 - type: loadout
   id: OuterCyberJacketYellow
   equipment:
     outerClothing: ClothingOuterCyberJacketYellow
+  groupBy: "CyberJacket"
 
 - type: loadout
   id: OuterDenimJacket
@@ -754,36 +763,133 @@
   id: NeckTieBlack
   equipment:
     neck: ClothingNeckTieBlack
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieBlue
   equipment:
     neck: ClothingNeckTieBlue
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieBrown
   equipment:
     neck: ClothingNeckTieBrown
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieGreen
   equipment:
     neck: ClothingNeckTieGreen
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieOrange
   equipment:
     neck: ClothingNeckTieChem
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieRed
   equipment:
     neck: ClothingNeckTieRed
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTiePurple
   equipment:
     neck: ClothingNeckTieSci
+  groupBy: "tie"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAce
+  equipment:
+    neck: ClothingNeckScarfStripedAce
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAro
+  equipment:
+    neck: ClothingNeckScarfStripedAro
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAroace
+  equipment:
+    neck: ClothingNeckScarfStripedAroace
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBiSexual
+  equipment:
+    neck: ClothingNeckScarfStripedBiSexual
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedGay
+  equipment:
+    neck: ClothingNeckScarfStripedGay
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedInter
+  equipment:
+    neck: ClothingNeckScarfStripedInter
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedLesbian
+  equipment:
+    neck: ClothingNeckScarfStripedLesbian
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedNonBinary
+  equipment:
+    neck: ClothingNeckScarfStripedNonBinary
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedPan
+  equipment:
+    neck: ClothingNeckScarfStripedPan
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedRainbow
+  equipment:
+    neck: ClothingNeckScarfStripedRainbow
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBlack
+  equipment:
+    neck: ClothingNeckScarfStripedBlack
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBlue
+  equipment:
+    neck: ClothingNeckScarfStripedBlue
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBrown
+  equipment:
+    neck: ClothingNeckScarfStripedBrown
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedGreen
+  equipment:
+    neck: ClothingNeckScarfStripedGreen
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedRed
+  equipment:
+    neck: ClothingNeckScarfStripedRed
+  groupBy: "scarf"
 
 - type: loadout
   id: NeckNeckerchief
