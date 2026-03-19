@@ -906,6 +906,52 @@
   - GlassesJensen
 
 # Command
+#Euphoria - Revert DV#3857
+## Administrative Assistant
+- type: loadoutGroup
+  id: AdminAssistantJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
+  name: loadout-group-admin-assistant-jumpsuit
+  loadouts:
+  - AdminAssistantJumpsuit
+  - AdminAssistantJumpskirt
+
+- type: loadoutGroup
+  id: AdminAssistantHead
+  parent: [FloofHats] # Floofstation
+  name: loadout-group-admin-assistant-head
+  minLimit: 0
+  loadouts:
+  - AdminAssistanthat
+
+- type: loadoutGroup
+  id: AdminAssistantShoes
+  parent: [FloofShoes] # Floofstation
+  name: loadout-group-admin-assistant-shoes
+  loadouts:
+  - BrownLeatherShoes
+  - WhiteLeatherShoes
+  - LaceupShoes
+
+- type: loadoutGroup
+  id: AdminAssistantOuter
+  parent: [FloofOuterClothing] # Floofstation
+  name: loadout-group-admin-assistant-outerclothing
+  loadouts:
+  - BartenderVest
+  - WinterCoatBlack
+  - WinterCoatBrown
+  - CorporateJacket
+
+- type: loadoutGroup
+  id: AdminAssistantGloves
+  parent: [FloofGloves] # Floofstation
+  name: loadout-group-admin-assistant-gloves
+  minLimit: 0
+  loadouts:
+  - HoPGloves
+  - InspectionGloves
+
 ## Captain
 - type: loadoutGroup
   id: CaptainGloves

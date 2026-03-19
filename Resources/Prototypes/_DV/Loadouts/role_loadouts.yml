@@ -129,3 +129,20 @@
   - RoboticistGlasses
   - Survival
   - GroupSpeciesBreathTool
+
+#Euphoria - Revert DV#3857
+# Command
+- type: roleLoadout
+  id: JobAdministrativeAssistant
+  parent: JobBaseLoadout # Floofstation
+  groups:
+  - AdminAssistantHead
+  - AdminAssistantJumpsuit
+  - AdminAssistantOuter
+  - AdminAssistantShoes
+  - AdminAssistantGloves
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool

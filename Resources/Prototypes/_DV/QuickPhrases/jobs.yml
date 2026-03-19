@@ -67,6 +67,12 @@
   id: CentralCommandOfficialPhrase
   text: job-name-centcomoff
 
+#Euphoria - Revert DV#3857
+- type: quickPhrase
+  parent: BaseCommandJobPhrase
+  id: AdminAssistantPhrase
+  text: job-name-admin-assistant
+
 - type: quickPhrase
   parent: BaseCommandJobPhrase
   id: StationAIPhrase

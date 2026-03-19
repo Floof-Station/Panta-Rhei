@@ -5,6 +5,8 @@
 # Command
 highlights-chief-justice = Chief Justice, "CJ", Justice, Command, Warrant, "Law"
 highlights-mystagogue = Mystagogue, Mysta, "MG", Epistemics, "Epi", Command, Science
+#Euphoria - Revert DV#3857
+highlights-administrative-assistant = Administrative Assistant, "AA", Command
 
 # Security
 highlights-prison-guard = Prison Guard, Prison, Guard, Security, "Sec", Security

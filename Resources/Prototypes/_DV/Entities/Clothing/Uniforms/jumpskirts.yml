@@ -358,11 +358,12 @@
   - type: Clothing
     sprite: _DV/Clothing/Uniforms/Jumpskirt/prosecutorred.rsi
 
+#Euphoria - Revert DV#3857
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpskirtSecretary
-  name: secretary's jumpskirt
-  description: A suit worn by secretary personnel. Smells of burnt coffee.
+  id: ClothingUniformJumpskirtAdminAssistant
+  name: administrative assistant's jumpskirt
+  description: A suit worn by the Administrative Assistant. Smells of burnt coffee.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Uniforms/Jumpskirt/admin_assistant.rsi

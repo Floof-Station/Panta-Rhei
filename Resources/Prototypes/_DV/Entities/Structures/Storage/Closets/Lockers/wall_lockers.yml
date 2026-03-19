@@ -230,6 +230,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
+	- id: RubberStampAdminAssistant #Euphoria - Revert DV#3857
         - id: RubberStampApproved
         - id: RubberStampDenied
         - id: RubberStampCaptain

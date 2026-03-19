@@ -8,6 +8,8 @@ job-name-courier = Courier
 job-name-cargo-assistant = Cargo Assistant
 job-name-security-borg = Security Cyborg
 job-name-librarian = Archivist
+#Euphoria - Revert DV#3857
+job-name-admin-assistant = Administrative Assistant
 # Used by the Agent ID
 job-name-senior-physician = Physician Mentor
 job-name-senior-researcher = Research Mentor
@@ -77,6 +79,8 @@ JobProsecutor = Prosecutor
 JobSecurityBorg = Security Cyborg
 JobRoboticist = Roboticist
 JobCargoAssistant = Cargo Assistant
+#Euphoria - Revert DV#3857
+JobAdminAssistant = Administrative Assistant
 
 # Pet Roles
 RoleLaika = Laika

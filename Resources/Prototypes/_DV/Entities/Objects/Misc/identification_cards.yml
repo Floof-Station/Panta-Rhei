@@ -19,6 +19,27 @@
   - type: PresetIdCard
     job: ChiefJustice
 
+#Euphoria - Revert DV#3857
+- type: entity
+  parent: IDCardStandard
+  id: AdminAssistantIDCard
+  name: administrative assistant ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: stripe_top
+      color: &color-service-top "#639137"
+    - state: stripe_bottom
+      color: &color-service-bottom "#446326"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: AdminAssistant
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: AdministrativeAssistant
+
 # Security and Prisoners
 - type: entity
   parent: IDCardStandard

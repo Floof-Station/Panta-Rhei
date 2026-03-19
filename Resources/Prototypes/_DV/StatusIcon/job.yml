@@ -54,6 +54,14 @@
     state: CargoAssistant
   jobName: job-name-cargo-assistant
 
+#Euphoria - Revert DV#3857
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconAdminAssitant
+  icon:
+    sprite: /Textures/_DV/Interface/Misc/job_icons.rsi
+    state: AdminAssistant
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconSurgeon

@@ -10,14 +10,14 @@
 
 - type: entity
   parent: BaseFigurineDeltaV
-  id: ToyFigurineSecretary
-  name: secretary figure
-  description: A figurine depicting a secretary, on their way to fetch coffee.
+  id: ToyFigurineAdminAssistant
+  name: administrative assistant figure
+  description: A figurine depicting the administrative assistant, on their way to fetch coffee for the Captain.
   components:
   - type: Sprite
-    state: secretary
+    state: adminassistant
   - type: SpeakOnTrigger
-    pack: FigurinesSecretary
+    pack: FigurinesAdminAssistant
 
 - type: entity
   parent: BaseFigurineDeltaV
