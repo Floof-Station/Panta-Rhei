@@ -26,6 +26,8 @@
     FacialHair: MobSlimeMarkingFollowSkin
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobSlimeTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
@@ -41,17 +43,17 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
-    Special:
+    Special: # the cat ear joke
       points: 1
       required: false
-    Tail:
-      points: 1
+    Tail: # the cat tail joke
+      points: 3
       required: false
     Head:
-      points: 6
+      points: 1
       required: false
     Face:
-      points: 10
+      points: 1
       required: false
     Snout:
       points: 1
@@ -60,10 +62,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 6
+      points: 4
       required: false
     HeadTop:
-      points: 6
+      points: 4
       required: false
     Hair:
       points: 1
@@ -77,8 +79,14 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
     Eyes:
-      points: 10
+      points: 1
       required: false
     Chest:
       points: 10
@@ -87,10 +95,10 @@
       points: 1
       required: false
     Legs:
-      points: 24 # Floof - Done some funky maths
+      points: 10 # Floof - was 4
       required: false
     Arms:
-      points: 24 # Floof - Done some funky maths
+      points: 10 # Floof - was 4
       required: false
 
 - type: humanoidBaseSprite

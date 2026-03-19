@@ -941,7 +941,7 @@ public sealed partial class ChatUIController : UIController
                 AddSpeechBubble(msg, SpeechBubble.SpeechType.Emote);
                 break;
             case ChatChannel.SubtleOOC:
-                AddSpeechBubble(msg, SpeechBubble.SpeechType.Looc);
+                AddSpeechBubble(msg, SpeechBubble.SpeechType.Whisper);
                 break;
             // Floofstation section end
         }

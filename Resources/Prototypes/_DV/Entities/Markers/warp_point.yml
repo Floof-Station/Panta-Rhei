@@ -57,14 +57,6 @@
   - type: WarpPoint
     location: Vault
 
-- type: entity
-  id: WarpPointConference
-  parent: WarpPoint
-  suffix: Conference Room
-  components:
-  - type: WarpPoint
-    location: Conference Room
-
 # Security
 - type: entity
   id: WarpPointSecurity
@@ -204,14 +196,6 @@
   components:
   - type: WarpPoint
     location: Robotics
-
-- type: entity
-  id: WarpPointMantis
-  parent: WarpPoint
-  suffix: Psionic Mantis
-  components:
-  - type: WarpPoint
-    location: Psionic Mantis
 
 #Logistics
 - type: entity

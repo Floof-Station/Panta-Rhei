@@ -1,6 +1,5 @@
 using System.Numerics;
 using Content.Client.Stylesheets;
-using Content.Shared._Floof.CCVar;
 using Content.Shared._Goobstation.CCVar; // GoobStation
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -37,6 +36,12 @@ namespace Content.Client.Options.UI.Tabs
             new();
 
         private readonly List<Action> _deferCommands = new();
+
+        private void HandleToggleUSQWERTYCheckbox(BaseButton.ButtonToggledEventArgs args)
+        {
+            _cfg.SetCVar(CVars.DisplayUSQWERTYHotkeys, args.Pressed);
+            _cfg.SaveToFile();
+        }
 
         private void InitToggleWalk()
         {
@@ -146,23 +151,8 @@ namespace Content.Client.Options.UI.Tabs
                 KeybindsContainer.AddChild(newCheckBox);
             }
 
-            void AddToggleCvarCheckBox(string checkBoxName, CVarDef<bool> cvar)
-            {
-                CheckBox newCheckBox = new CheckBox() { Text = Loc.GetString(checkBoxName) };
-                newCheckBox.Pressed = _cfg.GetCVar(cvar);
-                newCheckBox.OnToggled += (e) =>
-                {
-                    _cfg.SetCVar(cvar, e.Pressed);
-                    _cfg.SaveToFile();
-                };
-
-                KeybindsContainer.AddChild(newCheckBox);
-            }
-
             AddHeader("ui-options-header-general");
-            AddToggleCvarCheckBox("ui-options-hotkey-keymap", CVars.DisplayUSQWERTYHotkeys);
-            AddToggleCvarCheckBox("ui-options-hold-to-attack-melee", CCVars.ControlHoldToAttackMelee);
-            AddToggleCvarCheckBox("ui-options-hold-to-attack-ranged", CCVars.ControlHoldToAttackRanged);
+            AddCheckBox("ui-options-hotkey-keymap", _cfg.GetCVar(CVars.DisplayUSQWERTYHotkeys), HandleToggleUSQWERTYCheckbox);
 
             AddHeader("ui-options-header-movement");
             AddButton(EngineKeyFunctions.MoveUp);
@@ -170,12 +160,10 @@ namespace Content.Client.Options.UI.Tabs
             AddButton(EngineKeyFunctions.MoveDown);
             AddButton(EngineKeyFunctions.MoveRight);
             AddButton(EngineKeyFunctions.Walk);
-            AddToggleCvarCheckBox("ui-options-default-walk", FloofCCVars.DefaultWalk); // Floofstation - default walk
             AddCheckBox("ui-options-hotkey-toggle-walk", _cfg.GetCVar(CCVars.ToggleWalk), HandleToggleWalk);
             InitToggleWalk();
             AddButton(ContentKeyFunctions.ToggleKnockdown);
             AddButton(ContentKeyFunctions.ToggleCrawlingUnder); // Floofstation - under-table crawling
-            AddButton(ContentKeyFunctions.ToggleCrawlingDirection); // Floofstation - changeable crawling directions
 
             AddHeader("ui-options-header-camera");
             AddButton(EngineKeyFunctions.CameraRotateLeft);

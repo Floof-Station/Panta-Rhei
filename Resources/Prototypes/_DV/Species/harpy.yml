@@ -6,7 +6,7 @@
   sprites: MobHarpySprites
   markingLimits: MobHarpyMarkingLimits
   dollPrototype: MobHarpyDummy
-  skinColoration: Hues
+  skinColoration: HumanToned
   # baseScale: "0.9, 0.9"
   minHeight: 0.6 # Floofstation
   maxHeight: 1.0 # Floofstation
@@ -29,6 +29,8 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobHarpyTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
@@ -54,10 +56,10 @@
       required: true
       defaultMarkings: [ HarpyTailPhoenix ]
     Head:
-      points: 4
+      points: 3
       required: false
     Face:
-      points: 10
+      points: 1
       required: false
     Snout:
       points: 1
@@ -66,11 +68,12 @@
       points: 1
       required: false
     HeadSide:
-      points: 6
+      points: 4
       required: false
     HeadTop:
-      points: 6
-      required: false
+      points: 1
+      required: true
+      defaultMarkings: [ HarpyEarsDefault ]
     Hair:
       points: 1
       required: false
@@ -83,8 +86,14 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
     Eyes:
-      points: 10
+      points: 1
       required: false
     Chest:
       points: 10
@@ -94,12 +103,12 @@
       points: 1
       required: false
     Legs:
-      points: 24
+      points: 10
       required: false
     Arms:
-      points: 24
-      required: true
-      # defaultMarkings: [ HarpyWingDefaultHuescale ] # breaks the layering if kept. Is ugly but the way this stuff is implemented makes it impossible to do anything else
+      points: 10
+      required: false
+      defaultMarkings: [ HarpyWingDefaultHuescale ]
 
 - type: humanoidBaseSprite
   id: MobHarpyHead

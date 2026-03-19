@@ -1,7 +1,6 @@
 # Logistics
 - type: roleLoadout
   id: JobMailCarrier
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MailCarrierHead
@@ -9,12 +8,12 @@
   - CommonBackpack
   - CargoTechnicianShoes
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 # Epistemics
 - type: roleLoadout
   id: JobForensicMantis
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MantisHead
@@ -24,12 +23,12 @@
   - MantisShoes
   - MantisGloves
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 # Security
 - type: roleLoadout
   id: JobPrisonGuard
-  parent: JobBaseLoadout # Floofstation
   groups:
   - PrisonGuardHead
   - SecurityNeck # DeltaV
@@ -41,6 +40,7 @@
   - SecurityBelt
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
+  - Trinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
   - SecurityFirearmAmmo # DeltaV - loadouts
@@ -48,23 +48,18 @@
 # Wildcards
 - type: roleLoadout
   id: JobPrisoner
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
-  - AssistantHead # floofstation - give prisoners access to other clothing options
-  - PassengerFace # floofstation - give prisoners access to other clothing options
   - PrisonerJumpsuit
   - CommonBackpack
-  - PassengerGloves # floofstation - give prisoners access to other clothing options
   - PassengerShoes
-  - PassengerOuterClothing # floofstation - give prisoners access to other clothing options
   - Glasses # DeltaV
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobMartialArtist
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MartialArtistJumpsuit
@@ -74,11 +69,11 @@
   - CommonBackpack
   - Glasses # DeltaV
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobGladiator
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - GladiatorJumpsuit
@@ -86,4 +81,5 @@
   - GladiatorOuterClothing
   - Glasses # DeltaV
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool

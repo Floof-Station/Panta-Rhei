@@ -335,10 +335,10 @@ binds:
   canFocus: true
 - function: RotateObjectClockwise
   type: State
-  key: MouseMiddle # Floof - conflicts with laying down
+  key: R
 - function: RotateObjectCounterclockwise
   type: State
-  key: MouseMiddle # Floof - conflicts with laying down
+  key: R
   mod1: Shift
 - function: FlipObject
   type: State
@@ -596,10 +596,6 @@ binds:
 - function: ToggleCrawlingUnder # Floofstation
   type: State
   mod1: Shift
-  key: R
-- function: ToggleCrawlingDirection # Floofstation
-  type: State
-  mod1: Control
   key: R
 - function: OpenAbilitiesMenu
   type: State

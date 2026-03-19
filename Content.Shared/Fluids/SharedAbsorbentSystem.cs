@@ -1,5 +1,4 @@
 using System.Numerics;
-using Content.Shared._Floof.Fluids.Absorbent;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
@@ -102,10 +101,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
         // We're then done if our mop doesn't use absorber solutions, since those don't need refilling.
         if (TryPuddleInteract((absorbEnt.Owner, absorbEnt.Comp, useDelay), absorberSoln.Value, user, target)
             || !absorbEnt.Comp.UseAbsorberSolution)
-        {
-            RaiseLocalEvent(absorbEnt, new PuddleMoppedEvent { Used = absorbEnt, User = user, Target = target }); // Floofstation - raise event
             return;
-        }
 
         // If it's refillable try to transfer
         TryRefillableInteract((absorbEnt.Owner, absorbEnt.Comp, useDelay), absorberSoln.Value, user, target);
@@ -267,7 +263,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
     /// <summary>
     ///     Logic for an absorbing entity interacting with a puddle.
     /// </summary>
-    public bool TryPuddleInteract(Entity<AbsorbentComponent, UseDelayComponent?> absorbEnt, // Floof - made public
+    private bool TryPuddleInteract(Entity<AbsorbentComponent, UseDelayComponent?> absorbEnt,
         Entity<SolutionComponent> absorberSoln,
         EntityUid user,
         EntityUid target)
@@ -294,7 +290,7 @@ public abstract class SharedAbsorbentSystem : EntitySystem
                 _popups.PopupClient(Loc.GetString("mopping-system-puddle-already-mopped", ("target", target)),
                     target,
                     user);
-                return true; // Floof - return false if the puddle is already evaporating. This is just so that AOEAbsorbent doesn't try to repeatedly mop evaporating footprints
+                return true;
             }
 
             // Check if we have any evaporative reagents on our absorber to transfer

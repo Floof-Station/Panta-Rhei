@@ -41,6 +41,8 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Eyes: MobHumanoidAnyMarking
     Chest: MobIPCTorso
     Wings: MobHumanoidAnyMarking
@@ -63,11 +65,11 @@
       points: 1
       required: false
     Head:
-      points: 6
+      points: 1
       required: true
       defaultMarkings: [ MobIPCHeadDefault ]
     Face:
-      points: 10
+      points: 1
       required: false
     Snout: # DeltaV - Adds ability to use more marking types
       points: 1
@@ -76,10 +78,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 6
+      points: 4
       required: false
     HeadTop:
-      points: 6
+      points: 4
       required: false
     Hair:
       points: 1 # DeltaV - Fixes hair not displaying
@@ -93,8 +95,14 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
     Eyes: # DeltaV - Moves screen to the eyes layer
-      points: 10
+      points: 1
       required: true
       defaultMarkings: [ MobIPCEyesDefault ]
     Chest:
@@ -105,11 +113,11 @@
       points: 1
       required: false
     Legs:
-      points: 24
+      points: 10
       required: true
       defaultMarkings: [ MobIPCLLegDefault, MobIPCLFootDefault, MobIPCRLegDefault, MobIPCRFootDefault ]
     Arms:
-      points: 24
+      points: 10
       required: true
       defaultMarkings: [ MobIPCLArmDefault, MobIPCLHandDefault, MobIPCRArmDefault, MobIPCRHandDefault ]
 

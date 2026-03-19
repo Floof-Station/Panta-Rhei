@@ -301,7 +301,7 @@
   parent: BaseMagazinePistolHighCapacity
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgePistolPractice # DeltaV
+    proto: CartridgePistol
   - type: Sprite
     layers:
     - state: practice

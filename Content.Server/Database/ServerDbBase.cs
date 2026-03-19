@@ -1931,7 +1931,6 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
 
         #endregion
 
-        // Floofstation
         #region Consent Settings
 
         private static async Task DeletePlayerConsentSettings(ServerDbContext db, NetUserId userId)
@@ -1971,7 +1970,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                     UserId = userId,
                     ConsentToggles = new(),
                     ConsentFreetext = consentSettings.Freetext,
-                    ConsentFreetextUpdatedAt = DateTime.UtcNow,
+                    ConsentFreetextUpdatedAt = DateTime.Now,
                 };
 
                 db.DbContext.ConsentSettings.Add(currentConsentSettings);
@@ -1979,7 +1978,7 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
             else if (currentConsentSettings.ConsentFreetext != consentSettings.Freetext)
             {
                 currentConsentSettings.ConsentFreetext = consentSettings.Freetext;
-                currentConsentSettings.ConsentFreetextUpdatedAt = DateTime.UtcNow;
+                currentConsentSettings.ConsentFreetextUpdatedAt = DateTime.Now;
             }
 
             Dictionary<ProtoId<ConsentTogglePrototype>, string> currentConsentToggles = currentConsentSettings.ConsentToggles.ToDictionary(
@@ -2038,7 +2037,6 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 .SingleOrDefaultAsync(c => c.ReaderUserId == readerUserId && c.ReadConsentSettingsId == consentSettingsId);
         }
 
-
         public async Task<ConsentFreetextReadReceipt> UpdatePlayerConsentReadReceipt(NetUserId readerUserId, int readConsentSettingsId)
         {
             await using var db = await GetDb();
@@ -2052,11 +2050,11 @@ INSERT INTO player_round (players_id, rounds_id) VALUES ({players[player]}, {id}
                 {
                     ReaderUserId = readerUserId,
                     ReadConsentSettingsId = readConsentSettingsId,
-                    ReadAt = DateTime.UtcNow,
+                    ReadAt = DateTime.Now,
                 };
             }
             else {
-                readRecipe.ReadAt = DateTime.UtcNow;
+                readRecipe.ReadAt = DateTime.Now;
             }
 
             return readRecipe;

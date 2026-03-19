@@ -73,7 +73,6 @@ namespace Content.Client.Input
             human.AddFunction(EngineKeyFunctions.Walk);
             human.AddFunction(ContentKeyFunctions.ToggleKnockdown);
             human.AddFunction(ContentKeyFunctions.ToggleCrawlingUnder); // Floofstation - under-table crawling
-            human.AddFunction(ContentKeyFunctions.ToggleCrawlingDirection); // Floofstation - changeable crawling directions
             human.AddFunction(ContentKeyFunctions.SwapHands);
             human.AddFunction(ContentKeyFunctions.SwapHandsReverse);
             human.AddFunction(ContentKeyFunctions.Drop);

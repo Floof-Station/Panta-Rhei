@@ -16,7 +16,7 @@
   requireAdminNotify: true # DeltaV
   supervisors: job-supervisors-hos
   canBeAntag: false
-  whitelisted: false #Euphoria - security is an open department
+  whitelisted: true # DeltaV
   access:
   - Security
   #- Brig # DeltaV - Removed brig access

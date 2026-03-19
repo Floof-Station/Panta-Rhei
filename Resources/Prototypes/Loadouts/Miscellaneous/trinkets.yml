@@ -56,7 +56,7 @@
   storage:
     back:
     - Lighter
-  groupBy: "lighters"
+  groupBy: "smokeables"
 
 - type: loadout
   id: CigPackGreen
@@ -86,22 +86,11 @@
     - CigPackBlack
   groupBy: "smokeables"
 
-- type: loadout # Euphoria
-  id: CigPackPurple
-  storage:
-    back:
-    - CigPackPurple
-  groupBy: "smokeables"
-
-- type: loadout # Euphoria
-  id: CigPackCandy
-  storage:
-    back:
-    - CigPackCandy
-  groupBy: "smokeables"
-
 - type: loadout
   id: CigarCase
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Command
   storage:
     back:
     - CigarCase
@@ -109,16 +98,12 @@
 
 - type: loadout
   id: CigarGold
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Command
   storage:
     back:
     - CigarGold
-  groupBy: "smokeables"
-
-- type: loadout
-  id: Vape
-  storage:
-    back:
-    - Vape
   groupBy: "smokeables"
 
 # Folders
@@ -295,7 +280,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPassenger # Floofstation - swap to passenger so more have access to it
+      role: JobClown
       time: 3600 # 1hr
   storage:
     back:

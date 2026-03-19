@@ -1917,8 +1917,7 @@ public abstract class SharedStorageSystem : EntitySystem
         if (!canInteract)
             return false;
 
-        var ev = new StorageInteractAttemptEvent(user, silent);
-        // Floof: Add User field
+        var ev = new StorageInteractAttemptEvent(silent);
         RaiseLocalEvent(storage, ref ev);
 
         return !ev.Cancelled;

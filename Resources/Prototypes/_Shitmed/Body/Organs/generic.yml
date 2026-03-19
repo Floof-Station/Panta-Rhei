@@ -1,23 +1,23 @@
 - type: entity
-  parent: [OrganHumanHeart, BioSynthOrganBase] # Floofstation - add the bio-synth organ parent for rotting
+  parent: OrganHumanHeart
   id: BioSynthHeart
   name: bio-synthetic heart
   description: This heart can be transplanted into any living organism and it will adapt to its recipient.
 
 - type: entity
-  parent: [OrganHumanLiver, BioSynthOrganBase] # Floofstation - add the bio-synth organ parent for rotting
+  parent: OrganHumanLiver
   id: BioSynthLiver
   name: bio-synthetic liver
   description: This liver can be transplanted into any living organism and it will adapt to its recipient.
 
 - type: entity
-  parent: [OrganHumanLungs, BioSynthOrganBase] # Floofstation - add the bio-synth organ parent for rotting
+  parent: OrganHumanLungs
   id: BioSynthLungs
   name: bio-synthetic lungs
   description: These lungs can be transplanted into any living organism and it will adapt to its recipient.
 
 - type: entity
-  parent: [OrganHumanEyes, BioSynthOrganBase] # Floofstation - add the bio-synth organ parent for rotting
+  parent: OrganHumanEyes
   id: BioSynthEyes
   name: bio-synthetic eyes
   description: These eyes can be transplanted into any living organism and it will adapt to its recipient.

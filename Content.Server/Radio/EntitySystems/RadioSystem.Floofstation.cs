@@ -38,15 +38,15 @@ public sealed partial class RadioSystem
             msg.ObfuscatedMessage = _language.ObfuscateSpeech(message, _language.GetLanguagePrototype(language)!);
             // Copy-pasted from SendRadioMessage, make sure to update accordingly
             msg.ObfuscatedWrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
-                ("channelColor", radioChannel.Color),
+                ("color", radioChannel.Color),
                 ("fontType", speech.FontId),
                 ("fontSize", speech.FontSize),
                 ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
                 ("channel", $"\\[{radioChannel.LocalizedName}\\]"),
                 ("name", senderName),
                 ("language", ChatSystem.LanguageNameForFluent(language)), // Floofstation
-                ("textColor", language.SpeechOverride.Color ?? radioChannel.Color), // Floofstation
-                ("textFont", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation
+                ("languageColor", language.SpeechOverride.Color ?? radioChannel.Color), // Floofstation
+                ("languageFont", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation
                 ("message", msg.ObfuscatedMessage)); // We shouldn't need to escape this because language obfuscation doesn't (shouldn't) preserve markup tags
         }
 

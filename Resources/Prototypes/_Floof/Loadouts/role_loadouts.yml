@@ -1,17 +1,5 @@
-# Used as a parent for all other role loadouts. Includes things that all jobs should have access to.
-- type: roleLoadout
-  id: JobBaseLoadout
-  abstract: true
-  groups:
-  - Trinkets
-  - Smokeables
-  - Pets
-  - Instruments
-  - SexToys # Floofstation
-
 - type: roleLoadout
   id: JobSeniorEngineer
-  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - StationEngineerHead
@@ -24,13 +12,12 @@
   - StationEngineerShoes
   - StationEngineerID
   - SurvivalExtended
-  - Smokeables
+  - Trinkets
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobSeniorPhysician
-  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
@@ -45,13 +32,12 @@
   - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
-  - Smokeables
+  - Trinkets
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobSeniorResearcher
-  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - ScientistHead
@@ -64,13 +50,12 @@
   - ScientistPDA
   - Glasses
   - Survival
-  - Smokeables
+  - Trinkets
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobSeniorOfficer
-  parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
   - SecurityNeck # DeltaV
@@ -83,7 +68,7 @@
   - SecurityBelt
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Smokeables
+  - Trinkets
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
@@ -91,7 +76,6 @@
 
 - type: roleLoadout
   id: JobInventorySpecialist
-  parent: JobBaseLoadout # Euphoria
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
@@ -104,26 +88,6 @@
   - CargoTechnicianShoes
   - Glasses
   - Survival
-  - Smokeables
+  - Trinkets
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
-
-- type: roleLoadout
-  id: JobSecurityTechnician
-  groups:
-  - SecurityHead
-  - SecurityNeck
-  - SecurityJumpsuit
-  - SecurityBackpack
-  - SecurityOuterClothingDeltaV
-  - StationEngineerGloves
-  - SecurityShoes
-  - SecurityPDA
-  - StationEngineerBelts
-  - RoboticistGlasses
-  - SurvivalSecurity
-  - Smokeables
-  - SecurityJobTrinkets
-  - GroupSpeciesBreathToolSecurity
-  - SecurityFirearm
-  - SecurityFirearmAmmo

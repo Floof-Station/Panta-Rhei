@@ -14,8 +14,10 @@ namespace Content.Shared.Humanoid
         Tail,
         Hair,
         FacialHair,
-        UndergarmentTop,    // Floofstation note: Undershirt has been changed to this
-        UndergarmentBottom, // Floofstation note: Underwear has been changed to this
+        UndergarmentTop,
+        UndergarmentBottom,
+        Underwear,
+        Undershirt,
         Chest,
         Head,
         Face,

@@ -5,7 +5,6 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Content.Server._NF.Administration;
 using Content.Server.Administration;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
@@ -553,27 +552,15 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         // Otherwise patch (edit) it
         if (existingEmbed.Id == null)
         {
-            // Floof: Replaced with Try/Catch for network issues and Simple Retry Logic.
-            HttpResponseMessage request;
-            try
-            {
-                request = await _httpClient.PostAsync($"{_webhookUrl}?wait=true",
-                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Exception thrown when trying to post message to Discord webhook: {e}");
-                _relayMessages.Remove(userId);
-                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
-                return;
-            }
+            var request = await _httpClient.PostAsync($"{_webhookUrl}?wait=true",
+                new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
+
             var content = await request.Content.ReadAsStringAsync();
             if (!request.IsSuccessStatusCode)
             {
                 Log.Error(
                     $"Discord returned bad status code when posting message (perhaps the message is too long?): {request.StatusCode}\nResponse: {content}");
                 _relayMessages.Remove(userId);
-                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
                 return;
             }
 
@@ -590,26 +577,15 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         }
         else
         {
-            HttpResponseMessage request;
-            try
-            {
-                request = await _httpClient.PatchAsync($"{_webhookUrl}/messages/{existingEmbed.Id}",
-                    new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
-            }
-            catch (Exception e)
-            {
-                Log.Error($"Exception thrown when trying to patch message to Discord webhook: {e}");
-                _relayMessages.Remove(userId);
-                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
-                return;
-            }
+            var request = await _httpClient.PatchAsync($"{_webhookUrl}/messages/{existingEmbed.Id}",
+                new StringContent(JsonSerializer.Serialize(payload), Encoding.UTF8, "application/json"));
+
             if (!request.IsSuccessStatusCode)
             {
                 var content = await request.Content.ReadAsStringAsync();
                 Log.Error(
                     $"Discord returned bad status code when patching message (perhaps the message is too long?): {request.StatusCode}\nResponse: {content}");
                 _relayMessages.Remove(userId);
-                _processingChannels.Remove(userId); // Floof: Remove so it Retries on next Message.
                 return;
             }
         }
@@ -681,28 +657,6 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
             ProcessQueue(userId, queue);
         }
     }
-
-    #region Floof Cwoink
-    public void OnWebhookCwoinkTextMessage(CwoinkTextMessage message, BwoinkActionBody body)
-    {
-        // Note for forks:
-        AdminData webhookAdminData = new();
-
-        var cwoinkParams = new CwoinkParams(
-            message,
-            SystemUserId,
-            webhookAdminData,
-            body.Username,
-            null,
-            body.UserOnly,
-            body.WebhookUpdate,
-            true,
-            body.RoleName,
-            body.RoleColor);
-        OnCwoinkInternal(cwoinkParams);
-    }
-
-    #endregion
 
     protected override void OnCwoinkTextMessage(CwoinkTextMessage message, EntitySessionEventArgs eventArgs)
     {

@@ -20,10 +20,6 @@ public sealed partial class ThermalVisionComponent : SwitchableVisionOverlayComp
 
     public override Color Color { get; set; } = Color.FromHex("#d06764");
 
-    // Floofstation - Ported a solution from EE that trait based thermal vision was pulsing 0 seconds
-    [DataField]
-    public override float PulseTime { get; set; } = 2f;
-
     [DataField]
     public float LightRadius = 2f;
 }

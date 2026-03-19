@@ -1,24 +1,22 @@
 # Logistics
 - type: roleLoadout
   id: JobCourier
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CourierHead
   - CourierNeck
   - CourierJumpsuit
   - CourierOuterClothing
-  - FloofCourierGloves # Floofstation give couriers gloves
   - CourierPDA
   - CourierBackpack
   - CourierShoes
   - Glasses
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobCargoAssistant
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CargoAssistantHead
@@ -28,22 +26,23 @@
   - CargoAssistantShoes
   - Glasses
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 # Security
 - type: roleLoadout
   id: JobBrigmedic
-  parent: JobBaseLoadout # Floofstation
   groups:
   - BrigMedicHead
   - BrigMedicNeck
   - BrigMedicJumpsuit
   - BrigMedicBack
-  - FloofCorpsmanGloves # Floofstation give corpsman gloves
+  - SecurityShoes
   - BrigMedicOuterClothing
-  - FloofCorpsmanShoes # Floofstation give corpsman shoes
+  - MedicalGloves
   - CorpsmanEyewear
   - SurvivalSecurity
+  - Trinkets
   - GroupSpeciesBreathToolCorpsman
   - SecurityFirearm
   - SecurityFirearmAmmo
@@ -51,7 +50,6 @@
 # Medical
 - type: roleLoadout
   id: JobSurgeon
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - SurgeonHead
@@ -65,29 +63,27 @@
   - SurgeonPDA
   - MedicalEyewear
   - SurvivalMedical
-  - MedicalDoctorJobTrinkets # Euphoria
+  - Trinkets
   - GroupSpeciesBreathToolMedical
 
 # Justice
 - type: roleLoadout
   id: JobChiefJustice
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefJusticeHead
   - ChiefJusticeJumpsuit
   - ChiefJusticeNeck
   - ChiefJusticeOuterClothing
-  - PassengerGloves
   - CommonBackpack
   - ChiefJusticeShoes
   - Glasses
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobClerk
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ClerkJumpsuit
@@ -97,11 +93,11 @@
   - ClerkShoes
   - Glasses
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobProsecutor
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ProsecutorJumpsuit
@@ -110,12 +106,12 @@
   - CommonBackpack
   - Glasses
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool
 
 # Epistemics
 - type: roleLoadout
   id: JobRoboticist
-  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - RoboticistHead
@@ -128,4 +124,5 @@
   - RoboticistPDA
   - RoboticistGlasses
   - Survival
+  - Trinkets
   - GroupSpeciesBreathTool

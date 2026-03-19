@@ -23,14 +23,3 @@ chat-emote-name-wurble = Wurble
 
 chat-emote-msg-mars = mars!
 chat-emote-msg-wurble = wurbles.
-
-# Tajaran
-chat-emote-name-softtrill = Soft Trill
-chat-emote-msg-softtrill = trills softly.
-
-chat-emote-name-felinetrill = Trill
-chat-emote-msg-felinetrill = trills.
-
-# Reptilian
-chat-emote-name-rattle = Rattle
-chat-emote-msg-rattle = rattles {POSS-ADJ($entity)} tail!

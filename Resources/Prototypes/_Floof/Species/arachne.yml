@@ -6,7 +6,7 @@
   sprites: MobArachneSprites
   markingLimits: MobArachneMarkingLimits
   dollPrototype: MobArachneDummy
-  skinColoration: Hues
+  skinColoration: HumanToned
 
 # The lack of a layer means that
 # this person cannot have round-start anything
@@ -33,6 +33,8 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
+    Underwear: MobHumanoidAnyMarking
+    Undershirt: MobHumanoidAnyMarking
     Chest: MobTaurTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobArachneEyes
@@ -59,10 +61,10 @@
       points: 0
       required: false
     Head:
-      points: 6
+      points: 1
       required: false
     Face:
-      points: 10
+      points: 1
       required: false
     Snout:
       points: 1
@@ -71,10 +73,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 6
+      points: 4
       required: false
     HeadTop:
-      points: 6
+      points: 4
       required: false
     Hair:
       points: 1
@@ -88,8 +90,14 @@
     UndergarmentBottom:
       points: 1
       required: false
+    Underwear:
+      points: 1
+      required: false
+    Undershirt:
+      points: 1
+      required: false
     Eyes:
-      points: 10
+      points: 1
       required: false
     Chest:
       points: 10
@@ -98,10 +106,10 @@
       points: 1
       required: false
     Legs:
-      points: 24
+      points: 10
       required: false
     Arms:
-      points: 24
+      points: 10
       required: false
 
 - type: humanoidBaseSprite

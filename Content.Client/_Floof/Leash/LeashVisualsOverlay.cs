@@ -41,7 +41,7 @@ public sealed class LeashVisualsOverlay : Overlay
         var worldHandle = args.WorldHandle;
         worldHandle.SetTransform(Vector2.Zero, Angle.Zero);
 
-        var query = _entMan.EntityQueryEnumerator<LeashedVisualsComponent>();
+        var query = _entMan.EntityQueryEnumerator<Shared._Floof.Leash.Components.LeashedVisualsComponent>();
         while (query.MoveNext(out var visualsComp))
         {
             if (visualsComp.Source is not {Valid: true} source
@@ -55,22 +55,21 @@ public sealed class LeashVisualsOverlay : Overlay
             var texture = _sprites.Frame0(visualsComp.Sprite);
             var width = texture.Width / (float) EyeManager.PixelsPerMeter;
 
-            // We MUST convert to map coordinates first or else later offsetting will lead to unnecessary transformations
-            var coordsA = _xform.ToMapCoordinates(sourceXform.Coordinates, false);
-            var coordsB = _xform.ToMapCoordinates(targetXform.Coordinates, false);
+            var coordsA = sourceXform.Coordinates;
+            var coordsB = targetXform.Coordinates;
 
             // If both coordinates are in the same spot (e.g. the leash is being held by the leashed), don't render anything
-            if (Vector2.DistanceSquared(coordsA.Position, coordsB.Position) < 0.01f)
+            if (coordsA.TryDistance(_entMan, _xform, coordsB, out var dist) && dist < 0.01f)
                 continue;
 
-            ExtractAnchorData(args, (source, sourceXform), visualsComp, out var rotA, out var offsetA, true);
-            ExtractAnchorData(args, (target, targetXform), visualsComp, out var rotB, out var offsetB, false);
+            ExtractAnchorData(args, (source, sourceXform), visualsComp, out var rotA, out var offsetA);
+            ExtractAnchorData(args, (target, targetXform), visualsComp, out var rotB, out var offsetB);
 
             coordsA = coordsA.Offset(rotA.RotateVec(offsetA));
             coordsB = coordsB.Offset(rotB.RotateVec(offsetB));
 
-            var posA = coordsA.Position;
-            var posB = coordsB.Position;
+            var posA = _xform.ToMapCoordinates(coordsA).Position;
+            var posB = _xform.ToMapCoordinates(coordsB).Position;
             var diff = (posB - posA);
             var length = diff.Length();
             var angle = (posB - posA).ToWorldAngle();
@@ -123,21 +122,21 @@ public sealed class LeashVisualsOverlay : Overlay
         }
     }
 
-    private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset, bool entityIsSource)
+    private void ExtractAnchorData(OverlayDrawArgs args, Entity<TransformComponent> leashedEntity, LeashedVisualsComponent visualsComp, out Angle rotation, out Vector2 offset)
     {
-        rotation = _xform.GetWorldRotation(leashedEntity.Comp);
-        offset = (entityIsSource ? visualsComp.OffsetSource : visualsComp.OffsetTarget);
+        rotation = leashedEntity.Comp.LocalRotation;
+        offset = visualsComp.OffsetSource;
 
-        // NoRotation sprites dont rotate with the transform it seems, and their "up" is always facing the viewport "up" when Rotation = 0
-        // Idfk what's going on anymore
+        // NoRotation sprites always have a zero rotation, and their "up" is always facing the viewport "up"
+        // Regular sprites on the other hand can have any rotation, and their rotation is described in world coordinates
         if (_spriteQuery.TryGetComponent(leashedEntity, out var sprite))
         {
             offset *= sprite.Scale;
             offset += sprite.Offset;
             if (sprite.NoRotation)
-                rotation = (-args.Viewport.Eye?.Rotation ?? Angle.Zero) + sprite.Rotation;
+                rotation = -args.Viewport.Eye?.Rotation ?? Angle.Zero;
             else
-                rotation += sprite.Rotation; // idfk man
+                rotation = sprite.Rotation;
         }
     }
 }

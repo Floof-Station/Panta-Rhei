@@ -98,10 +98,6 @@ public partial class SharedBodySystem
         string markingId,
         bool remove = false)
     {
-        // Floofstation - DO NOT TOUCH MARKINGS CLIENT-SIDE, YOU ARE DUPLICATING THEM!!!
-        if (_net.IsClient && !IsClientSide(uid))
-            return;
-
 
         if (!Resolve(partAppearance, ref partAppearance.Comp))
             return;
@@ -166,10 +162,6 @@ public partial class SharedBodySystem
     protected void UpdateAppearance(EntityUid target,
         BodyPartAppearanceComponent component)
     {
-        // Floofstation - DO NOT TOUCH MARKINGS CLIENT-SIDE, YOU ARE DUPLICATING THEM!!!
-        if (_net.IsClient && !IsClientSide(target))
-            return;
-
         if (!TryComp(target, out HumanoidAppearanceComponent? bodyAppearance))
             return;
 

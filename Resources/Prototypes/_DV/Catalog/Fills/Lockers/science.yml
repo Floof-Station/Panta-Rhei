@@ -30,10 +30,6 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - !type:NestedSelector
-          tableId: FillLockerScientist
-        - !type:AllSelector
-          children:
-          - id: ClothingOuterHardsuitEVAScience
-          - id: ClothingHeadHelmetEVAScience
-          - id: AirTankFilled
+        - id: ClothingOuterHardsuitEVAScience
+        - id: ClothingHeadHelmetEVAScience
+        - id: AirTankFilled

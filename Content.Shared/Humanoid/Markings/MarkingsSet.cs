@@ -292,8 +292,7 @@ public sealed partial class MarkingSet
 
         foreach (var (category, points) in Points)
         {
-            //Floof change, added an additional or clause. Needed due to default markings otherwise rendering under markings if not all marking points are used in categories with more than one point
-            if (points.Points <= 0 || points.DefaultMarkings.Count <= 0 || (Markings.TryGetValue(category, out var markings) && markings.Count > 0))
+            if (points.Points <= 0 || points.DefaultMarkings.Count <= 0)
             {
                 continue;
             }
