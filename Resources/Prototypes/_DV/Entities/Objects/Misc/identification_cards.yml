@@ -29,10 +29,10 @@
     layers:
     - state: silver
     - state: stripe_top
-      color: &color-service-top "#639137"
+      color: "#1b67a5"
     - state: stripe_bottom
-      color: &color-service-bottom "#446326"
-    - sprite: *icon-rsi
+      color: "#0e4069"
+    - sprite: *icon-rsi-dv
       offset: *icon-offset
       state: AdminAssistant
   - type: Item
