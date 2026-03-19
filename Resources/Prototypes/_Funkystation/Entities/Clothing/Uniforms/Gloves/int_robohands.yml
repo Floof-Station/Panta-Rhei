@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHandsBase
+  id: IntRoboHands
+  name: roboticist's tekkou gloves
+  description: Tekkou-styled fingerless gloves with a fingerloop. Won't protect you from live wires, but will look GREAT doing it.
+  components:
+  - type: Sprite
+    sprite: _Funkystation/Clothing/Gloves/int_robohands.rsi
+  - type: Clothing
+    sprite: _Funkystation/Clothing/Gloves/int_robohands.rsi

@@ -1,0 +1,37 @@
+- type: emote
+  id: SoftTrill
+  name: chat-emote-name-softtrill
+  category: Vocal
+  whitelist:
+    components:
+    - Vocal
+    tags:
+    - TajaranEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ "chat-emote-msg-softtrill" ]
+  chatTriggers:
+  - quietly trill
+  - quietly trills
+  - trills quietly
+  - trill quietly
+  - softly trill
+  - softly trills
+  - trills softly
+  - trill softly
+
+- type: emote
+  id: FelineTrill
+  name: chat-emote-name-felinetrill
+  category: Vocal
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: [ "chat-emote-msg-felinetrill" ]
+  chatTriggers:
+  - trills
+  - trill

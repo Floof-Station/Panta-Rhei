@@ -43,12 +43,32 @@
           - ItemMask
         density: 1000
         hard: false
+      # Begin floofstation - fishing
+      fishing:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.4
+        layer:
+        - ItemMask
+        mask:
+        - HighImpassable
+        density: 1000
+        hard: false
+      # End floofstation - fishing
   - type: FootstepModifier
     footstepSoundCollection:
       collection: N14FootstepWater
       params:
         volume: 8
-
+  # Begin floofstation - fishing
+  - type: FishingSpot
+    fishList: !type:NestedSelector
+      tableId: WaterFishingLootTable
+    fishDefaultTimer: 25.0
+    fishTimerVariety: 15.0
+  # End floofstation - fishing
+  - type: CosmicCorruptible # floofstation - Cosmic Cult
+    convertTo: FloorCosmicDecay
 
 - type: entity
   parent: N14FloorWaterDirtyEntity

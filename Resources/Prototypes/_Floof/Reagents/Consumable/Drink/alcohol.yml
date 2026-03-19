@@ -1622,3 +1622,48 @@
 
 
 
+- type: reagent
+  id: MillerMargarita
+  name: reagent-name-millermargarita
+  parent: BaseAlcohol
+  desc: reagent-desc-millermargarita
+  physicalDesc: reagent-physical-desc-slimey
+  flavor: millermargarita
+  color: "#fa8036"
+  metamorphicSprite:
+    sprite: _Floof/Objects/Consumable/Drinks/millermargarita.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 0.15
+
+- type: reagent
+  id: HarpySnowfall
+  name: reagent-name-harpysnowfall
+  parent: BaseAlcohol
+  desc: reagent-desc-harpysnowfall
+  physicalDesc: reagent-physical-desc-snowfall
+  flavor: harpysnowfall
+  color: "#d95763"
+  metamorphicSprite:
+    sprite: _Floof/Objects/Consumable/Drinks/harpysnowfall.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 9
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+        effects:
+        - !type:SatiateThirst
+          factor: 2
+        - !type:AdjustReagent
+          reagent: Ethanol
+          amount: 0.07

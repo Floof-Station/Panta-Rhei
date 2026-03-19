@@ -56,6 +56,10 @@
         layer:
         - MachineLayer
   - type: EntityStorage
+    openSound:
+      path: /Audio/_Goobstation/Effects/closetopen.ogg # Euphoria - New sounds from Goob
+    closeSound:
+      path: /Audio/_Goobstation/Effects/closetclose.ogg # Euphoria - New sounds from Goob
   - type: ContainerContainer
     containers:
       entity_storage: !type:Container

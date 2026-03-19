@@ -11,6 +11,18 @@
   - type: GuideHelp
     guides:
     - Science
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound: &diskPickupSound
+      path: /Audio/_EE/Items/Handling/disk_pickup.ogg
+      params:
+        volume: -8
+  - type: EmitSoundOnDrop
+    sound: &diskDropSound
+      path: /Audio/_EE/Items/Handling/disk_drop.ogg
+      params:
+        volume: -8
+  - type: EmitSoundOnLand
+    sound: *diskDropSound
 
 - type: entity
   parent: ResearchDisk
@@ -62,6 +74,12 @@
     price: 100
   - type: StealTarget
     stealGroup: TechnologyDisk
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound: *diskPickupSound
+  - type: EmitSoundOnDrop
+    sound: *diskDropSound
+  - type: EmitSoundOnLand
+    sound: *diskDropSound
 
 - type: entity
   parent: TechnologyDisk

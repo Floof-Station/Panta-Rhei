@@ -79,7 +79,9 @@ namespace Content.Shared.Movement.Components
         public const float SprintingSoundModifier = 3.5f;
         public const float WalkingSoundModifier = 1.5f;
 
-        public bool Sprinting => (HeldMoveButtons & MoveButtons.Walk) == 0x0;
+        [DataField]
+        public bool DefaultWalk = false; // Floofstation
+        public bool Sprinting => ((HeldMoveButtons & MoveButtons.Walk) == 0x0) ^ DefaultWalk; // Floofstation
 
         [ViewVariables(VVAccess.ReadWrite)]
         public bool CanMove = true;
@@ -94,5 +96,6 @@ namespace Content.Shared.Movement.Components
         public Angle RelativeRotation;
         public TimeSpan LerpTarget;
         public bool CanMove;
+        public bool DefaultWalk; // Floofstation
     }
 }

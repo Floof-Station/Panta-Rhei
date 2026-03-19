@@ -950,6 +950,32 @@
   products:
     PussyTonic: 2
 
-
-
-
+- type: reaction
+  id: MillerMargarita
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Slime:
+        amount: 1
+    JuiceOrange:
+        amount: 1
+    Margarita:
+        amount: 1
+  products:
+        MillerMargarita: 3
+    
+- type: reaction
+  id: HarpySnowfall
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    JuiceWatermelon:
+        amount: 3
+    Vodka:
+        amount: 1
+    Ice:
+        amount: 1
+    Sugar:
+        amount: 1
+  products:
+        HarpySnowfall: 6

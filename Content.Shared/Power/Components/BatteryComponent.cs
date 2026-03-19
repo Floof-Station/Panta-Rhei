@@ -66,6 +66,14 @@ public sealed partial class BatteryComponent : Component
     public float ChargeRate;
 
     /// <summary>
+    /// Current charge of the battery in joules (ie. watt seconds)
+    ///
+    /// Euphoria Port from Goobstation
+    /// </summary>
+    [DataField("CurrentCharge")]
+    public float CurrentCharge;
+
+    /// <summary>
     /// The current charge state of the battery.
     /// Used to track state changes for raising <see cref="BatteryStateChangedEvent"/>.
     /// </summary>

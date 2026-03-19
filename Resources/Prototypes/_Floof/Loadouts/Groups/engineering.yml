@@ -1,0 +1,49 @@
+﻿#below addtions are for ce
+- type: loadoutGroup
+  id: FloofCeThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformChiefEngiThong
+
+- type: loadoutGroup
+  id: FloofCeGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsChiefEngiWarmers
+
+- type: loadoutGroup
+  id: FloofCeSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksChiefEngi
+
+# engineer & atmos additions
+- type: loadoutGroup
+  id: FloofEngineeringJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformEngiThong
+
+- type: loadoutGroup
+  id: FloofEngineeringGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsEngiWarmers
+
+- type: loadoutGroup
+  id: FloofEngineeringShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksEngi

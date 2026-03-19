@@ -61,12 +61,26 @@
       Male: MaleFelinid
       Female: FemaleFelinid
       Unsexed: MaleFelinid
+  - type: LanguageKnowledge #Euphoria - Languages
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    - Nekomimetic
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Nekomimetic
+    naturalLanguage: SolCommon
   - type: ItemCougher
     item: Hairball
     action: ActionHairball
     coughPopup: hairball-cough
   - type: Felinid
   - type: NoShoesSilentFootsteps
+  - type: NightVision # Euphoria
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
 
 - type: entity
   save: false
