@@ -99,7 +99,6 @@ public abstract class SharedCustomExamineSystem : EntitySystem
 
     private void OnSetCustomExamineMessage(SetCustomExamineMessage msg, EntitySessionEventArgs args)
     {
-        var popupShown = false;
         var target = GetEntity(msg.Target);
 
         // If custom examine data is the same as previous, don't bother
@@ -109,23 +108,23 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         )
             return;
 
-        if (CanInstantlyChangeExamine(args.SenderSession, target))
+        if (CanInstantlyChangeExamine(args.SenderSession, target, out var reasonLoc))
         {
             SetData(msg.PublicData, msg.SubtleData, target);
             return;
         }
 
-        if (CanSlowlyChangeExamine(args.SenderSession, target))
+        if (CanSlowlyChangeExamine(args.SenderSession, target, out reasonLoc))
         {
             var user = args.SenderSession.AttachedEntity!.Value; // CanSlowlyChangeExamine ensures its not null
-            if (TryStartExamineChangeDoAfter(msg.PublicData, msg.SubtleData, user, target, out popupShown))
+            if (TryStartExamineChangeDoAfter(msg.PublicData, msg.SubtleData, user, target))
                 return;
         }
 
         // Show a popup to the user if it fails. I wanted to use a chat message here, but it feels kinda wack
         // On the other hand popups can easily be obscured by the custom examine window.
-        if (_net.IsServer && !popupShown)
-            _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data-generic"), target, args.SenderSession, PopupType.Medium);
+        if (_net.IsServer && reasonLoc is not null)
+            _popups.PopupEntity(Loc.GetString(reasonLoc), target, args.SenderSession, PopupType.Medium);
     }
 
     private void OnSetExamineDoAfter(SetCustomExamineDoAfterEvent args)
@@ -134,7 +133,7 @@ public abstract class SharedCustomExamineSystem : EntitySystem
             return;
 
         // Sanity check
-        if (!CanSlowlyChangeExamine(args.User, target))
+        if (!CanSlowlyChangeExamine(args.User, target, out _))
             return;
 
         SetData(args.PublicData, args.SubtleData, target);
@@ -143,35 +142,53 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Returns true if the player can instantly change custom examine (is
+    ///     Returns true if the player can instantly change custom examine.
     /// </summary>
-    /// <param name="actor"></param>
-    /// <param name="examinee"></param>
-    /// <returns></returns>
-    protected bool CanInstantlyChangeExamine(ICommonSession actor, EntityUid examinee) =>
-        actor.AttachedEntity == examinee && _actionBlocker.CanConsciouslyPerformAction(examinee)
-        || _admin.IsAdmin(actor) && HasComp<GhostComponent>(actor.AttachedEntity); // Must be an aghost, not just an adminned player
+    protected bool CanInstantlyChangeExamine(ICommonSession actor, EntityUid examinee, out string? reasonLoc)
+    {
+        if (actor.AttachedEntity == examinee && _actionBlocker.CanConsciouslyPerformAction(examinee)
+            || _admin.IsAdmin(actor) && HasComp<GhostComponent>(actor.AttachedEntity)) // Must be an aghost, not just an adminned player
+        {
+            reasonLoc = null;
+            return true;
+        }
 
-    protected bool CanSlowlyChangeExamine(ICommonSession actor, EntityUid examinee) =>
-        actor.AttachedEntity is { } user && CanSlowlyChangeExamine(user, examinee);
+        reasonLoc = "custom-examine-cant-change-data-generic";
+        return false;
+    }
 
-    private bool CanSlowlyChangeExamine(EntityUid user, EntityUid examinee) {
+    protected bool CanSlowlyChangeExamine(ICommonSession actor, EntityUid examinee, out string? reasonLoc)
+    {
+        reasonLoc = null;
+        return actor.AttachedEntity is { } user && CanSlowlyChangeExamine(user, examinee, out reasonLoc);
+    }
+
+    private bool CanSlowlyChangeExamine(EntityUid user, EntityUid examinee, out string? reasonLoc)
+    {
         if (!_actionBlocker.CanInteract(user, examinee)
-            || HasComp<GhostComponent>(user)) // This sucks, but ghosts actually CAN interact with anything
+            || HasComp<GhostComponent>(user) // This sucks, but ghosts actually CAN interact with anything
+            || !_interactions.InRangeAndAccessible(user, examinee))
+        {
+            reasonLoc = "custom-examine-cant-interact";
             return false;
+        }
 
         // This assumes user != target, prevent the menu from showing up if the target hasn't consented to it
         if (HasComp<ActorComponent>(examinee) && !_consent.HasConsent(examinee, CustomExamineChangedByOthersConsent))
+        {
+            reasonLoc = "custom-examine-cant-change-data-consent";
             return false;
+        }
 
-        return _interactions.InRangeAndAccessible(user, examinee);
+        reasonLoc = null;
+        return true;
     }
 
     /// <summary>
     ///     Returns true if the player can change examine at all.
     /// </summary>
-    protected bool CanChangeExamine(ICommonSession actor, EntityUid examinee) =>
-        CanInstantlyChangeExamine(actor, examinee) || CanSlowlyChangeExamine(actor, examinee);
+    protected bool CanChangeExamine(ICommonSession actor, EntityUid examinee, out string? reasonLoc) =>
+        CanInstantlyChangeExamine(actor, examinee, out reasonLoc) || CanSlowlyChangeExamine(actor, examinee, out reasonLoc);
 
     private void CheckExpirations(Entity<CustomExamineComponent> ent)
     {
@@ -233,20 +250,10 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     /// <summary>
     ///     Tries to start a do-after that would change the custom examine of another player. Returns true if the do-after has started or has already been going.
     ///     This will perform some consent checks.
-    ///     The popupShown output parameter is true if this method showed a popup, usually implying success = false.
     /// </summary>
-    public bool TryStartExamineChangeDoAfter(CustomExamineData publicData, CustomExamineData subtleData, EntityUid user, EntityUid target, out bool popupShown, bool quiet = false)
+    public bool TryStartExamineChangeDoAfter(CustomExamineData publicData, CustomExamineData subtleData, EntityUid user, EntityUid target, bool quiet = false)
     {
-        // Check basic consent
-        popupShown = false;
-        if (!_consent.HasConsent(target, CustomExamineChangedByOthersConsent))
-        {
-            if (_net.IsServer && !quiet)
-                _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data-consent"), target, user, PopupType.MediumCaution);
-            popupShown = true;
-            return false;
-        }
-
+        // Basic consent check is already done in CanChangeExamine
         // Sanitize message data - remove NSFW contents if the target didn't consent for it
         if (!_consent.HasConsent(target, NsfwDescConsent))
         {
