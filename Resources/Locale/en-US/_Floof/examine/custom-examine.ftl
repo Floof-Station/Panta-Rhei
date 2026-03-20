@@ -23,6 +23,8 @@ custom-examine-too-long = (too long, may lose data)
 custom-examine-verb = Custom Examine
 custom-examine-nsfw-hidden = [color=#9999a9]<More is hidden due to consent prefs>[/color]
 
-custom-examine-cant-change-data = You cannot change custom examine of this entity.
+custom-examine-cant-change-data-generic = You cannot change custom examine of this entity.
+custom-examine-cant-change-data-consent = The user did not consent for this.
 # This is the best I could come up with. I thought about "something has changed" but that just sounds ominous and would confuse new players.
 custom-examine-data-changed-visibly = Custom examine has changed.
+custom-examine-do-after-started-target = {THE($user)} is trying to change your custom examine data.

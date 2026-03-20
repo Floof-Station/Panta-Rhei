@@ -22,12 +22,15 @@ namespace Content.Shared._Floof.Examine;
 public abstract class SharedCustomExamineSystem : EntitySystem
 {
     public static ProtoId<ConsentTogglePrototype> NsfwDescConsent = "NSFWDescriptions";
+    public static ProtoId<ConsentTogglePrototype> CustomExamineChangedByOthersConsent = "CustomExamineChangedByOthers";
     public static int PublicMaxLength = 256, SubtleMaxLength = 256;
     /// <summary>Max length of any content field, INCLUDING markup.</summary>
     public static int AbsolutelyMaxLength = 1024;
 
     /// <summary>The time it takes to update the custom examine of another entity.</summary>
     public static TimeSpan SlowCustomExamineChangeDuration = TimeSpan.FromSeconds(3);
+    /// <summary>The time multiplier for changing examine of another player.</summary>
+    public static float SlowCustomExaminePlayerPenalty = 2;
 
     private static readonly string[] AllowedTags = // This sucks, shared markup when
     [
@@ -105,7 +108,6 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         )
             return;
 
-
         if (CanInstantlyChangeExamine(args.SenderSession, target))
         {
             SetData(msg.PublicData, msg.SubtleData, target);
@@ -115,33 +117,17 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         if (CanSlowlyChangeExamine(args.SenderSession, target))
         {
             var user = args.SenderSession.AttachedEntity!.Value; // CanSlowlyChangeExamine ensures its not null
-            var doAfterArgs = new DoAfterArgs()
-            {
-                DuplicateCondition = DuplicateConditions.SameEvent,
-                BlockDuplicate = true, // We're predicting the event, so CancelDuplicate would probably cause mispredicts
-                BreakOnDamage = true,
-                BreakOnMove = true,
-                BreakOnWeightlessMove = true,
-                NeedHand = false,
-                RequireCanInteract = true,
-                Target = target,
-                User = user,
-                Delay = SlowCustomExamineChangeDuration,
-                Event = new SetCustomExamineDoAfterEvent(msg.PublicData, msg.SubtleData),
-                Broadcast = true, // No component to listen on
-            };
-
-            if (_doAfters.TryStartDoAfter(doAfterArgs))
+            if (TryStartExamineChangeDoAfter(msg.PublicData, msg.SubtleData, user, target))
                 return;
         }
 
-        // I wanted to use a chat message here, but it feels kinda wack
+        // Show a popup to the user if it fails. I wanted to use a chat message here, but it feels kinda wack
         // On the other hand popups can easily be obscured by the custom examine window.
         if (_net.IsServer)
-            _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data"), target, args.SenderSession, PopupType.Medium);
+            _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data-generic"), target, args.SenderSession, PopupType.Medium);
     }
 
-    private void OnSetExamineDoAfter(ref SetCustomExamineDoAfterEvent args)
+    private void OnSetExamineDoAfter(SetCustomExamineDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Target is not {} target)
             return;
@@ -152,7 +138,7 @@ public abstract class SharedCustomExamineSystem : EntitySystem
 
         SetData(args.PublicData, args.SubtleData, target);
         // Small popup to let other players know what happened
-        _popups.PopupEntity(Loc.GetString("custom-examine-data-changed-visibly"), target);
+        _popups.PopupPredicted(Loc.GetString("custom-examine-data-changed-visibly"), target, null);
     }
 
     /// <summary>
@@ -170,7 +156,7 @@ public abstract class SharedCustomExamineSystem : EntitySystem
 
     private bool CanSlowlyChangeExamine(EntityUid user, EntityUid examinee) =>
         _actionBlocker.CanInteract(user, examinee)
-        && HasComp<GhostComponent>(user) // This sucks, but ghosts actually CAN interact with anything
+        && !HasComp<GhostComponent>(user) // This sucks, but ghosts actually CAN interact with anything
         && _interactions.InRangeAndAccessible(user, examinee);
 
     /// <summary>
@@ -223,7 +209,7 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     }
 
     /// <summary>
-    ///     Sets custom examine data on the entity and dirties it.
+    ///     Sets custom examine data on the entity and dirties it. This performs NO checks.
     /// </summary>
     private void SetData(CustomExamineData publicData, CustomExamineData subtleData, EntityUid target)
     {
@@ -234,6 +220,59 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         comp.SubtleData = subtleData;
 
         Dirty(target, comp);
+    }
+
+    /// <summary>
+    ///     Tries to start a do-after that would change the custom examine of another player. Returns true if the do-after has started or has already been going.
+    ///     This will perform some consent checks.
+    /// </summary>
+    public bool TryStartExamineChangeDoAfter(CustomExamineData publicData, CustomExamineData subtleData, EntityUid user, EntityUid target, bool quiet = false)
+    {
+        // Check basic consent
+        if (!_consent.HasConsent(target, CustomExamineChangedByOthersConsent))
+        {
+            if (_net.IsServer && !quiet)
+                _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data-consent"), target, user, PopupType.MediumCaution);
+            return false;
+        }
+
+        // Sanitize message data - remove NSFW contents if the target didn't consent for it
+        if (!_consent.HasConsent(target, NsfwDescConsent))
+        {
+            if (publicData.RequiresConsent)
+                publicData.Content = "";
+            if (subtleData.RequiresConsent)
+                subtleData.Content = "";
+        }
+
+        // If it's a player, change the do-after length respectively and show a popup for them
+        var delay = SlowCustomExamineChangeDuration;
+        if (HasComp<ActorComponent>(target))
+        {
+            delay *= SlowCustomExaminePlayerPenalty;
+            if (_net.IsServer && !quiet) // The target will never predict it
+                _popups.PopupEntity(Loc.GetString("custom-examine-do-after-started-target", ("user", user)), target, target, PopupType.SmallCaution);
+        }
+
+        var doAfterArgs = new DoAfterArgs
+        {
+            DuplicateCondition = DuplicateConditions.SameEvent,
+            CancelDuplicate = true,
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            BreakOnWeightlessMove = true,
+            NeedHand = false,
+            RequireCanInteract = true,
+            Target = target,
+            User = user,
+            Delay = delay,
+            Event = new SetCustomExamineDoAfterEvent(publicData, subtleData),
+            Broadcast = true, // No component to listen on
+        };
+
+        var result = _doAfters.TryStartDoAfter(doAfterArgs, out var doAfterId);
+        // DoAfterSystem only returns a null do-after ID if there were duplicates, so it *should* be safe to assume?
+        return result || doAfterId is null;
     }
 
     protected int LengthWithoutMarkup(string text) => FormattedMessage.RemoveMarkupPermissive(text).Length;

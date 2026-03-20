@@ -2,6 +2,13 @@
   id: NSFWDescriptions
   name: NSFW character descriptions
   description: Toggling this on allows you to see explicit examine messages added by other players.
+  sortKey: CE_Nsfw
+
+- type: consentToggle
+  id: CustomExamineChangedByOthers
+  name: Allow others to change your examine
+  description: Toggle this on to allow other players to change your custom examine data, both public and subtle. There will be a small delay.
+  sortKey: CE_Cbe
 
 - type: consentToggle
   id: MassMindswap
