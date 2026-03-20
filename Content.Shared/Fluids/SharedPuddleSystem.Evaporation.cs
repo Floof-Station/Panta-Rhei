@@ -55,7 +55,7 @@ public abstract partial class SharedPuddleSystem
             if (puddleSolution.Volume <= 0)
             {
                 #if TOOLS || DEBUG
-                Log.Debug("FIXME: deleting an empty footprint, this shouldnt happen!");
+                Log.Info("FIXME: deleting an empty footprint, this shouldnt happen!");
                 #endif
                 PredictedQueueDel(uid);
                 continue;
