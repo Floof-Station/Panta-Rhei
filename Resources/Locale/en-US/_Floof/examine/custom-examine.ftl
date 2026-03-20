@@ -22,3 +22,7 @@ custom-examine-too-long = (too long, may lose data)
 
 custom-examine-verb = Custom Examine
 custom-examine-nsfw-hidden = [color=#9999a9]<More is hidden due to consent prefs>[/color]
+
+custom-examine-cant-change-data = You cannot change custom examine of this entity.
+# This is the best I could come up with. I thought about "something has changed" but that just sounds ominous and would confuse new players.
+custom-examine-data-changed-visibly = Custom examine has changed.

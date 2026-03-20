@@ -88,7 +88,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
                     SubtleData = data.subtleData,
                     Target = GetNetEntity(target)
                 };
-                RaiseNetworkEvent(ev);
+                RaisePredictiveEvent(ev);
             };
         }
 
