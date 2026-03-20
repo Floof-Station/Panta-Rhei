@@ -52,7 +52,7 @@ public abstract partial class SharedPuddleSystem
             // Floofstation section - delete all puddles that contain no liquid
             // There is an unresolved bug with footprints sometimes ending up with 0 liquid inside
             // I suspect it's happening during reagent transfer, but I'm unable to reproduce it in dev.
-            if (puddleSolution.Volume == 0)
+            if (puddleSolution.Volume <= 0)
             {
                 PredictedQueueDel(uid);
                 continue;
