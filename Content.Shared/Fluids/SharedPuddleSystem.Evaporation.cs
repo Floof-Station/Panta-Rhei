@@ -54,6 +54,9 @@ public abstract partial class SharedPuddleSystem
             // I suspect it's happening during reagent transfer, but I'm unable to reproduce it in dev.
             if (puddleSolution.Volume <= 0)
             {
+                #if TOOLS || DEBUG
+                Log.Debug("FIXME: deleting an empty footprint, this shouldnt happen!");
+                #endif
                 PredictedQueueDel(uid);
                 continue;
             }
