@@ -99,6 +99,7 @@ public abstract class SharedCustomExamineSystem : EntitySystem
 
     private void OnSetCustomExamineMessage(SetCustomExamineMessage msg, EntitySessionEventArgs args)
     {
+        var popupShown = false;
         var target = GetEntity(msg.Target);
 
         // If custom examine data is the same as previous, don't bother
@@ -117,13 +118,13 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         if (CanSlowlyChangeExamine(args.SenderSession, target))
         {
             var user = args.SenderSession.AttachedEntity!.Value; // CanSlowlyChangeExamine ensures its not null
-            if (TryStartExamineChangeDoAfter(msg.PublicData, msg.SubtleData, user, target))
+            if (TryStartExamineChangeDoAfter(msg.PublicData, msg.SubtleData, user, target, out popupShown))
                 return;
         }
 
         // Show a popup to the user if it fails. I wanted to use a chat message here, but it feels kinda wack
         // On the other hand popups can easily be obscured by the custom examine window.
-        if (_net.IsServer)
+        if (_net.IsServer && !popupShown)
             _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data-generic"), target, args.SenderSession, PopupType.Medium);
     }
 
@@ -232,14 +233,17 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     /// <summary>
     ///     Tries to start a do-after that would change the custom examine of another player. Returns true if the do-after has started or has already been going.
     ///     This will perform some consent checks.
+    ///     The popupShown output parameter is true if this method showed a popup, usually implying success = false.
     /// </summary>
-    public bool TryStartExamineChangeDoAfter(CustomExamineData publicData, CustomExamineData subtleData, EntityUid user, EntityUid target, bool quiet = false)
+    public bool TryStartExamineChangeDoAfter(CustomExamineData publicData, CustomExamineData subtleData, EntityUid user, EntityUid target, out bool popupShown, bool quiet = false)
     {
         // Check basic consent
+        popupShown = false;
         if (!_consent.HasConsent(target, CustomExamineChangedByOthersConsent))
         {
             if (_net.IsServer && !quiet)
                 _popups.PopupEntity(Loc.GetString("custom-examine-cant-change-data-consent"), target, user, PopupType.MediumCaution);
+            popupShown = true;
             return false;
         }
 
@@ -277,9 +281,7 @@ public abstract class SharedCustomExamineSystem : EntitySystem
             Broadcast = true, // No component to listen on
         };
 
-        var result = _doAfters.TryStartDoAfter(doAfterArgs, out var doAfterId);
-        // DoAfterSystem only returns a null do-after ID if there were duplicates, so it *should* be safe to assume?
-        return result || doAfterId is null;
+        return _doAfters.TryStartDoAfter(doAfterArgs);
     }
 
     protected int LengthWithoutMarkup(string text) => FormattedMessage.RemoveMarkupPermissive(text).Length;
