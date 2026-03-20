@@ -154,10 +154,17 @@ public abstract class SharedCustomExamineSystem : EntitySystem
     protected bool CanSlowlyChangeExamine(ICommonSession actor, EntityUid examinee) =>
         actor.AttachedEntity is { } user && CanSlowlyChangeExamine(user, examinee);
 
-    private bool CanSlowlyChangeExamine(EntityUid user, EntityUid examinee) =>
-        _actionBlocker.CanInteract(user, examinee)
-        && !HasComp<GhostComponent>(user) // This sucks, but ghosts actually CAN interact with anything
-        && _interactions.InRangeAndAccessible(user, examinee);
+    private bool CanSlowlyChangeExamine(EntityUid user, EntityUid examinee) {
+        if (!_actionBlocker.CanInteract(user, examinee)
+            || HasComp<GhostComponent>(user)) // This sucks, but ghosts actually CAN interact with anything
+            return false;
+
+        // This assumes user != target, prevent the menu from showing up if the target hasn't consented to it
+        if (HasComp<ActorComponent>(examinee) && !_consent.HasConsent(examinee, CustomExamineChangedByOthersConsent))
+            return false;
+
+        return _interactions.InRangeAndAccessible(user, examinee);
+    }
 
     /// <summary>
     ///     Returns true if the player can change examine at all.
