@@ -5,3 +5,4 @@ Vox-only-masks = vox masks
 Vox-only-armored-masks = Vox armored masks
 Vox-only-Pistols = vox pistols
 vox-only-lesser-armor = vox armor
+Vox-only-armor = vox armor
