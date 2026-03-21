@@ -86,6 +86,20 @@
     - CigPackBlack
   groupBy: "smokeables"
 
+- type: loadout # Euphoria
+  id: CigPackPurple
+  storage:
+    back:
+    - CigPackPurple
+  groupBy: "smokeables"
+
+- type: loadout # Euphoria
+  id: CigPackCandy
+  storage:
+    back:
+    - CigPackCandy
+  groupBy: "smokeables"
+
 - type: loadout
   id: CigarCase
   storage:
@@ -98,6 +112,13 @@
   storage:
     back:
     - CigarGold
+  groupBy: "smokeables"
+
+- type: loadout
+  id: Vape
+  storage:
+    back:
+    - Vape
   groupBy: "smokeables"
 
 # Folders

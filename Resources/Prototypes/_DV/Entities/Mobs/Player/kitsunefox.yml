@@ -51,6 +51,7 @@
     tags:
     - VimPilot
     - DoorBumpOpener
+    - KitsuneEmotes # Floofstation - give kitsune fox form kitsune emotes
   - type: HTN
     rootTask:
       task: IdleCompound
@@ -71,3 +72,10 @@
     - Kagebun
     - Nekomimetic
     naturalLanguage: Kagebun
+  # Floofstation addtions start
+  - type: Vocal
+    sounds:
+      Male: MaleKitsune
+      Female: FemaleKitsune
+      Unsexed: MaleKitsune
+  # Floofstation additions end

@@ -126,5 +126,6 @@
     - type: FaxMachine
       name: "Captain's Office"
       receiveNukeCodes: true
+      receiveStationGoal: true # Floofstation - station goals
     - type: StealTarget
       stealGroup: FaxMachineCaptain

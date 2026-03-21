@@ -1,4 +1,5 @@
-﻿- type: trait
+﻿# =================     Bionics    ================== #
+- type: trait
   id: LeftBionicPryArm
   name: trait-name-LeftBionicPryArm
   description: trait-description-BionicPryArm
@@ -37,11 +38,11 @@
       slotId: "right arm"
 
 - type: trait
-  id: CyberEyes
-  name: trait-name-CyberEyes
-  description: trait-description-CyberEyes
+  id: CyberEyesFlare
+  name: trait-name-CyberEyesFlare
+  description: trait-description-CyberEyesFlare
   category: Medical
-  cost: 3
+  cost: 8
   conflicts:
   - Blindness
   - PoorVision
@@ -57,7 +58,7 @@
   category: Medical
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
-  cost: 3
+  cost: 8
   conflicts:
   - Blindness
   - PoorVision
@@ -78,31 +79,11 @@
     - type: NightVision
 
 - type: trait
-  id: CyberEyesThermoVision
-  category: Medical
-  name: trait-name-CyberEyesThermoVision
-  description: trait-description-CyberEyesThermoVision
-  cost: 3
-  conflicts:
-  - Blindness
-  - PoorVision
-  conditions:
-  - !type:HasJobCondition
-    invert: true
-    job: Prisoner 
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: ThermalVision
-      pulseTime: 2
-      toggleAction: PulseThermalVision
-
-- type: trait
   id: CyberEyesSecurity
   category: Medical
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
-  cost: 1
+  cost: 4
   conflicts:
   - CyberEyesOmni
   conditions:
@@ -114,25 +95,22 @@
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
-    
+
 - type: trait
   id: CyberEyesMedical
   category: Medical
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
-  cost: 1
+  cost: 4
   conflicts:
     - CyberEyesOmni
   effects:
   - !type:AddCompsEffect
     components:
-    - type: SolutionScanner
     - type: ShowHealthBars
       damageContainers:
       - Biological
       - BiologicalMetaphysical
-      - Inorganic
-      - Silicon
     - type: ShowHealthIcons
       damageContainers:
       - Biological
@@ -143,7 +121,7 @@
   category: Medical
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
-  cost: 2
+  cost: 6
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
@@ -156,7 +134,7 @@
     - type: ShowJobIcons
     - type: ShowMindShieldIcons
     - type: ShowCriminalRecordIcons
-    - type: SolutionScanner
+    #- type: SolutionScanner
     - type: ShowHealthIcons
       damageContainers:
       - Biological
@@ -165,5 +143,65 @@
       damageContainers:
       - Biological
       - BiologicalMetaphysical
-      - Inorganic
-      - Silicon
+# =================================================== #
+
+# ================= Stamina traits ================== #
+- type: trait
+  id: Vigor
+  name: trait-vigor-name
+  description: trait-vigor-desc
+  category: Medical
+  cost: 4 # I don't think it's extremely useful in combat, but it can help you survive one extra stunbaton hit.
+  conflicts:
+  - Vigor
+  - Lethargy
+  - Weakness
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition # Presumably this is related to IPCs and Onis already being hella strong? On EE floof stamina damage was based on a mass contest, so it makes sense.
+    invert: true
+    species:
+    - Oni
+    - IPC
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 1.2
+
+- type: trait
+  id: Lethargy
+  name: trait-lethargy-name
+  description: trait-lethargy-desc
+  category: Medical
+  cost: -2
+  conflicts:
+  - Vigor
+  - Lethargy
+  - Weakness
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 0.8
+
+- type: trait
+  id: Weakness
+  name: trait-weakness-name
+  description: trait-weakness-desc
+  category: Medical
+  cost: -5 # Getting stunned from 1-2 stunbaton or disabler hits is worth a lot.
+  conflicts:
+  - Vigor
+  - Lethargy
+  - Weakness
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 0.5
+# =================================================== #

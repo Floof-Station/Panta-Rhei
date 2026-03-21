@@ -1,0 +1,10 @@
+- type: trait
+  id: GermanAccent
+  name: trait-german-name # It works if I change this to the string "german", its likely not finding this variable
+  description: trait-german-desc
+  category: Accents
+  cost: 0 #floof
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: GermanAccent

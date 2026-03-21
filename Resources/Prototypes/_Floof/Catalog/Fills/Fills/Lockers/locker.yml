@@ -1,0 +1,78 @@
+#Security Technician
+
+- type: entity
+  id: LockerSecurityTechnicianFilled
+  suffix: Filled
+  parent: LockerSecurityTechnician
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerSecTech
+
+- type: entityTable
+  id: FillLockerSecTech
+  table: !type:AllSelector
+    children:
+    - id: WeaponDisabler
+    - id: WeaponTaser
+    - id: ClothingHeadHelmetSecTech
+    - id: Flash
+      amount: 2
+    - id: ClothingEyesHudDiagnostic
+    - id: ClothingHeadsetSecurity
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingShoesBootsJack
+    - id: ClothingBeltUtilityEngineering
+    - id: SheetSteel
+    - id: SheetSteel10
+    - id: SheetGlass10
+    - id: PositronicBrain
+    - id: BorgModuleTool
+    - id: CableHVStack
+    - id: CableApcStack
+    - id: CableMVStack
+    - id: PowerCellHigh
+
+# Security Technician with Hardsuit
+
+- type: entity
+  id: LockerSecurityTechnicianFilledHardsuit
+  suffix: Filled, Hardsuit
+  parent: LockerSecurityTechnician
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: FillLockerSecTechSuit
+
+- type: entityTable
+  id: FillLockerSecTechSuit
+  table: !type:AllSelector
+    children:
+    - id: WeaponDisabler
+    - id: WeaponTaser
+    - id: ClothingHeadHelmetSecTech
+    - id: Flash
+      amount: 2
+    - id: ClothingEyesHudDiagnostic
+    - id: ClothingHeadsetSecurity
+    - id: ClothingHandsGlovesCombat
+    - id: ClothingShoesBootsJack
+    - id: ClothingBeltUtilityEngineering
+    - id: SheetSteel
+    - id: SheetSteel10
+    - id: SheetGlass10
+    - id: PositronicBrain
+    - id: BorgModuleTool
+    - id: CableHVStack
+    - id: CableApcStack
+    - id: CableMVStack
+    - id: PowerCellHigh
+    - id: ClothingOuterHardsuitSecTech
+    - id: ClothingMaskGasSecurity
+    - id: OxygenTankFilled
+    - id: NitrogenTankFilled
+    - id: WaterVaporTankFilled
+    - id: ClothingShoesBootsSecurityMagboots
+    - id: JetpackSecurityFilled

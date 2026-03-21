@@ -17,6 +17,18 @@
   - type: Tag
     tags:
     - BoxCardboard
+  - type: EmitSoundOnPickup # Euphoria - Port Goob handling SFX
+    sound: &boxPickupSound
+      path: /Audio/_Goobstation/Items/handling/cardboardbox_pickup.ogg
+      params:
+        volume: -3
+  - type:  EmitSoundOnDrop
+    sound: &boxDropSound
+      path: /Audio/_Goobstation/Items/handling/cardboardbox_drop.ogg
+      params:
+        volume: -3
+  - type: EmitSoundOnLand
+    sound: *boxDropSound
 
 - type: entity
   name: mousetrap box

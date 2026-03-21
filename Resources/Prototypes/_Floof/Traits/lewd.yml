@@ -4,6 +4,8 @@
   description: trait-description-CumProducer
   category: Medical
   cost: 0
+  conflicts:
+  - BigCumProducer
   conditions:
     - !type:HasCompCondition
       component: BorgChassis
@@ -20,6 +22,8 @@
   description: trait-description-MilkProducer
   category: Medical
   cost: 0
+  conflicts:
+  - BigMilkProducer
   conditions:
     - !type:HasCompCondition
       component: BorgChassis
@@ -36,6 +40,8 @@
   description: trait-description-SquirtProducer
   category: Medical
   cost: 0
+  conflicts:
+  - BigSquirtProducer
   conditions:
     - !type:HasCompCondition
       component: BorgChassis
@@ -45,3 +51,63 @@
     components:
     - type: SquirtProducer
       solutionname: "vagina"
+
+- type: trait
+  id: BigCumProducer
+  name: trait-name-BigCumProducer
+  description: trait-description-BigCumProducer
+  category: Medical
+  cost: 0
+  conflicts:
+  - CumProducer
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: CumProducer
+      solutionname: "penis"
+      maxVolume: 150
+      quantityPerUpdate: 10
+
+- type: trait
+  id: BigMilkProducer
+  name: trait-name-BigMilkProducer
+  description: trait-description-BigMilkProducer
+  category: Medical
+  cost: 0
+  conflicts:
+  - MilkProducer
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MilkProducer
+      solutionname: "breasts"
+      maxVolume: 250
+      quantityPerUpdate: 10
+
+- type: trait
+  id: BigSquirtProducer
+  name: trait-name-BigSquirtProducer
+  description: trait-description-BigSquirtProducer
+  category: Medical
+  cost: 0
+  conflicts:
+  - SquirtProducer
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: SquirtProducer
+      solutionname: "vagina"
+      maxVolume: 150
+      quantityPerUpdate: 10

@@ -12,11 +12,20 @@
   - type: EmitSoundOnCollide
     sound:
       collection: WeakHit
-  - type: EmitSoundOnLand
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
     sound:
-      path: /Audio/Effects/drop.ogg
+      collection: GenericPickup
       params:
-        volume: 2
+        volume: -7
+        maxDistance: 6
+  - type: EmitSoundOnDrop
+    sound: &itemDropSound
+      collection: GenericDrop
+      params:
+        volume: -7
+        maxDistance: 6
+  - type: EmitSoundOnLand
+    sound: *itemDropSound
   - type: DamageOnHighSpeedImpact
     damage:
       types:

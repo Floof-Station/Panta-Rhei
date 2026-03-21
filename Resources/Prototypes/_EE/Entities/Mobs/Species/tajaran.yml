@@ -5,7 +5,7 @@
   abstract: true
   components:
   - type: Hunger
-    baseDecayRate: 0.035 # Floof changed to default value
+    baseDecayRate: 0.02083333332 # Euphoria - 25% more than base
   - type: Thirst
   - type: Sprite
     scale: 0.8, 0.8
@@ -72,9 +72,9 @@
   - type: Vocal
     wilhelm: "/Audio/Nyanotrasen/Voice/Felinid/cat_wilhelm.ogg"
     sounds:
-      Male: MaleFelinid
-      Female: FemaleFelinid
-      Unsexed: MaleFelinid
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
   - type: LanguageKnowledge #Euphoria - Languages
     speaks:
     - TauCetiBasic
@@ -92,6 +92,8 @@
     - CanPilot
     - FootstepSound
     - DoorBumpOpener
+    - AnomalyHost #Euphoria
+    - TajaranEmotes #Euphoria
   - type: FootPrints
   - type: Temperature
     coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal

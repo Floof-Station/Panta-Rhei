@@ -135,6 +135,14 @@ public sealed partial class FaxMachineComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId PrintOfficePaperId = "PaperOffice";
+
+    /// Floofstation addition start
+    /// <summary>
+    /// 	Should this fax receive station goals
+    /// </summary>
+    [DataField]
+    public bool ReceiveStationGoal { get; set; } = false;
+    /// Floofstation addition end
 }
 
 [DataDefinition]
