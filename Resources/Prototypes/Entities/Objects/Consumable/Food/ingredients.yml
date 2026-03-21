@@ -669,7 +669,7 @@
         - ReagentId: Butter
           Quantity: 15
   - type: SliceableFood
-    count: 5
+    count: 3
     slice: FoodButterSlice
   - type: Extractable # DeltaV - Makes butter extractable
     grindableSolutionName: food
@@ -687,10 +687,10 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 4
+        maxVol: 6
         reagents:
         - ReagentId: Butter
-          Quantity: 3
+          Quantity: 5
   - type: Tag
     tags:
     - Slice
