@@ -1,0 +1,39 @@
+
+
+#Basic Helmet (Security Helmet)
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetShoalenforcerhelm
+  name: coercialis helm
+  description: A well maintained helm with a gold cross stamped on the forehead.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Head/Helmets/enforcerhelm.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Head/Helmets/enforcerhelm.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - SecurityHelmet
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetShoalenforcercommanderhelm
+  name: coercialis constable helm
+  description: A well maintained helm with a gold cross stamped on the forehead. This one is stained black to denote a higher rank.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Head/Helmets/enforcercommanderhelm.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Head/Helmets/enforcercommanderhelm.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - SecurityHelmet
+  - type: HideLayerClothing
+    layers:
+      Hair: HEAD
+

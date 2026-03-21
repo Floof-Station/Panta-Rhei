@@ -1,0 +1,33 @@
+- type: entity
+  parent: ClothingOuterArmorDuraVest
+  id: ClothingOuterShoalGambeson
+  name: gambeson
+  suffix: Black
+  description: A thick tightly woven gambeson made to defend the ark from scoundrels to rowdy bar patrons.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/OuterClothing/blackgambeson.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/OuterClothing/blackgambeson.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorShoalEnforcerArmor
+  name: coercialis plate and chainmail
+  description: An ancient suit of coercialis armor passed down generation to generation. Made from secret forging techniques to make it lightweight yet durable.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/OuterClothing/enforcerplatemail.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/OuterClothing/enforcerplatemail.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorShoalEnforcercommanderArmor
+  name: coercialis constable plate and chainmail
+  description: An ancient suit of coercialis armor passed down generation to generation. Made from secret forging techniques to make it lightweight yet durable. This one is stained black to denote a higher rank.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/OuterClothing/enforcercommanderplatemail.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/OuterClothing/enforcercommanderplatemail.rsi

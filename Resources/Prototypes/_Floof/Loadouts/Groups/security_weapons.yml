@@ -25,6 +25,18 @@
   - FloofSecurityFirearmSpeedLoaderMagnumRubber
   - FloofSecurityFirearmSpeedLoaderMagnum
   - FloofSecurityFirearmPowerCellHigh
+  - FloofSecurityFirearmMagazineMagnum
+  - FloofSecurityFirearmMagazineMagnumRubber
+
+- type: loadoutGroup
+  id: FloofSecurityFirearmAmmoCommand
+  abstract: true
+  name: loadout-group-security-gun-ammo
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - FloofSecurityFirearmMagazineShotgun
+  - FloofSecurityFirearmMagazineShotgunBeanbag
 
 - type: loadoutGroup
   id: FloofSecurityRevolverAmmo

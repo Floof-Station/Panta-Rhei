@@ -3,3 +3,5 @@
 #evil ass loadout locals to loadout groups that shouldnt be seen in game so github doesnt have a fucking fit
 Vox-only-masks = vox masks
 Vox-only-armored-masks = Vox armored masks
+Vox-only-Pistols = vox pistols
+vox-only-lesser-armor = vox armor

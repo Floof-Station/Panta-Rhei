@@ -464,7 +464,7 @@
 
 - type: loadoutGroup
   id: BartenderOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [Shoalserviceararmor, FloofOuterClothing] # Floofstation
   name: loadout-group-bartender-outerclothing
   minLimit: 0
   loadouts:
@@ -1477,7 +1477,7 @@
 # Security
 - type: loadoutGroup
   id: HeadofSecurityHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhoshelmet, FloofHats] # floofstation
   name: loadout-group-head-of-security-head
   minLimit: 0
   loadouts:
@@ -1486,7 +1486,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
-  parent: [FloofHosThong, FloofSecurityJumpsuits, SeniorOfficerJumpsuits, ] # Floofstation
+  parent: [FloofHosThong, FloofSecurityJumpsuits, SeniorOfficerJumpsuits, Shoalenforcerclothes] # Floofstation
   name: loadout-group-head-of-security-jumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
@@ -1549,7 +1549,7 @@
 
 - type: loadoutGroup
   id: WardenHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-warden-head
   minLimit: 0
   loadouts:
@@ -1558,7 +1558,7 @@
 
 - type: loadoutGroup
   id: WardenJumpsuit
-  parent: [FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityOfficerJumpsuit, Shoalenforcerclothes, FloofJumpsuits] # Floofstation
   name: loadout-group-warden-jumpsuit
   loadouts:
   - WardenJumpsuit
@@ -1591,7 +1591,7 @@
 
 - type: loadoutGroup
   id: SecurityHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-security-head
   minLimit: 0
   loadouts:
@@ -1602,7 +1602,7 @@
 
 - type: loadoutGroup
   id: SecurityJumpsuit
-  parent: [FloofSecurityJumpsuits, FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityJumpsuits, FloofSecurityOfficerJumpsuit, Shoalenforcerclothes, FloofJumpsuits] # Floofstation
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
@@ -1673,7 +1673,7 @@
 
 - type: loadoutGroup
   id: DetectiveHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-detective-head
   minLimit: 0
   loadouts:
@@ -1693,7 +1693,7 @@
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
-  parent: [FloofDetectiveJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofDetectiveJumpsuit, Shoalenforcerclothes, FloofJumpsuits] # Floofstation
   name: loadout-group-detective-jumpsuit
   loadouts:
   - DetectiveJumpsuit
