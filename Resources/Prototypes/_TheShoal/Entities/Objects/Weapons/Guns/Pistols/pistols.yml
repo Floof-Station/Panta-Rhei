@@ -2,17 +2,17 @@
   name: SL-B1
   parent: WeaponPistolN1984
   id: WeaponPistolSLB1
-  description: The standard shoal Sidearm often called by its street name the Slab-1. Forged with a built in fission powered flashlight. Feeds from .45 magnum magazines.
+  description: The standard shoal Sidearm often called by its street name the "Slab-1. Forged with a built in fission powered flashlight. Feeds from .45 magnum magazines.
   components:
   - type: Sprite
-    sprite: _theshoal/Objects/Weapons/Guns/Pistols/SLB1.rsi
+    sprite: _TheShoal/Objects/Weapons/Guns/Pistols/SLB1.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-0
       map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _theshoal/Objects/Weapons/Guns/Pistols/SLB1.rsi
+    sprite: _TheShoal/Objects/Weapons/Guns/Pistols/SLB1.rsi
   - type: Gun
     fireRate: 2
     availableModes:
