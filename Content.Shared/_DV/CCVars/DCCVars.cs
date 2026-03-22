@@ -122,7 +122,7 @@ public sealed partial class DCCVars
     /// What year it is in the game. Actual value shown in game is server date + this value.
     /// </summary>
     public static readonly CVarDef<int> YearOffset =
-        CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
+        CVarDef.Create("game.current_year_offset", 500, CVar.SERVERONLY); // Euphoria - changed offset to match lore (from 550 to 500)
 
     /*
      * Traits
