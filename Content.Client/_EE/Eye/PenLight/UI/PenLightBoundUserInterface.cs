@@ -2,7 +2,7 @@ using Content.Shared.Medical;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
-namespace Content.Client.Eye.PenLight.UI
+namespace Content.Client._EE.Eye.PenLight.UI
 {
     [UsedImplicitly]
     public sealed class PenLightBoundUserInterface : BoundUserInterface
