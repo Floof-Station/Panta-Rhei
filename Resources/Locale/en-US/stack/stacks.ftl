@@ -190,7 +190,6 @@ stack-green-carpet-tile = green carpet tile
 stack-orange-carpet-tile = orange carpet tile
 stack-skyblue-carpet-tile = skyblue carpet tile
 stack-purple-carpet-tile = purple carpet tile
-stack-purple-carpet-simple-tile = purple carpet simple tile
 stack-pink-carpet-tile = pink carpet tile
 stack-cyan-carpet-tile = cyan carpet tile
 stack-white-carpet-tile = white carpet tile

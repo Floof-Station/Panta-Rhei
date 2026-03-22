@@ -49,7 +49,8 @@
 - type: entity
   id: Carpet
   parent: CarpetBase
-  suffix: Red
+  name: red carpet
+  suffix: tile
   components:
   - type: Sprite
     sprite: Structures/Furniture/Carpets/red_carpet.rsi
@@ -78,7 +79,8 @@
 - type: entity
   id: CarpetBlack
   parent: CarpetBase
-  suffix: Black
+  name: black carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -108,7 +110,8 @@
 - type: entity
   id: CarpetPink
   parent: CarpetBase
-  suffix: Pink
+  name: pink carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -138,7 +141,8 @@
 - type: entity
   id: CarpetBlue
   parent: CarpetBase
-  suffix: Blue
+  name: blue carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -168,7 +172,8 @@
 - type: entity
   id: CarpetGreen
   parent: CarpetBase
-  suffix: Green
+  name: green carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -198,7 +203,8 @@
 - type: entity
   id: CarpetOrange
   parent: CarpetBase
-  suffix: Orange
+  name: orange carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -228,7 +234,8 @@
 - type: entity
   id: CarpetSBlue
   parent: CarpetBase
-  suffix: Sky Blue
+  name: sky blue carpet
+  suffix: tile Blue
   components:
   - type: Clickable
   - type: Sprite
@@ -258,7 +265,8 @@
 - type: entity
   id: CarpetPurple
   parent: CarpetBase
-  suffix: Purple
+  name: purple carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -286,39 +294,10 @@
                 max: 1
 
 - type: entity
-  id: CarpetSimplePurple
-  parent: CarpetBase
-  suffix: Purple Simple
-  components:
-  - type: Clickable
-  - type: Sprite
-    sprite: Structures/Furniture/Carpets/purple_carpet_simple.rsi
-  - type: Icon
-    sprite: Structures/Furniture/Carpets/purple_carpet_simple.rsi
-  - type: Destructible
-    thresholds:
-      - trigger:
-          !type:DamageTrigger
-          damage: 100
-        behaviors: #excess damage (nuke?). avoid computational cost of spawning entities.
-        - !type:DoActsBehavior
-          acts: [ "Destruction" ]
-      - trigger:
-          !type:DamageTrigger
-          damage: 10
-        behaviors:
-          - !type:DoActsBehavior
-            acts: [ "Destruction" ]
-          - !type:SpawnEntitiesBehavior
-            spawn:
-              FloorCarpetSimpleItemPurple:
-                min: 1
-                max: 1
-
-- type: entity
   id: CarpetCyan
   parent: CarpetBase
-  suffix: Cyan
+  name: cyan carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite
@@ -348,7 +327,8 @@
 - type: entity
   id: CarpetWhite
   parent: CarpetBase
-  suffix: White
+  name: white carpet
+  suffix: tile
   components:
   - type: Clickable
   - type: Sprite

@@ -1,9 +1,9 @@
 # TODO once tiles can be smoothed and carpets ported over to that, add them to the FloorTile outputs
 - type: entity
-  name: carpet
   parent: FloorTileItemBase
   id: FloorCarpetItemRed
-  suffix: Red
+  name: red carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-red
@@ -22,7 +22,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemBlack
-  suffix: Black
+  name: black carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-black
@@ -38,7 +39,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemBlue
-  suffix: Blue
+  name: blue carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-blue
@@ -54,7 +56,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemGreen
-  suffix: Green
+  name: green carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-green
@@ -70,7 +73,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemOrange
-  suffix: Orange
+  name: orange carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-orange
@@ -86,7 +90,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemSkyBlue
-  suffix: Sky Blue
+  name: sky blue carpet
+  suffix: Item 
   components:
   - type: Sprite
     state: carpet-skyblue
@@ -102,7 +107,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemPurple
-  suffix: Purple
+  name: purple carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-purple
@@ -117,24 +123,9 @@
 
 - type: entity
   parent: FloorCarpetItemRed
-  id: FloorCarpetSimpleItemPurple
-  suffix: Purple Simple
-  components:
-  - type: Sprite
-    state: carpet-simple-purple
-  - type: Item
-    heldPrefix: carpet-simple-purple
-  - type: Stack
-    stackType: FloorCarpetSimplePurple
-  - type: SpawnAfterInteract #Nuke after convert to FloorTile
-    prototype: CarpetSimplePurple
-    doAfter: 0.5
-    removeOnInteract: true
-    
-- type: entity
-  parent: FloorCarpetItemRed
   id: FloorCarpetItemPink
-  suffix: Pink
+  name: pink carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-pink
@@ -150,7 +141,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemCyan
-  suffix: Cyan
+  name: cyan carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-cyan
@@ -166,7 +158,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemWhite
-  suffix: White
+  name: white carpet
+  suffix: Item
   components:
   - type: Sprite
     state: carpet-white

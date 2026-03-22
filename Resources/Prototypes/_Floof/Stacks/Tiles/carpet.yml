@@ -1,0 +1,14 @@
+# behold, my things. These aren't actually tiles (yet)
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleBlack
+  name: stack-black-carpet-simple-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-black }
+  spawn: FloorCarpetSimpleItemBlack
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimplePurple
+  name: stack-purple-carpet-simple-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-purple }
+  spawn: FloorCarpetSimpleItemPurple

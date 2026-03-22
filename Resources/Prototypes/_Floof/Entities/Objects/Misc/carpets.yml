@@ -1,0 +1,38 @@
+# TODO once tiles can be smoothed and carpets ported over to that, add them to the FloorTile outputs
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemBlack
+  name: black carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-black
+  - type: Item
+    heldPrefix: carpet-simple-black
+  - type: Stack
+    stackType: FloorCarpetSimpleBlack
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleBlack
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemPurple
+  name: purple carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-purple
+  - type: Item
+    heldPrefix: carpet-simple-purple
+  - type: Stack
+    stackType: FloorCarpetSimplePurple
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimplePurple
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material

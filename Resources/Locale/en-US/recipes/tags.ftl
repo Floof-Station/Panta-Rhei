@@ -88,7 +88,6 @@ construction-graph-tag-green-carpet = green carpet
 construction-graph-tag-orange-carpet = orange carpet
 construction-graph-tag-pink-carpet = pink carpet
 construction-graph-tag-purple-carpet = purple carpet
-construction-graph-tag-purple-carpet-simple = purple carpet simple
 construction-graph-tag-red-carpet = red carpet
 construction-graph-tag-white-carpet = white carpet
 
