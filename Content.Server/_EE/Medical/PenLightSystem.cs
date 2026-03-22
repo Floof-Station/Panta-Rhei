@@ -52,7 +52,7 @@ public sealed class PenLightSystem : EntitySystem
         if (args.Handled
             || args.Cancelled
             || args.Target == null
-            || !_powerCell.TryGetBatteryFromEntityOrSlot(uid, user: args.User)) // still working on this
+            || !_powerCell.HasDrawCharge(uid.Owner, user: args.User)) // still working on this
             return;
 
         OpenUserInterface(args.User, uid);
