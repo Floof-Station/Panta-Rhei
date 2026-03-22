@@ -553,6 +553,10 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
+        /// <summary>
+        /// Floofstation
+        /// Forces the trait system to select the correct profile for trait saving
+        /// </summary>
         private void ChooseProfile()
         {
             if (Profile is null)
@@ -923,7 +927,7 @@ namespace Content.Client.Lobby.UI
             _recordsTab.Update(profile);
             // End CD - Character Records
 
-            ChooseProfile();
+            ChooseProfile(); // Floofstation - Trait saving maybe fix
             UpdateTraitsSelection(); // DeltaV - Traits
 
             RefreshAntags();

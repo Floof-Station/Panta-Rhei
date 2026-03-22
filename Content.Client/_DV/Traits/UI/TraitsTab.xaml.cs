@@ -326,6 +326,7 @@ public sealed partial class TraitsTab : BoxContainer
     }
 
     /// <summary>
+    /// Floofstation
     /// Sets the current profile
     /// </summary>
     public void ChooseProfile(HumanoidCharacterProfile profile)
