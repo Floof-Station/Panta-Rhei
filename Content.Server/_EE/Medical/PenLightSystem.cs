@@ -12,6 +12,7 @@ using Content.Shared.Traits.Assorted;
 using Content.Shared.Drunk;
 using Content.Shared.Drugs;
 using Content.Shared._EE.Medical;
+using Content.Shared.StatusEffectNew;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -27,6 +28,7 @@ public sealed class PenLightSystem : EntitySystem
     [Dependency] private readonly PowerCellSystem _powerCell = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -118,8 +120,8 @@ public sealed class PenLightSystem : EntitySystem
         // Blind
         var blind = _entityManager.HasComponent<PermanentBlindnessComponent>(target);
 
-        // Drunk
-        var drunk = _entityManager.HasComponent<DrunkStatusEffectComponent>(target);
+        // Drunk - check for the drunkstatuseffectcomp
+        var drunk =  _statusEffect.HasEffectComp<DrunkStatusEffectComponent>(target);
 
         // EyeDamage
         var eyeDamage = false;
@@ -128,8 +130,8 @@ public sealed class PenLightSystem : EntitySystem
             eyeDamage = eyeDam.EyeDamage > 0 && eyeDam.EyeDamage < 6; //6 means perma-blind
         }
 
-        // Hallucinating
-        var seeingRainbows = _entityManager.HasComponent<SeeingRainbowsStatusEffectComponent>(target);
+        // Hallucinating - check if the player has the high status affect
+        var seeingRainbows = _statusEffect.HasEffectComp<SeeingRainbowsStatusEffectComponent>(target);
 
         // Healthy
         var healthy = !(blind || drunk || eyeDamage || seeingRainbows);
