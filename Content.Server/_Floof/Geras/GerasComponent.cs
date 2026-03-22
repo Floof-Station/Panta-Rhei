@@ -1,6 +1,7 @@
 using Content.Shared.Actions;
 using Content.Shared.Polymorph;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Server._Floof.Geras;
 

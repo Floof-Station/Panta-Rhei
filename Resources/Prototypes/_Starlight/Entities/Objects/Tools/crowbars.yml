@@ -40,7 +40,11 @@
       path: /Audio/_EE/Items/Handling/crowbar_drop.ogg
       params:
         volume: -2
-  - type: EmitSoundOnLand
+  - type: EmitSoundOnLand # Euphoria - why was this gone??? wtf?
+    sound:
+      path: /Audio/Items/crowbar_drop.ogg
+      params:
+        volume: -2
 
 - type: entity
   name: improvised crowbar

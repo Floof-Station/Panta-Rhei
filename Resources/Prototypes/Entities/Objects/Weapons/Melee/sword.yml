@@ -32,6 +32,9 @@
   id: Cutlass
   description: A wickedly curved blade, often seen in the hands of space pirates.
   components:
+  - type: EmitSoundOnLand # Euphoria - Port over Goob's interaction sounds.
+    sound: &swordDropSound
+      path: /Audio/_Goobstation/Items/handling/sabre_drop.ogg
   - type: Sprite
     sprite: Objects/Weapons/Melee/cutlass.rsi
   - type: MeleeWeapon
@@ -54,6 +57,8 @@
   id: Machete
   description: A large, vicious looking blade.
   components:
+  - type: EmitSoundOnLand # Euphoria - Port over Goob's interaction sounds.
+    sound: *swordDropSound
   - type: Sprite
     sprite: Objects/Weapons/Melee/machete.rsi
   - type: MeleeWeapon
@@ -77,6 +82,8 @@
   id: CaptainSabre
   description: A ceremonial weapon belonging to the captain of the station.
   components:
+  - type: EmitSoundOnLand # Euphoria - Port over Goob's interaction sounds.
+    sound: *swordDropSound
   - type: Sprite
     sprite: Objects/Weapons/Melee/captain_sabre.rsi
   - type: MeleeWeapon
@@ -111,6 +118,8 @@
   id: Katana
   description: Ancient craftwork made with not so ancient plasteel.
   components:
+  - type: EmitSoundOnLand # Euphoria - Port over Goob's interaction sounds.
+    sound: *swordDropSound
   - type: Sprite
     sprite: _DV/Objects/Weapons/Melee/katana.rsi # DeltaV
   - type: MeleeWeapon
@@ -180,6 +189,8 @@
   id: Claymore
   description: An ancient war blade.
   components:
+  - type: EmitSoundOnLand # Euphoria - Port over Goob's interaction sounds.
+    sound: *swordDropSound
   - type: Sprite
     sprite: Objects/Weapons/Melee/claymore.rsi
   - type: MeleeWeapon

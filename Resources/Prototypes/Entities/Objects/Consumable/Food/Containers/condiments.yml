@@ -556,7 +556,7 @@
   - type: SolutionContainerManager
     solutions:
       food:
-        maxVol: 20
+        maxVol: 40
   - type: SolutionTransfer
     canChangeTransferAmount: true
     minTransferAmount: 5
@@ -595,7 +595,7 @@
       food:
         reagents:
         - ReagentId: TableSalt
-          Quantity: 20
+          Quantity: 40
   - type: Sprite
     state: shaker-salt
   - type: Icon
@@ -615,7 +615,7 @@
       food:
         reagents:
         - ReagentId: Blackpepper
-          Quantity: 20
+          Quantity: 40
   - type: Sprite
     state: shaker-pepper
   - type: Icon

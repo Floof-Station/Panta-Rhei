@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
-using Content.Shared._DV.Movement; // DeltaV
+using Content.Shared._DV.Movement;
+using Content.Shared._Floof.Movement.Footsteps;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Friction;
@@ -63,6 +64,7 @@ public abstract partial class SharedMoverController : VirtualController
     protected EntityQuery<PullableComponent> PullableQuery;
     protected EntityQuery<TransformComponent> XformQuery;
     protected EntityQuery<NoShoesSilentFootstepsComponent> NoShoesSilentQuery; // DeltaV - NoShoesSilentFootstepsComponent
+    protected EntityQuery<FootstepVolumeModifierComponent> FootstepVolumeQuery; // Floofstation
 
     private static readonly ProtoId<TagPrototype> FootstepSoundTag = "FootstepSound";
 
@@ -96,6 +98,7 @@ public abstract partial class SharedMoverController : VirtualController
         FootstepModifierQuery = GetEntityQuery<FootstepModifierComponent>();
         MapGridQuery = GetEntityQuery<MapGridComponent>();
         NoShoesSilentQuery = GetEntityQuery<NoShoesSilentFootstepsComponent>(); // DeltaV - NoShoesSilentFootstepsComponent
+        FootstepVolumeQuery = GetEntityQuery<FootstepVolumeModifierComponent>(); // Floofstation
         MapQuery = GetEntityQuery<MapComponent>();
 
         SubscribeLocalEvent<MovementSpeedModifierComponent, TileFrictionEvent>(OnTileFriction);
@@ -344,6 +347,11 @@ public abstract partial class SharedMoverController : VirtualController
             {
                 var soundModifier = mover.Sprinting ? InputMoverComponent.SprintingSoundModifier
                     : InputMoverComponent.WalkingSoundModifier;
+
+                // Floofstation section - volume modifiers
+                if (FootstepVolumeQuery.TryGetComponent(uid, out var volumeModifier))
+                    soundModifier += volumeModifier.Volume;
+                // Floofstation section end
 
                 var audioParams = sound.Params
                     .WithVolume(sound.Params.Volume + soundModifier)

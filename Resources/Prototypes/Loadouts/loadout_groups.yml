@@ -1163,7 +1163,7 @@
 
 - type: loadoutGroup
   id: TechnicalAssistantJumpsuit
-  parent: [FloofEngineeringShoes, FloofShoes] # Floofstation
+  parent: [FloofEngineeringJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-technical-assistant-jumpsuit
   loadouts:
   - YellowJumpsuit
@@ -1889,7 +1889,7 @@
 
 - type: loadoutGroup
   id: MedicalInternJumpsuit
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-medical-intern-jumpsuit
   loadouts:
   - MedicalBlueScrubs # DeltaV
@@ -1984,6 +1984,7 @@
 
 - type: loadoutGroup
   id: MedicalEyewear
+  parent: [FloofChemistEyeWear] # Floofstation
   name: loadout-group-medical-glasses
   minLimit: 0
   loadouts:

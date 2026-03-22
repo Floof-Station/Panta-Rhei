@@ -4,6 +4,14 @@
   parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: &magBoxDropSound
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound: *magBoxDropSound
   - type: Tag
     tags:
     - MagazineShotgun

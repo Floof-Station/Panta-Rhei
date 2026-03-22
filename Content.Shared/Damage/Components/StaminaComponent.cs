@@ -70,7 +70,7 @@ public sealed partial class StaminaComponent : Component
     /// This float determines how fast stamina will regenerate after exiting the stamina crit.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float AfterCritDecayMultiplier = 5f;
+    public float AfterCritDecayMultiplier = 2f; // Floofstation - lower value
 
     /// <summary>
     /// This is how much stamina damage a mob takes when it forces itself to stand up before modifiers
@@ -87,7 +87,7 @@ public sealed partial class StaminaComponent : Component
     /// <summary>
     /// Thresholds that determine an entity's slowdown as a function of stamina damage.
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Floofstation - made networked because of traits
     public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f }, { 60, 0.7f }, { 80, 0.5f } };
 
     #region Animation Data
@@ -96,7 +96,7 @@ public sealed partial class StaminaComponent : Component
     /// Threshold at which low stamina animations begin playing. This should be set to a value that means something.
     /// At 50, it is aligned so when you hit 60 stun the entity will be breathing once per second (well above hyperventilation).
     /// </summary>
-    [DataField]
+    [DataField, AutoNetworkedField] // Floofstation - networked
     public float AnimationThreshold = 50;
 
     /// <summary>
@@ -127,13 +127,13 @@ public sealed partial class StaminaComponent : Component
     /// Min multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
     /// </summary>
     [DataField]
-    public Vector2 JitterMin = Vector2.Create(0.5f, 0.125f);
+    public Vector2 JitterMin = Vector2.Create(0.25f, 0.0625f); // Floofstation - lowered because it looks weird.
 
     /// <summary>
     /// Max multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
     /// </summary>
     [DataField]
-    public Vector2 JitterMax = Vector2.Create(1f, 0.25f);
+    public Vector2 JitterMax = Vector2.Create(0.5f, 0.125f); // Floofstation - lowered because it looks weird.
 
     /// <summary>
     /// Minimum total animations per second

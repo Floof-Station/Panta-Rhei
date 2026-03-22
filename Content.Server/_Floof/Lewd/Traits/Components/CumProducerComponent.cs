@@ -16,7 +16,7 @@ public sealed partial class CumProducerComponent : Component
     public ProtoId<ReagentPrototype> ReagentId = "Cum";
 
     [DataField]
-    public FixedPoint2 MaxVolume = FixedPoint2.New(25);
+    public FixedPoint2 MaxVolume = FixedPoint2.New(30);
 
     [ViewVariables]
     public Entity<SolutionComponent>? Solution = null;

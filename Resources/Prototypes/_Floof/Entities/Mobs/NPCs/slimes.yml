@@ -32,3 +32,14 @@
         Base: blue_adult_slime
       Dead:
         Base: blue_adult_slime_dead
+  - type: Tag # Floof
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+    - SlimeEmotes
+  - type: Vocal # Floof. This is 100% more of a bandaid fix until I learn more about how sounds work, but now Geras emotes will have sound.
+    sounds:
+        Male: MaleSlime
+        Female: FemaleSlime
+        Unsexed: MaleSlime
+

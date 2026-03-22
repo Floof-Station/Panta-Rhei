@@ -112,17 +112,18 @@
 - type: weightedRandom
   id: AsakimObjectiveGroup
   weights:
-    AsakimObjectiveGroupKill: 1
+    #AsakimObjectiveGroupKill: 1 #Floofstation - removed until kill objects are tied to consent
     AsakimObjectiveGroupTheft: 1
     AsakimObjectiveGroupInfiltrate: 1
     AsakimObjectiveGroupInterrogate: 1
     AsakimObjectiveGroupUpgrade: 1
     AsakimObjectiveGroupAlly: 1
 
-- type: weightedRandom
-  id: AsakimObjectiveGroupKill
-  weights:
-    AsakimKillObjective: 1
+#Floofstation - removed until kill objects are tied to consent
+#- type: weightedRandom
+#  id: AsakimObjectiveGroupKill
+#  weights:
+#    AsakimKillObjective: 1
 
 - type: weightedRandom
   id: AsakimObjectiveGroupTheft

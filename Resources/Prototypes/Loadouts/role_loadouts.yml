@@ -325,10 +325,13 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - StationEngineerHead
   - StationEngineerNeck # DeltaV
   - TechnicalAssistantJumpsuit
-  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
+  - StationEngineerGloves # floostation - give them access to gloves
+  - StationEngineerBelts # floofstation - give them access to belts
   - StationEngineerBackpack
+  - StationEngineerOuterClothing # floofstation - give them access to outer clothing
   - StationEngineerShoes # DeltaV
   - SurvivalExtended
   - TechnicalAssistantJobTrinkets
@@ -411,12 +414,14 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
-  - AssistantHead # floofstation - give prisoners access to other clothing options
+  - ScientistHead # floofstation - let research assistant have acess to hats
+  - ScientistNeck # floofsatation - give research assistant access to other clothing options
   - PassengerFace # floofstation - give prisoners access to other clothing options
   - ResearchAssistantJumpsuit
   - ScientistBackpack
-  - PassengerGloves # floofstation - give prisoners access to other clothing options
-  - PassengerOuterClothing # floofstation - give prisoners access to other clothing options
+  - ScientistGloves # floofstation - give research assistant access to other clothing options
+  - ScientistOuterClothing # floofstation - give research assistant access to other clothing options
+  - ScientistShoes # floofsatation - give research assistant access to other clothing options
   - Glasses
   - Survival
   - ResearchAssistantJobTrinkets
@@ -506,11 +511,16 @@
   - SecurityNeck # DeltaV
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityCadetJumpsuit
+  - SecurityOuterClothingDeltaV # Floofstation - Let cadets customize their outer clothing
+  - SecurityShoes  # Floofstation - Let cadets customize their shoes
   - SecurityBackpack
+  - SecurityEyewear # Floofstation - let cadets customize their eye wear
   - SurvivalSecurity
   - Glasses # DeltaV
   - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - SecurityFirearm # Floofstation - let cadets choose their fire arm
+  - SecurityFirearmAmmo # Floofstation - let cadets choose their ammo
 
 # Medical
 - type: roleLoadout
@@ -559,7 +569,12 @@
   - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
+  - MedicalMask # Floofstation
+  - MedicalDoctorOuterClothing # Floofstation
   - MedicalInternPDADelta # DeltaV
+  - MedicalGloves # Floofstation
+  - MedicalDoctorBelts # Floofstation
+  - MedicalShoes # Floofstation
   - MedicalEyewear
   - SurvivalMedical
   - MedicalInternJobTrinkets
@@ -572,6 +587,7 @@
   - GroupTankHarness
   - MedicalMask
   - ChemistNeck # DeltaV
+  - MedicalEyewear # Floofstation - give chemists the option to choose eyewear
   - ChemistJumpsuit
   - ChemistGloves # DeltaV, replaces MedicalGloves
   - ChemistBackpack
