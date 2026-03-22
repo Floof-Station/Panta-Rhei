@@ -66,11 +66,5 @@
   - type: Item
     sprite: _EE/Penlights/cmopenlight.rsi
     heldPrefix: off
-  - type: PointLight
-    enabled: false
-    mask: /Textures/Effects/LightMasks/cone.png
-    autoRot: true
-    radius: 2
-    netsync: false
   - type: PenLight
     examSpeed: 1.5 #time in seconds
