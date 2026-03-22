@@ -1,7 +1,8 @@
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
-namespace Content.Shared.Medical;
+
+namespace Content.Shared._EE.Medical;
 
 /// <summary>
 ///     This for penlights; a tool used to check for eye damage.

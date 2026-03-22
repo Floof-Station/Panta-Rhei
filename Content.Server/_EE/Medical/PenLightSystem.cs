@@ -4,7 +4,7 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Interaction;
-using Content.Shared.Medical;
+// using Content.Shared.Medical; going ot be able to remove this
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 // Addtions here
@@ -13,6 +13,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Traits.Assorted;
 using Content.Shared.Drunk; // not the right import
 using Content.Shared.Drugs; // not the right import
+using Content.Shared._EE.Medical;
 //using Content.Shared.Traits.Assorted.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
@@ -54,8 +55,7 @@ public sealed class PenLightSystem : EntitySystem
         if (args.Handled
             || args.Cancelled
             || args.Target == null
-            //|| !_powerCell.HasDrawCharge(uid, user: args.User))
-            )
+            || !_powerCell.HasActivatableCharge(uid, user: args.User))
             return;
 
         OpenUserInterface(args.User, uid);

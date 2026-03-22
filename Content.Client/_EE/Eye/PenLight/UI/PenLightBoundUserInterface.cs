@@ -1,4 +1,4 @@
-using Content.Shared.Medical;
+using Content.Shared._EE.Medical;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 
