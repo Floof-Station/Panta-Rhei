@@ -553,6 +553,18 @@ namespace Content.Client.Lobby.UI
             SetDirty();
         }
 
+        private void ChooseProfile()
+        {
+            if (Profile is null)
+            {
+                return;
+            }
+            else
+            {
+                Traits.ChooseProfile(Profile);
+            }
+        }
+
         /// <summary>
         /// Updates the traits tab with the current profile's selected traits.
         /// </summary>
@@ -911,6 +923,7 @@ namespace Content.Client.Lobby.UI
             _recordsTab.Update(profile);
             // End CD - Character Records
 
+            ChooseProfile();
             UpdateTraitsSelection(); // DeltaV - Traits
 
             RefreshAntags();

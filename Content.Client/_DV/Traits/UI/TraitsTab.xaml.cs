@@ -326,6 +326,14 @@ public sealed partial class TraitsTab : BoxContainer
     }
 
     /// <summary>
+    /// Sets the current profile
+    /// </summary>
+    public void ChooseProfile(HumanoidCharacterProfile profile)
+    {
+        _profile = profile;
+    }
+
+    /// <summary>
     /// Sets the currently selected traits (e.g., when loading a profile).
     /// </summary>
     public void SetSelectedTraits(IEnumerable<ProtoId<TraitPrototype>> traits)
