@@ -74,17 +74,3 @@
     netsync: false
   - type: PenLight
     examSpeed: 1.5 #time in seconds
-  - type: Appearance
-  - type: ToggleableLightVisuals
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellSmall
-  - type: Tag
-    tags:
-    - Flashlight
-    - Write
-    - Pen
