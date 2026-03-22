@@ -559,11 +559,7 @@ namespace Content.Client.Lobby.UI
         /// </summary>
         private void ChooseProfile()
         {
-            if (Profile is null)
-            {
-                return;
-            }
-            else
+            if (Profile is not null)
             {
                 Traits.ChooseProfile(Profile);
             }
