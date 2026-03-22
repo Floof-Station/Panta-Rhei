@@ -439,7 +439,7 @@
 - type: loadoutGroup
   id: SecurityAllAmmo
   name: loadout-group-all-ammo
-  parent: [FloofSecurityFirearmAmmo, FloofSecurityFirearmAmmoCommand] # Floofstation
+  parent: [FloofSecurityFirearmAmmo] # Floofstation
   minLimit: 0
   maxLimit: 2
   loadouts:
