@@ -2,13 +2,13 @@
 - type: stack
   parent: BaseTileStack
   id: FloorCarpetSimpleBlack
-  name: stack-black-carpet-simple-tile
+  name: stack-carpet-simple-black-tile
   icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-black }
   spawn: FloorCarpetSimpleItemBlack
 
 - type: stack
   parent: BaseTileStack
   id: FloorCarpetSimplePurple
-  name: stack-purple-carpet-simple-tile
+  name: stack-carpet-simple-purple-tile
   icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-purple }
   spawn: FloorCarpetSimpleItemPurple
