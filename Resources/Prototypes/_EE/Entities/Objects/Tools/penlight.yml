@@ -14,9 +14,6 @@
       shader: unshaded
       visible: false
       map: [ "light" ]
-  - type: Item
-    sprite: _EE/Penlights/penlight.rsi
-    heldPrefix: off
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
@@ -34,6 +31,8 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot {}
+  - type: ItemToggle
+  - type: ItemTogglePointLight
   - type: PowerCellSlot
     cellSlotId: cell_slot
   - type: ItemSlots
