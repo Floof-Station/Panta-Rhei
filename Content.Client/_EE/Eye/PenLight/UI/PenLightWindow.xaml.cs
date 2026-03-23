@@ -22,8 +22,7 @@ namespace Content.Client._EE.Eye.PenLight.UI
         {
             RobustXamlLoader.Load(this);
 
-            var dependencies = IoCManager.Instance!;
-            _entityManager = dependencies.Resolve<IEntityManager>();
+            _entityManager = IoCManager.Resolve<IEntityManager>();
         }
         public void Diagnose(PenLightUserMessage msg)
         {
