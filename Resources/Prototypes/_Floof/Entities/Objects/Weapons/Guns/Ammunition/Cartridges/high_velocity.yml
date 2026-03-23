@@ -8,28 +8,31 @@
     tags:
     - CartridgeHighVelocity
   - type: CartridgeAmmo
-    proto: BulletHighVelocity
+    deleteOnSpawn: true
   - type: Sprite
+    noRot: false
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
     layers:
     - state: base
-      map: [ "enum.AmmoVisualLayers.Base" ]
+      map: ["enum.AmmoVisualLayers.Base"]
   - type: Appearance
   - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
 
 - type: entity
   id: CartridgeHighVelocity
+  parent: BaseCartridgeHighVelocity
   name: cartridge (.10 high-velocity)
   description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons.
-  parent: BaseCartridgeHighVelocity
   components:
   - type: CartridgeAmmo
     proto: BulletHighVelocity
 
 - type: entity
   id: CartridgeHighVelocityAP
-  name: cartridge (.10 high-velocity armor-piercing)
   parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity armor-piercing)
   description: A very hard munition to come by, made to fly quickly. This is designed to cut through all sorts of steel and kevlar armor, but lacks in velocity and impact.
   components:
   - type: CartridgeAmmo
@@ -44,8 +47,8 @@
 
 - type: entity
   id: CartridgeHighVelocityRubber
-  name: cartridge (.10 high-velocity rubber)
   parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity rubber)
   description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Designed to incapacitate rather than kill, these rubber tipped rounds bruise hard.
   components:
   - type: CartridgeAmmo
@@ -61,8 +64,8 @@
 - type: entity
   id: CartridgeHighVelocityPractice
   name: cartridge (.10 high-velocity practice)
-  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Chalk ammunition is generally non-harmful, used for practice.
   parent: BaseCartridgeHighVelocity
+  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Chalk ammunition is generally non-harmful, used for practice.
   components:
   - type: CartridgeAmmo
     proto: BulletHighVelocityPractice
@@ -76,9 +79,9 @@
 
 - type: entity
   id: CartridgeHighVelocityUranium
+  parent: BaseCartridgeHighVelocity
   name: cartridge (.10 high-velocity uranium)
   description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. A heavy tungstun core holding an exotic uranium-core, loses out on a lot of damage in favor of its radioactive potenial.
-  parent: BaseCartridgeHighVelocity
   components:
   - type: CartridgeAmmo
     proto: BulletHighVelocityUranium
@@ -92,9 +95,9 @@
 
 - type: entity
   id: CartridgeHighVelocityJHP
+  parent: BaseCartridgeHighVelocity
   name: cartridge (.10 high-velocity hollow-point)
   description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Not effective against armor, but cuts into both skin and scale causing massive amounts of internal bleeding.
-  parent: BaseCartridgeHighVelocity
   components:
   - type: CartridgeAmmo
     proto: BulletHighVelocityJHP
@@ -108,9 +111,9 @@
 
 - type: entity
   id: CartridgeHighVelocitySpent
+  parent: BaseCartridgeHighVelocity
   name: cartridge (.10 high-velocity)
   suffix: spent
-  parent: BaseCartridgeHighVelocity
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi

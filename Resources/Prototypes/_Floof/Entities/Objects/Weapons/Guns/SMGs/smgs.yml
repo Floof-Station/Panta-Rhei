@@ -161,7 +161,7 @@
         priority: 2
         whitelist:
           tags:
-          - MagazineHighVelocity
+            - MagazineHighVelocity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -169,7 +169,7 @@
         priority: 1
         whitelist:
           tags:
-          - CartridgeHighVelocity
+            - CartridgeHighVelocity
   - type: MagazineVisuals
     magState: mag
     steps: 1
