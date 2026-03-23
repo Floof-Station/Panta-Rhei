@@ -13,14 +13,11 @@ using Content.Shared.Drunk;
 using Content.Shared.Drugs;
 using Content.Shared._EE.Medical;
 using Content.Shared.StatusEffectNew;
-using Content.Shared.Item;
-using Content.Shared.Item.ItemToggle;
-using Content.Shared.Item.ItemToggle.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
-namespace Content.Server.Medical;
+namespace Content.Server._EE.Medical;
 /// <summary>
 ///     This stores the eye exam system for <see cref="PenLightComponent"/>
 /// </summary>
@@ -32,7 +29,6 @@ public sealed class PenLightSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -71,10 +67,7 @@ public sealed class PenLightSystem : EntitySystem
     /// </summary>
     private bool IsLightEnabled(EntityUid uid)
     {
-        if(_toggle.TryActivate(uid) == false)
-            return false;
-        else
-            return true;
+ 		return TryComp<PointLightComponent>(uid, out var pointLight) && pointLight.Enabled;
     }
 
     /// <summary>

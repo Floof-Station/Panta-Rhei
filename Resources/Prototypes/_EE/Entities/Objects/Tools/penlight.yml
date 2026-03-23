@@ -1,6 +1,6 @@
 - type: entity
   name: Pen Light
-  parent: Pen
+  parent: FlashlightLantern
   id: PenLightBase
   description: A pen-sized light, used by medical staff.
   components:
@@ -14,12 +14,18 @@
       shader: unshaded
       visible: false
       map: [ "light" ]
+  - type: Item
+    sprite: null
+    heldPrefix: off
   - type: PointLight
     enabled: false
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     radius: 2
     netsync: false
+  - type: ToggleableVisuals
+    spriteLayer: light
+    inhandVisuals: {}
   - type: PenLight
     examSpeed: 3 #time in seconds
   - type: Appearance
@@ -31,7 +37,6 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot {}
-  - type: ItemToggle
   - type: ItemTogglePointLight
   - type: PowerCellSlot
     cellSlotId: cell_slot
