@@ -21,15 +21,22 @@ namespace Content.Client._EE.Eye.PenLight.UI
             };
             _window.OnClose += Close;
             _window.OpenCentered();
+
+            // If there's a stored message, apply it
+            if (LastReceivedMessage is PenLightUserMessage lastMessage)
+                _window.Diagnose(lastMessage);
         }
 
+        private PenLightUserMessage? LastReceivedMessage;
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)
         {
-            if (_window == null
-                || message is not PenLightUserMessage cast)
+            if (message is not PenLightUserMessage cast)
                 return;
 
-            _window.Diagnose(cast);
+            LastReceivedMessage = cast; // Store the message in case UI isn't open yet
+
+            if (_window == null)
+                return;
         }
 
         protected override void Dispose(bool disposing)

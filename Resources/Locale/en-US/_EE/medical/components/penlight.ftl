@@ -9,3 +9,4 @@ pen-light-exam-drunk-text = The patient's eyes are slow to follow the light, dro
 pen-light-exam-eyedamage-text = The patient's eyes are partially focused, though they struggle to look at the light for too long.
 pen-light-exam-hallucinating-text = The patient's eyes are wandering around, with dilated pupils. They don't focus on the light.
 pen-light-exam-healthy-text = The patient follows the light perfectly with no stuttering.
+penlight-cannot-examine-self = You can't examine your own eyes.
