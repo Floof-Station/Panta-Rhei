@@ -1,0 +1,19 @@
+- type: entity
+  id: MagazineBoxHighVelocity
+  parent: BaseMagazineBoxRifle
+  name: ammunition box (.10 High-Velocity)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 50
+    proto: CartridgeHighVelocity
+  - type: Sprite
+    layers:
+    - state: base-b
+      map: ["enum.GunVisualLayers.Base"]
+    - state: magb-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: magb
+    steps: 4
+    zeroVisible: false
+  - type: Appearance
