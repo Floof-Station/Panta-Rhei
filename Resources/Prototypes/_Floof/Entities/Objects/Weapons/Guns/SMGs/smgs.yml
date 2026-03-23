@@ -2,11 +2,11 @@
   name: Vector-S
   suffix: Admeme
   parent: [BaseWeaponSubMachineGun, BaseMajorContraband]
-  id: WeaponSubMachineGunKrissVector
+  id: WeaponSubMachineGunRealVector
   description: An old sol-made PDW. With an insane fire-rate and low recoil. Uses .45 magnum ammo. Jesus this thing is wild.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -66,7 +66,7 @@
   description: An old sol-made PDW. With an accruate and fast burst. Uses .45 magnum ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/vector.rsi
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -126,7 +126,7 @@
   description: An newer version of the PDW. With high fire-rate and velocity but at the cost of accuracy, heck, the stock is missing. Uses .10 high-velocity ammo.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/SMGs/vectormod.rsi
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vectormod.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
