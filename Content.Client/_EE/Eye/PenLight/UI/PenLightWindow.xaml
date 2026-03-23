@@ -4,8 +4,8 @@
     SetSize="0 -300">
     <ScrollContainer VerticalExpand="True">
         <BoxContainer Name="RootContainer" Orientation="Vertical" HorizontalExpand="True">
-            <Label Name="NoPatientDataText" Text="{Loc 'pen-light-window-no-patient-data-text'}" Visible="False"/>
-            <Label Name="ExamDataLabel"/>
+            <RichTextLabel Name="NoPatientDataText" Text="{Loc 'pen-light-window-no-patient-data-text'}" Visible="False"/>
+            <RichTextLabel Name="ExamDataLabel"/>
         </BoxContainer>
     </ScrollContainer>
 </controls:FancyWindow>

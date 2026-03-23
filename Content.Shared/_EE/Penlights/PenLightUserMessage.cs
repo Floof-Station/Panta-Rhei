@@ -5,13 +5,13 @@ namespace Content.Shared._EE.Medical;
 public sealed class PenLightUserMessage : BoundUserInterfaceMessage
 {
     public readonly NetEntity? TargetEntity;
-    public bool? Blind;
-    public bool? Drunk;
-    public bool? EyeDamage;
-    public bool? Healthy;
-    public bool? SeeingRainbows;
+    public bool Blind;
+    public bool Drunk;
+    public bool EyeDamage;
+    public bool Healthy;
+    public bool SeeingRainbows;
 
-    public PenLightUserMessage(NetEntity? targetEntity, bool? blind, bool? drunk, bool? eyeDamage, bool? healthy, bool? seeingRainbows)
+    public PenLightUserMessage(NetEntity? targetEntity, bool blind, bool drunk, bool eyeDamage, bool healthy, bool seeingRainbows)
     {
         TargetEntity = targetEntity;
         Blind = blind;
