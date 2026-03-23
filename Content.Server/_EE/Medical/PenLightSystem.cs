@@ -13,6 +13,9 @@ using Content.Shared.Drunk;
 using Content.Shared.Drugs;
 using Content.Shared._EE.Medical;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.Item;
+using Content.Shared.Item.ItemToggle;
+using Content.Shared.Item.ItemToggle.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -29,6 +32,7 @@ public sealed class PenLightSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly ItemToggleSystem _toggle = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -67,7 +71,10 @@ public sealed class PenLightSystem : EntitySystem
     /// </summary>
     private bool IsLightEnabled(EntityUid uid)
     {
-        return TryComp<PointLightComponent>(uid, out var pointLight) && pointLight.Enabled;
+        if(_toggle.TryActivate(uid) == false)
+            return false;
+        else
+            return true;
     }
 
     /// <summary>
