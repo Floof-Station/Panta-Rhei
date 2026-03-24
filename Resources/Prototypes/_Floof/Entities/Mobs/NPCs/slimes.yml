@@ -20,18 +20,23 @@
   - type: Item
     size: Huge
   - type: Sprite
-    color: "#FFFFFF55"
+    layers:
+    - map: [ "colorMap" ]
+      state: slime_geras
+    - map: [ "eyesMap" ]
+      state: slime_geras_eyes
+      shader: unshaded
+  - type: RandomSprite
+    selected:
+      colorMap:
+        slime_geras: "#0000FF"
+      eyesMap:
+        slime_geras_eyes: "#0000FF"
   - type: MeleeWeapon
     attackRate: 2
     damage:
       types:
         Blunt: 4
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: blue_adult_slime
-      Dead:
-        Base: blue_adult_slime_dead
   - type: Tag # Floof
     tags:
     - FootstepSound
