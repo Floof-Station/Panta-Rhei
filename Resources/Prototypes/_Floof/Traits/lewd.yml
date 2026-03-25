@@ -35,6 +35,24 @@
       solutionname: "breasts"
 
 - type: trait
+  id: HoneyProducer
+  name: trait-name-HoneyProducer
+  description: trait-description-HoneyProducer
+  category: Medical
+  cost: 0
+  conflicts:
+  - BigMilkProducer
+  conditions:
+    - !type:HasCompCondition
+      component: BorgChassis
+      invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: HoneyProducer
+      solutionname: "breasts"
+
+- type: trait
   id: SquirtProducer
   name: trait-name-SquirtProducer
   description: trait-description-SquirtProducer
