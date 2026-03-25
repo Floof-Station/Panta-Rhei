@@ -40,8 +40,6 @@
   description: trait-description-HoneyProducer
   category: Medical
   cost: 0
-  conflicts:
-  - BigMilkProducer
   conditions:
     - !type:HasCompCondition
       component: BorgChassis
