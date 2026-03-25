@@ -1,9 +1,9 @@
 # TODO once tiles can be smoothed and carpets ported over to that, add them to the FloorTile outputs
 - type: entity
-  name: carpet
   parent: FloorTileItemBase
   id: FloorCarpetItemRed
-  suffix: Red
+  name: red carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-red
@@ -22,7 +22,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemBlack
-  suffix: Black
+  name: black carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-black
@@ -38,7 +39,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemBlue
-  suffix: Blue
+  name: blue carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-blue
@@ -54,7 +56,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemGreen
-  suffix: Green
+  name: green carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-green
@@ -70,7 +73,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemOrange
-  suffix: Orange
+  name: orange carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-orange
@@ -86,7 +90,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemSkyBlue
-  suffix: Sky Blue
+  name: sky blue carpet # floofstation change
+  suffix: Item  # floofstation change
   components:
   - type: Sprite
     state: carpet-skyblue
@@ -102,7 +107,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemPurple
-  suffix: Purple
+  name: purple carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-purple
@@ -118,7 +124,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemPink
-  suffix: Pink
+  name: pink carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-pink
@@ -134,7 +141,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemCyan
-  suffix: Cyan
+  name: cyan carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-cyan
@@ -150,7 +158,8 @@
 - type: entity
   parent: FloorCarpetItemRed
   id: FloorCarpetItemWhite
-  suffix: White
+  name: white carpet # floofstation change
+  suffix: Item # floofstation change
   components:
   - type: Sprite
     state: carpet-white
