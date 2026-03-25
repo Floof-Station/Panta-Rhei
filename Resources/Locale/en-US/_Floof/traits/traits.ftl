@@ -4,6 +4,9 @@ trait-description-CumProducer = You have a schlong between your legs.
 trait-name-MilkProducer = Boobs
 trait-description-MilkProducer = You have a pair of large mammaries.
 
+trait-name-HoneyProducer = Boobs - Honey
+trait-description-HoneyProducer = You have a pair of large mammaries capable of producing Honey.
+
 trait-name-SquirtProducer = Pussy
 trait-description-SquirtProducer = You have a slit between your legs.
 
