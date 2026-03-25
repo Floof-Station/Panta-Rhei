@@ -33,16 +33,19 @@ public sealed class LewdTraitSystem : EntitySystem
         SubscribeLocalEvent<CumProducerComponent, ComponentStartup>(OnComponentInitCum);
         SubscribeLocalEvent<MilkProducerComponent, ComponentStartup>(OnComponentInitMilk);
         SubscribeLocalEvent<SquirtProducerComponent, ComponentStartup>(OnComponentInitSquirt);
+        SubscribeLocalEvent<HoneyProducerComponent, ComponentStartup>(OnComponentInitHoney);
 
         //Verbs
         SubscribeLocalEvent<CumProducerComponent, GetVerbsEvent<InnateVerb>>(AddCumVerb);
         SubscribeLocalEvent<MilkProducerComponent, GetVerbsEvent<InnateVerb>>(AddMilkVerb);
         SubscribeLocalEvent<SquirtProducerComponent, GetVerbsEvent<InnateVerb>>(AddSquirtVerb);
+        SubscribeLocalEvent<HoneyProducerComponent, GetVerbsEvent<InnateVerb>>(AddHoneyVerb);
 
         //Events
         SubscribeLocalEvent<CumProducerComponent, CummingDoAfterEvent>(OnDoAfterCum);
         SubscribeLocalEvent<MilkProducerComponent, MilkingDoAfterEvent>(OnDoAfterMilk);
         SubscribeLocalEvent<SquirtProducerComponent, SquirtingDoAfterEvent>(OnDoAfterSquirt);
+        SubscribeLocalEvent<HoneyProducerComponent, HoneyingDoAfterEvent>(OnDoAfterHoney);
     }
 
     #region event handling
@@ -112,6 +115,28 @@ public sealed class LewdTraitSystem : EntitySystem
             Priority = 1
         };
         args.Verbs.Add(verbMilk);
+    }
+    
+    public void AddHoneyVerb(Entity<HoneyProducerComponent> entity, ref GetVerbsEvent<InnateVerb> args)
+    {
+        if (args.Using == null ||
+             !args.CanInteract ||
+             args.User != args.Target ||
+             !EntityManager.HasComponent<RefillableSolutionComponent>(args.Using.Value)) //see if removing this part lets you milk on the ground.
+            return;
+
+        _solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out _);
+
+        var user = args.User;
+        var used = args.Using.Value;
+
+        InnateVerb verbHoney = new()
+        {
+            Act = () => AttemptHoney(entity, user, used),
+            Text = Loc.GetString($"honey-verb-get-text"),
+            Priority = 1
+        };
+        args.Verbs.Add(verbHoney);
     }
 
     public void AddSquirtVerb(Entity<SquirtProducerComponent> entity, ref GetVerbsEvent<InnateVerb> args)
@@ -189,6 +214,33 @@ public sealed class LewdTraitSystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString("milk-verb-success", ("amount", quantity), ("target", Identity.Entity(args.Args.Used.Value, EntityManager))), entity.Owner, args.Args.User, PopupType.Medium);
     }
 
+    private void OnDoAfterHoney(Entity<HoneyProducerComponent> entity, ref HoneyingDoAfterEvent args)
+    {
+        if (args.Cancelled || args.Handled || args.Args.Used == null)
+            return;
+
+        if (!_solutionContainer.ResolveSolution(entity.Owner, entity.Comp.SolutionName, ref entity.Comp.Solution, out var solution))
+            return;
+
+        if (!_solutionContainer.TryGetRefillableSolution(args.Args.Used.Value, out var targetSoln, out var targetSolution))
+            return;
+
+        args.Handled = true;
+        var quantity = solution.Volume;
+        if (quantity == 0)
+        {
+            _popupSystem.PopupEntity(Loc.GetString("honey-verb-dry"), entity.Owner, args.Args.User);
+            return;
+        }
+
+        if (quantity > targetSolution.AvailableVolume)
+            quantity = targetSolution.AvailableVolume;
+
+        var split = _solutionContainer.SplitSolution(entity.Comp.Solution.Value, quantity);
+        _solutionContainer.TryAddSolution(targetSoln.Value, split);
+        _popupSystem.PopupEntity(Loc.GetString("honey-verb-success", ("amount", quantity), ("target", Identity.Entity(args.Args.Used.Value, EntityManager))), entity.Owner, args.Args.User, PopupType.Medium);
+    }
+
     private void OnDoAfterSquirt(Entity<SquirtProducerComponent> entity, ref SquirtingDoAfterEvent args)
     {
         if (args.Cancelled || args.Handled || args.Args.Used == null)
@@ -248,6 +300,21 @@ public sealed class LewdTraitSystem : EntitySystem
         _doAfterSystem.TryStartDoAfter(doargs);
     }
 
+    private void AttemptHoney(Entity<HoneyProducerComponent> lewd, EntityUid userUid, EntityUid containerUid)
+    {
+        if (!HasComp<HoneyProducerComponent>(userUid))
+            return;
+
+        var doargs = new DoAfterArgs(EntityManager, userUid, 5, new HoneyingDoAfterEvent(), lewd, lewd, used: containerUid)
+        {
+            BreakOnMove = true,
+            BreakOnDamage = true,
+            MovementThreshold = 1.0f,
+        };
+
+        _doAfterSystem.TryStartDoAfter(doargs);
+    }
+    
     private void AttemptSquirt(Entity<SquirtProducerComponent> lewd, EntityUid userUid, EntityUid containerUid)
     {
         if (!HasComp<SquirtProducerComponent>(userUid))
@@ -269,6 +336,7 @@ public sealed class LewdTraitSystem : EntitySystem
         var queryCum = EntityQueryEnumerator<CumProducerComponent>();
         var queryMilk = EntityQueryEnumerator<MilkProducerComponent>();
         var querySquirt = EntityQueryEnumerator<SquirtProducerComponent>();
+        var queryHoney = EntityQueryEnumerator<HoneyProducerComponent>();
         var now = _timing.CurTime;
 
         while (queryCum.MoveNext(out var uid, out var containerCum))
@@ -317,6 +385,30 @@ public sealed class LewdTraitSystem : EntitySystem
                 continue;
 
             _solutionContainer.TryAddReagent(containerMilk.Solution.Value, containerMilk.ReagentId, containerMilk.QuantityPerUpdate, out _);
+        }
+
+        while (queryHoney.MoveNext(out var uid, out var containerHoney))
+        {
+            if (now < containerHoney.NextGrowth)
+                continue;
+
+            containerHoney.NextGrowth = now + containerHoney.GrowthDelay;
+
+            if (_mobState.IsDead(uid))
+                continue;
+
+            if (EntityManager.TryGetComponent(uid, out HungerComponent? hunger))
+            {
+                if (_hunger.GetHungerThreshold(hunger) < HungerThreshold.Okay)
+                    continue;
+
+                //_hunger.ModifyHunger(uid, -containerMilk.HungerUsage, hunger);
+            }
+
+            if (!_solutionContainer.ResolveSolution(uid, containerHoney.SolutionName, ref containerHoney.Solution))
+                continue;
+
+            _solutionContainer.TryAddReagent(containerHoney.Solution.Value, containerHoney.ReagentId, containerHoney.QuantityPerUpdate, out _);
         }
 
         while (querySquirt.MoveNext(out var uid, out var containerSquirt))
