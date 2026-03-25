@@ -65,6 +65,14 @@ public sealed class LewdTraitSystem : EntitySystem
         solutionMilk.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionMilk.Volume);
     }
 
+    private void OnComponentInitHoney(Entity<HoneyProducerComponent> entity, ref ComponentStartup args)
+    {
+        if (!_solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solutionHoney))
+            return;
+        solutionHoney.MaxVolume = entity.Comp.MaxVolume;
+        solutionHoney.AddReagent(entity.Comp.ReagentId, entity.Comp.MaxVolume - solutionHoney.Volume);
+    }
+
     private void OnComponentInitSquirt(Entity<SquirtProducerComponent> entity, ref ComponentStartup args)
     {
         if (!_solutionContainer.EnsureSolution(entity.Owner, entity.Comp.SolutionName, out var solutionSquirt))
