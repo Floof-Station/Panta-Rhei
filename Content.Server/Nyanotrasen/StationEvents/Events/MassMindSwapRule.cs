@@ -5,7 +5,9 @@ using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Common.Consent;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Bed.Cryostorage;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Audio;
@@ -27,6 +29,7 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedConsentSystem _consent = default!; // Floofstation
+    [Dependency] private readonly SharedCryostorageSystem _cryoSystem = default!; // Floofstation
 
     private static readonly ProtoId<ConsentTogglePrototype> MindswapConsent = "MassMindswap"; // Floofstation
 
@@ -77,7 +80,8 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
         var query = EntityQueryEnumerator<PotentialPsionicComponent, MobStateComponent>();
         while (query.MoveNext(out var psion, out _, out _))
         {
-            if (!_consent.HasConsent(psion, MindswapConsent)) // Floofstation - requires consent
+            if (!_consent.HasConsent(psion, MindswapConsent) // Floofstation - requires consent
+                || _cryoSystem.IsInPausedMap(psion)) // This hack is needed because sometimes cryo fails to pause mobs
                 continue;
 
             if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion))
@@ -114,7 +118,6 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
                 // A valid swap target has been found.
                 // Remove this actor from the pool of swap candidates before they go.
                 psionicPool.Remove(actor);
-                psionicPool.Remove(other); // Floofstation - remove both from the pool so avoid having chain swaps which get people trapped
 
                 // Do the swap.
                 _mindSwap.Swap(actor, other);
