@@ -1,6 +1,6 @@
 - type: entity
   name: Pen Light
-  parent: FlashlightLantern
+  parent: [Pen, FlashlightLantern]
   id: PenLightBase
   description: A pen-sized light, used by medical staff.
   components:

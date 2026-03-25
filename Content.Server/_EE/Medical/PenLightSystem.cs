@@ -54,7 +54,7 @@ public sealed class PenLightSystem : EntitySystem
         if (args.Handled
             || args.Cancelled
             || args.Target == null
-            || !_powerCell.HasDrawCharge(uid.Owner, user: args.User)) // still working on this
+            || !_powerCell.HasDrawCharge(uid.Owner, user: args.User))
             return;
 
         OpenUserInterface(args.User, uid);
