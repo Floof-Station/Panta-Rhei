@@ -26,6 +26,15 @@
   - type: Tag
     tags:
       - Meat
+  - type: EmitSoundOnPickup # Euphoria - Port Goob handling SFX
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
 
 - type: entity
   id: BaseHumanOrgan

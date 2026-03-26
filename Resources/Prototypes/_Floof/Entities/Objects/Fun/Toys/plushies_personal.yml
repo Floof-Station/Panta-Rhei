@@ -19,11 +19,26 @@
     state: slime
   - type: UseDelay
     delay: 3.0
+  - type: EmitSoundOnUse
+    sound: &slimeSquish
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound: *slimeSquish
+  - type: EmitSoundOnCollide
+    sound: *slimeSquish
   - type: EmitSoundOnActivate
     sound:
       path: /Audio/Voice/Human/female_sigh.ogg
       params:
         volume: 1
+  - type: MeleeWeapon
+    soundHit: &slimeLaugh
+      path: /Audio/_Floof/Voice/Slime/slime_laugh_f1.ogg
+      params:
+        variation: 0.20
+        volume: 4
 
 - type: entity
   parent: PlushieHuman
@@ -159,7 +174,7 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
-    sound:
+    sound: &avaliSpeak
       path: /Audio/_Floof/Voice/Avali/avali_1.ogg
       params:
         volume: 1
@@ -169,16 +184,9 @@
   - type: EmitSoundOnCollide
     sound: *landAvali
   - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
-      params:
-        volume: 1
+    sound: *avaliSpeak
   - type: MeleeWeapon
-    soundHit:
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
-      params:
-        variation: 0.05
-        volume: 4
+    soundHit: *landAvali
 
 - type: entity
   parent: PlushieHuman
@@ -191,6 +199,20 @@
     state: slimebartender
   - type: UseDelay
     delay: 1.0
+  - type: EmitSoundOnUse
+    sound: &slimePop
+      path: /Audio/_Floof/Voice/Slime/s_pop.ogg
+      params:
+        volume: 2
+        variation: 0.05
+  - type: EmitSoundOnLand
+    sound: *slimeLaugh
+  - type: EmitSoundOnActivate
+    sound: *slimePop
+  - type: MeleeWeapon
+    soundHit: *slimeLaugh
+  - type: EmitSoundOnCollide
+    sound: *slimeLaugh
 
 - type: entity
   parent: PlushieHuman
@@ -370,26 +392,18 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
-    sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
-      params:
-        volume: 1
+    sound: *avaliSpeak
   - type: EmitSoundOnLand
-    sound: &landResomi
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+    sound: *landAvali
   - type: EmitSoundOnCollide
-    sound: *landResomi
+    sound: *landAvali
   - type: EmitSoundOnActivate
     sound:
-      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
+      path: /Audio/_RMC14/Voice/Avali/avali_laugh.ogg
       params:
         volume: 1
   - type: MeleeWeapon
-    soundHit:
-      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
-      params:
-        variation: 0.05
-        volume: 4
+    soundHit: *landAvali
 
 
 - type: entity
@@ -534,6 +548,10 @@
     sound: *yap
   - type: EmitSoundOnCollide
     sound: *yap
+  - type: EmitSoundOnLand
+    sound: *yap
+  - type: MeleeWeapon
+    soundHit: *yap
 
 - type: entity
   parent: PlushieHuman
@@ -579,6 +597,20 @@
     state: eldrichcap
   - type: UseDelay
     delay: 3.0
+  - type: EmitSoundOnUse
+    sound: &shadekinMar
+      path: /Audio/_Floof/Voice/Shadowkin/mar.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnLand
+    sound: &slimeScreamM
+      path: /Audio/_Floof/Voice/Slime/slime_scream_m1.ogg
+  - type: EmitSoundOnActivate
+    sound: *shadekinMar
+  - type: MeleeWeapon
+    soundHit: *slimeScreamM
+  - type: EmitSoundOnCollide
+    sound: *slimeScreamM
 
 - type: entity
   parent: PlushieHuman
@@ -658,15 +690,19 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
+    sound: &toySqueak
       path: /Audio/Items/Toys/toysqueak1.ogg
       params:
         volume: 2
   - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        volume: 2
+    sound: *toySqueak
+  - type: EmitSoundOnLand
+    sound: &vulpScream
+      path: /Audio/_Floof/Voice/Vulpkanin/vulpscream2.ogg
+  - type: MeleeWeapon
+    soundHit: *vulpScream
+  - type: EmitSoundOnCollide
+    sound: *vulpScream
 
 - type: entity
   parent: PlushieHuman
@@ -713,15 +749,18 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound:
+    sound: &metalBreak
       path: /Audio/Effects/metal_break3.ogg
       params:
         volume: 2
   - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Effects/metal_break3.ogg
-      params:
-        volume: 2
+    sound: *metalBreak
+  - type: EmitSoundOnLand
+    sound: *slimeSquish
+  - type: MeleeWeapon
+    soundHit: *slimeSquish
+  - type: EmitSoundOnCollide
+    sound: *slimeSquish
 
 - type: entity
   parent: PlushieHuman
@@ -1038,6 +1077,13 @@
       params:
         variation: 0.05
         volume: 4
+  - type: EmitSoundOnActivate
+    sound: &diskDrop
+      path: /Audio/_EE/Items/Handling/disk_drop.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *diskDrop
 
 - type: entity
   parent: BasePlushie
@@ -1261,6 +1307,21 @@
     soundHit: *mothScream
 
 - type: entity
+  parent: PlushieMoth
+  id: EngimothPlushie
+  name: engimoth plushie
+  description: It's blueberry scented! It also has a tag underneath a wing... "Do not bring this moth into visual contact with the supermatter!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/engimoth.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/engimoth.rsi
+    slots:
+    - HEAD
+
+- type: entity
   parent: BasePlushie
   id: CheerfulQuadborgPlushie
   name: Cheerful Quadborg Plushie
@@ -1374,10 +1435,7 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnActivate
-    sound: &toySqueak
-      path: /Audio/Items/Toys/toysqueak1.ogg
-      params:
-        variation: 0.05
+    sound: *toySqueak
   - type: EmitSoundOnUse
     sound: *toySqueak
   - type: EmitSoundOnLand
@@ -1572,3 +1630,89 @@
     sound: *cat_hiss2
   - type: MeleeWeapon
     soundHit: *cat_hiss2
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieExpieMobster
+  name: Expie mobster plushie
+  description: The weight of this plushie’s gaze makes you want to hand over all of your money. Why does the moff have a crown? IS THAT A GU—”
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mobster
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &ltrifle_cock
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *ltrifle_cock
+  - type: EmitSoundOnLand
+    sound: &moth_chitter
+      path: /Audio/_DV/Voice/Chitinid/moth_chitter.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *moth_chitter
+  - type: MeleeWeapon
+    soundHit: *moth_chitter
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieMailTech
+  name: Mail tech plushie
+  description: Cargo's strongest soldiers, for when Delivery Must Complete. #the text is a refrence and its intended to be like that
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mailtech
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &skates
+      path: /Audio/Items/Toys/skates.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *skates
+  - type: EmitSoundOnLand
+    sound: &hit_kick
+      path: /Audio/Effects/hit_kick.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *hit_kick
+  - type: MeleeWeapon
+    soundHit: *hit_kick
+
+- type: entity
+  parent: PlushieExperiment
+  id: PlushieFlick #yip!
+  name: cybersun engineer plushie
+  description: Each plushie is given its soul by pressing it to a supermatter sliver, if you listen closely you can hear yourself getting cancer in real-time!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/flickplushie.rsi
+    state: icon
+  - type: Item
+    sprite: _Floof/Objects/Fun/flickplushie.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    equippedPrefix: flick
+    slots:
+    - HEAD

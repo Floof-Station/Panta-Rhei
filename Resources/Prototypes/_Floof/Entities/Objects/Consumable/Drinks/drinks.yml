@@ -173,7 +173,23 @@
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/grandnavy.rsi
     state: icon
-
+    
+- type: entity
+  parent: DrinkGlass
+  id: DrinkHarpySnowfallGlass
+  suffix: harpy's snowfall
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: HarpySnowfall
+          Quantity: 30
+  - type: Icon
+    sprite: _Floof/Objects/Consumable/Drinks/harpysnowfall.rsi
+    state: icon
+  
 - type: entity
   parent: DrinkGlass
   id: DrinkHornyStallionGlass
@@ -300,6 +316,22 @@
           Quantity: 30
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/marsbar.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkMillerMargaritaGlass
+  suffix: miller margarita
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        -  ReagentId: MillerMargarita
+           Quantity: 30
+  - type: Icon
+    sprite: _Floof/Objects/Consumable/Drinks/millermargarita.rsi
     state: icon
 
 - type: entity

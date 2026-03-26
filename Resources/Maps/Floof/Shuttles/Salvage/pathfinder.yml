@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/11/2026 15:20:27
-  entityCount: 441
+  time: 03/12/2026 13:54:49
+  entityCount: 444
 maps: []
 grids:
 - 1
@@ -1170,6 +1170,13 @@ entities:
     components:
     - type: Transform
       pos: -1.5,2.5
+      parent: 1
+- proto: ConveyorBelt
+  entities:
+  - uid: 252
+    components:
+    - type: Transform
+      pos: -5.5,-1.5
       parent: 1
 - proto: DefibrillatorCabinetFilled
   entities:
@@ -2409,6 +2416,13 @@ entities:
     - type: Transform
       pos: -8.5,-3.5
       parent: 1
+- proto: Recycler
+  entities:
+  - uid: 358
+    components:
+    - type: Transform
+      pos: -5.5,-1.5
+      parent: 1
 - proto: ReinforcedWindow
   entities:
   - uid: 83
@@ -2678,6 +2692,29 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,-2.5
       parent: 1
+- proto: TwoWayLever
+  entities:
+  - uid: 357
+    components:
+    - type: Transform
+      pos: -4.5,-2.5
+      parent: 1
+    - type: DeviceLinkSource
+      linkedPorts:
+        358:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
+        252:
+        - - Left
+          - Reverse
+        - - Right
+          - Forward
+        - - Middle
+          - Off
 - proto: VendingMachineTankDispenserEVA
   entities:
   - uid: 335

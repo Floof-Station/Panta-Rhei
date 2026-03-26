@@ -7,6 +7,7 @@ namespace Content.Shared.Input
     {
         public static readonly BoundKeyFunction ToggleKnockdown = "ToggleKnockdown";
         public static readonly BoundKeyFunction ToggleCrawlingUnder = "ToggleCrawlingUnder"; // Floofstation - under-furniture crawling
+        public static readonly BoundKeyFunction ToggleCrawlingDirection = "ToggleCrawlingDirection"; // Floofstation - changeable crawling directions
         public static readonly BoundKeyFunction UseItemInHand = "ActivateItemInHand";
         public static readonly BoundKeyFunction AltUseItemInHand = "AltActivateItemInHand";
         public static readonly BoundKeyFunction ActivateItemInWorld = "ActivateItemInWorld";

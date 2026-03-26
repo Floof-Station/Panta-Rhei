@@ -3,9 +3,25 @@
   parent: Clothing
   id: ClothingShoesBase
   components:
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      path: /Audio/_Goobstation/Items/handling/generic_small_pickup.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnDrop
+    sound: &shoesDropSound
+      path: /Audio/_Goobstation/Items/handling/shoes_drop.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnLand
+    sound: *shoesDropSound
   - type: Clothing
     slots:
     - FEET
+    equipSound: # Euphoria - Port over Goob's interaction sounds.
+      collection: GenericEquip
+      params:
+        volume: -5
   - type: Sprite
     state: icon
   - type: Item

@@ -1,0 +1,10 @@
+- type: polymorph # Euphoria - This Morph readded to allow Geras to work. 1:1 port.
+  id: SlimeMorphGeras
+  configuration:
+    entity: MobSlimesGeras
+    transferName: true
+    transferHumanoidAppearance: false
+    inventory: Drop
+    transferDamage: true
+    revertOnDeath: true
+    revertOnCrit: true

@@ -210,9 +210,9 @@ public sealed partial class JobRequirementsManager : ISharedPlaytimeManager
         if (!_cfg.GetCVar(CCVars.GameRoleWhitelist))
             return true;
 
-        // DeltaV - blanket whitelist check in client
-        if (_whitelisted)
-            return true;
+        // DeltaV - blanket whitelist check in client; Euphoria - remove blanket whitelist checks to enable role whitelist
+        //if (_whitelisted)
+        //    return true;
 
         if (job.Whitelisted && !_jobWhitelists.Contains(job.ID))
         {

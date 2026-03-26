@@ -3,9 +3,26 @@
   parent: Clothing
   id: ClothingOuterBase
   components:
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      collection: GenericPickup
+      params:
+        volume: -9
+  - type: EmitSoundOnDrop
+    sound:
+      collection: GenericDrop
+      params:
+        volume: -9
+  - type: EmitSoundOnLand
+    sound:
+      collection: GenericDrop
+      params:
+        volume: -9
   - type: Clothing
     slots:
     - outerClothing
+    equipSound: # Euphoria - Port over Goob's interaction sounds.
+      collection: GenericEquip
   - type: Sprite
     state: icon
   - type: AllowSuitStorage # DeltaV - allow suit storage for all outer clothing, no whitelist

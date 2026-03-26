@@ -31,3 +31,92 @@
   maxLimit: 1
   loadouts:
   - UnderSocksHeadSecurity
+
+# security officer additions
+- type: loadoutGroup
+  id: FloofSecurityOfficerJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformSecurityThong
+
+- type: loadoutGroup
+  id: FloofSecurityOfficerGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsSecurityWarmers
+
+- type: loadoutGroup
+  id: FloofSecurityOfficerShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksSecurity
+
+# detective additions
+- type: loadoutGroup
+  id: FloofDetectiveJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformDetectiveThong
+
+- type: loadoutGroup
+  id: FloofDetectiveOuterClothing
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - OuterCoatDetective
+
+- type: loadoutGroup
+  id: FloofDetectiveGloves
+  name: loadout-group-security-detective-gloves
+  parent: [SecurityGloves]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsGlovesForensic
+  - ClothingHandsDetectiveWarmers
+
+- type: loadoutGroup
+  id: FloofDetectiveShoes
+  name: loadout-group-security-detective-shoes
+  parent: [SecurityShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksDetective
+
+# corpsman additions
+- type: loadoutGroup
+  id: FloofCorpsmanJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformCorpsmanThong
+
+- type: loadoutGroup
+  id: FloofCorpsmanGloves
+  name: loadout-group-security-corpsman-gloves
+  parent: [MedicalGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsCorpsmanWarmers
+
+- type: loadoutGroup
+  id: FloofCorpsmanShoes
+  name: loadout-group-security-corpsman-shoes
+  parent: [SecurityShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesColorBlack
+  - ClothingUnderSocksCorpsman

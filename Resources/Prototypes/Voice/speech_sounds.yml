@@ -142,6 +142,15 @@
   exclaimSound:
     path: /Audio/Voice/Talk/arachnid_exclaim.ogg
 
+- type: speechSounds # Euphoria - bring over moth speech from frontier
+  id: Moth
+  saySound:
+    path: /Audio/_NF/Voice/Talk/moth.ogg
+  askSound:
+    path: /Audio/_NF/Voice/Talk/moth_ask.ogg
+  exclaimSound:
+    path: /Audio/_NF/Voice/Talk/moth_exclaim.ogg
+
 - type: speechSounds
   id: Cat
   saySound:

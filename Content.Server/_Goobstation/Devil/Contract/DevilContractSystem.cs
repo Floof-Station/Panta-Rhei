@@ -243,12 +243,13 @@ public sealed partial class DevilContractSystem : EntitySystem
             return false;
         }
 
-        if (HasComp<MindShieldComponent>(user)
-            && !HasComp<DevilComponent>(user))
-        {
-            failReason = Loc.GetString("devil-contract-mind-shielded-failed");
-            return false;
-        }
+        // Euphoria - Changed so Mindshield don't stop devil deals as the company doesn't own your soul
+        //if (HasComp<MindShieldComponent>(user)
+        //    && !HasComp<DevilComponent>(user))
+        //{
+        //    failReason = Loc.GetString("devil-contract-mind-shielded-failed");
+        //    return false;
+        //}
 
         if (HasComp<PossessedComponent>(user))
         {

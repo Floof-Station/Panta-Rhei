@@ -20,13 +20,13 @@
     - type: Psionic # Nyano - Summary: Makes the mime psionic.
     - type: MimePowers
       preventWriting: false # DeltaV
-    - type: FrenchAccent
+    #- type: FrenchAccent # DeltaV - remove forced accents
 
 - type: startingGear
   id: MimeGear
   equipment:
     gloves: ClothingHandsGlovesColorWhite
-    shoes: ClothingShoesColorWhite
+    #shoes: ClothingShoesColorWhite # Floofstation - allow loadouts to handle shoe customization
     id: MimePDA
     pocket1: CrayonMime
     pocket2: Paper # DeltaV

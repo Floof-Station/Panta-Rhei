@@ -1,0 +1,85 @@
+- type: trait
+  id: TraitDispel
+  name: trait-dispel-name
+  description: trait-dispel-desc
+  category: Mental
+  cost: 5
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: ResearchDirector
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Psionic
+    - type: DispelPower
+
+- type: trait
+  id: TraitPrecognition
+  name: trait-precognition-name
+  description: trait-precognition-desc
+  category: Mental
+  cost: 4
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Psionic
+    - type: PrecognitionPower
+
+- type: trait
+  id: TraitMetapsionic
+  name: trait-metapsionic-name
+  description: trait-metapsionic-desc
+  category: Mental
+  cost: 2
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: ForensicMantis
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Psionic
+    - type: MetapsionicPower
+    
+- type: trait
+  id: TraitPsychokineticScream
+  name: trait-psychokinetic-scream-name
+  description: trait-psychokinetic-scream-desc
+  category: Mental
+  cost: 6
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Psionic
+    - type: PsychokineticScreamPower
+
+- type: trait
+  id: TraitPsionicRegeneration
+  name: trait-psionic-regeneration-name
+  description: trait-psionic-regeneration-desc
+  category: Mental
+  cost: 6
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Psionic
+    - type: PsionicRegenerationPower
+  
+- type: trait # Bible not included
+  id: TraitReligious
+  name: trait-religious-name
+  description: trait-religious-desc
+  category: Mental
+  cost: 10
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: ResearchDirector
+  - !type:HasJobCondition
+    invert: true
+    job: Chaplain
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BibleUser

@@ -8,11 +8,13 @@
   - UniformLOLogisThong
 
 - type: loadoutGroup
-  id: FloofLoGloves
-  abstract: true
+  id: FloofLoGloves # this is the group to give LO so they have their gloves
+  name: loadout-group-logistics-officer-gloves
+  parent: [PassengerGloves]
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ClothingHandsGlovesPapercutProof
   - HandsLOLogisWarmers
 
 - type: loadoutGroup
@@ -22,3 +24,74 @@
   maxLimit: 1
   loadouts:
   - UnderSocksLOLogis
+
+# courier additions
+- type: loadoutGroup
+  id: FloofCourierJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformCourierDevy
+  - UniformCourierThong
+
+- type: loadoutGroup
+  id: FloofCourierOuterclothing
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingOuterDevy
+  - ClothingOuterExpressBuffCourierCoat
+
+- type: loadoutGroup
+  id: FloofCourierBackpack
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingBackpackDuffelCourierDevy
+
+- type: loadoutGroup
+  id: FloofCourierShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesCourierDevy
+  - ClothingUnderSocksCourier
+
+- type: loadoutGroup
+  id: FloofCourierGloves
+  name: loadout-group-logistics-courier-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsCourierWarmers
+
+# cargotech additions
+- type: loadoutGroup
+  id: FloofCargotechJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformLogisThong
+
+- type: loadoutGroup
+  id: FloofCargotechGloves
+  name: loadout-group-logistics-cargotech-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsLogisWarmers
+
+- type: loadoutGroup
+  id: FloofCargotechShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksLogis

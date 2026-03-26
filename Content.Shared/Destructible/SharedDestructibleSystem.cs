@@ -1,7 +1,12 @@
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Systems;
+
 namespace Content.Shared.Destructible;
 
 public abstract class SharedDestructibleSystem : EntitySystem
 {
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!; // Floofstation
+
     /// <summary>
     /// Force entity to be destroyed and deleted.
     /// </summary>
@@ -14,6 +19,14 @@ public abstract class SharedDestructibleSystem : EntitySystem
 
         var eventArgs = new DestructionEventArgs();
         RaiseLocalEvent(owner, eventArgs);
+
+        // Floofstation - break all contacts first so that other systems like SpeedModifierContacts stop doing their things
+        // This will raise EndCollideEvent on all colliding bodies, then prevent it from colliding again (which can happen due to physics sub-stepping)
+        if (TryComp<PhysicsComponent>(owner, out var physics))
+        {
+            _physics.DestroyContacts(physics);
+            _physics.SetCanCollide(owner, false, dirty: false, force: true, body: physics);
+        }
 
         PredictedQueueDel(owner);
         return true;

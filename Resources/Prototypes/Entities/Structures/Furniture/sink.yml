@@ -26,6 +26,11 @@
         maxVol: 100
       tank:
         maxVol: 500
+        # Floofstation additions start
+        reagents:
+        - ReagentId: Water
+          Quantity: 1500
+        # Floofstation additions end
   - type: SolutionRegeneration
     solution: tank
     generated:
@@ -80,7 +85,7 @@
       tank:
         reagents:
         - ReagentId: Water
-          Quantity: 500
+          Quantity: 1500 # Floofstation
 
 - type: entity
   name: wide sink
@@ -127,4 +132,4 @@
       tank:
         reagents:
         - ReagentId: Water
-          Quantity: 500
+          Quantity: 1500 # Floofstation

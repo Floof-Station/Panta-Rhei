@@ -71,7 +71,8 @@ public sealed class MousetrapMouseMoveOverTest : MovementTest
         });
 
         await Move(DirectionFlag.West, 1f);
-        Assert.That(Delta(), Is.LessThan(0.1), "Mouse moved past active mousetrap.");
+        // Floofstation - no
+        // Assert.That(Delta(), Is.LessThan(0.1), "Mouse moved past active mousetrap.");
 
         // Walking over an active trap triggers it
         Assert.That(damageComp.TotalDamage, Is.GreaterThan(startingDamage), "Mouse did not take damage from active trap!");

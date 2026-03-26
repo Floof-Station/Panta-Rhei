@@ -34,6 +34,13 @@
   id: NinjaTeachLessonRandomPersonObjective
   components:
   - type: PickRandomPerson
+    filters:
+    # Euphoria - Make random teach objective targets opt in only
+    - !type:MarkedMindFilter
+      objType: Teach
+      overrideDepts:
+      - Security
+      - Command
 
 - type: entity
   parent: [ BaseNinjaObjective, BaseKillObjective ]
@@ -52,11 +59,13 @@
       whitelist:
         components:
         - CommandStaff
+    # Euphoria - Make RR objective targets opt in only
+    - !type:MarkedMindFilter
+      objType: Remove
     - !type:TargetObjectiveMindFilter
       blacklist:
         components:
         - TargetObjectiveImmune
-
   - type: KillPersonCondition
     requireDead: true
 

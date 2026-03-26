@@ -96,6 +96,9 @@
     title: objective-condition-maroon-person-title
   - type: PickRandomPerson
     filters:
+    # Euphoria - Make RR objective targets opt in only
+    - !type:MarkedMindFilter
+      objType: Remove
     # Can't have multiple objectives to kill the same person.
     - !type:TargetObjectiveMindFilter
       blacklist:
@@ -123,6 +126,9 @@
       whitelist:
         components:
         - CommandStaff
+    # Euphoria - Make RR objective targets opt in only
+    - !type:MarkedMindFilter
+      objType: Remove
     # Can't have multiple objectives to kill the same person.
     - !type:TargetObjectiveMindFilter
       blacklist:

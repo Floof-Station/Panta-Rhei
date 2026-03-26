@@ -1,0 +1,23 @@
+- type: entity
+  id: SpawnPointSecurityTechnician
+  parent: SpawnPointJobBase
+  name: security technician
+  components:
+  - type: SpawnPoint
+    job_id: SecurityTechnician
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointInventorySpecialist
+  parent: SpawnPointJobBase
+  name: inventory specialist
+  components:
+  - type: SpawnPoint
+    job_id: InventorySpecialist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: cargo_tech

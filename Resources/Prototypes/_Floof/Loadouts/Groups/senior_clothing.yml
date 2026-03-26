@@ -8,6 +8,7 @@
 
 - type: loadoutGroup
   id: StationEngineerGloves
+  parent: [FloofEngineeringGloves] # we want to give them the armwarmers
   name: loadout-group-engineering-gloves
   minLimit: 1
   maxLimit: 1
