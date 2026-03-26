@@ -58,17 +58,20 @@
   id: ClothingBeltUtilityAtmos
   parent: ClothingBeltUtility
   suffix: Engineering
+  name: utility belt tools atmos
   components:
-  - type: StorageFill
-    contents:
-      - id: CrowbarYellow
-      - id: Wrench
-      - id: Screwdriver
-      - id: Wirecutter
-      - id: Welder
-      - id: Multitool
-      - id: GasAnalyzer
-      - id: HolofanProjector
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: Wrench
+        - id: Screwdriver
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: GasAnalyzer
+        - id: HolofanProjector
 
 - type: entity
   id: ClothingHarnessSafetyAdvancedToolsEngineering
