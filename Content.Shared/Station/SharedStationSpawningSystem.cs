@@ -83,10 +83,15 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             _metadata.SetEntityDescription(spawnedEntity, customDesc, md);
         if (loadout.ColorOverride is {} customColor && HasComp<ItemComponent>(spawnedEntity))
         {
+            // Explode the shit out of them if they hand-edit the yaml in an attempt to create a transparent item
+            var parsedColor = Color.FromHex(customColor, Color.White);
+            if (parsedColor.A <= 1f)
+                parsedColor = Color.Pink; //parsedColor.ToHexNoAlpha();
+
             // ColorPaintSystem is server-side and I cant be bothered to move it.
-            var painted = EnsureComp<ColorPaintedComponent>(spawnedEntity);
             EnsureComp<AppearanceComponent>(spawnedEntity);
-            painted.Color = Color.FromHex(customColor, Color.White);
+            var painted = EnsureComp<ColorPaintedComponent>(spawnedEntity);
+            painted.Color = parsedColor;
         }
     }
     // Floofstation section end
