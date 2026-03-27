@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace Content.Server.Database.Migrations.Sqlite
+namespace Content.Server.Database.Migrations.Postgres
 {
     /// <inheritdoc />
     public partial class FloofstationLoadoutMetadataCustomization : Migration
@@ -13,19 +13,22 @@ namespace Content.Server.Database.Migrations.Sqlite
             migrationBuilder.AddColumn<string>(
                 name: "color_override",
                 table: "profile_loadout",
-                type: "TEXT",
+                type: "character varying(9)",
+                maxLength: 9,
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "description_override",
                 table: "profile_loadout",
-                type: "TEXT",
+                type: "character varying(512)",
+                maxLength: 512,
                 nullable: true);
 
             migrationBuilder.AddColumn<string>(
                 name: "name_override",
                 table: "profile_loadout",
-                type: "TEXT",
+                type: "character varying(96)",
+                maxLength: 96,
                 nullable: true);
         }
 

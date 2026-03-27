@@ -1147,11 +1147,13 @@ namespace Content.Server.Database.Migrations.Postgres
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ColorOverride")
-                        .HasColumnType("text")
+                        .HasMaxLength(9)
+                        .HasColumnType("character varying(9)")
                         .HasColumnName("color_override");
 
                     b.Property<string>("DescriptionOverride")
-                        .HasColumnType("text")
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
                         .HasColumnName("description_override");
 
                     b.Property<string>("LoadoutName")
@@ -1160,7 +1162,8 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnName("loadout_name");
 
                     b.Property<string>("NameOverride")
-                        .HasColumnType("text")
+                        .HasMaxLength(96)
+                        .HasColumnType("character varying(96)")
                         .HasColumnName("name_override");
 
                     b.Property<int>("ProfileLoadoutGroupId")

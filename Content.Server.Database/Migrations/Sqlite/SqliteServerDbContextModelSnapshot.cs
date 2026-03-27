@@ -1085,10 +1085,12 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnName("profile_loadout_id");
 
                     b.Property<string>("ColorOverride")
+                        .HasMaxLength(9)
                         .HasColumnType("TEXT")
                         .HasColumnName("color_override");
 
                     b.Property<string>("DescriptionOverride")
+                        .HasMaxLength(512)
                         .HasColumnType("TEXT")
                         .HasColumnName("description_override");
 
@@ -1098,6 +1100,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnName("loadout_name");
 
                     b.Property<string>("NameOverride")
+                        .HasMaxLength(96)
                         .HasColumnType("TEXT")
                         .HasColumnName("name_override");
 
