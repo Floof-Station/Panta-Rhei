@@ -10,6 +10,7 @@
   - !type:DoorTimingWireAction
   - !type:DoorSafetyWireAction
   - !type:AiInteractWireAction
+  - !type:AccessWireAction # Euphoria
 
 - type: wireLayout
   parent: Airlock
@@ -58,6 +59,7 @@
   - !type:DoorSafetyWireAction
   - !type:AiInteractWireAction
   dummyWires: 4
+  - !type:AccessWireAction # Euphoria
 
 - type: wireLayout
   id: Vending
@@ -140,6 +142,7 @@
   - !type:DoorBoltLightWireAction
   - !type:DoorTimingWireAction
   - !type:DoorSafetyWireAction
+  - !type:AccessWireAction # Euphoria
 
 - type: wireLayout
   id: Defusable
@@ -176,12 +179,14 @@
   wires:
   - !type:PowerWireAction
   - !type:AiInteractWireAction
+  - !type:AccessWireAction # Euphoria
 
 - type: wireLayout
   id: Computer
   dummyWires: 3
   wires:
   - !type:PowerWireAction
+  - !type:AccessWireAction # Euphoria
 
 - type: wireLayout
   id: ComputerAi
