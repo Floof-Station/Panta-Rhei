@@ -82,7 +82,7 @@
 
 - type: entity
   name: viper
-  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  parent: [BaseWeaponPistol, BaseSecurityContraband] # Euphoria
   id: WeaponPistolViper
   description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo.
   components:
