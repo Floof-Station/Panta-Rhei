@@ -185,13 +185,14 @@
   id: Computer
   dummyWires: 3
   wires:
-  - !type:PowerWireAction
   - !type:AccessWireAction # Euphoria
+  - !type:PowerWireAction
 
 - type: wireLayout
   id: ComputerAi
   dummyWires: 2
   wires:
+  - !type:AccessWireAction # Euphoria
   - !type:PowerWireAction
   - !type:AiInteractWireAction
 
