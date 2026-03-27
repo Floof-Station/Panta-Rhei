@@ -1,0 +1,26 @@
+#enforcer armor
+- type: loadout
+  id: loadoutshoalenforcerplatemail
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+    outerClothing: ClothingOuterArmorShoalEnforcerArmor
+
+#enforcer commander armor
+- type: loadout
+  id: loadoutshoalenforcercommanderplatemail
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+    outerClothing: ClothingOuterArmorShoalEnforcercommanderArmor
+
+#gambeson 
+- type: loadout
+  id: loadoutshoalgambeson
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+    outerClothing: ClothingOuterShoalGambeson
