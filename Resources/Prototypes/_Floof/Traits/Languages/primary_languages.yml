@@ -5,11 +5,6 @@
   description: trait-NaturalRatvarian-desc
   category: NaturalLanguages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    invert: true
-    species:
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Ratvarian
@@ -25,7 +20,6 @@
     invert: true
     species:
     - Chitinid
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Chittin
@@ -41,7 +35,6 @@
     invert: true
     species:
     - Feroxi
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Nehina
@@ -57,7 +50,6 @@
     invert: true
     species:
     - Rodentia
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Mouse
@@ -73,7 +65,6 @@
     invert: true
     species:
     - Vulpkanin
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Canilunzt
@@ -89,7 +80,6 @@
     invert: true
     species:
     - IPC
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Binary
@@ -104,9 +94,8 @@
   - !type:OneOfSpeciesCondition
     invert: true
     species:
-    # Arachne they dont speak Arachind
+    # Arachne #they dont speak Arachind
     - Arachnid
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Arachnic
@@ -122,7 +111,6 @@
     invert: true
     species:
     - Diona
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: RootSpeak
@@ -138,7 +126,6 @@
     invert: true
     species:
     - Human
-    - Shadowkin
     - Felinid
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
@@ -155,7 +142,6 @@
     invert: true
     species:
     - Harpy
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: ValyrianStandard
@@ -171,7 +157,6 @@
     invert: true
     species:
     - Moth
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Moffic
@@ -187,7 +172,6 @@
     invert: true
     species:
     - Reptilian
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Draconic
@@ -203,7 +187,6 @@
     invert: true
     species:
     - SlimePerson
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Bubblish
@@ -219,7 +202,6 @@
     invert: true
     species:
     - Resomi
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Schechi
@@ -235,7 +217,6 @@
     invert: true
     species:
     - Felinid
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Nekomimetic
@@ -252,7 +233,6 @@
     species:
     - Kitsune
     - Oni
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Kagebun
