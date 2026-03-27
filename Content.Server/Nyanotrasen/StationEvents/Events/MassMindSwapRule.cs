@@ -83,7 +83,8 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
         {
             if (!_consent.HasConsent(psion, MindswapConsent) // Floofstation - requires consent
                 || _cryoSystem.IsInPausedMap(psion) // This hack is needed because sometimes cryo fails to pause mobs
-                || TryComp<MindSwappedComponent>(psion, out var oldSwapped) && oldSwapped.OriginalEntity != psion) // Also exclude those who are already swapped
+                || TryComp<MindSwappedComponent>(psion, out var oldSwapped) && oldSwapped.OriginalEntity != psion // Also exclude those who are already swapped
+                || !HasComp<HumanoidAppearanceComponent>(psion)) // Avoid swapping people into non-humanoid psions, like glimmer mites, cus that sucks
                 continue;
 
             if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion))
