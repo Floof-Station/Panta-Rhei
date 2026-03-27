@@ -22,6 +22,18 @@ public sealed partial class Loadout : IEquatable<Loadout>
     public bool HasCustomMetadata => NameOverride != null || DescriptionOverride != null || ColorOverride != null;
     // Floofstation section end
 
+    // Floofstation section - constructors
+    public Loadout() {}
+
+    public Loadout(Loadout copy)
+    {
+        Prototype = copy.Prototype;
+        NameOverride = copy.NameOverride;
+        DescriptionOverride = copy.DescriptionOverride;
+        ColorOverride = copy.ColorOverride;
+    }
+    // Floofstation section end
+
     public bool Equals(Loadout? other)
     {
         if (ReferenceEquals(null, other)) return false;

@@ -1,6 +1,7 @@
 using System.Linq;
-using Content.Shared._DV.Silicon.IPC;
-using Content.Shared._Floof.Paint; // DeltaV
+using Content.Shared._DV.Silicon.IPC; // DeltaV
+using Content.Shared._Floof.Paint;
+using Content.Shared._Floof.Util;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -76,11 +77,22 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         if (!Exists(spawnedEntity) || Deleted(spawnedEntity))
             return;
 
+        // Those are from the db model, I didn't bother defining them in a common place.
+        var MaxNameLength = 96;
+        var MaxDescLength = 512;
+
         var md = MetaData(spawnedEntity);
         if (loadout.NameOverride is {} customName)
-            _metadata.SetEntityName(spawnedEntity, customName, md);
+        {
+            customName = FormattedMessage.RemoveMarkupPermissive(customName);
+            _metadata.SetEntityName(spawnedEntity, customName.TakeChars(MaxNameLength), md);
+        }
         if (loadout.DescriptionOverride is {} customDesc)
-            _metadata.SetEntityDescription(spawnedEntity, customDesc, md);
+        {
+            // I don't want to bother including a tag whitelist, plus random colors in examine are pretty annoying.
+            customDesc = FormattedMessage.RemoveMarkupPermissive(customDesc);
+            _metadata.SetEntityDescription(spawnedEntity, customDesc.TakeChars(MaxDescLength), md);
+        }
         if (loadout.ColorOverride is {} customColor && HasComp<ItemComponent>(spawnedEntity))
         {
             // Explode the shit out of them if they hand-edit the yaml in an attempt to create a transparent item
