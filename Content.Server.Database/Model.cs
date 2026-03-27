@@ -654,6 +654,11 @@ namespace Content.Server.Database
         /*
          * Insert extra data here like custom descriptions or colors or whatever.
          */
+        // Floofstation, it's as if wizden knew.
+        public string? NameOverride { get; set; }
+        public string? DescriptionOverride { get; set; }
+        public string? ColorOverride { get; set; }
+        // Floofstation section end
     }
 
     #endregion
