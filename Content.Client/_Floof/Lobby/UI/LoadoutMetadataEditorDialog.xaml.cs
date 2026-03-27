@@ -88,11 +88,7 @@ public sealed partial class LoadoutMetadataEditorDialog : FancyWindow
             customDesc = null;
         // Ideally this should be done server-side but w/e, this is just to prevent players from hurting each other's eyes by making completely black items
         if (customColor != null)
-        {
-            var colorHsl = Color.ToHsl(customColor.Value);
-            if (colorHsl.Z < 0.1f)
-                customColor = Color.FromHsl(colorHsl + new Vector4(0, 0, 0.1f, 0));
-        }
+            customColor = SharedColorPaintSystem.ClampBrightness(customColor.Value, 0.25f, 1f);
 
         _loadout.NameOverride = customName;
         _loadout.DescriptionOverride = customDesc;

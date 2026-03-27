@@ -98,8 +98,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         {
             // Explode the shit out of them if they hand-edit the yaml in an attempt to create a transparent item
             var parsedColor = Color.FromHex(customColor, Color.White);
-            if (parsedColor.A <= 1f)
+            if (parsedColor.A < 1f)
                 parsedColor = Color.Pink; //parsedColor.ToHexNoAlpha();
+            parsedColor = SharedColorPaintSystem.ClampBrightness(parsedColor, 0.25f, 1f);
 
             // ColorPaintSystem is server-side and I cant be bothered to move it.
             _colorPaint.Paint(null, null, spawnedEntity, parsedColor);

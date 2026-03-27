@@ -52,4 +52,17 @@ public abstract class SharedColorPaintSystem : EntitySystem
         RemComp<ColorPaintedComponent>(target);
         Dirty(target, paint);
     }
+
+    /// <summary>
+    ///     Clamps the brightness (luminance) of a color.
+    /// </summary>
+    public static Color ClampBrightness(Color color, float min, float max)
+    {
+        var hsl = Color.ToHsl(color);
+        var l = hsl.Z;
+        if (l >= min && l <= max)
+            return color;
+
+        return Color.FromHsl(hsl with { Z = Math.Clamp(l, min, max) });
+    }
 }
