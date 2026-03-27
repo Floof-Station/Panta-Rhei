@@ -1580,3 +1580,13 @@ Entries:
       message: There are some new stock companies for logi to invest in.
   id: 195
   time: '2026-03-27T19:10:35.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Senior Officer now has Genpop access like the rest of security.
+    - type: Remove
+      message: >-
+        Senior Officer no longer has service access to fall in line with the
+        rest of security.
+  id: 196
+  time: '2026-03-27T19:11:13.0000000+00:00'
