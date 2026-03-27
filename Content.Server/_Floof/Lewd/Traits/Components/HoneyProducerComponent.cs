@@ -10,7 +10,7 @@ namespace Content.Server._Floof.Lewd.Traits.Components;
 public sealed partial class HoneyProducerComponent : Component
 {
     [DataField("solutionname")]
-    public string SolutionName = "breasts";
+    public string SolutionName = "honeysac";
 
     [DataField]
     public ProtoId<ReagentPrototype> ReagentId = "Honey";
