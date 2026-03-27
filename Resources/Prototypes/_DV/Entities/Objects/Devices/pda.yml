@@ -481,6 +481,14 @@
   description: Smells faintly like burnt flesh and anesthesia.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: SurgeonIDCard
   - type: Appearance
     appearanceDataInit:
