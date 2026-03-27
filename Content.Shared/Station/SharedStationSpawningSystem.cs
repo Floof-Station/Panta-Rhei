@@ -27,6 +27,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!; // DeltaV
+    [Dependency] private readonly SharedColorPaintSystem _colorPaint = default!; // Floofstation
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -101,9 +102,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 parsedColor = Color.Pink; //parsedColor.ToHexNoAlpha();
 
             // ColorPaintSystem is server-side and I cant be bothered to move it.
-            EnsureComp<AppearanceComponent>(spawnedEntity);
-            var painted = EnsureComp<ColorPaintedComponent>(spawnedEntity);
-            painted.Color = parsedColor;
+            _colorPaint.Paint(null, null, spawnedEntity, parsedColor);
         }
     }
     // Floofstation section end

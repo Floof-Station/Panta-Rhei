@@ -18,14 +18,12 @@ namespace Content.Server._Floof.Paint;
 /// <summary>
 /// Colors target and consumes reagent on each color success.
 /// </summary>
-public sealed class ColorPaintSystem : EntitySystem
+public sealed class ColorPaintSystem : SharedColorPaintSystem
 {
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearanceSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly OpenableSystem _openable = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
@@ -116,39 +114,6 @@ public sealed class ColorPaintSystem : EntitySystem
         Paint(entity.Comp.Whitelist, entity.Comp.Blacklist, target, entity.Comp.Color);
         _audio.PlayPvs(entity.Comp.Spray, entity);
         _popup.PopupEntity(Loc.GetString("paint-success", ("target", target)), user, user, PopupType.Medium);
-    }
-
-    public void Paint(EntityWhitelist? whitelist, EntityWhitelist? blacklist, EntityUid target, Color color)
-    {
-        if (_whitelist.IsWhitelistFail(whitelist, target)
-            || _whitelist.IsWhitelistPass(blacklist, target))
-            return;
-
-        EnsureComp<ColorPaintedComponent>(target, out var paint);
-        EnsureComp<AppearanceComponent>(target);
-
-        paint.Color = color;
-        paint.Enabled = true;
-
-        // Try to paint all clothing on the entity if it has any
-        if (HasComp<InventoryComponent>(target)
-            && _inventory.TryGetSlots(target, out var slotDefinitions))
-            foreach (var slot in slotDefinitions)
-            {
-                if (!_inventory.TryGetSlotEntity(target, slot.Name, out var slotEnt)
-                    || _whitelist.IsWhitelistFail(whitelist, slotEnt.Value)
-                    || _whitelist.IsWhitelistPass(blacklist, slotEnt.Value))
-                    continue;
-
-                EnsureComp<ColorPaintedComponent>(slotEnt.Value, out var slotToPaint);
-                EnsureComp<AppearanceComponent>(slotEnt.Value);
-                slotToPaint.Color = color;
-                _appearanceSystem.SetData(slotEnt.Value, PaintVisuals.Painted, true);
-                Dirty(slotEnt.Value, slotToPaint);
-            }
-
-        _appearanceSystem.SetData(target, PaintVisuals.Painted, true);
-        Dirty(target, paint);
     }
 
     /// <summary>
