@@ -6,7 +6,7 @@
          MouseFilter="Ignore"
          Margin="0 0 0 5">
     <!-- Floofstation section -->
-    <TextureButton Access="Public" Name="ConfigureButton" TexturePath="/Textures/Interface/pencil.png" Margin="0 0 5 0" />
+    <TextureButton Access="Public" Name="ConfigureButton" TexturePath="/Textures/Interface/pencil.png" SetSize="40, 40" Margin="0 0 5 0" />
     <!-- Floofstation section end -->
     <Button Name="SelectButton" ToggleMode="True" Margin="0 0 5 0" HorizontalExpand="True"/>
     <PanelContainer SetSize="64 64" HorizontalAlignment="Right">

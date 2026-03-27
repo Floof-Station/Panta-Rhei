@@ -7,6 +7,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Client._Floof.Lobby.UI;
 using YamlDotNet.Serialization.NodeTypeResolvers;
 
 namespace Content.Client.Lobby.UI.Loadouts;
@@ -226,8 +227,9 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
 
         var loadoutPrefs = loadout.SelectedLoadouts.TryGetValue(_groupProto.ID, out var chosenGroup)
             ? chosenGroup.Find(it => it.Prototype == proto.ID)
-            : null; // Floofstation
+            : null; // Floofstation - try to find loadout pref
         cont.Text = loadoutPrefs?.NameOverride ?? loadoutSystem.GetName(proto); // Floofstation - can be overridden
+        LoadoutMetadataEditorDialog.ColorEntity(cont.SpriteEntity, loadoutPrefs?.ColorOverride, collection.Resolve<IEntityManager>()); // Floofstation - color entity preview
 
         cont.Select.Pressed = pressed;
 
