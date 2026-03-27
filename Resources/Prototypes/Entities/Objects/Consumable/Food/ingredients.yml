@@ -766,6 +766,11 @@
       - state: cheesewedge-inhand-left
       right:
       - state: cheesewedge-inhand-right
+  # Floofstation cheese slice addition start
+  - type: SliceableFood
+    count: 3
+    slice: FoodSliceOfCheese
+  # Floofstation cheese slice addition end
 
 - type: entity
   parent: FoodBakingBase
