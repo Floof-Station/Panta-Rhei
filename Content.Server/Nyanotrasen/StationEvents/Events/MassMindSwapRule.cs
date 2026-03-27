@@ -4,6 +4,7 @@ using Content.Server.Psionics;
 using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Common.Consent;
+using Content.Shared._DV.Abilities.Psionics;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared.GameTicking.Components;
@@ -81,7 +82,8 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
         while (query.MoveNext(out var psion, out _, out _))
         {
             if (!_consent.HasConsent(psion, MindswapConsent) // Floofstation - requires consent
-                || _cryoSystem.IsInPausedMap(psion)) // This hack is needed because sometimes cryo fails to pause mobs
+                || _cryoSystem.IsInPausedMap(psion) // This hack is needed because sometimes cryo fails to pause mobs
+                || TryComp<MindSwappedComponent>(psion, out var oldSwapped) && oldSwapped.OriginalEntity != psion) // Also exclude those who are already swapped
                 continue;
 
             if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion))
