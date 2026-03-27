@@ -52,7 +52,7 @@
     scale: 0.5, 0.5 # make the spirte much smaller
     state: cheeseslice
   - type: EmbeddableProjectile
-    sound: /Audio/Weapons/pop.ogg
+    sound: /Audio/Effects/pop.ogg
     embedOnThrow: True
     offset: "0,-0.1"
   - type: ThrowingAngle
