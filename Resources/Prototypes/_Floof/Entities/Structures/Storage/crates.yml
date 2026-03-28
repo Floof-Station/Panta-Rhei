@@ -67,11 +67,6 @@
     sprite: _Floof/Structures/Lewd/kinkcrate.rsi
   - type: Sprite
     sprite: _Floof/Structures/Lewd/kinkcrate.rsi
-  - type: Reflect
-    reflects:
-    - Energy
-    reflectProb: 0.2
-    spread: 90
 
 - type: entity
   parent: CrateBaseWeldable
@@ -82,8 +77,3 @@
     sprite: _Floof/Structures/Lewd/lewdcrate.rsi
   - type: Sprite
     sprite: _Floof/Structures/Lewd/lewdcrate.rsi
-  - type: Reflect
-    reflects:
-    - Energy
-    reflectProb: 0.2
-    spread: 90
