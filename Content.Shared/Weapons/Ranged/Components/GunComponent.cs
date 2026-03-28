@@ -271,17 +271,6 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public Vector2 DefaultDirection = new Vector2(0, -1);
-}
-
-[Flags]
-public enum SelectiveFire : byte
-{
-    Invalid = 0,
-    // Combat mode already functions as the equivalent of Safety
-    SemiAuto = 1 << 0,
-    Burst = 1 << 1,
-    FullAuto = 1 << 2, // Not in the building!
-}
 
     /// <summary>
     ///     If this weapon is using any kind of "Shotgun-like" ammunition, this applies as a multiplier on the spread arc.
@@ -308,3 +297,15 @@ public enum SelectiveFire : byte
     /// </summary>
     [DataField]
     public bool UniformSpread;
+
+}
+
+[Flags]
+public enum SelectiveFire : byte
+{
+    Invalid = 0,
+    // Combat mode already functions as the equivalent of Safety
+    SemiAuto = 1 << 0,
+    Burst = 1 << 1,
+    FullAuto = 1 << 2, // Not in the building!
+}
