@@ -21,6 +21,7 @@ using Robust.Shared.Utility;
 using Content.Shared.Interaction; // Frontier
 using Content.Shared.Examine; // Frontier
 using Content.Shared.Power; // Frontier
+using Content.Shared._Lavaland.Weapons.Ranged.Events; // Lavaland
 
 namespace Content.Server.Weapons.Ranged.Systems;
 
@@ -205,7 +206,7 @@ public sealed partial class GunSystem : SharedGunSystem
                     goto SpreadBreak;
                 }
 
-                ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
+                ShootOrThrow(ammoEnt, mapAngle.ToVec(), gunVelocity, gun, gunUid, user);
                 shotProjectiles.Add(ammoEnt);
 
                 for (var i = 1; i < projectileCount; i++)
