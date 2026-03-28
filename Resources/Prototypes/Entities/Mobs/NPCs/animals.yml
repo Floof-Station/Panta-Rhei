@@ -535,7 +535,7 @@
   - type: GhostTakeoverAvailable
   - type: Speech
     speechVerb: Moth
-    speechSounds: Chitter # Delta-V - Eep!
+    speechSounds: Moth # Euphoria - squeak! bring over moth speech from frontier
     allowedEmotes: ['Chitter', 'Squeak']
   - type: FaxableObject
     insertingState: inserting_mothroach
@@ -3276,6 +3276,10 @@
     - Fox
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
+  - type: Speech # Floofstation - they lacked that for some reason
+    allowedEmotes: ['Bark', 'Snarl', 'Whine']
+    speechVerb: Canine
+    speechSounds: Vulpkanin
 
 - type: entity
   abstract: true

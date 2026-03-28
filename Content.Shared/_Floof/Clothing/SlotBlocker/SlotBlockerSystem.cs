@@ -104,6 +104,40 @@ public sealed class SlotBlockerSystem : EntitySystem
     }
 
     /// <summary>
+    ///     Checks whether any slot with the target flags is occupied, returns true if so. Otherwise, checks if it is obstructed and returns that.
+    ///     See <see cref="IsSlotObstructed"/>
+    /// </summary>
+    public bool IsSlotObstructedOrOccupied(
+        Entity<InventoryComponent?> ent,
+        Entity<SlotBlockerComponent?>? equipment,
+        CheckType check,
+        SlotFlags targetSlot,
+        out string? reason)
+    {
+        reason = null;
+        if (!Resolve(ent, ref ent.Comp))
+            return false;
+
+        // Code duplication, blegh
+        var slots = ent.Comp.Slots;
+        for (int i = 0; i < slots.Length; i++)
+        {
+            var slot = slots[i];
+            if (!slot.SlotFlags.HasFlag(targetSlot))
+                continue;
+
+            var container = ent.Comp.Containers[i];
+            if (container.ContainedEntity is not { Valid: true } other || other == equipment?.Owner)
+                continue;
+
+            // The target slot contains an entity, and that entity is not the equipment (if any).
+            return true;
+        }
+
+        return IsSlotObstructed(ent!, equipment, check, targetSlot, out reason);
+    }
+
+    /// <summary>
     ///     Checks whether a slot (or any of the slots) is blocked.
     /// </summary>
     /// <param name="ent">Entity to check for blocking clothing.</param>

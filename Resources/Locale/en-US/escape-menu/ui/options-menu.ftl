@@ -108,6 +108,9 @@ ui-options-hud-layout = HUD layout:
 
 ## Controls menu
 
+ui-options-hold-to-attack-melee = Hold to attack (melee)
+ui-options-hold-to-attack-ranged = Hold to attack (ranged)
+
 ui-options-binds-reset-all = Reset ALL keybinds
 ui-options-binds-explanation = Click to change binding, right-click to clear
 ui-options-unbound = Unbound
@@ -140,8 +143,6 @@ ui-options-function-move-down = Move Down
 ui-options-function-move-right = Move Right
 ui-options-function-walk = Walk
 ui-options-function-toggle-knockdown = Toggle Crawling
-# Floofstation
-ui-options-function-toggle-crawling-under = Toggle crawling under furniture
 
 ui-options-function-camera-rotate-left = Rotate left
 ui-options-function-camera-rotate-right = Rotate right

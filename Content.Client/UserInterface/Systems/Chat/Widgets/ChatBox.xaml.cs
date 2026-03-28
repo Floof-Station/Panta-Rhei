@@ -185,7 +185,7 @@ public partial class ChatBox : UIWidget
     {
         var formatted = new FormattedMessage(4); // EE - Chat stacking - up from 3
         formatted.PushColor(color);
-        formatted.AddMarkupOrThrow(message);
+        formatted.AddMarkupPermissive(message); // Floofstation - make permissive
         formatted.Pop();
 
         // EE - Chat stacking

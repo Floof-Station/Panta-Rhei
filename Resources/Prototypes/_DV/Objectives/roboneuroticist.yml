@@ -50,6 +50,9 @@
       whitelist:
         components:
         - CommandStaff
+    # Euphoria - Make RR objective targets opt in only
+    - !type:MarkedMindFilter
+      objType: Remove
     - !type:TargetObjectiveMindFilter
       blacklist:
         components:

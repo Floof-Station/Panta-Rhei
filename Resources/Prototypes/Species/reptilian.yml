@@ -32,8 +32,6 @@
     FacialHair: MobHumanoidAnyMarking # DeltaV - unbaldify reptilians
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
     Chest: MobReptilianTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobHumanoidEyes
@@ -64,10 +62,10 @@
       points: 1 # DeltaV - unbaldify reptilians
       required: false
     Head:
-      points: 1
+      points: 10
       required: false
     Face:
-      points: 1
+      points: 10
       required: false
     Snout:
       points: 1
@@ -77,10 +75,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 4
+      points: 6
       required: false
     HeadTop:
-      points: 2
+      points: 6
       required: false
     UndergarmentTop:
       points: 1
@@ -88,14 +86,8 @@
     UndergarmentBottom:
       points: 1
       required: false
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
-      points: 1
-      required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10
@@ -104,10 +96,10 @@
       points: 1
       required: false
     Legs:
-      points: 10
+      points: 24
       required: false
     Arms:
-      points: 10
+      points: 24
       required: false
 
 - type: humanoidBaseSprite
@@ -143,7 +135,7 @@
 - type: humanoidBaseSprite
   id: MobReptilianTorsoFemale
   baseSprite:
-    sprite: Mobs/Species/Reptilian/parts.rsi
+    sprite: _Euphoria/Mobs/Species/Reptilian/parts.rsi # Euphoria - Tweak female reptilian torso to be less blocky.
     state: torso_f
 
 - type: humanoidBaseSprite

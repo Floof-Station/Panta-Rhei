@@ -30,8 +30,6 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
     Chest: MobResomiTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobResomiEyes
@@ -53,7 +51,7 @@
       points: 2
       required: false
     Head:
-      points: 1
+      points: 2
       required: false
     Face:
       points: 1
@@ -65,10 +63,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 4
+      points: 6
       required: false
     HeadTop:
-      points: 4
+      points: 6
       required: false
     Hair:
       points: 1
@@ -82,14 +80,8 @@
     UndergarmentBottom:
       points: 1
       required: false
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
-      points: 1
-      required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10
@@ -98,10 +90,10 @@
       points: 1
       required: false
     Legs:
-      points: 10
+      points: 24
       required: false
     Arms:
-      points: 10
+      points: 24
       required: false
 
 - type: humanoidBaseSprite

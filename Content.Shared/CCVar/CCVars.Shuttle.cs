@@ -25,7 +25,7 @@ public sealed partial class CCVars
     ///     Whether the arrivals terminal should be on a planet map.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsPlanet =
-        CVarDef.Create("shuttle.arrivals_planet", true, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_planet", false, CVar.SERVERONLY); // Floof - planet arrivals are broken
 
     /// <summary>
     ///     Whether the arrivals shuttle is enabled.
@@ -43,13 +43,13 @@ public sealed partial class CCVars
     ///     Cooldown between arrivals departures. This should be longer than the FTL time or it will double cycle.
     /// </summary>
     public static readonly CVarDef<float> ArrivalsCooldown =
-        CVarDef.Create("shuttle.arrivals_cooldown", 50f, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_cooldown", 100f, CVar.SERVERONLY); // Floof - increased
 
     /// <summary>
     ///     Are players allowed to return on the arrivals shuttle.
     /// </summary>
     public static readonly CVarDef<bool> ArrivalsReturns =
-        CVarDef.Create("shuttle.arrivals_returns", false, CVar.SERVERONLY);
+        CVarDef.Create("shuttle.arrivals_returns", true, CVar.SERVERONLY); // Floof
 
     /// <summary>
     ///     Should all players who spawn at arrivals have godmode until they leave the map?

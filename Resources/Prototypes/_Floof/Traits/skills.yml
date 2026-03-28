@@ -1,0 +1,18 @@
+- type: trait
+  id: LightStep
+  name: trait-light-step-name
+  description: trait-light-step-desc
+  category: Skills
+  cost: 1 # Minor stealth bonus
+  conditions:
+  - !type:OneOfSpeciesCondition # These species make no footstep sounds when walking barefoot.
+    invert: true
+    species:
+    - Felinid
+    - Tajaran
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: FootstepVolumeModifier
+      volume: -10 # same as EE, makes it 2x quieter
+

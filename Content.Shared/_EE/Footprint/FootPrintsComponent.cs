@@ -1,4 +1,6 @@
 ﻿using System.Numerics;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -37,8 +39,9 @@ public sealed partial class FootPrintsComponent : Component
     [ViewVariables(VVAccess.ReadOnly), DataField]
     public EntProtoId<FootPrintComponent> StepProtoId = "Footstep";
 
-    [ViewVariables(VVAccess.ReadOnly), DataField]
-    public Color PrintsColor = Color.FromHex("#00000000");
+    // Floofstation - removed
+    // [ViewVariables(VVAccess.ReadOnly), DataField]
+    // public Color PrintsColor = Color.FromHex("#00000000");
 
     /// <summary>
     ///     The size scaling factor for footprint steps. Must be positive.
@@ -52,20 +55,21 @@ public sealed partial class FootPrintsComponent : Component
     [DataField]
     public float DragSize = 0.5f;
 
-    /// <summary>
-    ///     The amount of color to transfer from the source (e.g., puddle) to the footprint.
-    /// </summary>
-    [DataField]
-    public float ColorQuantity;
-
-    /// <summary>
-    ///     The factor by which the alpha channel is reduced in subsequent footprints.
-    /// </summary>
-    [DataField]
-    public float ColorReduceAlpha = 0.1f;
-
-    [DataField]
-    public string? ReagentToTransfer;
+    // Floofstation - removed
+    // /// <summary>
+    // ///     The amount of color to transfer from the source (e.g., puddle) to the footprint.
+    // /// </summary>
+    // [DataField]
+    // public float ColorQuantity;
+    //
+    // /// <summary>
+    // ///     The factor by which the alpha channel is reduced in subsequent footprints.
+    // /// </summary>
+    // [DataField]
+    // public float ColorReduceAlpha = 0.1f;
+    //
+    // [DataField]
+    // public string? ReagentToTransfer;
 
     [DataField]
     public Vector2 OffsetPrint = new(0.1f, 0f);
@@ -80,9 +84,24 @@ public sealed partial class FootPrintsComponent : Component
     /// </summary>
     public Vector2 StepPos = Vector2.Zero;
 
+    // Floofstation - removed
+    // /// <summary>
+    // ///     Controls how quickly the footprint color transitions between steps.
+    // ///     Value between 0 and 1, where higher values mean faster color changes.
+    // /// </summary>
+    // public float ColorInterpolationFactor = 0.2f;
+
+    // Floofstation edits section
     /// <summary>
-    ///     Controls how quickly the footprint color transitions between steps.
-    ///     Value between 0 and 1, where higher values mean faster color changes.
+    ///     Reagent volume used for footprints.
     /// </summary>
-    public float ColorInterpolationFactor = 0.2f;
+    [DataField]
+    public Solution ContainedSolution = new(3) { CanReact = true, MaxVolume = 5f, };
+
+    /// <summary>
+    ///     Amount of reagents used per footprint.
+    /// </summary>
+    [DataField]
+    public FixedPoint2 FootprintVolume = 0.75f;
+    // Floofstation section end
 }

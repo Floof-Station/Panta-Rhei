@@ -36,7 +36,7 @@
 
 - type: loadoutGroup
   id: MantisJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofMantisJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-mantis-jumpsuit
   loadouts:
   - MantisJumpsuit
@@ -53,14 +53,14 @@
 
 - type: loadoutGroup
   id: MantisShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [FloofMantisShoes, FloofShoes] # Floofstation
   name: loadout-group-mantis-shoes
   loadouts:
   - MantisBoots
 
 - type: loadoutGroup
   id: MantisGloves
-  parent: [FloofGloves] # Floofstation
+  parent: [FloofMantisGloves, FloofGloves] # Floofstation
   name: loadout-group-mantis-gloves
   minLimit: 0
   loadouts:

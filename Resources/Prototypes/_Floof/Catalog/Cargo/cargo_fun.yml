@@ -7,3 +7,23 @@
   cost: 2000
   category: Fun
   group: market
+
+- type: cargoProduct
+  id: FunMysteryKnifeLootbox
+  icon:
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    state: icon
+  product: CrateMysteryKnifeLootbox
+  cost: 1000
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: FunMysteryKnifeLootboxBulk
+  icon:
+    sprite: Objects/Weapons/Melee/combat_knife.rsi
+    state: icon
+  product: CrateMysteryKnifeLootboxBulk
+  cost: 9500
+  category: cargoproduct-category-name-fun
+  group: market

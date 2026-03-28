@@ -16,8 +16,8 @@
     - Kitsune # Floof - M3739 - #937 - They are light enough as it is.
     invert: true
   effects:
-  - !type:ModifyFixtureEffect
-    factor: 0.7746 # Square root of 0.6 as this modifies the radius
+  - !type:ModifyDensityEffect
+    factor: 0.6
   conflicts:
     - Heavyweight
 
@@ -40,5 +40,5 @@
   conflicts:
     - Lightweight
   effects:
-  - !type:ModifyFixtureEffect
-    factor: 1.1832 # Square root of 1.4 as this affects the radius, opposite of lightweight.
+  - !type:ModifyDensityEffect
+    factor: 1.4

@@ -26,6 +26,8 @@ using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Server._DV.Curation.Systems;
+using Content.Shared._DV.Curation;
 
 namespace Content.Server.Administration;
 
@@ -86,6 +88,8 @@ public sealed partial class ServerApi : IPostInjectInit
         RegisterActorHandler(HttpMethod.Patch, "/admin/actions/panic_bunker", ActionPanicPunker);
 
         RegisterHandler(HttpMethod.Post, "/admin/actions/send_bwoink", ActionSendBwoink); // Frontier - Discord Ahelp Reply
+
+        RegisterHandler(HttpMethod.Post, "/admin/actions/send_cwoink", ActionSendCwoink); // Floof: Cwoink API
     }
 
     public void Initialize()
@@ -399,6 +403,38 @@ public sealed partial class ServerApi : IPostInjectInit
             await RespondOk(context);
         });
     }
+    #endregion
+
+    #region Floof API
+
+    private async Task ActionSendCwoink(IStatusHandlerContext context)
+    {
+        var body = await ReadJson<BwoinkActionBody>(context); // Cwoinks and bwoinks share the same body, so we can reuse it
+        if (body == null)
+            return;
+
+        await RunOnMainThread(async () =>
+            {
+                // Player not online or wrong Guid
+                if (!_playerManager.TryGetSessionById(new NetUserId(body.Guid), out var player))
+                {
+                    await RespondError(
+                        context,
+                        ErrorCode.PlayerNotFound,
+                        HttpStatusCode.UnprocessableContent,
+                        "Player not found");
+                    return;
+                }
+
+                var serverCwoinkSystem = _entitySystemManager.GetEntitySystem<CwoinkSystem>();
+                var message = new CwoinkTextMessage(player.UserId, SharedBwoinkSystem.SystemUserId, body.Text);
+                serverCwoinkSystem.OnWebhookCwoinkTextMessage(message, body);
+
+                // Respond with OK
+                await RespondOk(context);
+            });
+    }
+
     #endregion
 
     #region Frontier

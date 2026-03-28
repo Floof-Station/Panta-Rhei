@@ -14,11 +14,45 @@
   - ClothingUniformJumpsuitHawaiBlue
   - ClothingUniformJumpsuitHawaiRed
   - ClothingUniformJumpsuitHawaiYellow
+  - ClothingUniformTurtleneckColorWhite
+  - ClothingUniformTurtleneckColorGrey
+  - ClothingUniformTurtleneckColorBlack
+  - ClothingUniformTurtleneckColorBlue
+  - ClothingUniformTurtleneckColorDarkBlue
+  - ClothingUniformTurtleneckColorTeal
+  - ClothingUniformTurtleneckColorGreen
+  - ClothingUniformTurtleneckColorDarkGreen
+  - ClothingUniformTurtleneckColorOrange
+  - ClothingUniformTurtleneckColorPink
+  - ClothingUniformTurtleneckColorRed
+  - ClothingUniformTurtleneckColorYellow
+  - ClothingUniformTurtleneckColorPurple
+  - ClothingUniformTurtleneckColorLightBrown
+  - ClothingUniformTurtleneckColorBrown
+  - ClothingUniformTurtleneckColorMaroon
+  - ClothingUniformTurtleneckSkirtColorWhite
+  - ClothingUniformTurtleneckSkirtColorGrey
+  - ClothingUniformTurtleneckSkirtColorBlack
+  - ClothingUniformTurtleneckSkirtColorBlue
+  - ClothingUniformTurtleneckSkirtColorDarkBlue
+  - ClothingUniformTurtleneckSkirtColorTeal
+  - ClothingUniformTurtleneckSkirtColorGreen
+  - ClothingUniformTurtleneckSkirtColorDarkGreen
+  - ClothingUniformTurtleneckSkirtColorOrange
+  - ClothingUniformTurtleneckSkirtColorPink
+  - ClothingUniformTurtleneckSkirtColorRed
+  - ClothingUniformTurtleneckSkirtColorYellow
+  - ClothingUniformTurtleneckSkirtColorPurple
+  - ClothingUniformTurtleneckSkirtColorLightBrown
+  - ClothingUniformTurtleneckSkirtColorBrown
+  - ClothingUniformTurtleneckSkirtColorMaroon
   - ClothingUniformJumpsuitColorBlack
   - ClothingUniformJumpsuitJeansBrown
+  - ClothingUniformJumpsuitSuitBlack
   - ClothingUniformJumpsuitSuitBlackAlt
   - ClothingUniformJumpsuitFlannel
   - ClothingUniformJumpsuitSuitBrownMob
+  - ClothingUniformJumpsuitSuitBlackMob
   - ClothingUniformJumpsuitKimono
   - ClothingUniformJumpsuitLostTourist
   - ClothingUniformJumpsuitLoungewear
@@ -28,11 +62,20 @@
   - ClothingUniformJumpsuitJeansRed
   - ClothingUniformJumpsuitSober
   - ClothingUniformJumpsuitDameDane
+  - ClothingUniformLittleGuyOveralls
   - ClothingUniformJumpsuitWorkvest
+  - ClothingUniformMNKDressBlack
+  - ClothingUniformMNKOfficeSkirt
+  - ClothingUniformMNKGymBra
+  - ClothingUniformMNKUnderGarment
+  - ClothingUniformMNKBlackOveralls
+  - ClothingUniformMNKBlackShoulder
+  - ClothingUniformMNKBlackOveralls
   - UniformJumpskirtNurse
   - ClothingUniformSkirtTurtle
   - ClothingUniformSchoolGakuranBlack
   - UniformSchoolgirlBlack
+  - UniformSchoolgirlRed
   - UniformSchoolgirlBlue
   - UniformSchoolgirlCyan
   - UniformSchoolgirlGreen
@@ -48,6 +91,11 @@
   - ClothingKimonoGreen
   - ClothingCostumeMioSkirt
   - ClothingCostumeNaota
+  - ClothingUniformClassicalMaidDress
+  - ClothingUniformJumpskirtJanimaid
+  - ClothingUniformJumpskirtJanimaidmini
+  - UniformMaid
+  - ClothingUniformJumpskirtTacticalMaid
   - ClothingThongCoder
   - ClothingThongBee
   - ClothingThongRainbow
@@ -55,6 +103,7 @@
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
+  - UniformNudityPermit
 
 # gloves
 - type: loadoutGroup
@@ -64,6 +113,7 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
+  - ClothingHandsGlovesLeather
   - ClothingArmwarmersCoder
   - ClothingArmwarmersBee
   - ClothingArmwarmersRainbow
@@ -86,11 +136,14 @@
   maxLimit: 1
   loadouts:
   - ClothingShoesBootsJack
+  - ClothingShoesBootsCowboyFancy
   - ClothingShoesBootsCowboyBlack
   - ClothingShoesBootsCowboyBrown
-  - ClothingShoesBootsCowboyFancy
   - ClothingShoesBootsCowboyWhite
   - ClothingShoesHighheelBoots
+  - ClothingShoesBootsWork
+  - ClothingShoesBootsWinter
+  - ShoesBootsFishing
   - ClothingClothWrap
   - ClothingSocksRainbow
   - ClothingSocksAce
@@ -128,12 +181,32 @@
   - CoatMNKBlackJacket
   - CoatLettermanBlue
   - CoatLettermanRed
+  - OuterFlannelBlue
+  - OuterFlannelRed
+  - OuterFlannelGreen
   - OuterCyberJacketWhite
   - OuterCyberJacketPurple
   - OuterCyberJacketYellow
   - OuterDenimJacket
   - OuterCorporateJacket
   - OuterCoatHyenhSweater
+  - ShrimpFishermanSuit
+  - OuterCoatPirate
+  - ClothingOuterCoatAcidRaincoat
+  - ClothingOuterCoatAcidRaincoatBlue
+  - ClothingOuterCoatAcidRaincoatGreen
+  - ClothingOuterCoatAcidRaincoatMagenta
+  - ClothingOuterCoatAcidRaincoatYellow
+  - ClothingOuterCoatBomberPunkRed
+  - ClothingOuterCoatJacketLeather
+  - ClothingOuterCoatJacketBiker
+  - ClothingOuterCoatJacketJamrock
+  - ClothingOuterCoatBomberAerostatic
+  - ClothingOuterCoatJacketLettermanBlue
+  - ClothingOuterCoatJacketLettermanBrown
+  - ClothingOuterCoatJacketLettermanRed
+  - ClothingOuterCoatJacketLettermanMagenta
+  - ClothingOuterCoatBomberPinkSleeves
 
 # hats
 - type: loadoutGroup
@@ -159,3 +232,20 @@
   - HeadHatBrownFlatcap
   - HeadHatGreyFlatcap
   - HeadHatBlacksoft
+  - HeadHatCorpsoft
+  - HeadHatSolidHeadband
+
+# glasses/eyewear
+- type: loadoutGroup
+  id: FloofGlasses
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingEyesBlindfold
+  - ClothingEyesBlindfoldFake
+  - ClothingEyesEyepatch
+  - ClothingEyesGlassesGar
+  - ClothingEyesGlassesGarGiga
+  - ClothingEyesGlassesGarOrange
+  - GlassesJamjar

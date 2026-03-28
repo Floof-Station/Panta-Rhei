@@ -97,20 +97,21 @@ public sealed partial class DragonSystem : EntitySystem
             if (!_mobState.IsDead(uid))
                 comp.RiftAccumulator += frameTime;
 
-            // Begin DeltaV Changes
-            if (!comp.HalftimePopupShown && Math.Round(comp.RiftAccumulator) == 0.5 * comp.RiftMaxAccumulator) // at halftime tell them they gonna die
-            {
-                Roar(uid, comp);
-                _popup.PopupEntity(Loc.GetString("deltav-dragon-halftime-popup"), uid, uid);
-                comp.HalftimePopupShown = true; // no spamming popups
-            }
-
-            if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)  // dragon is out of time
-            {
-                Roar(uid, comp);
-                _damageable.TryChangeDamage(uid, comp.DeathDamage,true,true); // gib time
-            }
-            // End DeltaV Changes
+            // Floofstation - no dying because of no rifts
+            // // Begin DeltaV Changes
+            // if (!comp.HalftimePopupShown && Math.Round(comp.RiftAccumulator) == 0.5 * comp.RiftMaxAccumulator) // at halftime tell them they gonna die
+            // {
+            //     Roar(uid, comp);
+            //     _popup.PopupEntity(Loc.GetString("deltav-dragon-halftime-popup"), uid, uid);
+            //     comp.HalftimePopupShown = true; // no spamming popups
+            // }
+            //
+            // if (comp.RiftAccumulator >= comp.RiftMaxAccumulator)  // dragon is out of time
+            // {
+            //     Roar(uid, comp);
+            //     _damageable.TryChangeDamage(uid, comp.DeathDamage,true,true); // gib time
+            // }
+            // // End DeltaV Changes
         }
     }
 

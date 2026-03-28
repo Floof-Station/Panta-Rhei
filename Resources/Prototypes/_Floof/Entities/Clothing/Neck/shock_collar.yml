@@ -16,6 +16,7 @@
     delay: 3
   - type: TriggerOnSignal
   - type: ShockOnTrigger
+    targetContainer: true # so the shock collar shocks the wearer
     damage: 1 # Way less damaging than the security variant
     duration: 3
   - type: DeviceNetwork

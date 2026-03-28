@@ -1,0 +1,122 @@
+# Tail
+
+- type: marking
+  id: ThavenBasicTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: basic_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: basic_behind
+
+- type: marking
+  id: ThavenBigTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: big1_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: big1_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: big2_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: big2_front
+
+- type: marking
+  id: ThavenTadpoleTail
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: tadpole1_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: tadpole1_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: tadpole2_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: tadpole2_front
+
+- type: marking
+  id: ThavenTailEel
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eel1_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eel1_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eel2_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eel2_front
+
+- type: marking
+  id: ThavenTailEelOverlay
+  bodyPart: Tail
+  markingCategory: Overlay
+  speciesRestriction: [ Thaven ]
+  coloring:
+    default:
+      type:
+        !type:EyeColoring
+        negative: false
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eelghost_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eelghost_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eel3_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: eel3_front
+
+- type: marking
+  id: ThavenTailNurse
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: nurse1_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: nurse1_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: nurse2_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: nurse2_front
+
+- type: marking
+  id: ThavenTailStub
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: stub1_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: stub1_front
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: stub2_behind
+  - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
+    state: stub2_front
+
+- type: marking
+  id: ThavenTailThresher
+  bodyPart: Tail
+  markingCategory: Tail
+  speciesRestriction: [ Thaven ]
+  followSkinColor: true
+  sprites:
+  - sprite: _Starlight/Mobs/Customization/thaven/tail.rsi
+    state: thresher1
+  - sprite: _Starlight/Mobs/Customization/thaven/tail.rsi
+    state: thresher2

@@ -49,7 +49,8 @@
 - type: entity
   id: Carpet
   parent: CarpetBase
-  suffix: Red
+  name: red carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Sprite
     sprite: Structures/Furniture/Carpets/red_carpet.rsi
@@ -78,7 +79,8 @@
 - type: entity
   id: CarpetBlack
   parent: CarpetBase
-  suffix: Black
+  name: black carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -108,7 +110,8 @@
 - type: entity
   id: CarpetPink
   parent: CarpetBase
-  suffix: Pink
+  name: pink carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -138,7 +141,8 @@
 - type: entity
   id: CarpetBlue
   parent: CarpetBase
-  suffix: Blue
+  name: blue carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -168,7 +172,8 @@
 - type: entity
   id: CarpetGreen
   parent: CarpetBase
-  suffix: Green
+  name: green carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -198,7 +203,8 @@
 - type: entity
   id: CarpetOrange
   parent: CarpetBase
-  suffix: Orange
+  name: orange carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -228,7 +234,8 @@
 - type: entity
   id: CarpetSBlue
   parent: CarpetBase
-  suffix: Sky Blue
+  name: sky blue carpet # floofstation change
+  suffix: tile Blue # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -258,7 +265,8 @@
 - type: entity
   id: CarpetPurple
   parent: CarpetBase
-  suffix: Purple
+  name: purple carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -288,7 +296,8 @@
 - type: entity
   id: CarpetCyan
   parent: CarpetBase
-  suffix: Cyan
+  name: cyan carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite
@@ -318,7 +327,8 @@
 - type: entity
   id: CarpetWhite
   parent: CarpetBase
-  suffix: White
+  name: white carpet # floofstation change
+  suffix: tile # floofstation change
   components:
   - type: Clickable
   - type: Sprite

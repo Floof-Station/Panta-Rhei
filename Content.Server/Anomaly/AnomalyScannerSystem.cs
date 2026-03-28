@@ -27,8 +27,9 @@ public sealed class AnomalyScannerSystem : SharedAnomalyScannerSystem
         );
     }
 
+    // Floofstation - made virtual
     /// <summary> Updates device with passed anomaly data. </summary>
-    public void UpdateScannerWithNewAnomaly(EntityUid scanner, EntityUid anomaly, AnomalyScannerComponent? scannerComp = null, AnomalyComponent? anomalyComp = null)
+    public override void UpdateScannerWithNewAnomaly(EntityUid scanner, EntityUid anomaly, AnomalyScannerComponent? scannerComp = null, AnomalyComponent? anomalyComp = null)
     {
         if (!Resolve(scanner, ref scannerComp) || !Resolve(anomaly, ref anomalyComp))
             return;

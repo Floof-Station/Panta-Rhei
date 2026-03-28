@@ -5,20 +5,58 @@
 
 - type: loadout
   id: ClothingBeltUtilityAdvancedToolsEngineering
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofAdvancedEngineeringTimer
   equipment:
     belt: ClothingBeltUtilityAdvancedToolsEngineering
 
 - type: loadout
   id: ClothingBeltUtilityAdvancedToolsAtmos
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofAdvancedAtmosTimer
   equipment:
     belt: ClothingBeltUtilityAdvancedToolsAtmos
 
 - type: loadout
   id: ClothingHarnessSafetyAdvancedToolsEngineering
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofAdvancedEngineeringTimer
   equipment:
     belt: ClothingHarnessSafetyAdvancedToolsEngineering
 
 - type: loadout
   id: ClothingHarnessSafetyAdvancedToolsAtmos
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofAdvancedAtmosTimer
   equipment:
     belt: ClothingHarnessSafetyAdvancedToolsAtmos
+
+- type: loadout
+  id: ClothingBeltUtilityAtmos
+  equipment:
+    belt: ClothingBeltUtilityAtmos
+
+# timers for special options
+- type: loadoutEffectGroup
+  id: FloofAdvancedEngineeringTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobStationEngineer
+      time: 15h # for workin extra reparing the station
+
+
+# timers for special options
+- type: loadoutEffectGroup
+  id: FloofAdvancedAtmosTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobAtmosphericTechnician
+      time: 15h # for workin extra reparing the station

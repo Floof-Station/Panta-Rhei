@@ -58,7 +58,14 @@
       - 0,0,1,4
       - 0,2,3,4
       - 4,0,5,4
-  - type: Wagging # Floofstation
+  - type: Wagging # Floofstation  
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - KitsuneEmotes # Added
 
 - type: entity
   save: false

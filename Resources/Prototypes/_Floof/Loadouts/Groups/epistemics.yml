@@ -1,0 +1,101 @@
+﻿#below addtions are for mysta
+- type: loadoutGroup
+  id: FloofMystaThong
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformEpiHeadThong
+
+- type: loadoutGroup
+  id: FloofMystaGloves
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HandsEpiHeadWarmers
+
+- type: loadoutGroup
+  id: FloofMystaSocks
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UnderSocksEpiHead
+
+# scientist additions
+- type: loadoutGroup
+  id: FloofScientistJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformEpiThong
+
+- type: loadoutGroup
+  id: FloofScientistGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsEpiWarmers
+
+- type: loadoutGroup
+  id: FloofScientistShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksEpi
+
+# mantis additions
+- type: loadoutGroup
+  id: FloofMantisJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformMantisEpiThong
+
+- type: loadoutGroup
+  id: FloofMantisGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsMantisEpiWarmers
+
+- type: loadoutGroup
+  id: FloofMantisShoes
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksMantisEpi
+
+# chaplain additions
+- type: loadoutGroup
+  id: FloofChaplainJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformChaplainThong
+
+- type: loadoutGroup
+  id: FloofChaplainGloves
+  name: loadout-group-epistemics-chaplain-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsChaplainWarmers
+
+- type: loadoutGroup
+  id: FloofChaplainShoes
+  name: loadout-group-epistemics-chaplain-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksChaplain

@@ -218,6 +218,12 @@
   description: Why isn't it white?
   components:
   - type: Pda
+    penSlot: # Floof
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
     id: MedicalInternIDCard
   - type: Appearance
     appearanceDataInit:
@@ -762,6 +768,14 @@
   description: Extraordinarily shiny and sterile.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: CMOPenLight
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: CMOIDCard
   - type: Appearance
     appearanceDataInit:
@@ -782,6 +796,14 @@
   description: Shiny and sterile.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: MedicalIDCard
   - type: Appearance
     appearanceDataInit:
@@ -834,6 +856,14 @@
   description: It has a few discolored blotches here and there.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: ChemistIDCard
   - type: Appearance
     appearanceDataInit:
@@ -1170,7 +1200,7 @@
   #   enum.PdaVisuals.PdaType:
   #     !type:String
   #     pda-syndi-operative
-  #- type: Icon 
+  #- type: Icon
   #  state: pda-syndi-operative
 
 
@@ -1210,7 +1240,7 @@
   #   enum.PdaVisuals.PdaType:
   #     !type:String
   #     pda-syndi-commander
-  #- type: Icon  
+  #- type: Icon
   #   state: pda-syndi-commander
 
 - type: entity
@@ -1316,6 +1346,14 @@
   description: Looks immaculately cleaned.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: PsychologistIDCard
   - type: Appearance
     appearanceDataInit:
@@ -1432,6 +1470,14 @@
   description: I wonder whose pulse is on the screen? I hope it doesn't stop...
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: BrigmedicIDCard
   - type: Appearance
     appearanceDataInit:
@@ -1528,6 +1574,14 @@
   description: Smells faintly like iron and chemicals.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: SeniorPhysicianIDCard
   - type: Appearance
     appearanceDataInit:

@@ -31,8 +31,21 @@
     inherentRadioChannels:
     - Common
     - Binary
-  - type: LeashAnchor # Floofstation - allow to leash selectable borgs
+  # Floofstation section
+  - type: LanguageKnowledge # Floofstation - languages
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
+  - type: LeashAnchor
     kind: Intrinsic
+  - type: Crawler
+  - type: CrawlingExtensions
+  # Floofstation section end
+
 
 - type: entity
   id: BorgChassisGeneric

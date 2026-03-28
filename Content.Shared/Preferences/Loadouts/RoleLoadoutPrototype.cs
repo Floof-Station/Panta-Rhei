@@ -1,5 +1,6 @@
 using Content.Shared.Dataset;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Shared.Preferences.Loadouts;
 
@@ -7,7 +8,7 @@ namespace Content.Shared.Preferences.Loadouts;
 /// Corresponds to a Job / Antag prototype and specifies loadouts
 /// </summary>
 [Prototype]
-public sealed partial class RoleLoadoutPrototype : IPrototype
+public sealed partial class RoleLoadoutPrototype : IPrototype, IInheritingPrototype
 {
     /*
      * Separate to JobPrototype / AntagPrototype as they are turning into messy god classes.
@@ -15,6 +16,15 @@ public sealed partial class RoleLoadoutPrototype : IPrototype
 
     [IdDataField]
     public string ID { get; private set; } = string.Empty;
+
+    /// <inheritdoc/>
+    /// Euphoria - Made Role Prototype into one capable of parenting.
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<RoleLoadoutPrototype>))]
+    public string[]? Parents { get; private set; }
+
+    [NeverPushInheritance]
+    [AbstractDataFieldAttribute]
+    public bool Abstract { get; private set; }
 
     /// <summary>
     /// Can the user edit their entity name for this role loadout?
@@ -33,6 +43,7 @@ public sealed partial class RoleLoadoutPrototype : IPrototype
     /// Groups that comprise this role loadout.
     /// </summary>
     [DataField]
+    [AlwaysPushInheritance]
     public List<ProtoId<LoadoutGroupPrototype>> Groups = new();
 
     /// <summary>

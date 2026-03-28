@@ -31,8 +31,6 @@
     FacialHair: MobHumanoidAnyMarking
     UndergarmentTop: MobHumanoidAnyMarking
     UndergarmentBottom: MobHumanoidAnyMarking
-    Underwear: MobHumanoidAnyMarking
-    Undershirt: MobHumanoidAnyMarking
     Chest: MobVoxTorso
     Wings: MobHumanoidAnyMarking
     Eyes: MobVoxEyes
@@ -86,14 +84,8 @@
     UndergarmentBottom:
       points: 1
       required: false
-    Underwear:
-      points: 1
-      required: false
-    Undershirt:
-      points: 1
-      required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10

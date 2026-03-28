@@ -5,6 +5,7 @@ namespace Content.Shared.Inventory;
 /// <summary>
 /// Handles prevention of items being unequipped and equipped from slots that are blocked by <see cref="SlotBlockComponent"/>.
 /// </summary>
+[Obsolete("Floofstation - do not use ubstream slot blocker, use the one in the _Floof namespace")]
 public sealed partial class SlotBlockSystem : EntitySystem
 {
     public override void Initialize()

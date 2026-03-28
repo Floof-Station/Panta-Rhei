@@ -1,6 +1,7 @@
 # Command
 - type: roleLoadout
   id: JobCaptain
+  parent: JobBaseLoadout # Floofstation
   groups:
   - CaptainHead
   - CaptainNeck
@@ -10,12 +11,12 @@
   - CaptainGloves # DeltaV
   - CaptainShoes # DeltaV
   - Survival
-  - Trinkets
   - CaptainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - HoPHead
@@ -27,7 +28,6 @@
   - HoPShoes # DeltaV
   - Glasses
   - Survival
-  - Trinkets
   - HoPJobTrinkets
   - GroupSpeciesBreathTool
 
@@ -45,6 +45,7 @@
 # Civilian
 - type: roleLoadout
   id: JobPassenger
+  parent: JobBaseLoadout # Floofstation
   groups:
   - Scarfs # DeltaV
   - GroupTankHarness
@@ -59,12 +60,12 @@
   - PassengerShoes
   - Glasses
   - Survival
-  - Trinkets
   - PassengerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBartender
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - BartenderHead
@@ -72,15 +73,17 @@
   - BartenderJumpsuit
   - CommonBackpack
   - BartenderOuterClothing
+  - FloofBartenderGloves # Floofstation - give bartender gloves
+  - FloofBartenderShoes # Floofstation - give bartender shoes
   - BartenderPDADelta # DeltaV
   - BartenderGlasses # DeltaV - replaces Glasses
   - Survival
-  - Trinkets
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobServiceWorker
+  parent: JobBaseLoadout # Floofstation
   groups:
   - ServiceWorkerHead # DeltaV
   - Scarfs # DeltaV
@@ -89,12 +92,12 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobChef
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChefHead
@@ -102,41 +105,47 @@
   - ChefJumpsuit
   - CommonBackpack
   - ChefOuterClothing
+  - FloofChefGloves # Floofstation - give chef gloves
+  - FloofChefShoes # Floofstation, give chef shoes
   - ChefPDADelta # DeltaV
   - Glasses
   - Survival
-  - Trinkets
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobLibrarian
+  parent: JobBaseLoadout # Floofstation
   groups:
   - LibrarianNeck # DeltaV
   - GroupTankHarness
   - LibrarianJumpsuit
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - LibrarianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobLawyer
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - LawyerNeck
   - LawyerJumpsuit
+  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - LawyerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobChaplain
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChaplainHead
@@ -144,33 +153,36 @@
   - ChaplainNeck
   - ChaplainJumpsuit
   - CommonBackpack
+  - FloofChaplainGloves # Floofstation -  this job dosent get to pick shoes for some reason
+  - FloofChaplainShoes # Floofstation, give them access to basic gloves from passengers
   - ChaplainOuterClothing
   - ChaplainBible
   - Glasses
   - Survival
-  - Trinkets
   - ChaplainJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobJanitor
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - JanitorHead
   - JanitorNeck # DeltaV
   - JanitorJumpsuit
   - JanitorGloves
+  - FloofJanitorShoes # Floofstation - let janitors pick their shoes
   - JanitorPDADelta # DeltaV
   - CommonBackpack
   - JanitorOuterClothing
   - Glasses
   - Survival
-  - Trinkets
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBotanist
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - BotanistHead
@@ -178,15 +190,17 @@
   - BotanistJumpsuit
   - BotanistBackpack
   - BotanistOuterClothing
+  - FloofBotanistGloves # Floofstation - give botanists gloves
+  - FloofBotanistShoes # Floofstation - give botanists shoes
   - Glasses
   - Survival
-  - Trinkets
   - BotanistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobClown
   canCustomizeName: true
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ClownHead
@@ -198,13 +212,13 @@
   - ClownPDADelta # DeltaV
   - ClownShoes
   - Glasses
-  - Trinkets
   - SurvivalClown
   - ClownJobTrinkets
 
 - type: roleLoadout
   id: JobMime
   canCustomizeName: true
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MimeHead
@@ -216,79 +230,83 @@
   - MimeBelt
   - Glasses
   - SurvivalMime
-  - Trinkets
   - MimeJobTrinkets
 
 - type: roleLoadout
   id: JobMusician
   canCustomizeName: true
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MusicianJumpsuit
   - MusicianNeck
   - CommonBackpack
+  - FloofMusicianGloves # Floofstation -  give musician access to gloves
+  - FloofMusicianShoes # Floofstation - give musician access to shoes
   - MusicianOuterClothing
   - Glasses
   - Survival
-  - Trinkets
   - MusicianJobTrinkets
-  - Instruments
   - GroupSpeciesBreathTool
 
 # Cargo
 - type: roleLoadout
   id: JobQuartermaster
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - QuartermasterHead
   - QuartermasterNeck
   - QuartermasterJumpsuit
   - CargoTechnicianBackpack
+  - FloofLoGloves # Floofstation let lo have gloves
   - QuartermasterOuterClothing
   - QuartermasterShoes
   - Glasses
   - Survival
-  - Trinkets
   - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobCargoTechnician
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
   - CargoTechnicianNeck # DeltaV
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
+  - FloofCargotechGloves # Floofstation, give them access to basic gloves from passengers
   - CargoTechnicianOuterClothing
   - CargoPDADelta # DeltaV
   - CargoTechnicianShoes
   - Glasses
   - Survival
-  - Trinkets
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobSalvageSpecialist
+  parent: JobBaseLoadout # Floofstation
   groups:
   - SalvageSpecialistNeck # DeltaV
   - SalvageSpecialistJumpsuit # DeltaV - more jumpskirts
   - GroupTankHarness
   - SalvageSpecialistBackpack
   - FloofSalvageSpecialistBelts # Floofstation
+  - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - SalvageSpecialistOuterClothing
   - SalvagePDADelta # DeltaV
   - SalvageSpecialistShoes
   - Glasses
   - Survival
-  - Trinkets
   - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
 
 # Engineering
 - type: roleLoadout
   id: JobChiefEngineer
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefEngineerHead
@@ -299,25 +317,29 @@
   - ChiefEngineerGloves # DeltaV
   - ChiefEngineerShoes
   - SurvivalExtended
-  - Trinkets
   - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobTechnicalAssistant
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - StationEngineerHead
   - StationEngineerNeck # DeltaV
   - TechnicalAssistantJumpsuit
+  - StationEngineerGloves # floostation - give them access to gloves
+  - StationEngineerBelts # floofstation - give them access to belts
   - StationEngineerBackpack
+  - StationEngineerOuterClothing # floofstation - give them access to outer clothing
   - StationEngineerShoes # DeltaV
   - SurvivalExtended
-  - Trinkets
   - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobStationEngineer
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - StationEngineerHead
@@ -330,12 +352,12 @@
   - StationEngineerShoes
   - StationEngineerID
   - SurvivalExtended
-  - Trinkets
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
+  parent: JobBaseLoadout # Floofstation
   groups:
   - AtmosphericTechnicianHead # DeltaV
   - AtmosphericTechnicianNeck # DeltaV
@@ -348,13 +370,13 @@
   - AtmosPDADelta # DeltaV
   - AtmosphericTechnicianShoes
   - SurvivalExtended
-  - Trinkets
   - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
 
 # Science
 - type: roleLoadout
   id: JobResearchDirector
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ResearchDirectorHead
@@ -366,12 +388,12 @@
   - ResearchDirectorShoes
   - Glasses
   - Survival
-  - Trinkets
   - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobScientist
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ScientistHead
@@ -384,25 +406,31 @@
   - ScientistPDA
   - Glasses
   - Survival
-  - Trinkets
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobResearchAssistant
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - ScientistHead # floofstation - let research assistant have acess to hats
+  - ScientistNeck # floofsatation - give research assistant access to other clothing options
+  - PassengerFace # floofstation - give prisoners access to other clothing options
   - ResearchAssistantJumpsuit
   - ScientistBackpack
+  - ScientistGloves # floofstation - give research assistant access to other clothing options
+  - ScientistOuterClothing # floofstation - give research assistant access to other clothing options
+  - ScientistShoes # floofsatation - give research assistant access to other clothing options
   - Glasses
   - Survival
-  - Trinkets
   - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
 
 # Security
 - type: roleLoadout
   id: JobHeadOfSecurity
+  parent: JobBaseLoadout # Floofstation
   groups:
   - HeadofSecurityHead
   - HeadofSecurityNeck
@@ -413,7 +441,6 @@
   - HeadofSecurityShoes # DeltaV - winter boots
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
   - HeadofSecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
@@ -421,6 +448,7 @@
 
 - type: roleLoadout
   id: JobWarden
+  parent: JobBaseLoadout # Floofstation
   groups:
   - WardenHead
   - SecurityNeck # DeltaV
@@ -432,7 +460,6 @@
   - SecurityShoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
   - WardenJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
@@ -440,6 +467,7 @@
 
 - type: roleLoadout
   id: JobSecurityOfficer
+  parent: JobBaseLoadout # Floofstation
   groups:
   - SecurityHead
   - SecurityNeck # DeltaV
@@ -452,7 +480,6 @@
   - SecurityBelt
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
@@ -460,16 +487,17 @@
 
 - type: roleLoadout
   id: JobDetective
+  parent: JobBaseLoadout # Floofstation
   groups:
   - DetectiveHead
   - SecurityNeck # DeltaV - replace DetectiveNeck for incongruence
   - DetectiveJumpsuitDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveJumpsuit
   - SecurityBackpack
   - DetectiveOuterClothingDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveOuterClothing
-  - SecurityShoes
+  - FloofDetectiveGloves # Floofstation - detective gloves
+  - FloofDetectiveShoes # Floofstation - detective shoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
-  - Trinkets
   - DetectiveJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityRevolverFirearm # DeltaV - loadouts
@@ -477,21 +505,27 @@
 
 - type: roleLoadout
   id: JobSecurityCadet
+  parent: JobBaseLoadout # Floofstation
   groups:
   - SecurityHead # DeltaV
   - SecurityNeck # DeltaV
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityCadetJumpsuit
+  - SecurityOuterClothingDeltaV # Floofstation - Let cadets customize their outer clothing
+  - SecurityShoes  # Floofstation - Let cadets customize their shoes
   - SecurityBackpack
+  - SecurityEyewear # Floofstation - let cadets customize their eye wear
   - SurvivalSecurity
   - Glasses # DeltaV
-  - Trinkets
   - SecurityCadetJobTrinkets
   - GroupSpeciesBreathToolSecurity
+  - SecurityFirearm # Floofstation - let cadets choose their fire arm
+  - SecurityFirearmAmmo # Floofstation - let cadets choose their ammo
 
 # Medical
 - type: roleLoadout
   id: JobChiefMedicalOfficer
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ChiefMedicalOfficerHead
@@ -505,12 +539,12 @@
   - ChiefMedicalOfficerShoes
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
   - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalDoctor
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
@@ -525,29 +559,35 @@
   - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobMedicalIntern
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MedicalInternJumpsuit
   - MedicalBackpack
+  - MedicalMask # Floofstation
+  - MedicalDoctorOuterClothing # Floofstation
   - MedicalInternPDADelta # DeltaV
+  - MedicalGloves # Floofstation
+  - MedicalDoctorBelts # Floofstation
+  - MedicalShoes # Floofstation
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
   - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobChemist
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - MedicalMask
   - ChemistNeck # DeltaV
+  - MedicalEyewear # Floofstation - give chemists the option to choose eyewear
   - ChemistJumpsuit
   - ChemistGloves # DeltaV, replaces MedicalGloves
   - ChemistBackpack
@@ -555,54 +595,60 @@
   - ChemistOuterClothing
   - ChemistShoes # DeltaV, replaces MedicalShoes
   - SurvivalMedical
-  - Trinkets
   - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 - type: roleLoadout
   id: JobParamedic
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - ParamedicHead
   - MedicalMask
   - MedicalDoctorNeck # DeltaV
   - ParamedicJumpsuit
-  - MedicalGloves
+  - FloofParamedGloves # Floofstation
   - MedicalBackpack
   - ParamedicOuterClothing
   - ParamedicShoes
   - MedicalEyewear
   - SurvivalMedical
-  - Trinkets
   - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
 
 # Wildcards
 - type: roleLoadout
   id: JobZookeeper
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobReporter
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # Floofstation let reporters have drip
+  - PassengerNeck # Floofstation let reporters have drip
+  - PassengerFace # Floofstation let reporters have drip
+  - PassengerGloves # Floofstation let reporters have drip
   - ReporterJumpsuit
+  - PassengerOuterClothing # Floofstation let reporters have drip
+  - PassengerShoes # Floofstation let reporters have drip
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - ReporterJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobPsychologist
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - PsychologistJumpsuit
@@ -617,12 +663,12 @@
   - PsychologistBelt
   # End DeltaV additions
   - Glasses
-  - Trinkets
   - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
   id: JobBoxer
+  parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
   - BoxerJumpsuit
@@ -630,7 +676,6 @@
   - CommonBackpack
   - Glasses
   - Survival
-  - Trinkets
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
 

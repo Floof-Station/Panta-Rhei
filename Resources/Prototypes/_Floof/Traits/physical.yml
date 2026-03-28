@@ -1,4 +1,5 @@
-﻿- type: trait
+﻿# =================     Bionics    ================== #
+- type: trait
   id: LeftBionicPryArm
   name: trait-name-LeftBionicPryArm
   description: trait-description-BionicPryArm
@@ -33,5 +34,174 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Right
-      protoId: JawsOfLifeLeftArm
+      protoId: JawsOfLifeRightArm
       slotId: "right arm"
+
+- type: trait
+  id: CyberEyesFlare
+  name: trait-name-CyberEyesFlare
+  description: trait-description-CyberEyesFlare
+  category: Medical
+  cost: 8
+  conflicts:
+  - Blindness
+  - PoorVision
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: FlashImmunity
+      showInExamine: false
+    - type: EyeProtection
+
+- type: trait
+  id: CyberEyesNightVision
+  category: Medical
+  name: trait-name-CyberEyesNightVision
+  description: trait-description-CyberEyesNightVision
+  cost: 8
+  conflicts:
+  - Blindness
+  - PoorVision
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: Prisoner
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Felinid
+    - Shadowkin
+    - Rodentia
+    - Tajaran
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: NightVision
+
+- type: trait
+  id: CyberEyesSecurity
+  category: Medical
+  name: trait-name-CyberEyesSecurity
+  description: trait-description-CyberEyesSecurity
+  cost: 4
+  conflicts:
+  - CyberEyesOmni
+  conditions:
+  - !type:InDepartmentCondition
+    department: Security
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+
+- type: trait
+  id: CyberEyesMedical
+  category: Medical
+  name: trait-name-CyberEyesMedical
+  description: trait-description-CyberEyesMedical
+  cost: 4
+  conflicts:
+    - CyberEyesOmni
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+
+- type: trait
+  id: CyberEyesOmni
+  category: Medical
+  name: trait-name-CyberEyesOmni
+  description: trait-description-CyberEyesOmni
+  cost: 6
+  conflicts:
+  - CyberEyesMedical
+  - CyberEyesSecurity
+  conditions:
+  - !type:InDepartmentCondition
+    department: Command
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: ShowCriminalRecordIcons
+    #- type: SolutionScanner
+    - type: ShowHealthIcons
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+    - type: ShowHealthBars
+      damageContainers:
+      - Biological
+      - BiologicalMetaphysical
+# =================================================== #
+
+# ================= Stamina traits ================== #
+- type: trait
+  id: Vigor
+  name: trait-vigor-name
+  description: trait-vigor-desc
+  category: Medical
+  cost: 4 # I don't think it's extremely useful in combat, but it can help you survive one extra stunbaton hit.
+  conflicts:
+  - Vigor
+  - Lethargy
+  - Weakness
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition # Presumably this is related to IPCs and Onis already being hella strong? On EE floof stamina damage was based on a mass contest, so it makes sense.
+    invert: true
+    species:
+    - Oni
+    - IPC
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 1.2
+
+- type: trait
+  id: Lethargy
+  name: trait-lethargy-name
+  description: trait-lethargy-desc
+  category: Medical
+  cost: -2
+  conflicts:
+  - Vigor
+  - Lethargy
+  - Weakness
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 0.8
+
+- type: trait
+  id: Weakness
+  name: trait-weakness-name
+  description: trait-weakness-desc
+  category: Medical
+  cost: -5 # Getting stunned from 1-2 stunbaton or disabler hits is worth a lot.
+  conflicts:
+  - Vigor
+  - Lethargy
+  - Weakness
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 0.5
+# =================================================== #

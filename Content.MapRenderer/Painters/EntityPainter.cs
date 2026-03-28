@@ -59,6 +59,9 @@ public sealed class EntityPainter
             return;
         }
 
+        //Floof station - make it so we do not paint deleted entities
+        if (!_sEntityManager.HasComponent<TransformComponent>(entity.Owner)) return; //Floof Station
+
         var worldRotation = xformSystem.GetWorldRotation(entity.Owner);
         foreach (var layer in entity.Sprite.AllLayers)
         {

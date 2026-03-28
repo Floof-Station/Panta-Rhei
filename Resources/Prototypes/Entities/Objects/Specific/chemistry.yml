@@ -618,3 +618,9 @@
       tags:
       - Pill
   - type: Dumpable
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      path: /Audio/_Goobstation/Items/handling/pillbottle_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Goobstation/Items/handling/pillbottle_drop.ogg

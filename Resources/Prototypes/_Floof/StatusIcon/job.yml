@@ -11,3 +11,10 @@
   icon:
     sprite: /Textures/_Floof/Interface/Misc/floof_job_icons.rsi
     state: InventorySpecialist
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSecurityTechnician
+  icon:
+    sprite: /Textures/_Floof/Interface/Misc/floof_job_icons.rsi
+    state: SecurityTechnician
