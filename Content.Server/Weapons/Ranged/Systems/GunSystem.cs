@@ -180,16 +180,39 @@ public sealed partial class GunSystem : SharedGunSystem
                 var spreadEvent = new GunGetAmmoSpreadEvent(ammoSpreadComp.Spread);
                 RaiseLocalEvent(gunUid, ref spreadEvent);
 
-                var angles = LinearSpread(mapAngle - spreadEvent.Spread / 2,
-                    mapAngle + spreadEvent.Spread / 2, ammoSpreadComp.Count);
+                var plusminusSpread = spreadEvent.Spread * gun.ShotgunSpreadMultiplier / 2;
+                var projectileCount = (int) (ammoSpreadComp.Count * gun.ShotgunProjectileCountModifier);
+
+                if (gun.UniformSpread)
+                {
+                    var angles = LinearSpread(mapAngle - plusminusSpread,
+                        mapAngle + plusminusSpread, ammoSpreadComp.Count);
+
+                    ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
+                    shotProjectiles.Add(ammoEnt);
+
+                    for (var i = 1; i < projectileCount; i++)
+                    {
+                        var newuid = Spawn(ammoSpreadComp.Proto, fromEnt);
+                        // Lavaland Change: Raise event when a projectile/pellet is fired from a gun.
+                        RaiseLocalEvent(gunUid, new ProjectileShotEvent()
+                        {
+                            FiredProjectile = newuid
+                        });
+                        ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user);
+                        shotProjectiles.Add(newuid);
+                    }
+                    goto SpreadBreak;
+                }
 
                 ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user);
                 shotProjectiles.Add(ammoEnt);
 
-                for (var i = 1; i < ammoSpreadComp.Count; i++)
+                for (var i = 1; i < projectileCount; i++)
                 {
+                    var angle = Random.NextAngle(mapAngle - plusminusSpread, mapAngle + plusminusSpread);
                     var newuid = Spawn(ammoSpreadComp.Proto, fromEnt);
-                    ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user);
+                    ShootOrThrow(newuid, angle.ToVec(), gunVelocity, gun, gunUid, user);
                     shotProjectiles.Add(newuid);
                 }
             }
@@ -198,7 +221,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 ShootOrThrow(ammoEnt, mapDirection, gunVelocity, gun, gunUid, user);
                 shotProjectiles.Add(ammoEnt);
             }
-
+        SpreadBreak:
             MuzzleFlash(gunUid, ammoComp, mapDirection.ToAngle(), user);
             Audio.PlayPredicted(gun.SoundGunshotModified, gunUid, user);
         }
@@ -214,14 +237,14 @@ public sealed partial class GunSystem : SharedGunSystem
         }
 
         // Do a throw
-        if (!HasComp<ProjectileComponent>(uid))
+        if (!TryComp(uid, out ProjectileComponent? projectileComp))
         {
             RemoveShootable(uid);
             // TODO: Someone can probably yeet this a billion miles so need to pre-validate input somewhere up the call stack.
             ThrowingSystem.TryThrow(uid, mapDirection, gun.ProjectileSpeedModified, user);
             return;
         }
-
+        projectileComp.Damage *= gun.DamageModifier;
         ShootProjectile(uid, mapDirection, gunVelocity, gunUid, user, gun.ProjectileSpeedModified);
     }
 
