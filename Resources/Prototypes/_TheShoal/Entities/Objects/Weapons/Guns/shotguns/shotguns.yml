@@ -1,0 +1,22 @@
+- type: entity
+  name: SL-T9
+  parent: [BaseWeaponShotgun, BaseSecurityContraband]
+  id: WeaponShotgunSLT9
+  description: A long tested sidearm for more aggressive vox. Laugh at the non arkbounds attempts of a handheld shotgun. Uses .50 shotgun shells.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+    storedOffset: 0,-5
+  - type: Sprite
+    sprite: _TheShoal/Objects/Weapons/Guns/Shotguns/SLT9.rsi
+  - type: Clothing
+    sprite: _TheShoal/Objects/Weapons/Guns/Shotguns/SLT9.rsi
+  - type: Gun
+    fireRate: 2
+  - type: BallisticAmmoProvider
+    capacity: 3
+  - type: StaticPrice
+    price: 0

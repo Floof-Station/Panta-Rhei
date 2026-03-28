@@ -1,0 +1,15 @@
+- type: loadout
+  id: LoadoutFirearmSLB1Pistol
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+    pocket1: WeaponPistolSLB1
+
+- type: loadout
+  id: LoadoutFirearmSLT9Shotgun
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+    pocket1: WeaponShotgunSLT9

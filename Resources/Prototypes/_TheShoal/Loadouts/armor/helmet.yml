@@ -1,0 +1,17 @@
+#enforcer helm
+- type: loadout
+  id: loadoutenforcerhelm
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+      head: ClothingHeadHelmetShoalenforcerhelm
+
+#enforcer commander helm
+- type: loadout
+  id: loadoutenforcercommanderhelm
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+      head: ClothingHeadHelmetShoalenforcercommanderhelm
