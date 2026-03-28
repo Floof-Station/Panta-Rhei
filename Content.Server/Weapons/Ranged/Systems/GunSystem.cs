@@ -181,6 +181,7 @@ public sealed partial class GunSystem : SharedGunSystem
                 var spreadEvent = new GunGetAmmoSpreadEvent(ammoSpreadComp.Spread);
                 RaiseLocalEvent(gunUid, ref spreadEvent);
 
+                // EE - Shotgun Variation - https://github.com/Simple-Station/Einstein-Engines/pull/1997
                 var plusminusSpread = spreadEvent.Spread * gun.ShotgunSpreadMultiplier / 2;
                 var projectileCount = (int) (ammoSpreadComp.Count * gun.ShotgunProjectileCountModifier);
 
