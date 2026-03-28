@@ -1,0 +1,28 @@
+#Head of Security's hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalHOSTiara
+  name: Wing of the law magical girl tiara
+  description: Now gracefully, pull out your concealed carry.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/security-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/security-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    color: "#e2d4fc"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - HeadSide

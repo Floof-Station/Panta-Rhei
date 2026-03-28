@@ -22,8 +22,8 @@ namespace Content.Server.Database
         public DbSet<Preference> Preference { get; set; } = null!;
         public DbSet<Profile> Profile { get; set; } = null!;
         public DbSet<AssignedUserId> AssignedUserId { get; set; } = null!;
-        public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!;
-        public DbSet<ConsentFreetextReadReceipt> ConsentFreetextReadReceipt { get; set; } = null!;
+        public DbSet<ConsentSettings> ConsentSettings { get; set; } = null!; // Floofstation
+        public DbSet<ConsentFreetextReadReceipt> ConsentFreetextReadReceipt { get; set; } = null!; // Floofstation
         public DbSet<Player> Player { get; set; } = default!;
         public DbSet<Admin> Admin { get; set; } = null!;
         public DbSet<AdminRank> AdminRank { get; set; } = null!;

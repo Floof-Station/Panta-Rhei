@@ -1,0 +1,279 @@
+# Pets
+- type: entity
+  parent: MobHamster
+  id: MobHamsterPet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - TauCetiBasic
+    - Mouse
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-hamster-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+- type: entity
+  parent: MobMouse
+  id: MobMousePet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    understands:
+    - TauCetiBasic
+    - Mouse
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-mouse-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+- type: entity
+  parent: MobMothroach
+  id: MobMothroachPet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Moffic
+    understands:
+    - TauCetiBasic
+    - Moffic
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-mothroach-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+# New Stuff -
+
+- type: entity
+  parent: MobFrog
+  id: MobFrogPet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Draconic
+    - Azaziba
+    - Kobold
+    understands:
+    - TauCetiBasic
+    - Draconic
+    - Azaziba
+    - Kobold
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-frog-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Normal
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+- type: entity
+  parent: MobSnake
+  id: MobSnakePet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Draconic
+    - Azaziba
+    - Kobold
+    understands:
+    - TauCetiBasic
+    - Draconic
+    - Azaziba
+    - Kobold
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-snake-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Normal
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+- type: entity
+  parent: MobFerret
+  id: MobFerretPet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Mouse
+    - Scurret
+    understands:
+    - TauCetiBasic
+    - Mouse   
+    - Scurret
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-ferret-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+  - type: Item
+    size: Normal
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+- type: entity
+  name: trained cortical borer
+  parent: MobCorticalBorer
+  id: MobCorticalBorerPet
+  description: A worm that burrows into brains and lays its eggs. This one appears tamed.
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: LanguageKnowledge
+    speaks:
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-pet-cortical-borer-name
+    description: ghost-role-information-pet-kinky-description
+    rules: ghost-role-information-cortical-borer-familiar-rules
+  - type: Item
+    size: Tiny
+  - type: CorticalBorer
+    eggProto: "CorticalBorerEggPet"
+    addOnInfest:
+    - type: PressureImmunity
+    removeOnInfest:
+    - type: CanEscapeInventory
+#  - type: HTN
+#    rootTask:
+#      task: FollowCompound
+#    blackboard:
+#      IdleRange: !type:Single
+#        1.5
+#      FollowCloseRange: !type:Single
+#        1.0
+#      FollowRange: !type:Single
+#        2.0
+
+- type: entity
+  parent: BaseItem
+  id: CorticalBorerEggPet
+  name: cortical borer egg
+  description: This egg is so nice and wet and soft...
+  components:
+  - type: Sprite
+    sprite: _Mono/Mobs/Aliens/cortical_borer_egg.rsi
+    state: icon
+  - type: Item
+    size: Tiny
+  - type: GhostRole
+    name: ghost-role-information-pet-cortical-borer-name
+    description: ghost-role-information-pet-kinky-description
+    rules: ghost-role-information-cortical-borer-familiar-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+  - type: GhostRoleMobSpawner
+    prototype: MobCorticalBorerPet

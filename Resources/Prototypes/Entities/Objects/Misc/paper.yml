@@ -55,6 +55,12 @@
   - type: Item
     size: Tiny
   - type: PhysicalComposition
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound: /Audio/_EE/Items/Handling/paper_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_EE/Items/Handling/paper_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/_EE/Items/Handling/paper_drop.ogg
 
 - type: entity
   name: paper

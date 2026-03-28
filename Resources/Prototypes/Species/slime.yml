@@ -41,17 +41,17 @@
 - type: markingPoints
   id: MobSlimeMarkingLimits
   points:
-    Special: # the cat ear joke
+    Special:
       points: 1
       required: false
-    Tail: # the cat tail joke
-      points: 3
+    Tail:
+      points: 1
       required: false
     Head:
-      points: 1
+      points: 6
       required: false
     Face:
-      points: 1
+      points: 10
       required: false
     Snout:
       points: 1
@@ -60,10 +60,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 4
+      points: 6
       required: false
     HeadTop:
-      points: 4
+      points: 6
       required: false
     Hair:
       points: 1
@@ -78,7 +78,7 @@
       points: 1
       required: false
     Eyes:
-      points: 1
+      points: 10
       required: false
     Chest:
       points: 10
@@ -87,10 +87,10 @@
       points: 1
       required: false
     Legs:
-      points: 10 # Floof - was 4
+      points: 24 # Floof - Done some funky maths
       required: false
     Arms:
-      points: 10 # Floof - was 4
+      points: 24 # Floof - Done some funky maths
       required: false
 
 - type: humanoidBaseSprite

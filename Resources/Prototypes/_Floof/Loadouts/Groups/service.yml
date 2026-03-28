@@ -1,0 +1,141 @@
+﻿# bartender additions
+- type: loadoutGroup
+  id: FloofBartenderJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformBartenderThong
+
+- type: loadoutGroup
+  id: FloofBartenderGloves
+  name: loadout-group-service-bartender-gloves
+  parent: [ PassengerGloves ]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsBartenderWarmers
+
+- type: loadoutGroup
+  id: FloofBartenderShoes
+  name: loadout-group-service-bartender-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesColorBlack
+  - ClothingUnderSocksBartender
+
+# musician additions
+- type: loadoutGroup
+  id: FloofMusicianJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformMusicianThong
+
+- type: loadoutGroup
+  id: FloofMusicianGloves
+  name: loadout-group-service-musician-gloves
+  parent: [ PassengerGloves ]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsMusicianWarmers
+
+- type: loadoutGroup
+  id: FloofMusicianShoes
+  name: loadout-group-service-musician-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesColorBlack
+  - ClothingUnderSocksMusician
+
+# janitor additions
+- type: loadoutGroup
+  id: FloofJanitorJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformJanitorThong
+
+- type: loadoutGroup
+  id: FloofJanitorGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsJanitorWarmers
+
+- type: loadoutGroup
+  id: FloofJanitorShoes
+  name: loadout-group-service-janitor-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesGaloshes
+  - ClothingUnderSocksJanitor
+
+# chef additions
+- type: loadoutGroup
+  id: FloofChefJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformChefThong
+
+- type: loadoutGroup
+  id: FloofChefGloves
+  name: loadout-group-service-chef-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsChefWarmers
+
+- type: loadoutGroup
+  id: FloofChefShoes
+  name: loadout-group-service-chef-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesColorBlack
+  - ClothingShoesChef
+  - ClothingShoesBootsWinterChef
+  - ClothingUnderSocksChef
+
+# botanist additions
+- type: loadoutGroup
+  id: FloofBotanistJumpsuit
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - UniformServiceThong
+
+- type: loadoutGroup
+  id: FloofBotanistGloves
+  name: loadout-group-service-botanist-gloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsGlovesLeather
+  - ClothingHandsServiceWarmers
+
+- type: loadoutGroup
+  id: FloofBotanistShoes
+  name: loadout-group-service-botanist-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingShoesColorBlack
+  - ClothingUnderSocksService

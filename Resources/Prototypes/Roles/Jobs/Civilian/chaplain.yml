@@ -15,15 +15,15 @@
   - !type:AddComponentSpecial
     components:
     - type: BibleUser #Lets them heal with bibles
-    - type: Condemned
-      soulOwnedNotDevil: true # This just means they won't suffer the effects of being condemned, while still not being able to sell their soul. - Goobstation
+    #- type: Condemned
+    #  soulOwnedNotDevil: true # This just means they won't suffer the effects of being condemned, while still not being able to sell their soul. - Goobstation
     - type: PsionicBonusChance # DeltaV - makes it more likely to become psionic.
       multiplier: 3
 
 - type: startingGear
   id: ChaplainGear
   equipment:
-    shoes: ClothingShoesColorBlack
+    #shoes: ClothingShoesColorBlack # Floofstation - do not give them these shoes, let loadouts be the default
     id: ChaplainPDA
     ears: ClothingHeadsetScience # DeltaV - Move Chaplain into Epistemics
   storage:

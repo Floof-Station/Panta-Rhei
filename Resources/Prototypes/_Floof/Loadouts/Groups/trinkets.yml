@@ -3,14 +3,10 @@
   id: TrinketsFloofstation
   abstract: true
   loadouts:
-  - LeashBasic
-  - RemoteSignaller
-  - GuitarInstrument
-  - BassGuitarInstrument
-  - ElectricGuitarInstrument
-  - RockGuitarInstrument
-  - HarmonicaInstrument
-  - TrumpetInstrument
+  - FishingRodMakeshift
+  - FishingRod
+  - FishingRodGoon
+  - HandheldStationMap
   - CrowbarRed
   - FlashlightLantern
   - DoubleEmergencyOxygenTankFilled
@@ -19,6 +15,24 @@
   - MedkitFilled
   - LunchboxGenericFilledRandom
   - CrayonBrush
+  - CrayonMagic
+  - LuxuryPen
+  - BookBase
+  - Paper
+  - Binoculars
+  - MaterialCardboard
+  - ToySword
+  - CardBoxBase
+  - CardBoxNanotrasen
+  - CardBoxSyndicate
+  - CardBoxBlack
+
+- type: loadoutGroup
+  id: SexToys
+  name: loadout-group-sex-toys
+  minLimit: 0
+  maxLimit: 5
+  loadouts:
   - AvianDildo
   - CanineDildo
   - CanineDildoRed
@@ -38,5 +52,9 @@
   - LewdFleshlightTeal
   - LewdFleshlightYellow
   - LewdWand
-  - LuxuryPen
-  - Paper
+  - WhipPinkCrotch
+  - WhipPink
+  - WhipTealCrotch
+  - WhipTeal
+  - LeashBasic
+  - RemoteSignaller

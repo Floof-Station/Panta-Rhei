@@ -8,6 +8,7 @@
 
 - type: loadoutGroup
   id: StationEngineerGloves
+  parent: [FloofEngineeringGloves] # we want to give them the armwarmers
   name: loadout-group-engineering-gloves
   minLimit: 1
   maxLimit: 1
@@ -22,6 +23,7 @@
   maxLimit: 1
   loadouts:
   - ClothingBeltUtility
+  - ClothingBeltUtilityAtmos
   - ClothingBeltUtilityAdvancedToolsEngineering
   - ClothingBeltUtilityAdvancedToolsAtmos
   - ClothingHarnessSafetyAdvancedToolsEngineering
@@ -62,10 +64,11 @@
 
 - type: loadoutGroup
   id: InventorySpecialistMisc
-  parent: CargoTechnicianJumpsuit
   name: loadout-group-invspec-misc
   minLimit: 0
   maxLimit: 2
   loadouts:
   - LoadoutInventorySpecialistStampApproved
   - LoadoutInventorySpecialistStampDenied
+  - ClipboardThreePapers
+  - BoxFolderPlasticClipboardThreePapers

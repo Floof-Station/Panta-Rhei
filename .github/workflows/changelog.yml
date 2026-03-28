@@ -5,16 +5,22 @@ concurrency: commit_action
 on:
   pull_request_target:
     types: [closed]
+  workflow_dispatch: # Floofstation
+    inputs:
+      pr_number:
+        description: 'PR number'
+        required: true
+        type: string
 
 env:
   GITHUB_TOKEN: ${{ secrets.BOT_TOKEN }}
   CHANGELOG_DIR: ${{ vars.CHANGELOG_DIR }}
-  PR_NUMBER: ${{ github.event.number }}
+  PR_NUMBER: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number || github.event.number }} # If running manually, fall back to manually specified PR number
 
 jobs:
   changelog:
-    runs-on: self-hosted
-    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' # Floofstation - permit manual dispatch
     permissions:
       contents: write
     steps:

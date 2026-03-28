@@ -19,5 +19,5 @@ public sealed partial class SurgeryStepDirtinessComponent : Component
     ///     The amount of dirtiness this step should add to gloves on completion
     /// </summary>
     [DataField]
-    public FixedPoint2 GloveDirtiness = 0.25; // Euphoria - Halved Value
+    public FixedPoint2 GloveDirtiness = 0.05; // Euphoria - Reduced by 90% from 0.5
 }

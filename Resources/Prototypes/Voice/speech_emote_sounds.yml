@@ -97,8 +97,6 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
-    Hiss:
-      collection: ReptillianHiss # Impstation
     Honk:
       collection: BikeHorn
     Whistle:
@@ -136,8 +134,6 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
-    Hiss:
-      collection: ReptillianHiss # Impstation
     Honk:
       collection: BikeHorn
     Whistle:
@@ -565,6 +561,10 @@
 - type: emoteSounds
   id: GeneralBodyEmotes
   sounds:
+    Thump:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+      params:
+        variation: 0.125
     Clap:
       collection: Claps
     ClapSingle:

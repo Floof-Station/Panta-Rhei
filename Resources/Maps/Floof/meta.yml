@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 02/23/2026 17:46:48
+  time: 03/08/2026 18:10:13
   entityCount: 28840
 maps:
 - 1
@@ -10511,21 +10511,6 @@ entities:
     - type: Transform
       pos: -14.5,56.5
       parent: 2
-  - uid: 27923
-    components:
-    - type: Transform
-      pos: 44.5,53.5
-      parent: 2
-  - uid: 27924
-    components:
-    - type: Transform
-      pos: 44.5,56.5
-      parent: 2
-  - uid: 27925
-    components:
-    - type: Transform
-      pos: 36.5,55.5
-      parent: 2
 - proto: AirlockArmoryGlassLocked
   entities:
   - uid: 152
@@ -12041,6 +12026,26 @@ entities:
     - type: Transform
       pos: -25.5,-14.5
       parent: 2
+- proto: AirlockLockableDorms
+  entities:
+  - uid: 27923
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 36.5,55.5
+      parent: 2
+  - uid: 27924
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 44.5,56.5
+      parent: 2
+  - uid: 27925
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 44.5,53.5
+      parent: 2
 - proto: AirlockMailGlassLocked
   entities:
   - uid: 381
@@ -12885,7 +12890,7 @@ entities:
       pos: -0.5,-58.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16724.064
+      secondsUntilStateChange: -16762.701
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -16590,25 +16595,6 @@ entities:
       parent: 2
 - proto: BenchSofaCorpLeft
   entities:
-  - uid: 27927
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 36.5,58.5
-      parent: 2
-  - uid: 27933
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 43.5,51.5
-      parent: 2
-  - uid: 27934
-    components:
-    - type: Transform
-      pos: 44.5,59.5
-      parent: 2
-- proto: BenchSofaCorpRight
-  entities:
   - uid: 27926
     components:
     - type: Transform
@@ -16626,8 +16612,33 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 45.5,58.5
       parent: 2
+- proto: BenchSofaCorpRight
+  entities:
+  - uid: 27927
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 36.5,58.5
+      parent: 2
+  - uid: 27933
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 43.5,51.5
+      parent: 2
+  - uid: 27934
+    components:
+    - type: Transform
+      pos: 44.5,59.5
+      parent: 2
 - proto: BenchSofaLeft
   entities:
+  - uid: 9888
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 32.5,-0.5
+      parent: 2
   - uid: 9891
     components:
     - type: Transform
@@ -16640,6 +16651,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 30.5,-0.5
       parent: 2
+  - uid: 22068
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-0.5
+      parent: 2
 - proto: BenchSofaMiddle
   entities:
   - uid: 9882
@@ -16651,20 +16668,6 @@ entities:
     components:
     - type: Transform
       pos: 31.5,0.5
-      parent: 2
-- proto: BenchSofaRight
-  entities:
-  - uid: 9888
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 32.5,-0.5
-      parent: 2
-  - uid: 22068
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 21.5,-0.5
       parent: 2
 - proto: BikeHorn
   entities:
@@ -67620,7 +67623,7 @@ entities:
       pos: 23.5,47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -26895.55
+      secondsUntilStateChange: -26934.188
       state: Opening
   - uid: 27810
     components:
@@ -78916,7 +78919,7 @@ entities:
       pos: -3.5,-52.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -54388.645
+      secondsUntilStateChange: -54427.28
       state: Closing
   - uid: 11888
     components:
@@ -145074,6 +145077,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 38.5,56.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        27923:
+        - - Pressed
+          - DoorBolt
     - type: Fixtures
       fixtures: {}
   - uid: 28070
@@ -145082,6 +145090,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 46.5,51.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        27925:
+        - - Pressed
+          - DoorBolt
     - type: Fixtures
       fixtures: {}
   - uid: 28071
@@ -145090,6 +145103,11 @@ entities:
       rot: 3.141592653589793 rad
       pos: 45.5,56.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        27924:
+        - - Pressed
+          - DoorBolt
     - type: Fixtures
       fixtures: {}
   - uid: 28265

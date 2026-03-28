@@ -26,14 +26,17 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Robust.Shared.Serialization.Manager;
 
 namespace Content.Server.Polymorph.Systems;
 
 public sealed partial class PolymorphSystem : EntitySystem
 {
     [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private readonly IComponentFactory _compFact = default!; // Floofstation
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly ISerializationManager _serialization = default!; // Floofstation
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedBuckleSystem _buckle = default!;
@@ -209,6 +212,18 @@ public sealed partial class PolymorphSystem : EntitySystem
             _audio.PlayPvs(configuration.PolymorphSound, targetTransformComp.Coordinates);
 
         var child = Spawn(configuration.Entity, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
+
+        // Copy specified components over. Floof Copied.
+        foreach (var compName in configuration.CopiedComponents)
+        {
+            if (!_compFact.TryGetRegistration(compName, out var reg)
+                || !EntityManager.TryGetComponent(uid, reg.Idx, out var comp))
+                continue;
+
+            var copy = _serialization.CreateCopy(comp, notNullableOverride: true);
+            copy.Owner = child;
+            AddComp(child, copy, true);
+        }
 
         if (configuration.PolymorphPopup != null)
             _popup.PopupEntity(Loc.GetString(configuration.PolymorphPopup,

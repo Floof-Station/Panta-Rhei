@@ -4,6 +4,7 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.Objectives.Systems;
 using Content.Shared.Objectives.Components;
 using Robust.Shared.Random;
+using Content.Shared._Floof.Traits.Components;
 
 namespace Content.Server._DV.Objectives.Systems;
 
@@ -56,6 +57,20 @@ public sealed class KillFellowTraitorObjectiveSystem : EntitySystem
                     valid = false;
                     break;
                 }
+            }
+            // Euphoria | Handle Marked target filtering
+            if (valid == true && TryComp<MarkedComponent>(traitor.Mind.CurrentEntity, out var mcomp))
+            {
+                if (mcomp == null)
+                {
+                    valid = false;
+                }
+                else
+                {
+                    if (!mcomp.TargetType.HasFlag(comp.TargetType))
+                        valid = false;
+                }
+
             }
             if (valid)
                 validTraitorMinds.Add(traitor.Id);

@@ -3,10 +3,22 @@
 #group misc
 - type: loadout
   id: LoadoutInventorySpecialistStampApproved
-  equipment:
-    back: RubberStampApproved
+  storage:
+    back:
+    - RubberStampApproved
 
 - type: loadout
   id: LoadoutInventorySpecialistStampDenied
+  storage:
+    back:
+    - RubberStampDenied
+
+- type: loadout
+  id: ClipboardThreePapers
   equipment:
-    back: RubberStampDenied
+    belt: BoxFolderClipboardThreePapers
+
+- type: loadout
+  id: PlasticClipboardThreePapers
+  equipment:
+    belt: BoxFolderPlasticClipboardThreePapers

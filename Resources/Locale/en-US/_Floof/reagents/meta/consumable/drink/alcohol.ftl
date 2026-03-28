@@ -196,4 +196,8 @@ reagent-desc-gin-and-pussy = A Sapphic twist on the classic Gin and Tonic, featu
 reagent-name-pussytonic = Pussy Tonic
 reagent-desc-pussytonic = Natural Lubrican with some tonic, for pussy lovers.
 
+reagent-name-millermargarita = Miller Margarita
+reagent-desc-millermargarita = A self-made spin on a classic by a popular bartender, emphasis on "self-made".
 
+reagent-name-harpysnowfall = Harpy's Snowfall
+reagent-desc-harpysnowfall = A chilled drink with a splash of booze, preferred by harpies on a hot day.
