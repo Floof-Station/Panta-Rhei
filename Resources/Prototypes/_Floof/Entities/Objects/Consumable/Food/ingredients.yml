@@ -27,3 +27,34 @@
           Quantity: 4
         - ReagentId: Sugar
           Quantity: 15
+
+- type: entity
+  name: cheese slice
+  parent: FoodBakingBase
+  id: FoodSliceOfCheese
+  description: A nice slice of cheese. Would be a shame if this landed on someones face.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - cheesy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 6
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 1.66 # This is the amount you get if you cut a cheese wedge
+  - type: Tag
+    tags:
+    - Slice
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Kitchen/cheese_slice.rsi
+    scale: 0.5, 0.5 # make the spirte much smaller
+    state: cheeseslice
+  - type: EmbeddableProjectile
+    sound: /Audio/Effects/pop.ogg
+    embedOnThrow: True
+    offset: "0,-0.1"
+  - type: ThrowingAngle
+    angle: 0
+  - type: LandAtCursor

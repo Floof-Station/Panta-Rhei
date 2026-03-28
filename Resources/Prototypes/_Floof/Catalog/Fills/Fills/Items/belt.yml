@@ -21,7 +21,7 @@
   id: ClothingBeltUtilityAdvancedToolsEngineering
   parent: ClothingBeltUtility
   suffix: Engineering
-  name: utility belt advanced tools
+  name: utility belt power tools
   components:
   - type: EntityTableContainerFill
     containers:
@@ -39,7 +39,7 @@
   id: ClothingBeltUtilityAdvancedToolsAtmos
   parent: ClothingBeltUtility
   suffix: Engineering
-  name: utility belt advanced tools atmos
+  name: utility belt power tools atmos
   components:
   - type: EntityTableContainerFill
     containers:
@@ -58,23 +58,26 @@
   id: ClothingBeltUtilityAtmos
   parent: ClothingBeltUtility
   suffix: Engineering
+  name: utility belt tools atmos
   components:
-  - type: StorageFill
-    contents:
-      - id: CrowbarYellow
-      - id: Wrench
-      - id: Screwdriver
-      - id: Wirecutter
-      - id: Welder
-      - id: Multitool
-      - id: GasAnalyzer
-      - id: HolofanProjector
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: Wrench
+        - id: Screwdriver
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
+        - id: GasAnalyzer
+        - id: HolofanProjector
 
 - type: entity
   id: ClothingHarnessSafetyAdvancedToolsEngineering
   parent: ClothingUncategorizedHarnessSafety
   suffix: Engineering
-  name: saftey harness advanced tools
+  name: saftey harness power tools
   components:
   - type: EntityTableContainerFill
     containers:
@@ -92,7 +95,7 @@
   id: ClothingHarnessSafetyAdvancedToolsAtmos
   parent: ClothingUncategorizedHarnessSafety
   suffix: Engineering
-  name: saftey harness advanced tools atmos
+  name: saftey harness power tools atmos
   components:
   - type: EntityTableContainerFill
     containers:

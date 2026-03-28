@@ -561,6 +561,10 @@
 - type: emoteSounds
   id: GeneralBodyEmotes
   sounds:
+    Thump:
+      path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
+      params:
+        variation: 0.125
     Clap:
       collection: Claps
     ClapSingle:

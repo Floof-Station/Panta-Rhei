@@ -27,10 +27,10 @@
         Blunt: 1
   - type: StaminaDamageOnHit
     damage: 10
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Stamina: 5
+  #- type: DamageOtherOnHit
+  #  damage:
+  #    types:
+  #      Stamina: 5
   - type: GenericVisualizer
     visuals:
       enum.ToggleableVisuals.Enabled:
