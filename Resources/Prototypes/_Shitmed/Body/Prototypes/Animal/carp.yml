@@ -15,35 +15,3 @@
         kidneys: OrganAnimalKidneys
     tail:
       part: TailCarp
-
-- type: body
-  id: CarpHands
-  name: carp
-  root: torso
-  slots:
-    torso:
-      part: TorsoAnimal
-      connections:
-      - tail
-      - left arm #Floof
-      - right arm #Floof
-      organs:
-        lungs: OrganSpaceAnimalLungs # Immunity to airloss
-        stomach: OrganAnimalStomach
-        liver: OrganAnimalLiver
-        heart: OrganSpaceAnimalHeart # Immunity to cold
-        kidneys: OrganAnimalKidneys
-    tail:
-      part: TailCarp
-    left arm: # Euphoria, giving fish latent hands
-      part: LeftArmFish
-      connections:
-      - left hand
-    left hand:
-      part: LeftHandFish
-    right arm:
-      part: RightArmFish
-      connections:
-      - right hand
-    right hand:
-      part: RightHandFish
