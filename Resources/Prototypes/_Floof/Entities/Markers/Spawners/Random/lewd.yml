@@ -150,8 +150,7 @@
     - id: ClothingUniformDressRed
     - id: ClothingUniformSwimsuitBlue
     - id: ClothingHeadHatCatEarsCosmetic
-    - id: ClothingMaskSexyClown
-    - id: ClothingMaskSexyMime
+    - id: ClothingMaskBlushingClown
     - id: ClothingMaskGasDrone
     - id: ClothingUniformJumpsuitCatsuit
     - id: ClothingUniformJumpsuitCatsuitShiny
@@ -163,7 +162,7 @@
       - id: ClothingNeckCollarBlue
       - id: ClothingNeckCollarBlack
       - id: ClothingNeckCollarPink
-      - id: ClothingNeckBellCollar
+      - id: ClothingNeckCollarBell
     # Schoolgirl uniforms
     - !type:GroupSelector
       children:
@@ -202,9 +201,6 @@
       children:
       - id: ClothingHeadHatWitch
       - id: ClothingOuterSuitWitchRobes
-      - id: HealthPotionFake
-        prob: 0.5
-      - id: ManaPotionFake
         prob: 0.5
     - !type:AllSelector
       children:
