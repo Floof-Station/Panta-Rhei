@@ -272,6 +272,7 @@ public sealed partial class GunComponent : Component
     [DataField]
     public Vector2 DefaultDirection = new Vector2(0, -1);
 
+    // EE Start - Shotgun Variation - https://github.com/Simple-Station/Einstein-Engines/pull/1997
     /// <summary>
     ///     If this weapon is using any kind of "Shotgun-like" ammunition, this applies as a multiplier on the spread arc.
     //      EG: 1.5 with standard buckshot gives a shotgun arc of 22.5 degrees.
@@ -297,7 +298,7 @@ public sealed partial class GunComponent : Component
     /// </summary>
     [DataField]
     public bool UniformSpread;
-
+    // EE End
 }
 
 [Flags]
