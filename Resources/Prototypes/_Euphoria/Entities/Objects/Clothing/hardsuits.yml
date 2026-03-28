@@ -1,0 +1,43 @@
+#Head of Security's Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  id: ClothingOuterHardsuitMagicalHOS
+  name: Wing of the law magical girl wand
+  description: Magical girl wand, twirl it around and transfor into a real magical girl of security.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/security-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/security-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.8
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: DamageOnShootProtection # imp
+    slots: OUTERCLOTHING
+    damageProtection:
+      flatReductions:
+        Blunt: 10
+  - type: StaminaResistance # DeltaV
+    damageCoefficient: 0.3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSecurityRed
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon

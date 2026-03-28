@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesBlindfoldFake
+  name: fake blindfold
+  description: The bind leading the blind, except somethings off about this blindfold...
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
