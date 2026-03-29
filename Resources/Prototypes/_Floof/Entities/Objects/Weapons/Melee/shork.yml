@@ -1,29 +1,85 @@
-- type: entity # Floofstation - Concealed Shork
+# Just something funny
+#- type: contrabandSeverity
+#  id: Twink
+#  examineText: contraband-examine-text-Twink
+
+#- type: entity
+#  id: BaseTwinkContraband
+#  abstract: true
+#  components:
+#  - type: Contraband
+#    severity: Twink
+
+- type: entity
   parent: PlushieSharkPink
-  id: PlushieSharkPinkBonk
+  id: PlushieSharkPinkWeapon
   name: pink shark hard toy
   description: Hehe shonk >:)
   components:
-  - type: Sprite
-    sprite: Objects/Fun/sharkplush.rsi
-    state: pink
-  - type: Item
-    heldPrefix: pink
   - type: MeleeWeapon
     wideAnimationRotation: -135
     range: 1.5
     soundHit:
       collection: ToySqueak
-    attackRate: 0.9 # Floofstation - this is hertz, not seconds
     damage:
       types:
         Blunt: 16
-    heavyDamageBaseModifier: 1.2
-    heavyStaminaCost: 5
     angle: 100
   - type: DamageOtherOnHit
-    meleeDamageMultiplier: 2
-    staminaCost: 10
-  - type: Tag
-    tags:
-      - PlushieSharkPink
+    damage:
+      types:
+        Blunt: 30
+
+- type: entity
+  parent: PlushieSharkBlue
+  id: PlushieSharkBlueWeapon
+  name: blue shark hard toy
+  description: Big and safe to have by your side if you want to send someone to the world below the surface of the ocean.
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    range: 1.5
+    soundHit:
+      collection: ToySqueak
+    damage:
+      types:
+        Slash: 16
+    angle: 100
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 30
+  - type: Sharp
+  - type: Scalpel
+    speed: 0.5
+  - type: BoneSaw
+    speed: 0.5
+  - type: Tool
+    qualities:
+      - Slicing
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+
+- type: entity
+  parent: PlushieSharkGrey
+  id: PlushieSharkGreyWeapon
+  name: grey shark hard toy
+  description: A quiet, reserved kind of shonk. Loves to turn the grey tide red.
+  components:
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    range: 3
+    soundHit:
+      collection: ToySqueak
+    damage:
+      types:
+        Piercing: 16
+    angle: 0
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Piercing: 30
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    offset: -0.15,0.0
+  - type: LandAtCursor
