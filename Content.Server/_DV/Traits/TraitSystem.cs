@@ -70,7 +70,7 @@ public sealed class TraitSystem : EntitySystem
             sortedPrototypes.Add(trait);
         }
 
-        sortedPrototypes.Sort((a, b) => -a.Cost.CompareTo(b.Cost)); //Floof - get all traits from negative cost to positive cost
+        sortedPrototypes.Sort((a, b) => a.Cost.CompareTo(b.Cost)); //Floof - get all traits from negative cost to positive cost
         foreach (var trait in sortedPrototypes)
             ApplyTrait(args.Mob, trait);
         // Floofstation edit end
