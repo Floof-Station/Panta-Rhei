@@ -32,8 +32,8 @@
 - type: reaction
   id: BreakfastForKings
   reactants:
-    Coffee:
-      amount: 1
+    Theobromine:
+      amount: 1 # Changed because something else uses coffee and nicotine
     Nicotine:
       amount: 1 # Smoking adds 0.15 to your system per second
   products:
