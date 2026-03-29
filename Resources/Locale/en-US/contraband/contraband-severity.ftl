@@ -54,3 +54,9 @@ contraband-examinable-verb-message = Check legality of this item.
 
 contraband-department-plural = {$department}
 contraband-job-plural = {MAKEPLURAL($job)}
+
+contraband-examine-text-Twink =
+    { $type ->
+        *[item] [color=#FFC5D3]This item is highly illegal bottom contraband![/color]
+        [reagent] [color=#FFC5D3]This reagent is highly illegal bottom contraband![/color]
+    }
