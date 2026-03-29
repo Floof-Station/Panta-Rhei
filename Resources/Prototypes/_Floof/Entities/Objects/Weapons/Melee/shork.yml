@@ -1,17 +1,17 @@
 # Just something funny
-#- type: contrabandSeverity
-#  id: Twink
-#  examineText: contraband-examine-text-Twink
-
-#- type: entity
-#  id: BaseTwinkContraband
-#  abstract: true
-#  components:
-#  - type: Contraband
-#    severity: Twink
+- type: contrabandSeverity
+  id: Twink
+  examineText: contraband-examine-text-Twink
 
 - type: entity
-  parent: PlushieSharkPink
+  id: BaseTwinkContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: Twink
+
+- type: entity
+  parent: [PlushieSharkPink, BaseTwinkContraband]
   id: PlushieSharkPinkWeapon
   name: pink shark hard toy
   description: Hehe shonk >:)
@@ -31,7 +31,7 @@
         Blunt: 30
 
 - type: entity
-  parent: PlushieSharkBlue
+  parent: [PlushieSharkBlue, BaseTwinkContraband]
   id: PlushieSharkBlueWeapon
   name: blue shark hard toy
   description: Big and safe to have by your side if you want to send someone to the world below the surface of the ocean.
@@ -61,7 +61,7 @@
       path: /Audio/Items/Culinary/chop.ogg
 
 - type: entity
-  parent: PlushieSharkGrey
+  parent: [PlushieSharkGrey, BaseTwinkContraband]
   id: PlushieSharkGreyWeapon
   name: grey shark hard toy
   description: A quiet, reserved kind of shonk. Loves to turn the grey tide red.
