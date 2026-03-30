@@ -10,9 +10,30 @@
   - type: Hunger
   - type: Inventory # Allows vulps to wear properly shaped helmets
     speciesId: vulpkanin
+    displacements: # Euphoria start: Starlight vulp textures
+      head:
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Vulpkanin/displacement.rsi
+            state: head
+      outerClothing:
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Vulpkanin/displacement.rsi
+            state: outerClothing
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Vulpkanin/displacement.rsi
+            state: jumpsuit
+      shoes: # DM only for colored shoes!
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Vulpkanin/displacement.rsi
+            state: shoes
   - type: Thirst
   - type: Icon
-    sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    sprite: _Starlight/Mobs/Species/Vulpkanin/parts.rsi
     state: full
   - type: Body
     prototype: Vulpkanin
@@ -121,7 +142,7 @@
 - type: entity
   save: false
   name: Vulpkanin Dummy
-  parent: MobHumanDummy
+  parent: BaseSpeciesDummy # Euphoria
   id: MobVulpkaninDummy
   categories: [ HideSpawnMenu ]
   description: A dummy vulpkanin meant to be used in character setup.
@@ -134,3 +155,14 @@
     - HeadSide
   - type: Inventory
     speciesId: vulpkanin
+    displacements: # Euphoria start: SL vulp textures
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Vulpkanin/displacement.rsi
+            state: jumpsuit
+      shoes: # DM only for colored shoes!
+        sizeMaps:
+          32:
+            sprite: _Starlight/Mobs/Species/Vulpkanin/displacement.rsi
+            state: shoes # Euphoria end
