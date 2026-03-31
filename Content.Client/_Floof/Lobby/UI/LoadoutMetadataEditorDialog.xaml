@@ -1,0 +1,46 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    MinSize="400, 300">
+
+    <BoxContainer
+        Orientation="Vertical"
+        Margin="8">
+
+        <BoxContainer Name="LoadoutPreviewContainer" Orientation="Vertical"/> <!-- Populated in constructor, shows a preview -->
+
+        <controls:HLine Color="#404040" Thickness="2" Margin="0 5" />
+
+        <BoxContainer Orientation="Vertical" Margin="2 0">
+            <Label Text="{Loc 'loadout-metadata-editor-custom-name'}"></Label>
+            <LineEdit
+                Name="CustomNameField"
+                PlaceHolder="{Loc 'loadout-metadata-editor-empty-hint'}"
+                ToolTip="{Loc 'loadout-metadata-editor-custom-name-tooltip'}"/>
+
+            <Label Text="{Loc 'loadout-metadata-editor-custom-desc'}"></Label>
+            <LineEdit
+                Name="CustomDescField"
+                PlaceHolder="{Loc 'loadout-metadata-editor-empty-hint'}"
+                ToolTip="{Loc 'loadout-metadata-editor-custom-name-tooltip'}"/>
+
+            <!-- Color picker -->
+            <CheckBox
+                Name="CustomColorEnabled"
+                Text="{Loc 'loadout-metadata-editor-custom-color'}"
+                ToolTip="{Loc 'loadout-metadata-editor-custom-color-tooltip'}"/>
+            <ColorSelectorSliders
+                Name="ColorSelector"
+                Visible="False"/>
+        </BoxContainer>
+
+        <controls:HLine Color="#404040" Thickness="2" Margin="0 5" />
+
+        <!-- I took this from QuickDialog, sue me -->
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="SaveButton" Text="{Loc 'quick-dialog-ui-ok'}"/>
+            <Button Name="CancelButton" Text="{Loc 'quick-dialog-ui-cancel'}"/>
+        </BoxContainer>
+    </BoxContainer>
+
+</controls:FancyWindow>

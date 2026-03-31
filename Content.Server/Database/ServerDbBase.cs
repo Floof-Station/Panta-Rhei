@@ -269,6 +269,9 @@ namespace Content.Server.Database
                         groupLoadouts.Add(new Loadout()
                         {
                             Prototype = profLoadout.LoadoutName,
+                            NameOverride = profLoadout.NameOverride, // Floofstation
+                            DescriptionOverride = profLoadout.DescriptionOverride, // Floofstation
+                            ColorOverride = profLoadout.ColorOverride, // Floofstation
                         });
                     }
                 }
@@ -387,6 +390,9 @@ namespace Content.Server.Database
                         profileGroup.Loadouts.Add(new ProfileLoadout()
                         {
                             LoadoutName = loadout.Prototype,
+                            NameOverride = loadout.NameOverride, // Floofstation
+                            DescriptionOverride = loadout.DescriptionOverride, // Floofstation
+                            ColorOverride = loadout.ColorOverride, // Floofstation
                         });
                     }
 
