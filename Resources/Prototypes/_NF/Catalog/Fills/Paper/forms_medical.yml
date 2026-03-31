@@ -292,15 +292,22 @@
     contentMargin: 12.0, 0.0, 12.0, 0.0
     # This is a narrow piece of paper
     maxWritableArea: 256.0, 0.0
+  # Euphoria: Add basic diagnostics and patient alerts to printout.
   - type: Paper
     content: |
       [head=3]Patient[/head]
       [bold]Name:[/bold] {patient.name}
       [bold]Species:[/bold] {patient.species}
-
+      
       [head=3]Responder[/head]
       [bold]Name:[/bold] {responder.name}
       [bold]Shift Time:[/bold] {roundTime}
-
+      
+      [head=3]Summary[/head]
+      [bold]Status:[/bold] {summary.status}
+      [bold]Temperature:[/bold] {summary.temperature}
+      [bold]Blood Level:[/bold] {summary.bloodLevel}
+      [bold]Total Damage:[/bold] {summary.damage}
+      {alerts}
       [head=3]Injuries[/head]
       {damageList}

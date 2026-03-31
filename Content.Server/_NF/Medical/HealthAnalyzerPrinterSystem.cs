@@ -1,19 +1,30 @@
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using Content.Server._DV.Traits.Assorted;
 using Content.Server._NF.CartridgeLoader.Cartridges;
+using Content.Server.Atmos.Rotting;
 using Content.Server.CartridgeLoader;
 using Content.Server.Hands.Systems;
 using Content.Server.Medical.Components;
+using Content.Shared._DV.Medical;
+using Content.Shared._DV.Traits.Assorted;
 using Content.Shared._NF.Medical;
+using Content.Shared.Atmos;
+using Content.Shared.Body.Components;
 using Content.Shared.CartridgeLoader;
-using Content.Shared.Damage;
+using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Labels.EntitySystems;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.Paper;
+using Content.Shared.Temperature.Components;
+using Content.Shared.Traits.Assorted;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
@@ -34,6 +45,13 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
     [Dependency] private readonly LabelSystem _label = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
+
+    // Euphoria: Add basic diagnostics and patient alerts to printout.
+    [Dependency] private readonly UnborgableSystem _unborgable = default!;
+    [Dependency] private readonly RedshirtSystem _redshirt = default!;
+    [Dependency] private readonly UncloneableSystem _uncloneable = default!;
+    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
+    [Dependency] private readonly RottingSystem _rottingSystem = default!;
 
     private static readonly Regex TemplateInsert = new(@"\{([\w.]+)\}");
 
@@ -144,6 +162,13 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
             { "responder.name", () => GetEntityName(responder) },
             { "roundTime", () => (_gameTiming.CurTime - _gameTicker.RoundStartTimeSpan).ToString(@"hh\:mm") },
             { "damageList", () => ComposeDamageList(damageable) },
+
+            // Euphoria: Add basic diagnostics and patient alerts to printout.
+            { "summary.status", () => GetMobState(patient) },
+            { "summary.temperature", () => GetTemperature(patient) },
+            { "summary.bloodLevel", () => GetBloodLevel(patient) },
+            { "summary.damage", () => damageable.TotalDamage.ToString() },
+            { "alerts", () => ComposeAlerts(patient) },
         };
 
         var content = TemplateInsert.Replace(template,
@@ -225,4 +250,83 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
                 : "health-analyzer-window-entity-unknown-species-text"
         );
     }
+
+    #region Euphoria: Add basic diagnostics and patient alerts to printout
+    private string GetMobState(EntityUid patient)
+    {
+        if (!TryComp<MobStateComponent>(patient, out var mobStateComponent))
+            return Loc.GetString("health-analyzer-window-entity-unknown-text");
+
+        return Loc.GetString(
+            mobStateComponent.CurrentState switch
+            {
+                MobState.Alive => "health-analyzer-window-entity-alive-text",
+                MobState.Critical => "health-analyzer-window-entity-critical-text",
+                MobState.Dead => "health-analyzer-window-entity-dead-text",
+                _ => "health-analyzer-window-entity-unknown-text",
+            }
+        );
+    }
+
+    private string GetTemperature(EntityUid patient)
+    {
+        float temperature = float.NaN;
+        if (TryComp<TemperatureComponent>(patient, out var temp))
+            temperature = temp.CurrentTemperature;
+
+        return !float.IsNaN(temperature)
+                ? $"{temperature - Atmospherics.T0C:F1} °C ({temperature:F1} K)"
+                : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+    }
+
+    private string GetBloodLevel(EntityUid patient)
+    {
+        float bloodLevel = float.NaN;
+        if (TryComp<BloodstreamComponent>(patient, out var bloodstream) &&
+            _solutionContainerSystem.ResolveSolution(patient, bloodstream.BloodSolutionName,
+                ref bloodstream.BloodSolution, out var bloodSolution))
+            bloodLevel = bloodSolution.FillFraction;
+
+        return !float.IsNaN(bloodLevel)
+            ? $"{bloodLevel * 100:F1} %"
+            : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+    }
+
+    private string GetTotalDamage(EntityUid patient)
+    {
+        return "";
+    }
+
+    private string ComposeAlerts(EntityUid patient)
+    {
+        StringBuilder alerts = new StringBuilder();
+
+        if (TryComp<UnrevivableComponent>(patient, out var unrevivableComp) && unrevivableComp.Analyzable)
+            alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-unrevivable-text-short"));
+
+        /* There's no need for the printout to include the bleeding alert, and
+         * it might distract from other important information at a glance.
+        if (TryComp<BloodstreamComponent>(patient, out var bloodstream) && bloodstream.BleedAmount > 0)
+        alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-bleeding-text"));
+         */
+
+        if (_rottingSystem.IsRotten(patient))
+            alerts.AppendLine(Loc.GetString(_rottingSystem.RotStage(patient) switch
+            {
+                2 => "rotting-extremely-bloated-short",
+                1 => "rotting-bloated-short",
+                _ => "rotting-rotting-short"
+            }));
+
+        if (_unborgable.IsUnborgable(patient))
+            alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-unborgable-text-short"));
+
+        if (_redshirt.IsRedshirt(patient))
+            alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-redshirt-text-short"));
+
+        if (_uncloneable.IsUncloneable(patient))
+            alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-uncloneable-text-short"));
+        return alerts.ToString();
+    }
+    #endregion
 }
