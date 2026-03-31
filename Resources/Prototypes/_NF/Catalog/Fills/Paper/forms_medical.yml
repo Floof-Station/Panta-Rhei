@@ -14,21 +14,23 @@
     layers:
     - state: folder-white
     - state: folder-base
-  - type: StorageFill
-    contents:
-    - id: PaperWrittenMedicalFormPatientInfo
-    - id: PaperWrittenMedicalFormPrescription
-    - id: PaperWrittenMedicalFormHealthInsurance
-    - id: PaperWrittenMedicalFormServiceInvoice
-    - id: PaperWrittenMedicalFormReceiptInvoice
-    - id: PaperWrittenMedicalFormRelease
-    - id: Paper
-      prob: 0.5
-    - id: Paper
-      prob: 0.5
+  - type: EntityTableContainerFill # Euphoria: EntityTableContainerFill<StorageFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: PaperWrittenMedicalFormPatientInfo
+        - id: PaperWrittenMedicalFormPrescription
+        - id: PaperWrittenMedicalFormHealthInsurance
+        - id: PaperWrittenMedicalFormServiceInvoice
+        - id: PaperWrittenMedicalFormReceiptInvoice
+        - id: PaperWrittenMedicalFormRelease
+        - id: Paper
+          prob: 0.5
+        - id: Paper
+          prob: 0.5
   - type: StaticPrice
     price: 100
-    vendPrice: 500
+#    vendPrice: 500 # Euphoria: Remove undefined property
 
 # Forms
 - type: entity # Loosely based on form made by Scratchie (Nova Howe) for Formal Complaint
