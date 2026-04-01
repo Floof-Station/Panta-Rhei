@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackBeast
+  name: beast pack
+  description: A large duffelbag with extra space for a busy beast.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Back/Duffels/beast.rsi
+  - type: Storage
+    grid:
+    - 0,0,8,5
+  - type: ExplosionResistance
+    damageCoefficient: 0.1
+
+
+
