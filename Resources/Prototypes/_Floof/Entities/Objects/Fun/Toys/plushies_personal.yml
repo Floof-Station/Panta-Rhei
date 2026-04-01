@@ -1716,3 +1716,45 @@
     equippedPrefix: flick
     slots:
     - HEAD
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieDevil
+  name: Devil plushie
+  description: A Devil Plushie of a hellish half-wolf with fire within it's fur. The crackling of flame can be heard around it. It's rather warm!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: devil
+  - type: UseDelay
+    delay: 5
+  - type: EmitSoundOnActivate
+    sound: &howl
+      path: /Audio/_DV/Voice/Vulpkanin/howl.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *howl
+  - type: EmitSoundOnLand
+    sound: &dog_snarl1
+      path: /Audio/Voice/Vulpkanin/dog_snarl1.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *dog_snarl1
+  - type: MeleeWeapon
+    soundHit: /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
+  - type: AmbientSound
+    sound: /Audio/Ambience/Objects/fireplace.ogg
+    volume: -18
+    range: 2
+  - type: PointLight
+    color: '#CD8014FF'
+    radius: 1.8
+    energy: 0.75
+  - type: EmitSoundOnThrow
+    sound: /Audio/_Floof/Voice/Vulpkanin/vulpscream2.ogg
+  - type: EmitSoundOnSpawn
+    positional: True
+    sound: /Audio/_Goobstation/Ambience/Antag/devil_start.ogg
+    volume: 1
