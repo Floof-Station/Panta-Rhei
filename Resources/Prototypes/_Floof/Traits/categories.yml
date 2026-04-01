@@ -1,7 +1,8 @@
 - type: traitCategory
   id: Languages
   name: trait-category-languages
-  maxTraits: 2 # Either foreigner + additional language, or 2 additional languages. No multilingual traits yet.
+  maxTraits: 4 #Allows foreigners to pick up to 3 languages to learn, but restricts non forigners to the same 2 they could pick before.
+  maxPoints: 2 
   priority: 1000 # At the bottom
   accentColor: "#418b60"
   defaultExpanded: false
