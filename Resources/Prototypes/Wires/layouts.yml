@@ -51,7 +51,6 @@
 - type: wireLayout
   id: HighSec
   wires:
-  - !type:AccessWireAction # Euphoria
   - !type:PowerWireAction
     pulseTimeout: 10
   - !type:DoorBoltWireAction
