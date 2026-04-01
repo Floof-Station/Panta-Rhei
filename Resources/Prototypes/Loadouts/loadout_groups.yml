@@ -1095,7 +1095,7 @@
 # Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
-  parent: [AtmosphericTechnicianHead, FloofHats] # floofstation
+  parent: [FloofCeHats, AtmosphericTechnicianHead, FloofHats] # floofstation
   name: loadout-group-chief-engineer-head
   minLimit: 0
   loadouts:
@@ -1104,7 +1104,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
-  parent: [FloofCeThong, SeniorEngineerJumpsuit] # Floofstation
+  parent: [FloofCeJumpsuits, SeniorEngineerJumpsuit] # Floofstation
   name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
@@ -1114,7 +1114,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
-  parent: [EngineeringCollars] # Floofstation
+  parent: [FloofCeCloak, EngineeringCollars] # Floofstation
   name: loadout-group-chief-engineer-neck
   minLimit: 0
   loadouts:
@@ -1138,7 +1138,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
-  parent: [FloofCeSocks, FloofShoes] # Floofstation
+  parent: [FloofCeShoes, FloofShoes] # Floofstation
   name: loadout-group-chief-engineer-shoes
   loadouts:
   #- BrownShoes # DeltaV - Engi loadout rework

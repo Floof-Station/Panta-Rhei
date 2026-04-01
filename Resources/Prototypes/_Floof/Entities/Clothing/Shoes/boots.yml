@@ -20,3 +20,15 @@
   - type: Construction
     graph: ClothingShoesCombatHighheelBoots
     node: shoes
+
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesBootsWorkWorn
+  name: well-worn workboots
+  description: Engineering lace-up work boots for the especially blue-collar.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Boots/workboots.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Boots/workboots.rsi
+  - type: Matchbox
