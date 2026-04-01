@@ -60,7 +60,7 @@ public sealed class TraitSystem : EntitySystem
         var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.JobId, speciesId, args.Profile, disabledTraits);
 
         // Apply valid traits
-        // Floofstation edit: first, sort valid traits by priority
+        // Floofstation edit: first, sort valid traits by cost
         var sortedPrototypes = new List<TraitPrototype>();
         foreach (var traitId in validTraits)
         {
@@ -70,7 +70,7 @@ public sealed class TraitSystem : EntitySystem
             sortedPrototypes.Add(trait);
         }
 
-        sortedPrototypes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+        sortedPrototypes = sortedPrototypes.OrderBy(a => -a.Priority).ThenBy(a => a.Cost).ToList(); //Floof - get all traits from negative cost to positive cost
         foreach (var trait in sortedPrototypes)
             ApplyTrait(args.Mob, trait);
         // Floofstation edit end
