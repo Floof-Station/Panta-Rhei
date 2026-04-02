@@ -1745,11 +1745,11 @@
   - type: MeleeWeapon
     soundHit: /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
   - type: AmbientSound
+    range: 2
     sound: &fireplace
       path: /Audio/Ambience/Objects/fireplace.ogg
       params:
         volume: -18
-      range: 2
   - type: PointLight
     color: '#CD8014FF'
     radius: 1.8
