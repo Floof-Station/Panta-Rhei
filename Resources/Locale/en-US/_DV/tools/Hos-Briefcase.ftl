@@ -3,6 +3,3 @@ energy-magnum-bundle-description = A heavy duty, slow recharging, energy revolve
 
 x01-bundle-name = X-01
 x01-bundle-description = A fast firing, high capacity, compact, energy gun perfect for dishing out consistent quick damage.
-
-truncheon-bundle-name = Advanced truncheon
-truncheon-bundle-description = A large, plasteel studded club designed for bludgeoning. Designed for use by Oni and other morphotypes of similar stature.
