@@ -1726,3 +1726,12 @@ Entries:
       message: Toy crates are back ins tock at Logi for 1000 spesos a piece.
   id: 216
   time: '2026-04-02T09:03:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Changed the PTL equation. The PTL no longer outputs 5000 spesos for just
+        5 GJ of power. Getting 100 spesos from it will take 4 GJ, and it scales
+        up to 5k spesos at 1 TJ logarithmically.
+  id: 217
+  time: '2026-04-02T11:13:10.0000000+00:00'
