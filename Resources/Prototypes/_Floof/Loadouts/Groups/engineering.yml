@@ -26,6 +26,17 @@
   - BootsWorkWorn
   - UnderSocksChiefEngi
 
+# ce pdas
+- type: loadoutGroup
+  id: FloofCEPDAs
+  name: loadout-group-chief-engineer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CEPDA
+  - StationForemanPDA
+  - StationArchitectPDA
+  
 - type: loadoutGroup
   id: FloofCeHats
   abstract: true

@@ -1,4 +1,4 @@
-﻿#below addtions are for mysta
+﻿#below additions are for mysta
 - type: loadoutGroup
   id: FloofMystaThong
   abstract: true
@@ -22,6 +22,16 @@
   maxLimit: 1
   loadouts:
   - UnderSocksEpiHead
+
+# mysta pdas
+- type: loadoutGroup
+  id: FloofMystaDAs
+  name: loadout-group-mysta-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - RnDPDA
+  - ResearchDirectorPDA
 
 # scientist additions
 - type: loadoutGroup
