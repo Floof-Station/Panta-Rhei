@@ -24,6 +24,8 @@
           - !type:ReagentCondition
             reagent: Pomelustine
             max: 50
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
       - !type:PopupMessage # Overdose causes nausea and vomiting
         type: Local
         visualType: Medium
@@ -34,16 +36,22 @@
           - !type:ReagentCondition
             reagent: Pomelustine
             min: 50
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
       - !type:Drunk
         conditions:
         - !type:ReagentCondition
           reagent: Pomelustine
           min: 50
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:Vomit
         conditions:
         - !type:ReagentCondition
           reagent: Pomelustine
           min: 60
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         probability: 0.05
       - !type:PopupMessage
         type: Local
@@ -55,6 +63,8 @@
           - !type:ReagentCondition
             reagent: Pomelustine
             max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
 
 - type: reagent
   id: Philterex
@@ -82,6 +92,8 @@
         - !type:ReagentCondition
           reagent: Philterex
           max: 16.5
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
@@ -97,11 +109,15 @@
         - !type:ReagentCondition
           reagent: Philterex
           min: 16.5
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:Emote
         conditions:
         - !type:ReagentCondition
           reagent: Philterex
           min: 16.5
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         emote: Yawn
         showInChat: true
         probability: 0.02
@@ -112,11 +128,15 @@
         - !type:ReagentCondition
           reagent: Philterex
           min: 16.5
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:GenericStatusEffect
         conditions:
         - !type:ReagentCondition
           reagent: Philterex
           min: 30.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         key: ForcedSleep
         component: ForcedSleeping
         type: Add
@@ -126,6 +146,8 @@
         - !type:ReagentCondition
           reagent: Philterex
           min: 30
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         damage:
           types:
             Poison: 1
@@ -139,6 +161,8 @@
           - !type:ReagentCondition
             reagent: Philterex
             max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
 
 - type: reagent
   id: Libidozenithizine
@@ -164,11 +188,15 @@
         - !type:ReagentCondition
           reagent: Libidozenithizine
           max: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
           reagent: Libidozenithizine
           min: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
         damage:
           types:
             Poison: 0.05
@@ -185,6 +213,8 @@
         - !type:ReagentCondition
           reagent: Libidozenithizine
           min: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:PopupMessage
         type: Local
         visualType: Small
@@ -195,3 +225,5 @@
           - !type:ReagentCondition
             reagent: Libidozenithizine
             max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
