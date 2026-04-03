@@ -670,7 +670,8 @@ public sealed class ScentSystem : EntitySystem
                 uid)));
         _popupSystem.PopupEntity(
             locmsg,
-            uid);
+            uid,
+            uid); // Euphoria - Make client-sided.
     }
 
     /// <summary>
@@ -728,7 +729,8 @@ public sealed class ScentSystem : EntitySystem
             ("sniffer", snifferName));
         _popupSystem.PopupEntity(
             sniffedMsg,
-            scentUid);
+            scentUid,
+            scentUid); // Euphoria - Make client-sided.
     }
 
     /// <summary>
