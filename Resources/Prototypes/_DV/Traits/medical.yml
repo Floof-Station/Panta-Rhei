@@ -4,7 +4,7 @@
   id: Narcolepsy
   name: trait-narcolepsy-name
   description: trait-narcolepsy-desc
-  category: Medical
+  category: DisabilitiesMental # Euphoria
   cost: -2 #floof
   effects:
   - !type:AddCompsEffect
@@ -19,7 +19,7 @@
   id: ChronicPain
   name: trait-chronic-pain-name
   description: trait-chronic-pain-desc
-  category: Medical
+  category: DisabilitiesMental # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -31,7 +31,7 @@
   id: LightweightDrunk
   name: trait-lightweight-name
   description: trait-lightweight-desc
-  category: Medical
+  category: DisabilitiesMental # Euphoria
   cost: -1 #floof
   effects:
   - !type:AddCompsEffect
@@ -43,7 +43,7 @@
   id: Unrevivable
   name: trait-unrevivable-name
   description: trait-unrevivable-desc
-  category: Medical
+  category: DisabilitiesPhysical # Euphoria
   cost: -6 #floof
   effects:
   - !type:AddCompsEffect
@@ -55,7 +55,7 @@
   id: Uncloneable
   name: trait-uncloneable-name
   description: trait-uncloneable-desc
-  category: Medical
+  category: DisabilitiesPhysical # Euphoria
   cost: -1 #floof
   effects:
   - !type:AddCompsEffect
@@ -66,7 +66,7 @@
   id: Unborgable
   name: trait-unborgable-name
   description: trait-unborgable-desc
-  category: Medical
+  category: DisabilitiesPhysical # Euphoria
   cost: -1 #floof
   effects:
   - !type:AddCompsEffect
@@ -77,7 +77,7 @@
   id: Redshirt
   name: trait-redshirt-name
   description: trait-redshirt-desc
-  category: Medical
+  category: DisabilitiesPhysical # Euphoria
   cost: -6 #floof
   effects:
   - !type:AddCompsEffect
@@ -95,7 +95,7 @@
   id: Synthetic
   name: trait-synth-name
   description: trait-synth-desc
-  category: Medical
+  category: Cybernetics # Euphoria
   conditions:
   - !type:HasCompCondition
     component: Silicon
