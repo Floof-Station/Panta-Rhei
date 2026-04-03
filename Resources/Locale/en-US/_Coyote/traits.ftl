@@ -232,7 +232,7 @@ trait-scent-bday-name = Birthday Candles
 trait-scent-bday-desc = You smell like birthday candles.
 
 trait-scent-unwashedfox-name = Unwashed Fox
-trait-scent-unwashedfox-desc = You smell like an unwashedfox fox.
+trait-scent-unwashedfox-desc = You smell like an unwashed fox.
 
 trait-scent-iron-name = Iron
 trait-scent-iron-desc = You smell ferous.
