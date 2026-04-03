@@ -152,7 +152,7 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(args.Examiner, proto.Lewd))
                 continue;
-            var smellColor = "Cyan";
+            var smellColor = "DarkGray"; // Euphoria - Less distracting.
             if (proto.Stinky && proto.Lewd)
             {
                 smellColor = "Orange";
@@ -670,7 +670,8 @@ public sealed class ScentSystem : EntitySystem
                 uid)));
         _popupSystem.PopupEntity(
             locmsg,
-            uid);
+            uid,
+            uid); // Euphoria - Make client-sided.
     }
 
     /// <summary>
@@ -728,7 +729,8 @@ public sealed class ScentSystem : EntitySystem
             ("sniffer", snifferName));
         _popupSystem.PopupEntity(
             sniffedMsg,
-            scentUid);
+            scentUid,
+            scentUid); // Euphoria - Make client-sided.
     }
 
     /// <summary>
