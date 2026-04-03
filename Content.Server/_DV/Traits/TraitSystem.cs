@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server.Database;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.Traits;
 using Content.Shared._DV.Traits.Conditions;
@@ -26,7 +27,6 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-
     private int _maxTraitCount;
     private int _maxTraitPoints;
 

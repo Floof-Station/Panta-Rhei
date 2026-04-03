@@ -1,0 +1,953 @@
+# regular smells
+- type: trait
+  id: ScentVanilla
+  name: trait-scent-vanilla-name
+  description: trait-scent-vanilla-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - ScentVanilla
+
+- type: trait
+  id: ScentCitrus
+  name: trait-scent-citrus-name
+  description: trait-scent-citrus-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - ScentCitrus
+
+- type: trait
+  id: ScentLinen
+  name: trait-scent-linen-name
+  description: trait-scent-linen-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - ScentLinen
+
+- type: trait
+  id: ScentSandalwood
+  name: trait-scent-sandalwood-name
+  description: trait-scent-sandalwood-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - ScentSandalwood
+
+- type: trait
+  id: ScentLavender
+  name: trait-scent-lavender-name
+  description: trait-scent-lavender-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Lavender
+
+- type: trait
+  id: ScentGreen
+  name: trait-scent-greentea-name
+  description: trait-scent-greentea-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Green
+
+- type: trait
+  id: ScentBergamot
+  name: trait-scent-bergamot-name
+  description: trait-scent-bergamot-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Bergamot
+
+- type: trait
+  id: ScentEucalyptus
+  name: trait-scent-eucalyptus-name
+  description: trait-scent-eucalyptus-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Eucalyptus
+
+- type: trait
+  id: ScentCedarwood
+  name: trait-scent-cedarwood-name
+  description: trait-scent-cedarwood-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Cedarwood
+
+- type: trait
+  id: ScentMint
+  name: trait-scent-mint-name
+  description: trait-scent-mint-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Mint
+
+- type: trait
+  id: ScentRosewater
+  name: trait-scent-rosewater-name
+  description: trait-scent-rosewater-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Rosewater
+
+- type: trait
+  id: ScentJasmine
+  name: trait-scent-jasmine-name
+  description: trait-scent-jasmine-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Jasmine
+
+- type: trait
+  id: ScentLemon
+  name: trait-scent-lemonzest-name
+  description: trait-scent-lemonzest-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Lemon
+
+- type: trait
+  id: ScentPine
+  name: trait-scent-pine-name
+  description: trait-scent-pine-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Pine
+
+- type: trait
+  id: ScentWarm
+  name: trait-scent-warmhoney-name
+  description: trait-scent-warmhoney-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Warm
+
+- type: trait
+  id: ScentRain
+  name: trait-scent-rain-name
+  description: trait-scent-rain-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Rain
+
+- type: trait
+  id: ScentApples
+  name: trait-scent-apples-name
+  description: trait-scent-apples-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Apples
+
+- type: trait
+  id: ScentCloves
+  name: trait-scent-cloves-name
+  description: trait-scent-cloves-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Cloves
+
+- type: trait
+  id: ScentDark
+  name: trait-scent-darkchocolate-name
+  description: trait-scent-darkchocolate-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Dark
+
+- type: trait
+  id: ScentOrange
+  name: trait-scent-orangeblossoms-name
+  description: trait-scent-orangeblossoms-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Orange
+
+- type: trait
+  id: ScentLeather
+  name: trait-scent-leather-name
+  description: trait-scent-leather-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Leather
+
+- type: trait
+  id: ScentAloe
+  name: trait-scent-aloe-name
+  description: trait-scent-aloe-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Aloe
+
+- type: trait
+  id: ScentCardamom
+  name: trait-scent-cardamom-name
+  description: trait-scent-cardamom-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Cardamom
+
+- type: trait
+  id: ScentPeaches
+  name: trait-scent-peaches-name
+  description: trait-scent-peaches-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Peaches
+
+- type: trait
+  id: ScentBasil
+  name: trait-scent-basil-name
+  description: trait-scent-basil-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Basil
+
+- type: trait
+  id: ScentSmoked
+  name: trait-scent-smokedwood-name
+  description: trait-scent-smokedwood-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Smoked
+
+- type: trait
+  id: ScentMilk
+  name: trait-scent-milkandsugar-name
+  description: trait-scent-milkandsugar-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Milk
+
+- type: trait
+  id: ScentIris
+  name: trait-scent-iris-name
+  description: trait-scent-iris-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Iris
+
+- type: trait
+  id: ScentGrapefruit
+  name: trait-scent-grapefruit-name
+  description: trait-scent-grapefruit-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Grapefruit
+
+- type: trait
+  id: ScentFrankincense
+  name: trait-scent-frankincense-name
+  description: trait-scent-frankincense-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Frankincense
+
+- type: trait
+  id: ScentPears
+  name: trait-scent-pears-name
+  description: trait-scent-pears-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Pears
+
+- type: trait
+  id: ScentTobacco
+  name: trait-scent-tobacco-name
+  description: trait-scent-tobacco-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Tobacco
+
+- type: trait
+  id: ScentSoap
+  name: trait-scent-soap-name
+  description: trait-scent-soap-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Soap
+
+- type: trait
+  id: ScentChamomile
+  name: trait-scent-chamomile-name
+  description: trait-scent-chamomile-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Chamomile
+
+- type: trait
+  id: ScentFig
+  name: trait-scent-fig-name
+  description: trait-scent-fig-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Fig
+
+- type: trait
+  id: ScentOzone
+  name: trait-scent-ozone-name
+  description: trait-scent-ozone-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Ozone
+
+- type: trait
+  id: ScentSweat
+  name: trait-scent-sweat-name
+  description: trait-scent-sweat-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Sweat
+
+- type: trait
+  id: ScentOil
+  name: trait-scent-oil-name
+  description: trait-scent-oil-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Oil
+
+- type: trait
+  id: ScentMotor
+  name: trait-scent-motoroil-name
+  description: trait-scent-motoroil-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Motor
+
+- type: trait
+  id: ScentSoil
+  name: trait-scent-soil-name
+  description: trait-scent-soil-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Soil
+
+- type: trait
+  id: ScentAlmond
+  name: trait-scent-almond-name
+  description: trait-scent-almond-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Almond
+
+- type: trait
+  id: ScentPatchouli
+  name: trait-scent-patchouli-name
+  description: trait-scent-patchouli-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Patchouli
+
+- type: trait
+  id: ScentBlueberry
+  name: trait-scent-blueberry-name
+  description: trait-scent-blueberry-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Blueberry
+
+- type: trait
+  id: ScentCinnamon
+  name: trait-scent-cinnamon-name
+  description: trait-scent-cinnamon-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Cinnamon
+
+- type: trait
+  id: ScentSea
+  name: trait-scent-seasalt-name
+  description: trait-scent-seasalt-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Sea
+
+- type: trait
+  id: ScentWildflowers
+  name: trait-scent-wildflowers-name
+  description: trait-scent-wildflowers-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Wildflowers
+
+# Lewd smells
+- type: trait
+  id: ScentMusk
+  name: trait-scent-musk-name
+  description: trait-scent-musk-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - ScentLewdMusk
+
+- type: trait
+  id: ScentHeat
+  name: trait-scent-heat-name
+  description: trait-scent-heat-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Heat
+
+- type: trait
+  id: ScentLatex
+  name: trait-scent-latex-name
+  description: trait-scent-latex-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Latex
+
+- type: trait
+  id: ScentBoystink
+  name: trait-scent-boystink-name
+  description: trait-scent-boystink-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Boystink
+
+- type: trait
+  id: ScentBoysmell
+  name: trait-scent-boysmell-name
+  description: trait-scent-boysmell-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Boysmell
+
+- type: trait
+  id: ScentSkunk
+  name: trait-scent-skunk-name
+  description: trait-scent-skunk-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Skunk
+
+- type: trait
+  id: ScentGirlstink
+  name: trait-scent-girlstink-name
+  description: trait-scent-girlstink-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Girlstink
+
+- type: trait
+  id: ScentGirlsmell
+  name: trait-scent-girlsmell-name
+  description: trait-scent-girlsmell-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Girlsmell
+
+- type: trait
+  id: ScentSpaceweed
+  name: trait-scent-spaceweed-name
+  description: trait-scent-spaceweed-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Spaceweed
+
+# Euphoria - Community Requested Scents
+
+# normal
+
+- type: trait
+  id: Gunmetal
+  name: trait-scent-gunmetal-name
+  description: trait-scent-gunmetal-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Gunmetal
+
+- type: trait
+  id: Disinfectant
+  name: trait-scent-disinfectant-name
+  description: trait-scent-disinfectant-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Disinfectant
+
+- type: trait
+  id: Ink
+  name: trait-scent-ink-name
+  description: trait-scent-ink-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Ink
+
+- type: trait
+  id: Dust
+  name: trait-scent-dust-name
+  description: trait-scent-dust-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Dust
+
+- type: trait
+  id: Metal
+  name: trait-scent-metal-name
+  description: trait-scent-metal-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Metal
+
+- type: trait
+  id: Omnizine
+  name: trait-scent-omni-name
+  description: trait-scent-omni-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Omnizine
+
+- type: trait
+  id: Gunpowder
+  name: trait-scent-gunpowder-name
+  description: trait-scent-gunpowder-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Gunpowder
+
+- type: trait
+  id: Moss
+  name: trait-scent-moss-name
+  description: trait-scent-moss-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Moss
+
+- type: trait
+  id: WeldingFuel
+  name: trait-scent-weldfuel-name
+  description: trait-scent-weldfuel-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - WeldingFuel
+
+- type: trait
+  id: Jolliness
+  name: trait-scent-jolly-name
+  description: trait-scent-jolly-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Jolliness
+
+- type: trait
+  id: Gingerbread
+  name: trait-scent-gingerbread-name
+  description: trait-scent-gingerbread-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Gingerbread
+
+- type: trait
+  id: Hellstone
+  name: trait-scent-hellstone-name
+  description: trait-scent-hellstone-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Hellstone
+
+- type: trait
+  id: Rust
+  name: trait-scent-rust-name
+  description: trait-scent-rust-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Rust
+
+- type: trait
+  id: Flowers
+  name: trait-scent-flowers-name
+  description: trait-scent-flowers-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Flowers
+
+- type: trait
+  id: Stillwater
+  name: trait-scent-stillwater-name
+  description: trait-scent-stillwater-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Stillwater
+
+- type: trait
+  id: Uranium
+  name: trait-scent-uranium-name
+  description: trait-scent-uranium-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Uranium
+
+- type: trait
+  id: BlackTea
+  name: trait-scent-blacktea-name
+  description: trait-scent-blacktea-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - BlackTea
+
+- type: trait
+  id: Seafood
+  name: trait-scent-seafood-name
+  description: trait-scent-seafood-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Seafood
+
+- type: trait
+  id: WetDog
+  name: trait-scent-wetdog-name
+  description: trait-scent-wetdog-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - WetDog
+
+- type: trait
+  id: Phoron
+  name: trait-scent-phoron-name
+  description: trait-scent-phoron-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Phoron
+
+- type: trait
+  id: Grass
+  name: trait-scent-grass-name
+  description: trait-scent-grass-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Grass
+
+- type: trait
+  id: BdayCandles
+  name: trait-scent-bday-name
+  description: trait-scent-bday-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - BdayCandles
+
+- type: trait
+  id: UnwashedFox
+  name: trait-scent-unwashedfox-name
+  description: trait-scent-unwashedfox-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - UnwashedFox
+
+- type: trait
+  id: Iron
+  name: trait-scent-iron-name
+  description: trait-scent-iron-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Iron
+
+- type: trait
+  id: Frezon
+  name: trait-scent-frezon-name
+  description: trait-scent-frezon-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Frezon
+
+- type: trait
+  id: Fish
+  name: trait-scent-fish-name
+  description: trait-scent-fish-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Fish
+
+- type: trait
+  id: CheapCologne
+  name: trait-scent-cheapcologne-name
+  description: trait-scent-cheapcologne-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - CheapCologne
+
+- type: trait
+  id: ExpensiveCologne
+  name: trait-scent-expensivecologne-name
+  description: trait-scent-expensivecologne-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - ExpensiveCologne
+
+- type: trait
+  id: Alcohol
+  name: trait-scent-alcohol-name
+  description: trait-scent-alcohol-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Alcohol
+
+# lewd
+
+- type: trait
+  id: Piss
+  name: trait-scent-piss-name
+  description: trait-scent-piss-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Piss
+
+- type: trait
+  id: Pomegranate
+  name: trait-scent-pomegranate-name
+  description: trait-scent-pomegranate-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Pomegranate

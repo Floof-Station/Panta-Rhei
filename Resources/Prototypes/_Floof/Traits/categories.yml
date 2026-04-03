@@ -21,3 +21,19 @@
   name: trait-category-skills
   priority: 45 # Under Medical
   accentColor: "#3242ef"
+
+- type: traitCategory
+  id: Scents
+  name: trait-category-scents
+  priority: 60
+  defaultExpanded: false
+  maxTraits: 2
+  accentColor: "#52ffc2"  # Mint Green
+
+- type: traitCategory
+  id: ScentsNSFW
+  name: trait-category-scents-nsfw
+  priority: 70
+  defaultExpanded: false
+  maxTraits: 2
+  accentColor: "#ff1778"  # Hot Pink
