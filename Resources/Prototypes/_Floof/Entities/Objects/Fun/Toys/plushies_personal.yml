@@ -1661,7 +1661,7 @@
 
 - type: entity
   parent: PlushieHuman
-  id: PlushieMailTech 
+  id: PlushieMailTech
   name: Mail tech plushie
   description: Cargo's strongest soldiers, for when Delivery Must Complete. #the text is a refrence and its intended to be like that
   components:
@@ -1686,3 +1686,33 @@
     sound: *hit_kick
   - type: MeleeWeapon
     soundHit: *hit_kick
+
+- type: entity
+  parent: PlushieExperiment
+  id: PlushieFlick #yip!
+  name: cybersun engineer plushie
+  description: Each plushie is given its soul by pressing it to a supermatter sliver, if you listen closely you can hear yourself getting cancer in real-time!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/flickplushie.rsi
+    state: icon
+  - type: Item
+    sprite: _Floof/Objects/Fun/flickplushie.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    equippedPrefix: flick
+    slots:
+    - HEAD

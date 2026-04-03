@@ -1,0 +1,28 @@
+- type: entity
+  name: SL-B1
+  parent: WeaponPistolMk58
+  id: WeaponPistolSLB1
+  description: The standard shoal Sidearm often called by its street name the "Slab-1". Forged with a built in fission powered flashlight. Feeds from .35 auto magazines.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Objects/Weapons/Guns/Pistols/SLB1.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _TheShoal/Objects/Weapons/Guns/Pistols/SLB1.rsi
+  - type: Gun
+    fireRate: 5
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+  - type: PointLight
+    autoRot: true
+    enabled: false
+    mask: /Textures/Effects/LightMasks/cone.png
+    radius: 8
+    color: "#d7e0b3"
+  - type: UnpoweredFlashlight

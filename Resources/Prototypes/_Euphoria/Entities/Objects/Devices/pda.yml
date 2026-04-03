@@ -1,0 +1,44 @@
+- type: entity
+  parent: BaseMedicalPDA
+  id: FreelancerPDA
+  name: Freelancer PDA
+  description: Refurbished standard PDA
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/pda.rsi
+  - type: Icon
+    sprite: _Floof/Objects/Devices/pda.rsi # DeltaV aPDA Resprite File Path
+    state: pda-free
+  - type: Pda
+    id: FreelancerIDCard
+  - type: PdaBorderColor
+    borderColor: "#668643"
+
+#PDA for sapient animals
+- type: entity
+  parent: BasePDA
+  id: AnimalPDA
+  name: Beast PDA
+  description: For non-human crew. A coordinate switch has been soldered onto the open circuits.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-zookeeper
+  - type: Icon
+    state: pda-zookeeper
+  - type: Pda
+    id: VisitorIDCard
+  - type: PdaBorderColor
+    borderColor: "#ffe685"
+  - type: SuitSensor
+    activationSlot: "pda"
+    randomMode: false
+    mode: SensorCords
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SuitSensor
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: StationLimitedNetwork

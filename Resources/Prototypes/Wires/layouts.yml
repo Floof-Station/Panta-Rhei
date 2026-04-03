@@ -1,6 +1,7 @@
 - type: wireLayout
   id: Airlock
   wires:
+  - !type:AccessWireAction # Euphoria
   - !type:PowerWireAction
   - !type:PowerWireAction
     pulseTimeout: 15
@@ -132,6 +133,7 @@
   id: Docking
   dummyWires: 2
   wires:
+  - !type:AccessWireAction # Euphoria
   - !type:PowerWireAction
   - !type:PowerWireAction
     pulseTimeout: 15
@@ -176,17 +178,20 @@
   wires:
   - !type:PowerWireAction
   - !type:AiInteractWireAction
+  - !type:AccessWireAction # Euphoria
 
 - type: wireLayout
   id: Computer
   dummyWires: 3
   wires:
+  - !type:AccessWireAction # Euphoria
   - !type:PowerWireAction
 
 - type: wireLayout
   id: ComputerAi
   dummyWires: 2
   wires:
+  - !type:AccessWireAction # Euphoria
   - !type:PowerWireAction
   - !type:AiInteractWireAction
 

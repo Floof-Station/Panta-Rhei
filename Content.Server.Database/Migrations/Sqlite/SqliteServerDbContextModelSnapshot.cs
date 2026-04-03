@@ -1084,10 +1084,25 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_loadout_id");
 
+                    b.Property<string>("ColorOverride")
+                        .HasMaxLength(9)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("color_override");
+
+                    b.Property<string>("DescriptionOverride")
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("description_override");
+
                     b.Property<string>("LoadoutName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("loadout_name");
+
+                    b.Property<string>("NameOverride")
+                        .HasMaxLength(96)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("name_override");
 
                     b.Property<int>("ProfileLoadoutGroupId")
                         .HasColumnType("INTEGER")

@@ -3,11 +3,13 @@
   id: ClothingUniformJumpsuitTacticool
   equipment:
     jumpsuit: ClothingUniformJumpsuitTacticool
+  groupBy: "tacticool"
 
 - type: loadout
   id: ClothingUniformJumpskirtTacticool
   equipment:
     jumpsuit: ClothingUniformJumpskirtTacticool
+  groupBy: "tacticool"
 
 - type: loadout
   id: ClothingUniformJumpsuitHawaiBlack
@@ -33,105 +35,330 @@
     jumpsuit: ClothingUniformJumpsuitHawaiYellow
   groupBy: "hawain"
 
+  # turtlenecks from detla-v
+- type: loadout
+  id: ClothingUniformTurtleneckColorWhite
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorWhite
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorGrey
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorGrey
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorBlack
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorBlack
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorBlue
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorBlue
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorDarkBlue
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorDarkBlue
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorTeal
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorTeal
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorGreen
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorGreen
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorDarkGreen
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorDarkGreen
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorOrange
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorOrange
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorPink
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorPink
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorRed
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorRed
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorYellow
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorYellow
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorPurple
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorPurple
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorLightBrown
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorLightBrown
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorBrown
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorBrown
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckColorMaroon
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckColorMaroon
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorWhite
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorWhite
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorGrey
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorGrey
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorBlack
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorBlack
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorBlue
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorBlue
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorDarkBlue
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorDarkBlue
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorTeal
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorTeal
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorDarkGreen
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorDarkGreen
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorGreen
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorGreen
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorOrange
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorOrange
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorPink
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorPink
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorRed
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorRed
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorYellow
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorYellow
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorPurple
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorPurple
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorLightBrown
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorLightBrown
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorBrown
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorBrown
+  groupBy: "turtleneck"
+
+- type: loadout
+  id: ClothingUniformTurtleneckSkirtColorMaroon
+  equipment:
+    jumpsuit: ClothingUniformTurtleneckSkirtColorMaroon
+  groupBy: "turtleneck"
+
 - type: loadout
   id: ClothingUniformJumpsuitColorBlack
   equipment:
     jumpsuit: ClothingUniformJumpsuitColorBlack
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitJeansBrown
   equipment:
     jumpsuit: ClothingUniformJumpsuitJeansBrown
+  groupBy: "casual"
+
+- type: loadout
+  id: ClothingUniformJumpsuitSuitBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSuitBlack
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBlackAlt
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBlackAlt
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitFlannel
   equipment:
     jumpsuit: ClothingUniformJumpsuitFlannel
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBrownMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBrownMob
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitBlackMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitBlackMob
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitKimono
   equipment:
     jumpsuit: ClothingUniformJumpsuitKimono
+  groupBy: "kimono"
 
 - type: loadout
   id: ClothingUniformJumpsuitCatsuit
   equipment:
     jumpsuit: ClothingUniformJumpsuitCatsuit
+  groupBy: "lewdsuit"
 
 - type: loadout
   id: ClothingUniformJumpsuitCatsuitShiny
   equipment:
     jumpsuit: ClothingUniformJumpsuitCatsuitShiny
+  groupBy: "lewdsuit"
 
 - type: loadout
   id: ClothingUniformJumpsuitLostTourist
   equipment:
     jumpsuit: ClothingUniformJumpsuitLostTourist
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitLoungewear
   equipment:
     jumpsuit: ClothingUniformJumpsuitLoungewear
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitWhiteMob
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitWhiteMob
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitSuitWhiteAlt
   equipment:
     jumpsuit: ClothingUniformJumpsuitSuitWhiteAlt
+  groupBy: "suits"
 
 - type: loadout
   id: ClothingUniformJumpsuitTshirtJeansPeach
   equipment:
     jumpsuit: ClothingUniformJumpsuitTshirtJeansPeach
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitJeansRed
   equipment:
     jumpsuit: ClothingUniformJumpsuitJeansRed
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitSober
   equipment:
     jumpsuit: ClothingUniformJumpsuitSober
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitDameDane
   equipment:
     jumpsuit: ClothingUniformJumpsuitDameDane
+  groupBy: "costume"
+
+- type: loadout
+  id: ClothingUniformLittleGuyOveralls
+  equipment:
+    jumpsuit: ClothingUniformLittleGuyOveralls
+  groupBy: "costume"
 
 - type: loadout
   id: UniformJumpskirtNurse
   equipment:
     jumpsuit: ClothingUniformJumpskirtNurse
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformSkirtTurtle
   equipment:
     jumpsuit: ClothingUniformSkirtTurtle
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformBlackTurtleneck
   equipment:
     jumpsuit: ClothingUniformBlackTurtleneck
+  groupBy: "turtleneck"
 
 - type: loadout
   id: ClothingUniformSchoolGakuranBlack
@@ -197,6 +424,7 @@
   id: ClothingCostumeBunnySuit
   equipment:
     jumpsuit: ClothingCostumeBunnySuit
+  groupBy: "lewdsuit"
 
 - type: loadout
   id: UniformGeisha
@@ -238,16 +466,19 @@
   id: ClothingCostumeMioSkirt
   equipment:
     jumpsuit: ClothingCostumeMioSkirt
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingCostumeNaota
   equipment:
     jumpsuit: ClothingCostumeNaota
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformJumpsuitWorkvest
   equipment:
     jumpsuit: ClothingUniformJumpsuitWorkvest
+  groupBy: "casual"
 
 - type: loadout
   id: ClothingUniformClassicalMaidDress
@@ -308,6 +539,7 @@
   id: ClothingUniformMNKDressBlack
   equipment:
     jumpsuit: ClothingUniformMNKDressBlack
+  groupBy: "mnk"
 
 - type: loadout
   id: ClothingUniformMNKOfficeSkirt
@@ -343,6 +575,7 @@
   id: UniformNudityPermit
   equipment:
     jumpsuit: ClothingUniformNudityPermit
+  groupBy: "lewdsuit"
 
 # socks
 - type: loadout
@@ -546,6 +779,96 @@
 
 # outer clothing (jackets)
 - type: loadout
+  id: ClothingOuterCoatAcidRaincoat
+  equipment:
+    outerClothing: ClothingOuterCoatAcidRaincoat
+  groupBy: "rain coat"
+
+- type: loadout
+  id: ClothingOuterCoatAcidRaincoatBlue
+  equipment:
+    outerClothing: ClothingOuterCoatAcidRaincoatBlue
+  groupBy: "rain coat"
+
+- type: loadout
+  id: ClothingOuterCoatAcidRaincoatGreen
+  equipment:
+    outerClothing: ClothingOuterCoatAcidRaincoatGreen
+  groupBy: "rain coat"
+
+- type: loadout
+  id: ClothingOuterCoatAcidRaincoatMagenta
+  equipment:
+    outerClothing: ClothingOuterCoatAcidRaincoatMagenta
+  groupBy: "rain coat"
+
+- type: loadout
+  id: ClothingOuterCoatAcidRaincoatYellow
+  equipment:
+    outerClothing: ClothingOuterCoatAcidRaincoatYellow
+  groupBy: "rain coat"
+
+- type: loadout
+  id: ClothingOuterCoatBomberPunkRed
+  equipment:
+    outerClothing: ClothingOuterCoatBomberPunkRed
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketLeather
+  equipment:
+    outerClothing: ClothingOuterCoatJacketLeather
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketBiker
+  equipment:
+    outerClothing: ClothingOuterCoatJacketBiker
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketJamrock
+  equipment:
+    outerClothing: ClothingOuterCoatJacketJamrock
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatBomberAerostatic
+  equipment:
+    outerClothing: ClothingOuterCoatBomberAerostatic
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketLettermanBlue
+  equipment:
+    outerClothing: ClothingOuterCoatJacketLettermanBlue
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketLettermanBrown
+  equipment:
+    outerClothing: ClothingOuterCoatJacketLettermanBrown
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketLettermanRed
+  equipment:
+    outerClothing: ClothingOuterCoatJacketLettermanRed
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatJacketLettermanMagenta
+  equipment:
+    outerClothing: ClothingOuterCoatJacketLettermanMagenta
+  groupBy: "jackets"
+
+- type: loadout
+  id: ClothingOuterCoatBomberPinkSleeves
+  equipment:
+    outerClothing: ClothingOuterCoatBomberPinkSleeves
+  groupBy: "jackets"
+
+- type: loadout
   id: OuterCoatPirate
   equipment:
     outerClothing: ClothingOuterCoatPirate
@@ -612,16 +935,19 @@
   id: OuterCyberJacketWhite
   equipment:
     outerClothing: ClothingOuterCyberJacketWhite
+  groupBy: "CyberJacket"
 
 - type: loadout
   id: OuterCyberJacketPurple
   equipment:
     outerClothing: ClothingOuterCyberJacketPurple
+  groupBy: "CyberJacket"
 
 - type: loadout
   id: OuterCyberJacketYellow
   equipment:
     outerClothing: ClothingOuterCyberJacketYellow
+  groupBy: "CyberJacket"
 
 - type: loadout
   id: OuterDenimJacket
@@ -754,36 +1080,133 @@
   id: NeckTieBlack
   equipment:
     neck: ClothingNeckTieBlack
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieBlue
   equipment:
     neck: ClothingNeckTieBlue
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieBrown
   equipment:
     neck: ClothingNeckTieBrown
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieGreen
   equipment:
     neck: ClothingNeckTieGreen
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieOrange
   equipment:
     neck: ClothingNeckTieChem
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTieRed
   equipment:
     neck: ClothingNeckTieRed
+  groupBy: "tie"
 
 - type: loadout
   id: NeckTiePurple
   equipment:
     neck: ClothingNeckTieSci
+  groupBy: "tie"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAce
+  equipment:
+    neck: ClothingNeckScarfStripedAce
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAro
+  equipment:
+    neck: ClothingNeckScarfStripedAro
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedAroace
+  equipment:
+    neck: ClothingNeckScarfStripedAroace
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBiSexual
+  equipment:
+    neck: ClothingNeckScarfStripedBiSexual
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedGay
+  equipment:
+    neck: ClothingNeckScarfStripedGay
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedInter
+  equipment:
+    neck: ClothingNeckScarfStripedInter
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedLesbian
+  equipment:
+    neck: ClothingNeckScarfStripedLesbian
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedNonBinary
+  equipment:
+    neck: ClothingNeckScarfStripedNonBinary
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedPan
+  equipment:
+    neck: ClothingNeckScarfStripedPan
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedRainbow
+  equipment:
+    neck: ClothingNeckScarfStripedRainbow
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBlack
+  equipment:
+    neck: ClothingNeckScarfStripedBlack
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBlue
+  equipment:
+    neck: ClothingNeckScarfStripedBlue
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedBrown
+  equipment:
+    neck: ClothingNeckScarfStripedBrown
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedGreen
+  equipment:
+    neck: ClothingNeckScarfStripedGreen
+  groupBy: "scarf"
+
+- type: loadout
+  id: ClothingNeckScarfStripedRed
+  equipment:
+    neck: ClothingNeckScarfStripedRed
+  groupBy: "scarf"
 
 - type: loadout
   id: NeckNeckerchief
@@ -1177,6 +1600,11 @@
   id: ClothingEyesBlindfold
   equipment:
     eyes: ClothingEyesBlindfold
+
+- type: loadout
+  id: ClothingEyesBlindfoldFake
+  equipment:
+    eyes: ClothingEyesBlindfoldFake
 
 - type: loadout
   id: ClothingEyesEyepatch

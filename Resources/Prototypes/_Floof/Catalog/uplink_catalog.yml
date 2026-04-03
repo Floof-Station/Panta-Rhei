@@ -8,3 +8,17 @@
     Telecrystal: 1
   categories:
   - UplinkAmmo
+
+- type: listing
+  id: UplinkFireAxe
+  name: uplink-fireaxe-name
+  description: uplink-fireaxe-desc
+  icon: { sprite: /Textures/Objects/Weapons/Melee/fireaxeflaming.rsi, state: icon }
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 10
+  productEntity: FireAxeFlaming
+  cost:
+    Telecrystal: 15
+  categories:
+  - UplinkWeaponry

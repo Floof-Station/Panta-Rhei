@@ -92,10 +92,10 @@ public sealed partial class PTLSystem : EntitySystem
     {
         var megajoule = 1e6;
         var maxSpesos = 5000;//Euphoria
-        var chargeCoeff = 2;//Euphoria
+        var chargeCoeff = 200;//Euphoria
         var charge = _battery.GetCharge((ent, ent.Comp2)) / megajoule;
         // Euphoria - Modeled after real capacitors.
-        var spesos = (int) (maxSpesos * (1 - Math.Exp(-chargeCoeff * charge)));
+        var spesos = (int) (maxSpesos * (1 - Math.Exp(charge/-chargeCoeff)));
 
         if (charge <= 0 || !double.IsFinite(spesos) || spesos < 0) return;
 

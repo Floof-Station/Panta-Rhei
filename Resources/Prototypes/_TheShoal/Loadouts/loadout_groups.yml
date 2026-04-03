@@ -1,4 +1,4 @@
-
+#masks
 - type: loadoutGroup
   id: GroupSpeciesBreathToolTheShoalBase
   name: Vox-only-masks
@@ -19,3 +19,84 @@
   hidden: True
   loadouts:
   - LoadoutClothingMaskEnforcer
+
+  #weapons
+- type: loadoutGroup
+  id: Shoalpistol
+  name: Vox-only-Pistols
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - LoadoutFirearmSLB1Pistol
+
+- type: loadoutGroup
+  id: Shoalpistolcommand
+  name: Vox-only-Pistols
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - LoadoutFirearmSLB1Pistol
+
+#clothes
+- type: loadoutGroup
+  id: Shoalenforcerclothes
+  name: Vox-only-armor
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - loadoutshoalCoercialisGarb
+  
+#armors
+- type: loadoutGroup
+  id: Shoalserviceararmor
+  name: Vox-only-armor
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - loadoutshoalgambeson
+
+
+- type: loadoutGroup
+  id: Shoalenforcerarmor
+  name: Vox-only-armor
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - loadoutshoalenforcerplatemail
+  - loadoutshoalgambeson
+
+- type: loadoutGroup
+  id: Shoalenforcerhosarmor
+  name: Vox-only-armor
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - loadoutshoalenforcerplatemail
+  - loadoutshoalenforcercommanderplatemail
+  - loadoutshoalgambeson
+
+  #helms
+- type: loadoutGroup
+  id: Shoalenforcerhelmet
+  name: Vox-only-armor
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - loadoutenforcerhelm
+
+- type: loadoutGroup
+  id: Shoalenforcerhoshelmet
+  name: Vox-only-armor
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - loadoutenforcerhelm
+  - loadoutenforcercommanderhelm

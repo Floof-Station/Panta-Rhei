@@ -3,10 +3,9 @@
   name: chat-emote-name-softtrill
   category: Vocal
   whitelist:
-    components:
-    - Vocal
     tags:
     - TajaranEmotes
+    - FelinidEmotes
   blacklist:
     components:
     - BorgChassis
@@ -26,8 +25,9 @@
   name: chat-emote-name-felinetrill
   category: Vocal
   whitelist:
-    components:
-    - Vocal
+    tags:
+    - TajaranEmotes
+    - FelinidEmotes
   blacklist:
     components:
     - BorgChassis

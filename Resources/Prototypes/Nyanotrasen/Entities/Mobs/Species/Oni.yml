@@ -35,7 +35,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.42
+          radius: 0.376 # Just make it so that an Oni of any size can walk through a door
         density: 220
         restitution: 0.0
         mask:

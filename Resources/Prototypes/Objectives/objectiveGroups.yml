@@ -44,7 +44,7 @@
     TeachLessonRandomPersonObjective: 1
     KillRandomHeadObjective: 0.25
     TeachRandomHeadObjective: 0.25 # Euphoria
-    KillRandomTraitorObjective: 0.2 # DeltaV
+    #KillRandomTraitorObjective: 0.2 # DeltaV # Euphoria | Temp disabled due to incorrectly assigning invalid targets
     TeachRandomTraitorObjective: 0.2 # Euphoria
 
 - type: weightedRandom
