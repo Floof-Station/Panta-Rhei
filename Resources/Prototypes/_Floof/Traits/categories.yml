@@ -1,8 +1,9 @@
 - type: traitCategory
   id: Languages
   name: trait-category-languages
-  maxTraits: 4 #Allows foreigners to pick up to 3 languages to learn, but restricts non forigners to the same 2 they could pick before.
-  maxPoints: 2 
+  # maxTraits: 4 #Allows foreigners to pick up to 3 languages to learn, but restricts non forigners to the same 2 they could pick before.
+  # maxPoints: 2 
+  #Removed maxTrait limit to allow more RP. Each language still has costs.
   priority: 1000 # At the bottom
   accentColor: "#418b60"
   defaultExpanded: false
