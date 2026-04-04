@@ -1,0 +1,22 @@
+- type: reaction
+  id: Mammalinol
+  reactants:
+    Milk:
+      amount: 1
+    Radium:
+      amount: 1
+    Potassium:
+      amount: 1
+  products:
+    Mammalinol: 3
+
+- type: reaction
+  id: Antimammalinol
+  reactants:
+    Mammalinol:
+      amount: 1
+    Plasma:
+      amount: 1
+      catalyst: true
+  products:
+    Antimammalinol: 1

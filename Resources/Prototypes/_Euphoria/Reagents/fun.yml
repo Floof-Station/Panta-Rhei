@@ -1,0 +1,37 @@
+- type: reagent
+  id: Mammalinol
+  name: reagent-name-mammalinol
+  group: Special
+  desc: reagent-desc-mammalinol
+  physicalDesc: reagent-physical-desc-milky
+  flavor: medicine
+  color: "#915c83"
+  metabolisms:
+    Medicine:
+      effects:
+        - !type:CauseLactation
+          conditions:
+            - !type:ReagentCondition
+              reagent: Mammalinol
+              min: 5
+            - !type:ConsentCondition
+              consent: InducedLactation
+
+- type: reagent
+  id: Antimammalinol
+  name: reagent-name-antimammalinol
+  group: Special
+  desc: reagent-desc-antimammalinol
+  physicalDesc: reagent-physical-desc-chalky
+  flavor: medicine
+  color: "#ffffff"
+  metabolisms:
+    Medicine:
+      effects:
+        - !type:RemoveLactation
+          conditions:
+            - !type:ReagentCondition
+              reagent: Antimammalinol
+              min: 5
+            - !type:ConsentCondition
+              consent: InducedLactation
