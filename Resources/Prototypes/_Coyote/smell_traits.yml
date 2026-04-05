@@ -918,6 +918,17 @@
     - ExpensiveCologne
 
 - type: trait
+  id: Alcohol
+  name: trait-scent-alcohol-name
+  description: trait-scent-alcohol-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Alcohol
+
+- type: trait
   id: Desperation
   name: trait-scent-desperation-name
   description: trait-scent-desperation-desc
