@@ -10,8 +10,6 @@ namespace Content.Shared._Coyote.SniffAndSmell;
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState] // Floofstation - network this shit
 public sealed partial class ScentComponent : Component
 {
-    public override bool SendOnlyToOwner => true; // Floofstation - don't bother sending it to others, this is just for the scent editor.
-
     /// <summary>
     /// The input list of prototypes to load into the scent dictionary.
     /// </summary>
