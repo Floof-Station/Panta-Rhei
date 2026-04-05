@@ -151,7 +151,7 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(args.Examiner, proto.Lewd))
                 continue;
-            var smellColor = "Cyan";
+            var smellColor = "DarkGray"; // Euphoria - make less distracting 
             if (proto.Stinky && proto.Lewd)
             {
                 smellColor = "Orange";
