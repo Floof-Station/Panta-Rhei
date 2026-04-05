@@ -45,7 +45,7 @@
 
 # =========== Alternative PDAs ==============
 
-# Alternative PDA base
+# Alternative PDA base TG style
 - type: entity
   parent: BasePDA
   id: BaseAlternativePDA
@@ -78,6 +78,44 @@
         pda
   - type: Icon
     sprite: _Floof/Objects/Devices/alternative_head_pda.rsi
+    state: pda
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+
+# Alternative PDA base DV style
+- type: entity
+  parent: BasePDA
+  id: BaseAlternativePDA2
+  name: Base Alternative PDA
+  description: Personal Data Assistant.
+  components:
+  - type: Pda
+    id: PassengerIDCard
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_pda.rsi # DeltaV aPDA Resprite File Path
+    scale: 0.75, 0.75 # DeltaV aPDA Resprite PDA Size change, makes it smaller for the full detail.
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda
+  - type: Icon
+    sprite: _Floof/Objects/Devices/alternative_pda.rsi
     state: pda
   - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
     preinstalled:
@@ -295,6 +333,47 @@
     - NewsReaderCartridge
     - NanoChatCartridge
     - GlimmerMonitorCartridge
+
+# chaplain
+
+- type: entity
+  parent: BaseAlternativePDA2
+  id: SpiritualCounselorPDA
+  name: spiritual counselor PDA
+  description: The PDA reaks of understanding.
+  components:
+  - type: Pda
+    id: SpiritualCounselorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-sc
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#8900c9"
+  - type: Icon
+    state: pda-sc
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
+      - NanoChatCartridge # DeltaV
+
+- type: entity
+  parent: SpiritualCounselorPDA
+  id: NoostatisticianPDA
+  name: noostatistician PDA
+  description: The bare minimum required for a holy PDA.
+  components:
+  - type: Pda
+    id: NoostatisticianIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-noos
 
 # chief engineer
 - type: entity

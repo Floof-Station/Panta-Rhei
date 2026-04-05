@@ -15,6 +15,8 @@ job-alt-title-station-foreman = Station Foreman
 job-alt-title-station-architect = Station Architect
 job-alt-title-quartermaster = Quartermaster
 job-alt-title-head-of-acquisitions = Head of Acquisitions
+job-alt-title-spiritual-counselor = Spiritual Counselor
+job-alt-title-noostatistician = Noostatistician
 
 loadout-group-captain-pdas = Captain pda
 loadout-group-hos-pdas = Head of Security pda
@@ -24,3 +26,4 @@ loadout-group-head-of-personnel-pdas = Head of Personnel pda
 loadout-group-mysta-pdas = Mystagogue pda
 loadout-group-chief-engineer-pdas = Chief Engineer pda
 loadout-group-logistics-officer-pdas = Logistics Officer pda
+loadout-group-chaplain-pdas = Chaplain pda

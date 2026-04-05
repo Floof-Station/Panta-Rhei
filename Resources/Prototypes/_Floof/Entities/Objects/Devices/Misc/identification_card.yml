@@ -129,3 +129,21 @@
   components:
   - type: IdCard
     jobTitle: job-alt-title-head-of-acquisitions
+
+#Chaplain
+- type: entity
+  parent: ChaplainIDCard
+  id: SpiritualCounselorIDCard
+  name: spiritual counselor card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-spiritual-counselor
+
+- type: entity
+  parent: ChaplainIDCard
+  id: NoostatisticianIDCard
+  name: Noostatistician card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-noostatistician
+

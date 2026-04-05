@@ -109,3 +109,13 @@
   maxLimit: 1
   loadouts:
   - ClothingUnderSocksChaplain
+
+- type: loadoutGroup
+  id: FloofChaplainPDAs
+  name: loadout-group-chaplain-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ChaplainPDA
+  - SpiritualCounselorPDA
+  - NoostatisticianPDA
