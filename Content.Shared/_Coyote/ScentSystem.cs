@@ -510,7 +510,8 @@ public sealed class ScentSystem : EntitySystem
 
         foreach (var ticket in component.PendingSmells.ToArray())
         {
-            if (!_proto.TryIndex<ScentPrototype>(ticket.ScentProto, out var scentProto))
+            // Floofstation - check for deletion
+            if (!_proto.TryIndex<ScentPrototype>(ticket.ScentProto, out var scentProto) || Deleted(ticket.SourceEntity))
             {
                 component.PendingSmells.Remove(ticket);
                 continue; // invalid scent proto
