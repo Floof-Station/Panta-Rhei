@@ -257,3 +257,33 @@ trait-scent-piss-desc = You smell like piss.
 
 trait-scent-pomegranate-name = Pomegranates
 trait-scent-pomegranate-desc = You smell like pomegranates.
+
+trait-scent-desperation-name = Desperation
+trait-scent-desperation-desc = You smell desperate.
+
+trait-scent-nectar-name = Nectar
+trait-scent-nectar-desc = You smell like sweet flower nectar.
+
+trait-scent-bungo-name = Bungo Fruit
+trait-scent-bungo-desc = You smell like fresh bungo fruit.
+
+trait-scent-burntfur-name = Burnt Fur
+trait-scent-burntfur-desc = You smell like crisp, burnt fur. Ouch.
+
+trait-scent-funny-name = Humor
+trait-scent-funny-desc = You smell funny! Honk Co. Cologne does not guarantee uncontrollable laughter.
+
+trait-scent-bakery-name = Bakery
+trait-scent-bakery-desc = You smell like a well-stocked bakery.
+
+trait-scent-silicone-name = Silicone
+trait-scent-silicone-desc = You smell like silicone.
+
+trait-scent-rubber-name = Rubber
+trait-scent-rubber-desc = You smell like rubber.
+
+trait-scent-cigarettes-name = Cigarettes
+trait-scent-cigarettes-desc = You reek of cigarettes. Consider quitting such habits.
+
+trait-scent-cum-name = Cum
+trait-scent-cum-desc = You reek of semen. Ew.

@@ -12,3 +12,8 @@
   id: NoClone
   name: Opt out from paradox anomalies
   description: Toggle this on to disallow yourself from being cloned via paradox anomalies.
+
+- type: consentToggle
+  id: PreventSmellDetection
+  name: Block smelling scents entirely
+  description: Turn this on to stop passively smelling people. Useful for if the pop-ups get annoying.

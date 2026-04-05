@@ -31,8 +31,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
 
-// Euphoria - no spam pls
-    public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
+    public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(45); // Euphoria - MAKE TAKE LONGER. The popups are a little too common.
     public TimeSpan NextSmellDetectionTime = TimeSpan.Zero;
 
     /// <inheritdoc/>
@@ -152,7 +151,7 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(args.Examiner, proto.Lewd))
                 continue;
-            var smellColor = "DarkGray"; // Euphoria - Less distracting.
+            var smellColor = "Cyan";
             if (proto.Stinky && proto.Lewd)
             {
                 smellColor = "Orange";
@@ -349,6 +348,9 @@ public sealed class ScentSystem : EntitySystem
         // lewd check
         if (!LewdOkay(uid, scentProto.Lewd))
             return false; // cant detect lewd scents
+        // euphoria - all scent snoof check
+        if (!SmellOkay(uid))
+            return false;
         if (SmellGuidIsOnCooldown(component, scentGuid))
             return false; // on cooldown
         // check LOS, if required
@@ -769,7 +771,7 @@ public sealed class ScentSystem : EntitySystem
     /// <summary>
     /// Lewd guard: prevents smelling lewd scents if the user has no business doing so
     /// If the scent isnt lewd, then, its allowed i guess
-    /// Otherwise, checl consents
+    /// Otherwise, check consents
     /// </summary>
     private bool LewdOkay(EntityUid uid, bool lood)
     {
@@ -778,6 +780,8 @@ public sealed class ScentSystem : EntitySystem
         return !_consent.HasConsent(uid, "CantSmellLewdScents");
         // dont like the fact that consents default to *ON*
     }
-   #endregion
+
+    private bool SmellOkay(EntityUid uid) => !_consent.HasConsent(uid, "PreventSmellDetection"); // Euphoria - consent toggle for smelling at all.
+    #endregion
 
 }

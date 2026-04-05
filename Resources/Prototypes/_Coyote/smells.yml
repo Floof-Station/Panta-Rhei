@@ -3,7 +3,7 @@
   abstract: true
   closeRange: 2
   farRange: 10
-  minCooldownSeconds: 20
+  minCooldownSeconds: 45 # Euphoria - MAKE TAKE LONGER. The popups are a little too common.
   maxCooldownSeconds: 120
   msgsExamine:
   - scent-default-examine
@@ -514,7 +514,6 @@
   id: Tobacco
   parent:
   - ScentBase
-  isStinky: true # Euphoria - stinky scents are stinky bro
   msgsExamine:
   - scent-tobacco-examine
   msgsDirect:
@@ -1236,6 +1235,126 @@
   msgsFar:
   - scent-alcohol-far
 
+- type: scent
+  id: Desperation
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-desperation-examine
+  msgsDirect:
+  - scent-desperation-direct
+  msgsClose:
+  - scent-desperation-close
+  msgsFar:
+  - scent-desperation-far
+
+- type: scent
+  id: Nectar
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-nectar-examine
+  msgsDirect:
+  - scent-nectar-direct
+  msgsClose:
+  - scent-nectar-close
+  msgsFar:
+  - scent-nectar-far
+
+- type: scent
+  id: Bungo
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-bungo-examine
+  msgsDirect:
+  - scent-bungo-direct
+  msgsClose:
+  - scent-bungo-close
+  msgsFar:
+  - scent-bungo-far
+
+- type: scent
+  id: BurntFur
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-burntfur-examine
+  msgsDirect:
+  - scent-burntfur-direct
+  msgsClose:
+  - scent-burntfur-close
+  msgsFar:
+  - scent-burntfur-far
+
+- type: scent
+  id: Funny
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-funny-examine
+  msgsDirect:
+  - scent-funny-direct
+  msgsClose:
+  - scent-funny-close
+  msgsFar:
+  - scent-funny-far
+
+- type: scent
+  id: Bakery
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-bakery-examine
+  msgsDirect:
+  - scent-bakery-direct
+  msgsClose:
+  - scent-bakery-close
+  msgsFar:
+  - scent-bakery-far
+
+- type: scent
+  id: Silicone
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-silicone-examine
+  msgsDirect:
+  - scent-silicone-direct
+  msgsClose:
+  - scent-silicone-close
+  msgsFar:
+  - scent-silicone-far
+
+- type: scent
+  id: Rubber
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-rubber-examine
+  msgsDirect:
+  - scent-rubber-direct
+  msgsClose:
+  - scent-rubber-close
+  msgsFar:
+  - scent-rubber-far
+
+- type: scent
+  id: Cigarettes
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-cigarettes-examine
+  msgsDirect:
+  - scent-cigarettes-direct
+  msgsClose:
+  - scent-cigarettes-close
+  msgsFar:
+  - scent-cigarettes-far
+
 # lewd
 
 - type: scent
@@ -1266,3 +1385,17 @@
   - scent-piss-close
   msgsFar:
   - scent-piss-far
+
+- type: scent
+  id: Cum # wow there really are SOME freaks out there...
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-cum-examine
+  msgsDirect:
+  - scent-cum-direct
+  msgsClose:
+  - scent-cum-close
+  msgsFar:
+  - scent-cum-far

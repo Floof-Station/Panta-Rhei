@@ -918,15 +918,103 @@
     - ExpensiveCologne
 
 - type: trait
-  id: Alcohol
-  name: trait-scent-alcohol-name
-  description: trait-scent-alcohol-desc
+  id: Desperation
+  name: trait-scent-desperation-name
+  description: trait-scent-desperation-desc
   category: Scents
   cost: 0 # Euphoria
   effects:
   - !type:AddScentTraitEffect
     scents:
-    - Alcohol
+    - Desperation
+
+- type: trait
+  id: Nectar
+  name: trait-scent-nectar-name
+  description: trait-scent-nectar-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Nectar
+
+- type: trait
+  id: Bungo
+  name: trait-scent-bungo-name
+  description: trait-scent-bungo-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Bungo
+
+- type: trait
+  id: BurntFur
+  name: trait-scent-burntfur-name
+  description: trait-scent-burntfur-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - BurntFur
+
+- type: trait
+  id: Funny
+  name: trait-scent-funny-name
+  description: trait-scent-funny-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Funny
+
+- type: trait
+  id: Bakery
+  name: trait-scent-bakery-name
+  description: trait-scent-bakery-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Bakery
+
+- type: trait
+  id: Silicone
+  name: trait-scent-silicone-name
+  description: trait-scent-silicone-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Silicone
+
+- type: trait
+  id: Rubber
+  name: trait-scent-rubber-name
+  description: trait-scent-rubber-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Rubber
+
+- type: trait
+  id: Cigarettes
+  name: trait-scent-cigarettes-name
+  description: trait-scent-cigarettes-desc
+  category: Scents
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Cigarettes
 
 # lewd
 
@@ -951,3 +1039,14 @@
   - !type:AddScentTraitEffect
     scents:
     - Pomegranate
+
+- type: trait
+  id: Cum
+  name: trait-scent-cum-name
+  description: trait-scent-cum-desc
+  category: ScentsNSFW
+  cost: 0 # Euphoria
+  effects:
+  - !type:AddScentTraitEffect
+    scents:
+    - Cum

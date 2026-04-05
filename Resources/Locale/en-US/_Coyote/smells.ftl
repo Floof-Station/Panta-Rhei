@@ -535,6 +535,60 @@ scent-alcohol-direct       = {CAPITALIZE($src)} smells like alcohol.
 scent-alcohol-close        = You smell a trace of alcohol.
 scent-alcohol-far          = You catch a faint whiff of alcohol.
 
+# desperation
+scent-desperation-examine      = desperation
+scent-desperation-direct       = {CAPITALIZE($src)} has a thick miasma of desperation.
+scent-desperation-close        = You smell a trace of desperation.
+scent-desperation-far          = You catch a faint whiff of desperation.
+
+# nectar
+scent-nectar-examine      = nectar
+scent-nectar-direct       = {CAPITALIZE($src)} smells like flower nectar.
+scent-nectar-close        = You smell a trace of nectar.
+scent-nectar-far          = You catch a faint whiff of nectar.
+
+# bungo
+scent-bungo-examine      = bungo
+scent-bungo-direct       = {CAPITALIZE($src)} smells like fresh bungo fruit.
+scent-bungo-close        = You smell a trace of bungo.
+scent-bungo-far          = You catch a faint whiff of bungo.
+
+# burntfur
+scent-burntfur-examine      = burnt fur
+scent-burntfur-direct       = {CAPITALIZE($src)} smells like burnt fur.
+scent-burntfur-close        = You smell a trace of burnt fur.
+scent-burntfur-far          = You catch a faint whiff of burnt fur.
+
+# funny
+scent-funny-examine      = humor
+scent-funny-direct       = {CAPITALIZE($src)} totally smells funny.
+scent-funny-close        = You smell a trace of something funny.
+scent-funny-far          = You catch a faint whiff of something funny.
+
+# bakery
+scent-bakery-examine      = bakery
+scent-bakery-direct       = {CAPITALIZE($src)} smells like a bakery.
+scent-bakery-close        = You smell a trace of a bakery.
+scent-bakery-far          = You catch a faint whiff of a bakery.
+
+# silicone
+scent-silicone-examine      = silicone
+scent-silicone-direct       = {CAPITALIZE($src)} smells like silicone.
+scent-silicone-close        = You smell a trace of silicone.
+scent-silicone-far          = You catch a faint whiff of silicone.
+
+# rubber
+scent-rubber-examine      = rubber
+scent-rubber-direct       = {CAPITALIZE($src)} smells like rubber.
+scent-rubber-close        = You smell a trace of rubber.
+scent-rubber-far          = You catch a faint whiff of rubber.
+
+# cigarettes
+scent-cigarettes-examine      = cigarettes
+scent-cigarettes-direct       = {CAPITALIZE($src)} reeks of cigarettes.
+scent-cigarettes-close        = You smell a trace of cigarettes.
+scent-cigarettes-far          = You catch a faint whiff of cigarettes.
+
 # lewd
 
 # pomegranates
@@ -548,3 +602,9 @@ scent-piss-examine      = piss
 scent-piss-direct       = {CAPITALIZE($src)} smells like piss.
 scent-piss-close        = You smell a trace of piss.
 scent-piss-far          = You catch a faint whiff of piss.
+
+# cum
+scent-cum-examine      = cum
+scent-cum-direct       = {CAPITALIZE($src)} smells like cum.
+scent-cum-close        = You smell a trace of cum.
+scent-cum-far          = You catch a faint whiff of cum.
