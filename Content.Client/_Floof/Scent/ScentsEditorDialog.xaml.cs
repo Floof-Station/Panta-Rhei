@@ -77,7 +77,7 @@ public sealed partial class ScentsEditorDialog : FancyWindow
 
     private bool FilterPrototypes(IPrototype scentPrototype)
     {
-        if (scentPrototype is not ScentPrototype s)
+        if (scentPrototype is not ScentPrototype s || s.Abstract)
             return true;
 
         return !s.Lewd || HasLewdConsent;
