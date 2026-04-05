@@ -71,8 +71,8 @@ public sealed class ScentSystem : EntitySystem
             InteractionVerb verb = new()
             {
                 Text = "Smell",
-                Priority = 2,
-                Category = VerbCategory.Interaction,
+                Priority = -19, // Floofstation - there's no way you want to randomly do this to your co-worker.
+                Category = VerbCategory.Interaction, // Floofstation - this doesn't belong here, but we'll leave it to avoid cluttering the verb ui
                 Disabled = !_interact.InRangeUnobstructed(
                     args.User,
                     args.Target,
@@ -99,7 +99,7 @@ public sealed class ScentSystem : EntitySystem
         InteractionVerb toggleVerb = new()
         {
             Text = toggleText,
-            Priority = 1,
+            Priority = -20, // Floofstation - below "smell"
             Category = VerbCategory.Interaction,
             Act = () =>
             {
@@ -221,12 +221,13 @@ public sealed class ScentSystem : EntitySystem
     /// <summary>
     /// Adds a scent prototype to a scent component!
     /// </summary>
-    public void AddScentPrototype(ScentComponent component, ProtoId<ScentPrototype> scentProtoId)
+    public void AddScentPrototype(Entity<ScentComponent> ent, ProtoId<ScentPrototype> scentProtoId) // Floofstation - who thought it's a good idea to only pass the component?
     {
         if (_proto.TryIndex(scentProtoId, out var scentProto))
         {
             var scentInstance = new Scent(scentProto, Guid.NewGuid().ToString());
-            component.Scents.Add(scentInstance);
+            ent.Comp.Scents.Add(scentInstance); // Floofstation
+            Dirty(ent); // Floofstation
         }
     }
 
