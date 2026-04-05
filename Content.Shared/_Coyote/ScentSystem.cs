@@ -14,6 +14,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -30,6 +31,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly SharedConsentSystem _consent = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
 // Euphoria - no spam pls
     public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
@@ -231,6 +233,23 @@ public sealed class ScentSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    ///     Floofstation. Replaces the target entity's list of scents with the provided list.
+    ///     Adds one if it doesn't exist. If checkDelay is true, additionally checks the scent setting delay.
+    /// </summary>
+    public bool TrySetScents(EntityUid targetEntity, List<Scent> scents, bool checkDelay = false)
+    {
+        var scentComp = EnsureComp<ScentComponent>(targetEntity);
+        if (checkDelay && !scentComp.ScentUpdateDelay.TryUpdate(_time))
+            return false;
+
+        scentComp.Scents.Clear();
+        scentComp.Scents.AddRange(scents);
+        Dirty(targetEntity, scentComp);
+
+        return true;
+    }
+
     /// <inheritdoc/>
     /// <summary>
     /// Does two things:
@@ -239,7 +258,13 @@ public sealed class ScentSystem : EntitySystem
     /// </summary>
     public override void Update(float frameTime)
     {
-        base.Update(frameTime);
+        // Floofstation - client cannot predict this shit
+        // Coyote station put this update loop in Shared without understanding the consequences
+        // Fortunately for them, scent and smeller components are non-networked on their side.
+        // Unfortunately for us, at least one of those is networked.
+        if (_net.IsClient)
+            return;
+
         if (NextSmellDetectionTime > _time.CurTime)
             return;
         NextSmellDetectionTime = _time.CurTime + BaseSmellCooldown;
@@ -780,5 +805,4 @@ public sealed class ScentSystem : EntitySystem
         // dont like the fact that consents default to *ON*
     }
    #endregion
-
 }

@@ -1,3 +1,4 @@
+using Content.Shared._Floof.Util;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -24,4 +25,10 @@ public sealed partial class ScentComponent : Component
     [ViewVariables]
     [DataField, AutoNetworkedField]
     public List<Scent> Scents = new();
+
+    /// <summary>
+    ///     Floofstation - how often the client can set scents. Default is 250 ms, well beyond human reaction range, should prevent spam-setting
+    /// </summary>
+    [DataField(serverOnly: true)]
+    public Ticker ScentUpdateDelay = new(TimeSpan.FromMilliseconds(250), true);
 }
