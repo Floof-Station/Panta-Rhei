@@ -41,7 +41,10 @@ public sealed class ScentSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ScentComponent, ComponentStartup>(OnScentStartup);
-        SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(GetSmellVerbs);
+        // Floofstation - changed to InnateVerb for parity with InteractionVerbsSystem
+        // Why? Because for some ungodly reason this system shoves its verbs into the category meant only for interaction verbs
+        // And that's causing sorting issues
+        SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InnateVerb>>(GetSmellVerbs);
         SubscribeLocalEvent<ScentComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ActorComponent, ComponentStartup>(AddSmeller);
     }
@@ -62,7 +65,7 @@ public sealed class ScentSystem : EntitySystem
     /// <summary>
     /// Adds smell verbs to smellers.
     /// </summary>
-    private void GetSmellVerbs(EntityUid uid, ScentComponent component, GetVerbsEvent<InteractionVerb> args)
+    private void GetSmellVerbs(EntityUid uid, ScentComponent component, GetVerbsEvent<InnateVerb> args) // Floofstation - changed to InnateVerb
     {
         if (!TryComp<ScentComponent>(args.Target, out var scentComp))
             return;
@@ -70,7 +73,7 @@ public sealed class ScentSystem : EntitySystem
             return;
         if (args.CanInteract)
         {
-            InteractionVerb verb = new()
+            InnateVerb verb = new() // Floofstation - changed to InnateVerb
             {
                 Text = "Smell",
                 Priority = -19, // Floofstation - there's no way you want to randomly do this to your co-worker.
@@ -98,7 +101,7 @@ public sealed class ScentSystem : EntitySystem
         var isIgnoringThem = IsIgnoringSmell(smellerComp, scentComp);
         var toggleText = isIgnoringThem ? "Notice Scent" : "Ignore Scent";
 
-        InteractionVerb toggleVerb = new()
+        InnateVerb toggleVerb = new() // Floofstation - changed to InnateVerb
         {
             Text = toggleText,
             Priority = -20, // Floofstation - below "smell"

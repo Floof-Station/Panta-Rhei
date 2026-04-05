@@ -1,5 +1,5 @@
 scent-editor-title = Scent Editor V1.0F
-scent-editor-current-header = Current scents
+scent-editor-current-header = Current scents (up to 3)
 scent-editor-presets = Presets
 scent-editor-save-preset-header = Save current as preset
 scent-editor-dropdown-title = Add scent

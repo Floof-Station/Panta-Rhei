@@ -16,6 +16,7 @@ public abstract class SharedScentEditingSystem : EntitySystem
 
     // TODO cvar? This is roughly the number the traits allowed you to have, but without the lewd/non-lewd separation.
     // If you edit this without making it a cvar your pc will explode at 3 am
+    // Also it's hardcoded in ftl, so do something about that too
     public static int MaxScents = 3;
 
     public List<ScentData> SanitizeScentList(List<ScentData> data)
