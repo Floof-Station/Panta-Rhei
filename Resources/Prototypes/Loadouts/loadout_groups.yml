@@ -596,7 +596,6 @@
   minLimit: 0
   loadouts:
   - ChaplainHead
-  - ChaplainHaloLustro
   - ChaplainNunHood
   - ChaplainPlagueHat
   - ChaplainWitchHat
@@ -622,12 +621,6 @@
   - ClothingUniformFuneralSuit
   - ClothingUniformFuneralSuitSkirt
   # End Imp additions
-  # Begin Euph additions
-  - ChaplainLustroAlt
-  - ChaplainLustro
-  - ChaplainInfernusLustro
-  - ChaplainInfernusLustroAlt
-  # End Euph additions
 
 - type: loadoutGroup
   id: ChaplainOuterClothing
@@ -635,7 +628,6 @@
   name: loadout-group-chaplain-outerclothing
   minLimit: 0
   loadouts:
-  - ChaplainCoatLustro
   - ChaplainPlagueSuit
   - ChaplainNunRobe
   - ChaplainBlackHoodie
@@ -648,7 +640,6 @@
   minLimit: 0
   loadouts:
   - ChaplainNeck
-  - ChaplainStoleLustro # Euphoria
   - ScarfBlack # DeltaV
 
 - type: loadoutGroup
@@ -664,7 +655,6 @@
   minLimit: 1
   loadouts:
   - Bible
-  - BibleLustro # Euphoria
   - BibleNanoTrasen
   - BibleDruid
   - BibleHonk
