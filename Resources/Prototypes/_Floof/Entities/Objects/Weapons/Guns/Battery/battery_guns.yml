@@ -10,6 +10,9 @@
     layers:
     - state: icon
       shader: unshaded
+  - type: Item
+    size: Normal
+    sprite: Objects/Fun/pondering_orb.rsi
   - type: Gun
     fireRate: 2
     soundGunshot:
