@@ -1,3 +1,4 @@
+# =================   General   ====================== #
 - type: trait
   id: LightStep
   name: trait-light-step-name
@@ -15,4 +16,79 @@
     components:
     - type: FootstepVolumeModifier
       volume: -10 # same as EE, makes it 2x quieter
+# =================================================== #
 
+
+# ================= Oni traits ====================== #
+- type: trait
+  id: Spearmaster
+  name: trait-spearmaster-name
+  description: trait-spearmaster-desc
+  category: Skills
+  cost: 0
+  conflicts:
+  - Swashbuckler
+  - WeaponsGeneralist
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Oni
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: BonusMeleeDamage
+      damageModifierSet:
+        coefficients:
+          Blunt: 1.25
+          Slash: 1.25
+          Piercing: 1.35
+          Asphyxiation: 1.35
+
+- type: trait
+  id: Swashbuckler
+  name: trait-swashbuckler-name
+  description: trait-swashbuckler-desc
+  category: Skills
+  cost: 0
+  conflicts:
+  - Spearmaster
+  - WeaponsGeneralist
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Oni
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: BonusMeleeDamage
+      damageModifierSet:
+        coefficients:
+          Blunt: 1.25
+          Slash: 1.35
+          Piercing: 1.25
+          Asphyxiation: 1.35
+
+- type: trait
+  id: WeaponsGeneralist
+  name: trait-weaponsgeneralist-name
+  description: trait-weaponsgeneralist-desc
+  category: Skills
+  cost: 0
+  conflicts:
+  - Spearmaster
+  - Swashbuckler
+  conditions:
+  - !type:OneOfSpeciesCondition
+    species:
+    - Oni
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: BonusMeleeDamage
+      damageModifierSet:
+        coefficients:
+          Blunt: 1.3
+          Slash: 1.3
+          Piercing: 1.3
+          Asphyxiation: 1.35
+# =================================================== #

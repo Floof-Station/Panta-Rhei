@@ -21,3 +21,5 @@ trait-lethargy-desc =
 trait-weakness-name = Weakness
 trait-weakness-desc =
     You are naturally more vulnerable to fatigue. Your stamina pool is halved, making you greately vulnerable to shoving and stunning attacks.
+
+
