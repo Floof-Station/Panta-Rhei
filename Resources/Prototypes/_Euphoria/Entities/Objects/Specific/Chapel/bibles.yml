@@ -1,0 +1,11 @@
+- type: entity
+  parent: Bible
+  id: BibleLustroEclessia
+  name: ritus ignis
+  description: The holy book of Lustro Eclessia. Praise be Sol'Magmus...
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Chapel/ritusignis.rsi
+    state: icon
+  - type: Item
+    sprite: _Euphoria/Objects/Specific/Chapel/ritusignis.rsi

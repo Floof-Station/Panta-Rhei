@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckLustroEclessiaStole
+  name: lustro eclessia stole
+  description: A religious ornament worn by those who teach the faith of Lustro Eclessia
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Neck/Stoles/lustrostole.rsi
+  - type: Clothing
+    slots: [neck]
+    sprite: _Euphoria/Clothing/Neck/Stoles/lustrostole.rsi
+  - type: Item
+    storedRotation: 90
