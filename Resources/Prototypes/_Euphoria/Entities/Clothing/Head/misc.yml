@@ -12,7 +12,10 @@
   - type: Clothing
     slots: [head]
     sprite: _Euphoria/Clothing/Head/Misc/lustrohalo.rsi
-    shader: unshaded
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: unshaded
   - type: PointLight
     color: '#CD8014FF'
     radius: 2.0

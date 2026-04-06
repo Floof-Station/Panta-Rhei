@@ -8,6 +8,10 @@
     sprite: _Euphoria/Clothing/OuterClothing/WinterCoats/lustrochap.rsi
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/WinterCoats/lustrochap.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING_lighting
+        shader: unshaded
 
 - type: entity
   parent: ClothingOuterWinterCoat
