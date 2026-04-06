@@ -19,7 +19,5 @@
     energy: 1.0
   - type: AmbientSound
     range: 2
-    sound: &fireplace
-      path: /Audio/Ambience/Objects/fireplace.ogg
-      params:
-        volume: -24
+    sound: /Audio/Ambience/Objects/fireplace.ogg
+    volume: -18
