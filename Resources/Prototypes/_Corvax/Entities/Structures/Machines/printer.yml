@@ -25,47 +25,11 @@
     producingSound: /Audio/Machines/scanning.ogg
     idleState: icon
     runningState: building
-    staticRecipes:
-    - PaperTemplateCommandEmergencyPersonalRequest
-    - PaperTemplateCommandStationRequestForAssistanceRecipe
-    - PaperTemplateEngineeringBuildingPermitRecipe
-    - PaperTemplateEpistemicsBorgificationNoticeRecipe
-    - PaperTemplateEpistemicsProductionRequestRecipe
-    - PaperTemplateEpistemicsPsionicSelfIdentificationRecipe
-    - PaperTemplateHopAccessPermitRecipe
-    - PaperTemplateHopJobTransferRequestRecipe
-    - PaperTemplateHopCrewmateIdentificationRecipe
-    - PaperTemplateHopFormalComplaintRecipe
-    - PaperTemplateHopOrderOfDismissalRecipe
-    - PaperTemplateHopDismissalOfDepartmentHeadRecipe
-    - PaperTemplateHopEmploymentApplicationRecipe
-    - PaperTemplateHopRestrictedEquipmentPermitRecipe
-    - PaperTemplateHopRestrictedWeaponsPermitRecipe
-    - PaperTemplateJusticePardonRequestRecipe
-    - PaperTemplateJusticeRestrainingOrderRecipe
-    - PaperTemplateJusticeTrialDocketCivilRecipe
-    - PaperTemplateJusticeTrialDocketCriminalRecipe
-    - PaperTemplateJusticeTrialDocketTestimonyRecipe
-    - PaperTemplateLogisticsCargoRequestRecipe
-    - PaperTemplateMedicalOrderOfDismissalRecipe
-    - PaperTemplateMedicalDeathCertificateRecipe
-    - PaperTemplateSecurityArrestReportRecipe
-    - PaperTemplateSecurityArrestWarrantRecipe
-    - PaperTemplateSecurityDepartSearchWarrantRecipe
-    - PaperTemplateSecurityDetectiveReportRecipe
-    - PaperTemplateSecurityFurloughRequestRecipe
-    - PaperTemplateSecurityIndividualSearchWarrantRecipe
-    - PaperTemplateSecurityInmateRequestRecipe
-    - PaperTemplateSecurityVisitationRequestRecipe
-    - PaperTemplateServiceBotanyRequestRecipe
-    - PaperTemplateServiceRestrictedPlantPermitRecipe
+    staticPacks:
+    - PrinterDocuments
   - type: EmagLatheRecipes
-    emagStaticRecipes:
-    - PrintedDocumentErrorLoadingFormHeaderRecipe
-    - PrintedDocumentNoticeOfLiquidationRecipe
-    - PrintedDocumentBusinessDealRecipe
-    - PrintedDocumentNoteBeginningMilitaryActionsRecipe
-    - PrintedDocumentReportAccomplishmentGoalsRecipe
+    emagStaticPacks:
+    - EmagPrinterDocuments
   - type: Fixtures
     fixtures:
       fix1:

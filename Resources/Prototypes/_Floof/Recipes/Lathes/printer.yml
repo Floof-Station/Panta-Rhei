@@ -12,61 +12,71 @@
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateCommandRecipe
-  category: PaperTemplateCommand
+  categories:
+    - PaperTemplateCommand
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateCommonRecipe
-  category: PaperTemplateCommon
+  categories:
+    - PaperTemplateCommon
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateEngineeringRecipe
-  category: PaperTemplateEngineering
+  categories:
+    - PaperTemplateEngineering
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateEpistemicsRecipe
-  category: PaperTemplateEpistemics
+  categories:
+    - PaperTemplateEpistemics
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateHopRecipe
-  category: PaperTemplateHop
+  categories:
+    - PaperTemplateHop
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateJusticeRecipe
-  category: PaperTemplateJustice
+  categories:
+    - PaperTemplateJustice
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateLogisticsRecipe
-  category: PaperTemplateLogistics
+  categories:
+     - PaperTemplateLogistics
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateMedicalRecipe
-  category: PaperTemplateMedical
+  categories:
+    - PaperTemplateMedical
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateSecurityRecipe
-  category: PaperTemplateSecurity
+  categories:
+    - PaperTemplateSecurity
 
 - type: latheRecipe
   abstract: true
   parent: BasePaperTemplateRecipe
   id: BasePaperTemplateServiceRecipe
-  category: PaperTemplateService
+  categories:
+    - PaperTemplateService
 
 # Command
 

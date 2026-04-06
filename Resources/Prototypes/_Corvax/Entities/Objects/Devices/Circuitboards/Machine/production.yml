@@ -6,8 +6,7 @@
   components:
   - type: MachineBoard
     prototype: PrinterDoc
-    requirements:
-      MatterBin: 3
-      Manipulator: 1
-    materialRequirements:
+    stackRequirements: #Euphoria - new recipe format
+      #MatterBin: 3 Euphoria - matterbins dont exist here, now its all arms
+      Manipulator: 4
       Glass: 1
