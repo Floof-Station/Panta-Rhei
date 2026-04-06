@@ -1,5 +1,4 @@
-﻿paper = paper
-ent-SheetPrinter = paper
+﻿ent-SheetPrinter = paper
     .suffix = Full
     .desc = A piece of white paper.
 ent-SheetPrinter1 = { ent-SheetPrinter }
