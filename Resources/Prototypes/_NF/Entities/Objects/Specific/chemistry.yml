@@ -63,13 +63,13 @@
       - CentrifugeCompatible # Vial > CentrifugeCompatible
       - Syringe
       components:
-      - Hypospray
+      - Injector # Euphoria Injector<Hypospray
 
 - type: entity
   name: corpsman's medical pouch
   id: CorpsmanMedicalPouch
-  parent: [ MedicalPouch, BaseC3SyndicateContraband] # Frontier: BaseSyndicateContraband > BaseC3SyndicateContraband
   description: Holds up to 15 tiny medical items.
+  parent: [ MedicalPouch, BaseSyndicateContraband ]
   components:
   - type: Sprite
     sprite: _NF/Objects/Storage/Pouches/pouch_small.rsi
