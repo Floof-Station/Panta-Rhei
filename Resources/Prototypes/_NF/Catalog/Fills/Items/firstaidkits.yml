@@ -30,41 +30,43 @@
     - id: DexPlusMedicalVial
     - id: SalineMedicalVial
 
-- type: entity
-  id: MedicalPouchFilledHigh
-  suffix: Contractor, High Quality
-  parent: MedicalPouch
-  components:
-  - type: StorageFill
-    contents:
-    - id: BruizineMedicalVialBluespace
-    - id: LacerinolMedicalVialBluespace
-    - id: PuncturaseMedicalVialBluespace
-    - id: OligomersMedicalVialBluespace
-    - id: OmnizineMedicalVialBluespace
-    - id: PyrazineMedicalVialBluespace
-    - id: LeporazineMedicalVialBluespace
-    - id: InsuzineMedicalVialBluespace
-    - id: StellibininMedicalVialBluespace
-    - id: OligArithMedicalVialBluespace
-    - id: DexPlusMedicalVialBluespace
-    - id: SalineMedicalVialBluespace
-
-- type: entity
-  id: MedicalPouchFilledERT
-  suffix: ERT, High Quality
-  parent: MedicalPouch
-  components:
-  - type: StorageFill
-    contents:
-    - id: BruizineMedicalVialBluespace
-    - id: LacerinolMedicalVialBluespace
-    - id: PuncturaseMedicalVialBluespace
-    - id: OligomersMedicalVialBluespace
-    - id: OmnizineMedicalVialBluespace
-    - id: HyperzineMedicalVialBluespace
-    - id: PyrazineMedicalVialBluespace
-    - id: StellibininMedicalVialBluespace
-    - id: OligArithMedicalVialBluespace
-    - id: DexPlusMedicalVialBluespace
-    - id: SalineMedicalVialBluespace
+# Ephoria: Remove bluespace vial fills
+#- type: entity
+#  id: MedicalPouchFilledHigh
+#  suffix: Contractor, High Quality
+#  parent: MedicalPouch
+#  components:
+#  - type: StorageFill
+#    contents:
+#    - id: BruizineMedicalVialBluespace
+#    - id: LacerinolMedicalVialBluespace
+#    - id: PuncturaseMedicalVialBluespace
+#    - id: OligomersMedicalVialBluespace
+#    - id: OmnizineMedicalVialBluespace
+#    - id: PyrazineMedicalVialBluespace
+#    - id: LeporazineMedicalVialBluespace
+#    - id: InsuzineMedicalVialBluespace
+#    - id: StellibininMedicalVialBluespace
+#    - id: OligArithMedicalVialBluespace
+#    - id: DexPlusMedicalVialBluespace
+#    - id: SalineMedicalVialBluespace
+#
+#- type: entity
+#  id: MedicalPouchFilledERT
+#  suffix: ERT, High Quality
+#  parent: MedicalPouch
+#  components:
+#  - type: StorageFill
+#    contents:
+#    - id: BruizineMedicalVialBluespace
+#    - id: LacerinolMedicalVialBluespace
+#    - id: PuncturaseMedicalVialBluespace
+#    - id: OligomersMedicalVialBluespace
+#    - id: OmnizineMedicalVialBluespace
+#    - id: HyperzineMedicalVialBluespace
+#    - id: PyrazineMedicalVialBluespace
+#    - id: StellibininMedicalVialBluespace
+#    - id: OligArithMedicalVialBluespace
+#    - id: DexPlusMedicalVialBluespace
+#    - id: SalineMedicalVialBluespace
+# Euphoria end
