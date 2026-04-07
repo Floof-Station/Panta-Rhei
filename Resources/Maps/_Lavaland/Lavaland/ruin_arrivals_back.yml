@@ -1,4 +1,4 @@
-meta:
+﻿meta:
   format: 7
   category: Grid
   engineVersion: 264.0.0
@@ -80,7 +80,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
-    - type: FTLDrive
+    #- type: FTLDrive #Euphoria
 - proto: AirlockAssemblyShuttleGlass
   entities:
   - uid: 2

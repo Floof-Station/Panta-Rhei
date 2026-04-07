@@ -287,7 +287,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
-    - type: FTLDrive
+    #- type: FTLDrive #Euphoria
 - proto: AtmosDeviceFanDirectional
   entities:
   - uid: 2
@@ -966,13 +966,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,10.5
       parent: 1
-- proto: PosterLegitGoobFaded
-  entities:
-  - uid: 111
-    components:
-    - type: Transform
-      pos: 11.5,5.5
-      parent: 1
+#- proto: PosterLegitGoobFaded #Euphoria
+#  entities:
+#  - uid: 111
+#    components:
+#    - type: Transform
+#      pos: 11.5,5.5
+#      parent: 1
 - proto: PoweredDimSmallLight
   entities:
   - uid: 112
@@ -1066,7 +1066,7 @@ entities:
     - type: Transform
       pos: 9.5,2.5
       parent: 1
-- proto: RMCOverheadSignNeonCafe
+- proto: BarSignMaidCafe #Euphoria
   entities:
   - uid: 94
     components:

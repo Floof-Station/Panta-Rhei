@@ -174,7 +174,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: ImplicitRoof
-    - type: FTLDrive
+    #- type: FTLDrive #Euphoria
     - type: RadiationGridResistance
 - proto: BarrelFire
   entities:
@@ -308,13 +308,13 @@ entities:
     - type: Transform
       pos: 4.5,-5.5
       parent: 1
-- proto: CrusherUpgradeLootSpawner
-  entities:
-  - uid: 63
-    components:
-    - type: Transform
-      pos: 3.5,-1.5
-      parent: 1
+#- proto: CrusherUpgradeLootSpawner #Euphoria
+#  entities:
+#  - uid: 63
+#    components:
+#    - type: Transform
+#      pos: 3.5,-1.5
+#      parent: 1
 - proto: DefaultStationBeaconRuinHunterShelter
   entities:
   - uid: 137

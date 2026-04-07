@@ -351,7 +351,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
-    - type: FTLDrive
+    #- type: FTLDrive #Euphoria
 - proto: AirlockAssemblyExternal
   entities:
   - uid: 2
@@ -1617,18 +1617,18 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -3.5,7.5
       parent: 1
-- proto: CrusherUpgradeLootSpawner
-  entities:
-  - uid: 557
-    components:
-    - type: Transform
-      pos: -4.5,2.5
-      parent: 1
-  - uid: 558
-    components:
-    - type: Transform
-      pos: -4.5,2.5
-      parent: 1
+#- proto: CrusherUpgradeLootSpawner
+#  entities:
+#  - uid: 557
+#    components:
+#    - type: Transform
+#      pos: -4.5,2.5
+#      parent: 1
+#  - uid: 558
+#    components:
+#    - type: Transform
+#      pos: -4.5,2.5
+#      parent: 1
 - proto: CrusherWeaponLootSpawner
   entities:
   - uid: 556

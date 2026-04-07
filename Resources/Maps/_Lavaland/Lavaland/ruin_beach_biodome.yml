@@ -578,7 +578,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
-    - type: FTLDrive
+    #- type: FTLDrive #Euphoria
 - proto: AirlockCargo
   entities:
   - uid: 2
@@ -2820,13 +2820,13 @@ entities:
     - type: Transform
       pos: 8.5,25.5
       parent: 1
-- proto: PosterLegitGoobFaded
-  entities:
-  - uid: 398
-    components:
-    - type: Transform
-      pos: 13.5,24.5
-      parent: 1
+#- proto: PosterLegitGoobFaded #Euphoria
+#  entities:
+#  - uid: 398
+#    components:
+#    - type: Transform
+#      pos: 13.5,24.5
+#      parent: 1
 - proto: PoweredDimSmallLight
   entities:
   - uid: 399
@@ -3104,7 +3104,7 @@ entities:
     - type: Transform
       pos: 20.5,10.5
       parent: 1
-- proto: RMCOverheadSignNeonBar
+- proto: BarSignMaidCafe #Euphoria
   entities:
   - uid: 648
     components:
