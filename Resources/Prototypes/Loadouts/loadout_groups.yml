@@ -591,7 +591,7 @@
 
 - type: loadoutGroup
   id: ChaplainHead
-  parent: [FloofHats] # floofstation
+  parent: [EuphoriaChaplainHead, FloofHats] # floofstation
   name: loadout-group-chaplain-head
   minLimit: 0
   loadouts:
@@ -610,7 +610,7 @@
 
 - type: loadoutGroup
   id: ChaplainJumpsuit
-  parent: [FloofChaplainJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofChaplainJumpsuit, EuphoriaChaplainJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chaplain-jumpsuit
   loadouts:
   - ChaplainJumpsuit
@@ -624,7 +624,7 @@
 
 - type: loadoutGroup
   id: ChaplainOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [EuphoriaChaplainOuterClothing, FloofOuterClothing] # Floofstation
   name: loadout-group-chaplain-outerclothing
   minLimit: 0
   loadouts:
@@ -635,7 +635,7 @@
 
 - type: loadoutGroup
   id: ChaplainNeck
-  parent: [ScientistNeck] # Floofstation
+  parent: [EuphoriaChaplainNeck, ScientistNeck] # Floofstation
   name: loadout-group-chaplain-neck
   minLimit: 0
   loadouts:
@@ -651,6 +651,7 @@
 
 - type: loadoutGroup
   id: ChaplainBible
+  parent: [EuphoriaChaplainBible]
   name: loadout-group-chaplain-bible
   minLimit: 1
   loadouts:

@@ -80,10 +80,6 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - ChaplainLustroAlt
-  - ChaplainLustro
-  - ChaplainInfernusLustro
-  - ChaplainInfernusLustroAlt
   - UniformChaplainThong
 
 - type: loadoutGroup
@@ -96,43 +92,10 @@
   - ClothingHandsChaplainWarmers
 
 - type: loadoutGroup
-  id: EuphoriaChaplainHead
-  parent: [ChaplainHead]
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - ChaplainHaloLustro
-
-- type: loadoutGroup
-  id: EuphoriaChaplainOuterClothing
-  parent: [ChaplainOuterClothing]
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - ChaplainCoatLustro
-
-- type: loadoutGroup
-  id: EuphoriaChaplainNeck
-  parent: [ChaplainNeck]
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - ChaplainStoleLustro
-
-- type: loadoutGroup
-  id: EuphoriaChaplainBible
-  parent: [ChaplainBible]
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - BibleLustro
-
-- type: loadoutGroup
   id: FloofChaplainShoes
   name: loadout-group-epistemics-chaplain-shoes
-  parent: [PassengerShoes]
+  parent: [EuphoriaChaplainShoes, PassengerShoes]
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - ChaplainLustroSandals
   - ClothingUnderSocksChaplain
