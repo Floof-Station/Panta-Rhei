@@ -3,6 +3,7 @@ using System;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    partial class SqliteServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260326022519_CDAllergies")]
+    partial class CDAllergies
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.1");
@@ -1107,25 +1110,10 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("INTEGER")
                         .HasColumnName("profile_loadout_id");
 
-                    b.Property<string>("ColorOverride")
-                        .HasMaxLength(9)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("color_override");
-
-                    b.Property<string>("DescriptionOverride")
-                        .HasMaxLength(512)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("description_override");
-
                     b.Property<string>("LoadoutName")
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("loadout_name");
-
-                    b.Property<string>("NameOverride")
-                        .HasMaxLength(96)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("name_override");
 
                     b.Property<int>("ProfileLoadoutGroupId")
                         .HasColumnType("INTEGER")
