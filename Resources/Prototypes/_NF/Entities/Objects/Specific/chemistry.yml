@@ -2,7 +2,7 @@
   name: medical pouch
   id: MedicalPouch
   parent: [ NFPouchBase, BaseBagOpenClose ]
-  description: Holds up to 12 tiny medical items.
+  description: A small pouch for pills, bottles, autoinjectors, and syringes. # Euphoria: More descriptive
   components:
   - type: Sprite
     sprite: _NF/Objects/Storage/Pouches/pouch_small.rsi
@@ -66,10 +66,10 @@
       - Injector # Euphoria Injector<Hypospray
 
 - type: entity
-  name: corpsman's medical pouch
+  name: interdyne medical pouch # Euphoria: interdyne<corpsman's
   id: CorpsmanMedicalPouch
-  description: Holds up to 15 tiny medical items.
   parent: [ MedicalPouch, BaseSyndicateContraband ]
+  description: A small pouch in syndicate colours for pills, bottles, autoinjectors, and syringes. # Euphoria: More descriptive
   components:
   - type: Sprite
     sprite: _NF/Objects/Storage/Pouches/pouch_small.rsi
