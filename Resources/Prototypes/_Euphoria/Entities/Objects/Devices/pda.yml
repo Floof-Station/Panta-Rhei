@@ -95,8 +95,6 @@
   name: Base Alternative PDA
   description: Personal Data Assistant.
   components:
-  - type: Pda
-    id: PassengerIDCard
   - type: Sprite
     sprite: _Floof/Objects/Devices/alternative_pda.rsi # DeltaV aPDA Resprite File Path
     scale: 0.75, 0.75 # DeltaV aPDA Resprite PDA Size change, makes it smaller for the full detail.
