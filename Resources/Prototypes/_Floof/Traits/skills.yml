@@ -24,14 +24,9 @@
   category: Skills
   cost: 2
   conditions:
-  - !type:OneOfSpeciesCondition
-     invert: true    
-     species:
-      - Felinid # Felinids/Tajaran already have this feature by default.
-      - Tajaran # Floof - Tajaran Update b7660b9
-      - Rodentia # Floof - Rodentia
-      - Resomi # Floof - have this by default after porting Goob changes
-      - Kitsune # Floof - M3739 - #937 - Kitsune have this by default.
+  - !type:HasCompCondition
+    invert: true  
+    component: PseudoItem
   effects:
     - !type:OverrideCompsEffect
       components:
