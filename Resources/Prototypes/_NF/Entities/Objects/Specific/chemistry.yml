@@ -45,6 +45,8 @@
         color: "#5a96bb"
   - type: Item
     size: Small
+    shape: # Euphoria: Restore shape to intended Frontier shape.
+    - 0,0,0,1
     sprite: _NF/Objects/Storage/Pouches/pouch_small.rsi
     inhandVisuals:
       left:
