@@ -336,6 +336,14 @@
         pda-sc
   - type: Icon
     state: pda-sc
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
+      - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: SpiritualCounselorPDA
