@@ -332,8 +332,6 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType: !type:String
         pda-sc
-  - type: Icon
-    state: pda-sc
   - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
     preinstalled:
       - CrewManifestCartridge
