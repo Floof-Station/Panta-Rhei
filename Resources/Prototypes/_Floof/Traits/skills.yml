@@ -16,6 +16,32 @@
     components:
     - type: FootstepVolumeModifier
       volume: -10 # same as EE, makes it 2x quieter
+
+- type: trait
+  id: Small
+  name: trait-small-name
+  description: trait-small-desc
+  category: Skills
+  cost: 2
+  conditions:
+  - !type:OneOfSpeciesCondition
+     invert: true    
+     species:
+      - Felinid # Felinids/Tajaran already have this feature by default.
+      - Tajaran # Floof - Tajaran Update b7660b9
+      - Rodentia # Floof - Rodentia
+      - Resomi # Floof - have this by default after porting Goob changes
+      - Kitsune # Floof - M3739 - #937 - Kitsune have this by default.
+  effects:
+    - !type:OverrideCompsEffect
+      components:
+        - type: PseudoItem
+          storedOffset: 0,17
+          shape:
+            - 0,0,1,4
+            - 0,2,3,4
+            - 4,0,5,4
+
 # =================================================== #
 
 
