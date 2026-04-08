@@ -89,6 +89,7 @@
 
 # Alternative PDA base DV style
 - type: entity
+  abstract: true
   parent: BasePDA
   id: BaseAlternativePDA2
   name: Base Alternative PDA
@@ -109,21 +110,6 @@
     - state: "id_overlay"
       map: [ "enum.PdaVisualLayers.IdLight" ]
       shader: "unshaded"
-  - type: Appearance
-    appearanceDataInit:
-      enum.PdaVisuals.PdaType:
-        !type:String
-        pda
-  - type: Icon
-    sprite: _Floof/Objects/Devices/alternative_pda.rsi
-    state: pda
-  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
-    preinstalled:
-    - CrewManifestCartridge
-    - NotekeeperCartridge
-    - NanoTaskCartridge
-    - NewsReaderCartridge
-    - NanoChatCartridge
 
 # captain
 - type: entity
@@ -337,7 +323,7 @@
 # chaplain
 
 - type: entity
-  parent: BaseAlternativePDA2
+  parent: [BaseAlternativePDA2, ChaplainPDA]
   id: SpiritualCounselorPDA
   name: spiritual counselor PDA
   description: The PDA reaks of understanding.
@@ -348,19 +334,8 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType: !type:String
         pda-sc
-  - type: PdaBorderColor
-    borderColor: "#d7d7d0"
-    accentVColor: "#8900c9"
   - type: Icon
     state: pda-sc
-  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
-    preinstalled:
-      - CrewManifestCartridge
-      - NotekeeperCartridge
-      - NanoTaskCartridge
-      - NewsReaderCartridge
-      - GlimmerMonitorCartridge
-      - NanoChatCartridge # DeltaV
 
 - type: entity
   parent: SpiritualCounselorPDA
