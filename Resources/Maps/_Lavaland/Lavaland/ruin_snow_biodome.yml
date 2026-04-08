@@ -5,7 +5,7 @@ meta:
   forkId: ""
   forkVersion: ""
   time: 01/08/2026 12:41:47
-  entityCount: 1026
+  entityCount: 1027
 maps: []
 grids:
 - 1
@@ -22,7 +22,7 @@ tilemap:
   96: FloorSnow
   2: FloorTechMaint
   127: FloorWood
-  7: FloorWoodDark
+  7: FloorDark
   132: Plating
 entities:
 - proto: ""
@@ -295,7 +295,6 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: ImplicitRoof
-    #- type: FTLDrive #Euphoria
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 2
@@ -3884,13 +3883,13 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 3.5,11.5
       parent: 1
-#- proto: CrusherUpgradeLootSpawner
-#  entities:
-#  - uid: 1024
-#    components:
-#    - type: Transform
-#      pos: 3.5,8.5
-#      parent: 1
+- proto: FoodBreadPlain
+  entities:
+  - uid: 1024
+    components:
+    - type: Transform
+      pos: 3.5,8.5
+      parent: 1
 - proto: DefaultStationBeaconRuinSnowBiodome
   entities:
   - uid: 1027

@@ -17846,14 +17846,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: MedkitCombatBlueFilled
+- proto: MedkitCombatFilled
   entities:
   - uid: 2742
     components:
     - type: Transform
       pos: 24.50361,-13.66452
       parent: 1
-- proto: MedkitCombatFilled
+- proto: MedkitCombatFilled #Euphoria
   entities:
   - uid: 2743
     components:
@@ -17908,7 +17908,7 @@ entities:
     - type: Transform
       pos: 31.5,-20.5
       parent: 1
-- proto: NutrimentImplanter
+- proto: FoodBreadPlain
   entities:
   - uid: 2748
     components:
@@ -18084,7 +18084,7 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: PKAUpgradePressure
+- proto: PKAUpgradeDamage
   entities:
   - uid: 2764
     components:
@@ -19746,7 +19746,7 @@ entities:
     - type: Transform
       pos: 28.5,-17.5
       parent: 1
-- proto: SmokeImplanter
+- proto: FoodBreadPlain
   entities:
   - uid: 3016
     components:
@@ -19810,7 +19810,7 @@ entities:
     - type: Transform
       pos: 21.5,-17.5
       parent: 1
-- proto: SpawnVehicleChairOfficeDark
+- proto: ChairOfficeDark
   entities:
   - uid: 3027
     components:
@@ -19827,7 +19827,7 @@ entities:
     - type: Transform
       pos: 10.5,11.5
       parent: 1
-- proto: SpawnVehicleChairOfficeLight
+- proto: ChairOfficeLight
   entities:
   - uid: 3030
     components:
@@ -20490,7 +20490,7 @@ entities:
     - type: Transform
       pos: 26.5,-12.5
       parent: 1
-- proto: UraniumChemistryVial
+- proto: BaseChemistryEmptyVial
   entities:
   - uid: 3127
     components:
@@ -22398,7 +22398,7 @@ entities:
     - type: Transform
       pos: 31.5,-18.5
       parent: 1
-- proto: WeaponDisablerSyndicate
+- proto: WeaponDisabler
   entities:
   - uid: 3498
     components:
