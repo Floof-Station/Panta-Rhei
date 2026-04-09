@@ -3137,7 +3137,7 @@ entities:
     - type: Transform
       pos: 15.5,-1.5
       parent: 1
-- proto: ProtoKineticWeaponSpaceLootSpawner
+- proto: ProtoKineticWeaponLootSpawner
   entities:
   - uid: 541
     components:
@@ -4080,7 +4080,7 @@ entities:
     - type: Transform
       pos: 3.5,3.5
       parent: 1
-- proto: ShrapnelPayload
+- proto: FlashPayload
   entities:
   - uid: 357
     components:
