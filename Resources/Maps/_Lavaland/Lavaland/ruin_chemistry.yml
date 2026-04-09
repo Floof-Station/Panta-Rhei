@@ -289,7 +289,7 @@ entities:
     - type: Transform
       pos: 8.5,10.5
       parent: 1
-- proto: BorgBeaker
+- proto: BorgModuleAdvancedCleaning #Euphoria
   entities:
   - uid: 38
     components:
@@ -503,22 +503,8 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -544,7 +530,7 @@ entities:
     - type: Transform
       pos: 11.5,15.5
       parent: 1
-- proto: portableChemicalMixer
+- proto: ChemMasterFlatpack
   entities:
   - uid: 54
     components:
