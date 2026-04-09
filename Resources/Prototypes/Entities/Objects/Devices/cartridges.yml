@@ -156,6 +156,10 @@
         sprite: Objects/Specific/Medical/healthanalyzer.rsi
         state: icon
     - type: MedTekCartridge
+    # Frontier: Add MedTekCartridgePrinter
+    - type: MedTekCartridgePrinter
+      printTemplate: PaperWrittenMedicalMedtekPatientRecord
+    # End Frontier: Add MedTekCartridgePrinter
 
 - type: entity
   parent: BasePDACartridge

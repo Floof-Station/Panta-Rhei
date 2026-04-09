@@ -8,13 +8,15 @@
       organs:
         eyes: OrganLaserEyes
     torso:
-      part: TorsoAnimal
+      part: TorsoReptilian
       connections:
       - legs
+      - left arm #Floof
+      - right arm #Floof
       - head
       organs:
         lungs: OrganAnimalLungs
-        stomach: OrganAnimalStomach
+        stomach: OrganReptilianStomach
         liver: OrganAnimalLiver
         heart: OrganAnimalHeart
         kidneys: OrganAnimalKidneys
@@ -24,3 +26,15 @@
       - feet
     feet:
       part: FeetAnimal
+    left arm: #Floof
+      part: LeftArmReptilian
+      connections:
+      - left hand
+    left hand:
+      part: LeftHandReptilian
+    right arm:
+      part: RightArmReptilian
+      connections:
+      - right hand
+    right hand:
+      part: RightHandReptilian

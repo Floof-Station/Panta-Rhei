@@ -32,6 +32,18 @@
   loadouts:
   - UnderSocksHeadSecurity
 
+#hos pdas
+- type: loadoutGroup
+  id: FloofHoSPDAs
+  name: loadout-group-hos-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - HoSPDA
+  - ChiefOfSecurityPDA
+  - SecurityDirectorPDA
+  - SheriffPDA
+
 # security officer additions
 - type: loadoutGroup
   id: FloofSecurityOfficerJumpsuit

@@ -1,0 +1,368 @@
+- type: entity
+  parent: BaseMedicalPDA
+  id: FreelancerPDA
+  name: Freelancer PDA
+  description: Refurbished standard PDA
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/pda.rsi
+  - type: Icon
+    sprite: _Floof/Objects/Devices/pda.rsi # DeltaV aPDA Resprite File Path
+    state: pda-free
+  - type: Pda
+    id: FreelancerIDCard
+  - type: PdaBorderColor
+    borderColor: "#668643"
+
+#PDA for sapient animals
+- type: entity
+  parent: BasePDA
+  id: AnimalPDA
+  name: Beast PDA
+  description: For non-human crew. A coordinate switch has been soldered onto the open circuits.
+  components:
+  - type: Appearance
+    appearanceDataInit:
+     enum.PdaVisuals.PdaType:
+       !type:String
+       pda-zookeeper
+  - type: Icon
+    state: pda-zookeeper
+  - type: Pda
+    id: VisitorIDCard
+  - type: PdaBorderColor
+    borderColor: "#ffe685"
+  - type: SuitSensor
+    activationSlot: "pda"
+    randomMode: false
+    mode: SensorCords
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    transmitFrequencyId: SuitSensor
+  - type: WirelessNetworkConnection
+    range: 1200
+  - type: StationLimitedNetwork
+
+# =========== Alternative PDAs ==============
+
+# Alternative PDA base
+- type: entity
+  parent: BasePDA
+  id: BaseAlternativePDA
+  name: Base Alternative PDA
+  description: Personal Data Assistant.
+  components:
+  - type: Pda
+    id: PassengerIDCard
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_head_pda.rsi
+    state: pda
+    scale: 1.02, 1.02 # increase the scale to match the size of delta-v pdas
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      offset: 0.1, 0.0 # 1.5 is WAY TOO FUCKING FAR, like in the next universe far
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      offset: 0.11, 0.1 # 0.125 is too far to the right
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda
+  - type: Icon
+    sprite: _Floof/Objects/Devices/alternative_head_pda.rsi
+    state: pda
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+
+# captain
+- type: entity
+  parent: BaseAlternativePDA
+  id: CommanderPDA
+  name: commander PDA
+  description: For those who lead the station in style.
+  components:
+  - type: Pda
+    id: CommanderIDCard
+    penSlot:
+      startingItem: PenCap # have to give captain their fancy pen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: PdaBorderColor
+    borderColor: "#7C5D00"
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        captain
+
+# head of security
+- type: entity
+  parent: BaseAlternativePDA
+  id: ChiefOfSecurityPDA
+  name: chief of security PDA
+  description: Respect my authority.
+  components:
+  - type: Pda
+    id: ChiefOfSecurityIDCard
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+    accentHColor: "#447987"
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        hos
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    - CrimeAssistCartridge # DeltaV
+    - SecWatchCartridge # DeltaV: SecWatch replaces WantedList
+    - LogProbeCartridge
+
+- type: entity
+  parent: ChiefOfSecurityPDA # parent off the first alternative hos pda to not have a ton of duplicate yaml
+  id: SecurityDirectorPDA
+  name: security director PDA
+  description: Respect my authority.
+  components:
+  - type: Pda
+    id: SecurityDirectorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        hos
+
+- type: entity
+  parent: ChiefOfSecurityPDA # parent off the first alternative hos pda to not have a ton of duplicate yaml
+  id: SheriffPDA
+  name: sheriff PDA
+  description: Respect my authority.
+  components:
+  - type: Pda
+    id: SheriffIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        hos
+
+# chief justice
+- type: entity
+  parent: BaseAlternativePDA
+  id: LegalAdvisorPDA
+  name: legal advisor PDA
+  description: Calm, collected and well versed in all that is law.
+  components:
+  - type: Pda
+    id: LegalAdvisorIDCard
+    penSlot:
+      startingItem: LuxuryPen # have to give cj their fancy pen
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        cj
+  - type: PdaBorderColor
+    borderColor: "#470823"
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    - CrimeAssistCartridge
+    - SecWatchCartridge
+
+# chief medical officer
+- type: entity
+  parent: BaseAlternativePDA
+  id: DirectorOfCarePDA
+  name: director of care PDA
+  description: Years of medical studies finally paying off.
+  components:
+  - type: Pda
+    id: DirectorOfCareIDCard
+    penSlot:
+      startingItem: CMOPenLight
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        cmo
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentHColor: "#447987"
+    accentVColor: "#447987"
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    - MedTekCartridge
+
+# head of personnel
+- type: entity
+  parent: BaseAlternativePDA
+  id: ServiceDirectorPDA
+  name: service director PDA
+  description: Looks like it has been chewed on.
+  components:
+  - type: Pda
+    id: ServiceDirectorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        hop
+  - type: PdaBorderColor
+    borderColor: "#789876"
+    accentHColor: "#447987"
+
+- type: entity
+  parent: ServiceDirectorPDA # parent from the first alternative hop pda to not duplicate yaml
+  id: ServiceManagerPDA
+  name: service manager PDA
+  description: Looks like it has been chewed on.
+  components:
+  - type: Pda
+    id: ServiceManagerIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        hop2
+
+- type: entity
+  parent: ServiceDirectorPDA # parent from the first alternative hop pda to not duplicate yaml
+  id: HeadOfPaperworkPDA
+  name: head of paperwork PDA
+  description: Looks like there are some ink stains on it.
+  components:
+  - type: Pda
+    id: HeadOfPaperworkIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        hop2
+
+# mystagogue
+- type: entity
+  parent: BaseAlternativePDA
+  id: ResearchDirectorPDA
+  name: research director PDA
+  description: Looks like there is an anomaly core lodged into the screen of this pda.
+  components:
+  - type: Pda
+    id: ResearchDirectorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        rd
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentHColor: "#447987"
+    accentVColor: "#8900c9"
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    - GlimmerMonitorCartridge
+
+# chief engineer
+- type: entity
+  parent: BaseAlternativePDA
+  id: StationArchitectPDA
+  name: station architect PDA
+  description: This pda is covered in oil, welding fuel and a hard days work.
+  components:
+  - type: Pda
+    id: StationArchitectIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        ce
+  - type: PdaBorderColor
+    borderColor: "#949137"
+    accentHColor: "#447987"
+
+- type: entity
+  parent: StationArchitectPDA
+  id: StationForemanPDA
+  name: station foreman PDA
+  description: This pda is covered in oil, welding fuel and a hard days work.
+  components:
+  - type: Pda
+    id: StationForemanIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        ce
+
+# logistics officer
+- type: entity
+  parent: BaseAlternativePDA
+  id: QMPDA
+  name: quartermaster PDA
+  description: Another day at blue collar job moving crate after crate.
+  components:
+  - type: Pda
+    id: QMIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        qm
+  - type: PdaBorderColor
+    borderColor: "#e39751"
+    accentVColor: "#a23e3e"
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    - MailMetricsCartridge
+    - StockTradingCartridge
+    - AstroNavCartridge
+
+- type: entity
+  parent: QMPDA
+  id: HeadOfAcquisitionsPDA
+  name: head of acquisitions PDA
+  description: This pda has scribbles all over it of places to crates used to sit and where they were getting moved to.
+  components:
+  - type: Pda
+    id: HeadOfAcquisitionsIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        qm
+# ===========================================

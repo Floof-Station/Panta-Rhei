@@ -1,0 +1,11 @@
+# Coercialis Garb
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformShoalCoercialisGarb
+  name: Coercialis Garb
+  description: A thickly woven shirt and pair of pants made to be worn under armor.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Clothing/Innerclothing/coercialisgarb.rsi
+  - type: Clothing
+    sprite: _TheShoal/Clothing/Innerclothing/coercialisgarb.rsi

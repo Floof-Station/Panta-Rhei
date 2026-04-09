@@ -1,0 +1,191 @@
+# TODO once tiles can be smoothed and carpets ported over to that, add them to the FloorTile outputs
+# Simple Carpets
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemBlack
+  name: black carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-black
+  - type: Item
+    heldPrefix: carpet-simple-black
+  - type: Stack
+    stackType: FloorCarpetSimpleBlack
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleBlack
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemBlue
+  name: blue carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-blue
+  - type: Item
+    heldPrefix: carpet-simple-blue
+  - type: Stack
+    stackType: FloorCarpetSimpleBlue
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleBlue
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemCyan
+  name: cyan carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-cyan
+  - type: Item
+    heldPrefix: carpet-simple-cyan
+  - type: Stack
+    stackType: FloorCarpetSimpleCyan
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleCyan
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemGreen
+  name: green carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-green
+  - type: Item
+    heldPrefix: carpet-simple-green
+  - type: Stack
+    stackType: FloorCarpetSimpleGreen
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleGreen
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemOrange
+  name: orange carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-orange
+  - type: Item
+    heldPrefix: carpet-simple-orange
+  - type: Stack
+    stackType: FloorCarpetSimpleOrange
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleOrange
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemPink
+  name: pink carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-pink
+  - type: Item
+    heldPrefix: carpet-simple-pink
+  - type: Stack
+    stackType: FloorCarpetSimplePink
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimplePink
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemPurple
+  name: purple carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-purple
+  - type: Item
+    heldPrefix: carpet-simple-purple
+  - type: Stack
+    stackType: FloorCarpetSimplePurple
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimplePurple
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemRed
+  name: red carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-red
+  - type: Item
+    heldPrefix: carpet-simple-red
+  - type: Stack
+    stackType: FloorCarpetSimpleRed
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleRed
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemSkyblue
+  name: skyblue carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-skyblue
+  - type: Item
+    heldPrefix: carpet-simple-skyblue
+  - type: Stack
+    stackType: FloorCarpetSimpleSkyblue
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleSkyblue
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material
+    
+- type: entity
+  parent: FloorCarpetItemRed
+  id: FloorCarpetSimpleItemWhite
+  name: white carpet simple
+  suffix: Item
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tiles/tile.rsi
+    state: carpet-simple-white
+  - type: Item
+    heldPrefix: carpet-simple-white
+  - type: Stack
+    stackType: FloorCarpetSimpleWhite
+  - type: SpawnAfterInteract #Nuke after convert to FloorTile
+    prototype: CarpetSimpleWhite
+    doAfter: 0.5
+    removeOnInteract: true
+  - type: Material

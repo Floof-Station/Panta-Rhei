@@ -1,4 +1,4 @@
-
+# freelancer
 - type: entity
   parent: IDCardStandard
   id: FreelancerIDCard
@@ -9,3 +9,123 @@
   - type: Sprite
     sprite: _Floof/Objects/Misc/id_cards.rsi
     state: "freelancer"
+
+# captain
+- type: entity
+  parent: CaptainIDCard
+  id: CommanderIDCard
+  name: commander ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-commander
+
+# head of security
+- type: entity
+  parent: HoSIDCard
+  id: ChiefOfSecurityIDCard
+  name: chief of security ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-chiefofsecurity
+
+- type: entity
+  parent: HoSIDCard
+  id: SecurityDirectorIDCard
+  name: chief of security ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-securitydirector
+
+- type: entity
+  parent: HoSIDCard
+  id: SheriffIDCard
+  name: sheriff ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-sheriff
+
+# chief justice
+- type: entity
+  parent: ChiefJusticeIDCard
+  id: LegalAdvisorIDCard
+  name: legaladvisor ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-legal-advisor
+
+# chief medical officer
+- type: entity
+  parent: CMOIDCard
+  id: DirectorOfCareIDCard
+  name: director of care ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-director-of-care
+
+# head of personnel
+- type: entity
+  parent: HoPIDCard
+  id: ServiceDirectorIDCard
+  name: service director ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-director
+
+- type: entity
+  parent: HoPIDCard
+  id: ServiceManagerIDCard
+  name: service manager ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-manager
+
+- type: entity
+  parent: HoPIDCard
+  id: HeadOfPaperworkIDCard
+  name: head of paperwork ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-head-of-paperwork
+
+# mystagogue
+- type: entity
+  parent: RDIDCard
+  id: ResearchDirectorIDCard
+  name: research director ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-research-director
+
+# chief engineer
+- type: entity
+  parent: CEIDCard
+  id: StationArchitectIDCard
+  name: station architect ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-station-architect
+
+- type: entity
+  parent: CEIDCard
+  id: StationForemanIDCard
+  name: station foreman ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-station-foreman
+
+# logistics officer
+- type: entity
+  parent: QuartermasterIDCard
+  id: QMIDCard
+  name: quartermaster card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-quartermaster
+
+- type: entity
+  parent: QuartermasterIDCard
+  id: HeadOfAcquisitionsIDCard
+  name: head of acquisitions ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-head-of-acquisitions

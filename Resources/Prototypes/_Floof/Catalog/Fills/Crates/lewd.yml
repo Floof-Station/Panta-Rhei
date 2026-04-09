@@ -1,0 +1,43 @@
+﻿- type: entity
+  id: CrateLewdToys
+  parent: CrateLewd
+  name: sex toys crate
+  description: Improve your station's mood by introducing some fun "toys"! Careful, work may plummet and the station may become a mess.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: LewdVibes
+          rolls: 4
+        - !type:NestedSelector
+          tableId: LewdFleshlights
+          rolls: 2
+        - !type:NestedSelector
+          tableId: LewdDildos
+          rolls: 4
+        - id: DrinkCumBottleFull
+          amount: 2
+
+- type: entity
+  id: CrateLewdKink
+  parent: CrateKink
+  name: kink paraphernalia crate
+  description: A selection of outfits, tools, and gear for the crew to live out their fantasies! Don't forget aftercare!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: LewdImpactPlay
+          rolls: 4
+        - !type:NestedSelector
+          tableId: LewdKinkClothing
+          rolls: 4
+        - !type:NestedSelector
+          tableId: LewdKinkTools
+          rolls: 5
+        - id: Brutepack
+          prob: 0.5

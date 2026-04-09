@@ -1,0 +1,65 @@
+- type: entity
+  parent: ClothingBeltUtility
+  id: ClothingBeltCombatUtility
+  name: combat utility belt
+  description: A specially made tacticool belt with pouches for tools as well as ammunition and security equipment.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/assault.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/assault.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: Storage
+    whitelist:
+      tags:
+      # Engineering
+      - Powerdrill
+      - Wirecutter
+      - Crowbar
+      - Screwdriver
+      - Flashlight
+      - Wrench
+      - GeigerCounter
+      - Flare
+      - CableCoil
+      - CigPack
+      - Radio
+      - HolofanProjector
+      - Multitool
+      - AppraisalTool
+      - JawsOfLife
+      - GPS
+      - WeldingMask
+      - RemoteSignaller
+      - UtilityKnife
+      # Security
+      - SecBeltEquip
+      - HandGrenade
+      - Sidearm
+      - MagazinePistol
+      - MagazineMagnum
+      - CombatKnife
+      components:
+      # Engineering
+      - StationMap
+      - SprayPainter
+      - SprayPainterAmmo
+      - NetworkConfigurator
+      - RCD
+      - RCDAmmo
+      - Welder
+      - PowerCell
+      - Geiger
+      - TrayScanner
+      - GasAnalyzer
+      - HandLabeler
+      # Security
+      - FlashOnTrigger
+      - SmokeOnTrigger
+      - Flash
+      - Handcuff
+      - BallisticAmmoProvider
+      - CartridgeAmmo
+      - Whistle
+      - BalloonPopper

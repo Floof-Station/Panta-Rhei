@@ -16,8 +16,10 @@
   - Security
   #- Brig # Delta V: Removed
   - Maintenance
-  - Service
+  #- Service # Floofstation - sec doesn't need service access
   - External
+  - GenpopEnter # Floofstation - give senior officer genpop access like other sec roles
+  - GenpopLeave  # Floofstation - give senior officer genpop access like other sec roles
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

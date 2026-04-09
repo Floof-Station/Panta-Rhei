@@ -1,7 +1,33 @@
+- type: traitCategory # Euphoria - Split Between Physical and Mental
+  id: DisabilitiesPhysical
+  name: trait-category-disabilitiesphysical
+  priority: 1
+  accentColor: "#64748b"  # Slate / muted gray
+
+- type: traitCategory # Euphoria
+  id: DisabilitiesMental
+  name: trait-category-disabilitiesmental
+  priority: 5
+  accentColor: "#7A687F"  # purplish grey
+
+- type: traitCategory # Euphoria
+  id: Cybernetics
+  name: trait-category-cybernetics
+  priority: 10
+  accentColor: "#5F081F"  # royal red
+  
+- type: traitCategory # Euphoria
+  id: Psionics
+  name: trait-category-psionic
+  priority: 15
+  accentColor: "#a855f7" # purple
+
 - type: traitCategory
   id: Languages
   name: trait-category-languages
-  maxTraits: 2 # Either foreigner + additional language, or 2 additional languages. No multilingual traits yet.
+  # maxTraits: 4 #Allows foreigners to pick up to 3 languages to learn, but restricts non forigners to the same 2 they could pick before.
+  # maxPoints: 2 
+  #Removed maxTrait limit to allow more RP. Each language still has costs.
   priority: 1000 # At the bottom
   accentColor: "#418b60"
   defaultExpanded: false
@@ -19,3 +45,26 @@
   name: trait-category-skills
   priority: 45 # Under Medical
   accentColor: "#3242ef"
+
+- type: traitCategory
+  id: Lewd
+  name: trait-category-lewd
+  priority: 50 # Under Medical
+  accentColor: "#6e304b" # pink
+  defaultExpanded: false
+  
+- type: traitCategory
+  id: Scents
+  name: trait-category-scents
+  priority: 60
+  defaultExpanded: false
+  maxTraits: 2
+  accentColor: "#52ffc2"  # Mint Green
+
+- type: traitCategory
+  id: ScentsNSFW
+  name: trait-category-scents-nsfw
+  priority: 70
+  defaultExpanded: false
+  maxTraits: 2
+  accentColor: "#ff1778"  # Hot Pink

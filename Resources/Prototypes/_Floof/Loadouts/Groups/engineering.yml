@@ -1,10 +1,11 @@
 ﻿#below addtions are for ce
 - type: loadoutGroup
-  id: FloofCeThong
+  id: FloofCeJumpsuits
   abstract: true
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ChiefEngineerLegacyJumpsuit
   - UniformChiefEngiThong
 
 - type: loadoutGroup
@@ -13,15 +14,40 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ChiefEngineerInsulativeGloves
   - HandsChiefEngiWarmers
 
 - type: loadoutGroup
-  id: FloofCeSocks
+  id: FloofCeShoes
   abstract: true
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - BootsWorkWorn
   - UnderSocksChiefEngi
+
+# ce pdas
+- type: loadoutGroup
+  id: FloofCEPDAs
+  name: loadout-group-chief-engineer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CEPDA
+  - StationForemanPDA
+  - StationArchitectPDA
+  
+- type: loadoutGroup
+  id: FloofCeHats
+  abstract: true
+  loadouts:
+  - WeldingHardhat
+
+- type: loadoutGroup
+  id: FloofCeCloak
+  abstract: true
+  loadouts:
+  - ChiefEngineerLegacyCloak
 
 # engineer & atmos additions
 - type: loadoutGroup
@@ -46,4 +72,5 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - BootsWorkWorn
   - ClothingUnderSocksEngi

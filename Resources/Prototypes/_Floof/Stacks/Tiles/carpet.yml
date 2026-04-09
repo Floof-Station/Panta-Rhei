@@ -1,0 +1,70 @@
+# behold, my things. These aren't actually tiles (yet)
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleBlack
+  name: stack-carpet-simple-black-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-black }
+  spawn: FloorCarpetSimpleItemBlack
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleBlue
+  name: stack-carpet-simple-blue-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-blue }
+  spawn: FloorCarpetSimpleItemBlue
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleCyan
+  name: stack-carpet-simple-cyan-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-cyan }
+  spawn: FloorCarpetSimpleItemCyan
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleGreen
+  name: stack-carpet-simple-green-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-green }
+  spawn: FloorCarpetSimpleItemGreen
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleOrange
+  name: stack-carpet-simple-orange-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-orange }
+  spawn: FloorCarpetSimpleItemOrange
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimplePink
+  name: stack-carpet-simple-pink-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-pink }
+  spawn: FloorCarpetSimpleItemPink
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimplePurple
+  name: stack-carpet-simple-purple-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-purple }
+  spawn: FloorCarpetSimpleItemPurple
+  
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleRed
+  name: stack-carpet-simple-red-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-red }
+  spawn: FloorCarpetSimpleItemRed
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleSkyblue
+  name: stack-carpet-simple-skyblue-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-skyblue }
+  spawn: FloorCarpetSimpleItemSkyblue
+
+- type: stack
+  parent: BaseTileStack
+  id: FloorCarpetSimpleWhite
+  name: stack-carpet-simple-white-tile
+  icon: { sprite: _Floof/Objects/Tiles/tile.rsi, state: carpet-simple-white }
+  spawn: FloorCarpetSimpleItemWhite

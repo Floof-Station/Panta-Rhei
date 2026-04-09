@@ -1,5 +1,7 @@
 using System.Linq;
 using Content.Shared._DV.Silicon.IPC; // DeltaV
+using Content.Shared._Floof.Paint;
+using Content.Shared._Floof.Util;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -25,6 +27,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!; // DeltaV
+    [Dependency] private readonly SharedColorPaintSystem _colorPaint = default!; // Floofstation
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -56,12 +59,54 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                     continue;
                 }
 
-                EquipStartingGear(entity, loadoutProto, raiseEvent: false);
+                // Floofstation section - apply custom metadata to loadouts.
+                var spawned = EquipStartingGear(entity, loadoutProto, raiseEvent: false);
+                if (spawned.Count == 1 && spawned[0] is { Valid: true } spawnedEntity)
+                    ApplyCustomLoadoutMetadata(spawnedEntity, items);
+                else if (items.HasCustomMetadata)
+                    Log.Warning($"Refusing to apply custom metadata to a loadout containing more than 1 item: {loadoutProto}");
+                // Floofstation section end
             }
         }
 
         EquipRoleName(entity, loadout, roleProto);
     }
+
+    // Floofstation - applies custom metadata from an entity onto a loadout.
+    private void ApplyCustomLoadoutMetadata(EntityUid spawnedEntity, Loadout loadout)
+    {
+        if (!Exists(spawnedEntity) || Deleted(spawnedEntity))
+            return;
+
+        // Those are from the db model, I didn't bother defining them in a common place.
+        var MaxNameLength = 96;
+        var MaxDescLength = 512;
+
+        var md = MetaData(spawnedEntity);
+        if (loadout.NameOverride is {} customName)
+        {
+            customName = FormattedMessage.RemoveMarkupPermissive(customName);
+            _metadata.SetEntityName(spawnedEntity, customName.TakeChars(MaxNameLength), md);
+        }
+        if (loadout.DescriptionOverride is {} customDesc)
+        {
+            // I don't want to bother including a tag whitelist, plus random colors in examine are pretty annoying.
+            customDesc = FormattedMessage.RemoveMarkupPermissive(customDesc);
+            _metadata.SetEntityDescription(spawnedEntity, customDesc.TakeChars(MaxDescLength), md);
+        }
+        if (loadout.ColorOverride is {} customColor && HasComp<ItemComponent>(spawnedEntity))
+        {
+            // Explode the shit out of them if they hand-edit the yaml in an attempt to create a transparent item
+            var parsedColor = Color.FromHex(customColor, Color.White);
+            if (parsedColor.A < 1f)
+                parsedColor = Color.Pink; //parsedColor.ToHexNoAlpha();
+            parsedColor = SharedColorPaintSystem.ClampBrightness(parsedColor, 0.25f, 1f);
+
+            // ColorPaintSystem is server-side and I cant be bothered to move it.
+            _colorPaint.Paint(null, null, spawnedEntity, parsedColor);
+        }
+    }
+    // Floofstation section end
 
     /// <summary>
     /// Applies the role's name as applicable to the entity.
@@ -86,10 +131,10 @@ public abstract class SharedStationSpawningSystem : EntitySystem
         }
     }
 
-    public void EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true)
+    public List<EntityUid> EquipStartingGear(EntityUid entity, LoadoutPrototype loadout, bool raiseEvent = true) // Floofstation - return spawned entities
     {
         EquipStartingGear(entity, loadout.StartingGear, raiseEvent);
-        EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
+        return EquipStartingGear(entity, (IEquipmentLoadout) loadout, raiseEvent);
     }
 
     /// <summary>
@@ -121,10 +166,11 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// <param name="entity">Entity to load out.</param>
     /// <param name="startingGear">Starting gear to use.</param>
     /// <param name="raiseEvent">Should we raise the event for equipped. Set to false if you will call this manually</param>
-    public void EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true)
+    public List<EntityUid> EquipStartingGear(EntityUid entity, IEquipmentLoadout? startingGear, bool raiseEvent = true) // Floofstation - added a return value
     {
+        var spawned = new List<EntityUid>();
         if (startingGear == null)
-            return;
+            return spawned; // Floofstation
 
         var xform = _xformQuery.GetComponent(entity);
 
@@ -136,6 +182,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 if (!string.IsNullOrEmpty(equipmentStr))
                 {
                     var equipmentEntity = Spawn(equipmentStr, xform.Coordinates);
+                    spawned.Add(equipmentEntity); // Floofstation
                     InventorySystem.TryEquip(entity, equipmentEntity, slot.Name, silent: true, force: true, checkDoafter: false); // Floofstation - don't start do-afters on spawn
                 }
             }
@@ -148,6 +195,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             foreach (var prototype in inhand)
             {
                 var inhandEntity = Spawn(prototype, coords);
+                spawned.Add(inhandEntity); // Floofstation
 
                 if (_handsSystem.TryGetEmptyHand((entity, handsComponent), out var emptyHand))
                 {
@@ -174,6 +222,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                     foreach (var entProto in entProtos)
                     {
                         var spawnedEntity = Spawn(entProto, coords);
+                        spawned.Add(spawnedEntity); // Floofstation
 
                         _storage.Insert(slotEnt.Value, spawnedEntity, out _, storageComp: storage, playSound: false);
                     }
@@ -186,6 +235,8 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             var ev = new StartingGearEquippedEvent(entity);
             RaiseLocalEvent(entity, ref ev);
         }
+
+        return spawned; // Floofstation
     }
 
     /// <summary>

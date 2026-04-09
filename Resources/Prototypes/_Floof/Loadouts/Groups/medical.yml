@@ -18,7 +18,7 @@
   loadouts:
   - OuterCoatCybersunWindbreaker
 
-#below addtions are for cmo
+#below additions are for cmo
 - type: loadoutGroup
   id: FloofCmoThong
   abstract: true
@@ -42,6 +42,16 @@
   maxLimit: 1
   loadouts:
   - UnderSocksCMO
+
+# cmo pdas
+- type: loadoutGroup
+  id: FloofCMOPDAs
+  name: loadout-group-chief-medical-officer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CMOPDA
+  - DirectorOfCarePDA
 
 # paramed additions
 - type: loadoutGroup
