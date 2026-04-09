@@ -76,7 +76,7 @@
   - type: Sprite
     layers:
     - state: red
-    - sprite: _Lavaland/Objects/Weapons/upgrade.rsi
+    - sprite: Objects/Tools/upgrade.rsi #Euphoria
       state: base
   - type: EntityTableSpawner
     table: !type:NestedSelector
