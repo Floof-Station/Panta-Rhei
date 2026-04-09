@@ -4,12 +4,7 @@
   name: trait-NaturalRatvarian-name
   description: trait-NaturalRatvarian-desc
   category: NaturalLanguages
-  cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    invert: true
-    species:
-    - Shadowkin
+  cost: 0
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Ratvarian
@@ -19,13 +14,12 @@
   name: trait-NaturalChittin-name
   description: trait-NaturalChittin-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Chitinid
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Chittin
@@ -35,13 +29,12 @@
   name: trait-NaturalNehina-name
   description: trait-NaturalNehina-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Feroxi
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Nehina
@@ -51,13 +44,12 @@
   name: trait-NaturalMouse-name
   description: trait-NaturalMouse-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Rodentia
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Mouse
@@ -67,13 +59,12 @@
   name: trait-NaturalCanilunzt-name
   description: trait-NaturalCanilunzt-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Vulpkanin
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Canilunzt
@@ -83,13 +74,12 @@
   name: trait-NaturalBinary-name
   description: trait-NaturalBinary-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - IPC
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Binary
@@ -99,14 +89,13 @@
   name: trait-NaturalArachnic-name
   description: trait-NaturalArachnic-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
-    # Arachne they dont speak Arachind
+    # Arachne #they dont speak Arachind
     - Arachnid
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Arachnic
@@ -116,13 +105,12 @@
   name: trait-NaturalRootSpeak-name
   description: trait-NaturalRootSpeak-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Diona
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: RootSpeak
@@ -132,13 +120,12 @@
   name: trait-NaturalSolCommon-name
   description: trait-NaturalSolCommon-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Human
-    - Shadowkin
     - Felinid
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
@@ -149,13 +136,12 @@
   name: trait-NaturalValyrianStandard-name
   description: trait-NaturalValyrianStandard-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Harpy
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: ValyrianStandard
@@ -165,13 +151,12 @@
   name: trait-NaturalMoffic-name
   description: trait-NaturalMoffic-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Moth
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Moffic
@@ -181,13 +166,12 @@
   name: trait-NaturalDraconic-name
   description: trait-NaturalDraconic-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Reptilian
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Draconic
@@ -197,13 +181,12 @@
   name: trait-NaturalBubblish-name
   description: trait-NaturalBubblish-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - SlimePerson
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Bubblish
@@ -213,13 +196,12 @@
   name: trait-NaturalSchechi-name
   description: trait-NaturalSchechi-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Resomi
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Schechi
@@ -229,13 +211,12 @@
   name: trait-NaturalNekomimetic-name
   description: trait-NaturalNekomimetic-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Felinid
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Nekomimetic
@@ -245,14 +226,13 @@
   name: trait-NaturalKagebun-name
   description: trait-NaturalKagebun-desc
   category: NaturalLanguages
-  cost: 1
+  cost: 0
   conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - Kitsune
     - Oni
-    - Shadowkin
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Kagebun

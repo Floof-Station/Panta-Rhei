@@ -1,9 +1,9 @@
-﻿- type: loadout
+﻿#below additions are for mysta
+- type: loadout
   id: ClothingNeckCloakRd
   equipment:
     neck: ClothingNeckCloakRd
 
-#below addtions are for mysta
 - type: loadout
   id: UniformEpiHeadThong
   equipment:
@@ -18,3 +18,14 @@
   id: UnderSocksEpiHead
   equipment:
     shoes: ClothingUnderSocksEpiHead
+
+# pdas
+- type: loadout
+  id: RnDPDA
+  equipment:
+    id: RnDPDA
+
+- type: loadout
+  id: ResearchDirectorPDA
+  equipment:
+    id: ResearchDirectorPDA

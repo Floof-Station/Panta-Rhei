@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingHeadHatHardhatBase
+  id: ClothingHeadHatHardhatWhiteWelding
+  name: white welding hard hat
+  description: A piece of headgear used in dangerous working conditions to protect the head. Comes with a built-in flashlight! The welding shield appears to be missing.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/Hardhats/white.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/Hardhats/white.rsi

@@ -464,7 +464,7 @@
 
 - type: loadoutGroup
   id: BartenderOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [Shoalserviceararmor, FloofOuterClothing] # Floofstation
   name: loadout-group-bartender-outerclothing
   minLimit: 0
   loadouts:
@@ -1096,7 +1096,7 @@
 # Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
-  parent: [AtmosphericTechnicianHead, FloofHats] # floofstation
+  parent: [FloofCeHats, AtmosphericTechnicianHead, FloofHats] # floofstation
   name: loadout-group-chief-engineer-head
   minLimit: 0
   loadouts:
@@ -1105,7 +1105,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerJumpsuit
-  parent: [FloofCeThong, SeniorEngineerJumpsuit] # Floofstation
+  parent: [FloofCeJumpsuits, SeniorEngineerJumpsuit] # Floofstation
   name: loadout-group-chief-engineer-jumpsuit
   loadouts:
   - ChiefEngineerJumpsuit
@@ -1115,7 +1115,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
-  parent: [EngineeringCollars] # Floofstation
+  parent: [FloofCeCloak, EngineeringCollars] # Floofstation
   name: loadout-group-chief-engineer-neck
   minLimit: 0
   loadouts:
@@ -1139,7 +1139,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
-  parent: [FloofCeSocks, FloofShoes] # Floofstation
+  parent: [FloofCeShoes, FloofShoes] # Floofstation
   name: loadout-group-chief-engineer-shoes
   loadouts:
   #- BrownShoes # DeltaV - Engi loadout rework
@@ -1478,7 +1478,7 @@
 # Security
 - type: loadoutGroup
   id: HeadofSecurityHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhoshelmet, FloofHats] # floofstation
   name: loadout-group-head-of-security-head
   minLimit: 0
   loadouts:
@@ -1487,7 +1487,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
-  parent: [FloofHosThong, FloofSecurityJumpsuits, SeniorOfficerJumpsuits, ] # Floofstation
+  parent: [FloofHosThong, FloofSecurityJumpsuits, SeniorOfficerJumpsuits, Shoalenforcerclothes] # Floofstation
   name: loadout-group-head-of-security-jumpsuit
   loadouts:
   - HeadofSecurityJumpsuit
@@ -1550,7 +1550,7 @@
 
 - type: loadoutGroup
   id: WardenHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-warden-head
   minLimit: 0
   loadouts:
@@ -1559,7 +1559,7 @@
 
 - type: loadoutGroup
   id: WardenJumpsuit
-  parent: [FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityOfficerJumpsuit, Shoalenforcerclothes, FloofJumpsuits] # Floofstation
   name: loadout-group-warden-jumpsuit
   loadouts:
   - WardenJumpsuit
@@ -1592,7 +1592,7 @@
 
 - type: loadoutGroup
   id: SecurityHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-security-head
   minLimit: 0
   loadouts:
@@ -1603,7 +1603,7 @@
 
 - type: loadoutGroup
   id: SecurityJumpsuit
-  parent: [FloofSecurityJumpsuits, FloofSecurityOfficerJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofSecurityJumpsuits, FloofSecurityOfficerJumpsuit, Shoalenforcerclothes, FloofJumpsuits] # Floofstation
   name: loadout-group-security-jumpsuit
   loadouts:
   - SecurityJumpsuit
@@ -1674,12 +1674,12 @@
 
 - type: loadoutGroup
   id: DetectiveHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-detective-head
   minLimit: 0
   loadouts:
-#  - DetectiveFedora # DeltaV - removed for incongruence
-#  - DetectiveFedoraGrey # DeltaV - removed for incongruence
+  - DetectiveFedora # DeltaV - removed for incongruence Floof - readded because IT'S THE DETECTIVE
+  - DetectiveFedoraGrey # DeltaV - removed for incongruence Floof - readded because IT'S THE DETECTIVE
   - DetBeret # DeltaV
 
 - type: loadoutGroup
@@ -1694,7 +1694,7 @@
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
-  parent: [FloofDetectiveJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofDetectiveJumpsuit, Shoalenforcerclothes, FloofJumpsuits] # Floofstation
   name: loadout-group-detective-jumpsuit
   loadouts:
   - DetectiveJumpsuit

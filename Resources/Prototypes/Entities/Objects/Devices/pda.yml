@@ -171,6 +171,15 @@
   id: BaseMedicalPDA
   abstract: true
   components:
+  # Floofstation additions start
+  - type: Pda
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  # Floofstation additions end
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
@@ -762,6 +771,14 @@
   description: Extraordinarily shiny and sterile.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: CMOPenLight
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: CMOIDCard
   - type: Appearance
     appearanceDataInit:
@@ -1170,7 +1187,7 @@
   #   enum.PdaVisuals.PdaType:
   #     !type:String
   #     pda-syndi-operative
-  #- type: Icon 
+  #- type: Icon
   #  state: pda-syndi-operative
 
 
@@ -1210,7 +1227,7 @@
   #   enum.PdaVisuals.PdaType:
   #     !type:String
   #     pda-syndi-commander
-  #- type: Icon  
+  #- type: Icon
   #   state: pda-syndi-commander
 
 - type: entity
@@ -1316,6 +1333,14 @@
   description: Looks immaculately cleaned.
   components:
   - type: Pda
+    # Floofstation additions start
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # Floofstation additions end
     id: PsychologistIDCard
   - type: Appearance
     appearanceDataInit:

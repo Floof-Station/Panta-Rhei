@@ -4,6 +4,10 @@ using Content.Server.Actions;
 using Content.Server.Popups;
 using Content.Shared._Floof.Geras;
 using Robust.Shared.Player;
+using Content.Server.Body.Components;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Humanoid;
+using Content.Shared.Sprite;
 
 namespace Content.Server._Floof.Geras;
 
@@ -38,7 +42,29 @@ public sealed class GerasSystem : EntitySystem
         if (HasComp<ZombieComponent>(uid))
             return; // i hate zomber.
 
+        var colors = GrabHumanoidColors(uid); // begin imp
+
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
+
+        if (colors != null) // Match Geras to Humanoid Skin color
+        {
+            (var skinColor, var eyeColor) = colors.Value;
+            if (TryComp<RandomSpriteComponent>(ent, out var randomSprite)) // has to use random sprite
+            {
+                foreach (var entry in randomSprite.Selected)
+                {
+                    var state = randomSprite.Selected[entry.Key];
+                    state.Color = entry.Key switch
+                    {
+                        "colorMap" => skinColor,
+                        "eyesMap" => eyeColor,
+                        _ => state.Color
+                    };
+                    randomSprite.Selected[entry.Key] = state;
+                }
+                Dirty(ent.Value, randomSprite);
+            }
+        } // end imp
 
         if (!ent.HasValue)
             return;
@@ -47,5 +73,17 @@ public sealed class GerasSystem : EntitySystem
         _popupSystem.PopupEntity(Loc.GetString("geras-popup-morph-message-user"), ent.Value, ent.Value);
 
         args.Handled = true;
+    }
+
+    private (Color, Color)? GrabHumanoidColors(EntityUid entity) //imp
+    {
+        if (TryComp<HumanoidAppearanceComponent>(entity, out var humanoid)) // Get Humanoid Appearance
+        {
+            var skinColor = humanoid.SkinColor;
+            var eyeColor = humanoid.EyeColor;
+            return (skinColor, eyeColor);
+        }
+
+        return null; // if a non-humanoid or someone with no bloodstream ascends, don't modify the colors
     }
 }

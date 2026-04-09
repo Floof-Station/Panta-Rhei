@@ -7,11 +7,13 @@
       part: TorsoAnimal
       connections:
       - legs
+      - left arm #Floof
+      - right arm #Floof
       organs:
         lungs: OrganDragonLungs
         stomach: OrganAnimalStomach
         liver: OrganAnimalLiver
-        heart: OrganSpaceAnimalHeart #Euphoria
+        heart: OrganBloodsuckerHeart # Floof
         kidneys: OrganAnimalKidneys
     legs:
       part: LegsAnimal
@@ -19,3 +21,15 @@
       - feet
     feet:
       part: FeetAnimal
+    left arm: # Euphoria, giving dragons latent hands
+      part: LeftArmFish
+      connections:
+      - left hand
+    left hand:
+      part: LeftHandFish
+    right arm:
+      part: RightArmFish
+      connections:
+      - right hand
+    right hand:
+      part: RightHandFish

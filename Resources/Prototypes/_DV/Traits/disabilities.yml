@@ -4,7 +4,7 @@
   id: Blindness
   name: trait-blindness-name
   description: trait-blindness-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -10 #floof
   conditions:
   - !type:HasCompCondition
@@ -20,7 +20,7 @@
   id: PoorVision
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -1 #floof
   conditions:
   - !type:HasCompCondition
@@ -37,7 +37,7 @@
   id: Monochromacy
   name: trait-monochromacy-name
   description: trait-monochromacy-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
   effects:
   - !type:AddCompsEffect
@@ -48,7 +48,7 @@
   id: Deuteranopia
   name: trait-deuteranopia-name
   description: trait-deuteranopia-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
   effects:
   - !type:AddCompsEffect
@@ -59,7 +59,7 @@
   id: UltraVision
   name: trait-ultravision-name
   description: trait-ultravision-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
   effects:
   - !type:AddCompsEffect
@@ -70,7 +70,7 @@
   id: ImpairedMobility
   name: trait-impaired-mobility-name
   description: trait-impaired-mobility-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -3 #floof
   effects:
   - !type:AddCompsEffect
@@ -83,7 +83,7 @@
   id: ArmAmputeeLeft
   name: trait-amputee-left-arm-name
   description: trait-amputee-left-arm-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -3 #floof
   conflicts:
   - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
@@ -98,7 +98,7 @@
   id: ArmAmputeeRight
   name: trait-amputee-right-arm-name
   description: trait-amputee-right-arm-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -3 #floof
   conflicts:
   - ArmAmputeeLeft
@@ -113,7 +113,7 @@
   id: Dysgraphia
   name: trait-dysgraphia-name
   description: trait-dysgraphia-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -2 #floof
   effects:
   - !type:AddCompsEffect
@@ -124,7 +124,7 @@
   id: PainNumbness
   name: trait-painnumbness-name
   description: trait-painnumbness-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -134,7 +134,7 @@
   id: Hemophilia
   name: trait-hemophilia-name
   description: trait-hemophilia-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euphoria
   cost: -2 #floof
   effects:
   - !type:AddCompsEffect

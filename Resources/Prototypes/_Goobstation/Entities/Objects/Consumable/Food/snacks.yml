@@ -1,0 +1,67 @@
+- type: entity
+  name: cornmoth # Euphoria - Name change
+  parent: FoodMeatBase
+  id: FoodSnackCornmoth # Euphoria - Name change
+  description: It's a corn dog with the adorable face of a moth person! ..You're unsure how ethical it is to eat this. # Euphoria - description change
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - ClothMade # Euphoria - make moths eat it
+  - type: FlavorProfile
+    flavors:
+    - cotton # Euphoria - changed flavor
+    - butter
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Food/cornmoth.rsi # Euphoria - Name change
+    layers:
+    - state: cornmoth-4 # Euphoria - Name change
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 4
+    fillBaseName: cornmoth- # Euphoria - Name change
+    changeColor: false
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Fiber # Euphoria - fibah for cotton flavor
+          Quantity: 5
+  - type: Appearance
+  - type: Edible # Euphoria - change to "Edible"
+    trash:
+    - FoodSnackCornmothTrash
+
+- type: entity
+  categories: [ HideSpawnMenu ]
+  parent: FoodPacketTrash
+  id: FoodSnackCornmothTrash
+  name: cornmoth stick
+  description: It's like you can still hear it chittering... # Euphoria - description change
+  components:
+  - type: Tag
+    tags:
+    - Trash
+    - ClothMade
+  - type: Item
+    sprite: _Goobstation/Objects/Consumable/Food/cornmoth.rsi # Euphoria - Name change
+  - type: Sprite
+    sprite: _Goobstation/Objects/Consumable/Food/cornmoth.rsi # Euphoria - Name change
+    state: cornmothnt # Euphoria - Name change
+  - type: Edible # Euphoria - change to "Edible"
+    solution: food
+  - type: FlavorProfile
+    flavors:
+    - paper
+  - type: BadFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 1
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5

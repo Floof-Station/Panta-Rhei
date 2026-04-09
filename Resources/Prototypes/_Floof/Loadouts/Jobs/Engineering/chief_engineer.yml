@@ -13,3 +13,64 @@
   id: UnderSocksChiefEngi
   equipment:
     shoes: ClothingUnderSocksChiefEngi
+
+#pdas
+- type: loadout
+  id: CEPDA
+  equipment:
+    id: CEPDA
+
+- type: loadout
+  id: StationForemanPDA
+  equipment:
+    id: StationForemanPDA
+
+- type: loadout
+  id: StationArchitectPDA
+  equipment:
+    id: StationArchitectPDA
+# Timers for special options
+
+- type: loadout
+  id: WeldingHardhat
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 5h
+  equipment:
+    head: ClothingHeadHatHardhatWhiteWelding # Drip takes time
+
+- type: loadout
+  id: ChiefEngineerLegacyJumpsuit
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 40h
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitChiefEngineerLegacy # Drip takes time
+
+- type: loadout
+  id: ChiefEngineerLegacyCloak
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 40h
+  equipment:
+    neck: ClothingNeckCloakCeLegacy # Drip takes time
+
+- type: loadout
+  id: ChiefEngineerInsulativeGloves
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobChiefEngineer
+      time: 40h
+  equipment:
+    hands: ClothingHandsGlovesCEInsuls # Drip takes time
