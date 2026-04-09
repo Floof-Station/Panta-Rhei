@@ -578,9 +578,11 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - MedicalDoctorHead # Floofstation
   - MedicalInternJumpsuit
   - MedicalBackpack
   - MedicalMask # Floofstation
+  - MedicalDoctorNeck # Floofstation
   - MedicalDoctorOuterClothing # Floofstation
   - MedicalInternPDADelta # DeltaV
   - MedicalGloves # Floofstation
@@ -682,9 +684,13 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # Floofstation
+  - PassengerNeck # Floofstation
+  - PassengerFace # Floofstation
   - BoxerJumpsuit
   - BoxerGloves
   - CommonBackpack
+  - FloofBoxerPDAs # Floofstation - pda customization
   - Glasses
   - Survival
   - BoxerJobTrinkets
