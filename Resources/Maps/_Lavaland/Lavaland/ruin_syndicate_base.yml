@@ -20297,7 +20297,6 @@ entities:
   - uid: 3131
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 12.5,7.5
       parent: 1
 - proto: VendingMachineColaRed
@@ -20394,13 +20393,11 @@ entities:
   - uid: 3145
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 20.5,5.5
       parent: 1
   - uid: 3146
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
       pos: 21.5,3.5
       parent: 1
 - proto: VestineChemistryVial

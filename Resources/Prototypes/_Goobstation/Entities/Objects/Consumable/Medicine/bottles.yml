@@ -149,21 +149,6 @@
     - id: ChemistryBottleDoxarubixadone
 
 - type: entity
-  id: ChemistryBottleCryptobiolin
-  suffix: cryptobiolin
-  parent: BaseChemistryBottleFilled
-  components:
-  - type: Label
-    currentLabel: reagent-name-cryptobiolin
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Cryptobiolin
-          Quantity: 30
-
-- type: entity
   id: ChemistryBottleHeartbreakerToxin
   suffix: heartbreakertoxin
   parent: BaseChemistryBottleFilled
@@ -236,21 +221,6 @@
         maxVol: 30
         reagents:
         - ReagentId: SpaceDrugs
-          Quantity: 30
-
-- type: entity
-  id: ChemistryBottleBruizine
-  suffix: bruizine
-  parent: BaseChemistryBottleFilled
-  components:
-  - type: Label
-    currentLabel: reagent-name-bruizine
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: Bruizine
           Quantity: 30
 
 - type: entity
