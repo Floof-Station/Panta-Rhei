@@ -15,11 +15,6 @@
       state: dead_ratvar
       noRot: true
       drawdepth: OverMobs
-  - type: AmbientSound
-    volume: 2
-    range: 20
-    sound:
-      path: /Audio/_Goobstation/Ambience/ominous_pulse.ogg
   - type: Physics
     bodyType: Static
   - type: Fixtures

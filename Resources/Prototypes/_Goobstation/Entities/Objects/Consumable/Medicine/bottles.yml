@@ -59,15 +59,9 @@
   table: !type:GroupSelector
     children:
     - !type:GroupSelector
-      weight: 90
+      weight: 100
       children:
-      - !type:NestedSelector
         tableId: RandomChemistryBottleMedicalTable
-    - !type:GroupSelector
-      weight: 10
-      children:
-      - !type:NestedSelector
-        tableId: RandomChemistryBottleToxinTable
 
 - type: entityTable
   id: RandomChemistryBottleMedicalTable
