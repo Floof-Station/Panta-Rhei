@@ -1,0 +1,20 @@
+- type: entity
+  name: SL-M1
+  parent: [BaseWeaponRevolver, BaseSecurityContraband]
+  id: WeaponShoalRevolverSlm1
+  description: A Shoal issued double action revolver with a mounted scope. Designed for sudden long range fights against non-vox forces. Loads 5 rounds of .45 magnum.
+  components:
+  - type: Sprite
+    sprite: _TheShoal/Objects/Weapons/Guns/Revolvers/slm1.rsi
+  - type: Clothing
+    sprite: _TheShoal/Objects/Weapons/Guns/Revolvers/slm1.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.2
+  - type: RevolverAmmoProvider
+    capacity: 5
+    chambers: [ True, True, True, True, True ]
+    ammoSlots: [ null, null, null, null, null ]

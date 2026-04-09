@@ -13,3 +13,11 @@
     proto: EffectSpeciesVox
   equipment:
     pocket1: WeaponShotgunSLT9
+
+- type: loadout
+  id: LoadoutFirearmSLM1Revolver
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: EffectSpeciesVox
+  equipment:
+    pocket1: WeaponShoalRevolverSlm1

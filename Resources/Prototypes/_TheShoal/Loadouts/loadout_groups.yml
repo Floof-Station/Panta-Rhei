@@ -29,6 +29,7 @@
   hidden: false
   loadouts:
   - LoadoutFirearmSLB1Pistol
+  - LoadoutFirearmSLM1Revolver
 
 - type: loadoutGroup
   id: Shoalpistolcommand
@@ -38,6 +39,16 @@
   hidden: false
   loadouts:
   - LoadoutFirearmSLB1Pistol
+  - LoadoutFirearmSLM1Revolver
+
+- type: loadoutGroup
+  id: ShoalRevolver
+  name: Vox-only-Pistols
+  minLimit: 1
+  maxLimit: 1
+  hidden: false
+  loadouts:
+  - LoadoutFirearmSLM1Revolver
 
 #clothes
 - type: loadoutGroup
@@ -48,7 +59,7 @@
   hidden: false
   loadouts:
   - loadoutshoalCoercialisGarb
-  
+
 #armors
 - type: loadoutGroup
   id: Shoalserviceararmor

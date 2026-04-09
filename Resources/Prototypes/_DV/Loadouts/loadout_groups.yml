@@ -386,7 +386,7 @@
 
 - type: loadoutGroup
   id: SecurityRevolverFirearm
-  parent: [FloofSecurityRevolvers] # Floofstation
+  parent: [FloofSecurityRevolvers, ShoalRevolver] # Floofstation
   name: loadout-group-revolver-gun
   minLimit: 0
   maxLimit: 1
