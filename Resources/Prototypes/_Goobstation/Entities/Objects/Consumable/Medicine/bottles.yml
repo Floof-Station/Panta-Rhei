@@ -55,15 +55,6 @@
       tableId: RandomChemistryBottleMedicalTier3
 
 - type: entityTable
-  id: RandomChemistryBottleAnyTable
-  table: !type:GroupSelector
-    children:
-    - !type:GroupSelector
-      weight: 100
-      children:
-        tableId: RandomChemistryBottleMedicalTable
-
-- type: entityTable
   id: RandomChemistryBottleMedicalTable
   table: !type:GroupSelector
     children:
