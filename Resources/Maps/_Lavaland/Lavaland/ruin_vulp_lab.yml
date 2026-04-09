@@ -1627,14 +1627,14 @@ entities:
     - type: Transform
       pos: 7.311695,12.649063
       parent: 1
-- proto: SyringeGun
+- proto: LauncherSyringe #Euphoria
   entities:
   - uid: 190
     components:
     - type: Transform
       pos: 0.6332998,13.572802
       parent: 1
-- proto: SyringePoisonLethalInjection
+- proto: SyringeStimulants #Euphoria, jesus christ this one was dark
   entities:
   - uid: 191
     components:
@@ -1716,7 +1716,7 @@ entities:
     - type: Transform
       pos: 0.5,12.5
       parent: 1
-- proto: VulpkaninCube
+- proto: MonkeyCube #Euphoria
   entities:
   - uid: 205
     components:

@@ -19,7 +19,7 @@ namespace Content.IntegrationTests.Tests._DV;
 /// </summary>
 public sealed class MappingCategoryTest
 {
-    private const string MapsPath = "/Maps/_Lavaland/Lavaland";
+    private const string MapsPath = "/Maps";
     // dev map doesn't matter and don't want to change it
     private readonly List<string> _ignoredMapsPath = ["/Maps/Test/", "/Maps/Shuttles/AdminSpawn", "/Maps/Floof/centcomm.yml", "/Maps/Floof/Shuttles/CentralCommand/", "/Maps/Floof/Shuttles/Event/", "/Maps/_Lavaland/Lavaland/ruin_hierophant_arena.yml"]; //Floofstation - add centcomm and admin shuttles to ignoredmappaths
 

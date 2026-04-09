@@ -109,22 +109,8 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-          - 21.824879
-          - 82.10312
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
-          - 0
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
@@ -1433,7 +1419,7 @@ entities:
     - type: Transform
       pos: 14.366309,17.413605
       parent: 1
-- proto: ClothingUniformJumpsuitCentcomOfficer
+- proto: ClothingOuterCardborg #Euphoria
   entities:
   - uid: 222
     components:
@@ -1528,7 +1514,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: FoamWonderprod
+- proto: FoamCutlass
   entities:
   - uid: 234
     components:
@@ -1795,7 +1781,7 @@ entities:
     - type: Transform
       pos: 4.8353815,5.040293
       parent: 1
-- proto: PlushieLouie
+- proto: PlushieSpawnerRandomPersonal #Euphoria
   entities:
   - uid: 275
     components:
@@ -1997,7 +1983,7 @@ entities:
     - type: Transform
       pos: 1.5587192,16.23759
       parent: 1
-- proto: SoapHomemadeBanana
+- proto: RandomSoap #Euphoria
   entities:
   - uid: 303
     components:
@@ -3012,7 +2998,6 @@ entities:
   - uid: 446
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
       pos: 13.5,8.5
       parent: 1
 - proto: VendingMachineMagivend
