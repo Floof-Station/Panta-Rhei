@@ -610,7 +610,7 @@
 
 - type: loadoutGroup
   id: ChaplainJumpsuit
-  parent: [FloofChaplainJumpsuit, EuphoriaChaplainJumpsuit, FloofJumpsuits] # Floofstation
+  parent: [FloofChaplainJumpsuit, FloofJumpsuits] # Floofstation
   name: loadout-group-chaplain-jumpsuit
   loadouts:
   - ChaplainJumpsuit
