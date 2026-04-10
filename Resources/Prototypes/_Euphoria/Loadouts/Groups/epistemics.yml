@@ -8,14 +8,6 @@
   - BibleLustro
 
 - type: loadoutGroup
-  id: EuphoriaChaplainShoes
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - ChaplainLustroSandals
-
-- type: loadoutGroup
   id: EuphoriaChaplainNeck
   abstract: true
   minLimit: 0
@@ -38,14 +30,3 @@
   maxLimit: 1
   loadouts:
   - ChaplainHaloLustro
-
-- type: loadoutGroup
-  id: EuphoriaChaplainJumpsuit
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - ChaplainLustroAlt
-  - ChaplainLustro
-  - ChaplainInfernusLustro
-  - ChaplainInfernusLustroAlt
