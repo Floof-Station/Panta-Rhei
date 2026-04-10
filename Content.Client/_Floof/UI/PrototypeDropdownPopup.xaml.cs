@@ -1,5 +1,3 @@
-// DeltaV
-
 using System.Linq;
 using Content.Client.UserInterface.Systems.Chat.Controls;
 using Content.Shared._DV.CCVars;
