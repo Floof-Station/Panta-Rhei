@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/09/2026 20:08:42
-  entityCount: 22815
+  time: 04/10/2026 12:31:40
+  entityCount: 22852
 maps:
 - 1
 grids:
@@ -15617,6 +15617,9 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,-17.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal:
+      - - Engineering
     - type: Fixtures
       fixtures: {}
   - uid: 307
@@ -15736,6 +15739,16 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+  - uid: 17423
+    components:
+    - type: MetaData
+      name: Libarian APC
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -16.5,-19.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
   - uid: 17732
     components:
     - type: MetaData
@@ -15791,6 +15804,8 @@ entities:
       fixtures: {}
   - uid: 21219
     components:
+    - type: MetaData
+      name: Security Central APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -16.5,28.5
@@ -15799,6 +15814,8 @@ entities:
       fixtures: {}
   - uid: 21680
     components:
+    - type: MetaData
+      name: Armory APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -21.5,17.5
@@ -15807,6 +15824,8 @@ entities:
       fixtures: {}
   - uid: 21681
     components:
+    - type: MetaData
+      name: Perma APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -27.5,16.5
@@ -15815,6 +15834,8 @@ entities:
       fixtures: {}
   - uid: 21682
     components:
+    - type: MetaData
+      name: Security South APC
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -5.5,14.5
@@ -15823,6 +15844,8 @@ entities:
       fixtures: {}
   - uid: 21683
     components:
+    - type: MetaData
+      name: Sec Desk APC
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -8.5,34.5
@@ -15831,6 +15854,8 @@ entities:
       fixtures: {}
   - uid: 22654
     components:
+    - type: MetaData
+      name: Epistemics APC
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 29.5,-26.5
@@ -15839,6 +15864,8 @@ entities:
       fixtures: {}
   - uid: 22655
     components:
+    - type: MetaData
+      name: Research Area APC
     - type: Transform
       pos: 34.5,-30.5
       parent: 2
@@ -27144,22 +27171,17 @@ entities:
   - uid: 2498
     components:
     - type: Transform
-      pos: -19.5,-16.5
+      pos: -19.5,-19.5
       parent: 2
   - uid: 2499
     components:
     - type: Transform
-      pos: -19.5,-15.5
+      pos: -18.5,-19.5
       parent: 2
   - uid: 2500
     components:
     - type: Transform
-      pos: -19.5,-14.5
-      parent: 2
-  - uid: 2501
-    components:
-    - type: Transform
-      pos: -19.5,-13.5
+      pos: -17.5,-19.5
       parent: 2
   - uid: 2502
     components:
@@ -30565,11 +30587,6 @@ entities:
     components:
     - type: Transform
       pos: -2.5,1.5
-      parent: 2
-  - uid: 17423
-    components:
-    - type: Transform
-      pos: -2.5,2.5
       parent: 2
   - uid: 17440
     components:
@@ -35000,6 +35017,141 @@ entities:
     components:
     - type: Transform
       pos: 24.5,-24.5
+      parent: 2
+  - uid: 22816
+    components:
+    - type: Transform
+      pos: -13.5,3.5
+      parent: 2
+  - uid: 22817
+    components:
+    - type: Transform
+      pos: -13.5,4.5
+      parent: 2
+  - uid: 22819
+    components:
+    - type: Transform
+      pos: -16.5,-19.5
+      parent: 2
+  - uid: 22829
+    components:
+    - type: Transform
+      pos: -20.5,-19.5
+      parent: 2
+  - uid: 22830
+    components:
+    - type: Transform
+      pos: -21.5,-19.5
+      parent: 2
+  - uid: 22831
+    components:
+    - type: Transform
+      pos: -21.5,-20.5
+      parent: 2
+  - uid: 22832
+    components:
+    - type: Transform
+      pos: -21.5,-21.5
+      parent: 2
+  - uid: 22833
+    components:
+    - type: Transform
+      pos: -21.5,-22.5
+      parent: 2
+  - uid: 22834
+    components:
+    - type: Transform
+      pos: -22.5,-22.5
+      parent: 2
+  - uid: 22835
+    components:
+    - type: Transform
+      pos: -23.5,-22.5
+      parent: 2
+  - uid: 22836
+    components:
+    - type: Transform
+      pos: -20.5,-22.5
+      parent: 2
+  - uid: 22837
+    components:
+    - type: Transform
+      pos: -19.5,-22.5
+      parent: 2
+  - uid: 22838
+    components:
+    - type: Transform
+      pos: -18.5,-22.5
+      parent: 2
+  - uid: 22839
+    components:
+    - type: Transform
+      pos: -18.5,-23.5
+      parent: 2
+  - uid: 22840
+    components:
+    - type: Transform
+      pos: -18.5,-24.5
+      parent: 2
+  - uid: 22841
+    components:
+    - type: Transform
+      pos: -18.5,-25.5
+      parent: 2
+  - uid: 22842
+    components:
+    - type: Transform
+      pos: -21.5,-18.5
+      parent: 2
+  - uid: 22843
+    components:
+    - type: Transform
+      pos: -21.5,-17.5
+      parent: 2
+  - uid: 22844
+    components:
+    - type: Transform
+      pos: -21.5,-16.5
+      parent: 2
+  - uid: 22845
+    components:
+    - type: Transform
+      pos: -21.5,-15.5
+      parent: 2
+  - uid: 22846
+    components:
+    - type: Transform
+      pos: -22.5,-15.5
+      parent: 2
+  - uid: 22847
+    components:
+    - type: Transform
+      pos: -20.5,-15.5
+      parent: 2
+  - uid: 22848
+    components:
+    - type: Transform
+      pos: -19.5,-15.5
+      parent: 2
+  - uid: 22849
+    components:
+    - type: Transform
+      pos: -18.5,-15.5
+      parent: 2
+  - uid: 22850
+    components:
+    - type: Transform
+      pos: -18.5,-14.5
+      parent: 2
+  - uid: 22851
+    components:
+    - type: Transform
+      pos: -18.5,-16.5
+      parent: 2
+  - uid: 22852
+    components:
+    - type: Transform
+      pos: -18.5,-18.5
       parent: 2
 - proto: CableApcStack
   entities:
@@ -39830,6 +39982,11 @@ entities:
     components:
     - type: Transform
       pos: 43.5,11.5
+      parent: 2
+  - uid: 2501
+    components:
+    - type: Transform
+      pos: -19.5,-13.5
       parent: 2
   - uid: 3025
     components:
@@ -44695,6 +44852,56 @@ entities:
     components:
     - type: Transform
       pos: 34.5,-16.5
+      parent: 2
+  - uid: 22818
+    components:
+    - type: Transform
+      pos: -19.5,-12.5
+      parent: 2
+  - uid: 22820
+    components:
+    - type: Transform
+      pos: -19.5,-14.5
+      parent: 2
+  - uid: 22821
+    components:
+    - type: Transform
+      pos: -19.5,-15.5
+      parent: 2
+  - uid: 22822
+    components:
+    - type: Transform
+      pos: -19.5,-16.5
+      parent: 2
+  - uid: 22823
+    components:
+    - type: Transform
+      pos: -19.5,-17.5
+      parent: 2
+  - uid: 22824
+    components:
+    - type: Transform
+      pos: -19.5,-18.5
+      parent: 2
+  - uid: 22825
+    components:
+    - type: Transform
+      pos: -19.5,-19.5
+      parent: 2
+  - uid: 22826
+    components:
+    - type: Transform
+      pos: -18.5,-19.5
+      parent: 2
+  - uid: 22827
+    components:
+    - type: Transform
+      pos: -17.5,-19.5
+      parent: 2
+  - uid: 22828
+    components:
+    - type: Transform
+      pos: -16.5,-19.5
       parent: 2
 - proto: CableMVStack
   entities:
@@ -123072,6 +123279,13 @@ entities:
     - type: Transform
       pos: -26.5,13.5
       parent: 2
+- proto: SentientSmileCore
+  entities:
+  - uid: 19924
+    components:
+    - type: Transform
+      pos: 29.5,-21.5
+      parent: 2
 - proto: ServiceTechFab
   entities:
   - uid: 525
@@ -127071,13 +127285,6 @@ entities:
     components:
     - type: Transform
       pos: -18.5,-21.5
-      parent: 2
-- proto: SpawnMobSmile
-  entities:
-  - uid: 19924
-    components:
-    - type: Transform
-      pos: 29.5,-21.5
       parent: 2
 - proto: SpawnMobWalter
   entities:
