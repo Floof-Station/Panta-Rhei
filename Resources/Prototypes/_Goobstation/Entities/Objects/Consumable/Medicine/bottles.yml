@@ -58,9 +58,6 @@
   id: RandomChemistryBottleMedicalTable
   table: !type:GroupSelector
     children:
-    - !type:GroupSelector
-      weight: 100
-      children:
       - id: ChemistryBottleDylovene
       #- id: ChemistryBottleEthylredoxrazine
       #- id: ChemistryBottleCryptobiolin
@@ -96,42 +93,42 @@
 - type: entityTable
   id: RandomChemistryBottleMedicalTier1
   table: !type:GroupSelector
-  children:
-    - id: ChemistryBottleSaline
-    - id: ChemistryBottleInaprovaline
-    - id: ChemistryBottleKelotane
-    - id: ChemistryBottleBicaridine
-    - id: ChemistryBottleHyronalin
+    children:
+      - id: ChemistryBottleSaline
+      - id: ChemistryBottleInaprovaline
+      - id: ChemistryBottleKelotane
+      - id: ChemistryBottleBicaridine
+      - id: ChemistryBottleHyronalin
 
 - type: entityTable
   id: RandomChemistryBottleMedicalTier2
   table: !type:GroupSelector
     children:
-    - id: ChemistryBottleDexalin
-    - id: ChemistryBottleDermaline
-    - id: ChemistryBottleBruizine
-    - id: ChemistryBottleLacerinol
-    - id: ChemistryBottlePuncturase
-    - id: ChemistryBottleDylovene
-    - id: ChemistryBottleEpinephrine
-    - id: ChemistryBottleTricordrazine
-    - id: ChemistryBottleIpecac
-    - id: ChemistryBottleOculine
+      - id: ChemistryBottleDexalin
+      - id: ChemistryBottleDermaline
+      - id: ChemistryBottleBruizine
+      - id: ChemistryBottleLacerinol
+      - id: ChemistryBottlePuncturase
+      - id: ChemistryBottleDylovene
+      - id: ChemistryBottleEpinephrine
+      - id: ChemistryBottleTricordrazine
+      - id: ChemistryBottleIpecac
+      - id: ChemistryBottleOculine
 
 - type: entityTable
   id: RandomChemistryBottleMedicalTier3
   table: !type:GroupSelector
     children:
-    - id: ChemistryBottleDexalinPlus
-    - id: ChemistryBottleCryoxadone
-    - id: ChemistryBottleTranexamicAcid
-    - id: ChemistryBottleLeporazine
-    - id: ChemistryBottleSiderlac
-    - id: ChemistryBottleUltravasculine
-    - id: ChemistryBottleSynaptizine
-    - id: ChemistryBottleEthylredoxrazine
-    - id: ChemistryBottleCryptobiolin
-    - id: ChemistryBottleDoxarubixadone
+      - id: ChemistryBottleDexalinPlus
+      - id: ChemistryBottleCryoxadone
+      - id: ChemistryBottleTranexamicAcid
+      - id: ChemistryBottleLeporazine
+      - id: ChemistryBottleSiderlac
+      - id: ChemistryBottleUltravasculine
+      - id: ChemistryBottleSynaptizine
+      - id: ChemistryBottleEthylredoxrazine
+      - id: ChemistryBottleCryptobiolin
+      - id: ChemistryBottleDoxarubixadone
 
 - type: entity
   id: ChemistryBottleHeartbreakerToxin
