@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared._Floof.Lewd.Components;
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Systems;
@@ -37,11 +38,12 @@ public sealed class LewdOrganSystem : EntitySystem
             return;
         }
 
-        organ.SlotId = ent.Comp.Data.OrganKind.ToString();
+        organ.SlotId = ent.Comp.Data.OrganKind.ToString().ToLowerInvariant();
     }
 
     private void OnLewdAdded(Entity<LewdOrganComponent> ent, ref OrganAddedToBodyEvent args)
     {
+        // TODO: we're not checking if it's in a valid slot? I'm not sure if it's an issue, but if it is, idk how to check
         AttachOrgan(ent, args.Body);
     }
 
@@ -73,6 +75,42 @@ public sealed class LewdOrganSystem : EntitySystem
     public void UpdateData(LewdOrganData data)
     {
         data.ProducedReagentPrototypes = data.ProducedReagents?.Select(it => (ProtoId<ReagentPrototype>) it.Reagent.Prototype)?.ToArray();
+    }
+
+    /// <summary>
+    ///     Updates the organ on a mob.
+    /// </summary>
+    public void UpdateOrgan(Entity<LewdOrganComponent> organ, EntityUid mob)
+    {
+        DebugTools.Assert(CompOrNull<OrganComponent>(organ)?.Body == mob);
+        DetachOrgan(organ, mob);
+        AttachOrgan(organ, mob);
+    }
+
+    /// <summary>
+    ///     Creates a relevant slot for the lewd organ and attaches it to that slot.
+    /// </summary>
+    public bool TryAddOrganToBody(Entity<LewdOrganComponent> organ, EntityUid mob)
+    {
+        if (_body.GetRootPartOrNull(mob) is not { } rootPart)
+            return false;
+
+        var slotName = organ.Comp.Data.OrganKind.ToString().ToLowerInvariant();
+        _body.TryCreateOrganSlot(rootPart.Entity, slotName, out var slot, rootPart.BodyPart);
+
+        // The above method is shitcode, doesn't even specify [NotNullWhen, so we're ignoring the slot out var here.
+        return _body.InsertOrgan(rootPart.Entity, organ, slotName, rootPart.BodyPart);
+    }
+
+    public IEnumerable<Entity<OrganComponent, LewdOrganComponent>> GetLewdOrgans(EntityUid mob)
+    {
+        if (!TryComp<BodyComponent>(mob, out var body))
+            return [];
+
+        var lewdQuery = GetEntityQuery<LewdOrganComponent>();
+        return _body.GetBodyOrgans(mob, body)
+            .Where(it => lewdQuery.HasComp(it.Id))
+            .Select(it => new Entity<OrganComponent, LewdOrganComponent>(it.Id, it.Component, lewdQuery.Comp(it.Id)));
     }
 
     private void AttachOrgan(Entity<LewdOrganComponent> organ, EntityUid body)

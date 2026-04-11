@@ -14,7 +14,7 @@
   parent: BaseLewdOrgan
   id: OrganGenericMammaryGlands
   name: mammary glands
-  description: A mammalian organ that produces milk for feeding newborns.
+  description: A mammalian organ that produces milk typically used for feeding offsprings.
   components:
   - type: LewdOrgan
     data:
@@ -23,7 +23,8 @@
       solutionVolume: 30
       producedReagents:
       - ReagentId: Milk
-        Quantity: 0.1 # Per second, takes ~5 minutes to fill up
+        Quantity: 30
+      productionSpeed: 0.1 # takes ~5 minutes to fill up
       drainSpeed: 0
 
 - type: entity
@@ -55,10 +56,11 @@
     data:
       organKind: Vagina
       solutionName: uterus # I'm not actually sure what to call this
-      solutionVolume: 10
+      solutionVolume: 30
       producedReagents:
       - ReagentId: NaturalLubricant
-        Quantity: 0.03 # Per second, takes ~10 minutes to fill up
+        Quantity: 10 # Only produces 10 units of lubricant by default, leaving the rest for deposition
+      productionSpeed: 0.03 # takes ~10 minutes to fill up, same as penis.
       drainSpeed: 0.05 # Same as the base speed of the penis.
       spillDrain: true
 

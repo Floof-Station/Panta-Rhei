@@ -14,4 +14,6 @@ public enum LewdOrganKind
     Penis   = 1 << 1,
     Vagina  = 1 << 2,
     Rectum  = 1 << 3,
+
+    All     = Breasts | Penis | Vagina | Rectum, // Traits use this for targetting
 }
