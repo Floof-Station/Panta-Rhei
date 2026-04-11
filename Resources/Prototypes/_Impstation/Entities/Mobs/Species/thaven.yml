@@ -60,6 +60,8 @@
   - type: TypingIndicator
     proto: Thaven # DeltaV unique typing indicator
   - type: Vocal
+    wilhelm: "/Audio/_Floof/Voice/Thaven/wilhelm.ogg" # DeltaV
+    wilhelmProbability: 0.001 # DeltaV
     sounds:
       Male: MaleThaven
       Female: FemaleThaven
