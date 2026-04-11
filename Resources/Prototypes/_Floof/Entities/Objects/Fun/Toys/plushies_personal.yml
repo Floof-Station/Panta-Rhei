@@ -1716,3 +1716,78 @@
     equippedPrefix: flick
     slots:
     - HEAD
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieDevil
+  name: Devil plushie
+  description: A Devil Plushie of a hellish half-wolf with fire within it's fur. The crackling of flame can be heard around it. It's rather warm!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: devil
+  - type: UseDelay
+    delay: 5
+  - type: EmitSoundOnActivate
+    sound: &howl
+      path: /Audio/_DV/Voice/Vulpkanin/howl.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *howl
+  - type: EmitSoundOnLand
+    sound: &dog_snarl1
+      path: /Audio/Voice/Vulpkanin/dog_snarl1.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *dog_snarl1
+  - type: MeleeWeapon
+    soundHit: /Audio/_Floof/Voice/Vulpkanin/gekker.ogg
+  - type: AmbientSound
+    range: 2
+    sound: &fireplace
+      path: /Audio/Ambience/Objects/fireplace.ogg
+      params:
+        volume: -18
+  - type: PointLight
+    color: '#CD8014FF'
+    radius: 1.8
+    energy: 0.75
+  - type: EmitSoundOnThrow
+    sound: /Audio/_Floof/Voice/Vulpkanin/vulpscream2.ogg
+  - type: EmitSoundOnSpawn
+    positional: True
+    sound: &devil_start
+      path: /Audio/_Goobstation/Ambience/Antag/devil_start.ogg
+      params:
+        volume: 1
+        maxDistance: 8
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieSatori
+  name: Soft squishy satori plushie
+  description: A plushie depicting a cuddly satori girl. The third eye tendril is painstakingly sewn on. This one is dressed in a dependable corpsman's outfit.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: satori
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &toysqueak2
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *toysqueak2
+  - type: EmitSoundOnLand
+    sound: &toysqueakB
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *toysqueakB
+  - type: MeleeWeapon
+    soundHit: *toysqueakB

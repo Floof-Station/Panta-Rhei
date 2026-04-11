@@ -4,6 +4,7 @@
 using Content.Shared._Common.Consent;
 using Robust.Client.Player;
 using Robust.Shared.Network;
+using Robust.Shared.Prototypes;
 
 namespace Content.Client._Common.Consent;
 
@@ -36,7 +37,10 @@ public sealed class ClientConsentManager : IClientConsentManager
     {
         if (_consent is null)
         {
-            throw new InvalidOperationException("Player doesn't have a session yet?");
+            // Floofstation - who thought it's a good idea?
+            // throw new InvalidOperationException("Player doesn't have a session yet?");
+            Logger.GetSawmill("consent").Error("Attempt to access consent data before session data has been loaded.");
+            return new();
         }
 
         return _consent;
@@ -47,5 +51,15 @@ public sealed class ClientConsentManager : IClientConsentManager
         _consent = message.Consent;
 
         OnServerDataLoaded?.Invoke();
+    }
+
+    // Floofstation - copypaste from server consent manager. Update if that ever changes.
+    /// <summary>
+    ///     Checks if the local player has the specified consent.
+    /// </summary>
+    public bool HasConsent(ProtoId<ConsentTogglePrototype> consentId)
+    {
+        var consent = GetConsentSettings();
+        return consent.Toggles.TryGetValue(consentId, out var val) && val == "on";
     }
 }
