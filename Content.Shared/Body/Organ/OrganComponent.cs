@@ -30,7 +30,7 @@ public sealed partial class OrganComponent : Component, ISurgeryToolComponent //
     ///     without referencing the prototype or hardcoding.
     /// </summary>
 
-    [DataField]
+    [DataField, Access(Other = AccessPermissions.ReadWriteExecute)] // Floofstation - made accessible
     public string SlotId = string.Empty;
 
     [DataField]
