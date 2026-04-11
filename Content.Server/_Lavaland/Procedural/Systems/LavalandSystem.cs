@@ -27,7 +27,7 @@ using Content.Server.Decals;
 using Content.Server.GameTicking;
 using Content.Server.Parallax;
 using Content.Server.Shuttles.Systems;
-using Content.Shared._Floof.CCVar; //Euphoria
+using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Maps;
@@ -80,7 +80,7 @@ public sealed partial class LavalandSystem : EntitySystem
         _xformQuery = GetEntityQuery<TransformComponent>();
         _fixtureQuery = GetEntityQuery<FixturesComponent>();
 
-        Subs.CVar(_config, FloofCCVars.StationPlanetSpawning, value => LavalandEnabled = value, true);//Euphoria
+        Subs.CVar(_config, CCVars.LavalandEnabled, value => LavalandEnabled = value, true);//Euphoria
     }
 
     private void OnLoadingMaps(LoadingMapsEvent ev)
