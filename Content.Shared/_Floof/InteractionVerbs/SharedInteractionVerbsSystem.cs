@@ -25,6 +25,8 @@ namespace Content.Shared._Floof.InteractionVerbs;
 
 public abstract class SharedInteractionVerbsSystem : EntitySystem
 {
+    public static readonly VerbCategory InteractionCategory = new("verb-categories-interaction", null);
+
     private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
 
@@ -331,12 +333,16 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
     private void CopyVerbData(InteractionVerbPrototype proto, Verb verb)
     {
+        VerbCategory category = InteractionCategory;
+        if (!string.IsNullOrEmpty(proto.Category) && _protoMan.Resolve(proto.Category, out var catProto))
+            category = catProto.Materialize();
+
         verb.Text = proto.Name;
         verb.Message = proto.Description;
         verb.DoContactInteraction = proto.DoContactInteraction;
         verb.Priority = proto.Priority;
         verb.Icon = proto.Icon;
-        verb.Category = VerbCategory.Interaction;
+        verb.Category = category;
     }
 
     /// <summary>

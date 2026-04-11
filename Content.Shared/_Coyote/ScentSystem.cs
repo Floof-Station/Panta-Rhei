@@ -14,6 +14,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
+using Content.Shared._Floof.InteractionVerbs;
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -72,7 +73,7 @@ public sealed class ScentSystem : EntitySystem
             {
                 Text = "Smell",
                 Priority = 2,
-                Category = VerbCategory.Interaction,
+                Category = SharedInteractionVerbsSystem.InteractionCategory,
                 Disabled = !_interact.InRangeUnobstructed(
                     args.User,
                     args.Target,
@@ -100,7 +101,7 @@ public sealed class ScentSystem : EntitySystem
         {
             Text = toggleText,
             Priority = 1,
-            Category = VerbCategory.Interaction,
+            Category = SharedInteractionVerbsSystem.InteractionCategory,
             Act = () =>
             {
                 ToggleIgnoreSmell(smellerComp, scentComp);

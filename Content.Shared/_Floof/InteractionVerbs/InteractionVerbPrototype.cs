@@ -1,5 +1,6 @@
 ﻿using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared.DoAfter;
+using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -32,6 +33,12 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public string Name => Loc.TryGetString($"interaction-{ID}-name", out var loc) ? loc : ID;
 
     public string? Description => Loc.TryGetString($"interaction-{ID}-description" , out var loc) ? loc : null;
+
+    /// <summary>
+    ///     Verb category to use for this verb. If blank, uses the default "interaction" category.
+    /// </summary>
+    [DataField]
+    public ProtoId<VerbCategoryPrototype> Category = string.Empty;
 
     /// <summary>
     ///     Sprite of the icon that the user sees on the verb button.
