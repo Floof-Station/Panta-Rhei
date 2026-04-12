@@ -10,8 +10,12 @@ namespace Content.Shared._Floof.InteractionVerbs.Events;
 ///     Note that this is raised before IsAllowed checks are performed on any of the verbs.
 /// </summary>
 [ByRefEvent]
-public sealed class GetInteractionVerbsEvent(List<ProtoId<InteractionVerbPrototype>> verbs)
+public sealed class GetInteractionVerbsEvent(EntityUid user, EntityUid target, List<ProtoId<InteractionVerbPrototype>> verbs)
 {
+    public EntityUid
+        User = user,
+        Target = target;
+
     public List<ProtoId<InteractionVerbPrototype>> Verbs = verbs;
 
     public bool Add(ProtoId<InteractionVerbPrototype> verb)
