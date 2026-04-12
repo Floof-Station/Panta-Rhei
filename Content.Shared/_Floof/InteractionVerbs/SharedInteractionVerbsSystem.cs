@@ -336,7 +336,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     private void CopyVerbData(InteractionVerbPrototype proto, Verb verb)
     {
         VerbCategory category = InteractionCategory;
-        if (!string.IsNullOrEmpty(proto.Category) && _protoMan.Resolve(proto.Category, out var catProto))
+        if (proto.Category is not null && _protoMan.Resolve(proto.Category, out var catProto))
             category = catProto.Materialize();
 
         verb.Text = proto.Name;

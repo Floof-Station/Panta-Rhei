@@ -38,7 +38,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     Verb category to use for this verb. If blank, uses the default "interaction" category.
     /// </summary>
     [DataField]
-    public ProtoId<VerbCategoryPrototype> Category = string.Empty;
+    public ProtoId<VerbCategoryPrototype>? Category = null;
 
     /// <summary>
     ///     Sprite of the icon that the user sees on the verb button.
@@ -121,7 +121,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     Arguments of the do-after shown if <see cref="Delay"/> is greater than zero.
     ///     The user, target, needHand, event, and other required parameters are set up automatically when the do-after is created.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public DoAfterArgs DoAfter = new()
     {
         User = EntityUid.Invalid,
