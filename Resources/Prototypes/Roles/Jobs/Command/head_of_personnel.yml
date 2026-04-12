@@ -46,17 +46,17 @@
   # As of 15/03/23 they can't do that so here's MOST of the rest of the access levels.
   # Head level access that isn't their own was deliberately left out, get AA from the captain instead.
   # Begin DeltaV Removals - fuck all of this HoP is a service role
-  - Chemistry
-  - Engineering
-  - Research
-  - Detective
-  - Salvage
-  - Security # NoooOoOo!! My HoPcurity!1
+  #- Chemistry
+  #- Engineering
+  #- Research
+  #- Detective
+  #- Salvage
+  #- Security # NoooOoOo!! My HoPcurity!1
   #- Brig
-  - Lawyer # Lawyer is now part of the justice dept
-  - Cargo
-  - Atmospherics
-  - Medical
+  #- Lawyer # Lawyer is now part of the justice dept
+  #- Cargo
+  #- Atmospherics
+  #- Medical
   # End DeltaV Removals
   # Begin DeltaV Additions - fine-grained service accesses
   - Boxer
@@ -66,21 +66,6 @@
   - Reporter
   - Zookeeper
   # End DeltaV Additions
-  # Begin Floofstation Additions
-  - Prosecutor
-  - Orders
-  - Mail
-  - Corpsman
-  - Justice
-  - Funding
-  - Clerk
-  - Surgery
-  - Psychologist
-  - Paramedic
-  - Robotics
-  - Library
-  - Mantis
-  # End Floofstation Additions
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
