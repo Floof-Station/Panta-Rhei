@@ -139,6 +139,8 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         var cooldown = proto.Cooldown;
         var delay = proto.Delay;
+        if (args.User == args.Target)
+            delay *= proto.SelfInteractDelayFactor;
         if (proto.ContestDelay)
             delay /= args.ContestAdvantage!.Value;
         if (proto.ContestCooldown)

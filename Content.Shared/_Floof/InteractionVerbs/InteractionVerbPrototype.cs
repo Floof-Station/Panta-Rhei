@@ -50,7 +50,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     Specifies what effects are shown when this verb is performed successfully, or unsuccessfully.
     ///     Effects specified here are shown after the associated do-after has ended, if any.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public EffectSpecifier? EffectSuccess, EffectFailure;
 
     /// <summary>
@@ -91,6 +91,12 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     /// </summary>
     [DataField]
     public TimeSpan Delay = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Factor applied to the verb delay when interacting with self.
+    /// </summary>
+    [DataField]
+    public float SelfInteractDelayFactor = 1f;
 
     /// <summary>
     ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and before the do-after.
