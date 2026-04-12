@@ -80,6 +80,7 @@ public sealed partial class TraitCategory : BoxContainer
 
     public void UpdateStats()
     {
+        // Floofstation note: we do NOT check UsesSlots here because category limits are separate from global limits
         SelectedCount = _traitEntries.Values.Count(e => e.IsSelected);
         PointsSpent = _traitEntries.Values
             .Where(e => e.IsSelected)
