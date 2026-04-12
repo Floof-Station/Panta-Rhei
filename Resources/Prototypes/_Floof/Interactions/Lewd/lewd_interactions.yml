@@ -1,0 +1,95 @@
+# Milking
+- type: Interaction
+  id: LewdFillContainerBreast
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 4 # 2.6s for self, 4 seconds for others, filling 3 units (1u/s for self)
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement
+      checkUser: false
+      slot: INNERCLOTHING # Must have accessible breasts
+    - !type:ConsentRequirement
+      consent: LewdContainerFillByOthers
+  action:
+    !type:LewdFillContainerFromTarget
+      organ: Breasts
+      maxAmount: 3
+
+- type: Interaction
+  id: LewdFillContainerPenis
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 20 # 20s for others and 13s for self, dumping all 20 units (1 u/s)
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement
+      checkUser: false
+      slot: INNERCLOTHING # Must have accessible groin
+    - !type:ConsentRequirement
+      consent: LewdContainerFillByOthers
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Penis
+    maxAmount: 10
+
+- type: Interaction
+  id: LewdFillContainerVagina
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 12 # Idk why you'd want this, I guess for drinks? 12 seconds for others, 8 for self
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement
+      checkUser: false
+      slot: INNERCLOTHING # Must have accessible groin
+    - !type:ConsentRequirement
+      consent: LewdContainerFillByOthers
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Vagina
+    maxAmount: 10
+
+# Sucking
+#LewdSuckPenis
+#LewdSuckBreast
+
+# Deposition/filling
+- type: Interaction
+  id: LewdFillPV
+  parent: BaseLewdFillContainer
+  priority: -2
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement
+      checkUser: false
+      slot: INNERCLOTHING # Both must have accessible groin
+    - !type:SlotObstructionRequirement
+      checkUser: true
+      slot: INNERCLOTHING
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Penis
+    receiverOrgan: Vagina
+
+- type: Interaction
+  id: LewdFillPR
+  parent: BaseLewdFillContainer
+  priority: -2
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement
+      checkUser: false
+      slot: INNERCLOTHING # Both must have accessible groin
+    - !type:SlotObstructionRequirement
+      checkUser: true
+      slot: INNERCLOTHING
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Penis
+    receiverOrgan: Rectum

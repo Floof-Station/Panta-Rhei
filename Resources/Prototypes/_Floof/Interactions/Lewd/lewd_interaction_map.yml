@@ -1,0 +1,15 @@
+- type: lewdInteractionMap
+  id: Default
+  map:
+    # Container filling
+    Breasts,None: LewdFillContainerBreast
+    Penis,None: LewdFillContainerPenis
+    Vagina,None: LewdFillContainerVagina
+    # Sucking
+    None,Penis: LewdSuckPenis
+    None,Breasts: LewdSuckBreast
+    # Sexual intercourse ig
+    Penis,Vagina: LewdFillPV
+    Penis,Rectum: LewdFillPR
+
+

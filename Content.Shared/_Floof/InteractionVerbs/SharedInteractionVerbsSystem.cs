@@ -83,6 +83,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, allVerbs);
         RaiseLocalEvent(entity, ref getVerbsEv, true);
+        allVerbs = getVerbsEv.Verbs.ToList();
 
         // Global verbs are added here because they should be allowed even on entities that do not define any interactions
         AddAll(allVerbs.Select(_protoMan.Index).Union(_globalPrototypes), args, () => new InnateVerb());

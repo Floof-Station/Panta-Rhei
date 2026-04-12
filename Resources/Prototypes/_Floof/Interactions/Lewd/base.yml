@@ -1,0 +1,43 @@
+# Parent for all lewd interactions.
+- type: Interaction
+  id: BaseLewd
+  abstract: true
+  category: LewdInteraction
+  requiresCanInteract: true
+  contactInteraction: true
+  range:
+    max: 1.2
+  effectDelayed:
+    popup: ObviousNoGhosts
+  effectSuccess:
+    popup: ObviousNoGhosts
+  effectFailure:
+    popup: Fail
+
+- type: Interaction
+  id: BaseLewdFillContainer
+  parent: [BaseLewd, BaseHands]
+  abstract: true
+  selfInteractDelayFactor: 0.6667
+  allowSelfInteract: true
+  effectSuccess: # This is mostly here to deincentivise people from doing it in public
+    popup: ObviousNoGhosts
+    sound:
+      path: /Audio/Items/drink.ogg
+      params:
+        volume: -5
+        maxDistance: 2
+
+- type: Interaction
+  id: BaseLewdFillOrgan
+  parent: [BaseLewd, BaseHands]
+  abstract: true
+  delay: 20 # The big delay here is mostly to incentivise using it in longer erp scenes when people aren't moving much
+  allowSelfInteract: false # if you're ever going to make this true, make sure to find a way to add a consent toggle for it.
+  effectSuccess:
+    popup: ObviousNoGhosts
+    sound:
+      path: /Audio/Items/drink.ogg
+      params:
+        volume: -3
+        maxDistance: 2
