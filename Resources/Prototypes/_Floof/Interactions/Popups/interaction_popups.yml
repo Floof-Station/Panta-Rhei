@@ -23,6 +23,12 @@
   popupType: Medium
   logChannel: Emotes
 
+- type: InteractionPopup
+  id: ObviousNoGhosts
+  popupType: Medium
+  logChannel: Emotes
+  visibleToGhosts: false
+
 # MediumCaution, visible to others
 - type: InteractionPopup
   id: Dangerous
