@@ -16,18 +16,17 @@ using Robust.Shared.Timing;
 namespace Content.Server._Floof.Lewd.Systems;
 
 /// <summary>
-///     Processess solutions added by the LewdOrganSystem. This is intentionally isolated as it should only perform read-only operations on the cache.
+///     Processes solutions added by the LewdOrganSystem. This is intentionally isolated as it should only perform read-only operations on the cache.
 /// </summary>
-public sealed class LewdMobSystem : EntitySystem
+public sealed class LewdSolutionsSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solContainer = default!;
     [Dependency] private readonly PuddleSystem _puddles = default!;
     [Dependency] private readonly MobStateSystem _mobStates = default!;
     [Dependency] private readonly HungerSystem _hungers = default!;
-    [Dependency] private readonly ForensicsSystem _forensics = default!;
 
-    public static Ticker GlobalUpdateInterval = new(TimeSpan.FromSeconds(1000)); // Never update more than once every second, otherwise precision errors will bite your arm off
+    public static Ticker GlobalUpdateInterval = new(TimeSpan.FromMilliseconds(1000)); // Never update more than once every second, otherwise precision errors will bite your arm off
 
     public override void Update(float frameTime)
     {

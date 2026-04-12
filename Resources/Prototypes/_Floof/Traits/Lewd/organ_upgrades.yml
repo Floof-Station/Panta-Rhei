@@ -31,13 +31,13 @@
 # ==================== #
 # 2x cap for production
 - type: trait
-  id: DoubleProductionLewdCapacity
+  id: DoubleLewdProductionCapacity
   name: trait-double-production-capacity-name
   description: trait-double-capacity-desc
   category: Lewd
   cost: 0
   conflicts:
-  - TripleProductionLewdCapacity
+  - QuadrupleLewdProductionCapacity
   effects:
   - !type:ModifyLewdOrgansEffect
     target: All
@@ -45,13 +45,13 @@
 
 # 4x cap for production
 - type: trait
-  id: QquadrupleProductionLewdCapacity
+  id: QuadrupleLewdProductionCapacity
   name: trait-quadruple-production-capacity-name
   description: trait-quadruple-capacity-desc
   category: Lewd
   cost: 1
   conflicts:
-  - DoubleProductionLewdCapacity
+  - DoubleLewdProductionCapacity
   effects:
   - !type:ModifyLewdOrgansEffect
     target: All

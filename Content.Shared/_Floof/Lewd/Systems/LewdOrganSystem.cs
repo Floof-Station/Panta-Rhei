@@ -79,7 +79,7 @@ public sealed class LewdOrganSystem : EntitySystem
         args.Verbs.Add(new()
         {
             Text = Loc.GetString("lewd-examine-organs-verb"),
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/_Floof/Interface/VerbIcons/cancer.png")),
             Act = () =>
             {
                 // A simple list of all organs and their fill fractions
@@ -97,9 +97,9 @@ public sealed class LewdOrganSystem : EntitySystem
 
                 var message = FormattedMessage.FromMarkupPermissive(Loc.GetString("lewd-examine-organs-self-header"));
                 foreach (var organDescription in organDescriptions)
-                    message.AddMarkupPermissive(organDescription);
+                    message.AddMarkupPermissive('\n' + organDescription);
 
-                _examines.SendExamineTooltip(target, ent, message, getVerbs: false, centerAtCursor: false);
+                _examines.SendExamineTooltip(user, ent, message, getVerbs: false, centerAtCursor: false);
             },
             Category = VerbCategory.Examine,
             CloseMenu = true,
@@ -168,6 +168,27 @@ public sealed class LewdOrganSystem : EntitySystem
         [NotNullWhen(true)] out Entity<SolutionComponent>? solutionEnt)
     {
         return _solContainer.TryGetSolution(body, organ.Comp.Data.SolutionName, out solutionEnt, out solution);
+    }
+
+    public bool TryGetOrganSolution(
+        LewdOrganKind organ,
+        Entity<SolutionContainerManagerComponent?> body,
+        [NotNullWhen(true)] out Solution? solution,
+        [NotNullWhen(true)] out Entity<SolutionComponent>? solutionEnt)
+    {
+        var lewdQuery = GetEntityQuery<LewdOrganComponent>();
+        foreach (var (organId, organComp) in _body.GetBodyOrgans(body))
+        {
+            if (!lewdQuery.TryComp(organId, out var lewd))
+                continue;
+
+            if (TryGetOrganSolution((organId, lewd), body, out solution, out solutionEnt))
+                return true;
+        }
+
+        solution = default;
+        solutionEnt = default;
+        return false;
     }
 
     private void AttachOrgan(Entity<LewdOrganComponent> organ, EntityUid body)
