@@ -20,5 +20,5 @@ public sealed partial class LewdMobDataComponent : Component
     public LewdOrganKind OrganKinds;
 
     [DataField, AutoNetworkedField, ViewVariables(VVAccess.ReadOnly)]
-    public Dictionary<LewdOrganKind, LewdOrganData> CachedData;
+    public Dictionary<LewdOrganKind, LewdOrganData> CachedData = new();
 }

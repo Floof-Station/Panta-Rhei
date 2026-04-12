@@ -9,11 +9,12 @@ namespace Content.Shared._Floof.Lewd;
 [Serializable, NetSerializable, Flags]
 public enum LewdOrganKind
 {
-    None    = 0,
     Breasts = 1,
     Penis   = 1 << 1,
     Vagina  = 1 << 2,
     Rectum  = 1 << 3,
 
+    None    = 0,
     All     = Breasts | Penis | Vagina | Rectum, // Traits use this for targetting
+    TotalCount = 4, // Update this when adding more
 }

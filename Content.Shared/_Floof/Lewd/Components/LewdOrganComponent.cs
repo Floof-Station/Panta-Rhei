@@ -9,5 +9,5 @@ namespace Content.Shared._Floof.Lewd.Components;
 public sealed partial class LewdOrganComponent : Component
 {
     [DataField]
-    public LewdOrganData Data;
+    public LewdOrganData Data = new();
 }

@@ -1,13 +1,20 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Shared._Floof.Lewd.Components;
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Events;
 using Content.Shared.Body.Organ;
 using Content.Shared.Body.Systems;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Examine;
+using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
 using Content.Shared.Forensics.Components;
+using Content.Shared.Verbs;
+using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -19,15 +26,18 @@ namespace Content.Shared._Floof.Lewd.Systems;
 /// </summary>
 public sealed class LewdOrganSystem : EntitySystem
 {
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedBodySystem _body = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solContainer = default!;
     [Dependency] private readonly SharedPuddleSystem _puddles = default!;
+    [Dependency] private readonly ExamineSystemShared _examines = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<LewdOrganComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<LewdOrganComponent, OrganAddedToBodyEvent>(OnLewdAdded);
         SubscribeLocalEvent<LewdOrganComponent, OrganRemovedFromBodyEvent>(OnLewdRemoved);
+        SubscribeLocalEvent<LewdMobDataComponent, GetVerbsEvent<ExamineVerb>>(OnLewdExamine);
     }
 
     private void OnMapInit(Entity<LewdOrganComponent> ent, ref MapInitEvent args)
@@ -43,19 +53,57 @@ public sealed class LewdOrganSystem : EntitySystem
 
     private void OnLewdAdded(Entity<LewdOrganComponent> ent, ref OrganAddedToBodyEvent args)
     {
+        if (_net.IsClient) // Client-side BodySystem spams mechanism attachments/removals whenever entities move in and out of PVS
+            return;
+
         // TODO: we're not checking if it's in a valid slot? I'm not sure if it's an issue, but if it is, idk how to check
         AttachOrgan(ent, args.Body);
     }
 
     private void OnLewdRemoved(Entity<LewdOrganComponent> ent, ref OrganRemovedFromBodyEvent args)
     {
-        if (!TryComp<LewdMobDataComponent>(args.OldBody, out var lewdData))
-        {
-            Log.Error("Lewd organ was removed from a body, but was never registered?");
+        if (_net.IsClient) // Client-side BodySystem spams mechanism attachments/removals whenever entities move in and out of PVS
             return;
-        }
 
         DetachOrgan(ent, args.OldBody);
+    }
+
+    private void OnLewdExamine(Entity<LewdMobDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
+    {
+        // When trying to examine yourself, add a verb showing all the lewd organs you have.
+        var user = args.User;
+        var target = args.Target;
+        if (user != target)
+            return;
+
+        args.Verbs.Add(new()
+        {
+            Text = Loc.GetString("lewd-examine-organs-verb"),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
+            Act = () =>
+            {
+                // A simple list of all organs and their fill fractions
+                var organDescriptions = GetLewdOrgans(target)
+                    .Select(it =>
+                    {
+                        var name = Name(it.Owner);
+                        var fillFraction = TryGetOrganSolution((it.Owner, it.Comp2), ent.Owner, out var sol, out _)
+                            ? sol.FillFraction
+                            : 0;
+                        var fillFractionStr = fillFraction.ToString("P1");
+
+                        return Loc.GetString("lewd-examine-organs-status", ("name", name), ("fillFraction", fillFractionStr));
+                    });
+
+                var message = FormattedMessage.FromMarkupPermissive(Loc.GetString("lewd-examine-organs-self-header"));
+                foreach (var organDescription in organDescriptions)
+                    message.AddMarkupPermissive(organDescription);
+
+                _examines.SendExamineTooltip(target, ent, message, getVerbs: false, centerAtCursor: false);
+            },
+            Category = VerbCategory.Examine,
+            CloseMenu = true,
+        });
     }
 
     /// <summary>
@@ -74,7 +122,7 @@ public sealed class LewdOrganSystem : EntitySystem
     /// </summary>
     public void UpdateData(LewdOrganData data)
     {
-        data.ProducedReagentPrototypes = data.ProducedReagents?.Select(it => (ProtoId<ReagentPrototype>) it.Reagent.Prototype)?.ToArray();
+        data.ProducedReagentPrototypes = data.ProducedReagents?.Select(it => (ProtoId<ReagentPrototype>) it.Reagent.Prototype).ToArray();
     }
 
     /// <summary>
@@ -111,6 +159,15 @@ public sealed class LewdOrganSystem : EntitySystem
         return _body.GetBodyOrgans(mob, body)
             .Where(it => lewdQuery.HasComp(it.Id))
             .Select(it => new Entity<OrganComponent, LewdOrganComponent>(it.Id, it.Component, lewdQuery.Comp(it.Id)));
+    }
+
+    public bool TryGetOrganSolution(
+        Entity<LewdOrganComponent> organ,
+        Entity<SolutionContainerManagerComponent?> body,
+        [NotNullWhen(true)] out Solution? solution,
+        [NotNullWhen(true)] out Entity<SolutionComponent>? solutionEnt)
+    {
+        return _solContainer.TryGetSolution(body, organ.Comp.Data.SolutionName, out solutionEnt, out solution);
     }
 
     private void AttachOrgan(Entity<LewdOrganComponent> organ, EntityUid body)
