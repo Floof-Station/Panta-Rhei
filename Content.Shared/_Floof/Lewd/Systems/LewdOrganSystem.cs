@@ -179,7 +179,7 @@ public sealed class LewdOrganSystem : EntitySystem
         var lewdQuery = GetEntityQuery<LewdOrganComponent>();
         foreach (var (organId, organComp) in _body.GetBodyOrgans(body))
         {
-            if (!lewdQuery.TryComp(organId, out var lewd))
+            if (!lewdQuery.TryComp(organId, out var lewd) || lewd.Data.OrganKind != organ)
                 continue;
 
             if (TryGetOrganSolution((organId, lewd), body, out solution, out solutionEnt))

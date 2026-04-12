@@ -27,6 +27,8 @@ public sealed partial class LewdOrganFluidTransfer : InteractionAction
     [DataField]
     public FixedPoint2 MaxAmount = FixedPoint2.MaxValue;
 
+    public override bool IsAllowed(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps) => CanPerform(args, proto, true, deps);
+
     public override bool CanPerform(InteractionArgs args,
         InteractionVerbPrototype proto,
         bool beforeDelay,

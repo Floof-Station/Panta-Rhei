@@ -20,6 +20,15 @@
   abstract: true
   selfInteractDelayFactor: 0.6667
   allowSelfInteract: true
+  hideByRequirement: true
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement
+      checkUser: false
+      slot: INNERCLOTHING # Must have accessible groin/breasts
+    - !type:ConsentRequirement
+      consent: LewdContainerFillByOthers
   effectSuccess: # This is mostly here to deincentivise people from doing it in public
     popup: ObviousNoGhosts
     sound:

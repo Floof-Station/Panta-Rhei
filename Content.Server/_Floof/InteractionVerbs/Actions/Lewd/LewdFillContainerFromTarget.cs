@@ -21,6 +21,8 @@ public sealed partial class LewdFillContainerFromTarget : InteractionAction
     [DataField(required: true)]
     public float MaxAmount;
 
+    public override bool IsAllowed(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps) => CanPerform(args, proto, true, deps);
+
     public override bool CanPerform(InteractionArgs args,
         InteractionVerbPrototype proto,
         bool beforeDelay,

@@ -50,13 +50,17 @@ public sealed class LewdInteractionsSystem : EntitySystem
         var organFlagsB = GetOrgans(ev.Target);
         foreach (var pair in EnumeratePairs(organsFlagsA, organFlagsB))
         {
-            if (!InteractionMap.Map.TryGetValue(pair, out var interactionVerbId))
+            Log.Info($"Emitted pair: {pair}");
+            if (!InteractionMap.Map.TryGetValue(pair, out var interactionVerbIds))
                 continue;
 
-            if (!_protoMan.Resolve(interactionVerbId, out var interactionVerb))
-                continue;
+            foreach (var interactionVerbId in interactionVerbIds)
+            {
+                if (!_protoMan.Resolve(interactionVerbId, out var interactionVerb))
+                    continue;
 
-            ev.Add(interactionVerb);
+                ev.Add(interactionVerb);
+            }
         }
     }
 
@@ -68,26 +72,29 @@ public sealed class LewdInteractionsSystem : EntitySystem
         var count = (int) LewdOrganKind.TotalCount;
         for (int i = 0; i < count; i++)
         {
-            if ((flagsA & (LewdOrganKind)(1 << i)) == 0)
+            var fi = (LewdOrganKind)(1 << i);
+            if ((flagsA & fi) == 0)
                 continue;
 
             for (int j = 0; j < count; j++)
             {
-                if ((flagsB & (LewdOrganKind)(1 << i)) == 0)
+                var fj = (LewdOrganKind)(1 << j);
+                if ((flagsB & fj) == 0)
                     continue;
 
-                yield return new((LewdOrganKind) i, (LewdOrganKind) j);
+                yield return new(fi, fj);
             }
         }
 
         // Special case: emit pairs (None, X) and (X, None) for milking and the like.
         for (int k = 0; k < count; k++)
         {
-            if ((flagsA & (LewdOrganKind)(1 << k)) != 0)
-                yield return new((LewdOrganKind) k, LewdOrganKind.None);
+            var fk = (LewdOrganKind)(1 << k);
+            if ((flagsA & fk) != 0)
+                yield return new(fk, LewdOrganKind.None);
 
-            if ((flagsB & (LewdOrganKind)(1 << k)) != 0)
-                yield return new(LewdOrganKind.None, (LewdOrganKind) k);
+            if ((flagsB & fk) != 0)
+                yield return new(LewdOrganKind.None, fk);
         }
     }
 

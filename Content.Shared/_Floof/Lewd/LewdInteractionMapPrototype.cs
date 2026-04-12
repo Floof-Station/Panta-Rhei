@@ -26,7 +26,7 @@ public sealed class LewdInteractionMapPrototype : IPrototype, IInheritingPrototy
     public string ID { get; private set; } = default!;
 
     [DataField(required: true), AlwaysPushInheritance]
-    public Dictionary<LewdOrganMapping, ProtoId<InteractionVerbPrototype>> Map = new();
+    public Dictionary<LewdOrganMapping, List<ProtoId<InteractionVerbPrototype>>> Map = new();
 }
 
 /// <summary>
@@ -61,4 +61,6 @@ public partial struct LewdOrganMapping : ISelfSerialize, IEquatable<LewdOrganMap
     public override bool Equals(object? obj) => obj is LewdOrganMapping other && Equals(other);
 
     public override int GetHashCode() => (int) Item1 * 127 + (int) Item2;
+
+    public override string ToString() => Serialize();
 }
