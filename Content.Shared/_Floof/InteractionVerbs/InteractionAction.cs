@@ -65,19 +65,15 @@ public abstract partial class InteractionAction
 
         #region Helper methods
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public T System<T>() where T : EntitySystem =>
             EntMan.System<T>();
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool TryComp<T>(EntityUid uid, [NotNullWhen(true)] out T? comp) where T : IComponent =>
             EntMan.TryGetComponent(uid, out comp);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public bool TryComp<T>([NotNullWhen(true)] EntityUid? uid, [NotNullWhen(true)] out T? comp) where T : IComponent =>
             EntMan.TryGetComponent(uid, out comp);
 
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public T EnsureComp<T>(EntityUid uid) where T : IComponent, new() =>
             EntMan.EnsureComponent<T>(uid);
 
