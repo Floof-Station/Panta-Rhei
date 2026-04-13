@@ -6,6 +6,9 @@ trait-spearmaster-desc =
     You have an outstanding proficiency with spears, wielding them as an extension of your body.
     Your melee Piercing bonus is increased to 35%, but your melee Blunt bonus is reduced to 25%.
 
+trait-small-name = Small
+trait-small-desc = You are able to climb into spaces others would not normally be able to fit into, such as duffel bags.
+
 trait-swashbuckler-name = Swashbuckler
 trait-swashbuckler-desc =
     You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.

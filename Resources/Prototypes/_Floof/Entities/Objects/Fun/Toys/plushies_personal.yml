@@ -1763,3 +1763,31 @@
       params:
         volume: 1
         maxDistance: 8
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieSatori
+  name: Soft squishy satori plushie
+  description: A plushie depicting a cuddly satori girl. The third eye tendril is painstakingly sewn on. This one is dressed in a dependable corpsman's outfit.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: satori
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &toysqueak2
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *toysqueak2
+  - type: EmitSoundOnLand
+    sound: &toysqueakB
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *toysqueakB
+  - type: MeleeWeapon
+    soundHit: *toysqueakB

@@ -16,6 +16,27 @@
     components:
     - type: FootstepVolumeModifier
       volume: -10 # same as EE, makes it 2x quieter
+
+- type: trait
+  id: Small
+  name: trait-small-name
+  description: trait-small-desc
+  category: Skills
+  cost: 2
+  conditions:
+  - !type:HasCompCondition
+    invert: true  
+    component: PseudoItem
+  effects:
+    - !type:OverrideCompsEffect
+      components:
+        - type: PseudoItem
+          storedOffset: 0,17
+          shape:
+            - 0,0,1,4
+            - 0,2,3,4
+            - 4,0,5,4
+
 # =================================================== #
 
 
