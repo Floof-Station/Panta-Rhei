@@ -10,18 +10,13 @@ using Content.Shared.FixedPoint;
 
 namespace Content.Server._Floof.InteractionVerbs.Actions.Lewd;
 
-public sealed partial class LewdFillContainerFromTarget : InteractionAction
+public sealed partial class LewdFillContainerFromTarget : BaseLewdOrganAction
 {
     /// <summary>
     ///     Organ on the target entity to draw from.
     /// </summary>
     [DataField(required: true)]
     public LewdOrganKind Organ;
-
-    [DataField(required: true)]
-    public float MaxAmount;
-
-    public override bool IsAllowed(InteractionArgs args, InteractionVerbPrototype proto, VerbDependencies deps) => CanPerform(args, proto, true, deps);
 
     public override bool CanPerform(InteractionArgs args,
         InteractionVerbPrototype proto,
@@ -55,12 +50,14 @@ public sealed partial class LewdFillContainerFromTarget : InteractionAction
             return false;
 
         var removed = solSystem.SplitSolution(sourceSolEnt.Value, MaxAmount);
+        var success = removed.Volume > 0;
         solSystem.TryMixAndOverflow(targetSolEnt.Value, removed, targetSol.MaxVolume, out var overflow);
 
         // If the above returned false then no reagents were transferred. However, we'll still spill the rest onto the ground as players may want just that
         if (overflow is { Volume.Value: not 0 })
             deps.System<PuddleSystem>().TrySpillAt(args.Target, overflow, out _, true);
 
-        return true;
+        args.AllowRepeat &= success && removed.Volume > MinRepeatAmount; // Stop repeating if the target has way too little fluid inside
+        return success; // Fail if there's nothing to draw
     }
 }

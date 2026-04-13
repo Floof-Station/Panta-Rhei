@@ -2,20 +2,25 @@
   id: Default
   map:
     # Container filling (target is container)
-    Breasts,None: [LewdFillContainerBreast]
-    Penis,None: [LewdFillContainerPenis]
-    Vagina,None: [LewdFillContainerVagina]
+    Breasts,None:
+    - LewdFillContainerBreast
+    Penis,None:
+    - LewdFillContainerPenis
+    Vagina,None:
+    - LewdFillContainerVagina
     # Container filling (target is the person) and sucking
     None,Breasts:
-    - LewdFillContainerBreast
-    - LewdSuckBreast
+    - LewdFillContainerBreastOther
+    - LewdSuckBreastOther
     None,Penis:
-    - LewdFillContainerPenis
-    - LewdSuckPenis
+    - LewdFillContainerPenisOther
+    - LewdSuckPenisOther
     None,Vagina:
     - LewdFillContainerVagina
     # Sexual intercourse ig
-    Penis,Vagina: [LewdFillPV]
-    Penis,Rectum: [LewdFillPR]
+    Penis,Vagina:
+    - LewdFillPV
+    Penis,Rectum:
+    - LewdFillPR
 
 

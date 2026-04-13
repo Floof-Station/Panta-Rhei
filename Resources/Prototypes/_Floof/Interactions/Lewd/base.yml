@@ -14,22 +14,41 @@
   effectFailure:
     popup: Fail
 
+
+# Milking yourself
 - type: Interaction
   id: BaseLewdFillContainer
   parent: [BaseLewd, BaseHands]
   abstract: true
-  selfInteractDelayFactor: 0.6667
   allowSelfInteract: true
   hideByRequirement: true
-  requirement:
-    !type:ComplexRequirement
-    requirements:
-    - !type:SlotObstructionRequirement
-      checkUser: false
-      slot: INNERCLOTHING # Must have accessible groin/breasts
-    - !type:ConsentRequirement
-      consent: LewdContainerFillByOthers
-  effectSuccess: # This is mostly here to deincentivise people from doing it in public
+  repeatable: true
+  effectSuccess: # This is mostly here to disincentive people from doing it in public
+    popup: ObviousNoGhosts
+    sound:
+      path: /Audio/Items/drink.ogg
+      params:
+        volume: -5
+        maxDistance: 2
+
+
+# Milking someone else
+- type: Interaction
+  id: BaseLewdFillContainerOther
+  parent: BaseLewdFillContainer
+  abstract: true
+  allowSelfInteract: false
+
+
+# Sucking
+- type: Interaction
+  id: BaseLewdSuckOther
+  parent: [BaseLewd, BaseMouth]
+  abstract: true
+  allowSelfInteract: false
+  hideByRequirement: true
+  repeatable: true
+  effectSuccess: # This is mostly here to disincentive people from doing it in public
     popup: ObviousNoGhosts
     sound:
       path: /Audio/Items/drink.ogg

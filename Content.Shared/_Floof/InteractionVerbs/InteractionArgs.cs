@@ -28,6 +28,12 @@ public sealed partial class InteractionArgs
     public Dictionary<string, object> Blackboard => _blackboardField ??= new(3);
     private Dictionary<string, object>? _blackboardField; // null by default, allocated lazily (only if actually needed)
 
+    /// <summary>
+    ///     Override for whether the verb is allowed to repeat. If set to false, the system will not repeat the verb even if the prototype requests it.
+    ///     Verb actions can write to this.
+    /// </summary>
+    public bool AllowRepeat = true;
+
     public InteractionArgs(EntityUid user, EntityUid target, EntityUid? used, bool canAccess, bool canInteract, bool hasHands, float? contestAdvantage)
     {
         User = user;
