@@ -5,7 +5,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 lavaland-planet-name-unknown = Unknown Planet
-lavaland-planet-name-lavaland = Lavaland Planet
+lavaland-planet-name-lavaland = Lavaland Wilds
 lavaland-planet-name-icemoon = IceMoon
 
 # GPS Signals
