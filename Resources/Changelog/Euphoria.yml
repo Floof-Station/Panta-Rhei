@@ -1996,3 +1996,11 @@ Entries:
         require Service time (overall, and Chef and Botany specifically too).
   id: 250
   time: '2026-04-11T10:07:32.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Merged upstream changes up to 2026-04-06. See the PR for more details.
+    - type: Fix
+      message: Probably fixed the empty footprint bug.
+  id: 251
+  time: '2026-04-13T00:12:00.0000000+00:00'

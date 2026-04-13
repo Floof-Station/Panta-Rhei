@@ -1,4 +1,4 @@
-<div class="header" align="center">  
+<div class="header" align="center">
 <img alt="Panta Rhei Logo" width="128" height="128" src="https://raw.githubusercontent.com/Floof-Station/Panta-Rhei/master/Resources/Textures/Logo/logo.png" />
 </div>
 
@@ -9,6 +9,7 @@ Panta Rhei is a fork of [Delta-V](https://github.com/DeltaV-Station/Delta-v), wh
 Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), a homegrown engine written in C#.
 
 ### Panta Rhei is a continuation of the [Nyanotrasen](https://www.nyanotrasen.moe/) fork. Any work done in a non-base namespace may contain incorrect attributes due to rewrites and recommitting.
+### Any work done in a non-base namespace may contain incorrect attributions due to rewrites and recommitting.
 
 ## Links
 
@@ -28,7 +29,7 @@ Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://githu
 </div>
 
 #### Space Station 14
-<div class="header" align="center">  
+<div class="header" align="center">
 
 [Website](https://spacestation14.io/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.io/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/)
 
@@ -37,8 +38,8 @@ Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://githu
 ## Documentation/Wiki
 
 The [docs site](https://docs.spacestation14.io/) has documentation on SS14s content, engine, game design and more.
-Additionally, see these resources for license and attribution information:  
-- [Robust Generic Attribution](https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html)  
+Additionally, see these resources for license and attribution information:
+- [Robust Generic Attribution](https://docs.spacestation14.com/en/specifications/robust-generic-attribution.html)
 - [Robust Station Image](https://docs.spacestation14.com/en/specifications/robust-station-image.html)
 
 ## Contributing
@@ -67,7 +68,7 @@ git clone https://github.com/Floof-Station/Panta-Rhei.git
 cd Panta-Rhei
 python RUN_THIS.py
 ```
-3. Compile the solution:  
+3. Compile the solution:
 
 Build the server using `dotnet build`.
 

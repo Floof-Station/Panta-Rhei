@@ -18,6 +18,7 @@ using Robust.Shared.Utility;
 using Content.Shared._CD.Records; // CD - Character Records
 using Content.Shared.FixedPoint; // CD - Allergies
 using Content.Shared._DV.Traits; // DeltaV - Traits rework
+using Content.Shared._DV.Species; // DeltaV - Species hiding
 
 namespace Content.Shared.Preferences
 {
@@ -263,7 +264,7 @@ namespace Content.Shared.Preferences
 
             var species = random.Pick(prototypeManager
                 .EnumeratePrototypes<SpeciesPrototype>()
-                .Where(x => ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))
+                .Where(x => !SpeciesHiderSystem.IsHidden(x.ID) && (ignoredSpecies == null ? x.RoundStart : x.RoundStart && !ignoredSpecies.Contains(x.ID))) // DeltaV - Don't randomize hidden species
                 .ToArray()
             ).ID;
 
