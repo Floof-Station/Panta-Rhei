@@ -18,12 +18,13 @@
       checkUser: false
       slot: INNERCLOTHING # Must have accessible groin/breasts
     - !type:UnderwearRequirement &noTopUndergarmentTarget
-      layer: UndergarmentBottom
+      layer: UndergarmentTop
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
       organ: Breasts
       maxAmount: 3
+      minRepeatAmount: 3
 
 - type: Interaction
   id: LewdFillContainerPenis
@@ -42,6 +43,7 @@
     !type:LewdFillContainerFromTarget
     organ: Penis
     maxAmount: 20
+    minRepeatAmount: 5
 
 - type: Interaction
   id: LewdFillContainerVagina
@@ -58,6 +60,7 @@
     !type:LewdFillContainerFromTarget
     organ: Vagina
     maxAmount: 8
+    minRepeatAmount: 3
 
 
 # ========================== #
@@ -74,10 +77,12 @@
     - *noTopUndergarmentTarget
     - !type:ConsentRequirement &filledByOthersConsent
       consent: LewdContainerFillByOthers
+      inverted: true
   action:
     !type:LewdFillContainerFromTarget
     organ: Breasts
     maxAmount: 3
+    minRepeatAmount: 3
 
 - type: Interaction
   id: LewdFillContainerPenisOther
@@ -94,6 +99,7 @@
     !type:LewdFillContainerFromTarget
     organ: Penis
     maxAmount: 20
+    minRepeatAmount: 5
 
 - type: Interaction
   id: LewdFillContainerVaginaOther
@@ -110,6 +116,7 @@
     !type:LewdFillContainerFromTarget
     organ: Vagina
     maxAmount: 8
+    minRepeatAmount: 3
 
 
 # ========================== #
@@ -131,6 +138,7 @@
     !type:LewdDrinkFromOrgan
     organ: Penis
     maxAmount: 20 # Same as FillPV
+    minRepeatAmount: 5 # Give em some break, eh?
 
 - type: Interaction
   id: LewdSuckBreastOther
@@ -145,8 +153,9 @@
     - *noBottomUndergarmentTarget
   action:
     !type:LewdDrinkFromOrgan
-    organ: Penis
+    organ: Breasts
     maxAmount: 20 # Same as FillContainerBreastOther
+    minRepeatAmount: 3
 
 
 # ========================== #

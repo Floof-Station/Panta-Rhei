@@ -33,6 +33,8 @@ public sealed class LewdSolutionsSystem : EntitySystem
         if (!GlobalUpdateInterval.TryUpdate(_timing))
             return;
 
+        var toAdd = new List<(EntityUid, SolutionContainerManagerComponent, LewdOrganData)>();
+
         var query = EntityQueryEnumerator<SolutionContainerManagerComponent, LewdMobDataComponent>();
         while (query.MoveNext(out var uid, out var solMan, out var lewd))
         {
@@ -51,7 +53,8 @@ public sealed class LewdSolutionsSystem : EntitySystem
                 {
                     // So fun fact, EnsureSolution can fail if the mob is not yet map-initialized
                     // This means that organ addition can randomly fail when done via traits.
-                    _solContainer.EnsureSolution(uid, lewdData.SolutionName, out var solution2, lewdData.SolutionVolume);
+                    Log.Warning($"Entity {uid} is missing a solution {lewdData.SolutionName}, adding it.");
+                    toAdd.Add((uid, solMan, lewdData));
                     continue;
                 }
 
@@ -59,6 +62,11 @@ public sealed class LewdSolutionsSystem : EntitySystem
                 if (CanRegenerate(uid))
                     ProcessRegeneration((uid, solMan, lewd), solution.Value, lewdData);
             }
+        }
+
+        foreach (var (uid, solMan, lewdData) in toAdd)
+        {
+            _solContainer.EnsureSolution(uid, lewdData.SolutionName, out _, lewdData.SolutionVolume);
         }
     }
 

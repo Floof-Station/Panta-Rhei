@@ -1,11 +1,9 @@
-using System.Linq;
 using Content.Server.Fluids.EntitySystems;
-using Content.Server.Hands.Systems;
 using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared._Floof.Lewd;
 using Content.Shared._Floof.Lewd.Systems;
+using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
-using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 
@@ -39,7 +37,7 @@ public sealed partial class LewdDrinkFromOrgan : BaseLewdOrganAction
         var success = removed.Volume > 0;
 
         var stomachSys = deps.System<StomachSystem>();
-        if (!stomachSys.TryTransferSolution(args.User, removed))
+        if (GetBiggestStomach(deps, args.User, solSystem) is not {} stomach || !stomachSys.TryTransferSolution(stomach, removed, stomach))
         {
             // Splash if the user can't consume the liquid for some reason (no stomach?)
             // As such we don't prevent the user from trying to drink even if they cant consume it
@@ -47,6 +45,30 @@ public sealed partial class LewdDrinkFromOrgan : BaseLewdOrganAction
         }
 
         args.AllowRepeat &= success && removed.Volume > MinRepeatAmount; // Stop repeating if the target has way too little fluid inside
-        return success;
+        return true;
+    }
+
+    public static Entity<StomachComponent>? GetBiggestStomach(VerbDependencies deps, EntityUid user, SharedSolutionContainerSystem solSystem)
+    {
+        var bodySystem = deps.System<SharedBodySystem>();
+        if (!bodySystem.TryGetBodyOrganEntityComps<StomachComponent>(user, out var stomachs))
+            return null;
+
+        var highestAvailable = FixedPoint2.Zero;
+        Entity<StomachComponent>? stomachToUse = null;
+        foreach (var ent in stomachs)
+        {
+            var owner = ent.Owner;
+            if (!solSystem.ResolveSolution(owner, StomachSystem.DefaultSolutionName, ref ent.Comp1.Solution, out var stomachSol))
+                continue;
+
+            if (stomachSol.AvailableVolume <= highestAvailable)
+                continue;
+
+            stomachToUse = ent;
+            highestAvailable = stomachSol.AvailableVolume;
+        }
+
+        return stomachToUse;
     }
 }

@@ -23,6 +23,7 @@
   allowSelfInteract: true
   hideByRequirement: true
   repeatable: true
+  repeat: true
   effectSuccess: # This is mostly here to disincentive people from doing it in public
     popup: ObviousNoGhosts
     sound:
@@ -38,6 +39,7 @@
   parent: BaseLewdFillContainer
   abstract: true
   allowSelfInteract: false
+  repeat: true
 
 
 # Sucking
@@ -47,7 +49,8 @@
   abstract: true
   allowSelfInteract: false
   hideByRequirement: true
-  repeatable: true
+  requiresHands: false
+  repeat: true
   effectSuccess: # This is mostly here to disincentive people from doing it in public
     popup: ObviousNoGhosts
     sound:
@@ -62,6 +65,8 @@
   abstract: true
   delay: 20 # The big delay here is mostly to incentivise using it in longer erp scenes when people aren't moving much
   allowSelfInteract: false # if you're ever going to make this true, make sure to find a way to add a consent toggle for it.
+  requiresHands: false
+  hideByRequirement: true
   effectSuccess:
     popup: ObviousNoGhosts
     sound:
