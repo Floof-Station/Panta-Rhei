@@ -24,6 +24,6 @@ public sealed partial class UnderwearRequirement : InvertableInteractionRequirem
     {
         var sys = deps.System<ModifyUndiesSystem>();
         var target = CheckUser ? args.User : args.Target;
-        return sys.IsMarkingHidden(target, Layer) ^ Inverted;
+        return sys.IsMissingUndergarment(target, Layer) ^ Inverted;
     }
 }

@@ -250,10 +250,10 @@ public sealed class ModifyUndiesSystem : EntitySystem
     /// <summary>
     ///     The above is a nightmare. This method checks if the relevant underwear slot is "pulled down" by checking if any marking on that layer is hidden.
     /// </summary>
-    public bool IsMarkingHidden(Entity<HumanoidAppearanceComponent?> ent, HumanoidVisualLayers layer)
+    public bool IsMissingUndergarment(Entity<HumanoidAppearanceComponent?> ent, HumanoidVisualLayers layer)
     {
         // TODO THIS IS TECHNICAL DEBT
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
         foreach (var hiddenMarkingId in ent.Comp.HiddenMarkings)
@@ -263,6 +263,10 @@ public sealed class ModifyUndiesSystem : EntitySystem
                 return true;
         }
 
-        return false;
+        // We need to check if the mob even has those markings in the first place
+        var markingCat = MarkingCategoriesConversion.FromHumanoidVisualLayers(layer);
+        var markings = ent.Comp.MarkingSet.Markings;
+
+        return !markings.ContainsKey(markingCat) || markings[markingCat].Count == 0;
     }
 }
