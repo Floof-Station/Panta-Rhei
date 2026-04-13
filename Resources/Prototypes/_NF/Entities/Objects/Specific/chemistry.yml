@@ -64,8 +64,11 @@
       - Bottle
       - CentrifugeCompatible # Vial > CentrifugeCompatible
       - Syringe
+      - PillCanister # Euphoria: Medical Pouch can contain pill canisters
       components:
       - Injector # Euphoria Injector<Hypospray
+    blacklist: # Euphoria: Remove Storage blacklist (medical pouch can contain pill canisters)
+      components: []
 
 - type: entity
   name: interdyne medical pouch # Euphoria: interdyne<corpsman's
