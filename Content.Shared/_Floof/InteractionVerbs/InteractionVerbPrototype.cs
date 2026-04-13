@@ -74,6 +74,13 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public InteractionAction? Action = null;
 
     /// <summary>
+    ///     If true, the system will attempt to repeat the verb on the next tick after a successful completion.
+    ///     The repeat will be interrupted when one of the actions or requirements fails, so make sure it's not a no-op.
+    /// </summary>
+    [DataField]
+    public bool Repeat = false;
+
+    /// <summary>
     ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be shown, but disabled.
     /// </summary>
     /// <remarks>I apologize, I could not come up with a better name.</remarks>
@@ -225,7 +232,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     }
 
     [DataDefinition, Serializable]
-    public partial class EffectSpecifier
+    public sealed partial class EffectSpecifier
     {
         [DataField]
         public EffectTargetSpecifier EffectTarget = EffectTargetSpecifier.TargetThenUser;
