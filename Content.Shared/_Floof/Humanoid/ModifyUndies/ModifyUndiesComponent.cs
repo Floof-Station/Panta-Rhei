@@ -1,11 +1,8 @@
 using Content.Shared.Humanoid;
 
-namespace Content.Server._Floof.Humanoid.ModifyUndies;
+namespace Content.Shared._Floof.Humanoid.ModifyUndies;
 
 
-/// <summary>
-/// This is used for...
-/// </summary>
 [RegisterComponent]
 public sealed partial class ModifyUndiesComponent : Component
 {

@@ -1,7 +1,5 @@
 using System.Linq;
-using Content.Server.Humanoid;
 using Content.Shared._Floof.Clothing.SlotBlocker;
-using Content.Shared._Floof.Humanoid.ModifyUndies;
 using Content.Shared.DoAfter;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -9,12 +7,14 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Server.Audio;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using static Content.Shared._Floof.Clothing.SlotBlocker.SlotBlockerSystem.CheckType;
 
-namespace Content.Server._Floof.Humanoid.ModifyUndies;
+namespace Content.Shared._Floof.Humanoid.ModifyUndies;
 
 /// <summary>
 /// This is a component that lets you show/hide specific underwear slots.
@@ -22,12 +22,11 @@ namespace Content.Server._Floof.Humanoid.ModifyUndies;
 /// </summary>
 public sealed class ModifyUndiesSystem : EntitySystem
 {
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly EntityManager _entMan = default!;
     [Dependency] private readonly SlotBlockerSystem _slotBlocker = default!;
 
     public static readonly VerbCategory UndiesCat =
@@ -49,7 +48,7 @@ public sealed class ModifyUndiesSystem : EntitySystem
             return;
 
         if (args.User != args.Target
-            && _slotBlocker.IsSlotObstructedOrOccupied(args.Target, null, SlotBlockerSystem.CheckType.IgnoreBlockerPreference, SlotFlags.INNERCLOTHING, out _))
+            && _slotBlocker.IsSlotObstructedOrOccupied(args.Target, null, IgnoreBlockerPreference, SlotFlags.INNERCLOTHING, out _))
             return; // mainly so people cant just spy on others undies *too* easily
 
         var isMine = args.User == args.Target;
@@ -246,5 +245,24 @@ public sealed class ModifyUndiesSystem : EntitySystem
             ent.Comp.HiddenMarkings.Add(markingId);
 
         Dirty(ent);
+    }
+
+    /// <summary>
+    ///     The above is a nightmare. This method checks if the relevant underwear slot is "pulled down" by checking if any marking on that layer is hidden.
+    /// </summary>
+    public bool IsMarkingHidden(Entity<HumanoidAppearanceComponent?> ent, HumanoidVisualLayers layer)
+    {
+        // TODO THIS IS TECHNICAL DEBT
+        if (!Resolve(ent, ref ent.Comp))
+            return false;
+
+        foreach (var hiddenMarkingId in ent.Comp.HiddenMarkings)
+        {
+            if (_protoMan.TryIndex<MarkingPrototype>(hiddenMarkingId, out var hiddenMarking) &&
+                hiddenMarking.BodyPart == layer)
+                return true;
+        }
+
+        return false;
     }
 }
