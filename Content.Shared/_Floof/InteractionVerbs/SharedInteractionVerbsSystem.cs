@@ -95,7 +95,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         PerformVerb(proto, ev.VerbArgs!, out var success);
         ev.Handled = true;
 
-        if (success && proto.Repeat)
+        if (success && proto.Repeat && ev.VerbArgs!.AllowRepeat)
             ev.Repeat = true;
     }
 
