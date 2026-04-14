@@ -30,6 +30,8 @@
           - !type:ReagentCondition
             reagent: NikkosNaughtyNectar
             max: 50
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
   footstepSound:
     collection: FootstepSticky
     params:

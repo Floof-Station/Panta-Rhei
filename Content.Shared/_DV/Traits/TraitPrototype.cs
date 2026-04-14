@@ -1,5 +1,6 @@
 using Content.Shared._DV.Traits.Conditions;
 using Content.Shared._DV.Traits.Effects;
+using Content.Shared._Coyote.SniffAndSmell;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.Traits;

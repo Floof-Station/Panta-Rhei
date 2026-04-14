@@ -1,0 +1,81 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    xmlns:ui="clr-namespace:Content.Client._Floof.UI"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    MinSize="500, 300"
+    Title="{Loc 'scent-editor-title'}">
+
+    <BoxContainer Orientation="Vertical">
+        <SplitContainer
+            Orientation="Horizontal"
+            HorizontalExpand="True"
+            VerticalExpand="True"
+            Margin="8">
+
+            <!-- Left side - current scents and scent addition dropdown -->
+            <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                <BoxContainer
+                    Orientation="Vertical"
+                    Name="PrimaryContainer"
+                    MinWidth="100"
+                    HorizontalExpand="True">
+
+                    <Label Text="{Loc 'scent-editor-current-header'}"></Label>
+
+                    <ScrollContainer
+                        HScrollEnabled="False"
+                        VScrollEnabled="True"
+                        HorizontalExpand="True"
+                        VerticalExpand="True">
+
+                        <BoxContainer Name="CurrentScentsContainer" Orientation="Vertical"/>
+                    </ScrollContainer>
+
+                    <!-- Scent dropdown added in code -->
+                </BoxContainer>
+
+                <!-- Dont you love having to add a fake separator? Because SplitContainer doesn't support drawing a separator on its own. -->
+                <customControls:VSeparator
+                    StyleClasses="LowDivider"
+                    Margin="2 0"
+                    MouseFilter="Pass"/>
+            </BoxContainer>
+
+            <!-- Right side - presets -->
+            <BoxContainer
+                Orientation="Vertical"
+                MinWidth="100">
+
+                <Label Text="{Loc 'scent-editor-presets'}"></Label>
+
+                <ScrollContainer
+                    HScrollEnabled="False"
+                    VScrollEnabled="True"
+                    HorizontalExpand="True"
+                    VerticalExpand="True">
+
+                    <BoxContainer Name="PresetsContainer" Orientation="Vertical"/>
+
+                </ScrollContainer>
+
+                <!-- Option to save the current settings as a preset at the bottom. -->
+                <Label Text="{Loc 'scent-editor-save-preset-header'}"></Label>
+
+                <BoxContainer Orientation="Horizontal" HorizontalExpand="True">
+                    <LineEdit Name="PresetNameEdit" HorizontalExpand="True"/>
+
+                    <TextureButton Name="SavePresetButton" TexturePath="/Textures/Interface/VerbIcons/group.svg.192dpi.png" SetSize="32 32"/>
+                </BoxContainer>
+            </BoxContainer>
+        </SplitContainer>
+
+        <controls:HLine Color="#404040" Thickness="2" Margin="0 5 0 5"/>
+
+        <!-- I took this from QuickDialog, again, sue me -->
+        <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="SaveButton" Text="{Loc 'quick-dialog-ui-ok'}"/>
+            <Button Name="CancelButton" Text="{Loc 'quick-dialog-ui-cancel'}"/>
+        </BoxContainer>
+    </BoxContainer>
+</controls:FancyWindow>

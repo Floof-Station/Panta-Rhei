@@ -1,5 +1,6 @@
 # Records editor
 humanoid-profile-editor-cd-records-tab = Records
+humanoid-profile-editor-cd-allergies-tab = Allergies
 
 # General
 humanoid-profile-editor-cd-records-height = Height (cm):

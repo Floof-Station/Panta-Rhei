@@ -5,8 +5,6 @@
   id: FloofJumpsuits
   abstract: true
   name: loadout-group-passenger-jumpsuits
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ClothingUniformJumpsuitTacticool
   - ClothingUniformJumpskirtTacticool
@@ -103,15 +101,18 @@
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
+  - ClothingCowprintBikini
   - UniformNudityPermit
+  - ClothingUniformBandedDancersGarb
+  - ClothingUniformRedSidelessDress
+  - ClothingUniformPurpleNightclubDress
+  - ClothingUniformBlackPetticoatDress
 
 # gloves
 - type: loadoutGroup
   id: FloofGloves
   abstract: true
   name: loadout-group-passenger-gloves
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsGlovesLeather
   - ClothingArmwarmersCoder
@@ -132,10 +133,9 @@
   id: FloofShoes
   abstract: true
   name: loadout-group-passenger-shoes
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ClothingShoesBootsJack
+  - ClothingShoesBootsLaceup
   - ClothingShoesBootsCowboyFancy
   - ClothingShoesBootsCowboyBlack
   - ClothingShoesBootsCowboyBrown
@@ -155,13 +155,12 @@
   - ClothingSocksPan
   - ClothingSocksTrans
   - ClothingSocksCoderValid
+  - ClothingSocksCowprint
 
 # backpacks
 - type: loadoutGroup
   id: FloofBackpacks
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - BackpackSatchelLeather
 
@@ -170,10 +169,9 @@
   id: FloofOuterClothing
   abstract: true
   name: loadout-group-passenger-outerclothing
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - OuterCoatBomber
+  - OuterLustroCoat
   - OuterCoatMNKWhiteHoodie
   - OuterHoodieBlack
   - OuterHoodieGrey
@@ -213,8 +211,6 @@
   id: FloofHats
   abstract: true
   name: loadout-group-assistant-head
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - HeadHatHairflower
   - HeadHatLilly
@@ -239,8 +235,6 @@
 - type: loadoutGroup
   id: FloofGlasses
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingEyesBlindfold
   - ClothingEyesBlindfoldFake

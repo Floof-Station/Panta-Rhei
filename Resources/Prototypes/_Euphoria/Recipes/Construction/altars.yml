@@ -1,0 +1,12 @@
+- type: construction
+  id: AltarLustroEcclesia
+  graph: Altar
+  startNode: start
+  targetNode: infernalis
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+

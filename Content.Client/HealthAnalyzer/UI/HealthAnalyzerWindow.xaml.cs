@@ -58,6 +58,8 @@ namespace Content.Client.HealthAnalyzer.UI
         public event Action? OnClaimPatient;
         // End DeltaV - Medical Records
 
+        public Action? OnPrintPatientRecord; // Frontier: Allow printing hardcopy of patient information
+
         public HealthAnalyzerWindow()
         {
             RobustXamlLoader.Load(this);
@@ -113,6 +115,8 @@ namespace Content.Client.HealthAnalyzer.UI
             StatusBox.Children.Last().RemoveStyleClass("ButtonSquare");
             ClaimButton.OnPressed += _ => OnClaimPatient?.Invoke();
             // End DeltaV - Medical Records
+
+            PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
         }
 
         // Shitmed Change Start
@@ -151,6 +155,7 @@ namespace Content.Client.HealthAnalyzer.UI
                 || !_entityManager.TryGetComponent<DamageableComponent>(isPart ? part : _target, out var damageable))
             {
                 NoPatientDataText.Visible = true;
+                PrintButtonsContainer.Visible = false; // Frontier
                 return;
             }
 
@@ -175,6 +180,8 @@ namespace Content.Client.HealthAnalyzer.UI
                 : Loc.GetString("health-analyzer-window-entity-unknown-text");
 
             ScanModeLabel.FontColorOverride = msg.ScanMode.HasValue && msg.ScanMode.Value ? Color.Green : Color.Red;
+
+            PrintButtonsContainer.Visible = msg is { Printable: true, ScanMode: true }; // Frontier
 
             // Patient Information
 

@@ -7,6 +7,8 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using System.Linq;
+using Content.Client._Floof.Lobby.UI;
+using YamlDotNet.Serialization.NodeTypeResolvers;
 
 namespace Content.Client.Lobby.UI.Loadouts;
 
@@ -25,6 +27,7 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
 
     public event Action<ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
     public event Action<ProtoId<LoadoutPrototype>>? OnLoadoutUnpressed;
+    public event Action<ProtoId<LoadoutPrototype>>? OnRequestLoadoutMetadataEdit; // Floofstation
 
     public LoadoutGroupContainer(HumanoidCharacterProfile profile, RoleLoadout loadout, LoadoutGroupPrototype groupProto, ICommonSession session, IDependencyCollection collection)
     {
@@ -222,7 +225,11 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
 
         var cont = new LoadoutContainer(proto, !enabled, reason);
 
-        cont.Text = loadoutSystem.GetName(proto);
+        var loadoutPrefs = loadout.SelectedLoadouts.TryGetValue(_groupProto.ID, out var chosenGroup)
+            ? chosenGroup.Find(it => it.Prototype == proto.ID)
+            : null; // Floofstation - try to find loadout pref
+        cont.Text = loadoutPrefs?.NameOverride ?? loadoutSystem.GetName(proto); // Floofstation - can be overridden
+        LoadoutMetadataEditorDialog.ColorEntity(cont.SpriteEntity, loadoutPrefs?.ColorOverride, collection.Resolve<IEntityManager>()); // Floofstation - color entity preview
 
         cont.Select.Pressed = pressed;
 
@@ -233,6 +240,17 @@ public sealed partial class LoadoutGroupContainer : BoxContainer
             else
                 OnLoadoutUnpressed?.Invoke(proto.ID);
         };
+
+        // Floofstation section - configure button. It's hidden while the loadout is unpressed.
+        cont.ConfigureButton.Visible = pressed;
+        OnLoadoutPressed += _ => cont.ConfigureButton.Visible = true;
+        OnLoadoutUnpressed += _ => cont.ConfigureButton.Visible = false;
+
+        cont.ConfigureButton.OnPressed += _ =>
+        {
+            OnRequestLoadoutMetadataEdit?.Invoke(proto.ID);
+        };
+        // Floofstation section end
 
         return cont;
     }

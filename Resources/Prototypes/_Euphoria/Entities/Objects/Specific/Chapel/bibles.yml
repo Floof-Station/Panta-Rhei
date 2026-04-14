@@ -1,0 +1,23 @@
+- type: entity
+  parent: Bible
+  id: BibleLustroEcclesia
+  name: ritus ignis
+  description: The holy book of Lustro Ecclesia. Praise be Sol'Magmus...
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Chapel/ritusignis.rsi
+    layers:
+    - state: icon
+    - state: icon_lighting
+      shader: unshaded
+  - type: Item
+    sprite: _Euphoria/Objects/Specific/Chapel/ritusignis.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: inhand-left_lighting
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: inhand-right_lighting
+        shader: unshaded

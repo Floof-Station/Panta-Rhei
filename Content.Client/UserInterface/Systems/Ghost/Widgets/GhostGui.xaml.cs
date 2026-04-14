@@ -6,6 +6,7 @@ using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing; // Frontier
 using Robust.Shared.Configuration; // Frontier
 using Content.Client._NF.UserInterface.Systems.Ghost.Controls; // Frontier
+using Content.Client._Goobstation.UserInterface.Systems.Ghost.Controls; // Goobstation - Ghostbar
 
 namespace Content.Client.UserInterface.Systems.Ghost.Widgets;
 
@@ -19,11 +20,13 @@ public sealed partial class GhostGui : UIWidget
 
     public GhostTargetWindow TargetWindow { get; }
     public GhostRespawnRulesWindow RulesWindow { get; } // Frontier
+    public GhostBarRulesWindow GhostBarWindow { get; }
 
     public event Action? RequestWarpsPressed;
     public event Action? ReturnToBodyPressed;
     public event Action? GhostRolesPressed;
     public event Action? GhostRespawnPressed; // Frontier
+    public event Action? GhostBarPressed; // Goobstation - Ghost Bar
     private int _prevNumberRoles;
 
     public GhostGui()
@@ -32,7 +35,7 @@ public sealed partial class GhostGui : UIWidget
 
         TargetWindow = new GhostTargetWindow();
         RulesWindow = new GhostRespawnRulesWindow(); // Frontier
-        RulesWindow.RespawnButton.OnPressed += _ => GhostRespawnPressed?.Invoke(); // Frontier
+        GhostBarWindow = new GhostBarRulesWindow();
 
         MouseFilter = MouseFilterMode.Ignore;
 
@@ -41,11 +44,13 @@ public sealed partial class GhostGui : UIWidget
         GhostRolesButton.OnPressed += _ => GhostRolesPressed?.Invoke();
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
         GhostRespawnButton.OnPressed += _ => RulesWindow.OpenCentered(); // Frontier
+        GhostBarButton.OnPressed += _ => GhostBarPressed?.Invoke(); // Goobstation - Ghost Bar
     }
 
     public void Hide()
     {
         TargetWindow.Close();
+        GhostBarWindow.Close(); // Goobstation - Ghost Bar
         Visible = false;
     }
 
@@ -99,6 +104,7 @@ public sealed partial class GhostGui : UIWidget
         if (disposing)
         {
             TargetWindow.Dispose();
+            GhostBarWindow.Dispose(); // Goobstation - Ghost Bar
         }
     }
 }

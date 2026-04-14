@@ -577,6 +577,30 @@
     jumpsuit: ClothingUniformNudityPermit
   groupBy: "lewdsuit"
 
+- type: loadout
+  id:   ClothingUniformBandedDancersGarb
+  equipment:
+    jumpsuit: ClothingUniformBandedDancersGarb
+  groupBy: "dresses"
+
+- type: loadout
+  id:   ClothingUniformRedSidelessDress
+  equipment:
+    jumpsuit: ClothingUniformRedSidelessDress
+  groupBy: "dresses"
+
+- type: loadout
+  id:   ClothingUniformPurpleNightclubDress
+  equipment:
+    jumpsuit: ClothingUniformPurpleNightclubDress
+  groupBy: "dresses"
+
+- type: loadout
+  id:   ClothingUniformBlackPetticoatDress
+  equipment:
+    jumpsuit: ClothingUniformBlackPetticoatDress
+  groupBy: "dresses"
+
 # socks
 - type: loadout
   id: ClothingSocksRainbow
@@ -643,6 +667,11 @@
   id: ClothingShoesBootsJack
   equipment:
     shoes: ClothingShoesBootsJack
+
+- type: loadout
+  id: ClothingShoesBootsLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup
 
 - type: loadout
   id: ClothingShoesBootsCowboyFancy

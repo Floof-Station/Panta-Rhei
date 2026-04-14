@@ -1,0 +1,24 @@
+- type: entity
+  parent: ClothingUniformThongBase
+  id: ClothingUniformCowprintBikini
+  name: Cow Print Bikini
+  description: Moo
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/cowprintbikini.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/cowprintbikini.rsi
+    equipDelay: 0
+    unequipDelay: 0
+
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderCowprintsocks
+  name: Cow Print Thigh Highs
+  description: For some reason, these are a little tighter at the top.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Under/Socks/cowprintsock.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Under/Socks/cowprintsock.rsi
