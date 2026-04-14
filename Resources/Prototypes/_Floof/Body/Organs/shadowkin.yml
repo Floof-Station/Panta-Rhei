@@ -94,6 +94,9 @@
   - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [Shadowkin]
+    #groups:
+    #- id: Alcohol
+    #  rateModifier: 0.1 # Floof Removal - lowest value is theoretically 0.2
 
 - type: entity
   id: OrganShadowkinKidneys
