@@ -486,4 +486,9 @@ public enum LogType
     /// Logs related to the consent system.
     /// </summary>
     Consent = 12489, // random high number to avoid conflict when upstream adds new log types
+
+    /// <summary>
+    /// Delta V - RMC Pose port
+    /// </summary>
+    RMCSetPose= 10000,
 }

@@ -20,9 +20,18 @@
     #  department: Security
     #  time: 2.5h
     # Floofstation changes end
+    #- !type:DepartmentTimeRequirement
+    #  department: Command
+    #  time: 5h # Floofstation changed from 2.5h to 5h
     - !type:DepartmentTimeRequirement
-      department: Command
-      time: 5h # Floofstation changed from 2.5h to 5h
+      department: Civilian
+      time: 10h # More in line with what Floof was. 
+    - !type:RoleTimeRequirement
+      role: JobChef
+      time: 2h
+    - !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 2h
   weight: 10 # DeltaV - Changed HoP weight from 20 to 10 due to them not being more important than other Heads
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"

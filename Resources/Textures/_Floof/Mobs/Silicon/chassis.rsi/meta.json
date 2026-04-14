@@ -5,10 +5,30 @@
     "y": 64
   },
   "license": "CC-BY-SA-3.0",
-  "copyright": "Made by Fenndragon discord: 190763499276861440, edits by LucasTheDrgn discord: 97135517740593152 and dakodragon discord: 56038550335922176",
+  "copyright": "Original quadborg sprites made by Fenndragon discord: 190763499276861440, edits by LucasTheDrgn discord: 97135517740593152 and dakodragon discord: 56038550335922176. Service, Generic, and and Salvage Quad sprites made by dzordz discord: 310775535984836609, Medical Quad sprites made by honeydothannah discord: 522186587627585559, Engineering and Security Quad sprites made by betterdragonhere discord: 1207115437163151460, edits and Janitor Quad sprites made by strawofman discord: 106862148956790784",
   "states": [
     {
+      "name": "quadgen",
+      "directions": 4
+    },
+    {
+      "name": "quadgen_e",
+      "directions": 4
+    },
+    {
+      "name": "quadgen_e_r",
+      "directions": 4
+    },
+    {
+      "name": "quadgen_l",
+      "directions": 4
+    },
+    {
       "name": "quadsec",
+      "directions": 4
+    },
+    {
+      "name": "quadsec_e",
       "directions": 4
     },
     {
@@ -19,38 +39,12 @@
       "name": "quadsec_l",
       "directions": 4
     },
-    {
-      "name": "quadsec_m",
-      "directions": 4,
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
-      ]
-    },
 	{
       "name": "quadserv",
+      "directions": 4
+    },
+	{
+      "name": "quadserv_e",
       "directions": 4
     },
 	{
@@ -61,38 +55,12 @@
       "name": "quadserv_l",
       "directions": 4
     },
-    {
-      "name": "quadserv_m",
-      "directions": 4,
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
-      ]
-    },
 	{
       "name": "quadmed",
+      "directions": 4
+    },
+	{
+      "name": "quadmed_e",
       "directions": 4
     },
 	{
@@ -104,77 +72,114 @@
       "directions": 4
     },
     {
-      "name": "quadmed_m",
-      "directions": 4,
-      "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
-      ]
+      "name": "quadsalv",
+      "directions": 4
     },
     {
-      "name": "quadsalv_l",
+      "name": "quadsalv_e",
       "directions": 4
     },
     {
       "name": "quadsalv_e_r",
       "directions": 4
     },
-	{
-      "name": "quadsalv",
+    {
+      "name": "quadsalv_l",
       "directions": 4
     },
     {
-      "name": "quadsalv_m",
+      "name": "quadjani",
+      "directions": 4
+    },
+    {
+      "name": "quadjani_e",
+      "directions": 4
+    },
+    {
+      "name": "quadjani_e_r",
+      "directions": 4
+    },
+    {
+      "name": "quadjani_l",
+      "directions": 4
+    },
+    {
+      "name": "quadjani_m",
       "directions": 4,
       "delays": [
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ],
-        [
-          0.2,
-          0.2,
-          0.2,
-          0.2
-        ]
+          [
+              0.1,
+              0.1,
+              0.1,
+              0.1
+          ],
+          [
+              0.1,
+              0.1,
+              0.1,
+              0.1
+          ],
+          [
+              0.1,
+              0.1,
+              0.1,
+              0.1
+          ],
+          [
+              0.1,
+              0.1,
+              0.1,
+              0.1
+          ]
       ]
+    },
+    {
+      "name": "quadengi",
+      "directions": 4
+    },
+    {
+      "name": "quadengi_e",
+      "directions": 4
+    },
+    {
+      "name": "quadengi_e_r",
+      "directions": 4
+    },
+    {
+      "name": "quadengi_l",
+      "directions": 4
+    },
+    {
+      "name": "quadcap",
+      "directions": 4
+    },
+    {
+      "name": "quadcap_e",
+      "directions": 4
+    },
+    {
+      "name": "quadcap_e_r",
+      "directions": 4
+    },
+    {
+      "name": "quadcap_l",
+      "directions": 4
+    },
+    {
+      "name": "quadcc",
+      "directions": 4
+    },
+    {
+      "name": "quadcc_e",
+      "directions": 4
+    },
+    {
+      "name": "quadcc_e_r",
+      "directions": 4
+    },
+    {
+      "name": "quadcc_l",
+      "directions": 4
     }
-
   ]
 }

@@ -1,0 +1,26 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadLustroEcclesiaHalo
+  name: flaming halo
+  description: A boon granted from Sol'Magmus, this halo signifies class within Lustro Ecclesia.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Misc/lustrohalo.rsi
+    layers:
+    - state: icon
+      shader: unshaded
+  - type: Clothing
+    slots: [head]
+    sprite: _Euphoria/Clothing/Head/Misc/lustrohalo.rsi
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: unshaded
+  - type: PointLight
+    color: '#CD8014FF'
+    radius: 2.0
+    energy: 1.0
+  - type: AmbientSound
+    range: 2
+    sound: /Audio/Ambience/Objects/fireplace.ogg
+    volume: -18

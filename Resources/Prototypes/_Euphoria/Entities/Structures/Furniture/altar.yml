@@ -1,0 +1,21 @@
+- type: entity
+  id: AltarLustroEcclesia
+  parent: AltarNanotrasen
+  name: infernalis altar
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Furniture/Altars/Gods/infernalis.rsi
+    layers:
+    - state: infernalis
+    - state: infernalis_lighting
+      shader: unshaded
+  - type: Icon
+    sprite: _Euphoria/Structures/Furniture/Altars/Gods/infernalis.rsi
+    state: infernalis
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    color: "#CD8014"
+  - type: Construction #Nyano
+    graph: Altar
+    node: infernalis

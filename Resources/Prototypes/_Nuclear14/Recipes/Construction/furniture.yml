@@ -328,7 +328,7 @@
   id: N14ChairOfficeErgonomic
   graph: N14Seat
   startNode: start
-  targetNode: N14ChairOfficeErgonomic
+  targetNode: N14ChairErgonomic
   category: construction-category-furniture
   description: ergonomic-office-chair-descrption
 #  icon:
@@ -417,12 +417,13 @@
   conditions:
     - !type:TileNotBlocked
 
+# May have been added on floofstation? Idk
 - type: construction
   name: TableWoodSettler
   id: N14TableWoodSettler
   graph: N14TableRecipes
   startNode: start
-  targetNode: TableWoodSettler
+  targetNode: N14TableWoodSettler
   category: construction-category-furniture
   description: TableWoodSettler-descprtion
   objectType: Structure
@@ -430,8 +431,5 @@
   canBuildInImpassable: false
   hide: false
   canRotate: true
-#  icon:
-#    sprite: _Nuclear14/Structures/Furniture/Tables/table_settler.rsi
-#    state: full
   conditions:
     - !type:TileNotBlocked

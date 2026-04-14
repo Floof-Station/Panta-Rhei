@@ -1,5 +1,72 @@
 - type: entity
   parent: ChairWood
+  id: N14ChairArmchair
+  name: armchair
+  description: A padded armchair.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: armchair
+  - type: Construction
+    graph: N14Seat
+    node: N14ChairArmchair
+
+# Metal Chairs
+- type: entity
+  parent: StoolBase # DeltaV - so it can swivel
+  id: N14ChairBarRetro
+  name: retro chair
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: retro_chair
+  - type: Construction # Begin DeltaV Additions
+    graph: N14Seat
+    node: N14ChairRetro # End DeltaV Additions
+
+- type: entity
+  id: N14ChairDinerBench
+  parent: ChairBase # DeltaV
+  name: diner chair
+  description: A cozy diner chair.
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
+    state: diner_chair
+
+- type: entity
+  id: N14ChairOfficeErgonomic
+  name: ergonomic office chair
+  parent: OfficeChairBase # DeltaV - furniture rework
+  components:
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Furniture/chairs.rsi # DeltaV - furniture rework
+    state: ergo_chair
+  - type: Construction # DeltaV
+    graph: N14Seat # DeltaV
+    node: N14ChairErgonomic # DeltaV - furniture rework
+  - type: StaticPrice # Floof - apparently it's expensive when deconstructed
+    price: 40
+
+- type: entity
+  parent: N14ChairBarRetro
+  id: N14ChairCaptain
+  name: captain chair
+  description: A chair fit for a captain.
+  components:
+  - type: Sprite
+    state: captain_chair
+
+
+
+
+
+
+
+############################################################################################
+# Floofstation section. Delta-v ported some but not all of these and now it's our burden. #
+- type: entity
+  parent: ChairWood
   id: N14ChairWood
   name: wooden chair
   description: A wooden chair suitable for sitting on.
@@ -82,19 +149,6 @@
   - type: Construction
     graph: N14Seat
     node: N14ChairStoolBarRed
-
-- type: entity
-  parent: N14ChairWood
-  id: N14ChairArmchair
-  name: armchair
-  description: A padded armchair.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: armchair
-  - type: Construction
-    graph: N14Seat
-    node: N14ChairArmchair
 
 # Metal Chairs
 - type: entity
@@ -252,22 +306,6 @@
     sprite: _Nuclear14/Structures/Furniture/chairs.rsi
     state: office_chair_green_broken
 
-
-- type: entity
-  parent: OfficeChairBase
-  id: N14ChairOfficeErgonomic
-  suffix: ergo
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Structures/Furniture/chairs.rsi
-    state: ergo_chair
-  - type: Construction
-    graph: N14Seat
-    node: N14ChairOfficeErgonomic
-  - type: StaticPrice # Floof - apparently it's expensive when deconstructed
-    price: 20
-
-
 - type: entity
   parent: N14ChairMetalGreen
   id: N14ChairMetalFolding
@@ -279,15 +317,6 @@
   - type: Construction
     graph: N14Seat
     node: N14ChairMetalFolding
-
-- type: entity
-  parent: N14ChairMetalGreen
-  id: N14ChairBarRetro
-  name: retro chair
-  suffix: retro
-  components:
-  - type: Sprite
-    state: retro_chair
 
 - type: entity
   parent: N14ChairMetalGreen
@@ -303,22 +332,3 @@
     node: N14ChairPlastic
   - type: StaticPrice # Floof - apparently it's expensive when deconstructed
     price: 20
-
-
-- type: entity
-  parent: N14ChairMetalGreen
-  id: N14ChairDinerBench
-  name: diner chair
-  description: An American Diner bench.
-  components:
-  - type: Sprite
-    state: diner_chair
-
-- type: entity
-  parent: N14ChairBarRetro
-  id: N14ChairCaptain
-  name: captain chair
-  description: A chair fit for a captain.
-  components:
-  - type: Sprite
-    state: captain_chair

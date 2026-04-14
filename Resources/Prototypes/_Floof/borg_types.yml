@@ -1,3 +1,105 @@
+# Generic quadborg
+- type: borgType
+  id: quadgeneric
+  # Description
+  dummyPrototype: QuadChassisGeneric
+  # Functional
+  extraModuleCount: 5
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  radioChannels:
+  - Science
+  addComponents:
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.75, 0.75
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadgen
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadgen_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadgen_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadgen
+  spriteHasMindState: quadgen_e
+  spriteNoMindState: quadgen_e_r
+  spriteToggleLightState: quadgen_l
+  # Pet
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+# Engineering quadborg
+- type: borgType
+  id: quadengineering
+  # Description
+  dummyPrototype: QuadChassisEngineer
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Science
+  - Engineering
+  lawset: Engineer # DeltaV - Custom lawset
+  job: StationEngineer # DeltaV - borg job requirements
+  addComponents: # DeltaV - departmental access
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-orange
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Engineering"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.75, 0.75
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadengi
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadengi_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadengi_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadengi
+  spriteHasMindState: quadengi_e
+  spriteNoMindState: quadengi_e_r
+  spriteToggleLightState: quadengi_l
+  # Pet
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+
 # Security quadborg
 - type: borgType
   id: quadsecurity
@@ -41,7 +143,7 @@
   # Visual
   clientComponents:
   - type: Sprite
-    scale: 0.7, 0.7
+    scale: 0.75, 0.75
     noRot: true
     drawdepth: Mobs
     sprite: _Floof/Mobs/Silicon/chassis.rsi
@@ -58,8 +160,7 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: quadsec
-  spriteBodyMovementState: quadsec_m
-  spriteHasMindState: quadsec_e_r
+  spriteHasMindState: quadsec_e
   spriteNoMindState: quadsec_e_r
   spriteToggleLightState: quadsec_l
   # Pet
@@ -98,7 +199,7 @@
   # Visual
   clientComponents:
   - type: Sprite
-    scale: 0.7, 0.7
+    scale: 0.75, 0.75
     noRot: true
     drawdepth: Mobs
     sprite: _Floof/Mobs/Silicon/chassis.rsi
@@ -115,8 +216,7 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: quadsalv
-  spriteBodyMovementState: quadsalv_m
-  spriteHasMindState: quadsalv_e_r
+  spriteHasMindState: quadsalv_e
   spriteNoMindState: quadsalv_e_r
   spriteToggleLightState: quadsalv_l
   # Pet
@@ -171,7 +271,7 @@
   # Visual
   clientComponents:
   - type: Sprite
-    scale: 0.7, 0.7
+    scale: 0.75, 0.75
     noRot: true
     drawdepth: Mobs
     sprite: _Floof/Mobs/Silicon/chassis.rsi
@@ -188,8 +288,7 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: quadmed
-  spriteBodyMovementState: quadmed_m
-  spriteHasMindState: quadmed_e_r
+  spriteHasMindState: quadmed_e
   spriteNoMindState: quadmed_e_r
   spriteToggleLightState: quadmed_l
   # Pet
@@ -226,7 +325,7 @@
   # Visual
   clientComponents:
   - type: Sprite
-    scale: 0.7, 0.7
+    scale: 0.75, 0.75
     noRot: true
     drawdepth: Mobs
     sprite: _Floof/Mobs/Silicon/chassis.rsi
@@ -243,10 +342,64 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: quadserv
-  spriteBodyMovementState: quadserv_m
-  spriteHasMindState: quadserv_e_r
+  spriteHasMindState: quadserv_e
   spriteNoMindState: quadserv_e_r
   spriteToggleLightState: quadserv_l
   # Pet
   petSuccessString: petting-success-service-cyborg
   petFailureString: petting-failure-service-cyborg
+
+# Janitor quadborg
+- type: borgType
+  id: quadjanitor
+  # Description
+  dummyPrototype: QuadChassisJanitor
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  radioChannels:
+  - Science
+  - Service
+  lawset: Janitor # DeltaV - Custom lawset
+  job: Janitor # DeltaV - borg job requirements
+  addComponents: # DeltaV - departmental access
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-purple
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Janitor"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.75, 0.75
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadjani
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadjani_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadjani_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadjani
+  spriteBodyMovementState: quadjani_m
+  spriteHasMindState: quadjani_e
+  spriteNoMindState: quadjani_e_r
+  spriteToggleLightState: quadjani_l
+  # Pet
+  petSuccessString: petting-success-janitor-cyborg
+  petFailureString: petting-failure-janitor-cyborg

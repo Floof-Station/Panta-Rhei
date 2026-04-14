@@ -230,7 +230,7 @@
     - DoorBumpOpener
     - AnomalyHost # MAKE SURE TO UPDATE FLOOFSTATION SPECIES TAGS IF THESE EVER CHANGE
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
-  - type: FootPrints # DeltaV port from EE, blood splatter
+  - type: FootPrints # DeltaV port from EE, blood splatter # Floofstation - delta-v removed this, but we're keeping it
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
@@ -243,6 +243,7 @@
     action: ActionToggleWaggingVulpkanin
   - type: ModifyUndies
   # Floofstation section end
+  - type: RMCSetPose # DeltaV - RMC pose port
 
 - type: entity
   save: false

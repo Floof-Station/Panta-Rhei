@@ -1930,3 +1930,176 @@ Entries:
       message: Firebug Festival cost changed from 10 to 15.
   id: 243
   time: '2026-04-07T23:34:19.0000000+00:00'
+- author: trashalice
+  changes:
+    - type: Tweak
+      message: >-
+        Changed sex toy whips to not do insane stamina damage. (they still do
+        damage if you want to have fun with them)
+  id: 244
+  time: '2026-04-09T09:02:16.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Add
+      message: Return of the small trait
+  id: 245
+  time: '2026-04-09T09:04:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        The Ghostbar is now available for round removed players or spectating
+        players to use with the character they chose for that round.
+  id: 246
+  time: '2026-04-10T03:50:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now edit your character's scent mid-game. Right-click menu >
+        interact > edit scents. Admin ghosts can edit scents on all entities.
+    - type: Fix
+      message: >-
+        The "interact" category no longer has smelling-related verbs above the
+        basic ones.
+  id: 247
+  time: '2026-04-10T09:26:40.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Engineering can now choose to bring engineering goggles or different
+        eyewear.
+    - type: Add
+      message: A few more trinkets are now aviaible.
+    - type: Fix
+      message: More roles should have access to full loadout options.
+  id: 248
+  time: '2026-04-11T02:38:10.0000000+00:00'
+- author: faefyr
+  changes:
+    - type: Add
+      message: 8 new chaplain clothing - Flame Religion
+    - type: Add
+      message: 1 new winter coat - Flame Religion
+    - type: Add
+      message: Flame religion Altar
+    - type: Add
+      message: Flame religion holy book
+  id: 249
+  time: '2026-04-11T02:58:13.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted HoP requirements to not require Command time, and instead
+        require Service time (overall, and Chef and Botany specifically too).
+  id: 250
+  time: '2026-04-11T10:07:32.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Merged upstream changes up to 2026-04-06. See the PR for more details.
+    - type: Fix
+      message: Probably fixed the empty footprint bug.
+  id: 251
+  time: '2026-04-13T00:12:00.0000000+00:00'
+- author: StrawOfMan
+  changes:
+    - type: Add
+      message: >-
+        Added quad variants of the Generic, Janitorial, and Engineering cyborgs.
+        Also added Command and CC quads as admeme spawns.
+    - type: Tweak
+      message: >-
+        Changed the sprites for the existing Security, Service, Medical, and
+        Salvage quads.
+    - type: Fix
+      message: Fixed a typo within the quad FTL.
+  id: 252
+  time: '2026-04-13T04:25:16.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: PTech inventory expanded for HoP
+  id: 253
+  time: '2026-04-13T04:51:29.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Changed name of Citrus Bikeshed to Akira Special
+  id: 254
+  time: '2026-04-13T04:52:16.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Tweak
+      message: Gas Canisters now use newer, more appealing sprites.
+  id: 255
+  time: '2026-04-13T04:59:09.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Document Printer
+    - type: Add
+      message: Document Printer flatpack to head lockers
+    - type: Add
+      message: Floof documents as part of locale
+  id: 256
+  time: '2026-04-13T05:07:09.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now change the custom examine of other entities you can interact
+        with. Changing it involves a do-after. You can't change the examine of
+        other players unless they turn on a new consent toggle.
+  id: 257
+  time: '2026-04-13T05:20:25.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: Added Weldbots, now requiring Experimental Welders.
+  id: 258
+  time: '2026-04-13T08:41:49.0000000+00:00'
+- author: Compilatron144
+  changes:
+    - type: Add
+      message: Added cowprint bikini and thigh highs. Moo!
+  id: 259
+  time: '2026-04-13T08:49:08.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: Added Sericulture back to Arachne. They can now spin silk again.
+    - type: Fix
+      message: Added Spider back to Arachne. They can now place floor webs again.
+  id: 260
+  time: '2026-04-13T08:55:06.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The curator help button is now available in the lobby.
+  id: 261
+  time: '2026-04-13T22:23:03.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: Geras can pick things up! HANDS (Or tendrils really...)
+    - type: Add
+      message: Geras can drag things! Without the use of a hand slot!
+    - type: Add
+      message: Geras can have things pulled out of their tendrils and "ID" slot.
+    - type: Tweak
+      message: >-
+        Geras also get an ID slot. It does show on their face/hands, but this
+        makes sense.
+    - type: Fix
+      message: Slimes get hurt by water *properly*
+  id: 262
+  time: '2026-04-13T22:35:23.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Respawn button actually respawning you.
+  id: 263
+  time: '2026-04-14T05:43:22.0000000+00:00'
