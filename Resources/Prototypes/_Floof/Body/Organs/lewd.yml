@@ -4,8 +4,12 @@
   description: Ew.
   abstract: true
   components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Organs/placeholder-organ.rsi
+    state: icon
+    scale: 0.7,0.7
   - type: Organ
-    removable: false # There is currently no surgeries defined for this organ. Even if you could detach it, you wouldn't be able to reattach it to someone without the relevant organ slot.
+    removable: false # There is currently no surgeries defined for these organs. Even if you could detach them, you wouldn't be able to reattach it to someone without the relevant organ slot.
   - type: LewdOrgan
 
 # This is silly.
@@ -14,7 +18,7 @@
   parent: BaseLewdOrgan
   id: OrganGenericMammaryGlands
   name: mammary glands
-  description: A mammalian organ that produces milk typically used for feeding offsprings.
+  description: A mammalian organ that produces milk typically used for feeding offsprings. Placeholder sprite.
   components:
   - type: LewdOrgan
     data:
@@ -31,7 +35,7 @@
   parent: BaseLewdOrgan
   id: OrganGenericPenis # Eek!
   name: penis
-  description: An appendage used by the majority of animal species to fertilize egg cells. Testicular glands included.
+  description: An appendage used by the majority of animal species to fertilize egg cells. Testicular glands included. Placeholder sprite.
   components:
   - type: LewdOrgan
     data:
@@ -45,13 +49,13 @@
       drainSpeed: 0
 
 # So fun fact, the female reproductive system consists from 3-5 different organs, but there isn't a generic name to describe the whole system, so I had to pick one
-# This one is tricky. Irl this organ doesn't produce much lubricant, so it's difficult to make it noticable while also retaining some immersion. So the default is low.
+# Also this one is tricky. Irl this organ doesn't produce much lubricant, so it's difficult to make it noticable while also retaining some immersion. So the default is low.
 # Players who want to "flood the room with their juices" can pick up a trait to do so. The primary purpose of this organ is deposition though.
 - type: entity
   parent: BaseLewdOrgan
   id: OrganGenericVagina
   name: vagina
-  description: An organ housing the female reproductive system.
+  description: An organ housing the female reproductive system. Placeholder sprite.
   components:
   - type: LewdOrgan
     data:
@@ -70,7 +74,7 @@
   parent: BaseLewdOrgan
   id: OrganGenericRectum
   name: rectum
-  description: Why are you holding this?
+  description: Why are you holding this? Placeholder sprite.
   components:
   - type: LewdOrgan
     data:
