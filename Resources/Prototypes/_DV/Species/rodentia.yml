@@ -44,6 +44,10 @@
     RHand: MobRodentiaRHand
     LLeg: MobRodentiaLLeg
     RLeg: MobRodentiaRLeg
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LFoot: MobRodentiaLFoot
     RFoot: MobRodentiaRFoot
 
@@ -127,24 +131,56 @@
   baseSprite:
     sprite: _DV/Mobs/Species/Rodentia/parts.rsi
     state: torso_m
+  altSprites: # Euphoria - Digi-Legs
+    Digitigrade: DigilegFurryTorsoMale
 
 - type: humanoidBaseSprite
   id: MobRodentiaTorsoMale
   baseSprite:
     sprite: _DV/Mobs/Species/Rodentia/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegFurryTorsoMale
 
 - type: humanoidBaseSprite
   id: MobRodentiaTorsoFemale
   baseSprite:
     sprite: _DV/Mobs/Species/Rodentia/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegFurryTorsoFemale
 
 - type: humanoidBaseSprite
   id: MobRodentiaLLeg
   baseSprite:
     sprite: _DV/Mobs/Species/Rodentia/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawLegLeft
+
+- type: humanoidBaseSprite
+  id: MobRodentiaLFoot
+  baseSprite:
+    sprite: _DV/Mobs/Species/Rodentia/parts.rsi
+    state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawFootLeft
+
+- type: humanoidBaseSprite
+  id: MobRodentiaRLeg
+  baseSprite:
+    sprite: _DV/Mobs/Species/Rodentia/parts.rsi
+    state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawLegRight
+
+- type: humanoidBaseSprite
+  id: MobRodentiaRFoot
+  baseSprite:
+    sprite: _DV/Mobs/Species/Rodentia/parts.rsi
+    state: r_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootRight
 
 - type: humanoidBaseSprite
   id: MobRodentiaLHand
@@ -157,18 +193,6 @@
   baseSprite:
     sprite: _DV/Mobs/Species/Rodentia/parts.rsi
     state: l_arm
-
-- type: humanoidBaseSprite
-  id: MobRodentiaLFoot
-  baseSprite:
-    sprite: _DV/Mobs/Species/Rodentia/parts.rsi
-    state: l_foot
-
-- type: humanoidBaseSprite
-  id: MobRodentiaRLeg
-  baseSprite:
-    sprite: _DV/Mobs/Species/Rodentia/parts.rsi
-    state: r_leg
 
 - type: humanoidBaseSprite
   id: MobRodentiaRHand

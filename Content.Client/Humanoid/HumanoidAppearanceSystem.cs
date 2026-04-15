@@ -10,6 +10,9 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Numerics; // CD - Character Records
+using System.Diagnostics.CodeAnalysis; // Euphoria - Digi-Legs
+using Content.Shared._Coyote; // Euphoria - Digi-Legs
+using Content.Shared.DisplacementMap; // Euphoria - Digi-Legs
 using Content.Shared._Floof.Sprite; // Floofstation
 using Robust.Client.Console; // CD - Character Records
 
@@ -133,7 +136,39 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             layer.Color = component.SkinColor.WithAlpha(proto.LayerAlpha);
 
         if (proto.BaseSprite != null)
-            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, proto.BaseSprite);
+        { // Euphoria - Digi-Legs
+            SpriteSpecifier appropriateSprite = proto.BaseSprite;
+            // COYOTE: add support for cute digitigrade legs
+            if (component.LegStyle != HumanoidLegStyle.Plantigrade
+                && proto.AltSprites.Count > 0)
+            {
+                ProtoId<MarkingPrototype>? altMarkingProtoId = null;
+                // we have to do two things: check if the leg style is supported, and if not, check if Digitigrade
+                // is supported. At least one needs to be true!
+                if (proto.AltSprites.TryGetValue(component.LegStyle, out ProtoId<MarkingPrototype> altSprite)
+                    || proto.AltSprites.TryGetValue(HumanoidLegStyle.Digitigrade, out altSprite))
+                {
+                    altMarkingProtoId = altSprite;
+                }
+                if (altMarkingProtoId is not null
+                    && _prototypeManager.TryIndex(altMarkingProtoId, out MarkingPrototype? altMarkingProto))
+                {
+                    // just use the first sprite, as base layers only have one sprite
+                    // the markings should only have one sprite anyway
+                    if (altMarkingProto.BaseLayerSprite is SpriteSpecifier.Rsi)
+                    {
+                        appropriateSprite = altMarkingProto.BaseLayerSprite;
+                    }
+                    else if (altMarkingProto.Sprites.Count > 0)
+                    {
+                        appropriateSprite = altMarkingProto.Sprites[0];
+                    }
+                }
+                // shader will be appliesed lader
+            }
+            // END COYOTE (PLEASE)
+            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, appropriateSprite);
+        }
     }
 
     /// <summary>
@@ -236,6 +271,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         humanoid.SkinColor = profile.Appearance.SkinColor;
         humanoid.EyeColor = profile.Appearance.EyeColor;
         humanoid.Height = profile.Height; // CD - Character Records
+        humanoid.LegStyle = profile.Appearance.LegStyle; // Euphoria - Digi-Legs
 
         UpdateSprite((uid, humanoid, Comp<SpriteComponent>(uid)));
     }
@@ -255,25 +291,59 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         var applyUndergarmentTop = censorNudity;
         var applyUndergarmentBottom = censorNudity;
 
-        foreach (var markingList in humanoid.MarkingSet.Markings.Values)
+        foreach (List<Marking> markingList in humanoid.MarkingSet.Markings.Values) // Euphoria - Digi-Legs
         {
-            foreach (var marking in markingList)
+            foreach (Marking marking in markingList)
             {
-                if (_markingManager.TryGetMarking(marking, out var markingPrototype))
-                {
-                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, entity);
-                    if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
-                        applyUndergarmentTop = false;
-                    else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
-                        applyUndergarmentBottom = false;
-                }
+                if (!_markingManager.TryGetMarking(marking, out MarkingPrototype? markingPrototype))
+                    continue;
+                PreModifyMarking(
+                    humanoid,
+                    markingPrototype,
+                    marking,
+                    out Marking newMarking,
+                    out MarkingPrototype newMarkingPrototype);
+                ApplyMarking(
+                    newMarkingPrototype,
+                    newMarking.MarkingColors,
+                    newMarking.Visible,
+                    humanoid,
+                    sprite);
             }
         }
 
         humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
 
-        AddUndergarments(entity, applyUndergarmentTop, applyUndergarmentBottom);
+        // AddUndergarments(entity, applyUndergarmentTop, applyUndergarmentBottom);
+
     }
+
+    /// <summary>
+    /// Takes in the marking about to be applied, and allows modification of it before application.
+    /// </summary>
+    private void PreModifyMarking( // Euphoria - Digi-Legs
+        HumanoidAppearanceComponent humanoid,
+        MarkingPrototype markingPrototype,
+        Marking marking,
+        out Marking newMarking,
+        out MarkingPrototype newPrototype
+        )
+    {
+        newMarking = marking;
+        newPrototype = markingPrototype;
+        if (humanoid.LegStyle == HumanoidLegStyle.Plantigrade)
+            return; // No need to modify anything for plantigrade legs.
+        // Check if the marking has alternate sprites for the current leg style,
+        // Or if they dont have that specific leg style, check if they have digitigrade paw instead
+        // if neither are present, we just use the normal marking and proot
+        if (markingPrototype.AlternateSprites.TryGetValue(humanoid.LegStyle, out var altMarkingProtoId)
+            || (humanoid.LegStyle != HumanoidLegStyle.Digitigrade
+                && markingPrototype.AlternateSprites.TryGetValue(HumanoidLegStyle.Digitigrade, out altMarkingProtoId)))
+        {
+            newPrototype = _prototypeManager.Index<MarkingPrototype>(altMarkingProtoId);
+        }
+    }
+
 
     private void ClearAllMarkings(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
     {
@@ -297,6 +367,18 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 RemoveMarking(marking, (entity, sprite));
             }
         }
+
+
+        // then we do it my way!
+        foreach (var layid in humanoid.ClientElderMarkings) // Euphoria - Digi-Legs
+        {
+            if (sprite.LayerMapTryGet(layid, out var index))
+            {
+                sprite.LayerMapRemove(layid);
+                sprite.RemoveLayer(index);
+            }
+        }
+        humanoid.ClientElderMarkings.Clear();
     }
 
     private void RemoveMarking(Marking marking, Entity<SpriteComponent> spriteEnt)
@@ -436,6 +518,15 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 _sprite.LayerMapSet((entity.Owner, sprite), layerId, layer);
                 _sprite.LayerSetSprite((entity.Owner, sprite), layerId, rsi);
             }
+// Euphoria - Digu-Legs
+            humanoid.ClientElderMarkings.Add(layerId);
+            // impstation edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
+            if (markingPrototype.Shader != null)
+            {
+                // use spriteComponent's layersetshader function to set the layer's shader to that which is specified.
+                sprite.LayerSetShader(layerId, markingPrototype.Shader);
+            }
+            // impstation edit end
 
             _sprite.LayerSetVisible((entity.Owner, sprite), layerId, visible);
 
@@ -479,6 +570,53 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             sprite[index].Color = skinColor.WithAlpha(spriteInfo.LayerAlpha);
         }
     }
+
+    // displacementData = _humanoidSystem.GetDisplacementForLegStyle(
+    //     slot,
+    //     humanoidAppearance.LegStyle,
+    //     inventory,
+    //     displacementData);
+
+    public void GetDisplacementForLegStyle( // Euphoria - Digi-Legs
+        EntityUid uid,
+        string slot,
+        HumanoidAppearanceComponent? humanoidAppearance,
+        DisplacementData? baseDisplacementDataIn,
+        DisplacementData? maleDisplacementDataIn,
+        DisplacementData? femaleDisplacementDataIn,
+        out DisplacementData? baseDisplacementData,
+        out DisplacementData? maleDisplacementData,
+        out DisplacementData? femaleDisplacementData
+        )
+    {
+        baseDisplacementData   = baseDisplacementDataIn;
+        maleDisplacementData   = maleDisplacementDataIn;
+        femaleDisplacementData = femaleDisplacementDataIn;
+        if (!Resolve(uid, ref humanoidAppearance))
+            return;
+        if (!_prototypeManager.TryIndex(humanoidAppearance.Species, out SpeciesPrototype? sp)
+            || !sp.AllowDigilegDisplacement)
+        {
+            return;
+        }
+
+        if (!humanoidAppearance.LegDisplacements.TryGetValue(
+            humanoidAppearance.LegStyle,
+            out ProtoId<LegDisplacementPrototype> displacement))
+        {
+            return;
+        }
+
+        if (!_prototypeManager.TryIndex(displacement, out LegDisplacementPrototype? ldp))
+        {
+            return;
+        }
+
+        baseDisplacementData   = ldp.Displacements!.GetValueOrDefault(slot, baseDisplacementDataIn);
+        maleDisplacementData   = ldp.MaleDisplacements!.GetValueOrDefault(slot, maleDisplacementDataIn);
+        femaleDisplacementData = ldp.FemaleDisplacements!.GetValueOrDefault(slot, femaleDisplacementDataIn);
+    }
+}
 
     public override void SetLayerVisibility(
         Entity<HumanoidAppearanceComponent> ent,

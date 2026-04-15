@@ -1,6 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.DisplacementMap;
+using Content.Client.Humanoid; // Euphoria - Digi-Legs
 using Content.Client.Inventory;
 using Content.Shared._DV.Silicon.IPC; // DeltaV - IPC Snouts
 using Content.Shared.Clothing;
@@ -51,6 +52,7 @@ public sealed class ClientClothingSystem : ClothingSystem
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
     [Dependency] private readonly DisplacementMapSystem _displacement = default!;
     [Dependency] private readonly SpriteSystem _sprite = default!;
+    [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!; // Euphoria - Digi-Legs
 
     public override void Initialize()
     {
@@ -294,6 +296,42 @@ public sealed class ClientClothingSystem : ClothingSystem
                     break;
             }
         }
+
+        if (TryComp(equipee, out HumanoidAppearanceComponent? ham)) // Euphoria - Digi-Legs
+        {
+            _humanoidSystem.s(
+                equipee,
+                slot,
+                ham,
+                inventory.Displacements.GetValueOrDefault(slot),
+                inventory.MaleDisplacements.GetValueOrDefault(slot),
+                inventory.FemaleDisplacements.GetValueOrDefault(slot),
+                out DisplacementData? baseDisplacement,
+                out DisplacementData? maleDisplacement,
+                out DisplacementData? femaleDisplacement);
+            // sex-specific displacement override
+            DisplacementData? newDisplacementData = null;
+            if (equipeeSex != null)
+            {
+                switch (equipeeSex)
+                {
+                    case Sex.Male:
+                        if (maleDisplacement != null)
+                            newDisplacementData = maleDisplacement;
+                        break;
+                    case Sex.Female:
+                        if (femaleDisplacement != null)
+                            newDisplacementData = femaleDisplacement;
+                        break;
+                }
+            }
+            if (newDisplacementData != null)
+                displacementData = newDisplacementData;
+            else if (baseDisplacement != null)
+                displacementData = baseDisplacement;
+        }
+
+
 
         // add the new layers
         foreach (var (key, layerData) in ev.Layers)

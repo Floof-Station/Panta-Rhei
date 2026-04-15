@@ -58,11 +58,15 @@ namespace Content.Shared.Humanoid
                     break;
                 case HumanoidVisualLayers.LLeg:
                     yield return HumanoidVisualLayers.LLeg;
+                    yield return HumanoidVisualLayers.LLegBehind;
                     yield return HumanoidVisualLayers.LFoot;
+                    yield return HumanoidVisualLayers.LFootBehind;
                     break;
                 case HumanoidVisualLayers.RLeg:
                     yield return HumanoidVisualLayers.RLeg;
+                    yield return HumanoidVisualLayers.RLegBehind;
                     yield return HumanoidVisualLayers.RFoot;
+                    yield return HumanoidVisualLayers.RFootBehind;
                     break;
                 case HumanoidVisualLayers.Chest:
                     yield return HumanoidVisualLayers.Chest;

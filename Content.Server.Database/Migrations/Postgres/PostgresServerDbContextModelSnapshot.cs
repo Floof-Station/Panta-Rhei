@@ -1113,6 +1113,11 @@ namespace Content.Server.Database.Migrations.Postgres
                         .HasColumnType("text")
                         .HasColumnName("hair_name");
 
+                    b.Property<string>("LegStyle") // Euphoria - Digi-Legs
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("leg_style");
+
                     b.Property<JsonDocument>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");

@@ -404,6 +404,7 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         SetSpecies(uid, profile.Species, false, humanoid);
         SetSex(uid, profile.Sex, false, humanoid);
         humanoid.EyeColor = profile.Appearance.EyeColor;
+        humanoid.LegStyle = profile.Appearance.LegStyle;
 
         SetSkinColor(uid, profile.Appearance.SkinColor, false);
 

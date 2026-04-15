@@ -39,6 +39,10 @@
     RArm: MobReptilianRArm
     LHand: MobReptilianLHand
     RHand: MobReptilianRHand
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LLeg: MobReptilianLLeg
     RLeg: MobReptilianRLeg
     LFoot: MobReptilianLFoot
@@ -125,24 +129,32 @@
   baseSprite:
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_m
+  altSprites: # Euphoria - Digi-Legs
+    Digitigrade: DigilegLizardTorsoMale
 
 - type: humanoidBaseSprite
   id: MobReptilianTorsoMale
   baseSprite:
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegLizardTorsoMale
 
 - type: humanoidBaseSprite
   id: MobReptilianTorsoFemale
   baseSprite:
     sprite: _Euphoria/Mobs/Species/Reptilian/parts.rsi # Euphoria - Tweak female reptilian torso to be less blocky.
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegLizardTorsoFemale
 
 - type: humanoidBaseSprite
   id: MobReptilianLLeg
   baseSprite:
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawDarkLegLeft
 
 - type: humanoidBaseSprite
   id: MobReptilianLHand
@@ -161,6 +173,8 @@
   baseSprite:
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawDarkFootLeft
 
 - type: humanoidBaseSprite
   id: MobReptilianRLeg
@@ -173,6 +187,8 @@
   baseSprite:
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: r_hand
+  altSprites:
+    Digitigrade: DigilegPawDarkLegRight
 
 - type: humanoidBaseSprite
   id: MobReptilianRArm
@@ -185,3 +201,5 @@
   baseSprite:
     sprite: Mobs/Species/Reptilian/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawDarkFootRight

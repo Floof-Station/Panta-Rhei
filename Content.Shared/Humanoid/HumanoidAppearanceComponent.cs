@@ -15,6 +15,8 @@ public sealed partial class HumanoidAppearanceComponent : Component
 {
     public MarkingSet ClientOldMarkings = new();
 
+    public HashSet<string> ClientElderMarkings = new(); // Euphoria - Digi-Legs
+
     [DataField, AutoNetworkedField]
     public MarkingSet MarkingSet = new();
 
@@ -117,6 +119,30 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<HumanoidVisualLayers, DisplacementData> MarkingsDisplacement = new();
+
+    // Euphoria - Digi-Legs
+    /// <summary>
+    ///     The leg style of this humanoid.
+    ///     used to do some fancy work! It does:
+    ///     - Swaps out the legs, feet, and torso sprites on a given base layer to match the leg style.
+    ///     - Applies appropriate displacement maps to legs and feet markings.
+    ///     - Applies appropriate displacement maps to clothing and such.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public HumanoidLegStyle LegStyle = HumanoidLegStyle.Plantigrade;
+
+    /// <summary>
+    ///     The set of displacements to use for clothing based on leg style.
+    ///     Currently unused because it crashes the game for some reason.
+    ///     Good luck if you want to figure it out coyote!
+    /// </summary>
+    [DataField]
+    public Dictionary<HumanoidLegStyle, ProtoId<LegDisplacementPrototype>> LegDisplacements = new()
+    {
+        {
+            HumanoidLegStyle.Digitigrade, new ProtoId<LegDisplacementPrototype>("LegDisplacementDigitigrade")
+        },
+    };
 }
 
 [DataDefinition]

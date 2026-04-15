@@ -1,0 +1,811 @@
+# I am a fox and I'm digging a leg, diggy digileg, diggy digileg
+
+######################
+# Furry Paws
+- type: marking
+  id: DigilegPawLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Paw-Left-FRONT-Leg: LLeg # LAYER
+    Paw-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    Paw-Left-BEHIND-Leg: Paw-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Left-Leg
+
+- type: marking
+  id: DigilegPawFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Paw-Left-FRONT-Foot: LFoot # LAYER
+    Paw-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    Paw-Left-BEHIND-Foot: Paw-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Left-Foot
+
+- type: marking
+  id: DigilegPawLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Paw-Right-FRONT-Leg: RLeg # LAYER
+    Paw-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    Paw-Right-BEHIND-Leg: Paw-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Right-Leg
+
+- type: marking
+  id: DigilegPawFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Paw-Right-FRONT-Foot: RFoot # LAYER
+    Paw-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    Paw-Right-BEHIND-Foot: Paw-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Paw-Right-Foot
+
+# Furry Dark Paws
+- type: marking
+  id: DigilegPawDarkLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawDark-Left-FRONT-Leg: LLeg # LAYER
+    PawDark-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    PawDark-Left-BEHIND-Leg: PawDark-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Left-Leg
+
+- type: marking
+  id: DigilegPawDarkFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawDark-Left-FRONT-Foot: LFoot # LAYER
+    PawDark-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    PawDark-Left-BEHIND-Foot: PawDark-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Left-Foot
+
+- type: marking
+  id: DigilegPawDarkLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawDark-Right-FRONT-Leg: RLeg # LAYER
+    PawDark-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    PawDark-Right-BEHIND-Leg: PawDark-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Right-Leg
+
+- type: marking
+  id: DigilegPawDarkFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawDark-Right-FRONT-Foot: RFoot # LAYER
+    PawDark-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    PawDark-Right-BEHIND-Foot: PawDark-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawDark-Right-Foot
+
+# Furry PawSlimes
+- type: marking
+  id: DigilegPawSlimeLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawSlime-Left-FRONT-Leg: LLeg # LAYER
+    PawSlime-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    PawSlime-Left-BEHIND-Leg: PawSlime-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Left-Leg
+
+- type: marking
+  id: DigilegPawSlimeFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawSlime-Left-FRONT-Foot: LFoot # LAYER
+    PawSlime-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    PawSlime-Left-BEHIND-Foot: PawSlime-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Left-Foot
+
+- type: marking
+  id: DigilegPawSlimeLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawSlime-Right-FRONT-Leg: RLeg # LAYER
+    PawSlime-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    PawSlime-Right-BEHIND-Leg: PawSlime-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Right-Leg
+
+- type: marking
+  id: DigilegPawSlimeFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    PawSlime-Right-FRONT-Foot: RFoot # LAYER
+    PawSlime-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    PawSlime-Right-BEHIND-Foot: PawSlime-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: PawSlime-Right-Foot
+
+#######################
+# Avian talons
+- type: marking
+  id: DigilegAvianLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Avian-Left-FRONT-Leg: LLeg # LAYER
+    Avian-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    Avian-Left-BEHIND-Leg: Avian-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Left-Leg
+
+- type: marking
+  id: DigilegAvianFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Avian-Left-FRONT-Foot: LFoot # LAYER
+    Avian-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    Avian-Left-BEHIND-Foot: Avian-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Left-Foot
+
+- type: marking
+  id: DigilegAvianLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Avian-Right-FRONT-Leg: RLeg # LAYER
+    Avian-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    Avian-Right-BEHIND-Leg: Avian-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Right-Leg
+
+- type: marking
+  id: DigilegAvianFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    Avian-Right-FRONT-Foot: RFoot # LAYER
+    Avian-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    Avian-Right-BEHIND-Foot: Avian-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: Avian-Right-Foot
+
+# Avian Dark talons
+- type: marking
+  id: DigilegAvianDarkLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    AvianDark-Left-FRONT-Leg: LLeg # LAYER
+    AvianDark-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    AvianDark-Left-BEHIND-Leg: AvianDark-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Left-Leg
+
+- type: marking
+  id: DigilegAvianDarkFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    AvianDark-Left-FRONT-Foot: LFoot # LAYER
+    AvianDark-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    AvianDark-Left-BEHIND-Foot: AvianDark-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Left-Foot
+
+- type: marking
+  id: DigilegAvianDarkLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    AvianDark-Right-FRONT-Leg: RLeg # LAYER
+    AvianDark-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    AvianDark-Right-BEHIND-Leg: AvianDark-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Right-Leg
+
+- type: marking
+  id: DigilegAvianDarkFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    AvianDark-Right-FRONT-Foot: RFoot # LAYER
+    AvianDark-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    AvianDark-Right-BEHIND-Foot: AvianDark-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: AvianDark-Right-Foot
+
+# chicken
+- type: marking
+  id: DigilegChickenLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenDark-Left-FRONT-Leg: LLeg # LAYER
+    ChickenDark-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    ChickenDark-Left-BEHIND-Leg: ChickenDark-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Left-Leg
+
+- type: marking
+  id: DigilegChickenFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenDark-Left-FRONT-Foot: LFoot # LAYER
+    ChickenDark-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    ChickenDark-Left-BEHIND-Foot: ChickenDark-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Left-Foot
+
+- type: marking
+  id: DigilegChickenLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenDark-Right-FRONT-Leg: RLeg # LAYER
+    ChickenDark-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    ChickenDark-Right-BEHIND-Leg: ChickenDark-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Right-Leg
+
+- type: marking
+  id: DigilegChickenFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenDark-Right-FRONT-Foot: RFoot # LAYER
+    ChickenDark-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    ChickenDark-Right-BEHIND-Foot: ChickenDark-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenDark-Right-Foot
+
+# chicken slime
+- type: marking
+  id: DigilegChickenSlimeLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenSlime-Left-FRONT-Leg: LLeg # LAYER
+    ChickenSlime-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    ChickenSlime-Left-BEHIND-Leg: ChickenSlime-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Left-Leg
+
+- type: marking
+  id: DigilegChickenSlimeFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenSlime-Left-FRONT-Foot: LFoot # LAYER
+    ChickenSlime-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    ChickenSlime-Left-BEHIND-Foot: ChickenSlime-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Left-Foot
+
+- type: marking
+  id: DigilegChickenSlimeLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenSlime-Right-FRONT-Leg: RLeg # LAYER
+    ChickenSlime-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    ChickenSlime-Right-BEHIND-Leg: ChickenSlime-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Right-Leg
+
+- type: marking
+  id: DigilegChickenSlimeFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    ChickenSlime-Right-FRONT-Foot: RFoot # LAYER
+    ChickenSlime-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    ChickenSlime-Right-BEHIND-Foot: ChickenSlime-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: ChickenSlime-Right-Foot
+
+#######################
+# Synthlizard SynthLizs
+- type: marking
+  id: DigilegSynthlizLegLeft
+  bodyPart: LLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    SynthLiz-Left-FRONT-Leg: LLeg # LAYER
+    SynthLiz-Left-BEHIND-Leg: LLegBehind # LAYER
+  colorLinks:
+    SynthLiz-Left-BEHIND-Leg: SynthLiz-Left-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Left-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Left-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Left-Leg
+
+- type: marking
+  id: DigilegSynthlizFootLeft
+  bodyPart: LFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    SynthLiz-Left-FRONT-Foot: LFoot # LAYER
+    SynthLiz-Left-BEHIND-Foot: LFootBehind # LAYER
+  colorLinks:
+    SynthLiz-Left-BEHIND-Foot: SynthLiz-Left-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Left-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Left-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Left-Foot
+
+- type: marking
+  id: DigilegSynthlizLegRight
+  bodyPart: RLeg
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    SynthLiz-Right-FRONT-Leg: RLeg # LAYER
+    SynthLiz-Right-BEHIND-Leg: RLegBehind # LAYER
+  colorLinks:
+    SynthLiz-Right-BEHIND-Leg: SynthLiz-Right-FRONT-Leg
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Right-FRONT-Leg
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Right-BEHIND-Leg
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Right-Leg
+
+- type: marking
+  id: DigilegSynthlizFootRight
+  bodyPart: RFoot
+  markingCategory: BaseLegs
+  hidden: true
+  layering:
+    SynthLiz-Right-FRONT-Foot: RFoot # LAYER
+    SynthLiz-Right-BEHIND-Foot: RFootBehind # LAYER
+  colorLinks:
+    SynthLiz-Right-BEHIND-Foot: SynthLiz-Right-FRONT-Foot
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Right-FRONT-Foot
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Right-BEHIND-Foot
+  baseLayerSprite:
+    sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthLiz-Right-Foot
+
+######################
+######################
+# Chests
+
+# Furry chest
+- type: marking
+  id: DigilegFurryTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: FurryChestMale
+
+- type: marking
+  id: DigilegFurryTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: FurryChestFemale
+
+# Bird chest
+- type: marking
+  id: DigilegBirdTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: BirdChestMale
+
+- type: marking
+  id: DigilegBirdTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: BirdChestFemale
+
+# Human chest
+- type: marking
+  id: DigilegHumanTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: HumanChestMale
+
+- type: marking
+  id: DigilegHumanTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: HumanChestFemale
+
+# Human chest with skintoned
+- type: marking
+  id: DigilegHumanTorsoMaleSkintoned
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: HumanChestMaleSkintoned
+
+- type: marking
+  id: DigilegHumanTorsoFemaleSkintoned
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: HumanChestFemaleSkintoned
+
+# Lizard chest
+- type: marking
+  id: DigilegLizardTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: LizardChestMale
+
+- type: marking
+  id: DigilegLizardTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: LizardChestFemale
+
+# Lumi chest
+- type: marking
+  id: DigilegLumiTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: LumiChestMale
+
+- type: marking
+  id: DigilegLumiTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: LumiChestFemale
+
+# Moth chest
+- type: marking
+  id: DigilegMothTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: MothChestMale
+
+- type: marking
+  id: DigilegMothTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: MothChestFemale
+
+# Moth chest
+- type: marking
+  id: DigilegMothTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: MothChestMale
+
+- type: marking
+  id: DigilegMothTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: MothChestFemale
+
+# Plant chest
+- type: marking
+  id: DigilegPlantTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PlantChestMale
+
+- type: marking
+  id: DigilegPlantTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: PlantChestFemale
+
+# Shark chest
+- type: marking
+  id: DigilegSharkTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SharkChestMale
+
+- type: marking
+  id: DigilegSharkTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SharkChestFemale
+
+# Slime chest
+- type: marking
+  id: DigilegSlimeTorsoMale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SlimeChestMale
+
+- type: marking
+  id: DigilegSlimeTorsoFemale
+  bodyPart: Chest
+  markingCategory: BaseChest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SlimeChestFemale

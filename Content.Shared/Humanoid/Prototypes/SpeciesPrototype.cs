@@ -174,6 +174,20 @@ public sealed partial class SpeciesPrototype : IPrototype
     [DataField("scaleHeight")]
     public bool ScaleHeight = true;
     // End CD - Character Records
+
+    // Euphoria - Digi-Legs
+    /// <summary>
+    ///     COYOTE: What kind of legs does this species have by default?
+    /// </summary>
+    [DataField]
+    public HumanoidLegStyle DefaultLegStyle = HumanoidLegStyle.Plantigrade;
+
+    /// <summary>
+    ///     COYOTE: Should this species get displacement maps applied when using digitigrade leg styles?
+    ///     Cus like, resomi and other critters with their own unique shapes might not want that.
+    /// </summary>
+    [DataField]
+    public bool AllowDigilegDisplacement = true;
 }
 
 public enum SpeciesNaming : byte

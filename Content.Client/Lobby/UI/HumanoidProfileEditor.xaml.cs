@@ -494,6 +494,7 @@ namespace Content.Client.Lobby.UI
             Markings.OnMarkingRemoved += OnMarkingChange;
             Markings.OnMarkingColorChange += OnMarkingChange;
             Markings.OnMarkingRankChange += OnMarkingChange;
+            Markings.OnLegStyleChanged += OnLegsChanged; // Euphoria - Digi-Legs
 
             #endregion Markings
 
@@ -1332,6 +1333,15 @@ namespace Content.Client.Lobby.UI
             ReloadProfilePreview();
         }
 
+        private void OnLegsChanged(HumanoidLegStyle legsStyle) // Euphoria - Digi-Legs
+        {
+            if (Profile is null)
+                return;
+
+            Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithLegs(legsStyle));
+            ReloadPreview();
+        }
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
@@ -1597,9 +1607,13 @@ namespace Content.Client.Lobby.UI
                 return;
             }
 
-            Markings.SetData(Profile.Appearance.Markings, Profile.Species,
-                Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor
-            );
+            Markings.SetData( // Euphoria - Digi-Legs
+                Profile.Appearance.Markings,
+                Profile.Species,
+                Profile.Sex,
+                Profile.Appearance.SkinColor,
+                Profile.Appearance.EyeColor,
+                Profile.Appearance.LegStyle);
         }
 
         private void UpdateGenderControls()

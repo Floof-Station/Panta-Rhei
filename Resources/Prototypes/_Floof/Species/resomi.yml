@@ -12,6 +12,7 @@
   - Unsexed
   - Male
   - Female
+  allowDigilegDisplacement: false # Euphoria - Digi-Legs
 
 - type: speciesBaseSprites
   id: MobResomiSprites
@@ -37,6 +38,10 @@
     RArm: MobResomiRArm
     LHand: MobResomiLHand
     RHand: MobResomiRHand
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LLeg: MobResomiLLeg
     RLeg: MobResomiRLeg
     LFoot: MobResomiLFoot

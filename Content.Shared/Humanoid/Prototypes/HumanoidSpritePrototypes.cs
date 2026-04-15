@@ -1,5 +1,6 @@
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared.Humanoid.Markings; // Euphoria - Digi-Legs
 
 namespace Content.Shared.Humanoid.Prototypes;
 
@@ -72,4 +73,13 @@ public sealed partial class HumanoidSpeciesSpriteLayer : IPrototype
     /// </summary>
     [DataField("markingsMatchSkin")]
     public bool MarkingsMatchSkin { get; private set; }
+
+    // Euphoria - Digi-Legs
+    /// <summary>
+    ///     Coyote: If set, thisll load a marking's sprites to use for alternate leg styles.
+    ///     Used for digitigrade legs that are cute as heck.
+    ///     My butts dont lie
+    /// </summary>
+    [DataField("altSprites")]
+    public Dictionary<HumanoidLegStyle, ProtoId<MarkingPrototype>> AltSprites = new();
 }

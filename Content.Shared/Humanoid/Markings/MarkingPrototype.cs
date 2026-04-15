@@ -50,6 +50,24 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("sprites", required: true)]
         public List<SpriteSpecifier> Sprites { get; private set; } = default!;
 
+        // Euphoria - Digi-Legs
+        /// <summary>
+        /// Coyote: for alternate legs, instead pull the data from *these* markings instead.
+        /// Used for digitigrade legs that are cute as heck.
+        /// Disregard this if the leg style is plantigrade.
+        /// </summary>
+        [DataField("altSprites")]
+        public Dictionary<HumanoidLegStyle, ProtoId<MarkingPrototype>> AlternateSprites { get; private set; } = new();
+
+        /// <summary>
+        /// Hidden from the character editor marking list if true.
+        /// Mainly cus it'll be used through the use of another marking,
+        /// a marking's marking if u so will u be
+        /// hidden kitten
+        /// </summary>
+        [DataField("hidden")]
+        public bool Hidden { get; private set; } = false;
+
         /// <summary>
         /// Floofstation: Allows specific layers to be put at arbitrary positions within the humanoid sprite.
         /// Whole point of this is to have things like tails be able to be
@@ -77,6 +95,9 @@ namespace Content.Shared.Humanoid.Markings
         /// </summary>
         [DataField("colorLinks")]
         public Dictionary<string, string>? ColorLinks { get; private set; }
+
+        [DataField("baseLayerSprite")] // Euphoria - Digi-Legs
+        public SpriteSpecifier? BaseLayerSprite { get; private set; } = default!;
 
         public Marking AsMarking()
         {

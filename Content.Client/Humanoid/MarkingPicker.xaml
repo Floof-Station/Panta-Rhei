@@ -13,9 +13,19 @@
                 <OptionButton Name="CMarkingCategoryButton" StyleClasses="OpenLeft" />
                 <LineEdit Name="CMarkingSearch" PlaceHolder="{Loc 'markings-search'}" />
 
-                <ItemList Name="CMarkingsUnused" VerticalExpand="True" MinSize="300 250" />
-                <Button Name="CMarkingAdd" Text="{Loc 'markings-add'}" StyleClasses="OpenRight" />
-            </BoxContainer>
+                <ItemList
+                    MinSize="300 250"
+                    Name="CMarkingsUnused"
+                    VerticalExpand="True" />
+                <Button
+                    Name="CMarkingAdd"
+                    StyleClasses="OpenRight"
+                    Text="{Loc 'markings-add'}" />
+                <BoxContainer HorizontalExpand="True" Orientation="Horizontal">
+                    <Label Text="Leg Style:" />
+                    <OptionButton HorizontalExpand="True" Name="CMarkingLegStyle" />
+                </BoxContainer>
+            </BoxContainer> <!--Euphoria - Digi-Legs-->
 
             <!-- Used markings -->
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">

@@ -33,6 +33,10 @@
     RArm: MobSlimeRArm
     LHand: MobSlimeLHand
     RHand: MobSlimeRHand
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LLeg: MobSlimeLLeg
     RLeg: MobSlimeRLeg
     LFoot: MobSlimeLFoot
@@ -121,24 +125,32 @@
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: torso_m
+  altSprites: # Euphoria - Digi-Legs
+    Digitigrade: DigilegLumiTorsoMale
 
 - type: humanoidBaseSprite
   id: MobSlimeTorsoMale
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegLumiTorsoMale
 
 - type: humanoidBaseSprite
   id: MobSlimeTorsoFemale
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegLumiTorsoFemale
 
 - type: humanoidBaseSprite
   id: MobSlimeLLeg
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawSlimeLegLeft
 
 - type: humanoidBaseSprite
   id: MobSlimeLArm
@@ -157,12 +169,16 @@
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawSlimeFootLeft
 
 - type: humanoidBaseSprite
   id: MobSlimeRLeg
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawSlimeLegRight
 
 - type: humanoidBaseSprite
   id: MobSlimeRArm
@@ -181,3 +197,5 @@
   baseSprite:
     sprite: Mobs/Species/Slime/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawSlimeFootRight

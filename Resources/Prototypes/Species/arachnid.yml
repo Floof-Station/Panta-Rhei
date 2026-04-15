@@ -38,6 +38,10 @@
     RArm: MobArachnidRArm
     LHand: MobArachnidLHand
     RHand: MobArachnidRHand
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LLeg: MobArachnidLLeg
     RLeg: MobArachnidRLeg
     LFoot: MobArachnidLFoot
@@ -129,24 +133,32 @@
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: torso_m
+  altSprites: # Euphoria - Digi-Legs
+    Digitigrade: DigilegMothTorsoMale
 
 - type: humanoidBaseSprite
   id: MobArachnidTorsoMale
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegMothTorsoMale
 
 - type: humanoidBaseSprite
   id: MobArachnidTorsoFemale
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegMothTorsoFemale
 
 - type: humanoidBaseSprite
   id: MobArachnidLLeg
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegLeft
 
 - type: humanoidBaseSprite
   id: MobArachnidLHand
@@ -165,12 +177,16 @@
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootLeft
 
 - type: humanoidBaseSprite
   id: MobArachnidRLeg
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: r_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegRight
 
 - type: humanoidBaseSprite
   id: MobArachnidRHand
@@ -189,3 +205,5 @@
   baseSprite:
     sprite: Mobs/Species/Arachnid/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootRight

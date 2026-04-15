@@ -37,6 +37,10 @@
     RArm: MobDionaRArm
     LHand: MobDionaLHand
     RHand: MobDionaRHand
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LLeg: MobDionaLLeg
     RLeg: MobDionaRLeg
     LFoot: MobDionaLFoot
@@ -127,24 +131,32 @@
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: torso_m
+  altSprites: # Euphoria - Digi-Legs
+    Digitigrade: DigilegPlantTorsoMale
 
 - type: humanoidBaseSprite
   id: MobDionaTorsoMale
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegPlantTorsoMale
 
 - type: humanoidBaseSprite
   id: MobDionaTorsoFemale
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegPlantTorsoFemale
 
 - type: humanoidBaseSprite
   id: MobDionaLLeg
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegLeft
 
 - type: humanoidBaseSprite
   id: MobDionaLHand
@@ -163,12 +175,16 @@
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootLeft
 
 - type: humanoidBaseSprite
   id: MobDionaRLeg
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: r_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegRight
 
 - type: humanoidBaseSprite
   id: MobDionaRHand
@@ -187,3 +203,5 @@
   baseSprite:
     sprite: Mobs/Species/Diona/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootRight

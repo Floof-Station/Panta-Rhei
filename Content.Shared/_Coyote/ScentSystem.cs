@@ -33,7 +33,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly INetManager _net = default!;
 
-// Euphoria - no spam pls
+    // Euphoria - no spam pls
     public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
     public TimeSpan NextSmellDetectionTime = TimeSpan.Zero;
 

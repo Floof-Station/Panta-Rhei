@@ -38,6 +38,10 @@
     RArm: MobHumanRArm
     LHand: MobHumanLHand
     RHand: MobHumanRHand
+    LLegBehind: MobHumanoidAnyMarking # Euphoria - Digi-Legs
+    RLegBehind: MobHumanoidAnyMarking
+    LFootBehind: MobHumanoidAnyMarking
+    RFootBehind: MobHumanoidAnyMarking
     LLeg: MobHumanLLeg
     RLeg: MobHumanRLeg
     LFoot: MobHumanLFoot
@@ -134,24 +138,32 @@
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: torso_m
+  altSprites: # Euphoria - Digi-Legs
+    Digitigrade: DigilegHumanTorsoMaleSkintoned
 
 - type: humanoidBaseSprite
   id: MobHumanTorsoMale
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegHumanTorsoMaleSkintoned
 
 - type: humanoidBaseSprite
   id: MobHumanTorsoFemale
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegHumanTorsoFemaleSkintoned
 
 - type: humanoidBaseSprite
   id: MobHumanLLeg
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawLegLeft
 
 - type: humanoidBaseSprite
   id: MobHumanLArm
@@ -170,12 +182,16 @@
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawFootLeft
 
 - type: humanoidBaseSprite
   id: MobHumanRLeg
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawLegRight
 
 - type: humanoidBaseSprite
   id: MobHumanRArm
@@ -194,3 +210,5 @@
   baseSprite:
     sprite: Mobs/Species/Human/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawFootRight

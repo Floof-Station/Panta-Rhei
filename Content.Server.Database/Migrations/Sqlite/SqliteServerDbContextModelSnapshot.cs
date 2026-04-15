@@ -1053,6 +1053,11 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasColumnType("TEXT")
                         .HasColumnName("hair_name");
 
+                    b.Property<string>("LegStyle") // Euphoria - Digi-Legs
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("leg_style");
+
                     b.Property<byte[]>("Markings")
                         .HasColumnType("jsonb")
                         .HasColumnName("markings");

@@ -291,6 +291,13 @@ namespace Content.Server.Database
                 loadouts[role.RoleName] = loadout;
             }
 
+            HumanoidLegStyle legstyle = HumanoidLegStyle.Plantigrade;
+            if (Enum.TryParse(
+                profile.LegStyle,
+                true,
+                out HumanoidLegStyle legstyleVal))
+                legstyle = legstyleVal;
+
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
@@ -307,7 +314,8 @@ namespace Content.Server.Database
                     Color.FromHex(profile.FacialHairColor),
                     Color.FromHex(profile.EyeColor),
                     Color.FromHex(profile.SkinColor),
-                    markings
+                    markings,
+                    legstyle
                 ),
                 spawnPriority,
                 jobs,
@@ -348,6 +356,7 @@ namespace Content.Server.Database
             profile.SpawnPriority = (int) humanoid.SpawnPriority;
             profile.Markings = markings;
             profile.Slot = slot;
+            profile.LegStyle = appearance.LegStyle.ToString();
             profile.PreferenceUnavailable = (DbPreferenceUnavailableMode) humanoid.PreferenceUnavailable;
 
             profile.Jobs.Clear();

@@ -62,3 +62,96 @@ marking-SpeciesAdaptorReptilianLLeg        = Base Sprite - Reptilian Left Leg
 marking-SpeciesAdaptorReptilianLFoot       = Base Sprite - Reptilian Left Foot
 marking-SpeciesAdaptorReptilianRLeg        = Base Sprite - Reptilian Right Leg
 marking-SpeciesAdaptorReptilianRFoot       = Base Sprite - Reptilian Right Foot
+
+humanoid-leg-style-Plantigrade = Normal
+humanoid-leg-style-Digitigrade = Digitigrade
+
+marking-SpeciesAdaptorAvianLLeg = Avian Left Leg
+marking-SpeciesAdaptorAvianLLeg-l_leg =  Avian Left Leg
+
+marking-SpeciesAdaptorAvianLFoot = Avian Left Foot
+marking-SpeciesAdaptorAvianLFoot-l_foot = Avian Left Foot
+
+marking-SpeciesAdaptorAvianRLeg =  Avian Right Leg
+marking-SpeciesAdaptorAvianRLeg-r_leg =  Avian Right Leg
+
+marking-SpeciesAdaptorAvianRFoot =  Avian Right Foot
+marking-SpeciesAdaptorAvianRFoot-r_foot =  Avian Right Foot
+
+marking-SpeciesAdaptorAvianDarkLLeg =  Avian Dark Left Leg
+marking-SpeciesAdaptorAvianDarkLLeg-l_leg =  Avian Dark Left Leg
+
+marking-SpeciesAdaptorAvianDarkLFoot =  Avian Dark Left Foot
+marking-SpeciesAdaptorAvianDarkLFoot-l_foot =  Avian Dark Left Foot
+
+marking-SpeciesAdaptorAvianDarkRLeg =  Avian Dark Right Leg
+marking-SpeciesAdaptorAvianDarkRLeg-r_leg =  Avian Dark Right Leg
+
+marking-SpeciesAdaptorAvianDarkRFoot =  Avian Dark Right Foot
+marking-SpeciesAdaptorAvianDarkRFoot-r_foot =  Avian Dark Right Foot
+
+marking-SpeciesAdaptorChickenLLeg =  Chicken Left Leg
+marking-SpeciesAdaptorChickenLLeg-l_leg =  Chicken Left Leg
+
+marking-SpeciesAdaptorChickenLFoot =  Chicken Left Foot
+marking-SpeciesAdaptorChickenLFoot-l_foot =  Chicken Left Foot
+
+marking-SpeciesAdaptorChickenRLeg =  Chicken Right Leg
+marking-SpeciesAdaptorChickenRLeg-r_leg =  Chicken Right Leg
+
+marking-SpeciesAdaptorChickenRFoot =  Chicken Right Foot
+marking-SpeciesAdaptorChickenRFoot-r_foot =  Chicken Right Foot
+
+marking-DigilegFurryTorsoMale = Furry Chest (Male)
+marking-DigilegFurryTorsoMale-FurryChestMale = Furry Chest (Male)
+
+marking-DigilegFurryTorsoFemale = Furry Chest (Female)
+marking-DigilegFurryTorsoFemale-FurryChestFemale = Furry Chest (Female)
+
+marking-DigilegBirdTorsoMale = Bird Chest (Male)
+marking-DigilegBirdTorsoMale-BirdChestMale = Bird Chest (Male)
+
+marking-DigilegBirdTorsoFemale = Bird Chest (Female)
+marking-DigilegBirdTorsoFemale-BirdChestFemale = Bird Chest (Female)
+
+marking-DigilegHumanTorsoMale = Human Chest (Male)
+marking-DigilegHumanTorsoMale-HumanChestMale = Human Chest (Male)
+
+marking-DigilegHumanTorsoFemale = Human Chest (Female)
+marking-DigilegHumanTorsoFemale-HumanChestFemale = Human Chest (Female)
+
+marking-DigilegHumanTorsoMaleSkintonee = Human Chest (Male)
+marking-DigilegHumanTorsoMaleSkintonee-HumanChestMaleSkintoned = Human Chest (Male)
+
+marking-DigilegHumanTorsoFemaleSkintoned = Human Chest (Female)
+marking-DigilegHumanTorsoFemaleSkintoned-HumanChestFemaleSkintoned = Human Chest (Female)
+
+marking-DigilegLizardTorsoMale = Lizard Chest (Male)
+marking-DigilegLizardTorsoMale-LizardChestMale = Lizard Chest (Male)
+
+marking-DigilegLizardTorsoFemale = Lizard Chest (Female)
+marking-DigilegLizardTorsoFemale-LizardChestFemale = Lizard Chest (Female)
+
+marking-DigilegMothTorsoMale = Moth Chest (Male)
+marking-DigilegMothTorsoMale-MothChestMale = Moth Chest (Male)
+
+marking-DigilegMothTorsoFemale = Moth Chest (Female)
+marking-DigilegMothTorsoFemale-MothChestFemale = Moth Chest (Female)
+
+marking-DigilegPlantTorsoMale = Plant Chest (Male)
+marking-DigilegPlantTorsoMale-PlantChestMale = Plant Chest (Male)
+
+marking-DigilegPlantTorsoFemale = Plant Chest (Female)
+marking-DigilegPlantTorsoFemale-PlantChestFemale = Plant Chest (Female)
+
+marking-DigilegSharkTorsoMale = Shark Chest (Male)
+marking-DigilegSharkTorsoMale-SharkChestMale = Shark Chest (Male)
+
+marking-DigilegSharkTorsoFemale = Shark Chest (Female)
+marking-DigilegSharkTorsoFemale-SharkChestFemale = Shark Chest (Female)
+
+marking-DigilegSlimeTorsoMale = Slime Chest (Male)
+marking-DigilegSlimeTorsoMale-SlimeChestMale = Slime Chest (Male)
+
+marking-DigilegSlimeTorsoFemale = Slime Chest (Female)
+marking-DigilegSlimeTorsoFemale-SlimeChestFemale = Slime Chest (Female)
