@@ -24,7 +24,7 @@
     !type:LewdFillContainerFromTarget
       organ: Breasts
       maxAmount: 3
-      minRepeatAmount: 3
+      minRepeatAmount: 2
 
 - type: Interaction
   id: LewdFillContainerPenis
@@ -195,3 +195,39 @@
     !type:LewdOrganFluidTransfer
     donorOrgan: Penis
     receiverOrgan: Rectum
+
+
+# ========================== #
+# Spilling
+# This is here because there's no interaction to simulate climax on the receiving side.
+- type: Interaction
+  id: LewdSpillVagina
+  parent: BaseLewdSpillOrgan
+  priority: -5
+  delay: 8
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Vagina
+    receiverOrgan: null
+
+- type: Interaction
+  id: LewdSpillPenis
+  parent: BaseLewdSpillOrgan
+  priority: -5
+  delay: 8
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Penis
+    receiverOrgan: null

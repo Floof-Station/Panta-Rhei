@@ -8,11 +8,12 @@
   range:
     max: 1.2
   effectDelayed:
-    popup: ObviousNoGhosts
+    popup: ObviousWithLimitsForOthers
   effectSuccess:
-    popup: ObviousNoGhosts
+    popup: ObviousWithLimitsForOthers
   effectFailure:
-    popup: Fail
+    popup: null # It would be detrimental to report interruptions into the chat.
+
 
 
 # Milking yourself
@@ -22,10 +23,9 @@
   abstract: true
   allowSelfInteract: true
   hideByRequirement: true
-  repeatable: true
   repeat: true
   effectSuccess: # This is mostly here to disincentive people from doing it in public
-    popup: ObviousNoGhosts
+    popup: ObviousWithLimitsForOthers
     sound:
       path: /Audio/Items/drink.ogg
       params:
@@ -52,13 +52,14 @@
   requiresHands: false
   repeat: true
   effectSuccess: # This is mostly here to disincentive people from doing it in public
-    popup: ObviousNoGhosts
+    popup: ObviousWithLimitsForOthers
     sound:
       path: /Audio/Items/drink.ogg
       params:
         volume: -5
         maxDistance: 2
 
+# Base for interactions that involve transferring from one person to another
 - type: Interaction
   id: BaseLewdFillOrgan
   parent: [BaseLewd, BaseHands]
@@ -68,9 +69,26 @@
   requiresHands: false
   hideByRequirement: true
   effectSuccess:
-    popup: ObviousNoGhosts
+    popup: ObviousWithLimitsForOthers
     sound:
-      path: /Audio/Items/drink.ogg
+      path: /Audio/Effects/Fluids/splat.ogg
+      params:
+        volume: -3
+        maxDistance: 2
+
+# Base for interactions that involve spilling liquid onto the floor
+- type: Interaction
+  id: BaseLewdSpillOrgan
+  parent: [BaseLewd, BaseHands]
+  abstract: true
+  allowSelfInteract: true # A user can only trigger it themselves
+  requiresHands: false
+  requiresCanInteract: false # Allow doing it while cuffed or w/e
+  hideByRequirement: true
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers
+    sound:
+      path: /Audio/Effects/Fluids/splat.ogg
       params:
         volume: -3
         maxDistance: 2

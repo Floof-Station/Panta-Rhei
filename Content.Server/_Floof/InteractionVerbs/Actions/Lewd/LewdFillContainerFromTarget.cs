@@ -57,7 +57,7 @@ public sealed partial class LewdFillContainerFromTarget : BaseLewdOrganAction
         if (overflow is { Volume.Value: not 0 })
             deps.System<PuddleSystem>().TrySpillAt(args.Target, overflow, out _, true);
 
-        args.AllowRepeat &= success && removed.Volume > MinRepeatAmount; // Stop repeating if the target has way too little fluid inside
+        args.AllowRepeat &= success && removed.Volume >= MinRepeatAmount; // Stop repeating if the target has way too little fluid inside
         return success; // Fail if there's nothing to draw
     }
 }

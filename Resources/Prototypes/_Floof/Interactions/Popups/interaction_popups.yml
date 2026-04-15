@@ -23,11 +23,14 @@
   popupType: Medium
   logChannel: Emotes
 
+# Medium, visible to others but not ghosts, 5m limit. Also doesn't send a chat message for others - only shows a popup.
 - type: InteractionPopup
-  id: ObviousNoGhosts
+  id: ObviousWithLimitsForOthers
   popupType: Medium
-  logChannel: Emotes
+  logChannel: Subtle
   visibleToGhosts: false
+  visibilityRange: 5 # 5m, 2.5x the normal interaction range.
+  logPopupOthers: true
 
 # MediumCaution, visible to others
 - type: InteractionPopup

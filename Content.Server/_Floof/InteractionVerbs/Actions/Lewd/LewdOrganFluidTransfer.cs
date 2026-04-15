@@ -19,10 +19,10 @@ public sealed partial class LewdOrganFluidTransfer : BaseLewdOrganAction
     public LewdOrganKind DonorOrgan;
 
     /// <summary>
-    ///     Organ on the target entity to deposit into.
+    ///     Organ on the target entity to deposit into. If set to null, spills all the liquid instead.
     /// </summary>
     [DataField(required: true)]
-    public LewdOrganKind ReceiverOrgan;
+    public LewdOrganKind? ReceiverOrgan;
 
     public override bool CanPerform(InteractionArgs args,
         InteractionVerbPrototype proto,
@@ -33,7 +33,7 @@ public sealed partial class LewdOrganFluidTransfer : BaseLewdOrganAction
         if (!lewdSys.TryGetOrganSolution(DonorOrgan, args.User, out _, out _))
             return false;
 
-        if (!lewdSys.TryGetOrganSolution(ReceiverOrgan, args.Target, out _, out _))
+        if (ReceiverOrgan != null && !lewdSys.TryGetOrganSolution(ReceiverOrgan.Value, args.Target, out _, out _))
             return false;
 
         return true;
@@ -45,13 +45,15 @@ public sealed partial class LewdOrganFluidTransfer : BaseLewdOrganAction
         if (!lewdSys.TryGetOrganSolution(DonorOrgan, args.User, out _, out var donorSolEnt))
             return false;
 
-        if (!lewdSys.TryGetOrganSolution(ReceiverOrgan, args.Target, out var receiverSol, out var receiverSolEnt))
-            return false;
-
         var solSystem = deps.System<SharedSolutionContainerSystem>();
         var removed = solSystem.SplitSolution(donorSolEnt.Value, MaxAmount);
         var success = removed.Volume > 0;
-        solSystem.TryMixAndOverflow(receiverSolEnt.Value, removed, receiverSol.MaxVolume, out var overflow);
+
+        Solution? overflow;
+        if (ReceiverOrgan != null && lewdSys.TryGetOrganSolution(ReceiverOrgan.Value, args.Target, out var receiverSol, out var receiverSolEnt))
+            solSystem.TryMixAndOverflow(receiverSolEnt.Value, removed, receiverSol.MaxVolume, out overflow);
+        else
+            overflow = removed; // Splash everything if couldn't transfer
 
         // Splash.
         if (overflow is { Volume.Value: not 0 })
