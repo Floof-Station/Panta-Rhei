@@ -26,8 +26,8 @@ interaction-LewdFillContainerPenis-success-others-popup = {interaction-LewdFillC
 # Frankly idfk what you call this, I'm only adding this because there are recipes that need natural lubricant.
 interaction-LewdFillContainerVagina-name = Squirt (into container)
 # User == Target
-interaction-LewdFillContainerVagina-delayed-self-popup = You are trying to scoup up the liquids from your pussy...
-interaction-LewdFillContainerVagina-success-self-popup = You scoup up some liquid from your pussy and into {THE($used)}.
+interaction-LewdFillContainerVagina-delayed-self-popup = You are trying to squirt...
+interaction-LewdFillContainerVagina-success-self-popup = You squirt some liquid into {THE($used)}.
 # Others.
 interaction-LewdFillContainerVagina-delayed-others-popup = {interaction-LewdFillContainerBreast-delayed-others-popup}
 interaction-LewdFillContainerVagina-success-others-popup = {interaction-LewdFillContainerBreast-success-others-popup}
@@ -114,7 +114,7 @@ interaction-LewdSpillVagina-delayed-self-popup = You are trying to reach climax.
 interaction-LewdSpillVagina-success-self-popup = You climax, spilling the contents of your pussy onto the floor!
 # Others
 interaction-LewdSpillVagina-delayed-others-popup = {THE($user)} looks like {SUBJECT($user)} {CONJUGATE-BE($target)} about to climax...
-interaction-LewdSpillVagina-success-others-popup = {THE($user)} climaxes on the floor, splashing something onto the floor!
+interaction-LewdSpillVagina-success-others-popup = {THE($user)} climaxes, splashing something onto the floor!
 
 interaction-LewdSpillPenis-name = Cum (on the floor)
 # User == Target
@@ -122,4 +122,4 @@ interaction-LewdSpillPenis-delayed-self-popup = You are trying to cum...
 interaction-LewdSpillPenis-success-self-popup = You cum, spilling a white substance onto the floor!
 # Others
 interaction-LewdSpillPenis-delayed-others-popup = {THE($user)} looks like {SUBJECT($user)} {CONJUGATE-BE($target)} about to cum...
-interaction-LewdSpillPenis-success-others-popup = {THE($user)} cums on the floor, splashing something onto the floor!
+interaction-LewdSpillPenis-success-others-popup = {THE($user)} cums, splashing something onto the floor!
