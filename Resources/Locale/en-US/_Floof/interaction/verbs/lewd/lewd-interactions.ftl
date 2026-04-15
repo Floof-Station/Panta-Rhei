@@ -24,7 +24,7 @@ interaction-LewdFillContainerPenis-delayed-others-popup = {interaction-LewdFillC
 interaction-LewdFillContainerPenis-success-others-popup = {interaction-LewdFillContainerBreast-success-others-popup}
 
 # Frankly idfk what you call this, I'm only adding this because there are recipes that need natural lubricant.
-interaction-LewdFillContainerPenisOther-name = Milk (into container)
+interaction-LewdFillContainerVagina-name = Squirt (into container)
 # User == Target
 interaction-LewdFillContainerVagina-delayed-self-popup = You are trying to scoup up the liquids from your pussy...
 interaction-LewdFillContainerVagina-success-self-popup = You scoup up some liquid from your pussy and into {THE($used)}.

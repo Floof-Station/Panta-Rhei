@@ -29,8 +29,7 @@
   popupType: Medium
   logChannel: Subtle
   visibleToGhosts: false
-  visibilityRange: 5 # 5m, 2.5x the normal interaction range.
-  logPopupOthers: true
+  visibilityRange: 4 # 4m, 2x the normal interaction range.
 
 # MediumCaution, visible to others
 - type: InteractionPopup
