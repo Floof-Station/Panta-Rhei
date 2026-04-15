@@ -50,7 +50,7 @@ public sealed class LewdInteractionsSystem : EntitySystem
         var organFlagsB = GetOrgans(ev.Target);
         foreach (var pair in EnumeratePairs(organsFlagsA, organFlagsB))
         {
-            Log.Info($"Emitted pair: {pair}");
+            // Log.Info($"Emitted pair: {pair}");
             if (!InteractionMap.Map.TryGetValue(pair, out var interactionVerbIds))
                 continue;
 
