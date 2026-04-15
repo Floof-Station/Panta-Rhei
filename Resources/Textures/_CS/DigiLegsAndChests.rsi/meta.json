@@ -1,0 +1,435 @@
+{
+  "license": "CC-BY-SA-3.0",
+  "copyright": "coyote-bayou",
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "Avian-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "BirdChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "BirdChestMale",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "FurryChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "FurryChestMale",
+      "directions": 4
+    },
+    {
+      "name": "HumanChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "HumanChestFemaleSkintoned",
+      "directions": 4
+    },
+    {
+      "name": "HumanChestMale",
+      "directions": 4
+    },
+    {
+      "name": "HumanChestMaleSkintoned",
+      "directions": 4
+    },
+    {
+      "name": "JellyChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "JellyChestMale",
+      "directions": 4
+    },
+    {
+      "name": "LizardChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "LizardChestMale",
+      "directions": 4
+    },
+    {
+      "name": "LumiChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "LumiChestMale",
+      "directions": 4
+    },
+    {
+      "name": "MothChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "MothChestMale",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Left-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Left-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Left-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Right-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Right-BEHIND-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Right-FRONT-Leg",
+      "directions": 4
+    },
+    {
+      "name": "PlantChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "PlantChestMale",
+      "directions": 4
+    },
+    {
+      "name": "SharkChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "SharkChestMale",
+      "directions": 4
+    },
+    {
+      "name": "SlimeChestFemale",
+      "directions": 4
+    },
+    {
+      "name": "SlimeChestMale",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Avian-Right-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "AvianDark-Right-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenDark-Right-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "ChickenSlime-Right-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "Paw-Right-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawDark-Right-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Left-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Left-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Left-FRONT-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Right-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Right-BEHIND-Foot",
+      "directions": 4
+    },
+    {
+      "name": "PawSlime-Right-FRONT-Foot",
+      "directions": 4
+    }
+  ]
+}

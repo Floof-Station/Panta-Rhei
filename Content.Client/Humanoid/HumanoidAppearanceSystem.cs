@@ -10,11 +10,10 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Numerics; // CD - Character Records
-using System.Diagnostics.CodeAnalysis; // Euphoria - Digi-Legs
-using Content.Shared._Coyote; // Euphoria - Digi-Legs
-using Content.Shared.DisplacementMap; // Euphoria - Digi-Legs
 using Content.Shared._Floof.Sprite; // Floofstation
 using Robust.Client.Console; // CD - Character Records
+using Content.Shared._Coyote; // Euphoria - Digi-Legs
+using Content.Shared.DisplacementMap; // Euphoria - Digi-Legs
 
 namespace Content.Client.Humanoid;
 
@@ -167,7 +166,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 // shader will be appliesed lader
             }
             // END COYOTE (PLEASE)
-            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, appropriateSprite);
+            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, proto.BaseSprite);
         }
     }
 
@@ -293,35 +292,31 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         foreach (List<Marking> markingList in humanoid.MarkingSet.Markings.Values) // Euphoria - Digi-Legs
         {
-            foreach (Marking marking in markingList)
+            foreach (var marking in markingList)
             {
-                if (!_markingManager.TryGetMarking(marking, out MarkingPrototype? markingPrototype))
-                    continue;
-                PreModifyMarking(
-                    humanoid,
-                    markingPrototype,
-                    marking,
-                    out Marking newMarking,
-                    out MarkingPrototype newMarkingPrototype);
-                ApplyMarking(
-                    newMarkingPrototype,
-                    newMarking.MarkingColors,
-                    newMarking.Visible,
-                    humanoid,
-                    sprite);
+                if (_markingManager.TryGetMarking(marking, out var markingPrototype))
+                {
+                    PreModifyMarking(humanoid, markingPrototype, marking, out var newMarking, out var newMarkingPrototype);
+
+                    ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, entity);
+                    if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
+                        applyUndergarmentTop = false;
+                    else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
+                        applyUndergarmentBottom = false;
+                }
             }
         }
 
         humanoid.ClientOldMarkings = new MarkingSet(humanoid.MarkingSet);
 
-        // AddUndergarments(entity, applyUndergarmentTop, applyUndergarmentBottom);
-
+        AddUndergarments(entity, applyUndergarmentTop, applyUndergarmentBottom);
     }
 
+    // Euphoria - Digi-Legs
     /// <summary>
     /// Takes in the marking about to be applied, and allows modification of it before application.
     /// </summary>
-    private void PreModifyMarking( // Euphoria - Digi-Legs
+    private void PreModifyMarking(
         HumanoidAppearanceComponent humanoid,
         MarkingPrototype markingPrototype,
         Marking marking,
@@ -343,7 +338,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             newPrototype = _prototypeManager.Index<MarkingPrototype>(altMarkingProtoId);
         }
     }
-
 
     private void ClearAllMarkings(Entity<HumanoidAppearanceComponent, SpriteComponent> entity)
     {
@@ -368,9 +362,9 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             }
         }
 
-
+        // Euphoria - Digi-Legs
         // then we do it my way!
-        foreach (var layid in humanoid.ClientElderMarkings) // Euphoria - Digi-Legs
+        foreach (var layid in humanoid.ClientElderMarkings)
         {
             if (sprite.LayerMapTryGet(layid, out var index))
             {
@@ -518,15 +512,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 _sprite.LayerMapSet((entity.Owner, sprite), layerId, layer);
                 _sprite.LayerSetSprite((entity.Owner, sprite), layerId, rsi);
             }
-// Euphoria - Digu-Legs
-            humanoid.ClientElderMarkings.Add(layerId);
-            // impstation edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
-            if (markingPrototype.Shader != null)
-            {
-                // use spriteComponent's layersetshader function to set the layer's shader to that which is specified.
-                sprite.LayerSetShader(layerId, markingPrototype.Shader);
-            }
-            // impstation edit end
+
+            humanoid.ClientElderMarkings.Add(layerId); // Euphoria - Digi-Legs
 
             _sprite.LayerSetVisible((entity.Owner, sprite), layerId, visible);
 
@@ -589,8 +576,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         out DisplacementData? femaleDisplacementData
         )
     {
-        baseDisplacementData   = baseDisplacementDataIn;
-        maleDisplacementData   = maleDisplacementDataIn;
+        baseDisplacementData = baseDisplacementDataIn;
+        maleDisplacementData = maleDisplacementDataIn;
         femaleDisplacementData = femaleDisplacementDataIn;
         if (!Resolve(uid, ref humanoidAppearance))
             return;
@@ -612,11 +599,10 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             return;
         }
 
-        baseDisplacementData   = ldp.Displacements!.GetValueOrDefault(slot, baseDisplacementDataIn);
-        maleDisplacementData   = ldp.MaleDisplacements!.GetValueOrDefault(slot, maleDisplacementDataIn);
+        baseDisplacementData = ldp.Displacements!.GetValueOrDefault(slot, baseDisplacementDataIn);
+        maleDisplacementData = ldp.MaleDisplacements!.GetValueOrDefault(slot, maleDisplacementDataIn);
         femaleDisplacementData = ldp.FemaleDisplacements!.GetValueOrDefault(slot, femaleDisplacementDataIn);
     }
-}
 
     public override void SetLayerVisibility(
         Entity<HumanoidAppearanceComponent> ent,

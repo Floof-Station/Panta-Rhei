@@ -7,7 +7,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
-
+using Content.Shared._Coyote; // Euphoria - Digi-Legs
 namespace Content.Shared.Humanoid;
 
 [NetworkedComponent, RegisterComponent, AutoGenerateComponentState(true)]
