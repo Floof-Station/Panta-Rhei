@@ -50,7 +50,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     Specifies what effects are shown when this verb is performed successfully, or unsuccessfully.
     ///     Effects specified here are shown after the associated do-after has ended, if any.
     /// </summary>
-    [DataField, AlwaysPushInheritance]
+    [DataField]
     public EffectSpecifier? EffectSuccess, EffectFailure;
 
     /// <summary>
