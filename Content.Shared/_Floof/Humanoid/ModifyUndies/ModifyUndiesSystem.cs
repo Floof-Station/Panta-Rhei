@@ -159,6 +159,9 @@ public sealed class ModifyUndiesSystem : EntitySystem
 
     private void ToggleUndies(EntityUid uid, ModifyUndiesComponent component, ModifyUndiesDoAfterEvent args)
     {
+        if (_net.IsClient)
+            return; // Don't predict
+
         if (!_markingManager.TryGetMarking(args.Marking, out var mProt))
             return;
         if (!TryComp<HumanoidAppearanceComponent>(args.Target, out var humApp))
