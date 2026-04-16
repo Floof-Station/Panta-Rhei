@@ -44,7 +44,7 @@ public sealed class LewdOrganSystem : EntitySystem
     {
         if (!TryComp<OrganComponent>(ent, out var organ))
         {
-            Log.Error($"LewdOrganComponent added to an entity without Organ: {ent.Owner}.");
+            Log.Warning($"LewdOrganComponent added to an entity without Organ: {ent.Owner}.");
             return;
         }
 

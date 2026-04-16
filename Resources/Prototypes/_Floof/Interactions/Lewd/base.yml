@@ -23,12 +23,12 @@
   allowSelfInteract: true
   hideByRequirement: true
   repeat: true
-  effectSuccess: # This is mostly here to disincentive people from doing it in public
-    popup: ObviousWithLimitsForOthers
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers # This is mostly here to disincentive people from doing it in public
     sound:
-      path: /Audio/Items/drink.ogg
+      path: /Audio/Effects/Fluids/splash.ogg
       params:
-        volume: -5
+        volume: -10
         maxDistance: 2
 
 
@@ -50,7 +50,7 @@
   hideByRequirement: true
   requiresHands: false
   repeat: true
-  effectSuccess: # This is mostly here to disincentive people from doing it in public
+  effectSuccess:
     popup: ObviousWithLimitsForOthers
     sound:
       path: /Audio/Items/drink.ogg
