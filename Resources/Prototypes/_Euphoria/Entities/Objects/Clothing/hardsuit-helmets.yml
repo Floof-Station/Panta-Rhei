@@ -116,6 +116,78 @@
     - Hair
     - HeadSide
 
+#CJ hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCJHat
+  name: CJ
+  description: CJ
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cj-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cj-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    color: "#e2d4fc"
+    radius: 5
+    energy: 4
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Cap hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCAPHat
+  name: CAP
+  description: CAP
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cap-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cap-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    color: "#e2d4fc"
+    radius: 5
+    energy: 4
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Cmo hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCMOHat
+  name: CMO
+  description: CMO
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cmo-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cmo-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    color: "#e2d4fc"
+    radius: 5
+    energy: 4
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
 #Syndie Nemesis Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
