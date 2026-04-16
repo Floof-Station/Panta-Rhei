@@ -181,8 +181,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitMagicalCJ
-  name: CJ item
-  description: CJ
+  name: Heart of justice gavel
+  description: This brilliant golden gavel features a pristine white handle, a crimson ribbon, and a ruby heart humming with dormant magic. If keep it close to your heart it may wake once more.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cj-magical.rsi
@@ -216,8 +216,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitMagicalCAP
-  name: CAP item
-  description: CAP
+  name: Fabergé heart pendant 
+  description: A ornate pendant, passed down from someone very important to you. You always keep it close to your heart.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
@@ -228,15 +228,27 @@
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
   - type: Armor
     modifiers:
       coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.5
         Radiation: 0.5
+        Caustic: 0.6
+  - type: DamageOnShootProtection # imp
+    slots: OUTERCLOTHING
+    damageProtection:
+      flatReductions:
+        Blunt: 10
   - type: StaminaResistance # DeltaV
-    damageCoefficient: 0.8
+    damageCoefficient: 0.3
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.8
+    sprintModifier: 0.8
   - type: ToggleableClothing
     clothingPrototype: ClothingOuterHardsuitMagicalCAPHat
   - type: Item
@@ -250,8 +262,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitMagicalCMO
-  name: CMO item
-  description: CMO
+  name: Panacea flask
+  description: A remedy for any ailment, yet the flask stays sealed. Yet it feels like all of your worries go away when you keep it close to your heart.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cmo-magical.rsi
@@ -265,12 +277,12 @@
   - type: Armor
     modifiers:
       coefficients:
-        Radiation: 0.5
-  - type: StaminaResistance # DeltaV
-    damageCoefficient: 0.8
+        Caustic: 0.1
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.4
   - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+    walkModifier: 0.95
+    sprintModifier: 0.95
   - type: ToggleableClothing
     clothingPrototype: ClothingOuterHardsuitMagicalCMOHat
   - type: Item
