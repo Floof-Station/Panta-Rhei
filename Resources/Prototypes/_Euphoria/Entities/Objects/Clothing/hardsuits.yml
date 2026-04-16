@@ -292,6 +292,48 @@
     - Hardsuit
     - WhitelistChameleon
 
+#CE Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  id: ClothingOuterHardsuitMagicalCE
+  name: CE wrench
+  description: placeholder
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/ce-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/ce-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.4
+        Radiation: 0.0
+        Caustic: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalCEHat
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+
+
 #Syndie Nemesis Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]

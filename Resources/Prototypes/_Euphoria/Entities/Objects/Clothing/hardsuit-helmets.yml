@@ -188,6 +188,30 @@
     slots:
     - HeadSide
 
+#Cmo hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCEHat
+  name: CE
+  description: CE
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/ce-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/ce-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    color: "#e2d4fc"
+    radius: 5
+    energy: 4
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
 #Syndie Nemesis Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
