@@ -91,7 +91,7 @@ public sealed partial class MarkingPicker : Control
         }
     }
 
-    public void SetData(List<Marking> newMarkings, string species, Sex sex, Color skinColor, Color eyeColor)
+    public void SetData(List<Marking> newMarkings, string species, Sex sex, Color skinColor, Color eyeColor, HumanoidLegStyle legStyle)
     {
         var pointsProto = _prototypeManager
             .Index<SpeciesPrototype>(species).MarkingPoints;
@@ -203,7 +203,7 @@ public sealed partial class MarkingPicker : Control
 
         foreach (var legStyle in _availableLegStyles)
         {
-            CMarkingLegStyle.AddItem(Loc.GetString($"humanoid-leg-style-{legStyle.ToString()}"), (int) legStyle);
+            CMarkingLegStyle.AddItem(Loc.GetString($"humanoid-leg-style-{legStyle.ToString()}"), (int)legStyle);
         }
 
         CMarkingLegStyle.SelectId((int)CurrentLegStyle);
@@ -240,14 +240,20 @@ public sealed partial class MarkingPicker : Control
     public void Populate(string filter)
     {
         SetupCategoryButtons();
+        SetupLegStyleButtons();
 
         CMarkingsUnused.Clear();
         _selectedUnusedMarking = null;
 
-        var sortedMarkings = GetMarkings(_selectedMarkingCategory).Values.Where(m =>
-            m.ID.ToLower().Contains(filter.ToLower()) ||
-            GetMarkingName(m).ToLower().Contains(filter.ToLower())
-        ).OrderBy(p => Loc.GetString(GetMarkingName(p)));
+        IOrderedEnumerable<MarkingPrototype> sortedMarkings = GetMarkings(_selectedMarkingCategory)
+            .Values.Where(m =>
+                !m.Hidden
+                && (m.ID.ToLower()
+                        .Contains(filter.ToLower())
+                    || GetMarkingName(m)
+                        .ToLower()
+                        .Contains(filter.ToLower())))
+            .OrderBy(p => Loc.GetString(GetMarkingName(p)));
 
         foreach (var marking in sortedMarkings)
         {

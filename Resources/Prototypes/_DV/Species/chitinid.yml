@@ -192,19 +192,13 @@
     state: l_arm
 
 - type: humanoidBaseSprite
-  id: MobChitinidRHand
-  baseSprite:
-    sprite: _DV/Mobs/Species/Chitinid/parts.rsi
-    state: r_hand
-
-- type: humanoidBaseSprite
   id: MobChitinidRArm
   baseSprite:
     sprite: _DV/Mobs/Species/Chitinid/parts.rsi
     state: r_arm
 
 - type: humanoidBaseSprite
-  id: MobChitinidRFoot
+  id: MobChitinidRHand
   baseSprite:
     sprite: _DV/Mobs/Species/Chitinid/parts.rsi
-    state: r_foot
+    state: r_hand

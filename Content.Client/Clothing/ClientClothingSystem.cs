@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Client.DisplacementMap;
-using Content.Client.Humanoid; // Euphoria - Digi-Legs
 using Content.Client.Inventory;
 using Content.Shared._DV.Silicon.IPC; // DeltaV - IPC Snouts
 using Content.Shared.Clothing;
@@ -14,6 +13,8 @@ using Content.Shared.Item;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
+using Content.Client.Humanoid; // Euphoria - Digi-Legs
+using Content.Shared.DisplacementMap; // Euphoria - Digi-Legs
 using Robust.Shared.Serialization.TypeSerializers.Implementations;
 using Robust.Shared.Utility;
 using static Robust.Client.GameObjects.SpriteComponent;
@@ -297,9 +298,9 @@ public sealed class ClientClothingSystem : ClothingSystem
             }
         }
 
-        if (TryComp(equipee, out HumanoidAppearanceComponent? ham)) // Euphoria - Digi-Legs
+        if (TryComp(equipee, out HumanoidAppearanceComponent? ham))
         {
-            _humanoidSystem.s(
+            _humanoidSystem.GetDisplacementForLegStyle(
                 equipee,
                 slot,
                 ham,
@@ -330,8 +331,6 @@ public sealed class ClientClothingSystem : ClothingSystem
             else if (baseDisplacement != null)
                 displacementData = baseDisplacement;
         }
-
-
 
         // add the new layers
         foreach (var (key, layerData) in ev.Layers)

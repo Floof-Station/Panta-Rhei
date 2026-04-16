@@ -564,7 +564,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
     //     inventory,
     //     displacementData);
 
-    public void GetDisplacementForLegStyle( // Euphoria - Digi-Legs
+    public void GetDisplacementForLegStyle(
         EntityUid uid,
         string slot,
         HumanoidAppearanceComponent? humanoidAppearance,

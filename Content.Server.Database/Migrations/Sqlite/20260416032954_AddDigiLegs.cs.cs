@@ -1,11 +1,11 @@
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Content.Server.Database.Migrations.Postgres
+namespace Content.Server.Database.Migrations.Sqlite
 {
     /// <inheritdoc />
-    public partial class adds_digilegs_and_such : Migration
+    public partial class AddDigiLegscs : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -13,7 +13,7 @@ namespace Content.Server.Database.Migrations.Postgres
             migrationBuilder.AddColumn<string>(
                 name: "leg_style",
                 table: "profile",
-                type: "text",
+                type: "TEXT",
                 nullable: false,
                 defaultValue: "");
         }

@@ -54,11 +54,18 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         Markings = markings;
         LegStyle = legStyle; // Euphoria - Digi-Legs
     }
-
     public HumanoidCharacterAppearance(HumanoidCharacterAppearance other) :
         this(other.HairStyleId, other.HairColor, other.FacialHairStyleId, other.FacialHairColor, other.EyeColor, other.SkinColor, new(other.Markings), other.LegStyle)
     {
 
+    }
+
+    public HumanoidCharacterAppearance WithLegs(HumanoidLegStyle newLegStyle) // Euphoria - Digi-Legs
+    {
+        return new HumanoidCharacterAppearance(this)
+        {
+            LegStyle = newLegStyle
+        };
     }
 
     public HumanoidCharacterAppearance WithHairStyleName(string newName)
