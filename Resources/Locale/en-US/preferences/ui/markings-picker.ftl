@@ -34,16 +34,3 @@ markings-category-Arms = Arms
 markings-category-Legs = Legs
 markings-category-Tail = Tail
 markings-category-Overlay = Overlay
-
-markings-category-BaseChest = Base Chest
-markings-category-BaseHead  = Base Head
-markings-category-BaseLArm  = Base Arm (left)
-markings-category-BaseLFoot = Base Foot (left)
-markings-category-BaseLHand = Base Hand (left)
-markings-category-BaseLLeg  = Base Leg (left)
-markings-category-BaseRArm  = Base Arm (right)
-markings-category-BaseRFoot = Base Foot (right)
-markings-category-BaseRHand = Base Hand (right)
-markings-category-BaseRLeg  = Base Leg (right)
-markings-category-BaseLegs  = Base Legs & Feet
-markings-category-BaseArms  = Base Arms & Hands

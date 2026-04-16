@@ -62,9 +62,13 @@ namespace Content.Shared.Humanoid.Markings
                 HumanoidVisualLayers.RHand => MarkingCategories.Arms,
                 HumanoidVisualLayers.LHand => MarkingCategories.Arms,
                 HumanoidVisualLayers.LLeg => MarkingCategories.Legs,
+                HumanoidVisualLayers.LLegBehind => MarkingCategories.Legs,
                 HumanoidVisualLayers.RLeg => MarkingCategories.Legs,
+                HumanoidVisualLayers.RLegBehind => MarkingCategories.Legs,
                 HumanoidVisualLayers.LFoot => MarkingCategories.Legs,
+                HumanoidVisualLayers.LFootBehind => MarkingCategories.Legs,
                 HumanoidVisualLayers.RFoot => MarkingCategories.Legs,
+                HumanoidVisualLayers.RFootBehind     => MarkingCategories.Legs,
                 HumanoidVisualLayers.Tail => MarkingCategories.Tail,
                 HumanoidVisualLayers.RArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer
                 HumanoidVisualLayers.LArmExtension => MarkingCategories.Arms, // Frontier: species-specific layer

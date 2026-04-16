@@ -55,12 +55,19 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
         LegStyle = legStyle; // Euphoria - Digi-Legs
     }
     public HumanoidCharacterAppearance(HumanoidCharacterAppearance other) :
-        this(other.HairStyleId, other.HairColor, other.FacialHairStyleId, other.FacialHairColor, other.EyeColor, other.SkinColor, new(other.Markings), other.LegStyle)
+        this(
+            other.HairStyleId,
+            other.HairColor,
+            other.FacialHairStyleId,
+            other.FacialHairColor,
+            other.EyeColor,
+            other.SkinColor,
+            new(other.Markings),
+            other.LegStyle)
     {
-
     }
 
-    public HumanoidCharacterAppearance WithLegs(HumanoidLegStyle newLegStyle) // Euphoria - Digi-Legs
+   public HumanoidCharacterAppearance WithLegs(HumanoidLegStyle newLegStyle)
     {
         return new HumanoidCharacterAppearance(this)
         {
@@ -115,6 +122,8 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             _ => skinColoration.ClosestSkinColor(speciesPrototype.DefaultSkinTone),
         };
 
+        var leggies = speciesPrototype.DefaultLegStyle;
+
         return new(
             HairStyles.DefaultHairStyle,
             Color.Black,
@@ -122,7 +131,8 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             Color.Black,
             Color.Black,
             skinColor,
-            new()
+            new(),
+            leggies
         );
     }
 
@@ -171,7 +181,17 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             _ => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         };
 
-        return new HumanoidCharacterAppearance(newHairStyle, newHairColor, newFacialHairStyle, newHairColor, newEyeColor, newSkinColor, new());
+var leggies = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).DefaultLegStyle;
+
+        return new HumanoidCharacterAppearance(
+            newHairStyle,
+            newHairColor,
+            newFacialHairStyle,
+            newHairColor,
+            newEyeColor,
+            newSkinColor,
+            new(),
+            leggies);
 
         float RandomizeColor(float channel)
         {
