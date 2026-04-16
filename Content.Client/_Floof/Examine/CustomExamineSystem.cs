@@ -31,7 +31,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
 
     private void OnGetVerbs(GetVerbsEvent<Verb> args)
     {
-        if (_player.LocalSession is null || !CanChangeExamine(_player.LocalSession, args.Target))
+        if (_player.LocalSession is null || !CanChangeExamine(_player.LocalSession, args.Target, out _))
             return;
 
         var target = args.Target;
@@ -88,7 +88,7 @@ public sealed class CustomExamineSystem : SharedCustomExamineSystem
                     SubtleData = data.subtleData,
                     Target = GetNetEntity(target)
                 };
-                RaiseNetworkEvent(ev);
+                RaisePredictiveEvent(ev);
             };
         }
 

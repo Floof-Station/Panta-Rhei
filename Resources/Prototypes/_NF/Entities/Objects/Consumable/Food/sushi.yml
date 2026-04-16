@@ -1,5 +1,5 @@
 ﻿- type: entity
-  name: avocado sushi
+  name: avocado sushi roll
   parent: FoodMealBase
   id: FoodMealAvocadoSushi
   description: Where did the seaweed come from?
@@ -27,7 +27,7 @@
     slice: FoodMealAvocadoSushiSlice
 
 - type: entity
-  name: avocado sushi
+  name: avocado sushi roll slice
   parent: FoodInjectableBase
   id: FoodMealAvocadoSushiSlice
   description: Where did the seaweed come from?
@@ -52,7 +52,7 @@
           Quantity: .4
 
 - type: entity
-  name: carp sushi
+  name: carp sushi roll
   parent: FoodMealBase
   id: FoodMealCarpSushi
   description: Certainly worth the risk.
@@ -70,11 +70,11 @@
         maxVol: 45
         reagents:
         - ReagentId: Nutriment
-          Quantity: 20
+          Quantity: 25
         - ReagentId: Flavorol
           Quantity: 10
-        - ReagentId: CarpoToxin
-          Quantity: 5
+        #- ReagentId: CarpoToxin - Euphoria
+        #  Quantity: 5
         - ReagentId: CucumberWater
           Quantity: 2
   - type: SliceableFood
@@ -82,7 +82,7 @@
     slice: FoodMealCarpSushiSlice
 
 - type: entity
-  name: carp sushi
+  name: carp sushi roll slice
   parent: FoodInjectableBase
   id: FoodMealCarpSushiSlice
   description: Certainly worth the smaller risk.
@@ -100,10 +100,10 @@
         maxVol: 9
         reagents:
         - ReagentId: Nutriment
-          Quantity: 4
+          Quantity: 5
         - ReagentId: Flavorol
           Quantity: 2
-        - ReagentId: CarpoToxin
-          Quantity: 1
+        #- ReagentId: CarpoToxin - Euphoria
+        #  Quantity: 1
         - ReagentId: CucumberWater
           Quantity: .4

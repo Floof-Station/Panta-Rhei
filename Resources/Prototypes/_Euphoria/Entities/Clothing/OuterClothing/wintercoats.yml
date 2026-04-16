@@ -1,0 +1,26 @@
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterLustroEcclesiaChaplainWinterCoat
+  name: lustro ecclesia regal coat
+  description: A beautifully crafted coat for a high ranking devotee of Lustro Ecclesia.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/WinterCoats/lustrochap.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/WinterCoats/lustrochap.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      - state: equipped-OUTERCLOTHING_lighting
+        shader: unshaded
+
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: ClothingOuterLustroEcclesiaWinterCoat
+  name: lustro ecclesia coat
+  description: A coat generally worn by a devotee of Lustro Ecclesia.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/WinterCoats/lustrocoat.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/WinterCoats/lustrocoat.rsi

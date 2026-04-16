@@ -130,7 +130,7 @@
   - type: IdCard
     jobTitle: job-alt-title-head-of-acquisitions
 
-#Chaplain
+# Chaplain
 - type: entity
   parent: ChaplainIDCard
   id: SpiritualCounselorIDCard
@@ -147,3 +147,11 @@
   - type: IdCard
     jobTitle: job-alt-title-noostatistician
 
+# emotional support
+- type: entity
+  parent: PassengerIDCard
+  id: EmotionalSupportIdCard
+  name: emotional support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-emotionalsupport

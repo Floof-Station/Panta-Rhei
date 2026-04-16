@@ -1,0 +1,176 @@
+- type: entity
+  name: Vector-S
+  suffix: Admeme
+  parent: [BaseWeaponSubMachineGun, BaseMajorContraband]
+  id: WeaponSubMachineGunRealVector
+  description: An old sol-made PDW. With an insane fire-rate and low recoil. Uses .45 magnum ammo. Jesus this thing is wild.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -16
+    maxAngle: -19
+  - type: Gun
+    minAngle: 21
+    maxAngle: 32
+    fireRate: 1200
+    burstFireRate: 240
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    - SemiAuto
+    - FullAuto
+    shotsPerBurst: 2
+    burstCooldown: 0.255
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineMagnumSubMachineGun
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeMagnum
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: Vector-B
+  suffix: Magnum
+  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
+  id: WeaponSubMachineGunVector
+  description: An old sol-made PDW. With an accruate and fast burst. Uses .45 magnum ammo.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -50
+    maxAngle: -25
+  - type: Gun
+    minAngle: 30
+    maxAngle: 60
+    fireRate: 24
+    burstFireRate: 48
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
+    selectedMode: Burst
+    availableModes:
+    - Burst
+    - SemiAuto
+    shotsPerBurst: 2
+    burstCooldown: 0.255
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMagnumSubMachineGun
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineMagnumSubMachineGun
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgeMagnum
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+
+- type: entity
+  name: Vector-F
+  suffix: High-Velocity
+  parent: [BaseWeaponSubMachineGun, BaseSyndicateContraband]
+  id: WeaponSubMachineGunVectorSyndie
+  description: An newer version of the PDW. With high fire-rate and velocity but at the cost of accuracy, heck, the stock is missing. Uses .10 high-velocity ammo.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vectormod.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Floof/Objects/Weapons/Guns/SMGs/vectormod.rsi
+  - type: Wieldable
+    unwieldOnUse: false
+  - type: GunWieldBonus
+    minAngle: -20
+    maxAngle: -20
+  - type: Gun
+    minAngle: 30
+    maxAngle: 60
+    fireRate: 24
+    soundGunshot:
+      path: /Audio/_Floof/Weapons/Guns/Gunshots/vector.ogg
+      params:
+        volume: -7
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    - SemiAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineHighVelocity
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazineHighVelocity
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeHighVelocity
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeHighVelocity
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance

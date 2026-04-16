@@ -21,7 +21,16 @@ public sealed class MappingCategoryTest
 {
     private const string MapsPath = "/Maps";
     // dev map doesn't matter and don't want to change it
-    private readonly List<string> _ignoredMapsPath = ["/Maps/Test/", "/Maps/Shuttles/AdminSpawn", "/Maps/Floof/centcomm.yml", "/Maps/Floof/Shuttles/CentralCommand/", "/Maps/Floof/Shuttles/Event/"]; //Floofstation - add centcomm and admin shuttles to ignoredmappaths
+    private readonly List<string> _ignoredMapsPath = [
+        "/Maps/Test/",
+        "/Maps/Shuttles/AdminSpawn",
+        // Floofstation section - add centcomm and admin shuttles to ignoredmappaths
+        "/Maps/Floof/centcomm.yml",
+        "/Maps/Floof/Shuttles/CentralCommand/",
+        "/Maps/Floof/Shuttles/Event/",
+        "/Maps/_DV/Shuttles/Event/"
+        // Floofstation section end
+    ];
 
     [Test]
     public async Task NonGameMapsLoadableTest()

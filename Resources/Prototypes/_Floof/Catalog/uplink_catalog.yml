@@ -1,3 +1,20 @@
+# Weapons
+- type: listing
+  id: UplinkVectorFBundle
+  name: "Vector-F Bundle"
+  description: "A modified version of the firearm. Shoots .10 High-Velocity. We've cut off the stock, added a suppressor, but dont expect it to help all that much, its mostly there so you don't burst your eardrums."
+  icon: { sprite: /Textures/_Floof/Objects/Weapons/Guns/SMGs/vectormod.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledVector
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 8
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkWeaponry
+
+# Ammo
+# For Caseless
 - type: listing
   id: UplinkMagazinePistolCaselessRifleSubsonic
   name: uplink-pistol-magazine-caseless-name-subsonic
@@ -9,6 +26,47 @@
   categories:
   - UplinkAmmo
 
+# For the Vector
+- type: listing
+  id: UplinkVectorAmmo
+  name: .10 magazine (high-velocity)
+  description: A single magazine with standard rounds. Compatable with the Vector G3s.
+  productEntity: MagazineHighVelocity
+  cost:
+    Telecrystal: 1
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkVectorAmmoAP
+  name: .10 magazine (high-velocity Armor Peircing)
+  description: A single magazine with AP rounds. Loses on kenetic shock for more penetration power. Compatable with the Vector G3s.
+  productEntity: MagazineHighVelocityAP
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkVectorAmmoRubber
+  name: .10 magazine (high-velocity rubber)
+  description: A single magazine with rubber-tiped rounds. A non-lethal option. Compatable with the Vector G3s.
+  productEntity: MagazineHighVelocityRubber
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkAmmo
+
+- type: listing
+  id: UplinkVectorAmmoJHP
+  name: .10 magazine (high-velocity hollow-point)
+  description: A single magazine with hollow-point rounds. Loses out on penetration power for more flesh damage and bleeding. Compatable with the Vector G3s.
+  productEntity: MagazineHighVelocityJHP
+  cost:
+    Telecrystal: 3
+  categories:
+  - UplinkAmmo
+  
 - type: listing
   id: UplinkFireAxe
   name: uplink-fireaxe-name

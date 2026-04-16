@@ -86,10 +86,8 @@
     # Begin DeltaV additions
       omnizinecigarette:
         reagents:
-          - ReagentId: Omnizine
-            Quantity: 3
-          - ReagentId: Dylovene
-            Quantity: 3
+        - ReagentId: Nicotine
+          Quantity: 10
   - type: Extractable
     grindableSolutionName: omnizinecigarette
     # End DeltaV additions

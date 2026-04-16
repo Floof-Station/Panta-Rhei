@@ -1,0 +1,130 @@
+- type: entity
+  id: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity)
+  parent: [ BaseCartridge, BaseSecurityContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - CartridgeHighVelocity
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
+
+- type: entity
+  id: CartridgeHighVelocity
+  parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity)
+  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHighVelocity
+
+- type: entity
+  id: CartridgeHighVelocityAP
+  parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity armor-piercing)
+  description: A very hard munition to come by, made to fly quickly. This is designed to cut through all sorts of steel and kevlar armor, but lacks in velocity and impact.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHighVelocityAP
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#540000"
+
+- type: entity
+  id: CartridgeHighVelocityRubber
+  parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity rubber)
+  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Designed to incapacitate rather than kill, these rubber tipped rounds bruise hard.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHighVelocityRubber
+  - type: Sprite
+    layers:
+    - state: base
+      map: [ "enum.AmmoVisualLayers.Base" ]
+    - state: tip
+      map: [ "enum.AmmoVisualLayers.Tip" ]
+      color: "#1f4fa3"
+
+- type: entity
+  id: CartridgeHighVelocityPractice
+  name: cartridge (.10 high-velocity practice)
+  parent: BaseCartridgeHighVelocity
+  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Chalk ammunition is generally non-harmful, used for practice.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHighVelocityPractice
+  -  type: Sprite
+     layers:
+     - state: base
+       map: [ "enum.AmmoVisualLayers.Base" ]
+     - state: tip
+       map: [ "enum.AmmoVisualLayers.Tip" ]
+       color: "#dbdbdb"
+
+- type: entity
+  id: CartridgeHighVelocityUranium
+  parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity uranium)
+  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. A heavy tungstun core holding an exotic uranium-core, loses out on a lot of damage in favor of its radioactive potenial.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHighVelocityUranium
+  -  type: Sprite
+     layers:
+     - state: base
+       map: [ "enum.AmmoVisualLayers.Base" ]
+     - state: tip
+       map: [ "enum.AmmoVisualLayers.Tip" ]
+       color: "#dbdbdb"
+
+- type: entity
+  id: CartridgeHighVelocityJHP
+  parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity hollow-point)
+  description: A harder to come by ammunition, made to fly quickly. Designed for fast firing weapons. Not effective against armor, but cuts into both skin and scale causing massive amounts of internal bleeding.
+  components:
+  - type: CartridgeAmmo
+    proto: BulletHighVelocityJHP
+  -  type: Sprite
+     layers:
+     - state: base
+       map: [ "enum.AmmoVisualLayers.Base" ]
+     - state: tip
+       map: [ "enum.AmmoVisualLayers.Tip" ]
+       color: "#976828"
+
+- type: entity
+  id: CartridgeHighVelocitySpent
+  parent: BaseCartridgeHighVelocity
+  name: cartridge (.10 high-velocity)
+  suffix: spent
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base-spent
+      map: [ "enum.AmmoVisualLayers.Base" ]
+  - type: SpentAmmoVisuals
+  - type: CartridgeAmmo
+    proto: BulletHighVelocity
+    spent: true
+  - type: Tag
+    tags:
+    - CartridgeHighVelocity
+    - Trash

@@ -318,6 +318,7 @@
   groups:
   - GroupTankHarness
   - ChiefEngineerHead
+  - FloofEngineeringGlasses # Floofstation glasses
   - ChiefEngineerJumpsuit
   - StationEngineerBackpack
   - ChiefEngineerNeck
@@ -336,6 +337,7 @@
   - GroupTankHarness
   - StationEngineerHead
   - StationEngineerNeck # DeltaV
+  - FloofEngineeringGlasses # Floofstation glasses
   - TechnicalAssistantJumpsuit
   - StationEngineerGloves # floostation - give them access to gloves
   - StationEngineerBelts # floofstation - give them access to belts
@@ -353,6 +355,7 @@
   - GroupTankHarness
   - StationEngineerHead
   - StationEngineerNeck # DeltaV
+  - FloofEngineeringGlasses # Floofstation glasses
   - StationEngineerJumpsuit
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
@@ -371,6 +374,7 @@
   - AtmosphericTechnicianHead # DeltaV
   - AtmosphericTechnicianNeck # DeltaV
   - GroupTankHarness
+  - FloofEngineeringGlasses # Floofstation glasses
   - AtmosphericTechnicianJumpsuit
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
@@ -579,9 +583,11 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - MedicalDoctorHead # Floofstation
   - MedicalInternJumpsuit
   - MedicalBackpack
   - MedicalMask # Floofstation
+  - MedicalDoctorNeck # Floofstation
   - MedicalDoctorOuterClothing # Floofstation
   - MedicalInternPDADelta # DeltaV
   - MedicalGloves # Floofstation
@@ -597,6 +603,7 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - ChemistHead # DeltaV
   - MedicalMask
   - ChemistNeck # DeltaV
   - MedicalEyewear # Floofstation - give chemists the option to choose eyewear
@@ -683,9 +690,13 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # Floofstation
+  - PassengerNeck # Floofstation
+  - PassengerFace # Floofstation
   - BoxerJumpsuit
   - BoxerGloves
   - CommonBackpack
+  - FloofBoxerPDAs # Floofstation - pda customization
   - Glasses
   - Survival
   - BoxerJobTrinkets

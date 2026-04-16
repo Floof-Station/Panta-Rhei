@@ -204,6 +204,10 @@
         Quantity: 1
   - type: RequiresEyeProtection
     statusEffectTime: 5 # less harmful; sunglasses can block it
+  - type: Tag
+    tags:
+    - WeldingTool
+    - ExperimentalWelder
 
 - type: entity
   name: emergency welding tool

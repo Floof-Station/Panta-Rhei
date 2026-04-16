@@ -17,6 +17,7 @@ job-alt-title-quartermaster = Quartermaster
 job-alt-title-head-of-acquisitions = Head of Acquisitions
 job-alt-title-spiritual-counselor = Spiritual Counselor
 job-alt-title-noostatistician = Noostatistician
+job-alt-title-emotionalsupport = Emotional Support
 
 loadout-group-captain-pdas = Captain pda
 loadout-group-hos-pdas = Head of Security pda
