@@ -533,8 +533,16 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 layerId,
                 colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
 
-            if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out var displacementData) && markingPrototype.CanBeDisplaced)
-                _displacement.TryAddDisplacement(displacementData, (entity.Owner, sprite), targetLayer + j + 1, layerId, out _);
+            if (humanoid.MarkingsDisplacement.TryGetValue(markingPrototype.BodyPart, out DisplacementData? displacementData)
+                && markingPrototype.CanBeDisplaced)
+            {
+                _displacement.TryAddDisplacement(
+                    displacementData,
+                    (entity.Owner, sprite),
+                    targetLayer + j + 1,
+                    layerId,
+                    out _);
+            }
         }
     }
 
