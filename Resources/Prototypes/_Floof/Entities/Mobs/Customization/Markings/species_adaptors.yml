@@ -28,6 +28,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegFurryTorsoMale
 
 - type: marking
   id: SpeciesAdaptorVulpkaninTorsoFemale
@@ -36,6 +38,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegFurryTorsoFemale
 
 - type: marking
   id: SpeciesAdaptorVulpkaninLArm
@@ -76,6 +80,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
       state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawLegLeft
 
 - type: marking
   id: SpeciesAdaptorVulpkaninLFoot
@@ -84,6 +90,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
       state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawFootLeft
 
 - type: marking
   id: SpeciesAdaptorVulpkaninRLeg
@@ -92,6 +100,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
       state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawLegRight
 
 - type: marking
   id: SpeciesAdaptorVulpkaninRFoot
@@ -100,6 +110,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Vulpkanin/parts.rsi
       state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawFootRight
 
 #### RODENTIA ####
 - type: marking
@@ -125,6 +137,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegFurryTorsoMale
 
 - type: marking
   id: SpeciesAdaptorRodentiaTorsoFemale
@@ -133,6 +147,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegFurryTorsoFemale
 
 - type: marking
   id: SpeciesAdaptorRodentiaLArm
@@ -173,6 +189,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
       state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawLegLeft
 
 - type: marking
   id: SpeciesAdaptorRodentiaLFoot
@@ -181,6 +199,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
       state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawFootLeft
 
 - type: marking
   id: SpeciesAdaptorRodentiaRLeg
@@ -189,6 +209,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
       state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawLegRight
 
 - type: marking
   id: SpeciesAdaptorRodentiaRFoot
@@ -197,6 +219,8 @@
   sprites:
     - sprite: DeltaV/Mobs/Species/Rodentia/parts.rsi
       state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawFootRight
 
 #### HUMAN ####
 - type: marking
@@ -222,6 +246,8 @@
   sprites:
   - sprite: Mobs/Species/Human/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegHumanTorsoMaleSkintoned
 
 - type: marking
   id: SpeciesAdaptorHumanTorsoFemale
@@ -230,6 +256,8 @@
   sprites:
   - sprite: Mobs/Species/Human/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegHumanTorsoFemaleSkintoned
 
 - type: marking
   id: SpeciesAdaptorHumanLArm
@@ -270,6 +298,8 @@
   sprites:
     - sprite: Mobs/Species/Human/parts.rsi
       state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawLegLeft
 
 - type: marking
   id: SpeciesAdaptorHumanLFoot
@@ -278,6 +308,8 @@
   sprites:
     - sprite: Mobs/Species/Human/parts.rsi
       state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawFootLeft
 
 - type: marking
   id: SpeciesAdaptorHumanRLeg
@@ -286,6 +318,8 @@
   sprites:
     - sprite: Mobs/Species/Human/parts.rsi
       state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawLegRight
 
 - type: marking
   id: SpeciesAdaptorHumanRFoot
@@ -294,6 +328,8 @@
   sprites:
     - sprite: Mobs/Species/Human/parts.rsi
       state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawFootRight
 
 #### FEROXI ####
 - type: marking
@@ -319,6 +355,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegSharkTorsoMale
 
 - type: marking
   id: SpeciesAdaptorFeroxiTorsoFemale
@@ -327,6 +365,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegSharkTorsoFemale
 
 - type: marking
   id: SpeciesAdaptorFeroxiLArm
@@ -367,6 +407,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegLeft
 
 - type: marking
   id: SpeciesAdaptorFeroxiLFoot
@@ -375,6 +417,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootLeft
 
 - type: marking
   id: SpeciesAdaptorFeroxiRLeg
@@ -383,6 +427,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: r_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegRight
 
 - type: marking
   id: SpeciesAdaptorFeroxiRFoot
@@ -391,6 +437,8 @@
   sprites:
   - sprite: DeltaV/Mobs/Species/Feroxi/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootRight
 
 #### REPTILIAN ####
 - type: marking
@@ -416,6 +464,8 @@
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_m
+  altSprites:
+    Digitigrade: DigilegLizardTorsoMale
 
 - type: marking
   id: SpeciesAdaptorReptilianTorsoFemale
@@ -424,6 +474,8 @@
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: torso_f
+  altSprites:
+    Digitigrade: DigilegLizardTorsoFemale
 
 - type: marking
   id: SpeciesAdaptorReptilianLArm
@@ -464,6 +516,8 @@
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: l_leg
+  altSprites:
+    Digitigrade: DigilegPawDarkLegLeft
 
 - type: marking
   id: SpeciesAdaptorReptilianLFoot
@@ -472,6 +526,8 @@
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: l_foot
+  altSprites:
+    Digitigrade: DigilegPawDarkFootLeft
 
 - type: marking
   id: SpeciesAdaptorReptilianRLeg
@@ -480,6 +536,8 @@
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: r_leg
+  altSprites:
+    Digitigrade: DigilegPawDarkLegRight
 
 - type: marking
   id: SpeciesAdaptorReptilianRFoot
@@ -488,4 +546,153 @@
   sprites:
   - sprite: Mobs/Species/Reptilian/parts.rsi
     state: r_foot
+  altSprites:
+    Digitigrade: DigilegPawDarkFootRight
 
+#### DIGILEG ADAPTORS ####
+#### AVIAN            ####
+- type: marking
+  id: SpeciesAdaptorAvianLLeg
+  bodyPart: LLeg
+  markingCategory: LLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegLeft
+
+- type: marking
+  id: SpeciesAdaptorAvianLFoot
+  bodyPart: LFoot
+  markingCategory: LFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootLeft
+
+- type: marking
+  id: SpeciesAdaptorAvianRLeg
+  bodyPart: RLeg
+  markingCategory: RLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_leg
+  altSprites:
+    Digitigrade: DigilegAvianLegRight
+
+- type: marking
+  id: SpeciesAdaptorAvianRFoot
+  bodyPart: RFoot
+  markingCategory: RFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_foot
+  altSprites:
+    Digitigrade: DigilegAvianFootRight
+
+#### AVIAN DARK ####
+- type: marking
+  id: SpeciesAdaptorAvianDarkLLeg
+  bodyPart: LLeg
+  markingCategory: LLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_leg
+  altSprites:
+    Digitigrade: DigilegAvianDarkLegLeft
+
+- type: marking
+  id: SpeciesAdaptorAvianDarkLFoot
+  bodyPart: LFoot
+  markingCategory: LFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_foot
+  altSprites:
+    Digitigrade: DigilegAvianDarkFootLeft
+
+- type: marking
+  id: SpeciesAdaptorAvianDarkRLeg
+  bodyPart: RLeg
+  markingCategory: RLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_leg
+  altSprites:
+    Digitigrade: DigilegAvianDarkLegRight
+
+- type: marking
+  id: SpeciesAdaptorAvianDarkRFoot
+  bodyPart: RFoot
+  markingCategory: RFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_foot
+  altSprites:
+    Digitigrade: DigilegAvianDarkFootRight
+
+#### CHICKEN  ####
+- type: marking
+  id: SpeciesAdaptorChickenLLeg
+  bodyPart: LLeg
+  markingCategory: LLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_leg
+  altSprites:
+    Digitigrade: DigilegChickenLegLeft
+
+- type: marking
+  id: SpeciesAdaptorChickenLFoot
+  bodyPart: LFoot
+  markingCategory: LFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: l_foot
+  altSprites:
+    Digitigrade: DigilegChickenFootLeft
+
+- type: marking
+  id: SpeciesAdaptorChickenRLeg
+  bodyPart: RLeg
+  markingCategory: RLeg
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_leg
+  altSprites:
+    Digitigrade: DigilegChickenLegRight
+
+- type: marking
+  id: SpeciesAdaptorChickenRFoot
+  bodyPart: RFoot
+  markingCategory: RFoot
+  kindAllowance: [BasicHumanlike, BasicFurry]
+  speciesRestriction: [Vulpkanin, SlimePerson, Human, Rodentia, Feroxi, Oni, IPC, Reptilian]
+  sprites:
+  - sprite: _DV/Mobs/Species/Vulpkanin/parts.rsi
+    state: r_foot
+  altSprites:
+    Digitigrade: DigilegChickenFootRight

@@ -9,11 +9,12 @@ using Robust.Client.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Shared._Coyote; // Euphoria - Digi-Legs
+using Content.Shared.DisplacementMap; // Euphoria - Digi-Legs
 using System.Numerics; // CD - Character Records
 using Content.Shared._Floof.Sprite; // Floofstation
 using Robust.Client.Console; // CD - Character Records
-using Content.Shared._Coyote; // Euphoria - Digi-Legs
-using Content.Shared.DisplacementMap; // Euphoria - Digi-Legs
+using System.Diagnostics.CodeAnalysis; // Euphoria - Digi-Legs
 
 namespace Content.Client.Humanoid;
 
@@ -104,6 +105,10 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         }
     }
 
+    /// <summary>
+    /// Sets the data for a specific layer on the sprite component.
+    /// This is for the base layers only, so like, arms, legs, torso, head, etc.
+    /// </summary>
     private void SetLayerData(
         Entity<HumanoidAppearanceComponent, SpriteComponent> entity,
         HumanoidVisualLayers key,
@@ -166,7 +171,7 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
                 // shader will be appliesed lader
             }
             // END COYOTE (PLEASE)
-            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, proto.BaseSprite);
+            _sprite.LayerSetSprite((entity.Owner, sprite), layerIndex, appropriateSprite);
         }
     }
 
@@ -292,13 +297,19 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
 
         foreach (List<Marking> markingList in humanoid.MarkingSet.Markings.Values) // Euphoria - Digi-Legs
         {
-            foreach (var marking in markingList)
+            foreach (Marking marking in markingList) // Euphoria - Digi-Legs
             {
-                if (_markingManager.TryGetMarking(marking, out var markingPrototype))
+                if (_markingManager.TryGetMarking(marking, out var markingPrototype)) // Euphoria - Digi-Legs
                 {
-                    PreModifyMarking(humanoid, markingPrototype, marking, out var newMarking, out var newMarkingPrototype);
+                    PreModifyMarking( // Euphoria - Digi-Legs
+                    humanoid,
+                    markingPrototype,
+                    marking,
+                    out Marking newMarking,
+                    out MarkingPrototype newMarkingPrototype);
 
                     ApplyMarking(markingPrototype, marking.MarkingColors, marking.Visible, entity);
+
                     if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentTop)
                         applyUndergarmentTop = false;
                     else if (markingPrototype.BodyPart == HumanoidVisualLayers.UndergarmentBottom)
@@ -332,8 +343,8 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         // Or if they dont have that specific leg style, check if they have digitigrade paw instead
         // if neither are present, we just use the normal marking and proot
         if (markingPrototype.AlternateSprites.TryGetValue(humanoid.LegStyle, out var altMarkingProtoId)
-            || (humanoid.LegStyle != HumanoidLegStyle.Digitigrade
-                && markingPrototype.AlternateSprites.TryGetValue(HumanoidLegStyle.Digitigrade, out altMarkingProtoId)))
+            || humanoid.LegStyle != HumanoidLegStyle.Digitigrade
+                && markingPrototype.AlternateSprites.TryGetValue(HumanoidLegStyle.Digitigrade, out altMarkingProtoId))
         {
             newPrototype = _prototypeManager.Index<MarkingPrototype>(altMarkingProtoId);
         }
@@ -514,6 +525,14 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
             }
 
             humanoid.ClientElderMarkings.Add(layerId); // Euphoria - Digi-Legs
+
+            // impstation edit begin - check if there's a shader defined in the markingPrototype's shader datafield, and if there is...
+            if (markingPrototype.Shader != null)
+            {
+                // use spriteComponent's layersetshader function to set the layer's shader to that which is specified.
+                sprite.LayerSetShader(layerId, markingPrototype.Shader);
+            }
+            // impstation edit end
 
             _sprite.LayerSetVisible((entity.Owner, sprite), layerId, visible);
 

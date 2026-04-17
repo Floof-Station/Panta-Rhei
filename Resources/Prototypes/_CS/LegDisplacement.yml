@@ -1,3 +1,29 @@
 - type: legDisplacement
   id: LegDisplacementDigitigrade
-# i have no clue what the FUCK this is for, it had onivia shit and i removed it. please for the love of god work.
+  displacements:
+    jumpsuit:
+      sizeMaps:
+        32:
+          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+          state: jumpsuit
+    shoes:
+      sizeMaps:
+        32:
+          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+          state: shoes
+    outerClothing:
+      sizeMaps:
+        32:
+          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+          state: outerclothing_hardsuit
+  femaleDisplacements:
+    jumpsuit:
+      sizeMaps:
+        32:
+          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+          state: jumpsuit-female
+    shoes:
+      sizeMaps:
+        32:
+          sprite: _DEN/Mobs/Species/Ovinia/displacement.rsi
+          state: shoes

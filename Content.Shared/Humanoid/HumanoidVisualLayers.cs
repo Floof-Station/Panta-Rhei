@@ -32,8 +32,8 @@ namespace Content.Shared.Humanoid
         LArm,
         RHand,
         LHand,
-        RLegBehind,
         // Euphoria - Digi-Legs
+        RLegBehind,
         RLeg, // background
         LLegBehind,
         LLeg, // background

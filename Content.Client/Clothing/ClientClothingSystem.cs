@@ -377,7 +377,7 @@ public sealed class ClientClothingSystem : ClothingSystem
                 if (layerData.State is not null && inventory.SpeciesId is not null && layerData.State.EndsWith(inventory.SpeciesId))
                     continue;
 
-                if (_displacement.TryAddDisplacement(
+                if (_displacement.TryAddDisplacement( // Euphoria - Digi-Legs
                     displacementData,
                     (equipee, sprite),
                     index,

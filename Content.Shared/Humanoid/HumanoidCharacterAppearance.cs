@@ -181,7 +181,7 @@ public sealed partial class HumanoidCharacterAppearance : ICharacterAppearance, 
             _ => strategy.ClosestSkinColor(new Color(random.NextFloat(1), random.NextFloat(1), random.NextFloat(1), 1)),
         };
 
-var leggies = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).DefaultLegStyle;
+        var leggies = IoCManager.Resolve<IPrototypeManager>().Index<SpeciesPrototype>(species).DefaultLegStyle;
 
         return new HumanoidCharacterAppearance(
             newHairStyle,

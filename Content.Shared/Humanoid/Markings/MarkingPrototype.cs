@@ -63,10 +63,16 @@ namespace Content.Shared.Humanoid.Markings
         /// Hidden from the character editor marking list if true.
         /// Mainly cus it'll be used through the use of another marking,
         /// a marking's marking if u so will u be
-        /// hidden kitten
+        /// hidden kitten (grr kitten)
         /// </summary>
         [DataField("hidden")]
         public bool Hidden { get; private set; } = false;
+
+        // Euphoria - Digi-Legs (am i really that blind..?)
+        // impstation edit - allow markings to support shaders
+        [DataField("shader")]
+        public string? Shader { get; private set; } = null;
+        // end impstation edit
 
         /// <summary>
         /// Floofstation: Allows specific layers to be put at arbitrary positions within the humanoid sprite.

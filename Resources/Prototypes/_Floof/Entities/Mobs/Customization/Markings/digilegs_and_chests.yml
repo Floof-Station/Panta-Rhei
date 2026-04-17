@@ -691,6 +691,23 @@
   - sprite: _CS/DigiLegsAndChests.rsi
     state: HumanChestFemaleSkintoned
 
+# Jelly chest
+- type: marking
+  id: DigilegJellyTorsoMale
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: JellyChestMale
+
+- type: marking
+  id: DigilegJellyTorsoFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: JellyChestFemale
+
 # Lizard chest
 - type: marking
   id: DigilegLizardTorsoMale
@@ -792,3 +809,20 @@
   sprites:
   - sprite: _CS/DigiLegsAndChests.rsi
     state: SlimeChestFemale
+
+# Synthliz chest
+- type: marking
+  id: DigilegSynthlizTorsoMale
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthlizChestMale
+
+- type: marking
+  id: DigilegSynthlizTorsoFemale
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _CS/DigiLegsAndChests.rsi
+    state: SynthlizChestFemale
