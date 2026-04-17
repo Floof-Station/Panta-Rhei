@@ -1,0 +1,12 @@
+<BoxContainer
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    MinSize="20, 40">
+
+    <Button
+        Name="ToggleButton"
+        Access="Public"
+        ToggleMode="True"
+        HorizontalExpand="true"
+        Text="Make sure to override Title."/>
+</BoxContainer>

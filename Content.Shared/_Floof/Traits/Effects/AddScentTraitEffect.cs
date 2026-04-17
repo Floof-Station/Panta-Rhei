@@ -8,6 +8,7 @@ namespace Content.Shared._Floof.Traits.Effects;
 /// <summary>
 /// Effect that adds a scent trait,
 /// </summary>
+[Obsolete("Probably going to be deprecated in favor of the scent editor players can invoke in-game.")]
 public sealed partial class AddScentTraitEffect : BaseTraitEffect
 {
     [DataField(required: true)] public List<ProtoId<ScentPrototype>> Scents;
@@ -16,12 +17,11 @@ public sealed partial class AddScentTraitEffect : BaseTraitEffect
     {
         var scentSystem = ctx.EntMan.System<ScentSystem>();
 
-        var sortedPrototypes = new List<TraitPrototype>();
         var scentComp = ctx.EntMan.EnsureComponent<ScentComponent>(ctx.Player);
 
         foreach (var scent in Scents)
         {
-            scentSystem.AddScentPrototype(scentComp, scent);
+            scentSystem.AddScentPrototype((ctx.Player, scentComp), scent);
         }
     }
 }

@@ -5,6 +5,7 @@ using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.Player;
 using Robust.Shared.Player;
+using Content.Shared._Goobstation.Ghostbar.Events;
 
 namespace Content.Client.Ghost
 {
@@ -195,6 +196,11 @@ namespace Content.Client.Ghost
         public void OpenGhostRoles()
         {
             _console.RemoteExecuteCommand(null, "ghostroles");
+        }
+
+        public void GhostBarSpawn() // Goobstation - Ghost Bar
+        {
+            RaiseNetworkEvent(new GhostBarSpawnEvent());
         }
 
         public void ToggleGhostVisibility(bool? visibility = null)

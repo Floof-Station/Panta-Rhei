@@ -546,10 +546,10 @@
     timeKeyPoints: # DeltaV
     # Floofstation section - replaced
     - 30, 10 # First 30m, 3 events on average
-    - 30, 8  # 30-60m, 3.5 events
-    - 30, 6  # 60-90m, 5 events
-    - 45, 10 # 90-135m, back to 4.5 events
-    - 35, 6  # 135-170m, back to 5 events
+    - 30, 7 # 30-60m, 4 events
+    - 30, 5 # 60-90m, 6 events
+    - 45, 9 # 90-135m, back to 5 events
+    - 35, 5 # 135-170m, back to 7 events
     - 70, 5  # 170-240m, 12 events/hour past the 3 hour mark
     - 30, 4  # 240-270, some actual chaos
     - 180, 8 # past the 4.5 hour mark, calmness

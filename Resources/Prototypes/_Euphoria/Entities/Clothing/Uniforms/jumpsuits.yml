@@ -1,0 +1,65 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformLustroEcclesiaInfernus
+  name: lustro ecclesia ceremonial dress
+  description: Ceremonial garbs of the Lustro Ecclesia faith. Typically worn by their devotees upon completion of the Fire Rite.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/infernus.rsi
+  - type: Clothing
+    slots: [innerclothing]
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/infernus.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - Skirt
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformLustroEcclesiaInfernusAlt
+  name: lustro ecclesia ceremonial trousers
+  description: Ceremonial garbs of the Lustro Ecclesia faith. Typically worn by their devotees upon completion of the Fire Rite.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpsuit/infernus.rsi
+  - type: Clothing
+    slots: [innerclothing]
+    sprite: _Euphoria/Clothing/Uniforms/Jumpsuit/infernus.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformLustroEcclesia
+  name: lustro ecclesia robes
+  description: Garbs worn by devotees of the Lustro Ecclesia faith.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpsuit/lustromonk.rsi
+  - type: Clothing
+    slots: [innerclothing]
+    sprite: _Euphoria/Clothing/Uniforms/Jumpsuit/lustromonk.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformLustroEcclesiaAlt
+  name: lustro ecclesia gown
+  description: Garbs worn by devotees of the Lustro Ecclesia faith.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/lustromonk.rsi
+  - type: Clothing
+    slots: [innerclothing]
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/lustromonk.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - Skirt

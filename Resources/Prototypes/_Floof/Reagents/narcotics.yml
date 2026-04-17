@@ -24,6 +24,8 @@
           - !type:ReagentCondition
             reagent: Pomelustine
             max: 50
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
       - !type:PopupMessage # Overdose causes nausea and vomiting
         type: Local
         visualType: Medium
@@ -55,6 +57,8 @@
           - !type:ReagentCondition
             reagent: Pomelustine
             max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
 
 - type: reagent
   id: Philterex
@@ -82,6 +86,8 @@
         - !type:ReagentCondition
           reagent: Philterex
           max: 16.5
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:PopupMessage
         type: Local
         visualType: MediumCaution
@@ -139,6 +145,8 @@
           - !type:ReagentCondition
             reagent: Philterex
             max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
 
 - type: reagent
   id: Libidozenithizine
@@ -164,6 +172,8 @@
         - !type:ReagentCondition
           reagent: Libidozenithizine
           max: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -185,6 +195,8 @@
         - !type:ReagentCondition
           reagent: Libidozenithizine
           min: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
       - !type:PopupMessage
         type: Local
         visualType: Small
@@ -195,3 +207,5 @@
           - !type:ReagentCondition
             reagent: Libidozenithizine
             max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs

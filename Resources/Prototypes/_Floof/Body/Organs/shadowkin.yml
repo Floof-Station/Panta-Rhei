@@ -94,9 +94,6 @@
   - type: Metabolizer
     maxReagents: 1
     metabolizerTypes: [Shadowkin]
-    groups:
-    - id: Alcohol
-      rateModifier: 0.1
 
 - type: entity
   id: OrganShadowkinKidneys

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesLustroEcclesiaSandals
+  name: brimstone sandals
+  description: A pair of brimstone, worn by devotees of Lustro Ecclesia.
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Clothing/Shoes/Misc/lustrosandals.rsi
+    - type: Clothing
+      sprite: _Euphoria/Clothing/Shoes/Misc/lustrosandals.rsi

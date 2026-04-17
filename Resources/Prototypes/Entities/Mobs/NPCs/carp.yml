@@ -28,6 +28,8 @@
       kind: Intrinsic
     - type: CombatMode
     - type: Physics
+    - type: MovedByPressure # DeltaV - Spacewind Immune
+      enabled: false
     - type: Fixtures
       fixtures:
         fix1:

@@ -1,0 +1,13 @@
+﻿name: "Labels: Priority"
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  add_label:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions-ecosystem/action-add-labels@v1
+      with:
+        labels: "Priority 3: Baseline"

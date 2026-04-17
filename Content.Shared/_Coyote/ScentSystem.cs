@@ -14,6 +14,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
+using Robust.Shared.Network;
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -30,6 +31,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly SharedConsentSystem _consent = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly INetManager _net = default!;
 
 // Euphoria - no spam pls
     public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
@@ -39,7 +41,10 @@ public sealed class ScentSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ScentComponent, ComponentStartup>(OnScentStartup);
-        SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(GetSmellVerbs);
+        // Floofstation - changed to InnateVerb for parity with InteractionVerbsSystem
+        // Why? Because for some ungodly reason this system shoves its verbs into the category meant only for interaction verbs
+        // And that's causing sorting issues
+        SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InnateVerb>>(GetSmellVerbs);
         SubscribeLocalEvent<ScentComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<ActorComponent, ComponentStartup>(AddSmeller);
     }
@@ -60,7 +65,7 @@ public sealed class ScentSystem : EntitySystem
     /// <summary>
     /// Adds smell verbs to smellers.
     /// </summary>
-    private void GetSmellVerbs(EntityUid uid, ScentComponent component, GetVerbsEvent<InteractionVerb> args)
+    private void GetSmellVerbs(EntityUid uid, ScentComponent component, GetVerbsEvent<InnateVerb> args) // Floofstation - changed to InnateVerb
     {
         if (!TryComp<ScentComponent>(args.Target, out var scentComp))
             return;
@@ -68,11 +73,11 @@ public sealed class ScentSystem : EntitySystem
             return;
         if (args.CanInteract)
         {
-            InteractionVerb verb = new()
+            InnateVerb verb = new() // Floofstation - changed to InnateVerb
             {
                 Text = "Smell",
-                Priority = 2,
-                Category = VerbCategory.Interaction,
+                Priority = -19, // Floofstation - there's no way you want to randomly do this to your co-worker.
+                Category = VerbCategory.Interaction, // Floofstation - this doesn't belong here, but we'll leave it to avoid cluttering the verb ui
                 Disabled = !_interact.InRangeUnobstructed(
                     args.User,
                     args.Target,
@@ -96,10 +101,10 @@ public sealed class ScentSystem : EntitySystem
         var isIgnoringThem = IsIgnoringSmell(smellerComp, scentComp);
         var toggleText = isIgnoringThem ? "Notice Scent" : "Ignore Scent";
 
-        InteractionVerb toggleVerb = new()
+        InnateVerb toggleVerb = new() // Floofstation - changed to InnateVerb
         {
             Text = toggleText,
-            Priority = 1,
+            Priority = -20, // Floofstation - below "smell"
             Category = VerbCategory.Interaction,
             Act = () =>
             {
@@ -221,13 +226,31 @@ public sealed class ScentSystem : EntitySystem
     /// <summary>
     /// Adds a scent prototype to a scent component!
     /// </summary>
-    public void AddScentPrototype(ScentComponent component, ProtoId<ScentPrototype> scentProtoId)
+    public void AddScentPrototype(Entity<ScentComponent> ent, ProtoId<ScentPrototype> scentProtoId) // Floofstation - who thought it's a good idea to only pass the component?
     {
         if (_proto.TryIndex(scentProtoId, out var scentProto))
         {
             var scentInstance = new Scent(scentProto, Guid.NewGuid().ToString());
-            component.Scents.Add(scentInstance);
+            ent.Comp.Scents.Add(scentInstance); // Floofstation
+            Dirty(ent); // Floofstation
         }
+    }
+
+    /// <summary>
+    ///     Floofstation. Replaces the target entity's list of scents with the provided list.
+    ///     Adds one if it doesn't exist. If checkDelay is true, additionally checks the scent setting delay.
+    /// </summary>
+    public bool TrySetScents(EntityUid targetEntity, List<Scent> scents, bool checkDelay = false)
+    {
+        var scentComp = EnsureComp<ScentComponent>(targetEntity);
+        if (checkDelay && !scentComp.ScentUpdateDelay.TryUpdate(_time))
+            return false;
+
+        scentComp.Scents.Clear();
+        scentComp.Scents.AddRange(scents);
+        Dirty(targetEntity, scentComp);
+
+        return true;
     }
 
     /// <inheritdoc/>
@@ -238,7 +261,13 @@ public sealed class ScentSystem : EntitySystem
     /// </summary>
     public override void Update(float frameTime)
     {
-        base.Update(frameTime);
+        // Floofstation - client cannot predict this shit
+        // Coyote station put this update loop in Shared without understanding the consequences
+        // Fortunately for them, scent and smeller components are non-networked on their side.
+        // Unfortunately for us, at least one of those is networked.
+        if (_net.IsClient)
+            return;
+
         if (NextSmellDetectionTime > _time.CurTime)
             return;
         NextSmellDetectionTime = _time.CurTime + BaseSmellCooldown;
@@ -481,7 +510,8 @@ public sealed class ScentSystem : EntitySystem
 
         foreach (var ticket in component.PendingSmells.ToArray())
         {
-            if (!_proto.TryIndex<ScentPrototype>(ticket.ScentProto, out var scentProto))
+            // Floofstation - check for deletion
+            if (!_proto.TryIndex<ScentPrototype>(ticket.ScentProto, out var scentProto) || Deleted(ticket.SourceEntity))
             {
                 component.PendingSmells.Remove(ticket);
                 continue; // invalid scent proto
@@ -779,5 +809,4 @@ public sealed class ScentSystem : EntitySystem
         // dont like the fact that consents default to *ON*
     }
    #endregion
-
 }

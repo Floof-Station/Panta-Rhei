@@ -1,0 +1,14 @@
+- type: entity
+  id: CrateArmoryVector
+  parent: [ CrateWeaponSecure, BaseSecurityContraband ]
+  name: vector crate
+  description: Contains a Gen-2 Vector with two fourty round mags. Requires Armory access to open.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: WeaponSubMachineGunVector
+          amount: 1
+        - id: MagazineMagnumSubMachineGun
+          amount: 2

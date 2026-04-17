@@ -1,6 +1,6 @@
 ## Borg type information
 
-borg-type-quadgeneric-name = Generic
+borg-type-quadgeneric-name = Generic Quad
 borg-type-quadgeneric-desc = Jack of all trades, master of none. Do various random station tasks, or maybe help out the science department that built you.
 borg-type-quadgeneric-transponder = generic cyborg
 

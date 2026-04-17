@@ -98,6 +98,12 @@ public abstract class SharedIdCardSystem : EntitySystem
         if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid) && TryGetIdCard(idUid.Value, out idCard))
             return true;
 
+        // Floofstation PedId Collars Start
+        // check the neckslot
+        if (_inventorySystem.TryGetSlotEntity(uid, "neck", out idUid) && TryGetIdCard(idUid.Value, out idCard))
+            return true;
+        // Floofstation PedId Collars End
+
         return false;
     }
 

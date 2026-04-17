@@ -2,8 +2,6 @@
 - type: loadoutGroup
   id: FloofCeJumpsuits
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ChiefEngineerLegacyJumpsuit
   - UniformChiefEngiThong
@@ -11,8 +9,6 @@
 - type: loadoutGroup
   id: FloofCeGloves
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ChiefEngineerInsulativeGloves
   - HandsChiefEngiWarmers
@@ -20,8 +16,6 @@
 - type: loadoutGroup
   id: FloofCeShoes
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - BootsWorkWorn
   - UnderSocksChiefEngi
@@ -36,7 +30,7 @@
   - CEPDA
   - StationForemanPDA
   - StationArchitectPDA
-  
+
 - type: loadoutGroup
   id: FloofCeHats
   abstract: true
@@ -53,24 +47,29 @@
 - type: loadoutGroup
   id: FloofEngineeringJumpsuit
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - UniformEngiThong
 
 - type: loadoutGroup
   id: FloofEngineeringGloves
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsEngiWarmers
 
 - type: loadoutGroup
   id: FloofEngineeringShoes
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - BootsWorkWorn
   - ClothingUnderSocksEngi
+
+- type: loadoutGroup
+  id: FloofEngineeringGlasses
+  parent: [FloofGlasses, Glasses]
+  name: loadout-group-engi-glasses
+  loadouts:
+  - ClothingEyesGlassesMeson
+  - ClothingHeadHatWelding
+  - ClothingHeadHatWeldingMaskPainted
+  - ClothingHeadHatWeldingMaskFlame
+  - ClothingHeadHatWeldingMaskFlameBlue
