@@ -183,8 +183,8 @@
     sprite: Objects/Consumable/Smokeables/Cigarettes/Packs/black.rsi
 
 - type: entity
-  id: CigPackSyndicate # Euphoria - Removed Contraband Tag
-  parent: CigPackBase
+  id: CigPackSyndicate
+  parent: CigPackBase # Euphoria - Removed Contraband Tag
   name: Interdyne herbals packet
   description: Premium medicinal cigarettes from the Interdyne Corporation. Smoke healthier, smoke smarter, smoke Interdynes. # Euphoria - Changed to use a less syndicate related description
   components:
