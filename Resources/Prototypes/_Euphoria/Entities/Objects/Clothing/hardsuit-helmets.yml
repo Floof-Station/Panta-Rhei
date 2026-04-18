@@ -12,9 +12,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4d4"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -43,9 +44,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#d4f7fc"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -67,9 +69,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fce8d4"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -98,9 +101,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#e9d4fc"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -130,9 +134,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4ec"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -154,9 +159,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#ffffff"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -178,9 +184,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#d4fcf4"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -188,7 +195,7 @@
     slots:
     - HeadSide
 
-#Cmo hardsuit
+#Ce hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingOuterHardsuitMagicalCEHat
@@ -202,9 +209,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#e2d4fc"
-    radius: 5
+    radius: 4
     energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fce7d4"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -226,9 +234,10 @@
     equipSound: /Audio/Magic/staff_healing.ogg
     unequipSound: /Audio/Magic/staff_healing.ogg
   - type: PointLight
-    color: "#df0000"
-    radius: 6
+    radius: 5
     energy: 5
+    mask: /Textures/_Euphoria/Effects/LightMasks/snake2.png 
+    color: "#e60243"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
