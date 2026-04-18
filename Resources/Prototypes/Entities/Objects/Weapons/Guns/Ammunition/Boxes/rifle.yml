@@ -115,3 +115,28 @@
       map: ["enum.GunVisualLayers.Mag"]
     - state: uranium
 
+# High-Velocity
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBoxHighVelocity
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+      - CartridgeHighVelocity
+    proto: CartridgeHighVelocity
+    capacity: 50
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/rifle.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: false
+  - type: Appearance

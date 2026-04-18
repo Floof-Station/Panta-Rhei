@@ -129,3 +129,12 @@
   components:
   - type: IdCard
     jobTitle: job-alt-title-head-of-acquisitions
+
+# emotional support
+- type: entity
+  parent: PassengerIDCard
+  id: EmotionalSupportIdCard
+  name: emotional support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-emotionalsupport

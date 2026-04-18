@@ -35,6 +35,7 @@ public sealed partial class GhostGui : UIWidget
 
         TargetWindow = new GhostTargetWindow();
         RulesWindow = new GhostRespawnRulesWindow(); // Frontier
+        RulesWindow.RespawnButton.OnPressed += _ => GhostRespawnPressed?.Invoke(); // Frontier
         GhostBarWindow = new GhostBarRulesWindow();
 
         MouseFilter = MouseFilterMode.Ignore;

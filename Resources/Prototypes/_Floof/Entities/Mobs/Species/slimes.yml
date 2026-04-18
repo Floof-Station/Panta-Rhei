@@ -1,14 +1,19 @@
-- type: entity # Euphoria - This entity readded to allow Geras to work again. 1:1 port.
+- type: entity # Euphoria - This entity readded to allow Geras to work again.
   name: geras
   description: A geras of a slime - the name is ironic, isn't it?
   id: MobSlimesGeras
-  parent: BaseMobAdultSlimes
+  parent: [BaseMobAdultSlimes, StripableInventoryBase]
   categories: [ HideSpawnMenu ]
   components:
   # they portable...
-  - type: MovementSpeedModifier
-    baseWalkSpeed: 3
-    baseSprintSpeed: 5 # +.5 from normal movement speed
+  - type: Body
+    prototype: Geras
+  - type: Inventory
+    templateId: gerasinv
+  - type: Hands
+  - type: MultiHandedItem
+  - type: Stripping
+  - type: ComplexInteraction
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -16,14 +21,13 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-  - type: MultiHandedItem
   - type: Item
     size: Huge
   - type: Sprite
     layers:
     - map: [ "colorMap" ]
       state: slime_geras
-    - map: [ "eyesMap" ]
+    - map: [ "eyesMap" ] # Coming back to this sprite soon - ScarlettJFG
       state: slime_geras_eyes
       shader: unshaded
   - type: RandomSprite
@@ -32,6 +36,10 @@
         slime_geras: "#0000FF"
       eyesMap:
         slime_geras_eyes: "#0000FF"
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
   - type: MeleeWeapon
     attackRate: 2
     damage:
@@ -47,4 +55,8 @@
         Male: MaleSlime
         Female: FemaleSlime
         Unsexed: MaleSlime
-
+  - type: Puller
+    needsHands: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5 # +.5 from normal movement speed
