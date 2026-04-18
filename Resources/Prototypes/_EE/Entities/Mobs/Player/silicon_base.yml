@@ -309,8 +309,8 @@
         # - ForcedSleep
         - TemporaryBlindness
         - Pacified
-        # - PsionicsDisabled
-        # - PsionicallyInsulated
+        - PsionicsDisabled
+        - PsionicallyInsulated
         - Flashed # Goobstation
     - type: Blindable
     - type: FireVisuals
@@ -350,3 +350,4 @@
       naturalLanguage: Binary
     - type: FootPrints # Floofstation - delta-v removed these, we're keeping them
     - type: RMCSetPose # DeltaV - RMC pose port
+    - type: PotentialPsionic # Euphoria - ALL species can be psionic
