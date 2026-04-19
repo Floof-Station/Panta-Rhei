@@ -175,7 +175,7 @@
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingOuterHardsuitMagicalCMOHat
   name: Magical nurse hat
-  description: It is time for "alternative" medicine
+  description: Turns out you were the cure all along.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/Head/Hardsuit/cmo-magical.rsi
@@ -199,8 +199,8 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingOuterHardsuitMagicalCEHat
-  name: CE
-  description: CE
+  name: High tech antenas
+  description: You may not know what they do, but you sure look badass in them.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/Head/Hardsuit/ce-magical.rsi

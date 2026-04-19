@@ -59,8 +59,8 @@
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/hop-magical.rsi
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/hop-magical.rsi
-    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
-    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation5.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation6.ogg
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -304,8 +304,8 @@
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitMagicalCE
   suffix: Magical Trinket
-  name: CE wrench
-  description: placeholder
+  name: Heartthrobingly big wrench
+  description: For tightening bolts or beating up bad guys, keeping it close to your heart in a pinch to save the day.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/ce-magical.rsi
