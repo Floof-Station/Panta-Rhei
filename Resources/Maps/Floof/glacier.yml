@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/19/2026 20:38:30
-  entityCount: 22918
+  time: 04/19/2026 21:50:16
+  entityCount: 22919
 maps:
 - 1
 grids:
@@ -115120,6 +115120,11 @@ entities:
     components:
     - type: Transform
       pos: -13.5,21.5
+      parent: 2
+  - uid: 22919
+    components:
+    - type: Transform
+      pos: 14.5,-0.5
       parent: 2
 - proto: PrizeCounter
   entities:
