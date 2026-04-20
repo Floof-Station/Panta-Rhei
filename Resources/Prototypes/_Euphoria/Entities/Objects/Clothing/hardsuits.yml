@@ -420,3 +420,41 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+
+#Syndie Henchman Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
+  id: ClothingOuterHardsuitMagicalSyndieHenchman
+  suffix: Magical Trinket
+  name: Fragment of sorrow
+  description: Fragment of much greater sorrow, they keep close to their heart.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/syndicate-henchman-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/syndicate-henchman-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation-evil.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation-evil2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.5
+  - type: StaminaResistance # DeltaV
+    damageCoefficient: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalSyndieHenchmanHood
+  - type: Item
+    size: Small
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: HideLayerClothing
+    slots:
+    - Tail
