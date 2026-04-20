@@ -42,12 +42,6 @@ public sealed partial class ModifyUnarmedTraitEffect : BaseTraitEffect
     public DamageSpecifier? FlatDamageIncrease;
 
     // <summary>
-    //   Turns the left click into a power attack when the light attack misses.
-    // </summary>
-    //[DataField]
-    //public bool? HeavyOnLightMiss; // TODO
-
-    // <summary>
     //     What to multiply the melee weapon range by.
     // </summary>
     [DataField]
@@ -78,9 +72,6 @@ public sealed partial class ModifyUnarmedTraitEffect : BaseTraitEffect
 
         if (FlatDamageIncrease != null)
             melee.Damage += FlatDamageIncrease;
-
-        //if (SoundSwing != null)
-        //    melee.soundSwing = HeavyOnLightMiss.Value; // TODO
 
         if (RangeModifier != null)
             melee.Range *= RangeModifier.Value;

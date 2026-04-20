@@ -25,8 +25,7 @@ trait-weakness-desc =
 trait-talons-name = Talons
 trait-talons-desc =
     Your fingertips have been replaced with piercing talons.
-    Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species. 
-    Does not confer any benefit to armed melee.
+    Your unarmed melee attacks deal Piercing damage instead of the standard damage type for your species. Does not confer any benefit to armed melee.
 
 trait-claws-name = Claws
 trait-claws-desc =
