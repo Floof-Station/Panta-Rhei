@@ -1,4 +1,5 @@
-- type: mumbleAccent
+# The idea here is that most vowels can't be pronounced nasally and many consonants require mouth or tongue action, so they need to be replaced.
+- type: muzzleAccent
   id: BasicMuzzle
   emoteVolume: -20
   doubleChance: 0.2
@@ -6,13 +7,13 @@
   replacements:
   # Length 1
   - m: n
-    n: ng
-    w: oo
-    y: ee
+    n: n
+    w: uh
+    y: mn
     c: sh
     q: g
     x: ksh
-    s: sh
+    s: h
     z: zh
     r: w
     l: w
@@ -25,9 +26,9 @@
     d: n
     f: h
     h: hh
-    a: uh
-    e: eh
-    i: eh
+    a: h
+    e: h
+    i: uh
     o: u
     u: uh
   # Length 2
@@ -79,7 +80,6 @@
     shr: nn
     sch: nn
     squ: ng
-    yes: ehh
-    the: eh
-    too: oh
-    you: hu
+    the: hnb
+    too: uhh
+    you: huu

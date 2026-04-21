@@ -1,6 +1,8 @@
 using System.Text;
 using Content.Server.Chat.Systems;
+using Content.Server.Speech;
 using Content.Shared._Vulp.Speech.Accents.Mumble;
+using Content.Shared.Chat;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -8,7 +10,8 @@ using Robust.Shared.Random;
 namespace Content.Server._Vulp.Speech.Accents.Mumble;
 
 
-public sealed class MumbleAccentSystem : EntitySystem
+// Floofstation-specific version of MumbleAccent.
+public sealed class MuzzledAccentSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
@@ -16,21 +19,20 @@ public sealed class MumbleAccentSystem : EntitySystem
 
     public override void Initialize()
     {
-        // Can we all just agree to burn the event bus down? I have to subscribe to this broadcasted event instead of AccentGetEvent
-        // because making sure this is applied after every other accept system is basically impossible
-        SubscribeLocalEvent<TransformSpeechEvent>(OnTransformSpeech);
+        // Ьaking sure this is applied after every other accent system is basically impossible, so we're subscribing to TransformSpeechEvent
+        SubscribeLocalEvent<TransformSpeechEvent>(OnTransformSpeech, after: [typeof(AccentSystem)]);
     }
 
     private void OnTransformSpeech(TransformSpeechEvent args)
     {
         // Note to self: TransformSpeechEvent is not raised if the language doesn't require speech
-        if (!TryComp<MumbleAccentComponent>(args.Sender, out var accent))
+        if (!TryComp<MuzzledAccentComponent>(args.Sender, out var accent))
             return;
 
         OnTransformSpeech((args.Sender, accent), ref args);
     }
 
-    private void OnTransformSpeech(Entity<MumbleAccentComponent> ent, ref TransformSpeechEvent args)
+    private void OnTransformSpeech(Entity<MuzzledAccentComponent> ent, ref TransformSpeechEvent args)
     {
         if (ent.Comp.AccentPrototype == null && !LoadAccent(ent) || ent.Comp.AccentPrototype is not { Initialized: true } accent)
             return;
@@ -77,7 +79,7 @@ public sealed class MumbleAccentSystem : EntitySystem
     ///     Sets mumble accent on the entity. If accent is null, removes it instead.
     /// </summary>
     /// <returns>True if accent was set or removed successfully, false otherwise.</returns>
-    public bool SetAccent(Entity<MumbleAccentComponent?> ent, MumbleAccentPrototype? accent)
+    public bool SetAccent(Entity<MuzzledAccentComponent?> ent, MuzzleAccentPrototype? accent)
     {
         if (accent == null)
         {
@@ -89,13 +91,13 @@ public sealed class MumbleAccentSystem : EntitySystem
         }
 
         if (ent.Comp == null)
-            ent.Comp = EnsureComp<MumbleAccentComponent>(ent);
+            ent.Comp = EnsureComp<MuzzledAccentComponent>(ent);
 
         ent.Comp.Accent = accent;
         return LoadAccent(ent!);
     }
 
-    private bool LoadAccent(Entity<MumbleAccentComponent> ent)
+    private bool LoadAccent(Entity<MuzzledAccentComponent> ent)
     {
         if (!_protoMan.TryIndex(ent.Comp.Accent, out var accent))
             return false;
@@ -107,7 +109,7 @@ public sealed class MumbleAccentSystem : EntitySystem
         return true;
     }
 
-    public void InitializePrototype(MumbleAccentPrototype accent)
+    public void InitializePrototype(MuzzleAccentPrototype accent)
     {
         accent.Lookups?.Clear();
         accent.Lookups ??= new();

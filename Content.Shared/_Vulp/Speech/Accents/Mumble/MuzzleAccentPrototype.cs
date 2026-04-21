@@ -4,8 +4,8 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Vulp.Speech.Accents.Mumble;
 
 
-[Prototype("mumbleAccent")]
-public sealed class MumbleAccentPrototype : IPrototype
+[Prototype("muzzleAccent")]
+public sealed class MuzzleAccentPrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; } = default!;
