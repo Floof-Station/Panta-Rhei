@@ -176,7 +176,7 @@
 
 - type: loadoutGroup
   id: CaptainOuterClothing
-  parent: [FloofOuterClothing] # floofstation
+  parent: [FloofCaptainOuterClothing, FloofOuterClothing] # floofstation
   name: loadout-group-captain-outerclothing
   loadouts:
   - CaptainOuterClothing

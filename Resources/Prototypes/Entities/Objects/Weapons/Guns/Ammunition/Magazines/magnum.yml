@@ -17,7 +17,7 @@
 - type: entity
   id: BaseMagazineMagnumSubMachineGun
   name: SMG magazine (.45 magnum)
-  parent: BaseItem
+  parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
   - type: Tag
@@ -28,9 +28,11 @@
     whitelist:
       tags:
         - CartridgeMagnum
-    capacity: 25
+    capacity: 40
   - type: Item
     size: Small
+    shape:
+    - 0,0,0,2
   - type: ContainerContainer
     containers:
       ballistic-ammo: !type:Container

@@ -442,15 +442,18 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Flare
+    pocket2: MedicalPouchFilledERT # Euphoria: Add medical pouch
   storage:
     back:
     - Hypospray
     - MedkitCombatFilled
     - MedkitCombatFilled
     - CrowbarRed
-    - ChemistryBottleOmnizine
-    - ChemistryBottleEpinephrine
-    - ChemistryBottleEpinephrine
+    # Euphoria start: Remove loose bottles for medical pouch fill
+    #- ChemistryBottleOmnizine
+    #- ChemistryBottleEpinephrine
+    #- ChemistryBottleEpinephrine
+    # Euphoria end
 
 - type: startingGear
   id: ERTMedicalGearEVA
@@ -466,15 +469,18 @@
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
     pocket1: Flare
+    pocket2: MedicalPouchFilledERT # Euphoria: Add medical pouch
   storage:
     back:
     - Hypospray
     - MedkitCombatFilled
     - MedkitCombatFilled
     - CrowbarRed
-    - ChemistryBottleOmnizine
-    - ChemistryBottleEpinephrine
-    - ChemistryBottleEpinephrine
+    # Euphoria start: Remove loose bottles for medical pouch fill
+    #- ChemistryBottleOmnizine
+    #- ChemistryBottleEpinephrine
+    #- ChemistryBottleEpinephrine
+    # Euphoria end
 
 - type: chameleonOutfit
   id: ERTMedicalChameleonOutfit

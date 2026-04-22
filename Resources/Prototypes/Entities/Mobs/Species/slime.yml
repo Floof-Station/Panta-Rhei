@@ -124,7 +124,7 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 0.05
+            Heat: 2 # Reupped to 2 from Floof. Slimes should be hurt by water, not tickled...
       - !type:PopupMessage
         type: Local
         visualType: Large

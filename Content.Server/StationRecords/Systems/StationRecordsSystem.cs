@@ -92,7 +92,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             || !_prototypeManager.HasIndex<JobPrototype>(jobId))
             return;
 
-        if (!_inventory.TryGetSlotEntity(player, "id", out var idUid))
+        if (!_inventory.TryGetSlotEntity(player, "id", out var idUid) && (!_inventory.TryGetSlotEntity(player, "neck", out idUid))) // Floofstation Pet IDs to check neck slot
             return;
 
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);

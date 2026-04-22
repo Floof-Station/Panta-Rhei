@@ -852,6 +852,15 @@ public sealed class AccessReaderSystem : EntitySystem
             items.Add(idUid.Value);
         }
 
+        // Floofstation PedId Collars Start
+        // why the fuck is this shit here im going to go buy bread
+        // Also Mnemo if you see this you are fishy.
+        if (_inventorySystem.TryGetSlotEntity(uid, "neck", out idUid))
+        {
+            items.Add(idUid.Value);
+        }
+        // Floofstation PedId Collars End
+
         return items.Any();
     }
 

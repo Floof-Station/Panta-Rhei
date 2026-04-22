@@ -1,0 +1,13 @@
+- type: entity
+  parent: ClothingBackpackDuffelSyndicateBundle
+  id: ClothingBackpackDuffelSyndicateFilledVector
+  name: "Vector-F bundle"
+  description: "A modified version of the legal G2 varient. We've cut off the stock, added a suppressor, but dont expect it to help all that much, its mostly there so you don't burst your eardrums." #  The 'suppressor' doesnt really suppress lol
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponSubMachineGunVectorSyndie
+        - id: MagazineHighVelocity
+          amount: 4

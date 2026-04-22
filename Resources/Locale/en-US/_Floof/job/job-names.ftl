@@ -15,6 +15,7 @@ job-alt-title-station-foreman = Station Foreman
 job-alt-title-station-architect = Station Architect
 job-alt-title-quartermaster = Quartermaster
 job-alt-title-head-of-acquisitions = Head of Acquisitions
+job-alt-title-emotionalsupport = Emotional Support
 
 loadout-group-captain-pdas = Captain pda
 loadout-group-hos-pdas = Head of Security pda
