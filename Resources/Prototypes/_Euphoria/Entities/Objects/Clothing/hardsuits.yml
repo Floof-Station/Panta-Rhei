@@ -41,6 +41,9 @@
     clothingPrototype: ClothingOuterHardsuitMagicalHOSTiara
   - type: Item
     size: Large
+  - type: Tool
+    qualities:
+      Decorrupting
   - type: Tag
     tags:
     - Hardsuit
@@ -253,6 +256,8 @@
     clothingPrototype: ClothingOuterHardsuitMagicalCAPHat
   - type: Item
     size: Large
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalSyndie
   - type: Tag
     tags:
     - Hardsuit
@@ -340,6 +345,12 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingOuterHardsuitMagicalSyndieHood
+  - type: Tool
+    qualities:
+      - Corrupting
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalCAP
+    corrupted: true
   - type: Tag
     tags:
     - Hardsuit
