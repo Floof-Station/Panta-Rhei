@@ -190,7 +190,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     /// <param name="station">The station this player is being spawned on.</param>
     public void SetPdaAndIdCardData(EntityUid entity, string characterName, JobPrototype jobPrototype, EntityUid? station)
     {
-        if (!InventorySystem.TryGetSlotEntity(entity, "id", out var idUid))
+        if (!InventorySystem.TryGetSlotEntity(entity, "id", out var idUid) && !InventorySystem.TryGetSlotEntity(entity, "neck", out idUid)) //  Floofstation Pet IDs to check neck slot
             return;
 
         var cardId = idUid.Value;

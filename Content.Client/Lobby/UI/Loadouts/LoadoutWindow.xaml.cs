@@ -20,6 +20,7 @@ public sealed partial class LoadoutWindow : FancyWindow
     public event Action<string>? OnNameChanged;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutPressed;
     public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnLoadoutUnpressed;
+    public event Action<ProtoId<LoadoutGroupPrototype>, ProtoId<LoadoutPrototype>>? OnRequestLoadoutMetadataEdit; // Floofstation
 
     private List<LoadoutGroupContainer> _groups = new();
 
@@ -87,6 +88,8 @@ public sealed partial class LoadoutWindow : FancyWindow
                 {
                     OnLoadoutUnpressed?.Invoke(group, args);
                 };
+
+                container.OnRequestLoadoutMetadataEdit += args => OnRequestLoadoutMetadataEdit?.Invoke(group, args); // Floofstation
             }
         }
     }

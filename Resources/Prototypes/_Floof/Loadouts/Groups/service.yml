@@ -51,7 +51,7 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - ClothingShoesColorBlack
+  - LaceupShoes
   - ClothingUnderSocksMusician
 
 # janitor additions
@@ -65,6 +65,7 @@
 
 - type: loadoutGroup
   id: FloofJanitorGloves
+  parent: [PassengerGloves]
   abstract: true
   minLimit: 0
   maxLimit: 1
@@ -139,3 +140,41 @@
   loadouts:
   - ClothingShoesColorBlack
   - ClothingUnderSocksService
+
+# mime additions
+- type: loadoutGroup
+  id: EuphoriaMimeShoes
+  name: loadout-group-service-mime-shoes
+  parent: [PassengerShoes]
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteShoes
+  - ClothingShoesBootsWinterMime
+
+# gladiator additions
+- type: loadoutGroup
+  id: FloofGladiatorPDAs
+  name: loadout-group-gladiator-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - GladiatorPDA
+
+# martial artist pda
+- type: loadoutGroup
+  id: FloofMartialArtistPDAs
+  name: loadout-group-martial-artist-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - MartialArtistPDA
+
+# boxer pda
+- type: loadoutGroup
+  id: FloofBoxerPDAs
+  name: loadout-group-boxer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BoxerPDA

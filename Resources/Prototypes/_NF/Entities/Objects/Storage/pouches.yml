@@ -1,0 +1,65 @@
+# BASE
+- type: entity
+  id: NFPouchBase
+  name: pouch
+  parent: BaseStorageItem # Euphoria: Removed RecyclableItemClothSmall
+  description: A pouch for organizing miscellaneous items.
+  suffix: Empty
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Storage/Pouches/pouch.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Clothing
+    quickEquip: false
+    sprite: _NF/Objects/Storage/Pouches/pouch.rsi
+    slots: [ belt, pocket ]
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,2,1
+    blacklist:
+      components: [ Storage ] # No bagception
+  - type: StaticPrice
+    price: 50
+  - type: ItemCounter
+    count:
+      components: [ Item ]
+    composite: true
+    layerStates:
+    - pouchFill1
+    - pouchFill2
+    - pouchFill3
+    - pouchFill4
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.SharedBagOpenVisuals.BagState:
+        closeLayer:
+          Open: { visible: false }
+          Closed: { visible: true }
+        openLayer:
+          Open: { visible: true }
+          Closed: { visible: false }
+        insideLayer:
+          Open: { visible: true }
+          Closed: { visible: false }
+        decal1:
+          Open: { visible: false }
+          Closed: { visible: true }
+        decal2:
+          Open: { visible: false }
+          Closed: { visible: true }
+  # Euphoria start: Add butcherable and material composition from removed parent RecyclableItemClothSmall
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+  # Euphoria end

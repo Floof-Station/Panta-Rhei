@@ -1,13 +1,4 @@
-﻿trait-name-CumProducer = Cock
-trait-description-CumProducer = You have a schlong between your legs.
-
-trait-name-MilkProducer = Boobs
-trait-description-MilkProducer = You have a pair of large mammaries.
-
-trait-name-SquirtProducer = Pussy
-trait-description-SquirtProducer = You have a slit between your legs.
-
-trait-name-EggLayer = Egg Layer
+﻿trait-name-EggLayer = Egg Layer
 trait-description-EggLayer = Your body through either mutation, oviposition, cybernetic or noospheric influence has the ability to lay eggs.
 
 trait-name-Succubus = Succubus
@@ -67,13 +58,13 @@ trait-description-CyberEyesOmni =
     and may be disabled by your employer before dispatch to the station.
 
 trait-dispel-name = Normality Projection
-trait-dispel-desc = 
+trait-dispel-desc =
     Your Mentalic abilities include the power to enforce normality upon Noospheric phenomena.
     This power, commonly known as "Dispel", allows the user to destroy otherworldly entities with their mind,
     or to immediately end psychic effects.
 
 trait-metapsionic-name = Metapsion
-trait-metapsionic-desc = 
+trait-metapsionic-desc =
     You are able to intuitively sense the activation of psionic abilities, as well as send out a 'scanning' pulse
     to detect whether or not psions are nearby. This ability has a wide area of effect, and cannot precisely
     scan individual entities. Still, it is better than being blind.
@@ -96,15 +87,6 @@ trait-psionic-regeneration-desc =
     After a short delay your body creates a chemical known as Prometheum which rapidly burns through your energy reserves to heal you.
 
 trait-religious-name = Religious
-trait-religious-desc = 
+trait-religious-desc =
     You are deeply religious, and a holy book in your hands is capable of miracles.
     (Bible not included)
-
-trait-name-BigCumProducer = Cock - Fire Hose
-trait-description-BigCumProducer = You have a schlong between your legs. It contains a massive amount of cum.
-
-trait-name-BigMilkProducer = Boobs - Milk Truck
-trait-description-BigMilkProducer = You have a pair of large mammaries. They contain a massive amount of milk.
-
-trait-name-BigSquirtProducer = Pussy - Water Feature
-trait-description-BigSquirtProducer = You have a slit between your legs. It contains a massive amount of squirt.

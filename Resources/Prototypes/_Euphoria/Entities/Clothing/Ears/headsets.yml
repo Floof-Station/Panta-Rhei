@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingHeadsetService
+  id: ClothingHeadsetBeast
+  name: beast headset
+  description: A headset on a necklace, for ease of use by the earless
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Ears/Headsets/beast.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Ears/Headsets/beast.rsi

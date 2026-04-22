@@ -279,7 +279,7 @@
 ## Brig Medic
 - type: loadoutGroup
   id: BrigMedicHead
-  parent: [FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
   name: loadout-group-brig-medic-head
   minLimit: 0
   loadouts:
@@ -309,7 +309,7 @@
 
 - type: loadoutGroup
   id: BrigMedicOuterClothing
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [Shoalenforcerarmor, FloofOuterClothing] # Floofstation
   name: loadout-group-brig-medic-outerclothing
   loadouts:
   - LongcoatBrigmedic
@@ -373,7 +373,7 @@
 ## Security Guns
 - type: loadoutGroup
   id: SecurityFirearm
-  parent: [FloofSecurityFirearm] # Floofstation
+  parent: [FloofSecurityFirearm, Shoalpistol] # Floofstation
   name: loadout-group-security-gun
   minLimit: 0
   maxLimit: 1
@@ -420,7 +420,7 @@
 
 - type: loadoutGroup
   id: SecurityAllFirearm
-  parent: [FloofSecurityFirearm] # Floofstation
+  parent: [FloofSecurityFirearm, Shoalpistolcommand] # Floofstation
   name: loadout-group-all-gun
   minLimit: 0
   maxLimit: 1
@@ -489,7 +489,7 @@
 
 - type: loadoutGroup
   id: SecurityOuterClothingDeltaV
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [Shoalenforcerarmor, FloofOuterClothing] # Floofstation
   name: loadout-group-security-outerclothing
   loadouts:
   - PlateCarrier
@@ -502,7 +502,7 @@
 ## Warden
 - type: loadoutGroup
   id: WardenOuterClothingDeltaV
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [Shoalenforcerarmor, FloofOuterClothing] # Floofstation
   name: loadout-group-warden-outerclothing
   loadouts:
   - PlateCarrier
@@ -514,7 +514,7 @@
 ## Head of Security
 - type: loadoutGroup
   id: HeadofSecurityOuterClothingDeltaV
-  parent: [FloofOuterClothing] # Floofstation
+  parent: [Shoalenforcerhosarmor, FloofOuterClothing] # Floofstation
   name: loadout-group-head-of-security-outerclothing
   loadouts:
   - PlateCarrier
@@ -541,7 +541,7 @@
 
 - type: loadoutGroup
   id: DetectiveOuterClothingDeltaV
-  parent: [FloofDetectiveOuterClothing, FloofOuterClothing] # Floofstation
+  parent: [Shoalenforcerarmor, FloofDetectiveOuterClothing, FloofOuterClothing] # Floofstation
   name: loadout-group-detective-outerclothing
   loadouts:
   - LongcoatSecurity
@@ -560,6 +560,7 @@
   minLimit: 0
   loadouts:
   - MedicalBeret
+  - BlueMedicalBeret
   - MimeFrenchBeret
   - PsychologistGreyFlatcap
   - PsychologistBrownFlatcap
@@ -601,8 +602,19 @@
   loadouts:
   - Stethoscope
   - ScarfBlue
+  - ScarfLightBlue
 
 ## Chemist
+
+- type: loadoutGroup
+  id: ChemistHead
+  name: loadout-group-chemist-head
+  minLimit: 0
+  loadouts:
+  - MedicalBeret
+  - BlueMedicalBeret
+  - SeniorChemistBeret
+
 - type: loadoutGroup
   id: ChemistNeck
   parent: [MedicalCollars] # Floofstation
@@ -612,6 +624,7 @@
   - ChemistTie
   - ScarfOrange
   - ScarfBlue
+  - ScarfLightBlue
 
 - type: loadoutGroup
   id: ChemistGloves
@@ -629,6 +642,8 @@
   name: loadout-group-chemist-shoes
   loadouts:
   - WhiteShoes
+  - LeatherShoes
+  - LaceupShoes
   - ChemistWinterBoots
   - ChemistShoes
 
@@ -637,6 +652,7 @@
   id: SurgeonHead
   parent: [FloofHats] # floofstation
   name: loadout-group-surgeon-head
+  minLimit: 0
   loadouts:
   - BlueSurgeryCap
   - GreenSurgeryCap
@@ -958,6 +974,7 @@
 # PDAs
 - type: loadoutGroup
   id: PassengerPDADelta
+  parent: FloofPetCollarPdas # Floofstation
   name: loadout-group-passenger-id-delta
   loadouts:
   - PassengerPDA
@@ -1075,3 +1092,19 @@
   hidden: true
   loadouts:
   - EmergencyIPCBox
+
+# ERT
+- type: loadoutGroup
+  id: GroupEVATankERT
+  name: loadout-group-EVA-tank
+  hidden: true
+  loadouts:
+  - LoadoutEmergencyOxygenExtendedERT
+  - LoadoutEmergencyNitrogenExtendedERT
+  - LoadoutEmergencyWaterVaporExtendedERT
+
+- type: roleLoadout
+  id: RoleSurvivalERT
+  groups:
+  - GroupEVATankERT
+  - SurvivalExtended

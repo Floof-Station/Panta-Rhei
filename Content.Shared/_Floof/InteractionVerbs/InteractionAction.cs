@@ -1,9 +1,12 @@
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
+using Dependency = Robust.Shared.IoC.DependencyAttribute;
 
 namespace Content.Shared._Floof.InteractionVerbs;
 
@@ -59,5 +62,21 @@ public abstract partial class InteractionAction
         // Floof - changed this to dynamically resolve the system, otehrwise IoC would inject a weird instance of this class that is never initialized, leading to obscure bugs.
         // If more *System references get added, make sure to convert them to this format. IoC doesn't support injecting entity systems.
         public EntityWhitelistSystem WhitelistSystem => EntMan.System<EntityWhitelistSystem>();
+
+        #region Helper methods
+
+        public T System<T>() where T : EntitySystem =>
+            EntMan.System<T>();
+
+        public bool TryComp<T>(EntityUid uid, [NotNullWhen(true)] out T? comp) where T : IComponent =>
+            EntMan.TryGetComponent(uid, out comp);
+
+        public bool TryComp<T>([NotNullWhen(true)] EntityUid? uid, [NotNullWhen(true)] out T? comp) where T : IComponent =>
+            EntMan.TryGetComponent(uid, out comp);
+
+        public T EnsureComp<T>(EntityUid uid) where T : IComponent, new() =>
+            EntMan.EnsureComponent<T>(uid);
+
+        #endregion
     }
 }

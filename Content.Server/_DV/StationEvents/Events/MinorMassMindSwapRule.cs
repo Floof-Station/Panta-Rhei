@@ -3,13 +3,17 @@ using Content.Server.Chat.Systems;
 using Content.Server._DV.StationEvents.Components;
 using Content.Server.Psionics;
 using Content.Server.StationEvents.Events;
+using Content.Shared._Common.Consent;
+using Content.Shared._DV.Abilities.Psionics;
 using Content.Shared.Abilities.Psionics;
+using Content.Shared.Bed.Cryostorage;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._DV.StationEvents.Events;
@@ -24,6 +28,10 @@ internal sealed class MinorMassMindSwapRule : StationEventSystem<MinorMassMindSw
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobstateSystem = default!;
+    [Dependency] private readonly SharedConsentSystem _consent = default!; // Floofstation
+    [Dependency] private readonly SharedCryostorageSystem _cryoSystem = default!; // Floofstation
+
+    private static readonly ProtoId<ConsentTogglePrototype> MindswapConsent = "MassMindswap"; // Floofstation - TODO: maybe this needs a separate consent?
 
     private TimeSpan _warningSoundLength;
     private ResolvedSoundSpecifier _resolvedWarningSound = string.Empty;
@@ -80,6 +88,11 @@ internal sealed class MinorMassMindSwapRule : StationEventSystem<MinorMassMindSw
         var query = EntityQueryEnumerator<PotentialPsionicComponent, MobStateComponent>();
         while (query.MoveNext(out var psion, out _, out _))
         {
+            if (!_consent.HasConsent(psion, MindswapConsent) // Floofstation - requires consent
+                || _cryoSystem.IsInPausedMap(psion) // This hack is needed because sometimes cryo fails to pause mobs
+                || TryComp<MindSwappedComponent>(psion, out var oldSwapped) && oldSwapped.OriginalEntity != psion) // Also exclude those who are already swapped
+                continue;
+
             if (_mobstateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion)
                 && HasComp<ActorComponent>(psion))
                 // Only a list of Players

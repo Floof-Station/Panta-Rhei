@@ -22,6 +22,7 @@
     tags:
       - ForceFixRotations
       - Window
+      - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: Sprite
     drawdepth: WallTops
     sprite: _DV/Structures/Windows/window.rsi #Delta V - Resprite windows
@@ -144,6 +145,7 @@
     tags:
       - Window
       - Directional #Delta V - Summary: Allows the tilewindow mapping command to work.
+      - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: MeleeSound
     soundGroups:
       Brute:

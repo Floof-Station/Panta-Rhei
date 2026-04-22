@@ -277,7 +277,11 @@ public abstract class SharedAbsorbentSystem : EntitySystem
 
         if (!SolutionContainer.ResolveSolution(target, puddle.SolutionName, ref puddle.Solution, out var puddleSolution)
             || puddleSolution.Volume <= 0)
-            return false;
+        {
+            // Floofstation - bandaid fix for empty footprints: simply nuke it.
+            QueueDel(target);
+            return true; // Also return true
+        }
 
         var (_, absorber, useDelay) = absorbEnt;
 

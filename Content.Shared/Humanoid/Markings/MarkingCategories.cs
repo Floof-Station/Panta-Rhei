@@ -21,8 +21,6 @@ namespace Content.Shared.Humanoid.Markings
         NeckFluff,
         UndergarmentTop,
         UndergarmentBottom,
-        Underwear,
-        Undershirt,
         Arms,
         LArm,
         RArm,
