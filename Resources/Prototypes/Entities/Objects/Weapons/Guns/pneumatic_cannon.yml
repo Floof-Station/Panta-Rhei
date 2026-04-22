@@ -200,11 +200,13 @@
     maxItemSize: Ginormous
     grid:
     - 0,0,19,10
-    whitelist:
-      tags: [] #dodging a test fail like the IRS
-  - type: PneumaticCannon
-    gasUsage: 0
-    throwItems: false
+  # Floofstation Changes Start - Make this actually take things as "ammo" and shoot them again
+    #whitelist:
+    #  tags: [] #dodging a test fail like the IRS
+  #- type: PneumaticCannon
+  #  gasUsage: 0
+  #  throwItems: false
+  # Floofstation changes end
   - type: Gun
     fireRate: 10
     selectedMode: FullAuto
