@@ -114,7 +114,6 @@
       sprite: _Floof/Mobs/Species/Arachne/parts.rsi
       state: spider_body
 
-
 - type: humanoidBaseSprite
   id: MobTaurTorso
   baseSprite:
@@ -137,7 +136,7 @@
   id: TaurBodyConnector
   baseSprite:
     sprite: _Floof/Mobs/Species/Arachne/parts.rsi
-    state: "spider_body_front"
+    state: spider_body_front
 
 - type: humanoidBaseSprite
   id: MobArachneEyes

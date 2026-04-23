@@ -19,6 +19,7 @@
     - id: MinorMassMindSwap # Delta V
     - id: GlimmerFoxfireSpawn
     - id: GlimmerRestyle
+    - id: GlimmerResearchStealer # Euphoria
 
 - type: entity
   parent: BaseGameRule
@@ -232,3 +233,14 @@
     minimumGlimmer: 300
     maximumGlimmer: 700
   - type: GlimmerRestyleRule
+
+#Euphoria
+- type: entity
+  parent: BaseGlimmerEvent
+  id: GlimmerResearchStealer
+  components:
+  - type: GlimmerEvent
+    minimumGlimmer: 600
+    glimmerBurnLower: 25
+    glimmerBurnUpper: 75
+  - type: GlimmerResearchStealerRule

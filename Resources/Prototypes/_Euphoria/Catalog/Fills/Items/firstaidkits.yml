@@ -1,0 +1,59 @@
+- type: entity
+  id: MedicalPouchFilledERT
+  suffix: ERT
+  parent: MedicalPouch
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryBottleSalicylicAcid
+        - id: ChemistryBottleSalbutamol
+        - id: ChemistryBottleSaline
+          amount: 2
+        - id: ChemistryBottleDermaline
+        - id: ChemistryBottlePyrazine
+        - id: ChemistryBottleCharcoal
+        - id: ChemistryBottleEpinephrine
+        - id: BruteAutoInjector
+        - id: BruteAutoInjector
+        - id: BurnAutoInjector
+        - id: AntiPoisonMedipen
+
+- type: entity
+  id: MedicalPouchFilledERTRed
+  suffix: ERT, Red
+  parent: MedicalPouch
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryBottleBruizine
+        - id: ChemistryBottleLacerinol
+        - id: ChemistryBottlePuncturase
+        - id: ChemistryBottleSalbutamol
+        - id: ChemistryBottleSaline
+          amount: 2
+        - id: ChemistryBottleDermaline
+        - id: ChemistryBottlePyrazine
+        - id: ChemistryBottleDiphenhydramine
+        - id: ChemistryBottleOmnizine
+        - id: ChemistryBottleEphedrine
+          amount: 2
+
+- type: entity
+  id: MedicalPouchFilledERTGamma
+  suffix: ERT, Red
+  parent: MedicalPouch
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: ChemistryBottleOmnizine
+          amount: 8
+        - id: ChemistryBottleSaline
+          amount: 2
+        - id: ChemistryBottleEphedrine
+          amount: 2

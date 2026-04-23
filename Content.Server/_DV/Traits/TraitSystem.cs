@@ -196,7 +196,7 @@ public sealed class TraitSystem : EntitySystem
             // Trait is valid, add it
             validTraits.Add(traitId);
             totalPoints += trait.Cost;
-            traitCount++;
+            traitCount += trait.UsesSlots ? 1 : 0; // Floofstation - consider that some traits may use no slots
 
             // Update category tracking
             categoryTraitCounts.TryGetValue(trait.Category, out var catCount);

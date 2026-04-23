@@ -2176,3 +2176,189 @@ Entries:
       message: Only the user can see chronic pain popups.
   id: 271
   time: '2026-04-16T07:04:57.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Add
+      message: Arachne can now use arachnid emotes.
+  id: 272
+  time: '2026-04-16T07:15:07.0000000+00:00'
+- author: TheRedForestButcher
+  changes:
+    - type: Fix
+      message: Fixed some issues with the Chief Engineer Loadout
+  id: 273
+  time: '2026-04-16T07:16:30.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Conspirators as part of being rolled for Secret.
+    - type: Tweak
+      message: >-
+        Event scheduler to have more events more often, while still keeping
+        periods of calm.
+  id: 274
+  time: '2026-04-16T07:34:08.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: >-
+        The research server can potentially start corrupting at high glimmer
+        levels.
+  id: 275
+  time: '2026-04-16T07:35:17.0000000+00:00'
+- author: Rosycup
+  changes:
+    - type: Add
+      message: >-
+        Ported an armored trenchcoat for the captain. Obtained through the
+        captain's loadout and locker.
+  id: 276
+  time: '2026-04-16T07:36:06.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Medical pouches for paramedics and corpsman to keep their chems in.
+  id: 277
+  time: '2026-04-16T07:38:49.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Bananium has been seen on lavaland planets and large asteroids in the
+        Euphoria sector again.
+  id: 278
+  time: '2026-04-17T14:43:27.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Increased Devil Spawn Chance
+  id: 279
+  time: '2026-04-18T01:08:56.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: 'Mapping for non-hosts no longer disables events or auto evac '
+  id: 280
+  time: '2026-04-18T23:17:44.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Player ability to call votes
+  id: 281
+  time: '2026-04-19T08:57:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Most medical roles now get a surgery speed modifier bonus.
+  id: 282
+  time: '2026-04-19T16:13:44.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Wristwatches to Trinket Loadout
+  id: 283
+  time: '2026-04-19T16:23:34.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Ported Corporate Coats from the old codebase, they are available in
+        loadouts.
+  id: 284
+  time: '2026-04-19T16:24:23.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: >-
+        Fixed IPCs missing a component that allowed them to talk to the Oracle,
+        despite being psionic.
+    - type: Fix
+      message: Fixed IPCs and Arachne not being able to offer things.
+  id: 285
+  time: '2026-04-21T07:46:48.0000000+00:00'
+- author: mrwthrasher-cloud
+  changes: []
+  id: 286
+  time: '2026-04-21T09:22:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Reworked lewd traits. There's now a set of 4 base traits that give you
+        special organs that can produce or store liquids, and several traits
+        that modify their stats. Players who have chosen one of the existing
+        lewd traits will have to choose again.
+    - type: Add
+      message: >-
+        There's 12 new lewd interaction verbs available that are related to the
+        lewd traits. In order to use them or have others use them on you, you
+        need to enable a couple new consent toggles. Most of them require you to
+        have no inner clothing and no matching underwear (use the right click
+        menu to remove underwear markings if you have any). Keep in mind that
+        these interactions can be seen by others (within a 4m radius).
+    - type: Add
+      message: >-
+        Certain traits can now be excluded from the global trait limit. Lewd
+        traits are an example of that.
+    - type: Fix
+      message: The "help up" interaction should now work correctly.
+  id: 287
+  time: '2026-04-22T10:32:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Mops can clean empty footprints now. The cause of empty footprints still
+        remains a partial mystery.
+  id: 288
+  time: '2026-04-22T11:33:46.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Fixed chitinid marking whitelist problem
+    - type: Fix
+      message: Fixed arachne age limit
+  id: 289
+  time: '2026-04-22T15:18:29.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: >-
+        Added Medical Records Circuit to CMO locker, and some others to other
+        heads.
+  id: 290
+  time: '2026-04-23T10:07:25.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: 4 unarmed centered traits
+  id: 291
+  time: '2026-04-23T10:08:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Senior Physician, Medical Doctor and Parameds have some additional
+        alternative PDAs
+    - type: Fix
+      message: Senior Physician no longer has access to the medical doctor PDAs.
+  id: 292
+  time: '2026-04-23T10:09:51.0000000+00:00'
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        Medical, Security and Engineering catsuits! All health and safety
+        approved.
+  id: 293
+  time: '2026-04-23T10:10:28.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Muzzles now obfuscate your speech instead of replacing it.
+    - type: Fix
+      message: >-
+        Accents (incl. muzzle accent) are no longer applied to non-spoken
+        languages (sign languages and universal).
+  id: 294
+  time: '2026-04-23T10:18:17.0000000+00:00'

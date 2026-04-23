@@ -1,3 +1,4 @@
+using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared._Floof.Scent;
 using Content.Shared.Verbs;
 using Robust.Client.GameObjects;
@@ -33,7 +34,7 @@ public sealed class ScentEditingSystem : SharedScentEditingSystem
             Text = Loc.GetString("scent-editor-verb"),
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/pencil.png")), // I love putting this everywhere
             Priority = -21, // Below "ignore scent"
-            Category = VerbCategory.Interaction, // This also doesn't belong here, but I'm keeping it here for consistency. TODO: own category?
+            Category = SharedInteractionVerbsSystem.InteractionCategory, // This also doesn't belong here, but I'm keeping it here for consistency. TODO: own category?
             Act = () => { scentsUi.ShowScentEditor(args.Target); },
             ClientExclusive = true, // Prediction bad
         };

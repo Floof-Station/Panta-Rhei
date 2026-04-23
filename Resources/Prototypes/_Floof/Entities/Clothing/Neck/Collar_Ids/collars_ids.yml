@@ -10,6 +10,7 @@
     id: EmotionalSupportIdCard
   - type: Sprite
     sprite: _Floof/Clothing/Neck/Collars/collar_black.rsi
+    scale: 1.0, 1.0 # Resize to standard size
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
       state: icon

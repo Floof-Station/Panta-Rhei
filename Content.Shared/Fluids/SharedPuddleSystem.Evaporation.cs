@@ -49,19 +49,6 @@ public abstract partial class SharedPuddleSystem
             if (!_solutionContainerSystem.ResolveSolution(uid, puddle.SolutionName, ref puddle.Solution, out var puddleSolution))
                 continue;
 
-            // Floofstation section - delete all puddles that contain no liquid
-            // There is an unresolved bug with footprints sometimes ending up with 0 liquid inside
-            // I suspect it's happening during reagent transfer, but I'm unable to reproduce it in dev.
-            if (puddleSolution.Volume <= 0)
-            {
-                #if TOOLS || DEBUG
-                Log.Info("FIXME: deleting an empty footprint, this shouldnt happen!");
-                #endif
-                PredictedQueueDel(uid);
-                continue;
-            }
-            // Floofstation section end
-
             // If we have multiple evaporating reagents in one puddle, just take the average evaporation speed and apply
             // that to all of them.
             var evaporationSpeeds = GetEvaporationSpeeds(puddleSolution);
