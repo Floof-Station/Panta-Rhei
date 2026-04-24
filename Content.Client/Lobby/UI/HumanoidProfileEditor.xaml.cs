@@ -44,7 +44,9 @@ using Content.Shared._CD.Records;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 // End CD - Character Records
-using Content.Shared._DV.Traits; // DV - Traits
+using Content.Shared._DV.Traits;
+using System.Runtime.InteropServices;
+using Robust.Shared.Toolshed.Commands.Values; // DV - Traits
 
 namespace Content.Client.Lobby.UI
 {
@@ -297,6 +299,7 @@ namespace Content.Client.Lobby.UI
                 var prototype = _prototypeManager.Index<SpeciesPrototype>(Profile.Species);
                 var newHeight = MathF.Round(MathHelper.Lerp(prototype.MinHeight, prototype.MaxHeight, CDHeightSlider.Value), 2);
                 CDHeight.Text = newHeight.ToString(CultureInfo.InvariantCulture);
+                EuphHeightDisplay.Text = ConvertHeightDisplay(newHeight); //Euphoria | Height display
                 SetProfileHeight(newHeight);
             };
 
@@ -1629,7 +1632,21 @@ namespace Content.Client.Lobby.UI
                                 (prototype.MaxHeight - prototype.MinHeight);
             CDHeightSlider.Value = sliderPercent;
             CDHeight.Text = Profile.Height.ToString(CultureInfo.InvariantCulture);
+            EuphHeightDisplay.Text = ConvertHeightDisplay(Profile.Height); //Euphoria | Height display
         }
+
+        // Euphoria | Height display - START
+        private static string ConvertHeightDisplay(float inputHeight)
+        {
+            var inInches = Math.Truncate(inputHeight * 100 - 31);
+            var outFeet = Math.Truncate(inInches / 12).ToString();
+            var outInchesTens = Math.Round(inInches % 12 / 10, 0, MidpointRounding.ToZero).ToString();
+            var outInchesOnes = (inInches % 12 % 10).ToString();
+            var outCM = Math.Round(inInches * 2.54, 0).ToString();
+            var result = $"{outCM}cm | {outFeet}'{outInchesTens}{outInchesOnes}\"";
+            return result;
+        }
+        // Euphoria | Height display - END
 
         private void UpdateCDAllergies()
         {
