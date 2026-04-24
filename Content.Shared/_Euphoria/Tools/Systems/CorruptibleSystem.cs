@@ -46,8 +46,9 @@ public sealed class CorruptibleSystem : EntitySystem
         if (args.Used != null)
             // Would be nicer if I could set it to the created entity, but that only plays for a split second.
             _audio.PlayPredicted(ent.Comp.CorruptFinishSound, args.Used.Value, args.User);
-        // Attuned passing here
-        QueueDel(ent.Owner);
+        // Attunement passing here
+        // also add a popup
+        PredictedQueueDel(ent.Owner);
     }
 }
 
