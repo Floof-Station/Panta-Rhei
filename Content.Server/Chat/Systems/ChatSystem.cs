@@ -876,6 +876,10 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     public string TransformSpeech(EntityUid sender, string message)
     {
+        // Floofstation: do not apply speech mods to non-spoken languages
+        if (!_languages.GetLanguage(sender).SpeechOverride.RequireSpeech)
+            return message;
+
         var ev = new TransformSpeechEvent(sender, message);
         RaiseLocalEvent(ev);
 

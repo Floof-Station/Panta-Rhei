@@ -130,6 +130,23 @@
   - type: IdCard
     jobTitle: job-alt-title-head-of-acquisitions
 
+# Chaplain
+- type: entity
+  parent: ChaplainIDCard
+  id: SpiritualCounselorIDCard
+  name: spiritual counselor card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-spiritual-counselor
+
+- type: entity
+  parent: ChaplainIDCard
+  id: NoostatisticianIDCard
+  name: Noostatistician card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-noostatistician
+
 # emotional support
 - type: entity
   parent: PassengerIDCard
@@ -138,3 +155,38 @@
   components:
   - type: IdCard
     jobTitle: job-alt-title-emotionalsupport
+
+# senior_phys
+- type: entity
+  parent: SeniorPhysicianIDCard
+  id: SeniorPhysIDCard
+  name: Senior Physician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-senior-phys
+
+# EMT (paramed)
+- type: entity
+  parent: ParamedicIDCard
+  id: TRIDCard
+  name: Trauma Responder ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-tr
+
+# mortician (doctor)
+- type: entity
+  parent: MedicalIDCard
+  id: MorticianIDCard
+  name: Mortician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-mortician
+
+- type: entity
+  parent: MedicalIDCard
+  id: VetIDCard
+  name: Veterinarian ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-vet

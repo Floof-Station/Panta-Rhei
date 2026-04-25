@@ -45,7 +45,7 @@
 
 # =========== Alternative PDAs ==============
 
-# Alternative PDA base
+# Alternative PDA base TG style
 - type: entity
   parent: BasePDA
   id: BaseAlternativePDA
@@ -86,6 +86,28 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - NanoChatCartridge
+
+# Alternative PDA base DV style
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: BaseAlternativePDA2
+  name: Base Alternative PDA
+  description: Personal Data Assistant.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_pda.rsi # DeltaV aPDA Resprite File Path
+    scale: 0.75, 0.75 # DeltaV aPDA Resprite PDA Size change, makes it smaller for the full detail.
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
 
 # captain
 - type: entity
@@ -296,6 +318,42 @@
     - NanoChatCartridge
     - GlimmerMonitorCartridge
 
+# chaplain
+
+- type: entity
+  parent: [BaseAlternativePDA2, ChaplainPDA]
+  id: SpiritualCounselorPDA
+  name: spiritual counselor PDA
+  description: The PDA reaks of understanding.
+  components:
+  - type: Pda
+    id: SpiritualCounselorIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-sc
+  - type: CartridgeLoader # Nyanotrasen - Glimmer Monitor
+    preinstalled:
+      - CrewManifestCartridge
+      - NotekeeperCartridge
+      - NanoTaskCartridge
+      - NewsReaderCartridge
+      - GlimmerMonitorCartridge
+      - NanoChatCartridge # DeltaV
+
+- type: entity
+  parent: SpiritualCounselorPDA
+  id: NoostatisticianPDA
+  name: noostatistician PDA
+  description: The bare minimum required for a holy PDA.
+  components:
+  - type: Pda
+    id: NoostatisticianIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-noos
+
 # chief engineer
 - type: entity
   parent: BaseAlternativePDA
@@ -365,4 +423,117 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType: !type:String
         qm
+
+# medical atlernative role pdas
+- type: entity
+  parent: BaseAlternativePDA
+  id: BaseAlternativeMedicalPDA
+  name: Base Medical Alternative PDA
+  description: Personal Data Assistant.
+  components:
+  - type: Pda
+    id: MedicalIDCard
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_medical_pda.rsi
+    state: senior_phys
+    scale: 1.02, 1.02 # increase the scale to match the size of delta-v pdas
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "senior_phys"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      offset: 0.1, 0.0 # 1.5 is WAY TOO FUCKING FAR, like in the next universe far
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      offset: 0.11, 0.1 # 0.125 is too far to the right
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        senior_phys
+  - type: Icon
+    sprite: _Floof/Objects/Devices/alternative_medical_pda.rsi
+    state: senior_phys
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NewsReaderCartridge
+    - NanoChatCartridge
+    - MedTekCartridge
+
+- type: entity
+  parent: BaseAlternativeMedicalPDA
+  id: SeniorPhysPDA
+  name: senior physician PDA
+  description: Medicals second most ignored doctor.
+  components:
+  - type: Pda
+    id: SeniorPhysIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        senior_phys
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#447987"
+
+- type: entity
+  parent: BaseAlternativeMedicalPDA
+  id: TRPDA
+  name: trauma responder PDA
+  description: You would think this PDA came with a siren but it does not.
+  components:
+  - type: Pda
+    id: TRIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        tr
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#2a4b5b"
+
+- type: entity
+  parent: BaseAlternativeMedicalPDA
+  id: MorticianPDA
+  name: mortician PDA
+  description: Don't forget to label those body bags and triage everything.
+  components:
+  - type: Pda
+    id: MorticianIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        mortician
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#447987"
+
+- type: entity
+  parent: BaseAlternativeMedicalPDA
+  id: VetPDA
+  name: veterinarian PDA
+  description: Make sure to take good care of those station pets.
+  components:
+  - type: Pda
+    id: VetIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        vet
+  - type: PdaBorderColor
+    borderColor: "#d7d7d0"
+    accentVColor: "#447987"
 # ===========================================

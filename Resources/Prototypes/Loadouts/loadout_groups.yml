@@ -1897,6 +1897,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
+  parent: FloofMedicalDoctorPDAs # Floofstation - medical pdas
   name: loadout-group-medical-doctor-id
   loadouts:
   - MedicalDoctorPDA
