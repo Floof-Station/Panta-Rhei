@@ -62,7 +62,6 @@
       storagebase: !type:AllSelector
         children:
         - id: IDComputerCircuitboard
-        #- id: FundingAllocationComputerCircuitboard # DeltaV - HoP doesn't have funding access
         - id: FundingAllocationComputerCircuitboard
         - id: ServiceTechFabCircuitboard # DeltaV
 
@@ -126,6 +125,7 @@
         - id: CommsComputerCircuitboard
         - id: StationRecordsComputerCircuitboard
         - id: IDComputerCircuitboard # DeltaV
+        - id: FundingAllocationComputerCircuitboard # Euphoria
 
 - type: entity
   name: circuit tote [CMO]
@@ -142,6 +142,8 @@
         - id: IDComputerCircuitboard # DeltaV
         - id: MedicalBiofabMachineBoard # DeltaV
         - id: AutoclaveMachineCircuitboard # DeltaV
+        - id: MedicalRecordsComputerCircuitboard # Euphoria
+        - id: CrewMonitoringComputerCircuitboard # Euphoria
 
 - type: entity
   name: circuit tote [MG] # DeltaV - Changed to MG
@@ -154,7 +156,7 @@
       storagebase: !type:AllSelector
         children:
         - id: CircuitImprinterMachineCircuitboard
-        #- id: ProtolatheMachineCircuitboard # DeltaV - Replaced with Epi fab
+        - id: ProtolatheMachineCircuitboard # DeltaV - Replaced with Epi fab # Euphoria - Undone
         - id: ResearchComputerCircuitboard
         - id: CargoRequestScienceComputerCircuitboard
         - id: RoboticsConsoleCircuitboard

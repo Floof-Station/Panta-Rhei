@@ -1,0 +1,68 @@
+- type: entity
+  id: BulletHighVelocity # More or less a clone of the minigun bullet
+  name: bullet (.10 high-velocity)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 5
+
+- type: entity
+  id: BulletHighVelocityPractice
+  name: bullet (.10 high-velocity practice)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+
+- type: entity
+  id: BulletHighVelocityUranium # Was inially added due to debugging, but is left as it could be used in other weapons made with the new ammo type, possibly
+  name: bullet (.10 high-velocity uranium)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 2
+        Radiation: 3
+
+- type: entity
+  id: BulletHighVelocityAP
+  name: bullet (.10 high-velocity Armor-Piercing)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 2 # Should be pretty balanced due to the firerate expected of these weapons. Does base 50 damage on a full hit (basically has to hit all shots at point blank)
+    ignoreResistances: true
+
+- type: entity
+  id: BulletHighVelocityJHP
+  name: bullet (.10 high-velocity Hollow-Point)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 1 # Should also be pretty balanced due to the extreme lack of effectivity against armor, but should be useful against those without.
+        Slash: 6
+
+- type: entity
+  id: BulletHighVelocityRubber
+  name: bullet (.10 high-velocity Rubber)
+  parent: BulletHighVelocity
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2

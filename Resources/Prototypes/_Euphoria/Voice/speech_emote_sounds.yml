@@ -1,0 +1,17 @@
+- type: emoteSounds
+  id: BaseArachne
+  sounds:
+    Chitter:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
+    Click:
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    Hiss:
+      path: /Audio/Animals/snake_hiss.ogg
+
+- type: emoteSounds
+  id: MaleArachne
+  parent: [MaleHuman, BaseArachne]
+
+- type: emoteSounds
+  id: FemaleArachne
+  parent: [FemaleHuman, BaseArachne]

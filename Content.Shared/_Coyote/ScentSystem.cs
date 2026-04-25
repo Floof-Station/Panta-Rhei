@@ -15,6 +15,7 @@ using Robust.Shared.Timing;
 using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
 using Robust.Shared.Network;
+using Content.Shared._Floof.InteractionVerbs;
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -77,7 +78,7 @@ public sealed class ScentSystem : EntitySystem
             {
                 Text = "Smell",
                 Priority = -19, // Floofstation - there's no way you want to randomly do this to your co-worker.
-                Category = VerbCategory.Interaction, // Floofstation - this doesn't belong here, but we'll leave it to avoid cluttering the verb ui
+                Category = SharedInteractionVerbsSystem.InteractionCategory, // Floofstation - this doesn't belong here, but we'll leave it to avoid cluttering the verb ui
                 Disabled = !_interact.InRangeUnobstructed(
                     args.User,
                     args.Target,
@@ -105,7 +106,7 @@ public sealed class ScentSystem : EntitySystem
         {
             Text = toggleText,
             Priority = -20, // Floofstation - below "smell"
-            Category = VerbCategory.Interaction,
+            Category = SharedInteractionVerbsSystem.InteractionCategory,
             Act = () =>
             {
                 ToggleIgnoreSmell(smellerComp, scentComp);

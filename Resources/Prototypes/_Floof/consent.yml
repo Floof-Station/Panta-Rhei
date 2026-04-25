@@ -19,3 +19,13 @@
   id: NoClone
   name: Opt out from paradox anomalies
   description: Toggle this on to disallow yourself from being cloned via paradox anomalies.
+
+- type: consentToggle
+  id: LewdInteractions
+  name: Lewd interactions
+  description: Enabling this allows you to interact with others' and use your own lewd organs. Most of those will require you to have your outer clothing off.
+
+- type: consentToggle
+  id: LewdContainerFillByOthers
+  name: "Lewd interactions: milking"
+  description: Toggle this on to allow others to "milk" you using beakers and other liquid containers. You will still be able to "milk" yourself with this off.

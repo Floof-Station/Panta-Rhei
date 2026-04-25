@@ -75,6 +75,13 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  - type: Speech # Euphoria: Added Arachnid Emotes
+    allowedEmotes: ['Click', 'Chitter', 'Hiss']
+  - type: Vocal
+    sounds:
+      Male: MaleArachne
+      Female: FemaleArachne
+      Unsexed: MaleArachne
   - type: HumanoidAppearance
     species: Human
     hideLayersOnEquip:
