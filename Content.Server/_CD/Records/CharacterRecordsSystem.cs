@@ -89,7 +89,7 @@ public sealed class CharacterRecordsSystem : EntitySystem
 
     private StationRecordKey? FindStationRecordsKey(EntityUid uid)
     {
-        if (!_inventory.TryGetSlotEntity(uid, "id", out var idUid))
+        if (!_inventory.TryGetSlotEntity(uid, "id", out var idUid) && !_inventory.TryGetSlotEntity(uid, "neck", out idUid)) // Floofstation Pet IDs to check neck slot
             return null;
 
         var keyStorageEntity = idUid;

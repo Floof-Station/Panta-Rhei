@@ -208,3 +208,101 @@
     multiplier: 0.5
 # =================================================== #
 
+# =================== Fist traits =================== #
+- type: trait
+  id: Talons
+  name: trait-talons-name
+  description: trait-talons-desc
+  category: BonusPhysical
+  cost: 0
+  conflicts:
+    - Claws
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Harpy # Harpies already have talons
+        - Arachnid # Apparently they have a "piercing" bite
+        - Feroxi # Floof - They bite. Piercing damage. Nuff said.
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+
+- type: trait
+  id: Claws
+  name: trait-claws-name
+  description: trait-claws-desc
+  category: BonusPhysical
+  cost: 0
+  conflicts:
+    - Talons
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Felinid # Felinids already have cat claws.
+        - Tajaran # Tajaran also have cat claws
+        - Reptilian # Reptilians also have cat claws.
+        - Shadowkin # Shadowkins also have claws.
+        # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
+        - Rodentia # Floof - Rodentia already has it
+        - Resomi # Floof - they have claws after port of Goob changes
+        - Feroxi # Floof - They bite. Nuff said.
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                  # Blunt also deals bleed damage, so this is more of a sidegrade.
+
+- type: trait
+  id: NaturalWeaponRemoval
+  name: trait-natural-weapon-removal-name
+  description: trait-natural-weapon-removal-desc
+  category: BonusPhysical
+  cost: 0
+  conflicts:
+    - Talons
+    - Claws
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Human
+        - Oni
+        - SlimePerson
+        - Diona
+        - Arachne
+        - IPC # Other species could justify getting this trait for Blunt stamina damage,
+              # but 6 blunt -> 5 blunt is a straight up downgrade.
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      soundHit:
+        collection: Punch
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 5
+
+- type: trait
+  id: ImprovedUnarmed # Striking calluses by any other name
+  name: trait-Improved-Unarmed-name
+  description: trait-Improved-Unarmed-desc
+  category: BonusPhysical
+  cost: 2
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      flatDamageIncrease:
+        types:
+          Blunt: 1
+# =================================================== #
+

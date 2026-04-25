@@ -176,7 +176,7 @@
 
 - type: loadoutGroup
   id: CaptainOuterClothing
-  parent: [FloofOuterClothing] # floofstation
+  parent: [FloofCaptainOuterClothing, FloofOuterClothing] # floofstation
   name: loadout-group-captain-outerclothing
   loadouts:
   - CaptainOuterClothing
@@ -1897,6 +1897,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
+  parent: FloofMedicalDoctorPDAs # Floofstation - medical pdas
   name: loadout-group-medical-doctor-id
   loadouts:
   - MedicalDoctorPDA

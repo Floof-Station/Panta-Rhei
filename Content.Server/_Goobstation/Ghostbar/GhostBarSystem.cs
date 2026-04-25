@@ -1,35 +1,24 @@
-﻿using Robust.Server.GameObjects;
+﻿using Content.Server.Antag.Components;
+using Content.Server.Atmos.Components;
+using Content.Server.Body.Components;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
-using Content.Server.Station.Components;
-using Content.Server.Station.Events;
-using Content.Server.Station.Systems;
-using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
-using Robust.Shared.Utility;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Random;
-using Content.Shared.Ghost;
 using Content.Server.Goobstation.Ghostbar.Components;
 using Content.Server.Mind;
-using Content.Shared.Mind;
+using Content.Server.Station.Systems;
+using Content.Shared._Floof.Language.Components;
+using Content.Shared._Goobstation.Ghostbar.Events;
+using Content.Shared.Abilities.Psionics;
+using Content.Shared.GameTicking;
+using Content.Shared.Ghost;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mindshield.Components;
+using Content.Shared.Temperature.Components;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
-using Robust.Shared.Prototypes;
-using Content.Shared.Roles.Jobs;
-using Content.Shared.Roles;
-using Content.Shared.Roles.Components;
-using Content.Shared.Inventory;
-using Content.Shared.Temperature.Components;
-using Content.Shared.Abilities.Psionics;
-using Content.Shared._Floof.Language.Components;
-using Content.Shared.Mindshield.Components;
-using Content.Shared.GameTicking;
-using Content.Shared._Goobstation.Ghostbar.Events;
-using Content.Server.Body.Components;
-using Content.Server.Atmos.Components;
-using Content.Server.Antag.Components;
+using Robust.Shared.Map;
+using Robust.Shared.Random;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Goobstation.Ghostbar;
 
@@ -41,7 +30,6 @@ public sealed class GhostBarSystem : EntitySystem
     [Dependency] private readonly GameTicker _ticker = default!;
     [Dependency] private readonly StationSpawningSystem _spawningSystem = default!;
     [Dependency] private readonly MindSystem _mindSystem = default!;
-    [Dependency] private readonly IEntityManager _entityManager = default!;
 
     private static readonly List<String> _jobPrototypes = new()
     {
@@ -56,6 +44,7 @@ public sealed class GhostBarSystem : EntitySystem
     {
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeNetworkEvent<GhostBarSpawnEvent>(SpawnPlayer);
+        SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(PlayerGhostedFromGhostbar);
     }
 
     private readonly ResPath _mapPath = new("Maps/Floof/Nonstation/Ghostbar/ghostbar.yml");
@@ -68,7 +57,7 @@ public sealed class GhostBarSystem : EntitySystem
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
     {
-        if (!_entityManager.HasComponent<GhostComponent>(args.SenderSession.AttachedEntity))
+        if (!EntityManager.HasComponent<GhostComponent>(args.SenderSession.AttachedEntity))
         {
             Log.Warning($"User {args.SenderSession.Name} tried to spawn at ghost bar without being a ghost.");
             return;
@@ -78,7 +67,7 @@ public sealed class GhostBarSystem : EntitySystem
         var query = EntityQueryEnumerator<GhostBarSpawnComponent>();
         while (query.MoveNext(out var ent, out _))
         {
-            spawnPoints.Add(_entityManager.GetComponent<TransformComponent>(ent).Coordinates);
+            spawnPoints.Add(EntityManager.GetComponent<TransformComponent>(ent).Coordinates);
         }
 
         if (spawnPoints.Count == 0)
@@ -96,19 +85,21 @@ public sealed class GhostBarSystem : EntitySystem
         RemComp<TemperatureComponent>(mobUid);
         RemComp<RespiratorComponent>(mobUid);
         RemComp<BarotraumaComponent>(mobUid);
-        _entityManager.EnsureComponent<MindShieldComponent>(mobUid);
-        _entityManager.EnsureComponent<AntagImmuneComponent>(mobUid);
-		_entityManager.EnsureComponent<PsionicInsulationComponent>(mobUid); // we don't want people getting mindswapped
-        _entityManager.EnsureComponent<UniversalLanguageSpeakerComponent>(mobUid); // give universal since we arent giving them any of their traits/languages
         EnsureComp<MindShieldComponent>(mobUid);
-        EnsureComp<AntagImmuneComponent>(mobUid);
+        EnsureComp<AntagImmuneComponent>(mobUid); // self explanatory why we dont want players becoming antags at the ghostbar
 		EnsureComp<PsionicInsulationComponent>(mobUid); // we don't want people getting mindswapped
-        EnsureComp<UniversalLanguageSpeakerComponent>(mobUid); // give universal since we arent giving them any of their traits/languages
+        EnsureComp<UniversalLanguageSpeakerComponent>(mobUid); // giving universal just in case for RP purposes
+        EnsureComp<GhostBarPlayerComponent>(mobUid); // give the player mob the ghostbarplayer comp so they can be tracked
         var targetMind = _mindSystem.GetMind(args.SenderSession.UserId);
 
         if (targetMind != null)
         {
             _mindSystem.TransferTo(targetMind.Value, mobUid, true);
         }
+    }
+    // Delete the players character if they choose to ghost while at the ghostbar using the GhostBarPlayerComponent
+    private void PlayerGhostedFromGhostbar(Entity<GhostBarPlayerComponent> ent, ref MindRemovedMessage args)
+    {
+        QueueDel(ent);
     }
 }

@@ -1791,3 +1791,42 @@
     sound: *toysqueakB
   - type: MeleeWeapon
     soundHit: *toysqueakB
+
+- type: entity
+  parent: BasePlushie
+  id: RedlizardPlushie
+  name: red lizard plushie
+  description: It's small, red, and adorable! Complete with small frills, and big black eyes.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/redlizardplushie.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/redlizardplushie.rsi
+    slots:
+    - HEAD
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnLand
+    sound: &landRL
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
+      params:
+        volume: 2
+        variation: 0.1
+  - type: EmitSoundOnCollide
+    sound: *landRL
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+      params:
+        volume: 1
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Voice/Reptilian/reptilian_scream.ogg
+      params:
+        variation: 0.1
+        volume: 4

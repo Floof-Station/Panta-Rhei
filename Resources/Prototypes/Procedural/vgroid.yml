@@ -77,6 +77,12 @@
       count: 35
       minGroupSize: 4
       maxGroupSize: 8
+    - !type:OreDunGen # Floofstation - allow bananium to spawn on vgroids
+      replacement: IronRock
+      entity: IronRockBananium
+      count: 35
+      minGroupSize: 4
+      maxGroupSize: 8
     - !type:OreDunGen
       replacement: IronRock
       entity: IronRockArtifactFragment

@@ -1,8 +1,10 @@
-﻿using Content.Shared.Mobs;
+﻿using Content.Shared._Common.Consent;
+using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Whitelist;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Floof.InteractionVerbs.Requirements;
