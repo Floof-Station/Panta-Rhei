@@ -4,7 +4,7 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 04/19/2026 22:22:02
+  time: 04/25/2026 12:04:09
   entityCount: 22932
 maps:
 - 1
@@ -3720,7 +3720,6 @@ entities:
             5683: 37,14
             5684: 37,13
             5685: 38,13
-            5686: 39,13
             5687: 37,12
             5688: 37,11
             5689: 37,10
@@ -10187,7 +10186,8 @@ entities:
           5,-2:
             0: 12927
           5,-1:
-            0: 65535
+            0: 63487
+            3: 2048
           5,-5:
             0: 14479
           5,0:
@@ -53690,6 +53690,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: -24.5,-42.5
       parent: 2
+  - uid: 21207
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 39.5,13.5
+      parent: 2
   - uid: 21218
     components:
     - type: Transform
@@ -56236,11 +56242,6 @@ entities:
     components:
     - type: Transform
       pos: 21.5,-1.5
-      parent: 2
-  - uid: 21204
-    components:
-    - type: Transform
-      pos: 24.5,-1.5
       parent: 2
 - proto: ChemicalPayload
   entities:
@@ -58958,7 +58959,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 79.5,5.5
       parent: 2
-- proto: ComputerShipyardAdmin
+- proto: ComputerShipyard
   entities:
   - uid: 16063
     components:
@@ -59484,10 +59485,10 @@ entities:
       isPlaceable: True
 - proto: CrateChemistrySupplies
   entities:
-  - uid: 21207
+  - uid: 1723
     components:
     - type: Transform
-      pos: 23.5,-1.5
+      pos: 24.5,-1.5
       parent: 2
 - proto: CrateCoffin
   entities:
@@ -140901,11 +140902,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 72.5,1.5
       parent: 2
-  - uid: 18663
-    components:
-    - type: Transform
-      pos: 40.5,13.5
-      parent: 2
   - uid: 18689
     components:
     - type: Transform
@@ -141086,6 +141082,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 41.5,73.5
       parent: 2
+  - uid: 21204
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 40.5,13.5
+      parent: 2
   - uid: 21221
     components:
     - type: Transform
@@ -141111,12 +141113,6 @@ entities:
       parent: 2
 - proto: WallReinforcedDiagonal
   entities:
-  - uid: 1723
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 39.5,13.5
-      parent: 2
   - uid: 2230
     components:
     - type: Transform
@@ -141134,6 +141130,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 55.5,14.5
+      parent: 2
+  - uid: 18663
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 39.5,13.5
       parent: 2
 - proto: WallReinforcedRust
   entities:
