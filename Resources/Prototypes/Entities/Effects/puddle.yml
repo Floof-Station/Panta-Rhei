@@ -252,7 +252,6 @@
   - type: SolutionContainerManager
     solutions:
       step: { maxVol: 2 }
-  - type: FootPrint
   - type: Puddle
     solution: step
   - type: Appearance
@@ -266,6 +265,8 @@
 #      components:
 #      - InputMover
   # Floof section - components that puddles have and footprints should also have. Why are we not inheriting from Puddle again?
+  # Answer: no PuddleFootPrints
+  - type: FootPrint
   - type: ExaminableSolution
     solution: step
   - type: DrawableSolution

@@ -1,4 +1,4 @@
-﻿#below addtions are for mysta
+﻿#below additions are for mysta
 - type: loadoutGroup
   id: FloofMystaThong
   abstract: true
@@ -22,6 +22,16 @@
   maxLimit: 1
   loadouts:
   - UnderSocksEpiHead
+
+# mysta pdas
+- type: loadoutGroup
+  id: FloofMystaDAs
+  name: loadout-group-mysta-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - RnDPDA
+  - ResearchDirectorPDA
 
 # scientist additions
 - type: loadoutGroup
@@ -80,6 +90,10 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ChaplainLustroAlt
+  - ChaplainLustro
+  - ChaplainInfernusLustro
+  - ChaplainInfernusLustroAlt
   - UniformChaplainThong
 
 - type: loadoutGroup
@@ -98,4 +112,15 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ChaplainLustroSandals
   - ClothingUnderSocksChaplain
+
+- type: loadoutGroup
+  id: FloofChaplainPDAs
+  name: loadout-group-chaplain-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ChaplainPDA
+  - SpiritualCounselorPDA
+  - NoostatisticianPDA

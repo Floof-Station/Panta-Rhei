@@ -244,6 +244,7 @@
     - Surgery # Shitmed change
     # Floofstation section - add your recipes here
     - AdvancedTranslation
+    - UpgradeKits_Goob
     # Floofstation section end
   - type: EmagLatheRecipes
     emagDynamicPacks:
@@ -522,7 +523,12 @@
       unlitRunningState: unlit-building # DeltaV - added animation sprite layers
       staticPacks:
       - SecurityAmmoStatic
+    # Start DeltaV Additions 
       - SecurityShotgunDrumsStatic
+      - AmmoFabPracticeStatic # Removes practice guns
+      - SecurityRubberAmmoStatic
+      dynamicPacks:
+      - SecurityAmmo
     # End DeltaV Additions
     - type: BlueprintReceiver
       whitelist:
@@ -642,6 +648,10 @@
     - CollarsFloofstation
     - CarpetSimple
     # Floofstation section end
+    # Euphoria section
+    - ClothingEpistemicsEuphoria
+    - ClothingPassengerEuphoria
+    # Euphoria section end
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm

@@ -1,0 +1,17 @@
+﻿- type: entity
+  parent: [ ClothingHandsGlovesColorBlack, BaseCommandContraband ]
+  id: ClothingHandsGlovesCEInsuls
+  name: advanced insulative gloves
+  description: These gloves provide excellent heat and electric insulation.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Gloves/ceinsuls.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Gloves/ceinsuls.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative
+  - type: DamageOnShootProtection # imp
+    damageProtection:
+      flatReductions:
+        Blunt: 4

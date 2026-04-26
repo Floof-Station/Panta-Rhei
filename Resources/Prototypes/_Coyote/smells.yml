@@ -1,0 +1,1268 @@
+- type: scent
+  id: ScentBase
+  abstract: true
+  closeRange: 2
+  farRange: 10
+  minCooldownSeconds: 20
+  maxCooldownSeconds: 120
+  msgsExamine:
+  - scent-default-examine
+  msgsDirect:
+  - scent-default-direct
+  msgsClose:
+  - scent-default-close
+  msgsFar:
+  - scent-default-far
+  detectionPercent: 35
+  directOnly: false
+  isStinky: false
+  isLewd: false
+  priorityMultiplier: 1.0
+  preventingComponents: []
+  blockingComponents: []
+
+- type: scent
+  id: ScentDirectOnly
+  abstract: true
+  directOnly: true
+  msgsDirect:
+  - scent-default-direct
+  msgsFar: []
+  msgsClose: []
+
+- type: scent
+  id: ScentLewd
+  abstract: true
+  isLewd: true
+
+- type: scent
+  id: ScentStinky
+  abstract: true
+  isStinky: true
+
+- type: scent
+  id: ScentNoExamine
+  abstract: true
+  msgsExamine: []
+
+- type: scent
+  id: ScentDefault
+  parent:
+  - ScentBase
+  - ScentNoExamine
+  - ScentDirectOnly
+
+- type: scent
+  id: ScentItemBase
+  abstract: true
+  parent:
+  - ScentDefault
+
+# Example Scents for Fenny
+
+#- type: scent
+#  id: ScentExampleForFenny
+#  parent:
+#  - ScentBase
+#  msgsExamine:
+#  - scent-default-examine
+#  msgsDirect:
+#  - scent-default-direct
+#  msgsClose:
+#  - scent-default-close
+#  msgsFar:
+#  - scent-default-far
+#
+#- type: scent
+#  id: ScentLewdExampleForFenny
+#  parent:
+#  - ScentBase
+#  - ScentLewd
+#  msgsExamine:
+#  - scent-default-lewd-examine
+#  msgsDirect:
+#  - scent-default-lewd-direct
+#  msgsClose:
+#  - scent-default-lewd-close
+#  msgsFar:
+#  - scent-default-lewd-far
+#
+#- type: scent
+#  id: ScentDirectOnlyExampleForFenny
+#  parent:
+#  - ScentBase
+#  - ScentDirectOnly
+#  msgsDirect:
+#  - scent-default-cool-direct
+#
+#- type: scent
+#  id: ScentDirectOnlyLewdExampleForFenny
+#  parent:
+#  - ScentBase
+#  - ScentDirectOnly
+#  - ScentLewd
+#  msgsDirect:
+#  - scent-default-lewd-direct
+
+# Primary Scents
+
+- type: scent
+  id: ScentLinen
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-linen-examine
+  msgsDirect:
+  - scent-linen-direct
+  msgsClose:
+  - scent-linen-close
+  msgsFar:
+  - scent-linen-far
+
+- type: scent
+  id: ScentCitrus
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-citrus-examine
+  msgsDirect:
+  - scent-citrus-direct
+  msgsClose:
+  - scent-citrus-close
+  msgsFar:
+  - scent-citrus-far
+
+- type: scent
+  id: ScentVanilla
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-vanilla-examine
+  msgsDirect:
+  - scent-vanilla-direct
+  msgsClose:
+  - scent-vanilla-close
+  msgsFar:
+  - scent-vanilla-far
+
+- type: scent
+  id: ScentSandalwood
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-sandalwood-examine
+  msgsDirect:
+  - scent-sandalwood-direct
+  msgsClose:
+  - scent-sandalwood-close
+  msgsFar:
+  - scent-sandalwood-far
+
+- type: scent
+  id: Lavender
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-lavender-examine
+  msgsDirect:
+  - scent-lavender-direct
+  msgsClose:
+  - scent-lavender-close
+  msgsFar:
+  - scent-lavender-far
+
+- type: scent
+  id: Green
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-greentea-examine
+  msgsDirect:
+  - scent-greentea-direct
+  msgsClose:
+  - scent-greentea-close
+  msgsFar:
+  - scent-greentea-far
+
+- type: scent
+  id: Bergamot
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-bergamot-examine
+  msgsDirect:
+  - scent-bergamot-direct
+  msgsClose:
+  - scent-bergamot-close
+  msgsFar:
+  - scent-bergamot-far
+
+- type: scent
+  id: Eucalyptus
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-eucalyptus-examine
+  msgsDirect:
+  - scent-eucalyptus-direct
+  msgsClose:
+  - scent-eucalyptus-close
+  msgsFar:
+  - scent-eucalyptus-far
+
+- type: scent
+  id: Cedarwood
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-cedarwood-examine
+  msgsDirect:
+  - scent-cedarwood-direct
+  msgsClose:
+  - scent-cedarwood-close
+  msgsFar:
+  - scent-cedarwood-far
+
+- type: scent
+  id: Mint
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-mint-examine
+  msgsDirect:
+  - scent-mint-direct
+  msgsClose:
+  - scent-mint-close
+  msgsFar:
+  - scent-mint-far
+
+- type: scent
+  id: Rosewater
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-rosewater-examine
+  msgsDirect:
+  - scent-rosewater-direct
+  msgsClose:
+  - scent-rosewater-close
+  msgsFar:
+  - scent-rosewater-far
+
+- type: scent
+  id: Jasmine
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-jasmine-examine
+  msgsDirect:
+  - scent-jasmine-direct
+  msgsClose:
+  - scent-jasmine-close
+  msgsFar:
+  - scent-jasmine-far
+
+- type: scent
+  id: Lemon
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-lemonzest-examine
+  msgsDirect:
+  - scent-lemonzest-direct
+  msgsClose:
+  - scent-lemonzest-close
+  msgsFar:
+  - scent-lemonzest-far
+
+- type: scent
+  id: Pine
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-pine-examine
+  msgsDirect:
+  - scent-pine-direct
+  msgsClose:
+  - scent-pine-close
+  msgsFar:
+  - scent-pine-far
+
+- type: scent
+  id: Warm
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-warmhoney-examine
+  msgsDirect:
+  - scent-warmhoney-direct
+  msgsClose:
+  - scent-warmhoney-close
+  msgsFar:
+  - scent-warmhoney-far
+
+- type: scent
+  id: Rain
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-rain-examine
+  msgsDirect:
+  - scent-rain-direct
+  msgsClose:
+  - scent-rain-close
+  msgsFar:
+  - scent-rain-far
+
+- type: scent
+  id: Apples
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-apples-examine
+  msgsDirect:
+  - scent-apples-direct
+  msgsClose:
+  - scent-apples-close
+  msgsFar:
+  - scent-apples-far
+
+- type: scent
+  id: Cloves
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-cloves-examine
+  msgsDirect:
+  - scent-cloves-direct
+  msgsClose:
+  - scent-cloves-close
+  msgsFar:
+  - scent-cloves-far
+
+- type: scent
+  id: Dark
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-darkchocolate-examine
+  msgsDirect:
+  - scent-darkchocolate-direct
+  msgsClose:
+  - scent-darkchocolate-close
+  msgsFar:
+  - scent-darkchocolate-far
+
+- type: scent
+  id: Orange
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-orangeblossoms-examine
+  msgsDirect:
+  - scent-orangeblossoms-direct
+  msgsClose:
+  - scent-orangeblossoms-close
+  msgsFar:
+  - scent-orangeblossoms-far
+
+- type: scent
+  id: Leather
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-leather-examine
+  msgsDirect:
+  - scent-leather-direct
+  msgsClose:
+  - scent-leather-close
+  msgsFar:
+  - scent-leather-far
+
+- type: scent
+  id: Aloe
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-aloe-examine
+  msgsDirect:
+  - scent-aloe-direct
+  msgsClose:
+  - scent-aloe-close
+  msgsFar:
+  - scent-aloe-far
+
+- type: scent
+  id: Cardamom
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-cardamom-examine
+  msgsDirect:
+  - scent-cardamom-direct
+  msgsClose:
+  - scent-cardamom-close
+  msgsFar:
+  - scent-cardamom-far
+
+- type: scent
+  id: Peaches
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-peaches-examine
+  msgsDirect:
+  - scent-peaches-direct
+  msgsClose:
+  - scent-peaches-close
+  msgsFar:
+  - scent-peaches-far
+
+- type: scent
+  id: Basil
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-basil-examine
+  msgsDirect:
+  - scent-basil-direct
+  msgsClose:
+  - scent-basil-close
+  msgsFar:
+  - scent-basil-far
+
+- type: scent
+  id: Smoked
+  parent:
+  - ScentBase
+  isStinky: true # Euphoria - stinky scents are stinky bro
+  msgsExamine:
+  - scent-smokedwood-examine
+  msgsDirect:
+  - scent-smokedwood-direct
+  msgsClose:
+  - scent-smokedwood-close
+  msgsFar:
+  - scent-smokedwood-far
+
+- type: scent
+  id: Milk
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-milkandsugar-examine
+  msgsDirect:
+  - scent-milkandsugar-direct
+  msgsClose:
+  - scent-milkandsugar-close
+  msgsFar:
+  - scent-milkandsugar-far
+
+- type: scent
+  id: Iris
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-iris-examine
+  msgsDirect:
+  - scent-iris-direct
+  msgsClose:
+  - scent-iris-close
+  msgsFar:
+  - scent-iris-far
+
+- type: scent
+  id: Grapefruit
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-grapefruit-examine
+  msgsDirect:
+  - scent-grapefruit-direct
+  msgsClose:
+  - scent-grapefruit-close
+  msgsFar:
+  - scent-grapefruit-far
+
+- type: scent
+  id: Frankincense
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-frankincense-examine
+  msgsDirect:
+  - scent-frankincense-direct
+  msgsClose:
+  - scent-frankincense-close
+  msgsFar:
+  - scent-frankincense-far
+
+- type: scent
+  id: Pears
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-pears-examine
+  msgsDirect:
+  - scent-pears-direct
+  msgsClose:
+  - scent-pears-close
+  msgsFar:
+  - scent-pears-far
+
+- type: scent
+  id: Tobacco
+  parent:
+  - ScentBase
+  isStinky: true # Euphoria - stinky scents are stinky bro
+  msgsExamine:
+  - scent-tobacco-examine
+  msgsDirect:
+  - scent-tobacco-direct
+  msgsClose:
+  - scent-tobacco-close
+  msgsFar:
+  - scent-tobacco-far
+
+- type: scent
+  id: Soap
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-soap-examine
+  msgsDirect:
+  - scent-soap-direct
+  msgsClose:
+  - scent-soap-close
+  msgsFar:
+  - scent-soap-far
+
+- type: scent
+  id: Chamomile
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-chamomile-examine
+  msgsDirect:
+  - scent-chamomile-direct
+  msgsClose:
+  - scent-chamomile-close
+  msgsFar:
+  - scent-chamomile-far
+
+- type: scent
+  id: Fig
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-fig-examine
+  msgsDirect:
+  - scent-fig-direct
+  msgsClose:
+  - scent-fig-close
+  msgsFar:
+  - scent-fig-far
+
+- type: scent
+  id: Ozone
+  parent:
+  - ScentBase
+  isStinky: true # Euphoria - stinky scents are stinky bro
+  msgsExamine:
+  - scent-ozone-examine
+  msgsDirect:
+  - scent-ozone-direct
+  msgsClose:
+  - scent-ozone-close
+  msgsFar:
+  - scent-ozone-far
+
+- type: scent
+  id: Sweat
+  parent:
+  - ScentBase
+  isStinky: true # Euphoria - stinky scents are stinky bro
+  msgsExamine:
+  - scent-sweat-examine
+  msgsDirect:
+  - scent-sweat-direct
+  msgsClose:
+  - scent-sweat-close
+  msgsFar:
+  - scent-sweat-far
+
+- type: scent
+  id: Oil
+  parent:
+  - ScentBase
+  isStinky: true # Euphoria - stinky scents are stinky bro
+  msgsExamine:
+  - scent-oil-examine
+  msgsDirect:
+  - scent-oil-direct
+  msgsClose:
+  - scent-oil-close
+  msgsFar:
+  - scent-oil-far
+
+- type: scent
+  id: Motor
+  parent:
+  - ScentBase
+  isStinky: true # Euphoria - stinky scents are stinky bro
+  msgsExamine:
+  - scent-motoroil-examine
+  msgsDirect:
+  - scent-motoroil-direct
+  msgsClose:
+  - scent-motoroil-close
+  msgsFar:
+  - scent-motoroil-far
+
+- type: scent
+  id: Soil
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-soil-examine
+  msgsDirect:
+  - scent-soil-direct
+  msgsClose:
+  - scent-soil-close
+  msgsFar:
+  - scent-soil-far
+
+- type: scent
+  id: Almond
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-almond-examine
+  msgsDirect:
+  - scent-almond-direct
+  msgsClose:
+  - scent-almond-close
+  msgsFar:
+  - scent-almond-far
+
+- type: scent
+  id: Patchouli
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-patchouli-examine
+  msgsDirect:
+  - scent-patchouli-direct
+  msgsClose:
+  - scent-patchouli-close
+  msgsFar:
+  - scent-patchouli-far
+
+- type: scent
+  id: Blueberry
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-blueberry-examine
+  msgsDirect:
+  - scent-blueberry-direct
+  msgsClose:
+  - scent-blueberry-close
+  msgsFar:
+  - scent-blueberry-far
+
+- type: scent
+  id: Cinnamon
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-cinnamon-examine
+  msgsDirect:
+  - scent-cinnamon-direct
+  msgsClose:
+  - scent-cinnamon-close
+  msgsFar:
+  - scent-cinnamon-far
+
+- type: scent
+  id: Sea
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-seasalt-examine
+  msgsDirect:
+  - scent-seasalt-direct
+  msgsClose:
+  - scent-seasalt-close
+  msgsFar:
+  - scent-seasalt-far
+
+- type: scent
+  id: Wildflowers
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-wildflowers-examine
+  msgsDirect:
+  - scent-wildflowers-direct
+  msgsClose:
+  - scent-wildflowers-close
+  msgsFar:
+  - scent-wildflowers-far
+
+
+# Lewd Scents
+
+- type: scent
+  id: ScentLewdMusk
+  parent:
+  - ScentBase
+  isLewd: true
+  isStinky: true # Euphoria
+  msgsExamine:
+  - scent-musk-examine
+  msgsDirect:
+  - scent-musk-direct
+  msgsClose:
+  - scent-musk-close
+  msgsFar:
+  - scent-musk-far
+
+- type: scent
+  id: Heat
+  parent:
+  - ScentBase
+  isLewd: true
+  msgsExamine:
+  - scent-heat-examine
+  msgsDirect:
+  - scent-heat-direct
+  msgsClose:
+  - scent-heat-close
+  msgsFar:
+  - scent-heat-far
+
+- type: scent
+  id: Latex
+  parent:
+  - ScentBase
+  isLewd: true
+  msgsExamine:
+  - scent-latex-examine
+  msgsDirect:
+  - scent-latex-direct
+  msgsClose:
+  - scent-latex-close
+  msgsFar:
+  - scent-latex-far
+
+- type: scent
+  id: Boystink
+  parent:
+  - ScentBase
+  isLewd: true
+  isStinky: true
+  msgsExamine:
+  - scent-boystink-examine
+  msgsDirect:
+  - scent-boystink-direct
+  msgsClose:
+  - scent-boystink-close
+  msgsFar:
+  - scent-boystink-far
+
+- type: scent
+  id: Boysmell
+  parent:
+  - ScentBase
+  isLewd: true
+  msgsExamine:
+  - scent-boysmell-examine
+  msgsDirect:
+  - scent-boysmell-direct
+  msgsClose:
+  - scent-boysmell-close
+  msgsFar:
+  - scent-boysmell-far
+
+- type: scent
+  id: Skunk
+  parent:
+  - ScentBase
+  isLewd: true
+  isStinky: true
+  msgsExamine:
+  - scent-skunk-examine
+  msgsDirect:
+  - scent-skunk-direct
+  msgsClose:
+  - scent-skunk-close
+  msgsFar:
+  - scent-skunk-far
+
+- type: scent
+  id: Girlstink
+  parent:
+  - ScentBase
+  isLewd: true
+  isStinky: true
+  msgsExamine:
+  - scent-girlstink-examine
+  msgsDirect:
+  - scent-girlstink-direct
+  msgsClose:
+  - scent-girlstink-close
+  msgsFar:
+  - scent-girlstink-far
+
+- type: scent
+  id: Girlsmell
+  parent:
+  - ScentBase
+  isLewd: true
+  msgsExamine:
+  - scent-girlsmell-examine
+  msgsDirect:
+  - scent-girlsmell-direct
+  msgsClose:
+  - scent-girlsmell-close
+  msgsFar:
+  - scent-girlsmell-far
+
+- type: scent
+  id: Spaceweed
+  parent:
+  - ScentBase
+  isLewd: true
+  msgsExamine:
+  - scent-spaceweed-examine
+  msgsDirect:
+  - scent-spaceweed-direct
+  msgsClose:
+  - scent-spaceweed-close
+  msgsFar:
+  - scent-spaceweed-far
+
+# Euphoria - Community Requested Scents
+# normal
+
+- type: scent
+  id: Gunmetal
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-gunmetal-examine
+  msgsDirect:
+  - scent-gunmetal-direct
+  msgsClose:
+  - scent-gunmetal-close
+  msgsFar:
+  - scent-gunmetal-far
+
+- type: scent
+  id: Disinfectant
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-disinfectant-examine
+  msgsDirect:
+  - scent-disinfectant-direct
+  msgsClose:
+  - scent-disinfectant-close
+  msgsFar:
+  - scent-disinfectant-far
+
+- type: scent
+  id: Ink
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-ink-examine
+  msgsDirect:
+  - scent-ink-direct
+  msgsClose:
+  - scent-ink-close
+  msgsFar:
+  - scent-ink-far
+
+- type: scent
+  id: Dust
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-dust-examine
+  msgsDirect:
+  - scent-dust-direct
+  msgsClose:
+  - scent-dust-close
+  msgsFar:
+  - scent-dust-far
+
+- type: scent
+  id: Metal
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-metal-examine
+  msgsDirect:
+  - scent-metal-direct
+  msgsClose:
+  - scent-metal-close
+  msgsFar:
+  - scent-metal-far
+
+- type: scent
+  id: Omnizine
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-omni-examine
+  msgsDirect:
+  - scent-omni-direct
+  msgsClose:
+  - scent-omni-close
+  msgsFar:
+  - scent-omni-far
+
+- type: scent
+  id: Gunpowder
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-gunpowder-examine
+  msgsDirect:
+  - scent-gunpowder-direct
+  msgsClose:
+  - scent-gunpowder-close
+  msgsFar:
+  - scent-gunpowder-far
+
+- type: scent
+  id: Moss
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-moss-examine
+  msgsDirect:
+  - scent-moss-direct
+  msgsClose:
+  - scent-moss-close
+  msgsFar:
+  - scent-moss-far
+
+- type: scent
+  id: WeldingFuel
+  isStinky: true
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-weldfuel-examine
+  msgsDirect:
+  - scent-weldfuel-direct
+  msgsClose:
+  - scent-weldfuel-close
+  msgsFar:
+  - scent-weldfuel-far
+
+- type: scent
+  id: Jolliness
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-jolly-examine
+  msgsDirect:
+  - scent-jolly-direct
+  msgsClose:
+  - scent-jolly-close
+  msgsFar:
+  - scent-jolly-far
+
+- type: scent
+  id: Gingerbread
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-gingerbread-examine
+  msgsDirect:
+  - scent-gingerbread-direct
+  msgsClose:
+  - scent-gingerbread-close
+  msgsFar:
+  - scent-gingerbread-far
+
+- type: scent
+  id: Hellstone
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-hellstone-examine
+  msgsDirect:
+  - scent-hellstone-direct
+  msgsClose:
+  - scent-hellstone-close
+  msgsFar:
+  - scent-hellstone-far
+
+- type: scent
+  id: Rust
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-rust-examine
+  msgsDirect:
+  - scent-rust-direct
+  msgsClose:
+  - scent-rust-close
+  msgsFar:
+  - scent-rust-far
+
+- type: scent
+  id: Flowers
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-flowers-examine
+  msgsDirect:
+  - scent-flowers-direct
+  msgsClose:
+  - scent-flowers-close
+  msgsFar:
+  - scent-flowers-far
+
+- type: scent
+  id: Stillwater
+  isStinky: true
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-stillwater-examine
+  msgsDirect:
+  - scent-stillwater-direct
+  msgsClose:
+  - scent-stillwater-close
+  msgsFar:
+  - scent-stillwater-far
+
+- type: scent
+  id: Uranium
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-uranium-examine
+  msgsDirect:
+  - scent-uranium-direct
+  msgsClose:
+  - scent-uranium-close
+  msgsFar:
+  - scent-uranium-far
+
+- type: scent
+  id: BlackTea
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-blacktea-examine
+  msgsDirect:
+  - scent-blacktea-direct
+  msgsClose:
+  - scent-blacktea-close
+  msgsFar:
+  - scent-blacktea-far
+
+- type: scent
+  id: Seafood
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-seafood-examine
+  msgsDirect:
+  - scent-seafood-direct
+  msgsClose:
+  - scent-seafood-close
+  msgsFar:
+  - scent-seafood-far
+
+- type: scent
+  id: WetDog
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-wetdog-examine
+  msgsDirect:
+  - scent-wetdog-direct
+  msgsClose:
+  - scent-wetdog-close
+  msgsFar:
+  - scent-wetdog-far
+
+- type: scent
+  id: Phoron
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-phoron-examine
+  msgsDirect:
+  - scent-phoron-direct
+  msgsClose:
+  - scent-phoron-close
+  msgsFar:
+  - scent-phoron-far
+
+- type: scent
+  id: Grass
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-grass-examine
+  msgsDirect:
+  - scent-grass-direct
+  msgsClose:
+  - scent-grass-close
+  msgsFar:
+  - scent-grass-far
+
+- type: scent
+  id: BdayCandles
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-bday-examine
+  msgsDirect:
+  - scent-bday-direct
+  msgsClose:
+  - scent-bday-close
+  msgsFar:
+  - scent-bday-far
+
+- type: scent
+  id: UnwashedFox
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-unwashedfox-examine
+  msgsDirect:
+  - scent-unwashedfox-direct
+  msgsClose:
+  - scent-unwashedfox-close
+  msgsFar:
+  - scent-unwashedfox-far
+
+- type: scent
+  id: Iron
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-iron-examine
+  msgsDirect:
+  - scent-iron-direct
+  msgsClose:
+  - scent-iron-close
+  msgsFar:
+  - scent-iron-far
+
+- type: scent
+  id: Frezon
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-frezon-examine
+  msgsDirect:
+  - scent-frezon-direct
+  msgsClose:
+  - scent-frezon-close
+  msgsFar:
+  - scent-frezon-far
+
+- type: scent
+  id: Fish
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-fish-examine
+  msgsDirect:
+  - scent-fish-direct
+  msgsClose:
+  - scent-fish-close
+  msgsFar:
+  - scent-fish-far
+
+- type: scent
+  id: CheapCologne
+  parent:
+  - ScentBase
+  isStinky: true # i dont care how much axe body spray you put on, it will ALWAYS MAKE YOU SMELL HORRIBLE
+  msgsExamine:
+  - scent-cheapcologne-examine
+  msgsDirect:
+  - scent-cheapcologne-direct
+  msgsClose:
+  - scent-cheapcologne-close
+  msgsFar:
+  - scent-cheapcologne-far
+
+- type: scent
+  id: ExpensiveCologne
+  parent:
+  - ScentBase
+  msgsExamine:
+  - scent-expensivecologne-examine
+  msgsDirect:
+  - scent-expensivecologne-direct
+  msgsClose:
+  - scent-expensivecologne-close
+  msgsFar:
+  - scent-expensivecologne-far
+
+- type: scent
+  id: Alcohol
+  parent:
+  - ScentBase
+  isStinky: true
+  msgsExamine:
+  - scent-alcohol-examine
+  msgsDirect:
+  - scent-alcohol-direct
+  msgsClose:
+  - scent-alcohol-close
+  msgsFar:
+  - scent-alcohol-far
+
+# lewd
+
+- type: scent
+  id: Pomegranate
+  parent:
+  - ScentBase
+  isLewd: true
+  msgsExamine:
+  - scent-pomegranate-examine
+  msgsDirect:
+  - scent-pomegranate-direct
+  msgsClose:
+  - scent-pomegranate-close
+  msgsFar:
+  - scent-pomegranate-far
+
+- type: scent
+  id: Piss # for the FREAKS out there...
+  parent:
+  - ScentBase
+  isLewd: true
+  isStinky: true
+  msgsExamine:
+  - scent-piss-examine
+  msgsDirect:
+  - scent-piss-direct
+  msgsClose:
+  - scent-piss-close
+  msgsFar:
+  - scent-piss-far

@@ -1,0 +1,233 @@
+# ========================== #
+# Note: when adding new interactions, please consider making them somewhat unqiue in some way.
+# We don't need 100 copies of the same interaction that just print out different texts - that's what the subtle chat is for.
+# This system is intended to add some gameplay effects to the ERP, not to replace it.
+# ========================== #
+
+# ========================== #
+# Milking yourself
+- type: Interaction
+  id: LewdFillContainerBreast
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 4 # 4s for self
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - !type:SlotObstructionRequirement &accessibleUnderwearTarget
+      checkUser: false
+      slot: INNERCLOTHING # Must have accessible groin/breasts
+    - !type:UnderwearRequirement &noTopUndergarmentTarget
+      layer: UndergarmentTop
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdFillContainerFromTarget
+      organ: Breasts
+      maxAmount: 3
+      minRepeatAmount: 2
+
+- type: Interaction
+  id: LewdFillContainerPenis
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 20 # 20s for self, dumping all 20 units (1 u/s)
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - !type:UnderwearRequirement &noBottomUndergarmentTarget
+      checkUser: false
+      layer: UndergarmentBottom
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Penis
+    maxAmount: 20
+    minRepeatAmount: 5
+
+- type: Interaction
+  id: LewdFillContainerVagina
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 12 # Idk why you'd want this, I guess for drinks? 12s for self
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Vagina
+    maxAmount: 8
+    minRepeatAmount: 3
+
+
+# ========================== #
+# Milking others
+- type: Interaction
+  id: LewdFillContainerBreastOther
+  parent: BaseLewdFillContainerOther
+  priority: 0
+  delay: 2.6 # 30% faster when someone else is doing it
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noTopUndergarmentTarget
+    - !type:ConsentRequirement &filledByOthersConsent
+      consent: LewdContainerFillByOthers
+      inverted: true
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Breasts
+    maxAmount: 3
+    minRepeatAmount: 3
+
+- type: Interaction
+  id: LewdFillContainerPenisOther
+  parent: BaseLewdFillContainerOther
+  priority: 0
+  delay: 14 # 30% faster when someone else is doing it
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - *filledByOthersConsent
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Penis
+    maxAmount: 20
+    minRepeatAmount: 5
+
+- type: Interaction
+  id: LewdFillContainerVaginaOther
+  parent: BaseLewdFillContainerOther
+  priority: 0
+  delay: 8 # 30% faster when someone else is doing it
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - *filledByOthersConsent
+  action:
+    !type:LewdFillContainerFromTarget
+    organ: Vagina
+    maxAmount: 8
+    minRepeatAmount: 3
+
+
+# ========================== #
+# Sucking
+- type: Interaction
+  id: LewdSuckPenisOther
+  parent: BaseLewdSuckOther
+  priority: -1
+  delay: 20 # Same as FillPV
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - !type:SlotObstructionRequirement &accessibleMouthUser
+      checkUser: true
+      slot: MASK # Must have accessible mouth
+    - *noBottomUndergarmentTarget
+  action:
+    !type:LewdDrinkFromOrgan
+    organ: Penis
+    maxAmount: 20 # Same as FillPV
+    minRepeatAmount: 5 # Give em some break, eh?
+
+- type: Interaction
+  id: LewdSuckBreastOther
+  parent: BaseLewdSuckOther
+  priority: -1
+  delay: 2.7 # Same as FillContainerBreastOther
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *accessibleMouthUser
+    - *noBottomUndergarmentTarget
+  action:
+    !type:LewdDrinkFromOrgan
+    organ: Breasts
+    maxAmount: 20 # Same as FillContainerBreastOther
+    minRepeatAmount: 3
+
+
+# ========================== #
+# Deposition/filling
+- type: Interaction
+  id: LewdFillPV
+  parent: BaseLewdFillOrgan
+  priority: -2
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - !type:SlotObstructionRequirement &accessibleUnderwearUser
+      checkUser: true
+      slot: INNERCLOTHING
+    - *noBottomUndergarmentTarget
+    - !type:UnderwearRequirement &noBottomUndergarmentUser
+      checkUser: false
+      layer: UndergarmentBottom
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Penis
+    receiverOrgan: Vagina
+
+- type: Interaction
+  id: LewdFillPR
+  parent: BaseLewdFillOrgan
+  priority: -2
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *accessibleUnderwearUser
+    - *noBottomUndergarmentTarget
+    - *noBottomUndergarmentUser
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Penis
+    receiverOrgan: Rectum
+
+
+# ========================== #
+# Spilling
+# This is here because there's no interaction to simulate climax on the receiving side.
+- type: Interaction
+  id: LewdSpillVagina
+  parent: BaseLewdSpillOrgan
+  priority: -5
+  delay: 8
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Vagina
+    receiverOrgan: null
+
+- type: Interaction
+  id: LewdSpillPenis
+  parent: BaseLewdSpillOrgan
+  priority: -5
+  delay: 8
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *accessibleUnderwearTarget
+    - *noBottomUndergarmentTarget
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdOrganFluidTransfer
+    donorOrgan: Penis
+    receiverOrgan: null

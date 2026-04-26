@@ -1,0 +1,93 @@
+# Parent for all lewd interactions.
+- type: Interaction
+  id: BaseLewd
+  abstract: true
+  category: LewdInteraction
+  requiresCanInteract: true
+  contactInteraction: true
+  range:
+    max: 1.2
+  effectDelayed:
+    popup: ObviousWithLimitsForOthers
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers
+  effectFailure: null # It would be detrimental to report interruptions into the chat.
+
+
+
+# Milking yourself
+- type: Interaction
+  id: BaseLewdFillContainer
+  parent: [BaseLewd, BaseHands]
+  abstract: true
+  allowSelfInteract: true
+  hideByRequirement: true
+  repeat: true
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers # This is mostly here to disincentive people from doing it in public
+    sound:
+      path: /Audio/Effects/Fluids/splash.ogg
+      params:
+        volume: -10
+        maxDistance: 2
+
+
+# Milking someone else
+- type: Interaction
+  id: BaseLewdFillContainerOther
+  parent: BaseLewdFillContainer
+  abstract: true
+  allowSelfInteract: false
+  repeat: true
+
+
+# Sucking
+- type: Interaction
+  id: BaseLewdSuckOther
+  parent: [BaseLewd, BaseMouth]
+  abstract: true
+  allowSelfInteract: false
+  hideByRequirement: true
+  requiresHands: false
+  repeat: true
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers
+    sound:
+      path: /Audio/Items/drink.ogg
+      params:
+        volume: -5
+        maxDistance: 2
+
+# Base for interactions that involve transferring from one person to another
+- type: Interaction
+  id: BaseLewdFillOrgan
+  parent: [BaseLewd, BaseHands]
+  abstract: true
+  delay: 20 # The big delay here is mostly to incentivise using it in longer erp scenes when people aren't moving much
+  allowSelfInteract: false # if you're ever going to make this true, make sure to find a way to add a consent toggle for it.
+  requiresHands: false
+  hideByRequirement: true
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers
+    sound:
+      path: /Audio/Effects/Fluids/splat.ogg
+      params:
+        volume: -3
+        maxDistance: 2
+
+# Base for interactions that involve spilling liquid onto the floor
+- type: Interaction
+  id: BaseLewdSpillOrgan
+  parent: [BaseLewd, BaseHands]
+  abstract: true
+  allowSelfInteract: true # A user can only trigger it themselves
+  requiresHands: false
+  requiresCanInteract: false # Allow doing it while cuffed or w/e
+  hideByRequirement: true
+  effectSuccess:
+    popup: ObviousWithLimitsForOthers
+    sound:
+      path: /Audio/Effects/Fluids/splat.ogg
+      params:
+        volume: -3
+        maxDistance: 2

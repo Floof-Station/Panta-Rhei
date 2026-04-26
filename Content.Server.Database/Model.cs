@@ -97,6 +97,13 @@ namespace Content.Server.Database
                 .HasForeignKey<CDModel.CDProfile>(p => p.ProfileId)
                 .IsRequired();
 
+            // CD - Allergies
+            modelBuilder.Entity<CDModel.CharacterAllergy>()
+                .HasOne(a => a.CDProfile)
+                .WithMany(p => p.CharacterAllergies)
+                .HasForeignKey(a => a.CDProfileId)
+                .IsRequired();
+
             modelBuilder.Entity<CDModel.CharacterRecordEntry>()
                 .HasOne(e => e.CDProfile)
                 .WithMany(e => e.CharacterRecordEntries)
@@ -654,6 +661,12 @@ namespace Content.Server.Database
         /*
          * Insert extra data here like custom descriptions or colors or whatever.
          */
+        // Floofstation, it's as if wizden knew.
+        // Length limits are also defined in SharedStationSpawningSystem, make sure to sync the two!
+        [MaxLength(96)] public string? NameOverride { get; set; }
+        [MaxLength(512)] public string? DescriptionOverride { get; set; }
+        [MaxLength(9)] public string? ColorOverride { get; set; }
+        // Floofstation section end
     }
 
     #endregion

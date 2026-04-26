@@ -1,0 +1,51 @@
+# These traits just give you the baseline organs.
+# Lewd traits don't use slots because their gameplay impact is negligible.
+
+- type: trait
+  id: BasicBreasts
+  priority: 5 # Must appear before organ upgrades
+  name: trait-basic-Breasts-name
+  description: trait-basic-Breasts-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddLewdOrganEffect
+    organ: OrganGenericMammaryGlands
+
+- type: trait
+  id: BasicPenis
+  priority: 5 # Must appear before organ upgrades
+  name: trait-basic-Penis-name
+  description: trait-basic-Penis-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddLewdOrganEffect
+    organ: OrganGenericPenis
+
+- type: trait
+  id: BasicVagina
+  priority: 5 # Must appear before organ upgrades
+  name: trait-basic-Vagina-name
+  description: trait-basic-Vagina-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddLewdOrganEffect
+    organ: OrganGenericVagina
+
+- type: trait
+  id: BasicRectum
+  priority: 5 # Must appear before organ upgrades
+  name: trait-basic-Rectum-name
+  description: trait-basic-Rectum-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddLewdOrganEffect
+    organ: OrganGenericRectum
+

@@ -122,7 +122,13 @@ public sealed partial class DCCVars
     /// What year it is in the game. Actual value shown in game is server date + this value.
     /// </summary>
     public static readonly CVarDef<int> YearOffset =
-        CVarDef.Create("game.current_year_offset", 550, CVar.SERVERONLY);
+        CVarDef.Create("game.current_year_offset", 500, CVar.SERVERONLY); // Euphoria - changed offset to match lore (from 550 to 500)
+
+    /// <summary>
+    /// What species to hide, as a comma seperated list.
+    /// </summary>
+    public static readonly CVarDef<string> HiddenSpecies =
+        CVarDef.Create("species.hidden", "Motorkind", CVar.SERVER | CVar.REPLICATED);
 
     /*
      * Traits
@@ -195,6 +201,12 @@ public sealed partial class DCCVars
     /// </summary>
     public static readonly CVarDef<string> DiscordReplyColor =
         CVarDef.Create("admin.discord_reply_color", string.Empty, CVar.SERVERONLY);
+
+    /// <summary>
+    ///     The maximum amount of hours that will trigger an admin alert on late join.
+    /// </summary>
+    public static readonly CVarDef<double> LateJoinAlertMaxHours =
+        CVarDef.Create("admin.alerts.latejoin_max_hours", 2.0, CVar.SERVERONLY);
 
     /// <summary>
     ///    Whether or not to disable the preset selecting test rule from running. Should be disabled in production. DeltaV specific, attached to Impstation Secret concurrent feature.

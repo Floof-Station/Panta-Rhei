@@ -200,6 +200,8 @@
         - FootstepSound
         - DoorBumpOpener
         - SiliconOrIPCEmotes # DeltaV
+        - Honker # DeltaV - Honk seperate from Silicon emotes
+        - SiliconMob # Euphoria - Weldbot
     - type: Hands
     - type: Inventory
       templateId: human
@@ -307,8 +309,8 @@
         # - ForcedSleep
         - TemporaryBlindness
         - Pacified
-        # - PsionicsDisabled
-        # - PsionicallyInsulated
+        - PsionicsDisabled
+        - PsionicallyInsulated
         - Flashed # Goobstation
     - type: Blindable
     - type: FireVisuals
@@ -317,7 +319,6 @@
       priority: 1
       lightningExplode: false
     - type: ComplexInteraction
-    - type: FootPrints
     - type: Carriable
     - type: Targeting
     - type: SurgeryTarget
@@ -347,4 +348,6 @@
       - TauCetiBasic
       - Binary
       naturalLanguage: Binary
-
+    - type: FootPrints # Floofstation - delta-v removed these, we're keeping them
+    - type: RMCSetPose # DeltaV - RMC pose port
+    - type: PotentialPsionic # Euphoria - ALL species can be psionic

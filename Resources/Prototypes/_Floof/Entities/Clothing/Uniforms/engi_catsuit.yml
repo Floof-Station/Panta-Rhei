@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformEngiCatsuit
+  name: engineering catsuit
+  description: This catsuit is made out of thicker latex than a usual catsuit while also featuring high vis stripes to ensure you're fully compliant with health and safety. For when you want to be a maintenance drone, but not a maintenance drone
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/engi_catsuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/engi_catsuit.rsi

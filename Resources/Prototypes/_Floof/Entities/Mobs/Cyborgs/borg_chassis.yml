@@ -1,4 +1,12 @@
 - type: entity
+  id: QuadChassisGeneric
+  parent: BorgChassisSelectable
+  name: generic quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadgeneric
+
+- type: entity
   id: QuadChassisSecurity
   parent: BorgChassisSelectable
   name: security quad cyborg
@@ -25,7 +33,158 @@
 - type: entity
   id: QuadChassisService
   parent: BorgChassisSelectable
-  name: service cyborg
+  name: service quad cyborg
   components:
   - type: BorgSwitchableType
     selectedBorgType: quadservice
+
+- type: entity
+  id: QuadChassisJanitor
+  parent: BorgChassisSelectable
+  name: janitor quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadjanitor
+
+- type: entity
+  id: QuadChassisEngineer
+  parent: BorgChassisSelectable
+  name: engineer quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadengineering
+
+# Admin Spawnable - Floofstation
+
+- type: entity
+  id: QuadChassisCommand
+  parent: BaseBorgChassisNT
+  name: command quad cyborg
+  components:
+  - type: Sprite
+    scale: 0.7, 0.7
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadcap
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadcap_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadcap_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgChassis
+    # Default borg can take no modules until selected type.
+    maxModules: 5
+    moduleWhitelist:
+      tags:
+        - BorgModuleGeneric
+        - BorgModuleScience
+        - BorgModuleEngineering
+        - BorgModuleService
+        - BorgModuleMedical
+        - BorgModuleCargo
+        - BorgModuleJanitor
+        - BorgModuleSecurity
+    hasMindState: quadcap_e
+    noMindState: quadcap_e_r
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Command
+    - Engineering
+    - Justice
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Prison
+    - Traffic
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Command
+    - Engineering
+    - Justice
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Prison
+    - Traffic
+    - Binary
+  - type: BorgTransponder
+    sprite:
+      sprite: _Floof/Mobs/Silicon/chassis.rsi
+      state: quadcap
+    name: command cyborg
+#  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
+#    interactSuccessString: petting-success-generic-cyborg
+#    interactFailureString: petting-failure-generic-cyborg
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-blue
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  - type: Crawler
+
+- type: entity
+  id: QuadChassisCC
+  parent: QuadChassisCommand
+  name: central command quad cyborg
+  components:
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Common
+    - Command
+    - Engineering
+    - Justice
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Prison
+    - Traffic
+    - CentCom
+    - Binary
+  - type: ActiveRadio
+    channels:
+    - Common
+    - Command
+    - Engineering
+    - Justice
+    - Medical
+    - Science
+    - Security
+    - Service
+    - Supply
+    - Prison
+    - Traffic
+    - CentCom
+    - Binary
+  - type: Sprite
+    layers:
+    - state: quadcc
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadcc_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadcc_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: BorgTransponder
+    sprite:
+      sprite: _Floof/Mobs/Silicon/chassis.rsi
+      state: quadcc
+    name: central command cyborg
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-green

@@ -8,6 +8,7 @@ using Content.Server.Body.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Humanoid;
 using Content.Shared.Sprite;
+using Content.Shared.Polymorph;
 
 namespace Content.Server._Floof.Geras;
 
@@ -37,6 +38,7 @@ public sealed class GerasSystem : EntitySystem
         _actionsSystem.AddAction(uid, ref component.GerasActionEntity, component.GerasAction);
     }
 
+
     private void OnMorphIntoGeras(EntityUid uid, GerasComponent component, MorphIntoGeras args)
     {
         if (HasComp<ZombieComponent>(uid))
@@ -65,6 +67,8 @@ public sealed class GerasSystem : EntitySystem
                 Dirty(ent.Value, randomSprite);
             }
         } // end imp
+
+
 
         if (!ent.HasValue)
             return;

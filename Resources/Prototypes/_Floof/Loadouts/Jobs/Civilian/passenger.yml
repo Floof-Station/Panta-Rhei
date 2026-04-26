@@ -577,6 +577,30 @@
     jumpsuit: ClothingUniformNudityPermit
   groupBy: "lewdsuit"
 
+- type: loadout
+  id:   ClothingUniformBandedDancersGarb
+  equipment:
+    jumpsuit: ClothingUniformBandedDancersGarb
+  groupBy: "dresses"
+
+- type: loadout
+  id:   ClothingUniformRedSidelessDress
+  equipment:
+    jumpsuit: ClothingUniformRedSidelessDress
+  groupBy: "dresses"
+
+- type: loadout
+  id:   ClothingUniformPurpleNightclubDress
+  equipment:
+    jumpsuit: ClothingUniformPurpleNightclubDress
+  groupBy: "dresses"
+
+- type: loadout
+  id:   ClothingUniformBlackPetticoatDress
+  equipment:
+    jumpsuit: ClothingUniformBlackPetticoatDress
+  groupBy: "dresses"
+
 # socks
 - type: loadout
   id: ClothingSocksRainbow
@@ -643,6 +667,11 @@
   id: ClothingShoesBootsJack
   equipment:
     shoes: ClothingShoesBootsJack
+
+- type: loadout
+  id: ClothingShoesBootsLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup
 
 - type: loadout
   id: ClothingShoesBootsCowboyFancy
@@ -892,6 +921,72 @@
   groupBy: "flannel"
 
 - type: loadout
+  id: OuterCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterCsCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterCsCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterHiCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterHiCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterHmCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterHmCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterIdCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterIdCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterBcCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterBcCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterDdCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterDdCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterFaCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterFaCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterGeCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterGeCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterZhCorporateJacket
+  equipment:
+    outerClothing: ClothingOuterZhCorporateJacket
+  groupBy: "CorpoCoat"
+
+- type: loadout
+  id: ClothingOuterCoatIdrisIncorporatedWindbreaker
+  equipment:
+    outerClothing: ClothingOuterCoatIdrisIncorporatedWindbreaker
+  groupBy: "CorpoCoat"
+
+- type: loadout
   id: OuterCoatBomber
   equipment:
     outerClothing: ClothingOuterCoatBomber
@@ -955,11 +1050,6 @@
     outerClothing: ClothingOuterDenimJacket
 
 - type: loadout
-  id: OuterCorporateJacket
-  equipment:
-    outerClothing: ClothingOuterCorporateJacket
-
-- type: loadout
   id: OuterCoatHyenhSweater
   equipment:
     outerClothing: ClothingOuterCoatHyenhSweater
@@ -968,6 +1058,30 @@
   id: ShrimpFishermanSuit
   equipment:
     outerClothing: ClothingShrimpFishermanSuit
+
+- type: loadout
+  id: ClothingUniformOversizeSweatshirt
+  equipment:
+    outerClothing: ClothingUniformOversizeSweatshirt
+  groupBy: "Sweatshirt"
+
+- type: loadout
+  id: ClothingUniformOversizeSweatGoth
+  equipment:
+    outerClothing: ClothingUniformOversizeSweatGoth
+  groupBy: "Sweatshirt"
+
+- type: loadout
+  id: ClothingUniformOversizeSweatUni
+  equipment:
+    outerClothing: ClothingUniformOversizeSweatUni
+  groupBy: "Sweatshirt"
+
+- type: loadout
+  id: ClothingUniformOversizeSweatTacky
+  equipment:
+    outerClothing: ClothingUniformOversizeSweatTacky
+  groupBy: "Sweatshirt"
 
 # hats
 - type: loadout
@@ -1602,6 +1716,11 @@
     eyes: ClothingEyesBlindfold
 
 - type: loadout
+  id: ClothingEyesBlindfoldFake
+  equipment:
+    eyes: ClothingEyesBlindfoldFake
+
+- type: loadout
   id: ClothingEyesEyepatch
   equipment:
     eyes: ClothingEyesEyepatch
@@ -1623,3 +1742,34 @@
   equipment:
     eyes: ClothingEyesGlassesGarOrange
   groupBy: "silly glasses"
+
+# pet collar pdas
+- type: loadout
+  id: ClothingNeckCollarBlackPetId
+  equipment:
+    neck: ClothingNeckCollarBlackPetId
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarBluePetId
+  equipment:
+    neck: ClothingNeckCollarBluePetId
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarPinkPetId
+  equipment:
+    neck: ClothingNeckCollarPinkPetId
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarSyndiPetId
+  equipment:
+    neck: ClothingNeckCollarSyndiPetId
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarShockPetId
+  equipment:
+    neck: ClothingNeckCollarShockPetId
+  groupBy: "petids"

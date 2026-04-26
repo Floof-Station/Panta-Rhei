@@ -2,7 +2,7 @@
   id: TraitDispel
   name: trait-dispel-name
   description: trait-dispel-desc
-  category: Mental
+  category: Psionics
   cost: 5
   conditions:
   - !type:HasJobCondition
@@ -18,7 +18,7 @@
   id: TraitPrecognition
   name: trait-precognition-name
   description: trait-precognition-desc
-  category: Mental
+  category: Psionics
   cost: 4
   effects:
   - !type:AddCompsEffect
@@ -30,7 +30,7 @@
   id: TraitMetapsionic
   name: trait-metapsionic-name
   description: trait-metapsionic-desc
-  category: Mental
+  category: Psionics
   cost: 2
   conditions:
   - !type:HasJobCondition
@@ -46,7 +46,7 @@
   id: TraitPsychokineticScream
   name: trait-psychokinetic-scream-name
   description: trait-psychokinetic-scream-desc
-  category: Mental
+  category: Psionics
   cost: 6
   effects:
   - !type:AddCompsEffect
@@ -58,7 +58,7 @@
   id: TraitPsionicRegeneration
   name: trait-psionic-regeneration-name
   description: trait-psionic-regeneration-desc
-  category: Mental
+  category: Psionics
   cost: 6
   effects:
   - !type:AddCompsEffect
@@ -70,7 +70,7 @@
   id: TraitReligious
   name: trait-religious-name
   description: trait-religious-desc
-  category: Mental
+  category: Skills
   cost: 10
   conditions:
   - !type:HasJobCondition

@@ -2,6 +2,13 @@
   id: NSFWDescriptions
   name: NSFW character descriptions
   description: Toggling this on allows you to see explicit examine messages added by other players.
+  sortKey: CE_Nsfw
+
+- type: consentToggle
+  id: CustomExamineChangedByOthers
+  name: Allow others to change your examine
+  description: Toggle this on to allow other players to change your custom examine data, both public and subtle. There will be a small delay.
+  sortKey: CE_Cbe
 
 - type: consentToggle
   id: MassMindswap
@@ -12,3 +19,23 @@
   id: NoClone
   name: Opt out from paradox anomalies
   description: Toggle this on to disallow yourself from being cloned via paradox anomalies.
+
+- type: consentToggle
+  id: LewdInteractions
+  name: Lewd interactions
+  description: Enabling this allows you to interact with others' and use your own lewd organs. Most of those will require you to have your outer clothing off.
+
+- type: consentToggle
+  id: LewdContainerFillByOthers
+  name: "Lewd interactions: milking"
+  description: Toggle this on to allow others to "milk" you using beakers and other liquid containers. You will still be able to "milk" yourself with this off.
+
+- type: consentToggle
+  id: PreyVore
+  name: Vore Prey
+  description: Allow yourself to be prey or insert yourself into a pred.
+
+- type: consentToggle
+  id: PredVore
+  name: Vore Pred
+  description: Allow yourself to be pred or have prey insert themselves into you.

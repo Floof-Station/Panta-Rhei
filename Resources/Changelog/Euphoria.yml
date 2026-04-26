@@ -1644,3 +1644,781 @@ Entries:
         detdrobe.
   id: 204
   time: '2026-03-28T00:56:37.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Add fake blind folds to loadouts.
+  id: 205
+  time: '2026-03-28T04:19:28.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: Blood-red encryption key can no longer be reverse engineered.
+  id: 206
+  time: '2026-03-28T13:46:59.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Passenger gloves to Inventory Specialist and Janitor loadout.
+    - type: Add
+      message: Passenger neck items to Chef loadout.
+    - type: Add
+      message: Passenger shoes to Service Worker loadout.
+    - type: Add
+      message: Passenger shoes, gloves, and outer to Archivist.
+  id: 207
+  time: '2026-03-28T21:48:30.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Mindswap should no longer pull people into cryosleeping bodies.
+  id: 208
+  time: '2026-03-28T23:25:03.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: You can now customize loadout item names, descriptions, and colors.
+  id: 209
+  time: '2026-03-31T14:56:25.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: Made it so foreigners can take more than one additional language.
+  id: 210
+  time: '2026-04-01T11:26:44.0000000+00:00'
+- author: Dogbone10
+  changes:
+    - type: Add
+      message: >-
+        Playable versions of dragons, carps, sharkminnows and raptors are now
+        available. Ask an admin for one!
+  id: 211
+  time: '2026-04-01T11:35:02.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Traits will now be applied correctly to your character. Traits that give
+        points happens before traits that take points.
+  id: 212
+  time: '2026-04-01T11:41:19.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Access Wire back to Airlocks, Computers etc
+  id: 213
+  time: '2026-04-01T11:45:34.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: Common jobs will no longer appear station specific.
+  id: 214
+  time: '2026-04-01T11:53:33.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Tweaked the price of the NT3 crate,
+  id: 215
+  time: '2026-04-01T11:57:44.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Toy crates are back ins tock at Logi for 1000 spesos a piece.
+  id: 216
+  time: '2026-04-02T09:03:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Changed the PTL equation. The PTL no longer outputs 5000 spesos for just
+        5 GJ of power. Getting 100 spesos from it will take 4 GJ, and it scales
+        up to 5k spesos at 1 TJ logarithmically.
+  id: 217
+  time: '2026-04-02T11:13:10.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Updated the Natural Language traits to not have a cost, since you're
+        both losing and gaining a language for net zero.
+  id: 218
+  time: '2026-04-03T00:27:53.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Removed max limit for Additional Languages. Each language still costs
+        points though. 
+  id: 219
+  time: '2026-04-03T00:28:40.0000000+00:00'
+- author: TheRealMasterChief117
+  changes:
+    - type: Add
+      message: >-
+        Added the combat utility belt for security technicians. It can hold
+        tools alongside security equipment.
+  id: 220
+  time: '2026-04-03T00:29:48.0000000+00:00'
+- author: TheRedForestButcher
+  changes:
+    - type: Add
+      message: Chief Engineer Drip
+  id: 221
+  time: '2026-04-03T00:42:32.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: >-
+        Added scents and scent-related interactions! Check them out in the
+        traits menu in the character select screen! Scroll down to find them!
+    - type: Add
+      message: >-
+        There is a new consent toggle for scents. Turning this on will hide any
+        and all NSFW-marked scents.
+  id: 222
+  time: '2026-04-03T00:53:24.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Spidercrafting to Arachne
+  id: 223
+  time: '2026-04-03T00:57:02.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: MedTek health analysis PDA software now has a print function.
+  id: 224
+  time: '2026-04-03T00:59:22.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Medical cybereyes and medical borgs can now see triage icons.
+  id: 225
+  time: '2026-04-03T01:01:41.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Add some additional alternative PDAs to head roles.
+  id: 226
+  time: '2026-04-03T01:26:09.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Sorts the Traits into new categories.
+  id: 227
+  time: '2026-04-03T02:27:15.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Tweak
+      message: Fixed a typo in scent traits.
+    - type: Tweak
+      message: Changed scent examine color to be less distracting.
+    - type: Fix
+      message: Fixed scents being seen by everyone.
+  id: 228
+  time: '2026-04-03T22:43:08.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: Changed Slavic accent cost from +2 to 0.
+  id: 229
+  time: '2026-04-04T05:45:30.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: 'Chronic pain trait is now a Cost of -1 instead of +1. '
+  id: 230
+  time: '2026-04-04T05:48:59.0000000+00:00'
+- author: faefyr
+  changes:
+    - type: Add
+      message: Devil Plushie/Phoenix Plushie
+  id: 231
+  time: '2026-04-04T05:52:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Thanks to Delta-v Hive has gotten a much needed face lift. Justice
+        department and sectech jobs are now available on Hive.
+  id: 232
+  time: '2026-04-04T06:04:56.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Lavaland mining outpost and shelters have a few more QOL additions.
+  id: 233
+  time: '2026-04-04T06:06:08.0000000+00:00'
+- author: TheRealMasterChief117
+  changes:
+    - type: Tweak
+      message: Musicians now have a selection for laceup shoes in their loadouts
+    - type: Fix
+      message: Fixed mimes not having shoe loadouts.
+  id: 234
+  time: '2026-04-04T06:09:46.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Tweak
+      message: >-
+        Some small Amber updates, adjusted atmos, Sech now has gear and a slot,
+        dorms & perma received some ugprades.
+  id: 235
+  time: '2026-04-04T09:54:07.0000000+00:00'
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        an advanced truncheon for the head of security sidearm case. Comes with
+        a cool hat for interrogating needs
+  id: 236
+  time: '2026-04-04T23:19:01.0000000+00:00'
+- author: Barheru
+  changes:
+    - type: Fix
+      message: In game date displayed on the PDA now accurately reflects Euphoria lore.
+  id: 237
+  time: '2026-04-04T23:20:05.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Centcomm found the missing penlights in a box labeled bread and is now
+        providing them to Parameds and all other additional medical staffing
+        jobs.
+  id: 238
+  time: '2026-04-06T02:17:58.0000000+00:00'
+- author: WazuraWasTaken
+  changes:
+    - type: Add
+      message: >-
+        Oni Trait: Swashbuckler, Spearmaster and Weapon Generalist to the trait
+        selections
+    - type: Tweak
+      message: Oni's Pierce and Slash Damage Modifier are now 1.25 instead of 1.2
+  id: 239
+  time: '2026-04-06T02:20:49.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: Added Allergies, fun! Actually no, as a medical main, this is pain...
+  id: 240
+  time: '2026-04-07T02:31:29.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Add
+      message: >-
+        Consent toggle for aphrodisiacs. It's off by default, so remember to
+        turn it on if you want.
+  id: 241
+  time: '2026-04-07T23:31:17.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Changed Carp Sushi Rolls to no longer have carpotoxin, the food health
+        rating will be increasing.
+    - type: Tweak
+      message: Changed Sashimi recipe to use soy sauce instead of salt.
+  id: 242
+  time: '2026-04-07T23:33:04.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: Firebug's Friend cost changed from 2 to 3.
+    - type: Tweak
+      message: Firebug Festival cost changed from 10 to 15.
+  id: 243
+  time: '2026-04-07T23:34:19.0000000+00:00'
+- author: trashalice
+  changes:
+    - type: Tweak
+      message: >-
+        Changed sex toy whips to not do insane stamina damage. (they still do
+        damage if you want to have fun with them)
+  id: 244
+  time: '2026-04-09T09:02:16.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Add
+      message: Return of the small trait
+  id: 245
+  time: '2026-04-09T09:04:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        The Ghostbar is now available for round removed players or spectating
+        players to use with the character they chose for that round.
+  id: 246
+  time: '2026-04-10T03:50:51.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now edit your character's scent mid-game. Right-click menu >
+        interact > edit scents. Admin ghosts can edit scents on all entities.
+    - type: Fix
+      message: >-
+        The "interact" category no longer has smelling-related verbs above the
+        basic ones.
+  id: 247
+  time: '2026-04-10T09:26:40.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Engineering can now choose to bring engineering goggles or different
+        eyewear.
+    - type: Add
+      message: A few more trinkets are now aviaible.
+    - type: Fix
+      message: More roles should have access to full loadout options.
+  id: 248
+  time: '2026-04-11T02:38:10.0000000+00:00'
+- author: faefyr
+  changes:
+    - type: Add
+      message: 8 new chaplain clothing - Flame Religion
+    - type: Add
+      message: 1 new winter coat - Flame Religion
+    - type: Add
+      message: Flame religion Altar
+    - type: Add
+      message: Flame religion holy book
+  id: 249
+  time: '2026-04-11T02:58:13.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted HoP requirements to not require Command time, and instead
+        require Service time (overall, and Chef and Botany specifically too).
+  id: 250
+  time: '2026-04-11T10:07:32.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Merged upstream changes up to 2026-04-06. See the PR for more details.
+    - type: Fix
+      message: Probably fixed the empty footprint bug.
+  id: 251
+  time: '2026-04-13T00:12:00.0000000+00:00'
+- author: StrawOfMan
+  changes:
+    - type: Add
+      message: >-
+        Added quad variants of the Generic, Janitorial, and Engineering cyborgs.
+        Also added Command and CC quads as admeme spawns.
+    - type: Tweak
+      message: >-
+        Changed the sprites for the existing Security, Service, Medical, and
+        Salvage quads.
+    - type: Fix
+      message: Fixed a typo within the quad FTL.
+  id: 252
+  time: '2026-04-13T04:25:16.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: PTech inventory expanded for HoP
+  id: 253
+  time: '2026-04-13T04:51:29.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Changed name of Citrus Bikeshed to Akira Special
+  id: 254
+  time: '2026-04-13T04:52:16.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Tweak
+      message: Gas Canisters now use newer, more appealing sprites.
+  id: 255
+  time: '2026-04-13T04:59:09.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Document Printer
+    - type: Add
+      message: Document Printer flatpack to head lockers
+    - type: Add
+      message: Floof documents as part of locale
+  id: 256
+  time: '2026-04-13T05:07:09.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        You can now change the custom examine of other entities you can interact
+        with. Changing it involves a do-after. You can't change the examine of
+        other players unless they turn on a new consent toggle.
+  id: 257
+  time: '2026-04-13T05:20:25.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: Added Weldbots, now requiring Experimental Welders.
+  id: 258
+  time: '2026-04-13T08:41:49.0000000+00:00'
+- author: Compilatron144
+  changes:
+    - type: Add
+      message: Added cowprint bikini and thigh highs. Moo!
+  id: 259
+  time: '2026-04-13T08:49:08.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: Added Sericulture back to Arachne. They can now spin silk again.
+    - type: Fix
+      message: Added Spider back to Arachne. They can now place floor webs again.
+  id: 260
+  time: '2026-04-13T08:55:06.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The curator help button is now available in the lobby.
+  id: 261
+  time: '2026-04-13T22:23:03.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: Geras can pick things up! HANDS (Or tendrils really...)
+    - type: Add
+      message: Geras can drag things! Without the use of a hand slot!
+    - type: Add
+      message: Geras can have things pulled out of their tendrils and "ID" slot.
+    - type: Tweak
+      message: >-
+        Geras also get an ID slot. It does show on their face/hands, but this
+        makes sense.
+    - type: Fix
+      message: Slimes get hurt by water *properly*
+  id: 262
+  time: '2026-04-13T22:35:23.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Respawn button actually respawning you.
+  id: 263
+  time: '2026-04-14T05:43:22.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Updated the ghostbar to have a few more vendors and a cryosleep room.
+    - type: Tweak
+      message: >-
+        Players that ghost while at the ghostbar will have their characters
+        deleted upon ghosting.
+  id: 264
+  time: '2026-04-15T03:27:59.0000000+00:00'
+- author: OrenjiKnight
+  changes:
+    - type: Add
+      message: 'Vector '
+    - type: Add
+      message: Modded Vector (Syndicate)
+    - type: Add
+      message: Unique Ammo for Modded Vector
+    - type: Add
+      message: Kriss Vector (Admeme)
+    - type: Tweak
+      message: Vectors can be wielded
+    - type: Tweak
+      message: Changed how the weapons work functionally.
+    - type: Tweak
+      message: Logi store & syndicate uplink have respective weaponry
+  id: 265
+  time: '2026-04-15T10:38:12.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Fix
+      message: Highlight issues for LO and SecTech roles
+  id: 266
+  time: '2026-04-15T10:40:12.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Fix
+      message: IPC emotes, piloting, footsteps, and opening doors
+  id: 267
+  time: '2026-04-15T22:09:09.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: The document printer will have its material magnet off by default.
+  id: 268
+  time: '2026-04-15T22:10:35.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Fix
+      message: Shadekin process ethanol correctly
+    - type: Fix
+      message: Shadekin now spawn with survival kits
+  id: 269
+  time: '2026-04-16T00:20:50.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Passengers can now select a new type of pda in their loadouts in the
+        form of a collar. These new collars function the same as a pda and can
+        be worn around the neck.
+    - type: Add
+      message: Added the emotional support collars to the hops ptech.
+  id: 270
+  time: '2026-04-16T05:47:12.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Tweak
+      message: Numb now gives 2 points rather than costing one.
+    - type: Tweak
+      message: Only the user can see chronic pain popups.
+  id: 271
+  time: '2026-04-16T07:04:57.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Add
+      message: Arachne can now use arachnid emotes.
+  id: 272
+  time: '2026-04-16T07:15:07.0000000+00:00'
+- author: TheRedForestButcher
+  changes:
+    - type: Fix
+      message: Fixed some issues with the Chief Engineer Loadout
+  id: 273
+  time: '2026-04-16T07:16:30.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Conspirators as part of being rolled for Secret.
+    - type: Tweak
+      message: >-
+        Event scheduler to have more events more often, while still keeping
+        periods of calm.
+  id: 274
+  time: '2026-04-16T07:34:08.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: >-
+        The research server can potentially start corrupting at high glimmer
+        levels.
+  id: 275
+  time: '2026-04-16T07:35:17.0000000+00:00'
+- author: Rosycup
+  changes:
+    - type: Add
+      message: >-
+        Ported an armored trenchcoat for the captain. Obtained through the
+        captain's loadout and locker.
+  id: 276
+  time: '2026-04-16T07:36:06.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Medical pouches for paramedics and corpsman to keep their chems in.
+  id: 277
+  time: '2026-04-16T07:38:49.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Bananium has been seen on lavaland planets and large asteroids in the
+        Euphoria sector again.
+  id: 278
+  time: '2026-04-17T14:43:27.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Increased Devil Spawn Chance
+  id: 279
+  time: '2026-04-18T01:08:56.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: 'Mapping for non-hosts no longer disables events or auto evac '
+  id: 280
+  time: '2026-04-18T23:17:44.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Player ability to call votes
+  id: 281
+  time: '2026-04-19T08:57:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Most medical roles now get a surgery speed modifier bonus.
+  id: 282
+  time: '2026-04-19T16:13:44.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Wristwatches to Trinket Loadout
+  id: 283
+  time: '2026-04-19T16:23:34.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Ported Corporate Coats from the old codebase, they are available in
+        loadouts.
+  id: 284
+  time: '2026-04-19T16:24:23.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: >-
+        Fixed IPCs missing a component that allowed them to talk to the Oracle,
+        despite being psionic.
+    - type: Fix
+      message: Fixed IPCs and Arachne not being able to offer things.
+  id: 285
+  time: '2026-04-21T07:46:48.0000000+00:00'
+- author: mrwthrasher-cloud
+  changes: []
+  id: 286
+  time: '2026-04-21T09:22:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Reworked lewd traits. There's now a set of 4 base traits that give you
+        special organs that can produce or store liquids, and several traits
+        that modify their stats. Players who have chosen one of the existing
+        lewd traits will have to choose again.
+    - type: Add
+      message: >-
+        There's 12 new lewd interaction verbs available that are related to the
+        lewd traits. In order to use them or have others use them on you, you
+        need to enable a couple new consent toggles. Most of them require you to
+        have no inner clothing and no matching underwear (use the right click
+        menu to remove underwear markings if you have any). Keep in mind that
+        these interactions can be seen by others (within a 4m radius).
+    - type: Add
+      message: >-
+        Certain traits can now be excluded from the global trait limit. Lewd
+        traits are an example of that.
+    - type: Fix
+      message: The "help up" interaction should now work correctly.
+  id: 287
+  time: '2026-04-22T10:32:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Mops can clean empty footprints now. The cause of empty footprints still
+        remains a partial mystery.
+  id: 288
+  time: '2026-04-22T11:33:46.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Fixed chitinid marking whitelist problem
+    - type: Fix
+      message: Fixed arachne age limit
+  id: 289
+  time: '2026-04-22T15:18:29.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: >-
+        Added Medical Records Circuit to CMO locker, and some others to other
+        heads.
+  id: 290
+  time: '2026-04-23T10:07:25.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: 4 unarmed centered traits
+  id: 291
+  time: '2026-04-23T10:08:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Senior Physician, Medical Doctor and Parameds have some additional
+        alternative PDAs
+    - type: Fix
+      message: Senior Physician no longer has access to the medical doctor PDAs.
+  id: 292
+  time: '2026-04-23T10:09:51.0000000+00:00'
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        Medical, Security and Engineering catsuits! All health and safety
+        approved.
+  id: 293
+  time: '2026-04-23T10:10:28.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Muzzles now obfuscate your speech instead of replacing it.
+    - type: Fix
+      message: >-
+        Accents (incl. muzzle accent) are no longer applied to non-spoken
+        languages (sign languages and universal).
+  id: 294
+  time: '2026-04-23T10:18:17.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Cheese slices can now be used in burger stacks and take up a 1x1 slot in
+        your backpack.
+  id: 295
+  time: '2026-04-24T05:33:25.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Added mad salvager NPC hostiles.
+    - type: Fix
+      message: Fixed Syndicate Guards sleeping the shift away.
+  id: 296
+  time: '2026-04-24T09:03:29.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: Two Chaplain Alternate PDAs
+  id: 297
+  time: '2026-04-24T15:38:08.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: Added plushie of a cute red lizard with big black eyes.
+  id: 298
+  time: '2026-04-24T15:48:12.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        The ghostbar now comes with an autolathe and material silo and is
+        planetside.
+    - type: Fix
+      message: The ghostbar should no longer be a valid ninja bombing target.
+    - type: Fix
+      message: The ghostbar welcome paper should now actually have its proper text.
+  id: 299
+  time: '2026-04-24T22:40:44.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Coffins now stop Rot, so long funerals can be conducted without needing
+        to keep the dearly departed in a unceremonial body bag.
+  id: 300
+  time: '2026-04-24T22:42:17.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Tweaked Interdyne Herbals description and contents.
+  id: 301
+  time: '2026-04-25T09:16:50.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Add
+      message: Added vore, accessible only through consent toggles
+  id: 302
+  time: '2026-04-26T00:38:03.0000000+00:00'

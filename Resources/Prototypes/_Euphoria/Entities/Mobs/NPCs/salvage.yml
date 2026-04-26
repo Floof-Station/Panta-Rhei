@@ -1,0 +1,45 @@
+- type: entity
+  name: NPC hostile human
+  parent: BaseMobHuman
+  id: MobHumanNPC
+  description: "A humanoid with uncertain intent."
+  components:
+    - type: NpcFactionMember
+      factions:
+        - SalvageMob
+    - type: MindContainer
+      showExamineInfo: False
+    - type: HTN
+      rootTask:
+        task: SimpleHumanoidHostileCompound
+    - type: Respirator #Mobs can't turn on internals by themselves, so we have to simulate them having it on
+      damage:
+        types:
+          Asphyxiation: 0
+      damageRecovery:
+        types:
+          Asphyxiation: -1.0
+    - type: SSDIndicator
+      updateInterval: 36000 # Won't fall asleep for 10 hours.
+
+- type: entity
+  name: NPC hostile human [Randomized]
+  parent: MobHumanNPC
+  id: MobHumanNPCRandomized
+  components:
+    - type: RandomHumanoidAppearance
+
+- type: entity
+  name: NPC hostile human [Salvager]
+  parent: MobHumanNPC
+  id: MobHumanNPCSalvager
+  components:
+  - type: Loadout
+    prototypes: [ NPCHumanSalvagerGearAltA, NPCHumanSalvagerGearAltB, NPCHumanSalvagerGearAltC, NPCHumanSalvagerGearAltD ]
+
+- type: entity
+  name: NPC hostile human [Salvager, Randomized]
+  parent: MobHumanNPCSalvager
+  id: MobHumanNPCSalvagerRandomized
+  components:
+  - type: RandomHumanoidAppearance
