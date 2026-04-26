@@ -1,0 +1,20 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadKyuSkinHat
+  name: Kyu Hat
+  description: Kill it with fire
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hat/kyuskin.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hat/kyuskin.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+  - type: Tag
+    tags:
+    - PetWearable
+    - ClothMade
+    - Recyclable
+    - HamsterWearable
+    - WhitelistChameleon

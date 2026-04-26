@@ -90,6 +90,15 @@
     - WhitelistChameleon
     - Write
     - Pen
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 1
+  - type: ThrowingAngle
+    angle: -45
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
 
 #QM Hardsuit
 - type: entity
@@ -139,6 +148,15 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 1
+  - type: ThrowingAngle
+    angle: 100
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
 
 #RD Hardsuit
 - type: entity
@@ -228,6 +246,14 @@
     damage:
       types:
         Blunt: 2
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 2
+  - type: ThrowingAngle
+    angle: 140
+
 
 #Cap Hardsuit
 - type: entity
@@ -366,6 +392,13 @@
       - Anchoring
     useSound:
       path: /Audio/Items/ratchet.ogg
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4.5
+  - type: ThrowingAngle
+    angle: -135
 
 #Syndie Nemesis Hardsuit
 - type: entity
@@ -458,3 +491,37 @@
   - type: HideLayerClothing
     slots:
     - Tail
+
+#tide Hardsuit (placeholder)
+
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  id: ClothingOuterHardsuitMagicalTide
+  suffix: Magical Trinket
+  name: Tider heart
+  description: placeholder
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalTiderGear
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon

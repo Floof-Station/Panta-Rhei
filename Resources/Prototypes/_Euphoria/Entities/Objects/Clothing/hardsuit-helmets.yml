@@ -278,3 +278,28 @@
       coefficients:
         Radiation: 0.9
 
+
+#tide Hardsuit (placeholder)
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalTiderGear
+  name: tider gear
+  description: Justice is blind, what a cruel joke for your fate to be weighted on a jesters whim.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/tider-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/tider-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4ec"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide

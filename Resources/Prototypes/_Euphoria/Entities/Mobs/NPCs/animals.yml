@@ -277,3 +277,115 @@
     - MindRoleGhostRoleFreeAgent
   - type: GhostRoleMobSpawner
     prototype: MobCorticalBorerPet
+
+- type: entity
+  parent: SimpleSpaceMobBase
+  id: MobKyu
+  name: Wierd Cat
+  description: It's a cat, i guess...
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: Magical girl Mascot cat
+    description: Help crew to become magical girls and sell their souls for your couse.
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+  - type: GhostTakeoverAvailable
+  - type: Emoting
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: _Euphoria/Mobs/NPC/kyu.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: cat
+  - type: Item
+    size: Tiny
+  - type: NpcFactionMember
+    factions:
+    - Cat
+  - type: HTN
+    constantlyReplan: false
+    rootTask:
+      task: IdleCompound
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: Deathgasp
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+      - ActionCritLastWords
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Critical
+      80: Dead
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 300
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          ClothingHeadKyuSkinHat:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: cat
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Edible
+  - type: Butcherable
+    spawned:
+    - id: ClothingHeadKyuSkinHat
+      amount: 1
+  - type: LanguageKnowledge
+    speaks:
+    - Universal
+    understands:
+    - Universal
+  - type: Carriable
+  - type: ZombieImmune
+  - type: Speech
+    speechSounds: Cat
+    speechVerb: SmallMob
+  - type: Inventory
+    speciesId: cat
+    templateId: pet
+  - type: LeashAnchor
+  - type: JumpAbility
+    jumpThrowSpeed: 16
+    jumpDistance: 3
+    action: ActionCatJump
+  - type: ItemCougher
+    item: ClothingOuterHardsuitMagicalHOS
+    action: ActionHairball
+    coughPopup: Make a contract with me, and become a magical girl!
+  - type: CheatDeath
+    reviveAmount: 9
