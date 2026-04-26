@@ -27,8 +27,7 @@
   - type: TimerTrigger
     keysIn:
     - timer
-    keyOut:
-    - die
+    keyOut: die
     delay: 0.5
   - type: DeleteParentOnTrigger
     keysIn:
