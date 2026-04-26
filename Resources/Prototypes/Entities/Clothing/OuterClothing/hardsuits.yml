@@ -5,8 +5,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband]
   id: ClothingOuterHardsuitAtmos
-  name: atmos hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has thermal shielding.
+  name: HpI-19A - "Fotia" Hardsuit
+  description: A special hardsuit produced by Hephaestus Industries, used by Atmospheric Technicians in low-pressure environments. The label indicats that it's rated for high thermal exposer. It feels rather heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/atmospherics.rsi
@@ -59,8 +59,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseEngineeringContraband]
   id: ClothingOuterHardsuitEngineering
-  name: engineering hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  name: HpI-19E - "Lampsi" Hardsuit
+  description: A standard-issue hardsuit produced by Hephaestus Industries, used by Engineers in low-pressure environments. The label indicates that it's rated for moderate radiation exposure. It feels rather heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/engineering.rsi
@@ -109,8 +109,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitSpatio
-  name: spationaut hardsuit
-  description: A lightweight hardsuit designed for industrial EVA in zero gravity.
+  name: HpI-20LS - "Kriti" Hardsuit
+  description: A sturdy hardsuit produced by Hephaestus Industries, designed for salvaging work in low-pressure environments. The label indicates it's rated for moderate amounts of radiation exposure. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/spatio.rsi
@@ -157,8 +157,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitSalvage
-  name: mining hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has reinforced plating for wildlife encounters.
+  name: HpI-20LM - "Lavrion" Hardsuit
+  description: A sturdy hardsuit produced by Hephaestus Industries, designed for mining operations in low-pressure environments. The suit's labels indicate that it provides moderate protectsions from most damages. It feels heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/salvage.rsi
@@ -207,8 +207,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitGoliath
-  name: goliath hardsuit
-  description: A lightweight hardsuit, adorned with a patchwork of thick, chitinous goliath hide.
+  name: HpI-20LS (M) - "Kriti-Goliath" Hardsuit
+  description: A standard Hephaestus Industries HpI-20LS "Kriti" hardsuit modified with layers of hard, chitinous plates harvested from goliaths, boosting its protection. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/goliath.rsi
@@ -265,8 +265,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCargoContraband]
   id: ClothingOuterHardsuitMaxim
-  name: salvager maxim hardsuit
-  description: Fire. Heat. These things forge great weapons, they also forge great salvagers.
+  name: FPA/HpI-18ELS "Maxim" Tacsuit
+  description: An old tactical combat hardsuit produced by Hephaestus Industries in cooperation with Five-Points Armory. It feels very sturdy yet also weightless, and strangely ominous. On one of the breastplates it has "Fire. Heat. These things forge great weapons, they also forge great salvagers." written in what appears to be dried oil and blood.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/maxim.rsi
@@ -303,8 +303,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitSecurity
-  name: security hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  name: FPA-83S - "Baghatur" Tacsuit
+  description: A sturdy, if outdated, tactical combat hardsuit mass-produced by Five-Points Armory, once commonly used by the NanoTrasen Security Force. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security.rsi
@@ -341,8 +341,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitBrigmedic
-  name: corpsman hardsuit # DeltaV - rename brigmedic to corpsman
-  description: Special hardsuit of the guardian angel of the brig. It is the medical version of the security hardsuit. # I will fix the rest of this entry later when I resprite sec suits
+  name: FPA-84SM - "Tsagaan" Tacsuit # DeltaV - rename brigmedic to corpsman
+  description: A sturdy, if outdated, tactical hardsuit mass-produced by Five-Points Armory, once commonly used by Corpsmen in the NanoTrasen Security Force. The tags on the suit indicate that it's rated for moderate amounts of physical and explosion damage. It feels heavy. # I will fix the rest of this entry later when I resprite sec suits
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/brigmedic.rsi
@@ -370,8 +370,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitWarden
-  name: warden's hardsuit
-  description: A specialized riot suit geared to combat low pressure environments.
+  name: FPA-92SW - "Sulde" Tacsuit
+  description: A specialized, if outdated, tactical combat hardsuit produced by Five-Points Armory, once commonly used by Wardens on NanoTrasen Stations. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels VERY heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security-warden.rsi
@@ -403,8 +403,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCap
-  name: captain's armored spacesuit
-  description: A formal armored spacesuit, made for the station's captain.
+  name: NT-42C - "Tengri" Tacsuit
+  description: A formal, tactical combat hardsuit, made in collaboration by NanoTrasen's R&D Department with Five-Points Armory for Station Commanders. The labels indicate that it provides protection against most forms of damage. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/capspace.rsi
@@ -460,8 +460,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitEngineeringWhite
-  name: chief engineer's hardsuit
-  description: A special hardsuit that protects against hazardous, low pressure environments, made for the chief engineer of the station.
+  name: HpI-24EC - "Daedalus" Hardsuit
+  description: A specialized hardsuit produced by Hephaestus Industries, often purchased for use by various corporations' Chief Engineers in low-pressure environments. The labels indicate that it's rated for extreme radiation and exotic particle exposure. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/engineering-white.rsi
@@ -512,8 +512,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitMedical
-  name: chief medical officer's hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Built with lightweight materials for easier movement.
+  name: ZhP-25MC - "Okuninushi" Hardsuit
+  description: A hardsuit produced by Zeng-hu Pharmaceuticals, often purchased for use by various corporations' Chief Medical Officers. The labels indicate that it protects against damage from most chemical spills. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/medical.rsi
@@ -557,8 +557,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseGrandTheftContraband]
   id: ClothingOuterHardsuitRd
-  name: experimental research hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  name: NT-45EC - "Sophia" Research Hardsuit
+  description: The magnum opus of NanoTrasen's R&D Department. The labels on the hardsuit claim that it's near-immune to explosions, heat, and radiation. It can also somehow shrink to fit inside a duffel bag. It feels heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/rd.rsi
@@ -611,8 +611,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitSecurityRed
-  name: head of security's hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  name: FPA-98SC - "Dayicin" Tacsuit
+  description: A top-of-the-line, if outdated, tactical combat hardsuit produced by Five-Points Armory. Once commonly used by NanoTrasen Security Commanders. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
@@ -650,8 +650,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitLuxury #DO NOT MAP - https://github.com/space-wizards/space-station-14/pull/19738#issuecomment-1703486738
-  name: luxury mining hardsuit
-  description: A refurbished mining hardsuit, fashioned after the Logistics Officer's colors. Graphene lining provides less protection, but is much easier to move. # DeltaV - Logistics Department replacing Cargo
+  name: HpI-20LC - "Minos" Hardsuit
+  description: A modified mining hardsuit from Hephaestus Industries, adorned with purple fabric and gold metal. Made specifically by Hephaestus Industries for their Logistics Officers, with a graphene lining for added flexibility. The labels indicate that it provides slight protection against most forms of damage. It feels incredibly light. # DeltaV - Logistics Department replacing Cargo
   categories: [ DoNotMap ]
   components:
   - type: Sprite
@@ -701,8 +701,8 @@
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseSyndicateContraband ]
   id: ClothingOuterHardsuitSyndie
-  name: blood-red hardsuit
-  description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
+  name: CSA-51O - "Shanlin" Tacsuit
+  description: A tactical combat hardsuit producted by the Cybersun Armaments Corporation, painted in a blood red. The suit's tags indicate that it provides moderate protection against most forms of damage. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
@@ -775,8 +775,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitSyndie, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieMedic
-  name: blood-red medic hardsuit
-  description: A heavily armored and agile advanced hardsuit specifically designed for field medic operations.
+  name: CSA-51OM - "Zhongyao" Tacsuit
+  description: A tactical combat hardsuit produced by the Cybersun Armaments Corporation. It's painted in a blood red on one half, the other bearing galactic standard medical markings. The tags on the suit indicate it provides moderate protection against most forms of damage. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiemedic.rsi
@@ -806,8 +806,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieElite
-  name: syndicate elite hardsuit
-  description: An elite version of the blood-red hardsuit, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
+  name: CSA-54OE - "Shiwei" Tacsuit
+  description: An "Elite" tactical combat hardsuit produced by the Cybersun Armaments Corporation. Unlike its siblings, it's painted in a jet black with blood red highlights. The suit's tags indicate it's rated for high radiation and thermal exposure, as well as significant explosive protection and moderate physical trauma protection. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
@@ -871,8 +871,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitSyndieCommander
-  name: syndicate commander hardsuit
-  description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
+  name: CSA-54OC - "Tianming" Tacsuit
+  description: A bulked up version of the CSA-51O - "Shanlin" Tacsuit, purpose-built for the Commander of a Syndicate Operative squad by the Cybersun Armaments Corporation. It boasts significantly improved armor for those deadly front-lines firefights, the tags indicating that it protects greatly against all forms of damage. This one has been painted in a blood red, and seems to be entirely weightless.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
@@ -933,8 +933,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
   id: ClothingOuterHardsuitJuggernaut
-  name: cybersun juggernaut suit
-  description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
+  name: CSA-80OUA - "Guan Yu" Tacsuit
+  description: The pride and joy of the Cybersun Armaments Corporation, named after an ancient Solarian God of War. Commonly referred to as a "Juggernaut" suit throughout the Galaxy. Matching its bulky appearance, it protects extremely well against all forms of damage. It feels VERY heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
@@ -1002,8 +1002,8 @@
 - type: entity
   parent: [ ClothingOuterHardsuitBase, BaseMagicalContraband ]
   id: ClothingOuterHardsuitWizard
-  name: wizard hardsuit
-  description: A bizarre gem-encrusted suit that radiates magical energies.
+  name: WZD-84 - "Mana" Tacsuit
+  description: A bizarre gem-encrusted suit famously used by members of the Wizard Federation in their operations. Contrary to its appearance, it can protect its wearer from space and moderate amounts of physical trauma. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/wizard.rsi
@@ -1253,8 +1253,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
   id: ClothingOuterHardsuitDeathsquad
-  name: death squad hardsuit
-  description: An advanced hardsuit favored by commandos for use in special operations.
+  name: NT-662UA "Samael" Tacsuit
+  description: A highly-advanced, top-of-the-line tactical combat hardsuit branded with the NanoTrasen logo and a strange-looking series number. You can barely make out the characters "NTIA-DAP" written on it. The armor appears to be lined with an exceptionally sturdy allow, and doesn't seem to have any weight, either.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/deathsquad.rsi
@@ -1309,8 +1309,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingOuterHardsuitBase ]
   id: ClothingOuterHardsuitCBURN
-  name: CBURN exosuit
-  description: A lightweight yet strong exosuit used for special cleanup operations.
+  name: NT-444-CBRN - "Jophiel" Tacsuit
+  description: A tactical combat hardsuit used by the CBURN division of the Emergency Response Team, branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a rather plain but sturdy alloy. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cburn.rsi
@@ -1444,8 +1444,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSanta
-  name: Santa's hardsuit
-  description: A festive, cheerful hardsuit that protects the jolly gift-giver while on sleighrides in space. Offers some resistance against asteroid strikes.
+  name: DNK-31 - "Jolly" Hardsuit
+  description: A festive hardsuit produced by Donk Co. for their limited-time celebratory evides. It provides protection for its jolly gift-giver to sleighride safely in space without worrying about asteroid strikes. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/santahardsuit.rsi

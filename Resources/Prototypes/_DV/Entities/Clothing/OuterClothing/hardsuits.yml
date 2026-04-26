@@ -2,8 +2,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitCombatStandard
-  name: combat hardsuit
-  description: A purpose-built combat suit designed to protect its user against all manner of enemy combatants in low pressure environments.
+  name: FPA-85 "Baghatur Mk II" Tacsuit
+  description: A sturdy tactical combat hardsuit mass-produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/standard.rsi
@@ -42,8 +42,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitCombatOfficer
-  name: security combat hardsuit
-  description: A purpose-built combat suit designed to protect its user against all manner of enemy combatants in low pressure environments. This one has station security markings.
+  name: FPA-85S - "Baghatur Mk II" Tacsuit
+  description: A sturdy tactical combat hardsuit mass-produced by Five-Points-Armory, painted with the colors of Station Security. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/officer.rsi
@@ -56,8 +56,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitCombatMedical
-  name: medical combat hardsuit
-  description: A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones.
+  name: FPA-86 - "Tsagaan Mk II" Tacsuit
+  description: A sturdy tactical combat medic hardsuit mass-produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/medical.rsi
@@ -88,8 +88,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatMedical
   id: ClothingOuterHardsuitCombatCorpsman
-  name: corpsman combat hardsuit
-  description: A purpose-built combat suit designed to allow its user greater mobility for superior support of friendly units in active combat zones. This one has station security markings.
+  name: FPA-86SM - "Tsagaan Mk II" Tacsuit
+  description: A sturdy tactical combat medic hardsuit mass-produced by Five-Points Armory, painted with the colors of Station Security and Medical staff. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/corpsman.rsi
@@ -102,8 +102,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitCombatRiot
-  name: riot combat hardsuit
-  description: A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments.
+  name: FPA-93 - "Sulde Mk II" Tacsuit
+  description: A specialized tactical combat hardsuit produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels VERY heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/riot.rsi
@@ -136,8 +136,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatRiot
   id: ClothingOuterHardsuitCombatWarden
-  name: warden's riot combat hardsuit
-  description: A purpose-built combat suit designed for crowd control against armed combatants in low pressure environments. This one has station security and warden's rank markings.
+  name: FPA-93SW - "Sulde Mk II" Tacsuit
+  description: A specialized tactical combat hardsuit produced by Five-Points Armory, painted with the colors of Station Security and Warden's rank markings. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels VERY heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/warden.rsi
@@ -150,8 +150,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatStandard
   id: ClothingOuterHardsuitCombatAdvanced
-  name: advanced combat hardsuit
-  description: A purpose-built combat suit of second-generation design, providing unparalleled protection against all manner of kinetic forces in low pressure environments.
+  name: FPA-99 - "Dayicin Mk II Tacsuit"
+  description: A top-of-the-line tactical combat hardsuit produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels somewhat light.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/advanced.rsi
@@ -184,8 +184,8 @@
 - type: entity
   parent: ClothingOuterHardsuitCombatAdvanced
   id: ClothingOuterHardsuitCombatHoS
-  name: head of security's advanced combat hardsuit
-  description: A purpose-built combat suit of second-generation design, providing unparalleled protection against all manner of kinetic forces in low pressure environments. This one has station security and commander's rank markings.
+  name: FPA-99SC - "Dayicin Mk II" Tacsuit
+  description: A top-of-the-line tactical combat hardsuit produced by Five-Points Armory, painted witht he colors of Station Security and Commander's rank markings. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels somewhat light.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/Combat/hos.rsi
@@ -229,8 +229,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTLeaderBase
-  name: ERT leader's hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
+  name: NT-444EL - "Michael" Tacsuit
+  description: A highly-advanced tactical combat hardsuit used by Leaders of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
@@ -253,8 +253,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTChaplainBase
-  name: ERT chaplain's hardsuit
-  description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
+  name: NT-444EC - "Barachiel" Hardsuit
+  description: A highly-advanced tactical combat hardsuit used by Chaplains of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy. It feels VERY heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
@@ -275,8 +275,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTEngineerBase
-  name: ERT engineer's hardsuit
-  description: A protective hardsuit worn by the engineers of an emergency response team.
+  name: NT-444EE - "Uriel" Hardsuit
+  description: A highly-advanced hardsuit used by Engineers of an Emergency Response team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a somewhat sturdy alloy that is highly resistant to radiation and thermal exposure. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
@@ -302,8 +302,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTMedicalBase
-  name: ERT medic's hardsuit
-  description: A protective hardsuit worn by the medics of an emergency response team.
+  name: NT-444EM - "Raphael" Tacsuit
+  description: A highly-advanced tactical combat hardsuit used by medics of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a sturdy alloy. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
@@ -326,8 +326,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTSecurityBase
-  name: ERT security's hardsuit
-  description: A protective hardsuit worn by the security officers of an emergency response team.
+  name: NT-444ES - "Gabriel" Tacsuit
+  description: A highly-advanced tactical combat hardsuit used by Security Officers of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a sturdy alloy. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertsecurity.rsi
@@ -350,8 +350,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTJanitorBase
-  name: ERT janitor's hardsuit
-  description: A protective hardsuit worn by the janitors of an emergency response team.
+  name: NT-444EJ - "Sandalphon" Hardsuit
+  description: A highly-advanced hardsuit used by Janitors of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a somewhat sturdy alloy that is highly resistant to radiation and thermal exposure. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertjanitor.rsi
@@ -406,8 +406,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTEliteBase
   id: ClothingOuterHardsuitERTLeaderElite
-  name: Elite ERT Leader Hardsuit
-  description: A protective hardsuit worn by the leader of an emergency response team.
+  name: NT-555ELE - "Michael Mk II" Tacsuit
+  description: A highly-advanced tactical combat suit used by Elite Leaders of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertleader.rsi
@@ -420,8 +420,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTEliteBase
   id: ClothingOuterHardsuitERTChaplainElite
-  name: Elite ERT chaplain's hardsuit
-  description: A protective hardsuit worn by the chaplains of an Emergency Response Team.
+  name: NT-555ECE - "Barachiel Mk II" Tacsuit
+  description: A highly-advanced tactical combat hardsuit used by Elite Chaplains of an Emergency Response Team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertchaplain.rsi #if you change this, please update the humanoid.yml with a better markers sprite.
@@ -434,8 +434,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTEliteBase
   id: ClothingOuterHardsuitERTEngineerElite
-  name: Elite ERT engineer's hardsuit
-  description: A protective hardsuit worn by the engineers of an emergency response team.
+  name: NT-555EEE - "Uriel Mk II" Tacsuit
+  description: A highly-advanced tactical combat hardsuit used by Elite Engineers of an Emergency Response team. It's branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy. It doesn't seem to have any weight.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/ERTSuits/eliteertengineer.rsi
@@ -491,8 +491,8 @@
 - type: entity
   parent: [ClothingOuterHardsuitSalvage, BaseJetpack, BaseCargoContraband]
   id: ClothingOuterHardsuitRhino
-  name: rhino industrial hardsuit
-  description: A hardsuit adorned with purple fabric and gold metal. Made specifically by Nanotrasen for their Logistics Officers, this hardsuit boasts better protection than most salvage suits and has an internal jetpack.
+  name: HpI-20LC - "Minos" Hardsuit
+  description: A modified mining hardsuit from Hephaestus Industries, adorned with purple fabric and gold metal. Made specifically by Hephaestus Industries for their Logistics Officers, this hardsuit boasts better protection than most salvage suits and has an internal jetpack.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/rhinosuit.rsi
@@ -528,8 +528,8 @@
   parent: [ ClothingOuterHardsuitBase, BaseSecurityContraband ]
   id: ClothingOuterHardsuitSyndieReverseEngineered
   suffix: reverse-engineered, Bluekies
-  name: SA-122 combat hardsuit
-  description: A heavily armored hardsuit designed for work in special operations. Made by the special acquisitions department of Nanotrasen.
+  name: SA-122 - "Shanlin" Tacsuit
+  description: A tactical combat hardsuit originally produced by the Cybersun Armaments Corporation, now reverse-engineered by the Special Acquisitions Department. The suit's tags indicate it provides moderate protection against most forms of damage. It feels incredibly light.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/ReverseEngineering/syndicate.rsi
@@ -576,8 +576,8 @@
   parent: [ ClothingOuterHardsuitBase, BaseSecurityContraband ]
   id: ClothingOuterHardsuitJuggernautReverseEngineered
   suffix: reverse-engineered, Bluekies
-  name: SA-126 assault hardsuit
-  description: A suit made by the special acquisitions department of Nanotrasen to be hyper resilient.
+  name: SA-126UA "Guan Yu" Tacsuit
+  description: The former pride and joy of the Cybersun Armaments Corporation, now reverse-engineered by the Special Acquisitions Department. The suit's tags indicate that it protects excellently against all forms of damage. It feels VERY heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/ReverseEngineering/juggernaut.rsi
