@@ -11,7 +11,9 @@
   - type: TriggerOnMobstateChange
     mobState:
     - Dead
+    keyOut: timer
   - type: TriggerOnActivateImplant
+    keyOut: timer
   - type: SmokeOnTrigger
     keysIn:
     - timer
@@ -22,8 +24,18 @@
     - timer
     sound: /Audio/Items/smoke_grenade_smoke.ogg
     positional: true
+  - type: TimerTrigger
+    keysIn:
+    - timer
+    keyOut:
+    - die
+    delay: 0.5
   - type: DeleteParentOnTrigger
+    keysIn:
+    - die
   - type: SpawnOnTrigger
+    keysIn:
+    - die
     proto: NinjaEscape
   - type: Tag
     tags:
