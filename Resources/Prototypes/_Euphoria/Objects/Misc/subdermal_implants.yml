@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseSubdermalImplant
+  id: NinjaEscapeImplant
+  name: ninja escape implant
+  description: This implant teleports the user's body to the Spider Clan dojo, forcing them to leave the current location so they won't be able to come back.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SubdermalImplant
+    permanent: true
+    implantAction: ActionActivateNinjaEscape
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Dead
+  - type: TriggerOnActivateImplant
+  - type: SmokeOnTrigger
+    keysIn:
+    - timer
+    duration: 30
+    spreadAmount: 50
+  - type: EmitSoundOnTrigger
+    keysIn:
+    - timer
+    sound: /Audio/Items/smoke_grenade_smoke.ogg
+    positional: true
+  - type: DeleteParentOnTrigger
+  - type: SpawnOnTrigger
+    proto: NinjaEscape
+  - type: Tag
+    tags:
+    - SubdermalImplant
+    - HideContextMenu

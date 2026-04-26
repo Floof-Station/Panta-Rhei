@@ -1,0 +1,16 @@
+- type: entity
+  parent: Acidifier
+  id: NinjaEscape
+  name: Ninja Escape
+  description: Teleports your body to save your life or leave the region.
+  components:
+  - type: Transform
+    anchored: True
+  - type: Sprite
+    sprite: _Goobstation/Textures/Effects/bluespace_lifeline.rsi
+    noRot: true
+    layers:
+    - state: bluespace_lifeline
+      shader: unshaded
+  - type: SpawnOnDespawn
+    prototype: ClothingMaskNinja # Replace With Ninja Calling Card but a stylish mask will have to do for now

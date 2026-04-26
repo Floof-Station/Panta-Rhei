@@ -1,0 +1,16 @@
+- type: entity
+  parent: BaseSuicideAction
+  id: ActionActivateNinjaEscape
+  name: Activate Ninja Escape
+  description: Activates your Ninja Escape implant, teleporting you far-far away from this station. You won't be able to come back. Use this when your job is done and you need to return to base.
+  components:
+  - type: Action
+    checkCanInteract: false
+    checkConsciousness: false
+    itemIconStyle: BigAction
+    priority: -20
+    icon:
+      sprite: _Goobstation/Textures/Effects/bluespace_lifeline.rsi
+      state: bluespace_lifeline
+  - type: InstantAction
+    event: !type:ActivateImplantEvent
