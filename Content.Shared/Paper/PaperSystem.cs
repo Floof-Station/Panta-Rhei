@@ -329,7 +329,7 @@ public sealed class PaperSystem : EntitySystem
         var identityEntity = player;
 
         // Get name from identity or fallback to entity name
-        name = MetaData(identityEntity).EntityName;
+        name = Name(player);
 
         // Get role from mind system
         if (TryComp<MindContainerComponent>(player, out var mindContainer) &&
