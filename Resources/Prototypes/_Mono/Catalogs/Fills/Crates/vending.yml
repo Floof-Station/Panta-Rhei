@@ -4,7 +4,7 @@
 
 - type: entity
   id: CrateVendingMachineRestockBaristaFilled
-  parent: CratePlasticBiodegradable
+  parent: CratePlastic # Euphoria - M3739 - Was originally 'CratePlasticBiodegradable'. We do not have that here.
   name: BaristaVend Restock Crate
   description: Contains a restock box for the BaristaVend.
   components:

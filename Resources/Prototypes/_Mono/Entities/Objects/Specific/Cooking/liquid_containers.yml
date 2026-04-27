@@ -72,14 +72,18 @@
     price: 1
 
 - type: entity
-  parent: DrinkGlassBase
+  parent: DrinkTeapot # Euphoria - M3739 - Originally 'DrinkGlassBase'. Inherited from DrinkTeapot itself instead.
   id: DrinkTeapotEmpty
   name: teapot
   description: An elegant teapot. It simply oozes class.
   suffix: Empty
   components:
-  - type: Sprite
-    sprite: Objects/Consumable/Drinks/teapot.rsi
+  - type: SolutionContainerManager # Euphoria - M3739 - Ensure it is, in fact, empty
+    solutions:
+      drink:
+        maxVol: 100
+#  - type: Sprite # Euphoria - M3739 - Redundant due to parent
+#    sprite: Objects/Consumable/Drinks/teapot.rsi
 
 - type: entity
   parent: DrinkGlass
