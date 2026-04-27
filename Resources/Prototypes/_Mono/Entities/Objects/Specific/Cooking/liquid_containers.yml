@@ -87,11 +87,11 @@
 #  - type: Sprite # Euphoria - M3739 - MonolithBaristaPort - Redundant due to parent
 #    sprite: Objects/Consumable/Drinks/teapot.rsi
 
-- type: entity
-  parent: DrinkGlass
-  id: DrinkTeaGlassEmpty
-  suffix: Empty 
-  components:
-  - type: Icon
-    sprite: Objects/Consumable/Drinks/teaglass.rsi
-    state: icon
+#- type: entity # Euphoria - M3739 - MonolithBaristaPort - Redundant due to parent
+#  parent: DrinkGlass
+#  id: DrinkTeaGlassEmpty
+#  suffix: Empty 
+#  components:
+#  - type: Icon
+#    sprite: Objects/Consumable/Drinks/teaglass.rsi
+#    state: icon
