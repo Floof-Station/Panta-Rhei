@@ -1,10 +1,11 @@
+### Euphoria - M3739 - MonolithBaristaPort - Proofread for spelling errors, and edited for accuracy. 
 book-text-tea-guide = "How 2 Make Tea 4 Dorks
 
-    Quick Explanation in 3 easy steps: 3 items needed, all available in the BarristaVend,
+    Quick Explanation in 3 easy steps: 3 items needed, 2 of which is available in the BaristaVend:
 
         - Tea Bag of choice
         - Liquid Container
-        - Heat Plate
+        - Hot Plate
 
     Step 1. Measurements.
 
@@ -12,11 +13,11 @@ book-text-tea-guide = "How 2 Make Tea 4 Dorks
 
         You can either pour 5u of it directly from the bag, or use a Tea Spoon to move 1u measurements.
 
-        Normal non-decaff coffee does not fall under this category and uses a different recipy.
+        Normal non-decaf coffee does not fall under this category and uses a different recipe.
 
     Step 2. Boil Water and add Powder
 
-        Put the water boiling for 20-30 seconds on the Heat Plate. Then, add appropriate ammount of Tea Powder, a chemical mixing sound being heard if done correctly.
+        Put the water boiling for 20-30 seconds on the Hot Plate. Then add the appropriate amount of Tea Powder, a chemical mixing sound should be heard if done correctly.
 
         Alternatively powder and water can be put on the hot plate together for quicker tea.
 
