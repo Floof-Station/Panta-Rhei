@@ -25,9 +25,9 @@
       # denyState: deny-unshaded
       ejectDelay: 1.9
       initialStockQuality: 0.33
-#    - type: MarketModifier # Euphoria - M3739 - Component does not exist
+#    - type: MarketModifier # Euphoria - M3739 - MonolithBaristaPort - Component does not exist.
 #      mod: 8
-    - type: DatasetVocalizer # Euphoria - M3739 - Was originally 'Advertise', which we don't have. This will do for now.
+    - type: DatasetVocalizer # Euphoria - M3739 - MonolithBaristaPort - Originally 'Advertise', which we don't have. This will do for now.
       pack: BaristaAds
     - type: SpeakOnUIClosed
       pack: BaristaGoodbyes
