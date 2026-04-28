@@ -112,6 +112,7 @@
 
 - type: roleLoadout
   id: JobSecurityTechnician
+  parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
   - SecurityNeck
