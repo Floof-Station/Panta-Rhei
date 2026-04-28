@@ -14,6 +14,20 @@
   - type: PdaBorderColor
     borderColor: "#668643"
 
+# Inventory Specialist
+- type: entity
+  parent: CargoPDA
+  id: InventorySpecialistPDA
+  name: inventory specialist PDA
+  description: PDA for the guy that oversees the inventory.
+  components:
+  - type: Pda
+    id: InventorySpecialistIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-inventoryassociate
+
 #PDA for sapient animals
 - type: entity
   parent: BasePDA

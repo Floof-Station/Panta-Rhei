@@ -1830,3 +1830,26 @@
       params:
         variation: 0.1
         volume: 4
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieNonjudgmentalDemon
+  name: nonjudgmental demon plushie
+  description: Unfortunately, this one can't handle your paperwork for you.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: nonjudgmentaldemon
+  - type: UseDelay
+    delay: 4.5
+  - type: EmitSoundOnActivate
+    sound: &printer
+      path: /Audio/Machines/printer.ogg
+  - type: EmitSoundOnUse
+    sound: *printer
+  - type: EmitSoundOnLand
+    sound: *printer
+  - type: EmitSoundOnCollide
+    sound: *printer
+  - type: MeleeWeapon
+    soundHit: *printer

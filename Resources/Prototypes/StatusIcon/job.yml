@@ -355,8 +355,8 @@
   parent: JobIcon
   id: JobIconPassenger
   icon:
-    sprite: *icon-rsi
-    state: Passenger
+    sprite: &icon-rsi-eu /Textures/_Euphoria/Interface/Misc/job_icons.rsi # Euphoria - change passenger icon to assistant
+    state: Assistant
   jobName: job-name-passenger
 
 - type: jobIcon
