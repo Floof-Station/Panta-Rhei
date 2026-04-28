@@ -492,21 +492,54 @@
     slots:
     - Tail
 
-#tide Hardsuit (placeholder)
+#Generic Hardsuit 
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitMagicalGeneric
+  suffix: Magical Trinket
+  name: Pink soul gem
+  description: Kepp it close to your heart and it may grant your wish!
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/generic-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/generic-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalGenericBow
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+
+#tider Hardsuit
 
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitMagicalTide
   suffix: Magical Trinket
-  name: Tider heart
-  description: placeholder
+  name: The Wildcard
+  description: Greed Equals Justice, desire everything for all.
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
-    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
-    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+    equipSound: /Audio/_Euphoria/Magic/tide-transformation.ogg
+    unequipSound: /Audio/_Euphoria/Magic/tide-transformation3.ogg
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -525,3 +558,12 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 5
+  - type: ThrowingAngle
+    angle: 180
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
