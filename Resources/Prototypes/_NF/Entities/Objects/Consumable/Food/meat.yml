@@ -58,6 +58,13 @@
   - type: Tag
     tags:
     - Meat
+  - type: MeleeWeapon # Euphoria - It's just the right shape to swing...
+    wideAnimationRotation: 90
+    damage:
+      types:
+        Blunt: 10
+    soundHit:
+      collection: MetalThud
 
 - type: entity
   name: honey glazed ham slice
