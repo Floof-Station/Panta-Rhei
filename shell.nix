@@ -18,6 +18,7 @@ let
     libGL
     openal
     freetype
+    fontconfig
     fluidsynth
     soundfont-fluid
     gtk3
@@ -43,6 +44,8 @@ let
     xorg.libxshmfence
     mesa
     alsa-lib
+    alsa-plugins
+    pipewire
     dbus
     at-spi2-core
     cups
