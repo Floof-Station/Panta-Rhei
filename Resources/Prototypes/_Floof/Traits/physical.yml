@@ -4,7 +4,7 @@
   name: trait-name-LeftBionicPryArm
   description: trait-description-BionicPryArm
   category: Cybernetics
-  cost: 2
+  cost: 8
   conflicts:
   - ArmAmputeeRight
   - ArmAmputeeLeft
@@ -23,7 +23,7 @@
   name: trait-name-RightBionicPryArm
   description: trait-description-BionicPryArm
   category: Cybernetics
-  cost: 2
+  cost: 8
   conflicts:
   - ArmAmputeeRight
   - ArmAmputeeLeft
@@ -42,7 +42,7 @@
   name: trait-name-CyberEyesFlare
   description: trait-description-CyberEyesFlare
   category: Cybernetics
-  cost: 8
+  cost: 6
   conflicts:
   - Blindness
   - PoorVision
@@ -58,7 +58,7 @@
   category: Cybernetics
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
-  cost: 8
+  cost: 6
   conflicts:
   - Blindness
   - PoorVision
@@ -83,12 +83,28 @@
   category: Cybernetics
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
-  cost: 4
+  cost: 3
   conflicts:
   - CyberEyesOmni
   conditions:
-  - !type:InDepartmentCondition
-    department: Security
+  - !type:HasJobCondition
+    job: HeadOfSecurity
+  - !type:HasJobCondition
+    job: Warden
+  - !type:HasJobCondition
+    job: Brigmedic
+  - !type:HasJobCondition
+    job: Detective
+  - !type:HasJobCondition
+    job: PrisonGuard
+  - !type:HasJobCondition
+    job: SecurityCadet
+  - !type:HasJobCondition
+    job: SecurityOfficer
+  - !type:HasJobCondition
+    job: SecurityTechnician
+  - !type:HasJobCondition
+    job: SeniorOfficer
   effects:
   - !type:AddCompsEffect
     components:
@@ -101,7 +117,7 @@
   category: Cybernetics
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
-  cost: 4
+  cost: 3
   conflicts:
     - CyberEyesOmni
   effects:
@@ -116,19 +132,36 @@
       - Biological
       - BiologicalMetaphysical
     - type: ShowTriageIcons # Euphoria - Add triage icons to standard crew-aligned medical HUDs
+    #- type: SolutionScanner
 
 - type: trait
   id: CyberEyesOmni
   category: Cybernetics
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
-  cost: 6
+  cost: 4
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
   conditions:
-  - !type:InDepartmentCondition
-    department: Command
+  - !type:HasJobCondition
+    job: Captain
+  - !type:HasJobCondition
+    job: ChiefJustice
+  - !type:HasJobCondition
+    job: ChiefEngineer
+  - !type:HasJobCondition
+    job: ChiefMedicalOfficer
+  - !type:HasJobCondition
+    job: HeadOfPersonnel
+  - !type:HasJobCondition
+    job: HeadOfSecurity
+  - !type:HasJobCondition
+    job: Quartermaster
+  - !type:HasJobCondition
+    job: ResearchDirector
+  - !type:HasJobCondition
+    job: Brigmedic
   effects:
   - !type:AddCompsEffect
     components:
