@@ -19,7 +19,7 @@
   name: trait-precognition-name
   description: trait-precognition-desc
   category: Psionics
-  cost: 4
+  cost: 3
   effects:
   - !type:AddCompsEffect
     components:
@@ -47,7 +47,7 @@
   name: trait-psychokinetic-scream-name
   description: trait-psychokinetic-scream-desc
   category: Psionics
-  cost: 6
+  cost: 3
   effects:
   - !type:AddCompsEffect
     components:
@@ -59,7 +59,11 @@
   name: trait-psionic-regeneration-name
   description: trait-psionic-regeneration-desc
   category: Psionics
-  cost: 6
+  cost: 8
+  conditions:
+  - !type:IsSpeciesCondition
+    species: IPC
+    invert: true
   effects:
   - !type:AddCompsEffect
     components:
