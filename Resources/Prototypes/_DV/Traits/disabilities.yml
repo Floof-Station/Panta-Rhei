@@ -21,7 +21,7 @@
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -1 #floof
+  cost: -3 #floof
   conditions:
   - !type:HasCompCondition
     component: Blindable
@@ -71,7 +71,7 @@
   name: trait-impaired-mobility-name
   description: trait-impaired-mobility-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
+  cost: -4 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -84,7 +84,7 @@
   name: trait-amputee-left-arm-name
   description: trait-amputee-left-arm-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
+  cost: -5 #floof
   conflicts:
   - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
   effects:
@@ -99,7 +99,7 @@
   name: trait-amputee-right-arm-name
   description: trait-amputee-right-arm-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
+  cost: -5 #floof
   conflicts:
   - ArmAmputeeLeft
   effects:
@@ -125,7 +125,7 @@
   name: trait-painnumbness-name
   description: trait-painnumbness-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -2
+  cost: -3
   effects:
   - !type:AddCompsEffect
     components:
@@ -136,7 +136,7 @@
   name: trait-hemophilia-name
   description: trait-hemophilia-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -2 #floof
+  cost: -3 #floof
   effects:
   - !type:AddCompsEffect
     components:
