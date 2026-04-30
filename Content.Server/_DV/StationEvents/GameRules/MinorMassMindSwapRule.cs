@@ -3,12 +3,11 @@ using Content.Server._DV.StationEvents.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Common.Consent;
-using Content.Shared._DV.Abilities.Psionics;
-using Content.Shared.Abilities.Psionics;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared._DV.Psionics.Components;
 using Content.Shared._DV.Psionics.Systems.PsionicPowers;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Robust.Server.Audio;
@@ -92,11 +91,9 @@ internal sealed class MinorMassMindSwapRule : StationEventSystem<MinorMassMindSw
         {
             if (!_consent.HasConsent(psion, MindswapConsent) // Floofstation - requires consent
                 || _cryoSystem.IsInPausedMap(psion) // This hack is needed because sometimes cryo fails to pause mobs
-                || TryComp<MindSwappedComponent>(psion, out var oldSwapped) && oldSwapped.OriginalEntity != psion) // Also exclude those who are already swapped
+                || TryComp<MindSwappedReturnPowerComponent>(psion, out var oldSwapped) && oldSwapped.OriginalEntity != psion) // Also exclude those who are already swapped
                 continue;
 
-            if (_mobstateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion)
-                && HasComp<ActorComponent>(psion))
             if (_mobstateSystem.IsAlive(psion, mobState) && HasComp<ActorComponent>(psion) && _psionic.CanBeTargeted(psion))
                 // Only a list of Players
                 psionicActors.Add(psion);

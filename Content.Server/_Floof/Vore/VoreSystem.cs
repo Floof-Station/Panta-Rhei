@@ -16,6 +16,7 @@ using Content.Shared._Common.Consent;
 using Content.Shared.Verbs;
 using Content.Shared.Polymorph;
 using Content.Shared.Destructible;
+using Content.Shared.Gibbing;
 using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
 namespace Content.Server._Floof.Vore;
@@ -54,7 +55,7 @@ public sealed class VoreSystem : EntitySystem
     }
 
     /// <summary>
-    /// creates verbs inside the interaction menu for yourself and other mobs controlled by players 
+    /// creates verbs inside the interaction menu for yourself and other mobs controlled by players
     /// only show up when the consent has been selected on both sides
     /// </summary>
     private void OnGetVerbs(EntityUid uid, VoreComponent comp, GetVerbsEvent<Verb> args){
@@ -64,7 +65,7 @@ public sealed class VoreSystem : EntitySystem
         // using command to turn on/off verb components
         if (!_cfg.GetCVar(VoreCVars.VoreEnabled))
             return;
-        
+
         // no self activation, only there to remove your own prey and not have other intervene or have others see that you have prey
         if (user == target){
             var container = _containerSystem.EnsureContainer<Container>(target, "vore_container");
@@ -81,14 +82,14 @@ public sealed class VoreSystem : EntitySystem
         // only when reachable & interactable
         if (!args.CanInteract || !args.CanAccess)
             return;
-        
+
         // to avoid empty mind NPCs
         if (!TryComp<MindContainerComponent>(target, out var mindContainer) || mindContainer.Mind == null)
             return;
 
         //no verbs for swallowed people
         /**TODO
-        making multivore possible. As of now its just a prevention method to avoid giving 
+        making multivore possible. As of now its just a prevention method to avoid giving
         Components such as space immunity to the pred
         */
         if (_containerSystem.TryGetContainingContainer(user, out var userContainer) && userContainer.ID == "vore_container")
@@ -114,7 +115,7 @@ public sealed class VoreSystem : EntitySystem
             });
         }
     }
-        
+
     /// <summary>
     /// used for after selecting to insert into someone or devour
     /// will create a slow popup and warning to give both sides time to react on it
@@ -125,7 +126,7 @@ public sealed class VoreSystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new OnVoreDoAfter(), user, target: target, used: user)
         {
             BreakOnMove = true,
-            BreakOnDamage = true,      
+            BreakOnDamage = true,
         };
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs))
             return;
@@ -146,7 +147,7 @@ public sealed class VoreSystem : EntitySystem
 
         var pred = uid;
         var container = _containerSystem.EnsureContainer<Container>(args.User, "vore_container");
-        
+
         var count = 0;
         //only counts entities with bodies meaning no items
         foreach (var e in container.ContainedEntities){
@@ -165,14 +166,14 @@ public sealed class VoreSystem : EntitySystem
 
         //moves prey inside the person
         _containerSystem.Insert(prey, container);
-        
+
         /*make the prey immune to space+temp+breathing to avoid consent concerns from outside influence
         gets removed after escaping or being forcefully ejected by pred*/
         ApplyStomachImmunities(prey);
     }
 
     /// <summary>
-    /// makes sure the prey is not inside any other container such as 
+    /// makes sure the prey is not inside any other container such as
     /// bags or being carried by someone before being inserted into the pred
     /// </summary>
     private void EnsureEntityFree(EntityUid pred, EntityUid prey){
@@ -255,10 +256,10 @@ public sealed class VoreSystem : EntitySystem
     /// <summary>
     /// in case of polymorp scenarios such as kitsune release all the content
     /// </summary>
-    private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){   
+    private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){
         OnTryReleasePrey(uid);
     }
-    
+
     /// <summary>
     /// the prey needs to have certain components such as pressure immunity
     /// for consent purposes -> having others avoid stumbling on scenarios
