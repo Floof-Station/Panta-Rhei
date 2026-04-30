@@ -334,15 +334,12 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             body = _bodySystem.GetBodyPartStatus(entity);
         // Shitmed Change End
 
-<<<<<<< HEAD
         var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
 
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),
-=======
         return new HealthAnalyzerUiState(
             GetNetEntity(entity),
->>>>>>> 2537c084eef959feba055ff6baa6cbb5320ab1e4
             bodyTemperature,
             bloodAmount,
             null,
@@ -351,16 +348,10 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
             // Shitmed Change
             body,
-<<<<<<< HEAD
             _medicalRecords.GetMedicalRecords(target), // DeltaV - Medical Records
             part != null ? GetNetEntity(part) : null,
 
             printable // Frontier
-        ));
-=======
-            _medicalRecords.GetMedicalRecords(entity), // DeltaV - Medical Records
-            part != null ? GetNetEntity(part) : null
         );
->>>>>>> 2537c084eef959feba055ff6baa6cbb5320ab1e4
     }
 }

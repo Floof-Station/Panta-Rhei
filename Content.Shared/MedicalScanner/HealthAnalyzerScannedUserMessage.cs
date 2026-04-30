@@ -39,7 +39,7 @@ public struct HealthAnalyzerUiState
         Dictionary<TargetBodyPart, TargetIntegrity>? body, // Shitmed Change
         MedicalRecord? medicalRecord = null, NetEntity? part = null, // DeltaV - Medical Records
         bool printable = false // Frontier
-        )
+        );
     public HealthAnalyzerUiState() {}
 
     public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body, MedicalRecord? medicalRecord = null, NetEntity? part = null) // Shitmed Change // DeltaV - Medical Records
