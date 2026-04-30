@@ -638,18 +638,6 @@
   - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
 
-# Wildcards
-- type: roleLoadout
-  id: JobZookeeper
-  parent: JobBaseLoadout # Floofstation
-  groups:
-  - GroupTankHarness
-  - CommonBackpack
-  - Glasses
-  - Survival
-  - ZookeeperJobTrinkets
-  - GroupSpeciesBreathTool
-
 - type: roleLoadout
   id: JobReporter
   parent: JobBaseLoadout # Floofstation
@@ -686,23 +674,6 @@
   # End DeltaV additions
   - Glasses
   - PsychologistJobTrinkets
-  - GroupSpeciesBreathTool
-
-- type: roleLoadout
-  id: JobBoxer
-  parent: JobBaseLoadout # Floofstation
-  groups:
-  - GroupTankHarness
-  - AssistantHead # Floofstation
-  - PassengerNeck # Floofstation
-  - PassengerFace # Floofstation
-  - BoxerJumpsuit
-  - BoxerGloves
-  - CommonBackpack
-  - FloofBoxerPDAs # Floofstation - pda customization
-  - Glasses
-  - Survival
-  - BoxerJobTrinkets
   - GroupSpeciesBreathTool
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs

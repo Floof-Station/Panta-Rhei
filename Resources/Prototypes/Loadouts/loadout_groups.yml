@@ -2124,24 +2124,6 @@
   - LizardPlushiePsychologist
 
 - type: loadoutGroup
-  id: BoxerJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
-  name: loadout-group-boxer-jumpsuit
-  loadouts:
-  - BoxerShorts
-  - BoxerShortsWithTop
-
-- type: loadoutGroup
-  id: BoxerGloves
-  parent: [FloofGloves] # Floofstation
-  name: loadout-group-boxer-gloves
-  loadouts:
-  - RedBoxingGloves
-  - BlueBoxingGloves
-  - GreenBoxingGloves
-  - YellowBoxingGloves
-
-- type: loadoutGroup
   id: BoxerJobTrinkets
   name: loadout-group-jobtrinkets
   minLimit: 0

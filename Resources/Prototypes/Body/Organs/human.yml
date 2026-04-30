@@ -1,6 +1,6 @@
 - type: entity
   id: BaseHumanOrgan
-  parent: BaseItem
+  parent: [BaseItem, BaseOrganRotting] # Floof - added the rotting parent
   abstract: true
   components:
   - type: Sprite
@@ -8,6 +8,7 @@
   - type: Organ
   - type: Edible
   - type: Extractable
+  - type: Gibbable
     grindableSolutionName: organ
   - type: SolutionContainerManager
     solutions:
@@ -35,13 +36,6 @@
   - type: EmitSoundOnLand
     sound:
       collection: OrganInteraction
-
-- type: entity
-  id: BaseHumanOrgan
-  parent: [BaseHumanOrganUnGibbable, BaseOrganRotting] # Floof - added the rotting parent
-  abstract: true
-  components:
-  - type: Gibbable
 
 - type: entity
   id: OrganHumanBrain

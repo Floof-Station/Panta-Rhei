@@ -37,7 +37,8 @@ public sealed class GhostBarSystem : EntitySystem
         "Bartender",
         "Botanist",
         "Chef",
-        "Janitor"
+        "Janitor",
+        "Musician"
     };
 
     public override void Initialize()
@@ -87,7 +88,6 @@ public sealed class GhostBarSystem : EntitySystem
         RemComp<BarotraumaComponent>(mobUid);
         EnsureComp<MindShieldComponent>(mobUid);
         EnsureComp<AntagImmuneComponent>(mobUid); // self explanatory why we dont want players becoming antags at the ghostbar
-		EnsureComp<PsionicInsulationComponent>(mobUid); // we don't want people getting mindswapped
         EnsureComp<UniversalLanguageSpeakerComponent>(mobUid); // giving universal just in case for RP purposes
         EnsureComp<GhostBarPlayerComponent>(mobUid); // give the player mob the ghostbarplayer comp so they can be tracked
         var targetMind = _mindSystem.GetMind(args.SenderSession.UserId);

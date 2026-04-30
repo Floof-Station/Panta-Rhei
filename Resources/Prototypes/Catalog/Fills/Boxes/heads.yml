@@ -1,77 +1,5 @@
 - type: entity
   parent: ToteBase
-  id: BoxCaptainCircuitboards
-  name: bridge circuit tote
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: CommsComputerCircuitboard
-        - id: StationRecordsComputerCircuitboard
-        - id: IDComputerCircuitboard # DeltaV
-
-- type: entity
-  parent: ToteBase
-  id: BoxCECircuitboards
-  name: engineering circuit tote
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: CargoRequestEngineeringComputerCircuitboard
-        - id: AlertsComputerCircuitboard
-        - id: AtmosMonitoringComputerCircuitboard
-        - id: PowerComputerCircuitboard
-        - id: SolarControlComputerCircuitboard
-        - id: IDComputerCircuitboard # DeltaV
-        - id: EngineeringTechFabCircuitboard # DeltaV
-        - id: CircuitImprinterMachineCircuitboard # DeltaV
-
-- type: entity
-  parent: ToteBase
-  id: BoxCMOCircuitboards
-  name: medical circuit tote
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: MedicalTechFabCircuitboard
-        - id: CargoRequestMedicalComputerCircuitboard
-        - id: IDComputerCircuitboard # DeltaV
-        - id: MedicalBiofabMachineBoard # DeltaV
-        - id: AutoclaveMachineCircuitboard # DeltaV
-
-- type: entity
-  parent: ToteBase
-  id: BoxHoPCircuitboards
-  name: head of personnel circuit tote
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: IDComputerCircuitboard
-        - id: FundingAllocationComputerCircuitboard
-        - id: CargoRequestServiceComputerCircuitboard
-
-- type: entity
-  parent: BoxStamps
-  id: BoxHoPStamps
-  name: head of personnel's stamp box
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: RubberStampApproved
-        - id: RubberStampDenied
-        - id: RubberStampHop
-
-- type: entity
-  parent: ToteBase
   id: BoxHoSCircuitboards
   name: security circuit tote
   components:
@@ -217,7 +145,6 @@
   name: circuit tote [MG] # DeltaV - Changed to MG
   parent: ToteBase
   id: BoxRDCircuitboards
-  name: science circuit tote
   components:
   - type: EntityTableContainerFill
     containers:

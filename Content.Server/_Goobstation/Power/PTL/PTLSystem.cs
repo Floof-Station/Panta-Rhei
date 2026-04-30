@@ -95,7 +95,7 @@ public sealed partial class PTLSystem : EntitySystem
         var chargeCoeff = 200;//Euphoria
         var charge = _battery.GetCharge((ent, ent.Comp2)) / megajoule;
         // Euphoria - Modeled after real capacitors.
-        var spesos = (int) (maxSpesos * (1 - Math.Exp(charge/-chargeCoeff)));
+        var spesos = (int)(maxSpesos * (1 - Math.Exp(charge / -chargeCoeff)));
 
         if (charge <= 0 || !double.IsFinite(spesos) || spesos < 0) return;
 
@@ -109,10 +109,9 @@ public sealed partial class PTLSystem : EntitySystem
                 localDirectionVector *= -1f;
 
             var directionInParentSpace = xform.LocalRotation.RotateVec(localDirectionVector);
-
             var targetCoords = xform.Coordinates.Offset(directionInParentSpace);
 
-            _gun.AttemptShoot(ent, ent, gun, targetCoords);
+            _gun.AttemptShoot(ent.Owner, (ent.Owner, gun), targetCoords);
         }
 
 
@@ -147,7 +146,7 @@ public sealed partial class PTLSystem : EntitySystem
         if (_tag.HasTag(held, _tagMultitool))
         {
             var stackPrototype = _protMan.Index<StackPrototype>(_stackCredits);
-            var stacks = _stack.SpawnMultipleAtPosition(stackPrototype, (int) ent.Comp.SpesosHeld, Transform(args.User).Coordinates);
+            var stacks = _stack.SpawnMultipleAtPosition(stackPrototype, (int)ent.Comp.SpesosHeld, Transform(args.User).Coordinates);
             ent.Comp.SpesosHeld = 0;
             _popup.PopupEntity(Loc.GetString("ptl-interact-spesos"), ent);
             _aud.PlayPvs(_soundKaching, args.User);

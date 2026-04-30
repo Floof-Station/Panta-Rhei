@@ -545,7 +545,6 @@
         children:
         - id: CrazyGlue
         - id: CrazyLube
-<<<<<<< HEAD
         - id: PlasticBanana
         # Floofstation section - spray paint (75% chance)
         - !type:GroupSelector
@@ -570,20 +569,6 @@
           amount: 2
         - id: ClothingShoesSkates
         - id: RubberChicken
-=======
-        - !type:NestedSelector
-          tableId: AllToyWeaponsTable
-          rolls: 2
-        - !type:NestedSelector
-          tableId: AllToySoundMakerTable
-          rolls: 2
-        - !type:NestedSelector
-          tableId: AllMiscToysTable
-          rolls: 2
-        - !type:NestedSelector # Extras rolls for extra variety
-          tableId: AllToysTable
-          rolls: 2
->>>>>>> 2537c084eef959feba055ff6baa6cbb5320ab1e4
 
 - type: entity
   parent: CrateGenericSteel

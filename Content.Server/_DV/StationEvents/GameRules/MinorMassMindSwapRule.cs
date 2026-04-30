@@ -5,6 +5,7 @@ using Content.Server.StationEvents.Events;
 using Content.Shared._Common.Consent;
 using Content.Shared.Bed.Cryostorage;
 using Content.Shared._DV.Psionics.Components;
+using Content.Shared._DV.Psionics.Components.PsionicPowers;
 using Content.Shared._DV.Psionics.Systems.PsionicPowers;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
