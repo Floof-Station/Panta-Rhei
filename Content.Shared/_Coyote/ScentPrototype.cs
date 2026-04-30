@@ -11,7 +11,7 @@ public sealed partial class ScentPrototype : IPrototype, IInheritingPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     /// <inheritdoc />
     /// <summary>

@@ -160,11 +160,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (gun.Owner != GetEntity(msg.Gun))
             return;
 
-        gun.ShootCoordinates = GetCoordinates(msg.Coordinates);
-        gun.Target = GetEntity(msg.Target);
-        AttemptShoot(user.Value, ent, gun);
+        gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
+        gun.Comp.Target = GetEntity(msg.Target);
+        AttemptShoot(user.Value, gun);
         if (msg.Continuous)
-            gun.ShotCounter = 0;
+            gun.Comp.ShotCounter = 0;
     }
 
     private void OnStopShootRequest(RequestStopShootEvent ev, EntitySessionEventArgs args)

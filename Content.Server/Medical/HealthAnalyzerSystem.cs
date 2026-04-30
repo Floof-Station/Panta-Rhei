@@ -76,7 +76,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             if (component.NextUpdate > _timing.CurTime)
                 continue;
 
-            if (component.ScannedEntity is not {} patient)
+            if (component.ScannedEntity is not { } patient)
                 continue;
 
             if (Deleted(patient))
@@ -258,7 +258,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     // Begin DeltaV - Medical Records
     private void OnHealthAnalyzerTriageStatusSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerTriageStatusMessage args)
     {
-        if (healthAnalyzer.Comp.StationRecordKey is not {} key)
+        if (healthAnalyzer.Comp.StationRecordKey is not { } key)
             return;
 
         _medicalRecords.SetPatientStatus(key, args.TriageStatus);
@@ -266,7 +266,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
     private void OnHealthAnalyzerTriageClaimSelected(Entity<HealthAnalyzerComponent> healthAnalyzer, ref HealthAnalyzerTriageClaimMessage args)
     {
-        if (healthAnalyzer.Comp.StationRecordKey is not {} key)
+        if (healthAnalyzer.Comp.StationRecordKey is not { } key)
             return;
 
         _medicalRecords.ClaimPatient(key, args.Actor);
@@ -336,8 +336,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
 
-        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
-            GetNetEntity(target),
+        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(GetNetEntity(target)));
+
         return new HealthAnalyzerUiState(
             GetNetEntity(entity),
             bodyTemperature,
@@ -345,13 +345,13 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             null,
             bleeding,
             unrevivable,
+            printable, // Frontier
 
             // Shitmed Change
             body,
-            _medicalRecords.GetMedicalRecords(target), // DeltaV - Medical Records
-            part != null ? GetNetEntity(part) : null,
 
-            printable // Frontier
+            _medicalRecords.GetMedicalRecords(entity), // DeltaV - Medical Records
+            part != null ? GetNetEntity(part) : null
         );
     }
 }

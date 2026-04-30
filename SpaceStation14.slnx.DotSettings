@@ -226,7 +226,7 @@ namespace $NAMESPACE$;
 public sealed partial class $CLASS$ : IPrototype {
     /// &lt;inheritdoc/&gt;
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 }</s:String>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=42CD33DDCA56314C933090204C703B42/UITag/@EntryValue">SS14</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=43636A0FA0FC32489EDF8E6516687CA0/@KeyIndexDefined">True</s:Boolean>
@@ -538,16 +538,16 @@ namespace $NAMESPACE$;
 public sealed class $CLASS$ : IPrototype, IInheritingPrototype {
     /// &lt;inheritdoc/&gt;
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     /// &lt;inheritdoc/&gt;
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer&lt;$CLASS$&gt;))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; set; }
 
     /// &lt;inheritdoc/&gt;
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; set; }
 }</s:String>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EA04030275C2A349A1CF0D32838BD1FA/UITag/@EntryValue">SS14</s:String>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F78E2BE57FA393438C0E0AC717B4FC76/@KeyIndexDefined">True</s:Boolean>
