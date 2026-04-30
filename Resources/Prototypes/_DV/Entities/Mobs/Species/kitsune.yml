@@ -48,8 +48,6 @@
 #    interactSuccessSound:
 #      path: /Audio/Animals/fox_squeak.ogg
   - type: Kitsune
-  - type: PsionicBonusChance
-    flatBonus: 0.5
   - type: LightweightDrunk
     boozeStrengthMultiplier: 3
   - type: PseudoItem
@@ -58,7 +56,7 @@
       - 0,0,1,4
       - 0,2,3,4
       - 4,0,5,4
-  - type: Wagging # Floofstation  
+  - type: Wagging # Floofstation
   - type: Tag # Floofstation
     tags:
     - CanPilot

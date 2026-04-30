@@ -57,6 +57,7 @@
       blacklist:
         components:
         - TargetObjectiveImmune
+    - !type:ObjectiveImmuneFilter
   - type: KillPersonCondition
     requireDead: true
 

@@ -1424,6 +1424,7 @@
   minLimit: 0
   loadouts:
   - RegularLabCoat
+  - LongLabCoat # DeltaV
   - ScienceLabCoat
   - ScienceWintercoat
   - SeniorResearcherLabCoat
@@ -1834,6 +1835,13 @@
   - BlueSurgeryCap
   - GreenSurgeryCap
   - PurpleSurgeryCap
+  # Begin DeltaV Additions
+  - BlackSurgeryCap
+  - CyanSurgeryCap
+  - PinkSurgeryCap
+  - WhiteSurgeryCap
+  - RainbowSurgeryCap
+  # End DeltaV Additions
   - NurseHat
 
 - type: loadoutGroup
@@ -1848,6 +1856,13 @@
   - MedicalBlueScrubs
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
+  # Begin DeltaV Additions
+  - MedicalBlackScrubs
+  - MedicalCyanScrubs
+  - MedicalPinkScrubs
+  - MedicalWhiteScrubs
+  - MedicalRainbowScrubs
+  # End DeltaV Additions
   # Begin DeltaV Additions - Medical Clothing Overhaul
   - MedicalApronJumpsuit
   - MedicalApronJumpskirt
@@ -2152,6 +2167,15 @@
   - LoadoutSpeciesVoxNitrogen
   - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporSyndicate # DeltaV
+
+- type: loadoutGroup
+  id: SurvivalMilitaryDouble
+  name: loadout-group-survival-military
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenMilitaryDouble
+  - EmergencyOxygenMilitaryDouble
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

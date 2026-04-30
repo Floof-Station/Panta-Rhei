@@ -136,3 +136,28 @@
   - RoboticistGlasses
   - Survival
   - GroupSpeciesBreathTool
+
+# Wildcards
+- type: roleLoadout
+  id: JobZookeeper
+  groups:
+  - GroupTankHarness
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - ZookeeperJobTrinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBoxer
+  groups:
+  - GroupTankHarness
+  - BoxerJumpsuit
+  - BoxerGloves
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - BoxerJobTrinkets
+  - GroupSpeciesBreathTool

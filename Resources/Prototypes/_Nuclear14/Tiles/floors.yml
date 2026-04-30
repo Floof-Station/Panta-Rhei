@@ -1750,8 +1750,8 @@
   sprite: /Textures/_Nuclear14/Tiles/wasteland.png
   variants: 4
   placementVariants: [0, 1, 2, 3]
-  baseTurf: space
-  isSubfloor: true
+  baseTurf: Space # Delta-V - Update due to upstream changes, was lowercase space
+  isSubfloor: false
   footstepSounds:
     collection: N14FootstepDirt
   friction: 1.25 # Floofstation - make walking not feel like ice

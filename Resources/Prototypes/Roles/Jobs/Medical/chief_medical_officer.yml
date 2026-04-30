@@ -48,6 +48,8 @@
    components:
     - type: SurgerySpeedModifier
       speedModifier: 2
+  - !type:ModifyPsionicChanceSpecial # DeltaV - Command Roles are more likely to be psionic.
+    jobBonusChance: 0.05 # Additional 5% chance.
 
 - type: startingGear
   id: CMOGear

@@ -1,12 +1,13 @@
-using Content.Server.Abilities.Psionics;
 using Content.Server.Chat.Systems;
-using Content.Server.Psionics;
 using Content.Server.StationEvents.Components;
 using Content.Server.StationEvents.Events;
 using Content.Shared._Common.Consent;
 using Content.Shared._DV.Abilities.Psionics;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.Bed.Cryostorage;
+using Content.Shared._DV.Psionics.Components;
+using Content.Shared._DV.Psionics.Systems;
+using Content.Shared._DV.Psionics.Systems.PsionicPowers;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
@@ -25,14 +26,15 @@ namespace Content.Server.Nyanotrasen.StationEvents.Events;
 internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComponent>
 {
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly MindSwapPowerSystem _mindSwap = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly SharedConsentSystem _consent = default!; // Floofstation
     [Dependency] private readonly SharedCryostorageSystem _cryoSystem = default!; // Floofstation
 
     private static readonly ProtoId<ConsentTogglePrototype> MindswapConsent = "MassMindswap"; // Floofstation
+    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly SharedMindSwapPowerSystem _mindSwap = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly SharedPsionicSystem _psionic = default!;
 
     private TimeSpan _warningSoundLength;
     private ResolvedSoundSpecifier _resolvedWarningSound = String.Empty;
@@ -79,7 +81,7 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
         List<EntityUid> psionicActors = new();
 
         var query = EntityQueryEnumerator<PotentialPsionicComponent, MobStateComponent>();
-        while (query.MoveNext(out var psion, out _, out _))
+        while (query.MoveNext(out var psion, out _, out var mobState))
         {
             if (!_consent.HasConsent(psion, MindswapConsent) // Floofstation - requires consent
                 || _cryoSystem.IsInPausedMap(psion) // This hack is needed because sometimes cryo fails to pause mobs
@@ -90,12 +92,15 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
             if (_mobStateSystem.IsAlive(psion) && !HasComp<PsionicInsulationComponent>(psion))
             {
                 psionicPool.Add(psion);
+            if (!_mobStateSystem.IsAlive(psion, mobState) || !_psionic.CanBeTargeted(psion))
+                continue;
 
-                if (HasComp<ActorComponent>(psion))
-                {
-                    // This is so we don't bother mindswapping NPCs with NPCs.
-                    psionicActors.Add(psion);
-                }
+            psionicPool.Add(psion);
+
+            if (HasComp<ActorComponent>(psion))
+            {
+                // This is so we don't bother mindswapping NPCs with NPCs.
+                psionicActors.Add(psion);
             }
         }
 
@@ -122,13 +127,8 @@ internal sealed class MassMindSwapRule : StationEventSystem<MassMindSwapRuleComp
                 // Remove this actor from the pool of swap candidates before they go.
                 psionicPool.Remove(actor);
 
-                // Do the swap.
-                _mindSwap.Swap(actor, other);
-                if (!component.IsTemporary)
-                {
-                    _mindSwap.GetTrapped(actor);
-                    _mindSwap.GetTrapped(other);
-                }
+                // Do the swap. Also ignore mindshields, because this is the big boi swap.
+                _mindSwap.SwapMinds(actor, other, false, component.IsTemporary, true);
             } while (true);
         }
     }
