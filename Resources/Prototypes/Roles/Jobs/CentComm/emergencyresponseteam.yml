@@ -517,27 +517,8 @@
   equipment:
     shoes: ClothingShoesBootsJackFilled
     head: ClothingHeadHelmetERTMedic
-    eyes: ClothingEyesHudMedical
-    gloves: ClothingHandsGlovesNitrile
-    outerClothing: ClothingOuterArmorBasicSlim
-    id: ERTMedicPDA
-    ears: ClothingHeadsetAltCentCom
-    belt: ClothingBeltMedicalFilled
-    pocket1: Flare
-    pocket2: MedicalPouchFilledERT # Euphoria: Add medical pouch
-  storage:
-    back:
-    - Hypospray
-    - MedkitCombatFilled
-    - MedkitCombatFilled
-    - CrowbarRed
-    # Euphoria start: Remove loose bottles for medical pouch fill
-    #- ChemistryBottleOmnizine
-    #- ChemistryBottleEpinephrine
-    #- ChemistryBottleEpinephrine
-    # Euphoria end
     outerClothing: ClothingOuterArmorBasic
-    pocket2: FlashlightSeclite
+    pocket2: MedicalPouchFilledERT # Euphoria: Add medical pouch
 
 - type: startingGear
   id: ERTMedicalGearEVA
