@@ -1,10 +1,9 @@
 - type: entity
   id: BaseAnimalOrgan
-  parent: [BaseAnimalOrganUnGibbable, BaseOrganRotting] # Floof - added the rotting parent
+  parent: [BaseItem, BaseOrganRotting] # Floof - added the rotting parent
   abstract: true
   components:
   - type: Organ
-  - type: Gibbable
   - type: Edible
   - type: Sprite
     sprite: Mobs/Species/Human/organs.rsi
