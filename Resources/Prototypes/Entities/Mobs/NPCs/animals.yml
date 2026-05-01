@@ -50,11 +50,6 @@
       path: /Audio/Animals/fox_squeak.ogg
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
-  - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 50
   - type: LanguageKnowledge # Floofstation
     speaks:
     - Mouse
