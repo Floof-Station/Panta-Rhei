@@ -690,7 +690,7 @@ public sealed class NuclearReactorSystem : SharedNuclearReactorSystem
             var announcement = Loc.GetString("reactor-melting-announcement");
             var sender = Loc.GetString("reactor-melting-announcement-sender");
             _chatSystem.DispatchStationAnnouncement(stationUid ?? uid, announcement, sender, false, null, Color.Orange);
-            _soundSystem.PlayGlobalOnStation(uid, _audio.ResolveSound(new SoundPathSpecifier("/Audio/Misc/delta_alt.ogg")));
+            _soundSystem.PlayGlobalOnStation(uid, _audio.ResolveSound(new SoundPathSpecifier("/Audio/_Starlight/misc/orange.ogg"))); // Euphoria - This sound fits better here tbh.
             comp.HasSentWarning = true;
         }
 
