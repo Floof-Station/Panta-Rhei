@@ -19,7 +19,7 @@ public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{
     /// Maximum number of prey this entity can hold.
     /// </summary>
     [DataField("maxPrey")]
-    public int MaxPrey = 2;
+    public int MaxPrey = 3;
     public OnVoreDoAfter(int maxPrey)
     {
         MaxPrey = maxPrey;

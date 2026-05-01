@@ -311,6 +311,9 @@
     count: 5
   - type: StackPrice
     price: 10
+  - type: Tag # Euphoria - I'm pretty sure this is purely the DV April fools thing.
+    tags:
+    - MedicalMisc
 
 - type: entity
   parent: Oilpack
@@ -344,6 +347,9 @@
   - type: Stack
     stackType: OmniPatch
     count: 10
+  - type: Tag # Euphoria
+    tags:
+    - MedicalMisc
 
 - type: entity
   id: Omnipatch1
@@ -395,3 +401,6 @@
     count: 10
   - type: StackPrice
     price: 5
+  - type: Tag # Euphoria
+    tags:
+    - MedicalMisc

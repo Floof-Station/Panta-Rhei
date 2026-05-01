@@ -36,7 +36,7 @@ public sealed partial class WeldbotWeldOperator : HTNOperator
 
     public const float EmaggedBurnDamage = 10;
     public const float SiliconRepairAmount = 30;
-    public const float StructureRepairAmount = 5;
+    public const float StructureRepairAmount = 10;
 
     /// <summary>
     /// Target entity to inject.

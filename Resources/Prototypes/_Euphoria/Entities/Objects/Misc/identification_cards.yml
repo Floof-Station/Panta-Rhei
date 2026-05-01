@@ -1,0 +1,17 @@
+- type: entity
+  parent: IDCardStandard
+  id: InventorySpecialistIDCard
+  name: inventory specialist ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: stripe_top
+      color: &color-supply-top "#b18644"
+    - state: stripe_bottom
+      color: &color-supply-bottom "#5b4523"
+    - sprite: &icon-rsi /Textures/_Floof/Interface/Misc/floof_job_icons.rsi
+      offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
+      state: InventorySpecialist
+  - type: PresetIdCard
+    job: InventorySpecialist

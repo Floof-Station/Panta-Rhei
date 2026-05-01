@@ -106,3 +106,10 @@
   maxLimit: 1
   loadouts:
   - ClothingUnderSocksLogis
+
+# inventory specialist additions
+- type: loadoutGroup
+  id: InventorySpecialistPDA
+  name: loadout-group-invspec-pda
+  loadouts:
+  - InventorySpecialistPDA

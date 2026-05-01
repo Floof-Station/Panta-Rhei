@@ -304,6 +304,8 @@
     - MechBoards
     - ShuttleBoards
     - EngineeringBoardsGoob #Goob Factorio port
+    - ServiceAssemblerPack # Frontier Service Assembler
+    - MedicalAssemblerPack # Frontier Medical Assembler
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards
@@ -598,6 +600,7 @@
     # End DeltaV Additions
     # Floofstation section
     - BasicTranslation
+    - MedicalAssemblerPack # Frontier Medical Assembler
     # Floofstation section end
   - type: Machine
     board: MedicalTechFabCircuitboard
