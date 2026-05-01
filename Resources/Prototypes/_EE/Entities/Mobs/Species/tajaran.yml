@@ -95,9 +95,10 @@
     - AnomalyHost #Euphoria
     - TajaranEmotes #Euphoria
   - type: FootPrints
+  - type: Temperature
+    currentTemperature: 311.76  # Body temperature of cat
   - type: TemperatureDamage
     coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal
-    currentTemperature: 311.76  # Body temperature of cat
     heatDamage:
       types:
         Heat: 2 # poor kitty
