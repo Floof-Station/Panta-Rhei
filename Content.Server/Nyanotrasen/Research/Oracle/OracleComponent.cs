@@ -21,10 +21,11 @@ public sealed partial class OracleComponent : Component
     public float BarkAccumulator;
 
     [DataField("barkTime")]
-    public TimeSpan BarkTime = TimeSpan.FromMinutes(1);
+    public TimeSpan BarkTime = TimeSpan.FromMinutes(3); //Euphoria - 3ish barks per request.
 
+    //Euphoria
     [DataField]
-    public OracleBarkType BarkType = OracleBarkType.Never;
+    public OracleBarkType BarkType = OracleBarkType.Timed;
 
     [DataField("rejectAccumulator")]
     public float RejectAccumulator;

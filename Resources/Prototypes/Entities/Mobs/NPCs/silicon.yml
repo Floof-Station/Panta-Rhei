@@ -123,6 +123,8 @@
     speechVerb: Robotic
     speechSounds: Pai #couldn't decide if this should be borg or pai sounds so I flipped a coin.
   - type: AnimatedEmotes # DeltaV - Allow bots to emote
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   parent: MobSiliconBase

@@ -1,0 +1,40 @@
+- type: entity
+  name: Libidozenithizine pill
+  parent: Pill
+  id: PillLibidozenithizine
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 20
+          reagents:
+            - ReagentId: Libidozenithizine
+              Quantity: 10
+
+- type: entity
+  name: space station rhino pill
+  parent: Pill
+  id: PillLibidozenithizineRhino
+  components:
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 50
+          reagents:
+            - ReagentId: Libidozenithizine # This will most likely kill you
+              Quantity: 50
+            
+- type: entity
+  parent: PresentRandom
+  id: RhinoPillbox
+  name: space station rhino pill box
+  description: A box containing a "Space Station Rhino Pill". The flashy labeling claims it lasts a whole day and allegedly "no headache". There's a small disclaimer on the back, but it's so small that it's completely illegible.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/figurines.rsi
+    layers:
+      - state: fig_box
+  - type: SpawnItemsOnUse
+    items:
+      - id: MysteryFigureBoxTrash
+      - id: PillLibidozenithizineRhino

@@ -22,6 +22,10 @@ job-alt-title-senior-phys = Senior Physician
 job-alt-title-tr = Trauma Responder
 job-alt-title-mortician = Mortician
 job-alt-title-vet = Veterinarian
+job-alt-title-acolyte = Acolyte
+job-alt-title-golemancer = Golemancer
+job-alt-title-mystic = Mystic
+job-alt-title-noviciate = Noviciate
 
 loadout-group-captain-pdas = Captain pda
 loadout-group-hos-pdas = Head of Security pda
@@ -34,3 +38,5 @@ loadout-group-logistics-officer-pdas = Logistics Officer pda
 loadout-group-chaplain-pdas = Chaplain pda
 loadout-group-floof-paramed-pdas = Paramed pda
 loadout-group-floof-senior-pyhs-pdas = Senior Physician pda
+loadout-group-epistemics-research-assistant-pdas = Research Assistant pda
+loadout-group-epistemics-senior-researcher-pda = Senior Researcher pda
