@@ -5,8 +5,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-// Start Euphoria //
-using Content.Server.Atmos.Rotting;
+using Content.Server.Atmos.Rotting; // Euphoria
 using Content.Server.DoAfter;
 using Content.Server.Nutrition.EntitySystems;
 using Content.Server.Popups;
@@ -20,7 +19,6 @@ using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
-// End Euphoria // 
 
 namespace Content.Shared._DV.Body.Systems;
 
