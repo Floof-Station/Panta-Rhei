@@ -58,7 +58,6 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     public event Action<TriageStatus>? OnTriageStatusChanged;
     public event Action? OnClaimPatient;
     // End DeltaV - Medical Records
-
     public Action? OnPrintPatientRecord; // Frontier: Allow printing hardcopy of patient information
 
     public HealthAnalyzerControl()
@@ -116,8 +115,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         StatusBox.Children.Last().AddStyleClass("OpenLeft");
         StatusBox.Children.Last().RemoveStyleClass("ButtonSquare");
         ClaimButton.OnPressed += _ => OnClaimPatient?.Invoke();
-        PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
         // End DeltaV - Medical Records
+        PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
     }
 
     public void Populate(HealthAnalyzerUiState state)

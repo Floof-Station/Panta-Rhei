@@ -30,12 +30,12 @@ public struct HealthAnalyzerUiState
     public bool? ScanMode;
     public bool? Bleeding;
     public bool? Unrevivable;
-    public bool Printable; // Frontier
     public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // Shitmed Change
     public NetEntity? Part; // Shitmed Change
     public MedicalRecord? MedicalRecord; // DeltaV - Medical Records
+    public bool Printable; // Frontier
 
-    public HealthAnalyzerUiState() { }
+    public HealthAnalyzerUiState() {}
 
     public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body, MedicalRecord? medicalRecord = null, NetEntity? part = null, bool printable = false) // Shitmed Change // DeltaV - Medical Records
     {
@@ -50,7 +50,7 @@ public struct HealthAnalyzerUiState
         MedicalRecord = medicalRecord; // DeltaV - Medical Records
         Printable = printable; // Frontier
     }
-};
+}
 
 // Shitmed Change Start
 [Serializable, NetSerializable]

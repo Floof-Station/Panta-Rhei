@@ -336,8 +336,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
 
         var printable = HasComp<HealthAnalyzerPrinterComponent>(target); // Frontier
 
-        // _uiSystem.ServerSendUiMessage(target, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(GetNetEntity(target)));
-
         return new HealthAnalyzerUiState(
             GetNetEntity(entity),
             bodyTemperature,
