@@ -8,4 +8,8 @@ public sealed class BeingMicrowavedEvent(EntityUid microwave, EntityUid? user, u
     public EntityUid Microwave = microwave;
     public EntityUid? User = user;
     public uint Time = time; // DeltaV Additions - Improve animal cube interactions (31668 - Upstream)
+    // Froniter start
+    public bool BeingHeated;
+    public bool BeingIrradiated;
+    // End Frontier
 }
