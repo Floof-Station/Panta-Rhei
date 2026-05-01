@@ -158,7 +158,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         ScanModeLabel.FontColorOverride = state.ScanMode.HasValue && state.ScanMode.Value ? Color.Green : Color.Red;
 
-        PrintButtonsContainer.Visible = msg is { Printable: true, ScanMode: true }; // Frontier
+        PrintButtonsContainer.Visible = state is { Printable: true, ScanMode: true }; // Frontier
 
         // Patient Information
 
