@@ -59,6 +59,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     public event Action? OnClaimPatient;
     // End DeltaV - Medical Records
 
+    public Action? OnPrintPatientRecord; // Frontier: Allow printing hardcopy of patient information
+
     public HealthAnalyzerControl()
     {
         RobustXamlLoader.Load(this);
@@ -114,6 +116,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         StatusBox.Children.Last().AddStyleClass("OpenLeft");
         StatusBox.Children.Last().RemoveStyleClass("ButtonSquare");
         ClaimButton.OnPressed += _ => OnClaimPatient?.Invoke();
+        PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
         // End DeltaV - Medical Records
     }
 

@@ -27,7 +27,7 @@ namespace Content.Client.HealthAnalyzer.UI
             _window.HealthAnalyzer.OnClaimPatient += SendTriageClaimMessage; // DeltaV - Medical Records
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
 
-            _window.OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
+            _window.HealthAnalyzer.OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
         }
 
 

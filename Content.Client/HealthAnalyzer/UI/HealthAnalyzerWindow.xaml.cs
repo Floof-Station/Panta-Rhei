@@ -13,12 +13,8 @@ public sealed partial class HealthAnalyzerWindow : FancyWindow
         RobustXamlLoader.Load(this);
     }
 
-    public Action? OnPrintPatientRecord; // Frontier: Allow printing hardcopy of patient information
-
     public void Populate(HealthAnalyzerScannedUserMessage msg)
     {
-        PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
-
         HealthAnalyzer.Populate(msg.State);
     }
 }
