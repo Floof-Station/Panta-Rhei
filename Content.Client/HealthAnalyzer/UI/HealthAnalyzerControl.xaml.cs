@@ -132,6 +132,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             || !_entityManager.TryGetComponent<DamageableComponent>(isPart ? part : target, out var damageable)) // Shitmed
         {
             NoPatientDataText.Visible = true;
+            PrintButtonsContainer.Visible = false; // Frontier
             return;
         }
 
@@ -156,6 +157,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             : Loc.GetString("health-analyzer-window-entity-unknown-text");
 
         ScanModeLabel.FontColorOverride = state.ScanMode.HasValue && state.ScanMode.Value ? Color.Green : Color.Red;
+
+        PrintButtonsContainer.Visible = msg is { Printable: true, ScanMode: true }; // Frontier
 
         // Patient Information
 
