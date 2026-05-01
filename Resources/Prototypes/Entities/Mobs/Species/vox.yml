@@ -88,11 +88,12 @@
   #  highpressuremultiplier: 0.6
   #  lowpressuremodifier: 1
   #  lowpressuremultiplier: 1000
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
   - type: TemperatureDamage
     heatDamageThreshold: 325 # still gotta wear a firesuit
     coldDamageThreshold: -200 # Floof: Space-fairing chickens
-    currentTemperature: 310.15
-    specificHeat: 42
     coldDamage:
       types:
         Cold: 0 #per second, scales with temperature & other constants

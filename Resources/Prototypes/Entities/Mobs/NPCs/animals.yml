@@ -55,13 +55,12 @@
       reagents:
       - ReagentId: Blood
         Quantity: 50
-#  - type: ReplacementAccent # Floofstation
-#    accent: mouse
   - type: LanguageKnowledge # Floofstation
     speaks:
     - Mouse
     understands:
     - Mouse
+  - type: Bloodstream
     bloodReferenceSolution:
       reagents:
       - ReagentId: Blood
