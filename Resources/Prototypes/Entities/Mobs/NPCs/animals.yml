@@ -51,7 +51,10 @@
   - type: SentienceTarget
     flavorKind: station-event-random-sentience-flavor-organic
   - type: Bloodstream
-    bloodMaxVolume: 50
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 50
 #  - type: ReplacementAccent # Floofstation
 #    accent: mouse
   - type: LanguageKnowledge # Floofstation
@@ -2613,7 +2616,10 @@
     interactSuccessSound:
       path: /Audio/Animals/parrot_raught.ogg
   - type: Bloodstream
-    bloodMaxVolume: 50
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 50
   - type: LanguageKnowledge # Floofstation
     speaks:
     - Chicken
@@ -2622,10 +2628,10 @@
     - Chicken
   - type: LeashAnchor # Floofstation
     kind: Intrinsic
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 50
+    #bloodReferenceSolution: # why are we giving the leash blood, this isnt ultrakill
+    #  reagents:
+    #  - ReagentId: Blood
+    #    Quantity: 50
 
 - type: entity
   name: parrot
