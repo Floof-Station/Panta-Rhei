@@ -45,3 +45,21 @@
   - Raw
   - HighRiskItem
   - Meat
+
+- type: foodSequenceElement
+  id: CrayonGreen
+  name: food-sequence-content-greencrayon
+  sprites:
+  - sprite: Objects/Fun/crayons.rsi
+    state: green
+  tags:
+  - CrayonGreen
+
+- type: foodSequenceElement
+  id: Flare
+  name: food-sequence-content-flare
+  sprites:
+  - sprite: Objects/Misc/flare.rsi
+    state: icon
+  tags:
+  - Flare

@@ -4,6 +4,14 @@
   id: Flare
   description: A flare that produces a very bright light for a short while. Point the flame away from yourself.
   components:
+  #Euphoria start
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: FoodSequenceElement
+    entries:
+      Burger: Flare
+      Taco: Flare
+  #Euphoria end
   - type: Tag
     tags:
     - Flare

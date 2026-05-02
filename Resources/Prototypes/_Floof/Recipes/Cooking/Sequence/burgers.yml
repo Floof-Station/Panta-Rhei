@@ -189,3 +189,55 @@
   - !type:LastElementHasTags # last bun
     tags:
     - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCrazy
+  key: Burger
+  result: FoodBurgerCrazy
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 9
+      max: 14
+  - !type:IngredientsWithTags # 2 meats
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 2 cheese
+    tags:
+    - Cheese
+    count:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 chili
+    tags:
+    - Vegetable
+    - Chili
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cabbage
+    tags:
+    - Vegetable
+    - Cabbage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 crayon green
+    tags:
+    - CrayonGreen
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 flare
+    tags:
+    - Flare
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
