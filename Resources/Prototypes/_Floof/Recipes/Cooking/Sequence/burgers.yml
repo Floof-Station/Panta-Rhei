@@ -123,3 +123,29 @@
   - !type:LastElementHasTags # last bun
     tags:
     - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCat
+  key: Burger
+  result: FoodBurgerCat
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 5
+  - !type:IngredientsWithTags # 1 cat ears
+    tags:
+    - CatEars
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 meat
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
