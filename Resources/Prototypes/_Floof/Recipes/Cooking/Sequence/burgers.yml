@@ -83,3 +83,43 @@
   - !type:LastElementHasTags # last bun
     tags:
     - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerBig
+  key: Burger
+  result: FoodBurgerBig
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 7
+      max: 11
+  - !type:IngredientsWithTags # 2 meats
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 cheese
+    tags:
+    - Cheese
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 tomato
+    tags:
+    - Fruit
+    - Vegetable
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 2 onion
+    tags:
+    - Vegetable
+    - Slice
+    count:
+      min: 2
+      max: 3
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
