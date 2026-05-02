@@ -29,7 +29,7 @@
   id: ArmsdealerViper
   table: !type:AllSelector
     children:
-    - id: WeaponPistolViper
+    - id: WeaponPistolViperSyndicate # Euphoria
       amount: !type:RangeNumberSelector
         range: 1, 2
     - id: MagazinePistol
