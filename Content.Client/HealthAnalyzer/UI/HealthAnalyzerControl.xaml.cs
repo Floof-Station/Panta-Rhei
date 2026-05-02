@@ -159,6 +159,12 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         ScanModeLabel.FontColorOverride = state.ScanMode.HasValue && state.ScanMode.Value ? Color.Green : Color.Red;
 
         PrintButtonsContainer.Visible = state is { Printable: true, ScanMode: true }; // Frontier
+        // Euphoria - TODO: FIX THIS DAMN PIECE OF SHIT FEATURE.
+        // IT DOESN'T WORK, AT ALL
+        // NO ERRORS, NO WARNINGS, NOTHING
+        // i am CLEARLY inexperienced to fix this fucking thing, so if you're making a PR to fix it, listen to me:
+        // this feature is a nightmare and shouldn't be meddled with.
+        // - taraz
 
         // Patient Information
 
