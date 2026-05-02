@@ -38,7 +38,7 @@
     gloves: ClothingHandsGlovesColorBlack
   storage:
     back:
-    - WeaponPistolViperSyndicate
+    - WeaponPistolViperSyndicate # Euphoria
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
@@ -54,7 +54,7 @@
   id: SyndicateReinforcementMedic
   parent: SyndicateOperativeClothing
   equipment:
-    pocket1: WeaponPistolViperSyndicate
+    pocket1: WeaponPistolViperSyndicate # Euphoria
   inhand:
     - MedkitCombatFilled
 
@@ -64,13 +64,13 @@
   equipment:
     id: AgentIDCard
     mask: ClothingMaskGasVoiceChameleon
-    pocket1: WeaponPistolViperSyndicate 
+    pocket1: WeaponPistolViperSyndicate # Euphoria 
 
 - type: startingGear
   id: SyndicateReinforcementThief
   parent: SyndicateOperativeClothing
   equipment:
-    pocket1: WeaponPistolViperSyndicate 
+    pocket1: WeaponPistolViperSyndicate # Euphoria 
   inhand:
     - ToolboxSyndicateFilled
   storage:
