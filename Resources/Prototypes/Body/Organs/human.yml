@@ -118,6 +118,10 @@
   parent: BaseHumanOrgan
   name: appendix
   components:
+  - type: FoodSequenceElement
+    entries:
+      Burger: Appendix
+      Taco: Brain
   - type: Sprite
     layers:
     - state: appendix
