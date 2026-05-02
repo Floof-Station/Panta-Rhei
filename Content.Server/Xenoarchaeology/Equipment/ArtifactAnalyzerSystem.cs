@@ -87,7 +87,7 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
         float normalizedGlimmer = Math.Clamp(_glimmerSystem.Glimmer / 1000f, 0, 1);
         //DeltaV - Prevents extreme glimmer multipliers
         //return (float)(.5f + Math.Clamp(Math.Pow(normalizedGlimmer, 0.5f) + 1.5f * Math.Pow(normalizedGlimmer, 10f), 0f, 1.5f)); //Euphoria - lower the upper end of glimmer scaling
-        return (float)(2*Math.Sin(normalizedGlimmer)+1); //Euphoria - prevent scaling from going out of control, while not punishing smaller research teams
+        return (float)(((0.5*normalizedGlimmer)/(normalizedGlimmer + 1) )+ 1); //Euphoria - prevent scaling from going out of control, while not punishing smaller research teams
 
     }
 }
