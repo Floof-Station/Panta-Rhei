@@ -21,7 +21,7 @@
   name: trait-poor-vision-name
   description: trait-poor-vision-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
+  cost: -1 #floof
   conditions:
   - !type:HasCompCondition
     component: Blindable
@@ -71,7 +71,7 @@
   name: trait-impaired-mobility-name
   description: trait-impaired-mobility-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -4 #floof
+  cost: -3 #floof
   effects:
   - !type:AddCompsEffect
     components:
@@ -125,7 +125,7 @@
   name: trait-painnumbness-name
   description: trait-painnumbness-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -3
+  cost: -2
   effects:
   - !type:AddCompsEffect
     components:
@@ -136,7 +136,7 @@
   name: trait-hemophilia-name
   description: trait-hemophilia-desc
   category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
+  cost: -2 #floof
   effects:
   - !type:AddCompsEffect
     components:
