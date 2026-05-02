@@ -5,6 +5,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+﻿using Content.Shared.Atmos.Rotting;;
 using Content.Server.Atmos.Rotting; // Euphoria
 using Content.Server.DoAfter;
 using Content.Server.Nutrition.EntitySystems;
