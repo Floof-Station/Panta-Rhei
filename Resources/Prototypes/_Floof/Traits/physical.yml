@@ -42,7 +42,7 @@
   name: trait-name-CyberEyesFlare
   description: trait-description-CyberEyesFlare
   category: Cybernetics
-  cost: 6
+  cost: 8
   conflicts:
   - Blindness
   - PoorVision
@@ -52,13 +52,14 @@
     - type: FlashImmunity
       showInExamine: false
     - type: EyeProtection
+      ProtectionTime: 15
 
 - type: trait
   id: CyberEyesNightVision
   category: Cybernetics
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
-  cost: 6
+  cost: 8
   conflicts:
   - Blindness
   - PoorVision
@@ -83,7 +84,7 @@
   category: Cybernetics
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
-  cost: 3
+  cost: 4
   conflicts:
   - CyberEyesOmni
   conditions:
@@ -117,7 +118,7 @@
   category: Cybernetics
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
-  cost: 3
+  cost: 4
   conflicts:
     - CyberEyesOmni
   effects:
@@ -139,7 +140,7 @@
   category: Cybernetics
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
-  cost: 4
+  cost: 6
   conflicts:
   - CyberEyesMedical
   - CyberEyesSecurity
