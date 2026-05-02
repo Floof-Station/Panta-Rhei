@@ -4,7 +4,7 @@
   components:
   - type: DevilRule
   - type: GameRule
-    minPlayers: 15
+    minPlayers: 3 # Euphoria - Was 15
   - type: AntagObjectives
     objectives:
     - DevilContractObjective
@@ -15,7 +15,7 @@
     definitions:
     - prefRoles: [ Devil ]
       max: 1
-      playerRatio: 40
+      playerRatio: 15 # Euphoria - Was 40
       mindRoles:
       - DevilMindRole
       startingGear: DevilStartingGear
