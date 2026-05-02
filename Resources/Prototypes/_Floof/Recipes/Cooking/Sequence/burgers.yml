@@ -168,3 +168,24 @@
   - !type:LastElementHasTags # last bun
     tags:
     - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCorgi
+  key: Burger
+  result: FoodBurgerCorgi
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 corgi meat
+    tags:
+    - Raw
+    - HighRiskItem
+    - Meat
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun

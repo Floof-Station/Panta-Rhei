@@ -34,3 +34,14 @@
     state: icon
   tags:
   - ClownMask
+
+- type: foodSequenceElement
+  id: FoodMeatCorgi
+  name: food-sequence-content-corgi
+  sprites:
+  - sprite: Objects/Consumable/Food/meat.rsi
+    state: corgi
+  tags:
+  - Raw
+  - HighRiskItem
+  - Meat
