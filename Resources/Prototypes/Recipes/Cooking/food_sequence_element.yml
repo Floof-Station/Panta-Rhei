@@ -102,6 +102,7 @@
   tags:
   - Cooked
   - Meat
+  - Bacon
 
 # Bear meat
 
@@ -114,16 +115,18 @@
   tags:
   - Cooked
   - Meat
+  - Bear
 
-- type: foodSequenceElement
-  id: MeatBearBurger
-  name: food-sequence-burger-content-bear
-  sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: product-cooked
-  tags:
-  - Cooked
-  - Meat
+#Euphoria - use metamorphosis
+#- type: foodSequenceElement
+#  id: MeatBearBurger
+#  name: food-sequence-burger-content-bear
+#  sprites:
+#  - sprite: Objects/Consumable/Food/meat.rsi
+#    state: product-cooked
+#  tags:
+#  - Cooked
+#  - Meat
 
 # Penguin meat
 
