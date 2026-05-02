@@ -1,3 +1,7 @@
+using Content.Server.Atmos.Rotting; // Euphoria
+using Content.Server.DoAfter; // Euphoria
+using Content.Server.Nutrition.EntitySystems; // Euphoria
+using Content.Server.Popups; // Euphoria
 using Content.Shared._DV.Body.Components;
 using Content.Shared._DV.Body.Events;
 using Content.Shared.DoAfter;
@@ -5,11 +9,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-﻿using Content.Shared.Atmos.Rotting;;
-using Content.Server.Atmos.Rotting; // Euphoria
-using Content.Server.DoAfter;
-using Content.Server.Nutrition.EntitySystems;
-using Content.Server.Popups;
 using Content.Shared.Atmos.Rotting;
 using Content.Shared.Damage;
 using Content.Shared.Inventory;
