@@ -373,3 +373,28 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMcguffin
+  key: Burger
+  result: FoodBurgerMcguffin
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 4
+    - !type:IngredientsWithTags # 1 scrambled eggs
+      tags:
+        - Egg
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 1 cheese
+      tags:
+        - Cheese
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
