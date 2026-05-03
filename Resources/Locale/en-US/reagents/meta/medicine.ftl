@@ -1,5 +1,5 @@
-reagent-name-cryptobiolin = cryptobiolin
-reagent-desc-cryptobiolin = Causes confusion and dizziness.
+reagent-name-sanctussal = sanctus sal
+reagent-desc-sanctussal = Causes confusion and dizziness.
 
 reagent-name-dylovene = dylovene
 reagent-desc-dylovene = A broad-spectrum anti-toxin, which treats toxin damage in organisms. Overdosing will cause vomiting, dizzyness and pain.

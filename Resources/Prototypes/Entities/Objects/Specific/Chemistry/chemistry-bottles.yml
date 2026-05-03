@@ -290,18 +290,18 @@
           Quantity: 30
 
 - type: entity
-  id: ChemistryBottleCryptobiolin
-  suffix: cryptobiolin
+  id: ChemistryBottleSanctusSal
+  suffix: sanctussal
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-name-cryptobiolin
+    currentLabel: reagent-name-sanctsussal
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: Cryptobiolin
+        - ReagentId: SanctusSal
           Quantity: 30
 
 - type: entity
@@ -1423,7 +1423,7 @@
     - id: ChemistryBottleBruizine
     - id: ChemistryBottleCognizine
     - id: ChemistryBottleCryoxadone
-    - id: ChemistryBottleCryptobiolin
+    - id: ChemistryBottleSanctusSal
     - id: ChemistryBottleDermaline
     - id: ChemistryBottleDexalin
     - id: ChemistryBottleDexalinPlus
