@@ -494,7 +494,11 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound: *yap
+    sound: &yap
+      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+      params:
+        volume: -1
+        variation: 0.05
   - type: EmitSoundOnCollide
     sound: *yap
   - type: EmitSoundOnActivate
