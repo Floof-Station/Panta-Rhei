@@ -124,6 +124,12 @@
   name: raw human meat
   description: Gross.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: MeatHuman
+      Taco: MeatHuman
+  #Euphoria end
   - type: Sprite
     state: plain
   - type: SolutionContainerManager

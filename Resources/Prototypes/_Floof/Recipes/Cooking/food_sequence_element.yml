@@ -86,9 +86,20 @@
 
 - type: foodSequenceElement
   id: Ectoplasm
-  name: food-sequence-content-fish
+  name: food-sequence-content-ectoplasm
   sprites:
     - sprite: _DV/Mobs/Ghosts/revenant.rsi
       state: ectoplasm
   tags:
     - Ectoplasm
+
+- type: foodSequenceElement
+  id: MeatHuman
+  name: food-sequence-content-human
+  sprites:
+    - sprite: Objects/Consumable/Food/meat.rsi
+      state: plain
+  tags:
+    - Raw
+    - Meat
+    - Human

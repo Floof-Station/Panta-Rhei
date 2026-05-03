@@ -5,3 +5,6 @@ food-sequence-content-clownmask = clown mask
 food-sequence-content-greencrayon = crayon green
 food-sequence-content-flare = flare
 food-sequence-content-plasma = plasma
+food-sequence-content-fish = fish
+food-sequence-content-ectoplasm = ectoplasm
+food-sequence-content-human = human

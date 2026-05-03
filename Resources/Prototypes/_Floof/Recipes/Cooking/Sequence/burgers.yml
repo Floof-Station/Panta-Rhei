@@ -333,3 +333,24 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerHuman
+  key: Burger
+  result: FoodBurgerHuman
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 human meat
+      tags:
+        - Raw
+        - Meat
+        - Human
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
