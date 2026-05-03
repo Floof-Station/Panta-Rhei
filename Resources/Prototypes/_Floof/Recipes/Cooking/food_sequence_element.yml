@@ -149,3 +149,13 @@
       state: icon
   tags:
     - WizardHat
+
+- type: foodSequenceElement
+  id: TofuSlice
+  name: food-sequence-content-tofu
+  sprites:
+  - sprite: Objects/Consumable/Food/ingredients.rsi
+    state: tofu-slice
+  tags:
+  - Tofu
+  - Slice
