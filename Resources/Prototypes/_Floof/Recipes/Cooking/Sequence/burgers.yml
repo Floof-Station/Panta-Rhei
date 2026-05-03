@@ -549,3 +549,42 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerSuper
+  key: Burger
+  result: FoodBurgerSuper
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 8
+        max: 12
+    - !type:IngredientsWithTags # 1 scrambled eggs
+      tags:
+      - Egg
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 2 meat
+      tags:
+        - Cooked
+        - Meat
+      count:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 2 meat
+      tags:
+        - Cheese
+      count:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 2 tomato
+      tags:
+        - Fruit
+        - Vegetable
+      count:
+        min: 2
+        max: 3
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
