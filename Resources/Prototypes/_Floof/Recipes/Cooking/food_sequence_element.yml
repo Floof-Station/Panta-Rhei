@@ -103,3 +103,12 @@
     - Raw
     - Meat
     - Human
+
+- type: foodSequenceElement
+  id: AmanitaJelly
+  name: food-sequence-content-human
+  sprites:
+    - sprite: Objects/Consumable/Food/meals.rsi
+      state: amanita-jelly
+  tags:
+    - AmanitaJelly
