@@ -547,7 +547,7 @@
   id: UplinkPistol9mmMagazine
   name: uplink-pistol-magazine-delta-name # DeltaV - to make it clear that these arent the same as normal pistol mags
   description: uplink-pistol-magazine-delta-desc # DeltaV - 20 round capacity
-  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi, state: base-icon }
+  icon: { sprite: /Textures/Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi, state: base }
   productEntity: MagazinePistolHighCapacity
   cost:
     Telecrystal: 1
