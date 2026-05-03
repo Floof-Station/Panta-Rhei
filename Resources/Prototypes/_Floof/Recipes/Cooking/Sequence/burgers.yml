@@ -464,3 +464,24 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerRat
+  key: Burger
+  result: FoodBurgerRat
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 dead rat
+      tags:
+        - Raw
+        - Meat
+        - Rat
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
