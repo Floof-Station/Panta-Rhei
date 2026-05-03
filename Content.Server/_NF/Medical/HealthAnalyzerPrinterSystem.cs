@@ -12,6 +12,7 @@ using Content.Shared._DV.Traits.Assorted;
 using Content.Shared._NF.Medical;
 using Content.Shared.Atmos;
 using Content.Shared.Body.Components;
+using Content.Server.Body.Systems;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage.Components;
@@ -52,6 +53,7 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
     [Dependency] private readonly UncloneableSystem _uncloneable = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly RottingSystem _rottingSystem = default!;
+    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
 
     private static readonly Regex TemplateInsert = new(@"\{([\w.]+)\}");
 
@@ -232,7 +234,7 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
             }
         }
 
-        return report.ToMarkup();
+        return report.ToString();
     }
 
     private string GetEntityName(EntityUid uid)
@@ -285,7 +287,7 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
         if (TryComp<BloodstreamComponent>(patient, out var bloodstream) &&
             _solutionContainerSystem.ResolveSolution(patient, bloodstream.BloodSolutionName,
                 ref bloodstream.BloodSolution, out var bloodSolution))
-            bloodLevel = bloodSolution.FillFraction;
+            bloodLevel = _bloodstreamSystem.GetBloodLevel(patient);
 
         return !float.IsNaN(bloodLevel)
             ? $"{bloodLevel * 100:F1} %"
