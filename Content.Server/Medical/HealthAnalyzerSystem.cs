@@ -286,7 +286,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             || !HasComp<DamageableComponent>(target))
             return;
 
-        var uiState = GetHealthAnalyzerUiState(target, part); // Shitmed Change
+        var uiState = GetHealthAnalyzerUiState(healthAnalyzer, target, part); // Shitmed Change
         uiState.ScanMode = scanMode;
 
         _uiSystem.ServerSendUiMessage(
@@ -302,7 +302,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="target">The entity being scanned</param>
     /// <param name="part">Shitmed Change: The body part being scanned, if any</param>
     /// <returns></returns>
-    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid? target, EntityUid? part = null)
+    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid healthAnalyzer, EntityUid? target, EntityUid? part = null)
     {
         if (!target.HasValue || !HasComp<DamageableComponent>(target))
             return new HealthAnalyzerUiState();
@@ -334,7 +334,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             body = _bodySystem.GetBodyPartStatus(entity);
         // Shitmed Change End
 
-        var printable = HasComp<HealthAnalyzerPrinterComponent>(target); // Frontier
+        var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
 
         return new HealthAnalyzerUiState(
             GetNetEntity(entity),
