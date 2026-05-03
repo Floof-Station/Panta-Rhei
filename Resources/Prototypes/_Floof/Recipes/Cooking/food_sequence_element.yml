@@ -140,3 +140,12 @@
       state: micro_mani
   tags:
     - Manipulator
+
+- type: foodSequenceElement
+  id: WizardHat
+  name: food-sequence-content-wizardhat
+  sprites:
+    - sprite: Clothing/Head/Hats/wizardhat.rsi
+      state: icon
+  tags:
+    - WizardHat
