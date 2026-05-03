@@ -11,4 +11,5 @@ food-sequence-content-human = human
 food-sequence-content-amanita-jelly = amanita jelly
 food-sequence-content-ribs = bbq ribs
 food-sequence-content-mimemask = mime mask
+food-sequence-content-manipulator = modular machine part
 

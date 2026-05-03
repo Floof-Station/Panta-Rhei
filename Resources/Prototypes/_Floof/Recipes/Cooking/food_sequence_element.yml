@@ -131,3 +131,12 @@
       state: icon
   tags:
     - MimeMask
+
+- type: foodSequenceElement
+  id: Manipulator
+  name: food-sequence-content-manipulator
+  sprites:
+    - sprite: Objects/Misc/stock_parts.rsi
+      state: micro_mani
+  tags:
+    - Manipulator

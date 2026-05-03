@@ -485,3 +485,22 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerRobot
+  key: Burger
+  result: FoodBurgerRobot
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 4
+    - !type:IngredientsWithTags # 2 manipulators
+      tags:
+        - Manipulator
+      count:
+        min: 2
+        max: 3
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
