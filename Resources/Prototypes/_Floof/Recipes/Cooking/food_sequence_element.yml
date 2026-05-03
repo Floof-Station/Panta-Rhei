@@ -106,9 +106,19 @@
 
 - type: foodSequenceElement
   id: AmanitaJelly
-  name: food-sequence-content-human
+  name: food-sequence-content-amanita-jelly
   sprites:
     - sprite: Objects/Consumable/Food/meals.rsi
       state: amanita-jelly
   tags:
     - AmanitaJelly
+
+- type: foodSequenceElement
+  id: Ribs
+  name: food-sequence-content-ribs
+  sprites:
+    - sprite: Objects/Consumable/Food/meals.rsi
+      state: ribs
+  tags:
+    - Meat
+    - Ribs

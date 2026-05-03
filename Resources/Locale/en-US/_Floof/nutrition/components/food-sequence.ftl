@@ -8,3 +8,5 @@ food-sequence-content-plasma = plasma
 food-sequence-content-fish = fish
 food-sequence-content-ectoplasm = ectoplasm
 food-sequence-content-human = human
+food-sequence-content-amanita-jelly = amanita jelly
+food-sequence-content-ribs = bbq ribs

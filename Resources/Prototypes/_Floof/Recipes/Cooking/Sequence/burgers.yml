@@ -382,7 +382,7 @@
     - !type:SequenceLength
       range:
         min: 3
-        max: 4
+        max: 5
     - !type:IngredientsWithTags # 1 scrambled eggs
       tags:
         - Egg
@@ -392,6 +392,33 @@
     - !type:IngredientsWithTags # 1 cheese
       tags:
         - Cheese
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMcrib
+  key: Burger
+  result: FoodBurgerMcrib
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 5
+    - !type:IngredientsWithTags # 1 ribs
+      tags:
+        - Meat
+        - Ribs
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 1 onion slice
+      tags:
+        - Vegetable
+        - Slice
       count:
         min: 1
         max: 2
