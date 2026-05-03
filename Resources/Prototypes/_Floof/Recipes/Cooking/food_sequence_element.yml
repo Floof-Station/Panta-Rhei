@@ -159,3 +159,14 @@
   tags:
   - Tofu
   - Slice
+
+- type: foodSequenceElement
+  id: Mothroach
+  name: food-sequence-burger-content-mothroach
+  sprites:
+  - sprite: Mobs/Animals/mothroach/mothroach.rsi
+    state: mothroach_dead
+  tags:
+  - Meat
+  - Raw
+  - Mothroach

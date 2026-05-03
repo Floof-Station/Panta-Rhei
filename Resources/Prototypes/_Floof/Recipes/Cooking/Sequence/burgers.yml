@@ -611,6 +611,27 @@
     - Bun
 
 - type: metamorphRecipe
+  id: FoodBurgerMothRoach
+  key: Burger
+  result: FoodBurgerMothRoach
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 xeno meat
+    tags:
+    - Meat
+    - Raw
+    - Mothroach
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
   id: FoodBurgerPlain
   key: Burger
   result: FoodBurgerPlain
