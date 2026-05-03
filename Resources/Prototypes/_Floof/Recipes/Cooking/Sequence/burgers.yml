@@ -639,14 +639,14 @@
   - !type:SequenceLength
     range:
       min: 2
-      max: 3
+      max: 2
   - !type:IngredientsWithTags # 1 meat cutlet
     tags:
     - Cooked
     - Meat
     count:
       min: 1
-      max: 2
+      max: 1
   - !type:LastElementHasTags # last bun
     tags:
     - Bun
