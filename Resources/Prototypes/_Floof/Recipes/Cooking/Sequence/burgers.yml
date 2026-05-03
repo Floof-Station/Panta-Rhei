@@ -241,3 +241,22 @@
   - !type:LastElementHasTags # last bun
     tags:
     - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerEmpowered
+  key: Burger
+  result: FoodBurgerEmpowered
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 4
+  - !type:IngredientsWithTags # 2 plasma
+    tags:
+    - Plasma
+    count:
+      min: 2
+      max: 3
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun

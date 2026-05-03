@@ -132,6 +132,14 @@
   name: plasma
   suffix: Single
   components:
+  #Euphoria start
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: FoodSequenceElement
+    entries:
+      Burger: Plasma
+      Taco: Plasma
+  #Euphoria end
   - type: Sprite
     state: plasma
   - type: Stack

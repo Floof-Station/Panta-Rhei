@@ -4,3 +4,4 @@ food-sequence-content-catears = cat ears
 food-sequence-content-clownmask = clown mask
 food-sequence-content-greencrayon = crayon green
 food-sequence-content-flare = flare
+food-sequence-content-plasma = plasma
