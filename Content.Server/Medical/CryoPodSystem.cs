@@ -53,7 +53,7 @@ public sealed partial class CryoPodSystem : SharedCryoPodSystem
         var gasMix = _gasAnalyzerSystem.GenerateGasMixEntry("Cryo pod", air.Air);
         var (beakerCapacity, beaker) = GetBeakerInfo(entity);
         var injecting = GetInjectingReagents(entity);
-        var health = _healthAnalyzerSystem.GetHealthAnalyzerUiState(patient);
+        var health = _healthAnalyzerSystem.GetHealthAnalyzerUiState(entity.Owner, patient);
         health.ScanMode = true;
 
         UI.ServerSendUiMessage(
