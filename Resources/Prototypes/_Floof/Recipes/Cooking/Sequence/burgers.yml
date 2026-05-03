@@ -425,3 +425,22 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMime
+  key: Burger
+  result: FoodBurgerMime
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 mime mask
+      tags:
+        - MimeMask
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun

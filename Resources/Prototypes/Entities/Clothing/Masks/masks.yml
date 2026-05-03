@@ -288,6 +288,14 @@
   name: mime mask
   description: The traditional mime's mask. It has an eerie facial posture.
   components:
+  #Euphoria changes start
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: FoodSequenceElement
+    entries:
+      Burger: MimeMask
+      Taco: MimeMask
+  #Euphoria changes end
   - type: Sprite
     sprite: Clothing/Mask/mime.rsi
   - type: Clothing
