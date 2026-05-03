@@ -504,3 +504,29 @@
     - !type:LastElementHasTags # last bun
       tags:
         - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerSoy
+  key: Burger
+  result: FoodBurgerSoy
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 5
+        max: 7
+    - !type:IngredientsWithTags # 2 cheese
+      tags:
+        - Cheese
+      count:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 2 soy beans
+      tags:
+        - Vegetable
+        - Soybeans
+      count:
+        min: 2
+        max: 3
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun

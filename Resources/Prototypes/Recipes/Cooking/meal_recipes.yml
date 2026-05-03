@@ -329,16 +329,16 @@
 #    MicroManipulatorStockPart: 2
     # i would add steel to this recipe but the microwave explodes
 
-- type: microwaveMealRecipe
-  id: RecipeSoylentBurger
-  name: soylent burger recipe
-  result: FoodBurgerSoy
-  time: 10
-  group: Savory
-  solids:
-    FoodBreadBun: 1
-    FoodCheeseSlice: 2
-    FoodSoybeans: 2 #replace with soylent green when those become craftable
+#- type: microwaveMealRecipe
+#  id: RecipeSoylentBurger
+#  name: soylent burger recipe
+#  result: FoodBurgerSoy
+#  time: 10
+#  group: Savory
+#  solids:
+#    FoodBreadBun: 1
+#    FoodCheeseSlice: 2
+#    FoodSoybeans: 2 #replace with soylent green when those become craftable
 
 - type: microwaveMealRecipe
   id: RecipeSpellBurger
