@@ -150,6 +150,12 @@
   name: raw carp fillet
   description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: Fish
+      Taco: Fish
+  #Euphoria end
   - type: FlavorProfile
     flavors:
       - fishy

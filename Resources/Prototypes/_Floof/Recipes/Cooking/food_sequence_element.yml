@@ -72,3 +72,14 @@
       state: plasma
   tags:
     - Plasma
+
+- type: foodSequenceElement
+  id: Fish
+  name: food-sequence-content-fish
+  sprites:
+    - sprite: Objects/Consumable/Food/meat.rsi
+      state: fish
+  tags:
+    - Raw
+    - Meat
+    - Fish
