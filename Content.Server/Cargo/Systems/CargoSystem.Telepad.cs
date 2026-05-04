@@ -40,9 +40,18 @@ public sealed partial class CargoSystem
             if (_station.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // todo cannot be fucking asked to figure out device linking rn but this shouldn't just default to the first port.
-            if (!TryGetLinkedConsole((uid, tele), out var console) ||
-                console.Value.Owner != args.OrderConsole.Owner)
+            // Check if any linked console matches the order console
+            var isLinked = false;
+            foreach (var console in GetLinkedConsoles(uid))
+            {
+                if (console.Owner == args.OrderConsole.Owner)
+                {
+                    isLinked = true;
+                    break;
+                }
+            }
+
+            if (!isLinked)
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
@@ -56,19 +65,16 @@ public sealed partial class CargoSystem
         }
     }
 
-    private bool TryGetLinkedConsole(Entity<CargoTelepadComponent> ent,
-        [NotNullWhen(true)] out Entity<CargoOrderConsoleComponent>? console)
+    private IEnumerable<Entity<CargoOrderConsoleComponent>> GetLinkedConsoles(EntityUid uid)
     {
-        console = null;
-        if (!TryComp<DeviceLinkSinkComponent>(ent, out var sinkComponent) ||
-            sinkComponent.LinkedSources.FirstOrNull() is not { } linked)
-            return false;
+        if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent))
+            yield break;
 
-        if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
-            return false;
-
-        console = (linked, consoleComp);
-        return true;
+        foreach (var linked in sinkComponent.LinkedSources)
+        {
+            if (TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
+                yield return (linked, consoleComp);
+        }
     }
 
 
@@ -98,7 +104,7 @@ public sealed partial class CargoSystem
                 continue;
             }
 
-            if (comp.CurrentOrders.Count == 0 || !TryGetLinkedConsole((uid, comp), out var console))
+            if (comp.CurrentOrders.Count == 0 || !GetLinkedConsoles(uid).Any())
             {
                 comp.Accumulator += comp.Delay;
                 continue;
@@ -143,12 +149,15 @@ public sealed partial class CargoSystem
             !TryComp<StationDataComponent>(station, out var data))
             return;
 
-        if (!TryGetLinkedConsole(ent, out var console))
+        var consoles = GetLinkedConsoles(ent).ToList();
+        if (consoles.Count == 0)
             return;
 
         foreach (var order in ent.Comp.CurrentOrders)
         {
-            TryFulfillOrder((station, data), console.Value.Comp.Account, order, db);
+            // We use the first console for the account info if multiple are linked during shutdown.
+            // This is a fallback; so just picking one is fine.
+            TryFulfillOrder((station, data), consoles[0].Comp.Account, order, db);
         }
     }
 
