@@ -377,7 +377,6 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
 
         // camera shake
         //Starlight begin | ES Screenshake
-        CameraShake(iterationIntensity.Count * 4f, pos, queued.TotalIntensity);
 
         //For whatever bloody reason, sound system requires ENTITY coordinates.
         var mapEntityCoords = _transformSystem.ToCoordinates(_map.GetMap(pos.MapId), pos);
@@ -408,9 +407,8 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             ? queued.Proto.SmallSoundFar
             : queued.Proto.SoundFar;
 
-        //Starlight begin | ES Screenshake
+        // camera shake - moved down here since as far as i can tell there is zero reason it can't be here
         CameraShake(iterationIntensity, pos, queued);
-        //Starlight end
 
         _audio.PlayGlobal(farSound, farFilter, true, farSound.Params);
 
@@ -455,7 +453,7 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             var distance = delta.Length();
             var effect = 5 * MathF.Pow(totalIntensity, 0.5f) * (1 - distance / range);
             if (effect > 0.01f)
-                {
+            {
                 _recoilSystem.KickCamera(uid, -delta.Normalized() * effect * 0.4f);
                 var shakeParams = rangeList.Count < queued.Proto.SmallSoundIterationThreshold
                     ? new ScreenshakeParameters { Trauma = 0.4f, DecayRate = 0.2f, Frequency = 0.014f }

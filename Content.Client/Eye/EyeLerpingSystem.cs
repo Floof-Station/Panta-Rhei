@@ -178,13 +178,11 @@ public sealed class EyeLerpingSystem : EntitySystem
 
     public override void FrameUpdate(float frameTime)
     {
-        var tickFraction = (float) _gameTiming.TickFraction / ushort.MaxValue;
+        var tickFraction = (float)_gameTiming.TickFraction / ushort.MaxValue;
         const double lerpMinimum = 0.00001;
         var query = AllEntityQuery<LerpingEyeComponent, EyeComponent, ContentEyeComponent, TransformComponent>(); //Starlight | ES Screenshake
-        var query = AllEntityQuery<LerpingEyeComponent, EyeComponent, TransformComponent>();
-        while (query.MoveNext(out var entity, out var lerpInfo, out var eye, out var contentEye, out var xform)) //Starlight | ES Screenshake
 
-        while (query.MoveNext(out var entity, out var lerpInfo, out var eye, out var xform))
+        while (query.MoveNext(out var entity, out var lerpInfo, out var eye, out var contentEye, out var xform)) //Starlight | ES Screenshake
         {
             // Handle zoom
             var zoomDiff = Vector2.Lerp(lerpInfo.LastZoom, lerpInfo.TargetZoom, tickFraction);

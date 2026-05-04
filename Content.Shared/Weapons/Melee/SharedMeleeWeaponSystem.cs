@@ -760,7 +760,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         if (appliedDamage.GetTotal() > FixedPoint2.Zero)
         {
             DoDamageEffect(targets, user, Transform(targets[0]));
-            DoScreenshake(meleeUid, damageResult, user, targets); // Starlight | ES Screenshake
+            DoScreenshake(meleeUid, appliedDamage, user, targets); // Starlight | ES Screenshake
         }
 
         return true;
@@ -1093,10 +1093,9 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
         }
 
         // only show to attacker if they put real oompf into it, or the weapon is just THAT strong
-        var bluntRequirement = damage.DamageDict.TryGetValue(BluntDamageName, out var blunt) && blunt >= 20;
-        var wieldRequirement = TryComp<WieldableComponent>(weapon, out var wieldable) && wieldable.Wielded;
+        var bluntRequirement = damage.DamageDict.TryGetValue(BluntDamageName, out var blunt) && blunt >= 15; // Euphoia edit - Changed to 15, still quite a lot.
 
-        if (!bluntRequirement && !wieldRequirement)
+        if (!bluntRequirement) // Euphoria edit - If you're giving out FIFTEEN UNITS OF BLUNT, you don't need to wield the weapon.
             return;
         var userRotation = new ScreenshakeParameters
         {

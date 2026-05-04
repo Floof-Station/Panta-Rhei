@@ -46,7 +46,6 @@ public sealed class ShakeOnStairsSystem : EntitySystem
                 if (_lastShakeCoords.TryGetValue(uid, out var coords))
                     if (currentCoords.InRange(coords, 0.22f)) // to prevent slight movements from causing screenshake
                         continue;
-                _shakeCooldowns[uid] = _timing.CurTime + TimeSpan.FromSeconds(0.05f); // just to prevent this from happening every frame
                 _lastShakeCoords[uid] = currentCoords;
                 var translation = new ScreenshakeParameters
                 {

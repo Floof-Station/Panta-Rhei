@@ -419,7 +419,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         {
             var gunShakeRotation = new ScreenshakeParameters()
             {
-                Trauma = 0.035f * gun.Comp.CameraRecoilScalarModified,
+                Trauma = 0.035f * gun.CameraRecoilScalarModified,
                 DecayRate = 1.2f,
                 Frequency = 0.008f
             };
