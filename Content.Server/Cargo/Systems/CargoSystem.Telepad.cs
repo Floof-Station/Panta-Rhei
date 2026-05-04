@@ -40,7 +40,7 @@ public sealed partial class CargoSystem
             if (_station.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // Check if any linked console matches the order console
+            // euphoria edit start
             var isLinked = false;
             foreach (var console in GetLinkedConsoles((uid, tele)))
             {
@@ -51,7 +51,7 @@ public sealed partial class CargoSystem
                 }
             }
 
-            if (!isLinked)
+            if (!isLinked) //euphoria edit end
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
@@ -65,9 +65,9 @@ public sealed partial class CargoSystem
         }
     }
 
+    //euphora edit start
     private IEnumerable<Entity<CargoOrderConsoleComponent>> GetLinkedConsoles(Entity<CargoTelepadComponent> telepad)
     {
-        //Get a 'DeviceLinkSinkComponent', or end the function early if we can't.
         if (!TryComp<DeviceLinkSinkComponent>(telepad, out var sinkComponent))
             yield break;
 
@@ -91,6 +91,7 @@ public sealed partial class CargoSystem
             }
         }
     }
+    //euphoria edit end
 
 
     private void UpdateTelepad(float frameTime)
@@ -119,7 +120,7 @@ public sealed partial class CargoSystem
                 continue;
             }
 
-            if (comp.CurrentOrders.Count == 0 || !GetLinkedConsoles((uid, comp)).Any())
+            if (comp.CurrentOrders.Count == 0 || !GetLinkedConsoles((uid, comp)).Any()) //euphoria
             {
                 comp.Accumulator += comp.Delay;
                 continue;
@@ -164,15 +165,17 @@ public sealed partial class CargoSystem
             !TryComp<StationDataComponent>(station, out var data))
             return;
 
-        var consoles = GetLinkedConsoles(ent).ToList();
-        if (consoles.Count == 0)
+        var consoles = GetLinkedConsoles(ent).ToList(); //euphoria
+        if (consoles.Count == 0) //euphoria
             return;
 
         foreach (var order in ent.Comp.CurrentOrders)
         {
-            // We use the first console for the account info if multiple are linked during shutdown.
-            // This is a fallback; so just picking one is fine.
-            TryFulfillOrder((station, data), consoles[0].Comp.Account, order, db);
+            // We use the first console for the account info if multiple are linked when the telepad shuts down.
+            // todo: this causes the order slip to use the wrong account... but nothing else.
+            //       and at this point i'd rather leave in this cosmetic bug than spend another day working on this.
+            //       let the future sort it out.
+            TryFulfillOrder((station, data), consoles[0].Comp.Account, order, db); //euphoria
         }
     }
 
