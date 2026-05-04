@@ -42,7 +42,7 @@ public sealed partial class CargoSystem
 
             // Check if any linked console matches the order console
             var isLinked = false;
-            foreach (var console in GetLinkedConsoles(uid))
+            foreach (var console in GetLinkedConsoles((uid, tele)))
             {
                 if (console.Owner == args.OrderConsole.Owner)
                 {
@@ -65,15 +65,30 @@ public sealed partial class CargoSystem
         }
     }
 
-    private IEnumerable<Entity<CargoOrderConsoleComponent>> GetLinkedConsoles(EntityUid uid)
+    private IEnumerable<Entity<CargoOrderConsoleComponent>> GetLinkedConsoles(Entity<CargoTelepadComponent> telepad)
     {
-        if (!TryComp<DeviceLinkSinkComponent>(uid, out var sinkComponent))
+        //Get a 'DeviceLinkSinkComponent', or end the function early if we can't.
+        if (!TryComp<DeviceLinkSinkComponent>(telepad, out var sinkComponent))
             yield break;
 
         foreach (var linked in sinkComponent.LinkedSources)
         {
-            if (TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
-                yield return (linked, consoleComp);
+            if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp) ||
+                !TryComp<DeviceLinkSourceComponent>(linked, out var sourceComponent))
+            {
+                continue;
+            }
+
+            var links = _linker.GetLinks(linked, telepad.Owner, sourceComponent);
+
+            foreach (var (_, sinkPort) in links)
+            {
+                if (sinkPort == telepad.Comp.ReceiverPort)
+                {
+                    yield return (linked, consoleComp);
+                    break;
+                }
+            }
         }
     }
 
@@ -104,7 +119,7 @@ public sealed partial class CargoSystem
                 continue;
             }
 
-            if (comp.CurrentOrders.Count == 0 || !GetLinkedConsoles(uid).Any())
+            if (comp.CurrentOrders.Count == 0 || !GetLinkedConsoles((uid, comp)).Any())
             {
                 comp.Accumulator += comp.Delay;
                 continue;
