@@ -65,7 +65,7 @@ public sealed partial class CargoSystem
         }
     }
 
-    //euphora edit start
+    //euphoria edit start
     private IEnumerable<Entity<CargoOrderConsoleComponent>> GetLinkedConsoles(Entity<CargoTelepadComponent> telepad)
     {
         if (!TryComp<DeviceLinkSinkComponent>(telepad, out var sinkComponent))
@@ -171,11 +171,7 @@ public sealed partial class CargoSystem
 
         foreach (var order in ent.Comp.CurrentOrders)
         {
-            // We use the first console for the account info if multiple are linked when the telepad shuts down.
-            // todo: this causes the order slip to use the wrong account... but nothing else.
-            //       and at this point i'd rather leave in this cosmetic bug than spend another day working on this.
-            //       let the future sort it out.
-            TryFulfillOrder((station, data), consoles[0].Comp.Account, order, db); //euphoria
+            TryFulfillOrder((station, data), order.Account, order, db); //euphoria; why didn't the order use its own account???
         }
     }
 
