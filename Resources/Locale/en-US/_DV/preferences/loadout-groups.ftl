@@ -39,7 +39,7 @@ loadout-group-clown-mask = Clown mask
 
 # Logistics
 
-loadout-group-cargo-logistics-neck = Logistics neck
+loadout-group-logistics-neck = Logistics neck
 
 loadout-group-cargo-technician-neck = Cargo Technician neck
 
@@ -70,7 +70,7 @@ loadout-group-salvage-id-delta = Salvage Specialist PDA
 
 # Medical
 
-loadout-group-cargo-medical-neck = Medical neck
+loadout-group-medical-neck = Medical neck
 
 loadout-group-chemist-gloves = Chemist gloves
 loadout-group-chemist-shoes = Chemist shoes
@@ -99,7 +99,7 @@ loadout-group-scarfs = Scarf
 
 # Epistemics
 
-loadout-group-cargo-epistemics-neck = Epistemics neck
+loadout-group-epistemics-neck = Epistemics neck
 
 loadout-group-mantis-head = Mantis head
 loadout-group-mantis-jumpsuit = Mantis jumpsuit
@@ -117,7 +117,7 @@ loadout-group-roboticist-id = Roboticist PDA
 
 # Engineering
 
-loadout-group-cargo-engineering-neck = Engineering neck
+loadout-group-engineering-neck = Engineering neck
 
 loadout-group-station-engineer-neck = Station Engineer neck
 
@@ -128,8 +128,6 @@ loadout-group-atmos-id-delta = Atmospheric Technician PDA
 loadout-group-atmospheric-technician-head = Atmospheric Technician Head
 
 # Security
-
-loadout-group-cargo-security-neck = security neck
 
 loadout-group-head-of-security-shoes = Head of Security shoes
 
@@ -157,7 +155,7 @@ loadout-group-all-ammo = Ammunition
 
 # Justice
 
-loadout-group-cargo-justice-neck = Justice neck
+loadout-group-justice-neck = Justice neck
 
 loadout-group-chiefjustice-head = Chief Justice head
 loadout-group-chiefjustice-jumpsuit = Chief Justice jumpsuit
