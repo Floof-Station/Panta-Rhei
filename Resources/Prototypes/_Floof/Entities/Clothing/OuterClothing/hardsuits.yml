@@ -10,7 +10,7 @@
     sprite: _Floof/Clothing/OuterClothing/Hardsuits/surgengeneralhardsuit.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
-    
+
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerPilot
@@ -35,7 +35,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
-    
+
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerLegion
@@ -60,7 +60,7 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.90
     sprintModifier: 0.90
-    
+
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerNorthstar
@@ -117,3 +117,40 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSecTech
+
+#Lazarus M91-A - Lore Related
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitLazarusM91
+  name: Lazarus M91-A Combat Hardsuit
+  description: A modified variant of the Solarian Military M91 Combat Suits, this armor is designed for the Solarian Marines but it has been repurposed for someone else..
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/Hardsuits/lazarus.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/Hardsuits/lazarus.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: FireProtection
+    reduction: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.50
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.50
+        Heat: 0.6
+        Radiation: 0
+        Caustic: 0.35
+        Holy: 0.50
+        Shadow: 0.50
+  - type: StaminaResistance
+    damageCoefficient: 0.2
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitLazarusM91
