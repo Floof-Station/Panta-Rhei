@@ -1343,6 +1343,7 @@
   #- ResearchDirectorCloak
   - MystagogueCloak # Replaced RD cloak with MG
   - ClothingNeckCloakRd # Floofstation
+  #- ScarfPurple
   # End DeltaV changes
 
 - type: loadoutGroup
@@ -1397,6 +1398,7 @@
 #  minLimit: 0
 #  loadouts:
 #  - ScientistTie
+#  - ScarfPurple # DeltaV
 
 - type: loadoutGroup
   id: ScientistJumpsuit
@@ -1526,6 +1528,8 @@
   - HeadofSecurityCloak
   - HeadofSecurityMantle
   # Begin DeltaV changes
+  #- ScarfRed
+  #- ScarfBlack
   - SecurityPoncho
   - HeadOfSecurityRobe
   - HeadOfSecurityCloakBoat
@@ -1700,6 +1704,7 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
+  #- ScarfRed # DeltaV
   - SecurityPoncho # DeltaV
 
 - type: loadoutGroup
@@ -1803,6 +1808,8 @@
   - ChiefMedicalOfficerMantle
   - ChiefMedicalOfficerOverTheShoulderCoat # DeltaV - Medical Clothing Overhaul
   - ChiefMedicalOfficerShawl # DeltaV - Medical Clothing Overhaul
+  #- ScarfBlue # DeltaV
+  #- ScarfLightBlue #DeltaV
   - Stethoscope # DeltaV
 
 - type: loadoutGroup
