@@ -190,3 +190,39 @@
   components:
   - type: IdCard
     jobTitle: job-alt-title-vet
+
+# alternative scientist
+- type: entity
+  parent: ResearchIDCard
+  id: AcolyteIDCard
+  name: acolyte ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-acolyte
+
+# alternative roboticist
+- type: entity
+  parent: RoboticistIDCard
+  id: GolemancerIDCard
+  name: golemancer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-golemancer
+
+# alternative mystic
+- type: entity
+  parent: SeniorResearcherIDCard
+  id: MysticIDCard
+  name: mystic ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-mystic
+
+# alternative research assistant
+- type: entity
+  parent: ResearchAssistantIDCard
+  id: NoviciateIDCard
+  name: noviciate ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-noviciate

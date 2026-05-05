@@ -550,4 +550,105 @@
   - type: PdaBorderColor
     borderColor: "#d7d7d0"
     accentVColor: "#447987"
+
+#epi pdas
+- type: entity
+  parent: SciencePDA # we use delta-vs parent as a base
+  id: AcolytePDA
+  name: acolyte PDA
+  description: The noosphere highly influenced the design of this pda.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_epi_pda.rsi
+    state: pda-acolyte
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-acolyte"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+  - type: Pda
+    id: LabTechIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-acolyte
+
+- type: entity
+  parent: SciencePDA # we use delta-vs parent as a base
+  id: GolemancerPDA
+  name: golemancer PDA
+  description: Comes with an additional antenna to communicate with station borgs.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_epi_pda.rsi
+    state: pda-golemancer
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-golemancer"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+  - type: Pda
+    id: LabTechIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-golemancer
+
+- type: entity
+  parent: SeniorResearcherPDA # we use delta-vs parent as a base
+  id: MysticPDA
+  name: mystic PDA
+  description: A well worn pda that has scribbled out notes from previously worked artifacts.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_epi_pda.rsi
+    state: pda-mystic
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-mystic"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+  - type: Pda
+    id: MysticIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-mystic
+
+- type: entity
+  parent: SciencePDA # we use delta-vs parent as a base
+  id: NoviciatePDA
+  name: noviciate PDA
+  description: A pristine pda that looks like it hasn't been used at all for artifact research.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Devices/alternative_epi_pda.rsi
+    state: pda-noviciate
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda-noviciate"
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+  - type: Pda
+    id: NoviciateIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType: !type:String
+        pda-noviciate
 # ===========================================

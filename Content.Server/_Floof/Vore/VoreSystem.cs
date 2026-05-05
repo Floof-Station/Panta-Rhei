@@ -17,6 +17,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Polymorph;
 using Content.Shared.Destructible;
 using Robust.Shared.Configuration;
+using Content.Shared._DV.Carrying;
 namespace Content.Server._Floof.Vore;
 
 public sealed class VoreSystem : EntitySystem
@@ -26,6 +27,7 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly CarryingSystem _carryingSystem = default!;
 
     public static readonly ProtoId<ConsentTogglePrototype> isPred = "PredVore";
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
@@ -47,7 +49,8 @@ public sealed class VoreSystem : EntitySystem
     /// in order to avoid giving every mob it one by one
     /// </summary>
     private void OnMindStartup(EntityUid uid, MindContainerComponent comp, ComponentStartup args){
-        EnsureComp<VoreComponent>(uid);
+        if (HasComp<BodyComponent>(uid))
+            EnsureComp<VoreComponent>(uid);
     }
 
     /// <summary>
@@ -77,10 +80,6 @@ public sealed class VoreSystem : EntitySystem
 
         // only when reachable & interactable
         if (!args.CanInteract || !args.CanAccess)
-            return;
-
-        // to avoid feeding yourself to items
-        if (!HasComp<BodyComponent>(target))
             return;
         
         // to avoid empty mind NPCs
@@ -131,7 +130,7 @@ public sealed class VoreSystem : EntitySystem
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs))
             return;
         _popupSystem.PopupEntity($"You are devouring someone!", user, user);
-        _popupSystem.PopupEntity($"You are being devoured!", target, target);
+        _popupSystem.PopupEntity($"You are being devoured!", target, target, PopupType.LargeCaution);
     }
 
     /// <summary>
@@ -145,13 +144,24 @@ public sealed class VoreSystem : EntitySystem
         if (args.Target is not EntityUid prey)
             return;
 
+        var pred = uid;
         var container = _containerSystem.EnsureContainer<Container>(args.User, "vore_container");
         
+        var count = 0;
+        //only counts entities with bodies meaning no items
+        foreach (var e in container.ContainedEntities){
+            if (HasComp<BodyComponent>(e))
+                count++;
+            Console.WriteLine($"Contained Entity: {e}, Count: {count}");
+        }
         //as a way to prevent too many entities to be devoured
-        if (container.ContainedEntities.Count > args.MaxPrey){
+        if (count >= args.MaxPrey){
             _popupSystem.PopupEntity("You are too full to swallow more prey.", args.User, args.User);
             return;
         }
+
+        //makes sure prey will be dropped from bags and hands
+        EnsureEntityFree(pred, prey);
 
         //moves prey inside the person
         _containerSystem.Insert(prey, container);
@@ -159,6 +169,32 @@ public sealed class VoreSystem : EntitySystem
         /*make the prey immune to space+temp+breathing to avoid consent concerns from outside influence
         gets removed after escaping or being forcefully ejected by pred*/
         ApplyStomachImmunities(prey);
+    }
+
+    /// <summary>
+    /// makes sure the prey is not inside any other container such as 
+    /// bags or being carried by someone before being inserted into the pred
+    /// </summary>
+    private void EnsureEntityFree(EntityUid pred, EntityUid prey){
+         //check if the prey is already inside a container and remove them (for example bags)
+        if (_containerSystem.TryGetContainingContainer(prey, out var currentContainer)){
+            if (currentContainer.ID != "vore_container")
+                _containerSystem.Remove(prey, currentContainer);
+        }
+
+        //in case prey is being carried by pred, someone else or is holding the prey drop them
+        // 1. pred carrying prey
+        if (TryComp<CarryingComponent>(pred, out var predCarrying) &&
+            predCarrying.Carried == prey)
+            _carryingSystem.DropCarried(pred, prey);
+        // 2. prey carrying pred
+        if (TryComp<CarryingComponent>(prey, out var preyCarrying) &&
+        preyCarrying.Carried == pred)
+            _carryingSystem.DropCarried(prey, pred);
+        // 3. prey being carried by someone else
+        if (TryComp<BeingCarriedComponent>(prey, out var preyBeingCarried) &&
+        preyBeingCarried.Carrier != pred)
+            _carryingSystem.DropCarried(preyBeingCarried.Carrier, prey);
     }
 
     /// <summary>
@@ -228,6 +264,12 @@ public sealed class VoreSystem : EntitySystem
     /// for consent purposes -> having others avoid stumbling on scenarios
     /// </summary>
     private void ApplyStomachImmunities(EntityUid prey){
+        /*double check making sure they are inside the container
+        should prevent possible exploitation of the system*/
+        if (!_containerSystem.TryGetContainingContainer(prey, out var container) ||
+        container.ID != "vore_container")
+           return;
+
         var tracker = EnsureComp<VoreImmunityTrackerComponent>(prey);
         if (!HasComp<PressureImmunityComponent>(prey))
         {

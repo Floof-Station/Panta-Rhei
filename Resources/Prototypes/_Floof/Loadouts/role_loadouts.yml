@@ -62,7 +62,7 @@
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
-  - ScientistPDA
+  - FloofSeniorResearcherPdas # Floofstation let senior research choose pda
   - Glasses
   - Survival
   - Smokeables
@@ -112,6 +112,7 @@
 
 - type: roleLoadout
   id: JobSecurityTechnician
+  parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
   - SecurityNeck
