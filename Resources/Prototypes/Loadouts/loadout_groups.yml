@@ -25,18 +25,18 @@
   - ClothingNeckAsexualPin
   - ClothingNeckAroacePin
   - ClothingNeckBisexualPin
-  - ClothingNeckGayPin
-  - ClothingNeckIntersexPin
-  - ClothingNeckLesbianPin
-  - ClothingNeckNonBinaryPin
-  - ClothingNeckPansexualPin
-  - ClothingNeckPluralPin
-  - ClothingNeckOmnisexualPin
-  - ClothingNeckGenderqueerPin
-  - ClothingNeckGenderfluidPin
-  - ClothingNeckTransPin
-  - ClothingNeckAutismPin
-  - ClothingNeckGoldAutismPin
+  - ClothingGayPin
+  - ClothingIntersexPin
+  - ClothingLesbianPin
+  - ClothingNonBinaryPin
+  - ClothingPansexualPin
+  - ClothingPluralPin
+  - ClothingOmnisexualPin
+  - ClothingGenderqueerPin
+  - ClothingGenderfluidPin
+  - ClothingTransPin
+  - ClothingAutismPin
+  - ClothingGoldAutismPin
   - OffsetCane
   - OffsetCaneWood
   - OffsetCaneClown
@@ -155,9 +155,9 @@
   - CaptainFormalSkirt
 
 - type: loadoutGroup
-  id: CaptainNeck
+  id: Captain
   parent: [CommandCollars] # Floofstation
-  name: loadout-group-captain-neck
+  name: loadout-group-captain-
   minLimit: 0
   loadouts:
   - CaptainCloak
@@ -216,9 +216,9 @@
   # End DeltaV additions
 
 - type: loadoutGroup
-  id: HoPNeck
+  id: HoP
   parent: [CommandCollars] # Floofstation
-  name: loadout-group-hop-neck
+  name: loadout-group-hop-
   minLimit: 0
   loadouts:
   - HoPCloak
@@ -317,11 +317,11 @@
   - GreenStripedDress
   - PinkStripedDress
   - OrangeStripedDress
-  - PurpleTurtleneckDress
-  - RedTurtleneckDress
-  - GreenTurtleneckDress
-  - BlueTurtleneckDress
-  - YellowTurtleneckDress
+  - PurpleTurtleDress
+  - RedTurtleDress
+  - GreenTurtleDress
+  - BlueTurtleDress
+  - YellowTurtleDress
   - OldYellowDress
   # End DeltaV additions
   - AncientJumpsuit
@@ -376,7 +376,7 @@
   - CommonDuffel
 
 - type: loadoutGroup
-  id: PassengerNeck
+  id: Passenger
   parent: [CommonCollars] # Floofstation
   name: loadout-group-passenger-neck
   minLimit: 0
@@ -632,7 +632,7 @@
 
 - type: loadoutGroup
   id: ChaplainNeck
-  parent: [EuphoriaChaplainNeck, ScientistNeck] # Floofstation
+  parent: [EuphoriaChaplainNeck, EpistemicsNeck] # Floofstation
   name: loadout-group-chaplain-neck
   minLimit: 0
   loadouts:
@@ -1300,6 +1300,14 @@
 
 # Science
 - type: loadoutGroup
+  id: EpistemicsNeck
+  parent: [ScienceCollars] # Floofstation
+  name: loadout-group-epistemics-neck
+  minLimit: 0
+  loadouts:
+  - ScientistTie
+
+- type: loadoutGroup
   id: ResearchDirectorHead
   parent: [FloofHats] # floofstation
   name: loadout-group-research-director-head
@@ -1311,7 +1319,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
-  parent: [ScientistNeck] # Floofstation
+  parent: [EpistemicsNeck] # Floofstation
   name: loadout-group-research-director-neck
   minLimit: 0
   loadouts:
@@ -1367,13 +1375,13 @@
   - SkullBandana
   - ScientificBeret
 
-- type: loadoutGroup
-  id: ScientistNeck
-  parent: [ScienceCollars] # Floofstation
-  name: loadout-group-scientist-neck
-  minLimit: 0
-  loadouts:
-  - ScientistTie
+#- type: loadoutGroup
+#  id: ScientistNeck
+#  parent: [ScienceCollars] # Floofstation
+#  name: loadout-group-scientist-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScientistTie
 
 - type: loadoutGroup
   id: ScientistJumpsuit
