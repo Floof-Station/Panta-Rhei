@@ -5,7 +5,7 @@
   groups:
   - GroupTankHarness
   - CourierHead
-  - CourierNeck
+  - LogisticsNeck # Euphoria
   - CourierJumpsuit
   - CourierOuterClothing
   - FloofCourierGloves # Floofstation give couriers gloves
@@ -21,6 +21,7 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - LogisticsNeck # Euphoria
   - CargoAssistantHead
   - CargoAssistantJumpsuit
   - CargoAssistantBackpack
@@ -36,7 +37,7 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - BrigMedicHead
-  - BrigMedicNeck
+  - SecurityNeck # Euphoria
   - BrigMedicJumpsuit
   - BrigMedicBack
   - FloofCorpsmanGloves # Floofstation give corpsman gloves
@@ -55,7 +56,7 @@
   groups:
   - GroupTankHarness
   - SurgeonHead
-  - MedicalDoctorNeck
+  - MedicalNeck # Euphoria
   - SurgeonMask
   - SurgeonScrubs
   - SurgeonGloves
@@ -126,7 +127,7 @@
   groups:
   - GroupTankHarness
   - RoboticistHead
-  - ScientistNeck
+  - EpistemicsNeck # Euphoria
   - RoboticistJumpsuit
   - ScientistBackpack
   - RoboticistOuterClothing
