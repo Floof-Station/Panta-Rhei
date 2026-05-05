@@ -223,7 +223,6 @@
   loadouts:
   - HoPCloak
   - HoPMantle
-  - ScarfBlue # DeltaV
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -579,12 +578,6 @@
   minLimit: 0
   loadouts:
   - LawyerNeck
-  # Begin DeltaV additions
-  - ScarfRed
-  - ScarfBlue
-  - ScarfBlack
-  - ScarfPurple
-  # End DeltaV additions
 
 - type: loadoutGroup
   id: LawyerJobTrinkets
@@ -644,7 +637,6 @@
   minLimit: 0
   loadouts:
   - ChaplainNeck
-  - ScarfBlack # DeltaV
 
 - type: loadoutGroup
   id: ChaplainJobTrinkets
@@ -984,7 +976,6 @@
   loadouts:
   - QuartermasterCloak
   - QuartermasterMantle
-  - ScarfBrown # DeltaV
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
@@ -1125,12 +1116,6 @@
   loadouts:
   - ChiefEngineerCloak
   - ChiefEngineerMantle
-  # Begin DeltaV Additions
-  - ScarfOrange
-  - ScarfRed
-  - ScarfBlue
-  - ScarfGreen
-  # End DeltaV Additions
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -1335,7 +1320,6 @@
   #- ResearchDirectorCloak
   - MystagogueCloak # Replaced RD cloak with MG
   - ClothingNeckCloakRd # Floofstation
-  - ScarfPurple
   # End DeltaV changes
 
 - type: loadoutGroup
@@ -1390,7 +1374,6 @@
   minLimit: 0
   loadouts:
   - ScientistTie
-  - ScarfPurple # DeltaV
 
 - type: loadoutGroup
   id: ScientistJumpsuit
@@ -1520,8 +1503,6 @@
   - HeadofSecurityCloak
   - HeadofSecurityMantle
   # Begin DeltaV changes
-  - ScarfRed
-  - ScarfBlack
   - SecurityPoncho
   - HeadOfSecurityRobe
   - HeadOfSecurityCloakBoat
@@ -1696,7 +1677,6 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
-  - ScarfRed # DeltaV
   - SecurityPoncho # DeltaV
 
 - type: loadoutGroup
@@ -1800,8 +1780,6 @@
   - ChiefMedicalOfficerMantle
   - ChiefMedicalOfficerOverTheShoulderCoat # DeltaV - Medical Clothing Overhaul
   - ChiefMedicalOfficerShawl # DeltaV - Medical Clothing Overhaul
-  - ScarfBlue # DeltaV
-  - ScarfLightBlue #DeltaV
   - Stethoscope # DeltaV
 
 - type: loadoutGroup
