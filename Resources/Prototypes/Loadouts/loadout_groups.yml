@@ -25,18 +25,18 @@
   - ClothingNeckAsexualPin
   - ClothingNeckAroacePin
   - ClothingNeckBisexualPin
-  - ClothingGayPin
-  - ClothingIntersexPin
-  - ClothingLesbianPin
-  - ClothingNonBinaryPin
-  - ClothingPansexualPin
-  - ClothingPluralPin
-  - ClothingOmnisexualPin
-  - ClothingGenderqueerPin
-  - ClothingGenderfluidPin
-  - ClothingTransPin
-  - ClothingAutismPin
-  - ClothingGoldAutismPin
+  - ClothingNeckGayPin
+  - ClothingNeckIntersexPin
+  - ClothingNeckLesbianPin
+  - ClothingNeckNonBinaryPin
+  - ClothingNeckPansexualPin
+  - ClothingNeckPluralPin
+  - ClothingNeckOmnisexualPin
+  - ClothingNeckGenderqueerPin
+  - ClothingNeckGenderfluidPin
+  - ClothingNeckTransPin
+  - ClothingNeckAutismPin
+  - ClothingNeckGoldAutismPin
   - OffsetCane
   - OffsetCaneWood
   - OffsetCaneClown
@@ -155,9 +155,9 @@
   - CaptainFormalSkirt
 
 - type: loadoutGroup
-  id: Captain
+  id: CaptainNeck
   parent: [CommandCollars] # Floofstation
-  name: loadout-group-captain-
+  name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
   - CaptainCloak
@@ -216,9 +216,9 @@
   # End DeltaV additions
 
 - type: loadoutGroup
-  id: HoP
+  id: HoPNeck
   parent: [CommandCollars] # Floofstation
-  name: loadout-group-hop-
+  name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
   - HoPCloak
@@ -317,11 +317,11 @@
   - GreenStripedDress
   - PinkStripedDress
   - OrangeStripedDress
-  - PurpleTurtleDress
-  - RedTurtleDress
-  - GreenTurtleDress
-  - BlueTurtleDress
-  - YellowTurtleDress
+  - PurpleTurtleneckDress
+  - RedTurtleneckDress
+  - GreenTurtleneckDress
+  - BlueTurtleneckDress
+  - YellowTurtleneckDress
   - OldYellowDress
   # End DeltaV additions
   - AncientJumpsuit
