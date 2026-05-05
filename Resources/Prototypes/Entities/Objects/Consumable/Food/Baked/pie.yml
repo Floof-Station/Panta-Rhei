@@ -178,6 +178,13 @@
     - Pie
   - type: SliceableFood
     slice: FoodPieBananaCreamSlice
+  - type: SolutionContainerManager # Euphoria - Changed what's inside a banana cream pie to be cream
+    solutions:
+      food:
+        maxVol: 60
+        reagents: 
+        - ReagentId: BananaCreamPie
+          Quantity: 50
 
 - type: entity
   name: slice of banana cream pie
