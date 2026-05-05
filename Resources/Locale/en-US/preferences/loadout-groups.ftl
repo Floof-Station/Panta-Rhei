@@ -35,12 +35,12 @@ loadout-group-hop-outerclothing = Head of Personnel outer clothing
 
 # Civilian
 # Begin DeltaV Changes - Rename Passenger to Assistant
-loadout-group-passenger-jumpsuit = Assistant jumpsuit
-loadout-group-passenger-mask = Assistant mask
-loadout-group-passenger-gloves = Assistant gloves
-loadout-group-passenger-outerclothing = Assistant outer clothing
-loadout-group-passenger-shoes = Assistant shoes
-loadout-group-passenger-neck = Assistant neck
+loadout-group-passenger-jumpsuit = Generic jumpsuit
+loadout-group-passenger-mask = Generic mask
+loadout-group-passenger-gloves = Generic gloves
+loadout-group-passenger-outerclothing = Generic outer clothing
+loadout-group-passenger-shoes = Generic shoes
+loadout-group-passenger-neck = Generic neck
 # End DeltaV Changes
 
 loadout-group-bartender-head = Bartender head
