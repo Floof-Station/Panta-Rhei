@@ -34,43 +34,43 @@
   - BartenderGlasses
   - GlassesCheapSunglasses
 
-- type: loadoutGroup
-  id: BartenderNeck
-  parent: [CommonCollars] # Floofstation
-  name: loadout-group-bartender-neck
-  minLimit: 0
-  loadouts:
-  - ScarfBlack
-  - ScarfPurple
+#- type: loadoutGroup
+#  id: BartenderNeck
+#  parent: [CommonCollars] # Floofstation
+#  name: loadout-group-bartender-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfBlack
+#  - ScarfPurple
 
 ## Librarian
-- type: loadoutGroup
-  id: LibrarianNeck
-  parent: [CommonCollars] # Floofstation
-  name: loadout-group-librarian-neck
-  minLimit: 0
-  loadouts:
-  - ScarfGreen
-  - ScarfRed
+#- type: loadoutGroup
+#  id: LibrarianNeck
+#  parent: [CommonCollars] # Floofstation
+#  name: loadout-group-librarian-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfGreen
+#  - ScarfRed
 
 ## Janitor
-- type: loadoutGroup
-  id: JanitorNeck
-  parent: [CommonCollars] # Floofstation
-  name: loadout-group-janitor-neck
-  minLimit: 0
-  loadouts:
-  - ScarfPurple
+#- type: loadoutGroup
+#  id: JanitorNeck
+#  parent: [CommonCollars] # Floofstation
+#  name: loadout-group-janitor-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfPurple
 
 ## Botanist
-- type: loadoutGroup
-  id: BotanistNeck
-  parent: [CommonCollars] # Floofstation
-  name: loadout-group-botanist-neck
-  minLimit: 0
-  loadouts:
-  - ScarfGreen
-  - ScarfBrown
+#- type: loadoutGroup
+#  id: BotanistNeck
+#  parent: [CommonCollars] # Floofstation
+#  name: loadout-group-botanist-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfGreen
+#  - ScarfBrown
 
 ## Clown
 - type: loadoutGroup
@@ -81,25 +81,25 @@
   - BlushingClownMask
 
 ## Mime
-- type: loadoutGroup
-  id: MimeNeck
-  parent: [CommonCollars] # Floofstation
-  name: loadout-group-mime-neck
-  minLimit: 0
-  loadouts:
-  - ScarfBlack
-  - ScarfZebra
+#- type: loadoutGroup
+#  id: MimeNeck
+#  parent: [CommonCollars] # Floofstation
+#  name: loadout-group-mime-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfBlack
+#  - ScarfZebra
 
 ## Musician
-- type: loadoutGroup
-  id: MusicianNeck
-  parent: [CommonCollars] # Floofstation
-  name: loadout-group-musician-neck
-  minLimit: 0
-  loadouts:
-  - ScarfBlack
-  - ScarfPurple
-  - ScarfZebra
+#- type: loadoutGroup
+#  id: MusicianNeck
+#  parent: [CommonCollars] # Floofstation
+#  name: loadout-group-musician-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfBlack
+#  - ScarfPurple
+#  - ScarfZebra
 
 ## Assistants
 - type: loadoutGroup
@@ -140,6 +140,12 @@
   - PirateHat
 
 # Logistics
+- type: loadoutGroup # Euphoria
+  id: LogisticsNeck
+  parent: [CargoCollars] # Floofstation
+  name: loadout-group-logistics-neck
+  minLimit: 0
+
 ## Courier
 - type: loadoutGroup
   id: CourierHead
@@ -150,14 +156,14 @@
   - CourierHead
   - MailCarrierHead
 
-- type: loadoutGroup
-  id: CourierNeck
-  parent: [CargoTechnicianNeck] # Floofstation
-  name: loadout-group-courier-neck
-  minLimit: 0
-  loadouts:
-  - ScarfBrown
-  - ScarfBlue
+#- type: loadoutGroup
+#  id: CourierNeck
+#  parent: [CargoTechnicianNeck] # Floofstation
+#  name: loadout-group-courier-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfBrown
+#  - ScarfBlue
 
 - type: loadoutGroup
   id: CourierJumpsuit
@@ -247,13 +253,13 @@
   - CargoWinterBoots
 
 ## Cargo Technician
-- type: loadoutGroup
-  id: CargoTechnicianNeck
-  parent: [CargoCollars] # Floofstation
-  name: loadout-group-cargo-technician-neck
-  minLimit: 0
-  loadouts:
-  - ScarfBrown
+#- type: loadoutGroup
+#  id: CargoTechnicianNeck
+#  parent: [CargoCollars] # Floofstation
+#  name: loadout-group-cargo-technician-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfBrown
 
 ## Salvage Specialist
 - type: loadoutGroup
@@ -263,7 +269,7 @@
   minLimit: 0
   loadouts:
   - SalvageCloak
-  - ScarfBrown
+  #- ScarfBrown
   - SalvageMantle
 
 - type: loadoutGroup
@@ -286,16 +292,16 @@
   - CorpsmanBeret
   - BrigMedicalBeret
 
-- type: loadoutGroup
-  id: BrigMedicNeck
-  parent: [SecurityCollars] # Floofstation
-  name: loadout-group-brig-medic-neck
-  minLimit: 0
-  loadouts:
-  - ScarfRed
-  - ScarfBlack
-  - ScarfBlue
-  - SecurityPoncho
+#- type: loadoutGroup
+ # id: BrigMedicNeck
+ # parent: [SecurityCollars] # Floofstation
+ # name: loadout-group-brig-medic-neck
+ # minLimit: 0
+ # loadouts:
+ # - ScarfRed
+ # - ScarfBlack
+ # - ScarfBlue
+ # - SecurityPoncho
 
 - type: loadoutGroup
   id: BrigMedicJumpsuit
@@ -483,8 +489,8 @@
   name: loadout-group-security-neck
   minLimit: 0
   loadouts:
-  - ScarfRed
-  - ScarfBlack
+  #- ScarfRed
+  #- ScarfBlack
   - SecurityPoncho
 
 - type: loadoutGroup
@@ -552,6 +558,17 @@
   - ArmorVestSlim
 
 # Medical
+- type: loadoutGroup
+  id: MedicalNeck
+  parent: [MedicalCollars] # Floofstation
+  name: loadout-group-medical-neck
+  minLimit: 0
+  loadouts:
+  - Stethoscope
+  - ChemistTie
+  #- ScarfBlue
+  #- ScarfLightBlue
+
 ## Psychologist
 - type: loadoutGroup
   id: PsychologistHead
@@ -594,15 +611,15 @@
   - WinterBoots
 
 ## Medical Doctor
-- type: loadoutGroup
-  id: MedicalDoctorNeck
-  parent: [MedicalCollars] # Floofstation
-  name: loadout-group-medical-doctor-neck
-  minLimit: 0
-  loadouts:
-  - Stethoscope
-  - ScarfBlue
-  - ScarfLightBlue
+#- type: loadoutGroup
+#  id: MedicalDoctorNeck
+#  parent: [MedicalCollars] # Floofstation
+#  name: loadout-group-medical-doctor-neck
+#  minLimit: 0
+#  loadouts:
+#  - Stethoscope
+#  - ScarfBlue
+#  - ScarfLightBlue
 
 ## Chemist
 
@@ -615,16 +632,16 @@
   - BlueMedicalBeret
   - SeniorChemistBeret
 
-- type: loadoutGroup
-  id: ChemistNeck
-  parent: [MedicalCollars] # Floofstation
-  name: loadout-group-chemist-neck
-  minLimit: 0
-  loadouts:
-  - ChemistTie
-  - ScarfOrange
-  - ScarfBlue
-  - ScarfLightBlue
+#- type: loadoutGroup
+#  id: ChemistNeck
+#  parent: [MedicalCollars] # Floofstation
+#  name: loadout-group-chemist-neck
+#  minLimit: 0
+#  loadouts:
+#  - ChemistTie
+#  - ScarfOrange
+#  - ScarfBlue
+#  - ScarfLightBlue
 
 - type: loadoutGroup
   id: ChemistGloves
@@ -744,25 +761,31 @@
   - LaceupShoes
 
 # Engineering
-## Station Engineer
 - type: loadoutGroup
-  id: StationEngineerNeck
+  id: EngineeringNeck
   parent: [EngineeringCollars] # Floofstation
-  name: loadout-group-station-engineer-neck
+  name: loadout-group-engineering-neck
   minLimit: 0
-  loadouts:
-  - ScarfOrange
-  - ScarfRed
+  
+## Station Engineer
+#- type: loadoutGroup
+#  id: StationEngineerNeck
+#  parent: [EngineeringCollars] # Floofstation
+#  name: loadout-group-station-engineer-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfOrange
+#  - ScarfRed
 
 ## Atmospheric Technician
-- type: loadoutGroup
-  id: AtmosphericTechnicianNeck
-  parent: [EngineeringCollars] # Floofstation
-  name: loadout-group-atmospheric-technician-neck
-  minLimit: 0
-  loadouts:
-  - ScarfLightBlue
-  - ScarfOrange
+#- type: loadoutGroup
+#  id: AtmosphericTechnicianNeck
+#  parent: [EngineeringCollars] # Floofstation
+#  name: loadout-group-atmospheric-technician-neck
+#  minLimit: 0
+#  loadouts:
+#  - ScarfLightBlue
+#  - ScarfOrange
 
 - type: loadoutGroup
   id: AtmosphericTechnicianHead
@@ -1070,20 +1093,20 @@
   - SocialWorkerPDA
 
 # Misc
-- type: loadoutGroup
-  id: Scarfs
-  name: loadout-group-scarfs
-  minLimit: 0
-  loadouts:
-  - ScarfRed
-  - ScarfBlue
-  - ScarfLightBlue
-  - ScarfGreen
-  - ScarfPurple
-  - ScarfBrown
-  - ScarfOrange
-  - ScarfBlack
-  - ScarfZebra
+#- type: loadoutGroup
+#  id: Scarfs
+#  name: loadout-group-scarfs
+#  minLimit: 0
+#  loadouts:
+#  - ScarfRed
+#  - ScarfBlue
+#  - ScarfLightBlue
+#  - ScarfGreen
+#  - ScarfPurple
+#  - ScarfBrown
+#  - ScarfOrange
+#  - ScarfBlack
+#  - ScarfZebra
 
 # Species
 - type: loadoutGroup
