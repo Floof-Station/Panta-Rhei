@@ -199,6 +199,7 @@
   loadouts:
   - HoPHead
   - HoPBeret
+  #- ScarfBlue # DeltaV
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -376,7 +377,7 @@
   - CommonDuffel
 
 - type: loadoutGroup
-  id: Passenger
+  id: PassengerNeck
   parent: [CommonCollars] # Floofstation
   name: loadout-group-passenger-neck
   minLimit: 0
@@ -578,6 +579,12 @@
   minLimit: 0
   loadouts:
   - LawyerNeck
+  # Begin DeltaV additions
+  #- ScarfRed
+  #- ScarfBlue
+  #- ScarfBlack
+  #- ScarfPurple
+  # End DeltaV additions
 
 - type: loadoutGroup
   id: LawyerJobTrinkets
