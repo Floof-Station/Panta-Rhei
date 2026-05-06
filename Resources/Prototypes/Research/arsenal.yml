@@ -213,7 +213,6 @@
   - WeaponAdvancedLaser
   - PortableRecharger
   - WeaponEnergyGunAdvanced # DeltaV - Advanced Energy Gun
-  - WeaponLaserSvalinn # Euphoria - Bought Svalinn back
 
 - type: technology
   id: ThermalWeaponry
@@ -243,3 +242,15 @@
   - ShuttleGunDusterCircuitboard
   technologyPrerequisites:
   - BasicShuttleArmament
+
+- type: technology # DeltaV - Removed for only causing issues
+  id: ExperimentalBatteryAmmo
+  name: research-technology-experimental-battery-ammo
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - WeaponLaserSvalinn
