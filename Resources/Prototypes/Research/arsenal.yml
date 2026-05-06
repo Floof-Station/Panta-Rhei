@@ -242,15 +242,3 @@
   - ShuttleGunDusterCircuitboard
   technologyPrerequisites:
   - BasicShuttleArmament
-
-- type: technology # Euphoria - It's Back
-  id: ExperimentalBatteryAmmo
-  name: research-technology-experimental-battery-ammo
-  icon:
-    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 3
-  cost: 15000
-  recipeUnlocks:
-  - WeaponLaserSvalinn
