@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseSign
+  id: SignTSF
+  name: trans-solar federation sign
+  description: A sign depicting the trans-solar federation emblem.
+  components:
+  - type: Sprite
+    sprite: _Floof/Wallmounts/signs.rsi
+    state: tsf

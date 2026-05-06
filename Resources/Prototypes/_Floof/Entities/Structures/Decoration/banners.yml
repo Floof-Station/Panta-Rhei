@@ -1,0 +1,19 @@
+- type: entity
+  id: BannerTSF
+  parent: BannerBase
+  name: trans-solar federation banner
+  description: A banner displaying the trans-solar federation.
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Decoration/banner.rsi
+    state: banner_tsf
+
+- type: entity
+  id: BannerTSFAlt
+  parent: BannerBase
+  name: fancy trans-solar federation banner
+  description: A banner displaying the trans-solar federation that is extra fancy.
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Decoration/banner.rsi
+    state: banner_tsf_fancy
