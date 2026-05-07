@@ -39,7 +39,7 @@ public sealed partial class ApcComponent : BaseApcNetComponent
     /// timer, which after enough overloading causes the APC to "trip" off.
     /// </summary>
     [DataField]
-    public float MaxLoad = 20e3f;
+    public float MaxLoad = 40e3f; // Euphoria - Was 20e3f, we're NOT redoing all our stations for this shit.
 
     /// <summary>
     /// Time that the APC can be continuously overloaded before tripping off.
