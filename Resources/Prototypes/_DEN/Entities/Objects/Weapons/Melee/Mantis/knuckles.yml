@@ -37,16 +37,16 @@
     attackRate: 1.0 # A bit slower than the other weapons
     range: 1.5
     angle: 60
+    soundHit:
+    path: /Audio/_Impstation/Weapons/nullglove.ogg
+    params:
+      variation: 0.15
   - type: DamageOtherOnHit
     damage:
       types:
         Blunt: 15 # 12 DPS, or 15 DPS against psions (same as CombatKnife)
         Holy: 6 # 22.5 total DPS against psionic supernaturals
         Structural: 7.5 # 5 structural DPS
-  - type: soundHit
-    path: /Audio/_Impstation/Weapons/nullglove.ogg
-    params:
-      variation: 0.15
     #animation: WeaponArcFist
     #wideAnimation: WeaponArcSmash
     #mustBeEquippedToUse: true
