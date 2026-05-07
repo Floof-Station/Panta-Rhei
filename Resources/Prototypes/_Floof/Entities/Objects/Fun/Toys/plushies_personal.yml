@@ -69,32 +69,6 @@
 
 - type: entity
   parent: PlushieHuman
-  id: PlushieKitsuneCaptain
-  name: Kitsune captain plushie
-  description: A Kitsune captain, this one seems to be particularly fluffy, especially their tails. the label reads 'Be careful around fire'.
-  components:
-  - type: Sprite
-    sprite: _Floof/Objects/Fun/floof_plush.rsi
-    state: kitsune
-  - type: UseDelay
-    delay: 3.0
-  - type: EmitSoundOnUse
-    sound: &yap
-      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
-      params:
-        volume: -1
-        variation: 0.05
-  - type: EmitSoundOnLand
-    sound: *yap
-  - type: EmitSoundOnCollide
-    sound: *yap
-  - type: EmitSoundOnActivate
-    sound: *yap
-  - type: MeleeWeapon
-    soundHit: *yap
-
-- type: entity
-  parent: PlushieHuman
   id: PlushieSapphicHarpyPlushie
   name: Sapphic harpy plushie
   description: A Plushie of a harpy. A attached label reads 'Come to the orchard in Spring...'.
@@ -520,7 +494,11 @@
       params:
         volume: 2
   - type: EmitSoundOnLand
-    sound: *yap
+    sound: &yap
+      path: /Audio/_Floof/Voice/Vulpkanin/yap.ogg
+      params:
+        volume: -1
+        variation: 0.05
   - type: EmitSoundOnCollide
     sound: *yap
   - type: EmitSoundOnActivate

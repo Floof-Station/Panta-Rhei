@@ -7,6 +7,7 @@
     - id: UnknownShuttleCargoLost
     - id: UnknownShuttleTravelingCuisine
     - id: UnknownShuttleDisasterEvacPod
+    - id: UnknownShuttleSampleCollector # Euphoria - Sample Collector role
     #- id: UnknownShuttleHonki # DeltaV - Removes the Clown Shuttle
     #- id: UnknownShuttleNTQuark # DeltaV - removed until theyre individually looked at
     #- id: UnknownShuttleCruiser
@@ -47,7 +48,7 @@
   - type: StationEvent
     startAnnouncement: station-event-unknown-shuttle-incoming
     startAudio:
-      path: /Audio/_Euphoria/Announcements/attention.ogg # Euphoria: New voicelines.
+      path: /Audio/_Euphoria/Announcements/unknown_shuttle.ogg # Euphoria - New Voice Lines
     weight: 5 # DeltaV - was 10, all of these kinda suck
     reoccurrenceDelay: 30
     duration: 1
@@ -251,3 +252,15 @@
   - type: LoadMapRule
     gridPath: /Maps/Shuttles/ShuttleEvent/spacebus.yml
 
+#Euphoria
+- type: entity
+  id: UnknownShuttleSampleCollector
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    maxOccurrences: 1
+    startAnnouncement:  station-event-unknown-shuttle-incoming
+  - type: PrecognitionResult
+    message: psionic-power-precognition-unknown-shuttle-sample-collector-result-message
+  - type: LoadMapRule
+    gridPath: /Maps/Floof/Shuttles/Event/SampleCollector/samplecollector.yml

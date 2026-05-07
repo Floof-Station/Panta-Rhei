@@ -2569,3 +2569,107 @@ Entries:
       message: Updated server rules
   id: 321
   time: '2026-05-02T23:29:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Removed brute damage from histamine
+    - type: Tweak
+      message: >-
+        Lowered threshold for histamine before epinephrine takes effect from 45
+        to 5
+  id: 322
+  time: '2026-05-03T04:38:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Saltern should appear in rotation again.
+  id: 323
+  time: '2026-05-03T17:56:54.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: >-
+        adjusted glaicer, security & epistemics have had major overhauls,
+        engineering, hop, librarian, psychologist have been touched up.
+  id: 324
+  time: '2026-05-03T17:58:04.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Be afraid admins have access to bread grenades and cheese slice grenades
+  id: 325
+  time: '2026-05-05T10:02:03.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Food recipes medical guide book entries will display properly again.
+  id: 326
+  time: '2026-05-06T02:19:23.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Fixed an issue with bibles.
+  id: 327
+  time: '2026-05-06T07:55:26.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The "spawn here" admin verb now loads the loadouts & traits from the
+        player's profile (while assuming Passenger as the job).
+  id: 328
+  time: '2026-05-06T10:57:47.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: Added voicelines for events that did not have any previously.
+    - type: Tweak
+      message: Changed the announcer voicelines to use a toned down effect.
+  id: 329
+  time: '2026-05-06T11:08:42.0000000+00:00'
+- author: Cprn-Sprkl
+  changes:
+    - type: Add
+      message: Sample Collectors have arrived to service station crew.
+  id: 330
+  time: '2026-05-06T11:15:42.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Sechtech has been added to train & archivists get thier locker.
+  id: 331
+  time: '2026-05-06T12:04:43.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        A Sechtech jobs slot has been added to Core & archivists get their
+        locker.
+  id: 332
+  time: '2026-05-06T12:05:59.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Pig not giving bacon. They now give Pork, that can be cut into
+        bacon.
+  id: 333
+  time: '2026-05-06T12:11:54.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Official policy surrounding ERP
+  id: 334
+  time: '2026-05-06T12:13:58.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        A Sechtech jobs slot has been added to Lighthouse & archivists get their
+        locker.
+    - type: Tweak
+      message: >-
+        Medicals cryopod always had a distro hookup, it was just hidden under a
+        table so that isn't hidden anymore.
+  id: 335
+  time: '2026-05-06T12:17:59.0000000+00:00'

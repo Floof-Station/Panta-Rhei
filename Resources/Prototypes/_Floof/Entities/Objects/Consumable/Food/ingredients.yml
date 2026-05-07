@@ -65,3 +65,39 @@
   - type: ThrowingAngle
     angle: 0
   - type: LandAtCursor
+
+- type: entity
+  parent: FoodMeatRawBase
+  id: FoodMeatPork
+  name: raw pork
+  description: A slab of fatty raw meat.
+  components:
+  - type: Sprite
+    state: plain
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 6
+        - ReagentId: Fat
+          Quantity: 15
+  - type: SliceableFood
+    count: 3
+    slice: FoodMeatBacon
+  - type: InternalTemperature
+    conductivity: 0.43
+  - type: Construction
+    graph: MeatSteak # when someone makes cooked pork change this
+    node: start
+    defaultTarget: meat steak
+  - type: Tag
+    tags:
+    - Meat
+  - type: Item
+    storedOffset: -2,1
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      right:
+      - state: plain-inhand-right

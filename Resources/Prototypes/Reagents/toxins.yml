@@ -393,7 +393,7 @@
         probability: 0.1
         damage:
           groups:
-            Brute: 1
+            #Brute: 1 #Euphoria - remove brute damage to stop allergies causing limb loss
           types:
             Poison: 1
       # todo: cough, sneeze
@@ -404,7 +404,7 @@
           min: 45
         damage:
           groups:
-            Brute: 1
+            #Brute: 1 #Euphoria - remove brute damage to stop allergies causing limb loss
             Airloss: 2
           types:
             Poison: 2
