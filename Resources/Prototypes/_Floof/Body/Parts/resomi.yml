@@ -131,7 +131,7 @@
 - type: entity
   id: RightFootResomi
   name: "right resomi foot"
-  parent: [PartResomi. BaseRightFoot]
+  parent: [PartResomi, BaseRightFoot]
   components:
   - type: Sprite
     netsync: false
