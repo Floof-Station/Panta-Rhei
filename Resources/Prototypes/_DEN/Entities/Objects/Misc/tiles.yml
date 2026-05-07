@@ -25,11 +25,11 @@
       types:
         Blunt: 9.5 # Heavier tiles hurt more, based on FloorTileItemSteel
     #staminaCost: 6
-    soundHit:
-      path: /Audio/Weapons/block_metal1.ogg
-      params:
-        volume: -60 # Why is it so loud...
-        variation: 0.05
+  - type: soundHit
+    path: /Audio/Weapons/block_metal1.ogg
+    params:
+      volume: -60 # Why is it so loud...
+      variation: 0.05
 
 - type: entity
   parent: FloorTileItemSomberSteel
@@ -266,6 +266,8 @@
     outputs:
       - Plating
       - FloorSomberMnemolithRough
+  - type: soundHit
+    path: /Audio/Weapons/block_metal1.ogg
   - type: Stack
     stackType: FloorTileSomberMnemolithRough
   - type: DamageOtherOnHit # Well, it is made of mnemolith...
@@ -310,7 +312,6 @@
     damage:
       types:
         Blunt: 5.5 # Lighter tiles hurt less, based on FloorTileItemBase
-    #staminaCost: 5
 
 
 - type: entity
