@@ -83,3 +83,128 @@
   id: NotPhrase
   parent: BaseQualitativePhrase
   text: phrase-not
+# Euphoria
+- type: quickPhrase
+  id: BigPhrase
+  parent: BaseActionPhrase
+  text: phrase-big
+
+- type: quickPhrase
+  id: SmallPhrase
+  parent: BaseActionPhrase
+  text: phrase-small
+
+- type: quickPhrase
+  id: TinyPhrase
+  parent: BaseActionPhrase
+  text: phrase-tiny
+
+- type: quickPhrase
+  id: TallPhrase
+  parent: BaseActionPhrase
+  text: phrase-tall
+
+- type: quickPhrase
+  id: ShortPhrase
+  parent: BaseActionPhrase
+  text: phrase-short
+
+- type: quickPhrase
+  id: LongPhrase
+  parent: BaseActionPhrase
+  text: phrase-long
+
+- type: quickPhrase
+  id: BestPhrase
+  parent: BaseActionPhrase
+  text: phrase-best
+
+- type: quickPhrase
+  id: WorstPhrase
+  parent: BaseActionPhrase
+  text: phrase-worst
+
+- type: quickPhrase
+  id: FullPhrase
+  parent: BaseActionPhrase
+  text: phrase-full
+
+- type: quickPhrase
+  id: EmptyPhrase
+  parent: BaseActionPhrase
+  text: phrase-empty
+
+- type: quickPhrase
+  id: SlowPhrase
+  parent: BaseActionPhrase
+  text: phrase-slow
+
+- type: quickPhrase
+  id: FastPhrase
+  parent: BaseActionPhrase
+  text: phrase-fast
+
+- type: quickPhrase
+  id: QuietPhrase
+  parent: BaseActionPhrase
+  text: phrase-quiet
+
+- type: quickPhrase
+  id: LoudPhrase
+  parent: BaseActionPhrase
+  text: phrase-loud
+
+- type: quickPhrase
+  id: BoringPhrase
+  parent: BaseActionPhrase
+  text: phrase-boring
+
+- type: quickPhrase
+  id: MildPhrase
+  parent: BaseActionPhrase
+  text: phrase-mild
+
+- type: quickPhrase
+  id: ModeratePhrase
+  parent: BaseActionPhrase
+  text: phrase-moderate
+
+- type: quickPhrase
+  id: SeverePhrase
+  parent: BaseActionPhrase
+  text: phrase-severe
+
+- type: quickPhrase
+  id: ExtremePhrase
+  parent: BaseActionPhrase
+  text: phrase-extreme
+
+- type: quickPhrase
+  id: CutePhrase
+  parent: BaseActionPhrase
+  text: phrase-cute
+
+- type: quickPhrase
+  id: AdorablePhrase
+  parent: BaseActionPhrase
+  text: phrase-adorable
+
+- type: quickPhrase
+  id: PrettyPhrase
+  parent: BaseActionPhrase
+  text: phrase-pretty
+
+- type: quickPhrase
+  id: HandsomePhrase
+  parent: BaseActionPhrase
+  text: phrase-handsome
+
+- type: quickPhrase
+  id: BeautifulPhrase
+  parent: BaseActionPhrase
+  text: phrase-beautiful
+
+- type: quickPhrase
+  id: NicePhrase
+  parent: BaseActionPhrase
+  text: phrase-nice
