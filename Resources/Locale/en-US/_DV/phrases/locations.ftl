@@ -21,4 +21,3 @@ phrase-location-northeast = northeast
 phrase-location-southeast = southeast
 phrase-location-southwest = southwest
 phrase-location-northwest = northwest
-
