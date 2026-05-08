@@ -55,15 +55,3 @@ phrase-hazard-freezing = freezing
 phrase-hazard-burning = burning
 phrase-hazard-bad-temperature = bad temperature
 phrase-hazard-darkness = darkness
-# Euphoria
-phrase-hazard-rod = rod
-phrase-hazard-violence = violence
-phrase-hazard-death = death
-phrase-hazard-spacing = spacing
-phrase-hostile-colossus = colossus
-phrase-hostile-cult = cult
-phrase-hostile-cultist = cultist
-phrase-hostile-devil = devil
-phrase-hostile-dragon = dragon
-phrase-hostile-thief = thief
-phrase-hostile-wizard = wizard

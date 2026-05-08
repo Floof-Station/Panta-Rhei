@@ -1,80 +1,84 @@
 - type: quickPhrase
-  id: BaseActionPhrase
-  parent: BaseCommonPhrase
-  group: Actions
-  abstract: true
+  id: BitePhrase
+  parent: BaseActionPhrase
+  text: phrase-bite
 
 - type: quickPhrase
-  id: CallPhrase
+  id: SitPhrase
   parent: BaseActionPhrase
-  text: phrase-call
+  text: phrase-sit
 
 - type: quickPhrase
-  id: DrinkActionPhrase
+  id: SuckPhrase
   parent: BaseActionPhrase
-  text: phrase-actiondrink
+  text: phrase-suck
 
 - type: quickPhrase
-  id: ShowMePhrase
+  id: KissPhrase
   parent: BaseActionPhrase
-  text: phrase-show
+  text: phrase-kiss
 
 - type: quickPhrase
-  id: HelpPhrase
+  id: HavePhrase
   parent: BaseActionPhrase
-  text: phrase-help
+  text: phrase-have
 
 - type: quickPhrase
-  id: AttackPhrase
+  id: HadPhrase
   parent: BaseActionPhrase
-  text: phrase-attack
+  text: phrase-had
 
 - type: quickPhrase
-  id: BreakPhrase
+  id: PutPhrase
   parent: BaseActionPhrase
-  text: phrase-break
+  text: phrase-put
 
 - type: quickPhrase
-  id: BuildPhrase
+  id: JerkPhrase
   parent: BaseActionPhrase
-  text: phrase-build
+  text: phrase-jerk
 
 - type: quickPhrase
-  id: HealPhrase
+  id: DigPhrase
   parent: BaseActionPhrase
-  text: phrase-heal
+  text: phrase-dig
 
 - type: quickPhrase
-  id: RunPhrase
+  id: FillPhrase
   parent: BaseActionPhrase
-  text: phrase-run
+  text: phrase-fill
 
 - type: quickPhrase
-  id: GoPhrase
+  id: FeelPhrase
   parent: BaseActionPhrase
-  text: phrase-go
+  text: phrase-feel
 
 - type: quickPhrase
-  id: FixPhrase
+  id: ShootPhrase
   parent: BaseActionPhrase
-  text: phrase-fix
+  text: phrase-shoot
 
 - type: quickPhrase
-  id: SwitchPhrase
+  id: PissPhrase
   parent: BaseActionPhrase
-  text: phrase-switch
+  text: phrase-piss
 
 - type: quickPhrase
-  id: KnowPhrase
+  id: SellPhrase
   parent: BaseActionPhrase
-  text: phrase-know
+  text: phrase-sell
 
 - type: quickPhrase
-  id: ThinkPhrase
+  id: BuyPhrase
   parent: BaseActionPhrase
-  text: phrase-think
+  text: phrase-buy
 
 - type: quickPhrase
-  id: EatPhrase
+  id: SpeakPhrase
   parent: BaseActionPhrase
-  text: phrase-eat
+  text: phrase-speak
+
+- type: quickPhrase
+  id: SleepPhrase
+  parent: BaseActionPhrase
+  text: phrase-sleep

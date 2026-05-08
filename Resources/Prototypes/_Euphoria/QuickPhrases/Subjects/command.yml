@@ -1,0 +1,9 @@
+- type: quickPhrase
+  id: CommandPhrase
+  parent: BaseCommandSubjectPhrase
+  text: phrase-command
+
+- type: quickPhrase
+  id: CentralCommandPhrase
+  parent: BaseCommandSubjectPhrase
+  text: phrase-central-command

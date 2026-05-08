@@ -41,11 +41,3 @@ phrase-species-insect = insect
 phrase-species-pet = pet
 phrase-species-chicken = chicken
 phrase-species-fish = fish
-# Euphoria
-phrase-species-borg = borg
-phrase-species-rabbit = rabbit
-phrase-species-scurret = scurret
-phrase-species-shark = shark
-phrase-species-dragon = dragon
-phrase-species-kitty = kitty
-phrase-species-puppy = puppy
