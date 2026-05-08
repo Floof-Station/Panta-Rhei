@@ -226,6 +226,29 @@
   clauseWeight: 150
   addedComponents:
   - type: DelayedDeath
-    preventAllRevives: true # :trol:
+    preventAllRevives: false # Euphoria - Doesn't RR
     deathTime: 300
     deathMessageId: devil-deal-time-ran-out
+
+# Euphoria - Additions
+# to speak all
+- type: clause
+  id: giftofbabel
+  clauseWeight: -10
+  addedComponents:
+  - type: UniversalLanguageSpeaker
+
+# to see in the dark
+- type: clause
+  id: fearofthedark
+  clauseWeight: -10
+  addedComponents:
+  - type: NightVision
+
+# to see the future
+- type: clause
+  id: fearofthefuture
+  clauseWeight: -10
+  addedComponents:
+  - type: Psionic
+  - type: PrecognitionPower
