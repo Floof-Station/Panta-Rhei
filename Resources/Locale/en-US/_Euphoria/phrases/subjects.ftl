@@ -26,6 +26,7 @@ phrase-women = women
 phrase-nonbinary = nonbinary
 phrase-agender = agender
 phrase-transgender = transgender
+phrase-cisgender = cisgender
 phrase-gender = gender
 phrase-gay = gay
 phrase-lesbian = lesbian

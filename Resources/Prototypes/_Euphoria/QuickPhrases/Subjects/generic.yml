@@ -100,7 +100,7 @@
   text: phrase-men
 
 - type: quickPhrase
-  id: WomenPhrase
+  id: WomanPhrase
   parent: BaseSubjectPhrase
   text: phrase-woman
 
@@ -123,6 +123,11 @@
   id: TransgenderPhrase
   parent: BaseSubjectPhrase
   text: phrase-transgender
+
+- type: quickPhrase
+  id: CisgenderPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-cisgender
 
 - type: quickPhrase
   id: GenderPhrase
