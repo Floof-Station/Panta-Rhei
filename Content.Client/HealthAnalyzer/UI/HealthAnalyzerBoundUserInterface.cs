@@ -1,6 +1,7 @@
-﻿using Content.Shared.MedicalScanner;
+using Content.Shared.MedicalScanner;
 using Content.Shared._Shitmed.Targeting; // Shitmed Change
 using Content.Shared._DV.MedicalRecords; // DeltaV - Medical Records
+﻿using Content.Shared._NF.Medical; // Frontier
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
@@ -25,6 +26,8 @@ namespace Content.Client.HealthAnalyzer.UI
             _window.OnTriageStatusChanged += SendTriageStatusMessage; // DeltaV - Medical Records
             _window.OnClaimPatient += SendTriageClaimMessage; // DeltaV - Medical Records
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
+
+            _window.OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
         }
 
 

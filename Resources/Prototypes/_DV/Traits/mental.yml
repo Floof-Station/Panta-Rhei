@@ -4,7 +4,7 @@
   id: Paracusia
   name: trait-paracusia-name
   description: trait-paracusia-desc
-  category: Mental
+  category: DisabilitiesMental # Euphoria
   cost: -2 #floof
   effects:
   - !type:AddCompsEffect
@@ -20,7 +20,7 @@
   id: Depression
   name: trait-depression-name
   description: trait-depression-desc
-  category: Mental
+  category: DisabilitiesMental # Euphoria
   cost: -1 #floof
   effects:
   - !type:SpawnItemInHandEffect
@@ -30,7 +30,7 @@
   id: Addicted
   name: trait-addicted-name
   description: trait-addicted-desc
-  category: Mental
+  category: DisabilitiesMental # Euphoria
   cost: -1 #floof
   effects:
   - !type:AddCompsEffect
@@ -41,7 +41,7 @@
   id: Liar
   name: trait-liar-name
   description: trait-liar-desc
-  category: Mental
+  category: DisabilitiesMental # Euphoria
   cost: -1 #floof
   effects:
   - !type:AddCompsEffect
@@ -53,7 +53,7 @@
   id: Pacifist
   name: trait-pacifist-name
   description: trait-pacifist-desc
-  category: Mental
+  category: DisabilitiesMental # Euphoria
   cost: -6 #floof
   effects:
   - !type:AddCompsEffect

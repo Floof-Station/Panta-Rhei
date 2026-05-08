@@ -30,6 +30,8 @@ using Content.Server._DV.MedicalRecords;
 using Content.Shared._DV.MedicalRecords;
 // End DeltaV
 
+using Content.Server._NF.Medical; // Frontier
+
 namespace Content.Server.Medical;
 
 public sealed class HealthAnalyzerSystem : EntitySystem
@@ -310,6 +312,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             body = _bodySystem.GetBodyPartStatus(target);
         // Shitmed Change End
 
+        var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
+
         _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
             GetNetEntity(target),
             bodyTemperature,
@@ -317,10 +321,13 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             scanMode,
             bleeding,
             unrevivable,
+
             // Shitmed Change
             body,
             _medicalRecords.GetMedicalRecords(target), // DeltaV - Medical Records
-            part != null ? GetNetEntity(part) : null
+            part != null ? GetNetEntity(part) : null,
+
+            printable // Frontier
         ));
     }
 }

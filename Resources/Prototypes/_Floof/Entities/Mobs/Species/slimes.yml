@@ -1,0 +1,62 @@
+- type: entity # Euphoria - This entity readded to allow Geras to work again.
+  name: geras
+  description: A geras of a slime - the name is ironic, isn't it?
+  id: MobSlimesGeras
+  parent: [BaseMobAdultSlimes, StripableInventoryBase]
+  categories: [ HideSpawnMenu ]
+  components:
+  # they portable...
+  - type: Body
+    prototype: Geras
+  - type: Inventory
+    templateId: gerasinv
+  - type: Hands
+  - type: MultiHandedItem
+  - type: Stripping
+  - type: ComplexInteraction
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      80: Dead # weak af tho
+  - type: NpcFactionMember
+    factions:
+    - NanoTrasen
+  - type: Item
+    size: Huge
+  - type: Sprite
+    layers:
+    - map: [ "colorMap" ]
+      state: slime_geras
+    - map: [ "eyesMap" ] # Coming back to this sprite soon - ScarlettJFG
+      state: slime_geras_eyes
+      shader: unshaded
+  - type: RandomSprite
+    selected:
+      colorMap:
+        slime_geras: "#0000FF"
+      eyesMap:
+        slime_geras_eyes: "#0000FF"
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+  - type: MeleeWeapon
+    attackRate: 2
+    damage:
+      types:
+        Blunt: 4
+  - type: Tag # Floof
+    tags:
+    - FootstepSound
+    - DoorBumpOpener
+    - SlimeEmotes
+  - type: Vocal # Floof. This is 100% more of a bandaid fix until I learn more about how sounds work, but now Geras emotes will have sound.
+    sounds:
+        Male: MaleSlime
+        Female: FemaleSlime
+        Unsexed: MaleSlime
+  - type: Puller
+    needsHands: false
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 5 # +.5 from normal movement speed

@@ -27,13 +27,7 @@
   storage:
     back:
     - ToySword
-
-- type: loadout
-  id: CardBoxBase
-  storage:
-    back:
-    - CardBoxBase
-  groupBy: "cardbox"
+  groupBy: "Other Toys"
 
 - type: loadout
   id: CardBoxNanotrasen
@@ -41,7 +35,7 @@
     back:
     - CardBoxNanotrasen
   groupBy: "cardbox"
-    
+
 - type: loadout
   id: CardBoxSyndicate
   storage:
@@ -55,3 +49,44 @@
     back:
     - CardBoxBlack
   groupBy: "cardbox"
+
+- type: loadout
+  id: TennisBall
+  storage:
+    back:
+    - TennisBall
+  groupBy: "Other Toys"
+
+- type: loadout
+  id: BeachBall
+  storage:
+    back:
+    - BeachBall
+  groupBy: "Other Toys"
+
+- type: loadout
+  id: PlushieSharkGrey
+  storage:
+    back:
+    - PlushieSharkGrey
+  groupBy: "Plushies"
+
+- type: loadout
+  id: PlushieSharkPink
+  storage:
+    back:
+    - PlushieSharkPink
+  groupBy: "Plushies"
+
+- type: loadout
+  id: PlushieSharkBlue
+  storage:
+    back:
+    - PlushieSharkBlue
+  groupBy: "Plushies"
+
+- type: loadout
+  id: WristwatchGold
+  storage:
+    back:
+    - WristwatchGold

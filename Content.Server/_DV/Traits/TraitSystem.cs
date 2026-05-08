@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Server.Database;
+using Content.Server.Ghost.Roles.Events;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.Traits;
 using Content.Shared._DV.Traits.Conditions;
@@ -26,7 +28,6 @@ public sealed class TraitSystem : EntitySystem
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
-
     private int _maxTraitCount;
     private int _maxTraitPoints;
 
@@ -35,6 +36,7 @@ public sealed class TraitSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<GhostRoleSpawnerUsedEvent>(OnGhostRoleSpawnerUsed);
 
         Subs.CVar(_config, DCCVars.MaxTraitCount, value => _maxTraitCount = value, true);
         Subs.CVar(_config, DCCVars.MaxTraitPoints, value => _maxTraitPoints = value, true);
@@ -60,7 +62,7 @@ public sealed class TraitSystem : EntitySystem
         var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.JobId, speciesId, args.Profile, disabledTraits);
 
         // Apply valid traits
-        // Floofstation edit: first, sort valid traits by priority
+        // Floofstation edit: first, sort valid traits by cost
         var sortedPrototypes = new List<TraitPrototype>();
         foreach (var traitId in validTraits)
         {
@@ -70,7 +72,7 @@ public sealed class TraitSystem : EntitySystem
             sortedPrototypes.Add(trait);
         }
 
-        sortedPrototypes.Sort((a, b) => -a.Priority.CompareTo(b.Priority));
+        sortedPrototypes = sortedPrototypes.OrderBy(a => -a.Priority).ThenBy(a => a.Cost).ToList(); //Floof - get all traits from negative cost to positive cost
         foreach (var trait in sortedPrototypes)
             ApplyTrait(args.Mob, trait);
         // Floofstation edit end
@@ -81,6 +83,49 @@ public sealed class TraitSystem : EntitySystem
             RaiseNetworkEvent(new DisabledTraitsEvent(disabledTraits), args.Player);
         }
     }
+
+    // Euphoria - Let's ghost role character spawns use traits
+    private void OnGhostRoleSpawnerUsed(GhostRoleSpawnerUsedEvent args)
+    {
+        // Check if there's a profile
+        if (args.Character == null)
+            return;
+
+        // Use the species ID from the profile if for some reason we can't get the humanoid appearance
+        ProtoId<SpeciesPrototype>? speciesId = args.Character.Species;
+        if (TryComp<HumanoidAppearanceComponent>(args.Spawned, out var humanoid))
+            speciesId = humanoid.Species;
+
+        // Track disabled traits and reasons
+        var disabledTraits = new Dictionary<ProtoId<TraitPrototype>, List<string>>();
+
+        var ghostjob = "Passenger";
+        // Validate and collect valid traits
+        var validTraits = ValidateTraits(args.Spawned, args.Character.TraitPreferences, args.Session, ghostjob, speciesId, args.Character, disabledTraits);
+
+        // Apply valid traits
+        // Floofstation edit: first, sort valid traits by cost
+        var sortedPrototypes = new List<TraitPrototype>();
+        foreach (var traitId in validTraits)
+        {
+            if (!_prototype.TryIndex(traitId, out var trait))
+                continue;
+
+            sortedPrototypes.Add(trait);
+        }
+
+        sortedPrototypes = sortedPrototypes.OrderBy(a => -a.Priority).ThenBy(a => a.Cost).ToList(); //Floof - get all traits from negative cost to positive cost
+        foreach (var trait in sortedPrototypes)
+            ApplyTrait(args.Spawned, trait);
+        // Floofstation edit end
+
+        // Send disabled traits notification to client if any were rejected
+        if (disabledTraits.Count > 0 && args.Session != null)
+        {
+            RaiseNetworkEvent(new DisabledTraitsEvent(disabledTraits), args.Session);
+        }
+    }
+
 
     /// <summary>
     /// Validates a set of trait selections against all rules and returns the valid subset.
@@ -196,7 +241,7 @@ public sealed class TraitSystem : EntitySystem
             // Trait is valid, add it
             validTraits.Add(traitId);
             totalPoints += trait.Cost;
-            traitCount++;
+            traitCount += trait.UsesSlots ? 1 : 0; // Floofstation - consider that some traits may use no slots
 
             // Update category tracking
             categoryTraitCounts.TryGetValue(trait.Category, out var catCount);

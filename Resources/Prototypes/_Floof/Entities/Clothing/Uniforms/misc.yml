@@ -263,3 +263,14 @@
     sprite: _Floof/Clothing/Uniforms/bluefancylad.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Uniforms/bluefancylad.rsi
+
+- type: entity
+  parent: [ClothingUniformBase, BaseCommandContraband, ClothingUniformFoldableBaseImpstation] # imp - Add foldable uniform jumpsuits
+  id: ClothingUniformJumpsuitChiefEngineerLegacy
+  name: chief engineer's legacy jumpsuit
+  description: It's a high visibility jumpsuit given to those engineers insane enough to achieve the rank of Chief Engineer, that can say they've seen it all.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Departmental/Engineering/ceuniformlegacy.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Departmental/Engineering/ceuniformlegacy.rsi

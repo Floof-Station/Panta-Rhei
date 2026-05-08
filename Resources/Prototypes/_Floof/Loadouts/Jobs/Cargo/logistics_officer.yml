@@ -18,3 +18,18 @@
   id: ClothingHandsGlovesPapercutProof
   equipment:
     gloves: ClothingHandsGlovesHop
+
+- type: loadout
+  id: QuartermasterPDA # this is the one from upstream renamed to LO
+  equipment:
+    id: QuartermasterPDA
+
+- type: loadout
+  id: QMPDA # this is the one found in the Floof pdas.yml
+  equipment:
+    id: QMPDA
+
+- type: loadout
+  id: HeadOfAcquisitionsPDA
+  equipment:
+    id: HeadOfAcquisitionsPDA

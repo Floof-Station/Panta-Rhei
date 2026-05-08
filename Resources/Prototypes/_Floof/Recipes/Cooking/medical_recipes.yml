@@ -8,6 +8,7 @@
     SterileBag: 1
   reagents:
     Blood: 30 #Bloodpacks are 30 per use.
+  recipeType: MedicalAssembler # Frontier
 
 #Single hybrid blood pack recipe
 - type: microwaveMealRecipe
@@ -20,6 +21,7 @@
   reagents:
     Blood: 15
     Saline: 15
+  recipeType: MedicalAssembler # Frontier
 
 #Five blood pack recipe
 - type: microwaveMealRecipe
@@ -31,6 +33,7 @@
     SterileBag: 1
   reagents:
     Blood: 150 #5 stack of 30 units per use.
+  recipeType: MedicalAssembler # Frontier
 
 #Five hybrid blood pack recipe
 - type: microwaveMealRecipe
@@ -43,6 +46,7 @@
   reagents:
     Blood: 75
     Saline: 75
+  recipeType: MedicalAssembler # Frontier
 
 #Ten blood pack recipe
 - type: microwaveMealRecipe
@@ -54,6 +58,7 @@
     SterileBag: 1
   reagents:
     Blood: 300 #10 stack of 30 units per use.
+  recipeType: MedicalAssembler # Frontier
 
 #Ten hybrid blood pack recipe
 - type: microwaveMealRecipe
@@ -66,6 +71,7 @@
   reagents:
     Blood: 150
     Saline: 150
+  recipeType: MedicalAssembler # Frontier
 
 #Full blood pack recipe
 - type: microwaveMealRecipe
@@ -77,6 +83,7 @@
     SterileBag: 1
   reagents:
     Blood: 450 #450 = 15 stack of 30 units per use.
+  recipeType: MedicalAssembler # Frontier
 
 #Full hybrid blood pack recipe
 - type: microwaveMealRecipe
@@ -89,6 +96,7 @@
   reagents:
     Blood: 225
     Saline: 225
+  recipeType: MedicalAssembler # Frontier
 
 #PFC based blood substitute recipe
 - type: microwaveMealRecipe
@@ -103,3 +111,4 @@
     Vitamin: 15
     Saline: 50
     Bleach: 5
+  recipeType: MedicalAssembler # Frontier

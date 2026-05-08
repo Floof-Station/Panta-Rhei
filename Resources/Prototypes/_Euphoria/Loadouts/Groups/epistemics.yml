@@ -1,0 +1,32 @@
+# chaplain
+- type: loadoutGroup
+  id: EuphoriaChaplainBible
+  abstract: true
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BibleLustro
+
+- type: loadoutGroup
+  id: EuphoriaChaplainNeck
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ChaplainStoleLustro
+
+- type: loadoutGroup
+  id: EuphoriaChaplainOuterClothing
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ChaplainCoatLustro
+
+- type: loadoutGroup
+  id: EuphoriaChaplainHead
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ChaplainHaloLustro

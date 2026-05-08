@@ -81,6 +81,9 @@
   - type: InteractionOutline
   - type: Damageable
     damageContainer: StructuralInorganic
+  - type: Tag
+    tags:
+    - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: ExaminableDamage
     messages: WindowMessages
   - type: Repairable
@@ -179,6 +182,9 @@
   - type: Repairable
   - type: Damageable
     damageContainer: StructuralInorganic
+  - type: Tag
+    tags:
+    - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: DamageVisuals
     thresholds: [8, 16, 25]
     damageDivisor: 3.333

@@ -1,0 +1,40 @@
+- type: startingGear
+  id: NPCHumanSalvagerGear
+  equipment:
+    head: ClothingHeadHelmetHardsuitSpatio
+    jumpsuit: ClothingUniformJumpsuitSalvageSpecialist
+    shoes: ClothingShoesBootsSalvage
+    mask: ClothingMaskGasExplorer
+    belt: OreBag
+    back: ClothingBackpackSatchelSalvage
+    outerClothing: ClothingOuterHardsuitSpatio
+
+- type: startingGear
+  id: NPCHumanSalvagerGearAltA
+  parent: NPCHumanSalvagerGear
+  inhand:
+    - WeaponProtoKineticAccelerator
+
+- type: startingGear
+  id: NPCHumanSalvagerGearAltB
+  parent: NPCHumanSalvagerGear
+  inhand:
+    - MiningDrill
+
+- type: startingGear
+  id: NPCHumanSalvagerGearAltC
+  parent: NPCHumanSalvagerGear
+  equipment:
+    head: ClothingHeadHelmetHardsuitSalvage
+    outerClothing: ClothingOuterHardsuitSalvage
+  inhand:
+    - WeaponProtoKineticAccelerator
+
+- type: startingGear
+  id: NPCHumanSalvagerGearAltD
+  parent: NPCHumanSalvagerGear
+  equipment:
+    head: ClothingHeadHelmetHardsuitSalvage
+    outerClothing: ClothingOuterHardsuitSalvage
+  inhand:
+    - MiningDrill

@@ -19,8 +19,13 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
     public Dictionary<TargetBodyPart, TargetIntegrity>? Body; // Shitmed Change
     public NetEntity? Part; // Shitmed Change
     public MedicalRecord? MedicalRecord; // DeltaV - Medical Records
+    public bool Printable; // Frontier
 
-    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, Dictionary<TargetBodyPart, TargetIntegrity>? body, MedicalRecord? medicalRecord = null, NetEntity? part = null) // Shitmed Change // DeltaV - Medical Records
+    public HealthAnalyzerScannedUserMessage(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable,
+        Dictionary<TargetBodyPart, TargetIntegrity>? body, // Shitmed Change
+        MedicalRecord? medicalRecord = null, NetEntity? part = null, // DeltaV - Medical Records
+        bool printable = false // Frontier
+        )
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
@@ -31,6 +36,7 @@ public sealed class HealthAnalyzerScannedUserMessage : BoundUserInterfaceMessage
         Body = body; // Shitmed Change
         Part = part; // Shitmed Change
         MedicalRecord = medicalRecord; // DeltaV - Medical Records
+        Printable = printable; // Frontier
     }
 }
 

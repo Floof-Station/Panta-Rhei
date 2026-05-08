@@ -1,0 +1,52 @@
+# chaplain outfits
+# jumpsuits
+- type: loadout
+  id: ChaplainLustroAlt
+  equipment:
+    jumpsuit: ClothingUniformLustroEcclesiaAlt
+
+- type: loadout
+  id: ChaplainLustro
+  equipment:
+    jumpsuit: ClothingUniformLustroEcclesia
+
+- type: loadout
+  id: ChaplainInfernusLustro
+  equipment:
+    jumpsuit: ClothingUniformLustroEcclesiaInfernus
+
+- type: loadout
+  id: ChaplainInfernusLustroAlt
+  equipment:
+    jumpsuit: ClothingUniformLustroEcclesiaInfernusAlt
+
+# neck
+- type: loadout
+  id: ChaplainStoleLustro
+  equipment:
+    neck: ClothingNeckLustroEcclesiaStole
+
+# outer clothing
+- type: loadout
+  id: ChaplainCoatLustro
+  equipment:
+    outerClothing: ClothingOuterLustroEcclesiaChaplainWinterCoat
+
+# head
+- type: loadout
+  id: ChaplainHaloLustro
+  equipment:
+    head: ClothingHeadLustroEcclesiaHalo
+
+# holybook
+- type: loadout
+  id: BibleLustro
+  storage:
+    back:
+    - BibleLustroEcclesia
+
+# shoes
+- type: loadout
+  id: ChaplainLustroSandals
+  equipment:
+    shoes: ClothingShoesLustroEcclesiaSandals

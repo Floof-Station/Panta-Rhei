@@ -69,10 +69,20 @@
     - TauCetiBasic
     - Bubblish
     naturalLanguage: Bubblish
+  - type: Geras # Euphoria - Readded this component to allow Geras to work.
+  - type: FootPrints # Floofstation - delta-v removed these, we're keeping them
+    leftBarePrint: "footprint-left-bare-slime"
+    rightBarePrint: "footprint-right-bare-slime"
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - SlimeEmotes # Added
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Slime
-  - type: Geras # Euphoria - Readded this component to allow Geras to work.
   - type: PassiveDamage # Around 8 damage a minute healed
     allowedStates:
     - Alive
@@ -114,7 +124,7 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 0.05
+            Heat: 2 # Reupped to 2 from Floof. Slimes should be hurt by water, not tickled...
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -140,16 +150,6 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
-  - type: FootPrints # DeltaV port from EE, blood splatter
-    leftBarePrint: "footprint-left-bare-slime"
-    rightBarePrint: "footprint-right-bare-slime"
-  - type: Tag # Floofstation
-    tags:
-    - CanPilot
-    - FootstepSound
-    - DoorBumpOpener
-    - AnomalyHost
-    - SlimeEmotes # Added
 
 - type: entity
   parent: MobHumanDummy

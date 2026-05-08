@@ -244,6 +244,7 @@
     - Surgery # Shitmed change
     # Floofstation section - add your recipes here
     - AdvancedTranslation
+    - UpgradeKits_Goob
     # Floofstation section end
   - type: EmagLatheRecipes
     emagDynamicPacks:
@@ -303,6 +304,8 @@
     - MechBoards
     - ShuttleBoards
     - EngineeringBoardsGoob #Goob Factorio port
+    - ServiceAssemblerPack # Frontier Service Assembler
+    - MedicalAssemblerPack # Frontier Medical Assembler
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards
@@ -522,7 +525,12 @@
       unlitRunningState: unlit-building # DeltaV - added animation sprite layers
       staticPacks:
       - SecurityAmmoStatic
+    # Start DeltaV Additions 
       - SecurityShotgunDrumsStatic
+      - AmmoFabPracticeStatic # Removes practice guns
+      - SecurityRubberAmmoStatic
+      dynamicPacks:
+      - SecurityAmmo
     # End DeltaV Additions
     - type: BlueprintReceiver
       whitelist:
@@ -592,6 +600,7 @@
     # End DeltaV Additions
     # Floofstation section
     - BasicTranslation
+    - MedicalAssemblerPack # Frontier Medical Assembler
     # Floofstation section end
   - type: Machine
     board: MedicalTechFabCircuitboard
@@ -642,6 +651,10 @@
     - CollarsFloofstation
     - CarpetSimple
     # Floofstation section end
+    # Euphoria section
+    - ClothingEpistemicsEuphoria
+    - ClothingPassengerEuphoria
+    # Euphoria section end
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm

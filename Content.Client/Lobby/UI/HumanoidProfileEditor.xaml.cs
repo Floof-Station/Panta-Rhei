@@ -9,10 +9,12 @@ using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.Sprite;
 using Content.Client.UserInterface.Systems.Guidebook;
+using Content.Shared._DV.Species; // DeltaV - Species hider
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
 using Content.Shared.Guidebook;
+using Content.Client._CD.Humanoid;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -37,7 +39,10 @@ using Direction = Robust.Shared.Maths.Direction;
 // Begin CD - Character Records
 using System.Globalization;
 using Content.Client._CD.Records.UI;
+using Content.Client._Floof.Lobby.UI;
 using Content.Shared._CD.Records;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.FixedPoint;
 // End CD - Character Records
 using Content.Shared._DV.Traits; // DV - Traits
 
@@ -116,6 +121,10 @@ namespace Content.Client.Lobby.UI
         private float _defaultHeight = 1f;
 
         private readonly RecordEditorGui _recordsTab;
+
+        // CD: Allergies editor
+        private readonly AllergyPicker _allergiesTab;
+
         // End CD - Station Records
 
         [ValidatePrototypeId<GuideEntryPrototype>]
@@ -491,6 +500,10 @@ namespace Content.Client.Lobby.UI
             // Begin CD - Character Records
             #region CosmaticRecords
 
+            _allergiesTab = new AllergyPicker(UpdateAllergies);
+            TabContainer.AddChild(_allergiesTab);
+            TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-cd-allergies-tab"));
+
             _recordsTab = new RecordEditorGui(UpdateProfileRecords);
             TabContainer.AddChild(_recordsTab);
             TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-cd-records-tab"));
@@ -739,7 +752,7 @@ namespace Content.Client.Lobby.UI
             SpeciesButton.Clear();
             _species.Clear();
 
-            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart));
+            _species.AddRange(_prototypeManager.EnumeratePrototypes<SpeciesPrototype>().Where(o => o.RoundStart && !SpeciesHiderSystem.IsHidden(o.ID))); // DeltaV - SpeciesHider
             _species.Sort((a, b) => string.Compare(a.Name, b.Name, StringComparison.CurrentCultureIgnoreCase));
             var speciesIds = _species.Select(o => o.ID).ToList();
 
@@ -908,6 +921,7 @@ namespace Content.Client.Lobby.UI
 
             // Begin CD - Character Records
             UpdateHeightControls();
+            UpdateCDAllergies();
             _recordsTab.Update(profile);
             // End CD - Character Records
 
@@ -1196,6 +1210,29 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
+            _loadoutWindow.OnRequestLoadoutMetadataEdit += (groupProto, loadoutProto) =>
+            {
+                if (!roleLoadout.SelectedLoadouts.TryGetValue(groupProto, out var group)
+                    || group.Find(it => it.Prototype == loadoutProto) is not { } loadout)
+                    return;
+
+                var dlg = new LoadoutMetadataEditorDialog(loadout, loadoutProto, groupProto);
+                dlg.OnSave += (newLoadout) =>
+                {
+                    // The role loadouts could have changed, we cant trust the old value
+                    if (!roleLoadout.SelectedLoadouts.TryGetValue(groupProto, out var newGroup))
+                        return;
+
+                    newGroup.RemoveAll(it => it.Prototype == loadoutProto);
+                    newGroup.Add(newLoadout);
+                    Profile = Profile?.WithLoadout(roleLoadout);
+                    _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
+                    SetDirty();
+                    ReloadPreview();
+                };
+                dlg.OpenCentered();
+            };
+
             JobOverride = jobProto;
             ReloadPreview();
 
@@ -1220,6 +1257,15 @@ namespace Content.Client.Lobby.UI
             Profile = Profile.WithCDCharacterRecords(records);
             IsDirty = true;
         }
+
+        // CD: Allergies editor
+        private void UpdateAllergies(Dictionary<ReagentPrototype, FixedPoint2> allergies)
+        {
+            Profile = Profile?.WithCDAllergies(allergies.Select(allergy => (allergy.Key.ID, allergy.Value))
+                .ToDictionary());
+            SetDirty();
+        }
+
         // End CD - Character Records
 
         private void OnFlavorTextChange(string content)
@@ -1584,6 +1630,24 @@ namespace Content.Client.Lobby.UI
             CDHeightSlider.Value = sliderPercent;
             CDHeight.Text = Profile.Height.ToString(CultureInfo.InvariantCulture);
         }
+
+        private void UpdateCDAllergies()
+        {
+            if (Profile == null)
+            {
+                return;
+            }
+
+            var allergies = new Dictionary<ReagentPrototype, FixedPoint2>();
+            foreach (var entry in (Dictionary<string, FixedPoint2>) Profile.CDAllergies)
+            {
+                if (!_prototypeManager.TryIndex(entry.Key, out ReagentPrototype? reagent))
+                    continue;
+                allergies.Add(reagent, entry.Value);
+            }
+            _allergiesTab.SetData(allergies);
+        }
+
         // End CD - Character Records
 
         private void UpdateSpawnPriorityControls()

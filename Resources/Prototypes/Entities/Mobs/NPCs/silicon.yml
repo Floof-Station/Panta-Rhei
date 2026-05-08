@@ -25,7 +25,9 @@
     - DoorBumpOpener
     - SiliconEmotes
     - SiliconOrIPCEmotes # DeltaV
+    - Honker # DeltaV - Can honk
     - Unimplantable
+    - SiliconMob # Euphoria - Weldbot weldable
   - type: MobState
     allowedStates:
       - Alive
@@ -112,6 +114,7 @@
     - DoorBumpOpener
     - SiliconEmotes
     - SiliconOrIPCEmotes # DeltaV
+    - Honker # DeltaV - Can honk
     - Bot
     - Unimplantable
   - type: Body
@@ -120,6 +123,8 @@
     speechVerb: Robotic
     speechSounds: Pai #couldn't decide if this should be borg or pai sounds so I flipped a coin.
   - type: AnimatedEmotes # DeltaV - Allow bots to emote
+  - type: LeashAnchor # Floofstation
+    kind: Intrinsic
 
 - type: entity
   parent: MobSiliconBase
@@ -487,6 +492,7 @@
     - FootstepSound
     - SiliconEmotes
     - SiliconOrIPCEmotes # DeltaV
+    - Honker # DeltaV - Can honk
     - Bot
     - Unimplantable
   - type: ActiveRadio

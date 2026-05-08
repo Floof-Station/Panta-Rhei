@@ -23,26 +23,26 @@ using static Content.Shared._Floof.InteractionVerbs.InteractionVerbPrototype.Eff
 
 namespace Content.Shared._Floof.InteractionVerbs;
 
-public abstract class SharedInteractionVerbsSystem : EntitySystem
+public abstract partial class SharedInteractionVerbsSystem : EntitySystem
 {
+    public static readonly VerbCategory InteractionCategory = new("verb-categories-interaction", null);
+
     private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
 
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfters = default!;
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly ContestsSystem _contests = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactions = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+    [Dependency] private readonly IDependencyCollection _deps = default!;
 
     public override void Initialize()
     {
-        IoCManager.InjectDependencies(_verbDependencies);
+        _deps.InjectDependencies(_verbDependencies);
 
         LoadGlobalVerbs();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
@@ -79,8 +79,9 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     {
         var allVerbs = entity.Comp.AllowedVerbs;
 
-        var getVerbsEv = new GetInteractionVerbsEvent(allVerbs);
-        RaiseLocalEvent(entity, ref getVerbsEv);
+        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, allVerbs);
+        RaiseLocalEvent(entity, ref getVerbsEv, true);
+        allVerbs = getVerbsEv.Verbs.ToList();
 
         // Global verbs are added here because they should be allowed even on entities that do not define any interactions
         AddAll(allVerbs.Select(_protoMan.Index).Union(_globalPrototypes), args, () => new InnateVerb());
@@ -91,8 +92,11 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         if (ev.Cancelled || ev.Handled || !_protoMan.TryIndex(ev.VerbPrototype, out var proto))
             return;
 
-        PerformVerb(proto, ev.VerbArgs!);
+        PerformVerb(proto, ev.VerbArgs!, out var success);
         ev.Handled = true;
+
+        if (success && proto.Repeat && ev.VerbArgs!.AllowRepeat)
+            ev.Repeat = true;
     }
 
     #endregion
@@ -137,6 +141,8 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
         var cooldown = proto.Cooldown;
         var delay = proto.Delay;
+        if (args.User == args.Target)
+            delay *= proto.SelfInteractDelayFactor;
         if (proto.ContestDelay)
             delay /= args.ContestAdvantage!.Value;
         if (proto.ContestCooldown)
@@ -147,7 +153,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
         // Delay can become zero if the contest advantage is infinity or just really large...
         if (delay <= TimeSpan.Zero)
         {
-            PerformVerb(proto, args);
+            PerformVerb(proto, args, out _);
             return true;
         }
 
@@ -176,8 +182,9 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
     ///     and shows a success/failure popup.
     /// </summary>
     /// <remarks>This does nothing on client, as the client has no clue about verb actions. Only the server should ever perform verbs.</remarks>
-    public void PerformVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
+    public void PerformVerb(InteractionVerbPrototype proto, InteractionArgs args, out bool success, bool force = false)
     {
+        success = true;
         if (_net.IsClient)
             return; // this leads to issues
 
@@ -185,10 +192,12 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             || !proto.Action!.CanPerform(args, proto, false, _verbDependencies) && !force
             || !proto.Action.Perform(args, proto, _verbDependencies))
         {
+            success = false;
             CreateVerbEffects(proto.EffectFailure, Fail, proto, args);
             return;
         }
 
+        // Success
         CreateVerbEffects(proto.EffectSuccess, Success, proto, args);
     }
 
@@ -331,12 +340,16 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
 
     private void CopyVerbData(InteractionVerbPrototype proto, Verb verb)
     {
+        VerbCategory category = InteractionCategory;
+        if (proto.Category is not null && _protoMan.Resolve(proto.Category, out var catProto))
+            category = catProto.Materialize();
+
         verb.Text = proto.Name;
         verb.Message = proto.Description;
         verb.DoContactInteraction = proto.DoContactInteraction;
         verb.Priority = proto.Priority;
         verb.Icon = proto.Icon;
-        verb.Category = VerbCategory.Interaction;
+        verb.Category = category;
     }
 
     /// <summary>
@@ -438,9 +451,7 @@ public abstract class SharedInteractionVerbsSystem : EntitySystem
             _popups.PopupEntity(message, target, filter, recordReplay, popup.PopupType);
     }
 
-    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, InteractionPopupPrototype popup, bool clip)
-    {
-    }
+    protected virtual void SendChatLog(string message, EntityUid source, Filter filter, InteractionPopupPrototype popup, bool clip) { }
 
     #endregion
 }

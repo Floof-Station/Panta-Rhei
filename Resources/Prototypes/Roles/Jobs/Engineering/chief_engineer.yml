@@ -40,8 +40,8 @@
 - type: startingGear
   id: ChiefEngineerGear
   equipment:
-    id: CEPDA
-    eyes: ClothingEyesGlassesMeson
+    #id: CEPDA # Floofstation - let loadouts handle what pda to give
+    #eyes: ClothingEyesGlassesMeson # Floofstation - let loadouts control glasses
     ears: ClothingHeadsetCE
     belt: ClothingBeltUtilityEngineering
   storage:
