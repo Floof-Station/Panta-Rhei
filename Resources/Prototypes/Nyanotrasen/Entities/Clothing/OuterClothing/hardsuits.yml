@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterHardsuitRd
   id: ClothingOuterHardsuitMystagogue
-  name: mystagogue's hardsuit
-  description: A heavy-duty hardsuit specialized for research that includes a built-in psionic nullification and detection system in the helmet. Modified bluespace embedded into the plating allows it to be folded into a smaller space then one would expect.
+  name: NT-46EC - "Seraphim" Research Hardsuit
+  description: The next tier in NanoTrasen's R&D Department. While this provides the exact same protections as the NT-45EC, it uses experimental bluespace technology to fit into smaller spaces rather than just folding into them, allowing for more stylish armor and even a labcoat to fit on it with a slimmer and sleeker build than the NT-45EC. The labels on the hardsuit claim that it's near-immune to explosions, heat, and radiation. It feels heavy.
   components:
   - type: Sprite
     sprite: _DV/Clothing/OuterClothing/Hardsuits/rd.rsi
@@ -14,7 +14,7 @@
 - type: entity
   parent: [ClothingOuterHardsuitMystagogue, ClothingOuterStorageFoldableBaseOpened]
   id: ClothingOuterHardsuitMystagogueLabcoat
-  name: mystagogue's hardsuit
+  name: NT-46EC - "Seraphim" Research Hardsuit
   components:
   - type: ContainerContainer
     containers:
@@ -25,7 +25,8 @@
 - type: entity
   parent: ClothingOuterHardsuitERTBase
   id: ClothingOuterHardsuitERTCentcomm
-  name: CentComm hardsuit
+  name: NT-444CC - "Ophanim" Tacsuit
+  description: A highly advanced tactical combat hardsuit adorned in green and gold used by Central Command Officers. It is branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy, and seems to be incredibly light.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/OuterClothing/Hardsuits/ERTSuits/ertcentcomm.rsi

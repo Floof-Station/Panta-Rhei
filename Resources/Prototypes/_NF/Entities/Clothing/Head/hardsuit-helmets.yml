@@ -2,9 +2,9 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitPilot
-  categories: [ HideSpawnMenu ]
-  name: pilot hardsuit helmet
-  description: Light hardsuit helmet for pilots.
+  categories:
+  name: RI-4202 Helmet
+  description: Light hardsuit helmet for 'Robust' pilots. Produced by Robust Industries.
   components:
   - type: BreathMask
   - type: Sprite

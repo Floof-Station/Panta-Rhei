@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingOuterHardsuitSyndieMedic
   id: ClothingOuterHardsuitSurgeonGeneral
-  name: Surgeon general hardsuit
-  description: A protective hardsuit worn by the Surgeon Generial, tailor by SESWC.
+  name: NT-444SG - "Jegudiel" Hardsuit
+  description: An advanced medical hardsuit made for the Surgeon General. It is branded with the NanoTrasen logo and a strange-looking series number. The armor appears to be lined with a very sturdy alloy, and it feels incredibly light.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Hardsuits/surgengeneralhardsuit.rsi
@@ -10,11 +10,11 @@
     sprite: _Floof/Clothing/OuterClothing/Hardsuits/surgengeneralhardsuit.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
-    
+
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerPilot
-  name: FL-02bt - "Pilot" Freelancer Softsuit
+  name: FL-02BT - "Pilot" Freelancer Softsuit
   description: A armored soft suit. "Maximum speed for minimal protection."
   components:
   - type: Sprite
@@ -35,11 +35,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 1.0
     sprintModifier: 1.0
-    
+
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerLegion
-  name: FL-03a - "Legion" Freelancer Softsuit
+  name: FL-03A - "Legion" Freelancer Softsuit
   description: A medium armored soft suit. "You ask if its reliable? We say a ton."
   components:
   - type: Sprite
@@ -60,11 +60,11 @@
   - type: ClothingSpeedModifier
     walkModifier: 0.90
     sprintModifier: 0.90
-    
+
 - type: entity
   parent: [ClothingOuterEVASuitBase, ClothingOuterStorageBase]
   id: ClothingOuterHardsuitFreelancerNorthstar
-  name: FL-04x - "Northstar" Freelancer Softsuit
+  name: FL-04X - "Northstar" Freelancer Softsuit
   description: A medium armored soft suit with build and advanced non functioning cloaking system. "When the clouds clear you will see the light of the Northstar"
   components:
   - type: Sprite
@@ -90,8 +90,8 @@
 - type: entity
   parent: ClothingOuterHardsuitBase
   id: ClothingOuterHardsuitSecTech
-  name: security technician hardsuit
-  description: A security hardsuit specialized for engineering work. Some of the protective lining has been swapped out.
+  name: FPA-41SE - "Aara" Tacsuit
+  description: A sturdy tactical combat engineer hardsuit mass-produced by Five-Points Armory, commonly found on Combat Engineers galaxy-wide. The tags on the suit indicate that its specially rated for radiation protection and mild to moderate amounts of physical trauma and thermal damage. It feels heavy.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/OuterClothing/Hardsuits/sectech.rsi

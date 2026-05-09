@@ -2,8 +2,8 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterHardsuitEVA
-  name: EVA suit
-  description: A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies.
+  name: IP-37 - "Huginn" EVA Suit
+  description: A lightweight space suit with the basic ability to protect the wearer from the vacuum of space during emergencies. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva.rsi
@@ -35,8 +35,8 @@
 - type: entity
   parent: [ ClothingOuterEVASuitBase, BaseSyndicateContraband ]
   id: ClothingOuterEVASuitSyndicate
-  name: syndicate EVA suit
-  description: "Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'"
+  name: IP-57 - "Muninn" EVA Suit
+  description: A red EVA suit produced by Interdyne Pharmaceuticals for maximum style and minimal protection in space. It feels somewhat light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_syndicate.rsi
@@ -69,8 +69,8 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id: ClothingOuterSuitEmergency
-  name: emergency EVA suit
-  description: An emergency EVA suit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to buy you time from the harsh vacuum of space.
+  name: IP-87 - "Salvator" Emergency EVA Suit
+  description: An emergency EVA suit with a built-in helmet. It's horribly slow and lacking in temperature protection, but enough to buy you time from the harsh vacuum of space. It feels heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_emergency.rsi
@@ -117,8 +117,8 @@
 - type: entity
   parent: ClothingOuterEVASuitBase
   id:  ClothingOuterHardsuitEVAPrisoner
-  name: prisoner EVA suit
-  description: An emergency EVA suit meant for prisoners. It's horribly slow and lacking in temperature protection, but enough to buy you time from the harsh vacuum of space.
+  name: IP-87P - "Jailbird" Prisoner EVA Suit
+  description: An emergency EVA suit meant for prisoners. It's horribly slow and lacking in temperature protection, but enough to buy you time from the harsh vacuum of space. It feels heavy.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Suits/eva_prisoner.rsi
@@ -172,8 +172,8 @@
 - type: entity
   parent: [ClothingOuterEVASuitBase, BaseMedicalContraband] #Despite "Voidsuits are light hardsuits", since it parents of EVA Suits, it goes with the other softsuits
   id: ClothingOuterHardsuitVoidParamed
-  name: paramedic void suit
-  description: A void suit made for paramedics.
+  name: ZhP-24M - "Sukunabikona" Voidsuit
+  description: A minimally-armored, radiation-resistant voidsuit with blue medical markings and little wings painted on the boots. The label also mentions is offers some protection against chemical spills. It feels incredibly light.
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/paramed.rsi

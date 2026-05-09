@@ -2,8 +2,8 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatStandard
-  name: combat hardsuit helmet
-  description: An armoured helmet with a yellow visor and dual head-mounted lights.
+  name: FPA-85 Helmet
+  description: An armoured helmet with a yellow visor and dual head-mounted lights. Meant to keep your noggin from busting open.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/standard.rsi
@@ -25,7 +25,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitCombatStandard
   id: ClothingHeadHelmetHardsuitCombatOfficer
-  name: security combat hardsuit helmet
+  name: FPA-85S Helmet
+  description: An armoured helmet with a yellow visor and dual head-mounted lights. Meant to keep your noggin from busting open. This one is painted in Station Security colors.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/officer.rsi
@@ -36,8 +37,8 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatMedical
-  name: medical combat hardsuit helmet
-  description: A lightweight armoured helmet with full-face blue visor and head-mounted light.
+  name: FPA-86 Helmet
+  description: A lightweight armoured helmet with full-face blue visor and head-mounted light. Meant to keep your noggin from busting open while doing field surgery.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/medical.rsi
@@ -59,7 +60,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitCombatMedical
   id: ClothingHeadHelmetHardsuitCombatCorpsman
-  name: corpsman combat hardsuit helmet
+  name: FPA-86SM Helmet
+  description: A lightweight armoured helmet with full-face blue visor and head-mounted light. Meant to keep your noggin from busting open while doing field surgery. This one is painted in Station Security and Medical colors.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/corpsman.rsi
@@ -70,8 +72,8 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatRiot
-  name: riot combat hardsuit helmet
-  description: A heavy armoured helmet with a sealed visor with yellow slits and dual head-mounted lights.
+  name: FPA-93 Helmet
+  description: A heavy armoured helmet with a sealed visor with yellow slits and dual head-mounted lights. Meant to keep your noggin from busting open while dealing with heavy opposition.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/riot.rsi
@@ -93,7 +95,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitCombatRiot
   id: ClothingHeadHelmetHardsuitCombatWarden
-  name: warden's riot combat hardsuit helmet
+  name: FPA-93SW Helmet
+  description: A heavy armoured helmet with a sealed visor with yellow slits and dual head-mounted lights. Meant to keep your noggin from busting open while dealing with heavy opposition. This one is painted with the colors of Station Security and Warden's rank markings.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/warden.rsi
@@ -104,8 +107,8 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingHeadHelmetHardsuitCombatAdvanced
-  name: advanced combat hardsuit helmet
-  description: A light but durable helmet with full-face protection and four head-mounted lights.
+  name: FPA-99 Helmet
+  description: A light but durable helmet with full-face protection and four head-mounted lights. Meant to keep your noggin from busting open while leading.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/advanced.rsi
@@ -129,7 +132,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitCombatAdvanced
   id: ClothingHeadHelmetHardsuitCombatHoS
-  name: head of security's advanced combat hardsuit helmet
+  name: FPA-99SC Helmet
+  description: A light but durable helmet with full-face protection and four head-mounted lights. Meant to keep your noggin from busting open while leading. This one is painted with the colors of Station Security and Commander's rank markings.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/Combat/hos.rsi
@@ -174,8 +178,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite ]
   id: ClothingHeadHelmetHardsuitERTLeaderElite
-  name: Elite ERT leader hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  name: NT-555ELE Helmet
+  description: A special tactical combat hardsuit helmet worn by Elite Leaders of an Emergency Response Team. Designed to keep you alive in the confines of a post-collapse Station.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/ERThelmets/eliteertleader.rsi
@@ -195,8 +199,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitERTLeaderElite ]
   id: ClothingHeadHelmetHardsuitERTChaplainElite
-  name: Elite ERT chaplain hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  name: NT-555ECE Helmet
+  description: A special tactical combat hardsuit helmet worn by Elite Chaplains of an Emergency Response Team. Designed to keep you alive in the confines of a post-collapse Station.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/ERThelmets/eliteertchaplain.rsi
@@ -218,8 +222,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitERTLeaderElite ]
   id: ClothingHeadHelmetHardsuitERTEngineerElite
-  name: Elite ERT engineer hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  name: NT-555EEE Helmet
+  description: A special tactical combat hardsuit helmet worn by Elite Engineers of an Emergency Response Team. Designed to keep you alive in the confines of a post-collapse Station.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/ERThelmets/eliteertengineer.rsi
@@ -239,8 +243,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitERTLeaderElite ]
   id: ClothingHeadHelmetHardsuitERTMedicalElite
-  name: Elite ERT medic hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  name: NT-555EME Helmet
+  description: A special tactical combat hardsuit helmet worn by Elite Medics of an Emergency Response Team. Designed to keep you alive in the confines of a post-collapse Station.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/ERThelmets/eliteertmedical.rsi
@@ -253,8 +257,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitERTLeaderElite ]
   id: ClothingHeadHelmetHardsuitERTSecurityElite
-  name: Elite ERT security hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  name: NT-555ESE Helmet
+  description: A special tactical combat hardsuit helmet worn by Elite Security Officers of an Emergency Response Team. Designed to keep you alive in the confines of a post-collapse Station.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/ERThelmets/eliteertsecurity.rsi
@@ -274,8 +278,8 @@
 - type: entity
   parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitERTLeaderElite ]
   id: ClothingHeadHelmetHardsuitERTJanitorElite
-  name: Elite ERT janitor hardsuit helmet
-  description: A special hardsuit helmet worn by members of an emergency response team.
+  name: NT-555EJE Helmet
+  description: A special tactical combat hardsuit helmet worn by Elite Janitors of an Emergency Response Team. Designed to keep you alive in the confines of a post-collapse Station.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/ERThelmets/eliteertjanitor.rsi
@@ -288,8 +292,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitEngineering
   id: ClothingHeadHelmetVoidsuitEngineering
-  name: engineering void suit helmet
-  description: An engineering hardsuit helmet designed for working in low-pressure, high radioactive environments. It's a lot lighter and flimsier than it looks...
+  name: HpI-19EV Helmet
+  description: The helmet to an HpI-19EV. Not as protective as it's harder cousin, but easier to move around in. It feels kind of flimsy.
   components:
   - type: PressureProtection # Using EVA pressure and temperature protections instead of hardsuits.
     highPressureMultiplier: 0.3
@@ -367,8 +371,8 @@
   parent: ClothingHeadHelmetHardsuitSyndie
   id: ClothingHeadHelmetHardsuitSyndieReverseEngineered
   categories: [ HideSpawnMenu ]
-  name: SA-123 combat hardsuit helmet
-  description: An advanced hardsuit helmet designed for work in special operations.
+  name: SA-122 Helmet
+  description: A reverse-engineered "Shanlin" helmet designed for use in special operations.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/ReverseEngineering/syndicate.rsi
@@ -381,8 +385,8 @@
   parent: ClothingHeadHelmetHardsuitCybersun
   id: ClothingHeadHelmetHardsuitJuggernautReverseEngineered
   categories: [ HideSpawnMenu ]
-  name: SA-127 combat hardsuit helmet
-  description: An assault hardsuit helmet featuring nigh-impenetrable armor plating.
+  name: SA-126UA Helmet
+  description: A reverse-engineered "Guan Yu" helmet meant for use with the SA-126UA. Its armor plating is nigh-impenetrable.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/ReverseEngineering/juggernaut.rsi

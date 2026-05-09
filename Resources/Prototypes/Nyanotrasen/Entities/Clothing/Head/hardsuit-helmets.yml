@@ -2,8 +2,8 @@
   parent: ClothingHeadHelmetHardsuitRd
   id: ClothingHeadHelmetHardsuitMystagogue
   categories: [ HideSpawnMenu ]
-  name: mystagogue's hardsuit helmet
-  description: Lightweight hardsuit helmet that has a galaxy-first psionic passthrough system.
+  name: NT-46EC Helmet
+  description: An equally-advanced helmet for an advanced hardsuit. This one has psionic insulation, allowing Mystagogues to go about their duties even with absurd glimmer amounts.
   components:
   - type: Sprite
     sprite: _DV/Clothing/Head/Hardsuits/rd.rsi
@@ -24,7 +24,8 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitERTLeader
   id: ClothingHeadHelmetHardsuitERTCentcomm
-  name: CentComm hardsuit helmet
+  name: NT-444CC Helmet
+  description: A highly-specialized tacsuit helmet adorned in green and gold, worn by Central Command Officers. Designed to keep you safe in your cushy office.
   components:
   - type: Sprite
     sprite: Nyanotrasen/Clothing/Head/Hardsuits/ERThelmets/ertcentcomm.rsi
