@@ -7,7 +7,7 @@
     duration: 1
     maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
     startAudio:
-      path: /Audio/_Euphoria/Announcements/attention.ogg # Euphoria: New voicelines.
+      path: /Audio/Announcements/announce.ogg # Euphoria - New Voice Lines
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-random-sentience-result-message
   - type: RandomSentienceRule
