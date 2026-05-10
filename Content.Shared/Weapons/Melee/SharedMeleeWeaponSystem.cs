@@ -72,6 +72,8 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private readonly SharedESScreenshakeSystem _shake = default!;
     // ES END
 
+    private static readonly string BluntDamageName = "Blunt"; // Starlight
+
     private const int AttackMask = (int)(CollisionGroup.MobMask | CollisionGroup.Opaque);
 
     /// <summary>
