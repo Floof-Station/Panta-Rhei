@@ -381,8 +381,8 @@ public sealed class ScentSystem : EntitySystem
         // lewd check
         if (!LewdOkay(uid, scentProto.Lewd))
             return false; // cant detect lewd scents
-        if (!SniffaOkay(args.Examiner)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
-                continue; // cant detect scents at all
+        if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+            return false; // cant detect scents at all
         if (SmellGuidIsOnCooldown(component, scentGuid))
             return false; // on cooldown
         // check LOS, if required
@@ -639,7 +639,7 @@ public sealed class ScentSystem : EntitySystem
         if (!LewdOkay(uid, proto.Lewd))
             return;
         if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
-                continue;
+            return;
         IncurSmellCooldown(component, ticket);
         UpdatePositionAndDistance(uid, ticket);
 
