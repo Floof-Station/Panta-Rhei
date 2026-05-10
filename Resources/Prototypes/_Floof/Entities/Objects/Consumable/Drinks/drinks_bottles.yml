@@ -51,9 +51,9 @@
   - type: Sprite
     sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
   - type: Sealable
-  - type: SolutionContainerVisuals
-    maxFillLevels: 3
-    fillBaseName: fill-
+#  - type: SolutionContainerVisuals
+#    maxFillLevels: 3
+#    fillBaseName: fill-
 
 - type: entity
   parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
@@ -72,9 +72,9 @@
   - type: Sprite
     sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
   - type: Sealable
-  - type: SolutionContainerVisuals
-    maxFillLevels: 3
-    fillBaseName: fill-
+#  - type: SolutionContainerVisuals
+#    maxFillLevels: 3
+#    fillBaseName: fill-
 
 - type: entity
   parent: DrinkBottleGlassBaseFull
@@ -97,6 +97,6 @@
     - state: fill-6
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Sealable
-  - type: SolutionContainerVisuals
-    maxFillLevels: 6
-    fillBaseName: fill-
+#  - type: SolutionContainerVisuals
+#    maxFillLevels: 6
+#    fillBaseName: fill-
