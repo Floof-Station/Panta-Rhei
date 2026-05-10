@@ -158,6 +158,8 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(args.Examiner, proto.Lewd))
                 continue;
+            if (!SniffaOkay(args.Examiner)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+                continue;
             var smellColor = "DarkGray"; // Euphoria - Less distracting.
             if (proto.Stinky && proto.Lewd)
             {
@@ -379,6 +381,8 @@ public sealed class ScentSystem : EntitySystem
         // lewd check
         if (!LewdOkay(uid, scentProto.Lewd))
             return false; // cant detect lewd scents
+        if (!SniffaOkay(args.Examiner)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+                continue; // cant detect scents at all
         if (SmellGuidIsOnCooldown(component, scentGuid))
             return false; // on cooldown
         // check LOS, if required
@@ -634,7 +638,8 @@ public sealed class ScentSystem : EntitySystem
             throw new InvalidOperationException($"Invalid scent prototype ID {ticket.ScentProto} in SmellScent.");
         if (!LewdOkay(uid, proto.Lewd))
             return;
-
+        if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+                continue;
         IncurSmellCooldown(component, ticket);
         UpdatePositionAndDistance(uid, ticket);
 
@@ -725,6 +730,8 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(smellerUid, scentProto.Lewd))
                 continue;
+            if (!SniffaOkay(smellerUid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+                continue;
             availableScents.Add(scent);
         }
         // if its empty, just pick any scent
@@ -808,6 +815,14 @@ public sealed class ScentSystem : EntitySystem
             return true;
         return !_consent.HasConsent(uid, "CantSmellLewdScents");
         // dont like the fact that consents default to *ON*
+    }
+
+    /// <summary>
+    /// Check consent for no sniffa
+    /// </summary>
+    private bool SniffaOkay(EntityUid uid)
+    {
+        return !_consent.HasConsent(uid, "CantSmellScentsAtAll");
     }
    #endregion
 }
