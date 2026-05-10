@@ -33,8 +33,7 @@
     interfaces:
       enum.PenLightUiKey.Key:
         type: PenLightBoundUserInterface
-  - type: ToggleableLightVisuals
-    spriteLayer: null # Euphoria - will this fix it???
+#  - type: ToggleableLightVisuals # Euphoria - too many errors, bro.
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot {}
