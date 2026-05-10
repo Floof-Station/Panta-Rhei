@@ -39,9 +39,15 @@ public sealed partial class StaminaComponent : Component
     public float StaminaDamage;
 
     /// <summary>
-    /// How much stamina damage is required to enter stam crit.
+    /// The base stamina the entity requires to enter stam crit. Should rarely if ever be modified outside of yaml.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
+    [DataField, AutoNetworkedField]
+    public float BaseCritThreshold = 100f;
+
+    /// <summary>
+    /// Modified crit threshold for when an entity should enter stamcrit.
+    /// </summary>
+    [ViewVariables, AutoNetworkedField]
     public float CritThreshold = 100f;
 
     /// <summary>
@@ -70,7 +76,7 @@ public sealed partial class StaminaComponent : Component
     /// This float determines how fast stamina will regenerate after exiting the stamina crit.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public float AfterCritDecayMultiplier = 2f; // Floofstation - lower value
+    public float AfterCritDecayMultiplier = 5f;
 
     /// <summary>
     /// This is how much stamina damage a mob takes when it forces itself to stand up before modifiers
@@ -85,10 +91,10 @@ public sealed partial class StaminaComponent : Component
     public SoundSpecifier ForceStandSuccessSound = new SoundPathSpecifier("/Audio/Effects/thudswoosh.ogg");
 
     /// <summary>
-    /// Thresholds that determine an entity's slowdown as a function of stamina damage.
+    /// Thresholds that determine an entity's slowdown as a function of stamina damage, in percentages.
     /// </summary>
-    [DataField, AutoNetworkedField] // Floofstation - made networked because of traits
-    public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f }, { 60, 0.7f }, { 80, 0.5f } };
+    [DataField]
+    public Dictionary<FixedPoint2, float> StunModifierThresholds = new() { {0, 1f }, { 0.6, 0.7f }, { 0.8, 0.5f } };
 
     #region Animation Data
 
@@ -96,7 +102,7 @@ public sealed partial class StaminaComponent : Component
     /// Threshold at which low stamina animations begin playing. This should be set to a value that means something.
     /// At 50, it is aligned so when you hit 60 stun the entity will be breathing once per second (well above hyperventilation).
     /// </summary>
-    [DataField, AutoNetworkedField] // Floofstation - networked
+    [DataField]
     public float AnimationThreshold = 50;
 
     /// <summary>
@@ -127,13 +133,13 @@ public sealed partial class StaminaComponent : Component
     /// Min multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
     /// </summary>
     [DataField]
-    public Vector2 JitterMin = Vector2.Create(0.25f, 0.0625f); // Floofstation - lowered because it looks weird.
+    public Vector2 JitterMin = Vector2.Create(0.5f, 0.125f);
 
     /// <summary>
     /// Max multipliers for JitterAmplitude in the X and Y directions, animation randomly chooses between these min and max multipliers
     /// </summary>
     [DataField]
-    public Vector2 JitterMax = Vector2.Create(0.5f, 0.125f); // Floofstation - lowered because it looks weird.
+    public Vector2 JitterMax = Vector2.Create(1f, 0.25f);
 
     /// <summary>
     /// Minimum total animations per second
