@@ -187,7 +187,7 @@ namespace Content.Server.RoundEnd
                 null,
                 Color.Gold);
 
-            _audio.PlayGlobal("/Audio/_Euphoria/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true); // Euphoria: New voicelines.
+            _audio.PlayGlobal("/Audio/_Euphoria/Announcements/shuttlecalled.ogg", Filter.Broadcast(), true); // Euphoria - New Voice Lines
 
             LastCountdownStart = _gameTiming.CurTime;
             ExpectedCountdownEnd = _gameTiming.CurTime + countdownTime;
@@ -235,7 +235,7 @@ namespace Content.Server.RoundEnd
             _chatSystem.DispatchGlobalAnnouncement(Loc.GetString("round-end-system-shuttle-recalled-announcement"),
                 Loc.GetString("round-end-system-shuttle-sender-announcement"), false, colorOverride: Color.Gold);
 
-            _audio.PlayGlobal("/Audio/_Euphoria/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true); // Euphoria: New voicelines.
+            _audio.PlayGlobal("/Audio/_Euphoria/Announcements/shuttlerecalled.ogg", Filter.Broadcast(), true); // Euphoria - New Voice Lines
 
             LastCountdownStart = null;
             ExpectedCountdownEnd = null;

@@ -741,7 +741,7 @@
     color: "#ff0000"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
-    sound: /Audio/_Euphoria/Announcements/intercept.ogg # Euphoria: New Voicelines.
+    sound: /Audio/_Euphoria/Announcements/intercept.ogg # Euphoria - New Voice Lines
     announceSentBy: false # The title already says who they are.
   - type: Computer
     board: SyndicateCommsComputerCircuitboard
@@ -776,7 +776,7 @@
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
     announceSentBy: false
-    sound: /Audio/Announcements/announce.ogg # DeltaV - changed from war.oog to announce.ogg
+    sound: /Audio/_Euphoria/Announcements/intercept.ogg # Euphoria - New Voice Lines
   - type: Computer
     board: WizardCommsComputerCircuitboard
   - type: PointLight
