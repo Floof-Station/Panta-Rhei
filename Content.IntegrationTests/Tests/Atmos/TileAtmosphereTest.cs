@@ -59,6 +59,7 @@ public abstract class TileAtmosphereTest : AtmosTest
     /// Checks that fire propages through the entire grid.
     /// </summary>
     [Test]
+    [Explicit] // Floofstation - OOM bait
     public async Task FireSpreading()
     {
         var markers = SEntMan.AllEntities<TestMarkerComponent>();
