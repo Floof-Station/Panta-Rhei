@@ -43,7 +43,7 @@ public sealed partial class MeleeWeaponSystem
             return;
         }
 
-var length = 1f;
+        var length = 1f;
         var offset = 1f;
 
         var spriteRotation = Angle.Zero;
@@ -59,8 +59,9 @@ var length = 1f;
             if (meleeWeaponComponent.SwingLeft)
                 angle *= -1;
 
-                length = (1 / meleeWeaponComponent.AttackRate) * 0.6f;
+            length = (1 / meleeWeaponComponent.AttackRate) * 0.6f;
             offset = meleeWeaponComponent.AnimationOffset;
+
             if (meleeWeaponComponent.ChangeSwingDirection) meleeWeaponComponent.SwingLeft = !meleeWeaponComponent.SwingLeft; // DeltaV - Nice swing animation for desword
         }
         _sprite.SetRotation((animationUid, sprite), localPos.ToWorldAngle());
@@ -81,7 +82,7 @@ var length = 1f;
             case WeaponArcAnimation.Thrust:
                 track = EnsureComp<TrackUserComponent>(animationUid);
                 track.User = user;
-                _animation.Play(animationUid, GetThrustAnimation((animationUid, sprite), distance, spriteRotation), ThrustAnimationKey);
+                _animation.Play(animationUid, GetThrustAnimation((animationUid, sprite), offset, spriteRotation, length), ThrustAnimationKey);
                 if (arcComponent.Fadeout)
                     _animation.Play(animationUid, GetFadeAnimation(sprite, length * 0.5f, length + 0.15f), FadeAnimationKey);
                 break;
