@@ -18,6 +18,11 @@ public sealed class SharedESScreenshakeSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
+    /// <summary>
+    /// Cooldowns take a string key so that multiple systems can apply their shake effects without one shake effect blocking the other.
+    /// </summary>
+    private readonly Dictionary<EntityUid, Dictionary<string, TimeSpan>> _shakeCooldowns = [];
+
     #region Internal
 
     public override void Initialize()
@@ -27,6 +32,7 @@ public sealed class SharedESScreenshakeSystem : EntitySystem
         // SubscribeLocalEvent<ESScreenshakeComponent, ESGetEyeRotationEvent>(OnGetEyeRotation); // DeltaV - Moved to Client system
         // SubscribeLocalEvent<ESScreenshakeComponent, GetEyeOffsetEvent>(OnGetEyeOffset); // DeltaV - Moved to Client system
         SubscribeLocalEvent<ESScreenshakeComponent, EntityUnpausedEvent>(OnEntityUnpaused);
+        SubscribeLocalEvent<RoundRestartCleanupEvent>(OnRoundRestartCleanup); // Starlight
     }
 
 
@@ -74,6 +80,9 @@ public sealed class SharedESScreenshakeSystem : EntitySystem
         Dirty(ent);
     }
 
+    private void OnRoundRestartCleanup(RoundRestartCleanupEvent ev) // Starlight
+        => _shakeCooldowns.Clear();
+
     /// <summary>
     ///     Calculates when both traumas will be at least = 0 given the decay rate and start time.
     /// </summary>
@@ -110,6 +119,40 @@ public sealed class SharedESScreenshakeSystem : EntitySystem
     #endregion
 
     #region Public API
+
+    // Starlight Begin
+    public bool IsOnCooldown(EntityUid uid, string key)
+    {
+        if (!_shakeCooldowns.TryGetValue(uid, out var cooldowns))
+        {
+            _shakeCooldowns.Add(uid, []);
+            return false;
+        }
+        if (!cooldowns.TryGetValue(key, out var cooldown)) return false;
+        if (_timing.CurTime < cooldown) return true;
+        _shakeCooldowns[uid].Remove(key); // remove from cooldowns if it shouldn't be on cooldown anymore
+        return false;
+    }
+
+    public void Screenshake(EntityUid uid, ESScreenshakeParameters? translation, ESScreenshakeParameters? rotation,
+        string key, float? cooldown = null)
+        => Screenshake(uid, translation, rotation, key,
+            cooldown is not null ? TimeSpan.FromSeconds(cooldown.Value) : null);
+
+    public void Screenshake(EntityUid uid, ESScreenshakeParameters? translation, ESScreenshakeParameters? rotation, string key, TimeSpan? cooldown = null)
+    {
+        if(!_shakeCooldowns.ContainsKey(uid)) _shakeCooldowns.Add(uid, []);
+        if (_shakeCooldowns[uid].TryGetValue(key, out var time))
+        {
+            if (_timing.CurTime < time) return;
+            _shakeCooldowns[uid].Remove(key);
+        }
+        if(cooldown is not null)
+            _shakeCooldowns[uid].Add(key, _timing.CurTime + cooldown.Value);
+
+        Screenshake(uid, translation, rotation);
+    }
+    // Starlight End
 
     public void Screenshake(EntityUid uid, ESScreenshakeParameters? translation, ESScreenshakeParameters? rotation)
     {

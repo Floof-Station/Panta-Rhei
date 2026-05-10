@@ -1104,7 +1104,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
     {
         if (damage.GetTotal() > 8) // only show to others if it hurts real bad
         {
-            var otherTranslation = new ScreenshakeParameters
+            var otherTranslation = new ESScreenshakeParameters
             {
                 Trauma = 0.45f,
                 DecayRate = 1.1f,
@@ -1119,7 +1119,7 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
 
         if (!bluntRequirement) // Euphoria edit - If you're giving out FIFTEEN UNITS OF BLUNT, you don't need to wield the weapon.
             return;
-        var userRotation = new ScreenshakeParameters
+        var userRotation = new ESScreenshakeParameters
         {
             Trauma = 0.08f,
             DecayRate = 1,

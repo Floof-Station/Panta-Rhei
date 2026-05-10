@@ -411,12 +411,8 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             ? queued.Proto.SmallSoundFar
             : queued.Proto.SoundFar;
 
-        // ES START
-        var farTranslationShake = iterationIntensity.Count < queued.Proto.SmallSoundIterationThreshold
-            ? new ESScreenshakeParameters() { Trauma = 0.4f, DecayRate = 0.2f, Frequency = 0.014f }
-            : new ESScreenshakeParameters() { Trauma = 0.6f, DecayRate = 0.05f, Frequency = 0.014f };
-        _shake.Screenshake(filter, farTranslationShake, null);
-        // ES END
+        // camera shake - moved down here since as far as i can tell there is zero reason it can't be here
+        CameraShake(iterationIntensity, pos, queued);
 
         _audio.PlayGlobal(farSound, farFilter, true, farSound.Params);
 
@@ -464,8 +460,8 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             {
                 _recoilSystem.KickCamera(uid, -delta.Normalized() * effect * 0.4f);
                 var shakeParams = rangeList.Count < queued.Proto.SmallSoundIterationThreshold
-                    ? new ScreenshakeParameters { Trauma = 0.4f, DecayRate = 0.2f, Frequency = 0.014f }
-                    : new ScreenshakeParameters { Trauma = 0.6f, DecayRate = 0.05f, Frequency = 0.014f };
+                    ? new ESScreenshakeParameters { Trauma = 0.4f, DecayRate = 0.2f, Frequency = 0.014f }
+                    : new ESScreenshakeParameters { Trauma = 0.6f, DecayRate = 0.05f, Frequency = 0.014f };
                 _shake.Screenshake(players, shakeParams, null);
             }
         }

@@ -18,7 +18,7 @@ using Content.Shared.Shuttles.Systems;
 using Content.Shared.StatusEffect;
 using Content.Shared.Timing;
 using Content.Shared.Whitelist;
-using Content.Shared._Starlight.Camera; // Starlight
+using Content.Shared._ES.Camera; // ES
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Components;
@@ -38,7 +38,7 @@ public sealed partial class ShuttleSystem
     /*
      * This is a way to move a shuttle from one location to another, via an intermediate map for fanciness.
      */
-    [Dependency] private readonly ScreenshakeSystem _shake = default!; // Starlight
+    [Dependency] private readonly SharedESScreenshakeSystem _shake = default!; // Starlight
     [Dependency] private readonly IPlayerManager _plr = default!; // Starlight
     [Dependency] private readonly CameraRecoilSystem _recoil = default!; // Starlight
 
@@ -590,7 +590,7 @@ public sealed partial class ShuttleSystem
                                      shaker.AttachedEntity is { } player &&
                                      !_shake.IsOnCooldown(player, ShakeKey)))
                         {
-                            var shake = new ScreenshakeParameters
+                            var shake = new ESScreenshakeParameters
                             {
                                 Trauma = 0.7f * progress, // Should now build up
                                 DecayRate = 1.7f,
@@ -612,11 +612,11 @@ public sealed partial class ShuttleSystem
                                      shaker.AttachedEntity is { } player &&
                                      !_shake.IsOnCooldown(player, ShakeKey)))
                         {
-                            var shake = new ScreenshakeParameters
+                            var shake = new ESScreenshakeParameters
                             {
                                 Trauma = 0.1f, DecayRate = 0.23f, Frequency = 0.015f,
                             };
-                            var rotation = new ScreenshakeParameters
+                            var rotation = new ESScreenshakeParameters
                             {
                                 Trauma = 0.014f, DecayRate = 0.12f, Frequency = 0.012f,
                             };
@@ -646,7 +646,7 @@ public sealed partial class ShuttleSystem
                                      shaker.AttachedEntity is not null))
                         {
                             if (shaker.AttachedEntity is null) continue;
-                            var shake = new ScreenshakeParameters
+                            var shake = new ESScreenshakeParameters
                             {
                                 Trauma = 1.2f, DecayRate = 0.9f, Frequency = 0.015f,
                             };
@@ -674,7 +674,7 @@ public sealed partial class ShuttleSystem
                                      shaker.AttachedEntity is not null))
                         {
                             if (shaker.AttachedEntity is null) continue;
-                            var shake = new ScreenshakeParameters
+                            var shake = new ESScreenshakeParameters
                             {
                                 Trauma = 1.2f, DecayRate = 0.9f, Frequency = 0.015f,
                             };
