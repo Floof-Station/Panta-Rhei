@@ -60,7 +60,9 @@ public sealed class ContentEyeSystem : SharedContentEyeSystem
         while (eyeEntities.MoveNext(out var entity, out ContentEyeComponent? contentComponent, out EyeComponent? eyeComponent))
         {
             UpdateEyeOffset((entity, eyeComponent));
-            UpdateEyeRotation((entity, eyeComponent)); // Starlight | ES Screenshake
+            // ES START
+            UpdateEyeRotation((entity, eyeComponent));
+            // ES END
         }
     }
 
@@ -72,7 +74,9 @@ public sealed class ContentEyeSystem : SharedContentEyeSystem
         while (eyeEntities.MoveNext(out var entity, out ContentEyeComponent? contentComponent, out EyeComponent? eyeComponent))
         {
             UpdateEyeOffset((entity, eyeComponent));
-            UpdateEyeRotation((entity, eyeComponent)); // Starlight | ES Screenshake
+            // ES START
+            UpdateEyeRotation((entity, eyeComponent));
+            // ES END
         }
     }
 }

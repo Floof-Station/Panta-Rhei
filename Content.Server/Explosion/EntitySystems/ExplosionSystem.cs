@@ -20,7 +20,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Inventory;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
-using Content.Shared._Starlight.Camera; // Starlight | ES Screenshake
+using Content.Shared._ES.Camera;
 using Robust.Server.GameStates;
 using Robust.Server.Player;
 using Robust.Shared.Audio.Systems;
@@ -56,7 +56,9 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly FlammableSystem _flammableSystem = default!;
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
-    [Dependency] private readonly ScreenshakeSystem _shake = default!; // Starlight | ES Screenshake
+    // ES START
+    [Dependency] private readonly SharedESScreenshakeSystem _shake = default!;
+    // ES END
     [Dependency] private readonly StationSystem _stationSystem = default!; // DeltaV
 
     private EntityQuery<FlammableComponent> _flammableQuery;
@@ -376,7 +378,9 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
         var visualEnt = CreateExplosionVisualEntity(pos, queued.Proto.ID, spaceMatrix, spaceData, gridData.Values, iterationIntensity);
 
         // camera shake
-        //Starlight begin | ES Screenshake
+        // ES START
+        // CameraShake(iterationIntensity.Count * 4f, pos, queued.TotalIntensity);
+        // ES END
 
         //For whatever bloody reason, sound system requires ENTITY coordinates.
         var mapEntityCoords = _transformSystem.ToCoordinates(_map.GetMap(pos.MapId), pos);
@@ -407,8 +411,12 @@ public sealed partial class ExplosionSystem : SharedExplosionSystem
             ? queued.Proto.SmallSoundFar
             : queued.Proto.SoundFar;
 
-        // camera shake - moved down here since as far as i can tell there is zero reason it can't be here
-        CameraShake(iterationIntensity, pos, queued);
+        // ES START
+        var farTranslationShake = iterationIntensity.Count < queued.Proto.SmallSoundIterationThreshold
+            ? new ESScreenshakeParameters() { Trauma = 0.4f, DecayRate = 0.2f, Frequency = 0.014f }
+            : new ESScreenshakeParameters() { Trauma = 0.6f, DecayRate = 0.05f, Frequency = 0.014f };
+        _shake.Screenshake(filter, farTranslationShake, null);
+        // ES END
 
         _audio.PlayGlobal(farSound, farFilter, true, farSound.Params);
 

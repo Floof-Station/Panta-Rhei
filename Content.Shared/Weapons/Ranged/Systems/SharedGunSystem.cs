@@ -24,7 +24,7 @@ using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Whitelist;
-using Content.Shared._Starlight.Camera; // Starlight
+using Content.Shared._ES.Camera; // ES
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -68,7 +68,9 @@ public abstract partial class SharedGunSystem : EntitySystem
     [Dependency] protected readonly ThrowingSystem ThrowingSystem = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
-    [Dependency] private readonly ScreenshakeSystem _shake = default!; // Starlight | ES Screenshake
+    // ES START
+    [Dependency] private SharedESScreenshakeSystem _shake = default!;
+    // ES END
 
     /// <summary>
     /// Default projectile speed
@@ -414,18 +416,11 @@ public abstract partial class SharedGunSystem : EntitySystem
         var shotEv = new GunShotEvent(user, ev.Ammo);
         RaiseLocalEvent(gunUid, ref shotEv);
 
-        //Starlight begin | ES Screenshake
-        if (fired)
-        {
-            var gunShakeRotation = new ScreenshakeParameters()
-            {
-                Trauma = 0.035f * gun.CameraRecoilScalarModified,
-                DecayRate = 1.2f,
-                Frequency = 0.008f
-            };
-            _shake.Screenshake(user, null, gunShakeRotation);
-        }
-        //Starlight end
+        // ES START
+        // this is a suspicious place to do this but whatever.
+        var gunShakeRotation = new ESScreenshakeParameters() { Trauma = 0.085f * gun.CameraRecoilScalarModified, DecayRate = 1.2f, Frequency = 0.008f};
+        _shake.Screenshake(user, null, gunShakeRotation);
+        // ES END
 
         if (!userImpulse || !TryComp<PhysicsComponent>(user, out var userPhysics))
             return true;

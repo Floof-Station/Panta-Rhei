@@ -1,4 +1,7 @@
-namespace Content.Shared._Starlight.Camera;
+using Content.Shared.Camera;
+using Content.Shared.Movement.Systems;
+
+namespace Content.Shared._ES.Camera;
 
 /// <summary>
 ///     Raised directed by-ref when <see cref="SharedContentEyeSystem.UpdateEyeRotation"/> is called.
@@ -9,4 +12,4 @@ namespace Content.Shared._Starlight.Camera;
 ///     Counterpart of <see cref="GetEyeOffsetEvent"/>, but for rotation, to use for screenshake.
 /// </remarks>
 [ByRefEvent]
-public record struct GetEyeRotationEvent(Angle Rotation);
+public record struct ESGetEyeRotationEvent(Angle Rotation);

@@ -289,10 +289,10 @@ public sealed partial class GunSystem : SharedGunSystem
         if (!Timing.IsFirstTimePredicted || user == null || recoil == Vector2.Zero || recoilScalar == 0)
             return;
 
-        //Starlight begin | ES Screenshake
-        var shakeIntensity = _cfg.GetCVar(CCVars.ScreenShakeIntensity);
-        _recoil.KickCamera(user.Value, recoil.Normalized() * (0.5f + ((0.13f - 0.5f) * shakeIntensity)) * recoilScalar);
-        //Starlight end
+        // ES START
+        // reduce recoil even further
+        _recoil.KickCamera(user.Value, recoil.Normalized() * 0.13f * recoilScalar);
+        // ES END
     }
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user)

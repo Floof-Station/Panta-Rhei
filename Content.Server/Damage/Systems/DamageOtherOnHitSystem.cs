@@ -8,7 +8,7 @@ using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
-using Content.Shared._Starlight.Camera; // Starlight | ES Screenshake
+using Content.Shared._ES.Camera;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
 
@@ -21,7 +21,9 @@ public sealed class DamageOtherOnHitSystem : SharedDamageOtherOnHitSystem
     [Dependency] private readonly Shared.Damage.Systems.DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
     [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
-    [Dependency] private readonly ScreenshakeSystem _shake = default!; // Starlight | ES Screenshake
+    // ES START
+    [Dependency] private readonly SharedESScreenshakeSystem _shake = default!;
+    // ES END
 
     public override void Initialize()
     {
@@ -50,16 +52,12 @@ public sealed class DamageOtherOnHitSystem : SharedDamageOtherOnHitSystem
         if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
         {
             var direction = body.LinearVelocity.Normalized();
-            //Starlight begin | ES Screenshake
+            // ES START
+            // lower recoil + shake
             _sharedCameraRecoil.KickCamera(args.Target, direction * 0.1f);
-            var shakeParams = new ScreenshakeParameters
-            {
-                Trauma = 0.35f,
-                DecayRate = 1.4f,
-                Frequency = 0.014f,
-            };
-            _shake.Screenshake(args.Target, shakeParams, null);
-            //Starlight end
+            var otherHitShake = new ESScreenshakeParameters() { Trauma = 0.35f, DecayRate = 1.4f, Frequency = 0.014f };
+            _shake.Screenshake(args.Target, otherHitShake, null);
+            // ES END
         }
     }
 }

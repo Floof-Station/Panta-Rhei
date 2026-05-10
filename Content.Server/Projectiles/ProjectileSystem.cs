@@ -9,7 +9,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.FixedPoint;
 using Content.Shared.Projectiles;
-using Content.Shared._Starlight.Camera; // Starlight | ES Screenshake
+using Content.Shared._ES.Camera;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Player;
 
@@ -23,7 +23,9 @@ public sealed class ProjectileSystem : SharedProjectileSystem
     [Dependency] private readonly DestructibleSystem _destructibleSystem = default!;
     [Dependency] private readonly GunSystem _guns = default!;
     [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
-    [Dependency] private readonly ScreenshakeSystem _shake = default!; // Starlight | ES Screenshake
+    // ES START
+    [Dependency] private readonly SharedESScreenshakeSystem _shake = default!;
+    // ES END
 
     public override void Initialize()
     {
@@ -122,17 +124,13 @@ public sealed class ProjectileSystem : SharedProjectileSystem
         {
             _guns.PlayImpactSound(target, damage, component.SoundHit, component.ForceSound);
 
-            //Starlight begin | ES Screenshake
-            var shakeParams = new ScreenshakeParameters
-            {
-                Trauma = 0.45f,
-                DecayRate = 1.1f,
-                Frequency = 0.04f,
-            };
+            // ES START
+            // shake + lower recoil
+            var otherShakeTranslation = new ESScreenshakeParameters() { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
             if (!args.OurBody.LinearVelocity.IsLengthZero())
                 _sharedCameraRecoil.KickCamera(target, args.OurBody.LinearVelocity.Normalized() * 0.08f);
-            _shake.Screenshake(target, shakeParams, null);
-            //Starlight end
+            _shake.Screenshake(target, otherShakeTranslation, null);
+            // ES END
         }
 
         if (component.DeleteOnCollide && component.ProjectileSpent)
