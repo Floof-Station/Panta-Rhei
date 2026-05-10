@@ -288,3 +288,135 @@
   solids:
     FoodDoughSlice: 1
     FoodMeatCutlet: 1
+
+# fish recipe additions
+- type: microwaveMealRecipe
+  id: RecipeSalmonSushi
+  name: salmon sushi recipe
+  result: FoodMealSalmonSushi
+  time: 5
+  solids:
+    FoodAvocadoSlice: 2
+    FoodCucumberSlice: 2
+    FoodMeatSalmon: 1
+  reagents:
+    Rice: 15
+    Water: 10
+
+- type: microwaveMealRecipe
+  id: RecipeFishBurger
+  name: fish burger recipe
+  result: FoodBurgerLowQualityFish
+  time: 10
+  group: Savory
+  solids:
+    FoodBreadBun: 1
+    FoodMeatFishLowQualityFillet: 1
+    FoodCheeseSlice: 1
+    FoodCabbage: 1
+
+- type: microwaveMealRecipe
+  id: RecipeArmorFishFlatBread
+  name: armor fish flatbread recipe
+  result: FoodFlatBreadArmorFish
+  time: 10
+  group: Savory
+  solids:
+    FoodDough: 1
+    FoodMeatFishLowQualityFillet: 1
+    FoodCheeseSlice: 1
+    FoodEggplant: 1
+  reagents:
+    OilOlive: 5
+
+- type: microwaveMealRecipe
+  id: RecipeGrilledMoonFish
+  name: grilled moon fish recipe
+  result: FoodMeatMoonFishGrilled
+  time: 5
+  group: Savory
+  solids:
+    FoodMeatMoonFishFillet: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMoonFishDemiglace
+  name: moonfish demiglace recipe
+  result: FoodMoonFishDemiglace
+  time: 15
+  group: Savory
+  solids:
+    FoodMeatMoonFishFillet: 1
+    FoodCheeseSlice: 1
+    FoodGarlic: 1
+    FoodAmbrosiaVulgaris: 1
+    FoodCarrot: 1
+  reagents:
+    OilOlive: 5
+
+- type: microwaveMealRecipe
+  id: RecipeFishFingers
+  name: fish fingers recipe
+  result: FoodFishFingers
+  time: 5
+  group: Savory
+  solids:
+    FoodMeatFishLowQualityFillet: 1
+    FoodDoughSlice: 1
+  reagents:
+    Mayo: 5
+
+- type: microwaveMealRecipe
+  id: RecipeFishFryLowQualityFish
+  name: low quality fish fry recipe
+  result: FoodFishFryLowQualityFish
+  time: 5
+  group: Savory
+  solids:
+    FoodMeatFishLowQualityFillet: 1
+    FoodLemon: 1
+    FoodPotato: 1
+  reagents:
+    OilOlive: 5
+
+- type: microwaveMealRecipe
+  id: RecipeFishFrySalmon
+  name: salmon fish fry recipe
+  result: FoodFishFrySalmon
+  time: 10
+  group: Savory
+  solids:
+    FoodMeatSalmon: 1
+    FoodLemon: 1
+    FoodPotato: 1
+  reagents:
+    OilOlive: 5
+    TableSalt: 5
+
+- type: microwaveMealRecipe
+  id: RecipeDonkFishStew
+  name: donk fish stew recipe
+  result: FoodStewDonkFish
+  time: 10
+  group: Soup
+  reagents:
+    Water: 10
+  solids:
+    FoodBowlBig: 1
+    FoodPotato: 1
+    FoodMushroom: 1
+    FoodMeatDonkFish: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCalamariPlater
+  name: calamari plater recipe
+  result: FoodCalamariPlater
+  time: 15
+  group: Savory
+  solids:
+    FoodMeatSquid: 1
+    FoodLemon: 1
+    FoodGarlic: 1
+    FoodChiliPepper: 1
+  reagents:
+    OilOlive: 5
+    TableSalt: 5
