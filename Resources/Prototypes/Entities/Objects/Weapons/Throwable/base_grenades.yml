@@ -47,6 +47,10 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  - type: Catchable # Euphoria - Think fast chuckle nuts
+    catchChance: 0.75
+    catchSuccessSound:
+      path: /Audio/Effects/Footsteps/bounce.ogg
 
 - type: entity # Starts fuse after taking 10 damage, instantly detonates/activates after taking 45 damage.
   abstract: true
