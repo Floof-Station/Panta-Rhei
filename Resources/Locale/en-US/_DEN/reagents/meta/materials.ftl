@@ -5,3 +5,7 @@
 # Other
 materials-mnemolith = mnemolith
 materials-eidolite = eidolite
+
+#slap stick solution, ignore this
+mnemolith = mnemolith
+eidolite = eidolite
