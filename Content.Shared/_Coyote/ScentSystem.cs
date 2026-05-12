@@ -158,8 +158,6 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(args.Examiner, proto.Lewd))
                 continue;
-            if (!SniffaOkay(args.Examiner)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
-                continue;
             var smellColor = "DarkGray"; // Euphoria - Less distracting.
             if (proto.Stinky && proto.Lewd)
             {
