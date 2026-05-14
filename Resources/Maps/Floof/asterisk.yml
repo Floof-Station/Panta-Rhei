@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/14/2026 18:56:07
-  entityCount: 14459
+  time: 05/14/2026 22:20:21
+  entityCount: 14455
 maps:
 - 1
 grids:
@@ -4797,26 +4797,6 @@ entities:
       id: Asterisk
     - type: NavMap
     - type: ImplicitRoof
-- proto: ActionToggleBlock
-  entities:
-  - uid: 9801
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 1018
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 1018
-  - uid: 9863
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 2667
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 2667
 - proto: AirAlarm
   entities:
   - uid: 3
@@ -7749,7 +7729,7 @@ entities:
       pos: 16.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -58227.844
+      secondsUntilStateChange: -58260.973
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -75388,35 +75368,6 @@ entities:
     - type: Transform
       pos: -30.5,-23.5
       parent: 2
-- proto: RiotShield
-  entities:
-  - uid: 1018
-    components:
-    - type: Transform
-      pos: -27.378483,10.540868
-      parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 9801
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 9801
-  - uid: 2667
-    components:
-    - type: Transform
-      pos: -27.644304,10.556493
-      parent: 2
-    - type: Blocking
-      blockingToggleActionEntity: 9863
-      user: invalid
-    - type: ActionsContainer
-    - type: ContainerContainer
-      containers:
-        actions: !type:Container
-          ents:
-          - 9863
 - proto: Roboisseur
   entities:
   - uid: 2535
