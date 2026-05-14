@@ -75408,7 +75408,21 @@ entities:
         actions: !type:Container
           ents:
           - 9801
- - proto: Roboisseur
+  - uid: 2667
+    components:
+    - type: Transform
+      pos: -27.644304,10.556493
+      parent: 2
+    - type: Blocking
+      blockingToggleActionEntity: 9863
+      user: invalid
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 9863
+- proto: Roboisseur
   entities:
   - uid: 2535
     components:
