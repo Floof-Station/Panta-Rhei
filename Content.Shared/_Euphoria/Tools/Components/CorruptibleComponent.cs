@@ -1,3 +1,4 @@
+using Content.Shared._Euphoria.MagicalCommand;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
@@ -9,7 +10,7 @@ namespace Content.Shared._Euphoria.Tools.Components;
 /// Different from polymorphing because the  item is pre-defined in the component.
 /// Currently used for the magical girl artifacts.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CorruptibleComponent : Component
 {
     /// <summary>
@@ -24,8 +25,14 @@ public sealed partial class CorruptibleComponent : Component
     [DataField(required: true)]
     public EntProtoId EntityId;
 
-    // If it's already corrupted, it needs to be decorrupted instead.
+    /// <summary>
+    /// Whether the altering item needs <see cref="EmpoweredFriendshipComponent"/> to succeed.
+    /// </summary>
     [DataField]
+    public bool RequiresEmpowered;
+
+    // If it's already corrupted, it needs to be decorrupted instead.
+    [DataField, AutoNetworkedField]
     public bool Corrupted;
 
     [DataField]

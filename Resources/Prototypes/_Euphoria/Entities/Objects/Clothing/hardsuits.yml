@@ -43,7 +43,7 @@
     size: Large
   - type: Tool
     qualities:
-      Decorrupting
+    - Decorrupting
   - type: FriendshipContributor
   - type: Tag
     tags:
@@ -259,6 +259,7 @@
     size: Large
   - type: Corruptible
     entityId: ClothingOuterHardsuitMagicalSyndie
+  - type: AttunableEquipment
   - type: PowerOfFriendship
     empoweredResult: ClothingOuterHardsuitMagicalCMO
   - type: Tag
@@ -295,6 +296,10 @@
     clothingPrototype: ClothingOuterHardsuitMagicalCMOHat
   - type: Item
     size: Large
+  - type: Tool
+    qualities:
+    - Decorrupting
+  - type: EmpoweredFriendship
   - type: Tag
     tags:
     - Hardsuit
@@ -350,10 +355,11 @@
     clothingPrototype: ClothingOuterHardsuitMagicalSyndieHood
   - type: Tool
     qualities:
-      - Corrupting
+    - Corrupting
   - type: Corruptible
     entityId: ClothingOuterHardsuitMagicalCAP
     corrupted: true
+    requiresEmpowered: true
   - type: Tag
     tags:
     - Hardsuit
