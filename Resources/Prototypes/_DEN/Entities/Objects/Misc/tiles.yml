@@ -20,20 +20,6 @@
       - FloorSomberSteel
   - type: Stack
     stackType: FloorTileSomberSteel
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 1
-    soundHit:
-    path: /Audio/Weapons/block_metal1.ogg
-    params:
-      volume: -60 # Why is it so loud...
-      variation: 0.05
-  - type: DamageOtherOnHit
-    damage:
-      types:
-        Blunt: 9.5 # Heavier tiles hurt more, based on FloorTileItemSteel
-    #staminaCost: 6
 
 - type: entity
   parent: FloorTileItemSomberSteel
