@@ -151,5 +151,5 @@ ent-ClothingHeadHelmetVoidsuitEngineering = HpI-19EV Helmet
 ent-ClothingHeadHelmetHardsuitSyndieReverseEngineered = Reverse-Engineered CSA-51 Helmet
     .desc = A reverse-engineered "Shanlin" helmet designed for use in special operations.
 
-ent-ClothingHeadHelmetHardsuitJuggernautReverseEngineered = Reverse-Engineered CSA-80 Helmet
-    .desc = A reverse-engineered "Guan Yu" helmet meant for use with the SA-126UA. Its armor plating is nigh-impenetrable.
+ent-ClothingHeadHelmetHardsuitJuggernautReverseEngineered = Reverse-Engineered CSA-80UA Helmet
+    .desc = A reverse-engineered "Guan Yu" helmet meant for use with the Reverse-Engineered CSA-80UA. Its armor plating is nigh-impenetrable.
