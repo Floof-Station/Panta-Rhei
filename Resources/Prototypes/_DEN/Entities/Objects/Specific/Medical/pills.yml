@@ -19,8 +19,8 @@
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
     layers:
-      - state: pill_canister
-      - state: pill_canister-spacedrugs # A greenish gray stripe
+    - state: pill_canister
+    - state: pill_canister-spacedrugs # A greenish gray stripe
   - type: StorageFill
     contents:
     - id: PillSpaceDrugs
@@ -38,8 +38,8 @@
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
     layers:
-      - state: pill_canister
-      - state: pill_canister-crypto # A blue stripe
+    - state: pill_canister
+    - state: pill_canister-crypto # A blue stripe
   - type: StorageFill
     contents:
     - id: PillCryptobiolin
@@ -57,8 +57,8 @@
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
     layers:
-      - state: pill_canister
-      - state: pill_canister-mindbreaker # A cool red stripe - not the color of mindbreaker, the label is a warning
+    - state: pill_canister
+    - state: pill_canister-mindbreaker # A cool red stripe - not the color of mindbreaker, the label is a warning
   - type: StorageFill
     contents:
     - id: PillMindbreakerToxin
@@ -76,8 +76,8 @@
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
     layers:
-      - state: pill_canister
-      - state: pill_canister-soulbreaker # A cool pink stripe - not the color of soulbreaker, the label is a warning
+    - state: pill_canister
+    - state: pill_canister-soulbreaker # A cool pink stripe - not the color of soulbreaker, the label is a warning
   - type: StorageFill
     contents:
     - id: PillSoulbreakerToxin
@@ -122,8 +122,8 @@
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
     layers:
-      - state: pill_canister
-      - state: pill_canister-mnemolith # A dark gray stripe
+    - state: pill_canister
+    - state: pill_canister-mnemolith # A dark gray stripe
   - type: StorageFill
     contents:
     - id: PillMnemolith
