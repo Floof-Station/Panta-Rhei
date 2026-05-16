@@ -552,7 +552,7 @@
   cost: -2
   conflicts:
   - OniShooting
-  requirements:
+  conditions:
   - !type:OneOfSpeciesCondition
     invert: true
     species:
