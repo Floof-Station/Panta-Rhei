@@ -17,3 +17,4 @@ flavor-complex-naughty-bartender = like a fancy coffee
 flavor-complex-cafe-cocktail = like a cold morning breeze
 flavor-complex-cinnamon-cookie = like grandma's baking
 flavor-complex-blood-red-licorice = like carnage in a candy store
+flavor-complex-mnemolith = like the bedrock of thought itself
