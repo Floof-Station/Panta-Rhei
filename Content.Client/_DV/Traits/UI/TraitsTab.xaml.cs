@@ -287,6 +287,15 @@ public sealed partial class TraitsTab : BoxContainer
         RecalculateStats();
     }
 
+    //Euphoria | Clears previously set conditions.
+    public void ResetConditions()
+    {
+        foreach (var (_, categoryUi) in _categoryUis)
+        {
+            categoryUi.ResetConditions();
+        }
+    }
+
     private void RecalculateStats()
     {
         _currentTraitCount = 0;
