@@ -66,12 +66,11 @@
   description: Upgraded sunglasses that provide flash immunity.
   components:
   - type: Sprite
-    sprite: _Den/Clothing/Eyes/Glasses/epiglasses.rsi
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses.rsi
   - type: Clothing
-    sprite: _Den/Clothing/Eyes/Glasses/epiglasses.rsi
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses.rsi
   - type: FlashImmunity
   - type: EyeProtection
-    protectionTime: 5
   - type: Tag
     tags:
     - WhitelistChameleon
