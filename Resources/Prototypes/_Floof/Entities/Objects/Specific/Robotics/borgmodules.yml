@@ -191,7 +191,6 @@
     - item: AnomalyScanner
     - item: AnomalyLocatorUnpowered
     - item: AnomalyLocatorWideUnpowered
-    - item: HandLabeler
     - hand:
         emptyRepresentative: SheetRGlass
         emptyLabel: borg-slot-construction-empty
@@ -204,6 +203,7 @@
         whitelist:
           tags:
           - ConstructionMaterial
+    - item: HandLabeler
   - type: BorgModuleIcon
     icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: sp-anomaly-module  }
 
