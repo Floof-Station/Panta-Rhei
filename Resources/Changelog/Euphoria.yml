@@ -2895,3 +2895,72 @@ Entries:
       message: Patched handling components with voresystem
   id: 361
   time: '2026-05-16T05:52:50.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: Added docks to arena plus pets. Added other minor things.
+    - type: Tweak
+      message: Adjusted evac on arena
+  id: 362
+  time: '2026-05-16T21:32:16.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Fixed traits not applying correctly when swapping characters.
+  id: 363
+  time: '2026-05-16T22:42:27.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Bad Aim and Can't Aim traits.
+  id: 364
+  time: '2026-05-16T22:57:05.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: 'Changed fixture radius of Chitinids to no longer get stuck in doors. '
+  id: 365
+  time: '2026-05-18T02:23:24.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Signing now only requires one free hand rather than two.
+  id: 366
+  time: '2026-05-18T04:14:15.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Lewd traits that increase the maximum amount of fluid production should
+        now correctly increase the organ fluid capacity to accommodate for
+        additional fluids.
+  id: 367
+  time: '2026-05-18T10:26:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        There is now a "clothing bypass" toggle that you can access by
+        right-clicking yourself. Toggling it on allows others and you to
+        interact with your lewd organs regardless of clothing.
+    - type: Tweak
+      message: >-
+        Some verbs like "toggle undies" can now be used even if the target has
+        outer clothing, so long as they don't have anything underneath and the
+        outer clothing is not a hardsuit or similar.
+    - type: Fix
+      message: >-
+        Removed the redundant "lewd interactions" consent toggle as it wasn't
+        used anywhere.
+    - type: Fix
+      message: >-
+        The ai eye should no longer be able to see interaction verb popups from
+        anywhere near a camera.
+  id: 368
+  time: '2026-05-18T10:30:41.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: Paper and mail can now be slid under airlock doors.
+  id: 369
+  time: '2026-05-18T11:41:23.0000000+00:00'

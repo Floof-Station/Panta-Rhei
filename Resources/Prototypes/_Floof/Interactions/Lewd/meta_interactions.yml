@@ -1,0 +1,19 @@
+- type: Interaction
+  id: LewdToggleAccessBypass
+  parent: BaseGlobal
+  category: LewdInteraction
+  priority: -99999 # The bottom
+  delay: 0
+  allowSelfInteract: true
+  contactInteraction: false
+  requiresHands: false
+  requiresCanInteract: false
+  checkInteractionBlocker: false
+  hideByRequirement: true
+  effectDelayed: null
+  effectSuccess:
+    popup: Subtle
+  effectFailure:
+    popup: Subtle
+  requirement: !type:SelfTargetRequirement
+  action: !type:ToggleLewdAccessBypassAction
