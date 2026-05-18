@@ -1,0 +1,20 @@
+## Static
+
+- type: latheRecipePack
+  id: BorgModulesStaticEuphoria
+  recipes:
+  - BorgModuleAnomaly
+  - BorgModuleArtifact
+  - BorgModuleOffice
+  - BorgModuleFluidManip
+  - BorgModuleFurnishing
+
+## Dynamic
+
+- type: latheRecipePack
+  id: BorgModulesEuphoria
+  recipes:
+  - BorgModuleFoamForce
+  - BorgModuleEnvSurvey
+  - BorgModuleAdvAnomaly
+  - BorgModuleQuantum
