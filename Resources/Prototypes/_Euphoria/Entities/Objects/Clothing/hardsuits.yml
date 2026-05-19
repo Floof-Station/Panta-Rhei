@@ -42,10 +42,6 @@
     clothingPrototype: ClothingOuterHardsuitMagicalHOSTiara
   - type: Item
     size: Large
-  - type: Tool
-    qualities:
-    - Decorrupting
-  - type: FriendshipContributor
   - type: Tag
     tags:
     - Hardsuit
@@ -56,6 +52,10 @@
       types:
         Blunt: 5
     bluntStaminaDamageFactor: 2.0
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalHOS
 
 
 #HOP Hardsuit
@@ -103,6 +103,10 @@
     angle: -45
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalHOP
 
 #QM Hardsuit
 - type: entity
@@ -161,6 +165,11 @@
     angle: 100
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalQM
+
 
 #RD Hardsuit
 - type: entity
@@ -209,6 +218,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalRDMysta
 
 #CJ Hardsuit
 - type: entity
@@ -257,7 +270,10 @@
         Blunt: 2
   - type: ThrowingAngle
     angle: 140
-
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalCJ
 
 #Cap Hardsuit
 - type: entity
@@ -301,15 +317,69 @@
     clothingPrototype: ClothingOuterHardsuitMagicalCAPHat
   - type: Item
     size: Large
-  - type: Corruptible
-    entityId: ClothingOuterHardsuitMagicalSyndie
-  - type: AttunableEquipment
-  - type: PowerOfFriendship
-    empoweredResult: ClothingOuterHardsuitMagicalCMO
   - type: Tag
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalCAP
+  - type: PowerOfFriendship
+    empoweredResult: ClothingHeadKyuSkinHat
+
+#Empowered Cap Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  id: ClothingOuterHardsuitEmpoweredMagicalCAP
+  suffix: Empowered m.Trinket
+  name: STRONG Fabergé heart pendant 
+  description: A ornate pendant, passed down from someone very important to you. You always keep it close to your heart.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.6
+        Heat: 0.5
+        Radiation: 0.5
+        Caustic: 0.6
+  - type: DamageOnShootProtection # imp
+    slots: OUTERCLOTHING
+    damageProtection:
+      flatReductions:
+        Blunt: 10
+  - type: StaminaResistance # DeltaV
+    damageCoefficient: 0.3
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalCAPHat
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: EmpoweredFriendship
+  - type: Tool
+    qualities:
+    - Decorrupting
 
 #Cmo Hardsuit
 - type: entity
@@ -341,14 +411,14 @@
     clothingPrototype: ClothingOuterHardsuitMagicalCMOHat
   - type: Item
     size: Large
-  - type: Tool
-    qualities:
-    - Decorrupting
-  - type: EmpoweredFriendship
   - type: Tag
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalCMO
 
 #CE Hardsuit
 - type: entity
@@ -412,6 +482,10 @@
         Blunt: 4.5
   - type: ThrowingAngle
     angle: -135
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitCorruptedMagicalCE
 
 #Generic Hardsuit 
 - type: entity
@@ -445,6 +519,54 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalSyndieHenchman
+  - type: Tool
+    qualities:
+    - Decorrupting
+  - type: PowerOfFriendship
+    empoweredResult: ClothingOuterHardsuitEmpoweredMagicalGeneric
+
+#Empowered Generic Hardsuit 
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitEmpoweredMagicalGeneric
+  suffix: Empowered m.Trinket
+  name: STRONG Pink soul gem
+  description: Kepp it close to your heart and it may grant your wish!
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/generic-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/generic-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalGenericBow
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: FriendshipContributor
+  - type: EmpoweredFriendship
+  - type: Tool
+    qualities:
+    - Decorrupting
 
 #Tider Hardsuit
 - type: entity
@@ -487,6 +609,60 @@
     angle: 180
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: FriendshipContributor
+  - type: Tool
+    qualities:
+    - Decorrupting
+  - type: PowerOfFriendship
+    empoweredResult: ClothingOuterHardsuitEmpoweredMagicalTide
+
+#Empowered Tider Hardsuit
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitEmpoweredMagicalTide
+  suffix: Empowered m.Trinket
+  name: STRONG The Wildcard
+  description: Greed Equals Justice, desire everything for all.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/tide-transformation.ogg
+    unequipSound: /Audio/_Euphoria/Magic/tide-transformation3.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitMagicalTiderGear
+  - type: Item
+    size: Large
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 5
+  - type: ThrowingAngle
+    angle: 180
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: FriendshipContributor
+  - type: EmpoweredFriendship
+  - type: Tool
+    qualities:
+    - Decorrupting
+
 
 #-------------------------- Evil part ----------------------------------------------
 
@@ -539,17 +715,17 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingOuterHardsuitMagicalSyndieHood
-  - type: Tool
-    qualities:
-    - Corrupting
-  - type: Corruptible
-    entityId: ClothingOuterHardsuitMagicalCAP
-    corrupted: true
-    requiresEmpowered: true
   - type: Tag
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: Tool
+    qualities:
+    - Corrupting
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalGeneric
+    corrupted: true
+    requiresEmpowered: true
 
 #Syndie Henchman Hardsuit
 - type: entity
@@ -641,6 +817,10 @@
     - Snout
     - HeadTop
     - HeadSide
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalHOP
+    corrupted: true
 
 #CORRUPTED Head of Security's Hardsuit
 - type: entity
@@ -694,6 +874,11 @@
       types:
         Blunt: 5
     bluntStaminaDamageFactor: 2.0
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalHOS
+    corrupted: true
+
 
 #CORRUPTED QM Hardsuit
 - type: entity
@@ -752,6 +937,11 @@
     angle: 100
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalQM
+    corrupted: true
+
 
 #CORRUPTED RD Hardsuit
 - type: entity
@@ -800,6 +990,11 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalRDMysta
+    corrupted: true
+
 
 #CORRUPTED CJ Hardsuit
 - type: entity
@@ -848,6 +1043,11 @@
         Blunt: 2
   - type: ThrowingAngle
     angle: 140
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalCJ
+    corrupted: true
+
 
 #CORRUPTED Cap Hardsuit
 - type: entity
@@ -895,6 +1095,10 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalCAP
+    corrupted: true
 
 #CORRUPTED Cmo Hardsuit
 - type: entity
@@ -930,6 +1134,11 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalCMO
+    corrupted: true
+
 
 #CORRUPTED CE Hardsuit
 - type: entity
@@ -993,3 +1202,7 @@
         Blunt: 4.5
   - type: ThrowingAngle
     angle: -135
+  - type: AttunableEquipment
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalCE
+    corrupted: true

@@ -365,6 +365,8 @@
     spawned:
     - id: ClothingHeadKyuSkinHat
       amount: 1
+    - id: ClothingOuterHardsuitMagicalGeneric
+      amount: 1
   - type: LanguageKnowledge
     speaks:
     - Universal
@@ -384,7 +386,7 @@
     jumpDistance: 3
     action: ActionCatJump
   - type: ItemCougher
-    item: ClothingOuterHardsuitMagicalHOS
+    item: ClothingOuterHardsuitMagicalGeneric
     action: ActionHairball
     coughPopup: Make a contract with me, and become a magical girl!
   - type: CheatDeath
