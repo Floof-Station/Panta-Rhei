@@ -36,11 +36,11 @@ public sealed partial class CorruptibleComponent : Component
     public bool Corrupted;
 
     [DataField]
-    public SoundSpecifier CorruptStartSound = new SoundPathSpecifier("/Audio/_DV/Effects/clang2.ogg");
+    public SoundSpecifier CorruptStartSound = new SoundPathSpecifier("/Audio/_Euphoria/Magic/corruption.ogg");
 
     [DataField]
     public EntityUid? CorruptStream;
 
     [DataField]
-    public SoundSpecifier CorruptFinishSound = new SoundPathSpecifier("/Audio/_Euphoria/Magic/magical-transformation-evil.ogg");
+    public SoundSpecifier CorruptFinishSound = new SoundPathSpecifier("/Audio/_Euphoria/Magic/corruption.ogg");
 }
