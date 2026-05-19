@@ -115,7 +115,7 @@ ent-ClothingOuterHardsuitCombatCorpsman = FPA-86SM - "Tsagaan MK II" Tacsuit
     .desc = A sturdy tactical combat medic hardsuit mass-produced by Five-Points Armory, painted with the colors of Station Security and Medical staff. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels heavy.
 
 ent-ClothingOuterHardsuitCombatRiot = FPA-93 - "Sulde MK II" Tacsuit
-    .desck = A specialized tactical combat hardsuit produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels EXTREMELY heavy.
+    .desc = A specialized tactical combat hardsuit produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels EXTREMELY heavy.
 
 ent-ClothingOuterHardsuitCombatWarden = FPA-93SW - "Sulde MK II" Tacsuit
     .desc = A specialized tactical combat hardsuit produced by Five-Points Armory, painted with the colors of Station Security and Warden's rank markings. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels EXTREMELY heavy.
