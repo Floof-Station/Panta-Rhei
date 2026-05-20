@@ -4,7 +4,7 @@
   id: ClothingNeckCollarBasetId
   abstract: true
   name: black emotional support id collar
-  description: A cute black collar that holds a pets id.
+  description: A cute black collar that holds a pet''s id.
   components:
   - type: Pda
     id: EmotionalSupportIdCard
@@ -35,32 +35,32 @@
   parent: [ClothingNeckCollarBlack, ClothingNeckCollarBasetId]
   id: ClothingNeckCollarBlackPetId
   name: black emotional support id collar
-  description: A cute black collar that holds a pets id.
+  description: A cute black collar that holds a pet''s id.
 
 # blue collar
 - type: entity
   parent: [ClothingNeckCollarBlue, ClothingNeckCollarBasetId]
   id: ClothingNeckCollarBluePetId
   name: blue emotional support id collar
-  description: A cute blue collar that holds a pets id.
+  description: A cute blue collar that holds a pet''s id.
 
 # pink collar
 - type: entity
   parent: [ClothingNeckCollarPink, ClothingNeckCollarBasetId]
   id: ClothingNeckCollarPinkPetId
   name: pink emotional support id collar
-  description: A cute pink collar that holds a pets id.
+  description: A cute pink collar that holds a pet''s id.
 
 # syndi collar
 - type: entity
   parent: [ClothingNeckCollarSyndi, ClothingNeckCollarBasetId]
   id: ClothingNeckCollarSyndiPetId
   name: red emotional support id collar
-  description: A cute red collar that holds a pets id.
+  description: A cute red collar that holds a pet''s id.
 
 # civilian shcok collar
 - type: entity
   parent: [ClothingNeckShockCollarCivilian, ClothingNeckCollarBasetId]
   id: ClothingNeckCollarShockPetId
   name: shock emotional support id collar
-  description: A cute shocky collar that holds a pets id.
+  description: A cute shocky collar that holds a pet''s id.
