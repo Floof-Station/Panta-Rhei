@@ -100,7 +100,7 @@
     zeroVisible: false
   - type: Gun
     projectileSpeed: 4
-    fireRate: 2
+    fireRate: 1
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
   - type: BatteryAmmoProvider
@@ -116,13 +116,8 @@
       fireCost: 333
     - proto: AnomalousParticleSigma
       fireCost: 333
-  - type: MeleeWeapon
-    damage:
-      types:
-        Blunt: 6
-    wideAnimationRotation: -90
   - type: BatterySelfRecharger
-    autoRechargePauseTime: 3
+    autoRechargePauseTime: 4
     autoRechargeRate: 1500
 
 - type: entity
@@ -131,5 +126,4 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: BatterySelfRecharger
-    autoRecharge: True
     autoRechargeRate: 20
