@@ -47,6 +47,10 @@ let
     at-spi2-core
     cups
     python3
+    # Euphoria
+    fontconfig
+    alsa-plugins
+    pipewire
     # DeltaV
     pre-commit
     wayland

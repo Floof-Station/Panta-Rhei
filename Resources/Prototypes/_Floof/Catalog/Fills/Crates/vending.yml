@@ -1,0 +1,10 @@
+﻿- type: entity
+  id: CrateVendingMachineRestockPetStoreFilled
+  parent: CratePlastic
+  name: Pet Shop restock crate
+  description: Contains a restock box for the Pet Shop vending machine.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: VendingMachineRestockPetStore

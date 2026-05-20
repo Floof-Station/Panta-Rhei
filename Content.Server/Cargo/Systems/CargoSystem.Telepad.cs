@@ -40,9 +40,18 @@ public sealed partial class CargoSystem
             if (_station.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
-            // todo cannot be fucking asked to figure out device linking rn but this shouldn't just default to the first port.
-            if (!TryGetLinkedConsole((uid, tele), out var console) ||
-                console.Value.Owner != args.OrderConsole.Owner)
+            // euphoria edit start
+            var isLinked = false;
+            foreach (var console in GetLinkedConsoles((uid, tele)))
+            {
+                if (console.Owner == args.OrderConsole.Owner)
+                {
+                    isLinked = true;
+                    break;
+                }
+            }
+
+            if (!isLinked) //euphoria edit end
                 continue;
 
             for (var i = 0; i < args.Order.OrderQuantity; i++)
@@ -56,20 +65,33 @@ public sealed partial class CargoSystem
         }
     }
 
-    private bool TryGetLinkedConsole(Entity<CargoTelepadComponent> ent,
-        [NotNullWhen(true)] out Entity<CargoOrderConsoleComponent>? console)
+    //euphoria edit start
+    private IEnumerable<Entity<CargoOrderConsoleComponent>> GetLinkedConsoles(Entity<CargoTelepadComponent> telepad)
     {
-        console = null;
-        if (!TryComp<DeviceLinkSinkComponent>(ent, out var sinkComponent) ||
-            sinkComponent.LinkedSources.FirstOrNull() is not { } linked)
-            return false;
+        if (!TryComp<DeviceLinkSinkComponent>(telepad, out var sinkComponent))
+            yield break;
 
-        if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp))
-            return false;
+        foreach (var linked in sinkComponent.LinkedSources)
+        {
+            if (!TryComp<CargoOrderConsoleComponent>(linked, out var consoleComp) ||
+                !TryComp<DeviceLinkSourceComponent>(linked, out var sourceComponent))
+            {
+                continue;
+            }
 
-        console = (linked, consoleComp);
-        return true;
+            var links = _linker.GetLinks(linked, telepad.Owner, sourceComponent);
+
+            foreach (var (_, sinkPort) in links)
+            {
+                if (sinkPort == telepad.Comp.ReceiverPort)
+                {
+                    yield return (linked, consoleComp);
+                    break;
+                }
+            }
+        }
     }
+    //euphoria edit end
 
 
     private void UpdateTelepad(float frameTime)
@@ -98,7 +120,7 @@ public sealed partial class CargoSystem
                 continue;
             }
 
-            if (comp.CurrentOrders.Count == 0 || !TryGetLinkedConsole((uid, comp), out var console))
+            if (comp.CurrentOrders.Count == 0 || !GetLinkedConsoles((uid, comp)).Any()) //euphoria
             {
                 comp.Accumulator += comp.Delay;
                 continue;
@@ -143,12 +165,13 @@ public sealed partial class CargoSystem
             !TryComp<StationDataComponent>(station, out var data))
             return;
 
-        if (!TryGetLinkedConsole(ent, out var console))
+        var consoles = GetLinkedConsoles(ent).ToList(); //euphoria
+        if (consoles.Count == 0) //euphoria
             return;
 
         foreach (var order in ent.Comp.CurrentOrders)
         {
-            TryFulfillOrder((station, data), console.Value.Comp.Account, order, db);
+            TryFulfillOrder((station, data), order.Account, order, db); //euphoria; why didn't the order use its own account???
         }
     }
 

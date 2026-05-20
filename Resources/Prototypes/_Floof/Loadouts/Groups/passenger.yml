@@ -98,6 +98,7 @@
   - ClothingThongBee
   - ClothingThongRainbow
   - ClothingThongCoderValid
+  - ClothingUniformFishnetThong
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
@@ -156,6 +157,7 @@
   - ClothingSocksTrans
   - ClothingSocksCoderValid
   - ClothingSocksCowprint
+  - ClothingUnderSocksFishnets
 
 # backpacks
 - type: loadoutGroup
@@ -186,7 +188,6 @@
   - OuterCyberJacketPurple
   - OuterCyberJacketYellow
   - OuterDenimJacket
-  - OuterCorporateJacket
   - OuterCoatHyenhSweater
   - ShrimpFishermanSuit
   - OuterCoatPirate
@@ -205,6 +206,26 @@
   - ClothingOuterCoatJacketLettermanRed
   - ClothingOuterCoatJacketLettermanMagenta
   - ClothingOuterCoatBomberPinkSleeves
+  - ClothingUniformOversizeSweatshirt
+  - ClothingUniformOversizeSweatGoth
+  - ClothingUniformOversizeSweatUni
+  - ClothingUniformOversizeSweatTacky
+  - OuterCorporateJacket
+  - ClothingOuterCsCorporateJacket
+  - ClothingOuterHiCorporateJacket
+  - ClothingOuterHmCorporateJacket
+  - ClothingOuterIdCorporateJacket
+  - ClothingOuterBcCorporateJacket
+  - ClothingOuterDdCorporateJacket
+  - ClothingOuterFaCorporateJacket
+  - ClothingOuterGeCorporateJacket
+  - ClothingOuterZhCorporateJacket
+  - ClothingOuterCoatIdrisIncorporatedWindbreaker
+  - ClothingUniformFishnet
+  - ClothingUniformFishnetAlt
+  - ClothingUniformFishnetSleeves
+  - ClothingUniformFishnetSleevesGloves
+  - ClothingUniformFishnetSimpleTop
 
 # hats
 - type: loadoutGroup
@@ -243,3 +264,14 @@
   - ClothingEyesGlassesGarGiga
   - ClothingEyesGlassesGarOrange
   - GlassesJamjar
+
+# pet collar pads
+- type: loadoutGroup
+  id: FloofPetCollarPdas
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarBlackPetId
+  - ClothingNeckCollarBluePetId
+  - ClothingNeckCollarPinkPetId
+  - ClothingNeckCollarSyndiPetId
+  - ClothingNeckCollarShockPetId

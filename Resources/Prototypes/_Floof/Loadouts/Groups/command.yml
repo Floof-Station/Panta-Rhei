@@ -69,6 +69,14 @@
   - CaptainPDA
   - CommanderPDA
 
+- type: loadoutGroup
+  id: FloofCaptainOuterClothing
+  name: loadout-group-captain-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CaptainTrenchCoat
+
 #below additions are for chief justice
 - type: loadoutGroup
   id: FloofCJPDAs

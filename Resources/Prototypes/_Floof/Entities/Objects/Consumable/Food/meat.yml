@@ -1,0 +1,77 @@
+﻿- type: entity
+  parent: FoodMeatFish
+  id: FoodMeatSalmon
+  name: raw salmon fillet
+  description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: salmon
+
+- type: entity
+  parent: FoodMeatFish
+  id: FoodMeatArmorFish
+  name: raw armorfish fillet
+  description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: armorfish_fillet
+
+- type: entity
+  parent: FoodMeatFish
+  id: FoodMeatDonkFish
+  name: raw donk fish fillet
+  description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: donkfillet
+
+- type: entity
+  parent: FoodMeatFish
+  id: FoodMeatFishLowQualityFillet
+  name: raw low quality fish fillet
+  description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: fishfillet
+
+- type: entity
+  parent: FoodMeatFish
+  id: FoodMeatMoonFishFillet
+  name: raw moon fish fillet
+  description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: moonfish_fillet
+
+- type: entity
+  parent: FoodMeatFish
+  id: FoodMeatSquid
+  name: raw squid
+  description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/squid.rsi
+    state: squid_meat

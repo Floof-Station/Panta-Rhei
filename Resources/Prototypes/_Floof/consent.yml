@@ -19,3 +19,18 @@
   id: NoClone
   name: Opt out from paradox anomalies
   description: Toggle this on to disallow yourself from being cloned via paradox anomalies.
+
+- type: consentToggle
+  id: LewdContainerFillByOthers
+  name: "Lewd interactions: milking"
+  description: Toggle this on to allow others to "milk" you using beakers and other liquid containers. You will still be able to "milk" yourself with this off.
+
+- type: consentToggle
+  id: PreyVore
+  name: Vore Prey
+  description: Allow yourself to be prey or insert yourself into a pred.
+
+- type: consentToggle
+  id: PredVore
+  name: Vore Pred
+  description: Allow yourself to be pred or have prey insert themselves into you.

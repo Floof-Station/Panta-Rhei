@@ -1,0 +1,46 @@
+# Mind Role
+- type: entity
+  parent: MindRoleGhostRoleFreeAgentHarmless
+  id: MindRoleSampleCollector
+  name: Sample Collector Role
+  components:
+  - type: MindRole
+    subtype: role-subtype-sample-collector
+  - type: SampleCollectorRole
+
+# Startine Gear
+- type: startingGear
+  id: SampleCollectorGear
+  equipment:
+    id: MedicalPDA
+    ears: ClothingHeadsetMedical
+    pocket1: EncryptionKeyTraffic
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    shoes: ClothingShoesColorWhite
+    gloves: ClothingHandsGlovesNitrile
+    back: ClothingBackpackMedical
+    outerClothing: ClothingOuterCoatLab
+
+# Spawner
+- type: entity
+  categories: [ Spawner ]
+  parent: MarkerBase
+  id: SpawnPointSampleCollector
+  name: ghost role spawn point
+  suffix: sample collector
+  components:
+  - type: GhostRole
+    name: ghost-role-information-sample-collector-name
+    description: ghost-role-information-sample-collector-description
+    mindRoles:
+    - MindRoleSampleCollector
+    raffle:
+      settings: default
+  - type: GhostRoleCharacterSpawner
+    outfitPrototype: SampleCollectorGear
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Specific/Medical/medical.rsi
+      state: bloodpack

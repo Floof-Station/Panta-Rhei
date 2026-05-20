@@ -1458,6 +1458,14 @@
   components:
   - type: Pda
     id: BrigmedicIDCard
+    # FLoofstation - Penlights
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # FLoofstation - Penlights
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:

@@ -1,0 +1,9 @@
+﻿# Entity Tables
+- type: entityTable
+  id: CrusherWeapons
+  table: !type:GroupSelector
+    children:
+    - id: WeaponCrusher
+    - id: WeaponCrusherGlaive
+    #- id: WeaponCrusherHammer -Euphoria
+    #- id: WeaponCrusherHalberd -Euphoria

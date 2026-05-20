@@ -250,7 +250,7 @@
   parent: BaseChemistryBottleFilled
   components:
   - type: Label
-    currentLabel: reagent-bruizine
+    currentLabel: reagent-name-bruizine # Euphoria: reagent-name-bruizine<reagent-bruizine
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -1464,3 +1464,9 @@
     - id: ChemistryBottleTranexamicAcid
     - id: ChemistryBottleTricordrazine
     - id: ChemistryBottleUltravasculine
+    # Euphoria start: Additional chem bottle fills
+    - id: ChemistryBottleBicArith
+    - id: ChemistryBottleCharcoal
+    - id: ChemistryBottleSalbutamol
+    - id: ChemistryBottleSalicylicAcid
+    # Euphoria end
