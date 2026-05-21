@@ -120,6 +120,10 @@
   description: trait-thaven-mood-desc
   category: Skills
   cost: 0
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
     - Thaven
   effects:
   - !type:AddCompsEffect
