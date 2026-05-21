@@ -65,7 +65,7 @@
     speedModifierThresholds:
       25: 0.5
   - type: Stamina
-    baseCritThreshold: 200
+    critThreshold: 200
   - type: Bloodstream
     bloodReagents:
       reagents:
@@ -156,7 +156,7 @@
       0: Alive
       250: Dead  # DeltaV - Was 100
   - type: Stamina
-    baseCritThreshold: 300
+    critThreshold: 300
   - type: SlowOnDamage
     speedModifierThresholds:
       50: 0.7
@@ -537,7 +537,7 @@
   - type: ComplexInteraction
   - type: MobState
   - type: Stamina
-    baseCritThreshold: 200
+    critThreshold: 200
   - type: Bloodstream
     bloodReagents:
       reagents:
