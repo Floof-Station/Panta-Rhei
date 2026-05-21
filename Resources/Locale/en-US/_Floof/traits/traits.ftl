@@ -90,3 +90,9 @@ trait-religious-name = Religious
 trait-religious-desc =
     You are deeply religious, and a holy book in your hands is capable of miracles.
     (Bible not included)
+
+trait-name-OniShooting = Can't Aim
+trait-description-OniShooting = Due to an innate skill issue, you can't aim at all.
+
+trait-name-BadShooting = Bad Aim
+trait-description-BadShooting = Due to a lack of training or simply a lack of skill or talent, you can't aim very well.
