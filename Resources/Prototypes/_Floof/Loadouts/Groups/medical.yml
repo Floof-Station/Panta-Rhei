@@ -137,3 +137,29 @@
   loadouts:
   - EyesGlassesChemical
   - EyesGlassesChemicalInterdyne
+
+#below additions are for medical doctors
+- type: loadoutGroup
+  id: FloofMedicalDoctorPDAs
+  abstract: true
+  loadouts:
+  - MorticianPDA
+  - VetPDA
+
+- type: loadoutGroup
+  id: FloofParamedicPDAs
+  name: loadout-group-floof-paramed-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ParamedicPDA
+  - TRPDA
+
+- type: loadoutGroup
+  id: FloofSeniorPhysicianPDAs
+  name: loadout-group-floof-senior-pyhs-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SeniorPhysicianPDA # Delta-vs version
+  - SeniorPhysPDA # Floofstations version

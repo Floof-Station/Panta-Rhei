@@ -1,3 +1,4 @@
+using System.Collections;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 
@@ -34,7 +35,7 @@ public sealed partial class CustomExamineComponent : Component
 }
 
 [DataDefinition, Serializable, NetSerializable]
-public partial struct CustomExamineData
+public partial struct CustomExamineData : IEquatable<CustomExamineData>
 {
     [DataField]
     public string? Content;
@@ -59,4 +60,15 @@ public partial struct CustomExamineData
     /// </summary>
     [DataField]
     public TimeSpan LastUpdate;
+
+    // God bless Rider for generating this
+    public bool Equals(CustomExamineData other) =>
+        Content == other.Content
+        && VisibilityRange == other.VisibilityRange
+        && ExpireTime.Equals(other.ExpireTime)
+        && RequiresConsent == other.RequiresConsent
+        && LastUpdate.Equals(other.LastUpdate);
+
+    public override bool Equals(object? obj) => obj is CustomExamineData other && Equals(other);
+    public override int GetHashCode() => HashCode.Combine(Content, VisibilityRange, ExpireTime, RequiresConsent, LastUpdate);
 }

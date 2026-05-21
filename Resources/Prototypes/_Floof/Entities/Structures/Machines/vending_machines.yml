@@ -34,3 +34,36 @@
     noRot: false
   - type: Rotatable
     rotateWhileAnchored: false
+
+- type: entity
+  parent: VendingMachine
+  id: PetStoreVendingMachine
+  name: Pet Store Vendor
+  description: Get your supplies for those good boys and girls in your life.
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Machines/VendingMachines/petstore.rsi
+    layers:
+    - state: "unpowered-base"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "powered-unshaded"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel-open
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#4ba3ad"
+  - type: VendingMachine
+    pack: PetVendorInventory
+    offState: unpowered-base
+    brokenState: broken-base
+    normalState: powered-unshaded
+    denyState: deny-unshaded
+  - type: Wires
+    layoutId: ShopVendor
+  - type: Rotatable
+    rotateWhileAnchored: false
+  - type: DatasetVocalizer
+    dataset: PetStoreAds

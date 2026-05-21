@@ -4,6 +4,7 @@ using Content.Shared.Item;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Kitchen.Components
@@ -110,5 +111,44 @@ namespace Content.Shared.Kitchen.Components
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public bool CanMicrowaveIdsSafely = true;
+
+
+        // Frontier: recipe type
+        /// <summary>
+        /// the types of recipes that this "microwave" can handle.
+        /// </summary>
+        [DataField(customTypeSerializer: typeof(FlagSerializer<MicrowaveRecipeTypeFlags>)), ViewVariables(VVAccess.ReadWrite)]
+        public int ValidRecipeTypes = (int)MicrowaveRecipeType.Microwave;
+
+        /// <summary>
+        /// If true, events sent off by the microwave will state that the object is being heated.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool CanHeat = true;
+
+        /// <summary>
+        /// If true, events sent off by the microwave will state that the object is being irradiated.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool CanIrradiate = true;
+
+        /// <summary>
+        /// The localization string to be displayed when something that's too large is inserted.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public string TooBigPopup = "microwave-component-interact-item-too-big";
+
+        /// <summary>
+        /// The sound that is played when a set of ingredients does not match an assembly recipe.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public SoundSpecifier NoRecipeSound = new SoundPathSpecifier("/Audio/Effects/Cargo/buzz_sigh.ogg");
+
+        /// <summary>
+        /// The sound that is played when a set of ingredients does not match an assembly recipe.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadOnly)]
+        public MicrowaveUiKey Key = MicrowaveUiKey.Key;
+        // End Frontier
     }
 }

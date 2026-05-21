@@ -1,0 +1,9 @@
+﻿# Entity tables
+- type: entityTable
+  id: ProtoKineticWeapons
+  table: !type:GroupSelector
+    children:
+    - id: WeaponProtoKineticAccelerator
+    #- id: WeaponProtoKineticShotgun - Euphoria
+    #- id: WeaponProtoKineticRepeater - Euphoria
+    #- id: WeaponProtoKineticPistol - Euphoria

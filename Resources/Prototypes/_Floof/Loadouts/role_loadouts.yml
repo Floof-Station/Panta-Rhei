@@ -39,11 +39,11 @@
   - MedicalMask
   - SeniorPhysicianJumpsuits #floofstation
   - MedicalDoctorBelts #floofstation
+  - FloofSeniorPhysicianPDAs # Floofstation Alternative pdas
   - MedicalGloves
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalDoctorPDA
   - MedicalEyewear
   - SurvivalMedical
   - Smokeables
@@ -62,7 +62,7 @@
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
-  - ScientistPDA
+  - FloofSeniorResearcherPdas # Floofstation let senior research choose pda
   - Glasses
   - Survival
   - Smokeables
@@ -102,7 +102,7 @@
   - PassengerGloves #floofstation
   - CargoTechnicianBackpack
   - CargoTechnicianOuterClothing
-  - CargoPDADelta # DeltaV
+  - InventorySpecialistPDA # Euphoria
   - CargoTechnicianShoes
   - Glasses
   - Survival
@@ -112,6 +112,7 @@
 
 - type: roleLoadout
   id: JobSecurityTechnician
+  parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
   - SecurityNeck

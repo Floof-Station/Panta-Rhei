@@ -1,0 +1,323 @@
+﻿- type: entity
+  name: salmon sushi roll
+  parent: FoodMealBase
+  id: FoodMealSalmonSushi
+  description: Where did the seaweed come from?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - cucumber
+    - avocado
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: salmon_sushi_roll
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Flavorol
+          Quantity: 10
+        - ReagentId: CucumberWater
+          Quantity: 2
+  - type: SliceableFood
+    count: 5
+    slice: FoodMealSalmonSushiSlice
+
+- type: entity
+  name: salmon sushi roll slice
+  parent: FoodInjectableBase
+  id: FoodMealSalmonSushiSlice
+  description: Where did the seaweed come from?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - cucumber
+    - avocado
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: salmon_suhsi_slice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 8
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Flavorol
+          Quantity: 2
+        - ReagentId: CucumberWater
+          Quantity: .4
+
+- type: entity
+  parent: FoodBurgerBase
+  id: FoodBurgerLowQualityFish
+  name: fish burger
+  description: Almost like a fish is yelling somewhere...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: kortaburger
+  - type: Item
+    storedOffset: 0,1
+    inhandVisuals:
+      left:
+      - state: bun-inhand-left
+      - state: alpha-filling-inhand-left
+        color: "#feffba"
+      - state: alpha-patty-inhand-left
+        color: "#f4bb53"
+      right:
+      - state: bun-inhand-right
+      - state: alpha-filling-inhand-right
+        color: "#feffba"
+      - state: alpha-patty-inhand-right
+        color: "#f4bb53"
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - fishy
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodFlatBreadArmorFish
+  name: armor fish flatbread
+  description: A flat bread with some of the finest cuts of fish.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: armorfish_flatbread
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - fishy
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+
+# Moonfish requires a bit more than other foods
+- type: foodSequenceElement
+  id: GrilledMoonFish
+  sprites:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: grilled_moonfish
+  tags:
+  - Cooked
+  - Meat
+
+- type: constructionGraph
+  id: GrilledMoonFish
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: grilled moonfish
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+
+  - node: grilled moonfish
+    entity: FoodMeatMoonFishGrilled
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatMoonFishGrilled
+  name: grilled moonsfish
+  description: A cooked moonfish fillet. Smells primal.
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - Meat
+    - Steak
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: grilled_moonfish
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 10
+        - ReagentId: Protein
+          Quantity: 5
+  - type: FoodSequenceElement
+    entries:
+      Burger: GrilledMoonFish
+      Taco: GrilledMoonFish
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodMoonFishDemiglace
+  name: moon fish demiglace
+  description: A nice fish dinner paired with some Demiglace.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: moonfish_demiglace
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodFishFingers
+  name: fish fingers
+  description: Who needs fish and chips when you can pop these bad boys?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: fishfingers
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodFishFryLowQualityFish
+  name: low quality fish fry
+  description: Not the best cut of fish but it will do for now...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: salmon_fishfry
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodFishFrySalmon
+  name: salmon fish fry
+  description: Salmon fish fry? More like fish cry...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: salmon_fishfry
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodStewDonkFish
+  name: donk fish stew
+  description: A classic entrée from the great fish migration.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - fishy
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/fish_filet.rsi
+    state: donkfish_stew
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 15
+        - ReagentId: Protein
+          Quantity: 5
+        - ReagentId: Water
+          Quantity: 5
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodCalamariPlater
+  name: calamari plater
+  description: Salmon fish fry? More like fish cry...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/squid.rsi
+    state: calimariplater
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - salty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Meat

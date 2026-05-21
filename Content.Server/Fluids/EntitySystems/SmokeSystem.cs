@@ -243,8 +243,13 @@ public sealed class SmokeSystem : EntitySystem
     /// </summary>
     public void SmokeReact(EntityUid entity, EntityUid smokeUid, SmokeComponent? component = null)
     {
-        if (!Resolve(smokeUid, ref component))
+        // Floofstation - this failing to resolve is an indication of the smoke being non-existent (e.g. smoke outside of a grid gets deleted)
+        // Just remove the affected by smoke comp in that case
+        if (!Resolve(smokeUid, ref component, false))
+        {
+            RemCompDeferred<SmokeAffectedComponent>(entity);
             return;
+        }
 
         if (!_solutionContainerSystem.ResolveSolution(smokeUid, SmokeComponent.SolutionName, ref component.Solution, out var solution) ||
             solution.Contents.Count == 0)

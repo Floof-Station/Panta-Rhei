@@ -1,0 +1,72 @@
+- type: entity
+  id: MedicalPouchFilledLow
+  suffix: Contractor, Low Quality
+  parent: MedicalPouch
+  components:
+  - type: StorageFill
+    contents:
+    - id: ChemistryBottleBicaridine # Euphoria ChemistryBottleBicaridine<BicaridineMedicalVial # this is only 40 points of healing of one type. This kit is rather weak
+    - id: ChemistryBottleDermaline # Euphoria ChemistryBottleDermaline<DermalineMedicalVial
+    - id: ChemistryBottleDylovene # Euphoria ChemistryBottleDylovene<DyloveneMedicalVial
+    - id: ChemistryBottleEpinephrine # Euphoria ChemistryBottleEpinephrine<EpinephrineMedicalVial
+    - id: ChemistryBottleSaline # Euphoria ChemistryBottleSaline<SalineMedicalVial
+
+- type: entity
+  id: MedicalPouchFilledMedium
+  suffix: Contractor, Medium Quality
+  parent: MedicalPouch
+  components:
+  - type: StorageFill
+    contents:
+    - id: ChemistryBottleBruizine # Euphoria ChemistryBottleBruizine<BruizineMedicalVial
+    - id: ChemistryBottleLacerinol # Euphoria ChemistryBottleLacerinol<LacerinolMedicalVial
+    - id: ChemistryBottlePuncturase # Euphoria ChemistryBottlePuncturase<PuncturaseMedicalVial
+    - id: ChemistryBottleTranexamicAcid # Euphoria ChemistryBottleTranexamicAcid<TranexamicAcidMedicalVial
+    - id: ChemistryBottlePyrazine # Euphoria ChemistryBottlePyrazine<PyrazineMedicalVial
+    - id: ChemistryBottleLeporazine # Euphoria ChemistryBottleLeporazine<LeporazineMedicalVial
+    - id: ChemistryBottleInsuzine # Euphoria ChemistryBottleInsuzine<InsuzineMedicalVial
+    - id: ChemistryBottleStellibinin # Euphoria ChemistryBottleStellibinin<StellibininMedicalVial
+    - id: ChemistryBottleBicArith # Euphoria ChemistryBottleBicArith<OligArithMedicalVial
+    - id: ChemistryBottleSalbutamol # Euphoria ChemistryBottleSalbutamol<DexPlusMedicalVial
+    - id: ChemistryBottleSaline # Euphoria ChemistryBottleSaline<SalineMedicalVial
+
+# Ephoria: Remove bluespace vial fills
+#- type: entity
+#  id: MedicalPouchFilledHigh
+#  suffix: Contractor, High Quality
+#  parent: MedicalPouch
+#  components:
+#  - type: StorageFill
+#    contents:
+#    - id: BruizineMedicalVialBluespace
+#    - id: LacerinolMedicalVialBluespace
+#    - id: PuncturaseMedicalVialBluespace
+#    - id: OligomersMedicalVialBluespace
+#    - id: OmnizineMedicalVialBluespace
+#    - id: PyrazineMedicalVialBluespace
+#    - id: LeporazineMedicalVialBluespace
+#    - id: InsuzineMedicalVialBluespace
+#    - id: StellibininMedicalVialBluespace
+#    - id: OligArithMedicalVialBluespace
+#    - id: DexPlusMedicalVialBluespace
+#    - id: SalineMedicalVialBluespace
+#
+#- type: entity
+#  id: MedicalPouchFilledERT
+#  suffix: ERT, High Quality
+#  parent: MedicalPouch
+#  components:
+#  - type: StorageFill
+#    contents:
+#    - id: BruizineMedicalVialBluespace
+#    - id: LacerinolMedicalVialBluespace
+#    - id: PuncturaseMedicalVialBluespace
+#    - id: OligomersMedicalVialBluespace
+#    - id: OmnizineMedicalVialBluespace
+#    - id: HyperzineMedicalVialBluespace
+#    - id: PyrazineMedicalVialBluespace
+#    - id: StellibininMedicalVialBluespace
+#    - id: OligArithMedicalVialBluespace
+#    - id: DexPlusMedicalVialBluespace
+#    - id: SalineMedicalVialBluespace
+# Euphoria end

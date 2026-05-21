@@ -176,7 +176,7 @@
 
 - type: loadoutGroup
   id: CaptainOuterClothing
-  parent: [FloofOuterClothing] # floofstation
+  parent: [FloofCaptainOuterClothing, FloofOuterClothing] # floofstation
   name: loadout-group-captain-outerclothing
   loadouts:
   - CaptainOuterClothing
@@ -1449,6 +1449,7 @@
 - type: loadoutGroup
   id: ScientistPDA
   name: loadout-group-scientist-id
+  parent: FloofScientistPdas # Floofstation epi alt pdas
   loadouts:
   - ScientistPDA
   - SeniorResearcherPDA
@@ -1897,6 +1898,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorPDA
+  parent: FloofMedicalDoctorPDAs # Floofstation - medical pdas
   name: loadout-group-medical-doctor-id
   loadouts:
   - MedicalDoctorPDA
@@ -1932,6 +1934,8 @@
   parent: [FloofJumpsuits] # Floofstation
   name: loadout-group-medical-intern-jumpsuit
   loadouts:
+  - MedicalApronJumpskirt # Floofstation
+  - MedicalApronJumpsuit # Floofstation
   - MedicalBlueScrubs # DeltaV
   - WhiteJumpsuit
   - WhiteJumpskirt

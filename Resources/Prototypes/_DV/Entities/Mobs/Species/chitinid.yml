@@ -84,8 +84,8 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.42
-        density: 220
+          radius: 0.39 #Euphoria change. Was 0.42. Base radius is 0.35. Any higher, and max-size Chitinid cannot fit through doors. 
+        density: 220 #Base species density is 185. Base density with Heavyweight trait should be 259. 
         restitution: 0.0
         mask:
         - MobMask

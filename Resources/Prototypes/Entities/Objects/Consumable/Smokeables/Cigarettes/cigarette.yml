@@ -79,6 +79,8 @@
       smokable:
         maxVol: 45
         reagents:
+          - ReagentId: Saline # Euphoria - Added Saline back in from old codebase
+            Quantity: 15
           - ReagentId: Omnizine # Euphoria - Down from 30 to 15
             Quantity: 15
           - ReagentId: Dylovene

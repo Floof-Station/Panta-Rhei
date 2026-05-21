@@ -1,0 +1,32 @@
+- type: lewdInteractionMap
+  id: Default
+  map:
+    # Container filling (target is container)
+    Breasts,None:
+    - LewdFillContainerBreast
+    Penis,None:
+    - LewdFillContainerPenis
+    Vagina,None:
+    - LewdFillContainerVagina
+    # Container filling (target is the person) and sucking
+    None,Breasts:
+    - LewdFillContainerBreastOther
+    - LewdSuckBreastOther
+    None,Penis:
+    - LewdFillContainerPenisOther
+    - LewdSuckPenisOther
+    None,Vagina:
+    - LewdFillContainerVagina
+    # Sexual intercourse ig
+    Penis,Vagina:
+    - LewdFillPV
+    Penis,Rectum:
+    - LewdFillPR
+    # Spilling onto the floor, climax or something
+    Vagina,Vagina:
+    - LewdSpillVagina
+    Penis,Penis:
+    - LewdSpillPenis
+# TODO it would be nice to have similar interactions but for actions like "helping someone else climax" but honestly i'm pretty fucking exhausted
+# Writing these out is NOT fun.
+

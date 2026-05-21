@@ -1,0 +1,85 @@
+- type: entity
+  parent: BaseHumanOrgan
+  id: BaseLewdOrgan
+  description: Ew.
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Organs/placeholder-organ.rsi
+    state: icon
+    scale: 0.7,0.7
+  - type: Organ
+    removable: false # There is currently no surgeries defined for these organs. Even if you could detach them, you wouldn't be able to reattach it to someone without the relevant organ slot.
+  - type: LewdOrgan
+
+# This is silly.
+# None of these have sprites now and also can't be removed/added via surgeries. If you want to make them transplantable, you'll have to make sprites for them.
+- type: entity
+  parent: BaseLewdOrgan
+  id: OrganGenericMammaryGlands
+  name: mammary glands
+  description: A mammalian organ that produces milk typically used for feeding offsprings. Placeholder sprite.
+  components:
+  - type: LewdOrgan
+    data:
+      organKind: Breasts
+      solutionName: mammaryGlands
+      solutionVolume: 30
+      producedReagents:
+      - ReagentId: Milk
+        Quantity: 30
+      productionSpeed: 0.1 # takes ~5 minutes to fill up
+      drainSpeed: 0
+
+- type: entity
+  parent: BaseLewdOrgan
+  id: OrganGenericPenis # Eek!
+  name: penis
+  description: An appendage used by the majority of animal species to fertilize egg cells. Testicular glands included. Placeholder sprite.
+  components:
+  - type: LewdOrgan
+    data:
+      organKind: Penis
+      solutionName: testicles
+      solutionVolume: 15
+      producedReagents:
+      - ReagentId: Cum
+        Quantity: 15
+      productionSpeed: 0.05 # Per second, takes ~10 minutes to fill up
+      drainSpeed: 0
+
+# So fun fact, the female reproductive system consists from 3-5 different organs, but there isn't a generic name to describe the whole system, so I had to pick one
+# Also this one is tricky. Irl this organ doesn't produce much lubricant, so it's difficult to make it noticable while also retaining some immersion. So the default is low.
+# Players who want to "flood the room with their juices" can pick up a trait to do so. The primary purpose of this organ is deposition though.
+- type: entity
+  parent: BaseLewdOrgan
+  id: OrganGenericVagina
+  name: vagina
+  description: An organ housing the female reproductive system. Placeholder sprite.
+  components:
+  - type: LewdOrgan
+    data:
+      organKind: Vagina
+      solutionName: vagina
+      solutionVolume: 30
+      producedReagents:
+      - ReagentId: NaturalLubricant
+        Quantity: 10 # Only produces 10 units of lubricant by default, leaving the rest for deposition
+      productionSpeed: 0.03 # takes ~10 minutes to fill up, same as penis.
+      drainSpeed: 0.05 # Same as the base speed of the penis.
+      spillDrain: true
+
+# No, we're not getting into bathroom stuff. This is here only for deposition.
+- type: entity
+  parent: BaseLewdOrgan
+  id: OrganGenericRectum
+  name: rectum
+  description: Why are you holding this? Placeholder sprite.
+  components:
+  - type: LewdOrgan
+    data:
+      organKind: Rectum
+      solutionName: rectum
+      solutionVolume: 30
+      drainSpeed: 0.05 # Same as the base speed of the penis.
+      spillDrain: true

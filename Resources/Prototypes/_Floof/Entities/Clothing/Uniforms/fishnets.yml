@@ -1,0 +1,84 @@
+﻿# outerwear
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformFishnet
+  name: Fishnet Top
+  description: "A fishnet top with a bra so you can show off those important assets."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet.rsi
+    layers:
+    - state: icon
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet.rsi
+    clothingVisuals:
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformFishnetAlt
+  name: Fishnet Top Alt
+  description: "An alternate version of the fishent top that allows for better view of your assets but was made with cheaper materials."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet_alt.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet_alt.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformFishnetSleeves
+  name: Fishnet Top Sleeves
+  description: "A fishnet top with a with sleeves so you can show off those important assets and stay a bit warmer."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet_sleeves.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet_sleeves.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformFishnetSleevesGloves
+  name: Fishnet Top Sleeves with Gloves
+  description: "A fishnet top with a with sleeves and gloves so you can show off those important assets and stay a bit warmer."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet_sleeves_gloves.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet_sleeves_gloves.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformFishnetSimpleTop
+  name: Fishnet Simple Top
+  description: "A very simple fishnet top made to easily fit almost anyone."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet_simple.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet_simple.rsi
+
+# innerwear
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformFishnetThong
+  name: Fishnet Thong
+  description: "A thong made out a similar material to fishnets, allows you to stay comfy and show off some assets."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet_thong.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet_thong.rsi
+
+# socks
+- type: entity
+  parent: ClothingShoesBase
+  id: ClothingUnderSocksFishnets
+  name: Fishnet Leg Covers
+  description: "Leggings made out of a nicely woven fabric that leaves just enough space to show off some assets."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/fishnet_shoes.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/fishnet_shoes.rsi

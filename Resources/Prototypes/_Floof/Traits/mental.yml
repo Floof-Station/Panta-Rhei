@@ -54,17 +54,17 @@
     - type: Psionic
     - type: PsychokineticScreamPower
 
-- type: trait
-  id: TraitPsionicRegeneration
-  name: trait-psionic-regeneration-name
-  description: trait-psionic-regeneration-desc
-  category: Psionics
-  cost: 6
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Psionic
-    - type: PsionicRegenerationPower
+# - type: trait
+#   id: TraitPsionicRegeneration
+#   name: trait-psionic-regeneration-name
+#   description: trait-psionic-regeneration-desc
+#   category: Psionics
+#   cost: 6
+#   effects:
+#   - !type:AddCompsEffect
+#     components:
+#     - type: Psionic
+#     - type: PsionicRegenerationPower
   
 - type: trait # Bible not included
   id: TraitReligious

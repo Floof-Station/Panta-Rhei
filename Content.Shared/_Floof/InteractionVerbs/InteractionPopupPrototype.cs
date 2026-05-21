@@ -51,6 +51,9 @@ public sealed partial class InteractionPopupPrototype : IPrototype
     [DataField]
     public bool DoClipping = true;
 
+    [DataField]
+    public bool VisibleToGhosts = true;
+
     /// <summary>
     ///     Range in which other entities, given that they can directly see the performer, see the chat log.
     ///     This does not affect the user and target. Only has effect if <see cref="LogPopup"/> is true.

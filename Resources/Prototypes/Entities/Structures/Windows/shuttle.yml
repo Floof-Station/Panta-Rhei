@@ -45,6 +45,11 @@
     graph: Window
     node: shuttleWindow
   - type: Appearance
+  - type: Tag
+    tags:
+    - ForceFixRotations
+    - Window
+    - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: DamageVisuals
     thresholds: [5, 10, 20]
     damageDivisor: 20
