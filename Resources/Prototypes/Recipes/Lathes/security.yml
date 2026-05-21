@@ -197,6 +197,14 @@
     Steel: 250
     Plastic: 100
 
+- type: latheRecipe # Euphoria
+  parent: BaseWeaponRecipeMelee
+  id: ClothingHandsKnuckleDustersStun
+  result: ClothingHandsKnuckleDustersStun
+  materials:
+    Steel: 300
+    Plastic: 300
+
 # Practice weapons
 - type: latheRecipe
   parent: BaseWeaponRecipePractice
