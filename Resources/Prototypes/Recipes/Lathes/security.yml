@@ -299,3 +299,14 @@
   materials:
     Plastic: 100
     Steel: 400
+
+# Euphoria
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: BorgModuleSecurityAdvancedMeasures
+  result: BorgModuleSecurityAdvancedMeasures
+  materials:
+    Steel: 1500
+    Glass: 500
+    Plastic: 250
+    Gold: 250

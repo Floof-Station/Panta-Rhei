@@ -15,7 +15,7 @@
   # TODO: change these when reworking secborg modules to have the equivalent of roundstart gear
   defaultModules:
   - BorgModuleSecurityDeescalate
-  - BorgModuleSecurityPatrol
+  - BorgModuleSecurityKill # Euphoria
 
   lawset: SiliconPolice
   job: SecurityOfficer
