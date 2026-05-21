@@ -15,7 +15,6 @@
   - type: BorgModuleIcon
     icon: { sprite: _Euphoria/Interface/Actions/actions_borg.rsi, state: kill-module}
 
-
 - type: entity
   id: BorgModuleSecurityAdvancedMeasures
   parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
@@ -25,8 +24,25 @@
     sprite: _Euphoria/Objects/Specific/Robotics/borgmodule.rsi
     layers:
     - state: security
-    - state: icon-Advmeasures
+    - state: icon-advmeasures
   - type: ItemBorgModule
     hands:
     - item: BorgWeaponXrayCannon
+  - type: BorgModuleIcon
     icon: { sprite: _Euphoria/Interface/Actions/actions_borg.rsi, state: advmeasures-module}
+
+- type: entity
+  id: BorgModuleSecurityAdvancedLaser
+  parent: [ BaseBorgModuleSecurity, BaseProviderBorgModule ]
+  name: advanced laser cyborg module
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Robotics/borgmodule.rsi
+    layers:
+    - state: security
+    - state: icon-laser
+  - type: ItemBorgModule
+    hands:
+    - item: BorgWeaponAdvancedLaser
+  - type: BorgModuleIcon
+    icon: { sprite: _Euphoria/Interface/Actions/actions_borg.rsi, state: laser-module}
