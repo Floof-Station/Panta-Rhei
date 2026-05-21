@@ -18,7 +18,7 @@ chat-manager-language-hint = { $language ->
 # Simple ($language) wrapper.
 chat-manager-language-hint-ui = {" "}({$language})
 
-chat-manager-language-requires-hands = You need free hands to speak this language!
+chat-manager-language-requires-hands = You need at least one free hand to speak this language!
 chat-manager-language-requires-speech = You are unable to speak right now!
 
 # todo move this wherever it belongs

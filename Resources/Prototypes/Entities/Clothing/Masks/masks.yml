@@ -196,6 +196,12 @@
   name: clown wig and mask
   description: A true prankster's facial attire. A clown is incomplete without his wig and mask.
   components:
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: ClownMask
+      Taco: ClownMask
+  #Euphoria changes end
   - type: Sprite
     sprite: Clothing/Mask/clown.rsi
   - type: Clothing
@@ -280,6 +286,12 @@
   name: mime mask
   description: The traditional mime's mask. It has an eerie facial posture.
   components:
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: MimeMask
+      Taco: MimeMask
+  #Euphoria changes end
   - type: Sprite
     sprite: Clothing/Mask/mime.rsi
   - type: Clothing

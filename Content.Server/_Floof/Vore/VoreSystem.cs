@@ -10,6 +10,7 @@ using Content.Shared.FloofStation;
 using Content.Shared._Floof.Vore;
 using Content.Shared._Shitmed.Body.Components;
 using Content.Shared._DV.CosmicCult.Components;
+using Content.Server.Radiation.Components;
 using Content.Server.Atmos.Components;
 using Content.Shared.Body.Events;
 using Content.Shared._Common.Consent;
@@ -18,6 +19,7 @@ using Content.Shared.Polymorph;
 using Content.Shared.Destructible;
 using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
+using Robust.Shared.Timing;
 namespace Content.Server._Floof.Vore;
 
 public sealed class VoreSystem : EntitySystem
@@ -32,9 +34,13 @@ public sealed class VoreSystem : EntitySystem
     public static readonly ProtoId<ConsentTogglePrototype> isPred = "PredVore";
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
 
+    private readonly HashSet<EntityUid> _pendingConsentUpdates = new();
+    private readonly HashSet<EntityUid> _pendingImmunityUpdates = new();
+
     public override void Initialize()
     {
-        SubscribeLocalEvent<MindContainerComponent, ComponentStartup>(OnMindStartup);
+        SubscribeLocalEvent<ConsentComponent, ComponentStartup>(OnConsentStartup);
+        SubscribeLocalEvent<ConsentComponent, EntityConsentToggleUpdatedEvent>(OnConsentUpdated);
 
         SubscribeLocalEvent<VoreComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<VoreComponent, OnVoreDoAfter>(OnVoreDoAfter);
@@ -45,12 +51,70 @@ public sealed class VoreSystem : EntitySystem
     }
 
     /// <summary>
-    /// gives the vorecomponent to every entity that has the mindcomponent
-    /// in order to avoid giving every mob it one by one
+    /// To get the most recent values for consent and current container
     /// </summary>
-    private void OnMindStartup(EntityUid uid, MindContainerComponent comp, ComponentStartup args){
-        if (HasComp<BodyComponent>(uid))
-            EnsureComp<VoreComponent>(uid);
+    public override void Update(float frameTime){
+        base.Update(frameTime);
+
+        // processing of consent updates
+        foreach (var uid in _pendingConsentUpdates){
+            ApplyVoreConsent(uid);
+        }
+        _pendingConsentUpdates.Clear();
+
+        // processing of immunity updates
+        foreach (var uid in _pendingImmunityUpdates){
+            RemoveStomachImmunities(uid);
+        }
+        _pendingImmunityUpdates.Clear();
+    }
+
+    /// <summary>
+    /// gives the mob vore component when they updated their consent to be pred or prey
+    /// in order to avoid giving every mob it one by one, timer needed to get the recent change 
+    /// </summary>
+    private void OnConsentUpdated(EntityUid uid, ConsentComponent comp, EntityConsentToggleUpdatedEvent args){
+        // only if the updated toggle is prey or pred
+        if (args.ConsentToggleProtoId != isPred && args.ConsentToggleProtoId != isPrey)
+            return;
+        _pendingConsentUpdates.Add(uid);
+    }
+
+    /// <summary>
+    /// same principle as OnConsentUpdated but without the need for checking consent change
+    /// </summary>
+    private void OnConsentStartup(EntityUid uid, ConsentComponent comp, ComponentStartup args){
+        _pendingConsentUpdates.Add(uid);
+    }
+
+    /// <summary>
+    /// gives a mob the vore component if they have selected either pred or prey consent and removes it if they have neither
+    /// </summary>
+    private void ApplyVoreConsent(EntityUid uid){
+        var hasPred = _consentSystem.HasConsent(uid, isPred);
+        var hasPrey = _consentSystem.HasConsent(uid, isPrey);
+        //TODO var for digest
+        
+        /* in case prey is inside a container immediately release them when they turn off prey consent
+        works as an emergency leave for the prey*/
+        if (!hasPrey &&
+        TryComp<VoreComponent>(uid, out var comp) &&
+        IsInVoreContainer(uid, comp) &&
+        _containerSystem.TryGetContainingContainer(uid, out var container)){
+            _containerSystem.Remove(uid, container);
+        }
+
+        //give the mob the needed component to be able to see the verbs
+        if (hasPred || hasPrey){
+            // to avoid item ghostroles like trays getting vore components
+            if (HasComp<BodyComponent>(uid))
+                EnsureComp<VoreComponent>(uid);
+        }
+        else{
+            RemComp<VoreComponent>(uid);
+        }
+        
+        //TODO component for digest
     }
 
     /// <summary>
@@ -67,12 +131,12 @@ public sealed class VoreSystem : EntitySystem
         
         // no self activation, only there to remove your own prey and not have other intervene or have others see that you have prey
         if (user == target){
-            var container = _containerSystem.EnsureContainer<Container>(target, "vore_container");
+            var container = _containerSystem.EnsureContainer<Container>(target, comp.ContainerId);
             if (container.ContainedEntities.Count > 0){
                 args.Verbs.Add(new Verb
                 {
                     Text = "Remove Prey",
-                    Act = () => OnTryReleasePrey(target)
+                    Act = () =>TryReleasePrey(target, comp)
                 });
             }
             return;
@@ -86,12 +150,9 @@ public sealed class VoreSystem : EntitySystem
         if (!TryComp<MindContainerComponent>(target, out var mindContainer) || mindContainer.Mind == null)
             return;
 
-        //no verbs for swallowed people
-        /**TODO
-        making multivore possible. As of now its just a prevention method to avoid giving 
-        Components such as space immunity to the pred
-        */
-        if (_containerSystem.TryGetContainingContainer(user, out var userContainer) && userContainer.ID == "vore_container")
+        /* if the user is a pred inside a pred allows them to have interactions with prey inside
+        only if they are in the same container however (not just same type but literally)*/ 
+        if (!IsValidVoreInteraction(user, target, comp))
             return;
 
         // devour (pred → prey)
@@ -100,26 +161,25 @@ public sealed class VoreSystem : EntitySystem
             args.Verbs.Add(new Verb
             {
                 Text = "Devour",
-                Act = () => OnTryVore(user, target)
+                Act = () => TryVore(user, target)
             });
         }
-
         // insert self (prey → pred)
         if (_consentSystem.HasConsent(user, isPrey)
             && _consentSystem.HasConsent(target, isPred)){
             args.Verbs.Add(new Verb
             {
                 Text = "Insert Self",
-                Act = () => OnTryVore(target, user)
+                Act = () => TryVore(target, user)
             });
         }
     }
-        
+
     /// <summary>
     /// used for after selecting to insert into someone or devour
     /// will create a slow popup and warning to give both sides time to react on it
     /// </summary>
-    private void OnTryVore(EntityUid user, EntityUid target){
+    private void TryVore(EntityUid user, EntityUid target){
 
         //slow loading bar to avoid instant vore with warning pop ups
         var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new OnVoreDoAfter(), user, target: target, used: user)
@@ -145,40 +205,39 @@ public sealed class VoreSystem : EntitySystem
             return;
 
         var pred = uid;
-        var container = _containerSystem.EnsureContainer<Container>(args.User, "vore_container");
+        var container = _containerSystem.EnsureContainer<Container>(pred, comp.ContainerId);
         
         var count = 0;
         //only counts entities with bodies meaning no items
         foreach (var e in container.ContainedEntities){
             if (HasComp<BodyComponent>(e))
                 count++;
-            Console.WriteLine($"Contained Entity: {e}, Count: {count}");
         }
         //as a way to prevent too many entities to be devoured
         if (count >= args.MaxPrey){
-            _popupSystem.PopupEntity("You are too full to swallow more prey.", args.User, args.User);
+            _popupSystem.PopupEntity("You are too full to swallow more prey.", pred, pred);
             return;
         }
 
         //makes sure prey will be dropped from bags and hands
-        EnsureEntityFree(pred, prey);
+        EnsureEntityFree(pred, prey, comp);
 
         //moves prey inside the person
         _containerSystem.Insert(prey, container);
         
         /*make the prey immune to space+temp+breathing to avoid consent concerns from outside influence
         gets removed after escaping or being forcefully ejected by pred*/
-        ApplyStomachImmunities(prey);
+        ApplyStomachImmunities(prey, comp);
     }
 
     /// <summary>
     /// makes sure the prey is not inside any other container such as 
     /// bags or being carried by someone before being inserted into the pred
     /// </summary>
-    private void EnsureEntityFree(EntityUid pred, EntityUid prey){
+    private void EnsureEntityFree(EntityUid pred, EntityUid prey, VoreComponent comp){
          //check if the prey is already inside a container and remove them (for example bags)
         if (_containerSystem.TryGetContainingContainer(prey, out var currentContainer)){
-            if (currentContainer.ID != "vore_container")
+            if (currentContainer.ID != comp.ContainerId)
                 _containerSystem.Remove(prey, currentContainer);
         }
 
@@ -201,8 +260,8 @@ public sealed class VoreSystem : EntitySystem
     /// for when the pred removes the prey from their container
     /// will remove the buffs such as space immunity for the target
     /// </summary>
-    private void OnTryReleasePrey(EntityUid pred){
-        var container = _containerSystem.EnsureContainer<Container>(pred, "vore_container");
+    private void TryReleasePrey(EntityUid pred, VoreComponent comp){
+        var container = _containerSystem.EnsureContainer<Container>(pred, comp.ContainerId);
         var preyList = new List<EntityUid>(container.ContainedEntities);
         //remove everything from people to items
         foreach (var prey in preyList){
@@ -211,7 +270,7 @@ public sealed class VoreSystem : EntitySystem
                 preyComp.IntentionalRelease = true;
 
             _containerSystem.Remove(prey, container);
-            RemoveStomachImmunities(prey);
+            _pendingImmunityUpdates.Add(prey);
             _popupSystem.PopupEntity("You have been released!", prey, prey);
         }
         _popupSystem.PopupEntity("You release your prey.", pred, pred);
@@ -222,7 +281,7 @@ public sealed class VoreSystem : EntitySystem
     /// will remove the buffs such as space immunity for the target
     /// </summary>
     private void OnVoreRemovedFromContainer(EntityUid uid, VoreComponent comp, EntRemovedFromContainerMessage args){
-        if (args.Container.ID != "vore_container")
+        if (args.Container.ID != comp.ContainerId)
             return;
 
         var prey = args.Entity;
@@ -233,7 +292,7 @@ public sealed class VoreSystem : EntitySystem
             return;
         }
 
-        RemoveStomachImmunities(prey);
+        _pendingImmunityUpdates.Add(prey);
         _popupSystem.PopupEntity("You struggle free!", prey, prey);
         _popupSystem.PopupEntity("Your prey escaped!", uid, uid);
     }
@@ -242,32 +301,31 @@ public sealed class VoreSystem : EntitySystem
     /// in case the user gets gibbed need content emptied including prey+items
     /// </summary>
     private void OnGibbedRemoveContent(EntityUid uid, VoreComponent comp, BeingGibbedEvent args){
-        OnTryReleasePrey(uid);
+        TryReleasePrey(uid, comp);
     }
 
     /// <summary>
     /// in case the user gets destroyed through for example singulo or gibbing
     /// </summary>
     private void OnDestroyedRemoveContent(EntityUid uid, VoreComponent comp, DestructionEventArgs args){
-        OnTryReleasePrey(uid);
+        TryReleasePrey(uid, comp);
     }
 
     /// <summary>
     /// in case of polymorp scenarios such as kitsune release all the content
     /// </summary>
     private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){   
-        OnTryReleasePrey(uid);
+        TryReleasePrey(uid, comp);
     }
     
     /// <summary>
     /// the prey needs to have certain components such as pressure immunity
     /// for consent purposes -> having others avoid stumbling on scenarios
     /// </summary>
-    private void ApplyStomachImmunities(EntityUid prey){
+    private void ApplyStomachImmunities(EntityUid prey, VoreComponent comp){
         /*double check making sure they are inside the container
         should prevent possible exploitation of the system*/
-        if (!_containerSystem.TryGetContainingContainer(prey, out var container) ||
-        container.ID != "vore_container")
+        if (!IsInVoreContainer(prey, comp))
            return;
 
         var tracker = EnsureComp<VoreImmunityTrackerComponent>(prey);
@@ -288,6 +346,13 @@ public sealed class VoreSystem : EntitySystem
             EnsureComp<TemperatureImmunityComponent>(prey);
             tracker.AddedTemperature = true;
         }
+        /* doesnt fully protect from radiation (given its potassium iodine protection meaning 90 percent reduction of radiation damage) 
+        but will give prey more time to react and escape before radiation starts doing damage */
+        if (!HasComp<RadiationProtectionComponent>(prey))
+        {
+            EnsureComp<RadiationProtectionComponent>(prey);
+            tracker.AddedRadiation = true;
+        }
     }
 
     /// <summary>
@@ -297,12 +362,57 @@ public sealed class VoreSystem : EntitySystem
     private void RemoveStomachImmunities(EntityUid prey){
         if (!TryComp<VoreImmunityTrackerComponent>(prey, out var tracker))
             return;
+        // if still in a container skip alltogether for example release from multi vore
+        if (TryComp<VoreComponent>(prey, out var comp) && IsInVoreContainer(prey, comp))
+            return;
+
         if (tracker.AddedPressure)
             RemComp<PressureImmunityComponent>(prey);
         if (tracker.AddedBreathing)
             RemComp<BreathingImmunityComponent>(prey);
         if (tracker.AddedTemperature)
             RemComp<TemperatureImmunityComponent>(prey);
+        if (tracker.AddedRadiation)
+            RemComp<RadiationProtectionComponent>(prey);
+        
         RemComp<VoreImmunityTrackerComponent>(prey);
+    }
+
+    /// <summary>
+    /// checks if an entity is inside a vore container
+    /// </summary>
+    /// <returns>
+    /// true if the entity is inside any vore container, otherwise false
+    /// </returns>
+    private bool IsInVoreContainer(EntityUid uid, VoreComponent comp){
+        return _containerSystem.TryGetContainingContainer(uid, out var container) &&
+           container.ID == comp.ContainerId;
+    }
+
+    /// <summary>
+    /// checks if prey is inside a vore container to only allow vore in the same container
+    /// </summary>
+    /// <returns>
+    /// false if only one is in a vore container or if both are inside another container
+    /// </returns>
+    private bool IsValidVoreInteraction(EntityUid user, EntityUid target, VoreComponent comp){
+        var userInVore = IsInVoreContainer(user, comp);
+        var targetInVore = IsInVoreContainer(target, comp);
+
+        // one in vore, one not → invalid
+        if (userInVore != targetInVore)
+            return false;
+
+        // both in vore → must be same stomach instance
+        if (userInVore)
+        {
+            _containerSystem.TryGetContainingContainer(user, out var userContainer);
+            _containerSystem.TryGetContainingContainer(target, out var targetContainer);
+
+            if (userContainer!.Owner != targetContainer!.Owner)
+                return false;
+        }
+
+        return true;
     }
 }

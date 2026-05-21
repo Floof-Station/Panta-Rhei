@@ -25,7 +25,7 @@
   cost: 2
   conditions:
   - !type:HasCompCondition
-    invert: true  
+    invert: true
     component: PseudoItem
   effects:
     - !type:OverrideCompsEffect
@@ -120,10 +120,6 @@
   description: trait-thaven-mood-desc
   category: Skills
   cost: 0
-  conditions:
-  - !type:OneOfSpeciesCondition
-    invert: true
-    species:
     - Thaven
   effects:
   - !type:AddCompsEffect
@@ -134,3 +130,51 @@
         enum.ThavenMoodsUiKey.Key:
           type: ThavenMoodsBoundUserInterface
           requireInputValidation: false
+
+# ==================== Guns ========================= #
+- type: trait # This just adds the Oni shooting malcus to anyone
+  id: OniShooting
+  name: trait-name-OniShooting
+  description: trait-description-OniShooting
+  category: Skills
+  cost: -6
+  conflicts:
+  - BadShooting
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Oni #already has this
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: PlayerAccuracyModifier
+      spreadMultiplier: 7.5
+      maxSpreadAngle: 90
+
+- type: trait
+  id: BadShooting
+  name: trait-name-BadShooting
+  description: trait-description-BadShooting
+  category: Skills
+  cost: -2
+  conflicts:
+  - OniShooting
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Oni #already has this
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: PlayerAccuracyModifier
+      spreadMultiplier: 2.5
+      maxSpreadAngle: 90
+

@@ -30,6 +30,12 @@
   description: A basic machine part used in the construction of a variety of devices.
   suffix: Rating 1
   components:
+    #Euphoria start
+    - type: FoodSequenceElement
+      entries:
+        Burger: Manipulator
+        Taco: Manipulator
+    #Euphoria end
     - type: Sprite
       state: micro_mani
     - type: Stack

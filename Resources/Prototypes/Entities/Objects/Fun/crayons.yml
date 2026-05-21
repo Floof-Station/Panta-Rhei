@@ -230,6 +230,14 @@
   id: CrayonGreen
   name: green crayon
   components:
+  #Euphoria start
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: FoodSequenceElement
+    entries:
+      Burger: CrayonGreen
+      Taco: CrayonGreen
+  #Euphoria end
   - type: Sprite
     state: green
   - type: Item

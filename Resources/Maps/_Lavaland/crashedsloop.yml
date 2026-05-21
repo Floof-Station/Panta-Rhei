@@ -1558,14 +1558,14 @@ entities:
       removedMasks: 20
     - type: PlaceableSurface
       isPlaceable: True
-- proto: SuitStorageEVAPirate
+- proto: SuitStorageEVA #Euphoria
   entities:
   - uid: 119
     components:
     - type: Transform
       pos: 2.5,-7.5
       parent: 1
-- proto: SuitStoragePirateCap
+- proto: SuitStorageEVA #Euphoria
   entities:
   - uid: 145
     components:
