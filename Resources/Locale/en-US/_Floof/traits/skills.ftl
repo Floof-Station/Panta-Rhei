@@ -19,3 +19,7 @@ trait-weaponsgeneralist-desc =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 30%.
 
+trait-thaven-mood-name = Thaven Moods
+trait-thaven-mood-desc =
+    You are, for some reason, for example via experimentation, accident or vaguely related, affected by Thaven "Moods".
+    You are, somewhat obligated to follow those moods to the best of your ability as this is an opt in.
