@@ -588,6 +588,7 @@ namespace Content.Client.Lobby.UI
                 }
             }
 
+            Traits.ResetConditions(); //Euphoria | Clears previous profile's conditions.
             Traits.SetSelectedTraits(selectedTraits);
             Traits.UpdateConditions(Profile);
         }

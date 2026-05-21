@@ -1,0 +1,25 @@
+﻿- type: entity
+  id: BonfireConstructionUnlit
+  parent: BaseStructure
+  name: unlit bonfire
+  description: What can be better then late evening under the sky with guitar and friends.
+  components:
+  - type: Construction
+    graph: Bonfire
+    node: Bonfire
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/bonfire.rsi
+    layers:
+    - state: bonfire
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: Wood
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

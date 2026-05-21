@@ -2137,3 +2137,848 @@ Entries:
       message: Highlight issues for LO and SecTech roles
   id: 266
   time: '2026-04-15T10:40:12.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Fix
+      message: IPC emotes, piloting, footsteps, and opening doors
+  id: 267
+  time: '2026-04-15T22:09:09.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: The document printer will have its material magnet off by default.
+  id: 268
+  time: '2026-04-15T22:10:35.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Fix
+      message: Shadekin process ethanol correctly
+    - type: Fix
+      message: Shadekin now spawn with survival kits
+  id: 269
+  time: '2026-04-16T00:20:50.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Passengers can now select a new type of pda in their loadouts in the
+        form of a collar. These new collars function the same as a pda and can
+        be worn around the neck.
+    - type: Add
+      message: Added the emotional support collars to the hops ptech.
+  id: 270
+  time: '2026-04-16T05:47:12.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Tweak
+      message: Numb now gives 2 points rather than costing one.
+    - type: Tweak
+      message: Only the user can see chronic pain popups.
+  id: 271
+  time: '2026-04-16T07:04:57.0000000+00:00'
+- author: UtriculariaCalycifida
+  changes:
+    - type: Add
+      message: Arachne can now use arachnid emotes.
+  id: 272
+  time: '2026-04-16T07:15:07.0000000+00:00'
+- author: TheRedForestButcher
+  changes:
+    - type: Fix
+      message: Fixed some issues with the Chief Engineer Loadout
+  id: 273
+  time: '2026-04-16T07:16:30.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Conspirators as part of being rolled for Secret.
+    - type: Tweak
+      message: >-
+        Event scheduler to have more events more often, while still keeping
+        periods of calm.
+  id: 274
+  time: '2026-04-16T07:34:08.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: >-
+        The research server can potentially start corrupting at high glimmer
+        levels.
+  id: 275
+  time: '2026-04-16T07:35:17.0000000+00:00'
+- author: Rosycup
+  changes:
+    - type: Add
+      message: >-
+        Ported an armored trenchcoat for the captain. Obtained through the
+        captain's loadout and locker.
+  id: 276
+  time: '2026-04-16T07:36:06.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Medical pouches for paramedics and corpsman to keep their chems in.
+  id: 277
+  time: '2026-04-16T07:38:49.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Bananium has been seen on lavaland planets and large asteroids in the
+        Euphoria sector again.
+  id: 278
+  time: '2026-04-17T14:43:27.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Increased Devil Spawn Chance
+  id: 279
+  time: '2026-04-18T01:08:56.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: 'Mapping for non-hosts no longer disables events or auto evac '
+  id: 280
+  time: '2026-04-18T23:17:44.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Player ability to call votes
+  id: 281
+  time: '2026-04-19T08:57:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Most medical roles now get a surgery speed modifier bonus.
+  id: 282
+  time: '2026-04-19T16:13:44.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Wristwatches to Trinket Loadout
+  id: 283
+  time: '2026-04-19T16:23:34.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Ported Corporate Coats from the old codebase, they are available in
+        loadouts.
+  id: 284
+  time: '2026-04-19T16:24:23.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: >-
+        Fixed IPCs missing a component that allowed them to talk to the Oracle,
+        despite being psionic.
+    - type: Fix
+      message: Fixed IPCs and Arachne not being able to offer things.
+  id: 285
+  time: '2026-04-21T07:46:48.0000000+00:00'
+- author: mrwthrasher-cloud
+  changes: []
+  id: 286
+  time: '2026-04-21T09:22:41.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Reworked lewd traits. There's now a set of 4 base traits that give you
+        special organs that can produce or store liquids, and several traits
+        that modify their stats. Players who have chosen one of the existing
+        lewd traits will have to choose again.
+    - type: Add
+      message: >-
+        There's 12 new lewd interaction verbs available that are related to the
+        lewd traits. In order to use them or have others use them on you, you
+        need to enable a couple new consent toggles. Most of them require you to
+        have no inner clothing and no matching underwear (use the right click
+        menu to remove underwear markings if you have any). Keep in mind that
+        these interactions can be seen by others (within a 4m radius).
+    - type: Add
+      message: >-
+        Certain traits can now be excluded from the global trait limit. Lewd
+        traits are an example of that.
+    - type: Fix
+      message: The "help up" interaction should now work correctly.
+  id: 287
+  time: '2026-04-22T10:32:55.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Mops can clean empty footprints now. The cause of empty footprints still
+        remains a partial mystery.
+  id: 288
+  time: '2026-04-22T11:33:46.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Fixed chitinid marking whitelist problem
+    - type: Fix
+      message: Fixed arachne age limit
+  id: 289
+  time: '2026-04-22T15:18:29.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: >-
+        Added Medical Records Circuit to CMO locker, and some others to other
+        heads.
+  id: 290
+  time: '2026-04-23T10:07:25.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: 4 unarmed centered traits
+  id: 291
+  time: '2026-04-23T10:08:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Senior Physician, Medical Doctor and Parameds have some additional
+        alternative PDAs
+    - type: Fix
+      message: Senior Physician no longer has access to the medical doctor PDAs.
+  id: 292
+  time: '2026-04-23T10:09:51.0000000+00:00'
+- author: trashalice
+  changes:
+    - type: Add
+      message: >-
+        Medical, Security and Engineering catsuits! All health and safety
+        approved.
+  id: 293
+  time: '2026-04-23T10:10:28.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Muzzles now obfuscate your speech instead of replacing it.
+    - type: Fix
+      message: >-
+        Accents (incl. muzzle accent) are no longer applied to non-spoken
+        languages (sign languages and universal).
+  id: 294
+  time: '2026-04-23T10:18:17.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Cheese slices can now be used in burger stacks and take up a 1x1 slot in
+        your backpack.
+  id: 295
+  time: '2026-04-24T05:33:25.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Added mad salvager NPC hostiles.
+    - type: Fix
+      message: Fixed Syndicate Guards sleeping the shift away.
+  id: 296
+  time: '2026-04-24T09:03:29.0000000+00:00'
+- author: bandw2gs
+  changes:
+    - type: Add
+      message: Two Chaplain Alternate PDAs
+  id: 297
+  time: '2026-04-24T15:38:08.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: Added plushie of a cute red lizard with big black eyes.
+  id: 298
+  time: '2026-04-24T15:48:12.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        The ghostbar now comes with an autolathe and material silo and is
+        planetside.
+    - type: Fix
+      message: The ghostbar should no longer be a valid ninja bombing target.
+    - type: Fix
+      message: The ghostbar welcome paper should now actually have its proper text.
+  id: 299
+  time: '2026-04-24T22:40:44.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Coffins now stop Rot, so long funerals can be conducted without needing
+        to keep the dearly departed in a unceremonial body bag.
+  id: 300
+  time: '2026-04-24T22:42:17.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Tweaked Interdyne Herbals description and contents.
+  id: 301
+  time: '2026-04-25T09:16:50.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Add
+      message: Added vore, accessible only through consent toggles
+  id: 302
+  time: '2026-04-26T00:38:03.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Tweak
+      message: >-
+        Weld-bots buffed, they repair structures at 2x the strength as before.
+        May adjust in the future if needed.
+  id: 303
+  time: '2026-04-26T11:09:22.0000000+00:00'
+- author: SlowVelcro
+  changes:
+    - type: Add
+      message: Added plushie of a Chief Justice demon
+  id: 304
+  time: '2026-04-27T08:17:52.0000000+00:00'
+- author: TheRealMasterChief117
+  changes:
+    - type: Fix
+      message: >-
+        Fixed inventory specialists not having the inventory specialist icon on
+        SecHuds and the crew manifest.
+    - type: Fix
+      message: FIxed the assistant icon being a P instead of an A.
+  id: 305
+  time: '2026-04-27T08:20:35.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Removed cardboxbase from loadouts, it shouldn't have been there to begin
+        with.
+  id: 306
+  time: '2026-04-29T09:59:51.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added honey glazed ham can now be swung like a club
+  id: 307
+  time: '2026-04-29T10:11:09.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Changed Super Synth time requirement in Musician from 50 hours to 15
+        hours.
+  id: 308
+  time: '2026-04-29T10:11:59.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Paramedics will no longer spawn with duplicate PDAs.
+  id: 309
+  time: '2026-04-29T10:13:28.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Tweak
+      message: adjusted the voresystem
+  id: 310
+  time: '2026-04-29T10:16:12.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Wardens will now spawn with the correct headset.
+  id: 311
+  time: '2026-05-01T04:55:28.0000000+00:00'
+- author: OrenjiKnight
+  changes:
+    - type: Tweak
+      message: >-
+        Slightly altered vector's firerate to fix small bug and balance it out a
+        little more in single-shot.
+  id: 312
+  time: '2026-05-01T04:56:22.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Add some alternative pads to Senior Researcher, Roboticist, Research
+        Assistant and Scientist that use the old job names from pre-rebase.
+  id: 313
+  time: '2026-05-01T05:00:04.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Frontier Medical Assembler & Oven have been ported and be found in t3
+        medical research and t2 civilian respectively.
+    - type: Add
+      message: >-
+        Once researched, medical can print empty medical pens that can be used
+        in the medical assembler.
+    - type: Add
+      message: >-
+        The oven can be used for most recipes currently and functions as a stove
+        & electric grill combined.
+  id: 314
+  time: '2026-05-01T05:02:56.0000000+00:00'
+- author: civilCornball
+  changes:
+    - type: Tweak
+      message: The Oracle now yells out its requests to everyone in earshot.
+  id: 315
+  time: '2026-05-01T05:07:04.0000000+00:00'
+- author: civilCornball
+  changes:
+    - type: Fix
+      message: Ore Boxes can now hold artifact fragments.
+  id: 316
+  time: '2026-05-01T10:02:28.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Tweak
+      message: >-
+        CentCom regrets to inform the crew that Michael, the previous announcer
+        for all the alerts and announcements, has retired. They have since hired
+        a new guy, we don't quite know what his name is, but.. He's there.
+  id: 317
+  time: '2026-05-01T10:30:47.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added "Space Station Rhino Pills".
+  id: 318
+  time: '2026-05-01T10:34:09.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Pet Shop vending machine for mappers & in the random clothing vending
+        machine pool.
+    - type: Add
+      message: >-
+        Cleanbots and Weldbots can now be leashed (the clean-o-tron will is
+        real.)
+  id: 319
+  time: '2026-05-01T13:29:27.0000000+00:00'
+- author: civilCornball
+  changes:
+    - type: Tweak
+      message: Oracle now yells less frequently; about 3 times per request.
+  id: 320
+  time: '2026-05-01T13:30:17.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Fix
+      message: Updated server rules
+  id: 321
+  time: '2026-05-02T23:29:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Removed brute damage from histamine
+    - type: Tweak
+      message: >-
+        Lowered threshold for histamine before epinephrine takes effect from 45
+        to 5
+  id: 322
+  time: '2026-05-03T04:38:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Saltern should appear in rotation again.
+  id: 323
+  time: '2026-05-03T17:56:54.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: >-
+        adjusted glaicer, security & epistemics have had major overhauls,
+        engineering, hop, librarian, psychologist have been touched up.
+  id: 324
+  time: '2026-05-03T17:58:04.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Be afraid admins have access to bread grenades and cheese slice grenades
+  id: 325
+  time: '2026-05-05T10:02:03.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Food recipes medical guide book entries will display properly again.
+  id: 326
+  time: '2026-05-06T02:19:23.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Fixed an issue with bibles.
+  id: 327
+  time: '2026-05-06T07:55:26.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The "spawn here" admin verb now loads the loadouts & traits from the
+        player's profile (while assuming Passenger as the job).
+  id: 328
+  time: '2026-05-06T10:57:47.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: Added voicelines for events that did not have any previously.
+    - type: Tweak
+      message: Changed the announcer voicelines to use a toned down effect.
+  id: 329
+  time: '2026-05-06T11:08:42.0000000+00:00'
+- author: Cprn-Sprkl
+  changes:
+    - type: Add
+      message: Sample Collectors have arrived to service station crew.
+  id: 330
+  time: '2026-05-06T11:15:42.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Sechtech has been added to train & archivists get thier locker.
+  id: 331
+  time: '2026-05-06T12:04:43.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        A Sechtech jobs slot has been added to Core & archivists get their
+        locker.
+  id: 332
+  time: '2026-05-06T12:05:59.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Pig not giving bacon. They now give Pork, that can be cut into
+        bacon.
+  id: 333
+  time: '2026-05-06T12:11:54.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Official policy surrounding ERP
+  id: 334
+  time: '2026-05-06T12:13:58.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        A Sechtech jobs slot has been added to Lighthouse & archivists get their
+        locker.
+    - type: Tweak
+      message: >-
+        Medicals cryopod always had a distro hookup, it was just hidden under a
+        table so that isn't hidden anymore.
+  id: 335
+  time: '2026-05-06T12:17:59.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: New types of fish can be found when fishing.
+    - type: Add
+      message: >-
+        Some of these fish will provide new kinds of fish meat when butchered
+        that can be used for very specific recipies.
+  id: 336
+  time: '2026-05-07T23:35:48.0000000+00:00'
+- author: civilCornball
+  changes:
+    - type: Fix
+      message: >-
+        Artifact crusher is less noisy; no longer spams the 'hydraulic press'
+        sound.
+  id: 337
+  time: '2026-05-08T02:06:11.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Brings back the Svalinn Laser Pistol that DV disabled.
+    - type: Add
+      message: Brings back the Speed Boots.
+  id: 338
+  time: '2026-05-08T10:10:05.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Add
+      message: Added Katana Belt to Security Loadout (firearms)
+  id: 339
+  time: '2026-05-08T10:13:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Security Technician is now available on Kettle. The Librarian gets their
+        locker, dorms has been partially redone and medicals paramedics get
+        their own room.
+  id: 340
+  time: '2026-05-08T10:14:14.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Dispel should no longer kill the lesser hellspawn.
+  id: 341
+  time: '2026-05-09T01:49:37.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Corpsman pdas will now contain a penlight.
+  id: 342
+  time: '2026-05-09T07:58:20.0000000+00:00'
+- author: Gaybritishcow
+  changes:
+    - type: Add
+      message: Added AAC words
+  id: 343
+  time: '2026-05-09T08:18:36.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Drumkit
+    - type: Add
+      message: Drumkit cargo purchase
+    - type: Add
+      message: Drumkit flatpack
+    - type: Add
+      message: Instrument flatpack for more flatpacks to be added
+  id: 344
+  time: '2026-05-09T22:49:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        A Sechtech jobs slot has been added to Hammurabi & Archivists get their
+        locker.
+    - type: Fix
+      message: >-
+        Justice now has their telecom server again & medical gets their crew
+        monitor server back.
+  id: 345
+  time: '2026-05-12T17:46:38.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Fix
+      message: Tajaran now get survival boxes too
+  id: 346
+  time: '2026-05-12T17:48:24.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Security Technician is now available on Edge and Archivists now have
+        their locker.
+    - type: Add
+      message: >-
+        Medical now has a station records PC since they did not previously have
+        one.
+    - type: Tweak
+      message: >-
+        Tweaked the salvage docking arm so the logistics shuttle can dock much
+        easier.
+  id: 347
+  time: '2026-05-12T17:51:15.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: 'Added traits for heat/cold tolerances/intolerances. '
+  id: 348
+  time: '2026-05-13T09:29:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        End of round Pacifism will not prevent throwing any entity that does
+        throwing damage.
+  id: 349
+  time: '2026-05-13T09:32:20.0000000+00:00'
+- author: youtubepoopfuneral
+  changes:
+    - type: Tweak
+      message: Redesigned service quadborg. Horse mode UNLOCKED.
+  id: 350
+  time: '2026-05-13T09:38:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        The syndicate have gotten hold of cheese slice grenades and now have
+        them in stock in their uplinks.
+  id: 351
+  time: '2026-05-13T09:55:00.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: Added more cyborg chargers to Glacier.
+    - type: Fix
+      message: Fixed LV & MV issues.
+  id: 352
+  time: '2026-05-14T16:29:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Harnesses have been added to the neck section of loadouts. Note: they
+        will display white in loadouts but will have their proper color in
+        round.
+  id: 353
+  time: '2026-05-15T11:24:36.0000000+00:00'
+- author: civilCornball
+  changes:
+    - type: Fix
+      message: Telepads now receive orders from all multitool-linked devices!
+  id: 354
+  time: '2026-05-15T11:27:05.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: >-
+        Added a new consent toggle to disable smelling all together. Shadekin
+        players, rejoice.
+  id: 355
+  time: '2026-05-15T11:30:51.0000000+00:00'
+- author: JFerrix
+  changes:
+    - type: Remove
+      message: Removed psionic regeneration trait
+  id: 356
+  time: '2026-05-15T13:49:57.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The Petshop vendor now contains a few treats and a snack box.
+    - type: Tweak
+      message: Removed the placeholder snacks from the Petshop Vendor.
+  id: 357
+  time: '2026-05-16T03:16:32.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Lavaland map generation
+    - type: Add
+      message: Legion mobs to Lavaland
+    - type: Add
+      message: Ruins to Lavaland generation
+    - type: Add
+      message: New materials to find (no recipes yet)
+    - type: Add
+      message: SpawnLootOnDeath Component
+    - type: Add
+      message: >-
+        Components that allow for biomes to be generated on the same map, along
+        with Planets.
+    - type: Add
+      message: Lavaland Wilds to the Lavaland Shuttle destinations
+    - type: Tweak
+      message: >-
+        Old Lavaland is now known as Lavaland Mines, and new Lavaland is known
+        as Lavaland Wilds
+  id: 358
+  time: '2026-05-16T04:58:22.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        The clicker is back, it is now available in loadouts and in the Pet Shop
+        Vending machine.
+  id: 359
+  time: '2026-05-16T05:47:07.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Tweak
+      message: Weapon melee animations have been changed to look nicer.
+  id: 360
+  time: '2026-05-16T05:49:02.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Add
+      message: Patched handling components with voresystem
+  id: 361
+  time: '2026-05-16T05:52:50.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Add
+      message: Added docks to arena plus pets. Added other minor things.
+    - type: Tweak
+      message: Adjusted evac on arena
+  id: 362
+  time: '2026-05-16T21:32:16.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Fixed traits not applying correctly when swapping characters.
+  id: 363
+  time: '2026-05-16T22:42:27.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Bad Aim and Can't Aim traits.
+  id: 364
+  time: '2026-05-16T22:57:05.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: 'Changed fixture radius of Chitinids to no longer get stuck in doors. '
+  id: 365
+  time: '2026-05-18T02:23:24.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Signing now only requires one free hand rather than two.
+  id: 366
+  time: '2026-05-18T04:14:15.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Lewd traits that increase the maximum amount of fluid production should
+        now correctly increase the organ fluid capacity to accommodate for
+        additional fluids.
+  id: 367
+  time: '2026-05-18T10:26:05.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        There is now a "clothing bypass" toggle that you can access by
+        right-clicking yourself. Toggling it on allows others and you to
+        interact with your lewd organs regardless of clothing.
+    - type: Tweak
+      message: >-
+        Some verbs like "toggle undies" can now be used even if the target has
+        outer clothing, so long as they don't have anything underneath and the
+        outer clothing is not a hardsuit or similar.
+    - type: Fix
+      message: >-
+        Removed the redundant "lewd interactions" consent toggle as it wasn't
+        used anywhere.
+    - type: Fix
+      message: >-
+        The ai eye should no longer be able to see interaction verb popups from
+        anywhere near a camera.
+  id: 368
+  time: '2026-05-18T10:30:41.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: Paper and mail can now be slid under airlock doors.
+  id: 369
+  time: '2026-05-18T11:41:23.0000000+00:00'
+- author: Tarazicon
+  changes:
+    - type: Add
+      message: >-
+        Nuclear reactors are available for purchase at logistics! Just.. don't
+        eat the fuel rods. Seriously.
+    - type: Add
+      message: >-
+        A new guidebook entry has been added for the nuclear reactor, better
+        read up, engineers!
+    - type: Add
+      message: >-
+        Added a new alert level: ORANGE. This is to be used when the station is
+        on the brink of becoming uninhabitable, such as a loose or a meltdown.
+        (The nuclear reactor automatically calls for code orange during a
+        meltdown.)
+  id: 370
+  time: '2026-05-18T12:33:25.0000000+00:00'

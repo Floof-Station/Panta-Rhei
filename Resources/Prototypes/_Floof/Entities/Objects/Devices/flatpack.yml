@@ -1,0 +1,22 @@
+﻿# Instruments
+
+- type: entity
+  parent: BaseFlatpack
+  id: InstrumentFlatpack
+  name: instrument flatpack
+  description: A flatpack used for constructing something.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    layers:
+    - state: service_music
+
+- type: entity
+  parent: InstrumentFlatpack
+  id: DrumKitFlatpack
+  name: drum kit flatpack
+  description: A flatpack used for constructing a drum kit.
+  components:
+  - type: Flatpack
+    entity: DrumkitInstrument

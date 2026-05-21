@@ -19,6 +19,17 @@
   - Paramedic
   - External
 # Floof section end
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: DoctorDay
+    prototype: WehMedipen
+  # Begin Floof Surgery Additions
+  - !type:AddComponentSpecial # Shitmed change
+    components:
+    - type: SurgerySpeedModifier
+      speedModifier: 1.4
+  # End Floof Surgery Additions
+
 
 - type: startingGear
   id: SeniorPhysicianGear

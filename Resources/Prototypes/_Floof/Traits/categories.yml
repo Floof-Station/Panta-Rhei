@@ -1,7 +1,13 @@
 - type: traitCategory # Euphoria - Split Between Physical and Mental
+  id: BonusPhysical
+  name: trait-category-bonusphysical
+  priority: 1 # good before the bad
+  accentColor: "#64998b"  # added more green than disphys
+
+- type: traitCategory # Euphoria - Split Between Physical and Mental
   id: DisabilitiesPhysical
   name: trait-category-disabilitiesphysical
-  priority: 1
+  priority: 2
   accentColor: "#64748b"  # Slate / muted gray
 
 - type: traitCategory # Euphoria

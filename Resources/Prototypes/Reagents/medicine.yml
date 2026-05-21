@@ -340,7 +340,7 @@
         conditions:
         - !type:ReagentCondition
           reagent: Histamine
-          min: 45
+          min: 5 #Euphoria - reduced from 45 for it to work against allergies
         reagent: Histamine
         amount: -5
       - !type:HealthChange

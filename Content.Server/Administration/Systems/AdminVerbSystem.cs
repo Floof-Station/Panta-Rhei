@@ -157,8 +157,15 @@ namespace Content.Server.Administration.Systems
 
                             var stationUid = _stations.GetOwningStation(args.Target);
 
+                            var job = "Passenger"; // Floofstation
                             var profile = _gameTicker.GetPlayerProfile(targetActor.PlayerSession);
-                            var mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid);
+                            var mobUid = _spawning.SpawnPlayerMob(coords.Value, job, profile, stationUid);
+
+                            // Floofstation - raise playerspawcomplete so traits and the like can load.
+                            var targetSession = targetActor.PlayerSession; // Note: PlayerSession gets set to null after TransferTo. Mind the side-effects.
+                            RaiseLocalEvent(mobUid,
+                                new PlayerSpawnCompleteEvent(mobUid, targetSession, job, true, true, 0, stationUid ?? EntityUid.Invalid, profile),
+                                true);
 
                             if (_mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp))
                                 _mindSystem.TransferTo(mindId, mobUid, true, mind: mindComp);

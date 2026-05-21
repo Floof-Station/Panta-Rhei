@@ -65,5 +65,11 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public int Priority = 0;
+
+    /// <summary>
+    /// If false, this trait doesn't affect the total number of traits.
+    /// </summary>
+    [DataField]
+    public bool UsesSlots = true;
     // Floofstation section end
 }

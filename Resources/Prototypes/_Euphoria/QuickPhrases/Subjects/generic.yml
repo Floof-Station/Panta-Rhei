@@ -1,0 +1,473 @@
+## Companies
+- type: quickPhrase
+  id: HGIPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-hgi
+
+- type: quickPhrase
+  id: NanotrasenPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-nanotrasen
+
+- type: quickPhrase
+  id: InterdynePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-interdyne
+
+- type: quickPhrase
+  id: DonkPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-donk
+
+- type: quickPhrase
+  id: CorporationPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-corporation
+
+- type: quickPhrase
+  id: CompanyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-company
+
+- type: quickPhrase
+  id: JobPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-job
+
+- type: quickPhrase
+  id: CybersunPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-cybersun
+
+- type: quickPhrase
+  id: WafflePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-waffle
+
+- type: quickPhrase
+  id: EuphoriaPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-euphoria
+
+- type: quickPhrase
+  id: LLCPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-llc
+
+- type: quickPhrase
+  id: GorlexPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-gorlex
+
+- type: quickPhrase
+  id: SyndicatePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-syndicate
+
+- type: quickPhrase
+  id: GalpolPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-galpol
+## Relations & Identity
+- type: quickPhrase
+  id: FriendPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-friend
+
+- type: quickPhrase
+  id: EnemyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-enemy
+
+- type: quickPhrase
+  id: GirlPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-girl
+
+- type: quickPhrase
+  id: BoyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-boy
+
+- type: quickPhrase
+  id: ManPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-man
+
+- type: quickPhrase
+  id: MenPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-men
+
+- type: quickPhrase
+  id: WomanPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-woman
+
+- type: quickPhrase
+  id: WomenPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-women
+
+- type: quickPhrase
+  id: NonbinaryPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-nonbinary
+
+- type: quickPhrase
+  id: AgenderPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-agender
+
+- type: quickPhrase
+  id: TransgenderPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-transgender
+
+- type: quickPhrase
+  id: CisgenderPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-cisgender
+
+- type: quickPhrase
+  id: GenderPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-gender
+
+- type: quickPhrase
+  id: GayPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-gay
+
+- type: quickPhrase
+  id: LesbianPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-lesbian
+
+- type: quickPhrase
+  id: BisexualPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-bisexual
+
+- type: quickPhrase
+  id: StraightPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-straight
+
+- type: quickPhrase
+  id: HeterosexualPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-heterosexual
+
+- type: quickPhrase
+  id: PansexualPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pansexual
+
+- type: quickPhrase
+  id: AsexualPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-asexual
+
+- type: quickPhrase
+  id: WifePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-wife
+
+- type: quickPhrase
+  id: HusbandPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-husband
+
+- type: quickPhrase
+  id: SpousePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-spouse
+
+- type: quickPhrase
+  id: PartnerPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-partner
+
+- type: quickPhrase
+  id: LoverPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-lover
+
+- type: quickPhrase
+  id: LovePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-love
+
+- type: quickPhrase
+  id: MotherPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-mother
+
+- type: quickPhrase
+  id: FatherPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-father
+
+- type: quickPhrase
+  id: ParentPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-parent
+
+- type: quickPhrase
+  id: ChildPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-child
+
+- type: quickPhrase
+  id: SonPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-son
+
+- type: quickPhrase
+  id: DaughterPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-daughter
+
+- type: quickPhrase
+  id: BrotherPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-brother
+
+- type: quickPhrase
+  id: SisterPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-sister
+
+- type: quickPhrase
+  id: SiblingPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-sibling
+
+- type: quickPhrase
+  id: RelativePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-relative
+## Misc
+- type: quickPhrase
+  id: MoneyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-money
+
+- type: quickPhrase
+  id: UnderstandPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-understand
+
+- type: quickPhrase
+  id: ThingPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-thing
+
+- type: quickPhrase
+  id: ArtPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-art
+
+- type: quickPhrase
+  id: HurtPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-hurt
+
+- type: quickPhrase
+  id: PainPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pain
+
+- type: quickPhrase
+  id: HolePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-hole
+
+- type: quickPhrase
+  id: SexPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-sex
+
+- type: quickPhrase
+  id: LanguagePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-language
+
+- type: quickPhrase
+  id: ToPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-to
+
+- type: quickPhrase
+  id: MagicPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-magic
+## Body Parts
+- type: quickPhrase
+  id: ArmPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-arm
+
+- type: quickPhrase
+  id: BreastPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-breast
+
+- type: quickPhrase
+  id: ChestPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-chest
+
+- type: quickPhrase
+  id: EarPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-ear
+
+- type: quickPhrase
+  id: EyePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-eye
+
+- type: quickPhrase
+  id: FacePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-face
+
+- type: quickPhrase
+  id: FootPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-foot
+
+- type: quickPhrase
+  id: HandPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-hand
+
+- type: quickPhrase
+  id: HeadPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-head
+
+- type: quickPhrase
+  id: LegPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-leg
+
+- type: quickPhrase
+  id: MouthPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-mouth
+
+- type: quickPhrase
+  id: TonguePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-tongue
+
+- type: quickPhrase
+  id: NosePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-nose
+
+- type: quickPhrase
+  id: TailPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-tail
+
+- type: quickPhrase
+  id: WingPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-wing
+
+- type: quickPhrase
+  id: HornPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-horn
+
+- type: quickPhrase
+  id: SkinPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-skin
+
+- type: quickPhrase
+  id: ScalePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-scale
+
+- type: quickPhrase
+  id: FurPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-fur
+
+- type: quickPhrase
+  id: TorsoPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-torso
+
+- type: quickPhrase
+  id: PenisPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-penis
+
+- type: quickPhrase
+  id: TesticlesPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-testicles
+
+- type: quickPhrase
+  id: VaginaPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-vagina
+
+- type: quickPhrase
+  id: NipplePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-nipple
+
+## Vulgarity
+- type: quickPhrase
+  id: CockPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-cock
+
+- type: quickPhrase
+  id: PussyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pussy
+
+- type: quickPhrase
+  id: AssPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-ass
+
+- type: quickPhrase
+  id: TitPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-tit
+
+- type: quickPhrase
+  id: BallsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-balls
+
+- type: quickPhrase
+  id: FuckPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-fuck
+
+- type: quickPhrase
+  id: ShitPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-shit
+
+##Fluids
+- type: quickPhrase
+  id: CumPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-cum
+
+- type: quickPhrase
+  id: SquirtPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-squirt
+

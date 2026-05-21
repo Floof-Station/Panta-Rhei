@@ -1,0 +1,15 @@
+﻿- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockPetStore
+  name: Pet Store Restock
+  description: Get all the supplies you need at your local Pet Shop!
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - PetVendorInventory
+  - type: Sprite
+    layers:
+    - state: base
+    - state: green_bit
+      shader: unshaded
+    - state: refill_games

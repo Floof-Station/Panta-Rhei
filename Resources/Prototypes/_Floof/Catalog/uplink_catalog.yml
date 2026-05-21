@@ -66,7 +66,7 @@
     Telecrystal: 3
   categories:
   - UplinkAmmo
-  
+
 - type: listing
   id: UplinkFireAxe
   name: uplink-fireaxe-name
@@ -80,3 +80,18 @@
     Telecrystal: 15
   categories:
   - UplinkWeaponry
+
+# Silly cheese grenade as a pointless uplink item with two in stock
+- type: listing
+  id: UplinkGrenadeFoamCheeseSlice
+  name: uplink-cheese-grenade-name
+  description: uplink-cheese-grenade-desc
+  icon: { sprite: /Textures/Objects/Fun/Foam/foam_grenade.rsi, state: icon }
+  productEntity: GrenadeFoamCheeseSlice
+  categories:
+  - UplinkPointless
+  cost:
+    Telecrystal: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2

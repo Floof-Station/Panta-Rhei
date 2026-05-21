@@ -1,0 +1,115 @@
+# These traits improve the lewd organs at a tiny cost.
+# 2x prod
+- type: trait
+  id: DoubleLewdProduction
+  name: trait-double-production-name
+  description: trait-double-production-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  conflicts:
+  - QuadrupleLewdProduction
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: All # Todo: specialized traits?
+    productionMultiplier: 2
+
+# 4x prod
+- type: trait
+  id: QuadrupleLewdProduction
+  name: trait-quadruple-production-name
+  description: trait-quadruple-production-desc
+  category: Lewd
+  cost: 1
+  usesSlots: false
+  conflicts:
+  - DoubleLewdProduction
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: All
+    productionMultiplier: 4
+
+
+# ==================== #
+# 2x cap for production
+- type: trait
+  id: DoubleLewdProductionCapacity
+  name: trait-double-production-capacity-name
+  description: trait-double-capacity-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  conflicts:
+  - QuadrupleLewdProductionCapacity
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: All
+    productionCapMultiplier: 2
+
+# 4x cap for production
+- type: trait
+  id: QuadrupleLewdProductionCapacity
+  name: trait-quadruple-production-capacity-name
+  description: trait-quadruple-capacity-desc
+  category: Lewd
+  cost: 1
+  usesSlots: false
+  conflicts:
+  - DoubleLewdProductionCapacity
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: All
+    productionCapMultiplier: 4
+
+
+# ==================== #
+# +20u deposition capacity
+- type: trait
+  id: LewdDepositionCapacity20
+  name: trait-deposition-capacity-20-name
+  description: trait-deposition-capacity-20-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  conflicts:
+  - LewdDepositionCapacity40
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: # Only these two support deposition
+    - Vagina
+    - Rectum
+    depositionCapacityBonus: 20
+
+# +40u deposition capacity
+- type: trait
+  id: LewdDepositionCapacity40
+  name: trait-deposition-capacity-40-name
+  description: trait-deposition-capacity-40-desc
+  category: Lewd
+  cost: 1
+  usesSlots: false
+  conflicts:
+  - LewdDepositionCapacity20
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: # Only these two support deposition
+    - Vagina
+    - Rectum
+    depositionCapacityBonus: 40
+
+
+# ==================== #
+# Void
+- type: trait
+  id: LewdVoidDeposit
+  name: trait-void-deposit-name
+  description: trait-void-deposit-desc
+  category: Lewd
+  cost: 0
+  usesSlots: false
+  conflicts:
+  - LewdDepositionCapacity20
+  effects:
+  - !type:ModifyLewdOrgansEffect
+    target: All
+    spillDrain: false

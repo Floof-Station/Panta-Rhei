@@ -243,17 +243,18 @@
     id: ERTMedicPDA
     ears: ClothingHeadsetAltCentCom
     belt: ClothingBeltMedicalFilled
-    pocket1: Hypospray
+    pocket1: MedicalPouchFilledERT # Euphoria: Hypospray moved to backpack and replaced with pouch
     pocket2: FlashlightSeclite
   storage:
     back:
     - WeaponEnergyGunMini
     - MedkitCombatFilled
     - CrowbarRed
-    - ChemistryBottleEpinephrine
+#    - ChemistryBottleEpinephrine # Euphoria: removed
+    - Hypospray # Euphoria: Moved from pocket1
     belt:
     - Portafib
-    - ChemistryBottleEpinephrine
+#    - ChemistryBottleEpinephrine # Euphoria: removed
 
 - type: startingGear
   parent: ERTMedicalGearAmber
@@ -262,36 +263,42 @@
     shoes: ClothingShoesBootsERTMagboots
     mask: ClothingMaskGasERT
     outerClothing: ClothingOuterHardsuitERTMedicalBase
+    pocket1: MedicalPouchFilledERTRed # Euphoria
   inhand:
   - WeaponEnergyGun
   storage:
     back:
     - MedkitCombatFilled
-    - BoxBottleMedicineBasic
+#    - BoxBottleMedicineBasic # Euphoria: removed
     - CrowbarRed
-    - ChemistryBottleEpinephrine
+#    - ChemistryBottleEpinephrine # Euphoria: removed
     - HoverBedHoloSpawnFolded
+    - Hypospray # Euphoria: Moved from pocket1
     belt:
     - DefibrillatorCompact
-    - ChemistryBottleEpinephrine
+#    - ChemistryBottleEpinephrine # Euphoria: removed
 
 - type: startingGear
   parent: ERTMedicalGearRed
   id: ERTMedicalGearGamma
   equipment:
     outerClothing: ClothingOuterHardsuitERTMedicalElite
+    pocket1: MedicalPouchFilledERTGamma # Euphoria
   inhand:
   - WeaponEnergyGunPistol
   storage:
     back:
     - MedkitCombatFilled
-    - BoxBottleMedicineBasic
-    - BoxBottleMedicineAdvanced
+#    - BoxBottleMedicineBasic # Euphoria: removed
+#    - BoxBottleMedicineAdvanced # Euphoria: removed
     - CrowbarRed
-    - ChemistryBottleEpinephrine
-    - ChemistryBottleEpinephrine
+#    - ChemistryBottleEpinephrine # Euphoria: removed
+#    - ChemistryBottleEpinephrine # Euphoria: removed
     - HoverBedHoloSpawnFolded
     - FireExtinguisherMini
+    - MedicalPouchFilledERTRed # Euphoria
+    belt:
+    - Hypospray # Euphoria: Moved from pocket1
 
 # Janitor
 
