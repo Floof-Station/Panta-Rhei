@@ -1,6 +1,7 @@
 - type: entity
   name: handheld medical records tablet
-  parent: HandheldCrewMonitor
+  parent: HandheldCrewMonitorEmpty
+  suffix: Empty
   id: HandheldMedicalRecordsTablet
   description: A hand-held medical records monitor displaying patient information.
   components:
@@ -26,7 +27,7 @@
     recipes:
     - HandheldCrewMonitor
   - type: StaticPrice
-    price: 500
+    price: 75
   - type: StealTarget
     stealGroup: HandheldCrewMonitor
   - type: PowerCellSlot
