@@ -1,7 +1,6 @@
 - type: entity
   name: handheld medical records tablet
-  parent: HandheldCrewMonitorEmpty
-  suffix: Empty
+  parent: HandheldCrewMonitor
   id: HandheldMedicalRecordsTablet
   description: A hand-held medical records monitor displaying patient information.
   components:
