@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: NanoMedInventory
   startingInventory:
+    HandheldMedicalRecordsTablet: 5
     HandheldHealthAnalyzer: 1
     Gauze: 3
     Brutepack: 3
@@ -9,7 +10,6 @@
     ChemistryBottleEpinephrine: 3
     Syringe: 3
     PillCanisterTricordrazine: 2
-    HandheldMedicalRecordsTablet: 5
   contrabandInventory:
     PillCanisterRandom: 1
     PowerCellSmall: 2
@@ -63,6 +63,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianInventory
   startingInventory:
+    HandheldMedicalRecordsTablet: 5
     HandheldHealthAnalyzer: 3
     AloeCream: 3
     Gauze: 5
