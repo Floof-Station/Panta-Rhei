@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/15/2026 15:26:41
-  entityCount: 21640
+  time: 05/23/2026 13:55:59
+  entityCount: 21650
 maps:
 - 1
 grids:
@@ -41073,13 +41073,6 @@ entities:
     - type: Transform
       pos: -14.633717,-29.633926
       parent: 2
-- proto: CargoTelepadMachineCircuitboard
-  entities:
-  - uid: 5146
-    components:
-    - type: Transform
-      pos: -14.289967,-29.37333
-      parent: 2
 - proto: Carpet
   entities:
   - uid: 4428
@@ -61436,7 +61429,7 @@ entities:
       pos: 40.5,14.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -137395.62
+      secondsUntilStateChange: -137793.8
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -98739,6 +98732,26 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 29.5,-7.5
       parent: 2
+  - uid: 21647
+    components:
+    - type: Transform
+      pos: -61.5,-11.5
+      parent: 2
+  - uid: 21648
+    components:
+    - type: Transform
+      pos: -60.5,-11.5
+      parent: 2
+  - uid: 21649
+    components:
+    - type: Transform
+      pos: -59.5,-11.5
+      parent: 2
+  - uid: 21650
+    components:
+    - type: Transform
+      pos: -58.5,-11.5
+      parent: 2
 - proto: HotplateMachineCircuitboard
   entities:
   - uid: 12052
@@ -103004,6 +103017,13 @@ entities:
     components:
     - type: Transform
       pos: -3.5,-26.5
+      parent: 2
+- proto: PortableGeneratorSuperPacmanMachineCircuitboard
+  entities:
+  - uid: 5146
+    components:
+    - type: Transform
+      pos: -14.24193,-29.545465
       parent: 2
 - proto: PortableScrubber
   entities:
@@ -110750,6 +110770,16 @@ entities:
       parent: 2
 - proto: ReinforcedPlasmaWindow
   entities:
+  - uid: 10999
+    components:
+    - type: Transform
+      pos: -8.5,-46.5
+      parent: 2
+  - uid: 11864
+    components:
+    - type: Transform
+      pos: -6.5,-46.5
+      parent: 2
   - uid: 13528
     components:
     - type: Transform
@@ -110973,6 +111003,26 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -28.5,-43.5
+      parent: 2
+  - uid: 13588
+    components:
+    - type: Transform
+      pos: -5.5,-47.5
+      parent: 2
+  - uid: 13589
+    components:
+    - type: Transform
+      pos: -5.5,-49.5
+      parent: 2
+  - uid: 13590
+    components:
+    - type: Transform
+      pos: -5.5,-48.5
+      parent: 2
+  - uid: 13861
+    components:
+    - type: Transform
+      pos: -7.5,-46.5
       parent: 2
   - uid: 17360
     components:
@@ -111371,11 +111421,6 @@ entities:
     - type: Transform
       pos: -59.5,35.5
       parent: 2
-  - uid: 10999
-    components:
-    - type: Transform
-      pos: -8.5,-46.5
-      parent: 2
   - uid: 11591
     components:
     - type: Transform
@@ -111399,11 +111444,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -59.5,36.5
-      parent: 2
-  - uid: 11864
-    components:
-    - type: Transform
-      pos: -6.5,-46.5
       parent: 2
   - uid: 12050
     components:
@@ -111616,24 +111656,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,-41.5
-      parent: 2
-  - uid: 13588
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -5.5,-47.5
-      parent: 2
-  - uid: 13589
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -5.5,-49.5
-      parent: 2
-  - uid: 13590
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -5.5,-48.5
       parent: 2
   - uid: 13592
     components:
@@ -112638,11 +112660,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 2.5,-43.5
-      parent: 2
-  - uid: 13861
-    components:
-    - type: Transform
-      pos: -7.5,-46.5
       parent: 2
   - uid: 13862
     components:
@@ -114073,6 +114090,13 @@ entities:
     - type: Transform
       pos: 17.551308,13.414032
       parent: 2
+- proto: SheetPlasma10
+  entities:
+  - uid: 21641
+    components:
+    - type: Transform
+      pos: -1.021759,-51.401787
+      parent: 2
 - proto: SheetPlasteel
   entities:
   - uid: 18197
@@ -114349,6 +114373,34 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -31.5,9.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 21643
+    components:
+    - type: Transform
+      pos: -58.5,-11.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 21644
+    components:
+    - type: Transform
+      pos: -59.5,-11.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 21645
+    components:
+    - type: Transform
+      pos: -60.5,-11.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 21646
+    components:
+    - type: Transform
+      pos: -61.5,-11.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -117619,6 +117671,17 @@ entities:
     - type: Transform
       pos: -42.5,68.5
       parent: 2
+- proto: SolidSecretDoor
+  entities:
+  - uid: 21642
+    components:
+    - type: Transform
+      pos: 25.5,30.5
+      parent: 2
+    - type: Door
+      state: Welded
+    - type: Weldable
+      isWelded: True
 - proto: SophicScribe
   entities:
   - uid: 5215
@@ -117919,7 +117982,7 @@ entities:
     - type: Transform
       pos: -49.5,30.5
       parent: 2
-- proto: SpawnMobSmile
+- proto: SpawnMobSmileCore
   entities:
   - uid: 21624
     components:
