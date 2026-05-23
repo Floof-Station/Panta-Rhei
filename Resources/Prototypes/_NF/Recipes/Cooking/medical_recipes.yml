@@ -101,7 +101,7 @@
   solids:
     BlankMediPen: 1
   reagents:
-    Saline: 15
+    Saline: 15 # Euphoria - DV adding funkychem which changed the amount in the pens but the recipe still needed the old amount
     Salbutamol: 15 # Delta-v renamed DexPlus
   recipeType: MedicalAssembler
 
@@ -207,43 +207,4 @@
   reagents:
     Ethylredoxrazine: 15
     Dylovene: 5
-  recipeType: MedicalAssembler
-
-# Euphoria
-
-- type: microwaveMealRecipe
-  id: RecipeWehMedipen
-  name: weh auto-injector
-  result: WehMedipen
-  time: 5
-  group: Medicinal
-  solids:
-    BlankMediPen: 1
-  reagents:
-    JuiceThatMakesYouWeh: 60
-  recipeType: MedicalAssembler
-
-- type: microwaveMealRecipe
-  id: RecipeCombatMedipen
-  name: combat medipen
-  result: CombatMedipen
-  time: 5
-  group: Medicinal
-  solids:
-    BlankMediPen: 1
-  reagents:
-    Omnizine: 20
-    TranexamicAcid: 10
-  recipeType: MedicalAssembler
-
-- type: microwaveMealRecipe
-  id: RecipeStimpack
-  name: hyperzine injector
-  result: Stimpack
-  time: 5
-  group: Medicinal
-  solids:
-    BlankMediPen: 1
-  reagents:
-    Stimulants: 30
   recipeType: MedicalAssembler
