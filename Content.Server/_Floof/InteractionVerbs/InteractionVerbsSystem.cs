@@ -1,10 +1,12 @@
 using System.Linq;
 using Content.Server.Chat.Managers;
+using Content.Server.Examine;
 using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
+using NetCord;
 using Robust.Shared.Player;
 
 namespace Content.Server._Floof.InteractionVerbs;
@@ -47,20 +49,28 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
             _chatManager.ChatMessageToManyFiltered(filter, popup.LogChannel, message, wrappedMessage, source, false, false, color);
     }
 
-    private Color InferColor(PopupType popup) => popup switch
+    private Robust.Shared.Maths.Color InferColor(PopupType popup) => popup switch
     {
         // These are all hardcoded on client-side, so we have to improvise
-        PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution => Color.Red,
-        PopupType.Medium or PopupType.Small => Color.LightGray,
-        _ => Color.White
+        PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution => Robust.Shared.Maths.Color.Red,
+        PopupType.Medium or PopupType.Small => Robust.Shared.Maths.Color.LightGray,
+        _ => Robust.Shared.Maths.Color.White
     };
 
     private bool CanSee(EntityUid source, EntityUid target, float maxRange)
     {
+        // Make sure to call the overload of InRangeUnobstructed that doesn't do an override check
+        // Otherwise the ai eye will see all interacts.
+        var targetXForm = Transform(target);
+
         // TODO: InRangeUnobstructed has a pretty high performance cost and is not intended to be used like that.
         // We should see if we can move this to client side later, aka make the client check if the target is visible for it.
         return _interactions.InRangeUnobstructed(
-            source, target, maxRange,
+            source,
+            (target, targetXForm),
+            targetXForm.Coordinates,
+            targetXForm.LocalRotation,
+            maxRange,
             CollisionGroup.Opaque,
             uid => !_occluderQuery.TryComp(uid, out var occluder) || !occluder.Enabled, // We ignore all entities that do not occlude light
             false);

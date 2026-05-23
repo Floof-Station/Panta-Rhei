@@ -118,6 +118,12 @@
   parent: BaseHumanOrgan
   name: appendix
   components:
+  #Start Euphoria changes
+  - type: FoodSequenceElement
+    entries:
+      Burger: Appendix
+      Taco: Appendix
+  #End Euphoria changes
   - type: Sprite
     layers:
     - state: appendix

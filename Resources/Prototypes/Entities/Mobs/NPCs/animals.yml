@@ -512,6 +512,12 @@
   id: MobMothroach
   description: This is the adorable by-product of multiple attempts at genetically mixing mothpeople with cockroaches.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: Mothroach
+      Taco: Mothroach
+  #Euphoria end
   - type: GhostRole
     makeSentient: true
     allowSpeech: true
