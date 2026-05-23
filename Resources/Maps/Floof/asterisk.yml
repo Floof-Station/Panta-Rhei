@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/17/2026 02:48:18
-  entityCount: 14587
+  time: 05/23/2026 13:56:03
+  entityCount: 14593
 maps:
 - 1
 grids:
@@ -7728,7 +7728,7 @@ entities:
       pos: 16.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -61738.797
+      secondsUntilStateChange: -62206.7
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -24526,6 +24526,21 @@ entities:
     components:
     - type: Transform
       pos: -53.5,8.5
+      parent: 2
+  - uid: 14588
+    components:
+    - type: Transform
+      pos: -52.5,14.5
+      parent: 2
+  - uid: 14589
+    components:
+    - type: Transform
+      pos: -52.5,13.5
+      parent: 2
+  - uid: 14590
+    components:
+    - type: Transform
+      pos: -52.5,12.5
       parent: 2
 - proto: CableHVStack
   entities:
@@ -66640,6 +66655,21 @@ entities:
     components:
     - type: Transform
       pos: -54.5,0.5
+      parent: 2
+  - uid: 14591
+    components:
+    - type: Transform
+      pos: -23.5,27.5
+      parent: 2
+  - uid: 14592
+    components:
+    - type: Transform
+      pos: -22.5,27.5
+      parent: 2
+  - uid: 14593
+    components:
+    - type: Transform
+      pos: -21.5,27.5
       parent: 2
 - proto: hydroponicsSoil
   entities:
