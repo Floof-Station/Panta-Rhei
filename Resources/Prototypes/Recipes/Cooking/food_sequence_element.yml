@@ -21,6 +21,10 @@
     state: dead-1
   - sprite: Mobs/Animals/mouse.rsi
     state: dead-2
+  tags: #Euphoria
+  - Meat
+  - Raw
+  - Rat
 
 - type: foodSequenceElement
   id: RatTaco
@@ -28,6 +32,10 @@
   sprites:
   - sprite: Objects/Consumable/Food/taco_sequence.rsi
     state: rat
+  tags: #Euphoria
+  - Meat
+  - Raw
+  - Rat
 
 - type: foodSequenceElement
   id: RatSkewer
@@ -102,6 +110,7 @@
   tags:
   - Cooked
   - Meat
+  - Bacon
 
 # Bear meat
 
@@ -114,16 +123,18 @@
   tags:
   - Cooked
   - Meat
+  - Bear
 
-- type: foodSequenceElement
-  id: MeatBearBurger
-  name: food-sequence-burger-content-bear
-  sprites:
-  - sprite: Objects/Consumable/Food/meat.rsi
-    state: product-cooked
-  tags:
-  - Cooked
-  - Meat
+#Euphoria - use metamorphosis
+#- type: foodSequenceElement
+#  id: MeatBearBurger
+#  name: food-sequence-burger-content-bear
+#  sprites:
+#  - sprite: Objects/Consumable/Food/meat.rsi
+#    state: product-cooked
+#  tags:
+#  - Cooked
+#  - Meat
 
 # Penguin meat
 
@@ -244,6 +255,7 @@
   tags:
   - Cooked
   - Meat
+  - Xeno #Euphoria
 
 # Meat lizard
 
@@ -459,6 +471,7 @@
   - Cooked
   - Cutlet
   - Meat
+  - Xeno
 
 # Dragon cutlet
 
@@ -537,6 +550,7 @@
     state: produce
   tags:
   - Vegetable
+  - Cabbage
 
 - type: foodSequenceElement
   id: CabbageBurger
@@ -546,6 +560,7 @@
     state: produce
   tags:
   - Vegetable
+  - Cabbage
 
 # Garlic
 
@@ -852,6 +867,7 @@
     state: produce
   tags:
   - Vegetable
+  - Chili
 
 - type: foodSequenceElement
   id: ChiliPepperSkewer
@@ -861,6 +877,7 @@
     state: skewer-pepper
   tags:
   - Vegetable
+  - Chili
 
 # Chilly pepper
 
@@ -1054,6 +1071,7 @@
     state: produce
   tags:
   - Vegetable
+  - Soybeans #Euphoria
 
 - type: foodSequenceElement
   id: SoybeansBurger
@@ -1063,6 +1081,7 @@
     state: produce
   tags:
   - Vegetable
+  - Soybeans #Euphoria
 
 # SpacemansTrumpet
 

@@ -98,6 +98,7 @@ public sealed class LewdOrganSystem : EntitySystem
                 var message = FormattedMessage.FromMarkupPermissive(Loc.GetString("lewd-examine-organs-self-header"));
                 foreach (var organDescription in organDescriptions)
                     message.AddMarkupPermissive('\n' + organDescription);
+                message.AddMarkupPermissive('\n' + Loc.GetString("lewd-examine-organs-self-footer", ("bypassClothing", ent.Comp.BypassClothingChecks)));
 
                 _examines.SendExamineTooltip(user, ent, message, getVerbs: false, centerAtCursor: false);
             },

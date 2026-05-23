@@ -26,12 +26,12 @@
 - type: startingGear
   id: SecurityCadetGear
   equipment:
-    shoes: ClothingShoesBootsJackFilled
-    outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets
+    #shoes: ClothingShoesBootsJackFilled # Floofstation - let loadouts handle this
+    #outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets # Floofstation - let loadouts handle this
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponDisabler # DeltaV - loadouts, Security Cadet doesn't spawn with a gun
+    #pocket1: WeaponDisabler # DeltaV - loadouts, Security Cadet doesn't spawn with a gun # Floofstation - let loadouts handle this
     pocket2: BookSecurity
   storage:
     back:

@@ -4,6 +4,12 @@
   name: cat ears
   description: "Holding these might potentially be contagious."
   components:
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: CatEars
+      Taco: CatEars
+  #Euphoria changes end
   - type: Sprite
     sprite: Clothing/Head/Hats/catears.rsi
     state: icon

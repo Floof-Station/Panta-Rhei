@@ -111,7 +111,7 @@
 - type: entity
 #  categories: [ HideSpawnMenu ] # DeltaV - departmental lathes # Floof - undone
   id: Autolathe
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseScienceContraband] # Euphoria | Science Restricted
   name: autolathe
   description: It produces basic items using metal and glass. Has the ability to process blueprints to print new recipes.
   components:
@@ -184,7 +184,7 @@
 - type: entity
 #  abstract: true # DeltaV - departmental lathes # Floof - undone
   id: AutolatheHyperConvection
-  parent: [Autolathe, BaseHyperlathe]
+  parent: [Autolathe, BaseHyperlathe, BaseScienceContraband] # Euphoria | Science Restricted
   name: hyper convection autolathe
   description: A highly-experimental autolathe that harnesses the power of extreme heat to slowly create objects more cost-effectively.
   components:
@@ -196,7 +196,7 @@
 - type: entity
 #  categories: [ HideSpawnMenu ] # DeltaV - departmental lathes # Floof - undone
   id: Protolathe
-  parent: BaseLatheLube
+  parent: [ BaseLatheLube, BaseScienceContraband ] # Euphoria | Science Restricted
   name: protolathe
   description: Converts raw materials into advanced items.
   components:
@@ -256,7 +256,7 @@
 - type: entity
   # abstract: true # DeltaV - departmental lathes # Floofstation - undone
   id: ProtolatheHyperConvection
-  parent: [Protolathe, BaseHyperlathe]
+  parent: [Protolathe, BaseHyperlathe, BaseScienceContraband] # Euphoria | Science Restricted
   name: hyper convection protolathe
   description: A highly-experimental protolathe that harnesses the power of extreme heat to slowly create objects more cost-effectively.
   components:
@@ -267,7 +267,7 @@
 
 - type: entity
   id: CircuitImprinter
-  parent: BaseLatheLube
+  parent: [BaseLatheLube, BaseScienceContraband] # Euphoria | Science Restricted
   name: circuit imprinter
   description: Prints circuit boards for machines.
   components:
@@ -316,7 +316,7 @@
 
 - type: entity
   id: CircuitImprinterHyperConvection
-  parent: [CircuitImprinter, BaseHyperlathe]
+  parent: [CircuitImprinter, BaseHyperlathe, BaseScienceContraband] # Euphoria | Science Restricted
   name: hyper convection circuit imprinter
   description: A highly-experimental circuit imprinter that harnesses the power of extreme heat to slowly create objects more cost-effectively.
   components:

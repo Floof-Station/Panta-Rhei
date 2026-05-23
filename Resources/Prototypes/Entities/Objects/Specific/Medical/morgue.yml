@@ -146,6 +146,14 @@
   name: ectoplasm
   description: Much less deadly in this form.
   components:
+  #Euphoria start
+    - type: Edible
+      requiresSpecialDigestion: true
+    - type: FoodSequenceElement
+      entries:
+        Burger: Ectoplasm
+        Taco: Ectoplasm
+  #Euphoria end
     - type: Sprite
       sprite: _DV/Mobs/Ghosts/revenant.rsi # DeltaV - Custom revenant sprite
       state: ectoplasm
