@@ -10,8 +10,16 @@
     - state: icon-kill
   - type: ItemBorgModule
     hands:
-    - item: WeaponPistolMk88
+    - item: WeaponPistolMk58
     - item: CombatKnife
+    - item: MagazinePistol
+      hand:
+        emptyRepresentative: MagazinePistol
+        emptyLabel: borg-slot-magazine-empty
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazineBox
   - type: BorgModuleIcon
     icon: { sprite: _Euphoria/Interface/Actions/actions_borg.rsi, state: kill-module}
 
