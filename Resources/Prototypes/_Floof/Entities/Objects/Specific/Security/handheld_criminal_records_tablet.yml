@@ -20,11 +20,5 @@
         type: CriminalRecordsConsoleBoundUserInterface
   - type: CriminalRecordsConsole
   - type: AccessReader
-    access: [["Security"]]
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
+    access:
+      [["Security"]]

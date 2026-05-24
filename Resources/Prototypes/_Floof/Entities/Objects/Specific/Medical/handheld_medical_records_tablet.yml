@@ -1,7 +1,6 @@
 - type: entity
   name: handheld medical records tablet
-  parent: HandheldCrewMonitorEmpty
-  suffix: Empty
+  parent: BaseItem
   id: HandheldMedicalRecordsTablet
   description: A hand-held medical records monitor displaying patient information.
   components:
@@ -30,10 +29,3 @@
     price: 75
   - type: StealTarget
     stealGroup: HandheldCrewMonitor
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
