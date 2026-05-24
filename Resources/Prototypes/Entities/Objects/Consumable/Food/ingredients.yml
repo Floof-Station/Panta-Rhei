@@ -860,6 +860,12 @@
   name: tofu slice
   description: A slice of tofu. Ingredient of various vegetarian dishes.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: TofuSlice
+      Taco: TofuSlice
+  #Euphoria end
   - type: Item
     size: Tiny
   - type: FlavorProfile

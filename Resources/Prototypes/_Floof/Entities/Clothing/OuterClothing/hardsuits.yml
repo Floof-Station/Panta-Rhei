@@ -88,7 +88,7 @@
 
 #SecTech Hardsuit
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: [ClothingOuterHardsuitBase, BaseSecurityContraband]
   id: ClothingOuterHardsuitSecTech
   name: security technician hardsuit
   description: A security hardsuit specialized for engineering work. Some of the protective lining has been swapped out.
