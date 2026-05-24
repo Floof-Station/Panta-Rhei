@@ -122,3 +122,58 @@
   id: NicePhrase
   parent: BaseQualitativePhrase
   text: phrase-nice
+
+- type: quickPhrase
+  id: RoundPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-round
+
+- type: quickPhrase
+  id: StinkyPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-stinky
+
+- type: quickPhrase
+  id: FinePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-fine
+
+- type: quickPhrase
+  id: SecretPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-secret
+
+- type: quickPhrase
+  id: HappyPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-happy
+
+- type: quickPhrase
+  id: SadPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-sad
+
+- type: quickPhrase
+  id: AngryPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-angry
+
+- type: quickPhrase
+  id: ScaredPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-scared
+
+- type: quickPhrase
+  id: HungryPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-hungry
+
+- type: quickPhrase
+  id: ThirstyPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-thirsty
+
+- type: quickPhrase
+  id: ComplicatedPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-complicated
