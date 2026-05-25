@@ -71,6 +71,7 @@ phrase-so = so
 phrase-and = and
 phrase-all-done = all done
 phrase-or = or
+phrase-but = but
 
 ## Body Parts
 phrase-arm = arm

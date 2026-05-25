@@ -345,6 +345,11 @@
   parent: BaseSubjectPhrase
   text: phrase-or
 
+- type: quickPhrase
+  id: ButPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-but
+
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase
