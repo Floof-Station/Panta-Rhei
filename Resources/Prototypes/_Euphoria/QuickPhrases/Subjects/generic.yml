@@ -350,6 +350,11 @@
   parent: BaseSubjectPhrase
   text: phrase-but
 
+- type: quickPhrase
+  id: LikePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-like
+
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase

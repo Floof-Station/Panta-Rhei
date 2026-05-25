@@ -72,6 +72,7 @@ phrase-and = and
 phrase-all-done = all done
 phrase-or = or
 phrase-but = but
+phrase-like = like
 
 ## Body Parts
 phrase-arm = arm
