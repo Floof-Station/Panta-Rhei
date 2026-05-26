@@ -236,6 +236,14 @@
       path: /Audio/Items/bikehorn.ogg
       params:
         variation: 0.125
+  - type: TriggerOnMobstateChange # Euphoria Start
+      mobState:
+      - Dead
+  - type: ScatteringGrenade
+    fillPrototype: HoloPeel
+    capacity: 10
+    randomDistance: true
+    randomThrowDistanceMax: 5
 
 - type: entity
   parent: MobHonkBot
