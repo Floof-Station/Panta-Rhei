@@ -237,8 +237,8 @@
       params:
         variation: 0.125
   - type: TriggerOnMobstateChange # Euphoria Start
-      mobState:
-      - Dead
+    mobState:
+    - Dead
   - type: ScatteringGrenade
     fillPrototype: HoloPeel
     capacity: 10
