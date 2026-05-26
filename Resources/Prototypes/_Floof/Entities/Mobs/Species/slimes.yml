@@ -23,6 +23,12 @@
     - NanoTrasen
   - type: Item
     size: Huge
+  #- type: Clothing # Awaiting Sprite
+    #quickEquip: false
+    #sprite: Mobs/Aliens/slimes.rsi
+    #equippedPrefix: 0
+    #slots:
+    #- HEAD
   - type: Sprite
     layers:
     - map: [ "colorMap" ]
@@ -30,6 +36,7 @@
     - map: [ "eyesMap" ] # Coming back to this sprite soon - ScarlettJFG
       state: slime_geras_eyes
       shader: unshaded
+    #- map: [ "head" ] # Also awaiting sprite
   - type: RandomSprite
     selected:
       colorMap:
@@ -50,11 +57,12 @@
     - FootstepSound
     - DoorBumpOpener
     - SlimeEmotes
+  - type: MindContainer
+    showExamineInfo: true
   - type: Vocal # Floof. This is 100% more of a bandaid fix until I learn more about how sounds work, but now Geras emotes will have sound.
     sounds:
         Male: MaleSlime
         Female: FemaleSlime
-        Unsexed: MaleSlime
   - type: Puller
     needsHands: false
   - type: MovementSpeedModifier
