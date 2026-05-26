@@ -58,7 +58,7 @@ public sealed class GerasSystem : EntitySystem
                     var state = randomSprite.Selected[entry.Key];
                     state.Color = entry.Key switch
                     {
-                        "colorMap" => skinColor,
+                        "colorMap" => skinColor.WithAlpha(0.72f),
                         "eyesMap" => eyeColor,
                         _ => state.Color
                     };
