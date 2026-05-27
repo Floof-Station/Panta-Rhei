@@ -8,10 +8,6 @@ using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Content.Shared.FloofStation;
 using Content.Shared._Floof.Vore;
-using Content.Shared._Shitmed.Body.Components;
-using Content.Shared._DV.CosmicCult.Components;
-using Content.Server.Radiation.Components;
-using Content.Server.Atmos.Components;
 using Content.Shared.Body.Events;
 using Content.Shared._Common.Consent;
 using Content.Shared.Verbs;
@@ -35,7 +31,6 @@ public sealed class VoreSystem : EntitySystem
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
 
     private readonly HashSet<EntityUid> _pendingConsentUpdates = new();
-    private readonly HashSet<EntityUid> _pendingImmunityUpdates = new();
 
     public override void Initialize()
     {
@@ -61,12 +56,6 @@ public sealed class VoreSystem : EntitySystem
             ApplyVoreConsent(uid);
         }
         _pendingConsentUpdates.Clear();
-
-        // processing of immunity updates
-        foreach (var uid in _pendingImmunityUpdates){
-            RemoveStomachImmunities(uid);
-        }
-        _pendingImmunityUpdates.Clear();
     }
 
     /// <summary>
@@ -97,9 +86,7 @@ public sealed class VoreSystem : EntitySystem
         
         /* in case prey is inside a container immediately release them when they turn off prey consent
         works as an emergency leave for the prey*/
-        if (!hasPrey &&
-        TryComp<VoreComponent>(uid, out var comp) &&
-        IsInVoreContainer(uid, comp) &&
+        if (!hasPrey && IsInVoreContainer(uid) &&
         _containerSystem.TryGetContainingContainer(uid, out var container)){
             _containerSystem.Remove(uid, container);
         }
@@ -152,7 +139,7 @@ public sealed class VoreSystem : EntitySystem
 
         /* if the user is a pred inside a pred allows them to have interactions with prey inside
         only if they are in the same container however (not just same type but literally)*/ 
-        if (!IsValidVoreInteraction(user, target, comp))
+        if (!IsValidVoreInteraction(user, target))
             return;
 
         // devour (pred → prey)
@@ -317,76 +304,18 @@ public sealed class VoreSystem : EntitySystem
     private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){   
         TryReleasePrey(uid, comp);
     }
-    
-    /// <summary>
-    /// the prey needs to have certain components such as pressure immunity
-    /// for consent purposes -> having others avoid stumbling on scenarios
-    /// </summary>
-    private void ApplyStomachImmunities(EntityUid prey, VoreComponent comp){
-        /*double check making sure they are inside the container
-        should prevent possible exploitation of the system*/
-        if (!IsInVoreContainer(prey, comp))
-           return;
-
-        var tracker = EnsureComp<VoreImmunityTrackerComponent>(prey);
-        if (!HasComp<PressureImmunityComponent>(prey))
-        {
-            EnsureComp<PressureImmunityComponent>(prey);
-            tracker.AddedPressure = true;
-        }
-
-        if (!HasComp<BreathingImmunityComponent>(prey))
-        {
-            EnsureComp<BreathingImmunityComponent>(prey);
-            tracker.AddedBreathing = true;
-        }
-
-        if (!HasComp<TemperatureImmunityComponent>(prey))
-        {
-            EnsureComp<TemperatureImmunityComponent>(prey);
-            tracker.AddedTemperature = true;
-        }
-        /* doesnt fully protect from radiation (given its potassium iodine protection meaning 90 percent reduction of radiation damage) 
-        but will give prey more time to react and escape before radiation starts doing damage */
-        if (!HasComp<RadiationProtectionComponent>(prey))
-        {
-            EnsureComp<RadiationProtectionComponent>(prey);
-            tracker.AddedRadiation = true;
-        }
-    }
-
-    /// <summary>
-    /// the removal of the components after leaving a container
-    /// to avoid intentional and accidental exploitation
-    /// </summary>
-    private void RemoveStomachImmunities(EntityUid prey){
-        if (!TryComp<VoreImmunityTrackerComponent>(prey, out var tracker))
-            return;
-        // if still in a container skip alltogether for example release from multi vore
-        if (TryComp<VoreComponent>(prey, out var comp) && IsInVoreContainer(prey, comp))
-            return;
-
-        if (tracker.AddedPressure)
-            RemComp<PressureImmunityComponent>(prey);
-        if (tracker.AddedBreathing)
-            RemComp<BreathingImmunityComponent>(prey);
-        if (tracker.AddedTemperature)
-            RemComp<TemperatureImmunityComponent>(prey);
-        if (tracker.AddedRadiation)
-            RemComp<RadiationProtectionComponent>(prey);
-        
-        RemComp<VoreImmunityTrackerComponent>(prey);
-    }
-
+ 
     /// <summary>
     /// checks if an entity is inside a vore container
     /// </summary>
     /// <returns>
-    /// true if the entity is inside any vore container, otherwise false
+    /// true if the entity is inside a vore container
     /// </returns>
-    private bool IsInVoreContainer(EntityUid uid, VoreComponent comp){
+    private bool IsInVoreContainer(EntityUid uid){
+        if (!TryComp<VoreComponent>(uid, out var comp))
+            return false;
         return _containerSystem.TryGetContainingContainer(uid, out var container) &&
-           container.ID == comp.ContainerId;
+               container.ID == comp.ContainerId;
     }
 
     /// <summary>
@@ -395,9 +324,9 @@ public sealed class VoreSystem : EntitySystem
     /// <returns>
     /// false if only one is in a vore container or if both are inside another container
     /// </returns>
-    private bool IsValidVoreInteraction(EntityUid user, EntityUid target, VoreComponent comp){
-        var userInVore = IsInVoreContainer(user, comp);
-        var targetInVore = IsInVoreContainer(target, comp);
+    private bool IsValidVoreInteraction(EntityUid user, EntityUid target){
+        var userInVore = IsInVoreContainer(user);
+        var targetInVore = IsInVoreContainer(target);
 
         // one in vore, one not → invalid
         if (userInVore != targetInVore)
