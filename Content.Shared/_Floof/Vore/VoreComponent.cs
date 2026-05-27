@@ -13,10 +13,6 @@ public sealed partial class VoreComponent : Component
     //TODO later include customizable containers for different vore types
     [DataField("containerId")]
     public string ContainerId = "vore_container";
-    /// <summary>
-    /// Set to true when the pred intentionally releases this entity to suppress escape popup
-    /// </summary>
-    public bool IntentionalRelease = false;
 }
 [Serializable, NetSerializable]
 public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{

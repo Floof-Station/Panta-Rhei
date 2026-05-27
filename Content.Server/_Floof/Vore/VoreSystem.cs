@@ -15,7 +15,8 @@ using Content.Shared.Polymorph;
 using Content.Shared.Destructible;
 using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
-using Robust.Shared.Timing;
+using Robust.Server.Player;
+using Content.Shared.Mobs.Systems;
 namespace Content.Server._Floof.Vore;
 
 public sealed class VoreSystem : EntitySystem
@@ -26,6 +27,8 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly CarryingSystem _carryingSystem = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
 
     public static readonly ProtoId<ConsentTogglePrototype> isPred = "PredVore";
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
@@ -39,7 +42,6 @@ public sealed class VoreSystem : EntitySystem
 
         SubscribeLocalEvent<VoreComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<VoreComponent, OnVoreDoAfter>(OnVoreDoAfter);
-        SubscribeLocalEvent<VoreComponent, EntRemovedFromContainerMessage>(OnVoreRemovedFromContainer);
         SubscribeLocalEvent<VoreComponent, BeingGibbedEvent>(OnGibbedRemoveContent);
         SubscribeLocalEvent<VoreComponent, DestructionEventArgs>(OnDestroyedRemoveContent);
         SubscribeLocalEvent<VoreComponent, PolymorphedEvent>(OnPolymorphedTransferContent);
@@ -53,6 +55,8 @@ public sealed class VoreSystem : EntitySystem
 
         // processing of consent updates
         foreach (var uid in _pendingConsentUpdates){
+            if (!HasComp<ConsentComponent>(uid))
+                continue;
             ApplyVoreConsent(uid);
         }
         _pendingConsentUpdates.Clear();
@@ -93,9 +97,7 @@ public sealed class VoreSystem : EntitySystem
 
         //give the mob the needed component to be able to see the verbs
         if (hasPred || hasPrey){
-            // to avoid item ghostroles like trays getting vore components
-            if (HasComp<BodyComponent>(uid))
-                EnsureComp<VoreComponent>(uid);
+            EnsureComp<VoreComponent>(uid);
         }
         else{
             RemComp<VoreComponent>(uid);
@@ -109,58 +111,55 @@ public sealed class VoreSystem : EntitySystem
     /// only show up when the consent has been selected on both sides
     /// </summary>
     private void OnGetVerbs(EntityUid uid, VoreComponent comp, GetVerbsEvent<Verb> args){
-        var user = args.User;
-        var target = args.Target;
-
         // using command to turn on/off verb components
         if (!_cfg.GetCVar(VoreCVars.VoreEnabled))
             return;
         
+        // only when reachable & interactable
+        if (!args.CanInteract || !args.CanAccess)
+            return;
+
+        BuildVoreContainerVerbs(uid, comp, args);
+        //TODO LATER ADD VERB CONSTRUCTORS FOR EXAMPLE DIGEST TO AVOID DUPLICATE SUBSCRIPTION TO GETVERBS
+    }
+
+    /// <summary>
+    /// handles the verbs that control the container such as inserting/removing
+    /// </summary>
+    private void BuildVoreContainerVerbs(EntityUid uid, VoreComponent comp, GetVerbsEvent<Verb> args){
+        var user = args.User;
+        var target = args.Target;
         // no self activation, only there to remove your own prey and not have other intervene or have others see that you have prey
         if (user == target){
             var container = _containerSystem.EnsureContainer<Container>(target, comp.ContainerId);
             if (container.ContainedEntities.Count > 0){
                 args.Verbs.Add(new Verb
                 {
-                    Text = "Remove Prey",
-                    Act = () =>TryReleasePrey(target, comp)
+                    Text = "Release all prey",
+                    Act = () => TryReleasePrey(target, comp)
                 });
             }
             return;
         }
-
-        // only when reachable & interactable
-        if (!args.CanInteract || !args.CanAccess)
-            return;
         
-        // to avoid empty mind NPCs
-        if (!TryComp<MindContainerComponent>(target, out var mindContainer) || mindContainer.Mind == null)
-            return;
-
-        /* if the user is a pred inside a pred allows them to have interactions with prey inside
-        only if they are in the same container however (not just same type but literally)*/ 
-        if (!IsValidVoreInteraction(user, target))
-            return;
-
-        // devour (pred → prey)
-        if (_consentSystem.HasConsent(user, isPred)
-            && _consentSystem.HasConsent(target, isPrey)){
+        // 1. devour (pred → prey)
+        if (IsDevourable(user, target)){
             args.Verbs.Add(new Verb
             {
                 Text = "Devour",
                 Act = () => TryVore(user, target)
             });
         }
-        // insert self (prey → pred)
-        if (_consentSystem.HasConsent(user, isPrey)
-            && _consentSystem.HasConsent(target, isPred)){
-            args.Verbs.Add(new Verb
-            {
-                Text = "Insert Self",
-                Act = () => TryVore(target, user)
-            });
+        // 2. insert self (prey → pred)
+        if (IsDevourable(target, user)){
+                args.Verbs.Add(new Verb
+                {
+                    Text = "Insert Self",
+                    Act = () => TryVore(target, user)
+                });
         }
     }
+
 
     /// <summary>
     /// used for after selecting to insert into someone or devour
@@ -211,10 +210,7 @@ public sealed class VoreSystem : EntitySystem
 
         //moves prey inside the person
         _containerSystem.Insert(prey, container);
-        
-        /*make the prey immune to space+temp+breathing to avoid consent concerns from outside influence
-        gets removed after escaping or being forcefully ejected by pred*/
-        ApplyStomachImmunities(prey, comp);
+        EnsureComp<DevouredComponent>(prey);
     }
 
     /// <summary>
@@ -252,36 +248,10 @@ public sealed class VoreSystem : EntitySystem
         var preyList = new List<EntityUid>(container.ContainedEntities);
         //remove everything from people to items
         foreach (var prey in preyList){
-            // in case pred intentionally releases the prey to avoid escape popups
-            if (TryComp<VoreComponent>(prey, out var preyComp))
-                preyComp.IntentionalRelease = true;
-
             _containerSystem.Remove(prey, container);
-            _pendingImmunityUpdates.Add(prey);
             _popupSystem.PopupEntity("You have been released!", prey, prey);
         }
         _popupSystem.PopupEntity("You release your prey.", pred, pred);
-    }
-
-    /// <summary>
-    /// in case the prey chose to escape themself
-    /// will remove the buffs such as space immunity for the target
-    /// </summary>
-    private void OnVoreRemovedFromContainer(EntityUid uid, VoreComponent comp, EntRemovedFromContainerMessage args){
-        if (args.Container.ID != comp.ContainerId)
-            return;
-
-        var prey = args.Entity;
-
-        // Check if this was an intentional release by the pred (not a self-escape)
-        if (TryComp<VoreComponent>(prey, out var preyComp) && preyComp.IntentionalRelease){
-            preyComp.IntentionalRelease = false;
-            return;
-        }
-
-        _pendingImmunityUpdates.Add(prey);
-        _popupSystem.PopupEntity("You struggle free!", prey, prey);
-        _popupSystem.PopupEntity("Your prey escaped!", uid, uid);
     }
 
     /// <summary>
@@ -316,6 +286,29 @@ public sealed class VoreSystem : EntitySystem
             return false;
         return _containerSystem.TryGetContainingContainer(uid, out var container) &&
                container.ID == comp.ContainerId;
+    }
+
+    /// <summary>
+    /// making sure all the consent toggles and issues are resolved before entering container
+    /// </summary>
+    /// <returns>
+    /// true if the entity is allowed to be eaten
+    /// </returns>
+    private bool IsDevourable(EntityUid user, EntityUid target){
+        if (user == target)
+            return false;
+        if (!_playerManager.TryGetSessionByEntity(user, out _) || !_playerManager.TryGetSessionByEntity(target, out _))
+            return false;
+        if (!HasComp<BodyComponent>(user) || !HasComp<BodyComponent>(target))
+            return false;
+        if (!IsValidVoreInteraction(user, target))
+            return false;
+        if (!_consentSystem.HasConsent(user, isPred) || !_consentSystem.HasConsent(target, isPrey))
+            return false;
+        if (_mobStateSystem.IsDead(target) || _mobStateSystem.IsCritical(target))
+            return false;
+        
+        return true;
     }
 
     /// <summary>

@@ -18,6 +18,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement;
+using Content.Server.Radiation.Components;
 namespace Content.Server._Floof.Vore;
 
 public sealed class VoreImmunitySystem : EntitySystem
@@ -152,13 +153,8 @@ public sealed class VoreImmunitySystem : EntitySystem
             tracker.AddedTemperature = true;
         }
 
-        if (!HasComp<FlashImmunityComponent>(prey)){
-            EnsureComp<FlashImmunityComponent>(prey);
-            tracker.AddedFlash = true;
-        }
-
-        if(!HasComp<RadiationImmunityComponent>(prey)){
-            EnsureComp<RadiationImmunityComponent>(prey);
+        if(!HasComp<RadiationProtectionComponent>(prey)){
+            EnsureComp<RadiationProtectionComponent>(prey);
             tracker.AddedRadiation = true;
         }
 
@@ -188,12 +184,8 @@ public sealed class VoreImmunitySystem : EntitySystem
             RemComp<TemperatureImmunityComponent>(prey);
             tracker.AddedTemperature = false;
         }
-        if (tracker.AddedFlash){
-            RemComp<FlashImmunityComponent>(prey);
-            tracker.AddedFlash = false;
-        }
         if (tracker.AddedRadiation){
-            RemComp<RadiationImmunityComponent>(prey);
+            RemComp<RadiationProtectionComponent>(prey);
             tracker.AddedRadiation = false;
         }
         _suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorCords);
