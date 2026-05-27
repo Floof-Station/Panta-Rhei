@@ -32,6 +32,7 @@ public sealed class VoreImmunitySystem : EntitySystem
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<VoreComponent, EntInsertedIntoContainerMessage>(OnPreyInsertedIntoContainer);
         SubscribeLocalEvent<VoreComponent, EntRemovedFromContainerMessage>(OnPreyRemovedFromContainer);
         
         SubscribeLocalEvent<DevouredComponent, ComponentStartup>(OnStartup);
@@ -43,16 +44,18 @@ public sealed class VoreImmunitySystem : EntitySystem
     public override void Update(float frameTime){
         base.Update(frameTime);
 
-        foreach (var uid in _pendingImmunityUpdates)
-        {
+        foreach (var uid in _pendingImmunityUpdates){
             RemoveStomachImmunities(uid);
         }
 
         _pendingImmunityUpdates.Clear();
     }
 
-    private void OnStartup(EntityUid uid, DevouredComponent comp, ComponentStartup args){
-        ApplyStomachImmunities(uid);
+    private void OnPreyInsertedIntoContainer(EntityUid uid, VoreComponent comp, EntInsertedIntoContainerMessage args){
+        //double check making sure its a vore_container
+        if (args.Container.ID != comp.ContainerId)
+            return;
+        EnsureComp<DevouredComponent>(args.Entity);
     }
 
     /// <summary>
@@ -63,16 +66,17 @@ public sealed class VoreImmunitySystem : EntitySystem
             _pendingImmunityUpdates.Add(args.Entity);
     }
 
+    private void OnStartup(EntityUid uid, DevouredComponent comp, ComponentStartup args){
+        ApplyStomachImmunities(uid);
+    }
+
     /// <summary>
-    /// alternative way of escaping
+    /// alternative way of escaping instead of using movement keys
     /// </summary>
     private void OnGetVerbs(EntityUid uid, DevouredComponent comp, GetVerbsEvent<Verb> args){
         if (!_containerSystem.TryGetContainingContainer(uid, out var container))
             return;
-        var prey = uid;
-        var pred = container.Owner;
-        
-        if (args.User != prey  && args.User != pred)
+        if (args.User != args.Target)
             return;
 
         args.Verbs.Add(new Verb
@@ -85,7 +89,6 @@ public sealed class VoreImmunitySystem : EntitySystem
                 _containerSystem.Remove(uid, container);
             }
         });
-
     }
 
     /// <summary>

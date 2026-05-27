@@ -210,7 +210,6 @@ public sealed class VoreSystem : EntitySystem
 
         //moves prey inside the person
         _containerSystem.Insert(prey, container);
-        EnsureComp<DevouredComponent>(prey);
     }
 
     /// <summary>
