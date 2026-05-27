@@ -3,7 +3,6 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Containers;
 using Content.Shared.Body.Components;
-using Content.Shared.Mind.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Popups;
 using Content.Shared.FloofStation;

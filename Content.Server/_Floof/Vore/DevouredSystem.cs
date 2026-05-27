@@ -79,6 +79,10 @@ public sealed class VoreImmunitySystem : EntitySystem
         if (args.User != args.Target)
             return;
 
+
+        var pred = container.Owner;
+        var prey = uid;
+
         args.Verbs.Add(new Verb
         {
             Text = "Struggle Free",
@@ -98,12 +102,16 @@ public sealed class VoreImmunitySystem : EntitySystem
     private void OnPreyMobStateChanged(EntityUid uid, DevouredComponent comp, ref MobStateChangedEvent args){
         if (args.NewMobState != MobState.Dead && args.NewMobState != MobState.Critical)
             return;
-
         if (!TryComp<VoreComponent>(uid, out var vore))
             return;
 
+        var safety = 0;
         while (_containerSystem.TryGetContainingContainer(uid, out var container) && container.ID == vore.ContainerId){
-            _containerSystem.Remove(uid, container);
+            // prevention of possible infinite loop incase failed removal (better safe than sorry)
+            if (++safety > 10)
+                break;
+            if (!_containerSystem.Remove(uid, container))
+                break;
         }
     }
 
