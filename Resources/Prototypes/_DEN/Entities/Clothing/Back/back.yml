@@ -3,28 +3,6 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: ClothingBackpack
-  id: ClothingBackpackNapsack
-  name: napsack
-  description: A large, padded sack with breathable mesh sides. Sold as a sleeping bag for felinids, so why does it have a carrying handle?
-  components:
-  - type: Item
-    size: Ginormous # This doesn't need to go inside anything else, ever
-  - type: Sprite
-    sprite: _DEN/Clothing/Back/Misc/napsack.rsi
-  - type: Clothing
-    quickEquip: false
-    slots:
-    - back
-    - suitStorage
-  - type: Storage
-    grid:
-    - 0,0,5,4
-    whitelist:
-      tags:
-      - CanPilot # ONLY carries player characters, nothing else!
-
-- type: entity
   parent: ClothingBackpackSatchel
   id: ClothingBackpackSatchelParamed
   name: paramedic satchel
