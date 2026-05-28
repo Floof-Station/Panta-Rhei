@@ -12,14 +12,12 @@
 - type: startingGear
   id: FoodCriticGear
   equipment:
-    id: MedicalPDA
-    ears: ClothingHeadsetMedical
+    id: VisitorPDA
+    ears: ClothingHeadsetService
     pocket1: EncryptionKeyTraffic
-    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
-    shoes: ClothingShoesColorWhite
-    gloves: ClothingHandsGlovesNitrile
-    back: ClothingBackpackMedical
-    outerClothing: ClothingOuterCoatLab
+    jumpsuit: ClothingUniformSeniorBartender
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpack
 
 # Spawner
 - type: entity
