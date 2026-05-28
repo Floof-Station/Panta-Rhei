@@ -113,6 +113,19 @@
     - TauCetiBasic
     understands:
     - TauCetiBasic
+  # Euphoria | Slip paper under doors.
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.25,-0.25,0.25,0.25"
+        density: 20
+        mask:
+        #- ItemMask # Euphoria | Disabled for slipping papers under doors
+        - SmallMobMask # Euphoria | Slip papers under doors
+        restitution: 0.3  # fite me
+        friction: 0.2
 
 # This empty parcel is allowed to exist and evade the tests for the admin
 # mailto command.

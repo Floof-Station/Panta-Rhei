@@ -1449,6 +1449,7 @@
 - type: loadoutGroup
   id: ScientistPDA
   name: loadout-group-scientist-id
+  parent: FloofScientistPdas # Floofstation epi alt pdas
   loadouts:
   - ScientistPDA
   - SeniorResearcherPDA

@@ -124,3 +124,34 @@
   - ChaplainPDA
   - SpiritualCounselorPDA
   - NoostatisticianPDA
+
+# epi alternative pdas
+- type: loadoutGroup
+  id: FloofScientistPdas
+  abstract: true
+  loadouts:
+  - AcolytePDA
+
+- type: loadoutGroup
+  id: FloofRoboticistPdas
+  abstract: true
+  loadouts:
+  - GolemancerPDA
+
+- type: loadoutGroup
+  id: FloofResearchAssistantPdas
+  name: loadout-group-epistemics-research-assistant-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ResearchAssistantPDA
+  - NoviciatePDA
+
+- type: loadoutGroup
+  id: FloofSeniorResearcherPdas
+  name: loadout-group-epistemics-senior-researcher-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SeniorResearcherPDA
+  - MysticPDA

@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseResearchAndDevelopmentPointSource
+  parent: [BaseResearchAndDevelopmentPointSource, BaseScienceContraband] # Euphoria | Science Restricted
   id: GlimmerProber
   name: glimmer prober
   description: Probes the noösphere to generate research points. Might be worth turning off if glimmer is a problem.
@@ -85,7 +85,7 @@
         path: /Audio/Nyanotrasen/Ambience/Objects/prober_hum_dangerous.ogg
 
 - type: entity
-  parent: BaseMachinePowered
+  parent: [BaseMachinePowered, BaseScienceContraband] # Euphoria | Science Restricted
   id: GlimmerDrain
   name: glimmer drain
   description: Uses electricity to try and sort out the noösphere, reducing its level of entropy.

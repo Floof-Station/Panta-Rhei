@@ -87,7 +87,7 @@ interaction-LewdFillPV-delayed-target-popup = {THE($user)} starts pounding your 
 interaction-LewdFillPV-success-target-popup = {THE($user)} cums inside you, coating your pussy white!
 # User
 interaction-LewdFillPV-delayed-self-popup = You start pounding {THE($target)}'s pussy...
-interaction-LewdFillPV-success-self-popup = You cum inside {THE($target)}, coating {POSS-ADJ($target)} ass white!
+interaction-LewdFillPV-success-self-popup = You cum inside {THE($target)}, coating {POSS-ADJ($target)} pussy white!
 # Others
 interaction-LewdFillPV-delayed-others-popup = {THE($user)} seems to be pounding {THE($target)}...
 interaction-LewdFillPV-success-others-popup = {THE($user)} seems to finish inside {THE($target)}.

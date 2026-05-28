@@ -152,6 +152,7 @@ namespace Content.Server.Bible
 
                 var selfMessage = Loc.GetString(component.LocPrefix + "-heal-success-none-self", ("target", Identity.Entity(args.Target.Value, EntityManager)), ("bible", uid));
                 _popupSystem.PopupEntity(selfMessage, args.User, args.User, PopupType.Large);
+                _delay.TryResetDelay((uid, useDelay));
             }
             else
             {

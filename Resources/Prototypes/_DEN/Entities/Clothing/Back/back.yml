@@ -213,3 +213,22 @@
   - type: Storage
     grid:
     - 0,0,20,5 # 1 wider than ClothingBackpackDuffelHolding, capable of fitting the StorableSpecies pseudoitem
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackNapsack
+  name: napsack
+  description: A large, padded sack with breathable mesh sides. Sold as a sleeping bag for felinids, so why does it have a carrying handle?
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/napsack.rsi
+  - type: Clothing
+    quickEquip: false
+    slots:
+    - back
+    - suitStorage
+  - type: Storage
+    grid:
+    - 0,0,5,4
+    whitelist:
+      tags:
+      - CanPilot # ONLY carries player characters, nothing else!

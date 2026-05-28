@@ -1,0 +1,23 @@
+﻿- type: entity
+  parent: GrenadeFoamDart
+  id: GrenadeFoamBread
+  name: foam bread grenade
+  description: Releases many loafs of bread all at once. Praise be the Mother Loaf!
+  suffix: Admeme
+  components:
+  - type: ScatteringGrenade
+    fillPrototype: FoodBreadPlain
+    capacity: 30
+    velocity: 30
+
+- type: entity
+  parent: GrenadeFoamDart
+  id: GrenadeFoamCheeseSlice
+  name: foam cheese slice grenade
+  suffix: Admeme
+  description: Cheesed to meet you. Remember lads, CHEESE EM!!
+  components:
+  - type: ScatteringGrenade
+    fillPrototype: FoodSliceOfCheese
+    capacity: 30
+    velocity: 30

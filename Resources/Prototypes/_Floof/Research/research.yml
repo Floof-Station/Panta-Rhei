@@ -1,0 +1,14 @@
+# File for Euphoria Research
+
+# Arsenal
+- type: technology # DV removed this
+  id: ExperimentalBatteryAmmo
+  name: research-technology-experimental-battery-ammo
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3
+  cost: 15000
+  recipeUnlocks:
+  - WeaponLaserSvalinn

@@ -1,0 +1,18 @@
+﻿- type: technology
+  id: AdvancedFoodService
+  name: research-technology-advanced-food-service
+  icon:
+    sprite: _NF/Structures/Machines/oven.rsi
+    state: composite_off
+  discipline: CivilianServices
+  tier: 2
+  cost: 7500
+  recipeUnlocks:
+  - KitchenAssemblerMachineCircuitboard
+  - ElectricRangeMachineCircuitboard
+
+- type: latheRecipePack
+  id: ServiceAssemblerPack
+  recipes:
+  - KitchenAssemblerMachineCircuitboard
+  - ElectricRangeMachineCircuitboard

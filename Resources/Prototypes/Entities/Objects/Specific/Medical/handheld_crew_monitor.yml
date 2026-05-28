@@ -42,8 +42,8 @@
         startingItem: PowerCellMedium
 
 - type: entity
-  id: HandheldCrewMonitorEmpty
   parent: HandheldCrewMonitor
+  id: HandheldCrewMonitorEmpty
   suffix: Empty
   components:
   - type: ItemSlots

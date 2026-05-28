@@ -818,6 +818,11 @@
   equipment:
     back: ClothingBackpackSatchelLeather
 
+- type: loadout
+  id: LoadoutNapsack
+  equipment:
+    back: ClothingBackpackNapsack
+
 # outer clothing (jackets)
 - type: loadout
   id: ClothingOuterCoatAcidRaincoat
@@ -1588,6 +1593,12 @@
   storage:
     back:
     - FlashlightLantern
+
+- type: loadout
+  id: Clicker
+  storage:
+    back:
+    - Clicker
 
 #lewd trinkets
 - type: loadout
