@@ -1,0 +1,46 @@
+# Mind Role
+- type: entity
+  parent: MindRoleGhostRoleFreeAgentHarmless
+  id: MindRoleFoodCritic
+  name: Food Critic Role
+  components:
+  - type: MindRole
+    subtype: role-subtype-food-critic
+  - type: FoodCriticRole
+
+# Startine Gear
+- type: startingGear
+  id: FoodCriticGear
+  equipment:
+    id: MedicalPDA
+    ears: ClothingHeadsetMedical
+    pocket1: EncryptionKeyTraffic
+    jumpsuit: ClothingUniformJumpsuitMedicalDoctor
+    shoes: ClothingShoesColorWhite
+    gloves: ClothingHandsGlovesNitrile
+    back: ClothingBackpackMedical
+    outerClothing: ClothingOuterCoatLab
+
+# Spawner
+- type: entity
+  categories: [ Spawner ]
+  parent: MarkerBase
+  id: SpawnPointFoodCritic
+  name: ghost role spawn point
+  suffix: sample collector
+  components:
+  - type: GhostRole
+    name: ghost-role-information-food-critic-name
+    description: ghost-role-information-food-critic-description
+    mindRoles:
+    - MindRoleFoodCritic
+    raffle:
+      settings: default
+  - type: GhostRoleCharacterSpawner
+    outfitPrototype: FoodCriticGear
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Specific/Medical/medical.rsi
+      state: bloodpack
