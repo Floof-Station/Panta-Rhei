@@ -138,6 +138,7 @@ public sealed class VoreSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = "Release all prey",
+                    Category = VoreVerbCategory.VoreGeneral,
                     Act = () => TryReleasePrey(target, comp)
                 });
             }
@@ -149,6 +150,7 @@ public sealed class VoreSystem : EntitySystem
             args.Verbs.Add(new Verb
             {
                 Text = "Devour",
+                Category = VoreVerbCategory.VoreGeneral,
                 Act = () => TryVore(user, target)
             });
         }
@@ -157,6 +159,7 @@ public sealed class VoreSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = "Insert Self",
+                    Category = VoreVerbCategory.VoreGeneral,
                     Act = () => TryVore(target, user)
                 });
         }
@@ -174,6 +177,7 @@ public sealed class VoreSystem : EntitySystem
                     args.Verbs.Add(new Verb
                     {
                         Text = $"Insert {Name(prey)}",
+                        Category = VoreVerbCategory.VoreGeneral,
                         Act = () => TryVore(target, prey)
                     });
                 }

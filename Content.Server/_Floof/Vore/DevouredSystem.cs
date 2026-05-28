@@ -86,6 +86,7 @@ public sealed class VoreImmunitySystem : EntitySystem
         args.Verbs.Add(new Verb
         {
             Text = "Struggle Free",
+            Category = VoreVerbCategory.VoreGeneral,
             Act = () => 
             {
                 _popupSystem.PopupEntity("You struggle free!", prey, prey);
