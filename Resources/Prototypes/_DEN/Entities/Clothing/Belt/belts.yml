@@ -56,19 +56,19 @@
   - type: Clothing
     sprite: _DEN/Clothing/Belt/mantis_belt_ornate.rsi
 
-- type: entity
-  parent: ClothingBeltMantisAiry
-  id: ClothingBeltMantisAiryLoot
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: StorageFill
-    contents:
-    - id: MantisMeleeSickle
+#- type: entity
+  #parent: ClothingBeltMantisAiry
+  #id: ClothingBeltMantisAiryLoot
+  #categories: [ HideSpawnMenu ]
+  #components:
+  #- type: StorageFill
+    #contents:
+    #- id: MantisMeleeSickle
     #- id: BoxFolderMantis
-    - id: CigPackMnemolith
-    - id: FlippoLighterMantis
+    #- id: CigPackMnemolith
+    #- id: FlippoLighterMantis
     #- id: SomberChairLeatherMantisWheelchairFolded
-  - type: Foldable
-    folded: true
-  - type: Clothing
-    equippedPrefix: rolled
+  #- type: Foldable
+    #folded: true
+  #- type: Clothing
+    #equippedPrefix: rolled
