@@ -39,13 +39,6 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -83,13 +76,6 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -126,13 +112,6 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
