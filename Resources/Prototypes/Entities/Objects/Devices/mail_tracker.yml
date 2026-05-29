@@ -1,0 +1,37 @@
+- type: entity
+  name: mail tracker
+  description: A handheld tracking device that locks onto the recipient of any scanned mail. Keep upright to retain accuracy.
+  id: PinpointerMailTracker
+  parent: PinpointerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: pinpointer_mail
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left-base
+        color: "#e39751"
+      - state: inhand-left-stripe
+        color: "#050c4d"
+      - state: inhand-left-top
+      right:
+      - state: inhand-right-base
+        color: "#e39751"
+      - state: inhand-right-stripe
+        color: "#050c4d"
+      - state: inhand-right-top
+  - type: Icon
+    state: pinpointer-way
+  - type: Pinpointer
+    updateTargetName: true
+  - type: MailPinpointer
+  - type: AccessReader
+    access: [[ Mail ]]
+  - type: UseDelay
+    delay: 5
