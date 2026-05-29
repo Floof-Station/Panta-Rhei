@@ -14,6 +14,7 @@
   recognizable: true
   standsout: true
   physicalDesc: reagent-physical-desc-ferrous
+  #isNourishing: true
   metabolisms:
     Drink:
       effects:
@@ -23,11 +24,40 @@
           - !type:MetabolizerTypeCondition
             type: [ Human ]
             inverted: true
+      # Euphoria start
+      - !type:SatiateHunger
+        factor: 0.5
+        conditions:
+          - !type:MetabolizerTypeCondition
+            type: [ Vampiric ]
+      - !type:AdjustReagent
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Vampiric ]
+        reagent: Water
+        amount: 0.3
+      - !type:AdjustReagent
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Vampiric ]
+        reagent: Protein
+        amount: 0.3
+      - !type:AdjustReagent
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Vampiric ]
+        reagent: Omnizine
+        amount: 0.1
+    #euphoria end
     Food:
       effects:
         - !type:AdjustReagent
           reagent: UncookedAnimalProteins
           amount: 0.1
+          conditions: #euphoria. Prevents vamps from getting sick if they cant digest blood.
+            - !type:MetabolizerTypeCondition
+              type: [ Vampiric ]
+              inverted: true
     Medicine:
       effects:
       - !type:HealthChange

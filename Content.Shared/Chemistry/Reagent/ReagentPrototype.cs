@@ -186,6 +186,9 @@ namespace Content.Shared.Chemistry.Reagent
         [DataField]
         public SoundSpecifier FootstepSound = new SoundCollectionSpecifier("FootstepPuddle");
 
+        [DataField]
+        public bool IsNourishing; // The Den
+
         // TODO: Reaction tile doesn't work properly and destroys reagents way too quickly
         public FixedPoint2 ReactionTile(TileRef tile, FixedPoint2 reactVolume, IEntityManager entityManager, List<ReagentData>? data)
         {

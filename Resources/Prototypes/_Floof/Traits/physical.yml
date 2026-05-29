@@ -517,3 +517,48 @@
   effects:
   - !type:ModifyTemperatureToleranceEffect
     heatToleranceModifier: -10 # 10 worse (less tolerant) than base (which should be 325).
+
+- type: trait
+  id: Vampirism
+  name: trait-name-Vampirism
+  description: trait-description-Vampirism
+  category: Skills
+  cost: 1 
+  conflicts:
+    - VampirismLite
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+      - type: Vampirism
+        succDelay: 3
+        specialDigestible: # Vampires cannot eat food chat is that real
+          tags:
+          - IceCream
+          - Pill
+          - Crayon
+          - Paper
+        isSpecialDigestibleExclusive: true  
+
+- type: trait
+  id: VampirismLite
+  name: trait-name-vamplite
+  description: trait-description-vamplite
+  category: Skills
+  cost: 3
+  conflicts:
+    - Vampirism
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+      - type: Vampirism
+        succDelay: 3
