@@ -18,12 +18,12 @@
         - !type:NestedSelector
           tableId: ArmsdealerPython
           weight: 1.2
-        - !type:NestedSelector
-          tableId: ArmsdealerMosin
-          weight: 1.6
-        - !type:NestedSelector
-          tableId: ArmsdealerDoubleBarreled
-          weight: 1
+        #- !type:NestedSelector # Euphoria - Lowered Amount of Junk
+        #  tableId: ArmsdealerMosin
+        #  weight: 1.6
+        #- !type:NestedSelector
+        #  tableId: ArmsdealerDoubleBarreled
+        #  weight: 1
 
 - type: entityTable
   id: ArmsdealerViper
@@ -32,9 +32,12 @@
     - id: WeaponPistolViper
       amount: !type:RangeNumberSelector
         range: 1, 2
+    - id: WeaponPistolViperWood # Euphoria - Added Wood
+      amount: !type:RangeNumberSelector
+        range: 1, 2
     - id: MagazinePistol
       amount: !type:RangeNumberSelector
-        range: 1, 4
+        range: 3, 6
 
 - type: entityTable
   id: ArmsdealerCobra
@@ -42,10 +45,10 @@
     children:
     - id: WeaponPistolCobra
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: MagazinePistolCaselessRifle
       amount: !type:RangeNumberSelector
-        range: 1, 4
+        range: 3, 6
 
 - type: entityTable
   id: ArmsdealerPython
@@ -53,10 +56,10 @@
     children:
     - id: WeaponRevolverPython
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: SpeedLoaderMagnum
       amount: !type:RangeNumberSelector
-        range: 1, 4
+        range: 3, 6
 
 - type: entityTable
   id: ArmsdealerMosin
@@ -100,6 +103,12 @@
         - !type:NestedSelector
           tableId: ArmsdealerBulldog
           weight: 1
+        - !type:NestedSelector # Euphoria
+          tableId: ArmsdealerAKMS
+          weight: 0.8
+        - !type:NestedSelector # Euphoria
+          tableId: ArmsdealerTypewriter
+          weight: 0.8
 
 - type: entityTable
   id: ArmsdealerEstoc
@@ -107,10 +116,10 @@
     children:
     - id: WeaponRifleEstoc
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: MagazineRifle
       amount: !type:RangeNumberSelector
-        range: 1, 4
+        range: 2, 4 # Euphoria - Increased Quantity
 
 - type: entityTable
   id: ArmsdealerC20r
@@ -118,10 +127,10 @@
     children:
     - id: WeaponSubMachineGunC20r
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: MagazinePistolSubMachineGun
       amount: !type:RangeNumberSelector
-        range: 1, 4
+        range: 2, 4 # Euphoria - Increased Quantity
 
 - type: entityTable
   id: ArmsdealerBulldog
@@ -129,10 +138,32 @@
     children:
     - id: WeaponShotgunBulldog
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: MagazineShotgun
       amount: !type:RangeNumberSelector
-        range: 1, 4
+        range: 2, 4 # Euphoria - Increased Quantity
+
+- type: entityTable # Euphoria - More Toys
+  id: ArmsdealerAKMS
+  table: !type:AllSelector
+    children:
+    - id: WeaponRifleAk
+      amount: !type:RangeNumberSelector
+        range: 2, 3
+    - id: MagazineLightRifle
+      amount: !type:RangeNumberSelector
+        range: 2, 4
+
+- type: entityTable # Euphoria - More Toys
+  id: ArmsdealerTypewriter
+  table: !type:AllSelector
+    children:
+    - id: WeaponSubMachineGunTypewriter
+      amount: !type:RangeNumberSelector
+        range: 2, 3
+    - id: MagazinePistolSubMachineGun
+      amount: !type:RangeNumberSelector
+        range: 2, 4
 
 #Sydicate the more exotic guns
 - type: entity
@@ -159,7 +190,7 @@
     - id: WeaponSniperHristov
     - id: MagazineBoxAntiMateriel
       amount: !type:RangeNumberSelector
-        range: 0, 2
+        range: 2, 3 # Euphoria - Increased Quantity
 
 - type: entityTable
   id: ArmsdealerL6
@@ -167,7 +198,8 @@
     children:
     - id: WeaponLightMachineGunL6
     - id: MagazineLightRifleBox
-      prob: 0.2
+      amount: !type:RangeNumberSelector
+        range: 1, 3 # Euphoria - Increased Quantity
 
 # Stolen guns from NT
 - type: entity
@@ -180,24 +212,30 @@
     containers:
       entity_storage: !type:GroupSelector
         children:
-        - !type:NestedSelector
-          tableId: ArmsdealerMk58
-          weight: 1.4
+        #- !type:NestedSelector # Euphoria - Removed Boring Cargo Buyable Stuff
+        #  tableId: ArmsdealerMk58
+        #  weight: 1.4
         - !type:NestedSelector
           tableId: ArmsdealerDrozd
           weight: 0.8
-        - !type:NestedSelector
-          tableId: ArmsdealerGrand
-          weight: 1.2
+        #- !type:NestedSelector
+        #  tableId: ArmsdealerGrand
+        #  weight: 1.2
         - !type:NestedSelector
           tableId: ArmsdealerLecter
           weight: 0.3
         - !type:NestedSelector
           tableId: ArmsdealerVulcan
           weight: 0.6
+        #- !type:NestedSelector
+        #  tableId: ArmsdealerKammerer
+        #  weight: 1
+        - !type:NestedSelector # Euphoria - Added Some Rarier Toys
+          tableId: ArmsdealerUniversal
+          weight: 0.3
         - !type:NestedSelector
-          tableId: ArmsdealerKammerer
-          weight: 1
+          tableId: ArmsdealerNT3
+          weight: 0.1
 
 - type: entityTable
   id: ArmsdealerMk58
@@ -216,10 +254,10 @@
     children:
     - id: WeaponSubMachineGunDrozd
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: MagazinePistolSubMachineGun
       amount: !type:RangeNumberSelector
-        range: 0, 4
+        range: 2, 4 # Euphoria - Increased Quantity
 
 - type: entityTable
   id: ArmsdealerGrand
@@ -239,7 +277,7 @@
     - id: WeaponRifleLecter
     - id: MagazineRifle
       amount: !type:RangeNumberSelector
-        range: 0, 3
+        range: 1, 3 # Euphoria - Increased Quantity
 
 - type: entityTable
   id: ArmsdealerVulcan
@@ -247,10 +285,10 @@
     children:
     - id: WeaponRifleVulcan
       amount: !type:RangeNumberSelector
-        range: 1, 2
+        range: 2, 3 # Euphoria - Increased Quantity
     - id: MagazineLightRifle
       amount: !type:RangeNumberSelector
-        range: 0, 4
+        range: 2, 4 # Euphoria - Increased Quantity
 
 - type: entityTable
   id: ArmsdealerKammerer
@@ -262,6 +300,26 @@
     - id: BoxLethalshot
       amount: !type:RangeNumberSelector
         range: 1, 4
+
+- type: entityTable # Euphoria
+  id: ArmsdealerUniversal
+  table: !type:AllSelector
+    children:
+    - id: WeaponPistolUniversal
+      amount: !type:RangeNumberSelector
+        range: 2, 3 
+    - id: MagazineUniversalMagnum
+      amount: !type:RangeNumberSelector
+        range: 2, 4
+
+- type: entityTable # Euphoria
+  id: ArmsdealerNT3
+  table: !type:AllSelector
+    children:
+    - id: WeaponLightMachinegGunNT3
+    - id: MagazineLMGAntiMaterielBox
+      amount: !type:RangeNumberSelector
+        range: 3, 4
 
 # All the ammo needs for your nefarious deeds
 - type: entity
