@@ -233,9 +233,9 @@ public sealed class VoreSystem : EntitySystem
         //gulp sound only for both entities involved
         if (comp.SoundDevour != null){
             if (_playerManager.TryGetSessionByEntity(pred, out var predSession))
-                _audioSystem.PlayGlobal(comp.SoundDevour, predSession);
+                _audioSystem.PlayEntity(comp.SoundDevour, predSession, pred);
             if (_playerManager.TryGetSessionByEntity(prey, out var preySession))
-                _audioSystem.PlayGlobal(comp.SoundDevour, preySession);
+                _audioSystem.PlayEntity(comp.SoundDevour, preySession, pred);
         }
 
         EnsureEntityFree(pred, prey, comp);
