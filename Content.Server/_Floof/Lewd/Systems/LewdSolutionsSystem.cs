@@ -47,8 +47,7 @@ public sealed class LewdSolutionsSystem : EntitySystem
             }
             foreach (var (kind, lewdData) in lewd.CachedData)
             {
-                if (!_solContainer.TryGetSolution(uid, lewdData.SolutionName, out var lewdSolution, errorOnMissing: false) &&
-                    !_solContainer.ResolveSolution(uid, lewdData.SolutionName, ref lewdSolution, out var solution))
+                if (!_solContainer.TryGetSolution(uid, lewdData.SolutionName, out var lewdSolution, errorOnMissing: false))
                 {
                     // So fun fact, EnsureSolution can fail if the mob is not yet map-initialized
                     // This means that organ addition can randomly fail when done via traits.
