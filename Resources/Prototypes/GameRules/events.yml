@@ -26,6 +26,7 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
+    - id: FoodCriticSpawn # Euphoria - Dunno where to put this so it's here for now
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -891,3 +892,19 @@
       min: 1
       max: 1
       pickPlayer: false
+
+#Euphoria
+
+- type: entity
+  parent: BaseGameRule
+  id: FoodCriticSpawn
+  components:
+  - type: StationEvent
+    weight: 2
+    duration: 1
+    earliestStart: 45
+    minimumPlayers: 20
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-unknown-shuttle-food-critic-result-message
+  - type: RandomSpawnRule
+    prototype: SpawnPointFoodCritic
