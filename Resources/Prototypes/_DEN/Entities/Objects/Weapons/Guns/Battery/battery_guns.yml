@@ -59,6 +59,9 @@
     - MantisBeltStorable
   - type: GuideHelp
     guides: [ MantisGuide ]
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
 
 
   #Mantis Guns
