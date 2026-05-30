@@ -306,6 +306,7 @@
     - EngineeringBoardsGoob #Goob Factorio port
     - ServiceAssemblerPack # Frontier Service Assembler
     - MedicalAssemblerPack # Frontier Medical Assembler
+    - ReactorCircuitboards # FH edit
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards
@@ -525,7 +526,7 @@
       unlitRunningState: unlit-building # DeltaV - added animation sprite layers
       staticPacks:
       - SecurityAmmoStatic
-    # Start DeltaV Additions 
+    # Start DeltaV Additions
       - SecurityShotgunDrumsStatic
       - AmmoFabPracticeStatic # Removes practice guns
       - SecurityRubberAmmoStatic

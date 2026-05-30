@@ -1,0 +1,22 @@
+﻿- type: latheRecipePack
+  id: FloofstationServiceCookingEquipment
+  recipes:
+  - IceCreamBowl
+  - Pitcher
+  - Skimmer # Using delta-vs skimmer recipe so we dont have a duplicate
+
+- type: latheRecipePack
+  id: FloofstationServiceFoodStorage
+  recipes:
+  - LunchboxGeneric # Is the empty lunchbox base and for all departments
+  - LunchboxCommand
+  - LunchboxEngineering
+  - LunchboxEpistemics
+  - LunchboxJustice
+  - LunchboxMedical
+  - LunchboxSecurity
+  - LunchboxLogistics
+  - LunchboxService
+  - FoodBoxPizza
+  - HappyHonkEmpty
+  - HappyHonkMimeEmpty

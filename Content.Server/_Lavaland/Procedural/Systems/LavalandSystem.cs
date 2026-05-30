@@ -45,8 +45,6 @@ namespace Content.Server._Lavaland.Procedural.Systems;
 
 public sealed partial class LavalandSystem : EntitySystem
 {
-    public bool LavalandEnabled = true;
-
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly TileSystem _tile = default!;
@@ -79,20 +77,19 @@ public sealed partial class LavalandSystem : EntitySystem
         _gridQuery = GetEntityQuery<MapGridComponent>();
         _xformQuery = GetEntityQuery<TransformComponent>();
         _fixtureQuery = GetEntityQuery<FixturesComponent>();
-
-        Subs.CVar(_config, CCVars.LavalandEnabled, value => LavalandEnabled = value, true);//Euphoria
     }
 
     private void OnLoadingMaps(LoadingMapsEvent ev)
     {
+        // Floofstation - no. This is handled by StationPlanetSpawnerSystem.
         EnsurePreloaderMap();
-        foreach (var gameMap in ev.Maps)
-        {
-            foreach (var planetEntry in gameMap.Planets)
-            {
-                SetupLavalandPlanet(planetEntry, out _);
-            }
-        }
+        // foreach (var gameMap in ev.Maps)
+        // {
+        //     foreach (var planetEntry in gameMap.Planets)
+        //     {
+        //         SetupLavalandPlanet(planetEntry, out _);
+        //     }
+        // }
     }
 
     private void OnRoundRestart(RoundRestartCleanupEvent ev)
@@ -107,8 +104,7 @@ public sealed partial class LavalandSystem : EntitySystem
     public void EnsurePreloaderMap()
     {
         // Already have a preloader?
-        if (GetPreloaderEntity() != null
-            || !LavalandEnabled)
+        if (GetPreloaderEntity() != null)
             return;
 
         var mapUid = _map.CreateMap(out var mapId, false);

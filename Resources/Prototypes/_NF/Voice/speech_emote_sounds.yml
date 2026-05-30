@@ -4,6 +4,25 @@
     path: /Audio/Animals/cat_meow.ogg
     params:
       variation: 0.125
+  sounds:
+    Scream: # Euph
+      collection: FelinidScreams
+    Snore: # Euph
+      collection: Snores
+    Hiss: # Euph
+      collection: FelinidHisses
+    Meow: # Euph
+      collection: FelinidMeows
+    Mew: # Euph
+      collection: FelinidMews
+    Growl: # Euph
+      collection: FelinidGrowls
+    Purr: # Euph
+      collection: FelinidPurrs
+    SoftTrill: # Euph
+      collection: SoftTrills
+    FelineTrill: # Euph
+      collection: FelineTrills
 
 - type: emoteSounds
   id: NfsdCat

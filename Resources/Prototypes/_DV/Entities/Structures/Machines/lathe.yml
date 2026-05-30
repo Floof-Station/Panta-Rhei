@@ -176,6 +176,8 @@
     - EVASuit
     # Floofstation section
     - CollarsAutolatheFloofstation
+    - FloofstationServiceCookingEquipment # static packs for food related storage and cooking items
+    - FloofstationServiceFoodStorage
     # Floofstation section end
     dynamicPacks:
     - Janitor
@@ -187,6 +189,12 @@
     stealGroup: ServiceTechFabCircuitboard
   - type: LatheAnnouncing
     channels: [Service]
+  - type: MaterialStorage # Floofstation - allow cardboard as a material in the lathe
+    whitelist: &StandardMaterialWhitelist
+        tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
 
 - type: entity
   parent: BaseTechFabDepartmental

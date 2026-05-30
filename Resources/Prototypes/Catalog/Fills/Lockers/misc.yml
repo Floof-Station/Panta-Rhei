@@ -1,8 +1,31 @@
 - type: entity
   id: LockerSyndicatePersonalFilled
-  suffix: Filled
+  suffix: Nukie, Filled
   parent: LockerSyndicatePersonal
+  description: It's a personal storage unit for operative gear.
   components:
+  - type: AccessReader
+    access: [["NuclearOperative"]]
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ClothingBeltMilitaryWebbing
+        - id: ClothingHandsGlovesCombat
+        - id: JetpackBlackFilled
+        - id: ClothingUniformJumpsuitOperative
+        - id: ClothingUniformJumpskirtOperative
+        - id: ClothingHeadsetAltSyndicate
+        - id: ClothingEyesHudSyndicate
+
+- type: entity
+  id: LockerSyndicateWallFilled
+  suffix: Nukie, Filled
+  parent: LockerWallSyndicate
+  description: It's a personal storage unit for operative gear.
+  components:
+  - type: AccessReader
+    access: [["NuclearOperative"]]
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:AllSelector
@@ -192,7 +215,7 @@
       prob: 0.45
       rolls: !type:RangeNumberSelector
         range: 0, 2
-    # TODO: when porting lewd toys, put them here or under MaintenanceToysTable
+    # README: when porting lewd toys, put them here or under MaintenanceToysTable
     # Floofstation section end
 
 - type: entity

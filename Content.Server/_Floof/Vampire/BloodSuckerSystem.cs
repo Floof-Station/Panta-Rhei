@@ -161,7 +161,7 @@ public sealed class BloodSuckerSystem : EntitySystem
             return false;
 
         // No blood left, yikes.
-        if (_bloodstreamSystem.GetBloodLevelPercentage(victim) == 0.0f)
+        if (_bloodstreamSystem.GetBloodLevel(victim) <= 0.01f)
             return false;
 
         // Does bloodsucker have a stomach?

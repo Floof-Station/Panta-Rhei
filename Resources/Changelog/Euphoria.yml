@@ -3167,3 +3167,134 @@ Entries:
         seen around station.
   id: 396
   time: '2026-05-25T07:49:21.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Bepis will now display in hand properly.
+  id: 397
+  time: '2026-05-26T12:31:12.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        The service techfab has new starting recipes. Service members can now
+        print lunchboxes, happy honk boxes & other things for specific food
+        recpies.
+  id: 398
+  time: '2026-05-28T10:04:11.0000000+00:00'
+- author: HyperBeast43
+  changes:
+    - type: Tweak
+      message: Changed Jerma's examine text.
+  id: 399
+  time: '2026-05-28T10:05:27.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Tarot cards should now stack properly.
+  id: 400
+  time: '2026-05-28T10:06:57.0000000+00:00'
+- author: XavyBoio
+  changes:
+    - type: Add
+      message: Added Medical Tablet and Security Tablet!
+  id: 401
+  time: '2026-05-28T10:08:44.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Fix
+      message: Harpy purrs no longer have a chance to sound like an APLU.
+  id: 402
+  time: '2026-05-29T11:00:51.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: >-
+        Changed paramedic and surgeon loadouts to give them more jumpsuit
+        options.
+  id: 403
+  time: '2026-05-29T11:05:28.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Fixed fluid puddling throwing an error during HONK HONK AWOOGA HUBBA
+        HUBBA
+  id: 404
+  time: '2026-05-30T05:17:26.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Merged upstream changes up to and including 2026-05-01. See the PR#580
+        for more details.
+    - type: Fix
+      message: >-
+        There should no longer be two instances of Lavaland in every round, and
+        lavaland won't try to generate 1 million tiles at once.
+  id: 405
+  time: '2026-05-30T05:41:49.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The cold weather poncho has been added to neck wear in loadouts.
+    - type: Tweak
+      message: Chaplains should now have access to all the hats that passengers do.
+  id: 406
+  time: '2026-05-30T05:52:37.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: A new blazer and skirt combo has been added!
+  id: 407
+  time: '2026-05-30T05:53:48.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: 1/4 of unreadied players count as readied for secret round calculation.
+  id: 408
+  time: '2026-05-30T05:55:18.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Uplink now has a free syndie key. Get on comms!
+    - type: Add
+      message: Uplink now has cat ears. Billions must UWU!
+  id: 409
+  time: '2026-05-30T05:55:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: The silly bibles will now have inhand sprites.
+  id: 410
+  time: '2026-05-30T06:21:30.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: Various enhancements to Nukie Mice, including the ability to be a hat
+    - type: Tweak
+      message: Various enhancements to SyndiCats, Including access to the radio
+    - type: Tweak
+      message: Various enhancements to cats, including the ability to purr
+    - type: Tweak
+      message: Mice can now see in the dark
+    - type: Tweak
+      message: Felinids can now trill, both ways
+    - type: Tweak
+      message: Trill emotes have slightly more fitting icons on the wheel
+  id: 411
+  time: '2026-05-30T06:31:44.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Research Assistants should no longer spawn with duplicate PDAs.
+  id: 412
+  time: '2026-05-30T23:11:08.0000000+00:00'
+- author: Nersylla
+  changes:
+    - type: Tweak
+      message: >-
+        Changed a number of colorable moth person markings to be available to
+        all species.
+  id: 413
+  time: '2026-05-30T23:13:34.0000000+00:00'
