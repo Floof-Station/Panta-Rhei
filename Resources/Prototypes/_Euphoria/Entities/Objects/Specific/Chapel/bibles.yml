@@ -29,20 +29,16 @@
   description: The holy book of Lust.
   components:
   - type: Sprite
-    sprite: _DV/Objects/Misc/gorlex_magazine.rsi
+    sprite: _Euphoria/Objects/Specific/Chapel/gorlex_bible.rsi
     layers:
     - state: icon
   - type: Item
-    sprite: _Euphoria/Objects/Specific/Chapel/ritusignis.rsi # placeholder till we get a new sprite for this
+    sprite: _Euphoria/Objects/Specific/Chapel/gorlex_bible.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-      - state: inhand-left_lighting
-        shader: unshaded
       right:
       - state: inhand-right
-      - state: inhand-right_lighting
-        shader: unshaded
 
 - type: entity
   parent: Bible
@@ -51,18 +47,16 @@
   description: The holy book of Lust.
   components:
   - type: Sprite
-    sprite: _DV/Objects/Misc/centcomm_magazine.rsi
+    sprite: _Euphoria/Objects/Specific/Chapel/chads_bible.rsi
     state: icon
   - type: Item
-    sprite: _Euphoria/Objects/Specific/Chapel/ritusignis.rsi # placeholder till we get a new sprite for this
+    sprite: _Euphoria/Objects/Specific/Chapel/chads_bible.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-      - state: inhand-left_lighting
         shader: unshaded
       right:
       - state: inhand-right
-      - state: inhand-right_lighting
         shader: unshaded
 
 - type: entity

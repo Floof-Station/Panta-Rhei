@@ -881,7 +881,7 @@ public sealed partial class ChatSystem : SharedChatSystem
             return message;
 
         var ev = new TransformSpeechEvent(sender, message);
-        RaiseLocalEvent(ev);
+        RaiseLocalEvent(sender, ev, true);
 
         return ev.Message;
     }

@@ -1,6 +1,7 @@
 - type: vendingMachineInventory
   id: NanoMedInventory
   startingInventory:
+    HandheldMedicalRecordsTablet: 5
     HandheldHealthAnalyzer: 1
     Gauze: 3
     Brutepack: 3
@@ -34,6 +35,7 @@
   id: NanoMedPlusInventory
   startingInventory:
     HandheldHealthAnalyzer: 3
+    HandheldMedicalRecordsTablet: 5
     Gauze: 5
     Brutepack: 5
     Ointment: 5
@@ -61,6 +63,7 @@
 - type: vendingMachineInventory
   id: NanoMedCivilianInventory
   startingInventory:
+    HandheldMedicalRecordsTablet: 5
     HandheldHealthAnalyzer: 3
     AloeCream: 3
     Gauze: 5
