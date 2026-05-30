@@ -902,8 +902,10 @@
   - type: StationEvent
     weight: 2
     duration: 1
-    earliestStart: 45
+    earliestStart: 5
     minimumPlayers: 20
+    OccursDuringRoundEnd: false
+    MaxOccurrences: 1
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-unknown-shuttle-food-critic-result-message
   - type: RandomSpawnRule
