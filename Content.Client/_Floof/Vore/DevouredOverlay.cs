@@ -44,6 +44,9 @@ public sealed class DevouredOverlay : Overlay
         return true;
     }
 
+    /// <summary>
+    /// dimming and color overlay to simulate being inside a stomach
+    /// </summary>
     protected override void Draw(in OverlayDrawArgs args){
         var worldHandle = args.WorldHandle;
         var viewport = args.WorldAABB;

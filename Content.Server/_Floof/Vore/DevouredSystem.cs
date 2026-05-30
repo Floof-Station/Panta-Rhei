@@ -51,6 +51,9 @@ public sealed class VoreImmunitySystem : EntitySystem
         _pendingImmunityUpdates.Clear();
     }
 
+    /// <summary>
+    /// responsible for giving the component that gives the prey immunities
+    /// </summary>
     private void OnPreyInsertedIntoContainer(EntityUid uid, VoreComponent comp, EntInsertedIntoContainerMessage args){
         //double check making sure its a vore_container
         if (args.Container.ID != comp.ContainerId)
