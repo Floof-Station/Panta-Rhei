@@ -9,6 +9,25 @@
 # SPDX-License-Identifier: MIT AND AGPL-3.0-or-later
 
 - type: entity
+  parent: Pill
+  id: PillCryptobiolin
+  suffix: Cryptobiolin 10u
+  components:
+  - type: Sprite
+    state: pill10
+  - type: Pill
+    pillType: 9
+  - type: Label
+    currentLabel: cryptobiolin 10u
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Cryptobiolin
+          Quantity: 10
+
+- type: entity
   parent: PillCanisterMantis
   id: PillCanisterSpaceDrugsMantis
   suffix: LSD, 5
