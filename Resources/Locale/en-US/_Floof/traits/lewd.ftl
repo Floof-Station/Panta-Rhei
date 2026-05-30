@@ -12,10 +12,10 @@ trait-basic-Rectum-desc = Your anal tunnel is accessible for deposition of up to
 
 
 # Bonuses
-trait-double-production-name = Double fluid production
+trait-double-production-name = Double fluid production speed
 trait-double-production-desc = All lewd organs you choose produce fluids twice as fast as specified in the description.
 
-trait-quadruple-production-name = Quadruple fluid production
+trait-quadruple-production-name = Quadruple fluid production speed
 trait-quadruple-production-desc = All lewd organs you choose produce fluids four times as fast as specified in the description.
 
 # Factorio flashbacks...

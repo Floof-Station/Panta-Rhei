@@ -1458,6 +1458,14 @@
   components:
   - type: Pda
     id: BrigmedicIDCard
+    # FLoofstation - Penlights
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+    # FLoofstation - Penlights
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
@@ -1584,6 +1592,42 @@
     accentVColor: "#DFDFDF"
   - type: Icon
     state: pda-seniorofficer
+
+# DeltaV - No senior courier job
+#- type: entity
+#  parent: BasePDA
+#  id: SeniorCourierPDA
+#  name: senior courier PDA
+#  description: Smells like postage stamps and shuttle fuel.
+#  components:
+#  - type: Pda
+#    id: CargoIDCard
+#  - type: Appearance
+#    appearanceDataInit:
+#     enum.PdaVisuals.PdaType:
+#       !type:String
+#       pda-seniorcourier
+#  - type: PdaBorderColor
+#    borderColor: "#e39751"
+#    accentVColor: "#DFDFDF"
+#  - type: Icon
+#    state: pda-seniorcourier
+
+- type: entity
+  parent: [ BaseHighlyIllegalContraband, BasePDA ]
+  id: NinjaPDA
+  name: ninja PDA
+  description: You stealthy bastard, you!
+  components:
+  - type: Pda
+    id: NinjaIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-ninja
+  - type: Icon
+    state: pda-ninja
 
 - type: entity
   parent: [ BaseMajorContraband, SyndiPDA ]

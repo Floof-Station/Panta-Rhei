@@ -1,0 +1,99 @@
+﻿- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackTreatMeat
+  name: meat treat
+  description: A small bone shaped meat flavored treat.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 2
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/petshop_treats.rsi
+    state: treat_meat
+  - type: Tag
+    tags:
+    - FoodSnack
+
+- type: entity
+  parent: FoodSnackTreatMeat
+  id: FoodSnackTreatBerry
+  name: berry treat
+  description: A small bone shaped berry flavored treat.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - berry
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/petshop_treats.rsi
+    state: treat_berry
+  - type: Tag
+    tags:
+    - FoodSnack
+
+- type: entity
+  parent: BaseStorageItem
+  id: PetShopTreatBox
+  name: Treats Box
+  description: A small box of snacks & treats, yummers!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/petshop_treats.rsi
+    layers:
+    - state: treat_box_trash
+    - state: treat_box
+      map: ["treat_box"]
+  - type: Item
+    size: Normal
+  - type: Storage
+    grid:
+    - 0,0,2,3
+    whitelist:
+      tags:
+      - FoodSnack
+      - Fruit # some snacks dont use foodnsack so we whitelist this to
+    hideStackVisualsWhenClosed: false
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        # Guaranteed loot
+        - id: FoodSnackTreatMeat
+          rolls: 2
+        - id: FoodSnackTreatBerry
+          rolls: 2
+        # Occasional pairs of other snacks as well
+        - id: FoodSnackRaisins
+          rolls: 2
+          prob: 0.33
+        - id: FoodSnackCnDs
+          rolls: 1
+          prob: 0.33
+        - id: FoodSnackCheesie
+          rolls: 1
+          prob: 0.33
+        - id: FoodSliceOfCheese
+          rolls: 1
+          prob: 0.33
+        - id: FoodSnackChips
+          rolls: 1
+          prob: 0.33
+        - id: FoodSnackSemki
+          rolls: 1
+          prob: 0.33
+        - id: FoodSnackSyndi
+          rolls: 1
+          prob: 0.33
+  - type: ItemCounter
+    count:
+      tags: [FoodSnack]
+    composite: false
+  - type: Appearance

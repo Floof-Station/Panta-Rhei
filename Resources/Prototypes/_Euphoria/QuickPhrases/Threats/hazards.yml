@@ -1,0 +1,19 @@
+- type: quickPhrase
+  id: HazardRodPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-rod
+
+- type: quickPhrase
+  id: HazardViolencePhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-violence
+
+- type: quickPhrase
+  id: HazardSpacingPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-spacing
+
+- type: quickPhrase
+  id: HazardDeathPhrase
+  parent: BaseHazardThreatPhrase
+  text: phrase-hazard-death

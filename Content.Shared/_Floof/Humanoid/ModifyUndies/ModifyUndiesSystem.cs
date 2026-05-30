@@ -50,7 +50,7 @@ public sealed class ModifyUndiesSystem : EntitySystem
             return;
 
         if (args.User != args.Target
-            && _slotBlocker.IsSlotObstructedOrOccupied(args.Target, null, IgnoreBlockerPreference, SlotFlags.INNERCLOTHING, out _))
+            && _slotBlocker.IsSlotObstructedOrOccupied(args.Target, "VirtualClothingPanties", IgnoreBlockerPreference, SlotFlags.INNERCLOTHING, out _))
             return; // mainly so people cant just spy on others undies *too* easily
 
         var isMine = args.User == args.Target;

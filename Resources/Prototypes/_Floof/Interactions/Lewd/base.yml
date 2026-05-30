@@ -83,6 +83,7 @@
   allowSelfInteract: true # A user can only trigger it themselves
   requiresHands: false
   requiresCanInteract: false # Allow doing it while cuffed or w/e
+  checkInteractionBlocker: false # Floof
   hideByRequirement: true
   effectSuccess:
     popup: ObviousWithLimitsForOthers
