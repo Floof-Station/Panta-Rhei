@@ -130,7 +130,6 @@
     attributes:
       gender: male
   - type: Sharp
-  - type: PotentialPsionic # Nyano
   - type: NightVision #Delta-v - Added nightvision
     color: "#808080"
   - type: LanguageKnowledge # Floofstation. Rat king speaks tau ceti.
@@ -257,7 +256,7 @@
       - !type:GibBehavior
         recursive: false
   - type: Stamina
-    critThreshold: 60
+    baseCritThreshold: 60
   - type: MeleeWeapon
     soundHit:
         path: /Audio/Weapons/bladeslice.ogg

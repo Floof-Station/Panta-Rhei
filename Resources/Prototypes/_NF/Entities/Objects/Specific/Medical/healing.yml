@@ -2,7 +2,7 @@
 # region Normal Vial Fills
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Bruizine 30u
   id: BruizineMedicalVial
   components:
@@ -17,7 +17,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Lacerinol 30u
   id: LacerinolMedicalVial
   components:
@@ -32,7 +32,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Puncturase 30u
   id: PuncturaseMedicalVial
   components:
@@ -47,7 +47,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   categories: [ HideSpawnMenu ] # Euphoria: Remove Dexalin plus vial
   suffix: Dex+ 30u
   id: DexPlusMedicalVial
@@ -63,7 +63,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Saline 30u
   id: SalineMedicalVial
   components:
@@ -78,7 +78,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Pyrazine 30u
   id: PyrazineMedicalVial
   components:
@@ -93,7 +93,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Insuzine 30u
   id: InsuzineMedicalVial
   components:
@@ -108,7 +108,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Leporazine 30u
   id: LeporazineMedicalVial
   components:
@@ -123,7 +123,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Stellibinin 30u
   id: StellibininMedicalVial
   components:
@@ -138,7 +138,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Tranexamic Acid 30u
   id: TranexamicAcidMedicalVial
   components:
@@ -153,7 +153,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Olig/Arith blend 30u
   id: OligArithMedicalVial
   components:
@@ -170,7 +170,7 @@
               Quantity: 15
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Bicaridine 30u
   id: BicaridineMedicalVial
   components:
@@ -185,7 +185,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Dermaline 30u
   id: DermalineMedicalVial
   components:
@@ -200,7 +200,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Dylovene 30u
   id: DyloveneMedicalVial
   components:
@@ -215,7 +215,7 @@
               Quantity: 30
 
 - type: entity
-  parent: BaseChemistryEmptyVial
+  parent: ChemistryEmptyVial
   suffix: Epinephrine 30u
   id: EpinephrineMedicalVial
   components:

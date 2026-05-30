@@ -23,6 +23,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using Content.Shared.Verbs;
 using Content.Shared._Goobstation.CCVar;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._Shitmed.Medical.Surgery;
 
@@ -37,6 +38,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly SurgeryCleanSystem _clean = default!; // DeltaV
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     [Dependency] private readonly InventorySystem _inventory = default!; // DeltaV - surgery cross contamination
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly RottingSystem _rot = default!; // Euphoria
 
     private readonly HashSet<string> _dirtyDnas = new(); // DeltaV
@@ -241,7 +243,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     {
         // Im killing this shit soon too, inshallah. // Euphoria - it stays for now
         if (ent.Comp.DamageType == "Rot")
-             _rot.ReduceAccumulator(args.Body, TimeSpan.FromSeconds(2147483648)); // BEHOLD, SHITCODE THAT I JUST COPY PASTED. I'll redo it at some point, pinky swear :) 
+             _rot.ReduceAccumulator(args.Body, TimeSpan.FromSeconds(2147483648)); // BEHOLD, SHITCODE THAT I JUST COPY PASTED. I'll redo it at some point, pinky swear :)
         /*else if (ent.Comp.DamageType == "Eye"
             && TryComp(ent, out BlindableComponent? blindComp)
             && blindComp.EyeDamage > 0)
@@ -252,7 +254,7 @@ public sealed class SurgerySystem : SharedSurgerySystem
     {
         if (HasComp<AnesthesiaComponent>(args.Body)) // DeltaV
             return;
-        if (HasComp<PainNumbnessComponent>(args.Body)) // DeltaV
+        if (_statusEffects.HasEffectComp<PainNumbnessStatusEffectComponent>(ent))
             return;
 
         _chat.TryEmoteWithChat(args.Body, ent.Comp.Emote);

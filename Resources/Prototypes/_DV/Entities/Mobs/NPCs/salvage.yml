@@ -1,6 +1,6 @@
 - type: entity
   name: Syndicate Guard
-  parent: MobHumanNPC
+  parent: MobHumanNPC # Euphoria mob reparent
   id: MobRadioGuard
   description: "Mindwiped and hypno-indoctrinated into perfect loyalty by the Syndicate. They will throw their life away to defend their objective."
   components:
@@ -11,8 +11,8 @@
       thresholds:
         0: Alive
         100: Dead #Tweak for "Acidify on Crit"
-    # - type: MindContainer | Euphoria mob reparent
-    #   showExamineInfo: False
+  # - type: MindContainer | Euphoria mob reparent
+  #  - type: MindExaminable
     - type: Loadout
       prototypes:
         - RadioGuardGear

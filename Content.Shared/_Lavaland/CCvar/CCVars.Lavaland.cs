@@ -26,9 +26,10 @@ namespace Content.Shared.CCVar;
 
 public sealed partial class CCVars
 {
-    /// <summary>
-    ///     Should the Lavaland roundstart generation be enabled.
-    /// </summary>
-    public static readonly CVarDef<bool> LavalandEnabled =
-        CVarDef.Create("lavaland.enabled", true, CVar.SERVERONLY);
+    // Floofstation - unused. Use game.station_planet_spawning.
+    // /// <summary>
+    // ///     Should the Lavaland roundstart generation be enabled.
+    // /// </summary>
+    // public static readonly CVarDef<bool> LavalandEnabled =
+    //     CVarDef.Create("lavaland.enabled", true, CVar.SERVERONLY);
 }
