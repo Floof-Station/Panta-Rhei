@@ -90,9 +90,27 @@ public sealed class VoreSystem : EntitySystem
 
         /* in case prey is inside a container immediately release them when they turn off prey consent
         works as an emergency leave for the prey*/
-        if (!hasPrey && IsInVoreContainer(uid) &&
-        _containerSystem.TryGetContainingContainer(uid, out var container)){
-            _containerSystem.Remove(uid, container);
+        if (!hasPrey){
+            var safety = 0;
+            while (_containerSystem.TryGetContainingContainer(uid, out var container)){
+                if (++safety > 10) 
+                    break;
+
+                if (IsInVoreContainer(uid)){
+                    _containerSystem.Remove(uid, container);
+                }
+                else{
+                    break;
+                }
+            }
+        }
+        // same for pred release all current prey
+        if (!hasPred){
+            if (TryComp<VoreComponent>(uid, out var comp)){
+                var container = _containerSystem.EnsureContainer<Container>(uid, comp.ContainerId);
+                if (container.ContainedEntities.Count > 0)
+                    TryReleasePrey(uid, comp);
+            }
         }
 
         //give the mob the needed component to be able to see the verbs

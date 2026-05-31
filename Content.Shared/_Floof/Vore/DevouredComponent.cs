@@ -5,4 +5,5 @@ public sealed partial class DevouredComponent : Component
     public bool AddedBreathing;
     public bool AddedTemperature;
     public bool AddedRadiation;
+    public bool AddedFlash;
 }
