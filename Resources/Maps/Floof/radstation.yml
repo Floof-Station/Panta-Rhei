@@ -4,8 +4,8 @@ meta:
   engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 05/27/2026 03:12:36
-  entityCount: 25004
+  time: 05/31/2026 03:05:37
+  entityCount: 25005
 maps:
 - 1
 grids:
@@ -15135,7 +15135,7 @@ entities:
       pos: -23.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38016.23
+      secondsUntilStateChange: -38257.582
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15169,7 +15169,7 @@ entities:
       pos: 34.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -102635.43
+      secondsUntilStateChange: -102876.78
       state: Opening
   - uid: 386
     components:
@@ -15503,7 +15503,7 @@ entities:
       pos: -35.5,-8.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38418.26
+      secondsUntilStateChange: -38659.613
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -63697,6 +63697,14 @@ entities:
     - type: Transform
       pos: -11.5,29.5
       parent: 2
+- proto: ComputerCargoOrdersService
+  entities:
+  - uid: 16593
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 15.5,7.5
+      parent: 2
 - proto: ComputerCloningConsole
   entities:
   - uid: 9124
@@ -64094,6 +64102,14 @@ entities:
     components:
     - type: Transform
       pos: 4.5,61.5
+      parent: 2
+- proto: ComputerSalvageJobBoard
+  entities:
+  - uid: 19876
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -43.5,-13.5
       parent: 2
 - proto: ComputerShuttleCargo
   entities:
@@ -75931,7 +75947,7 @@ entities:
   - uid: 10666
     components:
     - type: Transform
-      pos: 16.337538,12.790525
+      pos: 17.184551,12.685972
       parent: 2
   - uid: 10668
     components:
@@ -82491,7 +82507,7 @@ entities:
       - 18056
       - 132
     - type: Door
-      secondsUntilStateChange: -3207.9634
+      secondsUntilStateChange: -3449.313
       state: Closing
   - uid: 12558
     components:
@@ -117265,7 +117281,7 @@ entities:
   - uid: 16234
     components:
     - type: Transform
-      pos: -43.5,-13.5
+      pos: -41.5,-9.5
       parent: 2
   - uid: 16235
     components:
@@ -117907,7 +117923,7 @@ entities:
         stampedName: ???
       - stampedColor: '#C69B17FF'
         stampedName: stamp-component-stamped-name-ce
-      content: Sometimes, I dream about cheese.
+      content: POWAH!!!!!!!!!!!
 - proto: PaperTemplateEngineeringBuildingPermit
   entities:
   - uid: 17638
@@ -119493,12 +119509,6 @@ entities:
     - type: Transform
       pos: 41.5,-12.5
       parent: 2
-  - uid: 16593
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 15.5,7.5
-      parent: 2
   - uid: 16594
     components:
     - type: Transform
@@ -119509,6 +119519,11 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,-62.5
+      parent: 2
+  - uid: 19657
+    components:
+    - type: Transform
+      pos: 16.5,12.5
       parent: 2
 - proto: PowerCellSmall
   entities:
@@ -140427,12 +140442,6 @@ entities:
     - type: Transform
       pos: 41.5,-12.5
       parent: 2
-  - uid: 19657
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 15.5,7.5
-      parent: 2
   - uid: 19658
     components:
     - type: Transform
@@ -143010,7 +143019,7 @@ entities:
   - uid: 20069
     components:
     - type: Transform
-      pos: -19.56586,-24.227554
+      pos: -19.550385,-24.33102
       parent: 2
   - uid: 20070
     components:
@@ -163032,7 +163041,7 @@ entities:
       pos: -41.5,12.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -238927.75
+      secondsUntilStateChange: -239169.1
       state: Opening
   - uid: 23498
     components:
