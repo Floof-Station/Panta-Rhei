@@ -9,9 +9,9 @@
   description: Feel the righteous power of the magical girl with the power of the law on your side, just hold this wand close to your heart.
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/security-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/hos-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/security-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/hos-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -796,7 +796,7 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalHOPHat
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalHOPHat
   - type: Item
     size: Small
   - type: Tag
@@ -826,6 +826,12 @@
     entityId: ClothingOuterHardsuitMagicalHOP
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepPaperwork
+      params:
+        variation: 0.09
+        volume: -6
 
 #CORRUPTED Head of Security's Hardsuit
 - type: entity
@@ -836,9 +842,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/security-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-hos-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/security-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-hos-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -866,7 +872,7 @@
     walkModifier: 0.8
     sprintModifier: 0.8
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalHOSTiara
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalHOSTiara
   - type: Item
     size: Large
   - type: Tag
@@ -894,9 +900,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/qm-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-qm-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/qm-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-qm-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -925,7 +931,7 @@
         - 1.025689525 # oxygen
         - 1.025689525 # nitrogen
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalQMHat
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalQMHat
   - type: Item
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/qm-magical.rsi
     size: Large
@@ -957,9 +963,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/rd-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-rd-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/rd-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-rd-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -988,7 +994,7 @@
     sprintModifier: 0.75
   - type: HeldSpeedModifier
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalRDWig
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalRDWig
   - type: Item
     size: Large
   - type: Tag
@@ -1000,6 +1006,17 @@
     entityId: ClothingOuterHardsuitMagicalRDMysta
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepMonolith
+      params:
+        variation: 0.09
+        volume: -6
+
 
 #CORRUPTED CJ Hardsuit
 - type: entity
@@ -1010,9 +1027,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cj-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cj-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cj-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cj-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -1028,7 +1045,7 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalCJHat
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalCJHat
   - type: Item
     size: Large
   - type: Tag
@@ -1063,9 +1080,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cap-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cap-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -1093,7 +1110,7 @@
     walkModifier: 0.8
     sprintModifier: 0.8
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalCAPHat
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalCAPHat
   - type: Item
     size: Large
   - type: Tag
@@ -1115,9 +1132,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cmo-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cmo-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cmo-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cmo-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -1133,7 +1150,7 @@
     walkModifier: 0.95
     sprintModifier: 0.95
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalCMOHat
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalCMOHat
   - type: Item
     size: Large
   - type: Tag
@@ -1145,6 +1162,10 @@
     entityId: ClothingOuterHardsuitMagicalCMO
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
 
 #CORRUPTED CE Hardsuit
 - type: entity
@@ -1155,9 +1176,9 @@
   description: PLACHOLDER
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/ce-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-ce-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/ce-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-ce-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -1180,7 +1201,7 @@
     walkModifier: 0.8
     sprintModifier: 0.8
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalCEHat
+    clothingPrototype: ClothingOuterHardsuitCorruptedMagicalCEHat
   - type: Item
     size: Large
   - type: Tag
@@ -1213,3 +1234,7 @@
     entityId: ClothingOuterHardsuitMagicalCE
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
