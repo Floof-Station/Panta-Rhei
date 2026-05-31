@@ -14,7 +14,7 @@
   equipment:
     id: VisitorPDA
     ears: ClothingHeadsetService
-    pocket1: EncryptionKeyTraffic
+    #pocket1: EncryptionKeyTraffic # They do not need this IF they are not spawning on a ship.
     jumpsuit: ClothingUniformSeniorBartender
     shoes: ClothingShoesBootsLaceup
     back: ClothingBackpack
