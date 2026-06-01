@@ -61,7 +61,9 @@
     guides: [ MantisGuide ]
   - type: ContainerContainer
   - containers:
-    cell_slot: !type:ContainerSlot
+      cell_slot: !type:ContainerSlot
+      gun_magazine: !type:ContainerSlot
+
 
 
 
