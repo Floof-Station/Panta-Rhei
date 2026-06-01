@@ -532,6 +532,10 @@
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
   effects:
   - !type:ModifyCritDeadThresholdEffect
     critModifier: 0.85 #-15%
@@ -561,6 +565,10 @@
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
   effects:
   - !type:ModifyCritDeadThresholdEffect
     critModifier: 1.05 #+5%
@@ -589,6 +597,10 @@
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
   effects:
   - !type:ModifyCritDeadThresholdEffect
     critModifier: 0.5 #-50%
