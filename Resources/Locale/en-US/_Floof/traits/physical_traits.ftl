@@ -98,4 +98,4 @@ trait-willtolive-desc =
 trait-brittlebone-name = Brittle Bones
 trait-brittlebone-desc = 
     People with this genetic disorder have bones that are easily broken, often simply by moving. 
-    This trait reduces your threshold for critical injury by 50%, and reduces your death threshold by 25%.
+    This trait reduces your threshold for critical injury by 50%.
