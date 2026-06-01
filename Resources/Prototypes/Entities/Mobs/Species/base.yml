@@ -129,7 +129,6 @@
     - Muted
     - TemporaryBlindness
     - Pacified
-    - StaminaModifier
     - Flashed
     - RadiationProtection
     - Adrenaline
@@ -179,7 +178,7 @@
   - type: CrawlingExtensions # Floofstation - under-furniture crawling
   - type: Dna
   - type: MindContainer
-    showExamineInfo: true
+  - type: MindExaminable
   - type: CanEnterCryostorage
 #  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
 #    successChance: 1
@@ -229,8 +228,6 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost # MAKE SURE TO UPDATE FLOOFSTATION SPECIES TAGS IF THESE EVER CHANGE
-  - type: PotentialPsionic # DeltaV - organic species can all be psionic
-  - type: FootPrints # DeltaV port from EE, blood splatter # Floofstation - delta-v removed this, but we're keeping it
   - type: Targeting # Shitmed Change
   - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
@@ -274,10 +271,11 @@
   - type: Blindable
   # Other
   - type: Temperature
-    heatDamageThreshold: 325
-    coldDamageThreshold: 260
     currentTemperature: 310.15
     specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 325
+    coldDamageThreshold: 260
     coldDamage:
       types:
         Cold: 0.1 #per second, scales with temperature & other constants
@@ -314,6 +312,7 @@
     alternateState: Standing
   #- type: StunVisuals # DeltaV - No stars
   - type: CanDoCPR # DeltaV - Addition of CPR
+  - type: PotentialPsionic # DeltaV - organic species can all be psionic
 
 - type: entity
   save: false

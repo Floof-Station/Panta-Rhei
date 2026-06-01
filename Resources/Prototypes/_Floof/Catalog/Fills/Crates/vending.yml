@@ -8,3 +8,14 @@
     containers:
       entity_storage:
         id: VendingMachineRestockPetStore
+
+- type: entity
+  id: CrateVendingMachineRestockBepisFilled
+  parent: CratePlastic
+  name: Bepis restock crate
+  description: Contains a restock box for the Bepis vending machine.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: VendingMachineRestockBepis

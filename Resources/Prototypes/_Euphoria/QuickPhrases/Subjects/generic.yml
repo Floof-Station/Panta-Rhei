@@ -68,6 +68,22 @@
   id: GalpolPhrase
   parent: BaseSubjectPhrase
   text: phrase-galpol
+
+- type: quickPhrase
+  id: FederalPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-federal
+
+- type: quickPhrase
+  id: AgentPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-agent
+
+- type: quickPhrase
+  id: ArmyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-army
+
 ## Relations & Identity
 - type: quickPhrase
   id: FriendPhrase
@@ -303,6 +319,42 @@
   id: MagicPhrase
   parent: BaseSubjectPhrase
   text: phrase-magic
+
+- type: quickPhrase
+  id: PregnantPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pregnant
+
+- type: quickPhrase
+  id: SoPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-so
+
+- type: quickPhrase
+  id: AndPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-and
+
+- type: quickPhrase
+  id: AllDonePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-all-done
+
+- type: quickPhrase
+  id: OrPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-or
+
+- type: quickPhrase
+  id: ButPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-but
+
+- type: quickPhrase
+  id: LikePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-like
+
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase
@@ -459,6 +511,11 @@
   id: ShitPhrase
   parent: BaseSubjectPhrase
   text: phrase-shit
+
+- type: quickPhrase
+  id: SlutPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-slut
 
 ##Fluids
 - type: quickPhrase

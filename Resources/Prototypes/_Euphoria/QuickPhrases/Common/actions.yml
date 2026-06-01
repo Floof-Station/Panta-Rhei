@@ -82,3 +82,18 @@
   id: SleepPhrase
   parent: BaseActionPhrase
   text: phrase-sleep
+
+- type: quickPhrase
+  id: TeachPhrase
+  parent: BaseActionPhrase
+  text: phrase-teach
+
+- type: quickPhrase
+  id: LearnPhrase
+  parent: BaseActionPhrase
+  text: phrase-learn
+
+- type: quickPhrase
+  id: SmellPhrase
+  parent: BaseActionPhrase
+  text: phrase-smell

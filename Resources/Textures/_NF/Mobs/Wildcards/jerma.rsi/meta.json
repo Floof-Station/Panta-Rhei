@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "size": {
+    "x": 128,
+    "y": 128
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Some call this a mistake, i call this a masterpiece, taken from Frontier PR: https://github.com/new-frontiers-14/frontier-station-14/pull/1142",
+  "states": [
+    {
+      "name": "alive",
+      "directions": 4,
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ],
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    },
+    {
+      "name": "crit"
+    },
+    {
+      "name": "dead"
+    }
+  ]
+}

@@ -19,6 +19,7 @@ using Content.Shared.Polymorph;
 using Content.Shared.Destructible;
 using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
+using Content.Shared.Gibbing;
 using Robust.Shared.Timing;
 namespace Content.Server._Floof.Vore;
 
@@ -72,7 +73,7 @@ public sealed class VoreSystem : EntitySystem
 
     /// <summary>
     /// gives the mob vore component when they updated their consent to be pred or prey
-    /// in order to avoid giving every mob it one by one, timer needed to get the recent change 
+    /// in order to avoid giving every mob it one by one, timer needed to get the recent change
     /// </summary>
     private void OnConsentUpdated(EntityUid uid, ConsentComponent comp, EntityConsentToggleUpdatedEvent args){
         // only if the updated toggle is prey or pred
@@ -121,7 +122,7 @@ public sealed class VoreSystem : EntitySystem
     }
 
     /// <summary>
-    /// creates verbs inside the interaction menu for yourself and other mobs controlled by players 
+    /// creates verbs inside the interaction menu for yourself and other mobs controlled by players
     /// only show up when the consent has been selected on both sides
     /// </summary>
     private void OnGetVerbs(EntityUid uid, VoreComponent comp, GetVerbsEvent<Verb> args){
@@ -131,7 +132,7 @@ public sealed class VoreSystem : EntitySystem
         // using command to turn on/off verb components
         if (!_cfg.GetCVar(VoreCVars.VoreEnabled))
             return;
-        
+
         // no self activation, only there to remove your own prey and not have other intervene or have others see that you have prey
         if (user == target){
             var container = _containerSystem.EnsureContainer<Container>(target, comp.ContainerId);
@@ -149,13 +150,13 @@ public sealed class VoreSystem : EntitySystem
         // only when reachable & interactable
         if (!args.CanInteract || !args.CanAccess)
             return;
-        
+
         // to avoid empty mind NPCs
         if (!TryComp<MindContainerComponent>(target, out var mindContainer) || mindContainer.Mind == null)
             return;
 
         /* if the user is a pred inside a pred allows them to have interactions with prey inside
-        only if they are in the same container however (not just same type but literally)*/ 
+        only if they are in the same container however (not just same type but literally)*/
         if (!IsValidVoreInteraction(user, target, comp))
             return;
 
@@ -191,7 +192,7 @@ public sealed class VoreSystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new OnVoreDoAfter(), user, target: target, used: user)
         {
             BreakOnMove = true,
-            BreakOnDamage = true,      
+            BreakOnDamage = true,
         };
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs))
             return;
@@ -212,7 +213,7 @@ public sealed class VoreSystem : EntitySystem
 
         var pred = uid;
         var container = _containerSystem.EnsureContainer<Container>(pred, comp.ContainerId);
-        
+
         var count = 0;
         //only counts entities with bodies meaning no items
         foreach (var e in container.ContainedEntities){
@@ -230,14 +231,14 @@ public sealed class VoreSystem : EntitySystem
 
         //moves prey inside the person
         _containerSystem.Insert(prey, container);
-        
+
         /*make the prey immune to space+temp+breathing to avoid consent concerns from outside influence
         gets removed after escaping or being forcefully ejected by pred*/
         ApplyStomachImmunities(prey, comp);
     }
 
     /// <summary>
-    /// makes sure the prey is not inside any other container such as 
+    /// makes sure the prey is not inside any other container such as
     /// bags or being carried by someone before being inserted into the pred
     /// </summary>
     private void EnsureEntityFree(EntityUid pred, EntityUid prey, VoreComponent comp){
@@ -320,10 +321,10 @@ public sealed class VoreSystem : EntitySystem
     /// <summary>
     /// in case of polymorp scenarios such as kitsune release all the content
     /// </summary>
-    private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){   
+    private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){
         TryReleasePrey(uid, comp);
     }
-    
+
     /// <summary>
     /// the prey needs to have certain components such as pressure immunity
     /// for consent purposes -> having others avoid stumbling on scenarios
@@ -352,7 +353,7 @@ public sealed class VoreSystem : EntitySystem
             EnsureComp<TemperatureImmunityComponent>(prey);
             tracker.AddedTemperature = true;
         }
-        /* doesnt fully protect from radiation (given its potassium iodine protection meaning 90 percent reduction of radiation damage) 
+        /* doesnt fully protect from radiation (given its potassium iodine protection meaning 90 percent reduction of radiation damage)
         but will give prey more time to react and escape before radiation starts doing damage */
         if (!HasComp<RadiationProtectionComponent>(prey))
         {
@@ -380,7 +381,7 @@ public sealed class VoreSystem : EntitySystem
             RemComp<TemperatureImmunityComponent>(prey);
         if (tracker.AddedRadiation)
             RemComp<RadiationProtectionComponent>(prey);
-        
+
         RemComp<VoreImmunityTrackerComponent>(prey);
     }
 

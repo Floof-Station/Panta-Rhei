@@ -6,7 +6,6 @@ namespace Content.Shared._Floof.InteractionVerbs.Requirements;
 /// <summary>
 ///     A requirement that combines multiple other requirements.
 /// </summawry>
-[Serializable, NetSerializable]
 public sealed partial class ComplexRequirement : InteractionRequirement
 {
     [DataField]

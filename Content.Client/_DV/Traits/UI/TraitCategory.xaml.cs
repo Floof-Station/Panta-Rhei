@@ -183,6 +183,16 @@ public sealed partial class TraitCategory : BoxContainer
         UpdateStats();
     }
 
+    //Euphoria | Clears previously set conditions.
+    public void ResetConditions()
+    {
+        foreach (var (_, entry) in _traitEntries)
+        {
+            entry.ResetConditionsMet();
+        }
+        UpdateStats();
+    }
+
     /// <summary>
     /// Checks if a trait in this category meets its conditions.
     /// </summary>

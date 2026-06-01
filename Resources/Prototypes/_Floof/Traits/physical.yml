@@ -15,7 +15,7 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Left
-      protoId: JawsOfLifeLeftArm
+      protoId: PrybarLeftArm
       slotId: "left arm"
 
 - type: trait
@@ -34,7 +34,7 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Right
-      protoId: JawsOfLifeRightArm
+      protoId: PrybarRightArm
       slotId: "right arm"
 
 - type: trait
@@ -312,7 +312,7 @@
   name: trait-coldtolerance-name
   description: trait-coldtolerance-desc
   category: Skills
-  cost: 1 
+  cost: 1
   conflicts:
     - ColdIntolerance
     - ColdIntoleranceAdvanced
@@ -370,7 +370,7 @@
   name: trait-heattolerance-name
   description: trait-heattolerance-desc
   category: Skills
-  cost: 1 
+  cost: 1
   conflicts:
     - HeatIntolerance
     - HeatIntoleranceAdvanced
@@ -396,7 +396,7 @@
   name: trait-heattoleranceadvanced-name
   description: trait-heattoleranceadvanced-desc
   category: Skills
-  cost: 2 
+  cost: 2
   conflicts:
     - HeatIntolerance
     - HeatIntoleranceAdvanced
@@ -422,7 +422,7 @@
   name: trait-coldintolerance-name
   description: trait-coldintolerance-desc
   category: Skills
-  cost: -1 
+  cost: -1
   conflicts:
     - ColdTolerance
     - ColdToleranceAdvanced
@@ -441,7 +441,7 @@
     #- Tajaran #248.15
     #- Resomi #195.4
     #- Shadowkin #195
-    - Reptilian #285 #At 20 intolerance, they're just barely on the cusp. The "you're too cold" warning keeps going back and forth. 
+    - Reptilian #285 #At 20 intolerance, they're just barely on the cusp. The "you're too cold" warning keeps going back and forth.
   effects:
   - !type:ModifyTemperatureToleranceEffect
     coldToleranceModifier: 20 # 20 worse (less tolerant) than base (which should be 260)
@@ -480,7 +480,7 @@
   name: trait-heatintolerance-name
   description: trait-heatintolerance-desc
   category: Skills
-  cost: -1 
+  cost: -1
   conflicts:
     - HeatTolerance
     - HeatToleranceAdvanced
@@ -517,5 +517,3 @@
   effects:
   - !type:ModifyTemperatureToleranceEffect
     heatToleranceModifier: -10 # 10 worse (less tolerant) than base (which should be 325).
-
-# =================================================== #

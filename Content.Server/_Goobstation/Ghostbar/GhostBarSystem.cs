@@ -6,6 +6,7 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Goobstation.Ghostbar.Components;
 using Content.Server.Mind;
 using Content.Server.Station.Systems;
+using Content.Shared._DV.Psionics.Components;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared._Goobstation.Ghostbar.Events;
 using Content.Shared.Abilities.Psionics;
@@ -80,14 +81,17 @@ public sealed class GhostBarSystem : EntitySystem
         var randomJob = _random.Pick(_jobPrototypes);
         var profile = _ticker.GetPlayerProfile(args.SenderSession);
         var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
-        RaiseLocalEvent(new PlayerSpawnCompleteEvent(mobUid, args.SenderSession, randomJob, true, true, 0, EntityUid.Invalid, profile)); // we give them their characters traits
 
         RemComp<TemperatureComponent>(mobUid);
         RemComp<RespiratorComponent>(mobUid);
         RemComp<BarotraumaComponent>(mobUid);
+        RemComp<PotentialPsionicComponent>(mobUid); // we don't want people getting mindswapped
+        RemComp<PsionicComponent>(mobUid); // we don't want people getting mindswapped
+
+        RaiseLocalEvent(new PlayerSpawnCompleteEvent(mobUid, args.SenderSession, randomJob, true, true, 0, EntityUid.Invalid, profile)); // we give them their characters traits
+
         EnsureComp<MindShieldComponent>(mobUid);
         EnsureComp<AntagImmuneComponent>(mobUid); // self explanatory why we dont want players becoming antags at the ghostbar
-		EnsureComp<PsionicInsulationComponent>(mobUid); // we don't want people getting mindswapped
         EnsureComp<UniversalLanguageSpeakerComponent>(mobUid); // giving universal just in case for RP purposes
         EnsureComp<GhostBarPlayerComponent>(mobUid); // give the player mob the ghostbarplayer comp so they can be tracked
         var targetMind = _mindSystem.GetMind(args.SenderSession.UserId);
