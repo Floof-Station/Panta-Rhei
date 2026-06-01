@@ -35,41 +35,25 @@ public sealed partial class ModifyCritDeadThresholdEffect : BaseTraitEffect
         var newCrit = threshDict.Thresholds.FirstOrDefault(x => x.Value == MobState.Critical).Key;
         var newDead = threshDict.Thresholds.FirstOrDefault(x => x.Value == MobState.Dead).Key;
 
-        if (newDead != null){
-            //Make changes only if something is passed in via the trait.
-            if (DeadModifier != 0){
-                newDead = newDead * DeadModifier;
-            }
-            
-            //Grab the existing Crit value. There shouldn't be a case in which we send in a Dict that doesn't have Crit, but let's account for that anyway.
-            if (newCrit != null){
-                //Make changes only if something is passed in via the trait.
-                if (CritModifier != 0){
-                  newCrit = newCrit * CritModifier;
+        //Make changes only if something is passed in via the trait.
+        if (DeadModifier != 0){
+            newDead = newDead * DeadModifier;
+        }
+        //Make changes only if something is passed in via the trait.
+        if (CritModifier != 0){
+            newCrit = newCrit * CritModifier;
 
-                  //Safeguard to make sure this value will not be too low, though this shouldn't happen.
-                  if (newCrit <= 5){
-                    newCrit = 5;
-                  }
-                }
-                //Safeguard to make sure Dead is not less than or equal to Crit.
-                if (newDead <= newCrit){
-                    newDead = newCrit + 0.1;
-                }
+            //Safeguard to make sure this value will not be too low, though this shouldn't happen.
+            if (newCrit <= 5){
+                newCrit = 5;
+            }
+        }
+        //Safeguard to make sure Dead is not less than or equal to Crit.
+        if (newDead <= newCrit){
+            newDead = newCrit + 0.1;
+        }
                 
-                threshy.SetMobStateThreshold(ctx.Player, newCrit, MobState.Critical, threshDict);
-                threshy.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
-            }
-            else { //I don't think there's a scenario in which a player will not have a Critical threshold, but just in case...
-                //There is no reason the Dead value should ever be 0 or lower, but just in case...
-                if (newDead <= 0) {
-                    newDead = 5;
-                }
-                threshy.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
-            }
-        }
-        else { //If the Dead threshold doesn't exist, something went horribly wrong. This should never happen, but just in case...
-            threshy.SetMobStateThreshold(ctx.Player, 1, MobState.Dead, threshDict); //A value greater than 0.
-        }
+        threshy.SetMobStateThreshold(ctx.Player, newCrit, MobState.Critical, threshDict);
+        threshy.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
     }
 }
