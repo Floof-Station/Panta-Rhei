@@ -12,7 +12,7 @@ namespace Content.Shared._Floof.Traits.Effects;
 /// </summary>
 public sealed partial class ModifyCritDeadThresholdEffect : BaseTraitEffect
 {
-    [Dependency] private readonly MobThresholdSystem _thresholds = default!;
+    //[Dependency] private readonly MobThresholdSystem _thresholds = default!;
     
     /// <summary>
     /// How much to multiply the Critical threshold by.
@@ -31,9 +31,11 @@ public sealed partial class ModifyCritDeadThresholdEffect : BaseTraitEffect
         if (!ctx.EntMan.TryGetComponent<MobThresholdsComponent>(ctx.Player, out var threshDict))
             return;
 
+        var threshy = ctx.EntMan.EntitySysManager.GetEntitySystem<MobThresholdSystem>();
+
         //The new Dictionary we'll be playing with.
-        SortedDictionary<FixedPoint2, MobState> newDict = new SortedDictionary<FixedPoint2, MobState>();
-        newDict.Add(0, MobState.Alive);
+        //SortedDictionary<FixedPoint2, MobState> newDict = new SortedDictionary<FixedPoint2, MobState>();
+        //newDict.Add(0, MobState.Alive);
 
         // Make some temporary values to capture the existing Crit and Dead values. 
         var newCrit = threshDict.Thresholds.FirstOrDefault(x => x.Value == MobState.Critical).Key;
@@ -63,8 +65,10 @@ public sealed partial class ModifyCritDeadThresholdEffect : BaseTraitEffect
                 
                 //newDict.Add(newCrit, MobState.Critical);
                 //newDict.Add(newDead, MobState.Dead);
-                _thresholds.SetMobStateThreshold(ctx.Player, newCrit, MobState.Critical, threshDict);
-                _thresholds.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
+                //_thresholds.SetMobStateThreshold(ctx.Player, newCrit, MobState.Critical, threshDict);
+                //_thresholds.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
+                threshy.SetMobStateThreshold(ctx.Player, newCrit, MobState.Critical, threshDict);
+                threshy.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
             }
             else { //I don't think there's a scenario in which a player will not have a Critical threshold, but just in case...
                 //There is no reason the Dead value should ever be 0 or lower, but just in case...
@@ -72,14 +76,14 @@ public sealed partial class ModifyCritDeadThresholdEffect : BaseTraitEffect
                     newDead = 5;
                 }
                 //newDict.Add(newDead, MobState.Dead);
-                _thresholds.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
+                //_thresholds.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
+                threshy.SetMobStateThreshold(ctx.Player, newDead, MobState.Dead, threshDict);
             }
         }
         else { //If the Dead threshold doesn't exist, something went horribly wrong. This should never happen, but just in case...
             //newDict.Add(1, MobState.Dead); //A value greater than 0.
-            _thresholds.SetMobStateThreshold(ctx.Player, 1, MobState.Dead, threshDict); //A value greater than 0.
+            //_thresholds.SetMobStateThreshold(ctx.Player, 1, MobState.Dead, threshDict); //A value greater than 0.
+            threshy.SetMobStateThreshold(ctx.Player, 1, MobState.Dead, threshDict); //A value greater than 0.
         }
-
-        //threshDict.Thresholds = newDict; //This isn't working, says I only have Read access to Thresholds in MobThresholdComponent
     }
 }
