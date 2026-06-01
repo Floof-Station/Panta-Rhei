@@ -581,6 +581,7 @@
   cost: 2
   conflicts:
     - WillToDie
+    - Redshirt
   effects:
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 1.05 #+5%
