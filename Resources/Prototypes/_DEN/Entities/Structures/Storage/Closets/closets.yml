@@ -26,7 +26,7 @@
     stateDoorOpen: door-open
     stateDoorClosed: door-closed
   - type: StaticPrice
-    price: 125
+    price: 300
   - type: EntityStorage
     closeSound:
       path: /Audio/Effects/woodenclosetclose.ogg
@@ -125,7 +125,7 @@
       map: ["enum.WeldableLayers.BaseWelded"]
   - type: Appearance
   - type: StaticPrice
-    price: 125
+    price: 300
   - type: EntityStorageVisuals
     stateBaseClosed: base
     stateDoorOpen: door-open
