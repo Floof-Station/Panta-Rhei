@@ -39,7 +39,7 @@
         spawn:
           ScrapElectrum:
             min: 2
-            max: 4
+            max: 2
   - type: DamageOnLand
     damage:
       types:
@@ -54,4 +54,4 @@
       types:
         Blunt: 0 # Metal
   - type: StaticPrice
-    price: 5 #ubuntu go away
+    price: 70 #ubuntu go away
