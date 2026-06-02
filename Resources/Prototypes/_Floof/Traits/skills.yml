@@ -161,3 +161,16 @@
     - type: PlayerAccuracyModifier
       spreadMultiplier: 2.5
       maxSpreadAngle: 90
+
+- type: trait
+  id: Waddle
+  name: trait-name-Waddle
+  description: trait-description-Waddle
+  category: Skills
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: WaddleAnimation
+      TumbleIntensity: 10
+      RunAnimationLengthMultiplier: 0.3
