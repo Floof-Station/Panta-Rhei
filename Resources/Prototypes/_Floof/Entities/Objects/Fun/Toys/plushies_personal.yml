@@ -1850,10 +1850,4 @@
         volume: 2
   - type: EmitSoundOnUse
     sound: *snap3
-  - type: SolutionContainerManager
-    solutions:
-      absorbed:
-        maxVol: 30
-        reagents:
-        - ReagentId: JuiceTomato
-          Quantity: 30
+
