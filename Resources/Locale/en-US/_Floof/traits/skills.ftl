@@ -19,3 +19,8 @@ trait-weaponsgeneralist-desc =
     You are a jack of all trades with melee weapons, enabling you to be versatile with your weapon arsenal.
     Your melee damage bonus for all Brute damage types (Blunt, Slash, Piercing) becomes 30%.
 
+trait-name-Waddle = Waddle
+trait-description-Waddle =
+    You got a bounce in your step.
+    (This trait gives you the funny South Park-esque walk animation.)
+    
