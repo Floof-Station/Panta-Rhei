@@ -77,6 +77,7 @@
   description: Teleport to anywhere you can see, if your Energy Katana is in your hand.
   components:
   - type: Action
+    useDelay: 60
     icon:
       sprite: Objects/Magic/magicactions.rsi
       state: blink
