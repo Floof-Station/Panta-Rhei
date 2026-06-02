@@ -11,20 +11,21 @@
     roles:
     - NinjaRole
 
-- type: entity
-  parent: BaseNinjaObjective
-  id: DoorjackObjective
-  components:
-  - type: Objective
-    icon:
-      sprite: Objects/Tools/emag.rsi
-      state: icon
-  - type: NumberObjective
-    min: 15
-    max: 40
-    title: objective-condition-doorjack-title
-    description: objective-condition-doorjack-description
-  - type: DoorjackCondition
+#This isn't really fun or engaging for the ninja or the rest of the crew.
+#- type: entity
+#  parent: BaseNinjaObjective
+#  id: DoorjackObjective
+#  components:
+#  - type: Objective
+#    icon:
+#      sprite: Objects/Tools/emag.rsi
+#      state: icon
+#  - type: NumberObjective
+#    min: 15
+#    max: 40
+#    title: objective-condition-doorjack-title
+#    description: objective-condition-doorjack-description
+#  - type: DoorjackCondition
 
 - type: entity
   parent: BaseNinjaObjective
