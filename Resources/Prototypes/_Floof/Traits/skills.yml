@@ -172,5 +172,6 @@
   - !type:AddCompsEffect
     components:
     - type: WaddleAnimation
-      TumbleIntensity: 10
-      RunAnimationLengthMultiplier: 0.3
+      keyName: SPWaddle
+      tumbleIntensity: 10
+      runAnimationLengthMultiplier: 0.3
