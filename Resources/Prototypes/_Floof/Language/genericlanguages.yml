@@ -4,6 +4,7 @@
 - type: language
   id: Universal
   parent: BaseLanguage
+  isVisibleLanguage: false
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
@@ -15,7 +16,7 @@
 - type: language
   id: Binary
   parent: BaseLanguage
-  isVisibleLanguage: true
+  icon: { state: "binary" }
   speech:
     fontId: Monospace
   obfuscation:
@@ -30,6 +31,7 @@
 - type: language
   id: Sign
   parent: BaseLanguage
+  icon: { state: "sign" }
   speech:
     allowRadio: false
     allowWriting: false
