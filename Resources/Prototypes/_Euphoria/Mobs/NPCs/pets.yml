@@ -1,0 +1,26 @@
+- type: entity
+  name: Sigmund
+  description: The paramedic's slightly overweight fuzzy friend.
+  parent: MobSaintBernard
+  id: MobSaintBernardSigmund
+  components:
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: "Sigmund"
+    description: "Help the paramedic with their work and beg the chemist for treats."
+  - type: GhostTakeoverAvailable
+  - type: Grammar
+    attributes: 
+      proper: true
+      gender: male
+  - type: Tag
+    tags:
+    - CannotSuicide
+  - type: LanguageKnowledge
+    speaks: 
+    - Dog
+    understands: 
+    - Dog
+    - TauCetiBasic

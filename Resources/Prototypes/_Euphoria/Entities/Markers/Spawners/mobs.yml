@@ -1,0 +1,13 @@
+- type: entity
+  name: Saint Bernard Sigmund Spawner
+  id: SpawnMobSaintBernardSigmund
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: saintbernard
+        sprite: _Euphoria/Mobs/Pets/saintbernard.rsi
+  - type: ConditionalSpawner
+    prototypes:
+      - MobSaintBernardSigmund
