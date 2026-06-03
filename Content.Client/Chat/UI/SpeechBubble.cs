@@ -1,4 +1,6 @@
 using System.Numerics;
+using System.Text.RegularExpressions;
+using Content.Client._Floof.Language.RichText;
 using Content.Client.Chat.Managers;
 using Content.Shared._Floof.Language;
 using Content.Shared.CCVar;
@@ -14,7 +16,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Client.Chat.UI
 {
-    public abstract class SpeechBubble : Control
+    public abstract partial class SpeechBubble : Control
     {
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IEyeManager _eyeManager = default!;
@@ -65,6 +67,11 @@ namespace Content.Client.Chat.UI
 
         // man down
         public event Action<EntityUid, SpeechBubble>? OnDied;
+
+        // Floofstation - lazy way to extract the language id from a LanguageIconTag.
+        // It's probably going to be fine unless someone tries to inject a LIT inside their character name, in which case it doesn't really matter
+        [GeneratedRegex($"\\[{LanguageIconTag.TagName}=\"(.*?)\"\\]")]
+        protected static partial Regex LanguageIdRegexp();
 
         public static SpeechBubble CreateSpeechBubble(SpeechType type, ChatMessage message, EntityUid senderEntity)
         {
@@ -277,8 +284,10 @@ namespace Content.Client.Chat.UI
             bubbleHeader.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleHeader", fontColor));
             bubbleContent.SetMessage(ExtractAndFormatSpeechSubstring(message, "BubbleContent", fontColor));
             // Floofstation section - append the language hint if there's supposed to be one
-            if (SharedChatSystem.GetStringInsideTag(message, "BubbleLanguage") is { Length: not 0 } languageName)
+            var languageMatch = LanguageIdRegexp().Match(message.WrappedMessage);
+            if (languageMatch.Success && languageMatch.Groups[1].Value is { Length: >0 } languageId)
             {
+                var languageName = Loc.GetString($"language-{languageId}-name");
                 var msg = bubbleHeader.GetFormattedMessage()!;
                 msg.AddMarkupPermissive(Loc.GetString("chat-manager-language-hint-ui", ("language", languageName)));
                 bubbleHeader.SetMessage(msg);

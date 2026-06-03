@@ -108,7 +108,7 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
             ("channel", $"\\[{channel.LocalizedName}\\]"),
             ("name", name),
             // Floofstation. Note that we explicitly don't use channel.Color here because this is only used for the language hint.
-            ("language", ChatSystem.LanguageNameForFluent(language)),
+            ("language", language.ID),
             ("textColor", ChatSystem.LanguageColorForFluent(language, new(200, 200, 200))),
             ("textFont", ChatSystem.LanguageFontForFluent(language)),
             // Floofstation section end
