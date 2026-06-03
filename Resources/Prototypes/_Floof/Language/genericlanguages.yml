@@ -3,6 +3,7 @@
 # Everyone can understand a message if it is spoken in Universal.
 - type: language
   id: Universal
+  parent: BaseLanguage
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
@@ -13,6 +14,7 @@
 # Used by robots. Note: this used to be called RobotTalk pre-rebase. Update your references.
 - type: language
   id: Binary
+  parent: BaseLanguage
   isVisibleLanguage: true
   speech:
     fontId: Monospace
@@ -27,6 +29,7 @@
 # Example of a sign language. Used by the Sign Language trait.
 - type: language
   id: Sign
+  parent: BaseLanguage
   speech:
     allowRadio: false
     allowWriting: false

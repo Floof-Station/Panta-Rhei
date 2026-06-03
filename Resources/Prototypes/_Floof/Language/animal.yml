@@ -1,6 +1,7 @@
 # Languages spoken by various critters.
 - type: language
   id: Bee
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -13,7 +14,7 @@
 
 - type: language
   id: Cat
-  isVisibleLanguage: true
+  parent: BaseLanguage
   icon: { state: "felidae" }
   obfuscation:
     !type:SyllableObfuscation
@@ -27,7 +28,7 @@
 
 - type: language
   id: Dog
-  isVisibleLanguage: true
+  parent: BaseLanguage
   icon: { state: "canilunzt" } # Placeholder
   obfuscation:
     !type:SyllableObfuscation
@@ -43,7 +44,7 @@
 
 - type: language
   id: Fox
-  isVisibleLanguage: true
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -58,6 +59,7 @@
 
 - type: language
   id: Xeno
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -68,7 +70,7 @@
 
 - type: language
   id: Monkey
-  isVisibleLanguage: true
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -79,7 +81,7 @@
 
 - type: language
   id: Mouse
-  isVisibleLanguage: true # Floofstation - we have rodentia
+  parent: BaseLanguage
   icon: { state: "mouse" }
   obfuscation:
     !type:SyllableObfuscation
@@ -97,6 +99,7 @@
 
 - type: language
   id: Chicken
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -108,6 +111,7 @@
 
 - type: language
   id: Duck
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -119,6 +123,7 @@
 
 - type: language
   id: Cow
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -129,6 +134,7 @@
 
 - type: language
   id: Sheep
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -140,6 +146,7 @@
 
 - type: language
   id: Kangaroo
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -152,6 +159,7 @@
 
 - type: language
   id: Pig
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -161,6 +169,7 @@
 
 - type: language
   id: Crab
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -176,6 +185,7 @@
 
 - type: language
   id: Kobold
+  parent: BaseLanguage
   isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
@@ -196,6 +206,7 @@
 
 - type: language
   id: Hissing
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -208,6 +219,7 @@
 
 - type: language
   id: Penguin
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -221,6 +233,7 @@
 
 - type: language
   id: Scurret
+  parent: BaseLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

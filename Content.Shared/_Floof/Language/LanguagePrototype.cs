@@ -1,14 +1,22 @@
 using Content.Shared.Chat;
+using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Language;
 
-[Prototype("language")]
-public sealed partial class LanguagePrototype : IPrototype
+[Prototype]
+public sealed partial class LanguagePrototype : IPrototype, IInheritingPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<LanguagePrototype>))]
+    public string[]? Parents { get; private set; }
+
+    [AbstractDataField, NeverPushInheritance]
+    public bool Abstract { get; private set; }
 
     /// <summary>
     ///     Whether this language will display its name in chat behind a player's name.

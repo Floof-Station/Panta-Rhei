@@ -1,6 +1,7 @@
 # Spoken by Unathi.
 - type: language
   id: Draconic
+  parent: BaseLanguage
   isVisibleLanguage: true
   speech:
     color: "#2aca2add"
@@ -98,6 +99,7 @@
 # !Do Not Make A Translator For This Language.
 - type: language
   id: Azaziba
+  parent: BaseLanguage
   speech:
     color: "#2aca2add"
   obfuscation:
