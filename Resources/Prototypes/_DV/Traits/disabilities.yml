@@ -127,9 +127,9 @@
   category: DisabilitiesPhysical # Euphoria
   cost: -2
   effects:
-  - !type:AddCompsEffect
-    components:
-    - type: PainNumbness
+  - !type:ApplyStatusEffect
+    statusEffects:
+    - PainNumbnessTraitStatusEffect
 
 - type: trait
   id: Hemophilia
@@ -138,6 +138,6 @@
   category: DisabilitiesPhysical # Euphoria
   cost: -2 #floof
   effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Hemophilia
+  - !type:ApplyStatusEffect
+    statusEffects:
+    - StatusEffectHemophiliaTrait

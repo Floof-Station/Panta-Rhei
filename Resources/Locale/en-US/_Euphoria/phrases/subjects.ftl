@@ -4,8 +4,8 @@ phrase-nanotrasen = Nanotrasen
 phrase-interdyne = Interdyne
 phrase-donk = Donk
 phrase-corporation = corporation
-phrase-company = Company
-phrase-job = Job
+phrase-company = company
+phrase-job = job
 phrase-cybersun = Cybersun
 phrase-waffle = Waffle
 phrase-euphoria = Euphoria
@@ -13,6 +13,9 @@ phrase-llc = LLC
 phrase-gorlex = Gorlex
 phrase-syndicate = Syndicate
 phrase-galpol = Galpol
+phrase-federal = federal
+phrase-agent = agent
+phrase-army = army
 
 ## Relations and Identity
 phrase-friend = friend
@@ -63,6 +66,13 @@ phrase-sex = sex
 phrase-to = to
 phrase-language = language
 phrase-magic = magic
+phrase-pregnant = pregnant
+phrase-so = so
+phrase-and = and
+phrase-all-done = all done
+phrase-or = or
+phrase-but = but
+phrase-like = like
 
 ## Body Parts
 phrase-arm = arm
@@ -98,6 +108,7 @@ phrase-tit = tit
 phrase-balls = balls
 phrase-fuck = fuck
 phrase-shit = shit
+phrase-slut = slut
 
 ## Fluids
 phrase-squirt = squirt
@@ -121,6 +132,8 @@ phrase-mass-cas = mass cas
 phrase-redshirt = redshirt
 phrase-unrevivable = unrevivable
 phrase-unclonable = unclonable
+phrase-rot = rot
+phrase-rotted = rotted
 
 ## Logistics
 phrase-money = money

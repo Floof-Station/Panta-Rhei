@@ -42,3 +42,35 @@ trait-Improved-Unarmed-desc =
     You hit harder than most when you punch, where from having striking calluses, improved strength, or just better technique.
     Increases unarmed melee damage by 1 blunt. Does not confer any benefit to armed melee.
 
+trait-coldtolerance-name = Cold Tolerance
+trait-coldtolerance-desc = 
+    Your tolerance for cold temperatures is a bit more robust than most of your species.
+
+trait-coldtoleranceadvanced-name = Cold Tolerance - Advanced
+trait-coldtoleranceadvanced-desc = 
+    Those who complain about the cold are just whining. Your tolerance for cold temperatures is much more robust than most.
+    (Equivalent to Vulpkanin cold tolerance)
+
+trait-heattolerance-name = Heat Tolerance
+trait-heattolerance-desc = 
+    Your tolerance for hot temperatures is a bit more robust than most of your species.
+
+trait-heattoleranceadvanced-name = Heat Tolerance - Advanced
+trait-heattoleranceadvanced-desc = 
+    Those who complain about the heat are just whining. Your tolerance for hot temperatures is much more robust than most.
+
+trait-coldintolerance-name = Cold Intolerance
+trait-coldintolerance-desc = 
+    Whether by growing up in a hot place, or from some genetic reason, your tolerance for cold temperatures is worse than others of your species.
+
+trait-coldintoleranceadvanced-name = Cold Intolerance - Advanced
+trait-coldintoleranceadvanced-desc = 
+    You simply can't handle the cold.
+
+trait-heatintolerance-name = Heat Intolerance
+trait-heatintolerance-desc = 
+    Whether by growing up in a cold place, or from some genetic reason, your tolerance for hot temperatures is worse than others of your species.
+
+trait-heatintoleranceadvanced-name = Heat Intolerance - Advanced
+trait-heatintoleranceadvanced-desc = 
+    You simply can't handle the heat. 

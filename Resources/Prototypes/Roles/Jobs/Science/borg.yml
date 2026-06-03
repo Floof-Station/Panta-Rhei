@@ -12,8 +12,9 @@
   - !type:DepartmentTimeRequirement # Floofstation - add command requirement
     department: Command
     time: 10h
+  weight: 10
   canBeAntag: false
-  whitelisted: true # DeltaV - ai must be whitelisted # Floofstation - not yet
+  whitelisted: true # DeltaV - ai must be whitelisted
   icon: JobIconStationAi
   supervisors: job-supervisors-rd
   jobEntity: StationAiBrain

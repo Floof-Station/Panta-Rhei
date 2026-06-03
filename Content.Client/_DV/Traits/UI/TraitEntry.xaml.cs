@@ -118,6 +118,14 @@ public sealed partial class TraitEntry : PanelContainer
         UpdateDisabledState();
     }
 
+    //Euphoria | Clears previously set conditions.
+    public void ResetConditionsMet()
+    {
+        _failedConditionTooltips.Clear();
+        MeetsConditions = true;
+        UpdateDisabledState();
+    }
+
     // Floofstation - just to eliminate some of this code repetition above. This is still a terrible fucking joke.
     private bool EvaluateCondition(BaseTraitCondition cond, ProtoId<JobPrototype>? jobId, ProtoId<SpeciesPrototype>? speciesId, IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences) => cond switch
     {

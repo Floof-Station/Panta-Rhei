@@ -52,3 +52,17 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+- type: construction
+  id: DanceFloorFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: dancefloor
+  category: construction-category-structures
+  description: dance-floor-construction
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

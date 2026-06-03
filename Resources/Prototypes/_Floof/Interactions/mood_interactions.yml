@@ -11,10 +11,8 @@
     !type:MobStateRequirement
     inverted: true
   action:
-    # TODO: this should pull the target closer or sumth, but I need to code that action first
-    !type:MoodAction
-    effect: BeingHugged
-  effectFailure: null # Floof
+    !type:NoOpAction
+  effectFailure: null
 
 # Petting someone (people) - improves the mood of the target
 - type: Interaction
@@ -34,9 +32,8 @@
       whitelist:
         components: [HumanoidAppearance]
   action:
-    !type:MoodAction
-    effect: BeingPet
-  effectFailure: null # Floof
+    !type:NoOpAction
+  effectFailure: null
 
 # Petting someone (animals) - improves the mood of the user and the target
 - type: Interaction
@@ -46,20 +43,13 @@
     !type:ComplexRequirement
     requirements:
     - !type:MobStateRequirement
-      allowedStates: [Alive]
+      inverted: true
     - !type:EntityWhitelistRequirement
       blacklist:
         components: [HumanoidAppearance]
   action:
-    !type:ComplexAction # TODO might wanna make a multiplexer action for situations like this
-    actions:
-    - !type:MoodAction
-      effect: BeingPet
-    - !type:OnUserAction
-      action:
-        !type:MoodAction
-        effect: PetAnimal
-  effectFailure: null # Floof
+    !type:NoOpAction
+  effectFailure: null
 
 # Kissing
 - type: Interaction
@@ -78,8 +68,7 @@
     - !type:SlotObstructionRequirement
       slot: MASK
   action:
-    !type:MoodAction
-    effect: BeingKissed
+    !type:NoOpAction
   effectSuccess:
     popup: Obvious
     sound: {path: /Audio/_Floof/Lewd/kiss.ogg}
@@ -103,8 +92,7 @@
     - !type:SlotObstructionRequirement
       slot: MASK
   action:
-    !type:MoodAction
-    effect: BeingLicked
+    !type:NoOpAction
   effectSuccess:
     popup: Obvious
     sound: {path: /Audio/_Floof/Lewd/lick.ogg}

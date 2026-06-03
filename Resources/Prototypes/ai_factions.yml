@@ -12,6 +12,8 @@
   - Wizard
   - AnimalFriend
   - Xenoborg
+  friendly:
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: SalvageMob
@@ -191,3 +193,26 @@
   # cause they are hostile to them
   - SimpleHostile
   - AllHostile
+
+# Lavaland mob faction to stop gang wars
+- type: npcFaction
+  id: Lavafauna
+  hostile:
+  - NanoTrasen
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  #- Changeling # goob edit - changelings
+  #- Heretic # goob edit - heretics
+  #- Blob # Goobstation - Blob
+  #- Shadowling # Einstein Engines - Shadowlings
+  - Wizard # goob edit - wizard
+  #- PirateFaction # goob - pirates
+  friendly:
+  - Dragon
