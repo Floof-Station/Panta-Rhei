@@ -80,6 +80,7 @@
 # (if they cut off your tail or ears you shouldn't be able to speak it, but well)
 - type: language
   id: NalRasan
+  icon: { state: "nekomimetic" } # Placeholder
   speech:
     allowRadio: false
     requireSpeech: false
@@ -116,6 +117,7 @@
 - type: language
   id: SiikTajr
   isVisibleLanguage: true
+  icon: { state: "nekomimetic" } # Placeholder
   speech:
     color: "#f58c9aee" # Bright red, to push this energy through
     fontId: Sriracha # relatively energetic, portraying the body movement I suppose

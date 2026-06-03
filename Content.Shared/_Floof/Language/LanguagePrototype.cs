@@ -1,5 +1,6 @@
 using Content.Shared.Chat;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Language;
 
@@ -18,7 +19,7 @@ public sealed partial class LanguagePrototype : IPrototype
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
     /// </summary>
-    [DataField("obfuscation")]
+    [DataField]
     public ObfuscationMethod Obfuscation = ObfuscationMethod.Default;
 
     /// <summary>
@@ -26,6 +27,12 @@ public sealed partial class LanguagePrototype : IPrototype
     /// </summary>
     [DataField("speech")]
     public SpeechOverrideInfo SpeechOverride = new();
+
+    /// <summary>
+    ///     Icon to display in the chat in place of LanguageIconTag.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public SpriteSpecifier? Icon = new SpriteSpecifier.Rsi(new("/Textures/_Floof/Interface/Misc/language_icons.rsi"), "default.png");
 
     #region utility
     /// <summary>
@@ -36,6 +43,7 @@ public sealed partial class LanguagePrototype : IPrototype
     /// <summary>
     ///     The in-world chat abbreviation of this language, localized.
     /// </summary>
+    [Obsolete("Currently returns Name. Abbreviations are obsolete.")]
     public string ChatName => Name;// Loc.GetString($"chat-language-{ID}-name");
 
     /// <summary>

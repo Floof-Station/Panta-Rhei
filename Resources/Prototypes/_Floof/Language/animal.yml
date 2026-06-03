@@ -13,7 +13,8 @@
 
 - type: language
   id: Cat
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  isVisibleLanguage: true
+  icon: { state: "felidae" }
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -26,7 +27,8 @@
 
 - type: language
   id: Dog
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  isVisibleLanguage: true
+  icon: { state: "canilunzt" } # Placeholder
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -41,7 +43,7 @@
 
 - type: language
   id: Fox
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -66,7 +68,7 @@
 
 - type: language
   id: Monkey
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -78,6 +80,7 @@
 - type: language
   id: Mouse
   isVisibleLanguage: true # Floofstation - we have rodentia
+  icon: { state: "mouse" }
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -173,7 +176,7 @@
 
 - type: language
   id: Kobold
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
