@@ -15,6 +15,7 @@
 - type: language
   id: Cat
   parent: BaseLanguage
+  isVisibleLanguage: true
   icon: { state: "felidae" }
   obfuscation:
     !type:SyllableObfuscation
@@ -29,6 +30,7 @@
 - type: language
   id: Dog
   parent: BaseLanguage
+  isVisibleLanguage: true
   icon: { state: "canilunzt" } # Placeholder
   obfuscation:
     !type:SyllableObfuscation
@@ -45,6 +47,7 @@
 - type: language
   id: Fox
   parent: BaseLanguage
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -60,6 +63,7 @@
 - type: language
   id: Xeno
   parent: BaseLanguage
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -71,6 +75,7 @@
 - type: language
   id: Monkey
   parent: BaseLanguage
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -82,6 +87,7 @@
 - type: language
   id: Mouse
   parent: BaseLanguage
+  isVisibleLanguage: true
   icon: { state: "mouse" }
   obfuscation:
     !type:SyllableObfuscation

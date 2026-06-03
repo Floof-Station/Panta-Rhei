@@ -6,9 +6,10 @@ chat-manager-entity-subtle-wrap-message = [italic][color=#d3d3ff]{ PROPER($entit
 chat-manager-entity-subtle-looc-wrap-message = [italic][color=#ff7782]SOOC: [Name]{$entityName}[/Name]: {$message}[/color][/italic]
 
 # Shows a LanguageIconTag, for use in other Fluent strings.
+# Note: this has to contain both an opening tag and a closing tag, and the tag cannot be self-closing, because otherwise Robust will skip calling either BeforeText or AfterText
 chat-manager-language-hint = { $language ->
     [null] {""}
-    *[other] {"["}langicon="{$language}"]
+    *[other] {"["}langicon="{$language}"][/langicon]
 }
 # Simple ($language) wrapper.
 chat-manager-language-hint-ui = {" "}({$language})

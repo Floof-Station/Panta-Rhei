@@ -24,6 +24,12 @@ public sealed class LanguageIconTag : IMarkupTagHandler
     public const string TagName = "langicon";
     public string Name => TagName;
 
+    // This is a small hack:
+    // RobustToolbox won't call AfterText if a tag is non-closing, and won't call BeforeText if it IS self-closing (dum dum)
+    // At the same time, AfterText has no access to the opening MarkupNode (which stores the node value and attributes)
+    // So to work around this, we remember things computed in the last call to BeforeText and use them in AfterText
+    private static LanguagePrototype? _lastTagData;
+
     public bool TryCreateControl(MarkupNode node, [NotNullWhen(true)] out Control? control)
     {
         if (!node.Value.TryGetString(out var languageId)
@@ -39,12 +45,15 @@ public sealed class LanguageIconTag : IMarkupTagHandler
         {
             Stretch = TextureRect.StretchMode.Scale,
             CanShrink = true,
-            SetSize = new(16, 16),
+            SetSize = new(20, 20),
+            VerticalAlignment = Control.VAlignment.Center,
         };
 
         var spriteSys = _sysMan.GetEntitySystem<SpriteSystem>();
         tex.Texture = spriteSys.Frame0(language.Icon);
 
+        tex.MouseFilter = Control.MouseFilterMode.Stop;
+        tex.DefaultCursorShape = Control.CursorShape.Hand;
         tex.TooltipSupplier = _ =>
         {
             var langSys = _sysMan.GetEntitySystem<LanguageSystem>();
@@ -62,14 +71,18 @@ public sealed class LanguageIconTag : IMarkupTagHandler
     public string TextBefore(MarkupNode node)
     {
         if (!TryGetLanguageProto(node, out var language) || !language.IsVisibleLanguage)
+        {
+            _lastTagData = null;
             return "";
+        }
 
+        _lastTagData = language; // See explanation above
         return "[";
     }
 
     public string TextAfter(MarkupNode node)
     {
-        if (!TryGetLanguageProto(node, out var language) || !language.IsVisibleLanguage)
+        if (_lastTagData is not {} language || !language.IsVisibleLanguage)
             return "";
 
         // If the local player turned on the "display language names" setting, show the language name in brackets
