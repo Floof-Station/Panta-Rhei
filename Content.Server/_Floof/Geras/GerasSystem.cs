@@ -9,6 +9,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Humanoid;
 using Content.Shared.Sprite;
 using Content.Shared.Polymorph;
+using Content.Shared.Speech.Components;
 
 namespace Content.Server._Floof.Geras;
 
@@ -46,7 +47,18 @@ public sealed class GerasSystem : EntitySystem
 
         var colors = GrabHumanoidColors(uid); // begin imp
 
+        var sex = GrabHumanoidSex(uid);
+
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
+
+        if (sex != null)
+        {
+            if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
+            {
+                humanoid.Sex = sex.Value;
+                Dirty(ent.Value, humanoid);
+            }
+        }
 
         if (colors != null) // Match Geras to Humanoid Skin color
         {
@@ -89,5 +101,15 @@ public sealed class GerasSystem : EntitySystem
         }
 
         return null; // if a non-humanoid or someone with no bloodstream ascends, don't modify the colors
+    }
+
+    private Sex? GrabHumanoidSex(EntityUid entity)
+    {
+        if (TryComp<HumanoidAppearanceComponent>(entity, out var humanoid))
+        {
+            var sexHum = humanoid.Sex;
+            return (sexHum);
+        }
+        return null;
     }
 }
