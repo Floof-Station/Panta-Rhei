@@ -277,3 +277,105 @@
     - MindRoleGhostRoleFreeAgent
   - type: GhostRoleMobSpawner
     prototype: MobCorticalBorerPet
+- type: entity
+  name: saint bernard
+  description: It's only heavy because of all the love it has to give!
+  parent: MobCorgiBase
+  id: MobSaintBernard
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Pets/saintbernard.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: saintbernard
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: saintbernard
+      Critical:
+        Base: saintbernard_dead
+      Dead:
+        Base: saintbernard_dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    hidden: true
+    altDisarm: false
+    soundHit:
+        path: /Audio/Effects/bite.ogg
+    angle: 0
+    attackRate: 1
+    damage:
+      types:
+        Slash: 3
+  - type: NpcFactionMember
+    factions:
+      - PetsNT
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: "sentient saint bernard"
+    description: "Beg the crew for belly rubs, and thank them by licking their faces. People love being drowned in slobber, you're sure of it."
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 4
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.35
+        density: 175
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: Grammar
+    attributes: 
+      gender: epicene
+  - type: Bloodstream
+    bloodMaxVolume: 350
+  - type: Puller
+    needsHands: false
+  - type: MobPrice
+    price: 300
+  - type: BarkAccent
+  - type: Vocal
+    screamAction: 
+    sounds:
+      Unsexed: MobDog
+  - type: Speech
+    allowedEmotes: ['Bark', 'Snarl', 'Whine', 'Howl', 'Awoo']
+    speechVerb: Vulpkanin
+    speechSounds: Vulpkanin
+  - type: LanguageKnowledge
+    speaks:
+    - Dog
+    understands:
+    - Dog
+  - type: Tag
+    tags: 
+    - DoorBumpOpener
+    - FootstepSound
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-dog
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/_DV/Voice/Vulpkanin/dog_bark2.ogg
+  - type: Inventory
+    speciesId: dog
+    templateId: pet
+  - type: InventorySlots
+  - type: Strippable
+  - type: UserInterface
+    interfaces:
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface

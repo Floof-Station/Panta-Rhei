@@ -1,0 +1,12 @@
+- type: entity
+  name: Saint Bernard Sigmund Spawner
+  id: SpawnMobSaintBernardSigmund
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ai
+  - type: ConditionalSpawner
+    prototypes:
+      - MobSaintBernardSigmund
