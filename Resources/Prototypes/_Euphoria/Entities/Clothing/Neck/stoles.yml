@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckLustroEcclesiaStole
+  name: lustro ecclesia stole
+  description: A religious ornament worn by those who teach the faith of Lustro Ecclesia
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Neck/Stoles/lustrostole.rsi
+    layers:
+    - state: icon
+    - state: icon_lighting
+      shader: unshaded
+  - type: Clothing
+    slots: [neck]
+    sprite: _Euphoria/Clothing/Neck/Stoles/lustrostole.rsi
+    clothingVisuals:
+      neck:
+      - state: equipped-NECK
+      - state: equipped-NECK_lighting
+        shader: unshaded
+  - type: Item
+    sprite: _Euphoria/Clothing/Neck/Stoles/lustrostole.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      - state: inhand-left_lighting
+        shader: unshaded
+      right:
+      - state: inhand-right
+      - state: inhand-right_lighting
+        shader: unshaded
+    storedRotation: 90

@@ -18,11 +18,11 @@ namespace Content.Shared._Floof.InteractionVerbs;
 ///     - {$selfTarget} - A boolean value that indicates whether the action is used on the user itself.
 ///     - {$hasUsed} - A boolean value that indicates whether the user is holding an item ($used is not null).
 /// </remarks>
-[Prototype("InteractionPopup"), Serializable]
+[Prototype("InteractionPopup")]
 public sealed partial class InteractionPopupPrototype : IPrototype
 {
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     [DataField]
     public PopupType PopupType = PopupType.Medium;
@@ -50,6 +50,9 @@ public sealed partial class InteractionPopupPrototype : IPrototype
     /// </summary>
     [DataField]
     public bool DoClipping = true;
+
+    [DataField]
+    public bool VisibleToGhosts = true;
 
     /// <summary>
     ///     Range in which other entities, given that they can directly see the performer, see the chat log.

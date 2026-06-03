@@ -6,6 +6,8 @@ using Content.Server.Preferences.Managers;
 using Content.Server.Station.Systems;
 using Content.Shared.Mind.Components;
 using Content.Shared.Preferences;
+using Content.Shared.GameTicking;
+using Content.Server.Database;
 
 namespace Content.Server.Ghost.Roles
 {
@@ -33,8 +35,8 @@ namespace Content.Server.Ghost.Roles
                 .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
             _transform.AttachToGridOrMap(mob);
 
-            var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, mob);
-            RaiseLocalEvent(mob, spawnedEvent);
+            var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, mob, character, args.Player);
+            RaiseLocalEvent(mob, spawnedEvent, true);
 
             EnsureComp<MindContainerComponent>(mob);
 

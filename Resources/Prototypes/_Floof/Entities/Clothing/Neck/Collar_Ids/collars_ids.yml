@@ -1,0 +1,66 @@
+﻿# base pet id collar (also is the black collar)
+- type: entity
+  parent: PassengerPDA
+  id: ClothingNeckCollarBasetId
+  abstract: true
+  name: black emotional support id collar
+  description: A cute black collar that holds a pets id.
+  components:
+  - type: Pda
+    id: EmotionalSupportIdCard
+  - type: Sprite
+    sprite: _Floof/Clothing/Neck/Collars/collar_black.rsi
+    scale: 1.0, 1.0 # Resize to standard size
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+      state: icon
+    - map: [ "enum.PdaVisualLayers.Flashlight" ]
+      sprite: _Floof/Mobs/Species/Arachne/blank.rsi # using a blank sprite for pda layers
+      state: "blank" # using a blank sprite for pda layers
+      shader: "unshaded"
+      visible: false
+    - map: [ "enum.PdaVisualLayers.IdLight" ]
+      sprite: _Floof/Mobs/Species/Arachne/blank.rsi # using a blank sprite for pda layers
+      state: "blank" # using a blank sprite for pda layers
+      shader: "unshaded"
+      visible: false
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        icon
+
+# blue collar
+- type: entity
+  parent: [ClothingNeckCollarBlack, ClothingNeckCollarBasetId]
+  id: ClothingNeckCollarBlackPetId
+  name: black emotional support id collar
+  description: A cute black collar that holds a pets id.
+
+# blue collar
+- type: entity
+  parent: [ClothingNeckCollarBlue, ClothingNeckCollarBasetId]
+  id: ClothingNeckCollarBluePetId
+  name: blue emotional support id collar
+  description: A cute blue collar that holds a pets id.
+
+# pink collar
+- type: entity
+  parent: [ClothingNeckCollarPink, ClothingNeckCollarBasetId]
+  id: ClothingNeckCollarPinkPetId
+  name: pink emotional support id collar
+  description: A cute pink collar that holds a pets id.
+
+# syndi collar
+- type: entity
+  parent: [ClothingNeckCollarSyndi, ClothingNeckCollarBasetId]
+  id: ClothingNeckCollarSyndiPetId
+  name: red emotional support id collar
+  description: A cute red collar that holds a pets id.
+
+# civilian shcok collar
+- type: entity
+  parent: [ClothingNeckShockCollarCivilian, ClothingNeckCollarBasetId]
+  id: ClothingNeckCollarShockPetId
+  name: shock emotional support id collar
+  description: A cute shocky collar that holds a pets id.

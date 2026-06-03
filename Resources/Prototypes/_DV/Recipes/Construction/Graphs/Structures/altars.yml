@@ -202,6 +202,17 @@
       - material: Gold
         amount: 4
         doAfter: 5
+    - to: infernalis # Euphoria
+      completed:
+      - !type:SnapToGrid
+      steps:
+      - material: Plasteel
+        amount: 10
+      - material: Bluespace
+        amount: 3
+      - material: Gold
+        amount: 4
+        doAfter: 5
 
   - node: nanotrasen
     entity: AltarNanotrasen
@@ -220,6 +231,9 @@
 
   - node: satana
     entity: AltarSatana
+
+  - node: infernalis # Euphoria
+    entity: AltarLustroEcclesia
 
   - node: technology
     entity: AltarTechnology

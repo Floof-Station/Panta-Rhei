@@ -19,6 +19,7 @@ public sealed partial class LoadoutContainer : BoxContainer
     private readonly EntityUid? _entity;
 
     public Button Select => SelectButton;
+    public EntityUid? SpriteEntity => Sprite.Entity; // Floofstation - public getter
 
     public string? Text
     {

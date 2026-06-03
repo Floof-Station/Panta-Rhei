@@ -165,13 +165,13 @@ public sealed partial class TraitsTab : BoxContainer
             }
 
             _selectedTraits.Add(traitId);
-            _currentTraitCount++;
+            _currentTraitCount += trait.UsesSlots ? 1 : 0; // Floofstation - consider that traits may want to use no slots.
             _currentPointsSpent += trait.Cost;
         }
         else
         {
             _selectedTraits.Remove(traitId);
-            _currentTraitCount--;
+            _currentTraitCount -= trait.UsesSlots ? 1 : 0; // Floofstation - consider that traits may want to use no slots.
             _currentPointsSpent -= trait.Cost;
         }
 
@@ -287,6 +287,15 @@ public sealed partial class TraitsTab : BoxContainer
         RecalculateStats();
     }
 
+    //Euphoria | Clears previously set conditions.
+    public void ResetConditions()
+    {
+        foreach (var (_, categoryUi) in _categoryUis)
+        {
+            categoryUi.ResetConditions();
+        }
+    }
+
     private void RecalculateStats()
     {
         _currentTraitCount = 0;
@@ -307,7 +316,7 @@ public sealed partial class TraitsTab : BoxContainer
                     continue;
 
                 _selectedTraits.Add(traitId);
-                _currentTraitCount++;
+                _currentTraitCount += trait.UsesSlots ? 1 : 0; // Floofstation - consider that some traits may use no slots
                 _currentPointsSpent += trait.Cost;
             }
         }
@@ -347,7 +356,7 @@ public sealed partial class TraitsTab : BoxContainer
                 continue;
 
             _selectedTraits.Add(traitId);
-            _currentTraitCount++;
+            _currentTraitCount += trait.UsesSlots ? 1 : 0; // Floofstation - consider that some traits may use no slots
             _currentPointsSpent += trait.Cost;
 
             if (_categoryUis.TryGetValue(trait.Category, out var categoryUi))

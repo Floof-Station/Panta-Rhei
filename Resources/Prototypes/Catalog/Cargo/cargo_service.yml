@@ -1,7 +1,7 @@
 - type: cargoProduct
   id: ServiceJanitorial
   icon:
-    sprite: Objects/Specific/Janitorial/janitorial.rsi
+    sprite: Objects/Specific/Janitorial/spray_bottle.rsi
     state: cleaner
   product: CrateServiceJanitorialSupplies
   cost: 560
@@ -84,7 +84,7 @@
     sprite: Objects/Misc/pens.rsi
     state: pen
   product: CrateServiceBureaucracy
-  cost: 1000
+  cost: 1550 #Euphoria - add document printer
   category: cargoproduct-category-name-service
   group: market
 

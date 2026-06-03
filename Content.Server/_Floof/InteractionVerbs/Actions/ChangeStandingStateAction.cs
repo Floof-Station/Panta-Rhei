@@ -36,9 +36,13 @@ public sealed partial class ChangeStandingStateAction : InteractionAction
         var isStanding = state.Standing;
         if (!isStanding && MakeStanding)
         {
-            // TryStand requires a KnockedDownComponent. Fucked up.
+            // TryStand requires a KnockedDownComponent. Fucked up. Also, it won't even make them stand up - we have to set AutoStand.
             if (deps.EntMan.TryGetComponent<KnockedDownComponent>(args.Target, out var knockedDown))
-                return stunSystem.TryStand((args.Target, knockedDown));
+            {
+                stunSystem.TryStand((args.Target, knockedDown));
+                stunSystem.SetAutoStand((args.Target, knockedDown), true);
+                return true;
+            }
             return stateSystem.Stand(args.Target);
         }
         else if (isStanding && MakeLaying)

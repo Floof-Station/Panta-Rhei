@@ -80,6 +80,7 @@ public sealed partial class TraitCategory : BoxContainer
 
     public void UpdateStats()
     {
+        // Floofstation note: we do NOT check UsesSlots here because category limits are separate from global limits
         SelectedCount = _traitEntries.Values.Count(e => e.IsSelected);
         PointsSpent = _traitEntries.Values
             .Where(e => e.IsSelected)
@@ -179,6 +180,16 @@ public sealed partial class TraitCategory : BoxContainer
         }
 
         // Update stats since some traits may have been deselected
+        UpdateStats();
+    }
+
+    //Euphoria | Clears previously set conditions.
+    public void ResetConditions()
+    {
+        foreach (var (_, entry) in _traitEntries)
+        {
+            entry.ResetConditionsMet();
+        }
         UpdateStats();
     }
 

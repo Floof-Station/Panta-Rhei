@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/faf6db214927874c19b8fa8585d26b5d40de1acc, derelict generic sprites modified by GoldenCan(GitHub), xenoborg sprites, created and modified by Samuka-C (github), Derelict Engineer, Janitor, Miner, Medical, and Assault Borg sprites by _miket on Discord, minor resprite of the service borg by Kittygyat (github), Quadborg sprites made by Fenndragon discord: 190763499276861440 and edits by LucasTheDrgn discord: 97135517740593152 and dakodragon discord: 56038550335922176, red cross on Syndi Medical Borg changed to blue to avoid Geneva issues by CDWimmer (GitHub)",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/faf6db214927874c19b8fa8585d26b5d40de1acc, derelict generic sprites modified by GoldenCan(GitHub), xenoborg sprites, created and modified by Samuka-C (github), Derelict Engineer, Janitor, Miner, Medical, and Assault Borg sprites by _miket on Discord, minor resprite of the service borg by Kittygyat (github), original quadborg sprites made by Fenndragon discord: 190763499276861440 and edits by LucasTheDrgn discord: 97135517740593152 and dakodragon discord: 56038550335922176, red cross on Syndi Medical Borg changed to blue to avoid Geneva issues by CDWimmer (GitHub), Service, Generic, and Salvage Quad sprites made by dzordz discord: 310775535984836609, Medical Quad sprites made by honeydothannah discord: 522186587627585559, Engineering and Security Quad sprites made by betterdragonhere discord: 1207115437163151460, edits and Janitor Quad sprites made by strawofman discord: 106862148956790784",
     "states": [
         {
             "name": "clown",
@@ -40,7 +40,27 @@
             "directions": 4
         },
         {
+            "name": "quadgen",
+            "directions": 4
+        },
+        {
+            "name": "quadgen_e",
+            "directions": 4
+        },
+        {
+            "name": "quadgen_e_r",
+            "directions": 4
+        },
+        {
+            "name": "quadgen_l",
+            "directions": 4
+        },
+        {
             "name": "quadsec",
+            "directions": 4
+        },
+        {
+            "name": "quadsec_e",
             "directions": 4
         },
         {
@@ -56,6 +76,10 @@
             "directions": 4
         },
         {
+            "name": "quadsalv_e",
+            "directions": 4
+        },
+        {
             "name": "quadsalv_e_r",
             "directions": 4
         },
@@ -65,6 +89,10 @@
         },
         {
             "name": "quadserv",
+            "directions": 4
+        },
+        {
+            "name": "quadserv_e",
             "directions": 4
         },
         {
@@ -80,11 +108,109 @@
             "directions": 4
         },
         {
+            "name": "quadmed_e",
+            "directions": 4
+        },
+        {
             "name": "quadmed_e_r",
             "directions": 4
         },
         {
             "name": "quadmed_l",
+            "directions": 4
+        },
+        {
+            "name": "quadjani",
+            "directions": 4
+        },
+        {
+            "name": "quadjani_e",
+            "directions": 4
+        },
+        {
+            "name": "quadjani_e_r",
+            "directions": 4
+        },
+        {
+            "name": "quadjani_l",
+            "directions": 4
+        },
+        {
+            "name": "quadjani_m",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "quadengi",
+            "directions": 4
+        },
+        {
+            "name": "quadengi_e",
+            "directions": 4
+        },
+        {
+            "name": "quadengi_e_r",
+            "directions": 4
+        },
+        {
+            "name": "quadengi_l",
+            "directions": 4
+        },
+        {
+            "name": "quadcap",
+            "directions": 4
+        },
+        {
+            "name": "quadcap_e",
+            "directions": 4
+        },
+        {
+            "name": "quadcap_e_r",
+            "directions": 4
+        },
+        {
+            "name": "quadcap_l",
+            "directions": 4
+        },
+        {
+            "name": "quadcc",
+            "directions": 4
+        },
+        {
+            "name": "quadcc_e",
+            "directions": 4
+        },
+        {
+            "name": "quadcc_e_r",
+            "directions": 4
+        },
+        {
+            "name": "quadcc_l",
             "directions": 4
         },
         {

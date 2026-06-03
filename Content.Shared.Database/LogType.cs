@@ -483,7 +483,17 @@ public enum LogType
     Instrument = 103,
 
     /// <summary>
+    /// Events related to players connecting/disconnecting.
+    /// </summary>
+    Connection = 104,
+
+    /// <summary>
     /// Logs related to the consent system.
     /// </summary>
     Consent = 12489, // random high number to avoid conflict when upstream adds new log types
+
+    /// <summary>
+    /// Delta V - RMC Pose port
+    /// </summary>
+    RMCSetPose= 10000,
 }

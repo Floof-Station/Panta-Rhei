@@ -1,104 +1,21 @@
 - type: entity
-  name: circuit tote [LO] # DeltaV - Renamed QM to LO
   parent: ToteBase
-  id: BoxQMCircuitboards
-  description: A Tote filled with LO's Circuit boards. # DeltaV - Renamed QM to LO
+  id: BoxCaptainCircuitboards
+  name: bridge circuit tote
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: CargoBountyComputerCircuitboard
-        - id: CargoRequestComputerCircuitboard
-        - id: CargoSaleComputerCircuitboard
-        - id: CargoShuttleConsoleCircuitboard
-        - id: SalvageMagnetMachineCircuitboard
-        #- id: SalvageJobBoardComputerCircuitboard # DeltaV - Uneeded because mining points
-        - id: MailTeleporterMachineCircuitboard
-        # DeltaV Additions
-        - id: IDComputerCircuitboard
-        - id: MiningShuttleConsoleCircuitboard
-        - id: LogisticsTechFabCircuitboard
-        - id: SalvageExpeditionsComputerCircuitboard
-        - id: FundingAllocationComputerCircuitboard # To be removed when it's in techvault on all maps
-        # END DeltaV Additions
+        - id: CommsComputerCircuitboard
+        - id: StationRecordsComputerCircuitboard
+        - id: IDComputerCircuitboard # DeltaV
+        - id: FundingAllocationComputerCircuitboard # Euphoria
 
 - type: entity
-  name: stamp box [LO] # DeltaV - Renamed QM to LO
-  parent: BoxCardboard
-  id: BoxQMStamps
-  description: A box filled with LO's Stamps. Stamped of course. # DeltaV - Renamed QM to LO
-  components:
-  - type: Item
-    size: Small
-    shape:
-    - 0,0,1,1
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: RubberStampApproved
-        - id: RubberStampDenied
-        - id: RubberStampQm
-  - type: Storage
-    grid:
-    - 0,0,1,1
-    whitelist:
-      components:
-      - Stamp
-  - type: Sprite
-    layers:
-      - state: box
-      - state: stamp
-
-- type: entity
-  name: circuit tote [HoP]
-  parent: ToteBase
-  id: BoxHoPCircuitboards
-  description: A Tote filled with HoP's Circuit boards.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: IDComputerCircuitboard
-        #- id: FundingAllocationComputerCircuitboard # DeltaV - HoP doesn't have funding access
-        - id: FundingAllocationComputerCircuitboard
-        - id: ServiceTechFabCircuitboard # DeltaV
-
-- type: entity
-  name: stamp box [HoP]
-  parent: BoxCardboard
-  id: BoxHoPStamps
-  description: A box filled with HoP's Stamps. Stamped of course.
-  components:
-  - type: Item
-    size: Small
-    shape:
-    - 0,0,1,1
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: RubberStampApproved
-        - id: RubberStampDenied
-        - id: RubberStampHop
-  - type: Storage
-    grid:
-    - 0,0,1,1
-    whitelist:
-      components:
-      - Stamp
-  - type: Sprite
-    layers:
-      - state: box
-      - state: stamp
-
-- type: entity
-  name: circuit tote [CE]
   parent: ToteBase
   id: BoxCECircuitboards
-  description: A Tote filled with CE's Circuit boards.
+  name: engineering circuit tote
   components:
   - type: EntityTableContainerFill
     containers:
@@ -114,24 +31,9 @@
         - id: CircuitImprinterMachineCircuitboard # DeltaV
 
 - type: entity
-  name: circuit tote [Captain]
-  parent: ToteBase
-  id: BoxCaptainCircuitboards
-  description: A Tote filled with Captain's Circuit boards.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: CommsComputerCircuitboard
-        - id: StationRecordsComputerCircuitboard
-        - id: IDComputerCircuitboard # DeltaV
-
-- type: entity
-  name: circuit tote [CMO]
   parent: ToteBase
   id: BoxCMOCircuitboards
-  description: A Tote filled with CMO's Circuit boards.
+  name: medical circuit tote
   components:
   - type: EntityTableContainerFill
     containers:
@@ -142,19 +44,97 @@
         - id: IDComputerCircuitboard # DeltaV
         - id: MedicalBiofabMachineBoard # DeltaV
         - id: AutoclaveMachineCircuitboard # DeltaV
+        - id: MedicalRecordsComputerCircuitboard # Euphoria
+        - id: CrewMonitoringComputerCircuitboard # Euphoria
 
 - type: entity
-  name: circuit tote [MG] # DeltaV - Changed to MG
+  parent: ToteBase
+  id: BoxHoPCircuitboards
+  name: head of personnel circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: IDComputerCircuitboard
+        - id: FundingAllocationComputerCircuitboard
+        - id: CargoRequestServiceComputerCircuitboard
+
+- type: entity
+  parent: BoxStamps
+  id: BoxHoPStamps
+  name: head of personnel's stamp box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: RubberStampHop
+
+- type: entity
+  parent: ToteBase
+  id: BoxHoSCircuitboards
+  name: security circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SecurityTechFabCircuitboard
+        - id: CargoRequestSecurityComputerCircuitboard
+        - id: CriminalRecordsComputerCircuitboard # Euphoria
+
+- type: entity
+  parent: ToteBase
+  id: BoxQMCircuitboards
+  name: cargo circuit tote
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CargoBountyComputerCircuitboard
+        - id: CargoRequestComputerCircuitboard
+        - id: CargoSaleComputerCircuitboard
+        - id: CargoShuttleConsoleCircuitboard
+        - id: SalvageMagnetMachineCircuitboard
+        - id: SalvageJobBoardComputerCircuitboard # DeltaV - Uneeded because mining points # Euphoria - Readded
+        - id: MailTeleporterMachineCircuitboard
+        # DeltaV Additions
+        - id: IDComputerCircuitboard
+        - id: MiningShuttleConsoleCircuitboard
+        - id: LogisticsTechFabCircuitboard
+        - id: SalvageExpeditionsComputerCircuitboard
+        - id: FundingAllocationComputerCircuitboard # To be removed when it's in techvault on all maps # floof - DO NOT REMOVE
+        # END DeltaV Additions
+        - id: CrewMonitoringComputerCircuitboard # Euphoria
+
+- type: entity
+  parent: BoxStamps
+  id: BoxQMStamps
+  name: quartermaster's stamp box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: RubberStampApproved
+        - id: RubberStampDenied
+        - id: RubberStampQm
+
+- type: entity
   parent: ToteBase
   id: BoxRDCircuitboards
-  description: A Tote filled with MG's Circuit boards. # DeltaV - Changed to MG
+  name: science circuit tote
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
         - id: CircuitImprinterMachineCircuitboard
-        #- id: ProtolatheMachineCircuitboard # DeltaV - Replaced with Epi fab
+        - id: ProtolatheMachineCircuitboard # DeltaV - Replaced with Epi fab # Euphoria - Undone
         - id: ResearchComputerCircuitboard
         - id: CargoRequestScienceComputerCircuitboard
         - id: RoboticsConsoleCircuitboard
@@ -163,17 +143,3 @@
         - id: StationAiFixerCircuitboard
         - id: IDComputerCircuitboard # DeltaV
         - id: EpistemicsTechFabCircuitboard # DeltaV
-
-- type: entity
-  name: circuit tote [HoS]
-  parent: ToteBase
-  id: BoxHoSCircuitboards
-  description: A Tote filled with HoS's Circuit boards.
-  components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: SecurityTechFabCircuitboard
-        - id: CargoRequestSecurityComputerCircuitboard
-        - id: IDComputerCircuitboard # DeltaV

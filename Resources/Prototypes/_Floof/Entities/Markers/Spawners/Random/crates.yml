@@ -1,0 +1,26 @@
+﻿- type: entity
+  name: lewd crate spawner
+  id: LewdCrateSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _Floof/Structures/Lewd/kinkcrate.rsi
+      state: icon
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: LewdCrateTable
+      prob: 0.6
+
+- type: entityTable
+  id: LewdCrateTable
+  table: !type:GroupSelector
+    children:
+    # Common Group
+    - !type:GroupSelector
+      weight: 75
+      children:
+      - !type:EntSelector
+        id: CrateLewdToys
+      - !type:EntSelector
+        id: CrateLewdKink

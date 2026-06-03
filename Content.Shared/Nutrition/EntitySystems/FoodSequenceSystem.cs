@@ -104,15 +104,16 @@ public sealed class FoodSequenceSystem : SharedFoodSequenceSystem
         MergeTrash(start.Owner, result);
         MergeTags(start, result);
     }
-
     private bool TryAddFoodElement(Entity<FoodSequenceStartPointComponent> start, Entity<FoodSequenceElementComponent, EdibleComponent?> element, EntityUid? user = null)
     {
         // we can't add a live mouse to a burger.
-        if (!Resolve(element, ref element.Comp2, false))
-            return false;
+        if (Resolve(element, ref element.Comp2, false))
+            if (element.Comp2.RequireDead && _mobState.IsAlive(element)) //Euphoria - logic change to allow for metamorphic recipes with non-edible ingredients
+                return false;
 
-        if (element.Comp2.RequireDead && _mobState.IsAlive(element))
-            return false;
+        //Euphoria
+        //if (element.Comp2.RequireDead && _mobState.IsAlive(element))
+        //    return false;
 
         //looking for a suitable FoodSequence prototype
         if (!element.Comp1.Entries.TryGetValue(start.Comp.Key, out var elementProto))

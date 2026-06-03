@@ -123,7 +123,7 @@ public sealed partial class ChatSystem
 
         // TODO harcoded 2 is bad but not like bad bad
         if (language.SpeechOverride.RequireHands &&
-            (!_actionBlocker.CanComplexInteract(entity) || _hands.CountFreeHands(entity) < 2))
+            (!_actionBlocker.CanComplexInteract(entity) || _hands.CountFreeHands(entity) < 1)) //Changed from 2 to 1 to allow one handed signing.
         {
             if (!silent)
                 _popups.PopupEntity(Loc.GetString("chat-manager-language-requires-hands"), entity, entity, PopupType.Medium);

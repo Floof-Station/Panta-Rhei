@@ -1,5 +1,6 @@
 ﻿using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared.DoAfter;
+using Content.Shared.Verbs;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
@@ -13,25 +14,31 @@ namespace Content.Shared._Floof.InteractionVerbs;
 /// <summary>
 ///     Represents an action that can be performed on an entity.
 /// </summary>
-[Prototype("Interaction"), Serializable]
+[Prototype("Interaction")]
 public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPrototype
 {
     /// <inheritdoc />
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<InteractionVerbPrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; set; }
 
     /// <inheritdoc />
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; set; }
 
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     // Locale getters
     public string Name => Loc.TryGetString($"interaction-{ID}-name", out var loc) ? loc : ID;
 
     public string? Description => Loc.TryGetString($"interaction-{ID}-description" , out var loc) ? loc : null;
+
+    /// <summary>
+    ///     Verb category to use for this verb. If blank, uses the default "interaction" category.
+    /// </summary>
+    [DataField]
+    public ProtoId<VerbCategoryPrototype>? Category = null;
 
     /// <summary>
     ///     Sprite of the icon that the user sees on the verb button.
@@ -67,6 +74,13 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public InteractionAction? Action = null;
 
     /// <summary>
+    ///     If true, the system will attempt to repeat the verb on the next tick after a successful completion.
+    ///     The repeat will be interrupted when one of the actions or requirements fails, so make sure it's not a no-op.
+    /// </summary>
+    [DataField]
+    public bool Repeat = false;
+
+    /// <summary>
     ///     If true, this action will be hidden if the <see cref="Requirement"/> does not pass its IsMet check. Otherwise it will be shown, but disabled.
     /// </summary>
     /// <remarks>I apologize, I could not come up with a better name.</remarks>
@@ -84,6 +98,12 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     /// </summary>
     [DataField]
     public TimeSpan Delay = TimeSpan.Zero;
+
+    /// <summary>
+    ///     Factor applied to the verb delay when interacting with self.
+    /// </summary>
+    [DataField]
+    public float SelfInteractDelayFactor = 1f;
 
     /// <summary>
     ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and before the do-after.
@@ -108,7 +128,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     Arguments of the do-after shown if <see cref="Delay"/> is greater than zero.
     ///     The user, target, needHand, event, and other required parameters are set up automatically when the do-after is created.
     /// </summary>
-    [DataField]
+    [DataField, AlwaysPushInheritance]
     public DoAfterArgs DoAfter = new()
     {
         User = EntityUid.Invalid,
@@ -212,7 +232,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     }
 
     [DataDefinition, Serializable]
-    public partial class EffectSpecifier
+    public sealed partial class EffectSpecifier
     {
         [DataField]
         public EffectTargetSpecifier EffectTarget = EffectTargetSpecifier.TargetThenUser;

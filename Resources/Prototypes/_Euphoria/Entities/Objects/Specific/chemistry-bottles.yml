@@ -1,0 +1,62 @@
+
+- type: entity
+  id: ChemistryBottleBicArith
+  suffix: arithrazine/bicaridine
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-mix-arithrazine-bicaridine
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Arithrazine
+          Quantity: 15
+        - ReagentId: Bicaridine
+          Quantity: 15
+
+- type: entity
+  id: ChemistryBottleCharcoal
+  suffix: charcoal
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-charcoal
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Charcoal
+          Quantity: 30
+
+- type: entity
+  id: ChemistryBottleSalbutamol
+  suffix: salbutamol
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-salbutamol
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Salbutamol
+          Quantity: 30
+
+- type: entity
+  id: ChemistryBottleSalicylicAcid
+  suffix: salicylic acid
+  parent: BaseChemistryBottleFilled
+  components:
+  - type: Label
+    currentLabel: reagent-name-salicylic-acid
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SalicylicAcid
+          Quantity: 30

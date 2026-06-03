@@ -5,7 +5,7 @@
     - id: MundaneDischarge
     - id: NoosphericZap
     - id: NoosphericFry
-    - id: PsionicCatGotYourTongue
+    - id: NoosphericSilence
     - id: MassMindSwap
     - id: GlimmerWispSpawn
     - id: FreeProber
@@ -19,6 +19,7 @@
     - id: MinorMassMindSwap # Delta V
     - id: GlimmerFoxfireSpawn
     - id: GlimmerRestyle
+    - id: GlimmerResearchStealer # Euphoria
 
 - type: entity
   parent: BaseGameRule
@@ -71,7 +72,7 @@
   - type: NoosphericFryRule
 
 - type: entity
-  id: PsionicCatGotYourTongue
+  id: NoosphericSilence
   parent: BaseGlimmerEvent
   components:
   - type: GlimmerEvent
@@ -79,7 +80,7 @@
     maximumGlimmer: 900
     glimmerBurnLower: 18
     glimmerBurnUpper: 40
-  - type: PsionicCatGotYourTongueRule
+  - type: NoosphericSilenceRule
 
 - type: entity
   id: MassMindSwap
@@ -158,7 +159,7 @@
     duration: 1
     reoccurrenceDelay: 20
     startAudio:
-      path: /Audio/_DV/Announcements/attention.ogg
+      path: /Audio/_Euphoria/Announcements/attention.ogg # Euphoria: New voicelines.
   - type: GlimmerEvent
     minimumGlimmer: 300
     maximumGlimmer: 600
@@ -232,3 +233,14 @@
     minimumGlimmer: 300
     maximumGlimmer: 700
   - type: GlimmerRestyleRule
+
+#Euphoria
+- type: entity
+  parent: BaseGlimmerEvent
+  id: GlimmerResearchStealer
+  components:
+  - type: GlimmerEvent
+    minimumGlimmer: 600
+    glimmerBurnLower: 25
+    glimmerBurnUpper: 75
+  - type: GlimmerResearchStealerRule

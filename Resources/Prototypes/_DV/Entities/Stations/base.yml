@@ -47,6 +47,5 @@
   abstract: true
   id: BaseStationLavaland
   components:
-  - type: StationPlanetSpawner
-    planet: Lavaland
-    gridPath: /Maps/_DV/Nonstations/lavaland_mining_base.yml
+  - type: StationLavalandSpawner # Floofstation - changed to spawn lavaland
+    prototype: Lavaland

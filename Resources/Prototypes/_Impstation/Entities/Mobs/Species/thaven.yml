@@ -60,12 +60,15 @@
   - type: TypingIndicator
     proto: Thaven # DeltaV unique typing indicator
   - type: Vocal
+    wilhelm: "/Audio/_Floof/Voice/Thaven/wilhelm.ogg" # DeltaV
+    wilhelmProbability: 0.001 # DeltaV
     sounds:
       Male: MaleThaven
       Female: FemaleThaven
       Unsexed: UnisexThaven
   - type: Speech
     speechSounds: Alto
+    allowedEmotes: ["Gnash", "Pop", "Growl", "Hiss"]
   - type: LanguageKnowledge # Floofstation. Idfk what a thaven is. Replace this with something if you care.
     speaks:
     - TauCetiBasic

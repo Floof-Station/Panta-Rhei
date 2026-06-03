@@ -171,6 +171,15 @@
   id: BaseMedicalPDA
   abstract: true
   components:
+  # Floofstation additions start
+  - type: Pda
+    penSlot:
+      startingItem: PenLightBase
+      priority: -1
+      whitelist:
+        tags:
+        - Write
+  # Floofstation additions end
   - type: CartridgeLoader
     uiKey: enum.PdaUiKey.Key
     preinstalled:
@@ -218,12 +227,6 @@
   description: Why isn't it white?
   components:
   - type: Pda
-    penSlot: # Floof
-      startingItem: PenLightBase
-      priority: -1
-      whitelist:
-        tags:
-        - Write
     id: MedicalInternIDCard
   - type: Appearance
     appearanceDataInit:
@@ -796,14 +799,6 @@
   description: Shiny and sterile.
   components:
   - type: Pda
-    # Floofstation additions start
-    penSlot:
-      startingItem: PenLightBase
-      priority: -1
-      whitelist:
-        tags:
-        - Write
-    # Floofstation additions end
     id: MedicalIDCard
   - type: Appearance
     appearanceDataInit:
@@ -856,14 +851,6 @@
   description: It has a few discolored blotches here and there.
   components:
   - type: Pda
-    # Floofstation additions start
-    penSlot:
-      startingItem: PenLightBase
-      priority: -1
-      whitelist:
-        tags:
-        - Write
-    # Floofstation additions end
     id: ChemistIDCard
   - type: Appearance
     appearanceDataInit:
@@ -1470,15 +1457,15 @@
   description: I wonder whose pulse is on the screen? I hope it doesn't stop...
   components:
   - type: Pda
-    # Floofstation additions start
+    id: BrigmedicIDCard
+    # FLoofstation - Penlights
     penSlot:
       startingItem: PenLightBase
       priority: -1
       whitelist:
         tags:
         - Write
-    # Floofstation additions end
-    id: BrigmedicIDCard
+    # FLoofstation - Penlights
   - type: Appearance
     appearanceDataInit:
      enum.PdaVisuals.PdaType:
@@ -1574,14 +1561,6 @@
   description: Smells faintly like iron and chemicals.
   components:
   - type: Pda
-    # Floofstation additions start
-    penSlot:
-      startingItem: PenLightBase
-      priority: -1
-      whitelist:
-        tags:
-        - Write
-    # Floofstation additions end
     id: SeniorPhysicianIDCard
   - type: Appearance
     appearanceDataInit:
@@ -1613,6 +1592,42 @@
     accentVColor: "#DFDFDF"
   - type: Icon
     state: pda-seniorofficer
+
+# DeltaV - No senior courier job
+#- type: entity
+#  parent: BasePDA
+#  id: SeniorCourierPDA
+#  name: senior courier PDA
+#  description: Smells like postage stamps and shuttle fuel.
+#  components:
+#  - type: Pda
+#    id: CargoIDCard
+#  - type: Appearance
+#    appearanceDataInit:
+#     enum.PdaVisuals.PdaType:
+#       !type:String
+#       pda-seniorcourier
+#  - type: PdaBorderColor
+#    borderColor: "#e39751"
+#    accentVColor: "#DFDFDF"
+#  - type: Icon
+#    state: pda-seniorcourier
+
+- type: entity
+  parent: [ BaseHighlyIllegalContraband, BasePDA ]
+  id: NinjaPDA
+  name: ninja PDA
+  description: You stealthy bastard, you!
+  components:
+  - type: Pda
+    id: NinjaIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-ninja
+  - type: Icon
+    state: pda-ninja
 
 - type: entity
   parent: [ BaseMajorContraband, SyndiPDA ]

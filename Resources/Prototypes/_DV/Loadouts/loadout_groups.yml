@@ -560,6 +560,7 @@
   minLimit: 0
   loadouts:
   - MedicalBeret
+  - BlueMedicalBeret
   - MimeFrenchBeret
   - PsychologistGreyFlatcap
   - PsychologistBrownFlatcap
@@ -601,8 +602,19 @@
   loadouts:
   - Stethoscope
   - ScarfBlue
+  - ScarfLightBlue
 
 ## Chemist
+
+- type: loadoutGroup
+  id: ChemistHead
+  name: loadout-group-chemist-head
+  minLimit: 0
+  loadouts:
+  - MedicalBeret
+  - BlueMedicalBeret
+  - SeniorChemistBeret
+
 - type: loadoutGroup
   id: ChemistNeck
   parent: [MedicalCollars] # Floofstation
@@ -612,6 +624,7 @@
   - ChemistTie
   - ScarfOrange
   - ScarfBlue
+  - ScarfLightBlue
 
 - type: loadoutGroup
   id: ChemistGloves
@@ -629,6 +642,8 @@
   name: loadout-group-chemist-shoes
   loadouts:
   - WhiteShoes
+  - LeatherShoes
+  - LaceupShoes
   - ChemistWinterBoots
   - ChemistShoes
 
@@ -637,6 +652,7 @@
   id: SurgeonHead
   parent: [FloofHats] # floofstation
   name: loadout-group-surgeon-head
+  minLimit: 0
   loadouts:
   - BlueSurgeryCap
   - GreenSurgeryCap
@@ -649,7 +665,7 @@
 
 - type: loadoutGroup
   id: SurgeonScrubs
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofJumpsuits, EuphoriaSurgeonScrubs] # Floofstation
   name: loadout-group-surgeon-scrubs
   loadouts:
   - MedicalBlueScrubs
@@ -660,7 +676,6 @@
   - MedicalPinkScrubs
   - MedicalWhiteScrubs
   - MedicalRainbowScrubs
-
 - type: loadoutGroup
   id: SurgeonMask
   name: loadout-group-surgeon-mask
@@ -869,6 +884,7 @@
   - RoboticistLabCoat
   - RoboticistWintercoat
   - RegularLabCoat
+  - LongLabCoat
   - ScienceLabCoat
   - CardborgCostume
 
@@ -958,6 +974,7 @@
 # PDAs
 - type: loadoutGroup
   id: PassengerPDADelta
+  parent: FloofPetCollarPdas # Floofstation
   name: loadout-group-passenger-id-delta
   loadouts:
   - PassengerPDA
@@ -1032,6 +1049,7 @@
 - type: loadoutGroup
   id: RoboticistPDA
   name: loadout-group-roboticist-id
+  parent: FloofRoboticistPdas # Floofstation epi alt pdas
   loadouts:
   - RoboticistPDA
 
@@ -1075,3 +1093,52 @@
   hidden: true
   loadouts:
   - EmergencyIPCBox
+
+# ERT
+- type: loadoutGroup
+  id: GroupEVATankERT
+  name: loadout-group-EVA-tank
+  hidden: true
+  loadouts:
+  - LoadoutEmergencyOxygenExtendedERT
+  - LoadoutEmergencyNitrogenExtendedERT
+  - LoadoutEmergencyWaterVaporExtendedERT
+
+- type: roleLoadout
+  id: RoleSurvivalERT
+  groups:
+  - GroupEVATankERT
+  - SurvivalExtended
+
+# Wildcards
+- type: loadoutGroup
+  id: BoxerJumpsuit
+  parent: [FloofJumpsuits] # Floofstation
+  name: loadout-group-boxer-jumpsuit
+  loadouts:
+  - BoxerShorts
+  - BoxerShortsWithTop
+
+- type: loadoutGroup
+  id: BoxerGloves
+  parent: [FloofGloves] # Floofstation
+  name: loadout-group-boxer-gloves
+  loadouts:
+  - RedBoxingGloves
+  - BlueBoxingGloves
+  - GreenBoxingGloves
+  - YellowBoxingGloves
+
+- type: loadoutGroup
+  id: BoxerJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieBoxer
+
+- type: loadoutGroup
+  id: ZookeeperJobTrinkets
+  name: loadout-group-jobtrinkets
+  minLimit: 0
+  loadouts:
+  - LizardPlushieZookeeper

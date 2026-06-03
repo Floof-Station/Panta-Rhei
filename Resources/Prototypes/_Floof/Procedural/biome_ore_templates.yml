@@ -1,0 +1,14 @@
+﻿# Prototype to be passed to lavalands planets.yml so we can generate bananium on it
+- type: biomeMarkerLayer
+  id: BananiumOre
+  entityMask:
+    AsteroidRock: AsteroidRockBananium
+    WallRock: WallRockBananium
+    WallRockBasalt: WallRockBasaltBananium
+    WallRockChromite: WallRockChromiteBananium
+    WallRockSand: WallRockSandBananium
+    WallRockSnow: WallRockSnowBananium
+  maxCount: 20
+  minGroupSize: 5
+  maxGroupSize: 10
+  radius: 4

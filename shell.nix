@@ -12,7 +12,7 @@
 
 let
   dependencies = with pkgs; [
-    dotnetCorePackages.sdk_9_0
+    dotnet-sdk_10
     icu
     glfw
     libGL
@@ -47,6 +47,10 @@ let
     at-spi2-core
     cups
     python3
+    # Euphoria
+    fontconfig
+    alsa-plugins
+    pipewire
     # DeltaV
     pre-commit
     wayland

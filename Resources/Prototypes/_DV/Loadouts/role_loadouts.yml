@@ -78,6 +78,8 @@
   - ChiefJusticeJumpsuit
   - ChiefJusticeNeck
   - ChiefJusticeOuterClothing
+  - FloofCJPDAs # Floofstation
+  - JusticePaperworkBelt # Floofstation
   - PassengerGloves
   - CommonBackpack
   - ChiefJusticeShoes
@@ -93,6 +95,8 @@
   - ClerkJumpsuit
   - ClerkNeck
   - ClerkOuterClothing
+  - JusticePaperworkBelt # Floofstation
+  - PassengerGloves # Floofstation
   - CommonBackpack
   - ClerkShoes
   - Glasses
@@ -107,6 +111,9 @@
   - ProsecutorJumpsuit
   - ProsecutorNeck
   - ProsecutorOuterClothing
+  - PassengerShoes # Floofstation
+  - JusticePaperworkBelt # Floofstation
+  - PassengerGloves # Floofstation
   - CommonBackpack
   - Glasses
   - Survival
@@ -128,4 +135,35 @@
   - RoboticistPDA
   - RoboticistGlasses
   - Survival
+  - GroupSpeciesBreathTool
+
+# Wildcards
+- type: roleLoadout
+  id: JobZookeeper
+  parent: JobBaseLoadout # Floofstation
+  groups:
+  - GroupTankHarness
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - ZookeeperJobTrinkets
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobBoxer
+  parent: JobBaseLoadout # Floofstation
+  groups:
+  - GroupTankHarness
+  - AssistantHead # Floofstation
+  - PassengerNeck # Floofstation
+  - PassengerFace # Floofstation
+  - BoxerJumpsuit
+  - BoxerGloves
+  - CommonBackpack
+  - FloofBoxerPDAs # Floofstation - pda customization
+  - Glasses
+  - Survival
+  - Trinkets
+  - BoxerJobTrinkets
   - GroupSpeciesBreathTool
