@@ -20,6 +20,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement;
 using Content.Server.Radiation.Components;
 using Content.Shared.Flash.Components;
+using Content.Shared.Inventory;
 namespace Content.Server._Floof.Vore;
 
 public sealed class VoreImmunitySystem : EntitySystem
@@ -28,6 +29,7 @@ public sealed class VoreImmunitySystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly SharedSuitSensorSystem _suitSensorSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
     
     private readonly HashSet<EntityUid> _pendingImmunityUpdates = new();
 
@@ -174,7 +176,15 @@ public sealed class VoreImmunitySystem : EntitySystem
             tracker.AddedFlash = true;
         }
 
-        _suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorOff);
+        //_suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorOff);
+        var slotEnumerator = _inventorySystem.GetSlotEnumerator(prey, SlotFlags.All);
+        while (slotEnumerator.NextItem(out var item, out var slot))
+        {
+            if (TryComp<SuitSensorComponent>(item, out var sensorComp)){
+                tracker.OriginalSensorModes[slot.Name] = sensorComp.Mode;
+                _suitSensorSystem.SetSensor((item, sensorComp), SuitSensorMode.SensorOff);
+            }
+        }
     }
 
     /// <summary>
@@ -208,7 +218,13 @@ public sealed class VoreImmunitySystem : EntitySystem
             RemComp<FlashImmunityComponent>(prey);
             tracker.AddedFlash = false;
         }
-        _suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorCords);
+        foreach (var (slotId, originalMode) in tracker.OriginalSensorModes){
+            if (!_inventorySystem.TryGetSlotEntity(prey, slotId, out var item))
+                continue;
+            if (TryComp<SuitSensorComponent>(item, out var sensorComp))
+                _suitSensorSystem.SetSensor((item.Value, sensorComp), originalMode);
+        }
+        //_suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorCords);
         RemComp<DevouredComponent>(prey);
     }
 }

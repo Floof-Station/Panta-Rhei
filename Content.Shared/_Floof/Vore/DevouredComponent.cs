@@ -1,3 +1,6 @@
+using Content.Shared.Medical.SuitSensor;
+namespace Content.Server._Floof.Vore;
+
 [RegisterComponent]
 public sealed partial class DevouredComponent : Component
 {
@@ -6,4 +9,7 @@ public sealed partial class DevouredComponent : Component
     public bool AddedTemperature;
     public bool AddedRadiation;
     public bool AddedFlash;
+
+    [DataField("originalSensorModes")]
+    public Dictionary<string, SuitSensorMode> OriginalSensorModes = new(); 
 }
