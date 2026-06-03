@@ -60,7 +60,7 @@ public sealed class LanguageIconTag : IMarkupTagHandler
             var understands = langSys.CanLocalPlayerUnderstand(language);
             var name = language.Name;
 
-            var msg = $"This text is written in {name}. You {(understands ? "understand" : "don't understand")} it.";
+            var msg = $"This message is spoken in {name}. You {(understands ? "understand" : "don't understand")} it.";
             return new Tooltip() { Text = msg };
         };
 
@@ -77,7 +77,7 @@ public sealed class LanguageIconTag : IMarkupTagHandler
         }
 
         _lastTagData = language; // See explanation above
-        return "[";
+        return "(";
     }
 
     public string TextAfter(MarkupNode node)
@@ -87,7 +87,7 @@ public sealed class LanguageIconTag : IMarkupTagHandler
 
         // If the local player turned on the "display language names" setting, show the language name in brackets
         if (!_cfg.GetCVar(FloofCCVars.AccessibilityFullLanguageNames))
-            return "]";
+            return ")";
 
         return $"{language.Name}]";
     }
