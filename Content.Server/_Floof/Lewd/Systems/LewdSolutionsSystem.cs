@@ -1,5 +1,4 @@
 using Content.Server.Fluids.EntitySystems;
-using Content.Server.Forensics;
 using Content.Shared._Floof.Lewd;
 using Content.Shared._Floof.Lewd.Components;
 using Content.Shared._Floof.Util;
@@ -33,10 +32,10 @@ public sealed class LewdSolutionsSystem : EntitySystem
         if (!GlobalUpdateInterval.TryUpdate(_timing))
             return;
 
-        var toAdd = new List<(EntityUid, SolutionContainerManagerComponent, LewdOrganData)>();
+        var toAdd = new List<(EntityUid, LewdOrganData)>();
 
-        var query = EntityQueryEnumerator<SolutionContainerManagerComponent, LewdMobDataComponent>();
-        while (query.MoveNext(out var uid, out var solMan, out var lewd))
+        var query = EntityQueryEnumerator<LewdMobDataComponent>();
+        while (query.MoveNext(out var uid, out var lewd))
         {
             if (!lewd.UpdateInterval.TryUpdate(_timing) || !CanProcess(uid))
                 continue;
@@ -46,38 +45,37 @@ public sealed class LewdSolutionsSystem : EntitySystem
                 Log.Warning($"Entity {uid} has an invalid lewd organ update interval, clamping it.");
                 lewd.UpdateInterval.Interval = GlobalUpdateInterval.Interval;
             }
-
             foreach (var (kind, lewdData) in lewd.CachedData)
             {
-                if (!_solContainer.TryGetSolution((uid, solMan), lewdData.SolutionName, out var solution, errorOnMissing: false))
+                if (!_solContainer.TryGetSolution(uid, lewdData.SolutionName, out var lewdSolution, errorOnMissing: false))
                 {
                     // So fun fact, EnsureSolution can fail if the mob is not yet map-initialized
                     // This means that organ addition can randomly fail when done via traits.
                     Log.Warning($"Entity {uid} is missing a solution {lewdData.SolutionName}, adding it.");
-                    toAdd.Add((uid, solMan, lewdData));
+                    toAdd.Add((uid, lewdData));
                     continue;
                 }
 
-                ProcessDrainage((uid, solMan, lewd), solution.Value, lewdData);
+                ProcessDrainage((uid, lewd), lewdSolution.Value, lewdData);
                 if (CanRegenerate(uid))
-                    ProcessRegeneration((uid, solMan, lewd), solution.Value, lewdData);
+                    ProcessRegeneration((uid, lewd), lewdSolution.Value, lewdData);
             }
         }
 
-        foreach (var (uid, solMan, lewdData) in toAdd)
+        foreach (var (uid, lewdData) in toAdd)
         {
             _solContainer.EnsureSolution(uid, lewdData.SolutionName, out _, lewdData.SolutionVolume);
         }
     }
 
-    private void ProcessDrainage(Entity<SolutionContainerManagerComponent, LewdMobDataComponent> ent, Entity<SolutionComponent> solution, LewdOrganData data)
+    private void ProcessDrainage(Entity<LewdMobDataComponent> ent, Entity<SolutionComponent> solution, LewdOrganData data)
     {
         if (data.DrainSpeed <= 0)
             return;
 
         // Remove all reagents that aren't supposed to regenerate
         Solution drained;
-        var dt = ent.Comp2.UpdateInterval.Interval.TotalSeconds;
+        var dt = ent.Comp.UpdateInterval.Interval.TotalSeconds;
         if (data.ProducedReagentPrototypes is { } regenerable)
             drained = _solContainer.SplitSolutionWithout(solution, data.DrainSpeed * dt, regenerable);
         else
@@ -87,13 +85,13 @@ public sealed class LewdSolutionsSystem : EntitySystem
             _puddles.TrySpillAt(ent, drained, out _, false);
     }
 
-    private void ProcessRegeneration(Entity<SolutionContainerManagerComponent, LewdMobDataComponent> ent, Entity<SolutionComponent> solution, LewdOrganData data)
+    private void ProcessRegeneration(Entity<LewdMobDataComponent> ent, Entity<SolutionComponent> solution, LewdOrganData data)
     {
         if (data.ProducedReagents is null || solution.Comp.Solution.AvailableVolume <= 0.01)
             return;
 
         // We need to produce N chemicals (usually N = 1) and make sure none of them exceed their internal caps
-        var dt = ent.Comp2.UpdateInterval.Interval.TotalSeconds;
+        var dt = ent.Comp.UpdateInterval.Interval.TotalSeconds;
         var sol = solution.Comp.Solution;
         var added = false;
         for (var i = 0; i < data.ProducedReagents.Length; i++)

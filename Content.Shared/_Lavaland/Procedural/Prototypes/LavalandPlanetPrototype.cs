@@ -10,7 +10,7 @@ public sealed partial class LavalandMapPrototype : IPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     [DataField(required: true)]
     public ProtoId<LavalandPlanetPrototype> Planet = "Lavaland";

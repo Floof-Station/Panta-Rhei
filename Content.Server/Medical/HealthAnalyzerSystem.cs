@@ -18,6 +18,8 @@ using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
+using Content.Server.Body.Systems;
+using Content.Server._NF.Medical;
 
 // Shitmed Change
 using Content.Shared.Body.Part;
@@ -29,8 +31,6 @@ using System.Linq;
 using Content.Server._DV.MedicalRecords;
 using Content.Shared._DV.MedicalRecords;
 // End DeltaV
-
-using Content.Server._NF.Medical; // Frontier
 
 namespace Content.Server.Medical;
 
@@ -46,7 +46,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly MedicalRecordsSystem _medicalRecords = default!;
+    [Dependency] private readonly MedicalRecordsSystem _medicalRecords = default!; // DeltaV - Medical Records
+    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
 
     public override void Initialize()
     {
@@ -280,54 +281,75 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// <param name="part">Shitmed Change: The body part being scanned, if any</param>
     public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode, EntityUid? part = null)
     {
-        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key))
+        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key)
+            || !HasComp<DamageableComponent>(target))
             return;
 
-        if (!HasComp<DamageableComponent>(target))
-            return;
+        var uiState = GetHealthAnalyzerUiState(target, healthAnalyzer, part); // Shitmed Change
+        uiState.ScanMode = scanMode;
 
+        _uiSystem.ServerSendUiMessage(
+            healthAnalyzer,
+            HealthAnalyzerUiKey.Key,
+            new HealthAnalyzerScannedUserMessage(uiState)
+        );
+    }
+
+    /// <summary>
+    /// Creates a HealthAnalyzerState based on the current state of an entity.
+    /// </summary>
+    /// <param name="target">The entity being scanned</param>
+    /// <param name="healthAnalyzer">Floofstation - health analyzer being used, if any. Do not neglect this.</param>
+    /// <param name="part">Shitmed Change: The body part being scanned, if any</param>
+    /// <returns></returns>
+    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid? target, EntityUid? healthAnalyzer, EntityUid? part) // Floofstation - also made the part parameter have no default value cus high chance of making a mistake here
+    {
+        if (!target.HasValue || !HasComp<DamageableComponent>(target))
+            return new HealthAnalyzerUiState();
+
+        var entity = target.Value;
         var bodyTemperature = float.NaN;
 
-        if (TryComp<TemperatureComponent>(target, out var temp))
+        if (TryComp<TemperatureComponent>(entity, out var temp))
             bodyTemperature = temp.CurrentTemperature;
 
         var bloodAmount = float.NaN;
         var bleeding = false;
         var unrevivable = false;
 
-        if (TryComp<BloodstreamComponent>(target, out var bloodstream) &&
-            _solutionContainerSystem.ResolveSolution(target, bloodstream.BloodSolutionName,
+        if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
+            _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
                 ref bloodstream.BloodSolution, out var bloodSolution))
         {
-            bloodAmount = bloodSolution.FillFraction;
+            bloodAmount = _bloodstreamSystem.GetBloodLevel(entity);
             bleeding = bloodstream.BleedAmount > 0;
         }
 
-        if (TryComp<UnrevivableComponent>(target, out var unrevivableComp) && unrevivableComp.Analyzable)
+        if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
         // Shitmed Change Start
         Dictionary<TargetBodyPart, TargetIntegrity>? body = null;
         if (HasComp<TargetingComponent>(target))
-            body = _bodySystem.GetBodyPartStatus(target);
+            body = _bodySystem.GetBodyPartStatus(entity);
         // Shitmed Change End
 
         var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
 
-        _uiSystem.ServerSendUiMessage(healthAnalyzer, HealthAnalyzerUiKey.Key, new HealthAnalyzerScannedUserMessage(
-            GetNetEntity(target),
+        return new HealthAnalyzerUiState(
+            GetNetEntity(entity),
             bodyTemperature,
             bloodAmount,
-            scanMode,
+            null, // Floofstation note: caller overrides this for some fucking fucked up evil reason
             bleeding,
             unrevivable,
 
             // Shitmed Change
             body,
-            _medicalRecords.GetMedicalRecords(target), // DeltaV - Medical Records
+            _medicalRecords.GetMedicalRecords(entity), // DeltaV - Medical Records
             part != null ? GetNetEntity(part) : null,
 
             printable // Frontier
-        ));
+        );
     }
 }

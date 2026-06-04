@@ -40,8 +40,8 @@
   - !type:AddCompsEffect
     components:
     - type: Psionic
-    - type: MetapsionicPower
-    
+    - type: MetapsionicPulsePower
+
 - type: trait
   id: TraitPsychokineticScream
   name: trait-psychokinetic-scream-name
@@ -65,7 +65,7 @@
 #     components:
 #     - type: Psionic
 #     - type: PsionicRegenerationPower
-  
+
 - type: trait # Bible not included
   id: TraitReligious
   name: trait-religious-name

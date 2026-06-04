@@ -510,6 +510,12 @@
     jumpsuit: ClothingUniformJumpskirtTacticalMaid
   groupBy: "maid"
 
+- type: loadout
+  id: ClothingUniformJumpskirtBlazer
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlazer
+  groupBy: "casual"
+
 # thongs
 - type: loadout
   id: ClothingThongCoder
@@ -1373,6 +1379,11 @@
   id: NeckNeckerchief
   equipment:
     neck: ClothingNeckNeckerchief
+
+- type: loadout
+  id: ClothingNeckCWPArctic
+  equipment:
+    neck: ClothingNeckCWPArctic
 
 # trinkets
 - type: loadout

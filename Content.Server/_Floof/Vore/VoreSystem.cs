@@ -18,6 +18,8 @@ using Robust.Server.Player;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Gibbing;
+using Robust.Shared.Timing;
 namespace Content.Server._Floof.Vore;
 
 public sealed class VoreSystem : EntitySystem
@@ -66,7 +68,7 @@ public sealed class VoreSystem : EntitySystem
 
     /// <summary>
     /// gives the mob vore component when they updated their consent to be pred or prey
-    /// in order to avoid giving every mob it one by one, timer needed to get the recent change 
+    /// in order to avoid giving every mob it one by one, timer needed to get the recent change
     /// </summary>
     private void OnConsentUpdated(EntityUid uid, ConsentComponent comp, EntityConsentToggleUpdatedEvent args){
         // only if the updated toggle is prey or pred
@@ -89,7 +91,7 @@ public sealed class VoreSystem : EntitySystem
         var hasPred = _consentSystem.HasConsent(uid, isPred);
         var hasPrey = _consentSystem.HasConsent(uid, isPrey);
         //TODO var for digest
-        
+
         /* in case prey is inside a container immediately release them when they turn off prey consent
         works as an emergency leave for the prey*/
         if (!hasPrey && IsInVoreContainer(uid) &&
@@ -104,12 +106,12 @@ public sealed class VoreSystem : EntitySystem
         else{
             RemComp<VoreComponent>(uid);
         }
-        
+
         //TODO component for digest
     }
 
     /// <summary>
-    /// creates verbs inside the interaction menu for yourself and other mobs controlled by players 
+    /// creates verbs inside the interaction menu for yourself and other mobs controlled by players
     /// only show up when the consent has been selected on both sides
     /// </summary>
     private void OnGetVerbs(EntityUid uid, VoreComponent comp, GetVerbsEvent<Verb> args){
@@ -196,7 +198,7 @@ public sealed class VoreSystem : EntitySystem
         var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new OnVoreDoAfter(), user, target: target, used: user)
         {
             BreakOnMove = true,
-            BreakOnDamage = true,      
+            BreakOnDamage = true,
         };
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs))
             return;
@@ -217,7 +219,7 @@ public sealed class VoreSystem : EntitySystem
 
         var pred = uid;
         var container = _containerSystem.EnsureContainer<Container>(pred, comp.ContainerId);
-        
+
         var count = 0;
         //only counts entities with bodies meaning no items
         foreach (var e in container.ContainedEntities){
@@ -243,7 +245,7 @@ public sealed class VoreSystem : EntitySystem
     }
 
     /// <summary>
-    /// makes sure the prey is not inside any other container such as 
+    /// makes sure the prey is not inside any other container such as
     /// bags or being carried by someone before being inserted into the pred
     /// </summary>
     private void EnsureEntityFree(EntityUid pred, EntityUid prey, VoreComponent comp){
@@ -300,7 +302,7 @@ public sealed class VoreSystem : EntitySystem
     /// <summary>
     /// in case of polymorp scenarios such as kitsune release all the content
     /// </summary>
-    private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){   
+    private void OnPolymorphedTransferContent(EntityUid uid, VoreComponent comp, PolymorphedEvent args){
         TryReleasePrey(uid, comp);
     }
  
