@@ -176,7 +176,6 @@ public sealed class VoreImmunitySystem : EntitySystem
             tracker.AddedFlash = true;
         }
 
-        //_suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorOff);
         var slotEnumerator = _inventorySystem.GetSlotEnumerator(prey, SlotFlags.All);
         while (slotEnumerator.NextItem(out var item, out var slot))
         {
@@ -224,7 +223,6 @@ public sealed class VoreImmunitySystem : EntitySystem
             if (TryComp<SuitSensorComponent>(item, out var sensorComp))
                 _suitSensorSystem.SetSensor((item.Value, sensorComp), originalMode);
         }
-        //_suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorCords);
         RemComp<DevouredComponent>(prey);
     }
 }
