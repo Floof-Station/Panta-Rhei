@@ -11,5 +11,5 @@ public sealed partial class DevouredComponent : Component
     public bool AddedFlash;
 
     [DataField("originalSensorModes")]
-    public Dictionary<string, SuitSensorMode> OriginalSensorModes = new(); 
+    public Dictionary<EntityUid, SuitSensorMode> OriginalSensorModes = new(); 
 }
