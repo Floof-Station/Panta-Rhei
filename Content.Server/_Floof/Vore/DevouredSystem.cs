@@ -221,6 +221,7 @@ public sealed class VoreImmunitySystem : EntitySystem
             if (TryComp<SuitSensorComponent>(item, out var sensorComp))
                 _suitSensorSystem.SetSensor((item, sensorComp), originalMode);
         }
+        tracker.OriginalSensorModes.Clear();
         RemComp<DevouredComponent>(prey);
     }
 }
