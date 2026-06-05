@@ -14,8 +14,11 @@ public sealed partial class VoreComponent : Component
     //TODO later include customizable containers for different vore types
     [DataField("containerId")]
     public string ContainerId = "vore_container";
+<<<<<<< HEAD
     [DataField]
     public SoundSpecifier SoundDevour = new SoundPathSpecifier("/Audio/_Floof/Vore/gulp.ogg");
+=======
+>>>>>>> master
 }
 [Serializable, NetSerializable]
 public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{

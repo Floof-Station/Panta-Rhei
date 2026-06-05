@@ -51,9 +51,12 @@ public sealed class VoreImmunitySystem : EntitySystem
         _pendingImmunityUpdates.Clear();
     }
 
+<<<<<<< HEAD
     /// <summary>
     /// responsible for giving the component that gives the prey immunities
     /// </summary>
+=======
+>>>>>>> master
     private void OnPreyInsertedIntoContainer(EntityUid uid, VoreComponent comp, EntInsertedIntoContainerMessage args){
         //double check making sure its a vore_container
         if (args.Container.ID != comp.ContainerId)
@@ -89,7 +92,10 @@ public sealed class VoreImmunitySystem : EntitySystem
         args.Verbs.Add(new Verb
         {
             Text = "Struggle Free",
+<<<<<<< HEAD
             Category = VoreVerbCategory.VoreGeneral,
+=======
+>>>>>>> master
             Act = () => 
             {
                 _popupSystem.PopupEntity("You struggle free!", prey, prey);

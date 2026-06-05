@@ -1,0 +1,125 @@
+﻿- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: BaseDanceFloorFixture
+  name: dance floor
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Floof/Structures/Tiles/dance_floor.rsi
+    drawdepth: FloorTiles
+    layers:
+    - map: ["enum.PoweredLightLayers.Base"]
+      state: dance-floor-light-off
+    - map: ["enum.PoweredLightLayers.Glow"]
+      state: dance-floor-light-on
+      shader: unshaded
+    state: dance-floor-light-off
+  - type: Fixtures
+  - type: Physics
+    canCollide: false
+  - type: Construction
+    graph: LightFixture
+    node: dancefloor
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+          ShardGlass:
+            min: 1
+            max: 1
+          CableApcStack1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalGlassBreak
+  - type: TrayScanReveal
+
+## Empty
+- type: entity
+  parent: BaseDanceFloorFixture
+  id: PoweredDanceFloorFixtureEmpty
+  suffix: Empty
+  description: ♫ It's time to boogy! And they say that disco is dead. ♫
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Tiles/dance_floor.rsi
+    state: dance-floor-light-off
+  - type: PointLight
+  - type: ApcPowerReceiver
+  - type: ExtensionCableReceiver
+  - type: InteractionOutline
+  - type: DeviceLinkSink
+    ports:
+    - On
+    - Off
+    - Toggle
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: SmartLight
+  - type: ContainerContainer
+    containers:
+      light_bulb: !type:ContainerSlot
+  - type: PoweredLight
+    bulb: Tube
+  - type: Appearance
+  - type: PoweredLightVisuals
+    blinkingSound:
+      path: /Audio/Machines/light_tube_on.ogg
+    spriteStateMap:
+      empty: dance-floor-light-off
+      off: dance-floor-light-off
+      on: dance-floor-light-off
+      broken: dance-floor-light-off
+      burned: dance-floor-light-off
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepWood
+      params:
+        volume: 3
+  - type: Tag
+    tags:
+    - Catwalk
+
+## Fluorescent
+- type: entity
+  parent: PoweredDanceFloorFixtureEmpty
+  id: PoweredDanceFloorFixtureFluorescent
+  suffix: Fluorescent
+  components:
+  - type: PoweredLight
+    hasLampOnSpawn: LightTube
+  - type: Tag
+    tags:
+    - Catwalk
+
+- type: entity
+  parent: BaseDanceFloorFixture
+  id: AlwaysPoweredDanceFloorFixtureFluorescent
+  suffix: Always powered, fluorescent
+  description: A dance floor that does not consume power for infinite parties.
+  components:
+  - type: PointLight
+    color: "#FFE4CE"
+    energy: 0.2
+    radius: 2
+    softness: 1
+  - type: Tag
+    tags:
+    - Catwalk

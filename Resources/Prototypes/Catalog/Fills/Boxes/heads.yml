@@ -59,7 +59,6 @@
         - id: IDComputerCircuitboard
         - id: FundingAllocationComputerCircuitboard
         - id: CargoRequestServiceComputerCircuitboard
-        - id: FundingAllocationComputerCircuitboard # Euphoria
 
 - type: entity
   parent: BoxStamps
@@ -85,6 +84,7 @@
         children:
         - id: SecurityTechFabCircuitboard
         - id: CargoRequestSecurityComputerCircuitboard
+        - id: CriminalRecordsComputerCircuitboard # Euphoria
 
 - type: entity
   parent: ToteBase
@@ -100,7 +100,7 @@
         - id: CargoSaleComputerCircuitboard
         - id: CargoShuttleConsoleCircuitboard
         - id: SalvageMagnetMachineCircuitboard
-        #- id: SalvageJobBoardComputerCircuitboard # DeltaV - Uneeded because mining points
+        - id: SalvageJobBoardComputerCircuitboard # DeltaV - Uneeded because mining points # Euphoria - Readded
         - id: MailTeleporterMachineCircuitboard
         # DeltaV Additions
         - id: IDComputerCircuitboard
@@ -109,7 +109,6 @@
         - id: SalvageExpeditionsComputerCircuitboard
         - id: FundingAllocationComputerCircuitboard # To be removed when it's in techvault on all maps # floof - DO NOT REMOVE
         # END DeltaV Additions
-        - id: MedicalRecordsComputerCircuitboard # Euphoria
         - id: CrewMonitoringComputerCircuitboard # Euphoria
 
 - type: entity
