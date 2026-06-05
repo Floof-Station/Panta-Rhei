@@ -12,8 +12,8 @@ namespace Content.Shared._Euphoria.Traits.Effects;
 public sealed partial class ReplaceBloodReagentTraitEffect : BaseTraitEffect
 {
 
-    [DataField(required: true)]
-    public string Reagent = null;
+    [DataField("reagent", required: true)]
+    public string Reagent;
 
     public override void Apply(TraitEffectContext ctx) {
         if (ctx.EntMan.TryGetComponent<BloodstreamComponent>(ctx.Player, out var bloodstream))

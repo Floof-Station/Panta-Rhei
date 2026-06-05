@@ -24,7 +24,7 @@
     - Diona #Sap
     - Moth #InsectBlood
     - Resomi #AmmoniaBlood
-    - Slime #Slime
+    - SlimePerson #Slime
     - Vox #AmmoniaBlood
   effects:
   - !type:ReplaceBloodReagentTraitEffect
@@ -106,7 +106,7 @@
     invert: true
     species:
     - Chitinid
-    - Mot
+    - Moth
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: InsectBlood
@@ -158,7 +158,7 @@
   - !type:OneOfSpeciesCondition
     invert: true
     species:
-    - Slime
+    - SlimePerson
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: Slime
