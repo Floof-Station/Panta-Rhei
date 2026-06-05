@@ -16,11 +16,8 @@ using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
 using Robust.Server.Player;
 using Content.Shared.Mobs.Systems;
-<<<<<<< HEAD
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Movement.Pulling.Components;
-=======
->>>>>>> master
 using Content.Shared.Gibbing;
 namespace Content.Server._Floof.Vore;
 
@@ -34,10 +31,7 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly CarryingSystem _carryingSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-<<<<<<< HEAD
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-=======
->>>>>>> master
 
     public static readonly ProtoId<ConsentTogglePrototype> isPred = "PredVore";
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
@@ -145,10 +139,7 @@ public sealed class VoreSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = "Release all prey",
-<<<<<<< HEAD
                     Category = VoreVerbCategory.VoreGeneral,
-=======
->>>>>>> master
                     Act = () => TryReleasePrey(target, comp)
                 });
             }
@@ -169,7 +160,6 @@ public sealed class VoreSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = "Insert Self",
-<<<<<<< HEAD
                     Category = VoreVerbCategory.VoreGeneral,
                     Act = () => TryVore(target, user)
                 });
@@ -193,10 +183,6 @@ public sealed class VoreSystem : EntitySystem
                     });
                 }
             }
-=======
-                    Act = () => TryVore(target, user)
-                });
->>>>>>> master
         }
     }
 
