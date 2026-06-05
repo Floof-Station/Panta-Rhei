@@ -22,14 +22,9 @@ public sealed partial class ReplaceBloodReagentTraitEffect : BaseTraitEffect
             var totalVolume = referenceSolution.Volume;
             referenceSolution.RemoveAllSolution();
             referenceSolution.AddReagent(Reagent, totalVolume);
-            if (
-                ctx.EntMan.TryGetComponent<ContainerManagerComponent>(ctx.Player, out var containerManager) &&
-                containerManager.Containers.TryGetValue($"solution@{bloodstream.BloodSolutionName}", out var solutionContainer) &&
-                solutionContainer is ContainerSlot solutionSlot &&
-                solutionSlot.ContainedEntity is { } containedSolution
-            )
+            if (bloodstream.BloodSolution.HasValue)
             {
-                var bloodSolution = ctx.EntMan.GetComponent<SolutionComponent>(containedSolution).Solution;
+                var bloodSolution = ctx.EntMan.GetComponent<SolutionComponent>(bloodstream.BloodSolution.Value).Solution;
                 bloodSolution.RemoveAllSolution();
                 bloodSolution.AddReagent(Reagent, totalVolume);
             }
