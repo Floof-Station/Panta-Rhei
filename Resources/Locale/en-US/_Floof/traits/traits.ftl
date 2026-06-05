@@ -22,6 +22,12 @@ trait-marked-remove-desc = Someone or something wants you REMOVED. Antags can re
 trait-marked-teach-name = Marked for Death
 trait-marked-teach-desc = Someone or something wants you taught a lesson. Antags can recieve objectives to kill you.
 
+trait-conversion-immune-name = Conversion Immune
+trait-conversion-immune-desc =
+    This trait prevents you from being converted mid-round by certain antags.
+    Currently only affects the Coscmic Cult.
+    Keep in mind that this does NOT in any way protect you from getting killed in case you try to use the immunity to your advantage.
+
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with modular cybernetic optical implants.
