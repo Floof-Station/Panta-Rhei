@@ -46,6 +46,9 @@
   cost: 1
   usesSlots: false
   conditions:
+  - !type:IsAntagEligibleCondition
+    antag: CosmicAntagCultist # Can you sell faith you can't lose?
+    invert: true
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
