@@ -13,10 +13,6 @@ public sealed partial class VoreComponent : Component
     //TODO later include customizable containers for different vore types
     [DataField("containerId")]
     public string ContainerId = "vore_container";
-    /// <summary>
-    /// Set to true when the pred intentionally releases this entity to suppress escape popup
-    /// </summary>
-    public bool IntentionalRelease = false;
 }
 [Serializable, NetSerializable]
 public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{
@@ -29,12 +25,4 @@ public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{
     {
         MaxPrey = maxPrey;
     }
-}
-[RegisterComponent]
-public sealed partial class VoreImmunityTrackerComponent : Component
-{
-    public bool AddedPressure;
-    public bool AddedBreathing;
-    public bool AddedTemperature;
-    public bool AddedRadiation;
 }
