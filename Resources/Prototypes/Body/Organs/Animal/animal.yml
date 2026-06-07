@@ -91,13 +91,13 @@
 - type: entity
   id: OrganMouseStomach
   parent: OrganAnimalStomach
-  name: mouse stomach # DeltaV
+  name: critter stomach # DeltaV
   categories: [ HideSpawnMenu ]
   components:
   - type: SolutionContainerManager
     solutions:
       stomach:
-        maxVol: 30
+        maxVol: 10 # Euphoria - Critters shouldn't eat twice their body weight in food
       food:
         maxVol: 5
         reagents:
