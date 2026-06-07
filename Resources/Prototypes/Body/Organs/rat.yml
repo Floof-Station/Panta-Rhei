@@ -22,3 +22,18 @@
           Quantity: 5
   - type: Sprite
     state: stomach
+
+- type: entity # Euphoria - Rodentia can eat more at once due to their hunger rate
+  id: OrganRodentiaStomach
+  parent: OrganRatStomach
+  suffix: "rodentia"
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 75
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
