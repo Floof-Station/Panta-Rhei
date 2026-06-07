@@ -113,6 +113,16 @@
   - type: Clothing
     sprite: _Floof/Clothing/Uniforms/stripethongrainbow.rsi
 
+- type: entity
+  parent: ClothingUniformPantsBase
+  id: ClothingUniformPantsJeans
+  name: jeans
+  description: Who needs a top?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/pants_jeans.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/pants_jeans.rsi
 
 #Other Outfits
 - type: entity

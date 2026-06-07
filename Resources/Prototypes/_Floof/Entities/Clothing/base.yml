@@ -14,3 +14,8 @@
   id: ClothingUniformThongBase
   parent: [ClothingUniformShirtlessBase, ClothingUniformBase]
   abstract: true
+
+- type: entity
+  id: ClothingUniformPantsBase # as to provide a more name-relevant type than the above for pants clothing w/o a refactor
+  parent: [ClothingUniformShirtlessBase, ClothingUniformBase]
+  abstract: true
