@@ -27,3 +27,19 @@
     groups:
       - id: Food
       - id: Drink
+
+- type: entity
+  id: OrganMothroachStomach
+  parent: OrganMothStomach
+  categories: [ HideSpawnMenu ]
+  name: mothroach stomach # Euphoria
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 10
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
