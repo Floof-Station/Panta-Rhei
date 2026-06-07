@@ -11,9 +11,10 @@
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
-  - !type:OneOfSpeciesCondition # Presumably this is related to IPCs and Onis already being hella strong? On EE floof stamina damage was based on a mass contest, so it makes sense.
+  - !type:OneOfSpeciesCondition
     invert: true
     species:
+    - IPC
     - SlimePerson
   effects:
   - !type:OverrideCompsEffect
@@ -41,6 +42,10 @@
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
   effects:
   - !type:OverrideCompsEffect
     components:
@@ -68,6 +73,10 @@
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
   effects:
   - !type:OverrideCompsEffect
     components:
