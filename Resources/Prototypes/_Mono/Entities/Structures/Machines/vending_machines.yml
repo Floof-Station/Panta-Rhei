@@ -18,7 +18,7 @@
 #    - type: MarketModifier # Euphoria - M3739 - #485 - Component does not exist.
 #      mod: 8
     - type: DatasetVocalizer # Euphoria - M3739 - #485 - Originally 'Advertise', which we don't have. This will do for now.
-      pack: BaristaAds
+      dataset: BaristaAds
     - type: SpeakOnUIClosed
       pack: BaristaGoodbyes
     - type: Sprite

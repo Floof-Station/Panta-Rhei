@@ -20,14 +20,14 @@
     solutions:
       injector:
         maxVol: 1
-  - type: Injector
-    injectOnly: false
+  - type: Injector # Euphoria - M3739 - #485 - Parameters we don't have are commented out. Function remains the same.
+#    injectOnly: false
     ignoreMobs: true
     ignoreClosed: false
-    minTransferAmount: 1
-    maxTransferAmount: 1
-    transferAmount: 1
-    toggleState: 1 # draw
+#    minTransferAmount: 1
+#    maxTransferAmount: 1
+#    transferAmount: 1
+#    toggleState: 1 # draw
   - type: StaticPrice
     price: 40
   - type: Tag
