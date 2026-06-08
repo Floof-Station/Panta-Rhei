@@ -1236,6 +1236,7 @@
 
 - type: loadoutGroup
   id: StationEngineerID
+  parent: FloofEngineerPDAs # Floofstation
   name: loadout-group-station-engineer-id
   loadouts:
   - StationEngineerPDA
@@ -1667,6 +1668,7 @@
 
 - type: loadoutGroup
   id: SecurityPDA
+  parent: FloofSecurityOfficerPdas # Floofstation
   name: loadout-group-security-id
   loadouts:
   - SecurityPDA

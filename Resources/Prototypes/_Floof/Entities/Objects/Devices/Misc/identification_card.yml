@@ -226,3 +226,440 @@
   components:
   - type: IdCard
     jobTitle: job-alt-title-noviciate
+
+# medical emotional support
+- type: entity
+  parent: MedicalInternIDCard
+  id: EmotionalSupportMedicalIntern
+  name: Emotional Support Medical Intern ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-intern
+
+- type: entity
+  parent: MedicalIDCard
+  id: EmotionalSupportMedicalDoctor
+  name: Emotional Support Medical Doctor ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-doctor
+
+- type: entity
+  parent: ParamedicIDCard
+  id: EmotionalSupportParamed
+  name: Emotional Support Paramed ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-paramed
+
+- type: entity
+  parent: ChemistIDCard
+  id: EmotionalSupportChemist
+  name: Emotional Support Chemist ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-chemist
+
+- type: entity
+  parent: PsychiatristIDCard
+  id: EmotionalSupportPsychiatrist
+  name: Emotional Support Psychiatrist ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-psychiatrist
+
+- type: entity
+  parent: SurgeonIDCard
+  id: EmotionalSupportSurgeon
+  name: Emotional Support Surgeon ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-surgeon
+
+- type: entity
+  parent: SeniorPhysIDCard
+  id: EmotionalSupportSeniorPhys
+  name: Emotional Support Senior Physician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-senior-physician
+
+# engineering emotional support
+- type: entity
+  parent: TechnicalAssistantIDCard
+  id: EmotionalSupportTA
+  name: Emotional Support Technical Assistant ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-TA
+
+- type: entity
+  parent: EngineeringIDCard
+  id: EmotionalSupportEngi
+  name: Emotional Support Station Engineer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-Engi
+
+- type: entity
+  parent: AtmosIDCard
+  id: EmotionalSupportAtmos
+  name: Emotional Support Atmospheric Technician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-Atmos
+
+- type: entity
+  parent: SeniorEngineerIDCard
+  id: EmotionalSupportSeniorEngi
+  name: Emotional Support Senior Engineer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-Senior-Engi
+
+# epistemics emotional support
+- type: entity
+  parent: ResearchAssistantIDCard
+  id: EmotionalSupportRA
+  name: Emotional Support Research Assistant ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-medical-emotional-support-ra
+
+- type: entity
+  parent: ResearchIDCard
+  id: EmotionalSupportScientistIDCard
+  name: Emotional Support Scientist ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-epistemics-emotional-support-scientist
+
+- type: entity
+  parent: RoboticistIDCard
+  id: EmotionalSupportRoboticistIDCard
+  name: Emotional Support Roboticist ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-epistemics-emotional-support-roboticist
+
+- type: entity
+  parent: LibrarianIDCard
+  id: EmotionalSupportCatalogerIDCard
+  name: Emotional Support Cataloger ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-epistemics-emotional-support-cataloger
+
+- type: entity
+  parent: ChaplainIDCard
+  id: EmotionalSupportChaplainIDCard
+  name: Emotional Support Chaplain ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-epistemics-emotional-support-chaplain
+
+- type: entity
+  parent: ForensicMantisIDCard
+  id: EmotionalSupportMantisIDCard
+  name: Emotional Support Mantis ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-epistemics-emotional-support-mantis
+
+- type: entity
+  parent: SeniorResearcherIDCard
+  id: EmotionalSupportSeniorResearcherIDCard
+  name: Emotional Support Senior Researcher ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-epistemics-emotional-support-senior-researcher
+
+# security emotional support
+- type: entity
+  parent: SecurityCadetIDCard
+  id: EmotionalSupportSecurityCadetIDCard
+  name: Emotional Support Security Cadet ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-security-cadet
+
+- type: entity
+  parent: SecurityIDCard
+  id: EmotionalSupportSecurityOfficerIDCard
+  name: Emotional Support Security Officer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-security-officer
+
+- type: entity
+  parent: SecurityIDCard # apparently sec tech did not get a proper pda or id so we have to use base security
+  id: EmotionalSupportSecuritySecTechIDCard
+  name: Emotional Support Security Technician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-sectech
+
+- type: entity
+  parent: DetectiveIDCard # have to use base detective id for det
+  id: EmotionalSupportSecurityDetectiveIDCard
+  name: Emotional Support Detective ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-detective
+
+- type: entity
+  parent: BrigmedicIDCard # use brigmedicidcard for corpsman
+  id: EmotionalSupportSecurityCorpsmanIDCard
+  name: Emotional Support Corpsman ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-corpsman
+
+- type: entity
+  parent: PrisonGuardIDCard # prisonguard
+  id: EmotionalSupportSecurityPrisonGuardIDCard
+  name: Emotional Support Prison Guard ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-prisonguard
+
+- type: entity
+  parent: SeniorOfficerPDA # senior officer
+  id: EmotionalSupportSecuritySeniorOfficerIDCard
+  name: Emotional Support Senior Officer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-seniorofficer
+
+- type: entity
+  parent: SeniorOfficerPDA # warden
+  id: EmotionalSupportSecurityWardenIDCard
+  name: Emotional Support Warden ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-emotional-support-warden
+
+# service, this will be fucky since we don't have a service collar
+- type: entity
+  parent: BartenderIDCard # bartender
+  id: EmotionalSupportServiceBartenderIDCard
+  name: Emotional Support Bartender ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-bartender
+
+- type: entity
+  parent: ChefIDCard # chef
+  id: EmotionalSupportServiceChefIDCard
+  name: Emotional Support Chef ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-chef
+
+- type: entity
+  parent: ServiceWorkerIDCard # service worker
+  id: EmotionalSupportServiceServiceWorkerIDCard
+  name: Emotional Support Service Worker ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-serviceworker
+
+- type: entity
+  parent: BotanistIDCard # botanist
+  id: EmotionalSupportServiceBotanistIDCard
+  name: Emotional Support Botanist ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-botanist
+
+- type: entity
+  parent: JanitorIDCard # janitor
+  id: EmotionalSupportServiceJanitorIDCard
+  name: Emotional Support Janitor ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-janitor
+
+- type: entity
+  parent: MusicianIDCard # musician
+  id: EmotionalSupportServiceMusicianIDCard
+  name: Emotional Support Musician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-musician
+
+- type: entity
+  parent: BoxerIDCard # boxer
+  id: EmotionalSupportServiceBoxerIDCard
+  name: Emotional Support Boxer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-Boxer
+
+- type: entity
+  parent: ClownIDCard # boxer
+  id: EmotionalSupportServiceClownIDCard
+  name: Emotional Support Clown ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-clown
+
+- type: entity
+  parent: MimeIDCard # mime
+  id: EmotionalSupportServiceMimeIDCard
+  name: Emotional Support Mime ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-mime
+
+- type: entity
+  parent: ReporterIDCard # reporter
+  id: EmotionalSupportServiceReporterIDCard
+  name: Emotional Support Reporter ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-reporter
+
+- type: entity
+  parent: PrisonerIDCard # prisoner
+  id: EmotionalSupportServicePrisonerIDCard
+  name: Emotional Support Prisoner ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-service-emotional-support-prisoner
+
+# gladitor is only on one specific map currently so im leaving it out, someone else can add it if they so desire
+# same with zookeper, is on two or three maps at most and never played
+# same with martial artist, few maps have it and the role is never taken
+
+# justice does not have a dept collar
+- type: entity
+  parent: LawyerIDCard # lawyer
+  id: EmotionalSupportJusticeLawyerIDCard
+  name: Emotional Support Lawyer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-justice-emotional-support-lawyer
+
+- type: entity
+  parent: ProsecutorIDCard # prosecutor
+  id: EmotionalSupportJusticeProsecutorIDCard
+  name: Emotional Support Lawyer ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-justice-emotional-support-prosecutor
+
+- type: entity
+  parent: ClerkIDCard # clerk
+  id: EmotionalSupportJusticeClerkIDCard
+  name: Emotional Support Clerk ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-justice-emotional-support-clerk
+
+# logistics
+- type: entity
+  parent: CargoIDCard # cargo tech
+  id: EmotionalSupportLogisticsCargotechIDCard
+  name: Emotional Support Cargo Tech ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-logistics-emotional-support-cargotech
+
+- type: entity
+  parent: CourierIDCard # courier
+  id: EmotionalSupportLogisticsCourierIDCard
+  name: Emotional Support Courier ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-logistics-emotional-support-courier
+
+- type: entity
+  parent: SalvageIDCard # salvage
+  id: EmotionalSupportLogisticsSalvageIDCard
+  name: Emotional Support Salvage ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-logistics-emotional-support-salvage
+
+- type: entity
+  parent: InventorySpecialistIDCard # inventory specialist
+  id: EmotionalSupportLogisticsInventorySpecialistIDCard
+  name: Emotional Support Inventory Specialist ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-logistics-emotional-support-inventoryspecalist
+
+# command (most will have to be done later but i can pre-make the ids so they are ready when we get sprites)
+- type: entity
+  parent: CaptainIDCard # captain
+  id: EmotionalSupportCommandCaptainIDCard
+  name: Emotional Support Captain ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-captain
+
+- type: entity
+  parent: CMOIDCard
+  id: EmotionalSupportCommandCMOIDCard
+  name: Chief Medical Officer Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-cmo
+
+- type: entity
+  parent: RDIDCard
+  id: EmotionalSupportCommandRDIDCard
+  name: Research Director Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-rd
+
+- type: entity
+  parent: CEIDCard
+  id: EmotionalSupportCommandCEIDCard
+  name: Chief Engineer Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-ce
+
+- type: entity
+  parent: HoSIDCard
+  id: EmotionalSupportCommandHOSIDCard
+  name: Head of Security Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-hos
+
+- type: entity
+  parent: QuartermasterIDCard
+  id: EmotionalSupportCommandLOIDCard
+  name: Logistics Officer Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-lo
+
+- type: entity
+  parent: HoPIDCard
+  id: EmotionalSupportCommandHOPIDCard
+  name: Head of Personnel Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-hop
+
+- type: entity
+  parent: ChiefJusticeIDCard
+  id: EmotionalSupportCommandCJIDCard
+  name: Chief Justice Emotional Support ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-command-emotional-support-cj
+
+# security technican
+- type: entity
+  parent: SecurityIDCard
+  id: SecurityTechnicianIDCard
+  name: Security Technician ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-security-technician

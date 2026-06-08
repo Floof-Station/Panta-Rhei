@@ -199,6 +199,7 @@
 
 - type: loadoutGroup
   id: CourierPDA
+  parent: FloofCourierPda # Floofstation pda
   name: loadout-group-courier-id
   loadouts:
   - CourierPDA
@@ -692,6 +693,7 @@
 
 - type: loadoutGroup
   id: SurgeonPDA
+  parent: FloofMedicalSurgeonPDAs # Floofstation
   name: loadout-group-surgeon-id
   loadouts:
   - SurgeonPDA
@@ -985,6 +987,7 @@
 
 - type: loadoutGroup
   id: BartenderPDADelta
+  parent: FloofBartenderPda # Floofstation pda
   name: loadout-group-bartender-id-delta
   loadouts:
   - BartenderPDA
@@ -992,6 +995,7 @@
 
 - type: loadoutGroup
   id: ChefPDADelta
+  parent: FloofChefPdas # Floofstation pda
   name: loadout-group-chef-id-delta
   loadouts:
   - ChefPDA
@@ -1001,6 +1005,7 @@
 
 - type: loadoutGroup
   id: MedicalInternPDADelta
+  parent: FloofMedicalInternPDAs # Floofstation
   name: loadout-group-medical-intern-id-delta
   loadouts:
   - MedicalInternPDA
@@ -1009,6 +1014,7 @@
 
 - type: loadoutGroup
   id: ChemistryPDA
+  parent: FloofMedicalChemistPDAs # Floofstation
   name: loadout-group-chemist-id
   loadouts:
   - ChemistryPDA
@@ -1016,6 +1022,7 @@
 
 - type: loadoutGroup
   id: AtmosPDADelta
+  parent: FloofAtmosTechPDAs # Floofstation
   name: loadout-group-atmos-id-delta
   loadouts:
   - AtmosPDA
@@ -1024,6 +1031,7 @@
 
 - type: loadoutGroup
   id: CargoPDADelta
+  parent: FloofCargotechPda # Floofstation pda
   name: loadout-group-cargo-id-delta
   loadouts:
   - CargoPDA
@@ -1032,6 +1040,7 @@
 
 - type: loadoutGroup
   id: SalvagePDADelta
+  parent: FloofSalvagePda # Floofstation pdas
   name: loadout-group-salvage-id-delta
   loadouts:
   - SalvagePDA
@@ -1040,6 +1049,7 @@
 
 - type: loadoutGroup
   id: ClownPDADelta
+  parent: FloofClownPda # Floofpda
   name: loadout-group-clown-id-delta
   loadouts:
   - ClownPDA
@@ -1055,6 +1065,7 @@
 
 - type: loadoutGroup
   id: JanitorPDADelta
+  parent: FloofJanitorPda # Floofstation alt pdas
   name: loadout-group-janitor-id-delta
   loadouts:
   - JanitorPDA
@@ -1062,6 +1073,7 @@
 
 - type: loadoutGroup
   id: PsychologistPDADelta
+  parent: FloofMedicalPsychPDAs # Floofstation
   name: loadout-group-psychologist-id-delta
   loadouts:
   - PsychologistPDA
