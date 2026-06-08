@@ -10,7 +10,6 @@ namespace Content.Shared._Floof.InteractionVerbs.Requirements;
 ///     Requires the target to have the slot obstructed (or not obstructed) by anything (e.g. a mask) that passes the whitelist
 ///     and (optionally) not have it blocked.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed partial class SlotObstructionRequirement : InteractionRequirement
 {
     /// <summary>

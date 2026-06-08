@@ -1,3 +1,7 @@
+using System.Diagnostics.Eventing.Reader;
+using Content.Shared.Preferences;
+using Robust.Shared.Player;
+
 namespace Content.Server.Ghost.Roles.Events
 {
     /// <summary>
@@ -15,11 +19,20 @@ namespace Content.Server.Ghost.Roles.Events
         /// </summary>
         public EntityUid Spawned;
 
-        public GhostRoleSpawnerUsedEvent(EntityUid spawner, EntityUid spawned)
+        // Euphoria - added 'character' and 'session'
+        public GhostRoleSpawnerUsedEvent(EntityUid spawner, EntityUid spawned, HumanoidCharacterProfile? character = null, ICommonSession? session = null)
         {
             Spawner = spawner;
 
             Spawned = spawned;
+
+            Character = character;
+
+            Session = session;
         }
+
+        // Euphoria - Ghost role traits
+        public HumanoidCharacterProfile? Character = null;
+        public ICommonSession? Session = null;
     }
 }

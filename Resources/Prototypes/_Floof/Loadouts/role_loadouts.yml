@@ -23,7 +23,7 @@
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
-  - StationEngineerID
+  - FloofSeniorEngineerPDAs
   - SurvivalExtended
   - Smokeables
   - StationEngineerJobTrinkets
@@ -62,7 +62,7 @@
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
-  - ScientistPDA
+  - FloofSeniorResearcherPdas # Floofstation let senior research choose pda
   - Glasses
   - Survival
   - Smokeables
@@ -80,7 +80,7 @@
   - SecurityOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was SecurityOuterClothing
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityShoes
-  - SecurityPDA
+  - FloofSecuritySeniorOfficerPdas
   - SecurityBelt
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
@@ -112,6 +112,7 @@
 
 - type: roleLoadout
   id: JobSecurityTechnician
+  parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
   - SecurityNeck
@@ -120,7 +121,7 @@
   - SecurityOuterClothingDeltaV
   - StationEngineerGloves
   - SecurityShoes
-  - SecurityPDA
+  - FloofSecurityTechnicianPdas
   - RoboticistGlasses
   - SurvivalSecurity
   - Smokeables

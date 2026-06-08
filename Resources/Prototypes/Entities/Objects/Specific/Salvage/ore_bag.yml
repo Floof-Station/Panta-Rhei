@@ -26,7 +26,7 @@
     areaInsert: true
     whitelist:
       tags:
-        - ArtifactFragment
+        #- ArtifactFragment #Euphoria - gave ArtifactFragment the 'ore' tag, which is the whitelist for these containers
         - Ore
   - type: Dumpable
   # Begin DeltaV Additions: toggle magnet from White Dream

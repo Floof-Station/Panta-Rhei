@@ -30,13 +30,6 @@
   groupBy: "Other Toys"
 
 - type: loadout
-  id: CardBoxBase
-  storage:
-    back:
-    - CardBoxBase
-  groupBy: "cardbox"
-
-- type: loadout
   id: CardBoxNanotrasen
   storage:
     back:
@@ -55,6 +48,13 @@
   storage:
     back:
     - CardBoxBlack
+  groupBy: "cardbox"
+
+- type: loadout
+  id: CardBoxTarot
+  storage:
+    back:
+    - CardBoxTarot
   groupBy: "cardbox"
 
 - type: loadout

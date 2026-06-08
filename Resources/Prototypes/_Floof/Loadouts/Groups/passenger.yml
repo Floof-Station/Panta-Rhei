@@ -98,6 +98,7 @@
   - ClothingThongBee
   - ClothingThongRainbow
   - ClothingThongCoderValid
+  - ClothingUniformFishnetThong
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
@@ -107,6 +108,7 @@
   - ClothingUniformRedSidelessDress
   - ClothingUniformPurpleNightclubDress
   - ClothingUniformBlackPetticoatDress
+  - ClothingUniformJumpskirtBlazer
 
 # gloves
 - type: loadoutGroup
@@ -156,6 +158,7 @@
   - ClothingSocksTrans
   - ClothingSocksCoderValid
   - ClothingSocksCowprint
+  - ClothingUnderSocksFishnets
 
 # backpacks
 - type: loadoutGroup
@@ -219,6 +222,11 @@
   - ClothingOuterGeCorporateJacket
   - ClothingOuterZhCorporateJacket
   - ClothingOuterCoatIdrisIncorporatedWindbreaker
+  - ClothingUniformFishnet
+  - ClothingUniformFishnetAlt
+  - ClothingUniformFishnetSleeves
+  - ClothingUniformFishnetSleevesGloves
+  - ClothingUniformFishnetSimpleTop
 
 # hats
 - type: loadoutGroup
@@ -264,7 +272,14 @@
   abstract: true
   loadouts:
   - ClothingNeckCollarBlackPetId
+  - ClothingNeckCollarBlackPetIdAlternative
   - ClothingNeckCollarBluePetId
+  - ClothingNeckCollarBluePetIdAlternative
   - ClothingNeckCollarPinkPetId
+  - ClothingNeckCollarPinkPetIdAlternative
   - ClothingNeckCollarSyndiPetId
+  - ClothingNeckCollarSyndiPetIdAlternative
   - ClothingNeckCollarShockPetId
+  - ClothingNeckCollarShockPetIdAlternative
+  - ClothingNeckCollarBellPetId
+  - ClothingNeckCollarBellPetIdAlternative

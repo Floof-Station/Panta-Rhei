@@ -6,12 +6,12 @@ namespace Content.Shared._Coyote.SniffAndSmell;
 /// <summary>
 /// This is a prototype for...
 /// </summary>
-[Prototype("scent")]
+[Prototype]
 public sealed partial class ScentPrototype : IPrototype, IInheritingPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     /// <inheritdoc />
     /// <summary>

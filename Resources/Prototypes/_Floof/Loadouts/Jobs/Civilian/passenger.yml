@@ -510,6 +510,12 @@
     jumpsuit: ClothingUniformJumpskirtTacticalMaid
   groupBy: "maid"
 
+- type: loadout
+  id: ClothingUniformJumpskirtBlazer
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBlazer
+  groupBy: "casual"
+
 # thongs
 - type: loadout
   id: ClothingThongCoder
@@ -533,6 +539,12 @@
   id: ClothingThongCoderValid
   equipment:
     jumpsuit: ClothingUniformThongCoderValid
+  groupBy: "thongs"
+
+- type: loadout
+  id: ClothingUniformFishnetThong
+  equipment:
+    jumpsuit: ClothingUniformFishnetThong
   groupBy: "thongs"
 
 - type: loadout
@@ -660,6 +672,12 @@
   id: ClothingSocksCoderValid
   equipment:
     shoes: ClothingUnderSocksCoderValid
+  groupBy: "thigh highs"
+
+- type: loadout
+  id: ClothingUnderSocksFishnets
+  equipment:
+    shoes: ClothingUnderSocksFishnets
   groupBy: "thigh highs"
 
 # shoes
@@ -805,6 +823,11 @@
   id: BackpackSatchelLeather
   equipment:
     back: ClothingBackpackSatchelLeather
+
+- type: loadout
+  id: LoadoutNapsack
+  equipment:
+    back: ClothingBackpackNapsack
 
 # outer clothing (jackets)
 - type: loadout
@@ -1083,6 +1106,36 @@
     outerClothing: ClothingUniformOversizeSweatTacky
   groupBy: "Sweatshirt"
 
+- type: loadout
+  id: ClothingUniformFishnet
+  equipment:
+    outerClothing: ClothingUniformFishnet
+  groupBy: "lewd outer"
+
+- type: loadout
+  id: ClothingUniformFishnetAlt
+  equipment:
+    outerClothing: ClothingUniformFishnetAlt
+  groupBy: "lewd outer"
+
+- type: loadout
+  id: ClothingUniformFishnetSleeves
+  equipment:
+    outerClothing: ClothingUniformFishnetSleeves
+  groupBy: "lewd outer"
+
+- type: loadout
+  id: ClothingUniformFishnetSimpleTop
+  equipment:
+    outerClothing: ClothingUniformFishnetSleevesGloves
+  groupBy: "lewd outer"
+
+- type: loadout
+  id: ClothingUniformFishnetSleevesGloves
+  equipment:
+    outerClothing: ClothingUniformFishnetSleevesGloves
+  groupBy: "lewd outer"
+
 # hats
 - type: loadout
   id: HeadHatSolidHeadband
@@ -1327,6 +1380,11 @@
   equipment:
     neck: ClothingNeckNeckerchief
 
+- type: loadout
+  id: ClothingNeckCWPArctic
+  equipment:
+    neck: ClothingNeckCWPArctic
+
 # trinkets
 - type: loadout
   id: HandheldStationMap
@@ -1546,6 +1604,12 @@
   storage:
     back:
     - FlashlightLantern
+
+- type: loadout
+  id: Clicker
+  storage:
+    back:
+    - Clicker
 
 #lewd trinkets
 - type: loadout
@@ -1772,4 +1836,46 @@
   id: ClothingNeckCollarShockPetId
   equipment:
     neck: ClothingNeckCollarShockPetId
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarBellPetId
+  equipment:
+    neck: ClothingNeckCollarBellPetId
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarBlackPetIdAlternative
+  equipment:
+    neck: ClothingNeckCollarBlackPetIdAlternative
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarBluePetIdAlternative
+  equipment:
+    neck: ClothingNeckCollarBluePetIdAlternative
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarPinkPetIdAlternative
+  equipment:
+    neck: ClothingNeckCollarPinkPetIdAlternative
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarSyndiPetIdAlternative
+  equipment:
+    neck: ClothingNeckCollarSyndiPetIdAlternative
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarShockPetIdAlternative
+  equipment:
+    neck: ClothingNeckCollarShockPetIdAlternative
+  groupBy: "petids"
+
+- type: loadout
+  id: ClothingNeckCollarBellPetIdAlternative
+  equipment:
+    neck: ClothingNeckCollarBellPetIdAlternative
   groupBy: "petids"

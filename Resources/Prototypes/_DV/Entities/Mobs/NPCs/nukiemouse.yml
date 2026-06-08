@@ -95,10 +95,10 @@
           Quantity: 5
   - type: Butcherable
     spawned:
-    - id: FoodMeat
+    - id: FoodMeatRat # Euphoria | Was FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  # - type: ReplacementAccent # Euphoria | Mice Mouse instead
+  #   accent: mouse
   - type: Tag
     tags:
     - VimPilot
@@ -107,12 +107,13 @@
     - Meat
     - FootstepSound
     - Radio
+    - ChefPilot # Euphoria | Nukatouille
   - type: Puller
     needsHands: False
   - type: NoSlip
   - type: Respirator #It just works?
     minSaturation: 5.0
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 423
     coldDamageThreshold: 0
   - type: PressureImmunity
@@ -141,7 +142,10 @@
     prototype: Rat
     requiredLegs: 1 # TODO: More than 1 leg
   - type: Bloodstream
-    bloodMaxVolume: 60
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 60
   - type: CanEscapeInventory
     baseResistTime: 3
   - type: MobPrice
@@ -160,3 +164,27 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/mouse_squeak.ogg
+  - type: NightVision # Euphoria | Mice see in the dark
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Clothing # Euphora | Mice go on your head
+    quickEquip: false
+    sprite: _DV/Mobs/Animals/nukiemouse.rsi
+    slots:
+    - HEAD
+  - type: LanguageKnowledge # Euphoria | Mice can mouse
+    speaks:
+    - Mouse
+    understands:
+    - TauCetiBasic # Euphoria | Trained mouse
+    - Mouse
+  - type: LeashAnchor # Euphoria | Take the nukie for a walk
+    kind: Intrinsic
+  - type: FoodSequenceElement # Euphoria | Mouse food
+    entries:
+      Taco: RatTaco
+      Burger: RatBurger
+      Skewer: RatSkewer
+  - type: Item # Euphoria | Pick up mouse
+    size: Tiny

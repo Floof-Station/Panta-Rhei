@@ -196,3 +196,15 @@
   - !type:AddCompsEffect
     components:
     - type: SlavicAccent
+
+# Euphoria | Rrrolling Accent for rolling rrrrs
+- type: trait
+  id: RrrollingAccent
+  name: trait-rrrolling-accent-name
+  description: trait-rrrolling-accent-desc
+  category: Accents
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: RrrollingAccent

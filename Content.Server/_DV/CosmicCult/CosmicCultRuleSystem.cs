@@ -33,6 +33,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Gibbing;
 using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Light.Components;
@@ -61,6 +62,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using System.Collections.Immutable;
 using System.Linq;
+using Content.Shared.NPC.Systems; //Euphoria | Use faction system to prevent colossus spawns attacking cultists.
 
 namespace Content.Server._DV.CosmicCult;
 
@@ -100,6 +102,8 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly VisibilitySystem _visibility = default!;
+    [Dependency] private readonly GibbingSystem _gibbing = default!;
+    [Dependency] private readonly NpcFactionSystem _npcFactionSystem = default!; //Euphoria | Use faction system to prevent colossus spawns attacking cultists.
 
     private ISawmill _sawmill = default!;
     private TimeSpan _t3RevealDelay = default!;
@@ -118,6 +122,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
     /// Mind role to add to cultists.
     /// </summary>
     public static readonly EntProtoId MindRole = "MindRoleCosmicCult";
+    public static readonly string CultFaction = "CosmicCult"; //Euphoria | Cultist faction
 
     public override void Initialize()
     {
@@ -415,7 +420,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         Spawn(cultRule.WarpVFX, spawnTgt);
         Spawn(cultRule.WarpVFX, Transform(player).Coordinates);
         _audio.PlayPvs(cultRule.WarpSFX, spawnTgt, AudioParams.Default.WithVolume(3f));
-        _body.GibBody(player); // you don't need that body anymore
+        _gibbing.Gib(player); // you don't need that body anymore
     }
 
     private static void SetWinType(Entity<CosmicCultRuleComponent> ent, WinType type)
@@ -674,6 +679,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         associatedComp.CultGamerule = rule;
 
         _role.MindAddRole(mindId, MindRole, mind, true);
+        _npcFactionSystem.AddFaction(uid, CultFaction, true); //Euphoria | Make part of the cultist faction
 
         _antag.SendBriefing(uid, Loc.GetString("cosmiccult-role-roundstart-fluff"), Color.FromHex("#4cabb3"), _briefingSound);
         _antag.SendBriefing(uid, Loc.GetString("cosmiccult-role-short-briefing"), Color.FromHex("#cae8e8"), null);
@@ -742,6 +748,7 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
             return;
 
         _role.MindAddRole(mindId, MindRole, mind, true);
+        _npcFactionSystem.AddFaction(uid, CultFaction, true); //Euphoria | Make part of the cultist faction
 
         _antag.SendBriefing(session, Loc.GetString("cosmiccult-role-conversion-fluff"), Color.FromHex("#4cabb3"), _briefingSound);
         _antag.SendBriefing(uid, Loc.GetString("cosmiccult-role-short-briefing"), Color.FromHex("#cae8e8"), null);
@@ -836,6 +843,8 @@ public sealed class CosmicCultRuleSystem : GameRuleSystem<CosmicCultRuleComponen
         _mind.ClearObjectives(mindId, mind);
         _role.MindRemoveRole<CosmicCultRoleComponent>(mindId);
         _role.MindRemoveRole<RoleBriefingComponent>(mindId);
+        _npcFactionSystem.RemoveFaction(ent.Owner, CultFaction, true); //Euphoria | Remove from the cultist faction
+
         if (_playerMan.TryGetSessionById(mind.UserId, out var session))
         {
             _euiMan.OpenEui(new CosmicDeconvertedEui(), session);

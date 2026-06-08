@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 267.3.0
+  engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 01/21/2026 19:51:50
-  entityCount: 922
+  time: 06/02/2026 11:19:29
+  entityCount: 963
 maps: []
 grids:
 - 2
@@ -474,6 +474,9 @@ entities:
     - type: GravityShake
       shakeTimes: 10
     - type: ImplicitRoof
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
 - proto: AirCanister
   entities:
   - uid: 3
@@ -685,6 +688,37 @@ entities:
       supplyRampPosition: 0.052734375
     - type: Fixtures
       fixtures: {}
+  - uid: 141
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 11.5,-6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 948
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 10.5,-7.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 952
+    components:
+    - type: Transform
+      pos: 1.5,-6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 953
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,-3.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: AtmosDeviceFanTiny
   entities:
   - uid: 920
@@ -778,8 +812,6 @@ entities:
           - 62
           - 63
           - 61
-    - type: ApcPowerReceiver
-      powerLoad: 0
 - proto: BorgChargerCircuitboard
   entities:
   - uid: 60
@@ -938,7 +970,7 @@ entities:
   - uid: 119
     components:
     - type: Transform
-      pos: 17.5,-4.5
+      pos: 7.5,-4.5
       parent: 2
   - uid: 120
     components:
@@ -1045,16 +1077,6 @@ entities:
     - type: Transform
       pos: 2.5,-2.5
       parent: 2
-  - uid: 141
-    components:
-    - type: Transform
-      pos: 1.5,-2.5
-      parent: 2
-  - uid: 142
-    components:
-    - type: Transform
-      pos: 0.5,-2.5
-      parent: 2
   - uid: 143
     components:
     - type: Transform
@@ -1064,11 +1086,6 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-4.5
-      parent: 2
-  - uid: 145
-    components:
-    - type: Transform
-      pos: 2.5,-5.5
       parent: 2
   - uid: 146
     components:
@@ -1130,15 +1147,10 @@ entities:
     - type: Transform
       pos: 8.5,-4.5
       parent: 2
-  - uid: 158
-    components:
-    - type: Transform
-      pos: 8.5,-5.5
-      parent: 2
   - uid: 159
     components:
     - type: Transform
-      pos: 8.5,-6.5
+      pos: 5.5,-4.5
       parent: 2
   - uid: 160
     components:
@@ -1153,7 +1165,7 @@ entities:
   - uid: 162
     components:
     - type: Transform
-      pos: 15.5,-5.5
+      pos: 6.5,-4.5
       parent: 2
   - uid: 163
     components:
@@ -1189,11 +1201,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,-9.5
-      parent: 2
-  - uid: 170
-    components:
-    - type: Transform
-      pos: -0.5,-2.5
       parent: 2
   - uid: 171
     components:
@@ -1330,11 +1337,6 @@ entities:
     - type: Transform
       pos: -3.5,-3.5
       parent: 2
-  - uid: 198
-    components:
-    - type: Transform
-      pos: -1.5,-4.5
-      parent: 2
   - uid: 199
     components:
     - type: Transform
@@ -1349,6 +1351,56 @@ entities:
     components:
     - type: Transform
       pos: 20.5,-6.5
+      parent: 2
+  - uid: 954
+    components:
+    - type: Transform
+      pos: -0.5,-3.5
+      parent: 2
+  - uid: 955
+    components:
+    - type: Transform
+      pos: 0.5,-3.5
+      parent: 2
+  - uid: 956
+    components:
+    - type: Transform
+      pos: 4.5,-4.5
+      parent: 2
+  - uid: 957
+    components:
+    - type: Transform
+      pos: 3.5,-4.5
+      parent: 2
+  - uid: 958
+    components:
+    - type: Transform
+      pos: 15.5,-5.5
+      parent: 2
+  - uid: 959
+    components:
+    - type: Transform
+      pos: 1.5,-6.5
+      parent: 2
+  - uid: 960
+    components:
+    - type: Transform
+      pos: 11.5,-5.5
+      parent: 2
+  - uid: 961
+    components:
+    - type: Transform
+      pos: 11.5,-6.5
+      parent: 2
+  - uid: 962
+    components:
+    - type: Transform
+      pos: 9.5,-7.5
+      parent: 2
+  - uid: 963
+    components:
+    - type: Transform
+      pos: 10.5,-7.5
       parent: 2
 - proto: CableApcStack1
   entities:
@@ -1497,6 +1549,36 @@ entities:
       canCollide: False
 - proto: CableMV
   entities:
+  - uid: 1
+    components:
+    - type: Transform
+      pos: 13.5,-4.5
+      parent: 2
+  - uid: 142
+    components:
+    - type: Transform
+      pos: 19.5,-4.5
+      parent: 2
+  - uid: 145
+    components:
+    - type: Transform
+      pos: 11.5,-4.5
+      parent: 2
+  - uid: 158
+    components:
+    - type: Transform
+      pos: 12.5,-4.5
+      parent: 2
+  - uid: 170
+    components:
+    - type: Transform
+      pos: 14.5,-4.5
+      parent: 2
+  - uid: 198
+    components:
+    - type: Transform
+      pos: 15.5,-4.5
+      parent: 2
   - uid: 263
     components:
     - type: Transform
@@ -1536,6 +1618,141 @@ entities:
     components:
     - type: Transform
       pos: 21.5,-3.5
+      parent: 2
+  - uid: 924
+    components:
+    - type: Transform
+      pos: 16.5,-4.5
+      parent: 2
+  - uid: 925
+    components:
+    - type: Transform
+      pos: 17.5,-4.5
+      parent: 2
+  - uid: 926
+    components:
+    - type: Transform
+      pos: 18.5,-4.5
+      parent: 2
+  - uid: 927
+    components:
+    - type: Transform
+      pos: 11.5,-5.5
+      parent: 2
+  - uid: 928
+    components:
+    - type: Transform
+      pos: 11.5,-6.5
+      parent: 2
+  - uid: 929
+    components:
+    - type: Transform
+      pos: 10.5,-4.5
+      parent: 2
+  - uid: 930
+    components:
+    - type: Transform
+      pos: 9.5,-4.5
+      parent: 2
+  - uid: 931
+    components:
+    - type: Transform
+      pos: 8.5,-4.5
+      parent: 2
+  - uid: 932
+    components:
+    - type: Transform
+      pos: 7.5,-4.5
+      parent: 2
+  - uid: 933
+    components:
+    - type: Transform
+      pos: 6.5,-4.5
+      parent: 2
+  - uid: 934
+    components:
+    - type: Transform
+      pos: 5.5,-4.5
+      parent: 2
+  - uid: 935
+    components:
+    - type: Transform
+      pos: 4.5,-4.5
+      parent: 2
+  - uid: 936
+    components:
+    - type: Transform
+      pos: 3.5,-4.5
+      parent: 2
+  - uid: 937
+    components:
+    - type: Transform
+      pos: 2.5,-4.5
+      parent: 2
+  - uid: 938
+    components:
+    - type: Transform
+      pos: 2.5,-3.5
+      parent: 2
+  - uid: 939
+    components:
+    - type: Transform
+      pos: 2.5,-2.5
+      parent: 2
+  - uid: 940
+    components:
+    - type: Transform
+      pos: 1.5,-2.5
+      parent: 2
+  - uid: 941
+    components:
+    - type: Transform
+      pos: 0.5,-2.5
+      parent: 2
+  - uid: 942
+    components:
+    - type: Transform
+      pos: 2.5,-5.5
+      parent: 2
+  - uid: 943
+    components:
+    - type: Transform
+      pos: 0.5,-3.5
+      parent: 2
+  - uid: 944
+    components:
+    - type: Transform
+      pos: 2.5,-6.5
+      parent: 2
+  - uid: 945
+    components:
+    - type: Transform
+      pos: 1.5,-6.5
+      parent: 2
+  - uid: 946
+    components:
+    - type: Transform
+      pos: 8.5,-5.5
+      parent: 2
+  - uid: 947
+    components:
+    - type: Transform
+      pos: 8.5,-6.5
+      parent: 2
+  - uid: 949
+    components:
+    - type: Transform
+      pos: 8.5,-7.5
+      parent: 2
+  - uid: 950
+    components:
+    - type: Transform
+      pos: 9.5,-7.5
+      parent: 2
+  - uid: 951
+    components:
+    - type: Transform
+      pos: 10.5,-7.5
       parent: 2
 - proto: CableMVStack1
   entities:
@@ -2407,9 +2624,6 @@ entities:
     - type: Transform
       pos: 6.5,-7.5
       parent: 2
-    - type: PowerCellDraw
-      canUse: True
-      canDraw: True
     - type: Physics
       canCollide: False
     - type: ContainerContainer
@@ -6039,8 +6253,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-10.5
       parent: 2
-    - type: Drain
-      accumulator: 0.814998
 - proto: SMESBasic
   entities:
   - uid: 249
@@ -7772,8 +7984,6 @@ entities:
           - 273
           - 274
           - 272
-    - type: ApcPowerReceiver
-      powerLoad: 0
   - uid: 276
     components:
     - type: Transform
@@ -7797,8 +8007,6 @@ entities:
           - 278
           - 279
           - 277
-    - type: ApcPowerReceiver
-      powerLoad: 0
 - proto: WeaponCapacitorRechargerCircuitboard
   entities:
   - uid: 275

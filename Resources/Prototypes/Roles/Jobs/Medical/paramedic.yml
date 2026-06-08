@@ -30,7 +30,7 @@
 - type: startingGear
   id: ParamedicGear
   equipment:
-    id: ParamedicPDA
+    #id: ParamedicPDA # Floofstation - let loadouts handle pdas
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalEMTFilled
   storage:
