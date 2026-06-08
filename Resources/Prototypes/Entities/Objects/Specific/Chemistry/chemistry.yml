@@ -482,6 +482,40 @@
   - type: Tag
     tags:
     - Syringe
+  # Floofstation silly syringe changes start
+  - type: TriggerOnStepTrigger
+  - type: StepTrigger
+    intersectRatio: 0.5
+  - type: CollisionWake
+    enabled: false
+  - type: PreventableStepTrigger
+  - type: DamageOnTrigger
+    targetUser: true
+    damage:
+      types:
+        Piercing: 2 # Two piercing if you step on this without shoes
+  - type: Slippery
+    slipSound:
+      path: /Audio/Effects/glass_step.ogg
+    slipData:
+      launchForwardsMultiplier: 0 # no launch multiplier
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        hard: false
+        layer:
+        - LowImpassable
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.2,-0.2,0.2,0.2"
+        density: 30
+        mask:
+        - ItemMask
+  # Floofstation changes end
 
 - type: entity
   parent: BaseSyringe
