@@ -2,7 +2,8 @@
   id: RecipeBiscuitSimple
   name: simple cookie recipe
   result: FoodBakedBiscuitSimple
-  resultCount: 4 # Frontier
+  # Euphoria - M3739 - #485 - resultCount commented out as we don't have it. Behold, Euphoria's most inefficient recipe as a result, and as of writing.
+  # resultCount: 4 # Frontier
   time: 10 # Frontier - 5<10
   group: BarsAndCookies
   reagents:
