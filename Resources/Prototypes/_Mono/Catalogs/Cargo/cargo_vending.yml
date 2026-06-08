@@ -1,6 +1,6 @@
 - type: cargoProduct
   id: CrateVendingMachineRestockBarista
-  abstract: true
+#  abstract: true # Euphoria - M3739 - #485 - Causes it to vanish from the catalog. Commented out.
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
     state: base
