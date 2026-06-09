@@ -39,6 +39,7 @@
   description: trait-monochromacy-desc
   category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
+  usesSlots: false # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -50,6 +51,7 @@
   description: trait-deuteranopia-desc
   category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
+  usesSlots: false # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -61,6 +63,7 @@
   description: trait-ultravision-desc
   category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
+  usesSlots: false # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
