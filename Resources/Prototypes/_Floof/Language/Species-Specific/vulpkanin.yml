@@ -2,7 +2,9 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Canilunzt
+  parent: BaseLanguage
   isVisibleLanguage: true
+  icon: { state: canilunzt }
   speech:
     color: "#d69b3dcc"
   obfuscation:

@@ -1,6 +1,8 @@
 # The "Default Language" other than Universal.
 - type: language
   id: TauCetiBasic
+  parent: BaseLanguage
+  icon: { state: tauceti }
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

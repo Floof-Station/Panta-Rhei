@@ -1,8 +1,9 @@
 # A mess of broken Japanese, spoken by Felinds and Oni
-# TODO: Replace this with a much better language.
 - type: language
   id: Nekomimetic
+  parent: BaseLanguage
   isVisibleLanguage: true
+  icon: { state: "nekomimetic" } # Placeholder sprite
   speech:
     color: "#df57aaee"
     fontId: Manga
