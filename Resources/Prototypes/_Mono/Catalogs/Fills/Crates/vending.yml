@@ -4,7 +4,8 @@
   name: BaristaVend Restock Crate
   description: Contains a restock box for the BaristaVend.
   components:
-  - type: StorageFill
-    contents:
-      - id: VendingMachineRestockBarista
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: VendingMachineRestockBarista
         amount: 2
