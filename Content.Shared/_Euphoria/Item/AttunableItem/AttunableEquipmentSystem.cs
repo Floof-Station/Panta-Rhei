@@ -31,12 +31,15 @@ public sealed class AttunableEquipmentSystem : EntitySystem
 
     /// <summary>
     /// Used for processes similar to polymorphing.
+    /// Gives the new object AttunableEquipment and binds the old user to the new object.
     /// </summary>
     private void TransferAttunableEquipment(EntityUid target, Entity<AttunableEquipmentComponent> original)
     {
         if (!HasComp<ClothingComponent>(target))
             return;
         EnsureComp<AttunableEquipmentComponent>(target, out var attunedComp);
+        if (original.Comp.AttunedEnt != null)
+            EnsureComp<AttunedEntityComponent>(original.Comp.AttunedEnt.Value);
         attunedComp.AttunedEnt = original.Comp.AttunedEnt;
     }
 
@@ -51,7 +54,7 @@ public sealed class AttunableEquipmentSystem : EntitySystem
 
     private void AddVerb(Entity<AttunableEquipmentComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
-        if (!args.CanAccess || !args.CanInteract || args.Hands == null || ent.Comp.AttunedEnt != null)
+        if (!args.CanAccess || !args.CanInteract || args.Hands == null || ent.Comp.AttunedEnt != null || HasComp<AttunedEntityComponent>(args.User))
             return;
 
         var user = args.User;
@@ -62,6 +65,7 @@ public sealed class AttunableEquipmentSystem : EntitySystem
             Act = () =>
             {
                 ent.Comp.AttunedEnt = user;
+                EnsureComp<AttunedEntityComponent>(user);
             },
         };
         args.Verbs.Add(attuneVerb);
