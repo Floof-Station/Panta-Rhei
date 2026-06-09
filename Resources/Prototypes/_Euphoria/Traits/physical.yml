@@ -197,6 +197,18 @@
   - HealingMinus
   - HealingPlus2
   conditions:
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
+  - !type:HasJobCondition
+    job: SalvageSpecialist
+    invert: true
+  - !type:HasCompCondition # Future-proofing, traits do not currently work for these roles
+    component: NukeOperative
+    invert: true
+  - !type:HasCompCondition # Future-proofing, traits do not currently work for these roles
+    component: NinjaRole
+    invert: true
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -228,6 +240,18 @@
   - HealingMinus
   - HealingPlus
   conditions:
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
+  - !type:HasJobCondition
+    job: SalvageSpecialist
+    invert: true
+  - !type:HasCompCondition # Future-proofing, traits do not currently work for these roles
+    component: NukeOperative
+    invert: true
+  - !type:HasCompCondition # Future-proofing, traits do not currently work for these roles
+    component: NinjaRole
+    invert: true
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
