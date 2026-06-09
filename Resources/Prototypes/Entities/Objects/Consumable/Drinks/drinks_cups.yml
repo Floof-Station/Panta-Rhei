@@ -4,12 +4,10 @@
   parent: DrinkBase
   id: DrinkBaseCup
   components:
-  # Euphoria start: Increase hot drink cup size so customers can add caramexinin (and other condiments).
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 20
-  # Euphoria end
   - type: FitsInDispenser
     solution: drink
   - type: SolutionTransfer
