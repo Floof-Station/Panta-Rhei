@@ -22,8 +22,8 @@ public sealed partial class CorruptibleComponent : Component
     /// <summary>
     /// The item that this will turn into.
     /// </summary>
-    [DataField(required: true)]
-    public EntProtoId EntityId;
+    [DataField(required: true), AutoNetworkedField]
+    public EntProtoId EntityId = "Crowbar";
 
     /// <summary>
     /// Whether the altering item needs <see cref="EmpoweredFriendshipComponent"/> to succeed.

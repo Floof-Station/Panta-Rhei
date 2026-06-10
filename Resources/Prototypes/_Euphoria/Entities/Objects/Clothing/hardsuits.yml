@@ -726,6 +726,9 @@
     entityId: ClothingOuterHardsuitMagicalGeneric
     corrupted: true
     requiresEmpowered: true
+  - type: PowerOfFriendship
+    empoweredResult: ClothingOuterHardsuitEmpoweredMagicalTide
+    keyword: evil
 
 #Syndie Henchman Hardsuit
 - type: entity
@@ -768,6 +771,8 @@
     entityId: ClothingOuterHardsuitMagicalGeneric
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED HOP Hardsuit
 - type: entity

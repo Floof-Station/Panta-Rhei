@@ -28,7 +28,7 @@ public sealed class PowerOfFriendshipSystem : EntitySystem
         Entity<FriendshipContributorComponent> contributor,
         EntityUid user)
     {
-        if (target.Comp.Contributors.Contains(contributor))
+        if (target.Comp.Contributors.Contains(contributor) || target.Comp.Keyword != contributor.Comp.Keyword)
             return false;
 
         if (_inventory.InSlotWithFlags(target.Owner, SlotFlags.OUTERCLOTHING))

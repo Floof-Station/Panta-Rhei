@@ -23,6 +23,23 @@ public sealed partial class PowerOfFriendshipComponent : Component
     /// </summary>
     [DataField]
     public EntProtoId EmpoweredResult;
+
+
+    /// <summary>
+    /// Effectively the 'group' that items must be in. By default, Syndicate amulets cannot charge the command amulets.
+    /// </summary>
+    [DataField]
+    public string Keyword = "pure";
+}
+
+/// <summary>
+/// This is the component that allows an amulet to power up something with <see cref="PowerOfFriendshipComponent"/>.
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+public sealed partial class FriendshipContributorComponent : Component
+{
+    [DataField]
+    public string Keyword = "pure";
 }
 
 /// <summary>
