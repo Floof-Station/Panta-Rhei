@@ -3,3 +3,6 @@ corruptible-component-decorruption-start = A purifying light gleams from {THE($u
 corruptible-component-corruption-finish = {CAPITALIZE(THE($target))} is overtaken by sorrow!
 corruptible-component-decorruption-finish = The emotional turmoil inside {THE($target)} settles...
 corruptible-component-corruption-no-start = {CAPITALIZE(THE($target))} cannot be altered while being used!
+
+tool-quality-corruption = Corruption
+tool-quality-decorruption = Purification
