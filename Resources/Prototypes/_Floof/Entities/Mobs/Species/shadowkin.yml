@@ -135,6 +135,23 @@
     color: "#A58ECC"
     activateSound: null
     deactivateSound: null
+  - type: LightReactive # Euphoria
+    manual: true
+  - type: LightLevelHealth # Euphoria
+    darkThreshold: 0.4
+    lightThreshold: 0.9
+    darkDamage:
+      groups:
+        Brute: -0.15
+        Burn: -0.15
+        Toxin: -0.15
+        Airloss: -0.15
+    lightDamage:
+      groups:
+        Heat: 1
+    healWhenDead: true
+    darkMovementSpeedMultiplier: 1.1
+    lightMovementSpeedMultiplier: 0.9
 
 - type: entity
   save: false
