@@ -35,6 +35,7 @@
   - QuartermasterPDA
   - QMPDA
   - HeadOfAcquisitionsPDA
+  - ClothingNeckCollarEmotionalSupportLO # emotional support
 
 # courier additions
 - type: loadoutGroup
@@ -113,3 +114,23 @@
   name: loadout-group-invspec-pda
   loadouts:
   - InventorySpecialistPDA
+  - ClothingNeckCollarEmotionalLogisticsInventorySpecialist
+
+# emotional support
+- type: loadoutGroup
+  id: FloofCargotechPda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalLogisticsCargotech
+
+- type: loadoutGroup
+  id: FloofCourierPda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalLogisticsCourier
+
+- type: loadoutGroup
+  id: FloofSalvagePda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalLogisticsSalvage

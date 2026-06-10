@@ -26,3 +26,15 @@
   id: ClothingUnderSocksDetective
   equipment:
     shoes: ClothingUnderSocksDetective
+
+# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportDetective
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportDetective
+
+# needs their regular pda for the loadout group
+- type: loadout
+  id: DetectivePDA
+  equipment:
+    id: DetectivePDA

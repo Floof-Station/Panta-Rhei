@@ -3200,3 +3200,341 @@ Entries:
       message: Added Medical Tablet and Security Tablet!
   id: 401
   time: '2026-05-28T10:08:44.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Fix
+      message: Harpy purrs no longer have a chance to sound like an APLU.
+  id: 402
+  time: '2026-05-29T11:00:51.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: >-
+        Changed paramedic and surgeon loadouts to give them more jumpsuit
+        options.
+  id: 403
+  time: '2026-05-29T11:05:28.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Fixed fluid puddling throwing an error during HONK HONK AWOOGA HUBBA
+        HUBBA
+  id: 404
+  time: '2026-05-30T05:17:26.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Merged upstream changes up to and including 2026-05-01. See the PR#580
+        for more details.
+    - type: Fix
+      message: >-
+        There should no longer be two instances of Lavaland in every round, and
+        lavaland won't try to generate 1 million tiles at once.
+  id: 405
+  time: '2026-05-30T05:41:49.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The cold weather poncho has been added to neck wear in loadouts.
+    - type: Tweak
+      message: Chaplains should now have access to all the hats that passengers do.
+  id: 406
+  time: '2026-05-30T05:52:37.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: A new blazer and skirt combo has been added!
+  id: 407
+  time: '2026-05-30T05:53:48.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: 1/4 of unreadied players count as readied for secret round calculation.
+  id: 408
+  time: '2026-05-30T05:55:18.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Uplink now has a free syndie key. Get on comms!
+    - type: Add
+      message: Uplink now has cat ears. Billions must UWU!
+  id: 409
+  time: '2026-05-30T05:55:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: The silly bibles will now have inhand sprites.
+  id: 410
+  time: '2026-05-30T06:21:30.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: Various enhancements to Nukie Mice, including the ability to be a hat
+    - type: Tweak
+      message: Various enhancements to SyndiCats, Including access to the radio
+    - type: Tweak
+      message: Various enhancements to cats, including the ability to purr
+    - type: Tweak
+      message: Mice can now see in the dark
+    - type: Tweak
+      message: Felinids can now trill, both ways
+    - type: Tweak
+      message: Trill emotes have slightly more fitting icons on the wheel
+  id: 411
+  time: '2026-05-30T06:31:44.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Research Assistants should no longer spawn with duplicate PDAs.
+  id: 412
+  time: '2026-05-30T23:11:08.0000000+00:00'
+- author: Nersylla
+  changes:
+    - type: Tweak
+      message: >-
+        Changed a number of colorable moth person markings to be available to
+        all species.
+  id: 413
+  time: '2026-05-30T23:13:34.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: PTL is 5x more resistant to charging.
+  id: 414
+  time: '2026-05-31T11:35:32.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: Fixes various circuits in totes.
+  id: 415
+  time: '2026-05-31T11:45:45.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Kitsune and Oni cannot understand cats by default
+    - type: Tweak
+      message: Freespeak description updated
+  id: 416
+  time: '2026-06-01T12:25:20.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Buffed industrial reagent grinder capacity and added exact volume
+        viewing.
+  id: 417
+  time: '2026-06-02T17:23:48.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Gun safes can now be built with id locks.
+  id: 418
+  time: '2026-06-02T17:45:32.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Dance tiles can now be built through the construction menu. They
+        required light tubes to be turned on and can be linked to other devices
+        such as remotes, buttons and switches.
+  id: 419
+  time: '2026-06-02T17:47:34.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The following evac shuttles should no longer start with their APCs
+        overloaded: NTES Propeller, NTES BC20, NTES Kabooze, NTES Meta
+  id: 420
+  time: '2026-06-04T12:03:06.0000000+00:00'
+- author: ItsDzordz
+  changes:
+    - type: Add
+      message: Added Italian plushie.
+  id: 421
+  time: '2026-06-04T12:04:32.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added traits for increasing or decreasing Critical and Dead thresholds.
+        Die to a stiff breeze if you want!
+    - type: Tweak
+      message: >-
+        Adjusted Redshirt to halve your Dead threshold instead of making it a
+        flat 100. Same result in most cases.
+  id: 422
+  time: '2026-06-04T12:05:47.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Added an accent for rolling your 'r's.
+  id: 423
+  time: '2026-06-04T12:06:10.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Tweak
+      message: 'Rework of the VoreSystems consent '
+  id: 424
+  time: '2026-06-04T12:11:02.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: We now allow Harpies to learn Tradeband.
+  id: 425
+  time: '2026-06-05T11:50:59.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the chemicals inside a Banana Cream Pie, it will now look tasty
+        instead of green.
+  id: 426
+  time: '2026-06-05T13:26:01.0000000+00:00'
+- author: youtubepoopfuneral
+  changes:
+    - type: Tweak
+      message: lovelox ears marking now has actual ears
+  id: 427
+  time: '2026-06-06T06:04:47.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: >-
+        An array of new traits allows you to customise your characters' blood.
+        Custom species rejoice.
+  id: 428
+  time: '2026-06-07T04:39:32.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Glacier Teg setup has been updated and is now much easier to run.
+  id: 429
+  time: '2026-06-07T04:42:45.0000000+00:00'
+- author: LynnWaffle
+  changes:
+    - type: Add
+      message: >-
+        Names and descriptions for hard and softsuits you might recognize from
+        pre-rebase. Minor creative liberties taken, as well as new suits from DV
+        that were nameless getting some.
+    - type: Remove
+      message: >-
+        DV .FTLs that affect hardsuit and hardsuit components, redundant with
+        changes and also broke the some changes
+  id: 430
+  time: '2026-06-07T04:56:16.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Newer model handheld radios are being provided to the station that allow
+        for you to be able to set the frequency, toggle the mic and or speaker.
+  id: 431
+  time: '2026-06-08T02:21:58.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Departmental ID Collars are here, most station roles will have access to
+        Emotional Support Collars that function as PDAs.
+    - type: Add
+      message: Justice & Service now have their own sprites for department collars.
+    - type: Add
+      message: >-
+        New collars have been made for all collar options. Find them in vending
+        machines the Uniform Printer.
+  id: 432
+  time: '2026-06-08T02:22:41.0000000+00:00'
+- author: Dogbone10
+  changes:
+    - type: Remove
+      message: Excess N14 Content
+  id: 433
+  time: '2026-06-08T10:32:09.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Make sure to wear shoes in medical, syringes will poke your feet.
+  id: 434
+  time: '2026-06-08T12:28:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: The Bepis vending machine is now animated.
+  id: 435
+  time: '2026-06-09T11:56:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Changed how languages are displayed in chat. There's now a small icon
+        next to the speaker's name. You can hover over it to see which language
+        the message is spoken in and whether you understand it.
+    - type: Add
+      message: >-
+        Added a new accessibility toggle that shows full language names next to
+        their icons in chat, similarly to how it was on pre-rebase floof.
+  id: 436
+  time: '2026-06-09T11:57:48.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Paper envelopes can be printed using the document printer or hand folded
+        through the construction menu.
+  id: 437
+  time: '2026-06-09T11:58:42.0000000+00:00'
+- author: SlowVelcro
+  changes:
+    - type: Tweak
+      message: >-
+        Changed punctuation in most holy book names to use title case for
+        capitalisation.
+  id: 438
+  time: '2026-06-09T21:06:14.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Tweak
+      message: >-
+        Heavy flatpacks like the gas turbine flatpack can no longer have paper
+        labels attached to them.
+    - type: Fix
+      message: >-
+        Gas canisters now have working paper label sprites. Atmos and Logi shall
+        no longer be plagued by ERROR canisters.
+  id: 439
+  time: '2026-06-10T00:23:11.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Made some traits not count towards your total trait slot limit (Meta
+        traits, accent traits, scent traits, colorblind traits)
+  id: 440
+  time: '2026-06-10T12:34:13.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: >-
+        Caramexinin packets are available in condiment and drink dispensers as
+        well as chefvends to make coffees and chocolates safe for all of
+        Hestia's employees and visitors.
+  id: 441
+  time: '2026-06-10T12:34:54.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: A new plushie chew toy is on the market.
+  id: 442
+  time: '2026-06-10T12:35:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Inert anomaly cores can now be turned into hats. These hats will have
+        the visual affects of infection anoms.
+  id: 443
+  time: '2026-06-10T12:43:00.0000000+00:00'

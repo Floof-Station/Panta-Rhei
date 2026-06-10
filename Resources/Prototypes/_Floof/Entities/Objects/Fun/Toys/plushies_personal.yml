@@ -1831,3 +1831,23 @@
     sound: *printer
   - type: MeleeWeapon
     soundHit: *printer
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieItalian
+  name: Italian plushie
+  description: Fuggedaboutit...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: italian
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &snap3
+      path: /Audio/Effects/Emotes/snap3.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *snap3
+

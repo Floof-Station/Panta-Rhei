@@ -6,7 +6,10 @@
   description: A homunculus made with old Earth livestreamer Jerma985''s DNA. How it got here is beyond you. 
   components:
   - type: Bloodstream
-    bloodMaxVolume: 650
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 650
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
@@ -140,7 +143,7 @@
     - Pacified
     - RadiationProtection
     - Adrenaline
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 2400
   - type: MovedByPressure # DeltaV - Spacewind Immune
     enabled: false

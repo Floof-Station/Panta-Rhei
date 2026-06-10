@@ -80,6 +80,8 @@
 # (if they cut off your tail or ears you shouldn't be able to speak it, but well)
 - type: language
   id: NalRasan
+  parent: BaseLanguage
+  icon: { state: "nekomimetic" } # Placeholder
   speech:
     allowRadio: false
     requireSpeech: false
@@ -115,7 +117,9 @@
 # To quote: "Language native to the Tajara, it employs both verbal and non-verbal elements"
 - type: language
   id: SiikTajr
+  parent: BaseLanguage
   isVisibleLanguage: true
+  icon: { state: "nekomimetic" } # Placeholder
   speech:
     color: "#f58c9aee" # Bright red, to push this energy through
     fontId: Sriracha # relatively energetic, portraying the body movement I suppose

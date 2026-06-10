@@ -4,6 +4,7 @@
   description: trait-protected-desc
   category: Meta
   cost: 0 #floof
+  usesSlots: false # Euphoria
   conditions:
   - !type:InDepartmentCondition
     department: Command

@@ -178,3 +178,83 @@
   maxLimit: 1
   loadouts:
   - BoxerPDA
+  - ClothingNeckCollarEmotionalSupportBoxer
+
+# emotional support
+- type: loadoutGroup
+  id: FloofBartenderPda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportBartender
+
+- type: loadoutGroup
+  id: FloofChefPdas
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportChef
+
+- type: loadoutGroup
+  id: FloofServiceWorkerPDAs
+  name: loadout-group-service-worker-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ServiceWorkerPDA
+  - ClothingNeckCollarEmotionalSupportServiceWorker
+
+- type: loadoutGroup
+  id: FloofServiceBotanistPDAs
+  name: loadout-group-botanist-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BotanistPDA
+  - ClothingNeckCollarEmotionalSupportBotanist
+
+- type: loadoutGroup
+  id: FloofJanitorPda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportJanitor
+
+- type: loadoutGroup
+  id: FloofServiceMusicianPDAs
+  name: loadout-group-musician-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - MusicianPDA
+  - ClothingNeckCollarEmotionalSupportMusician
+
+- type: loadoutGroup
+  id: FloofClownPda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportClown
+
+- type: loadoutGroup
+  id: FloofServiceMimePDAs
+  name: loadout-group-mime-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - MimePDA
+  - ClothingNeckCollarEmotionalSupportMime
+
+- type: loadoutGroup
+  id: FloofServiceReporterPDAs
+  name: loadout-group-reporters-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ReporterPDA
+  - ClothingNeckCollarEmotionalSupportReporter
+
+- type: loadoutGroup
+  id: FloofServicePrisonerPDAs
+  name: loadout-group-prisoner-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PrisonerPDA
+  - ClothingNeckCollarEmotionalSupportPrisoner

@@ -16,3 +16,13 @@
   equipment:
     shoes: ClothingUnderSocksMantisEpi
 
+# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportMantis
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportMantis
+
+- type: loadout # have to give ta their base pda as loadout option to
+  id: PsionicMantisPDA
+  equipment:
+    id: PsionicMantisPDA

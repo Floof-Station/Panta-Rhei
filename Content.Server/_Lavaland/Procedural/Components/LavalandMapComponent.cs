@@ -38,6 +38,7 @@ public sealed partial class LavalandMapComponent : Component
 
     /// <summary>
     /// Chunks in this area are always loaded
+    /// Floofstation - no, they are not.
     /// </summary>
     [ViewVariables]
     public Box2 LoadArea;

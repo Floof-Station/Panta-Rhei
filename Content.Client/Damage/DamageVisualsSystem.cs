@@ -1,4 +1,6 @@
 using System.Linq;
+using Content.Shared.Body.Components;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -333,6 +335,15 @@ public sealed class DamageVisualsSystem : VisualizerSystem<DamageVisualsComponen
             index
         );
         SpriteSystem.LayerMapSet(spriteEnt, mapKey, newLayer);
+        #region Euphoria: Add damage visuals colour from bloodstream
+        if (TryComp<BloodstreamComponent>(spriteEnt, out var bloodstream)
+            && bloodstream.BloodReferenceSolution != null
+            && _prototypeManager.Resolve<ReagentPrototype>(bloodstream.BloodReferenceSolution.Contents[0].Reagent.Prototype, out var reagent))
+        {
+            SpriteSystem.LayerSetColor(spriteEnt, newLayer, reagent.SubstanceColor);
+        }
+        else
+        # endregion
         if (sprite.Color != null)
             SpriteSystem.LayerSetColor(spriteEnt, newLayer, Color.FromHex(sprite.Color));
         SpriteSystem.LayerSetVisible(spriteEnt, newLayer, false);

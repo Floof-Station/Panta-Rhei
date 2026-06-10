@@ -27,9 +27,6 @@ public sealed partial class LavalandSystem
     {
         lavaland = null;
 
-        if (!LavalandEnabled)
-            return false;
-
         if (preloader == null)
         {
             preloader = GetPreloaderEntity();
@@ -91,7 +88,8 @@ public sealed partial class LavalandSystem
             EntityManager.AddComponents(lavalandMap, prototype.AddComponents);
 
         // Preload here to prevent biome entities from overlaying with everything else
-        _biome.Preload(lavalandMap, Comp<BiomeComponent>(lavalandMap), loadBox);
+        // Floofstation - no, just no, what kinda fucking hardware did you design this for?!
+        // _biome.Preload(lavalandMap, Comp<BiomeComponent>(lavalandMap), loadBox);
 
         return true;
     }

@@ -112,7 +112,7 @@ public sealed class LewdOrganSystem : EntitySystem
     /// </summary>
     public bool IsOfType(Entity<LewdOrganComponent?> ent, LewdOrganKind kind)
     {
-        if (!Resolve(ent, ref ent.Comp))
+        if (!Resolve(ent, ref ent.Comp, false))
             return false;
 
         return (ent.Comp.Data.OrganKind & kind) != 0;
@@ -220,7 +220,7 @@ public sealed class LewdOrganSystem : EntitySystem
     private void DetachOrgan(Entity<LewdOrganComponent> ent, EntityUid body)
     {
         // There should NEVER be more than one organ corresponding to a single lewd type.
-        DebugTools.Assert(_body.GetBodyOrgans(body)
+        DebugTools.Assert(!_body.GetBodyOrgans(body)
                 .Any(it => it.Id != ent.Owner && IsOfType(it.Id, ent.Comp.Data.OrganKind)),
             "Body contains multiple lewd organs of the same type? This will cause issues.");
 
