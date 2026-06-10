@@ -47,7 +47,7 @@ public sealed class GerasSystem : EntitySystem
 
         var colors = GrabHumanoidColors(uid); // begin imp
 
-        var sex = GrabHumanoidSex(uid);
+        var sex = CompOrNull<HumanoidAppearanceComponent>(uid)?.Sex;
 
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
 
@@ -101,15 +101,5 @@ public sealed class GerasSystem : EntitySystem
         }
 
         return null; // if a non-humanoid or someone with no bloodstream ascends, don't modify the colors
-    }
-
-    private Sex? GrabHumanoidSex(EntityUid entity)
-    {
-        if (TryComp<HumanoidAppearanceComponent>(entity, out var humanoid))
-        {
-            var sexHum = humanoid.Sex;
-            return (sexHum);
-        }
-        return null;
     }
 }
