@@ -34,6 +34,7 @@
   - ServiceDirectorPDA
   - ServiceManagerPDA
   - HeadOfPaperworkPDA
+  - ClothingNeckCollarEmotionalSupportHOP # Emotional support
 
 #below additions are for captain
 - type: loadoutGroup
@@ -68,6 +69,8 @@
   loadouts:
   - CaptainPDA
   - CommanderPDA
+  - ClothingNeckCollarEmotionalSupportCaptain # Emotional support
+  - ClothingNeckCollarEmotionalSupportCaptainAlternative
 
 - type: loadoutGroup
   id: FloofCaptainOuterClothing
@@ -86,3 +89,4 @@
   loadouts:
   - ChiefJusticePDA
   - LegalAdvisorPDA
+  - ClothingNeckCollarEmotionalSupportCJ

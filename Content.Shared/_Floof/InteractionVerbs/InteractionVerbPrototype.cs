@@ -14,20 +14,20 @@ namespace Content.Shared._Floof.InteractionVerbs;
 /// <summary>
 ///     Represents an action that can be performed on an entity.
 /// </summary>
-[Prototype("Interaction"), Serializable]
+[Prototype("Interaction")]
 public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPrototype
 {
     /// <inheritdoc />
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<InteractionVerbPrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; set; }
 
     /// <inheritdoc />
     [NeverPushInheritance]
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; set; }
 
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; set; } = default!;
 
     // Locale getters
     public string Name => Loc.TryGetString($"interaction-{ID}-name", out var loc) ? loc : ID;

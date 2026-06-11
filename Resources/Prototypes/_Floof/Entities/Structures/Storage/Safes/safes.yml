@@ -1,0 +1,11 @@
+﻿- type: entity
+  id: GunSafeIDLockable
+  parent: [IdLockableBase, GunSafeDV]
+  components:
+  - type: IdLock
+    enabled: true
+  - type: Construction
+    graph: ClosetSteelSecure
+    node: idLockable
+    containers:
+    - entity_storage

@@ -652,3 +652,22 @@
       enum.PdaVisuals.PdaType: !type:String
         pda-noviciate
 # ===========================================
+
+# security technician
+- type: entity
+  parent: BaseSecurityPDA
+  id: SecurityTechnicianPDA
+  name: security technician PDA
+  description: Red to hide the stains of passenger blood.
+  components:
+  - type: Pda
+    id: SecurityTechnicianIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-security
+  - type: PdaBorderColor
+    borderColor: "#A32D26"
+  - type: Icon
+    state: pda-security

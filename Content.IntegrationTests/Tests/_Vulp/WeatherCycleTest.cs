@@ -9,7 +9,6 @@ using Content.Shared.Atmos;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
-using Serilog;
 
 
 namespace Content.IntegrationTests.Tests._Vulp;

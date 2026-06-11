@@ -1,0 +1,186 @@
+- type: trait
+  id: ReplaceBloodRed
+  name: trait-replace-blood-red-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    species:
+    - Arachnid #CopperBlood
+    - Avali #AmmoniaBlood
+    - Chitinid #InsectBlood
+    - Diona #Sap
+    - Moth #InsectBlood
+    - Resomi #AmmoniaBlood
+    - SlimePerson #Slime
+    - Vox #AmmoniaBlood
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: Blood
+
+- type: trait
+  id: ReplaceBloodAmmonia
+  name: trait-replace-blood-ammonia-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Avali
+    - Resomi
+    - Vox
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: AmmoniaBlood
+
+- type: trait
+  id: ReplaceBloodCopper
+  name: trait-replace-blood-copper-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Arachnid
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: CopperBlood
+
+- type: trait
+  id: ReplaceBloodInsect
+  name: trait-replace-blood-insect-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Chitinid
+    - Moth
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: InsectBlood
+
+- type: trait
+  id: ReplaceBloodSap
+  name: trait-replace-blood-sap-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Diona
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: Sap
+
+- type: trait
+  id: ReplaceBloodSlime
+  name: trait-replace-blood-slime-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodYellow
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - SlimePerson
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: Slime
+
+- type: trait
+  id: ReplaceBloodYellow
+  name: trait-replace-blood-yellow-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: YellowBlood
