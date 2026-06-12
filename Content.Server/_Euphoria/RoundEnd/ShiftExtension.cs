@@ -4,6 +4,7 @@ using Content.Server.Station.Systems;
 using Content.Shared.Fax.Components;
 using Content.Shared.Paper;
 using Content.Shared.Station.Components;
+using Robust.Shared.Player;
 
 namespace Content.Server.RoundEnd;
 
@@ -16,11 +17,6 @@ public sealed partial class RoundEndSystem : EntitySystem
     /// <returns>True if at least one fax received paper.</returns>
     public bool SendShiftExtensionReview()
     {
-        //var station = GetStation();
-        // if (!HasComp<StationEmergencyShuttleComponent>(station))
-        // {
-        //     return false;
-        // }
         var enumerator = EntityQueryEnumerator<FaxMachineComponent>();
         var wasSent = false;
 
@@ -51,11 +47,12 @@ public sealed partial class RoundEndSystem : EntitySystem
             wasSent = true;
         }
 
-        // if (wasSent)
-        // {
-        //     var msg = Loc.GetString("round-end-system-vote-stalemate-fax-announcement");
-        //     _chatSystem.DispatchStationAnnouncement(station.Value, msg, colorOverride: Color.Green);
-        // }
+        if (wasSent)
+        {
+            var msg = Loc.GetString("round-end-system-vote-stalemate-fax-announcement");
+            _chatSystem.DispatchGlobalAnnouncement(msg, "Central Command", colorOverride: Color.Green);
+            _audio.PlayGlobal("/Audio/Machines/high_tech_confirm.ogg", Filter.Broadcast(), true);
+        }
 
         return wasSent;
 

@@ -1,4 +1,4 @@
-﻿round-end-system-vote-stalemate-fax-announcement = Automated fax sent: Bridge, Urgent
+﻿round-end-system-vote-stalemate-fax-announcement = Automated fax sent: Captain's Office, Urgent
 round-end-system-vote-stalemate-fax-name = shift extension review
 round-end-system-vote-stalemate-fax-contents =
     ⠀[head=1][color=#007c00]────────────────────[/color][/head]
