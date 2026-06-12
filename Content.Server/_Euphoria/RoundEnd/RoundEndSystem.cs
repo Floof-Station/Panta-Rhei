@@ -1,11 +1,13 @@
-﻿using Content.Server.Voting.Managers;
-using Content.Server.Voting;
+﻿using Content.Server.Voting;
 using Content.Shared._DV.CCVars;
 
 namespace Content.Server.RoundEnd;
 
 public sealed partial class RoundEndSystem : EntitySystem
 {
+    /// <summary>
+    ///     Calls for a secret ballot on whether to automatically call the evacuation shuttle or not.
+    /// </summary>
     public void CallEvacuationSecretBallot()
     {
         var options = new VoteOptions
@@ -23,8 +25,13 @@ public sealed partial class RoundEndSystem : EntitySystem
 
         vote.OnFinished += (_, args) =>
         {
-            if (args.Winner == null || (bool)args.Winner)
+            if (args.Winner is true)
                 RequestRoundEnd(null, false, "round-end-system-vote-shuttle-called-announcement");
+            if (args.Winner == null)
+            {
+                RequestRoundEnd(null, false, "round-end-system-vote-shuttle-called-announcement");
+                SendShiftExtensionReview();
+            };
         };
     }
 }
