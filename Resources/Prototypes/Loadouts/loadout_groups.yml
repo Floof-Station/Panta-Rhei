@@ -1013,7 +1013,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianHead
-  parent: [FloofHats] # floofstation
+  parent: [FloofCargotechHats, FloofHats] # floofstation
   name: loadout-group-cargo-technician-head
   minLimit: 0
   loadouts:
@@ -1032,7 +1032,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
-  parent: [FloofBackpacks] # Floofstation
+  parent: [FloofCargoTechBags, FloofBackpacks] # Floofstation
   name: loadout-group-cargo-technician-backpack
   loadouts:
   - CargoTechnicianBackpack

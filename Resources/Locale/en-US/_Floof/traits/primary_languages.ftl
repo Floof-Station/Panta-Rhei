@@ -83,3 +83,8 @@ trait-NaturalKagebun-desc =
     To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
     To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
     Through some adaptation, augmentation or clever workaround, you speak this instead of your species's usual natural language.
+
+trait-NaturalSiikMaas-name = Siik'maas
+trait-NaturalSiikMaas-desc =
+    The ancient religious tongue of the Tajara, now the most widely spoken and taught language on Adhomai.
+

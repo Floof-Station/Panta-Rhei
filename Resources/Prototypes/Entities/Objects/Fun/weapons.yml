@@ -138,6 +138,7 @@
 - type: entity
   parent: [ BaseItem, BaseToyGun ]
   id: WeaponStickyHand
+  categories: [ HideSpawnMenu ] # Floofstation - remove this because of bug abuse.
   name: sticky hand
   description: They're saying you're reaching. They're saying it's a stretch. You'll show them all, and you'll stick it to them.
   components:

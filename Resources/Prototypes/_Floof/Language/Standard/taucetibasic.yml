@@ -3,6 +3,7 @@
   id: TauCetiBasic
   parent: BaseLanguage
   icon: { state: tauceti }
+  isVisibleLanguage: false
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

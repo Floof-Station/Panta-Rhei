@@ -26,6 +26,7 @@ job-alt-title-acolyte = Acolyte
 job-alt-title-golemancer = Golemancer
 job-alt-title-mystic = Mystic
 job-alt-title-noviciate = Noviciate
+job-alt-title-logistics-tech-pilot = Shuttle Pilot
 job-alt-title-medical-emotional-support-intern = Emotional Support Medical Intern
 job-alt-title-medical-emotional-support-doctor = Emotional Support Medical Doctor
 job-alt-title-medical-emotional-support-paramed = Emotional Support Paramedic

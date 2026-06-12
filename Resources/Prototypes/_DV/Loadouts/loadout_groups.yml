@@ -208,7 +208,7 @@
 ## Cargo Assistant
 - type: loadoutGroup
   id: CargoAssistantHead
-  parent: [FloofHats] # floofstation
+  parent: [FloofCargotechHats, FloofHats] # floofstation
   name: loadout-group-cargo-assistant-head
   minLimit: 0
   loadouts:
@@ -224,7 +224,7 @@
 
 - type: loadoutGroup
   id: CargoAssistantBackpack
-  parent: [FloofBackpacks] # Floofstation
+  parent: [FloofCargoTechBags, FloofBackpacks] # Floofstation
   name: loadout-group-cargo-assistant-backpack
   loadouts:
   - CargoTechnicianBackpack
@@ -250,7 +250,7 @@
 ## Cargo Technician
 - type: loadoutGroup
   id: CargoTechnicianNeck
-  parent: [CargoCollars] # Floofstation
+  parent: [FloofCargotechNeck, CargoCollars] # Floofstation
   name: loadout-group-cargo-technician-neck
   minLimit: 0
   loadouts:

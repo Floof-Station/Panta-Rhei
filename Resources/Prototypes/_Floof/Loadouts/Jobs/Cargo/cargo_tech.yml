@@ -21,3 +21,67 @@
   id: ClothingNeckCollarEmotionalLogisticsCargotech
   equipment:
     neck: ClothingNeckCollarEmotionalLogisticsCargotech
+
+# Pilot gear
+- type: loadout
+  id: PilotPDA # this is the one found in the Floof pdas.yml
+  equipment:
+    id: PilotPDA
+
+#scarf
+- type: loadout
+  id: ClothingNeckScarfPilot
+  equipment:
+    neck: ClothingNeckScarfPilot
+
+#jumpsuit
+- type: loadout
+  id: ClothingUniformJumpsuitPilot
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPilot
+
+#webbing
+- type: loadout
+  id: ClothingBeltPilot
+  equipment:
+    belt: ClothingBeltPilot
+
+#backpacks
+- type: loadout
+  id: ClothingBackpackPilot
+  equipment:
+    back: ClothingBackpackPilot
+
+- type: loadout
+  id: ClothingBackpackSatchelPilot
+  equipment:
+    back: ClothingBackpackSatchelPilot
+
+- type: loadout
+  id: ClothingBackpackDuffelPilot
+  equipment:
+    back: ClothingBackpackDuffelPilot
+
+#googles
+- type: loadout
+  id: ClothingEyesGlassesPilot
+  equipment:
+    eyes: ClothingEyesGlassesPilot
+
+#hat
+- type: loadout
+  id: ClothingHeadHatPilot
+  equipment:
+    head: ClothingHeadHatPilot
+
+#gloves
+- type: loadout
+  id: ClothingHandsGlovesPilot
+  equipment:
+    gloves: ClothingHandsGlovesPilot
+
+#shoes
+- type: loadout
+  id: ClothingShoesBootsPilot
+  equipment:
+    shoes: ClothingShoesBootsPilot

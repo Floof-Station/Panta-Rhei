@@ -227,6 +227,15 @@
   - type: IdCard
     jobTitle: job-alt-title-noviciate
 
+# alternative logistics technician
+- type: entity
+  parent: CargoIDCard # cargo tech
+  id: PilotID
+  name: Shuttle Pilot ID card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-logistics-tech-pilot
+
 # medical emotional support
 - type: entity
   parent: MedicalInternIDCard

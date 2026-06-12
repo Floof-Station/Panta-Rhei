@@ -90,6 +90,7 @@
   maxLimit: 1
   loadouts:
   - UniformLogisThong
+  - ClothingUniformJumpsuitPilot
 
 - type: loadoutGroup
   id: FloofCargotechGloves
@@ -99,14 +100,52 @@
   maxLimit: 1
   loadouts:
   - ClothingHandsLogisWarmers
+  - ClothingHandsGlovesPilot
 
 - type: loadoutGroup
   id: FloofCargotechShoes
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ClothingUnderSocksLogis
+  - ClothingShoesBootsPilot
+
+- type: loadoutGroup
+  id: FloofCargotechBelts
+  name: loadout-group-cargo-belts
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltPilot
+
+- type: loadoutGroup
+  id: FloofCargoTechBags
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingBackpackPilot
+  - ClothingBackpackSatchelPilot
+  - ClothingBackpackDuffelPilot
+
+- type: loadoutGroup
+  id: FloofCargoTechGlasses
+  name: loadout-group-cargotech-glasses
+  parent: [Glasses]
+  loadouts:
+  - ClothingEyesGlassesPilot
+
+- type: loadoutGroup
+  id: FloofCargotechHats
+  abstract: true
+  loadouts:
+  - ClothingHeadHatPilot
+
+- type: loadoutGroup
+  id: FloofCargotechNeck
+  abstract: true
+  loadouts:
+  - ClothingNeckScarfPilot
 
 # inventory specialist additions
 - type: loadoutGroup
@@ -121,6 +160,7 @@
   id: FloofCargotechPda
   abstract: true
   loadouts:
+  - PilotPDA
   - ClothingNeckCollarEmotionalLogisticsCargotech
 
 - type: loadoutGroup
