@@ -33,3 +33,5 @@ round-end-system-vote-stalemate-fax-contents =
     
     ⠀[head=1]────────────────────[/head]
     ⠀                   [color=#898989][italic]AREA FOR STAMPS, AREA FOR SIGNATURES[/italic][/color]
+round-end-system-vote-stalemate-fax-fail = Autocall vote is a tie, but the tiebreaker fax (SER) failed to send!
+round-end-system-vote-stalemate-fax-success = Autocall vote is a tie, tiebreaker fax (SER) sent.
