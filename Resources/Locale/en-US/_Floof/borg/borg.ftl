@@ -29,9 +29,9 @@ borg-type-quadservice-desc = Help out with a wide range of crew services, rangin
 borg-type-quadservice-transponder = service cyborg
 
 borg-type-research-name = Research
-borg-type-research-desc = Study the noosphere, dispense knowledge to the crew, and experiement with new technologies.
+borg-type-research-desc = Study the noosphere, dispense knowledge to the crew, and experiment with new technologies.
 borg-type-research-transponder = research cyborg
 
 borg-type-quadresearch-name = Research Quad
-borg-type-quadresearch-desc = Study the noosphere, dispense knowledge to the crew, and experiement with new technologies.
+borg-type-quadresearch-desc = Study the noosphere, dispense knowledge to the crew, and experiment with new technologies.
 borg-type-quadresearch-transponder = research cyborg

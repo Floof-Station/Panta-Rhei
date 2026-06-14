@@ -37,7 +37,7 @@
   id: BorgModuleFoamForce
   parent: [ BaseBorgModule, BaseProviderBorgModule ]
   name: foam force cyborg module
-  description: Grants any cyborg the most deadly of weapons... foam! Fun for the whole family!
+  description: Grants a cyborg the most deadly of weapons... foam! Fun for the whole family!
   components:
   - type: Sprite
     layers:
@@ -55,7 +55,7 @@
   id: BorgModuleFurnishing
   parent: [ BaseBorgModule, BaseProviderBorgModule ]
   name: furnishing cyborg module
-  description: A piece of tech that allows cyborgs partake in simple construction.
+  description: A piece of tech that allows cyborgs to partake in simple construction.
   components:
   - type: Sprite
     layers:
