@@ -28,7 +28,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Command/captsocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - BugFixes-Algeron - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -691,7 +691,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/secsocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - BugFixes-Algeron - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -731,7 +731,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/hossocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - BugFixes-Algeron - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -771,7 +771,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/detectsocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - BugFixes-Algeron - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -811,7 +811,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/corpsmansocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - BugFixes-Algeron - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
