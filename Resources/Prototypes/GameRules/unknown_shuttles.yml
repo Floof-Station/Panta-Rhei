@@ -8,7 +8,6 @@
     - id: UnknownShuttleTravelingCuisine
     - id: UnknownShuttleDisasterEvacPod
     - id: UnknownShuttleSampleCollector # Euphoria - Sample Collector role
-    #- id: UnknownShuttleFoodCritic # Euphoria - Food Critic role - UNUSED
     #- id: UnknownShuttleHonki # DeltaV - Removes the Clown Shuttle
     #- id: UnknownShuttleNTQuark # DeltaV - removed until theyre individually looked at
     #- id: UnknownShuttleCruiser
@@ -265,16 +264,3 @@
     message: psionic-power-precognition-unknown-shuttle-sample-collector-result-message
   - type: LoadMapRule
     gridPath: /Maps/Floof/Shuttles/Event/SampleCollector/samplecollector.yml
-
-- type: entity # - UNUSED
-  id: UnknownShuttleFoodCritic
-  parent: BaseUnknownShuttleRule
-  components:
-  - type: StationEvent
-    maxOccurrences: 1
-    startAnnouncement:  station-event-unknown-shuttle-incoming
-  - type: PrecognitionResult
-    message: psionic-power-precognition-unknown-shuttle-food-critic-result-message
-  - type: LoadMapRule
-    gridPath: /Maps/Floof/Shuttles/Event/FoodCritic/foodcritic.yml
-
