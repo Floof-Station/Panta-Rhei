@@ -149,7 +149,7 @@ public sealed partial class FaxMachineComponent : Component
     ///     Should this fax receive shift extension reviews?
     /// </summary>
     [DataField]
-    public bool ReceiveShiftExtensionReview { get; set; } = false;
+ // public bool ReceiveShiftExtensionReview { get; set; } = false;
     // Euphoria addition end
 }
 

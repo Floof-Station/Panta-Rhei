@@ -387,7 +387,7 @@ namespace Content.Server.RoundEnd
             {
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
-                    CallEvacuationSecretBallot(); // Euphoria - M3739 - SecretBallot - Players vote on shuttle call, no live counts.
+                    CallEvacuationSecretBallot(); // Euphoria - M3739 - #698 - Players vote on shuttle call, no live counts.
                     _autoCalledBefore = true;
                 }
 
