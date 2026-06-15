@@ -84,7 +84,7 @@
 #
 #General Engineering
 - type: entity
-  parent: ClothingHandsBase
+  parent: [ClothingHandsBase, BaseEngineeringContraband]
   id: ClothingHandsEngiWarmers
   name: engineering arm-warmers
   description: A pair of rather nice arm-warmers, styled for Engineering roles.
@@ -93,10 +93,10 @@
     sprite: _Floof/Clothing/Departmental/Engineering/engiwarmer.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Engineering/engiwarmer.rsi
+  - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-yellow
-  - type: FingerprintMask
 
 - type: entity
   parent: ClothingShoesBase
@@ -471,7 +471,7 @@
     sprite: _Floof/Clothing/Departmental/Logistics/devysuit.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Logistics/devysuit.rsi
-    
+
 - type: entity
   parent: ClothingShoesBase
   id: ClothingShoesCourierDevy
@@ -482,7 +482,7 @@
     sprite: _Floof/Clothing/Departmental/Logistics/devyboots.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Logistics/devyboots.rsi
-    
+
 - type: entity
   parent: ClothingOuterWinterCoat
   id: ClothingOuterDevy
@@ -493,7 +493,7 @@
     sprite: _Floof/Clothing/Departmental/Logistics/devycoat.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Logistics/devycoat.rsi
-    
+
 #Medical Outfits
 #
 #General Medical

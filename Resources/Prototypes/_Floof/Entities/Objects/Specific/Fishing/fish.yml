@@ -1,0 +1,302 @@
+﻿# Can use BaseFish or BaseFishRare depending on what rarity we want
+# Common Fish
+- type: entity
+  id: FishAngel
+  parent: BaseFish
+  name: angel fish
+  description: Is that an ANGEL!? Oh wait no its just a fish...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: angelfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatDonkFish
+
+- type: entity
+  id: FishArticChar
+  parent: BaseFish
+  name: artic char
+  description: A cold fish on a semi-warm station?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: arctic_char
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatFishLowQualityFillet
+
+- type: entity
+  id: FishCardinal
+  parent: BaseFish
+  name: cardinal fish
+  description: A fish that some thought to be religious figure.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: cardinalfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatDonkFish
+
+- type: entity
+  id: FishCrab
+  parent: BaseFish
+  name: crab
+  description: A crab, looks a bit to familiar...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: crab
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatCrab # is a crab so lets give crab meat
+
+- type: entity
+  id: FishDwarfMoon
+  parent: BaseFish
+  name: moon fish
+  description: A fish that reminds you of the moons some of these stations orbit.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: dwarf_moonfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatMoonFishFillet
+
+- type: entity
+  id: FishFire
+  parent: BaseFish
+  name: fire fish
+  description: I cast fireball! Oh wait... this is just a fish.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: firefish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: Coal1 # is a fire fish so lets it give one coal
+
+- type: entity
+  id: FishGoldFish
+  parent: BaseFish
+  name: gold fish
+  description: Some people used to keep these as pets, can you believe that?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: goldfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: IngotGold1 # is a gold fish so lets it give one gold bar
+
+- type: entity
+  id: FishGuppy
+  parent: BaseFish
+  name: guppy
+  description: Some people used to keep these as pets, can you believe that?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: guppy
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSalmon
+
+- type: entity
+  id: FishSandSurfer
+  parent: BaseFish
+  name: sand surfer
+  description: Many wonder how this fish got its name, it cerintly can not surf.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: sand_surfer
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatFishLowQualityFillet
+
+- type: entity
+  id: FishThreeEyes
+  parent: BaseFish
+  name: mutant fish
+  description: This mutated fish has three eyes and none of them blink at the same time.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: three_eyes
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatFishLowQualityFillet
+
+# Rare Fish
+- type: entity
+  id: FishArmored
+  parent: BaseFishRare
+  name: armor fish
+  description: A stunning fish knight and his suit of armor.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: armorfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatArmorFish
+
+- type: entity
+  id: FishBoneMass
+  parent: BaseFishRare
+  name: bone fish
+  description: A spooky scary skeleton fish, does this send shivers down your spine? No? Damn...
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: bonemass
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: MaterialBones1 # is a skeleton fish so let it drop a bone
+
+- type: entity
+  id: FishMonk
+  parent: BaseFishRare
+  name: monk fish
+  description: Just look at how cute that smile is!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: monkfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSalmon
+
+- type: entity
+  id: FishRat
+  parent: BaseFishRare
+  name: rat fish
+  description: A very distant relative to the rat king, the rat fish prefers water instead of disposal bins.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: ratfish
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat # is a rat fish, so let it drop a slice of rat meat
+
+- type: entity
+  id: FishSludge
+  parent: BaseFishRare
+  name: sludge fish
+  description: A fish that thrives in toxic and polluted waters.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: sludgefish_purple
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatFishLowQualityFillet # not sure what to give the sludge fish yet
+
+- type: entity
+  id: FishStingray
+  parent: BaseFishRare
+  name: sting ray
+  description: Watch out for its tail..
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: stingray
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSalmon # going to give it salmon for now since we don't have any sting ray tails
+
+- type: entity
+  id: FishLava
+  parent: BaseFishRare
+  name: lava fish
+  description: Some question how a fish that was meant to swim in lava is in the water, and honestly its best you don't ask to many questions.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: lava_loop
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: Coal1 # is a lava fish so lets it give one coal
+
+- type: entity
+  id: FishJumperCable
+  parent: BaseFishRare
+  name: jumper cable fish
+  description: This fish looks like it can be used in place of HV wires, sadly thats just not how things work.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: jumpercable
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatDonkFish
+
+- type: entity
+  id: FishPlasma
+  parent: BaseFishRare
+  name: plasma fish
+  description: Some question how a fish that was meant to swim in plasma is in the water, and honestly its best you don't ask to many questions.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: plasma_loop
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: SheetPlasma1 # is a plasma fish so lets it give one coal
+
+- type: entity
+  id: FishSquid
+  parent: BaseFishRare
+  name: squid
+  description: You gotta be squiding me!? It is just a squid?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+    state: squid
+  - type: Item
+    sprite: _Floof/Objects/Specific/Fishing/fish.rsi
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatSquid

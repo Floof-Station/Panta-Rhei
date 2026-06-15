@@ -119,11 +119,10 @@
       understands:
       - Eldritch
     - type: Bloodstream
-      bloodMaxVolume: 300
-      bloodReagents:
+      bloodReferenceSolution:
         reagents:
         - ReagentId: Laughter
-          Quantity: 1
+          Quantity: 300
 
 - type: entity
   name: behonker

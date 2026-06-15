@@ -177,7 +177,7 @@
 
 - type: entity
   name: experimental welding tool
-  parent: Welder
+  parent: [ Welder, BaseEngineeringContraband ] # Euphoria | Engineering Restricted
   id: WelderExperimental
   description: "An experimental welder capable of self-fuel generation and less harmful to the eyes."
   components:

@@ -98,3 +98,27 @@
       - !type:AdjustReagent # Will find a way to make it so only someone with the Australian Accent component heals later
         reagent: Ichor
         amount: 0.2
+
+- type: reagent # You may ask me why, but I got sick of seeing green come of cream pies.
+  id: BananaCreamPie
+  parent: Nutriment
+  name: reagent-name-bananacreampie
+  desc: reagent-desc-bananacreampie
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: bananacreampie
+  color: "#fffdd0"
+  recognizable: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+      - !type:SatiateThirst
+        factor: 0.5
+      - !type:HealthChange # I folded vitamins into it
+        probability: 0.5
+        damage:
+          groups:
+            Brute: -0.1 # For reference vitamins are -0.5
+            Burn: -0.1
+      - !type:ModifyBleed
+        amount: -0.1 # 0.25

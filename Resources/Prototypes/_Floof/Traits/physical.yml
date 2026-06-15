@@ -15,7 +15,7 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Left
-      protoId: JawsOfLifeLeftArm
+      protoId: PrybarLeftArm
       slotId: "left arm"
 
 - type: trait
@@ -34,7 +34,7 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Right
-      protoId: JawsOfLifeRightArm
+      protoId: PrybarRightArm
       slotId: "right arm"
 
 - type: trait
@@ -306,3 +306,303 @@
           Blunt: 1
 # =================================================== #
 
+# ==============Temperature Tolerance================ #
+- type: trait
+  id: ColdTolerance
+  name: trait-coldtolerance-name
+  description: trait-coldtolerance-desc
+  category: Skills
+  cost: 1
+  conflicts:
+    - ColdIntolerance
+    - ColdIntoleranceAdvanced
+    #- ColdToleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have huge tolerance
+    invert: true
+    species:
+    #- Vulpkanin #220
+    - Vox #-200, Jesus
+    #- Moth #230
+    #- Chitinid #230
+    #- Avali #223
+    #- Tajaran #248.15
+    - Resomi #195.4
+    - Shadowkin #195
+    #- Reptilian #285
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: -20 # 20 better (more tolerant) than base (which should be 260)
+
+- type: trait
+  id: ColdToleranceAdvanced
+  name: trait-coldtoleranceadvanced-name
+  description: trait-coldtoleranceadvanced-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - ColdIntolerance
+    - ColdIntoleranceAdvanced
+    #- ColdTolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have extreme tolerance
+    invert: true
+    species:
+    - Vulpkanin #220
+    - Vox #-200, Jesus
+    #- Moth #230
+    #- Chitinid #230
+    - Avali #223
+    #- Tajaran #248.15
+    - Resomi #195.4
+    - Shadowkin #195
+    #- Reptilian #285
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: -40 # 40 better (more tolerant) than base (which should be 260), same as Vulpkanin
+
+- type: trait
+  id: HeatTolerance
+  name: trait-heattolerance-name
+  description: trait-heattolerance-desc
+  category: Skills
+  cost: 1
+  conflicts:
+    - HeatIntolerance
+    - HeatIntoleranceAdvanced
+    #- HeatToleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have this tolerance or something better (only reptilian?)
+    invert: true
+    species:
+    - Reptilian #Holy 400 heat tolerance, Batman
+    #- Moth #320
+    #- Chitinid #320
+    #- Avali #310
+    #- Resomi #320.15
+    #- Shadowkin #330
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: 20 # 20 better (more tolerant) than base (which should be 325).
+
+- type: trait
+  id: HeatToleranceAdvanced
+  name: trait-heattoleranceadvanced-name
+  description: trait-heattoleranceadvanced-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - HeatIntolerance
+    - HeatIntoleranceAdvanced
+    #- HeatTolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have this tolerance or something better (only reptilian?)
+    invert: true
+    species:
+    - Reptilian #Holy 400 heat tolerance, Batman
+    #- Moth #320
+    #- Chitinid #320
+    #- Avali #310
+    #- Resomi #320.15
+    #- Shadowkin #330
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: 40 # 40 better (more tolerant) than base (which should be 325).
+
+- type: trait
+  id: ColdIntolerance
+  name: trait-coldintolerance-name
+  description: trait-coldintolerance-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - ColdTolerance
+    - ColdToleranceAdvanced
+    #- ColdIntoleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger at room temperature (maybe reptilian)
+    invert: true
+    species:
+    #- Vulpkanin #220
+    - Vox #-200, Jesus. Vox don't take cold damage.
+    #- Moth #230
+    #- Chitinid #230
+    #- Avali #223
+    #- Tajaran #248.15
+    #- Resomi #195.4
+    #- Shadowkin #195
+    - Reptilian #285 #At 20 intolerance, they're just barely on the cusp. The "you're too cold" warning keeps going back and forth.
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: 20 # 20 worse (less tolerant) than base (which should be 260)
+
+- type: trait
+  id: ColdIntoleranceAdvanced
+  name: trait-coldintoleranceadvanced-name
+  description: trait-coldintoleranceadvanced-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - ColdTolerance
+    - ColdToleranceAdvanced
+    #- ColdIntolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger at room temperature (reptilian)
+    invert: true
+    species:
+    #- Vulpkanin #220
+    - Vox #-200, Jesus. Vox don't take cold damage.
+    #- Moth #230
+    #- Chitinid #230
+    #- Avali #223
+    #- Tajaran #248.15
+    #- Resomi #195.4
+    #- Shadowkin #195
+    - Reptilian #285
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: 40 # 40 worse (less tolerant) than base (which should be 260)
+
+- type: trait
+  id: HeatIntolerance
+  name: trait-heatintolerance-name
+  description: trait-heatintolerance-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - HeatTolerance
+    - HeatToleranceAdvanced
+    #- HeatIntoleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: -5 # 5 worse (less tolerant) than base (which should be 325).
+
+- type: trait
+  id: HeatIntoleranceAdvanced
+  name: trait-heatintoleranceadvanced-name
+  description: trait-heatintoleranceadvanced-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - HeatTolerance
+    - HeatToleranceAdvanced
+    #- HeatIntolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger of regular room temperature.
+    invert: true
+    species:
+    #- Reptilian #Holy 400 heat tolerance, Batman. Giving intolerance wouldn't make much of a difference, might just be free points, basically.
+    - Moth #320 Constant warning at 10 below their normal.
+    - Chitinid #320
+    - Avali #310 Too dangerous.
+    - Resomi #320.15 Constant warning at 10 below their normal.
+    #- Shadowkin #330
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: -10 # 10 worse (less tolerant) than base (which should be 325).
+# =================================================== #
+
+# =============Crit and Dead Threshold=============== #
+- type: trait
+  id: GlassJaw
+  name: trait-glassjaw-name
+  description: trait-glassjaw-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.85 #-15%
+
+- type: trait
+  id: WillToDie
+  name: trait-willtodie-name
+  description: trait-willtodie-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - WillToLive
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.9 #-10%
+
+- type: trait
+  id: Tenacity
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
+  category: Skills
+  cost: 3
+  conflicts:
+    - GlassJaw
+    - BrittleBones
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 1.05 #+5%
+
+- type: trait
+  id: WillToLive
+  name: trait-willtolive-name
+  description: trait-willtolive-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - WillToDie
+    - Redshirt
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 1.05 #+5%
+
+- type: trait
+  id: BrittleBones
+  name: trait-brittlebone-name
+  description: trait-brittlebone-desc
+  category: Skills
+  cost: -10
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.5 #-50%
+# =================================================== #

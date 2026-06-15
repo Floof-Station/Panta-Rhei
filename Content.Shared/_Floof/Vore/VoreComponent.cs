@@ -8,10 +8,11 @@ namespace Content.Shared._Floof.Vore;
 public sealed partial class VoreComponent : Component
 {
     /// <summary>
-    /// Set to true when the pred intentionally releases this entity to suppress escape popup
+    /// The ID of the container used for vore mechanics.
     /// </summary>
-    [DataField]
-    public bool IntentionalRelease = false;
+    //TODO later include customizable containers for different vore types
+    [DataField("containerId")]
+    public string ContainerId = "vore_container";
 }
 [Serializable, NetSerializable]
 public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{
@@ -24,11 +25,4 @@ public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{
     {
         MaxPrey = maxPrey;
     }
-}
-[RegisterComponent]
-public sealed partial class VoreImmunityTrackerComponent : Component
-{
-    public bool AddedPressure;
-    public bool AddedBreathing;
-    public bool AddedTemperature;
 }

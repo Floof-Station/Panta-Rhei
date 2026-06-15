@@ -67,3 +67,35 @@
     rotateWhileAnchored: false
   - type: DatasetVocalizer
     dataset: PetStoreAds
+
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBepis
+  name: Bepis Vendor
+  description: Get your nice cold can of Bepis here.
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Machines/VendingMachines/bepis.rsi
+    layers:
+    - state: "Bepis_Machine-off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "Bepis_Machine"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: Bepis_Machine-panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#4ba3ad"
+  - type: VendingMachine
+    pack: BepisInventory
+    offState: Bepis_Machine-off
+    brokenState: Bepis_Machine-broken
+    normalState: Bepis_Machine
+    denyState: Bepis_Machine-deny
+  - type: Wires
+    layoutId: ShopVendor
+  - type: Rotatable
+    rotateWhileAnchored: false
+  - type: DatasetVocalizer
+    dataset: VendingMachineBepisAds

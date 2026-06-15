@@ -51,6 +51,13 @@
   groupBy: "cardbox"
 
 - type: loadout
+  id: CardBoxTarot
+  storage:
+    back:
+    - CardBoxTarot
+  groupBy: "cardbox"
+
+- type: loadout
   id: TennisBall
   storage:
     back:

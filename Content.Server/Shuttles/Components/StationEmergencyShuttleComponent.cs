@@ -31,7 +31,7 @@ public sealed partial class StationEmergencyShuttleComponent : Component
     /// <summary>
     /// Sound played when the shuttle has successfully docked with the station.
     /// </summary>
-    public SoundSpecifier DockedAudio = new SoundPathSpecifier("/Audio/_Euphoria/Announcements/shuttle_dock.ogg"); // Euphoria: New voicelines.
+    public SoundSpecifier DockedAudio = new SoundPathSpecifier("/Audio/_Euphoria/Announcements/shuttle_dock.ogg"); // Euphoria - New Voice Lines
 
     /// <summary>
     /// The announcement made when the shuttle is unable to dock and instead parks in nearby space.
@@ -41,7 +41,7 @@ public sealed partial class StationEmergencyShuttleComponent : Component
     /// <summary>
     /// Sound played when the shuttle is unable to dock and instead parks in nearby space.
     /// </summary>
-    public SoundSpecifier NearbyAudio = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
+    public SoundSpecifier NearbyAudio = new SoundPathSpecifier("/Audio/_Euphoria/Announcements/shuttlenodock.ogg"); // Euphoria - New Voice Lines
 
     /// <summary>
     /// The announcement made when the shuttle is unable to find a station.
@@ -51,7 +51,7 @@ public sealed partial class StationEmergencyShuttleComponent : Component
     /// <summary>
     /// Sound played when the shuttle is unable to find a station.
     /// </summary>
-    public SoundSpecifier FailureAudio = new SoundPathSpecifier("/Audio/Misc/notice1.ogg");
+    public SoundSpecifier FailureAudio = new SoundPathSpecifier("/Audio/_Euphoria/Announcements/shuttlenodock.ogg"); // Euphoria - New Voice Lines
 
     /// <summary>
     /// Text appended to the docking announcement if the launch time has been extended.

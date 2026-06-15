@@ -1,0 +1,23 @@
+﻿- type: construction
+  id: Envelope
+  graph: Envelope
+  startNode: start
+  targetNode: envelope
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: WoodenBong
+  graph: WoodenBong
+  startNode: start
+  targetNode: woodenBong
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: MakeShiftBong
+  graph: WoodenBong
+  startNode: start
+  targetNode: makeshiftBong
+  category: construction-category-tools
+  objectType: Item
