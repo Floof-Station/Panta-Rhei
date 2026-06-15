@@ -147,6 +147,7 @@ public sealed class TraitSystem : EntitySystem
         var traitCount = 0;
         var categoryTraitCounts = new Dictionary<ProtoId<TraitCategoryPrototype>, int>();
         var categoryPointTotals = new Dictionary<ProtoId<TraitCategoryPrototype>, int>();
+        var resolvedTraits = new List<TraitPrototype>(selectedTraits.Count); // Euphoria: Fix order-dependant trait validation
 
         // Build condition context
         var conditionCtx = new TraitConditionContext
@@ -170,6 +171,37 @@ public sealed class TraitSystem : EntitySystem
                 Log.Warning($"Unknown trait ID in player preferences: {traitId}");
                 continue;
             }
+
+            #region Euphoria: Fix order-dependant trait validation
+            /**
+             * Trait validation is order-dependant due to counting point limits. Try to put traits in an order that makes sense.
+             * This means add all point-negative traits first, then all the positive traits, so that traits can never get rejected for points
+             * if the final total points are under the limit.
+             * Finally, evaluate more expensive traits before less expensive traits, so that the final validated set is as close to the point
+             * limit as possible.
+             */
+
+            resolvedTraits.Add(trait);
+        }
+
+        // Sort negative and zero point costs first, and then lower costs last. The order of the negative and zero-cost traits is unimportant.
+        resolvedTraits.Sort((a, b) => {
+            if (a.Cost > 0 != b.Cost > 0)
+            {
+                // A and B have different signs. Sort in ascending order.
+                return a.Cost.CompareTo(b.Cost);
+            }
+            else
+            {
+                // A and B have the same sign. Sort in descending order.
+                return b.Cost.CompareTo(a.Cost);
+            }
+        });
+
+        foreach (var trait in resolvedTraits) {
+            var traitId = trait.ID;
+
+            #endregion
 
             var rejectionReasons = new List<string>();
 
