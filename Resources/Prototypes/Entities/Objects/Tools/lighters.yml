@@ -272,6 +272,11 @@
     activatedDamage:
         types:
             Heat: 1
+  - type: MeleeWeapon #Euph
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 1 # does a little bit of damage on hit when off
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
