@@ -185,20 +185,8 @@ public sealed class TraitSystem : EntitySystem
         }
 
         // Sort negative and zero point costs first, and then lower costs last. The order of the negative and zero-cost traits is unimportant.
-        resolvedTraits.Sort((a, b) => {
-            if (a.Cost > 0 != b.Cost > 0)
-            {
-                // A and B have different signs. Sort in ascending order.
-                return a.Cost.CompareTo(b.Cost);
-            }
-            else
-            {
-                // A and B have the same sign. Sort in descending order.
-                return b.Cost.CompareTo(a.Cost);
-            }
-        });
-
-        foreach (var trait in resolvedTraits) {
+        foreach (var trait in resolvedTraits.OrderBy((trait) => trait.Cost > 0).ThenByDescending((trait) => trait.Cost))
+        {
             var traitId = trait.ID;
 
             #endregion
