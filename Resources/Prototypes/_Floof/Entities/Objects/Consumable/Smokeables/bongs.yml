@@ -1,0 +1,47 @@
+﻿- type: entity
+  id: WoodenBong
+  parent: BaseSmokingPipe
+  name: wooden bong
+  description: Just like grandpappy used to smoke.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Smokeables/bong.rsi
+    state: unlit-icon
+    scale: 0.65, 0.65
+  - type: Clothing
+    sprite: _Floof/Objects/Consumable/Smokeables/bong.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+    sprite: _Floof/Objects/Consumable/Smokeables/bong.rsi
+  - type: Appearance
+  - type: BurnStateVisuals
+    unlitIcon: unlit-icon
+  - type: Construction
+    graph: WoodenBong
+    node: woodenBong
+
+- type: entity
+  id: MakeShiftBong
+  parent: BaseSmokingPipe
+  name: makeshift glass bong
+  description: Just like grandpappy used to smoke.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Smokeables/Pipes/crack.rsi
+    state: unlit-icon
+    scale: 0.65, 0.65
+  - type: Clothing
+    sprite: Objects/Consumable/Smokeables/Pipes/crack.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+    sprite: Objects/Consumable/Smokeables/Pipes/crack.rsi
+  - type: Appearance
+  - type: BurnStateVisuals
+    unlitIcon: unlit-icon
+  - type: Construction
+    graph: WoodenBong
+    node: makeshiftBong

@@ -236,3 +236,13 @@
   effects:
   - !type:ReplaceNaturalLanguageTraitEffect
     language: Kagebun
+
+- type: trait
+  id: NaturalSiikMaas
+  name: trait-NaturalSiikMaas-name
+  description: trait-NaturalSiikMaas-desc
+  category: NaturalLanguages
+  cost: 0
+  effects:
+  - !type:ReplaceNaturalLanguageTraitEffect
+    language: SiikMaas

@@ -517,3 +517,92 @@
   effects:
   - !type:ModifyTemperatureToleranceEffect
     heatToleranceModifier: -10 # 10 worse (less tolerant) than base (which should be 325).
+# =================================================== #
+
+# =============Crit and Dead Threshold=============== #
+- type: trait
+  id: GlassJaw
+  name: trait-glassjaw-name
+  description: trait-glassjaw-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.85 #-15%
+
+- type: trait
+  id: WillToDie
+  name: trait-willtodie-name
+  description: trait-willtodie-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - WillToLive
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.9 #-10%
+
+- type: trait
+  id: Tenacity
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
+  category: Skills
+  cost: 3
+  conflicts:
+    - GlassJaw
+    - BrittleBones
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 1.05 #+5%
+
+- type: trait
+  id: WillToLive
+  name: trait-willtolive-name
+  description: trait-willtolive-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - WillToDie
+    - Redshirt
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 1.05 #+5%
+
+- type: trait
+  id: BrittleBones
+  name: trait-brittlebone-name
+  description: trait-brittlebone-desc
+  category: Skills
+  cost: -10
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.5 #-50%
+# =================================================== #

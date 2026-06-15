@@ -158,4 +158,9 @@ public sealed partial class DamageVisualizerSprite
     ///     Supports only hexadecimal format.
     /// </summary>
     [DataField("color")] public  string? Color;
+
+    #region Euphoria: Damage visual overlays can be coloured from bloodstream
+    [DataField("colorFromBlood")]
+    public bool ColorFromBlood = false;
+    #endregion
 }

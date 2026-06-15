@@ -21,68 +21,11 @@
   parent: BaseStructure
   id: N14Television
   name: television
-  description: An old pre-war television.
+  description: An old nonfunctional television.
   components:
   - type: Sprite
     sprite: _Nuclear14/Structures/Furniture/televisions.rsi
     state: wood_tv
-
-- type: entity
-  parent: N14Television
-  id: N14TelevisionCabinetOpen
-  components:
-  - type: Sprite
-    state: cabinet_tv
-
-- type: entity
-  parent: N14Television
-  id: N14TelevisionRadking
-  description: A Radking brand television.
-  components:
-  - type: Sprite
-    state: radking_tv
-
-- type: entity
-  parent: N14Television
-  id: N14TelevisionRedwood
-  description: A television in a redwood cabinet.
-  components:
-  - type: Sprite
-    state: redwood_tv
-
-- type: entity
-  parent: N14Television
-  id: N14TelevisionTube
-  description: An old pre-war tube television.
-  components:
-  - type: Sprite
-    state: tube_tv
-
-- type: entity
-  parent: N14Television
-  id: N14TelevisionSmall
-  description: A television in a small case.
-  components:
-  - type: Sprite
-    state: small_tv
-    drawdepth: SmallObjects
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.10,-0.10,0.10,0.10"
-        density: 100
-        mask:
-          - TabletopMachineMask
-
-- type: entity
-  parent: N14TelevisionSmall
-  id: N14TelevisionTiny
-  description: A tiny television.
-  components:
-  - type: Sprite
-    state: tiny_tv
 
 - type: entity
   parent: SeatBase
@@ -139,68 +82,6 @@
     autoDrain: false
   - type: DumpableSolution
     solution: drainBuffer
-
-- type: entity
-  parent: N14Toilet
-  id: N14ToiletWater
-  suffix: filled water
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      toilet:
-        reagents:
-        - ReagentId: Water
-          Quantity: 200
-  - type: SolutionRegeneration
-    solution: toilet
-    generated:
-      reagents:
-      - ReagentId: Water
-        Quantity: 2
-
-- type: entity
-  parent: N14Toilet
-  id: N14ToiletDirty
-  suffix: filled dirty water
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      toilet:
-        reagents:
-        - ReagentId: Water
-          Quantity: 180
-        - ReagentId: GastroToxin
-          Quantity: 20
-  - type: SolutionRegeneration
-    solution: toilet
-    generated:
-      reagents:
-      - ReagentId: Water
-        Quantity: 3
-      - ReagentId: GastroToxin
-        Quantity: 1
-
-- type: entity
-  parent: N14Toilet
-  id: N14ToiletIrradiated
-  suffix: filled rad water
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      toilet:
-        reagents:
-        - ReagentId: Water
-          Quantity: 180
-        - ReagentId: GastroToxin
-          Quantity: 20
-  - type: SolutionRegeneration
-    solution: toilet
-    generated:
-      reagents:
-      - ReagentId: Water
-        Quantity: 3
-      - ReagentId: GastroToxin
-        Quantity: 1
 
 #- type: entity
 #  parent: N14Shower - this parent needs to be made

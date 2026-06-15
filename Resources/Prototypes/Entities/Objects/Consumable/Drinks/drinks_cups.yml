@@ -39,6 +39,12 @@
   name: mug
   description: A mug.
   components:
+  # Euphoria start: Increase hot drink cup size so customers can add caramexinin (and other condiments).
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 25
+  # Euphoria end
   - type: Sprite
     sprite: Objects/Consumable/Drinks/mug.rsi
   - type: SolutionContainerVisuals
@@ -236,6 +242,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
+        maxVol: 25 # Euphoria 25<undefined: Increase drink cup size so customers can add caramexinin (or other condiments).
         reagents:
         - ReagentId: HotCocoa
           Quantity: 20
@@ -260,6 +267,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
+        maxVol: 25 # Euphoria 25<undefined: Increase drink cup size so customers can add caramexinin (or other condiments).
         reagents:
         - ReagentId: Coffee
           Quantity: 20
@@ -284,6 +292,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
+        maxVol: 25 # Euphoria 25<undefined: Increase drink cup size so customers can add caramexinin (or other condiments).
         reagents:
         - ReagentId: CafeLatte
           Quantity: 20
@@ -310,6 +319,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
+        maxVol: 25 # Euphoria 25<undefined: Increase drink cup size so customers can add caramexinin (or other condiments).
         reagents:
         - ReagentId: Tea
           Quantity: 20
@@ -327,6 +337,7 @@
   - type: SolutionContainerManager
     solutions:
       drink:
+        maxVol: 25 # Euphoria 25<undefined: Increase drink cup size so customers can add caramexinin (or other condiments).
         reagents:
         - ReagentId: GreenTea
           Quantity: 20

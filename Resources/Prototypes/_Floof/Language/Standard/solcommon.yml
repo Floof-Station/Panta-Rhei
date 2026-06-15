@@ -3,7 +3,8 @@
 # Replacement syllables taken from TheDen at commit https://github.com/TheDenSS14/TheDen/commit/d6cd10f72f0250d9ec1ba4e5fb3c59dce6d657d3
 - type: language
   id: SolCommon
-  isVisibleLanguage: true
+  parent: BaseLanguage
+  icon: { state: solcommon }
   speech:
     color: "#8282fbaa"
   obfuscation:

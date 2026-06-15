@@ -306,20 +306,19 @@
     - Arachnic
 
 
-# - type: entity # Floof - Tajaran Update b7660b9, SiikMaas disabled
-
-#   id: SiikMaasTranslator
-#   parent: [ TranslatorPoweredBase ]
-#   name: Siik'maas translator
-#   description: Translates speech between Siik'maas and Tau-Ceti Basic. For talking to Tajara!
-#   components:
-#   - type: HandheldTranslator
-#     spoken:
-#     - TauCetiBasic
-#     - SiikMaas
-#     understood:
-#     - TauCetiBasic
-#     - SiikMaas
-#     requires:
-#     - TauCetiBasic
-#     - SiikMaas
+- type: entity
+  id: SiikMaasTranslator
+  parent: [ TranslatorPoweredBase ]
+  name: Siik'maas translator
+  description: Translates speech between Siik'maas and Tau-Ceti Basic. For talking to Tajara!
+  components:
+  - type: HandheldTranslator
+    spoken:
+    - TauCetiBasic
+    - SiikMaas
+    understood:
+    - TauCetiBasic
+    - SiikMaas
+    requires:
+    - TauCetiBasic
+    - SiikMaas

@@ -1,10 +1,11 @@
 # Created by AeraAuling, modified by M3739.
-# An ancient language primarily used by the yōkai, originating from their supernatural roots. 
+# An ancient language primarily used by the yōkai, originating from their supernatural roots.
 # To the uninitiated, it is a chorus of sounds ranging from eerie whispers to ritualistic chanting.
 # To those who speak it, it is a living tongue that links them to the spirit world and their ancient pacts.
 - type: language
   id: Kagebun
-  isVisibleLanguage: true
+  parent: BaseLanguage
+  icon: { state: canilunzt } # Placeholder
   speech:
     color: "#893594ed"
     fontId: RyujinAttack

@@ -43,6 +43,7 @@
   - ChiefOfSecurityPDA
   - SecurityDirectorPDA
   - SheriffPDA
+  - ClothingNeckCollarEmotionalSupportHOS # emotional support
 
 # security officer additions
 - type: loadoutGroup
@@ -132,3 +133,73 @@
   loadouts:
   - ClothingShoesColorBlack
   - ClothingUnderSocksCorpsman
+
+# emotional support
+- type: loadoutGroup
+  id: FloofSecurityCadetPdas
+  name: loadout-group-security-cadet-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityCadetPDA
+  - ClothingNeckCollarEmotionalSupportSecCadet
+
+- type: loadoutGroup
+  id: FloofSecurityOfficerPdas
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportSecOfficer
+
+- type: loadoutGroup
+  id: FloofSecurityTechnicianPdas
+  name: loadout-group-security-sechtech-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityTechnicianPDA
+  - ClothingNeckCollarEmotionalSupportSecTech
+
+- type: loadoutGroup
+  id: FloofSecurityDetectivePdas
+  name: loadout-group-security-detective-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - DetectivePDA
+  - ClothingNeckCollarEmotionalSupportDetective
+
+- type: loadoutGroup
+  id: FloofSecurityCorpsmanPdas
+  name: loadout-group-security-corpsman-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BrigmedicPDA
+  - ClothingNeckCollarEmotionalSupportCorpsman
+
+- type: loadoutGroup
+  id: FloofSecurityPrisonguardPdas
+  name: loadout-group-security-prisonguard-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PrisonGuardPDA
+  - ClothingNeckCollarEmotionalSupportPrisonGuard
+
+- type: loadoutGroup
+  id: FloofSecuritySeniorOfficerPdas
+  name: loadout-group-security-seniorofficer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SeniorOfficerPDA
+  - ClothingNeckCollarEmotionalSupportSeniorOfficer
+
+- type: loadoutGroup
+  id: FloofSecurityWardenPdas
+  name: loadout-group-security-warden-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WardenPDA
+  - ClothingNeckCollarEmotionalSupportWarden

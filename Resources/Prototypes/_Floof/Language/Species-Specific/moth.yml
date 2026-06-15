@@ -2,7 +2,8 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Moffic
-  isVisibleLanguage: true
+  parent: BaseLanguage
+  icon: { state: moffic }
   speech:
     color: "#c7df2edd"
     fontId: Copperplate

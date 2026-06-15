@@ -54,7 +54,7 @@ trait-amputee-right-arm-desc =
 
 trait-redshirt-name = Redshirt
 trait-redshirt-desc =
-    Sets your death threshold to 100 damage. You no longer have a critical state.
+    Halves your death threshold (to 100 damage for most). You likely no longer have a critical state.
 
     "They said this air would be breathable.
     Get in, get out again, and no one gets hurt.
