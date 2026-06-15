@@ -511,6 +511,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-white
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - BugFixes-Algeron - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -549,6 +550,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-white
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - BugFixes-Algeron - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -587,6 +589,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-blue
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - BugFixes-Algeron - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -625,6 +628,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-blue
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - BugFixes-Algeron - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -799,6 +803,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-white
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - BugFixes-Algeron - Consistency with latex gloves and the like.
 
 - type: entity
   parent: [ ClothingShoesBase, ClothingShoesMilitaryBase ]
