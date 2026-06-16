@@ -129,11 +129,33 @@ public sealed class LewdOrganSystem : EntitySystem
     /// <summary>
     ///     Updates the organ on a mob.
     /// </summary>
-    public void UpdateOrgan(Entity<LewdOrganComponent> organ, EntityUid mob)
+    public void UpdateOrgan(Entity<LewdOrganComponent> organ, EntityUid body)
     {
-        DebugTools.Assert(CompOrNull<OrganComponent>(organ)?.Body == mob);
-        DetachOrgan(organ, mob);
-        AttachOrgan(organ, mob);
+        DebugTools.Assert(CompOrNull<OrganComponent>(organ)?.Body == body);
+
+        // Original implementation removed and re-added the organ, which seemed to detach the solution from the mob and not add it back.
+        // This approach just tries to update the relevant components without removing it.
+        LewdMobDataComponent bodyData = EnsureComp<LewdMobDataComponent>(body);
+        LewdOrganData organData = organ.Comp.Data;
+
+        // If this organ produces anything, change its produced reagents to contain the body's DNA
+        // This is primarily so that if e.g. somehow chemicals from person A get into person B's organs, they will get drained
+        if (organData.ProducedReagents is { Length: > 0 } && TryComp<DnaComponent>(body, out var donorComp) && donorComp.DNA != null)
+        {
+            var dna = new List<ReagentData> { new DnaData { DNA = donorComp.DNA } };
+            for (var i = 0; i < organData.ProducedReagents.Length; i++)
+            {
+                var reagent = organData.ProducedReagents[i];
+                organData.ProducedReagents[i] = new(reagent.Reagent.Prototype, reagent.Quantity, dna);
+            }
+        }
+
+        // Add the solution to the mob
+        _solContainer.EnsureSolutionEntity(body, organData.SolutionName, out var solution, organData.SolutionVolume);
+
+        UpdateData(organData);
+        bodyData.OrganKinds |= organData.OrganKind;
+        bodyData.CachedData[organData.OrganKind] = organData;
     }
 
     /// <summary>
@@ -194,27 +216,7 @@ public sealed class LewdOrganSystem : EntitySystem
 
     private void AttachOrgan(Entity<LewdOrganComponent> organ, EntityUid body)
     {
-        var bodyData = EnsureComp<LewdMobDataComponent>(body);
-        var organData = organ.Comp.Data;
-
-        // If this organ produces anything, change its produced reagents to contain the body's DNA
-        // This is primarily so that if e.g. somehow chemicals from person A get into person B's organs, they will get drained
-        if (organData.ProducedReagents is { Length: > 0 } && TryComp<DnaComponent>(body, out var donorComp) && donorComp.DNA != null)
-        {
-            var dna = new List<ReagentData> { new DnaData { DNA = donorComp.DNA } };
-            for (var i = 0; i < organData.ProducedReagents.Length; i++)
-            {
-                var reagent = organData.ProducedReagents[i];
-                organData.ProducedReagents[i] = new(reagent.Reagent.Prototype, reagent.Quantity, dna);
-            }
-        }
-
-        UpdateData(organData);
-        bodyData.OrganKinds |= organData.OrganKind;
-        bodyData.CachedData[organData.OrganKind] = organData;
-
-        // Add the solution to the mob
-        _solContainer.EnsureSolution(body, organData.SolutionName, out var solution, organData.SolutionVolume);
+        UpdateOrgan(organ, body);
     }
 
     private void DetachOrgan(Entity<LewdOrganComponent> ent, EntityUid body)
