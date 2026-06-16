@@ -29,12 +29,12 @@
 
 - type: entity
   parent: PillCanisterMantis
-  id: PillCanisterCryptobiolinMantis
-  suffix: cryptobiolin, 10
-  description: "A drug which causes mild confusion, but renders you psionically insulated. Each pill lasts about five minutes."
+  id: PillCanisterSanctusSalMantis
+  suffix: sanctussal, 20
+  description: "New regulations and formulas have forced the Mantes of the Outerchamber to switch to SanctusSal pills, from CryptoBiolin."
   components:
   - type: Label
-    currentLabel: cryptobiolin 15u
+    currentLabel: sanctussal 20u
   - type: Sprite
     sprite: _DEN/Objects/Specific/Mantis/pillcanistermantis.rsi
     layers:
@@ -42,7 +42,7 @@
     - state: pill_canister-crypto # A blue stripe
   - type: StorageFill
     contents:
-    - id: PillCryptobiolin
+    - id: PillSanctusSal
       amount: 10
 
 
