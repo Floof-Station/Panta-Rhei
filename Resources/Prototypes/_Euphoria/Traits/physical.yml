@@ -220,15 +220,17 @@
   effects:
   - !type:OverrideCompsEffect
     components:
-    - type: PassiveDamage # Equal to slime person healing
+    - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 65
+      damageCap: 50 # +30 over default
       damage:
         types:
-          Heat: -0.14
+          Heat: -0.14 # -0.07 over default
         groups:
-          Brute: -0.14
+          Brute: -0.14 # -0.07 over default
+    - type: Hunger
+      baseDecayRate: 0.035 # 2.1 times default
 
 - type: trait
   id: HealingPlus2
@@ -265,13 +267,15 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 65 # same as lower trait
+      damageCap: 60 # +10 over lower trait
       damage:
         types:
           Heat: -0.14 # same as lower trait
           Poison: -0.07 # not present in lower trait
         groups:
           Brute: -0.21 # increased 50% over lower trait
+    - type: Hunger
+      baseDecayRate: 0.035 # same as lower trait
 
 - type: trait
   id: HealingMinus
