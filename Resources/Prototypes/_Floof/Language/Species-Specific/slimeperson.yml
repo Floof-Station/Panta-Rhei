@@ -2,7 +2,8 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Bubblish
-  isVisibleLanguage: true
+  parent: BaseLanguage
+  icon: { state: bubblish }
   speech:
     color: "#00a3e2dd"
     fontId: RubikBubbles

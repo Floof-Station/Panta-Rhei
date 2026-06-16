@@ -1,0 +1,19 @@
+# Small Plastic Bottles
+
+- type: entity
+  parent: [DrinkVisualsAllFilled, DrinkBottlePlasticBaseFull]
+  id: DrinkCaramexininBottleFull
+  name: caramexinin bottle
+  description: A small bottle of caramexinin meant for a drinks dispenser.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Caramexinin
+          Quantity: 30
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/drinkbottlesmall.rsi
+    state: icon_caramexinin
+  - type: Label
+    currentLabel: reagent-name-caramexinin

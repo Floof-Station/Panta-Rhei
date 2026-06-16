@@ -1,0 +1,37 @@
+# Packets
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketCaramexinin
+  name: caramexinin
+  description: Counteracts the effects of theobromine in chocolate or coffee.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Caramexinin
+          Quantity: 10
+  - type: Icon
+    state: packet-caramexinin
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+
+- type: entity
+  parent: ReagentPacketBase
+  id: ReagentContainerCaramexinin
+  name: caramexinin container
+  description: A big container of caramexinin for making chocolate and coffee safe for animals.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Consumable/Food/ingredients.rsi
+    state: caramexinin-big
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 50
+        reagents:
+        - ReagentId: Caramexinin
+          Quantity: 50

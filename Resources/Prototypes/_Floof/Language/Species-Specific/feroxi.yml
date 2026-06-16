@@ -2,7 +2,9 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Nehina
+  parent: BaseLanguage
   isVisibleLanguage: true
+  icon: { state: fish }
   speech:
     color: "#8DB9D6"
   obfuscation:

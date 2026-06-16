@@ -3379,3 +3379,280 @@ Entries:
       message: 'Rework of the VoreSystems consent '
   id: 424
   time: '2026-06-04T12:11:02.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: We now allow Harpies to learn Tradeband.
+  id: 425
+  time: '2026-06-05T11:50:59.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Changed the chemicals inside a Banana Cream Pie, it will now look tasty
+        instead of green.
+  id: 426
+  time: '2026-06-05T13:26:01.0000000+00:00'
+- author: youtubepoopfuneral
+  changes:
+    - type: Tweak
+      message: lovelox ears marking now has actual ears
+  id: 427
+  time: '2026-06-06T06:04:47.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: >-
+        An array of new traits allows you to customise your characters' blood.
+        Custom species rejoice.
+  id: 428
+  time: '2026-06-07T04:39:32.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Glacier Teg setup has been updated and is now much easier to run.
+  id: 429
+  time: '2026-06-07T04:42:45.0000000+00:00'
+- author: LynnWaffle
+  changes:
+    - type: Add
+      message: >-
+        Names and descriptions for hard and softsuits you might recognize from
+        pre-rebase. Minor creative liberties taken, as well as new suits from DV
+        that were nameless getting some.
+    - type: Remove
+      message: >-
+        DV .FTLs that affect hardsuit and hardsuit components, redundant with
+        changes and also broke the some changes
+  id: 430
+  time: '2026-06-07T04:56:16.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Newer model handheld radios are being provided to the station that allow
+        for you to be able to set the frequency, toggle the mic and or speaker.
+  id: 431
+  time: '2026-06-08T02:21:58.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Departmental ID Collars are here, most station roles will have access to
+        Emotional Support Collars that function as PDAs.
+    - type: Add
+      message: Justice & Service now have their own sprites for department collars.
+    - type: Add
+      message: >-
+        New collars have been made for all collar options. Find them in vending
+        machines the Uniform Printer.
+  id: 432
+  time: '2026-06-08T02:22:41.0000000+00:00'
+- author: Dogbone10
+  changes:
+    - type: Remove
+      message: Excess N14 Content
+  id: 433
+  time: '2026-06-08T10:32:09.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Make sure to wear shoes in medical, syringes will poke your feet.
+  id: 434
+  time: '2026-06-08T12:28:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: The Bepis vending machine is now animated.
+  id: 435
+  time: '2026-06-09T11:56:44.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Changed how languages are displayed in chat. There's now a small icon
+        next to the speaker's name. You can hover over it to see which language
+        the message is spoken in and whether you understand it.
+    - type: Add
+      message: >-
+        Added a new accessibility toggle that shows full language names next to
+        their icons in chat, similarly to how it was on pre-rebase floof.
+  id: 436
+  time: '2026-06-09T11:57:48.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Paper envelopes can be printed using the document printer or hand folded
+        through the construction menu.
+  id: 437
+  time: '2026-06-09T11:58:42.0000000+00:00'
+- author: SlowVelcro
+  changes:
+    - type: Tweak
+      message: >-
+        Changed punctuation in most holy book names to use title case for
+        capitalisation.
+  id: 438
+  time: '2026-06-09T21:06:14.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Tweak
+      message: >-
+        Heavy flatpacks like the gas turbine flatpack can no longer have paper
+        labels attached to them.
+    - type: Fix
+      message: >-
+        Gas canisters now have working paper label sprites. Atmos and Logi shall
+        no longer be plagued by ERROR canisters.
+  id: 439
+  time: '2026-06-10T00:23:11.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Made some traits not count towards your total trait slot limit (Meta
+        traits, accent traits, scent traits, colorblind traits)
+  id: 440
+  time: '2026-06-10T12:34:13.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: >-
+        Caramexinin packets are available in condiment and drink dispensers as
+        well as chefvends to make coffees and chocolates safe for all of
+        Hestia's employees and visitors.
+  id: 441
+  time: '2026-06-10T12:34:54.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: A new plushie chew toy is on the market.
+  id: 442
+  time: '2026-06-10T12:35:51.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Inert anomaly cores can now be turned into hats. These hats will have
+        the visual affects of infection anoms.
+  id: 443
+  time: '2026-06-10T12:43:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Engineering emotional support collars will have their proper IDs.
+    - type: Fix
+      message: Technical Assistants will no longer spawn with duplicate PDAs.
+  id: 444
+  time: '2026-06-11T12:51:10.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Remove
+      message: The stick hand has been temporarily removed due to bug abuse.
+  id: 445
+  time: '2026-06-12T11:24:40.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Acolyte and Golemancer should now have their proper IDs for their
+        alternative PDAs.
+  id: 446
+  time: '2026-06-12T19:22:16.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: The Tajaran language of Siik'Maas has been restored.
+    - type: Tweak
+      message: Tajara now have Siik'Maas as their primary language.
+  id: 447
+  time: '2026-06-12T19:28:49.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Two kinds of bongs can be crafted in the construction menu, the wooden
+        variant can be found in the Shady Cigs vendor.
+  id: 448
+  time: '2026-06-12T19:33:43.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Cargo technicians now have access to pilot gear in loadouts.
+  id: 449
+  time: '2026-06-12T19:36:15.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Medical PDAs and ID Collars can scan people with out being taken off.
+  id: 450
+  time: '2026-06-13T00:54:44.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Engineering arm warmers are now insulated.
+  id: 451
+  time: '2026-06-13T00:56:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: Kettle now has two Chemist slots again.
+    - type: Tweak
+      message: >-
+        The number of players required for Asteriks, Kettle and Edge have been
+        adjusted.
+  id: 452
+  time: '2026-06-15T07:09:26.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The Carp Chew Toy is now available in loadouts.
+  id: 453
+  time: '2026-06-15T07:11:06.0000000+00:00'
+- author: Compilatron144
+  changes:
+    - type: Fix
+      message: >-
+        Fixed an issue with lewd modifier traits disconnecting organ solutions
+        from the body.
+  id: 454
+  time: '2026-06-15T22:46:03.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Add
+      message: >-
+        Security, Engineering, and Medical catsuits can now be selected in the
+        loadout.
+    - type: Tweak
+      message: >-
+        CE and Captain arm-warmers are now insulated. Medical arm-warmers now
+        show how dirty they are, making them suitable for surgery.
+    - type: Tweak
+      message: >-
+        Security thigh-highs now have the same injury slowdown reduction as
+        combat boots.
+    - type: Fix
+      message: >-
+        Security dogs, including Laika, are now comprehendible in their native
+        language.
+    - type: Fix
+      message: >-
+        Storage sprites identity crisis for the plasteel arming sword, and the
+        emergency water vapor tanks and it's variants have been resolved.
+    - type: Fix
+      message: >-
+        The plasteel arming sword no longer has an invisible suit storage
+        sprite.
+    - type: Fix
+      message: >-
+        'Custom Specie Name' is now 'Custom Species Name', and a proofread of
+        the CJ emotional support collar.
+  id: 455
+  time: '2026-06-16T11:07:50.0000000+00:00'
+- author: Compilatron144
+  changes:
+    - type: Add
+      message: Added the milking machine, for milking cows. And "cows".
+  id: 456
+  time: '2026-06-16T11:17:29.0000000+00:00'

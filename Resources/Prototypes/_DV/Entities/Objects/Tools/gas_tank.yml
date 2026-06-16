@@ -24,6 +24,7 @@
     sprite: _DV/Objects/Tanks/emergency_water_vapor.rsi
   - type: Item
     sprite: _DV/Objects/Tanks/emergency_water_vapor.rsi
+    storedSprite: null # Euphoria - M3739 - #706 - Null out storedSprite complex field as it currently doesn't have one.
   - type: Clothing
     sprite: _DV/Objects/Tanks/emergency_water_vapor.rsi
 
@@ -37,6 +38,7 @@
     sprite: _DV/Objects/Tanks/emergency_extended_water_vapor.rsi
   - type: Item
     sprite: _DV/Objects/Tanks/emergency_extended_water_vapor.rsi
+    storedSprite: null # Euphoria - M3739 - #706 - Null out storedSprite complex field as it currently doesn't have one.
   - type: Clothing
     sprite: _DV/Objects/Tanks/emergency_extended_water_vapor.rsi
 
@@ -50,6 +52,7 @@
     sprite: _DV/Objects/Tanks/emergency_double_water_vapor.rsi
   - type: Item
     sprite: _DV/Objects/Tanks/emergency_double_water_vapor.rsi
+    storedSprite: null # Euphoria - M3739 - #706 - Null out storedSprite complex field as it currently doesn't have one.
   - type: Clothing
     sprite: _DV/Objects/Tanks/emergency_double_water_vapor.rsi
 
