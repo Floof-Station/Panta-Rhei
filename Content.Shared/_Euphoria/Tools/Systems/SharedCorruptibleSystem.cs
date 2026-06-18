@@ -1,5 +1,7 @@
+using Content.Shared._Euphoria.Item.AttunableItem;
 using Content.Shared._Euphoria.MagicalCommand;
 using Content.Shared._Euphoria.Tools.Components;
+using Content.Shared.Destructible;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -13,7 +15,7 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Euphoria.Tools.Systems;
 
-public sealed class CorruptibleSystem : EntitySystem
+public abstract class SharedCorruptibleSystem : EntitySystem
 {
     [Dependency] private readonly SharedToolSystem _tools = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -27,12 +29,15 @@ public sealed class CorruptibleSystem : EntitySystem
     {
         SubscribeLocalEvent<CorruptibleComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<CorruptibleComponent, CorruptionFinishedEvent>(OnCorruptionFinished);
+        SubscribeLocalEvent<CorruptibleComponent, AttunedToEvent>(OnAttunedTo);
     }
+
+    protected abstract void OnAttunedTo(Entity<CorruptibleComponent> ent, ref AttunedToEvent args);
 
     private void OnInteractUsing(Entity<CorruptibleComponent> ent, ref InteractUsingEvent args)
     {
         var requiredQuality = ent.Comp.Corrupted ? DecorruptingQuality : CorruptingQuality;
-        if (!TryComp<ToolComponent>(args.Used, out var tool) || !_tools.HasQuality(args.Used, requiredQuality, tool)
+        if (Deleted(ent) || !TryComp<ToolComponent>(args.Used, out var tool) || !_tools.HasQuality(args.Used, requiredQuality, tool)
             || ent.Comp.RequiresEmpowered && !HasComp<EmpoweredFriendshipComponent>(args.Used))
             return;
 
@@ -56,8 +61,10 @@ public sealed class CorruptibleSystem : EntitySystem
         if (args.Cancelled)
             return;
 
+        var evil = ent.Comp.Corrupted;
+
         var spawnedEnt = PredictedSpawnNextToOrDrop(ent.Comp.EntityId, ent.Owner);
-        var popup = ent.Comp.Corrupted
+        var popup = evil
             ? Loc.GetString("corruptible-component-decorruption-finish", ("target", ent.Owner))
             : Loc.GetString("corruptible-component-corruption-finish", ("target", ent.Owner));
         _popupSystem.PopupPredicted(popup, spawnedEnt, args.User);
@@ -68,10 +75,11 @@ public sealed class CorruptibleSystem : EntitySystem
         {
             InitialItem = ent.Owner,
             CreatedItem = spawnedEnt,
+            Evil = !evil,
         };
         RaiseLocalEvent(ent.Owner, ev);
-        // Attunement passing here
-        // Should probably make an event so whatever other components can pass their stuff along
+        //Sadly blows up debug if you aghost/otherwise do it instantly but not sure how to NOT do that
+        // Just don't corrupt an item in aghost in debug :)
         PredictedQueueDel(ent.Owner);
     }
 }
@@ -85,4 +93,6 @@ public sealed partial class PostCorruptingEvent : EntityEventArgs
 {
     public EntityUid InitialItem;
     public EntityUid CreatedItem;
+    // Determines whether the object is being corrupted or decorrupted.
+    public bool Evil = true;
 }
