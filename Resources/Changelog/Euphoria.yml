@@ -3656,3 +3656,19 @@ Entries:
       message: Added the milking machine, for milking cows. And "cows".
   id: 456
   time: '2026-06-16T11:17:29.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: Traits should no longer be erroneously rejected for being too expensive.
+  id: 457
+  time: '2026-06-16T22:49:22.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Tweak
+      message: >-
+        The automatic evacuation shuttle call is now a secret ballot; live
+        counts of each option is no longer visible for non-admins.
+    - type: Add
+      message: The automatic evacuation shuttle call now has an IC tiebreaker system.
+  id: 458
+  time: '2026-06-17T11:14:06.0000000+00:00'

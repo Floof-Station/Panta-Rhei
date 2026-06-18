@@ -73,7 +73,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.48
+          radius: 0.39 #Euph change. Was 0.48, gets stuck in doors. 0.39 is same as Chitinid.
         density: 275 # Its an abandoned bioweapon species with 4 arms, of course it should be able to fight a Oni.
         restitution: 0.0
         mask:
