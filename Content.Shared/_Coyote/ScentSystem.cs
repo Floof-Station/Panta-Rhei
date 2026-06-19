@@ -642,10 +642,7 @@ public sealed class ScentSystem : EntitySystem
         // Eventually I might just change this to be attached to entities rather than every actor(??) and make it so that it needs the actor component to actually do any of the sniffing.
         if (!SniffaOkay(uid) || _mobState.IsDead(uid) ||
             HasComp<GhostComponent>(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
-        {
-            Log.Debug("honk");
             return;
-        }
 
         IncurSmellCooldown(component, ticket);
         UpdatePositionAndDistance(uid, ticket);
