@@ -1,7 +1,7 @@
 - type: entity
   abstract: true
   parent: [ BaseCartridge, BaseSecurityContraband ]
-  id: BaseCartridgePistol
+  id: BaseCartridge45Pistol
   name: cartridge (.45 auto)
   components:
   - type: Tag
@@ -18,8 +18,8 @@
   - type: SpentAmmoVisuals
 
 - type: entity
-  parent: BaseCartridgePistol
-  id: CartridgePistol
+  parent: BaseCartridge45Pistol
+  id: Cartridge45Pistol
   name: cartridge (.45 auto)
   description: High caliber round designed with increased stopping power in mind, used by all manner of pistols and submachine guns. Standard kinetic ammunition is common and useful in most situations.
   components:
@@ -27,8 +27,8 @@
     proto: Bullet45Pistol
 
 - type: entity
-  parent: BaseCartridgePistol
-  id: CartridgePistolPractice
+  parent: BaseCartridge45Pistol
+  id: Cartridge45PistolPractice
   name: cartridge (.45 auto practice)
   description: High caliber round designed with increased stopping power in mind, used by all manner of pistols and submachine guns. Practice ammunition fires a chalk projectile that stings a little, but otherwise causes no lasting damage.
   components:
@@ -43,8 +43,8 @@
          color: "#dbdbdb"
 
 - type: entity
-  parent: BaseCartridgePistol
-  id: CartridgePistolIncendiary
+  parent: BaseCartridge45Pistol
+  id: Cartridge45PistolIncendiary
   name: cartridge (.45 auto incendiary)
   description: High caliber round designed with increased stopping power in mind, used by all manner of pistols and submachine guns. Incendiary ammunition contains a self-igniting compound that sets targets ablaze.
   components:
@@ -59,10 +59,10 @@
         color: "#ff6e52"
 
 - type: entity
-  id: CartridgePistolUranium
+  id: Cartridge45PistolUranium
   name: cartridge (.45 auto uranium)
   description: High caliber round designed with increased stopping power in mind, used by all manner of pistols and submachine guns. Uranium ammunition replaces the lead core of the bullet with fissile material, irradiating targets from the inside.
-  parent: BaseCartridgePistol
+  parent: BaseCartridge45Pistol
   components:
   - type: CartridgeAmmo
     proto: Bullet45PistolUranium
@@ -75,8 +75,8 @@
         color: "#65fe08"
 
 - type: entity
-  parent: BaseCartridgePistol
-  id: CartridgePistolSpent
+  parent: BaseCartridge45Pistol
+  id: Cartridge45PistolSpent
   name: cartridge (.45 auto)
   suffix: spent
   components:
