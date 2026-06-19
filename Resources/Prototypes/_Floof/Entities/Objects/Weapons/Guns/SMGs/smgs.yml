@@ -78,7 +78,7 @@
     unwieldOnUse: false
   - type: GunWieldBonus
     minAngle: -50
-    maxAngle: -25
+    maxAngle: -45 # Decreased the amount of damage it deals
   - type: Gun
     minAngle: 30
     maxAngle: 60
@@ -106,11 +106,11 @@
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: Cartridge45Pistol
         priority: 1
         whitelist:
           tags:
-          - CartridgeMagnum
+          - Cartridge45Pistol
   - type: MagazineVisuals
     magState: mag
     steps: 1
