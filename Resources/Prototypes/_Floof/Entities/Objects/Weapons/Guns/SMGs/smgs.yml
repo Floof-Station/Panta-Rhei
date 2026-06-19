@@ -64,7 +64,7 @@
   suffix: Magnum
   parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
   id: WeaponSubMachineGunVector
-  description: An old sol-made PDW. With an accruate and fast burst. Uses .45 magnum ammo.
+  description: An old sol-made PDW. With an accruate and fast burst. Uses .45 auto ammo.
   components:
   - type: Sprite
     sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
@@ -91,7 +91,7 @@
     availableModes:
     - Burst
     - SemiAuto
-    shotsPerBurst: 2
+    shotsPerBurst: 3
     burstCooldown: 0.255
   - type: ItemSlots
     slots:
