@@ -1,0 +1,97 @@
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseMagazineBox45Pistol
+  name: ammunition box (.45 auto)
+  components:
+  - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
+    sound:
+      path: /Audio/_Goobstation/Items/handling/ammobox_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: &magBoxDropSound
+      path: /Audio/_Goobstation/Items/handling/ammobox_drop.ogg
+  - type: EmitSoundOnLand
+    sound: *magBoxDropSound
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - Cartridge45Pistol
+    proto: Cartridge45Pistol
+    capacity: 30
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Boxes/pistol.rsi
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Appearance
+
+# Boxes
+- type: entity
+  parent: BaseMagazineBoxPistol
+  id: MagazineBox45Pistol
+  name: ammunition box (.45 auto)
+  description: A cardboard box of .45 auto rounds. Intended to hold general-purpose kinetic ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45Pistol
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+
+- type: entity
+  parent: BaseMagazineBoxPistol
+  id: MagazineBox45PistolPractice
+  name: ammunition box (.45 auto practice)
+  description: A cardboard box of .45 auto rounds. Intended to hold harmless practice ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45PistolPractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: practice
+
+- type: entity
+  id: MagazineBoxPistolIncendiary
+  parent: BaseMagazineBox45Pistol
+  name: ammunition box (.45 auto incendiary)
+  description: A cardboard box of .45 auto rounds. Intended to hold self-igniting incendiary ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45PistolIncendiary
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: incendiary
+
+- type: entity
+  parent: BaseMagazineBoxPistol
+  id: MagazineBox45PistolUranium
+  name: ammunition box (.45 auto uranium)
+  description: A cardboard box of .45 auto rounds. Intended to hold exotic uranium-core ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: Cartridge45PistolUranium
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    - state: uranium
