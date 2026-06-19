@@ -18,3 +18,33 @@
   completetime: 5
   materials:
     Steel: 1000
+
+#.45 Auto
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBox45Pistol
+  result: MagazineBox45Pistol
+  materials:
+    Steel: 240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBox45PistolIncendiary
+  result: MagazineBox45PistolIncendiary
+  materials:
+    Plastic: 240
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBox45PistolPractice
+  result: MagazineBox45PistolPractice
+  materials:
+    Steel: 60
+
+- type: latheRecipe
+  parent: BaseAmmoBoxRecipe
+  id: MagazineBox45PistolUranium
+  result: MagazineBox45PistolUranium
+  materials:
+    Plastic: 240
+    Uranium: 180
