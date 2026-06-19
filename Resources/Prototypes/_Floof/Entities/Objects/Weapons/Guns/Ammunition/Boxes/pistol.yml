@@ -34,7 +34,7 @@
 
 # Boxes
 - type: entity
-  parent: BaseMagazineBoxPistol
+  parent: BaseMagazineBox45Pistol
   id: MagazineBox45Pistol
   name: ammunition box (.45 auto)
   description: A cardboard box of .45 auto rounds. Intended to hold general-purpose kinetic ammunition.
@@ -49,7 +49,7 @@
       map: ["enum.GunVisualLayers.Mag"]
 
 - type: entity
-  parent: BaseMagazineBoxPistol
+  parent: BaseMagazineBox45Pistol
   id: MagazineBox45PistolPractice
   name: ammunition box (.45 auto practice)
   description: A cardboard box of .45 auto rounds. Intended to hold harmless practice ammunition.
@@ -65,7 +65,7 @@
     - state: practice
 
 - type: entity
-  id: MagazineBoxPistolIncendiary
+  id: MagazineBoxPistol45Incendiary
   parent: BaseMagazineBox45Pistol
   name: ammunition box (.45 auto incendiary)
   description: A cardboard box of .45 auto rounds. Intended to hold self-igniting incendiary ammunition.
@@ -81,7 +81,7 @@
     - state: incendiary
 
 - type: entity
-  parent: BaseMagazineBoxPistol
+  parent: BaseMagazineBox45Pistol
   id: MagazineBox45PistolUranium
   name: ammunition box (.45 auto uranium)
   description: A cardboard box of .45 auto rounds. Intended to hold exotic uranium-core ammunition.
