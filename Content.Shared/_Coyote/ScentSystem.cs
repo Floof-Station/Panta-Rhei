@@ -16,6 +16,8 @@ using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
 using Robust.Shared.Network;
 using Content.Shared._Floof.InteractionVerbs;
+using Content.Shared.Ghost;
+using Content.Shared.Mobs.Systems;
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -33,6 +35,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
 // Euphoria - no spam pls
     public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
@@ -636,8 +639,14 @@ public sealed class ScentSystem : EntitySystem
             throw new InvalidOperationException($"Invalid scent prototype ID {ticket.ScentProto} in SmellScent.");
         if (!LewdOkay(uid, proto.Lewd))
             return;
-        if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+        // Eventually I might just change this to be attached to entities rather than every actor(??) and make it so that it needs the actor component to actually do any of the sniffing.
+        if (!SniffaOkay(uid) || _mobState.IsDead(uid) ||
+            HasComp<GhostComponent>(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+        {
+            Log.Debug("honk");
             return;
+        }
+
         IncurSmellCooldown(component, ticket);
         UpdatePositionAndDistance(uid, ticket);
 
