@@ -25,9 +25,10 @@
     proto: CartridgeMagnumIncendiary
     capacity: 12
 
-- type: entity
+# Euphoria - Vector
+- type: entity # Euphoria - I will suffer this no longer, they made a gun that shoots 45 ACP shoot 45 magnum simply because they have the same number
   id: BaseMagazineMagnumSubMachineGun
-  name: SMG magazine (.45 magnum)
+  name: SMG magazine (.45 auto)
   parent: BaseItem
   abstract: true
   components:
@@ -38,7 +39,7 @@
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeMagnum
+        - Cartridge45Pistol
     capacity: 25
   - type: Item
     size: Small
@@ -61,7 +62,7 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunEmpty
-  name: SMG magazine (.45 magnum any)
+  name: SMG magazine (.45 auto any)
   suffix: empty
   parent: BaseMagazineMagnumSubMachineGun
   components:
@@ -82,11 +83,11 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGun
-  name: SMG magazine (.45 magnum)
+  name: SMG magazine (.45 auto)
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeMagnum
+    proto: Cartridge45Pistol
   - type: Sprite
     layers:
     - state: base
@@ -102,11 +103,11 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunPractice
-  name: SMG magazine (.45 magnum practice)
+  name: SMG magazine (.45 auto practice)
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeMagnumPractice
+    proto: Cartridge45PistolPractice
   - type: Sprite
     layers:
     - state: base
@@ -128,11 +129,11 @@
 
 - type: entity
   id: MagazineMagnumSubMachineGunUranium
-  name: SMG magazine (.45 magnum uranium)
+  name: SMG magazine (.45 auto uranium)
   parent: BaseMagazineMagnumSubMachineGun
   components:
   - type: BallisticAmmoProvider
-    proto: CartridgeMagnumUranium
+    proto: Cartridge45PistolUranium
   - type: Sprite
     layers:
     - state: base
