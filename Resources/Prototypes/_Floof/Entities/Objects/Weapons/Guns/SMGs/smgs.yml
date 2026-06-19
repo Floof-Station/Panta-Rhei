@@ -60,10 +60,10 @@
 
 - type: entity
   name: Vector-B
-  suffix: Magnum
+  suffix: 9x19mm, Security
   parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
   id: WeaponSubMachineGunVector
-  description: An old sol-made PDW. With an accruate and fast burst. Uses .45 magnum ammo.
+  description: An old sol-made PDW. With an accurate and fast burst. Uses .35 auto ammo.
   components:
   - type: Sprite
     sprite: _Floof/Objects/Weapons/Guns/SMGs/vector.rsi
@@ -77,12 +77,12 @@
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus
-    minAngle: -50
-    maxAngle: -25
+    minAngle: -23
+    maxAngle: -30
   - type: Gun
-    minAngle: 30
-    maxAngle: 60
-    fireRate: 8
+    minAngle: 25
+    maxAngle: 45
+    fireRate: 20
     burstFireRate: 30
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
@@ -90,27 +90,28 @@
     availableModes:
     - Burst
     - SemiAuto
+    - FullAuto
     shotsPerBurst: 2
     burstCooldown: 0.255
   - type: ItemSlots
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineMagnumSubMachineGun
+        startingItem: MagazinePistolSubMachineGun
         insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
         priority: 2
         whitelist:
           tags:
-          - MagazineMagnumSubMachineGun
+          - MagazinePistolSubMachineGun
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
-        startingItem: CartridgeMagnum
+        startingItem: CartridgePistol
         priority: 1
         whitelist:
           tags:
-          - CartridgeMagnum
+          - CartridgePistol
   - type: MagazineVisuals
     magState: mag
     steps: 1
@@ -119,7 +120,7 @@
 
 - type: entity
   name: Vector-F
-  suffix: High-Velocity
+  suffix: High-Velocity,  Syndicate
   parent: [BaseWeaponSubMachineGun, BaseSyndicateContraband]
   id: WeaponSubMachineGunVectorSyndie
   description: An newer version of the PDW. With high fire-rate and velocity but at the cost of accuracy, heck, the stock is missing. Uses .10 high-velocity ammo.
