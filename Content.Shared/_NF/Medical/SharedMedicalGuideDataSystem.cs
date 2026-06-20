@@ -75,7 +75,7 @@ public sealed partial class MedicalRecipeData
     {
         Identitier = proto.Name;
         Recipe = proto.ID;
-        Result = proto.Result;
+        Result = "proto.Result";
         _outputCount = proto.ResultCount;
     }
 }

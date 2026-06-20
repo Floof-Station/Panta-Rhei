@@ -755,7 +755,14 @@ namespace Content.Server.Kitchen.EntitySystems
                     for (var i = 0; i < active.PortionedRecipe.Item2; i++)
                     {
                         SubtractContents(microwave, active.PortionedRecipe.Item1);
-                        Spawn(active.PortionedRecipe.Item1.Result, coords);
+                        //Euph - allow for spawning multiple results from a single recipe
+                        foreach (var result in active.PortionedRecipe.Item1.Results)
+                        {
+                            for (var j = 0; j < result.Value; j++)
+                            {
+                                Spawn(result.Key, coords);
+                            }
+                        }
                     }
                 }
 

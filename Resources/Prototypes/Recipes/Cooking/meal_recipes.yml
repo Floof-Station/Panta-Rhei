@@ -453,7 +453,8 @@
 - type: microwaveMealRecipe
   id: RecipeBread
   name: bread recipe
-  result: FoodBreadPlain
+  result:
+    FoodBreadPlain: 1 #Euphoria
   time: 10
   group: Breads
   solids:

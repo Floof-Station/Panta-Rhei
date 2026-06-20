@@ -30,8 +30,9 @@ namespace Content.Shared.Kitchen
         [DataField("solids", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, EntityPrototype>))]
         private Dictionary<string, FixedPoint2> _ingsSolids = new ();
 
-        [DataField("result", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string Result { get; private set; } = string.Empty;
+        //Euph, make recipes be able to handle multiple results from a single recipe
+        [DataField("result", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, EntityPrototype>))]
+        private Dictionary<string,FixedPoint2> _ingsResult = new ();
 
         [DataField("time")]
         public uint CookTime { get; private set; } = 5;
@@ -46,6 +47,7 @@ namespace Content.Shared.Kitchen
         // TODO Turn this into a ReagentQuantity[]
         public IReadOnlyDictionary<string, FixedPoint2> IngredientsReagents => _ingsReagents;
         public IReadOnlyDictionary<string, FixedPoint2> IngredientsSolids => _ingsSolids;
+        public IReadOnlyDictionary<string, FixedPoint2> Results => _ingsResult; //Euph, multiple results per recipe
         public bool HideInGuidebook { get; set; }
         public int ResultCount { get; set; }
 

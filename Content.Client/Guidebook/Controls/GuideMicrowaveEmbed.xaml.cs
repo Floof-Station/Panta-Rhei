@@ -80,11 +80,11 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
 
     private void GenerateHeader(FoodRecipePrototype recipe)
     {
-        var entity = _prototype.Index<EntityPrototype>(recipe.Result);
+        var entity = _prototype.Index<EntityPrototype>(recipe.Results.Keys.First());
 
         RepresentedPrototype = entity;
 
-        IconContainer.AddChild(new GuideEntityEmbed(recipe.Result, false, false));
+        IconContainer.AddChild(new GuideEntityEmbed(recipe.Results.Keys.First(), false, false));
         ResultName.SetMarkup(entity.Name);
         ResultDescription.SetMarkup(entity.Description);
     }
