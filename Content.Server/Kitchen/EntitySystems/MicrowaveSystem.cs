@@ -38,10 +38,13 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Stacks;
 using Content.Server.Construction.Components;
+using Content.Server.Fluids.EntitySystems;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Components;
 using Content.Shared.Temperature.Components;
-using Content.Shared._NF.Kitchen.Components; // Frontier
+using Content.Shared._NF.Kitchen.Components;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent; // Frontier
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -69,6 +72,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
+        [Dependency] private readonly PuddleSystem _puddle = default!; //Euphoria
 
         private static readonly EntProtoId MalfunctionSpark = "Spark";
 
@@ -755,14 +759,23 @@ namespace Content.Server.Kitchen.EntitySystems
                     for (var i = 0; i < active.PortionedRecipe.Item2; i++)
                     {
                         SubtractContents(microwave, active.PortionedRecipe.Item1);
-                        //Euph - allow for spawning multiple results from a single recipe
+                        //Euph edits start - allow for spawning multiple results from a single recipe
                         foreach (var result in active.PortionedRecipe.Item1.Results)
                         {
                             for (var j = 0; j < result.Value; j++)
                             {
-                                Spawn(result.Key, coords);
+                                if (_prototype.HasIndex<ReagentPrototype>(result.Key))
+                                {
+                                    var toAdd = new Solution(result.Key, result.Value,null);
+                                    _puddle.TrySpillAt(uid, toAdd,out _);
+                                }
+                                else
+                                {
+                                    Spawn(result.Key, coords);
+                                }
                             }
                         }
+                        //Euph edits end
                     }
                 }
 
