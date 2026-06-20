@@ -1,9 +1,8 @@
-using Content.Shared._Euphoria.MagicalCommand;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Euphoria.Tools.Components;
+namespace Content.Shared._Euphoria.MagicalCommand.Components;
 
 /// <summary>
 /// This component designates that an item can be 'corrupted' into another using a valid tool.

@@ -1,9 +1,12 @@
+using Content.Server.Antag;
 using Content.Shared._Euphoria.Item.AttunableItem;
 using Content.Shared._Euphoria.MagicalCommand;
-using Content.Shared._Euphoria.Tools.Systems;
+using Content.Shared._Euphoria.MagicalCommand.Components;
+using Content.Shared._Euphoria.MagicalCommand.Systems;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
+using Robust.Shared.Audio;
 
 namespace Content.Server._Euphoria.Item.AttunableItem;
 
@@ -14,20 +17,30 @@ public sealed partial class AttunableEquipmentSystem : SharedAttunableEquipmentS
 {
     [Dependency] private readonly SharedRoleSystem _role = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
+    [Dependency] private readonly AntagSelectionSystem _antag = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<AttunedEntityComponent, MindRemovedMessage>(OnMindRemoved);
+        SubscribeLocalEvent<AttunedEntityComponent, MindAddedMessage>(OnMindAdded);
     }
 
     private void OnMindRemoved(Entity<AttunedEntityComponent> ent, ref MindRemovedMessage message)
     {
-        Log.Debug("honking");
-        if (!_mind.TryGetMind(message.Mind, out var mindId, out var mindComp))
-            return;
         _role.MindRemoveRole(message.Mind.Owner, "MindRoleCorruptedMagicalGirl");
+    }
 
+    private void OnMindAdded(Entity<AttunedEntityComponent> ent, ref MindAddedMessage message)
+    {
+        // I need to get the actual item attuned to, to test if it is corrupted or not. Annoying.
+        if (!TryComp<CorruptibleComponent>(ent.Comp.AttunedTo, out var corruptible) || !corruptible.Corrupted)
+            return;
+        _role.MindAddRole(message.Mind.Owner, "MindRoleCorruptedMagicalGirl");
+        _antag.SendBriefing(ent,
+            Loc.GetString(SharedMagicalCorruptibleSystem.RoleBriefing),
+            Color.PaleVioletRed,
+            SharedMagicalCorruptibleSystem.RoleSound);
     }
 
     protected override void OnPostCorruption(Entity<AttunableEquipmentComponent> ent, ref PostCorruptingEvent args)

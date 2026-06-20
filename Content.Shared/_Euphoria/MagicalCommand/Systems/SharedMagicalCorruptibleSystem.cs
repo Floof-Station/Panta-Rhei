@@ -1,7 +1,5 @@
 using Content.Shared._Euphoria.Item.AttunableItem;
-using Content.Shared._Euphoria.MagicalCommand;
-using Content.Shared._Euphoria.Tools.Components;
-using Content.Shared.Destructible;
+using Content.Shared._Euphoria.MagicalCommand.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory;
@@ -9,13 +7,14 @@ using Content.Shared.Popups;
 using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Content.Shared.Tools.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
-namespace Content.Shared._Euphoria.Tools.Systems;
+namespace Content.Shared._Euphoria.MagicalCommand.Systems;
 
-public abstract class SharedCorruptibleSystem : EntitySystem
+public abstract class SharedMagicalCorruptibleSystem : EntitySystem
 {
     [Dependency] private readonly SharedToolSystem _tools = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -24,6 +23,8 @@ public abstract class SharedCorruptibleSystem : EntitySystem
 
     private static readonly ProtoId<ToolQualityPrototype> CorruptingQuality = "Corrupting";
     private static readonly ProtoId<ToolQualityPrototype> DecorruptingQuality = "Decorrupting";
+    public static readonly string RoleBriefing = "corrupt-magical-briefing";
+    public static readonly SoundPathSpecifier RoleSound = new SoundPathSpecifier("/Audio/_Euphoria/Magic/corruption.ogg");
 
     public override void Initialize()
     {

@@ -19,7 +19,9 @@ public sealed partial class AttunableEquipmentComponent : Component
 /// <summary>
 /// ...And this one makes it so that an entity can only be bound to one AttunableEquipment at once.
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class AttunedEntityComponent : Component
 {
+    [DataField, AutoNetworkedField]
+    public EntityUid? AttunedTo;
 }

@@ -1,8 +1,7 @@
 using Content.Shared._Euphoria.MagicalCommand;
-using Content.Shared._Euphoria.Tools.Systems;
+using Content.Shared._Euphoria.MagicalCommand.Systems;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Mind.Components;
 using Content.Shared.Verbs;
 using Serilog;
 
@@ -19,13 +18,7 @@ public abstract partial class SharedAttunableEquipmentSystem : EntitySystem
         SubscribeLocalEvent<AttunableEquipmentComponent, FriendshipTransformEvent>(OnFriendshipTransform);
         SubscribeLocalEvent<AttunableEquipmentComponent, BeingEquippedAttemptEvent>(OnEquippedAttempt);
         SubscribeLocalEvent<AttunableEquipmentComponent, GetVerbsEvent<AlternativeVerb>>(AddVerb);
-        // SubscribeLocalEvent<AttunedEntityComponent, MindRemovedMessage>(OnMindRemoved);
     }
-
-    // private void OnMindRemoved(Entity<AttunedEntityComponent> ent, ref MindRemovedMessage message)
-    // {
-    //     Log.Debug("who up doinking it");
-    // }
 
     protected virtual void OnPostCorruption(Entity<AttunableEquipmentComponent> ent, ref PostCorruptingEvent args)
     {
@@ -45,16 +38,12 @@ public abstract partial class SharedAttunableEquipmentSystem : EntitySystem
     {
         if (!HasComp<ClothingComponent>(target))
             return;
-        Log.Debug(HasComp<AttunableEquipmentComponent>(target).ToString());
         EnsureComp<AttunableEquipmentComponent>(target, out var attunedComp);
-        if (original.Comp.AttunedEnt != null)
-            EnsureComp<AttunedEntityComponent>(original.Comp.AttunedEnt.Value);
-        var temp = original.Comp.AttunedEnt;
-        if (temp != null)
-            Log.Debug(temp.Value.Id.ToString());
+        if (original.Comp.AttunedEnt == null)
+            return;
+        EnsureComp<AttunedEntityComponent>(original.Comp.AttunedEnt.Value, out var attunerComp);
+        attunerComp.AttunedTo = target;
         attunedComp.AttunedEnt = original.Comp.AttunedEnt;
-        if (attunedComp.AttunedEnt != null)
-            Log.Debug(attunedComp.AttunedEnt.Value.ToString());
         Dirty(target, attunedComp);
     }
 
@@ -81,7 +70,8 @@ public abstract partial class SharedAttunableEquipmentSystem : EntitySystem
             Act = () =>
             {
                 ent.Comp.AttunedEnt = user;
-                EnsureComp<AttunedEntityComponent>(user);
+                EnsureComp<AttunedEntityComponent>(user, out var attunerComp);
+                attunerComp.AttunedTo = ent.Owner;
                 var ev = new AttunedToEvent
                 {
                     Attunable = ent,
