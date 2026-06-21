@@ -256,6 +256,8 @@
           Brute: -0.21 # increased 50% over lower trait
   - !type:ModifyHungerDecayEffect
     amount: 0.00833333333 # same as lower trait
+  - !type:ModifyThirstDecayEffect
+    amount: 0.05 #+50% from base
 
 - type: trait
   id: HealingMinus
