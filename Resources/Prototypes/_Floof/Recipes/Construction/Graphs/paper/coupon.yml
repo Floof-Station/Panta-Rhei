@@ -1,0 +1,16 @@
+﻿- type: constructionGraph
+  id: PaperCoupon
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: coupon
+      steps:
+      - tag: Paper
+        name: crafting-material-paper
+        icon:
+          sprite: Objects/Misc/bureaucracy.rsi
+          state: paper
+        doAfter: 5
+  - node: coupon
+    entity: PaperCoupon

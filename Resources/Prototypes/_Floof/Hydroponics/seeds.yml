@@ -92,3 +92,62 @@
       Min: 1
       Max: 4
       PotencyDivisor: 5
+
+- type: seed
+  id: coconut
+  name: seeds-coconut-name
+  noun: seeds-noun-seeds
+  displayName: seeds-coconut-display-name
+  plantRsi: _Floof/Objects/Specific/Hydroponics/coconut.rsi
+  packetPrototype: CoconutSeeds
+  productPrototypes:
+  - FoodCoconut
+  mutationPrototypes:
+  - coconutgun # fakeCapfruit
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 10
+  production: 10
+  yield: 3
+  potency: 10
+  idealLight: 8
+  growthStages: 3
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20
+    CoconutWater:
+      Min: 5
+      Max: 30
+      PotencyDivisor: 25
+    Vitamin:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 50
+
+- type: seed
+  id: coconutgun
+  name: seeds-coconut-gun-name
+  noun: seeds-noun-seeds
+  displayName: seeds-coconut-gun-display-name
+  plantRsi: _Floof/Objects/Specific/Hydroponics/coconut_gun.rsi
+  packetPrototype: CoconutGunSeeds
+  productPrototypes:
+  - FoodCoconutGunFruit
+  lifespan: 65
+  maturation: 15
+  production: 15
+  yield: 1
+  potency: 10
+  growthStages: 2
+  idealLight: 6
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    Sulfur:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20

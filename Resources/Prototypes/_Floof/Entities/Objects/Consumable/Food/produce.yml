@@ -125,3 +125,79 @@
   - type: Tag
     tags:
     - Vegetable
+
+- type: entity
+  name: coconut
+  parent: FoodProduceBase
+  id: FoodCoconut
+  description: A delicious, sweet fruit, believed to have special properties.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - creamy
+    - nutty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: CoconutWater
+          Quantity: 2
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/coconut.rsi
+  - type: Produce
+    seedId: coconut
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CoconutWater
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+    - CoconutFruit
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1 # give it a tiny bit of throw damage for the silly
+
+- type: entity
+  name: coconut gun husk
+  parent: FoodProduceBase
+  id: FoodCoconutGunFruit
+  description: A delicious, gun-shaped fruit with a thick wooden stem.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - gunpowder
+    - sweet
+    - creamy
+    - nutty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Sulfur # we keep this so it tastes similar to gat fruit
+          Quantity: 5
+        - ReagentId: CoconutWater
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/coconut_gun.rsi
+  - type: Produce
+    seedId: coconutgun
+  - type: Edible
+    trash:
+    - WeaponRifleCoconutGun
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: WeaponRifleCoconutGun
+  - type: Tag
+    tags:
+    - Fruit # It's in the name

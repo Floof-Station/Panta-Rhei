@@ -1,0 +1,16 @@
+﻿- type: constructionGraph
+  id: CoconutPellet
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: coconut_ammo
+      steps:
+      - tag: CoconutFruit # need a new tag
+        name: construction-graph-tag-coconut-pellet
+        icon:
+          sprite: _Floof/Objects/Specific/Hydroponics/coconut.rsi
+          state: produce
+        doAfter: 2
+  - node: coconut_ammo
+    entity: CoconutPellet

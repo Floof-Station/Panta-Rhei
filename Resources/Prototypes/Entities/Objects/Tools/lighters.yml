@@ -222,6 +222,9 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  - type: Cautery # Shitmed Euph
+    speed: 0.45
+  - type: SurgeryTool # Shitmed Euph
   - type: Tag # DeltaV
     tags:
     - WeldingTool
@@ -269,6 +272,11 @@
     activatedDamage:
         types:
             Heat: 1
+  - type: MeleeWeapon #Euph This is needed in order to make attacks. 
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 1 # does a little bit of damage on hit when off
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -322,6 +330,9 @@
         shader: unshaded
   - type: ItemTogglePointLight
   - type: UseDelay
+  - type: Cautery # Shitmed Euph
+    speed: 0.45
+  - type: SurgeryTool # Shitmed Euph
   - type: IgnitionSource
     ignited: false
 
