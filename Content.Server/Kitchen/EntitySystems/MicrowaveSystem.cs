@@ -26,7 +26,7 @@ using Content.Server.Lightning;
 using Content.Shared.Item;
 using Content.Shared.Kitchen;
 using Content.Shared.Kitchen.Components;
-using Content.Shared.Popups;
+using Content.Shared.Popups; //Euphoria
 using Content.Shared.Power;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
@@ -38,7 +38,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Stacks;
 using Content.Server.Construction.Components;
-using Content.Server.Fluids.EntitySystems;
+using Content.Server.Fluids.EntitySystems; //Euphoria
+using Content.Server.Popups;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Components;
 using Content.Shared.Temperature.Components;
@@ -73,6 +74,7 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
         [Dependency] private readonly PuddleSystem _puddle = default!; //Euphoria
+        [Dependency] private readonly PopupSystem _popup = default!; //Euphoria
 
         private static readonly EntProtoId MalfunctionSpark = "Spark";
 
@@ -762,14 +764,45 @@ namespace Content.Server.Kitchen.EntitySystems
                         //Euph edits start - allow for spawning multiple results from a single recipe
                         foreach (var result in active.PortionedRecipe.Item1.Results)
                         {
-                            for (var j = 0; j < result.Value; j++)
+                            //If the prototype is a reagent, handle it as a liquid
+                            if (_prototype.HasIndex<ReagentPrototype>(result.Key))
                             {
-                                if (_prototype.HasIndex<ReagentPrototype>(result.Key))
+                                var toAdd = new Solution(result.Key, result.Value, null);
+
+                                foreach (var item in microwave.Storage.ContainedEntities)
                                 {
-                                    var toAdd = new Solution(result.Key, result.Value,null);
-                                    _puddle.TrySpillAt(uid, toAdd,out _);
+                                    // use the same reagents as when we selected the recipe
+                                    if (!_solutionContainer.TryGetRefillableSolution(item,
+                                            out var solutionEntity,
+                                            out var solution))
+                                        continue;
+
+                                    _solutionContainer.TryMixAndOverflow(solutionEntity.Value, toAdd,solutionEntity.Value.Comp.Solution.MaxVolume,out var overflow);
+
+                                    toAdd.RemoveAllSolution();
+
+                                    if (overflow != null && overflow.Volume > 0)
+                                    {
+                                        toAdd.SetContents(overflow);
+                                    }
+                                    else
+                                    {
+                                        break;
+                                    }
                                 }
-                                else
+
+                                if (toAdd.Volume > 0)
+                                {
+                                    _popup.PopupEntity(Loc.GetString("lathe-reagent-dispense-no-container",
+                                            ("name", uid)),
+                                        uid);
+                                    _puddle.TrySpillAt(uid, toAdd, out _);
+                                }
+
+                            }
+                            else
+                            {
+                                for (int j = 0; j < result.Value; j++)
                                 {
                                     Spawn(result.Key, coords);
                                 }
