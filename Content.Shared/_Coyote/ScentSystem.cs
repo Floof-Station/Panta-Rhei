@@ -639,9 +639,7 @@ public sealed class ScentSystem : EntitySystem
             throw new InvalidOperationException($"Invalid scent prototype ID {ticket.ScentProto} in SmellScent.");
         if (!LewdOkay(uid, proto.Lewd))
             return;
-        // Eventually I might just change this to be attached to entities rather than every actor(??) and make it so that it needs the actor component to actually do any of the sniffing.
-        if (!SniffaOkay(uid) || _mobState.IsDead(uid) ||
-            HasComp<GhostComponent>(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+        if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
             return;
 
         IncurSmellCooldown(component, ticket);
@@ -826,7 +824,7 @@ public sealed class ScentSystem : EntitySystem
     /// </summary>
     private bool SniffaOkay(EntityUid uid)
     {
-        return !_consent.HasConsent(uid, "CantSmellScentsAtAll");
+        return !_consent.HasConsent(uid, "CantSmellScentsAtAll") && !HasComp<GhostComponent>(uid) && _mobState.IsAlive(uid);
     }
    #endregion
 }
