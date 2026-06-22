@@ -1,0 +1,11 @@
+﻿- type: entity
+  id: CrateNapsacks
+  parent: CrateNapsack
+  name: Napsack crate
+  description: A crate filled with napsacks, a new type of bag capable of carrying small crewmembers while keeping your hands free.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: ClothingBackpackNapsack
+        amount: 3

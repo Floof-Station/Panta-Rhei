@@ -67,6 +67,10 @@ trait-SiikTajr-name = Siik'tajr
 trait-SiikTajr-desc =
     A modern language for those with expressive ears and tails, combining vocalizations with body language.
 
+trait-SiikMaas-name = Siik'maas
+trait-SiikMaas-desc =
+    The ancient religious tongue of the Tajara, now the most widely spoken and taught language on Adhomai.
+
 trait-SolCommon-name = Sol Common
 trait-SolCommon-desc = {language-SolCommon-description}
 

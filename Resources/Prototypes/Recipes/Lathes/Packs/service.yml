@@ -27,6 +27,7 @@
   - Holoprojector
   - WetFloorSign
   - WireBrush
+  - PaperCup # Euphoria - M3739 - #485
 
 - type: latheRecipePack
   parent:
@@ -41,6 +42,7 @@
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
   - SmartFridgeCircuitboard
+  - PrinterDocMachineCircuitboard  # Euphoria: Corvax-Printer
 
 ## Dynamic
 
@@ -61,6 +63,7 @@
 - type: latheRecipePack
   parent:
   - ServiceBoardsDeltaV # DeltaV
+  - ServiceBoardsEuphoria # Euphoria
   id: ServiceBoards
   recipes:
   - BiofabricatorMachineCircuitboard

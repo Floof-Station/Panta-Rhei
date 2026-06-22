@@ -620,7 +620,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         var wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
             ("entityName", name), ("message", FormattedMessage.EscapeText(message)),
-            ("textColor", "ffffff"), ("language", LanguageNameForFluent(null))); // Floofstation - extra args because d-v for some reason decided to reuse the whisper wrap.
+            ("textColor", "ffffff"), ("language", "null")); // Floofstation - extra args because d-v for some reason decided to reuse the whisper wrap.
 
         foreach (var (session, data) in GetRecipients(source, WhisperMuffledRange))
         {
@@ -876,8 +876,12 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     public string TransformSpeech(EntityUid sender, string message)
     {
+        // Floofstation: do not apply speech mods to non-spoken languages
+        if (!_languages.GetLanguage(sender).SpeechOverride.RequireSpeech)
+            return message;
+
         var ev = new TransformSpeechEvent(sender, message);
-        RaiseLocalEvent(ev);
+        RaiseLocalEvent(sender, ev, true);
 
         return ev.Message;
     }

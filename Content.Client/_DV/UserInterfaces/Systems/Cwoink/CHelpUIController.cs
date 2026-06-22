@@ -6,6 +6,7 @@ using Content.Client._DV.Curation.UI.Cwoink;
 using Content.Client.Administration.Managers;
 using Content.Client.Gameplay;
 using Content.Client.Lobby;
+using Content.Client.Lobby.UI; // Floofstation Lobby CHelp Button
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
@@ -43,6 +44,7 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
 
     private CwoinkSystem? _cwoinkSystem;
     private MenuButton? GameCHelpButton => UIManager.GetActiveUIWidgetOrNull<GameTopMenuBar>()?.CHelpButton;
+    private Button? LobbyCHelpButton => (UIManager.ActiveScreen as LobbyGui)?.CHelpButton; // Floofstation Lobby CHelp Button
     public ICHelpUIHandler? UIHelper;
     private bool _discordRelayActive;
     private bool _hasUnreadCHelp;
@@ -65,12 +67,22 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
     {
         if (GameCHelpButton != null)
             GameCHelpButton.OnPressed -= CHelpButtonPressed;
+
+        // Floofstation Lobby CHelp Button Start
+        if (LobbyCHelpButton != null)
+            LobbyCHelpButton.OnPressed -= CHelpButtonPressed;
+        // Floofstation Lobby CHelp Button End
     }
 
     public void LoadButton()
     {
         if (GameCHelpButton != null)
             GameCHelpButton.OnPressed += CHelpButtonPressed;
+
+        // Floofstation Lobby CHelp Button Start
+        if (LobbyCHelpButton != null)
+            LobbyCHelpButton.OnPressed -= CHelpButtonPressed;
+        // Floofstation Lobby CHelp Button End
     }
 
     private void OnAdminStatusUpdated()
@@ -112,6 +124,13 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
         {
             GameCHelpButton.Pressed = pressed;
         }
+
+        // Floofstation Lobby CHelp Button Start
+        if (LobbyCHelpButton != null)
+        {
+            LobbyCHelpButton.Pressed = pressed;
+        }
+        // Floofstation Lobby CHelp Button End
 
         UIManager.ClickSound();
         UnreadCHelpRead();
@@ -237,12 +256,14 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
     private void UnreadCHelpReceived()
     {
         GameCHelpButton?.StyleClasses.Add(StyleClass.Negative);
+        LobbyCHelpButton?.StyleClasses.Add(StyleClass.Negative); // Floofstation Lobby CHelp Button
         _hasUnreadCHelp = true;
     }
 
     private void UnreadCHelpRead()
     {
         GameCHelpButton?.StyleClasses.Remove(StyleClass.Negative);
+        LobbyCHelpButton?.StyleClasses.Remove(StyleClass.Negative); // Floofstation Lobby CHelp Button
         _hasUnreadCHelp = false;
     }
 
@@ -273,10 +294,31 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
 
     public void OnStateEntered(LobbyState state)
     {
+        // Floofstation Lobby CHelp Button Start
+        if (LobbyCHelpButton != null)
+        {
+            LobbyCHelpButton.OnPressed -= CHelpButtonPressed;
+            LobbyCHelpButton.OnPressed += CHelpButtonPressed;
+            LobbyCHelpButton.Pressed = UIHelper?.IsOpen ?? false;
+
+            if (_hasUnreadCHelp)
+            {
+                UnreadCHelpReceived();
+            }
+            else
+            {
+                UnreadCHelpRead();
+            }
+        }
+        // Floofstation Lobby CHelp Button End
     }
 
     public void OnStateExited(LobbyState state)
     {
+        // Floofstation Lobby CHelp Button Start
+        if (LobbyCHelpButton != null)
+            LobbyCHelpButton.OnPressed -= CHelpButtonPressed;
+        // Floofstation Lobby End Button Start
     }
 }
 

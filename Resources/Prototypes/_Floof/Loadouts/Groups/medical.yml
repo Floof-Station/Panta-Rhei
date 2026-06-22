@@ -18,7 +18,7 @@
   loadouts:
   - OuterCoatCybersunWindbreaker
 
-#below addtions are for cmo
+#below additions are for cmo
 - type: loadoutGroup
   id: FloofCmoThong
   abstract: true
@@ -43,6 +43,17 @@
   loadouts:
   - UnderSocksCMO
 
+# cmo pdas
+- type: loadoutGroup
+  id: FloofCMOPDAs
+  name: loadout-group-chief-medical-officer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - CMOPDA
+  - DirectorOfCarePDA
+  - ClothingNeckCollarEmotionalSupportCMO # Emotional Support
+
 # paramed additions
 - type: loadoutGroup
   id: FloofParamedJumpsuit
@@ -51,6 +62,18 @@
   maxLimit: 1
   loadouts:
   - UniformParaMedicThong
+  - MedicalApronJumpsuit
+  - MedicalApronJumpskirt
+  - MedicalOffsetJumpsuit
+  - MedicalOffsetJumpskirt
+  - MedicalVestJumpsuit
+  - MedicalVestJumpskirt
+  - BlueTurtleneckJumpsuit
+  - BlueTurtleneckJumpskirt
+  - DarkBlueTurtleneckJumpsuit
+  - DarkBlueTurtleneckJumpskirt
+  - WhiteTurtleneckJumpsuit
+  - WhiteTurtleneckJumpskirt
 
 - type: loadoutGroup
   id: FloofParamedGloves
@@ -77,6 +100,7 @@
   maxLimit: 1
   loadouts:
   - UniformMedicThong
+  - UniformMedCatsuit
 
 - type: loadoutGroup
   id: FloofMedicalDoctorGloves
@@ -127,3 +151,57 @@
   loadouts:
   - EyesGlassesChemical
   - EyesGlassesChemicalInterdyne
+
+#below additions are for medical doctors
+- type: loadoutGroup
+  id: FloofMedicalDoctorPDAs
+  abstract: true
+  loadouts:
+  - MorticianPDA
+  - VetPDA
+  - ClothingNeckCollarEmotionalSupportMedicalDoctor
+
+- type: loadoutGroup
+  id: FloofParamedicPDAs
+  name: loadout-group-floof-paramed-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ParamedicPDA
+  - TRPDA
+  - ClothingNeckCollarEmotionalSupportParamed
+
+- type: loadoutGroup
+  id: FloofSeniorPhysicianPDAs
+  name: loadout-group-floof-senior-pyhs-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SeniorPhysicianPDA # Delta-vs version
+  - SeniorPhysPDA # Floofstations version
+  - ClothingNeckCollarEmotionalSupportSeniorPhys
+
+# medical intern pdas
+- type: loadoutGroup
+  id: FloofMedicalInternPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportMedicalIntern
+
+- type: loadoutGroup
+  id: FloofMedicalChemistPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportChemist
+
+- type: loadoutGroup
+  id: FloofMedicalPsychPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportPsychologist
+
+- type: loadoutGroup
+  id: FloofMedicalSurgeonPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportSurgeon

@@ -79,6 +79,8 @@
       smokable:
         maxVol: 45
         reagents:
+          - ReagentId: Saline # Euphoria - Added Saline back in from old codebase
+            Quantity: 15
           - ReagentId: Omnizine # Euphoria - Down from 30 to 15
             Quantity: 15
           - ReagentId: Dylovene
@@ -86,10 +88,8 @@
     # Begin DeltaV additions
       omnizinecigarette:
         reagents:
-          - ReagentId: Omnizine
-            Quantity: 3
-          - ReagentId: Dylovene
-            Quantity: 3
+        - ReagentId: Nicotine
+          Quantity: 10
   - type: Extractable
     grindableSolutionName: omnizinecigarette
     # End DeltaV additions

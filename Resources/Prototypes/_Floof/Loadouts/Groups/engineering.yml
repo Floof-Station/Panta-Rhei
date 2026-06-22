@@ -1,49 +1,111 @@
 ﻿#below addtions are for ce
 - type: loadoutGroup
-  id: FloofCeThong
+  id: FloofCeJumpsuits
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
+  - ChiefEngineerLegacyJumpsuit
   - UniformChiefEngiThong
 
 - type: loadoutGroup
   id: FloofCeGloves
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
+  - ChiefEngineerInsulativeGloves
   - HandsChiefEngiWarmers
 
 - type: loadoutGroup
-  id: FloofCeSocks
+  id: FloofCeShoes
   abstract: true
+  loadouts:
+  - BootsWorkWorn
+  - UnderSocksChiefEngi
+
+# ce pdas
+- type: loadoutGroup
+  id: FloofCEPDAs
+  name: loadout-group-chief-engineer-pdas
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - UnderSocksChiefEngi
+  - CEPDA
+  - StationForemanPDA
+  - StationArchitectPDA
+  - ClothingNeckCollarEmotionalSupportCE # Emotional Support
+
+- type: loadoutGroup
+  id: FloofCeHats
+  abstract: true
+  loadouts:
+  - WeldingHardhat
+
+- type: loadoutGroup
+  id: FloofCeCloak
+  abstract: true
+  loadouts:
+  - ChiefEngineerLegacyCloak
 
 # engineer & atmos additions
 - type: loadoutGroup
   id: FloofEngineeringJumpsuit
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - UniformEngiThong
+  - UniformEngiCatsuit
 
 - type: loadoutGroup
   id: FloofEngineeringGloves
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsEngiWarmers
 
 - type: loadoutGroup
   id: FloofEngineeringShoes
   abstract: true
+  loadouts:
+  - BootsWorkWorn
+  - ClothingUnderSocksEngi
+
+- type: loadoutGroup
+  id: FloofEngineeringGlasses
+  parent: [FloofGlasses, Glasses]
+  name: loadout-group-engi-glasses
+  loadouts:
+  - ClothingEyesGlassesMeson
+  - ClothingHeadHatWelding
+  - ClothingHeadHatWeldingMaskPainted
+  - ClothingHeadHatWeldingMaskFlame
+  - ClothingHeadHatWeldingMaskFlameBlue
+
+# technical assistant pdas
+- type: loadoutGroup
+  id: FloofTechnicalAssistantPDAs
+  name: loadout-group-technical-assistant-pdas
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - ClothingUnderSocksEngi
+  - TechnicalAssistantPDA
+  - ClothingNeckCollarEmotionalSupportTA
+
+# engineer pdas
+- type: loadoutGroup
+  id: FloofEngineerPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportStationEngineer
+
+# atmos pdas
+- type: loadoutGroup
+  id: FloofAtmosTechPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportAtmosTech
+
+# technical assistant pdas
+- type: loadoutGroup
+  id: FloofSeniorEngineerPDAs
+  name: loadout-group-senior-engineer-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SeniorEngineerPDA
+  - ClothingNeckCollarEmotionalSupportSeniorEngineer

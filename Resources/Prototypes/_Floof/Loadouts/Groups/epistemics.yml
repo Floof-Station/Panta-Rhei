@@ -1,4 +1,4 @@
-﻿#below addtions are for mysta
+﻿#below additions are for mysta
 - type: loadoutGroup
   id: FloofMystaThong
   abstract: true
@@ -22,6 +22,17 @@
   maxLimit: 1
   loadouts:
   - UnderSocksEpiHead
+
+# mysta pdas
+- type: loadoutGroup
+  id: FloofMystaDAs
+  name: loadout-group-mysta-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - RnDPDA
+  - ResearchDirectorPDA
+  - ClothingNeckCollarEmotionalSupportRD # emotional support
 
 # scientist additions
 - type: loadoutGroup
@@ -80,6 +91,10 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ChaplainLustroAlt
+  - ChaplainLustro
+  - ChaplainInfernusLustro
+  - ChaplainInfernusLustroAlt
   - UniformChaplainThong
 
 - type: loadoutGroup
@@ -98,4 +113,69 @@
   minLimit: 1
   maxLimit: 1
   loadouts:
+  - ChaplainLustroSandals
   - ClothingUnderSocksChaplain
+
+- type: loadoutGroup
+  id: FloofChaplainPDAs
+  name: loadout-group-chaplain-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ChaplainPDA
+  - SpiritualCounselorPDA
+  - NoostatisticianPDA
+  - ClothingNeckCollarEmotionalSupportChaplain
+
+# epi alternative pdas
+- type: loadoutGroup
+  id: FloofScientistPdas
+  abstract: true
+  loadouts:
+  - AcolytePDA
+  - ClothingNeckCollarEmotionalSupportScientist
+
+- type: loadoutGroup
+  id: FloofRoboticistPdas
+  abstract: true
+  loadouts:
+  - GolemancerPDA
+  - ClothingNeckCollarEmotionalSupportRoboticist
+
+- type: loadoutGroup
+  id: FloofResearchAssistantPdas
+  name: loadout-group-epistemics-research-assistant-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ResearchAssistantPDA
+  - NoviciatePDA
+  - ClothingNeckCollarEmotionalSupportEpistemicsBase
+
+- type: loadoutGroup
+  id: FloofSeniorResearcherPdas
+  name: loadout-group-epistemics-senior-researcher-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SeniorResearcherPDA
+  - MysticPDA
+  - ClothingNeckCollarEmotionalSupportSeniorResearcher
+
+- type: loadoutGroup
+  id: FloofCatalogerPDAs
+  name: loadout-group-cataloger-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LibrarianPDA
+  - ClothingNeckCollarEmotionalSupportCataloger
+
+- type: loadoutGroup
+  id: FloofMantisPDAs
+  name: loadout-group-mantis-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PsionicMantisPDA
+  - ClothingNeckCollarEmotionalSupportMantis

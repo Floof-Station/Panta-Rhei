@@ -283,6 +283,7 @@
     allowedFlags:
       - Hide
       - HideLabel
+    hideOnInit: true
   - type: ActivatableUI
     key: enum.IFFConsoleUiKey.Key
   - type: UserInterface
@@ -375,7 +376,7 @@
   parent: BaseComputerAiAccess
   id: ComputerCriminalRecords
   name: criminal records computer
-  description: This can be used to check criminal records. Only security and justice can modify them. # DeltaV Justice can access too 
+  description: This can be used to check criminal records. Only security and justice can modify them. # DeltaV Justice can access too
   components:
   - type: CriminalRecordsConsole
   - type: UserInterface
@@ -411,7 +412,7 @@
   - type: Computer
     board: CriminalRecordsComputerCircuitboard
   - type: AccessReader
-    access: [["Security"], ["Justice"]] # DeltaV Justice can access too 
+    access: [["Security"], ["Justice"]] # DeltaV Justice can access too
   - type: GuideHelp
     guides:
     - CriminalRecords
@@ -741,7 +742,7 @@
     color: "#ff0000"
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
-    sound: /Audio/Announcements/intercept.ogg # DeltaV
+    sound: /Audio/_Euphoria/Announcements/intercept.ogg # Euphoria - New Voice Lines
     announceSentBy: false # The title already says who they are.
   - type: Computer
     board: SyndicateCommsComputerCircuitboard
@@ -776,7 +777,7 @@
     canShuttle: false
     global: true #announce to everyone they're about to fuck shit up
     announceSentBy: false
-    sound: /Audio/Announcements/announce.ogg # DeltaV - changed from war.oog to announce.ogg
+    sound: /Audio/_Euphoria/Announcements/intercept.ogg # Euphoria - New Voice Lines
   - type: Computer
     board: WizardCommsComputerCircuitboard
   - type: PointLight
@@ -1652,7 +1653,7 @@
   - type: Computer
     board: StationAiUploadCircuitboard
   - type: AccessReader
-    access: [ [ "ResearchDirector" ] ]
+    access: [ [ "ResearchDirector" ], ["ChiefEngineer" ] ] # DeltaV - added chief engineer
   - type: Lock
     unlockOnClick: false
   - type: SiliconLawUpdater
@@ -1759,3 +1760,38 @@
         type: StationAiFixerConsoleBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+
+- type: entity
+  parent: BaseComputer
+  id: ComputerNukieDelivery
+  name: syndicate delivery computer
+  description: "A computer that can bluespace in certain equipment for Nuclear Operations. \nThe circuitboard is integrated into the frame and can't be recovered if deconstructed."
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: request-syndie
+    - map: ["computerLayerKeys"]
+      state: syndie_generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  # - type: Computer
+  #   board: SyndicateCommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#f71713"
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    name: store-preset-name-nukie-delivery
+    categories:
+    - NukieDelivery

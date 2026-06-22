@@ -1,0 +1,53 @@
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformOversizeSweatshirt
+  name: Oversized Sweatshirt
+  description: There could be nothing underneath this and nobody would ever know.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirt.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirt.rsi
+    equipDelay: 0
+    unequipDelay: 0
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformOversizeSweatUni
+  name: Oversized University Sweatshirt
+  description: There could be nothing underneath this and nobody would ever know. This one says "University of Canadian Galactica Athletic Department"
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirtuni.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirtuni.rsi
+    equipDelay: 0
+    unequipDelay: 0
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformOversizeSweatTacky
+  name: Oversized Tacky Sweatshirt
+  description: There could be nothing underneath this and nobody would ever know. This one has a tacky leopard print pattern.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirttacky.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirttacky.rsi
+    equipDelay: 0
+    unequipDelay: 0
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingUniformOversizeSweatGoth
+  name: Oversized Gothic Sweatshirt
+  description: There could be nothing underneath this and nobody would ever know. This one has a badly faded logo for a 300 year old goth band.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirtgoth.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Sweatshirts/bigsweatshirtgoth.rsi
+    equipDelay: 0
+    unequipDelay: 0
+
+

@@ -156,6 +156,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
         Gui.GhostRespawnPressed += GuiOnGhostRespawnPressed; // Frontier
+        Gui.GhostBarPressed += GhostBarPressed; // Goobstation - Ghost Bar
+        Gui.GhostBarWindow.SpawnButtonPressed += GhostBarSpawnPressed; // Goobstation - Ghost Bar
 
         UpdateGui();
     }
@@ -177,6 +179,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
         Gui.GhostRespawnPressed -= GuiOnGhostRespawnPressed; // Frontier
+        Gui.GhostBarPressed -= GhostBarPressed; // Goobstation - Ghost Bar
+        Gui.GhostBarWindow.SpawnButtonPressed -= GhostBarSpawnPressed; // Goobstation - Ghost Bar
 
         Gui.Hide();
     }
@@ -196,5 +200,15 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
     private void GhostRolesPressed()
     {
         _system?.OpenGhostRoles();
+    }
+
+    private void GhostBarPressed() // Goobstation - Ghost Bar
+    {
+        Gui?.GhostBarWindow.OpenCentered();
+    }
+
+    private void GhostBarSpawnPressed() // Goobstation - Ghost Bar
+    {
+        _system?.GhostBarSpawn();
     }
 }

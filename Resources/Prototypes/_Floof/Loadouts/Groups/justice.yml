@@ -1,0 +1,35 @@
+﻿# paper work belt
+- type: loadoutGroup
+  id: JusticePaperworkBelt
+  name: loadout-group-justice-belts
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltPaperworkFilled
+
+- type: loadoutGroup
+  id: FloofServiceLawyerPDAs
+  name: loadout-group-lawyer-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LawyerPDA
+  - ClothingNeckCollarEmotionalJusticeLawyer
+
+- type: loadoutGroup
+  id: FloofServiceProsecutorPDAs
+  name: loadout-group-prosecutor-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ProsecutorPDA
+  - ClothingNeckCollarEmotionalJusticeProsecutor
+
+- type: loadoutGroup
+  id: FloofServiceClerkPDAs
+  name: loadout-group-clerk-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClerkPDA
+  - ClothingNeckCollarEmotionalJusticeClerk

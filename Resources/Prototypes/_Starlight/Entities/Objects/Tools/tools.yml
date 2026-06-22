@@ -37,6 +37,14 @@
           state: wrench
         useSound:
           path: /Audio/Items/crowbar.ogg
+      # Begin DeltaV additions - Wrenchcrowbar fix
+      - behavior: Anchoring
+        sprite:
+          sprite: _Starlight/Objects/Tools/makeshift_omnitool.rsi
+          state: wrenchflipped
+        useSound:
+          path: /Audio/Items/ratchet.ogg
+      # End DeltaV additions
 
 - type: entity
   name: makeshift crowbar-wrench-screwdriver
@@ -445,8 +453,8 @@
           components:
           - type: DisarmMalus
             malus: 0.6
-        - type: ToggleableLightVisuals
-          spriteLayer: flame
+#        - type: ToggleableLightVisuals # Floof - this component was removed a while ago
+#          spriteLayer: flame
         - type: RefillableSolution
           solution: Welder
         - type: Tool
@@ -661,8 +669,8 @@
           components:
           - type: DisarmMalus
             malus: 0.6
-        - type: ToggleableLightVisuals
-          spriteLayer: flame
+#        - type: ToggleableLightVisuals # Floof - this component was removed a while ago
+#          spriteLayer: flame
         - type: RefillableSolution
           solution: Welder
         - type: Tool

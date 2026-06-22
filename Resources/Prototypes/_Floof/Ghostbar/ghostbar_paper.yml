@@ -1,0 +1,8 @@
+﻿- type: entity
+  id: PaperGhostbar
+  name: HGI Ghostbar Welcome
+  description: The single sheet of paper welcomes you to the afterlife!
+  parent: Paper
+  components:
+  - type: Paper
+    content: book-text-ghostbar-paper

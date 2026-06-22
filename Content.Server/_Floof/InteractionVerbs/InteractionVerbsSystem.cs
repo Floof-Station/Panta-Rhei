@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Server.Chat.Managers;
 using Content.Shared._Floof.InteractionVerbs;
+using Content.Shared.Ghost;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
@@ -29,6 +30,12 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
         var color = popup.LogColor ?? InferColor(popup.PopupType);
         var wrappedMessage = message; // TODO: custom chat wraps maybe?
 
+        if (!popup.VisibleToGhosts)
+        {
+            var ghostQuery = GetEntityQuery<GhostComponent>();
+            filter.RemoveWhereAttachedEntity(ghostQuery.HasComp);
+        }
+
         // Exclude entities who cannot directly see the target of the popup. TODO this may have a high performance cost - although whispers do the same.
         // We only do this if the popup has to be logged into chat since that has some gameplay implications.
         if (clip && popup.DoClipping)
@@ -50,10 +57,18 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
 
     private bool CanSee(EntityUid source, EntityUid target, float maxRange)
     {
+        // Make sure to call the overload of InRangeUnobstructed that doesn't do an override check
+        // Otherwise the ai eye will see all interacts.
+        var targetXForm = Transform(target);
+
         // TODO: InRangeUnobstructed has a pretty high performance cost and is not intended to be used like that.
         // We should see if we can move this to client side later, aka make the client check if the target is visible for it.
         return _interactions.InRangeUnobstructed(
-            source, target, maxRange,
+            source,
+            (target, targetXForm),
+            targetXForm.Coordinates,
+            targetXForm.LocalRotation,
+            maxRange,
             CollisionGroup.Opaque,
             uid => !_occluderQuery.TryComp(uid, out var occluder) || !occluder.Enabled, // We ignore all entities that do not occlude light
             false);

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSecCatsuit
+  name: security catsuit
+  description: This catsuit is made with various clips and straps which serve an unknown purpose, probably webbing and gear, right? Imprinted with a security emblem on it's back.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/sec_catsuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/sec_catsuit.rsi

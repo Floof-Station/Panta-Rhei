@@ -32,3 +32,20 @@
   equipment:
     shoes: ClothingUnderSocksParaMedic
 
+#base paramed pda (it didnt have a loadout prototype)
+- type: loadout
+  id: ParamedicPDA
+  equipment:
+    id: ParamedicPDA
+
+# alternative PDA
+- type: loadout
+  id: TRPDA
+  equipment:
+    id: TRPDA
+
+# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportParamed
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportParamed

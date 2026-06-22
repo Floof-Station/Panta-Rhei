@@ -3,7 +3,7 @@
   mapName: 'Edge'
   mapPath: /Maps/Floof/edge.yml # Floofstation
   minPlayers: 10
-  maxPlayers: 80
+  maxPlayers: 50
   stations:
     Edge:
       stationProto: StandardNanotrasenStation
@@ -63,6 +63,7 @@
             Brigmedic: [ 1, 1 ]
             Prisoner: [ 2, 3 ]
             SeniorOfficer: [ 1, 1 ]
+            SecurityTechnician: [ 1, 1 ]
           #supply
             Quartermaster: [ 1, 1 ]
             InventorySpecialist: [ 1, 1 ] #FloofStation

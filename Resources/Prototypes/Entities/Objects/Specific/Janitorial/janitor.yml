@@ -38,7 +38,6 @@
   - type: Item
     size: Large
     sprite: Objects/Specific/Janitorial/mop.rsi
-    storedRotation: 45
   - type: Absorbent
     useAbsorberSolution: true
   - type: AreaAbsorbent # Floofstation - gives mops AOE effect. Regular mops have a limited range.
@@ -61,6 +60,8 @@
     guides:
     - Janitorial
   - type: DnaSubstanceTrace
+  - type: DecalScrubber # DeltaV
+    cleaningSolutionName: absorbed
 
 - type: entity
   parent: MopItem
@@ -99,6 +100,9 @@
       tags:
         - Mop
         - MopAdv
+    - type: DnaSubstanceTrace
+    - type: DecalScrubber # DeltaV
+      cleaningSolutionName: absorbed
 
 - type: entity
   name: wet floor sign
@@ -289,7 +293,7 @@
   id: PlungerLoot
   weights:
     RandomSpawner100: 56
-    SpacemenFigureSpawner: 28
+    SpacemenFigurineSpawner90: 28
     SpawnMobCockroach: 5
     MaintenanceToolSpawner: 5
     SpawnMobMoproach: 2
@@ -346,6 +350,7 @@
     - type: Fiber
       fiberColor: fibers-white
     - type: DnaSubstanceTrace
+    - type: PhysicalComposition # DeltaV - Made rag recycleable
 
 - type: entity
   parent: BaseItem
@@ -382,3 +387,12 @@
         Piercing: 3
     soundHit:
       path: "/Audio/Weapons/bladeslice.ogg"
+
+- type: entity
+  parent: WireBrush
+  id: WireBrushElectrical
+  name: electrical wire brush
+  description: A bristly steel wire brush with a moving head, allowing for a way easier time cleaning.
+  components:
+  - type: Tool
+    speedModifier: 1.5

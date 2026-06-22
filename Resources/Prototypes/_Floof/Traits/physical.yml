@@ -3,7 +3,7 @@
   id: LeftBionicPryArm
   name: trait-name-LeftBionicPryArm
   description: trait-description-BionicPryArm
-  category: Disabilities
+  category: Cybernetics
   cost: 2
   conflicts:
   - ArmAmputeeRight
@@ -15,14 +15,14 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Left
-      protoId: JawsOfLifeLeftArm
+      protoId: PrybarLeftArm
       slotId: "left arm"
 
 - type: trait
   id: RightBionicPryArm
   name: trait-name-RightBionicPryArm
   description: trait-description-BionicPryArm
-  category: Disabilities
+  category: Cybernetics
   cost: 2
   conflicts:
   - ArmAmputeeRight
@@ -34,14 +34,14 @@
     - type: Amputee
       removeBodyPart: Arm
       partSymmetry: Right
-      protoId: JawsOfLifeRightArm
+      protoId: PrybarRightArm
       slotId: "right arm"
 
 - type: trait
   id: CyberEyesFlare
   name: trait-name-CyberEyesFlare
   description: trait-description-CyberEyesFlare
-  category: Medical
+  category: Cybernetics
   cost: 8
   conflicts:
   - Blindness
@@ -55,7 +55,7 @@
 
 - type: trait
   id: CyberEyesNightVision
-  category: Medical
+  category: Cybernetics
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
   cost: 8
@@ -80,7 +80,7 @@
 
 - type: trait
   id: CyberEyesSecurity
-  category: Medical
+  category: Cybernetics
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
   cost: 4
@@ -98,7 +98,7 @@
 
 - type: trait
   id: CyberEyesMedical
-  category: Medical
+  category: Cybernetics
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
   cost: 4
@@ -115,10 +115,11 @@
       damageContainers:
       - Biological
       - BiologicalMetaphysical
+    - type: ShowTriageIcons # Euphoria - Add triage icons to standard crew-aligned medical HUDs
 
 - type: trait
   id: CyberEyesOmni
-  category: Medical
+  category: Cybernetics
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
   cost: 6
@@ -143,6 +144,7 @@
       damageContainers:
       - Biological
       - BiologicalMetaphysical
+    - type: ShowTriageIcons # Euphoria - Add triage icons to standard crew-aligned medical HUDs
 # =================================================== #
 
 # ================= Stamina traits ================== #
@@ -150,7 +152,7 @@
   id: Vigor
   name: trait-vigor-name
   description: trait-vigor-desc
-  category: Medical
+  category: Skills
   cost: 4 # I don't think it's extremely useful in combat, but it can help you survive one extra stunbaton hit.
   conflicts:
   - Vigor
@@ -173,7 +175,7 @@
   id: Lethargy
   name: trait-lethargy-name
   description: trait-lethargy-desc
-  category: Medical
+  category: DisabilitiesPhysical
   cost: -2
   conflicts:
   - Vigor
@@ -191,7 +193,7 @@
   id: Weakness
   name: trait-weakness-name
   description: trait-weakness-desc
-  category: Medical
+  category: DisabilitiesPhysical
   cost: -5 # Getting stunned from 1-2 stunbaton or disabler hits is worth a lot.
   conflicts:
   - Vigor
@@ -204,4 +206,403 @@
   effects:
   - !type:ModifyStaminaThresholdEffect
     multiplier: 0.5
+# =================================================== #
+
+# =================== Fist traits =================== #
+- type: trait
+  id: Talons
+  name: trait-talons-name
+  description: trait-talons-desc
+  category: BonusPhysical
+  cost: 0
+  conflicts:
+    - Claws
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Harpy # Harpies already have talons
+        - Arachnid # Apparently they have a "piercing" bite
+        - Feroxi # Floof - They bite. Piercing damage. Nuff said.
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Piercing: 5 # No, this isn't "OP", this is literally the worst brute damage type in the game.
+                      # Same deal as Slash, except that a majority of all armor provides Piercing resistance.
+
+- type: trait
+  id: Claws
+  name: trait-claws-name
+  description: trait-claws-desc
+  category: BonusPhysical
+  cost: 0
+  conflicts:
+    - Talons
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Felinid # Felinids already have cat claws.
+        - Tajaran # Tajaran also have cat claws
+        - Reptilian # Reptilians also have cat claws.
+        - Shadowkin # Shadowkins also have claws.
+        # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
+        - Rodentia # Floof - Rodentia already has it
+        - Resomi # Floof - they have claws after port of Goob changes
+        - Feroxi # Floof - They bite. Nuff said.
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      soundHit:
+        collection: AlienClaw
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5 # Trade stamina damage on hit for a very minor amount of extra bleed.
+                  # Blunt also deals bleed damage, so this is more of a sidegrade.
+
+- type: trait
+  id: NaturalWeaponRemoval
+  name: trait-natural-weapon-removal-name
+  description: trait-natural-weapon-removal-desc
+  category: BonusPhysical
+  cost: 0
+  conflicts:
+    - Talons
+    - Claws
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Human
+        - Oni
+        - SlimePerson
+        - Diona
+        - Arachne
+        - IPC # Other species could justify getting this trait for Blunt stamina damage,
+              # but 6 blunt -> 5 blunt is a straight up downgrade.
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      soundHit:
+        collection: Punch
+      animation: WeaponArcFist
+      damage:
+        types:
+          Blunt: 5
+
+- type: trait
+  id: ImprovedUnarmed # Striking calluses by any other name
+  name: trait-Improved-Unarmed-name
+  description: trait-Improved-Unarmed-desc
+  category: BonusPhysical
+  cost: 2
+  effects:
+    - !type:ModifyUnarmedTraitEffect
+      flatDamageIncrease:
+        types:
+          Blunt: 1
+# =================================================== #
+
+# ==============Temperature Tolerance================ #
+- type: trait
+  id: ColdTolerance
+  name: trait-coldtolerance-name
+  description: trait-coldtolerance-desc
+  category: Skills
+  cost: 1
+  conflicts:
+    - ColdIntolerance
+    - ColdIntoleranceAdvanced
+    #- ColdToleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have huge tolerance
+    invert: true
+    species:
+    #- Vulpkanin #220
+    - Vox #-200, Jesus
+    #- Moth #230
+    #- Chitinid #230
+    #- Avali #223
+    #- Tajaran #248.15
+    - Resomi #195.4
+    - Shadowkin #195
+    #- Reptilian #285
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: -20 # 20 better (more tolerant) than base (which should be 260)
+
+- type: trait
+  id: ColdToleranceAdvanced
+  name: trait-coldtoleranceadvanced-name
+  description: trait-coldtoleranceadvanced-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - ColdIntolerance
+    - ColdIntoleranceAdvanced
+    #- ColdTolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have extreme tolerance
+    invert: true
+    species:
+    - Vulpkanin #220
+    - Vox #-200, Jesus
+    #- Moth #230
+    #- Chitinid #230
+    - Avali #223
+    #- Tajaran #248.15
+    - Resomi #195.4
+    - Shadowkin #195
+    #- Reptilian #285
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: -40 # 40 better (more tolerant) than base (which should be 260), same as Vulpkanin
+
+- type: trait
+  id: HeatTolerance
+  name: trait-heattolerance-name
+  description: trait-heattolerance-desc
+  category: Skills
+  cost: 1
+  conflicts:
+    - HeatIntolerance
+    - HeatIntoleranceAdvanced
+    #- HeatToleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have this tolerance or something better (only reptilian?)
+    invert: true
+    species:
+    - Reptilian #Holy 400 heat tolerance, Batman
+    #- Moth #320
+    #- Chitinid #320
+    #- Avali #310
+    #- Resomi #320.15
+    #- Shadowkin #330
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: 20 # 20 better (more tolerant) than base (which should be 325).
+
+- type: trait
+  id: HeatToleranceAdvanced
+  name: trait-heattoleranceadvanced-name
+  description: trait-heattoleranceadvanced-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - HeatIntolerance
+    - HeatIntoleranceAdvanced
+    #- HeatTolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which already have this tolerance or something better (only reptilian?)
+    invert: true
+    species:
+    - Reptilian #Holy 400 heat tolerance, Batman
+    #- Moth #320
+    #- Chitinid #320
+    #- Avali #310
+    #- Resomi #320.15
+    #- Shadowkin #330
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: 40 # 40 better (more tolerant) than base (which should be 325).
+
+- type: trait
+  id: ColdIntolerance
+  name: trait-coldintolerance-name
+  description: trait-coldintolerance-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - ColdTolerance
+    - ColdToleranceAdvanced
+    #- ColdIntoleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger at room temperature (maybe reptilian)
+    invert: true
+    species:
+    #- Vulpkanin #220
+    - Vox #-200, Jesus. Vox don't take cold damage.
+    #- Moth #230
+    #- Chitinid #230
+    #- Avali #223
+    #- Tajaran #248.15
+    #- Resomi #195.4
+    #- Shadowkin #195
+    - Reptilian #285 #At 20 intolerance, they're just barely on the cusp. The "you're too cold" warning keeps going back and forth.
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: 20 # 20 worse (less tolerant) than base (which should be 260)
+
+- type: trait
+  id: ColdIntoleranceAdvanced
+  name: trait-coldintoleranceadvanced-name
+  description: trait-coldintoleranceadvanced-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - ColdTolerance
+    - ColdToleranceAdvanced
+    #- ColdIntolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger at room temperature (reptilian)
+    invert: true
+    species:
+    #- Vulpkanin #220
+    - Vox #-200, Jesus. Vox don't take cold damage.
+    #- Moth #230
+    #- Chitinid #230
+    #- Avali #223
+    #- Tajaran #248.15
+    #- Resomi #195.4
+    #- Shadowkin #195
+    - Reptilian #285
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    coldToleranceModifier: 40 # 40 worse (less tolerant) than base (which should be 260)
+
+- type: trait
+  id: HeatIntolerance
+  name: trait-heatintolerance-name
+  description: trait-heatintolerance-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - HeatTolerance
+    - HeatToleranceAdvanced
+    #- HeatIntoleranceAdvanced
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: -5 # 5 worse (less tolerant) than base (which should be 325).
+
+- type: trait
+  id: HeatIntoleranceAdvanced
+  name: trait-heatintoleranceadvanced-name
+  description: trait-heatintoleranceadvanced-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - HeatTolerance
+    - HeatToleranceAdvanced
+    #- HeatIntolerance
+  conditions:
+  - !type:HasCompCondition
+    component: Temperature
+  - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger of regular room temperature.
+    invert: true
+    species:
+    #- Reptilian #Holy 400 heat tolerance, Batman. Giving intolerance wouldn't make much of a difference, might just be free points, basically.
+    - Moth #320 Constant warning at 10 below their normal.
+    - Chitinid #320
+    - Avali #310 Too dangerous.
+    - Resomi #320.15 Constant warning at 10 below their normal.
+    #- Shadowkin #330
+  effects:
+  - !type:ModifyTemperatureToleranceEffect
+    heatToleranceModifier: -10 # 10 worse (less tolerant) than base (which should be 325).
+# =================================================== #
+
+# =============Crit and Dead Threshold=============== #
+- type: trait
+  id: GlassJaw
+  name: trait-glassjaw-name
+  description: trait-glassjaw-desc
+  category: Skills
+  cost: -2
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.85 #-15%
+
+- type: trait
+  id: WillToDie
+  name: trait-willtodie-name
+  description: trait-willtodie-desc
+  category: Skills
+  cost: -1
+  conflicts:
+    - WillToLive
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.9 #-10%
+
+- type: trait
+  id: Tenacity
+  name: trait-tenacity-name
+  description: trait-tenacity-desc
+  category: Skills
+  cost: 3
+  conflicts:
+    - GlassJaw
+    - BrittleBones
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 1.05 #+5%
+
+- type: trait
+  id: WillToLive
+  name: trait-willtolive-name
+  description: trait-willtolive-desc
+  category: Skills
+  cost: 2
+  conflicts:
+    - WillToDie
+    - Redshirt
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 1.05 #+5%
+
+- type: trait
+  id: BrittleBones
+  name: trait-brittlebone-name
+  description: trait-brittlebone-desc
+  category: Skills
+  cost: -10
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.5 #-50%
 # =================================================== #

@@ -63,3 +63,141 @@
     tags:
     - Fruit
     - Slice
+
+- type: entity
+  name: humpshroom
+  parent: FoodProduceBase
+  id: FoodHumpShroom
+  description: A sweet-smelling mushroom that excretes a sticky and arousing liquid.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Philterex
+          Quantity: 5
+        - ReagentId: Cum
+          Quantity: 20
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/humpshroom.rsi
+  - type: Produce
+    seedId: humpShroom
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  name: breedshroom
+  parent: FoodProduceBase
+  id: FoodBreedShroom
+  description: An overwhelmingly smelling mushroom that excretes an incredibly sticky and arousing liquid. It has been known to increase the population in colonies.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - mushroom
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Libidozenithizine
+          Quantity: 2
+        - ReagentId: Cum
+          Quantity: 20
+        - ReagentId: Philterex
+          Quantity: 4
+        - ReagentId: Happiness
+          Quantity: 4
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/breedshroom.rsi
+  - type: Produce
+    seedId: breedShroom
+  - type: Extractable
+    grindableSolutionName: food
+  - type: Tag
+    tags:
+    - Vegetable
+
+- type: entity
+  name: coconut
+  parent: FoodProduceBase
+  id: FoodCoconut
+  description: A delicious, sweet fruit, believed to have special properties.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - creamy
+    - nutty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: CoconutWater
+          Quantity: 2
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/coconut.rsi
+  - type: Produce
+    seedId: coconut
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: CoconutWater
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+    - CoconutFruit
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 1 # give it a tiny bit of throw damage for the silly
+
+- type: entity
+  name: coconut gun husk
+  parent: FoodProduceBase
+  id: FoodCoconutGunFruit
+  description: A delicious, gun-shaped fruit with a thick wooden stem.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - gunpowder
+    - sweet
+    - creamy
+    - nutty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Sulfur # we keep this so it tastes similar to gat fruit
+          Quantity: 5
+        - ReagentId: CoconutWater
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/coconut_gun.rsi
+  - type: Produce
+    seedId: coconutgun
+  - type: Edible
+    trash:
+    - WeaponRifleCoconutGun
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: WeaponRifleCoconutGun
+  - type: Tag
+    tags:
+    - Fruit # It's in the name

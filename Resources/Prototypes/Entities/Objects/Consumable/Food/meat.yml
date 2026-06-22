@@ -42,6 +42,7 @@
   - type: AtmosExposed
   - type: Temperature
     currentTemperature: 290
+  - type: TemperatureDamage
   # required for cooking to work
   - type: InternalTemperature
     thickness: 0.02
@@ -69,16 +70,6 @@
     entity: FoodMeatRotten
     # once it would say bloated, turn into the rotten prototype
     stage: 1
-
-# bruh
-- type: Tag
-  id: Raw
-
-- type: Tag
-  id: Cooked
-
-- type: Tag
-  id: Cutlet
 
 # Raw
 
@@ -124,6 +115,12 @@
   name: raw human meat
   description: Gross.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: MeatHuman
+      Taco: MeatHuman
+  #Euphoria end
   - type: Sprite
     state: plain
   - type: SolutionContainerManager
@@ -133,8 +130,8 @@
         - ReagentId: UncookedAnimalProteins
           Quantity: 9
   - type: SliceableFood
-    count: 3
-    slice: FoodMeatCutlet
+    count: 2
+    slice: FoodMeatBacon # Euphoria - Long Bacon
   - type: Item
     storedOffset: -2,1
     inhandVisuals:
@@ -150,6 +147,12 @@
   name: raw carp fillet
   description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: Fish
+      Taco: Fish
+  #Euphoria end
   - type: FlavorProfile
     flavors:
       - fishy
@@ -350,6 +353,12 @@
   id: FoodMeatCorgi
   description: The tainted gift of an evil crime. The meat may be delicious, but at what cost?
   components:
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: FoodMeatCorgi
+      Taco: FoodMeatCorgi
+  #Euphoria changes end
   - type: Tag
     tags:
     - Raw
@@ -1114,7 +1123,7 @@
     node: filet migrawr
   - type: FoodSequenceElement
     entries:
-      Burger: MeatBearBurger
+      Burger: MeatBear #Euphoria
       Taco: MeatBear
   - type: Item
     storedOffset: -1,1

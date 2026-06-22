@@ -1,0 +1,172 @@
+﻿- type: foodSequenceElement
+  id: Appendix
+  name: food-sequence-content-appendix
+  sprites:
+  - sprite: Mobs/Species/Human/organs.rsi
+    state: appendix
+  tags:
+  - Appendix
+  - Raw
+
+- type: foodSequenceElement
+  id: BaseballBat
+  name: food-sequence-content-baseballbat
+  sprites:
+  - sprite: Objects/Weapons/Melee/baseball_bat.rsi
+    state: icon
+  tags:
+  - BaseballBat
+
+- type: foodSequenceElement
+  id: CatEars
+  name: food-sequence-content-catears
+  sprites:
+  - sprite: Clothing/Head/Hats/catears.rsi
+    state: icon
+  tags:
+  - CatEars
+
+- type: foodSequenceElement
+  id: ClownMask
+  name: food-sequence-content-clownmask
+  sprites:
+  - sprite: Clothing/Mask/clown.rsi
+    state: icon
+  tags:
+  - ClownMask
+
+- type: foodSequenceElement
+  id: FoodMeatCorgi
+  name: food-sequence-content-corgi
+  sprites:
+  - sprite: Objects/Consumable/Food/meat.rsi
+    state: corgi
+  tags:
+  - Raw
+  - HighRiskItem
+  - Meat
+
+- type: foodSequenceElement
+  id: CrayonGreen
+  name: food-sequence-content-greencrayon
+  sprites:
+  - sprite: Objects/Fun/crayons.rsi
+    state: green
+  tags:
+  - CrayonGreen
+
+- type: foodSequenceElement
+  id: Flare
+  name: food-sequence-content-flare
+  sprites:
+  - sprite: Objects/Misc/flare.rsi
+    state: icon
+  tags:
+  - Flare
+
+- type: foodSequenceElement
+  id: Plasma
+  name: food-sequence-content-plasma
+  sprites:
+    - sprite: Objects/Materials/Sheets/other.rsi
+      state: plasma
+  tags:
+    - Plasma
+
+- type: foodSequenceElement
+  id: Fish
+  name: food-sequence-content-fish
+  sprites:
+    - sprite: Objects/Consumable/Food/meat.rsi
+      state: fish
+  tags:
+    - Raw
+    - Meat
+    - Fish
+
+- type: foodSequenceElement
+  id: Ectoplasm
+  name: food-sequence-content-ectoplasm
+  sprites:
+    - sprite: _DV/Mobs/Ghosts/revenant.rsi
+      state: ectoplasm
+  tags:
+    - Ectoplasm
+
+- type: foodSequenceElement
+  id: MeatHuman
+  name: food-sequence-content-human
+  sprites:
+    - sprite: Objects/Consumable/Food/meat.rsi
+      state: plain
+  tags:
+    - Raw
+    - Meat
+    - Human
+
+- type: foodSequenceElement
+  id: AmanitaJelly
+  name: food-sequence-content-amanita-jelly
+  sprites:
+    - sprite: Objects/Consumable/Food/meals.rsi
+      state: amanita-jelly
+  tags:
+    - AmanitaJelly
+
+- type: foodSequenceElement
+  id: Ribs
+  name: food-sequence-content-ribs
+  sprites:
+    - sprite: Objects/Consumable/Food/meals.rsi
+      state: ribs
+  tags:
+    - Meat
+    - Ribs
+
+- type: foodSequenceElement
+  id: MimeMask
+  name: food-sequence-content-mimemask
+  sprites:
+    - sprite: Clothing/Mask/mime.rsi
+      state: icon
+  tags:
+    - MimeMask
+
+- type: foodSequenceElement
+  id: Manipulator
+  name: food-sequence-content-manipulator
+  sprites:
+    - sprite: Objects/Misc/stock_parts.rsi
+      state: micro_mani
+  tags:
+    - Manipulator
+
+- type: foodSequenceElement
+  id: WizardHat
+  name: food-sequence-content-wizardhat
+  sprites:
+    - sprite: Clothing/Head/Hats/wizardhat.rsi
+      state: icon
+  tags:
+    - WizardHat
+
+- type: foodSequenceElement
+  id: TofuSlice
+  name: food-sequence-content-tofu
+  sprites:
+  - sprite: Objects/Consumable/Food/ingredients.rsi
+    state: tofu-slice
+  tags:
+  - Tofu
+  - Slice
+
+- type: foodSequenceElement
+  id: Mothroach
+  name: food-sequence-burger-content-mothroach
+  sprites:
+  - sprite: Mobs/Animals/mothroach/mothroach.rsi
+    state: mothroach_dead
+  tags:
+  - Meat
+  - Raw
+  - Mothroach

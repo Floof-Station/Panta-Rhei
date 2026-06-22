@@ -1,0 +1,88 @@
+﻿- type: entity
+  id: PaperCoupon
+  parent: Paper
+  name: coupon
+  description: A printed coupon that can be redeemed to the person who printed it.
+  components:
+  - type: Tag
+    tags:
+    - Document
+    - Trash
+    - Paper
+  - type: StaticPrice
+    price: 0
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper_receipt_horizontal
+    - state: paper_receipt_horizontal_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_perforated.svg.96dpi.png"
+    headerMargin: 0.0, 0.0, 0.0, 6.0
+    backgroundImageTile: true
+    backgroundPatchMargin: 0.0, 6.0, 0.0, 6.0
+    contentMargin: 12.0, 0.0, 12.0, 0.0
+    # This is a narrow piece of paper
+    maxWritableArea: 256.0, 0.0
+  - type: Construction
+    graph: PaperCoupon
+    node: start
+
+- type: entity
+  parent: BaseItem
+  id: PaperPlane
+  name: Paper Plane
+  description: It's a bird! No its a plane! No is just a paper plane.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/paper_plane.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.25
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.5 # a little bouncy
+        friction: 0.2
+  - type: Item
+    size: Small
+    sprite: _Floof/Objects/Misc/paper_plane.rsi
+  - type: TileFrictionModifier
+    modifier: 0.1
+  - type: EmbeddableProjectile
+    removalTime: .2
+  - type: ThrowingAngle
+    angle: 270
+  - type: Tag
+    tags:
+    - Trash
+  - type: Construction
+    graph: PaperPlane
+    node: start
+
+- type: entity
+  parent: BaseItem
+  id: PaperOrigamiSwan
+  name: Origami Swan
+  description: It's a bird! No its a plane! No wait its just an Origami Swan.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/origami.rsi
+    state: origami_swan
+  - type: Item
+    size: Small
+    sprite: _Floof/Objects/Misc/origami.rsi
+  - type: Tag
+    tags:
+    - Trash
+  - type: Construction
+    graph: PaperPlane
+    node: start

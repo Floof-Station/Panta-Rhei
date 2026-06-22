@@ -5,8 +5,6 @@
   id: FloofJumpsuits
   abstract: true
   name: loadout-group-passenger-jumpsuits
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ClothingUniformJumpsuitTacticool
   - ClothingUniformJumpskirtTacticool
@@ -100,18 +98,23 @@
   - ClothingThongBee
   - ClothingThongRainbow
   - ClothingThongCoderValid
+  - ClothingUniformFishnetThong
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
+  - ClothingCowprintBikini
   - UniformNudityPermit
+  - ClothingUniformBandedDancersGarb
+  - ClothingUniformRedSidelessDress
+  - ClothingUniformPurpleNightclubDress
+  - ClothingUniformBlackPetticoatDress
+  - ClothingUniformJumpskirtBlazer
 
 # gloves
 - type: loadoutGroup
   id: FloofGloves
   abstract: true
   name: loadout-group-passenger-gloves
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsGlovesLeather
   - ClothingArmwarmersCoder
@@ -132,10 +135,9 @@
   id: FloofShoes
   abstract: true
   name: loadout-group-passenger-shoes
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ClothingShoesBootsJack
+  - ClothingShoesBootsLaceup
   - ClothingShoesBootsCowboyFancy
   - ClothingShoesBootsCowboyBlack
   - ClothingShoesBootsCowboyBrown
@@ -155,13 +157,13 @@
   - ClothingSocksPan
   - ClothingSocksTrans
   - ClothingSocksCoderValid
+  - ClothingSocksCowprint
+  - ClothingUnderSocksFishnets
 
 # backpacks
 - type: loadoutGroup
   id: FloofBackpacks
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - BackpackSatchelLeather
 
@@ -170,10 +172,9 @@
   id: FloofOuterClothing
   abstract: true
   name: loadout-group-passenger-outerclothing
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - OuterCoatBomber
+  - OuterLustroCoat
   - OuterCoatMNKWhiteHoodie
   - OuterHoodieBlack
   - OuterHoodieGrey
@@ -188,7 +189,6 @@
   - OuterCyberJacketPurple
   - OuterCyberJacketYellow
   - OuterDenimJacket
-  - OuterCorporateJacket
   - OuterCoatHyenhSweater
   - ShrimpFishermanSuit
   - OuterCoatPirate
@@ -207,14 +207,32 @@
   - ClothingOuterCoatJacketLettermanRed
   - ClothingOuterCoatJacketLettermanMagenta
   - ClothingOuterCoatBomberPinkSleeves
+  - ClothingUniformOversizeSweatshirt
+  - ClothingUniformOversizeSweatGoth
+  - ClothingUniformOversizeSweatUni
+  - ClothingUniformOversizeSweatTacky
+  - OuterCorporateJacket
+  - ClothingOuterCsCorporateJacket
+  - ClothingOuterHiCorporateJacket
+  - ClothingOuterHmCorporateJacket
+  - ClothingOuterIdCorporateJacket
+  - ClothingOuterBcCorporateJacket
+  - ClothingOuterDdCorporateJacket
+  - ClothingOuterFaCorporateJacket
+  - ClothingOuterGeCorporateJacket
+  - ClothingOuterZhCorporateJacket
+  - ClothingOuterCoatIdrisIncorporatedWindbreaker
+  - ClothingUniformFishnet
+  - ClothingUniformFishnetAlt
+  - ClothingUniformFishnetSleeves
+  - ClothingUniformFishnetSleevesGloves
+  - ClothingUniformFishnetSimpleTop
 
 # hats
 - type: loadoutGroup
   id: FloofHats
   abstract: true
   name: loadout-group-assistant-head
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - HeadHatHairflower
   - HeadHatLilly
@@ -239,12 +257,29 @@
 - type: loadoutGroup
   id: FloofGlasses
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingEyesBlindfold
+  - ClothingEyesBlindfoldFake
   - ClothingEyesEyepatch
   - ClothingEyesGlassesGar
   - ClothingEyesGlassesGarGiga
   - ClothingEyesGlassesGarOrange
   - GlassesJamjar
+
+# pet collar pads
+- type: loadoutGroup
+  id: FloofPetCollarPdas
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarBlackPetId
+  - ClothingNeckCollarBlackPetIdAlternative
+  - ClothingNeckCollarBluePetId
+  - ClothingNeckCollarBluePetIdAlternative
+  - ClothingNeckCollarPinkPetId
+  - ClothingNeckCollarPinkPetIdAlternative
+  - ClothingNeckCollarSyndiPetId
+  - ClothingNeckCollarSyndiPetIdAlternative
+  - ClothingNeckCollarShockPetId
+  - ClothingNeckCollarShockPetIdAlternative
+  - ClothingNeckCollarBellPetId
+  - ClothingNeckCollarBellPetIdAlternative

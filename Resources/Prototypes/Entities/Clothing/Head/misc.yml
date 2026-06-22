@@ -210,6 +210,12 @@
   description: "NYAH!"
   categories: [ DoNotMap ]
   components:
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: CatEars
+      Taco: CatEars
+  #Euphoria changes end
   - type: Tag
     tags: [] # ignore "WhitelistChameleon" tag
   - type: Sprite

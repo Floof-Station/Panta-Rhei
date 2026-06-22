@@ -67,8 +67,9 @@ reagent-desc-soda-water = A container of club soda. Why not make a scotch and so
 reagent-name-soy-latte = soy latte
 reagent-desc-soy-latte = A coffee drink made with espresso and steamed soy milk.
 
-reagent-name-tea = tea
-reagent-desc-tea = A drink made by boiling leaves of the tea tree, Camellia sinensis.
+# Mono edit
+reagent-name-tea = black tea
+reagent-desc-tea = A classic, robust black tea with a deep, rich flavor.
 
 reagent-name-tonic-water = tonic water
 reagent-desc-tonic-water = It tastes strange but at least the quinine keeps the Space Malaria at bay.
@@ -96,5 +97,5 @@ reagent-desc-posca = Poor warriors' drink from a forgotten era.
 reagent-name-mopwata = mopwata
 reagent-desc-mopwata = Dirty, stagnant mop water.
 
-reagent-name-orange-lime-soda = citrus bikeshed
+reagent-name-orange-lime-soda = akira special
 reagent-desc-orange-lime-soda = The soda should be orange! No, it should be lemon-lime!

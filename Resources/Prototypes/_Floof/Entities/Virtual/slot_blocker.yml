@@ -1,0 +1,8 @@
+# These items are only spawned once when first needed and referenced later when needed
+
+# An "item" that can be used to check if the user has no inner clothing and nothing like a hardsuit restricts access from the bottom
+# This item has an InnerClothing slot so it can be "worn" under coats
+- type: entity
+  id: VirtualClothingPanties
+  parent: ClothingUniformEngiThong
+  categories: [ HideSpawnMenu ]

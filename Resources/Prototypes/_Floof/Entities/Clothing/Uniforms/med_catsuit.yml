@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformMedCatsuit
+  name: medical catsuit
+  description: This catsuit is made with sterile latex and nitrile. Comes with a medical cross painted onto the back. Smells sterile.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/med_catsuit.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/med_catsuit.rsi

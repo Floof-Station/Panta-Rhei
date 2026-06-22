@@ -7,6 +7,10 @@
   markingLimits: MobArachneMarkingLimits
   dollPrototype: MobArachneDummy
   skinColoration: Hues
+  minAge: 60
+  youngAge: 150
+  oldAge: 400
+  maxAge: 700
 
 # The lack of a layer means that
 # this person cannot have round-start anything
@@ -110,7 +114,6 @@
       sprite: _Floof/Mobs/Species/Arachne/parts.rsi
       state: spider_body
 
-
 - type: humanoidBaseSprite
   id: MobTaurTorso
   baseSprite:
@@ -133,7 +136,7 @@
   id: TaurBodyConnector
   baseSprite:
     sprite: _Floof/Mobs/Species/Arachne/parts.rsi
-    state: "spider_body_front"
+    state: spider_body_front
 
 - type: humanoidBaseSprite
   id: MobArachneEyes

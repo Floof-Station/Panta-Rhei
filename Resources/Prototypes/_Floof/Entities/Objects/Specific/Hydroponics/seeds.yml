@@ -8,3 +8,45 @@
     seedId: pomegranate
   - type: Sprite
     sprite: _Floof/Objects/Specific/Hydroponics/pomegranate.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of humpshroom spores
+  id: HumpShroomSeeds
+  components:
+  - type: Seed
+    seedId: humpShroom
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/humpshroom.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of breedshroom spores
+  id: BreedShroomSeeds
+  components:
+  - type: Seed
+    seedId: breedShroom
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/breedshroom.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of coconut tree seeds
+  description: "Sun shine and tasty fruit."
+  id: CoconutSeeds
+  components:
+  - type: Seed
+    seedId: coconut
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/coconut.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of coconut gun seeds
+  description: "Sun shine and tasty fruit with a silly pew pew."
+  id: CoconutGunSeeds
+  components:
+  - type: Seed
+    seedId: coconutgun
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/coconut_gun.rsi

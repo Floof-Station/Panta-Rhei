@@ -21,6 +21,7 @@
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     #- id: ClothingHandsKnuckleDustersQM # DeltaV - No weaponry for LO.
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -46,6 +47,7 @@
     - id: ClothingHeadsetAltCommand
     - id: ClothingOuterArmorCaptainCarapace
     - id: ClothingOuterWinterCapArmored #DeltaV
+    - id: ClothingOuterCoatCapTrench # TheDen
     - id: BoxCaptainCircuitboards
     - id: DoorRemoteCustom
     #- id: MedalCase # DeltaV - Moved to dresser
@@ -57,6 +59,7 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
+    - id: PrinterDocFlatpack #Corvax - Printer
     - id: HeadSkeleton # A skull to accompany your skeleton crew
       conditions:
       - !type:PlayerCountCondition
@@ -144,6 +147,7 @@
     - id: HoPIDCard
     #- id: WeaponDisabler # DeltaV - There is no reason for the service head to have a disabler.
     - id: ClothingEyesHudCommand
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -180,6 +184,7 @@
     - id: AirGrenade # DeltaV
     - id: HolotapeProjector # DeltaV - engineering tape
     - id: BoxFolderCeClipboard # DeltaV - Power Digi-Board
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -238,6 +243,7 @@
     - id: MedkitFilled
     - id: RubberStampCMO
     - id: MedTekCartridge
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -291,6 +297,7 @@
     - id: RubberStampRd
     - id: BibleMystagogue  # DeltaV - steal objective and source of abilities
     - id: EncryptionKeyBinary # Floofstation - give mystagouge the binary key to spek to borgs an AI
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -354,6 +361,7 @@
     - id: WeaponTaser
     #- id: WantedListCartridge # DeltaV - replaced by secwatch
     - id: DrinkHosFlask
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -401,6 +409,7 @@
     - id: SpaceCash1000
     - id: BeachBall
     - id: BikeHorn
+    - id: PrinterDocFlatpack #Corvax - Printer
 
 - type: entity
   id: LockerFreezerVaultFilled

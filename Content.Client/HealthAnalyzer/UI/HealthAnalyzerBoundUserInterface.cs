@@ -1,6 +1,7 @@
-﻿using Content.Shared.MedicalScanner;
+using Content.Shared.MedicalScanner;
 using Content.Shared._Shitmed.Targeting; // Shitmed Change
 using Content.Shared._DV.MedicalRecords; // DeltaV - Medical Records
+﻿using Content.Shared._NF.Medical; // Frontier
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
 
@@ -21,10 +22,12 @@ namespace Content.Client.HealthAnalyzer.UI
             base.Open();
 
             _window = this.CreateWindow<HealthAnalyzerWindow>();
-            _window.OnBodyPartSelected += SendBodyPartMessage; // Shitmed Change
-            _window.OnTriageStatusChanged += SendTriageStatusMessage; // DeltaV - Medical Records
-            _window.OnClaimPatient += SendTriageClaimMessage; // DeltaV - Medical Records
+            _window.HealthAnalyzer.OnBodyPartSelected += SendBodyPartMessage; // Shitmed Change
+            _window.HealthAnalyzer.OnTriageStatusChanged += SendTriageStatusMessage; // DeltaV - Medical Records
+            _window.HealthAnalyzer.OnClaimPatient += SendTriageClaimMessage; // DeltaV - Medical Records
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
+
+            _window.HealthAnalyzer.OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
         }
 
 
@@ -48,7 +51,7 @@ namespace Content.Client.HealthAnalyzer.UI
                 return;
 
             if (_window != null)
-                _window.OnBodyPartSelected -= SendBodyPartMessage;
+                _window.HealthAnalyzer.OnBodyPartSelected -= SendBodyPartMessage;
 
             _window?.Dispose();
         }
