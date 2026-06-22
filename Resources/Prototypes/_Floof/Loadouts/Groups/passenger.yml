@@ -134,6 +134,7 @@
 - type: loadoutGroup
   id: FloofShoes
   abstract: true
+  parent: [EuphoriaShoes] # Euphoria
   name: loadout-group-passenger-shoes
   loadouts:
   - ClothingShoesBootsJack
