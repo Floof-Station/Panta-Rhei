@@ -12,7 +12,7 @@
 # Heels
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesBaseButcherableHeelsNoisy
   id: ClothingShoesHeelsKitten
   name: kitten heels
   description: A pair of cute kitten heels with a dainty ankle strap.
@@ -21,12 +21,6 @@
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten.rsi
   - type: Clothing
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-      params:
-        volume: -6
-        variation: 0.09
 
 - type: entity
   parent: ClothingShoesHeelsKitten
@@ -59,7 +53,7 @@
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_rose.rsi
 
 - type: entity
-  parent: ClothingShoesBaseButcherable
+  parent: ClothingShoesBaseButcherableHeelsNoisy
   id: ClothingShoesHeelsBallet
   name: ballet heels
   description: A pair of extreme heels that force you to walk en pointe.
@@ -72,9 +66,3 @@
     damage:
       types:
         Piercing: 6
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-      params:
-        volume: -6
-        variation: 0.09

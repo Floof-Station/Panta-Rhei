@@ -1,7 +1,7 @@
 
 # Security
 - type: entity
-  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband] # Euphoria +ClothingShoesMilitaryBase, -ClothingShoesBootsJack, -ClothingShoesHighheelBoots
+  parent: [ClothingShoesMilitaryBase, ClothingShoesBaseHeelsNoisy, BaseSecurityContraband] # Euphoria +ClothingShoesMilitaryBase, +ClothingShoesBaseHeelsNoisy, -ClothingShoesBootsJack, -ClothingShoesHighheelBoots
   id: ClothingShoesBootsJackHeels
   name: high-heeled jackboots
   description: Specialized high-heeled boots intended for use in combat scenarios, while somehow passing equipment standards. Now, you can kick ass in style!
@@ -22,11 +22,3 @@
     damage:
       types:
         Piercing: 6 # Euphoria 6<8 for consistency with Combat High Heels
-  # Euphoria start: Add footstep sounds
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-      params:
-        volume: -6
-        variation: 0.09
-  # Euphoria end
