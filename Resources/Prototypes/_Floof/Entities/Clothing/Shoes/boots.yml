@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: [ClothingShoesMilitaryBase, BaseSecurityContraband] # Euphoria: +BaseSecurityContraband
   id: ClothingShoesCombatHighheelBoots
   name: combat high-heeled boots
   description: Snazy boots for when you want to be stylish, yet very prepared.
@@ -15,6 +15,11 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHighHeels
+      # Euphoria start: Add footstep sounds parameters to match other high heels
+      params:
+        volume: -6
+        variation: 0.09
+      # Euphoria end
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
   - type: Construction
