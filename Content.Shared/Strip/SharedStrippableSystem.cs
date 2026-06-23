@@ -727,11 +727,14 @@ public abstract class SharedStrippableSystem : EntitySystem
     }
 
     // Floofstation/Euphoria - allow slots to always be hidden
-    public bool IsStripForceHidden(SlotDefinition definition, EntityUid? viewer)
+    public bool IsStripSlotHiddenByEquipment(SlotDefinition definition, Entity<InventoryComponent> entity, EntityUid? viewer)
     {
-        if (!definition.AlwaysStripHidden)
+        if (definition.HiddenBySlot == null)
             return false;
 
-        return !HasComp<BypassInteractionChecksComponent>(viewer);
+        if (HasComp<BypassInteractionChecksComponent>(viewer))
+            return false;
+
+        return _inventorySystem.TryGetSlotEntity(entity, definition.HiddenBySlot, out var invEntity, entity);
     }
 }

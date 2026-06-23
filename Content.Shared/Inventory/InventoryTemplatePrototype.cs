@@ -58,10 +58,10 @@ public sealed partial class SlotDefinition
     [DataField("stripHidden")] public bool StripHidden { get; private set; }
 
     /// <summary>
-    ///     Floofstation/Euphoria change: if true, always hides the contents of this slot, regardless of whether it's filled or empty.
-    ///     Only has effect if StripHidden is also true.
+    ///     Floofstation/Euphoria change: if not null, the entity in this slot will be completely hidden if this slot is not empty.
+    ///     <seealso cref="SharedStrippableSystem.IsStripSlotHiddenByEquipment"/>
     /// </summary>
-    public bool AlwaysStripHidden { get; private set; }
+    public string? HiddenBySlot { get; private set; } = null;
 
     /// <summary>
     ///     Offset for the clothing sprites.
