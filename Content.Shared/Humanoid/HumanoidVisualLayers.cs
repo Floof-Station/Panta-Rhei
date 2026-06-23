@@ -16,6 +16,7 @@ namespace Content.Shared.Humanoid
         FacialHair,
         UndergarmentTop,    // Floofstation note: Undershirt has been changed to this
         UndergarmentBottom, // Floofstation note: Underwear has been changed to this
+        UndergarmentSocks,  // Floofstation-specific
         Chest,
         Head,
         Face,

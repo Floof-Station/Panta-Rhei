@@ -2,14 +2,25 @@ using System.Numerics;
 using Content.Shared.Strip;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
 namespace Content.Shared.Inventory;
 
 [Prototype]
-public sealed partial class InventoryTemplatePrototype : IPrototype
+public sealed partial class InventoryTemplatePrototype : IPrototype, IInheritingPrototype // Floof - made inheriting
 {
     [IdDataField] public string ID { get; private set; } = string.Empty;
 
+    // Floof section
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<InventoryTemplatePrototype>))]
+    public string[]? Parents { get; private set; }
+
+    [NeverPushInheritance]
+    [AbstractDataField]
+    public bool Abstract { get; private set; }
+    // Floof section end
+
+    [AlwaysPushInheritance] // Floof - push inheritance
     [DataField("slots")] public SlotDefinition[] Slots { get; private set; } = Array.Empty<SlotDefinition>();
 }
 
