@@ -72,6 +72,11 @@
     slots:
     - UNDERGARMENT_BOTTOM
     equippedState: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - INNERCLOTHING
+      - OUTERCLOTHING
 
 # Base for top undergarment
 - type: entity
@@ -83,6 +88,14 @@
     slots:
     - UNDERGARMENT_TOP
     equippedState: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - INNERCLOTHING
+      - OUTERCLOTHING
+      blacklist:
+        tags:
+        - ShirtlessClothing
 
 # Base for socks
 - type: entity
@@ -94,3 +107,7 @@
     slots:
     - UNDERGARMENT_SOCKS
     equippedState: equipped-FEET # Terrible hack cause i can't be bothered to rename all the items' sprites
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - FEET
