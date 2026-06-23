@@ -3,22 +3,24 @@
   id: BaseHumanoidUnderwear
   slots:
     - name: undergarmentBottom
-      slotTexture: gloves
+      slotTexture: undergarmentBottom
       slotFlags: UNDERGARMENT_BOTTOM
       uiWindowPos: 3,1
       strippingWindowPos: 3,2
       displayName: Bottom Undergarment
-      alwaysStripHidden: true
+      hiddenBySlot: jumpsuit
+      hiddenWhenEmpty: true
     - name: undergarmentTop
-      slotTexture: gloves
+      slotTexture: undergarmentTop
       slotFlags: UNDERGARMENT_TOP
       uiWindowPos: 3,2
-      strippingWindowPos: 3,3
+      strippingWindowPos: 3,1
       displayName: Top Undergarment
-      hiddenBySlot: innerClothing
+      hiddenBySlot: jumpsuit
+      hiddenWhenEmpty: true
     - name: undergarmentSocks
-      slotTexture: gloves
+      slotTexture: undergarmentSocks
       slotFlags: UNDERGARMENT_SOCKS
       uiWindowPos: 3,0
-      strippingWindowPos: 3,1
+      strippingWindowPos: 3,3
       displayName: Socks

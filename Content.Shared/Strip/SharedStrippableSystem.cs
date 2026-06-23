@@ -303,7 +303,7 @@ public abstract class SharedStrippableSystem : EntitySystem
 
         if (!stealth)
         {
-            if (IsStripHidden(slotDef, user))
+            if (IsStripHidden(slotDef, user, target))
                 _popupSystem.PopupEntity(Loc.GetString("strippable-component-alert-owner-hidden", ("slot", slot)), target, target, PopupType.Large);
             else
             {
@@ -715,26 +715,16 @@ public abstract class SharedStrippableSystem : EntitySystem
             args.Handled = true;
     }
 
-    public bool IsStripHidden(SlotDefinition definition, EntityUid? viewer)
+    public bool IsStripHidden(SlotDefinition definition, EntityUid? viewer, Entity<InventoryComponent?> inventoryEnt) // Floof - pass in the inventory entity
     {
-        if (!definition.StripHidden)
+        // Floof - allow the entity to be hidden by occlusion
+        if (!definition.StripHidden
+            && (definition.HiddenBySlot is null || !_inventorySystem.TryGetSlotEntity(inventoryEnt, definition.HiddenBySlot, out _, inventoryEnt)))
             return false;
 
         if (viewer == null)
             return true;
 
         return !HasComp<BypassInteractionChecksComponent>(viewer);
-    }
-
-    // Floofstation/Euphoria - allow slots to always be hidden
-    public bool IsStripSlotHiddenByEquipment(SlotDefinition definition, Entity<InventoryComponent> entity, EntityUid? viewer)
-    {
-        if (definition.HiddenBySlot == null)
-            return false;
-
-        if (HasComp<BypassInteractionChecksComponent>(viewer))
-            return false;
-
-        return _inventorySystem.TryGetSlotEntity(entity, definition.HiddenBySlot, out var invEntity, entity);
     }
 }
