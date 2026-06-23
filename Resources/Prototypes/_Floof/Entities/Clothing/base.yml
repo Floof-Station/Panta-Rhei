@@ -71,7 +71,9 @@
   - type: Clothing
     slots:
     - UNDERGARMENT_BOTTOM
-    equippedState: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
+    clothingVisuals:
+      undergarmentTop:
+      - state: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
   - type: SlotBlocker # Floofstation
     blockedBy:
       slots:
@@ -87,7 +89,9 @@
   - type: Clothing
     slots:
     - UNDERGARMENT_TOP
-    equippedState: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
+    clothingVisuals:
+      undergarmentTop:
+      - state: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
   - type: SlotBlocker # Floofstation
     blockedBy:
       slots:
@@ -106,8 +110,24 @@
   - type: Clothing
     slots:
     - UNDERGARMENT_SOCKS
-    equippedState: equipped-FEET # Terrible hack cause i can't be bothered to rename all the items' sprites
+    clothingVisuals:
+      undergarmentTop:
+      - state: equipped-FEET # Terrible hack cause i can't be bothered to rename all the items' sprites
   - type: SlotBlocker # Floofstation
     blockedBy:
       slots:
       - FEET
+
+
+
+# Base for top undergarment that can also be equipped in inner or outer clothing
+- type: entity
+  abstract: true
+  parent: ClothingUndergarmentTopBase
+  id: ClothingUndergarmentTopSwitchableBase
+  components:
+  - type: Clothing
+    slots:
+    - INNERCLOTHING
+    - OUTERCLOTHING
+    - UNDERGARMENT_TOP
