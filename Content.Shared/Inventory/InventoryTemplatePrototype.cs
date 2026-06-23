@@ -58,6 +58,12 @@ public sealed partial class SlotDefinition
     [DataField("stripHidden")] public bool StripHidden { get; private set; }
 
     /// <summary>
+    ///     Floofstation/Euphoria change: if true, always hides the contents of this slot, regardless of whether it's filled or empty.
+    ///     Only has effect if StripHidden is also true.
+    /// </summary>
+    public bool AlwaysStripHidden { get; private set; }
+
+    /// <summary>
     ///     Offset for the clothing sprites.
     /// </summary>
     [DataField("offset")] public Vector2 Offset { get; private set; } = Vector2.Zero;
