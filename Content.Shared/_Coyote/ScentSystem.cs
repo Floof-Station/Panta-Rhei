@@ -16,8 +16,8 @@ using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
 using Robust.Shared.Network;
 using Content.Shared._Floof.InteractionVerbs;
-using Content.Shared.Ghost;
-using Content.Shared.Mobs.Systems;
+using Content.Shared.Ghost; // Euphoria
+using Content.Shared.Mobs.Systems; // Euphoria
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -35,7 +35,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!; // Euphoria
 
 // Euphoria - no spam pls
     public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
@@ -824,7 +824,8 @@ public sealed class ScentSystem : EntitySystem
     /// </summary>
     private bool SniffaOkay(EntityUid uid)
     {
-        return !_consent.HasConsent(uid, "CantSmellScentsAtAll") && !HasComp<GhostComponent>(uid) && _mobState.IsAlive(uid);
+        return !_consent.HasConsent(uid, "CantSmellScentsAtAll")
+            && !HasComp<GhostComponent>(uid) && _mobState.IsAlive(uid); // Euphoria
     }
    #endregion
 }
