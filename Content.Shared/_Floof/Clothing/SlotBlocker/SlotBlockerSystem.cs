@@ -207,7 +207,7 @@ public sealed class SlotBlockerSystem : EntitySystem
             // Check whether this clothing is blocked by this slot
             if (equipment is { Comp: not null } equipment2
                 && equipment2.Comp.BlockedBy.Slots != SlotFlags.NONE
-                && BlockerObstructsSlot(other, other, ref equipment2.Comp.BlockedBy, check, slot.SlotFlags, targetSlot, ref reason))
+                && BlockerObstructsSlot(other, other, ref equipment2.Comp.BlockedBy, check, slot.SlotFlags, slot.SlotFlags, ref reason))
                 return true;
 
             // Check whether the clothing in this slot blocks this clothing
@@ -227,10 +227,10 @@ public sealed class SlotBlockerSystem : EntitySystem
         ref BlockerDefinition blocks,
         CheckType check,
         SlotFlags blockerInSlot,
-        SlotFlags equipmentInSlot,
+        SlotFlags checkedSlot,
         ref string? reason)
     {
-        if (!blocks.Slots.HasFlag(equipmentInSlot)
+        if (!blocks.Slots.HasFlag(checkedSlot)
             || (blocks.EnableInSlots & blockerInSlot) == 0
             // If there's an equipment whitelist, then equipment must be present to consider this blocker.
             || blocks.Whitelist != null && (whitelistTarget == null || _whitelist.IsWhitelistFail(blocks.Whitelist, whitelistTarget.Value))
