@@ -111,7 +111,7 @@
     slots:
     - UNDERGARMENT_SOCKS
     clothingVisuals:
-      undergarmentTop:
+      undergarmentSocks:
       - state: equipped-FEET # Terrible hack cause i can't be bothered to rename all the items' sprites
   - type: SlotBlocker # Floofstation
     blockedBy:
@@ -131,3 +131,7 @@
     - INNERCLOTHING
     - OUTERCLOTHING
     - UNDERGARMENT_TOP
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - OUTERCLOTHING
