@@ -1138,6 +1138,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cmo-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cmo-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -1167,6 +1170,19 @@
     entityId: ClothingOuterHardsuitMagicalCMO
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
   - type: HideLayerClothing
     slots:
     - Hair
