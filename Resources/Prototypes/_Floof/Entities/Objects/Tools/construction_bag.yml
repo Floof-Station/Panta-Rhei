@@ -1,0 +1,75 @@
+﻿# regular construction bag
+- type: entity
+  parent: BaseStorageItem
+  id: ConstructionBag
+  name: construction bag
+  description: A robust bag for engineers alike to carry large amounts of construction materials.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tools/construction_bag.rsi
+    state: construction_bag
+  - type: Clothing
+    sprite: _Floof/Objects/Tools/construction_bag.rsi
+    quickEquip: false
+    slots:
+    - belt
+    clothingVisuals:
+      belt:
+      - state: construction_bag_belt
+  - type: Item
+    size: Huge
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,9,3
+    quickInsert: true
+    areaInsert: true
+    whitelist:
+      tags:
+      - Ingot
+      - Sheet
+      - CableCoil
+      - ConstructionMaterial # May need to add a new tag for rods, this may cause un-intended mats to go into the bag
+    blacklist:
+      tags:
+      - PrizeTicket
+  - type: Dumpable
+  - type: StaticPrice
+    price: 100
+  - type: MagnetPickup
+    range: 2
+  - type: ItemToggle
+    soundActivate: &soundActivate
+      collection: sparks
+      params:
+        variation: 0.25
+    soundDeactivate: *soundActivate
+  - type: ItemToggleExamine
+    on: magnet-pickup-component-magnet-on
+    off: magnet-pickup-component-magnet-off
+
+# bluespace costruction bag
+- type: entity
+  parent: ConstructionBag
+  id: ConstructionBagOfHolding
+  name: construction bag of holding
+  description: A robust bag of holding for engineers alike to carry large amounts of construction materials.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tools/construction_bag.rsi
+    state: bluespace_construction_bag
+  - type: Item
+    size: Huge
+    inhandVisuals:
+      left:
+      - state: bluespace_inhand-left
+      right:
+      - state: bluespace_inhand-right
+  - type: Storage
+    grid:
+    - 0,0,19,9
