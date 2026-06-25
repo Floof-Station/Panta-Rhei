@@ -201,3 +201,61 @@
   - type: Tag
     tags:
     - Fruit # It's in the name
+
+- type: entity
+  name: peanut
+  parent: FoodProduceBase
+  id: FoodPeanutInShell # in shell
+  description: A delicious and salty peanut in its shell.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - nutty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: PeanutOil
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/peanut.rsi
+  - type: Produce
+    seedId: peanuts
+  - type: Tag
+    tags:
+    - Nuts
+  - type: SpawnItemsOnUse
+    items:
+    - id: FoodPeanut
+      amount: 2 # give two peanuts per plant
+    sound:
+      path: /Audio/Effects/packetrip.ogg
+
+- type: entity
+  name: peanut
+  parent: FoodProduceBase
+  id: FoodPeanut
+  description: A delicious and salty peanut in its shell.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - nutty
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: PeanutOil
+          Quantity: 2
+        - ReagentId: Nutriment
+          Quantity: 5
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/peanut_raw.rsi
+  - type: Tag
+    tags:
+    - Nuts

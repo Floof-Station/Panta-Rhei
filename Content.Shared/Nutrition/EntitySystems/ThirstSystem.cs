@@ -220,4 +220,26 @@ public sealed class ThirstSystem : EntitySystem
             UpdateEffects(uid, thirst);
         }
     }
+
+    #region Euphoria: Add access to BaseThirstDecay for ModifyThirstDecayEffect
+    /// <summary>
+    /// Sets an entity's base thirst decay in a safe way. Silently fails if entity has no thirst component.
+    /// </summary>
+    /// <param name="ent">The entity to which the thirst component belongs.</param>
+    /// <param name="baseDecayRate">The value to set the base decay rate to.</param>
+    /// <param name="component">The thirst component to set the base decay rate for, or null.</param>
+    public void SetBaseDecayRate(EntityUid ent, float baseDecayRate, ThirstComponent? component = null)
+    {
+        if (!Resolve(ent, ref component))
+            return;
+
+        // First calculate and set current thirst value.
+        SetThirst(ent, component, component.CurrentThirst);
+        component.BaseDecayRate = baseDecayRate;
+
+        // Force thirst threshold effects to set actual decay based on base decay and threshold modifier.
+        // Current threshold does not need to be re-calculated.
+        UpdateEffects(ent, component);
+    }
+    #endregion
 }

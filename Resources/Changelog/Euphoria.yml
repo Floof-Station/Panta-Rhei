@@ -3806,3 +3806,89 @@ Entries:
       message: Made 🍤 Fisher Outfit warm enough to walk outside on Glacier
   id: 476
   time: '2026-06-21T07:51:35.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Botany can now grow peanuts, seeds can be found in the seed vendor.
+    - type: Add
+      message: Peanuts have a recipe to be turned into peanut butter.
+    - type: Add
+      message: >-
+        Peanut Butter can be used in various new food recipes and one drink
+        recipe.
+  id: 477
+  time: '2026-06-22T09:12:36.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Two new medals have been added to the medal case for command members to
+        give out as they see fit.
+  id: 478
+  time: '2026-06-22T09:14:20.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Ability to modify thirst decay as part of traits
+    - type: Tweak
+      message: Add increased thirst to Enhanced Regeneration
+  id: 479
+  time: '2026-06-22T09:15:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        When editing loadouts, you can now choose to copy loadout metadata or
+        even the entire loadout to other jobs. Hover your mouse over the
+        checkboxes in the loadout metadata editor for more info.
+    - type: Fix
+      message: >-
+        Fixed a couple bugs related to loadouts. Most notably, the character
+        preview should now correctly display loadouts with a custom color tint.
+  id: 480
+  time: '2026-06-22T09:19:57.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Potted plants are now carriable the same way players are.
+  id: 481
+  time: '2026-06-22T09:21:44.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: Geras can Offer!
+    - type: Add
+      message: Geras can Climb onto things (Such as Tables)
+    - type: Add
+      message: Geras can now Buckle into chairs!
+    - type: Add
+      message: >-
+        Geras can escape from inventories by wiggling! (Move while held or in
+        inventory. If you have the small trait, it's like that.)
+    - type: Tweak
+      message: Geras have a Transparency layer as they should.
+    - type: Fix
+      message: Geras having an AI (or at least wandering while SSD)
+  id: 482
+  time: '2026-06-23T10:41:32.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Envelopes will no longer eat the first paper you put into them after
+        manually crafting.
+  id: 483
+  time: '2026-06-23T10:46:09.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Construction bags are now available to Engineering on shift start, can
+        be found in the Engineering Vendor or printed at the Engineering
+        techfab.
+    - type: Add
+      message: >-
+        Construction Bag of Holding has been added to t2 advanced tools research
+        and can hold much more than the basic Construction bag.
+  id: 484
+  time: '2026-06-25T09:20:39.0000000+00:00'
