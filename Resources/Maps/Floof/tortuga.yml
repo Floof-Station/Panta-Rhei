@@ -4,8 +4,8 @@ meta:
   engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 06/25/2026 19:13:41
-  entityCount: 36264
+  time: 06/26/2026 18:03:59
+  entityCount: 36280
 maps:
 - 35
 grids:
@@ -15844,8 +15844,8 @@ entities:
       - 24596
       - 21360
       - 21357
-      - 35273
-      - 35272
+      - 36271
+      - 35396
       - 35469
       - 35394
       - 35429
@@ -15875,6 +15875,8 @@ entities:
       - 35428
       - 21363
       - 22300
+      - 28522
+      - 36280
     - type: AccessReader
       accessListsOriginal:
       - - Atmospherics
@@ -17680,10 +17682,20 @@ entities:
     - type: Transform
       pos: -16.5,-6.5
       parent: 33
+  - uid: 21647
+    components:
+    - type: Transform
+      pos: -85.5,-34.5
+      parent: 33
   - uid: 23297
     components:
     - type: Transform
       pos: -14.5,-6.5
+      parent: 33
+  - uid: 31630
+    components:
+    - type: Transform
+      pos: -85.5,-33.5
       parent: 33
   - uid: 32309
     components:
@@ -17804,6 +17816,28 @@ entities:
     components:
     - type: Transform
       pos: -47.5,-3.5
+      parent: 33
+  - uid: 36268
+    components:
+    - type: Transform
+      pos: -87.5,-27.5
+      parent: 33
+  - uid: 36269
+    components:
+    - type: Transform
+      pos: -86.5,-27.5
+      parent: 33
+  - uid: 36272
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -91.5,-35.5
+      parent: 33
+  - uid: 36273
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -91.5,-34.5
       parent: 33
 - proto: AirlockHeadOfPersonnelLocked
   entities:
@@ -20108,8 +20142,11 @@ entities:
   - uid: 28522
     components:
     - type: Transform
-      pos: -87.5,-20.5
+      pos: -86.5,-25.5
       parent: 33
+    - type: DeviceNetwork
+      deviceLists:
+      - 35496
   - uid: 29171
     components:
     - type: Transform
@@ -20222,6 +20259,14 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 1821
+  - uid: 36280
+    components:
+    - type: Transform
+      pos: -87.5,-15.5
+      parent: 33
+    - type: DeviceNetwork
+      deviceLists:
+      - 35496
 - proto: AirSensorUnset
   entities:
   - uid: 34726
@@ -20393,6 +20438,13 @@ entities:
     components:
     - type: Transform
       pos: -61.449493,-20.09271
+      parent: 33
+- proto: AntiAnomalyZone20
+  entities:
+  - uid: 36278
+    components:
+    - type: Transform
+      pos: 85.5,42.5
       parent: 33
 - proto: AntiMeteorZoneArrivals
   entities:
@@ -20806,6 +20858,13 @@ entities:
       parent: 33
     - type: Fixtures
       fixtures: {}
+  - uid: 35273
+    components:
+    - type: Transform
+      pos: -94.5,-33.5
+      parent: 33
+    - type: Fixtures
+      fixtures: {}
   - uid: 35374
     components:
     - type: MetaData
@@ -20813,18 +20872,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -89.5,-25.5
-      parent: 33
-    - type: AccessReader
-      accessListsOriginal:
-      - - Engineering
-    - type: Fixtures
-      fixtures: {}
-  - uid: 35426
-    components:
-    - type: MetaData
-      name: APC (Dorms 2)
-    - type: Transform
-      pos: -91.5,-33.5
       parent: 33
     - type: AccessReader
       accessListsOriginal:
@@ -23883,6 +23930,11 @@ entities:
     components:
     - type: Transform
       pos: -96.5,-29.5
+      parent: 33
+  - uid: 36275
+    components:
+    - type: Transform
+      pos: -104.5,-29.5
       parent: 33
 - proto: BenchBlueComfy
   entities:
@@ -28420,6 +28472,11 @@ entities:
     components:
     - type: Transform
       pos: -38.5,-25.5
+      parent: 33
+  - uid: 12837
+    components:
+    - type: Transform
+      pos: -94.5,-33.5
       parent: 33
   - uid: 12889
     components:
@@ -45861,11 +45918,6 @@ entities:
     - type: Transform
       pos: -50.5,81.5
       parent: 33
-  - uid: 35275
-    components:
-    - type: Transform
-      pos: -91.5,-33.5
-      parent: 33
   - uid: 35307
     components:
     - type: Transform
@@ -46275,6 +46327,11 @@ entities:
     components:
     - type: Transform
       pos: -72.5,-39.5
+      parent: 33
+  - uid: 35449
+    components:
+    - type: Transform
+      pos: -88.5,-25.5
       parent: 33
   - uid: 35454
     components:
@@ -62334,10 +62391,10 @@ entities:
     - type: Transform
       pos: -49.5,80.5
       parent: 33
-  - uid: 35276
+  - uid: 35275
     components:
     - type: Transform
-      pos: -91.5,-33.5
+      pos: -92.5,-34.5
       parent: 33
   - uid: 35277
     components:
@@ -62488,6 +62545,11 @@ entities:
     components:
     - type: Transform
       pos: -88.5,-25.5
+      parent: 33
+  - uid: 35426
+    components:
+    - type: Transform
+      pos: -93.5,-34.5
       parent: 33
   - uid: 35531
     components:
@@ -62713,6 +62775,16 @@ entities:
     components:
     - type: Transform
       pos: 71.5,42.5
+      parent: 33
+  - uid: 36266
+    components:
+    - type: Transform
+      pos: -94.5,-34.5
+      parent: 33
+  - uid: 36267
+    components:
+    - type: Transform
+      pos: -94.5,-33.5
       parent: 33
 - proto: CableMVStack
   entities:
@@ -75829,6 +75901,14 @@ entities:
     - type: Transform
       pos: 55.5,-13.5
       parent: 33
+- proto: ComputerShuttleSalvage
+  entities:
+  - uid: 36276
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 59.5,-8.5
+      parent: 33
 - proto: ComputerSolarControl
   entities:
   - uid: 18458
@@ -78098,6 +78178,11 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -105.5,-37.5
+      parent: 33
+  - uid: 36274
+    components:
+    - type: Transform
+      pos: -104.5,-29.5
       parent: 33
 - proto: CurtainsRedOpen
   entities:
@@ -88949,28 +89034,6 @@ entities:
     - type: Transform
       pos: 3.6163175,-15.525661
       parent: 33
-- proto: Dresser
-  entities:
-  - uid: 21647
-    components:
-    - type: Transform
-      pos: -89.5,-40.5
-      parent: 33
-  - uid: 31630
-    components:
-    - type: Transform
-      pos: -100.5,-40.5
-      parent: 33
-  - uid: 35108
-    components:
-    - type: Transform
-      pos: -95.5,-29.5
-      parent: 33
-  - uid: 35183
-    components:
-    - type: Transform
-      pos: -103.5,-29.5
-      parent: 33
 - proto: DresserCaptainFilledDV
   entities:
   - uid: 4635
@@ -89078,6 +89141,26 @@ entities:
     components:
     - type: Transform
       pos: -51.5,118.5
+      parent: 33
+  - uid: 33633
+    components:
+    - type: Transform
+      pos: -103.5,-29.5
+      parent: 33
+  - uid: 35108
+    components:
+    - type: Transform
+      pos: -95.5,-29.5
+      parent: 33
+  - uid: 35183
+    components:
+    - type: Transform
+      pos: -100.5,-40.5
+      parent: 33
+  - uid: 35272
+    components:
+    - type: Transform
+      pos: -89.5,-40.5
       parent: 33
 - proto: DresserHeadOfPersonnelFilledDV
   entities:
@@ -92910,8 +92993,6 @@ entities:
       parent: 33
     - type: DeviceList
       devices:
-      - 35273
-      - 35272
       - 35469
       - 35394
       - 35429
@@ -96452,24 +96533,6 @@ entities:
       - 33608
       - 271
       - 7732
-  - uid: 35272
-    components:
-    - type: Transform
-      pos: -94.5,-34.5
-      parent: 33
-    - type: DeviceNetwork
-      deviceLists:
-      - 25683
-      - 35495
-  - uid: 35273
-    components:
-    - type: Transform
-      pos: -94.5,-35.5
-      parent: 33
-    - type: DeviceNetwork
-      deviceLists:
-      - 25683
-      - 35495
   - uid: 35394
     components:
     - type: Transform
@@ -96481,6 +96544,15 @@ entities:
       - 35495
       - 35503
       - 690
+  - uid: 35396
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -91.5,-35.5
+      parent: 33
+    - type: DeviceNetwork
+      deviceLists:
+      - 35495
   - uid: 35428
     components:
     - type: Transform
@@ -96698,6 +96770,15 @@ entities:
       deviceLists:
       - 36177
       - 25568
+  - uid: 36271
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -91.5,-34.5
+      parent: 33
+    - type: DeviceNetwork
+      deviceLists:
+      - 35495
 - proto: Fireplace
   entities:
   - uid: 3467
@@ -159280,6 +159361,9 @@ entities:
     - type: Transform
       pos: -30.5,61.5
       parent: 33
+    - type: AccessReader
+      accessListsOriginal:
+      - - Security
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
@@ -159346,6 +159430,16 @@ entities:
       parent: 33
     - type: Lock
       locked: False
+- proto: LockerSecurityTechnicianFilledHardsuit
+  entities:
+  - uid: 35276
+    components:
+    - type: Transform
+      pos: -28.5,61.5
+      parent: 33
+    - type: AccessReader
+      accessListsOriginal:
+      - - Security
 - proto: LockerSurgeonFilled
   entities:
   - uid: 18523
@@ -174331,11 +174425,6 @@ entities:
     - type: Transform
       pos: -75.5,-3.5
       parent: 33
-  - uid: 12837
-    components:
-    - type: Transform
-      pos: -28.5,61.5
-      parent: 33
   - uid: 27365
     components:
     - type: Transform
@@ -177340,12 +177429,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -87.5,-30.5
       parent: 33
-  - uid: 35396
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -91.5,-35.5
-      parent: 33
   - uid: 35397
     components:
     - type: Transform
@@ -177538,6 +177621,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 59.5,50.5
+      parent: 33
+  - uid: 36270
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -90.5,-35.5
       parent: 33
 - proto: PoweredLightBlueInterior
   entities:
@@ -184676,10 +184765,10 @@ entities:
     - type: Transform
       pos: -87.5,-35.5
       parent: 33
-  - uid: 35449
+  - uid: 36279
     components:
     - type: Transform
-      pos: -86.5,-18.5
+      pos: -86.5,-17.5
       parent: 33
 - proto: RandomSpawner100
   entities:
@@ -200381,6 +200470,13 @@ entities:
     components:
     - type: Transform
       pos: -75.5,4.5
+      parent: 33
+- proto: SpawnPointSecurityTechnician
+  entities:
+  - uid: 36277
+    components:
+    - type: Transform
+      pos: -28.5,60.5
       parent: 33
 - proto: SpawnPointServiceWorker
   entities:
