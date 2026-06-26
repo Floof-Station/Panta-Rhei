@@ -1863,15 +1863,17 @@
   - type: UseDelay
     delay: 2.0
   - type: EmitSoundOnActivate
-    sound: *yap
+    sound: &yip
+      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
   - type: EmitSoundOnUse
-    sound: *yap
+    sound: *yip
   - type: EmitSoundOnLand
-    sound: *foxScream
+    sound: &fox_growl1
+      path: /Audio/_DV/Voice/Kitsune/fox_growl1.ogg
   - type: EmitSoundOnCollide
-    sound: *foxScream
+    sound: *fox_growl1
   - type: MeleeWeapon
-    soundHit: *foxScream
+    soundHit: *fox_growl1
 
 - type: entity
   parent: PlushieHuman
@@ -1885,12 +1887,12 @@
   - type: UseDelay
     delay: 2.0
   - type: EmitSoundOnActivate
-    sound: &fox_squeal1
-      path: /Audio/_DV/Voice/Kitsune/fox_squeal1.ogg
+    sound: &fox2
+      path: /Audio/Animals/fox2.ogg
       params:
         volume: 2
   - type: EmitSoundOnUse
-    sound: *fox_squeal1
+    sound: *fox2
   - type: EmitSoundOnLand
     sound: &fox13
       path: /Audio/Animals/fox13.ogg
@@ -1900,3 +1902,4 @@
     sound: *fox13
   - type: MeleeWeapon
     soundHit: *fox13
+    
