@@ -214,7 +214,10 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
                 ("damageGroup", group.LocalizedName),
                 ("amount", groupDamage)
             );
-            report.AddMarkupPermissive(groupTitleText); // Euphoria: Use AddMarkupPermissive instead of AddText to preserve markup.
+            #region Euphoria: Use AddMarkupPermissive instead of AddText to preserve Markup.
+            //report.AddText(groupTitleText);
+            report.AddMarkupPermissive(groupTitleText);
+            #endregion
             report.PushNewline();
 
             // List individual damage types
@@ -226,7 +229,10 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
                     continue;
                 }
 
-                report.AddMarkupPermissive(Loc.GetString( // Euphoria: Use AddMarkupPermissive instead of AddText to preserve markup.
+                #region Euphoria: Use AddMarkupPermissive instead of AddText to preserve Markup.
+                //report.AddText(Loc.GetString(
+                report.AddMarkupPermissive(Loc.GetString(
+                #endregion
                     "health-analyzer-printout-damage-type-text",
                     ("damageType", _prototypes.Index<DamageTypePrototype>(type).LocalizedName),
                     ("amount", amount)
