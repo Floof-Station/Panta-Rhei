@@ -276,6 +276,19 @@
 # ======================================================== #
 # Service worker additions
 - type: loadoutGroup
+  id: ServiceWorkerNeck
+  parent: [CommonCollars, Scarfs]
+  minLimit: 0
+  loadouts: []
+
+- type: loadoutGroup
+  id: ServiceWorkerGloves
+  parent: [PassengerGloves]
+  minLimit: 0
+  loadouts:
+  - ClothingHandsServiceWarmers
+
+- type: loadoutGroup
   id: FloofServiceWorkerPDAs
   name: loadout-group-service-worker-pdas
   loadouts:
