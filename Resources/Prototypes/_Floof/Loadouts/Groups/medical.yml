@@ -1,67 +1,52 @@
-﻿# paramed backpacks
-- type: loadoutGroup
-  id: FloofParamedBackpacks
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - BackpackParamedic
-  - BackpackDuffelParamed
-  - BackpackSatchelParamed
-
+﻿# ======================================================== #
 # outer clothing for all of medical not just paramed
 - type: loadoutGroup
   id: FloofMedicalOuterClothing
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - OuterCoatCybersunWindbreaker
 
-#below additions are for cmo
-- type: loadoutGroup
-  id: FloofCmoThong
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformCMOThong
 
+# ======================================================== #
+# cmo additions
 - type: loadoutGroup
   id: FloofCmoGloves
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - HandsCMOWarmers
 
 - type: loadoutGroup
-  id: FloofCmoSocks
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UnderSocksCMO
-
-# cmo pdas
-- type: loadoutGroup
   id: FloofCMOPDAs
   name: loadout-group-chief-medical-officer-pdas
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - CMOPDA
   - DirectorOfCarePDA
   - ClothingNeckCollarEmotionalSupportCMO # Emotional Support
 
+- type: loadoutGroup
+  id: FloofUndergarmentTopCMO
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomCMO
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformCMOThong
+
+- type: loadoutGroup
+  id: FloofSocksCMO
+  parent: FloofSocksPassenger
+  loadouts:
+  - UnderSocksCMO
+
+
+# ======================================================== #
 # paramed additions
 - type: loadoutGroup
   id: FloofParamedJumpsuit
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
-  - UniformParaMedicThong
   - MedicalApronJumpsuit
   - MedicalApronJumpskirt
   - MedicalOffsetJumpsuit
@@ -79,87 +64,33 @@
   id: FloofParamedGloves
   name: loadout-group-medical-paramedic-gloves
   parent: [MedicalGloves]
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsParaMedicWarmers
 
 - type: loadoutGroup
-  id: FloofParamedShoes
+  id: FloofParamedBackpacks
   abstract: true
-  minLimit: 1
-  maxLimit: 1
+  loadouts:
+  - BackpackParamedic
+  - BackpackDuffelParamed
+  - BackpackSatchelParamed
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopParamed
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomParamed
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformParaMedicThong
+
+- type: loadoutGroup
+  id: FloofSocksParamed
+  parent: FloofSocksPassenger
   loadouts:
   - ClothingUnderSocksParaMedic
-
-# medical doctor additions
-- type: loadoutGroup
-  id: FloofMedicalDoctorJumpsuit
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformMedicThong
-  - UniformMedCatsuit
-
-- type: loadoutGroup
-  id: FloofMedicalDoctorGloves
-  abstract: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - ClothingHandsMedicWarmers
-
-- type: loadoutGroup
-  id: FloofMedicalShoes
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - ClothingUnderSocksMedic
-
-# chemist additions
-- type: loadoutGroup
-  id: FloofChemistJumpsuit
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformChemistsThong
-
-- type: loadoutGroup
-  id: FloofChemistGloves
-  abstract: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - ClothingHandsChemistsWarmers
-
-- type: loadoutGroup
-  id: FloofChemistShoes
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - ClothingUnderSocksChemists
-
-- type: loadoutGroup
-  id: FloofChemistEyeWear
-  abstract: true
-  minLimit: 0
-  maxLimit: 1
-  loadouts:
-  - EyesGlassesChemical
-  - EyesGlassesChemicalInterdyne
-
-#below additions are for medical doctors
-- type: loadoutGroup
-  id: FloofMedicalDoctorPDAs
-  abstract: true
-  loadouts:
-  - MorticianPDA
-  - VetPDA
-  - ClothingNeckCollarEmotionalSupportMedicalDoctor
 
 - type: loadoutGroup
   id: FloofParamedicPDAs
@@ -171,6 +102,90 @@
   - TRPDA
   - ClothingNeckCollarEmotionalSupportParamed
 
+
+# ======================================================== #
+# medical doctor additions
+- type: loadoutGroup
+  id: FloofMedicalDoctorJumpsuit
+  abstract: true
+  loadouts:
+  - UniformMedCatsuit
+
+- type: loadoutGroup
+  id: FloofMedicalDoctorGloves
+  abstract: true
+  loadouts:
+  - ClothingHandsMedicWarmers
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopMedicalDoctor
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomMedicalDoctor
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformMedicThong
+
+- type: loadoutGroup
+  id: FloofSocksMedicalDoctor
+  parent: FloofSocksPassenger
+  loadouts:
+  - ClothingUnderSocksMedic
+
+- type: loadoutGroup
+  id: FloofMedicalDoctorPDAs
+  abstract: true
+  loadouts:
+  - MorticianPDA
+  - VetPDA
+  - ClothingNeckCollarEmotionalSupportMedicalDoctor
+
+# ======================================================== #
+# chemist additions
+- type: loadoutGroup
+  id: FloofChemistGloves
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingHandsChemistsWarmers
+
+- type: loadoutGroup
+  id: FloofChemistEyeWear
+  abstract: true
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - EyesGlassesChemical
+  - EyesGlassesChemicalInterdyne
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopChemist
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomChemist
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformChemistsThong
+
+- type: loadoutGroup
+  id: FloofSocksChemist
+  parent: FloofSocksPassenger
+  loadouts:
+  - ClothingUnderSocksChemists
+
+- type: loadoutGroup
+  id: FloofMedicalChemistPDAs
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportChemist
+
+# ======================================================== #
+# misc additions
 - type: loadoutGroup
   id: FloofSeniorPhysicianPDAs
   name: loadout-group-floof-senior-pyhs-pdas
@@ -181,18 +196,14 @@
   - SeniorPhysPDA # Floofstations version
   - ClothingNeckCollarEmotionalSupportSeniorPhys
 
+
+# ======================================================== #
 # medical intern pdas
 - type: loadoutGroup
   id: FloofMedicalInternPDAs
   abstract: true
   loadouts:
   - ClothingNeckCollarEmotionalSupportMedicalIntern
-
-- type: loadoutGroup
-  id: FloofMedicalChemistPDAs
-  abstract: true
-  loadouts:
-  - ClothingNeckCollarEmotionalSupportChemist
 
 - type: loadoutGroup
   id: FloofMedicalPsychPDAs
