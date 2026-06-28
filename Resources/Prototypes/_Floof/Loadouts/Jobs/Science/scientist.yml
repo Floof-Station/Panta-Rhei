@@ -1,8 +1,4 @@
 ﻿# scientist outfits
-- type: loadout
-  id: UniformEpiThong
-  equipment:
-    jumpsuit: ClothingUniformEpiThong
 
 # gloves
 - type: loadout
@@ -11,10 +7,6 @@
     gloves: ClothingHandsEpiWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksEpi
-  equipment:
-    shoes: ClothingUnderSocksEpi
 
 # pdas
 - type: loadout
@@ -27,3 +19,17 @@
   id: ClothingNeckCollarEmotionalSupportScientist
   equipment:
     neck: ClothingNeckCollarEmotionalSupportScientist
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformEpiThong
+  equipment:
+    undergarmentBottom: ClothingUniformEpiThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksEpi
+  equipment:
+    undergarmentSocks: ClothingUnderSocksEpi

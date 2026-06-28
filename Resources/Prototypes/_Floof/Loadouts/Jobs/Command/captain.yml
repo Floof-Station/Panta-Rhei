@@ -1,19 +1,9 @@
 ﻿# ======================================================== #
 # captain additions
 - type: loadout
-  id: UniformCaptainThong
-  equipment:
-    jumpsuit: ClothingUniformCaptainThong
-
-- type: loadout
   id: HandsCaptainWarmers
   equipment:
     gloves: ClothingHandsCaptainWarmers
-
-- type: loadout
-  id: UnderSocksCaptain
-  equipment:
-    shoes: ClothingUnderSocksCaptain
 
 # pda
 - type: loadout
@@ -42,3 +32,18 @@
   id: ClothingNeckCollarEmotionalSupportCaptainAlternative
   equipment:
     neck: ClothingNeckCollarEmotionalSupportCaptainAlternative
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformCaptainThong
+  equipment:
+    undergarmentBottom: ClothingUniformCaptainThong
+
+# socks
+- type: loadout
+  id: UnderSocksCaptain
+  equipment:
+    undergarmentSocks: ClothingUnderSocksCaptain
+
