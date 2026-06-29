@@ -1008,36 +1008,6 @@
     outerClothing: ClothingUniformOversizeSweatTacky
   groupBy: "Sweatshirt"
 
-- type: loadout
-  id: ClothingUniformFishnet
-  equipment:
-    outerClothing: ClothingUniformFishnet
-  groupBy: "lewd outer"
-
-- type: loadout
-  id: ClothingUniformFishnetAlt
-  equipment:
-    outerClothing: ClothingUniformFishnetAlt
-  groupBy: "lewd outer"
-
-- type: loadout
-  id: ClothingUniformFishnetSleeves
-  equipment:
-    outerClothing: ClothingUniformFishnetSleeves
-  groupBy: "lewd outer"
-
-- type: loadout
-  id: ClothingUniformFishnetSimpleTop
-  equipment:
-    outerClothing: ClothingUniformFishnetSleevesGloves
-  groupBy: "lewd outer"
-
-- type: loadout
-  id: ClothingUniformFishnetSleevesGloves
-  equipment:
-    outerClothing: ClothingUniformFishnetSleevesGloves
-  groupBy: "lewd outer"
-
 # hats
 - type: loadout
   id: HeadHatSolidHeadband
@@ -1784,6 +1754,35 @@
 
 
 # top undergarment
+- type: loadout
+  id: ClothingUniformFishnet
+  equipment:
+    undergarmentTop: ClothingUniformFishnet
+  groupBy: "fishnet top"
+
+- type: loadout
+  id: ClothingUniformFishnetAlt
+  equipment:
+    undergarmentTop: ClothingUniformFishnetAlt
+  groupBy: "fishnet top"
+
+- type: loadout
+  id: ClothingUniformFishnetSleeves
+  equipment:
+    undergarmentTop: ClothingUniformFishnetSleeves
+  groupBy: "fishnet top"
+
+- type: loadout
+  id: ClothingUniformFishnetSimpleTop
+  equipment:
+    undergarmentTop: ClothingUniformFishnetSleevesGloves
+  groupBy: "fishnet top"
+
+- type: loadout
+  id: ClothingUniformFishnetSleevesGloves
+  equipment:
+    undergarmentTop: ClothingUniformFishnetSleevesGloves
+  groupBy: "fishnet top"
 
 # bottom undergarment
 # thongs
