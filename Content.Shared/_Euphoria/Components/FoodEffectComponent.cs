@@ -1,10 +1,10 @@
-﻿namespace Content.Shared._Euphoria.Components;
+﻿namespace Content.Shared._Euphoria.FoodEffects.Components;
 
 [RegisterComponent]
 public sealed partial class FoodEffectComponent : Component
 {
     [DataField]
-    public StatusEffects Effect = StatusEffects.Speed;
+    public string Effect = "";
 
     [DataField]
     public TimeSpan? Time = TimeSpan.FromSeconds(2);
@@ -14,11 +14,6 @@ public sealed partial class FoodEffectComponent : Component
 
     [DataField]
     public TimeSpan Delay;
-}
-
-public enum StatusEffects
-{
-    Speed,
 }
 
 public enum StatusEffectMetabolismMode

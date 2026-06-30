@@ -24,6 +24,8 @@ using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
+using Content.Shared._Euphoria.FoodEffects.Components; //Euphoria
+using Content.Shared.StatusEffectNew; //Euphoria
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -55,6 +57,7 @@ public sealed partial class IngestionSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly StatusEffectsSystem _effects = default!; //Euphoria
 
     // Body Component Dependencies
     [Dependency] private readonly SharedBodySystem _body = default!;
@@ -378,6 +381,23 @@ public sealed partial class IngestionSystem : EntitySystem
         RaiseLocalEvent(food, ref afterEv);
 
         _stomach.TryTransferSolution(stomachToUse.Value.Owner, split, stomachToUse);
+
+        //Start Euphoria changes
+        if (TryComp<FoodEffectComponent>(food, out var foodEffect))
+        {
+            var effect = foodEffect.Effect;
+            var time = foodEffect.Time;
+            var mode = foodEffect.Mode;
+            var delay = foodEffect.Delay;
+
+            if (!_effects.HasStatusEffect(entity, effect))
+            {
+                if (mode == StatusEffectMetabolismMode.Update)
+                    _effects.TryUpdateStatusEffectDuration(entity, new EntProtoId(effect), time, delay);
+            }
+        }
+
+        //End Euphoria changes
 
         if (!afterEv.Destroy)
         {
