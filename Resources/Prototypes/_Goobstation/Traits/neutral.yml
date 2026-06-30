@@ -1,23 +1,25 @@
-﻿- type: trait # Goobstation
+﻿#Euphoria changes start
+- type: trait # Goobstation
   id: BoganAccent
-  category: TraitsSpeechAccents
-  slots: 0
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: TraitsAccents
-  functions:
-  - !type:TraitAddComponent
+  name: trait-name-BoganAccent
+  description: trait-description-BoganAccent
+  category: Accents
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddCompsEffect
     components:
     - type: BoganAccent
 
 - type: trait # Goobstation
   id: MedievalAccent
-  category: TraitsSpeechAccents
-  slots: 0
-  requirements:
-  - !type:CharacterItemGroupRequirement
-    group: TraitsAccents
-  functions:
-  - !type:TraitAddComponent
+  name: trait-name-MedievalAccent
+  description: trait-description-MedievalAccent
+  category: Accents
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddCompsEffect
     components:
     - type: MedievalAccent
+#Euphoria changes end
