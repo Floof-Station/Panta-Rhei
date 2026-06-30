@@ -1,0 +1,13 @@
+﻿- type: entity
+  name: fuzzy cuffs
+  description: Used to detain "criminals".
+  id: FuzzyHandcuffs
+  parent: Handcuffs
+  components:
+  - type: Handcuff
+    breakoutTime: 3 # allow for easily breaking out since these aren't meant for security use
+    cuffedRSI: _Floof/Objects/Misc/fuzzy_cuffs.rsi
+    bodyIconState: body-overlay
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/fuzzy_cuffs.rsi
+    state: handcuff

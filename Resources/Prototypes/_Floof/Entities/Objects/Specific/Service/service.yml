@@ -1,0 +1,35 @@
+﻿- type: entity
+  id: HappyHonkEmpty
+  parent: [ BoxCardboard, BaseBagOpenClose ]
+  name: happy honk meal
+  suffix: Empty
+  description: The toy is more edible than the food.
+  components:
+  - type: Sprite
+    sprite: Objects/Storage/Happyhonk/clown.rsi
+    state: box
+  - type: Item
+    sprite: Objects/Storage/Happyhonk/clown.rsi
+    heldPrefix: box
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,3,3
+  - type: Tag
+    tags:
+    - Trash
+    - HappyHonk
+    - BoxCardboard
+
+- type: entity
+  id: HappyHonkMimeEmpty
+  parent: HappyHonkEmpty
+  description: A limited mime edition of the happy honk meal.
+  components:
+  - type: Tag
+    tags:
+    - MimeHappyHonk
+  - type: Sprite
+    sprite: Objects/Storage/Happyhonk/mime.rsi
+  - type: Item
+    sprite: Objects/Storage/Happyhonk/mime.rsi

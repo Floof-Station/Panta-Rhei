@@ -1,6 +1,7 @@
 # Languages spoken by various critters.
 - type: language
   id: Bee
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -13,7 +14,8 @@
 
 - type: language
   id: Cat
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  parent: BaseAnimalLanguage
+  icon: { state: felidae }
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -26,7 +28,7 @@
 
 - type: language
   id: Dog
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -41,7 +43,7 @@
 
 - type: language
   id: Fox
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -56,6 +58,7 @@
 
 - type: language
   id: Xeno
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -66,7 +69,7 @@
 
 - type: language
   id: Monkey
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -77,7 +80,9 @@
 
 - type: language
   id: Mouse
-  isVisibleLanguage: true # Floofstation - we have rodentia
+  parent: BaseAnimalLanguage
+  isVisibleLanguage: true
+  icon: { state: mouse }
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -94,6 +99,7 @@
 
 - type: language
   id: Chicken
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -105,6 +111,7 @@
 
 - type: language
   id: Duck
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -116,6 +123,7 @@
 
 - type: language
   id: Cow
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -126,6 +134,7 @@
 
 - type: language
   id: Sheep
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -137,6 +146,7 @@
 
 - type: language
   id: Kangaroo
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -149,6 +159,7 @@
 
 - type: language
   id: Pig
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -158,6 +169,7 @@
 
 - type: language
   id: Crab
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -173,7 +185,8 @@
 
 - type: language
   id: Kobold
-  isVisibleLanguage: true # Floofstation - can be picked via traits
+  parent: BaseAnimalLanguage
+  isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -193,6 +206,7 @@
 
 - type: language
   id: Hissing
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -205,6 +219,7 @@
 
 - type: language
   id: Penguin
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -218,6 +233,7 @@
 
 - type: language
   id: Scurret
+  parent: BaseAnimalLanguage
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

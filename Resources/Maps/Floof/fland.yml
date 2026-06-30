@@ -4,8 +4,8 @@ meta:
   engineVersion: 268.0.0
   forkId: ""
   forkVersion: ""
-  time: 05/09/2026 22:45:53
-  entityCount: 37006
+  time: 05/15/2026 15:41:56
+  entityCount: 37022
 maps:
 - 1
 grids:
@@ -15816,6 +15816,17 @@ entities:
     - type: Transform
       pos: 86.510315,-15.505127
       parent: 13329
+- proto: ActionToggleInternals
+  entities:
+  - uid: 1143
+    mapInit: true
+    paused: true
+    components:
+    - type: Transform
+      parent: 26508
+    - type: Action
+      originalIconColor: '#FFFFFFFF'
+      container: 26508
 - proto: AirAlarm
   entities:
   - uid: 609
@@ -18164,7 +18175,7 @@ entities:
       pos: 90.5,-29.5
       parent: 13329
     - type: Door
-      secondsUntilStateChange: -23133.814
+      secondsUntilStateChange: -23961.955
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -19760,7 +19771,7 @@ entities:
       pos: -15.5,-4.5
       parent: 13329
     - type: Door
-      secondsUntilStateChange: -28291.088
+      secondsUntilStateChange: -29119.229
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -29501,6 +29512,13 @@ entities:
     components:
     - type: Transform
       pos: 93.5,-33.5
+      parent: 13329
+- proto: Autoclave
+  entities:
+  - uid: 37021
+    components:
+    - type: Transform
+      pos: 9.5,56.5
       parent: 13329
 - proto: Autolathe
   entities:
@@ -111392,6 +111410,41 @@ entities:
     - type: Transform
       pos: 40.5,-46.5
       parent: 13329
+  - uid: 37008
+    components:
+    - type: Transform
+      pos: 39.5,18.5
+      parent: 13329
+  - uid: 37009
+    components:
+    - type: Transform
+      pos: 47.5,-38.5
+      parent: 13329
+  - uid: 37011
+    components:
+    - type: Transform
+      pos: 79.5,-31.5
+      parent: 13329
+  - uid: 37015
+    components:
+    - type: Transform
+      pos: 64.5,34.5
+      parent: 13329
+  - uid: 37016
+    components:
+    - type: Transform
+      pos: 22.5,41.5
+      parent: 13329
+  - uid: 37018
+    components:
+    - type: Transform
+      pos: 23.5,51.5
+      parent: 13329
+  - uid: 37019
+    components:
+    - type: Transform
+      pos: 21.5,59.5
+      parent: 13329
 - proto: DonkpocketBoxSpawner
   entities:
   - uid: 10147
@@ -169541,6 +169594,13 @@ entities:
     - type: Transform
       pos: 14.5,51.5
       parent: 13329
+- proto: MedicalBiofabricator
+  entities:
+  - uid: 37022
+    components:
+    - type: Transform
+      pos: 8.5,53.5
+      parent: 13329
 - proto: MedicalScanner
   entities:
   - uid: 18729
@@ -170421,8 +170481,16 @@ entities:
   - uid: 26508
     components:
     - type: Transform
-      pos: 9.417409,56.61388
+      pos: 8.621847,55.976944
       parent: 13329
+    - type: GasTank
+      toggleActionEntity: 1143
+    - type: ActionsContainer
+    - type: ContainerContainer
+      containers:
+        actions: !type:Container
+          ents:
+          - 1143
 - proto: NTDefaultCircuitBoard
   entities:
   - uid: 36391
@@ -171294,8 +171362,20 @@ entities:
     - type: Transform
       pos: 59.48666,36.510437
       parent: 13329
+- proto: PetCarrier
+  entities:
+  - uid: 37013
+    components:
+    - type: Transform
+      pos: 82.5,-15.5
+      parent: 13329
 - proto: PetStoreVendingMachine
   entities:
+  - uid: 1148
+    components:
+    - type: Transform
+      pos: -10.5,12.5
+      parent: 13329
   - uid: 36494
     components:
     - type: Transform
@@ -178784,6 +178864,13 @@ entities:
       parent: 13329
     - type: ApcPowerReceiver
       powerLoad: 0
+- proto: PrizeCounter
+  entities:
+  - uid: 13390
+    components:
+    - type: Transform
+      pos: -12.5,12.5
+      parent: 13329
 - proto: Protolathe
   entities:
   - uid: 20056
@@ -182352,11 +182439,6 @@ entities:
       parent: 13329
 - proto: RandomVendingDrinks
   entities:
-  - uid: 1148
-    components:
-    - type: Transform
-      pos: -10.5,12.5
-      parent: 13329
   - uid: 1883
     components:
     - type: Transform
@@ -194334,6 +194416,20 @@ entities:
     - type: Transform
       pos: -4.5,27.5
       parent: 13329
+- proto: SpawnMobHamsterHamlet
+  entities:
+  - uid: 37020
+    components:
+    - type: Transform
+      pos: 68.5,59.5
+      parent: 13329
+- proto: SpawnMobJusticePet
+  entities:
+  - uid: 37014
+    components:
+    - type: Transform
+      pos: 64.5,34.5
+      parent: 13329
 - proto: SpawnMobKangarooWillow
   entities:
   - uid: 13383
@@ -194415,6 +194511,13 @@ entities:
     - type: Transform
       pos: 92.5,-53.5
       parent: 13329
+- proto: SpawnMobPollyParrot
+  entities:
+  - uid: 37012
+    components:
+    - type: Transform
+      pos: 81.5,-15.5
+      parent: 13329
 - proto: SpawnMobPossumMorty
   entities:
   - uid: 36049
@@ -194450,6 +194553,13 @@ entities:
     - type: Transform
       pos: -17.5,52.5
       parent: 13329
+- proto: SpawnMobSmile
+  entities:
+  - uid: 37010
+    components:
+    - type: Transform
+      pos: 54.5,-14.5
+      parent: 13329
 - proto: SpawnMobSmileCore
   entities:
   - uid: 16630
@@ -194463,6 +194573,11 @@ entities:
     components:
     - type: Transform
       pos: 20.5,36.5
+      parent: 13329
+  - uid: 37017
+    components:
+    - type: Transform
+      pos: 22.5,41.5
       parent: 13329
 - proto: SpawnPointAtmos
   entities:
@@ -202874,11 +202989,6 @@ entities:
     components:
     - type: Transform
       pos: -21.5,16.5
-      parent: 13329
-  - uid: 1143
-    components:
-    - type: Transform
-      pos: -12.5,12.5
       parent: 13329
   - uid: 1167
     components:

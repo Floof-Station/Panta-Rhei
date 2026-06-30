@@ -1,0 +1,27 @@
+﻿- type: entity
+  id: CoconutPellet
+  description: Don't shoot your eye out.
+  name: Coconut Pellet
+  parent: BulletBB
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/Projectiles/coconut_ammo.rsi
+    layers:
+    - state: coconut
+  - type: Tag
+    tags:
+    - CoconutPellet
+    - Trash
+  - type: PhysicalComposition
+    materialComposition:
+      Biomass: 1
+  - type: Construction
+    graph: CoconutPellet
+    node: start
+  - type: Projectile
+    impactEffect: BulletImpactEffect
+    deleteOnCollide: false
+    onlyCollideWhenShot: true
+    damage:
+      types:
+        Blunt: 1

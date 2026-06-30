@@ -4,6 +4,7 @@ using System.Text.RegularExpressions;
 using Content.Server._DV.Traits.Assorted;
 using Content.Server._NF.CartridgeLoader.Cartridges;
 using Content.Server.Atmos.Rotting;
+using Content.Server.Body.Systems;
 using Content.Server.CartridgeLoader;
 using Content.Server.Hands.Systems;
 using Content.Server.Medical.Components;
@@ -46,12 +47,14 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly CartridgeLoaderSystem _cartridgeLoader = default!;
 
-    // Euphoria: Add basic diagnostics and patient alerts to printout.
+    #region Euphoria: Add basic diagnostics and patient alerts to printout.
     [Dependency] private readonly UnborgableSystem _unborgable = default!;
     [Dependency] private readonly RedshirtSystem _redshirt = default!;
     [Dependency] private readonly UncloneableSystem _uncloneable = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
     [Dependency] private readonly RottingSystem _rottingSystem = default!;
+    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
+    #endregion
 
     private static readonly Regex TemplateInsert = new(@"\{([\w.]+)\}");
 
@@ -211,7 +214,10 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
                 ("damageGroup", group.LocalizedName),
                 ("amount", groupDamage)
             );
-            report.AddText(groupTitleText);
+            #region Euphoria: Use AddMarkupPermissive instead of AddText to preserve Markup.
+            //report.AddText(groupTitleText);
+            report.AddMarkupPermissive(groupTitleText);
+            #endregion
             report.PushNewline();
 
             // List individual damage types
@@ -223,7 +229,10 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
                     continue;
                 }
 
-                report.AddText(Loc.GetString(
+                #region Euphoria: Use AddMarkupPermissive instead of AddText to preserve Markup.
+                //report.AddText(Loc.GetString(
+                report.AddMarkupPermissive(Loc.GetString(
+                #endregion
                     "health-analyzer-printout-damage-type-text",
                     ("damageType", _prototypes.Index<DamageTypePrototype>(type).LocalizedName),
                     ("amount", amount)
@@ -281,25 +290,17 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
 
     private string GetBloodLevel(EntityUid patient)
     {
-        float bloodLevel = float.NaN;
-        if (TryComp<BloodstreamComponent>(patient, out var bloodstream) &&
-            _solutionContainerSystem.ResolveSolution(patient, bloodstream.BloodSolutionName,
-                ref bloodstream.BloodSolution, out var bloodSolution))
-            bloodLevel = bloodSolution.FillFraction;
+        float bloodLevel = HasComp<BloodstreamComponent>(patient) ? _bloodstream.GetBloodLevel(patient) : float.NaN;
 
         return !float.IsNaN(bloodLevel)
             ? $"{bloodLevel * 100:F1} %"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
     }
 
-    private string GetTotalDamage(EntityUid patient)
-    {
-        return "";
-    }
-
     private string ComposeAlerts(EntityUid patient)
     {
         StringBuilder alerts = new StringBuilder();
+        var isDead = TryComp<MobStateComponent>(patient, out var mobStateComponent) && mobStateComponent.CurrentState == MobState.Dead;
 
         if (TryComp<UnrevivableComponent>(patient, out var unrevivableComp) && unrevivableComp.Analyzable)
             alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-unrevivable-text-short"));
@@ -310,6 +311,7 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
         alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-bleeding-text"));
          */
 
+        // Technically possible to be rotting and alive with admemes, and this is examinable, so put it in the printout.
         if (_rottingSystem.IsRotten(patient))
             alerts.AppendLine(Loc.GetString(_rottingSystem.RotStage(patient) switch
             {
@@ -320,6 +322,10 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
 
         if (_unborgable.IsUnborgable(patient))
             alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-unborgable-text-short"));
+
+        // All alerts after this are only displayed if dead. Move this condition if this ever changes.
+        if (!isDead)
+            return alerts.ToString();
 
         if (_redshirt.IsRedshirt(patient))
             alerts.AppendLine(Loc.GetString("health-analyzer-window-entity-redshirt-text-short"));

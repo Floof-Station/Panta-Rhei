@@ -59,15 +59,9 @@
     - K9
   - type: StealTarget
     stealGroup: AnimalSecurity # DeltaV - Adjusts because we have multiple possible sec animals
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 315 # 10 lower than base
     coldDamageThreshold: 240 # 20 lower than base
-  - type: Grappler
-    handDisabling: SingleActive
-    grapplingPart: grapple-part-jaws
-    proneOnGrapple: true # Make sure Laika isn't shot by sprays
-    grappleSound:
-      collection: VulpkaninGrowls
   - type: LanguageKnowledge # Floofstation - pets understand tau-ceti.
     speaks:
     - Dog
@@ -217,11 +211,10 @@
           amount: 1
           prob: 0.2
     - type: Bloodstream
-      bloodMaxVolume: 200
-      bloodReagents:
+      bloodReferenceSolution:
         reagents:
         - ReagentId: Cryoxadone
-          Quantity: 1
+          Quantity: 200
     - type: Fixtures
       fixtures:
         fix1:
@@ -260,8 +253,8 @@
         reagents:
         - ReagentId: Omnizine
           Quantity: 1
-    - type: ReplacementAccent
-      accent: xeno #Add cool snake accent later. wyci
+    #- type: ReplacementAccent # Floofstation - disbaled to let them speak langauges like other station pets
+    #  accent: xeno #Add cool snake accent later. wyci
     - type: PointLight
       radius: 1.1
       energy: 0.25
@@ -306,6 +299,8 @@
     - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
       speaks:
       - Hissing
+      - Draconic
       understands:
       - Hissing
+      - Draconic
       - TauCetiBasic

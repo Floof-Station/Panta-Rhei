@@ -300,6 +300,9 @@
       - !type:AdjustReagent
         reagent: Nutriment
         amount: 0.1
+      - !type:AdjustReagent
+        reagent: Theobromine # Mono edit
+        amount: 0.1
 
 - type: reagent
   id: FrostOil

@@ -29,7 +29,7 @@
     damageContainer: BiologicalMetaphysical
     damageModifierSet: ManifestedSpirit
   - type: MindContainer
-    showExamineInfo: true
+  - type: MindExaminable
   - type: NpcFactionMember
     factions:
     - PetsNT
@@ -37,7 +37,6 @@
   - type: Alerts
   - type: Familiar
   - type: Psionic #Nyano - Summary: Makes psionic on creation.
-    removable: false
   - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
     speaks:
     - Mouse
@@ -100,11 +99,10 @@
     tags:
     - Chapel
   - type: MindContainer
-    showExamineInfo: true
+  - type: MindExaminable
   - type: Familiar
   - type: Dispellable
   - type: Psionic #Nyano - Summary: makes psionic on creation.
-    removable: false
   - type: Vocal
     sounds:
       Male: Cerberus

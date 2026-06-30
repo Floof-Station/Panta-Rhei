@@ -32,6 +32,7 @@
   loadouts:
   - RnDPDA
   - ResearchDirectorPDA
+  - ClothingNeckCollarEmotionalSupportRD # emotional support
 
 # scientist additions
 - type: loadoutGroup
@@ -124,6 +125,7 @@
   - ChaplainPDA
   - SpiritualCounselorPDA
   - NoostatisticianPDA
+  - ClothingNeckCollarEmotionalSupportChaplain
 
 # epi alternative pdas
 - type: loadoutGroup
@@ -131,12 +133,14 @@
   abstract: true
   loadouts:
   - AcolytePDA
+  - ClothingNeckCollarEmotionalSupportScientist
 
 - type: loadoutGroup
   id: FloofRoboticistPdas
   abstract: true
   loadouts:
   - GolemancerPDA
+  - ClothingNeckCollarEmotionalSupportRoboticist
 
 - type: loadoutGroup
   id: FloofResearchAssistantPdas
@@ -146,6 +150,7 @@
   loadouts:
   - ResearchAssistantPDA
   - NoviciatePDA
+  - ClothingNeckCollarEmotionalSupportEpistemicsBase
 
 - type: loadoutGroup
   id: FloofSeniorResearcherPdas
@@ -155,3 +160,22 @@
   loadouts:
   - SeniorResearcherPDA
   - MysticPDA
+  - ClothingNeckCollarEmotionalSupportSeniorResearcher
+
+- type: loadoutGroup
+  id: FloofCatalogerPDAs
+  name: loadout-group-cataloger-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LibrarianPDA
+  - ClothingNeckCollarEmotionalSupportCataloger
+
+- type: loadoutGroup
+  id: FloofMantisPDAs
+  name: loadout-group-mantis-pdas
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - PsionicMantisPDA
+  - ClothingNeckCollarEmotionalSupportMantis

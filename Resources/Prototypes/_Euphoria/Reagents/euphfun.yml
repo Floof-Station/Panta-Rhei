@@ -1,0 +1,27 @@
+- type: reagent
+  id: Screamazine
+  name: reagent-name-screamazine
+  group: Special
+  desc: reagent-desc-screamazine
+  physicalDesc: reagent-physical-desc-non-newtonian
+  flavor: PAIN
+  color: "#800000"
+  metabolisms:
+    Medicine:
+      metabolismRate: 0.5
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages:
+          - "reagent-effect-screamazine1"
+          - "reagent-effect-screamazine2"
+          - "reagent-effect-screamazine3"
+          - "reagent-effect-screamazine4"
+        probability: 0.5
+      - !type:Emote
+        emote: Scream
+        showInChat: true
+        showInGuidebook: true
+        force: true
+        probability: 0.9

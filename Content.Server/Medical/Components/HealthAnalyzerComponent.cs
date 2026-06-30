@@ -1,5 +1,6 @@
 using Content.Shared.StationRecords; // DeltaV - triage
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Medical.Components;
@@ -82,4 +83,12 @@ public sealed partial class HealthAnalyzerComponent : Component
     [DataField]
     public StationRecordKey? StationRecordKey;
     // End DeltaV - Medical Records
+
+    //FarHorizons Start
+    [DataField]
+    public EntProtoId Action = "ActionMedTek";
+
+    [DataField]
+    public EntityUid? ActionEntity;
+    //FarHorizons End
 }

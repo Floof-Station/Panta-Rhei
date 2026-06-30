@@ -1,0 +1,43 @@
+- type: emote
+  id: Scree
+  name: chat-emote-name-scree
+  category: Vocal
+  available: true
+  icon: { sprite: _Starlight/Actions/resomi.rsi, state: bird_call }
+  whitelist:
+    requireAll: true
+    components:
+    - Vocal
+    tags:
+    - ResomiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-scree"]
+  chatTriggers:
+  - scree
+  - screeing
+  - screes
+  - screed
+
+- type: emote
+  id: Call
+  name: chat-emote-name-call
+  category: Vocal
+  available: true
+  icon: { sprite: _Starlight/Actions/resomi.rsi, state: bird_call }
+  whitelist:
+    requireAll: true
+    components:
+    - Vocal
+    tags:
+    - ResomiEmotes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-call"]
+  chatTriggers:
+  - call
+  - calling
+  - calls
+  - called

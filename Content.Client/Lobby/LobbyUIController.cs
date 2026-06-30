@@ -358,16 +358,20 @@ public sealed class LobbyUIController : UIController, IOnStateEntered<LobbyState
         if (roleLoadout == null)
             return;
 
-        foreach (var group in roleLoadout.SelectedLoadouts.Values)
-        {
-            foreach (var loadout in group)
-            {
-                if (!_prototypeManager.Resolve(loadout.Prototype, out var loadoutProto))
-                    continue;
+        // Floofstation - replaced the below shitcode with a call to StationSpawningSystem to avoid code duplication
+        if (_prototypeManager.TryIndex(roleLoadout.Role, out var roleLoadoutPrototype))
+            _spawn.EquipRoleLoadout(uid, roleLoadout, roleLoadoutPrototype);
 
-                _spawn.EquipStartingGear(uid, loadoutProto);
-            }
-        }
+        // foreach (var group in roleLoadout.SelectedLoadouts.Values)
+        // {
+        //     foreach (var loadout in group)
+        //     {
+        //         if (!_prototypeManager.Resolve(loadout.Prototype, out var loadoutProto))
+        //             continue;
+        //
+        //         _spawn.EquipStartingGear(uid, loadoutProto);
+        //     }
+        // }
     }
 
     /// <summary>

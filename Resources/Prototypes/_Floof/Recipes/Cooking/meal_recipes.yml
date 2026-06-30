@@ -420,3 +420,79 @@
   reagents:
     OilOlive: 5
     TableSalt: 5
+
+- type: microwaveMealRecipe
+  id: RecipePeanutButterBrownies
+  name: peanut butter brownie recipe
+  result: FoodBakedPeanutButterBrownieBatch
+  time: 25
+  group: BarsAndCookies
+  reagents:
+    Flour: 15
+    Sugar: 15
+    Egg: 18
+    PeanutButter: 30
+  solids:
+    FoodButter: 2
+    FoodSnackChocolateBar: 2
+
+- type: microwaveMealRecipe
+  id: RecipePeanutButterCup
+  name: peanut butter cup recipe
+  result: FoodBakedPeanutButterCup
+  time: 10
+  group: BarsAndCookies
+  reagents:
+    Flour: 5
+    Sugar: 5
+    PeanutButter: 5
+  solids:
+    FoodSnackChocolateBar: 1
+
+- type: microwaveMealRecipe
+  id: RecipePeanutButterTart
+  name: peanut butter tart recipe
+  result: FoodBakedPeanutButterTart
+  time: 15
+  group: Pie
+  reagents:
+    PeanutButter: 15
+  solids:
+    FoodDoughPie: 1
+    FoodPlateTin: 1
+    FoodFrosting: 1
+
+- type: microwaveMealRecipe
+  id: RecipePeanutButterJelly
+  name: peanut butter and jelly sandwich recipe
+  result: FoodBakedPeanutButterJellySandwich
+  time: 10
+  group: Savory
+  reagents:
+    PeanutButter: 10
+  solids:
+    FoodBreadPlainSlice: 2
+    FoodBerries: 2 # till someone adds jelly for the pb&j
+
+- type: microwaveMealRecipe
+  id: RecipePeanutButterBanana
+  name: peanut butter and banana sandwich recipe
+  result: FoodBakedPeanutButterBananaSandwich
+  time: 10
+  group: Savory
+  reagents:
+    PeanutButter: 10
+  solids:
+    FoodBreadPlainSlice: 2
+    FoodBanana: 2
+
+- type: microwaveMealRecipe
+  id: RecipeToastedPeanutButterBread
+  name: peanut butter toast recipe
+  result: FoodBreadPeanutButterToast
+  time: 5
+  group: Savory
+  reagents:
+    PeanutButter: 5
+  solids:
+    FoodBreadPlainSlice: 1

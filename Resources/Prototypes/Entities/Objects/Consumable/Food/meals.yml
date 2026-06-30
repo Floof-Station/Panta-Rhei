@@ -383,6 +383,12 @@
   name: bbq ribs
   description: BBQ ribs, slathered in a healthy coating of BBQ sauce. The least vegan thing to ever exist.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: Ribs
+      Taco: Ribs
+  #Euphoria end
   - type: Item
     storedOffset: 0,-4
   - type: Edible
