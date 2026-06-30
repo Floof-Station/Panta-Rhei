@@ -618,8 +618,12 @@ public sealed class FaxSystem : EntitySystem
         var printout = component.PrintingQueue.Dequeue();
 
         var entityToSpawn = printout.PrototypeId.Length == 0 ? component.PrintPaperId.ToString() : printout.PrototypeId;
+        #region Euphoria: Detach print results from handheld fax machines
+        /*
         var printed = Spawn(entityToSpawn, Transform(uid).Coordinates);
-        _transform.AttachToGridOrMap(printed); // Euphoria: Detach print results from handheld fax machines.
+        */
+        var printed = SpawnNextToOrDrop(entityToSpawn, uid);
+        #endregion
 
         if (TryComp<PaperComponent>(printed, out var paper))
         {
