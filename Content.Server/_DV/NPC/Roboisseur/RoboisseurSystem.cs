@@ -13,6 +13,7 @@ using Content.Shared.Database;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared.Chat;
+using Content.Shared.Chemistry.Reagent;
 
 namespace Content.Server.Roboisseur.Roboisseur
 {
@@ -183,12 +184,13 @@ namespace Content.Server.Roboisseur.Roboisseur
 
             var allRecipes = _prototypeManager.EnumeratePrototypes<FoodRecipePrototype>();
             var allProtos = new List<String>();
-            //Euph edits start - read all results from all recipes
+            //Euph edits start - read all results from all recipes + liquids
             foreach (var recipe in allRecipes)
             {
                 foreach (var result in recipe.Results)
                 {
-                    allProtos.Add(result.Key);
+                    if(!_prototypeManager.HasIndex<ReagentPrototype>(result.Key))
+                        allProtos.Add(result.Key);
                 }
             }
             //Euph edits end

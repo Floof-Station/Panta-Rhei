@@ -79,14 +79,64 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
     }
 
     private void GenerateHeader(FoodRecipePrototype recipe)
-    {
-        var entity = _prototype.Index<EntityPrototype>(recipe.Results.Keys.First());
+    {   //Start Euphoria Changes
+        //I have seen darkness, and while I can't draw, this code will show you what I saw
+        foreach(var result in recipe.Results)
+        {
+            //RepresentedPrototype = entity;
 
-        RepresentedPrototype = entity;
+            //IconContainer.AddChild(new GuideEntityEmbed(result, false, false));
+            //ResultName.SetMarkup(ResultName.GetMessage()+entity.Name);
+            //ResultDescription.SetMarkup(entity.Description);
 
-        IconContainer.AddChild(new GuideEntityEmbed(recipe.Results.Keys.First(), false, false));
-        ResultName.SetMarkup(entity.Name);
-        ResultDescription.SetMarkup(entity.Description);
+            var resultQuantityMsg = new FormattedMessage();
+            resultQuantityMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-quantity-display", ("amount", result.Value)));
+
+            var solidQuantityLabel = new RichTextLabel();
+            solidQuantityLabel.SetMessage(resultQuantityMsg);
+
+            ResultsGrid.AddChild(solidQuantityLabel);
+
+            if (_prototype.HasIndex<ReagentPrototype>(result.Key))
+            {
+                var reagent = _prototype.Index<ReagentPrototype>(result.Key);
+
+                var liquidColorMsg = new FormattedMessage();
+                liquidColorMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-reagent-color-display", ("color", reagent.SubstanceColor)));
+
+                var liquidColorLabel = new GuidebookRichPrototypeLink();
+                liquidColorLabel.HorizontalAlignment = Control.HAlignment.Center;
+                liquidColorLabel.SetMessage(liquidColorMsg);
+
+                ResultsGrid.AddChild(liquidColorLabel);
+
+                // liquid name
+
+                var liquidNameMsg = new FormattedMessage();
+                liquidNameMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-reagent-name-display", ("reagent", reagent.LocalizedName)));
+
+                var liquidNameLabel = new RichTextLabel();
+                liquidNameLabel.SetMessage(liquidNameMsg);
+
+                ResultsGrid.AddChild(liquidNameLabel);
+            }
+            else
+            {
+                var entity = _prototype.Index<EntityPrototype>(result.Key);
+                ResultsGrid.AddChild(new GuideEntityEmbed(result.Key, false, false));
+
+                var resultNameMsg = new FormattedMessage();
+                resultNameMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-name-display",
+                    ("ingredient", entity.Name)));
+
+                var resultNameLabel = new GuidebookRichPrototypeLink();
+                resultNameLabel.SetMessage(resultNameMsg);
+                ResultsGrid.AddChild(resultNameLabel);
+            }
+
+        }
+        //End Euphoria Changes
+
     }
 
     private void GenerateSolidIngredients(FoodRecipePrototype recipe)
