@@ -65,7 +65,7 @@
     - CombatBoots
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: [ClothingShoesMilitaryBase, ClothingShoesBaseHeelsNoisy] # Euphoria: +ClothingShoesBaseHeelsNoisy
   id: ClothingShoesHighheelBoots
   name: high-heeled boots
   description: Snazy boots for when you want to be stylish, yet prepared.
@@ -78,12 +78,14 @@
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
-      params:
-        volume: -6
-        variation: 0.09
+# Euphoria start: FootstepModifier set by parent for maintainable consistency
+#  - type: FootstepModifier
+#    footstepSoundCollection:
+#      collection: FootstepHighHeels
+#      params:
+#        volume: -6
+#        variation: 0.09
+# Euphoria end
   - type: Tag #Floofstation
     tags:
     - HighHeelBoots
