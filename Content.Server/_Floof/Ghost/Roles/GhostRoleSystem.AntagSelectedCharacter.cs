@@ -11,10 +11,23 @@ using Content.Server.Database;
 using Content.Server.Antag;
 using Robust.Shared.Player;
 using Content.Server.Humanoid;
+
 /*
-This entire file is a mimicry of DeltaV's GhostRoleSystem.Character.cs, made to account for the fact that it can't respond to
-AntagSelectEntityEvent and seems to thus be invalid for spawning antagonist ghost roles as the player's character.
-Please be aware that this code was added by a teenager who read most of* a book on C#. Scrutinize heavily. If you something weird, it's very likely *not* a design choice, but a mistake. Please let me know.
+This entire file is a mimicry of DeltaV's GhostRoleSystem.Character.cs.
+It is made to account for the fact that it can't respond to AntagSelectEntityEvent
+and seems to thus be invalid for spawning antagonist ghost roles as the player's character.
+
+This is done by copying the homework of GhostRoleSystem.Character.cs and AntagLoadProfileSystem.cs,
+mashing the two together into a horrifying little franken-system that should get the job done.
+This code *should* allow antagonist prototypes to use GhostRoleCharacterSpawnerComponent to
+spawn with the player's selected character.
+
+This is very likely shitcode. Due to the derivative nature of its creation, it will likely
+have unnecessary parts that should not be there. Things may be done in an incorrect or
+unstable way. Scrutinize heavily.
+
+If you something weird, it's very likely *not* a design choice, but a mistake.
+Please let me know. I am learning :3
 */
 
 namespace Content.Server.Ghost.Roles
