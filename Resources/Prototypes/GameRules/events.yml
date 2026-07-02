@@ -896,7 +896,7 @@
 
 - type: entity
   parent: BaseGameRule
-  id: TestySpawn
+  id: TestAntagFoodCritic
   components:
   - type: StationEvent
     weight: 5 # DeltaV - was 6
@@ -906,8 +906,9 @@
     minimumPlayers: 40 # DeltaV - was 30
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-ninja-spawn-result-message
-  - type: SpaceSpawnRule
+  - type: AntagRandomSpawn
   - type: GhostRoleCharacterSpawner
+    outfitPrototype: FoodCriticGear
   - type: AntagObjectives
     objectives:
     #- StealResearchObjective # DeltaV: Moved to random objectives
@@ -930,28 +931,16 @@
       min: 1
       max: 1
       pickPlayer: false
-      startingGear: SpaceNinjaGear
-      roleLoadout:
-      - RoleSurvivalSpaceNinja
+      startingGear: FoodCriticGear
+      #roleLoadout:
+      #- RoleSurvivalSpaceNinja
       briefing:
         text: ninja-role-greeting
         color: Green
         sound: /Audio/Misc/ninja_greeting.ogg
-      components:
-      - type: SpaceNinja
-      - type: NpcFactionMember
-        factions:
-        - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
-      - type: RandomMetadata
-        nameSegments:
-        - NamesNinjaTitle
-        - NamesNinja
-        nameFormat: name-format-ninja
+      #components:
       mindRoles:
-      - MindRoleNinja
+      - MindRoleFoodCritic
   - type: DynamicRuleCost
     cost: 75
 

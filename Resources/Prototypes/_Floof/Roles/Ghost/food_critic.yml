@@ -41,3 +41,24 @@
     layers:
     - state: green
     - sprite: Objects/Consumable/Food/burger.rsi
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostAntagFoodCritic
+  components:
+  - type: GhostRole
+    name: ghost-role-information-food-critic-name
+    description: ghost-role-information-food-critic-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleFoodCritic
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Consumable/Food/burger.rsi
+      state: icon
+
