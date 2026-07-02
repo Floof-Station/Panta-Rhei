@@ -1,7 +1,8 @@
 - type: microwaveMealRecipe
   id: RecipeCornmoth
   name: cornmoth recipe
-  result: FoodSnackCornmoth
+  result:
+    FoodSnackCornmoth: 1
   time: 5
   group: Savory
   solids:

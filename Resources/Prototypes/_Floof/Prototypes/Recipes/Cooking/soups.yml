@@ -1,7 +1,8 @@
 ﻿- type: microwaveMealRecipe
   id: RecipeMisoSoup
   name: miso soup recipe
-  result: FoodSoupMiso
+  result:
+    FoodSoupMiso: 1
   time: 10
   group: Soup
   reagents:

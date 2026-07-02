@@ -1,7 +1,8 @@
 - type: microwaveMealRecipe
   id: RecipeCamelSoup
   name: one day blinding stew recipe # DeltaV - name change
-  result: FoodCamelSoup
+  result:
+    FoodCamelSoup: 1 #Euphoria
   time: 15
   solids:
     TearGasGrenade: 1

@@ -1,3 +1,4 @@
+#Euphoria - recipes changes with Cooking rework
 # Most of these dont sound remotely moth-edible but they all have Moth in their ids???
 
 # Soups & Stews
@@ -5,7 +6,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothCottonSoup
   name: cotton soup recipe
-  result: FoodMothCottonSoup
+  result:
+    FoodMothCottonSoup: 1
   time: 10
   group: Moth
   reagents:
@@ -21,7 +23,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothCheeseSoup
   name: cheese soup recipe
-  result: FoodMothCheeseSoup
+  result:
+    FoodMothCheeseSoup: 1
   time: 10
   group: Soup
   reagents:
@@ -36,7 +39,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothSeedSoup
   name: seed soup recipe
-  result: FoodMothSeedSoup
+  result:
+    FoodMothSeedSoup: 1
   time: 10
   group: Soup
   reagents:
@@ -51,7 +55,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothBeanStew
   name: bean stew recipe
-  result: FoodMothBeanStew
+  result:
+    FoodMothBeanStew: 1
   time: 10
   group: Soup
   reagents:
@@ -67,7 +72,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothOatStew
   name: oat stew recipe
-  result: FoodMothOatStew
+  result:
+    FoodMothOatStew: 1
   time: 10
   group: Soup
   reagents:
@@ -82,7 +88,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothHeartburnSoup
   name: heartburn soup recipe
-  result: FoodMothHeartburnSoup
+  result:
+    FoodMothHeartburnSoup: 1
   time: 10
   group: Soup
   reagents:
@@ -99,7 +106,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothMothicSalad
   name: mothic salad recipe
-  result: FoodMothSaladBase
+  result:
+    FoodMothSaladBase: 1
   time: 10
   group: Salad
   solids:
@@ -111,7 +119,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothCapreseSalad
   name: caprese salad recipe
-  result: FoodMothCapreseSalad
+  result:
+    FoodMothCapreseSalad: 1
   time: 10
   group: Salad
   reagents:
@@ -124,7 +133,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothFleetSalad
   name: fleet salad recipe
-  result: FoodMothFleetSalad
+  result:
+    FoodMothFleetSalad: 1
   time: 10
   group: Salad
   reagents:
@@ -138,7 +148,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothCottonSalad
   name: cotton salad recipe
-  result: FoodMothCottonSalad
+  result:
+    FoodMothCottonSalad: 1
   time: 10
   group: Moth
   reagents:
@@ -151,7 +162,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothKachumbariSalad
   name: kachumbari salad recipe
-  result: FoodMothKachumbariSalad
+  result:
+    FoodMothKachumbariSalad: 1
   time: 10
   group: Salad
   reagents:
@@ -167,7 +179,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothCheesecakeBalls
   name: cheesecake balls recipe
-  result: FoodMothCheesecakeBalls
+  result:
+    FoodMothCheesecakeBalls: 1
   time: 10
   group: BarsAndCookies
   reagents:
@@ -180,7 +193,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothMothmallow
   name: mothmallow recipe
-  result: FoodMothMothmallow
+  result:
+    FoodMothMothmallow: 1
   time: 10
   group: Moth
   reagents:
@@ -195,7 +209,8 @@
 - type: microwaveMealRecipe
   id: RecipeMothMoffin
   name: moffin recipe
-  result: FoodMothMoffin
+  result:
+    FoodMothMoffin: 1
   time: 5
   group: Moth
   reagents:
