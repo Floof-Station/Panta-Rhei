@@ -36,7 +36,7 @@ namespace Content.Server.Ghost.Roles
     {
         //[Dependency] private readonly IServerPreferencesManager _prefs = default!;
         //[Dependency] private readonly OutfitSystem _outfit = default!;
-	[Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
+	//[Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!; //Not used
 
         private void OnSpawnerTakeAntagSelectedCharacter(Entity<GhostRoleCharacterSpawnerComponent> ent,
             ref AntagSelectEntityEvent args)
