@@ -457,7 +457,8 @@
 - type: microwaveMealRecipe
   id: RecipePeanutButterBrownies
   name: peanut butter brownie recipe
-  result: FoodBakedPeanutButterBrownieBatch
+  result:
+    FoodBakedPeanutButterBrownieBatch: 1
   time: 25
   group: BarsAndCookies
   reagents:
@@ -472,7 +473,8 @@
 - type: microwaveMealRecipe
   id: RecipePeanutButterCup
   name: peanut butter cup recipe
-  result: FoodBakedPeanutButterCup
+  result:
+    FoodBakedPeanutButterCup: 1
   time: 10
   group: BarsAndCookies
   reagents:
@@ -485,7 +487,8 @@
 - type: microwaveMealRecipe
   id: RecipePeanutButterTart
   name: peanut butter tart recipe
-  result: FoodBakedPeanutButterTart
+  result:
+    FoodBakedPeanutButterTart: 1
   time: 15
   group: Pie
   reagents:
@@ -498,7 +501,8 @@
 - type: microwaveMealRecipe
   id: RecipePeanutButterJelly
   name: peanut butter and jelly sandwich recipe
-  result: FoodBakedPeanutButterJellySandwich
+  result:
+    FoodBakedPeanutButterJellySandwich: 1
   time: 10
   group: Savory
   reagents:
@@ -510,7 +514,8 @@
 - type: microwaveMealRecipe
   id: RecipePeanutButterBanana
   name: peanut butter and banana sandwich recipe
-  result: FoodBakedPeanutButterBananaSandwich
+  result:
+    FoodBakedPeanutButterBananaSandwich: 1
   time: 10
   group: Savory
   reagents:
@@ -522,7 +527,8 @@
 - type: microwaveMealRecipe
   id: RecipeToastedPeanutButterBread
   name: peanut butter toast recipe
-  result: FoodBreadPeanutButterToast
+  result:
+    FoodBreadPeanutButterToast: 1
   time: 5
   group: Savory
   reagents:
