@@ -1,3 +1,28 @@
+#Objectives
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseFoodCriticObjective
+  components:
+  - type: Objective
+    # difficulty isn't used since all objectives are picked
+    difficulty: 1.5
+    issuer: objective-issuer-donk-co
+  - type: RoleRequirement
+    roles:
+    - FoodCriticRole
+
+- type: entity
+  parent: [BaseFoodCriticObjective, BaseSurviveObjective]
+  id: FoodCriticSurviveObjective
+  name: Live to write your review
+  description: The food can't be that bad...
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Mask/burger.rsi
+      state: icon
+
 # Mind Role
 - type: entity
   parent: BaseMindRoleAntag
@@ -7,6 +32,7 @@
   - type: MindRole
     antagPrototype: FoodCriticAntagPrototype
     subtype: role-subtype-food-critic
+    #exclusiveAntag: true
   - type: FoodCriticRole
 
 # Antag Prototype
@@ -20,6 +46,7 @@
   #- !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
     #time: 10h
   #guides: [ SpaceNinja ]
+
 
 
 # Starting Gear
@@ -95,12 +122,7 @@
     outfitPrototype: FoodCriticGear
   - type: AntagObjectives
     objectives:
-    #- StealResearchObjective # DeltaV: Moved to random objectives
-    - DoorjackObjective
-    - SpiderChargeObjective
-    #- TerrorObjective # DeltaV: Moved to random objectives
-    #- MassArrestObjective # DeltaV: Moved to random objectives
-    - NinjaSurviveObjective
+    - FoodCriticSurviveObjective
   - type: AntagRandomObjectives # DeltaV: Random objectives for hacking and killing
     sets:
     - groups: NinjaHackingObjectiveGroups
