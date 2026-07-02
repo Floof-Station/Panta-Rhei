@@ -7,6 +7,9 @@ psionic-power-precognition-food-critic-result-message = You see a judge, not one
 role-subtype-food-critic = Food Critic
 ghost-role-information-food-critic-name = Food Critic
 ghost-role-information-food-critic-description = Test the culinary prowess of HGI's service crew. Is the food here worth risking being eaten by the rat king? You'll be the judge of that.
+food-critic-round-end-agent-name = Food Critic
+food-critic-role-greeting = You are a professional food critic, sent out to critique the allegedly greatest cuisines of the galaxy. You are here to write a review of HGI's food service. Put them to the ultimate test.
+
 
 
 psionic-power-precognition-unknown-shuttle-casino = For a brief moment, you can hear the sound of slot machines and drinks clanking together.

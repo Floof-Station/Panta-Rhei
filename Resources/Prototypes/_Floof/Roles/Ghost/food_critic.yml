@@ -74,7 +74,7 @@
     reoccurrenceDelay: 60 # DeltaV - was 20
     minimumPlayers: 40 # DeltaV - was 30
   - type: PrecognitionResult # DeltaV - Precogniton
-    message: psionic-power-precognition-ninja-spawn-result-message
+    message: psionic-power-precognition-food-critic-result-message
   - type: AntagRandomSpawn
   - type: GhostRoleCharacterSpawner
     outfitPrototype: FoodCriticGear
@@ -94,7 +94,7 @@
       maxPicks: 2 # 2 kill or steal objectives max
     maxDifficulty: 100 # ignore difficulty, use maxPicks instead
   - type: AntagSelection
-    agentName: ninja-round-end-agent-name
+    agentName: food-critic-round-end-agent-name
     definitions:
     - spawnerPrototype: SpawnPointGhostAntagFoodCritic
       min: 1
@@ -104,11 +104,11 @@
       #roleLoadout:
       #- RoleSurvivalSpaceNinja
       briefing:
-        text: ninja-role-greeting
-        color: Green
-        sound: /Audio/Misc/ninja_greeting.ogg
+        text: food-critic-role-greeting
+        color: Lime
+        sound: /Audio/Items/beep.ogg
       #components:
       mindRoles:
       - MindRoleFoodCritic
   - type: DynamicRuleCost
-    cost: 75
+    cost: 20
