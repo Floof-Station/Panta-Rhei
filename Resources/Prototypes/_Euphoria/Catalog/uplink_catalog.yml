@@ -1,0 +1,25 @@
+- type: listing
+  id: UplinkHydraPendant
+  name: Hydra Pendant Hardsuit
+  description: The EVIL magical Nemesis hardsuit! Has the power to corrupt and turn command magical girl hardsuits into their EVIL counterparts. All with the protection of a thermal hardsuit.
+  icon: { sprite: /Textures/_Euphoria/Clothing/OuterClothing/Hardsuits/syndicate-magical.rsi, state: icon }
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 10
+  productEntity: ClothingOuterHardsuitMagicalSyndie
+  cost:
+    Telecrystal: 14
+  categories:
+  - UplinkWearables
+
+- type: listing
+  id: UplinkFragmentOfSorrow
+  name: Fragment of sorrow EVA
+  description: A snake pijama suit perfect for a EVIL Henchman. With a build in hood that makes the suit space proof.
+  icon: { sprite: /Textures/_Euphoria/Clothing/OuterClothing/Hardsuits/syndicate-henchman-magical.rsi, state: icon }
+  discountCategory: veryRareDiscounts
+  productEntity: ClothingOuterHardsuitMagicalSyndieHenchman
+  cost:
+    Telecrystal: 2
+  categories:
+  - UplinkWearables

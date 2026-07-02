@@ -1,0 +1,8 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleCorruptedMagicalGirl
+  name: Corrupted Magical Girl Role
+  components:
+  - type: RoleBriefing
+    briefing: corrupt-magical-girl-briefing
+  - type: MindRole

@@ -1,0 +1,1 @@
+corrupt-magical-girl-briefing = Your heart is overtaken by sadness, and must be expressed somehow.

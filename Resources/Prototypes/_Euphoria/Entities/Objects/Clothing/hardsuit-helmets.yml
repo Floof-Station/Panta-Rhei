@@ -1,0 +1,557 @@
+#Head of Security's hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalHOSTiara
+  name: Wings of the law tiara
+  description: Now gracefully, pull out your concealed carry.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/hos-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/hos-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4d4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Hop hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalHOPHat
+  name: Top hat full of paperwork
+  description: The moment you lift the hat the unfiled paperwork pour out of it... better keep it on.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/hop-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/hop-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#d4f7fc"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#QM hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalQMHat
+  name: Chekei Breki
+  description: We run out of budget making the wings, the magical girl association is cuttign costs again...
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/qm-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/qm-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fce8d4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#RD hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalRDWig
+  name: Twin tail wig
+  description: How do you like your new haircut?
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/rd-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/rd-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#e9d4fc"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
+
+#CJ hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCJHat
+  name: Scales jester hat
+  description: Justice is blind, what a cruel joke for your fate to be weighted on a jesters whim.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cj-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cj-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4ec"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Cap hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCAPHat
+  name: Magical captain hat
+  description: Not all treasure is silver and gold.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cap-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cap-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Cmo hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCMOHat
+  name: Magical nurse hat
+  description: Turns out you were the cure all along.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cmo-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/cmo-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#d4fcf4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Ce hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalCEHat
+  name: High tech antenas
+  description: You may not know what they do, but you sure look badass in them.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/ce-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/ce-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fce7d4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Generic Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalGenericBow
+  name: Cute double bows
+  description: Cute, but was it worth your soul?
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/generic-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/generic-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fdbec8"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#tide Hardsuit (placeholder)
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalTiderGear
+  name: Stylish Tophat
+  description: When you need to yoink in style.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/tider-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/tider-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4ec"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#EVIL PART
+
+#Syndie Nemesis Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalSyndieHood
+  name: Hydra Hood
+  description: Cut off one head, two more will take its place.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/syndicate-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/syndicate-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 5
+    energy: 5
+    mask: /Textures/_Euphoria/Effects/LightMasks/snake2.png 
+    color: "#e60243"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+#Syndie Henchman Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitMagicalSyndieHenchmanHood
+  name: Snake Hood
+  description: Cut off one head and... well thats it, its not a hydra.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/syndicate-henchman-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/syndicate-henchman-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/snake2.png 
+    color: "#e60243"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Radiation: 0.9
+
+
+#Head of Security's hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalHOSTiara
+  name: COR HOS
+  description: Now gracefully, pull out your concealed carry.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-hos-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-hos-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4d4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
+
+#Hop hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalHOPHat
+  name: COR HOP
+  description: The moment you lift the hat the unfiled paperwork pour out of it... better keep it on.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-hop-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-hop-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#d4f7fc"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#QM hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalQMHat
+  name: COR QM
+  description: We run out of budget making the wings, the magical girl association is cuttign costs again...
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-qm-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-qm-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fce8d4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
+
+#RD hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalRDWig
+  name: COR RD
+  description: How do you like your new haircut?
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-rd-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-rd-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#e9d4fc"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
+
+#CJ hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalCJHat
+  name: COR CJ
+  description: Justice is blind, what a cruel joke for your fate to be weighted on a jesters whim.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-cj-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-cj-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fcd4ec"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - HeadSide
+
+#Cap hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalCAPHat
+  name: COR CAP
+  description: Not all treasure is silver and gold.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-cap-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-cap-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Cmo hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalCMOHat
+  name: COR CMO
+  description: Turns out you were the cure all along.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-cmo-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-cmo-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#d4fcf4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Ce hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitCorruptedMagicalCEHat
+  name: COR CE
+  description: You may not know what they do, but you sure look badass in them.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-ce-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/evil-ce-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fce7d4"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
