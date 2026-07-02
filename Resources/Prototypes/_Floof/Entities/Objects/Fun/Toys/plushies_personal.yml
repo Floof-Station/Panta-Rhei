@@ -1851,3 +1851,55 @@
   - type: EmitSoundOnUse
     sound: *snap3
 
+- type: entity
+  parent: PlushieHuman
+  id: PlushieStationMom
+  name: Station mom plushie
+  description: An adorably cozy plushie of a Captain and three of her kits! The kits are attached to the plushie with magnets.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: mom
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &yip
+      path: /Audio/_Floof/Voice/Reptilian/yip.ogg
+  - type: EmitSoundOnUse
+    sound: *yip
+  - type: EmitSoundOnLand
+    sound: &fox_growl1
+      path: /Audio/_DV/Voice/Kitsune/fox_growl1.ogg
+  - type: EmitSoundOnCollide
+    sound: *fox_growl1
+  - type: MeleeWeapon
+    soundHit: *fox_growl1
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieHgiRepresentative
+  name: HGI representative plushie
+  description: A warm plushie of a popular Kitsune girl. The Hestia Galactic logo is sewn on the front of her chest.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: hgi
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &fox2
+      path: /Audio/Animals/fox2.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *fox2
+  - type: EmitSoundOnLand
+    sound: &fox13
+      path: /Audio/Animals/fox13.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *fox13
+  - type: MeleeWeapon
+    soundHit: *fox13
+    

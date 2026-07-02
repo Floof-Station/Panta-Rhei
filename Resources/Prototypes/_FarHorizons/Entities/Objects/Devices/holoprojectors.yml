@@ -4,15 +4,21 @@
   name: radiation barrier projector
   description: Stop the deadly radiation from a delamination or meltdown, at least for a little while.
   components:
-  - type: HolosignProjector
-    signProto: HolosignRadiationBlocking
-    chargeUse: 60
+# Floofstation edits start - removing this becuase this does not work
+#  - type: HolosignProjector
+#    signProto: HolosignRadiationBlocking
+#    chargeUse: 60
+# Floofstation edits end
   - type: Sprite
     sprite: _FarHorizons/Objects/Devices/Holoprojectors/radiation.rsi
     state: icon
   - type: Tag
     tags:
       - HolofanProjector
+# Floofstation additions start - this will make it use the right projection prototype
+  - type: ChargeHolosignProjector
+    signProto: HolosignRadiationBlocking
+# Floofstation additons end
   # - type: StaticPrice
   #   price: 50
   # - type: GuideHelp

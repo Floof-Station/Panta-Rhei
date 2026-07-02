@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared._DV.Traits;
 using Content.Shared._DV.Traits.Conditions;
+using Content.Shared._Euphoria.Traits.Conditions;
 using Content.Shared._Floof.Traits.Condition;
 using Content.Shared._Floof.Util;
 using Content.Shared.Humanoid.Prototypes;
@@ -129,11 +130,16 @@ public sealed partial class TraitEntry : PanelContainer
     // Floofstation - just to eliminate some of this code repetition above. This is still a terrible fucking joke.
     private bool EvaluateCondition(BaseTraitCondition cond, ProtoId<JobPrototype>? jobId, ProtoId<SpeciesPrototype>? speciesId, IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences) => cond switch
     {
+        ITraitConditionSkipLobbyCheck skipCond => !cond.Invert, // Euphoria: Skip conditions that can't be reliably checked in the lobby.
         IsSpeciesCondition speciesCond => CheckSpeciesCondition(speciesCond, speciesId),
         OneOfSpeciesCondition oneOfSpeciesCond => oneOfSpeciesCond.Species.Any(it => it == speciesId), // Floofstation - terrible hardcoding - I don't care, just rework the system someday
+        #region Euphoria: Skip conditions that can't be reliably checked in the lobby.
+        /*
         HasJobCondition jobCond => CheckJobCondition(jobCond, jobId),
         InDepartmentCondition deptCond => CheckDepartmentCondition(deptCond, jobId),
         HasCompCondition compCond => !compCond.Invert, // can't check in lobby but screws with the inversion logic
+        */
+        #endregion
         IsAntagEligibleCondition antagEligibleCond => CheckAntagEligibleCondition(antagEligibleCond, antagPreferences),
         AnyOfCondition anyOfCond => CheckAnyOfCondition(anyOfCond, jobId, speciesId, antagPreferences),
         _ => WrapExpression.Return(true, _ => Log.Warning($"Condition {cond.GetType()} lacks a client-side handler. This code is horrible.")), // Floofstation - log error

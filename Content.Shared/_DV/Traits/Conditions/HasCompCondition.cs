@@ -1,3 +1,4 @@
+using Content.Shared._Euphoria.Traits.Conditions;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
@@ -8,6 +9,7 @@ namespace Content.Shared._DV.Traits.Conditions;
 /// Use Invert = true to check if the player does NOT have the component.
 /// </summary>
 public sealed partial class HasCompCondition : BaseTraitCondition
+    , ITraitConditionSkipLobbyCheck // Euphoria: Skip lobby checks for component conditions.
 {
     /// <summary>
     /// The component name to check for (e.g., "Pacifism").

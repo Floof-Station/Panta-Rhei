@@ -8,3 +8,61 @@
       sprite: _Euphoria/Clothing/Shoes/Misc/lustrosandals.rsi
     - type: Clothing
       sprite: _Euphoria/Clothing/Shoes/Misc/lustrosandals.rsi
+
+# Heels
+
+- type: entity
+  parent: ClothingShoesBaseButcherableHeelsNoisy
+  id: ClothingShoesHeelsKitten
+  name: kitten heels
+  description: A pair of cute kitten heels with a dainty ankle strap.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten.rsi
+
+- type: entity
+  parent: ClothingShoesHeelsKitten
+  id: ClothingShoesHeelsKittenBlack
+  name: black kitten heels
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_black.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_black.rsi
+
+- type: entity
+  parent: ClothingShoesHeelsKitten
+  id: ClothingShoesHeelsKittenCrimson
+  name: crimson kitten heels
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_crimson.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_crimson.rsi
+
+- type: entity
+  parent: ClothingShoesHeelsKitten
+  id: ClothingShoesHeelsKittenRose
+  name: rose kitten heels
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_rose.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_rose.rsi
+
+- type: entity
+  parent: ClothingShoesBaseButcherableHeelsNoisy
+  id: ClothingShoesHeelsBallet
+  name: ballet heels
+  description: A pair of extreme heels that force you to walk en pointe.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_ballet.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_ballet.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 6

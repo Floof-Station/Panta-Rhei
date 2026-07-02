@@ -8,3 +8,26 @@
     Glass: 800
     Steel: 1000
     Plastic: 400
+
+- type: latheRecipe
+  id: ConstructionBagOfHolding
+  result: ConstructionBagOfHolding
+  categories:
+  - Tools
+  completetime: 5
+  materials:
+    Steel: 2000
+    Silver: 750
+    Plasma: 1000
+    Bluespace: 200
+
+- type: latheRecipe
+  id: ConstructionBag
+  result: ConstructionBag
+  categories:
+  - Tools
+  completetime: 3
+  materials:
+    Steel: 1000
+    Silver: 300
+    Plasma: 500

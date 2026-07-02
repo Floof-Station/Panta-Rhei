@@ -1,0 +1,55 @@
+- type: entity
+  parent: [ BaseMachinePowered, ConstructibleMachine, StorageTank ]
+  id: MilkingMachine
+  name: milking machine
+  description: An industrial grade milking machine - designed for cows. Doesn't say what kind of cows though.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Structures/Lewd/milker.rsi
+      layers:
+        - state: milktank-1
+        - state: milktank
+          map: ["enum.SolutionContainerLayers.Fill"]
+          visible: false
+        - state: unlit
+          map: ["unlit"]
+    - type: Appearance
+    - type: Machine
+      board: MilkingMachineCircuitboard
+    - type: AmbientSound
+      enabled: false
+      sound:
+        path: /Audio/_Floof/Lewd/vibrate_loop.ogg
+    - type: GenericVisualizer
+      visuals:
+        enum.PowerDeviceVisuals.Powered:
+          unlit:
+            True: { visible: false }
+            False: { visible: true }
+    - type: PowerSwitch
+    - type: SolutionContainerVisuals
+      maxFillLevels: 7
+      fillBaseName: milktank-2-
+    - type: ExaminableSolution
+      solution: tank
+      exactVolume: true
+    - type: Milker
+      tubeSprite:
+        sprite: _Euphoria/Objects/Structures/Lewd/milker_tube.rsi
+        state: tube
+      popupDataset: MilkerPopups
+      milkedAmount: 2
+      milkedSolutionWhitelist:
+      - mammaryGlands
+      - udder
+      milkedEntityWhitelist:
+        components:
+        - MobState
+
+- type: localizedDataset
+  id: MilkerPopups
+  values:
+    prefix: milker-popup-
+    count: 16

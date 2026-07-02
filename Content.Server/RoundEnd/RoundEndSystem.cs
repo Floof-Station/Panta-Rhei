@@ -387,7 +387,7 @@ namespace Content.Server.RoundEnd
             {
                 if (!_shuttle.EmergencyShuttleArrived && ExpectedCountdownEnd is null)
                 {
-                    CallEvacuationVote(); // DeltaV - players vote on ending the round
+                    CallEvacuationSecretBallot(); // Euphoria - M3739 - #698 - Players vote on shuttle call, no live counts.
                     _autoCalledBefore = true;
                 }
 

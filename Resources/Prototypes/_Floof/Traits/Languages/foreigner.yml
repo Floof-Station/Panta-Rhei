@@ -34,3 +34,19 @@
   - !type:ForeignerTraitEffect
     baseLanguage: TauCetiBasic
     baseTranslator: TranslatorForeigner
+
+- type: trait
+  id: ForeignOrigin
+  name: trait-foreign-origin-name
+  description: trait-foreign-origin-desc
+  category: Languages
+  cost: -1
+  priority: 1
+  conflicts:
+    - Foreigner
+    - ForeignerLight
+  conditions:
+  - !type:HasCompCondition
+    component: LanguageKnowledge
+  effects:
+  - !type:RemoveSpeciesLanguageEffect
