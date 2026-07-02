@@ -10,7 +10,7 @@ using Content.Shared.GameTicking;
 using Content.Server.Database;
 using Content.Server.Antag;
 using Robust.Shared.Player;
-
+using Content.Server.Humanoid;
 /*
 This entire file is a mimicry of DeltaV's GhostRoleSystem.Character.cs, made to account for the fact that it can't respond to
 AntagSelectEntityEvent and seems to thus be invalid for spawning antagonist ghost roles as the player's character.
@@ -23,11 +23,11 @@ namespace Content.Server.Ghost.Roles
     {
         //[Dependency] private readonly IServerPreferencesManager _prefs = default!;
         //[Dependency] private readonly OutfitSystem _outfit = default!;
+	[Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
 
         private void OnSpawnerTakeAntagSelectedCharacter(Entity<GhostRoleCharacterSpawnerComponent> ent,
             ref AntagSelectEntityEvent args)
         {
-            //ICommonSession session = args.Session.Value;
 
             if (args.Handled ||
 		!(args.Session != null)) //If the session is null then fuck you I'm outta here
@@ -45,20 +45,20 @@ namespace Content.Server.Ghost.Roles
 
             var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Session.UserId).SelectedCharacter;
 	    
-            var mob = _ent.System<StationSpawningSystem>()
-                .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
-            _transform.AttachToGridOrMap(mob);
+             args.Entity = _ent.System<StationSpawningSystem>()
+                 .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
+             _transform.AttachToGridOrMap(args.Entity.Value);
 
-            var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, mob, character, args.Session);
-            RaiseLocalEvent(mob, spawnedEvent, true);
+            var spawnedEvent = new GhostRoleSpawnerUsedEvent(uid, args.Entity.Value, character, args.Session);
+            RaiseLocalEvent(args.Entity.Value, spawnedEvent, true);
 
-            EnsureComp<MindContainerComponent>(mob);
+            EnsureComp<MindContainerComponent>(args.Entity.Value);
 
-	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, mob, ghostRole);
+	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, args.Entity.Value, ghostRole);
 
-            _outfit.SetOutfit(mob, component.OutfitPrototype);
+            _outfit.SetOutfit(args.Entity.Value, component.OutfitPrototype);
 
-            EntityManager.AddComponents(mob, component.AddedComponents);
+            EntityManager.AddComponents(args.Entity.Value, component.AddedComponents);
 
             if (++component.CurrentTakeovers < component.AvailableTakeovers)
             {
