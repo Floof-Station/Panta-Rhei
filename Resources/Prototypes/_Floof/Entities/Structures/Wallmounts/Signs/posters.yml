@@ -6,3 +6,13 @@
   components:
   - type: Sprite
     state: poster34_contraband
+
+- type: entity
+  parent: PosterBase
+  id: PosterFih
+  name: "fih"
+  description: "A public notice that highlights the dangers of traveling space carps. Stuck neatly beside it is a post-it note, bearing the readout from a health analyzer: according to its data, the individual in question turns out to be a one-of-a-kind half-human, half-fish hybrid!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Wallmounts/Posters/fih.rsi
+    state: fih

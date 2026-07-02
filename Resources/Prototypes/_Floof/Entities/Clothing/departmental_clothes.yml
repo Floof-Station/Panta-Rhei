@@ -12,6 +12,7 @@
     sprite: _Floof/Clothing/Departmental/Command/captwarmer.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Command/captwarmer.rsi
+  - type: Insulated # Euphoria - M3739 - #706 - Consistency with captain gloves
   - type: Fiber
     fiberMaterial: fibers-durathread
     fiberColor: fibers-regal-blue
@@ -28,7 +29,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Command/captsocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -131,6 +132,7 @@
     sprite: _Floof/Clothing/Departmental/Engineering/chiefengiwarmer.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Engineering/chiefengiwarmer.rsi
+  - type: Insulated # Euphoria - M3739 - #706 - Missed a spot!
   - type: Fiber
     fiberMaterial: fibers-insulative
     fiberColor: fibers-white
@@ -511,6 +513,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-white
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -549,6 +552,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-white
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -587,6 +591,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-blue
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -625,6 +630,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-blue
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
   parent: ClothingShoesBase
@@ -691,7 +697,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/secsocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -731,7 +737,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/hossocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -771,7 +777,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/detectsocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase
@@ -799,6 +805,7 @@
     fiberMaterial: fibers-latex
     fiberColor: fibers-white
   - type: FingerprintMask
+  - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
   parent: [ ClothingShoesBase, ClothingShoesMilitaryBase ]
@@ -811,7 +818,7 @@
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/corpsmansocks.rsi
   - type: ClothingSlowOnDamageModifier
-    modifier: 0.8
+    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
   parent: ClothingUniformThongBase

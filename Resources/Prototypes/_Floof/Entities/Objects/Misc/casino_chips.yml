@@ -1,0 +1,201 @@
+﻿# Casino chips
+- type: entity
+  parent: BaseItem
+  id: CasinoChip # Parent for all the other chips
+  name: casino chip
+  description: Lets go gambling.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,0
+    storedOffset: 0,-2
+  - type: Material
+  - type: StaticPrice
+    price: 0
+  - type: Stack
+    stackType: CasinoChip
+    count: 1
+    baseLayer: base
+    layerStates:
+    - spacecasinocash1
+    - spacecasinocash10
+    - spacecasinocash20
+    - spacecasinocash50
+    - spacecasinocash100
+    - spacecasinocash200
+    - spacecasinocash500
+    - spacecasinocash1000
+    layerFunction: Threshold
+  - type: StackLayerThreshold
+    thresholds: [10, 20, 50, 100, 500, 1000, 2500, 5000, 10000]
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash1
+    layers:
+    - state: spacecasinocash1
+      map: ["base"]
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: CargoSellBlacklist # Frontier
+  - type: PhysicalComposition
+    materialComposition:
+      CasinoChips: 1
+  - type: Tag
+    tags:
+    - Sheet
+    - CasinoChips
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip1
+  suffix: 1
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash1
+  - type: Stack
+    stackType: CasinoChip
+    count: 1
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip10
+  suffix: 10
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash10
+  - type: Stack
+    stackType: CasinoChip
+    count: 10
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip20
+  suffix: 20
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash20
+  - type: Stack
+    stackType: CasinoChip
+    count: 20
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip50
+  suffix: 50
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash50
+  - type: Stack
+    stackType: CasinoChip
+    count: 50
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip100
+  suffix: 100
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash100
+  - type: Stack
+    stackType: CasinoChip
+    count: 100
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip200
+  suffix: 200
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash200
+  - type: Stack
+    stackType: CasinoChip
+    count: 200
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip500
+  suffix: 500
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash500
+  - type: Stack
+    stackType: CasinoChip
+    count: 500
+
+- type: entity
+  parent: CasinoChip
+  id: CasinoChip1000
+  suffix: 1000
+  components:
+  - type: Icon
+    sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi
+    state: spacecasinocash1000
+  - type: Stack
+    stackType: CasinoChip
+    count: 1000
+
+# Chip case
+- type: entity
+  name: casino chip case
+  description: A classy casino chip carrying case. HGI is not responsible for gambling addiction
+  parent: BaseStorageItem
+  id: CasinoChipCaseEmpty
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/Casino/chip_case.rsi
+    state: pokercase
+    scale: 0.50, 0.50 # make this smaller
+  - type: Storage # add whitelist
+    whitelist:
+      tags:
+      - CasinoChips # only chips can go in
+    maxItemSize: Small
+    grid:
+    - 0,0,5,3
+  - type: Item
+    size: Large
+    sprite: _Floof/Objects/Misc/Casino/chip_case.rsi
+    heldPrefix: pokercase
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 300
+
+- type: entity
+  name: casino chip case
+  parent: CasinoChipCaseEmpty
+  id: CasinoChipCaseFull
+  suffix: Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CasinoChip20
+          amount: 2
+        - id: CasinoChip50
+          amount: 1
+        - id: CasinoChip100
+          amount: 2
+        - id: CasinoChip200
+          amount: 3
+        - id: CasinoChip500
+          amount: 2
+        - id: CasinoChip1000
+          amount: 2

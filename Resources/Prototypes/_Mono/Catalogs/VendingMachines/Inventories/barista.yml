@@ -1,0 +1,28 @@
+- type: vendingMachineInventory
+  id: BaristaVendInventory
+  startingInventory:
+    ReagentContainerBlackTeaPouch: 4
+    ReagentContainerGreenTeaPouch: 4
+    ReagentContainerChamomileTeaPouch: 4
+    ReagentContainerBerryTeaPouch: 4
+    ReagentContainerFruitTeaPouch: 4
+    ReagentContainerDecafBlackTeaPouch: 4
+    ReagentContainerCoffeePouch: 4
+    ReagentContainerDecafCoffeePouch: 4
+    PaperCup: 10
+    Teaspoon: 5
+    DrinkMug: 6
+    Kettle: 3
+    DrinkTeapotEmpty: 4
+    DrinkGlass: 8
+#    ChemistryHotplateFlatpack: 5 # Euphoria - M3739 - #485 - We don't have this.
+    FoodBoxBiscuitSimple: 2
+    FoodBoxBiscuitOatmeal: 2
+    FoodBoxBiscuitSugar: 2
+    PaperWrittenTeaGuide: 10 # Euphoria - M3739 - #485 - Originally 4294967295 for 'infinite'. No.
+  contrabandInventory:
+    DrinkMugRainbow: 1
+    ReagentContainerYorkshireTeaPouch: 4
+  emaggedInventory:
+    ReagentContainerSyndicateTeaPouch: 1 # You ain't getting no more
+    DrinkMugRed: 2

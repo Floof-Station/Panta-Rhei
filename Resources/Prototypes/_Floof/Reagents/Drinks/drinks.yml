@@ -122,3 +122,18 @@
             Burn: -0.1
       - !type:ModifyBleed
         amount: -0.1 # 0.25
+
+- type: reagent
+  id: PeanutButterWhiskey
+  name: reagent-name-peanut-butter-whiskey
+  parent: BaseJuice
+  desc: reagent-desc-peanut-butter-whiskey
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#DCA465"
+  recognizable: true
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.5

@@ -1,0 +1,9 @@
+- type: entity # Security Viper
+  name: viper
+  parent: [WeaponPistolViper, BaseSecurityContraband]
+  id: WeaponPistolViperSecurity
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. Uses .35 auto ammo.
+  suffix: Security
+  components:
+   - type: Gun
+     fireRate: 5

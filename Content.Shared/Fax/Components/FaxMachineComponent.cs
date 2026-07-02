@@ -142,7 +142,15 @@ public sealed partial class FaxMachineComponent : Component
     /// </summary>
     [DataField]
     public bool ReceiveStationGoal { get; set; } = false;
+
     /// Floofstation addition end
+    /// Euphoria addition start
+    /// <summary>
+    ///     Should this fax receive shift extension reviews?
+    /// </summary>
+    [DataField]
+    public bool ReceiveShiftExtensionReview { get; set; } = false;
+    // Euphoria addition end
 }
 
 [DataDefinition]

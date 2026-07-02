@@ -9,3 +9,26 @@
       entity_storage:
         id: ClothingBackpackNapsack
         amount: 3
+
+- type: entity
+  id: CrateFunClothingHeels
+  parent: CratePlastic
+  name: heels crate
+  description: Nine extra pairs of heels for fashion-conscious crew and visitors.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: ClothingShoesHeelsKitten
+          amount: 2
+        - id: ClothingShoesHeelsKittenBlack
+          amount: 1
+        - id: ClothingShoesHeelsKittenCrimson
+          amount: 1
+        - id: ClothingShoesHeelsKittenRose
+          amount: 1
+        - id: ClothingShoesHeelsBallet
+          amount: 2
+        - id: ClothingShoesHighheelBoots
+          amount: 2

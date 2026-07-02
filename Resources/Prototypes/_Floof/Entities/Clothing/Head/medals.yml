@@ -1,0 +1,22 @@
+﻿- type: entity
+  parent: ClothingNeckGoldmedal
+  id: ClothingNeckGoodGirl
+  name: good girl gold medal
+  description: Given to a crewmate who is a good girl.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Neck/Medals/good_crew.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Neck/Medals/good_crew.rsi
+
+- type: entity
+  parent: ClothingNeckGoodGirl
+  id: ClothingNeckGoodBoy
+  name: good boy gold medal
+  description: Given to a crewmate who is a good boy.
+
+- type: entity
+  parent: ClothingNeckGoodGirl
+  id: ClothingNeckGoodPerson
+  name: good person gold medal
+  description: Given to a crewmate or borg who is a good person.
