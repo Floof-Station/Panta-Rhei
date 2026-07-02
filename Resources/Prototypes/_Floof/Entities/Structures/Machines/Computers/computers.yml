@@ -28,3 +28,65 @@
     board: SalvageShuttleConsoleCircuitboard
   - type: StealTarget
     stealGroup: SalvageShuttleConsoleCircuitboard
+
+- type: entity
+  id: CasinoSlotMachine
+  name: slot machine
+  parent: ArcadeBase
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/Casino/casino_slot_machine.rsi
+    layers:
+    - map: ["computerLayerBody"]
+      state: slotmachine
+    - map: ["computerLayerScreen"]
+      state: slotmachine
+    - map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      state: slotmachine_panel
+      visible: false
+  - type: PointLight
+    color: "#e3a136"
+  - type: SpaceVillainArcade
+    rewardMinAmount: 0 # Note: this is the empty variant
+    rewardMaxAmount: 0
+    possibleRewards: # Floofstation - old rewards removed and replaced with this.
+    - PrizeBall
+    - CasinoChip10
+    - CasinoChip10
+    - CasinoChip10
+    - CasinoChip10
+    - CasinoChip20
+    - CasinoChip20
+    - CasinoChip20
+    - CasinoChip50
+  - type: WiresPanel
+  - type: Wires
+    layoutId: Arcade
+    boardName: wires-board-name-arcade
+  - type: ActivatableUI
+    key: enum.SpaceVillainArcadeUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: StationAiWhitelist
+  - type: UserInterface
+    interfaces:
+      enum.SpaceVillainArcadeUiKey.Key:
+        type: SpaceVillainArcadeBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: Vocalizer
+    minVocalizeInterval: 1m # Arcades are noisy
+    maxVocalizeInterval: 4m
+    hideChat: true
+  - type: DatasetVocalizer
+    dataset: SpaceVillainAds
+  - type: SpeakOnUIClosed
+    pack: SpaceVillainGoodbyes
+
+- type: entity
+  id: CasinoSlotMachineFilled # will actually let players win chips
+  parent: CasinoSlotMachine
+  suffix: Filled
+  components:
+  - type: SpaceVillainArcade
+    rewardMinAmount: 30 # Euphoria
+    rewardMaxAmount: 150 # Euphoria

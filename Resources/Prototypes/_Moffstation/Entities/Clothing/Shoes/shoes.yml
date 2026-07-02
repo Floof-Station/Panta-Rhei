@@ -1,0 +1,24 @@
+
+# Security
+- type: entity
+  parent: [ClothingShoesMilitaryBase, ClothingShoesBaseHeelsNoisy, BaseSecurityContraband] # Euphoria +ClothingShoesMilitaryBase, +ClothingShoesBaseHeelsNoisy, -ClothingShoesBootsJack, -ClothingShoesHighheelBoots
+  id: ClothingShoesBootsJackHeels
+  name: high-heeled jackboots
+  description: Specialized high-heeled boots intended for use in combat scenarios, while somehow passing equipment standards. Now, you can kick ass in style!
+  components:
+  - type: Sprite
+    sprite: _Moffstation/Clothing/Shoes/high-heeled-jackboots.rsi
+  - type: Clothing
+    sprite: _Moffstation/Clothing/Shoes/high-heeled-jackboots.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.0275"
+      shoes-vox:
+      - state: equipped-FEET-vox
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.5 # Euphoria: 0.5<0.3 for consistency with other combat boots.
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 6 # Euphoria 6<8 for consistency with Combat High Heels

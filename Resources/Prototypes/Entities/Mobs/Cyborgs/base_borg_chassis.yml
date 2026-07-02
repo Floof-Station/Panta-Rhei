@@ -76,6 +76,12 @@
       # Only used for NT borgs that can switch type, defined here to avoid copy-pasting the rest of this component.
       enum.BorgSwitchableTypeUiKey.SelectBorgType:
         type: BorgSelectTypeUserInterface
+      # Begin DeltaV - borg PDAs
+      enum.PdaUiKey.Key:
+        type: PdaBoundUserInterface
+      enum.RingerUiKey.Key:
+        type: RingerBoundUserInterface
+      # End DeltaV - borg PDAs
   - type: Targeting # Shitmed Change
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
@@ -131,6 +137,8 @@
       borg_id_chip: !type:ContainerSlot # DeltaV - borg id chips
       borg_module: !type:Container { }
       part-container: !type:Container
+      program-container: !type:Container # DeltaV - Borg PDAs
+      Cartridge-Slot: !type:ContainerSlot # DeltaV - Borg PDAs
   - type: PowerCellSlot
     cellSlotId: cell_slot
     fitsInCharger: true
@@ -419,6 +427,40 @@
     fiberColor: fibers-black
   - type: BypassLock
     bypassDelay: 15 # We don't want people to easily be able to remove syndieborg brains.
+  # Euphoria start: Add borg PDA to syndicate borgs
+  - type: Pda
+    id: SyndicateIDCard
+    idSlot:
+      locked: true
+    penSlot:
+      locked: true
+    paiSlot:
+      locked: true
+  - type: PdaBorderColor
+    borderColor: "#891417"
+  - type: Ringer
+  - type: NanoChatCard
+    listNumber: false
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+    - NotekeeperCartridge
+    - NanoTaskCartridge
+    - NanoChatCartridge
+    cartridgeSlot:
+      locked: true
+      priority: -1
+      name: device-pda-slot-component-slot-name-cartridge
+      ejectSound: /Audio/Machines/id_swipe.ogg
+      insertSound: /Audio/Machines/id_insert.ogg
+      whitelist:
+        components:
+        - Cartridge
+  - type: ActionGrant
+    actions:
+    - ActionOpenCartridges
+  - type: BorgPda
+  # Euphoria End
 
 - type: entity
   id: BaseBorgChassisDerelict
