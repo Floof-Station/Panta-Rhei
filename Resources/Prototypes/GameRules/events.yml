@@ -26,7 +26,7 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
-    - id: FoodCriticSpawn # Euphoria - Dunno where exactly to put this so it's here for now, this wasn't a thought-out decision to put it here specifically so if you feel like it should be somewhere else, be my guest.
+    - id: AntagFoodCriticSpawn # Euphoria - Dunno where exactly to put this so it's here for now, this wasn't a thought-out decision to put it here specifically so if you feel like it should be somewhere else, be my guest.
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -893,54 +893,3 @@
       min: 1
       max: 1
       pickPlayer: false
-
-- type: entity
-  parent: BaseGameRule
-  id: TestAntagFoodCritic
-  components:
-  - type: StationEvent
-    weight: 5 # DeltaV - was 6
-    duration: null
-    earliestStart: 30
-    reoccurrenceDelay: 60 # DeltaV - was 20
-    minimumPlayers: 40 # DeltaV - was 30
-  - type: PrecognitionResult # DeltaV - Precogniton
-    message: psionic-power-precognition-ninja-spawn-result-message
-  - type: AntagRandomSpawn
-  - type: GhostRoleCharacterSpawner
-    outfitPrototype: FoodCriticGear
-  - type: AntagObjectives
-    objectives:
-    #- StealResearchObjective # DeltaV: Moved to random objectives
-    - DoorjackObjective
-    - SpiderChargeObjective
-    #- TerrorObjective # DeltaV: Moved to random objectives
-    #- MassArrestObjective # DeltaV: Moved to random objectives
-    - NinjaSurviveObjective
-  - type: AntagRandomObjectives # DeltaV: Random objectives for hacking and killing
-    sets:
-    - groups: NinjaHackingObjectiveGroups
-      maxPicks: 2 # only pick 2 of 3 of them to reduce metagaming
-    - groups: NinjaBonusObjectiveGroups
-      maxPicks: 2 # 2 kill or steal objectives max
-    maxDifficulty: 100 # ignore difficulty, use maxPicks instead
-  - type: AntagSelection
-    agentName: ninja-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostSpaceNinja
-      min: 1
-      max: 1
-      pickPlayer: false
-      startingGear: FoodCriticGear
-      #roleLoadout:
-      #- RoleSurvivalSpaceNinja
-      briefing:
-        text: ninja-role-greeting
-        color: Green
-        sound: /Audio/Misc/ninja_greeting.ogg
-      #components:
-      mindRoles:
-      - MindRoleFoodCritic
-  - type: DynamicRuleCost
-    cost: 75
-
