@@ -10,6 +10,7 @@ ghost-role-information-food-critic-description = Test the culinary prowess of HG
 food-critic-round-end-agent-name = Food Critic
 food-critic-role-greeting = You are a professional food critic, sent out to critique the allegedly greatest cuisines of the galaxy. You are here to write a review of HGI's food service. Put them to the ultimate test.
 roles-antag-food-critic-objective = Write a review of the station's culinary capabilities.
+roles-antag-food-critic-name = Food Critic
 
 
 
