@@ -49,12 +49,12 @@ namespace Content.Server.Ghost.Roles
             var uid = ent.Owner;
             var component = ent.Comp;
 	 
-            if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
-                ghostRole.Taken)
-            {
-                //args.TookRole = false;
-                return;
-            }
+            // if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
+            //     ghostRole.Taken)
+            // {
+            //     //args.TookRole = false;
+            //     return;
+            // }
 
             var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Session.UserId).SelectedCharacter;
 	    
@@ -67,7 +67,7 @@ namespace Content.Server.Ghost.Roles
 
             EnsureComp<MindContainerComponent>(args.Entity.Value);
 
-	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, args.Entity.Value, ghostRole);
+	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, args.Entity.Value);
 
             _outfit.SetOutfit(args.Entity.Value, component.OutfitPrototype);
 
@@ -79,7 +79,7 @@ namespace Content.Server.Ghost.Roles
                 return;
             }
 
-            ghostRole.Taken = true;
+            // ghostRole.Taken = true;
 
             if (component.DeleteOnSpawn)
                 QueueDel(uid);

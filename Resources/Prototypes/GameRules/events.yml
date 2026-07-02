@@ -894,3 +894,64 @@
       max: 1
       pickPlayer: false
 
+- type: entity
+  parent: BaseGameRule
+  id: TestySpawn
+  components:
+  - type: StationEvent
+    weight: 5 # DeltaV - was 6
+    duration: null
+    earliestStart: 30
+    reoccurrenceDelay: 60 # DeltaV - was 20
+    minimumPlayers: 40 # DeltaV - was 30
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-ninja-spawn-result-message
+  - type: SpaceSpawnRule
+  - type: GhostRoleCharacterSpawner
+  - type: AntagObjectives
+    objectives:
+    #- StealResearchObjective # DeltaV: Moved to random objectives
+    - DoorjackObjective
+    - SpiderChargeObjective
+    #- TerrorObjective # DeltaV: Moved to random objectives
+    #- MassArrestObjective # DeltaV: Moved to random objectives
+    - NinjaSurviveObjective
+  - type: AntagRandomObjectives # DeltaV: Random objectives for hacking and killing
+    sets:
+    - groups: NinjaHackingObjectiveGroups
+      maxPicks: 2 # only pick 2 of 3 of them to reduce metagaming
+    - groups: NinjaBonusObjectiveGroups
+      maxPicks: 2 # 2 kill or steal objectives max
+    maxDifficulty: 100 # ignore difficulty, use maxPicks instead
+  - type: AntagSelection
+    agentName: ninja-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostSpaceNinja
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: SpaceNinjaGear
+      roleLoadout:
+      - RoleSurvivalSpaceNinja
+      briefing:
+        text: ninja-role-greeting
+        color: Green
+        sound: /Audio/Misc/ninja_greeting.ogg
+      components:
+      - type: SpaceNinja
+      - type: NpcFactionMember
+        factions:
+        - Syndicate
+      - type: AutoImplant
+        implants:
+        - DeathAcidifierImplant
+      - type: RandomMetadata
+        nameSegments:
+        - NamesNinjaTitle
+        - NamesNinja
+        nameFormat: name-format-ninja
+      mindRoles:
+      - MindRoleNinja
+  - type: DynamicRuleCost
+    cost: 75
+
