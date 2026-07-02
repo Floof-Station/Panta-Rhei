@@ -1,12 +1,26 @@
 # Mind Role
 - type: entity
-  parent: MindRoleGhostRoleFreeAgentHarmless
+  parent: BaseMindRoleAntag
   id: MindRoleFoodCritic
   name: Food Critic Role
   components:
   - type: MindRole
+    antagPrototype: FoodCriticAntagPrototype
     subtype: role-subtype-food-critic
   - type: FoodCriticRole
+
+# Antag Prototype
+- type: antag
+  id: FoodCriticAntagPrototype
+  name: roles-antag-space-ninja-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-food-critic-objective
+  #requirements:
+  #- !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
+    #time: 10h
+  #guides: [ SpaceNinja ]
+
 
 # Starting Gear
 - type: startingGear
@@ -42,6 +56,7 @@
     - state: green
     - sprite: Objects/Consumable/Food/burger.rsi
 
+#New Antag Spawn Point
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
