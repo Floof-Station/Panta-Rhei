@@ -108,6 +108,7 @@
   - ClothingUniformRedSidelessDress
   - ClothingUniformPurpleNightclubDress
   - ClothingUniformBlackPetticoatDress
+  - ClothingUniformJumpskirtBlazer
 
 # gloves
 - type: loadoutGroup
@@ -133,6 +134,7 @@
 - type: loadoutGroup
   id: FloofShoes
   abstract: true
+  parent: [EuphoriaShoes] # Euphoria
   name: loadout-group-passenger-shoes
   loadouts:
   - ClothingShoesBootsJack
@@ -271,7 +273,14 @@
   abstract: true
   loadouts:
   - ClothingNeckCollarBlackPetId
+  - ClothingNeckCollarBlackPetIdAlternative
   - ClothingNeckCollarBluePetId
+  - ClothingNeckCollarBluePetIdAlternative
   - ClothingNeckCollarPinkPetId
+  - ClothingNeckCollarPinkPetIdAlternative
   - ClothingNeckCollarSyndiPetId
+  - ClothingNeckCollarSyndiPetIdAlternative
   - ClothingNeckCollarShockPetId
+  - ClothingNeckCollarShockPetIdAlternative
+  - ClothingNeckCollarBellPetId
+  - ClothingNeckCollarBellPetIdAlternative

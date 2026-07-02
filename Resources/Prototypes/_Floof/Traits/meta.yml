@@ -4,6 +4,7 @@
   description: trait-marked-teach-desc
   category: Meta
   cost: 0
+  usesSlots: false
   conditions:
   - !type:InDepartmentCondition
     department: Command
@@ -26,6 +27,7 @@
   description: trait-marked-remove-desc
   category: Meta
   cost: 0
+  usesSlots: false
   conditions:
   - !type:HasCompCondition
     component: TargetObjectiveImmune

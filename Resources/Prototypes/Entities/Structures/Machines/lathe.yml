@@ -306,6 +306,7 @@
     - EngineeringBoardsGoob #Goob Factorio port
     - ServiceAssemblerPack # Frontier Service Assembler
     - MedicalAssemblerPack # Frontier Medical Assembler
+    - ReactorCircuitboards # FH edit
   - type: EmagLatheRecipes
     emagDynamicPacks:
     - SecurityBoards
@@ -355,6 +356,7 @@
     - BorgDVModulesStatic # DeltaV - modules
     - BorgModulesStaticShitmed # Shitmed
     - BorgIdentificationStaticDeltaV # DeltaV - Borg IDs
+    - BorgModulesStaticEuphoria # Euphoria
     dynamicPacks:
     - Robotics
     - BorgModules
@@ -525,7 +527,7 @@
       unlitRunningState: unlit-building # DeltaV - added animation sprite layers
       staticPacks:
       - SecurityAmmoStatic
-    # Start DeltaV Additions 
+    # Start DeltaV Additions
       - SecurityShotgunDrumsStatic
       - AmmoFabPracticeStatic # Removes practice guns
       - SecurityRubberAmmoStatic
@@ -589,6 +591,7 @@
     - ToolAugments
     - SimpleToolsStaticDeltaV
     # End DeltaV Additions
+    - AtmosToolsForCryogenics #Euphoria - So that medfabs can make gas analyzers
     dynamicPacks:
     - Chemistry
     - CyberneticsMedical # Shitmed change

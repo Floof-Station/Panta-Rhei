@@ -963,7 +963,7 @@
         amount: 1
   products:
         MillerMargarita: 3
-    
+
 - type: reaction
   id: HarpySnowfall
   requiredMixerCategories:
@@ -979,3 +979,15 @@
         amount: 1
   products:
         HarpySnowfall: 6
+
+- type: reaction
+  id: PeanutButterWhiskey
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    PeanutButter:
+      amount: 1
+    Whiskey:
+      amount: 1
+  products:
+    PeanutButterWhiskey: 2

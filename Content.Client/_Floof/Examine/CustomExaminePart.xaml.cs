@@ -10,7 +10,6 @@ using Robust.Client.UserInterface.RichText;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
-using Serilog;
 
 
 namespace Content.Client._Floof.Examine;

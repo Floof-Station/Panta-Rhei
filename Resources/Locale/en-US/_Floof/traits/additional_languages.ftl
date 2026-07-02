@@ -10,9 +10,8 @@ trait-Tradeband-desc =
 
 trait-Freespeak-name = Freespeak (Gutter)
 trait-Freespeak-desc =
-    A language of renegades and frontiersmen descending from various languages from Earth like Hindi combined into a multi-rooted jumble that sounds incoherent or even barbarian to non-native speakers.
-    This language is the only common cultural identity for humans in the frontier. Speaking this language in itself boldly declares the speaker a free spirit.
-    Often called 'Gutter' by Alliance citizens.
+    A multi-rooted language used by renegades and frontiersmen that descended from Hindi and various other Earth languages. It sounds rather unique to non-native speakers.
+    It serves as a common cultural identity on the frontier, and speakers of this language boldly declare themselves as free spirits.
 
 trait-Elyran-name = Elyran Standard
 trait-Elyran-desc =

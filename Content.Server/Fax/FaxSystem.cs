@@ -4,6 +4,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Server.Tools;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
@@ -22,6 +23,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.NameModifier.Components;
 using Content.Shared.Paper;
 using Content.Shared.Power;
+using Content.Shared.PowerCell;
 using Content.Shared.Tools;
 using Content.Shared.UserInterface;
 using Robust.Server.GameObjects;
@@ -51,6 +53,10 @@ public sealed class FaxSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly FaxecuteSystem _faxecute = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
+    #region Euphoria: Allow for handheld fax or copy machines
+    [Dependency] private readonly PowerCellSystem _cell = default!;
+    [Dependency] private readonly TransformSystem _transform = default!;
+    #endregion
 
     private static readonly ProtoId<ToolQualityPrototype> ScrewingQuality = "Screwing";
 
@@ -87,11 +93,23 @@ public sealed class FaxSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        #region Euphoria: Allow unpowered or battery-powered fax machines
+        /*
         var query = EntityQueryEnumerator<FaxMachineComponent, ApcPowerReceiverComponent>();
         while (query.MoveNext(out var uid, out var fax, out var receiver))
         {
             if (!receiver.Powered)
                 continue;
+        */
+        var query = EntityQueryEnumerator<FaxMachineComponent>();
+        while (query.MoveNext(out var uid, out var fax))
+        {
+            if (!this.IsPowered(uid, EntityManager))
+                return;
+
+            if (!_cell.HasActivatableCharge(uid))
+                return;
+            #endregion
 
             ProcessPrintingAnimation(uid, frameTime, fax);
             ProcessInsertingAnimation(uid, frameTime, fax);
@@ -600,7 +618,12 @@ public sealed class FaxSystem : EntitySystem
         var printout = component.PrintingQueue.Dequeue();
 
         var entityToSpawn = printout.PrototypeId.Length == 0 ? component.PrintPaperId.ToString() : printout.PrototypeId;
+        #region Euphoria: Detach print results from handheld fax machines
+        /*
         var printed = Spawn(entityToSpawn, Transform(uid).Coordinates);
+        */
+        var printed = SpawnNextToOrDrop(entityToSpawn, uid);
+        #endregion
 
         if (TryComp<PaperComponent>(printed, out var paper))
         {

@@ -291,3 +291,16 @@
     - SiikTajr
     languagesUnderstood:
     - SiikTajr
+
+- type: trait
+  id: SiikMaas
+  name: trait-SiikMaas-name
+  description: trait-SiikMaas-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - SiikMaas
+    languagesUnderstood:
+    - SiikMaas

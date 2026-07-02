@@ -1,12 +1,10 @@
 using System.Linq;
 using Content.Server.Chat.Managers;
-using Content.Server.Examine;
 using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared.Ghost;
 using Content.Shared.Interaction;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
-using NetCord;
 using Robust.Shared.Player;
 
 namespace Content.Server._Floof.InteractionVerbs;
@@ -49,12 +47,12 @@ public sealed class InteractionVerbsSystem : SharedInteractionVerbsSystem
             _chatManager.ChatMessageToManyFiltered(filter, popup.LogChannel, message, wrappedMessage, source, false, false, color);
     }
 
-    private Robust.Shared.Maths.Color InferColor(PopupType popup) => popup switch
+    private Color InferColor(PopupType popup) => popup switch
     {
         // These are all hardcoded on client-side, so we have to improvise
-        PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution => Robust.Shared.Maths.Color.Red,
-        PopupType.Medium or PopupType.Small => Robust.Shared.Maths.Color.LightGray,
-        _ => Robust.Shared.Maths.Color.White
+        PopupType.LargeCaution or PopupType.MediumCaution or PopupType.SmallCaution => Color.Red,
+        PopupType.Medium or PopupType.Small => Color.LightGray,
+        _ => Color.White
     };
 
     private bool CanSee(EntityUid source, EntityUid target, float maxRange)

@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "license": "CC-BY-3.0",
+    "copyright": "Taken from TGStation PR: https://github.com/tgstation/tgstation/pull/44875, bluespace_construction_bag, bluespace_inhand-left, bluespace_inhand-right Edited by Dunrab (Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "construction_bag"
+        },
+        {
+            "name": "construction_bag_belt",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "bluespace_construction_bag"
+        },
+        {
+            "name": "bluespace_inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "bluespace_inhand-right",
+            "directions": 4
+        }
+    ]
+}
