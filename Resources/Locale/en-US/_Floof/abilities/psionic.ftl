@@ -11,7 +11,11 @@ food-critic-round-end-agent-name = Food Critic
 food-critic-role-greeting = You are a professional food critic, sent out to critique the allegedly greatest cuisines of the galaxy. You are here to write a review of HGI's food service. Put them to the ultimate test.
 roles-antag-food-critic-objective = Write a review of the station's culinary capabilities.
 roles-antag-food-critic-name = Food Critic
-objective-issuer-donk-co = Donk Co!
+objective-issuer-donk-co = [color=orange]Donk Co![/color]
+ghost-role-information-peaceful-antagonist-rules = Your objectives have been described to you. You are here to do a job, same as anyone. Good luck!
+                                               You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                               You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                               You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
 
 
 

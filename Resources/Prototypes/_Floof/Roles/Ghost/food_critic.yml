@@ -32,7 +32,7 @@
   - type: MindRole
     antagPrototype: FoodCriticAntagPrototype
     subtype: role-subtype-food-critic
-    #exclusiveAntag: true
+    #exclusiveAntag: true #Uncommenting this breaks everything as of July 2nd 2026
   - type: FoodCriticRole
 
 # Antag Prototype
@@ -92,18 +92,14 @@
   - type: GhostRole
     name: ghost-role-information-food-critic-name
     description: ghost-role-information-food-critic-description
-    rules: ghost-role-information-antagonist-rules
+    rules: ghost-role-information-peaceful-antagonist-rules
     mindRoles:
     - MindRoleFoodCritic
     raffle:
       settings: default
   - type: Sprite
-    sprite: Markers/jobs.rsi
-    layers:
-    - state: green
-    - sprite: Objects/Consumable/Food/burger.rsi
-      state: icon
-
+    sprite: Objects/Consumable/Food/burger.rsi
+    state: human
 
 - type: entity
   parent: BaseGameRule
