@@ -396,11 +396,6 @@
   id: FoodBreadPlain
   description: Some plain old earthen bread.
   components:
-  - type: FoodEffect
-    effect: PainNumbnessTraitStatusEffect
-    time: 16
-    mode: Update
-    delay: 0
   - type: Sprite
     layers:
     - state: plain
