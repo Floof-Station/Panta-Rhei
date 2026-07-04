@@ -15,3 +15,15 @@
   id: ClothingUnderSocksCorpsman
   equipment:
     shoes: ClothingUnderSocksCorpsman
+
+# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportCorpsman
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportCorpsman
+
+# needs their regular pda for the loadout group
+- type: loadout
+  id: BrigmedicPDA
+  equipment:
+    id: BrigmedicPDA

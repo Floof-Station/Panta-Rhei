@@ -25,3 +25,5 @@ ghost-role-information-friendly-beast-rules = [color=red]This is an admin spawne
         You are allowed to join the station.
         You have a backpack, headset, PDA, and two hand/pocket slots.
         Listen to admins about any additional rules.
+
+ghost-role-information-pet-spider-name = Pet Spider

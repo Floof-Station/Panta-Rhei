@@ -1,4 +1,5 @@
 #nullable enable
+using Content.Shared._Floof.CCVar;
 using Content.Shared.CCVar;
 
 namespace Content.IntegrationTests;
@@ -35,6 +36,6 @@ public static partial class PoolManager
         (CCVars.InteractionRateLimitCount.Name, "9999999"),
         (CCVars.InteractionRateLimitPeriod.Name, "0.1"),
         (CCVars.MovementMobPushing.Name, "false"),
-        (CCVars.LavalandEnabled.Name, "false"), // Lavaland Change
+        (FloofCCVars.StationPlanetSpawning.Name, "false")
     };
 }

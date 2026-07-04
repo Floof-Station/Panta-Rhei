@@ -1,7 +1,8 @@
 # Spoken by Unathi.
 - type: language
   id: Draconic
-  isVisibleLanguage: true
+  parent: BaseLanguage
+  icon: { state: sintaunathi } # Placeholder sprite
   speech:
     color: "#2aca2add"
   obfuscation:
@@ -98,6 +99,7 @@
 # !Do Not Make A Translator For This Language.
 - type: language
   id: Azaziba
+  parent: BaseLanguage
   speech:
     color: "#2aca2add"
   obfuscation:

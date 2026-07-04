@@ -54,12 +54,14 @@
         Piercing: 1
   - type: Speech
     speechSounds: Alto
+    speechVerb: Felinid # Euphoria
+    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl'] # Euphoria | Emote wheel
   - type: DamageOnHighSpeedImpact # Landing on all fours!
     damage:
       types:
         Blunt: 1
   - type: Stamina
-    critThreshold: 85
+    baseCritThreshold: 85
     decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
   - type: TypingIndicator
     proto: felinid
@@ -78,13 +80,15 @@
   - type: LanguageKnowledge #Euphoria - Languages
     speaks:
     - TauCetiBasic
+    - SiikMaas #Euphoria - Restore Maas
     - SiikTajr
     - Cat
     understands:
     - TauCetiBasic
+    - SiikMaas #Euphoria - Restore Maas
     - SiikTajr
     - Cat
-    naturalLanguage: SiikTajr
+    naturalLanguage: SiikMaas #Euphoria - Restore Maas
   - type: Felinid # real
   - type: NoShoesSilentFootsteps
   - type: Tag
@@ -96,8 +100,9 @@
     - TajaranEmotes #Euphoria
   - type: FootPrints
   - type: Temperature
-    coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal
     currentTemperature: 311.76  # Body temperature of cat
+  - type: TemperatureDamage
+    coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal
     heatDamage:
       types:
         Heat: 2 # poor kitty

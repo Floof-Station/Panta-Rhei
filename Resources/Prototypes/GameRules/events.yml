@@ -26,6 +26,7 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
+    - id: FoodCriticSpawn # Euphoria - Dunno where exactly to put this so it's here for now, this wasn't a thought-out decision to put it here specifically so if you feel like it should be somewhere else, be my guest.
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -279,7 +280,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalEVA
+      - RoleSurvivalSpaceNinja
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -588,6 +589,7 @@
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
+    occursDuringRoundEnd: false
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-zombie-outbreak-result-message
   - type: ZombieRule
@@ -891,3 +893,4 @@
       min: 1
       max: 1
       pickPlayer: false
+

@@ -112,3 +112,40 @@
     Saline: 50
     Bleach: 5
   recipeType: MedicalAssembler # Frontier
+
+- type: microwaveMealRecipe
+  id: RecipeWehMedipen
+  name: weh auto-injector
+  result: WehMedipen
+  time: 5
+  group: Medicinal
+  solids:
+    BlankMediPen: 1
+  reagents:
+    JuiceThatMakesYouWeh: 60
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeCombatMedipen
+  name: combat medipen
+  result: CombatMedipen
+  time: 5
+  group: Medicinal
+  solids:
+    BlankMediPen: 1
+  reagents:
+    Omnizine: 20
+    TranexamicAcid: 10
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeStimpack
+  name: hyperzine injector
+  result: Stimpack
+  time: 5
+  group: Medicinal
+  solids:
+    BlankMediPen: 1
+  reagents:
+    Stimulants: 30
+  recipeType: MedicalAssembler

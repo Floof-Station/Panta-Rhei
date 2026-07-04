@@ -73,7 +73,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.48
+          radius: 0.39 #Euph change. Was 0.48, gets stuck in doors. 0.39 is same as Chitinid.
         density: 275 # Its an abandoned bioweapon species with 4 arms, of course it should be able to fight a Oni.
         restitution: 0.0
         mask:
@@ -157,10 +157,11 @@
     solution: melee
     transferAmount: 1
   - type: Temperature
-    heatDamageThreshold: 400
-    coldDamageThreshold: 285
     currentTemperature: 310.15
     specificHeat: 42
+  - type: TemperatureDamage # DeltaV - Update for TemperatureDamage
+    heatDamageThreshold: 400
+    coldDamageThreshold: 285
     coldDamage:
       types:
         Cold : 0.05 #per second, scales with temperature & other constants

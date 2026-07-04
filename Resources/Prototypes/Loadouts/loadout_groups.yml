@@ -595,7 +595,7 @@
 
 - type: loadoutGroup
   id: ChaplainHead
-  parent: [EuphoriaChaplainHead, FloofHats] # floofstation
+  parent: [EuphoriaChaplainHead, FloofHats, AssistantHead] # floofstation
   name: loadout-group-chaplain-head
   minLimit: 0
   loadouts:
@@ -1013,7 +1013,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianHead
-  parent: [FloofHats] # floofstation
+  parent: [FloofCargotechHats, FloofHats] # floofstation
   name: loadout-group-cargo-technician-head
   minLimit: 0
   loadouts:
@@ -1032,7 +1032,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianBackpack
-  parent: [FloofBackpacks] # Floofstation
+  parent: [FloofCargoTechBags, FloofBackpacks] # Floofstation
   name: loadout-group-cargo-technician-backpack
   loadouts:
   - CargoTechnicianBackpack
@@ -1236,6 +1236,7 @@
 
 - type: loadoutGroup
   id: StationEngineerID
+  parent: FloofEngineerPDAs # Floofstation
   name: loadout-group-station-engineer-id
   loadouts:
   - StationEngineerPDA
@@ -1424,6 +1425,7 @@
   minLimit: 0
   loadouts:
   - RegularLabCoat
+  - LongLabCoat # DeltaV
   - ScienceLabCoat
   - ScienceWintercoat
   - SeniorResearcherLabCoat
@@ -1663,9 +1665,11 @@
   - CombatBoots # DeltaV
   - JackBoots
   - SecurityWinterBoots
+  - JackHeels # Moffstation - High-Heeled Jackboots
 
 - type: loadoutGroup
   id: SecurityPDA
+  parent: FloofSecurityOfficerPdas # Floofstation
   name: loadout-group-security-id
   loadouts:
   - SecurityPDA
@@ -1835,6 +1839,13 @@
   - BlueSurgeryCap
   - GreenSurgeryCap
   - PurpleSurgeryCap
+  # Begin DeltaV Additions
+  - BlackSurgeryCap
+  - CyanSurgeryCap
+  - PinkSurgeryCap
+  - WhiteSurgeryCap
+  - RainbowSurgeryCap
+  # End DeltaV Additions
   - NurseHat
 
 - type: loadoutGroup
@@ -1849,6 +1860,13 @@
   - MedicalBlueScrubs
   - MedicalGreenScrubs
   - MedicalPurpleScrubs
+  # Begin DeltaV Additions
+  - MedicalBlackScrubs
+  - MedicalCyanScrubs
+  - MedicalPinkScrubs
+  - MedicalWhiteScrubs
+  - MedicalRainbowScrubs
+  # End DeltaV Additions
   # Begin DeltaV Additions - Medical Clothing Overhaul
   - MedicalApronJumpsuit
   - MedicalApronJumpskirt
@@ -2011,7 +2029,6 @@
   - ParamedicJumpskirt
   - ParamedicJumpSuitJumper # DeltaV - Medical Clothing Overhaul
   - ParamedicJumpSkirtJumper # DeltaV - Medical Clothing Overhaul
-
 - type: loadoutGroup
   id: ParamedicOuterClothing
   parent: [FloofMedicalOuterClothing, FloofOuterClothing] # Floofstation
@@ -2087,7 +2104,7 @@
 
 - type: loadoutGroup
   id: PsychologistJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [FloofJumpsuits, EuphoriaPsychJumpsuit] # Floofstation
   name: loadout-group-psychologist-jumpsuit
   loadouts:
   - PsychologistJumpsuit
@@ -2109,38 +2126,6 @@
   loadouts:
   - LizardPlushiePsychologist
 
-- type: loadoutGroup
-  id: BoxerJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
-  name: loadout-group-boxer-jumpsuit
-  loadouts:
-  - BoxerShorts
-  - BoxerShortsWithTop
-
-- type: loadoutGroup
-  id: BoxerGloves
-  parent: [FloofGloves] # Floofstation
-  name: loadout-group-boxer-gloves
-  loadouts:
-  - RedBoxingGloves
-  - BlueBoxingGloves
-  - GreenBoxingGloves
-  - YellowBoxingGloves
-
-- type: loadoutGroup
-  id: BoxerJobTrinkets
-  name: loadout-group-jobtrinkets
-  minLimit: 0
-  loadouts:
-  - LizardPlushieBoxer
-
-- type: loadoutGroup
-  id: ZookeeperJobTrinkets
-  name: loadout-group-jobtrinkets
-  minLimit: 0
-  loadouts:
-  - LizardPlushieZookeeper
-
 # Other
 - type: loadoutGroup
   id: SurvivalSyndicate
@@ -2153,6 +2138,15 @@
   - LoadoutSpeciesVoxNitrogen
   - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporSyndicate # DeltaV
+
+- type: loadoutGroup
+  id: SurvivalMilitaryDouble
+  name: loadout-group-survival-military
+  minLimit: 2
+  hidden: true
+  loadouts:
+  - EmergencyNitrogenMilitaryDouble
+  - EmergencyOxygenMilitaryDouble
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

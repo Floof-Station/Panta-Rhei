@@ -27,7 +27,7 @@
     sprite: _DV/Objects/Augments/arm.rsi
     state: base
   - type: Storage
-    maxItemSize: Normal
+    maxItemSize: Ginormous # Floofstation - was Normal, stop allowing people to stack these in their backpacks
     defaultStorageOrientation: Vertical
     grid:
     - 0,0,9,1
