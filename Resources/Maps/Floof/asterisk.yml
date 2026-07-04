@@ -103,9 +103,6 @@ entities:
         moles:
           Oxygen: 21.824879
           Nitrogen: 82.10312
-    - type: Gravity
-      gravityShakeSound: !type:SoundPathSpecifier
-        path: /Audio/Effects/alert.ogg
     - type: WeatherCycle
       prototype: Winter
   - uid: 2
