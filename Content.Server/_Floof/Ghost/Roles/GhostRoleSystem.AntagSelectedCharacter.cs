@@ -36,7 +36,6 @@ namespace Content.Server.Ghost.Roles
     {
         //[Dependency] private readonly IServerPreferencesManager _prefs = default!;
         //[Dependency] private readonly OutfitSystem _outfit = default!;
-	//[Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!; //Not used
 
         private void OnSpawnerTakeAntagSelectedCharacter(Entity<GhostRoleCharacterSpawnerComponent> ent,
             ref AntagSelectEntityEvent args)
@@ -49,6 +48,8 @@ namespace Content.Server.Ghost.Roles
             var uid = ent.Owner;
             var component = ent.Comp;
 	 
+	    //The expression here always evaluates to true, unlike in OnSpawnerTakeCharacter.
+	    //Maybe something else is handling this?
             // if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
             //     ghostRole.Taken)
             // {
@@ -75,16 +76,16 @@ namespace Content.Server.Ghost.Roles
 
             if (++component.CurrentTakeovers < component.AvailableTakeovers)
             {
-                //args.TookRole = true;
+                //args.TookRole = true; //Doesn't exist for AntagSelectEntityEvent
                 return;
             }
 
-            // ghostRole.Taken = true;
+            // ghostRole.Taken = true; //Doesn't exist for AntagSelectEntityEvent
 
             if (component.DeleteOnSpawn)
                 QueueDel(uid);
 
-            //args.TookRole = true;
+            //args.TookRole = true; //Doesn't exist for AntagSelectEntityEvent
         }
     }
 }
