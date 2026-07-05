@@ -12,6 +12,7 @@ using Content.Server.Antag;
 using Robust.Shared.Player;
 using Content.Server.Humanoid;
 
+
 /*
 This entire file is a mimicry of DeltaV's GhostRoleSystem.Character.cs.
 It is made to account for the fact that it can't respond to AntagSelectEntityEvent
@@ -51,9 +52,6 @@ namespace Content.Server.Ghost.Roles
 {
     public sealed partial class GhostRoleSystem
     {
-        //[Dependency] private readonly IServerPreferencesManager _prefs = default!;
-        //[Dependency] private readonly OutfitSystem _outfit = default!;
-
         private void OnSpawnerTakeAntagSelectedCharacter(Entity<GhostRoleCharacterSpawnerComponent> ent,
             ref AntagSelectEntityEvent args)
         {
