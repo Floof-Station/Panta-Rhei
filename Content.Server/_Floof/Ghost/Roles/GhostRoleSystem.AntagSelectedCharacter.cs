@@ -18,9 +18,9 @@ It is made to account for the fact that it can't respond to AntagSelectEntityEve
 and seems to thus be invalid for spawning antagonist ghost roles as the player's character.
 
 This is done by copying the homework of GhostRoleSystem.Character.cs and AntagLoadProfileSystem.cs,
-mashing the two together into a horrifying little franken-system that should get the job done.
+mashing the two together into a horrifying little franken-handler that should get the job done.
 This code *should* allow antagonist prototypes to use GhostRoleCharacterSpawnerComponent to
-spawn with the player's selected character.
+spawn with the player's selected character when it is attached at the same level as AntagSelectionComponent.
 
 This is very likely shitcode. Due to the derivative nature of its creation, it will likely
 have unnecessary parts that should not be there. Things may be done in an incorrect or
@@ -28,6 +28,23 @@ unstable way. Scrutinize heavily.
 
 If you something weird, it's very likely *not* a design choice, but a mistake.
 Please let me know. I am learning :3
+
+With that said, even if this code is safe, it's still a third implementation of essentially the same functionality:
+
+See ghost role needs an entity -> Query player session for information to spawn an appropriate character ->
+Spawn a character with the appropriate qualities from the player's selected character.
+
+Is there anything I can do about that? No, not really. AntagLoadProfileRuleSystem's OnSelectEntity handler is from wizden, 
+and GhostRoleSystem's OnSpawnerTakeCharacter is from DeltaV. These architectural decisions are above me, but I also wanted
+to acknowledge them because I don't like them and want to be up-front about the fact this source file would not need
+to exist if when making AntagLoadProfileRule they accounted for a desire to make an antagonist fully into the player's
+selected character. Maybe this could be done by making the aspects of the character the system must copy 
+a datafield in the component. I did not try to do this because I did not want to interfere with upstream files.
+Even better, not separating spawning functionality between antagonists and regular ghost roles.
+Even better even better, not separating spawning functionality between anything at all so that I could just
+access the functionality for spawning regular player characters. I think that if that was done, I would
+actually not have had to write any code at all. However, fixing that would involve fucking with
+some of the most fundamental systems of the game. So... can't do much about that. Rant over :3
 */
 
 namespace Content.Server.Ghost.Roles
