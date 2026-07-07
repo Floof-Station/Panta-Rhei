@@ -382,23 +382,6 @@ public sealed partial class IngestionSystem : EntitySystem
 
         _stomach.TryTransferSolution(stomachToUse.Value.Owner, split, stomachToUse);
 
-        //Start Euphoria changes
-        if (TryComp<FoodEffectComponent>(food, out var foodEffect))
-        {
-            var effect = foodEffect.Effect;
-            var time = foodEffect.Time;
-            var mode = foodEffect.Mode;
-            var delay = foodEffect.Delay;
-
-            if (!_effects.HasStatusEffect(entity, effect))
-            {
-                if (mode == StatusEffectMetabolismMode.Update)
-                    _effects.TryUpdateStatusEffectDuration(entity, new EntProtoId(effect), time, delay);
-            }
-        }
-
-        //End Euphoria changes
-
         if (!afterEv.Destroy)
         {
             args.Repeat = afterEv.Repeat;
