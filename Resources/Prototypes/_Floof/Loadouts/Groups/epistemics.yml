@@ -1,12 +1,5 @@
-﻿#below additions are for mysta
-- type: loadoutGroup
-  id: FloofMystaThong
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformEpiHeadThong
-
+﻿# ======================================================== #
+# mysta additions
 - type: loadoutGroup
   id: FloofMystaGloves
   abstract: true
@@ -15,15 +8,6 @@
   loadouts:
   - HandsEpiHeadWarmers
 
-- type: loadoutGroup
-  id: FloofMystaSocks
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UnderSocksEpiHead
-
-# mysta pdas
 - type: loadoutGroup
   id: FloofMystaDAs
   name: loadout-group-mysta-pdas
@@ -34,31 +18,56 @@
   - ResearchDirectorPDA
   - ClothingNeckCollarEmotionalSupportRD # emotional support
 
-# scientist additions
 - type: loadoutGroup
-  id: FloofScientistJumpsuit
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformEpiThong
+  id: FloofUndergarmentTopMystagogue
+  parent: FloofUndergarmentTopScientist
+  loadouts: [] # Nuthing here yet
 
+- type: loadoutGroup
+  id: FloofUndergarmentBottomMystagogue
+  parent: FloofUndergarmentBottomScientist
+  loadouts:
+  - UniformEpiHeadThong
+
+- type: loadoutGroup
+  id: FloofSocksMystagogue
+  parent: FloofSocksScientist
+  loadouts:
+  - UnderSocksEpiHead
+
+# ======================================================== #
+# scientist additions
 - type: loadoutGroup
   id: FloofScientistGloves
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsEpiWarmers
 
 - type: loadoutGroup
-  id: FloofScientistShoes
+  id: FloofScientistPdas
   abstract: true
-  minLimit: 1
-  maxLimit: 1
+  loadouts:
+  - AcolytePDA
+  - ClothingNeckCollarEmotionalSupportScientist
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopScientist
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomScientist
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformEpiThong
+
+- type: loadoutGroup
+  id: FloofSocksScientist
+  parent: FloofSocksPassenger
   loadouts:
   - ClothingUnderSocksEpi
 
+# ======================================================== #
 # mantis additions
 - type: loadoutGroup
   id: FloofMantisJumpsuit
@@ -84,6 +93,8 @@
   loadouts:
   - ClothingUnderSocksMantisEpi
 
+
+# ======================================================== #
 # chaplain additions
 - type: loadoutGroup
   id: FloofChaplainJumpsuit
@@ -127,14 +138,9 @@
   - NoostatisticianPDA
   - ClothingNeckCollarEmotionalSupportChaplain
 
-# epi alternative pdas
-- type: loadoutGroup
-  id: FloofScientistPdas
-  abstract: true
-  loadouts:
-  - AcolytePDA
-  - ClothingNeckCollarEmotionalSupportScientist
 
+# ======================================================== #
+# Assorted PDAs
 - type: loadoutGroup
   id: FloofRoboticistPdas
   abstract: true

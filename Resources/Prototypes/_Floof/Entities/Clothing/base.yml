@@ -10,7 +10,128 @@
     - Skirt
     - ShirtlessClothing # to allow equipping/unequipping under coats and the like
 
+# Base undergarment. Do not inherit from this directly.
 - type: entity
-  id: ClothingUniformThongBase
-  parent: [ClothingUniformShirtlessBase, ClothingUniformBase]
   abstract: true
+  parent: Clothing
+  id: ClothingUndergarmentBase
+  components:
+  - type: EmitSoundOnPickup # Goob's interaction sounds.
+    sound:
+      path: /Audio/_Goobstation/Items/handling/generic_small_pickup.ogg
+      params:
+        volume: -8
+  - type: EmitSoundOnDrop
+    sound: &garment_drop_sound
+      path: /Audio/_Goobstation/Items/handling/shoes_drop.ogg
+      params:
+        volume: -8
+  - type: EmitSoundOnLand
+    sound: *garment_drop_sound
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0 # 1x2
+  - type: Edible
+    requiresSpecialDigestion: true
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1 # Very little
+      amount: 1
+  - type: PhysicalComposition # 50% of the amount of cloth you'd obtain upon butchering
+    materialComposition:
+      Cloth: 50
+  - type: Sprite
+    state: icon
+  - type: Clothing
+    equipSound:
+      collection: GenericEquip
+      params:
+        volume: -8
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+
+
+# Base for bottom undergarment
+- type: entity
+  abstract: true
+  parent: ClothingUndergarmentBase
+  id: ClothingUndergarmentBottomBase
+  components:
+  - type: Clothing
+    slots:
+    - UNDERGARMENT_BOTTOM
+    clothingVisuals:
+      undergarmentTop:
+      - state: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - INNERCLOTHING
+      - OUTERCLOTHING
+
+# Base for top undergarment
+- type: entity
+  abstract: true
+  parent: ClothingUndergarmentBase
+  id: ClothingUndergarmentTopBase
+  components:
+  - type: Clothing
+    slots:
+    - UNDERGARMENT_TOP
+    clothingVisuals:
+      undergarmentTop:
+      - state: equipped-INNERCLOTHING # Terrible hack cause i can't be bothered to rename all the items' sprites
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - INNERCLOTHING
+      - OUTERCLOTHING
+      blacklist:
+        tags:
+        - ShirtlessClothing
+
+# Base for socks
+- type: entity
+  abstract: true
+  parent: ClothingUndergarmentBase
+  id: ClothingUndergarmentSocksBase
+  components:
+  - type: Clothing
+    slots:
+    - UNDERGARMENT_SOCKS
+    clothingVisuals:
+      undergarmentSocks:
+      - state: equipped-FEET # Terrible hack cause i can't be bothered to rename all the items' sprites
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - FEET
+
+
+
+# Base for top undergarment that can also be equipped in inner or outer clothing
+- type: entity
+  abstract: true
+  parent: ClothingUndergarmentTopBase
+  id: ClothingUndergarmentTopSwitchableBase
+  components:
+  - type: Clothing
+    slots:
+    - INNERCLOTHING
+    - OUTERCLOTHING
+    - UNDERGARMENT_TOP
+  - type: SlotBlocker # Floofstation
+    blockedBy:
+      slots:
+      - OUTERCLOTHING

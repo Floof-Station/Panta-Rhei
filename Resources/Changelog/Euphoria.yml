@@ -4066,3 +4066,51 @@ Entries:
       message: Two pet spiders are now available in loadouts.
   id: 507
   time: '2026-07-04T01:51:58.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Fix
+      message: Sec Viper starting with a extended mag was not intended.
+  id: 508
+  time: '2026-07-06T05:45:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Added fun!
+    - type: Remove
+      message: Removed fun!
+    - type: Tweak
+      message: Changed fun!
+    - type: Fix
+      message: Fixed fun!
+  id: 509
+  time: '2026-07-06T06:32:46.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: Added Sinta'Unathi/Draconic to Secondary Language traits.
+  id: 510
+  time: '2026-07-07T08:32:42.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Added 3 extra inventory slots: undergarment top, undergarment bottom,
+        and socks. Currently the top slot only accepts fishnet tops, the bottom
+        slot accepts thongs, and socks slot accepts thigh-high socks. There are
+        plans to convert undergarment markings into clothing entities as well.
+    - type: Tweak
+      message: >-
+        Janitor and command thigh-high socks no longer give mechanical benefit:
+        instead, you can wear proper combat/no-slip shoes over them.
+    - type: Fix
+      message: Shoes will no longer draw over clothing (and especially skirts!).
+    - type: Fix
+      message: Zookeeper and Service Worker should now be able to choose more loadouts.
+    - type: Tweak
+      message: >-
+        Leash and Remote Signaller have been moved to the "trinkets" loadouts
+        category. You may need to re-select them if you had them selected in the
+        other category. In compensation, the trinkets category now allows up to
+        4 items.
+  id: 511
+  time: '2026-07-07T10:34:49.0000000+00:00'

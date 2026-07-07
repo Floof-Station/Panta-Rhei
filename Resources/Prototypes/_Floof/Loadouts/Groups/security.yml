@@ -1,43 +1,43 @@
-﻿# jumpsuits
+﻿# ======================================================== #
+# jumpsuits
 - type: loadoutGroup
   id: FloofSecurityJumpsuits
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - UniformJumpsuitSecSummer
 
-# hos stuff
-- type: loadoutGroup
-  id: FloofHosThong
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformHeadSecurityThong
-
+# ======================================================== #
+# HOS additions
 - type: loadoutGroup
   id: FloofHosGloves
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - HandsHeadSecurityWarmers
+  - ClothingHandsSecurityWarmers
 
 - type: loadoutGroup
-  id: FloofHosSocks
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
+  id: FloofUndergarmentTopHOS
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomHOS
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformHeadSecurityThong
+  - UniformSecurityThong
+
+- type: loadoutGroup
+  id: FloofSocksHOS
+  parent: FloofSocksPassenger
   loadouts:
   - UnderSocksHeadSecurity
+  - ClothingUnderSocksSecurity
 
 #hos pdas
 - type: loadoutGroup
   id: FloofHoSPDAs
   name: loadout-group-hos-pdas
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - HoSPDA
   - ChiefOfSecurityPDA
@@ -45,46 +45,48 @@
   - SheriffPDA
   - ClothingNeckCollarEmotionalSupportHOS # emotional support
 
+
+# ======================================================== #
 # security officer additions
 - type: loadoutGroup
   id: FloofSecurityOfficerJumpsuit
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
-  - UniformSecurityThong
   - UniformSecCatsuit
 
 - type: loadoutGroup
   id: FloofSecurityOfficerGloves
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsSecurityWarmers
 
 - type: loadoutGroup
-  id: FloofSecurityOfficerShoes
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
+  id: FloofUndergarmentTopSecurityOfficer
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomSecurityOfficer
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformSecurityThong
+
+- type: loadoutGroup
+  id: FloofSocksSecurityOfficer
+  parent: FloofSocksPassenger
   loadouts:
   - ClothingUnderSocksSecurity
 
+# ======================================================== #
 # detective additions
 - type: loadoutGroup
   id: FloofDetectiveJumpsuit
   abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformDetectiveThong
+  loadouts: []
 
 - type: loadoutGroup
   id: FloofDetectiveOuterClothing
   abstract: true
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - OuterCoatDetective
 
@@ -92,8 +94,6 @@
   id: FloofDetectiveGloves
   name: loadout-group-security-detective-gloves
   parent: [SecurityGloves]
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - HandsGlovesForensic
   - ClothingHandsDetectiveWarmers
@@ -102,26 +102,36 @@
   id: FloofDetectiveShoes
   name: loadout-group-security-detective-shoes
   parent: [SecurityShoes]
-  minLimit: 1
-  maxLimit: 1
+  loadouts: []
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopDetective
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomDetective
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformDetectiveThong
+
+- type: loadoutGroup
+  id: FloofSocksDetective
+  parent: FloofSocksPassenger
   loadouts:
   - ClothingUnderSocksDetective
 
+# ======================================================== #
 # corpsman additions
 - type: loadoutGroup
   id: FloofCorpsmanJumpsuit
   abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformCorpsmanThong
+  loadouts: []
 
 - type: loadoutGroup
   id: FloofCorpsmanGloves
   name: loadout-group-security-corpsman-gloves
   parent: [MedicalGloves]
-  minLimit: 0
-  maxLimit: 1
   loadouts:
   - ClothingHandsCorpsmanWarmers
 
@@ -129,12 +139,28 @@
   id: FloofCorpsmanShoes
   name: loadout-group-security-corpsman-shoes
   parent: [SecurityShoes]
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ClothingShoesColorBlack
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopCorpsman
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomCorpsman
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformCorpsmanThong
+
+- type: loadoutGroup
+  id: FloofSocksCorpsman
+  parent: FloofSocksPassenger
+  loadouts:
   - ClothingUnderSocksCorpsman
 
+
+# ======================================================== #
 # emotional support
 - type: loadoutGroup
   id: FloofSecurityCadetPdas

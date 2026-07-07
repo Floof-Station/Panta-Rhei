@@ -1,8 +1,4 @@
 ﻿# station engineer & atmos outfits
-- type: loadout
-  id: UniformEngiThong
-  equipment:
-    jumpsuit: ClothingUniformEngiThong
 
 # gloves
 - type: loadout
@@ -11,11 +7,6 @@
     gloves: ClothingHandsEngiWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksEngi
-  equipment:
-    shoes: ClothingUnderSocksEngi
-
 - type: loadout
   id: BootsWorkWorn
   equipment:
@@ -52,3 +43,18 @@
   id: ClothingNeckCollarEmotionalSupportStationEngineer
   equipment:
     neck: ClothingNeckCollarEmotionalSupportStationEngineer
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformEngiThong
+  equipment:
+    undergarmentBottom: ClothingUniformEngiThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksEngi
+  equipment:
+    undergarmentSocks: ClothingUnderSocksEngi
+

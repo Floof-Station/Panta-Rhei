@@ -1,12 +1,5 @@
-﻿#below additions are for hop
-- type: loadoutGroup
-  id: FloofHopThong
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformCommandThong
-
+﻿# ======================================================== #
+# hop additions
 - type: loadoutGroup
   id: FloofHopGloves
   abstract: true
@@ -14,14 +7,6 @@
   maxLimit: 1
   loadouts:
   - HandsCommandWarmers
-
-- type: loadoutGroup
-  id: FloofHopSocks
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UnderSocksCommand
 
 # hop pdas
 - type: loadoutGroup
@@ -36,15 +21,25 @@
   - HeadOfPaperworkPDA
   - ClothingNeckCollarEmotionalSupportHOP # Emotional support
 
-#below additions are for captain
 - type: loadoutGroup
-  id: FloofCaptainThong
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformCaptainThong
+  id: FloofUndergarmentTopCommand
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
 
+- type: loadoutGroup
+  id: FloofUndergarmentBottomCommand
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformCommandThong
+
+- type: loadoutGroup
+  id: FloofSocksCommand
+  parent: FloofSocksPassenger
+  loadouts:
+  - UnderSocksCommand
+
+# ======================================================== #
+# captain additions
 - type: loadoutGroup
   id: FloofCaptainGloves
   abstract: true
@@ -52,14 +47,6 @@
   maxLimit: 1
   loadouts:
   - HandsCaptainWarmers
-
-- type: loadoutGroup
-  id: FloofCaptainSocks
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UnderSocksCaptain
 
 - type: loadoutGroup
   id: FloofCaptainPDAs
@@ -80,7 +67,26 @@
   loadouts:
   - CaptainTrenchCoat
 
-#below additions are for chief justice
+- type: loadoutGroup
+  id: FloofUndergarmentTopCaptain
+  parent: FloofUndergarmentTopCommand
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomCaptain
+  parent: FloofUndergarmentBottomCommand
+  loadouts:
+  - UniformCaptainThong
+
+- type: loadoutGroup
+  id: FloofSocksCaptain
+  parent: FloofSocksCommand
+  loadouts:
+  - UnderSocksCaptain
+
+
+# ======================================================== #
+# chief justice additions
 - type: loadoutGroup
   id: FloofCJPDAs
   name: loadout-group-chief-justice-pdas

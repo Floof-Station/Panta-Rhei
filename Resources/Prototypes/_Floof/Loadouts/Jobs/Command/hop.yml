@@ -1,18 +1,9 @@
-﻿#below additions are for hop
-- type: loadout
-  id: UniformCommandThong
-  equipment:
-    jumpsuit: ClothingUniformCommandThong
-
+﻿# ======================================================== #
+# hop additions
 - type: loadout
   id: HandsCommandWarmers
   equipment:
     gloves: ClothingHandsCommandWarmers
-
-- type: loadout
-  id: UnderSocksCommand
-  equipment:
-    shoes: ClothingUnderSocksCommand
 
 # hop pdas
 - type: loadout
@@ -40,3 +31,18 @@
   id: ClothingNeckCollarEmotionalSupportHOP
   equipment:
     neck: ClothingNeckCollarEmotionalSupportHOP
+
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformCommandThong
+  equipment:
+    undergarmentBottom: ClothingUniformCommandThong
+
+# socks
+- type: loadout
+  id: UnderSocksCommand
+  equipment:
+    undergarmentSocks: ClothingUnderSocksCommand

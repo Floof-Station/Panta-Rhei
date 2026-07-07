@@ -1,8 +1,4 @@
 ﻿# medical doctor outfits
-- type: loadout
-  id: UniformMedicThong
-  equipment:
-    jumpsuit: ClothingUniformMedicThong
 
 # gloves
 - type: loadout
@@ -11,10 +7,6 @@
     gloves: ClothingHandsMedicWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksMedic
-  equipment:
-    shoes: ClothingUnderSocksMedic
 
 # alternative PDA
 - type: loadout
@@ -32,3 +24,19 @@
   id: ClothingNeckCollarEmotionalSupportMedicalDoctor
   equipment:
     neck: ClothingNeckCollarEmotionalSupportMedicalDoctor
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformMedicThong
+  equipment:
+    undergarmentBottom: ClothingUniformMedicThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksMedic
+  equipment:
+    undergarmentSocks: ClothingUnderSocksMedic
+
+
