@@ -764,48 +764,41 @@ namespace Content.Server.Kitchen.EntitySystems
                         //Euph edits start - allow for spawning multiple results from a single recipe
                         foreach (var result in active.PortionedRecipe.Item1.Results)
                         {
-                            //If the prototype is a reagent, handle it as a liquid
-                            if (_prototype.HasIndex<ReagentPrototype>(result.Key))
+                            Spawn(result, coords);
+                        }
+
+                        if (active.PortionedRecipe.Item1.ResultReagents != null)
+                        {
+                            Solution toAdd = new Solution(active.PortionedRecipe.Item1.ResultReagents);
+                            foreach (var item in microwave.Storage.ContainedEntities)
                             {
-                                var toAdd = new Solution(result.Key, result.Value, null);
 
-                                foreach (var item in microwave.Storage.ContainedEntities)
+                                // use the same reagents as when we selected the recipe
+                                if (!_solutionContainer.TryGetRefillableSolution(item,
+                                        out var solutionEntity,
+                                        out var solution))
+                                    continue;
+
+                                _solutionContainer.TryMixAndOverflow(solutionEntity.Value, toAdd,solutionEntity.Value.Comp.Solution.MaxVolume,out var overflow);
+
+                                toAdd.RemoveAllSolution();
+
+                                if (overflow != null && overflow.Volume > 0)
                                 {
-                                    // use the same reagents as when we selected the recipe
-                                    if (!_solutionContainer.TryGetRefillableSolution(item,
-                                            out var solutionEntity,
-                                            out var solution))
-                                        continue;
-
-                                    _solutionContainer.TryMixAndOverflow(solutionEntity.Value, toAdd,solutionEntity.Value.Comp.Solution.MaxVolume,out var overflow);
-
-                                    toAdd.RemoveAllSolution();
-
-                                    if (overflow != null && overflow.Volume > 0)
-                                    {
-                                        toAdd.SetContents(overflow);
-                                    }
-                                    else
-                                    {
-                                        break;
-                                    }
+                                    toAdd.SetContents(overflow);
                                 }
-
-                                if (toAdd.Volume > 0)
+                                else
                                 {
-                                    _popup.PopupEntity(Loc.GetString("lathe-reagent-dispense-no-container",
-                                            ("name", uid)),
-                                        uid);
-                                    _puddle.TrySpillAt(uid, toAdd, out _);
+                                    break;
                                 }
-
                             }
-                            else
+
+                            if (toAdd.Volume > 0)
                             {
-                                for (int j = 0; j < result.Value; j++)
-                                {
-                                    Spawn(result.Key, coords);
-                                }
+                                _popup.PopupEntity(Loc.GetString("lathe-reagent-dispense-no-container",
+                                        ("name", uid)),
+                                    uid);
+                                _puddle.TrySpillAt(uid, toAdd, out _);
                             }
                         }
                         //Euph edits end

@@ -55,7 +55,7 @@ public sealed class MedicalRecipeDataSystem : SharedMedicalGuideDataSystem
             {
                 foreach (var result in recipe.Results)
                 {
-                    _sources.GetOrNew(result.Key).Add(new MedicalRecipeData(recipe));
+                    _sources.GetOrNew(result).Add(new MedicalRecipeData(recipe));
                 }
             }
             //Euph edits end

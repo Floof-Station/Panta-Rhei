@@ -1,11 +1,9 @@
-#Euphoria - recipes changes with Cooking rework
 # Breads
 
 #- type: microwaveMealRecipe
 #  id: RecipeMoldyBread
 #  name: moldy bread recipe
-#  result:
-#   FoodBreadMoldy: 1
+#  result: FoodBreadMoldy
 #  time: 20
 #  group: Breads
 #  solids:
@@ -17,8 +15,7 @@
 - type: microwaveMealRecipe
   id: RecipeCheeseCurds
   name: cheese curds recipe
-  result:
-    FoodCheeseCurds: 1
+  result: FoodCheeseCurds
   time: 5
   solids:
     FoodCurdCheese: 1
@@ -26,8 +23,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothHerbyCheese
   name: herby cheese recipe
-  result:
-    FoodMothHerbyCheese: 1
+  result: FoodMothHerbyCheese
   time: 5
   solids:
     FoodCurdCheese: 1
@@ -38,8 +34,7 @@
 - type: microwaveMealRecipe
   id: RecipeBoritoPie
   name: borito pie recipe
-  result:
-    FoodBoritoPie: 1
+  result: FoodBoritoPie
   time: 15
   group: Pie
   solids:
@@ -53,8 +48,7 @@
 - type: microwaveMealRecipe
   id: RecipeBlueTomatoSoup
   name: blue tomato soup recipe
-  result:
-    FoodSoupTomatoBlue: 1
+  result: FoodSoupTomatoBlue
   time: 10
   group: Soup
   reagents:
@@ -66,8 +60,7 @@
 - type: microwaveMealRecipe
   id: RecipePurpleTomatoSoup
   name: purple tomato soup recipe
-  result:
-    FoodSoupTomatoPurple: 1
+  result: FoodSoupTomatoPurple
   time: 10
   group: Soup
   reagents:
@@ -80,8 +73,7 @@
 #- type: microwaveMealRecipe
 #  id: RecipeMothEyeballSoup
 #  name: moth eyeball soup recipe
-#  result:
-#   FoodMothEyeballSoup: 1
+#  result: FoodMothEyeballSoup
 #  time: 10
 #  group: Soup
 #  reagents:
@@ -95,8 +87,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothChiliCabbageWrap
   name: sweet chili cabbage wrap recipe
-  result:
-    FoodMothChiliCabbageWrap: 1
+  result: FoodMothChiliCabbageWrap
   time: 15
   group: Salad
   reagents:
@@ -110,8 +101,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothCornmealPorridge
   name: cornmeal porridge recipe
-  result:
-    FoodMothCornmealPorridge: 1
+  result: FoodMothCornmealPorridge
   time: 10
   group: Soup
   reagents:
@@ -123,8 +113,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothVegetarianChili
   name: vegetarian chili recipe
-  result:
-    FoodMothVegetarianChili: 1
+  result: FoodMothVegetarianChili
   time: 10
   group: Soup
   reagents:
@@ -140,8 +129,7 @@
 - type: microwaveMealRecipe
   id: RecipeScrambledEggs
   name: scrambled eggs recipe
-  result:
-    FoodMealScrambledEggs: 1
+  result: FoodMealScrambledEggs
   time: 5
   group: Savory
   reagents:
@@ -154,8 +142,7 @@
 - type: microwaveMealRecipe
   id: RecipeChickenNuggetBox
   name: chicken nugget box recipe
-  result:
-    FoodBoxNugget: 1
+  result: FoodBoxNugget
   time: 10
   group: Savory
   reagents:
@@ -168,8 +155,7 @@
 - type: microwaveMealRecipe
   id: RecipeFishChips
   name: fish and chips recipe
-  result:
-    FoodMealFishChips: 1
+  result: FoodMealFishChips
   time: 15
   group: Savory
   solids:
@@ -182,8 +168,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothSqueakingFry
   name: squeaking stir fry recipe
-  result:
-    FoodMothSqueakingFry: 1
+  result: FoodMothSqueakingFry
   time: 15
   group: Savory
   reagents:
@@ -198,8 +183,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothEngineFodder
   name: engine fodder recipe
-  result:
-    FoodMothEngineFodder: 1
+  result: FoodMothEngineFodder
   time: 30
   group: Savory
   solids:
@@ -211,8 +195,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothFueljackLunch
   name: fueljack lunch recipe
-  result:
-    FoodMothFueljackLunch: 1
+  result: FoodMothFueljackLunch
   time: 15
   group: Savory
   solids:
@@ -225,8 +208,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothToastedSeeds
   name: toasted seeds recipe
-  result:
-    FoodMothToastedSeeds: 1
+  result: FoodMothToastedSeeds
   time: 15
   group: Savory
   reagents:
@@ -239,8 +221,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothBakedCheese
   name: baked cheese recipe
-  result:
-    FoodMothBakedCheese: 1
+  result: FoodMothBakedCheese
   time: 15
   group: Savory
   solids:
@@ -249,8 +230,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothBakedCheesePlatter
   name: baked cheese platter recipe
-  result:
-    FoodMothBakedCheesePlatter: 1
+  result: FoodMothBakedCheesePlatter
   time: 5
   group: Savory
   solids:
@@ -260,8 +240,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothBakedRice
   name: baked rice recipe
-  result:
-    FoodMothBakedRice: 1
+  result: FoodMothBakedRice
   time: 15
   group: Savory
   solids:
@@ -274,8 +253,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothGreenLasagne
   name: green lasagne recipe
-  result:
-    FoodMothGreenLasagne: 1
+  result: FoodMothGreenLasagne
   time: 20
   group: Savory
   reagents:
@@ -288,8 +266,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothBakedCorn
   name: baked corn recipe
-  result:
-    FoodMothBakedCorn: 1
+  result: FoodMothBakedCorn
   time: 15
   group: Savory
   solids:
@@ -298,8 +275,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothButteredBakedCorn
   name: buttered baked corn recipe
-  result:
-    FoodMothButteredBakedCorn: 1
+  result: FoodMothButteredBakedCorn
   time: 5
   group: Savory
   # reagents: # Whenever we can actually melt butter
@@ -311,8 +287,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothMozzarellaSticks
   name: mozzarella sticks recipe
-  result:
-    FoodMothMozzarellaSticks: 1
+  result: FoodMothMozzarellaSticks
   time: 15
   group: Savory
   reagents:
@@ -324,8 +299,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothMacBalls
   name: mac balls recipe
-  result:
-    FoodMothMacBalls: 1
+  result: FoodMothMacBalls
   time: 15
   group: Savory
   reagents:
@@ -337,8 +311,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothHuaMulanCongee
   name: mulan congee recipe
-  result:
-    FoodMothHuaMulanCongee: 1
+  result: FoodMothHuaMulanCongee
   time: 10
   group: Savory
   solids:
@@ -349,8 +322,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothCheesyPorridge
   name: cheesy porridge recipe
-  result:
-    FoodMothCheesyPorridge: 1
+  result: FoodMothCheesyPorridge
   time: 10
   group: Savory
   reagents:
@@ -364,8 +336,7 @@
 - type: microwaveMealRecipe
   id: RecipeMothEggplantPolenta
   name: fried eggplant and polenta recipe
-  result:
-    FoodMothEggplantPolenta: 1
+  result: FoodMothEggplantPolenta
   time: 10
   group: Savory
   reagents:

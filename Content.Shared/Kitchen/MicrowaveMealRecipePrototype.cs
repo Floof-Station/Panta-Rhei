@@ -1,10 +1,11 @@
-﻿using Content.Shared.Chemistry.Reagent;
+﻿using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Robust.Shared.Serialization; // Frontier
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array; // Frontier
 
 namespace Content.Shared.Kitchen
 {
@@ -30,9 +31,13 @@ namespace Content.Shared.Kitchen
         [DataField("solids", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, EntityPrototype>))]
         private Dictionary<string, FixedPoint2> _ingsSolids = new ();
 
-        //Euph, make recipes be able to handle multiple results from a single recipe
-        [DataField("result", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, EntityPrototype>))]
-        private Dictionary<string,FixedPoint2> _ingsResult = new ();
+        //Euphoria, allow for multiple results from a single recipe
+        [DataField("result")]
+        public EntProtoId[] Results = [];
+
+        //Euph, allow for liquid output in microwave recipes
+        [DataField("resultReagents")]
+        public Solution? ResultReagents;
 
         [DataField("time")]
         public uint CookTime { get; private set; } = 5;
@@ -47,7 +52,6 @@ namespace Content.Shared.Kitchen
         // TODO Turn this into a ReagentQuantity[]
         public IReadOnlyDictionary<string, FixedPoint2> IngredientsReagents => _ingsReagents;
         public IReadOnlyDictionary<string, FixedPoint2> IngredientsSolids => _ingsSolids;
-        public IReadOnlyDictionary<string, FixedPoint2> Results => _ingsResult; //Euph, multiple results per recipe
         public bool HideInGuidebook { get; set; }
         public int ResultCount { get; set; }
 

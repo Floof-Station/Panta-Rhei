@@ -184,13 +184,12 @@ namespace Content.Server.Roboisseur.Roboisseur
 
             var allRecipes = _prototypeManager.EnumeratePrototypes<FoodRecipePrototype>();
             var allProtos = new List<String>();
-            //Euph edits start - read all results from all recipes + liquids
+            //Euph edits start - read all results from all recipes
             foreach (var recipe in allRecipes)
             {
                 foreach (var result in recipe.Results)
                 {
-                    if(!_prototypeManager.HasIndex<ReagentPrototype>(result.Key))
-                        allProtos.Add(result.Key);
+                    allProtos.Add(result);
                 }
             }
             //Euph edits end

@@ -1,11 +1,9 @@
-﻿#Euphoria - recipes changed with Cooking rework
-#Breads & Sandwiches
+﻿#Breads & Sandwiches
 
 - type: microwaveMealRecipe
   id: RecipeAvocadoToast
   name: avocado toast recipe
-  result:
-    FoodBreadAvocadoToast: 1
+  result: FoodBreadAvocadoToast
   time: 5
   solids:
     FoodBreadPlainSlice: 1
@@ -14,8 +12,7 @@
 - type: microwaveMealRecipe
   id: RecipeBreakfastBagel
   name: breakfast bagel recipe
-  result:
-    FoodMealBreakfastBagel: 1
+  result: FoodMealBreakfastBagel
   time: 5
   solids:
     FoodBagel: 1
@@ -26,8 +23,7 @@
 - type: microwaveMealRecipe
   id: RecipeBreakfastBagelPoppy
   name: poppyseed breakfast bagel recipe
-  result:
-    FoodMealBreakfastBagelPoppy: 1
+  result: FoodMealBreakfastBagelPoppy
   time: 5
   solids:
     FoodBagelPoppy: 1
@@ -38,8 +34,7 @@
 - type: microwaveMealRecipe
   id: RecipeCucumberSandwich
   name: cucumber sandwich recipe
-  result:
-    FoodMealCucumberSandwich: 1
+  result: FoodMealCucumberSandwich
   time: 5
   solids:
     FoodBreadPlainSlice: 2
@@ -52,7 +47,10 @@
   id: RecipeSausageRaw
   name: raw sausage recipe
   result:
-    FoodSausageRaw: 3
+  - FoodSausageRaw
+  - FoodSausageRaw
+  - FoodSausageRaw
+  #resultCount: 3
   time: 10
   group: Savory # TODO: move to ingredients
   solids:
@@ -66,7 +64,10 @@
   id: RecipeSausageRawStomachRat
   name: raw stomach sausage recipe
   result:
-    FoodSausageRaw: 3
+  - FoodSausageRaw
+  - FoodSausageRaw
+  - FoodSausageRaw
+  #resultCount: 3
   time: 10
   group: Savory # TODO: move to ingredients
   solids:
@@ -80,7 +81,10 @@
   id: RecipeSausageRawStomachHuman
   name: raw stomach sausage recipe
   result:
-    FoodSausageRaw: 3
+  - FoodSausageRaw
+  - FoodSausageRaw
+  - FoodSausageRaw
+  #resultCount: 3
   time: 10
   group: Savory # TODO: move to ingredients
   solids:
@@ -93,8 +97,7 @@
 - type: microwaveMealRecipe
   id: RecipeSausageCooked
   name: cooked sausage recipe
-  result:
-    FoodMeatSausage: 1
+  result: FoodMeatSausage
   time: 10
   group: Savory
   solids:
@@ -106,8 +109,7 @@
 - type: microwaveMealRecipe
   id: RecipeHotdog
   name: hotdog recipe
-  result:
-    FoodMealHotdog: 1
+  result: FoodMealHotdog
   time: 10
   group: Savory
   solids:
@@ -121,8 +123,7 @@
 - type: microwaveMealRecipe
   id: RecipeAvocadoSushi
   name: avocado sushi recipe
-  result:
-    FoodMealAvocadoSushi: 1
+  result: FoodMealAvocadoSushi
   time: 5
   solids:
     FoodAvocadoSlice: 2
@@ -135,8 +136,7 @@
 - type: microwaveMealRecipe
   id: RecipeCarpSushi
   name: carp sushi recipe
-  result:
-    FoodMealCarpSushi: 1
+  result: FoodMealCarpSushi
   time: 5
   solids:
     FoodAvocadoSlice: 2
@@ -151,8 +151,7 @@
 - type: microwaveMealRecipe
   id: RecipeGreekSalad
   name: greek salad recipe
-  result:
-    FoodSaladGreek: 1
+  result: FoodSaladGreek
   time: 5
   reagents:
     Vinaigrette: 5
@@ -165,8 +164,7 @@
 - type: microwaveMealRecipe
   id: RecipeAvocadoSalad
   name: avocado salad recipe
-  result:
-    FoodSaladAvocado: 1
+  result: FoodSaladAvocado
   time: 5
   reagents:
     OilOlive: 5
@@ -182,8 +180,7 @@
 - type: microwaveMealRecipe
   id: RecipeRaisins
   name: raisins recipe
-  result:
-    ReagentContainerRaisin: 1 # A little bit cursed, spawning a bag
+  result: ReagentContainerRaisin # A little bit cursed, spawning a bag
   time: 30
   solids:
     FoodGrape: 5
@@ -191,8 +188,7 @@
 - type: microwaveMealRecipe
   id: RecipePickle
   name: pickle recipe
-  result:
-    FoodPickle: 1
+  result: FoodPickle
   time: 5
   solids:
     FoodCucumber: 1
@@ -202,8 +198,7 @@
 - type: microwaveMealRecipe
   id: RecipeHoneyBun
   name: honey bun recipe
-  result:
-    FoodBakedBunHoney: 1
+  result: FoodBakedBunHoney
   time: 5
   solids:
     FoodBreadBun: 1
@@ -213,8 +208,7 @@
 - type: microwaveMealRecipe
   id: RecipeHoneyChallah
   name: honey challah recipe
-  result:
-    FoodBreadChallah: 1
+  result: FoodBreadChallah
   time: 15
   solids:
     FoodDoughRope: 3
@@ -225,8 +219,7 @@
 - type: microwaveMealRecipe
   id: RecipeGlazedHam
   name: honey glazed ham recipe
-  result:
-    FoodMeatGlazedHam: 1
+  result: FoodMeatGlazedHam
   time: 15
   solids:
     FoodMeat: 2
@@ -237,8 +230,7 @@
 - type: microwaveMealRecipe
   id: RecipeAppleHoneyDutchBaby
   name: honey apple streusel pie
-  result:
-    FoodPieAppleHoney: 1
+  result: FoodPieAppleHoney
   time: 15
   solids:
     FoodPlateTin: 1
@@ -251,8 +243,7 @@
 - type: microwaveMealRecipe
   id: RecipePoachedPears
   name: poached pears recipe
-  result:
-    FoodMealPoachedPears: 1
+  result: FoodMealPoachedPears
   time: 10
   solids:
     FoodBowlBig: 1
@@ -264,8 +255,7 @@
 - type: microwaveMealRecipe
   id: RecipePearsBelleHelene
   name: pears belle helene recipe
-  result:
-    FoodMealPearsBelleHelene: 1
+  result: FoodMealPearsBelleHelene
   time: 10
   solids:
     FoodBowlBig: 1
@@ -278,8 +268,7 @@
 - type: microwaveMealRecipe
   id: RecipePearMuffin
   name: pear muffin recipe
-  result:
-    FoodBakedMuffinPear: 1
+  result: FoodBakedMuffinPear
   time: 10
   solids:
     FoodPear: 1
@@ -292,8 +281,7 @@
 - type: microwaveMealRecipe
   id: RecipePearCheeseTart
   name: pear and cheese tart recipe
-  result:
-    FoodTartPearCheese: 1
+  result: FoodTartPearCheese
   time: 15
   solids:
     FoodPlateTin: 1

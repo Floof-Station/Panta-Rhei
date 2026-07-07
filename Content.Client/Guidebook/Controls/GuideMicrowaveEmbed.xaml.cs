@@ -92,15 +92,39 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
             //ResultDescription.SetMarkup(entity.Description);
 
             var resultQuantityMsg = new FormattedMessage();
-            resultQuantityMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-quantity-display", ("amount", result.Value)));
+            resultQuantityMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-quantity-display", ("amount", 1)));
 
             var solidQuantityLabel = new RichTextLabel();
             solidQuantityLabel.SetMessage(resultQuantityMsg);
 
             ResultsGrid.AddChild(solidQuantityLabel);
 
-            if (_prototype.HasIndex<ReagentPrototype>(result.Key))
+
+            var entity = _prototype.Index<EntityPrototype>(result);
+            ResultsGrid.AddChild(new GuideEntityEmbed(result, false, false));
+
+            var resultNameMsg = new FormattedMessage();
+            resultNameMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-name-display",
+                ("ingredient", entity.Name)));
+
+            var resultNameLabel = new GuidebookRichPrototypeLink();
+            resultNameLabel.SetMessage(resultNameMsg);
+            ResultsGrid.AddChild(resultNameLabel);
+
+        }
+
+        if (recipe.ResultReagents != null)
+        {
+            foreach (var result in recipe.ResultReagents.GetReagentPrototypes(_prototype))
             {
+                var resultQuantityMsg = new FormattedMessage();
+                resultQuantityMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-quantity-display", ("amount", result.Value)));
+
+                var solidQuantityLabel = new RichTextLabel();
+                solidQuantityLabel.SetMessage(resultQuantityMsg);
+
+                ResultsGrid.AddChild(solidQuantityLabel);
+
                 var reagent = _prototype.Index<ReagentPrototype>(result.Key);
 
                 var liquidColorMsg = new FormattedMessage();
@@ -122,20 +146,6 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
 
                 ResultsGrid.AddChild(liquidNameLabel);
             }
-            else
-            {
-                var entity = _prototype.Index<EntityPrototype>(result.Key);
-                ResultsGrid.AddChild(new GuideEntityEmbed(result.Key, false, false));
-
-                var resultNameMsg = new FormattedMessage();
-                resultNameMsg.AddMarkupOrThrow(Loc.GetString("guidebook-microwave-solid-name-display",
-                    ("ingredient", entity.Name)));
-
-                var resultNameLabel = new GuidebookRichPrototypeLink();
-                resultNameLabel.SetMessage(resultNameMsg);
-                ResultsGrid.AddChild(resultNameLabel);
-            }
-
         }
         //End Euphoria Changes
 

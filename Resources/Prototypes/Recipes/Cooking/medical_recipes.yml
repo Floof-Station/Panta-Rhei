@@ -1,9 +1,7 @@
-#Euphoria - recipe changes from Cooking rework
 - type: microwaveMealRecipe
   id: RecipeAloeCream
   name: aloe cream recipe
-  result:
-    AloeCream: 1
+  result: AloeCream
   time: 5 # DeltaV - was 10
   group: Medicinal
   solids:
@@ -13,8 +11,7 @@
 - type: microwaveMealRecipe
   id: RecipeMedicatedSuture
   name: medicated suture recipe
-  result:
-    MedicatedSuture: 1
+  result: MedicatedSuture
   time: 5 # DeltaV - was 10
   group: Medicinal
   solids:
@@ -29,8 +26,7 @@
 - type: microwaveMealRecipe
   id: RecipeRegenerativeMesh
   name: regenerative mesh recipe
-  result:
-    RegenerativeMesh: 1
+  result: RegenerativeMesh
   time: 5 # DeltaV - was 10
   group: Medicinal
   solids:

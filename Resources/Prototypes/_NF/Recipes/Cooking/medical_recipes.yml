@@ -1,12 +1,10 @@
-﻿#Euphoria - file modified for Cooking remake
-#pen recipes
+﻿#pen recipes
 #Upstream recipes
 
 - type: microwaveMealRecipe
   id: RecipeEmergencyMedipen
   name: emergency medipen
-  result:
-    EmergencyMedipen: 1
+  result: EmergencyMedipen
   time: 5
   group: Medicinal
   solids:
@@ -19,8 +17,7 @@
 - type: microwaveMealRecipe
   id: RecipeAntiPoisonMedipen
   name: poison auto-injector
-  result:
-    AntiPoisonMedipen: 1
+  result: AntiPoisonMedipen
   time: 5
   group: Medicinal
   solids:
@@ -33,8 +30,7 @@
 - type: microwaveMealRecipe
   id: RecipeBruteAutoInjector
   name: brute auto-injector
-  result:
-    BruteAutoInjector: 1
+  result: BruteAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -47,8 +43,7 @@
 - type: microwaveMealRecipe
   id: RecipeBurnAutoInjector
   name: burn auto-injector
-  result:
-    BurnAutoInjector: 1
+  result: BurnAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -61,8 +56,7 @@
 - type: microwaveMealRecipe
   id: RecipeRadAutoInjector
   name: rad auto-injector
-  result:
-    RadAutoInjector: 1
+  result: RadAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -75,8 +69,7 @@
 - type: microwaveMealRecipe
   id: RecipePunctAutoInjector
   name: puncturase auto-injector
-  result:
-    PunctAutoInjector: 1
+  result: PunctAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -89,8 +82,7 @@
 - type: microwaveMealRecipe
   id: RecipePyraAutoInjector
   name: pyrazine auto-injector
-  result:
-    PyraAutoInjector: 1
+  result: PyraAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -103,8 +95,7 @@
 - type: microwaveMealRecipe
   id: RecipeAirlossAutoInjector
   name: airloss auto-injector
-  result:
-    AirlossAutoInjector: 1
+  result: AirlossAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -119,8 +110,7 @@
 - type: microwaveMealRecipe
   id: RecipePenHemostasis
   name: hemostasis auto-injector
-  result:
-    HemostasisAutoInjector: 1
+  result: HemostasisAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -133,8 +123,7 @@
 - type: microwaveMealRecipe
   id: RecipePenEphedrine
   name: ephedrine auto-injector
-  result:
-    EphedrineAutoInjector: 1
+  result: EphedrineAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -146,8 +135,7 @@
 - type: microwaveMealRecipe
   id: RecipePenStimulant
   name: stimulant auto-injector
-  result:
-    StimulantAutoInjector: 1
+  result: StimulantAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -160,8 +148,7 @@
 - type: microwaveMealRecipe
   id: RecipePenCrisisAutoInjector
   name: crisis auto-injector
-  result:
-    CrisisAutoInjector: 1
+  result: CrisisAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -174,8 +161,7 @@
 - type: microwaveMealRecipe
   id: RecipePenLacerAutoInjector
   name: lacerinol auto-injector
-  result:
-    LacerAutoInjector: 1
+  result: LacerAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -188,8 +174,7 @@
 - type: microwaveMealRecipe
   id: RecipePenBruizAutoInjector
   name: bruizine auto-injector
-  result:
-    BruizAutoInjector: 1
+  result: BruizAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -202,8 +187,7 @@
 - type: microwaveMealRecipe
   id: RecipePenPolyAutoInjector
   name: polypyrylium oligomers auto-injector
-  result:
-    PolyAutoInjector: 1
+  result: PolyAutoInjector
   time: 5
   group: Medicinal
   solids:
@@ -215,8 +199,7 @@
 - type: microwaveMealRecipe
   id: RecipePenEthylredoxrazineAutoInjector
   name: barkeeper's friend auto-injector
-  result:
-    EthylredoxrazineAutoInjector: 1
+  result: EthylredoxrazineAutoInjector
   time: 5
   group: Medicinal
   solids:

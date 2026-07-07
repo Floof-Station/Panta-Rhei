@@ -553,7 +553,7 @@ public sealed class DeepFryerSystem : SharedDeepFryerSystem
         // Spawn the result (from the microwave recipe)
         foreach (var resultOut in microwaveRecipe.Results)
         {
-            var result = Spawn(resultOut.Key, coords);
+            var result = Spawn(resultOut, coords);
             // Transfer solution from fryer to food (includes oil AND any contaminants!)
             TransferOilToFood(ent, result, deepFryerRecipe.OilConsumption);
 
