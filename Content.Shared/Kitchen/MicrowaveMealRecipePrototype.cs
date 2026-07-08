@@ -32,8 +32,8 @@ namespace Content.Shared.Kitchen
         private Dictionary<string, FixedPoint2> _ingsSolids = new ();
 
         //Euphoria, allow for multiple results from a single recipe
-        [DataField("result")]
-        public EntProtoId[] Results = [];
+        [DataField("result", customTypeSerializer: typeof(AbstractPrototypeIdArraySerializer<EntityPrototype>))]
+        public string[] Results = [];
 
         //Euph, allow for liquid output in microwave recipes
         [DataField("resultReagents")]
