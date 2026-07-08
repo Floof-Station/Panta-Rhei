@@ -54,11 +54,15 @@
       - map: [ "underpants" ]
       - map: [ "undershirt" ]
       - map: [ "socks" ]
-      - map: [ "jumpsuit" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
+      - map: [ "undergarmentSocks" ] # Floof
+      - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "shoes" ] # Floof - moved above jumpsuit
+      - map: [ "jumpsuit" ] # Floof - moved below hands and feet
       - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
         color: "#ffffff"
         sprite: Objects/Misc/handcuffs.rsi
@@ -66,7 +70,6 @@
         visible: false
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -200,15 +203,17 @@
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: [ "underpants" ]
       - map: [ "undershirt" ]
-      - map: [ "socks" ]
-      - map: [ "jumpsuit" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
       - map: ["enum.HumanoidVisualLayers.LHand"]
       - map: ["enum.HumanoidVisualLayers.RHand"]
+      - map: [ "undergarmentSocks" ] # Floof
+      - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "shoes" ] # Floof - moved above jumpsuit
+      - map: [ "jumpsuit" ] # Floof - moved below hands and feet
       - map: [ "id" ]
       - map: [ "gloves" ]
-      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]

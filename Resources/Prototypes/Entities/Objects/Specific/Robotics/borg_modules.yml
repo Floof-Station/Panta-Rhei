@@ -614,6 +614,16 @@
     hands:
     - item: AppraisalTool
     - item: Pen
+    # Euphoria start: Add paper hand to appraisal module.
+    - hand:
+        emptyRepresentative: PaperCargoBountyManifest
+        emptyLabel: borg-slot-paper-folders-empty
+        whitelist:
+          components:
+          - Paper
+          tags:
+          - Folder
+    # Euphoria end
     - item: HandLabeler
     - item: RubberStampApproved
     - item: RubberStampDenied

@@ -1,9 +1,4 @@
 ﻿# musician additions
-- type: loadout
-  id: UniformMusicianThong
-  equipment:
-    jumpsuit: ClothingUniformMusicianThong
-
 # gloves
 - type: loadout
   id: ClothingHandsMusicianWarmers
@@ -11,10 +6,6 @@
     gloves: ClothingHandsMusicianWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksMusician
-  equipment:
-    shoes: ClothingUnderSocksMusician
 
 # emotional support collar
 - type: loadout
@@ -26,3 +17,17 @@
   id: MusicianPDA
   equipment:
     id: MusicianPDA
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformMusicianThong
+  equipment:
+    undergarmentBottom: ClothingUniformMusicianThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksMusician
+  equipment:
+    undergarmentSocks: ClothingUnderSocksMusician

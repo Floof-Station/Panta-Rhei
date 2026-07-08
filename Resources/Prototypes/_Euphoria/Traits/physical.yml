@@ -1,3 +1,4 @@
+# Blood
 - type: trait
   id: ReplaceBloodRed
   name: trait-replace-blood-red-name
@@ -184,3 +185,108 @@
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: YellowBlood
+
+# Regeneration
+- type: trait
+  id: HealingPlus
+  name: trait-healing-plus-name
+  description: trait-healing-plus-desc
+  category: BonusPhysical
+  cost: 4
+  conflicts:
+  - HealingMinus
+  - HealingPlus2
+  conditions:
+  - !type:HasCompCondition
+    component: Hunger
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+    - SlimePerson
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      damageCap: 50 # +30 over default
+      damage:
+        types:
+          Heat: -0.14 # -0.07 over default
+        groups:
+          Brute: -0.14 # -0.07 over default
+  - !type:ModifyHungerDecayEffect
+    amount: 0.00833333333 # +50% over default
+
+- type: trait
+  id: HealingPlus2
+  name: trait-healing-plus-2-name
+  description: trait-healing-plus-2-desc
+  category: BonusPhysical
+  cost: 8
+  conflicts:
+  - HealingMinus
+  - HealingPlus
+  conditions:
+  - !type:HasCompCondition
+    component: Hunger
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: PassiveDamage
+      allowedStates:
+      - Alive
+      damageCap: 60 # +10 over lower trait
+      damage:
+        types:
+          Heat: -0.14 # same as lower trait
+          Poison: -0.07 # not present in lower trait
+        groups:
+          Brute: -0.21 # increased 50% over lower trait
+  - !type:ModifyHungerDecayEffect
+    amount: 0.00833333333 # same as lower trait
+  - !type:ModifyThirstDecayEffect
+    amount: 0.05 #+50% from base
+
+- type: trait
+  id: HealingMinus
+  name: trait-healing-minus-name
+  description: trait-healing-minus-desc
+  category: DisabilitiesPhysical
+  cost: -1
+  conflicts:
+  - HealingPlus
+  - HealingPlus2
+  conditions:
+  - !type:HasCompCondition
+    component: Hunger
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:OverrideCompsEffect
+    components:
+    - type: PassiveDamage # Half of base, with 75% of the cap
+      allowedStates:
+      - Alive
+      damageCap: 15
+      damage:
+        types:
+          Heat: -0.03
+        groups:
+          Brute: -0.03

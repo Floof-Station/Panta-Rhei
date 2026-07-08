@@ -36,6 +36,24 @@
 
         <controls:HLine Color="#404040" Thickness="2" Margin="0 5" />
 
+        <!-- "Apply to all" toggles -->
+        <BoxContainer Orientation="Horizontal" Margin="2 0">
+            <CheckBox
+                Name="CopyMetadataToAllCheckbox"
+                Text="{Loc 'loadout-metadata-editor-apply-to-all'}"
+                ToolTip="{Loc 'loadout-metadata-editor-apply-to-all-tooltip'}"
+                Pressed="False"/>
+
+            <Control SetWidth="5"/>
+
+            <CheckBox
+                Name="CopyLoadoutToAllCheckbox"
+                Text="{Loc 'loadout-metadata-editor-copy-loadout-to-all'}"
+                ToolTip="{Loc 'loadout-metadata-editor-copy-loadout-to-all-tooltip'}"
+                Pressed="False"
+                Disabled="True"/>
+        </BoxContainer>
+
         <!-- I took this from QuickDialog, sue me -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Name="SaveButton" Text="{Loc 'quick-dialog-ui-ok'}"/>

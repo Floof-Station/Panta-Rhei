@@ -11,3 +11,18 @@
   effects:
     - !type:SpawnEntity
       entity: FoodFrosting
+
+- type: reaction
+  id: CreatePeanutButter
+  impact: Low
+  quantized: true
+  conserveEnergy: false
+  reactants:
+    Butter:
+      amount: 1
+    Sugar:
+      amount: 1
+    PeanutOil:
+      amount: 1
+  products:
+    PeanutButter: 3

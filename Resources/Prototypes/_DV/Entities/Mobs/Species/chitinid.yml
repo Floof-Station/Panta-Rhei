@@ -84,8 +84,8 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.39 #Euphoria change. Was 0.42. Base radius is 0.35. Any higher, and max-size Chitinid cannot fit through doors. 
-        density: 220 #Base species density is 185. Base density with Heavyweight trait should be 259. 
+          radius: 0.39 #Euphoria change. Was 0.42. Base radius is 0.35. Any higher, and max-size Chitinid cannot fit through doors.
+        density: 220 #Base species density is 185. Base density with Heavyweight trait should be 259.
         restitution: 0.0
         mask:
         - MobMask
@@ -125,18 +125,21 @@
       - map: [ "enum.HumanoidVisualLayers.LLeg" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-      - map: [ "jumpsuit" ]
       - map: [ "enum.HumanoidVisualLayers.LHand" ]
       - map: [ "enum.HumanoidVisualLayers.RHand" ]
       - map: [ "enum.HumanoidVisualLayers.LFoot" ]
       - map: [ "enum.HumanoidVisualLayers.RFoot" ]
+      - map: [ "undergarmentSocks" ] # Floof
+      - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "shoes" ] # Floof - moved above jumpsuit
+      - map: [ "jumpsuit" ] # Floof - moved below hands and feet
       - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
         color: "#ffffff"
         sprite: Objects/Misc/handcuffs.rsi
         state: body-overlay-2
         visible: false
       - map: [ "gloves" ]
-      - map: [ "shoes" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation

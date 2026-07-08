@@ -6,7 +6,7 @@
     - id: NoosphericZap
     - id: NoosphericFry
     - id: NoosphericSilence
-    - id: MassMindSwap
+#    - id: MassMindSwap # Floof - disabled because it RRs peopel
     - id: GlimmerWispSpawn
     - id: FreeProber
     - id: GlimmerRevenantSpawn
@@ -85,6 +85,7 @@
 - type: entity
   id: MassMindSwap
   parent: BaseGlimmerEvent
+  abstract: true # Floof - disabled beacuse it RRs people
   components:
   - type: GlimmerEvent
     minimumGlimmer: 900

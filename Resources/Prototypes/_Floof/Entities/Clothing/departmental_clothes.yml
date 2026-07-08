@@ -19,7 +19,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksCaptain
   name: captain's thigh-high socks
   description: A pair of thigh-high socks, styled for a captain.
@@ -28,11 +28,9 @@
     sprite: _Floof/Clothing/Departmental/Command/captsocks.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Command/captsocks.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformCaptainThong
   name: captain's thong
   description: Styled for a captain, but is this even considered a piece of clothing?
@@ -60,7 +58,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksCommand
   name: command's thigh-high socks
   description: A pair of thigh-high socks, styled for command roles.
@@ -71,7 +69,7 @@
     sprite: _Floof/Clothing/Departmental/Command/commandsocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformCommandThong
   name: command's thong
   description: Styled for a commanding officer, but is this even considered a piece of clothing?
@@ -100,7 +98,7 @@
     fiberColor: fibers-yellow
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksEngi
   name: engineering thigh-high socks
   description: A pair of thigh-high socks, styled for Engineering roles.
@@ -111,7 +109,7 @@
     sprite: _Floof/Clothing/Departmental/Engineering/engisocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformEngiThong
   name: engineering thong
   description: Styled for a engineering, but is this even considered a piece of clothing?
@@ -139,7 +137,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksChiefEngi
   name: chief engineer's thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
@@ -150,7 +148,7 @@
     sprite: _Floof/Clothing/Departmental/Engineering/chiefengisocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformChiefEngiThong
   name: chief engineer's thong
   description: Styled for a Logistics, but is this even considered a piece of clothing?
@@ -183,7 +181,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksEpi
   name: epistemics thigh-high socks
   description: A pair of thigh-high socks, styled for Epistemic roles.
@@ -194,7 +192,7 @@
     sprite: _Floof/Clothing/Departmental/Epistemics/episocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformEpiThong
   name: epistemics thong
   description: Styled for a Epistemics, but is this even considered a piece of clothing?
@@ -224,7 +222,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksChaplain
   name: chaplain thigh-high socks
   description: A pair of thigh-high socks, oddly, styled for a Chaplain.
@@ -235,7 +233,7 @@
     sprite: _Floof/Clothing/Departmental/Epistemics/chaplainsocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformChaplainThong
   name: chaplain thong
   description: Oddly, styled for a Chaplain, but is this even considered a piece of clothing?
@@ -285,7 +283,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksEpiHead
   name: research director's thigh-high socks
   description: A pair of thigh-high socks, styled for the research director.
@@ -296,7 +294,7 @@
     sprite: _Floof/Clothing/Departmental/Epistemics/directorepisocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformEpiHeadThong
   name: research director's thong
   description: Oddly, styled for the research director, but is this even considered a piece of clothing?
@@ -323,7 +321,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksMantisEpi
   name: psionic mantis' thigh-high socks
   description: A pair of thigh-high socks, styled for a Psionic Mantis.
@@ -334,7 +332,7 @@
     sprite: _Floof/Clothing/Departmental/Epistemics/mantisepisocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformMantisEpiThong
   name: psionic mantis' thong
   description: Styled for a Psionic Mantis, but is this even considered a piece of clothing?
@@ -363,7 +361,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksLogis
   name: logistics thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
@@ -374,7 +372,7 @@
     sprite: _Floof/Clothing/Departmental/Logistics/logisocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformLogisThong
   name: logistics thong
   description: Styled for a Logistics, but is this even considered a piece of clothing?
@@ -404,7 +402,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksLOLogis
   name: logistics officer thigh-high socks
   description: A pair of thigh-high socks, styled for Logistic roles.
@@ -415,7 +413,7 @@
     sprite: _Floof/Clothing/Departmental/Logistics/qmlogisocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformLOLogisThong
   name: logistics officer thong
   description: Styled for a Logistics, but is this even considered a piece of clothing?
@@ -442,7 +440,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksCourier
   name: courier thigh-high socks
   description: A pair of thigh-high socks, styled for Couriers.
@@ -453,7 +451,7 @@
     sprite: _Floof/Clothing/Departmental/Logistics/mailcarriersocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformCourierThong
   name: courier thong
   description: Styled for a Couriers, but is this even considered a piece of clothing?
@@ -516,7 +514,7 @@
   - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksMedic
   name: medical thigh-high socks
   description: A pair of thigh-high socks, styled for Medic roles.
@@ -527,7 +525,7 @@
     sprite: _Floof/Clothing/Departmental/Medical/medicalsocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformMedicThong
   name: medical thong
   description: Styled for a Medics, but is this even considered a piece of clothing?
@@ -555,7 +553,7 @@
   - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksChemists
   name: chemist thigh-high socks
   description: A pair of thigh-high socks, styled for Chemists.
@@ -566,7 +564,7 @@
     sprite: _Floof/Clothing/Departmental/Medical/chemistsocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformChemistsThong
   name: chemist thong
   description: Styled for a Chemists, but is this even considered a piece of clothing?
@@ -594,7 +592,7 @@
   - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksParaMedic
   name: paramedic thigh-high socks
   description: A pair of thigh-high socks, styled for Paramedic roles.
@@ -605,7 +603,7 @@
     sprite: _Floof/Clothing/Departmental/Medical/paramedsocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformParaMedicThong
   name: paramedic thong
   description: Styled for a Paramedics, but is this even considered a piece of clothing?
@@ -633,7 +631,7 @@
   - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksCMO
   name: chief med officer's thigh-high socks
   description: A pair of thigh-high socks, styled for the CMO.
@@ -644,7 +642,7 @@
     sprite: _Floof/Clothing/Departmental/Medical/cmosocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformCMOThong
   name: chief med officer's thong
   description: Styled for the CMO, but is this even considered a piece of clothing?
@@ -657,7 +655,7 @@
 # Surgeon Outfit
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformSurgeonGerneralThong
   name: surgeon general thong
   description: Styled for the surgeon general, but is this even considered a piece of clothing? Tailor by SESWC
@@ -687,7 +685,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksSecurity
   name: security thigh-high socks
   description: A pair of thigh-high socks, styled for Security roles.
@@ -696,11 +694,9 @@
     sprite: _Floof/Clothing/Departmental/Security/secsocks.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/secsocks.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformSecurityThong
   name: security thong
   description: Styled for a Security, but is this even considered a piece of clothing?
@@ -727,7 +723,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksHeadSecurity
   name: HoS thigh-high socks
   description: A pair of thigh-high socks, styled for the HoS.
@@ -736,11 +732,9 @@
     sprite: _Floof/Clothing/Departmental/Security/hossocks.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/hossocks.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformHeadSecurityThong
   name: HoS thong
   description: Styled for the HoS, but is this even considered a piece of clothing?
@@ -767,7 +761,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksDetective
   name: detective's thigh-high socks
   description: A pair of thigh-high socks, styled for a Detective.
@@ -776,11 +770,9 @@
     sprite: _Floof/Clothing/Departmental/Security/detectsocks.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/detectsocks.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformDetectiveThong
   name: detective's thong
   description: Styled for a Detective, but is this even considered a piece of clothing?
@@ -808,7 +800,7 @@
   - type: SurgeryDirtiness # Euphoria - M3739 - #706 - Consistency with latex gloves and the like.
 
 - type: entity
-  parent: [ ClothingShoesBase, ClothingShoesMilitaryBase ]
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksCorpsman
   name: corpsman thigh-high socks
   description: A pair of thigh-high socks, styled for Corpsman roles.
@@ -817,11 +809,9 @@
     sprite: _Floof/Clothing/Departmental/Security/corpsmansocks.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Departmental/Security/corpsmansocks.rsi
-  - type: ClothingSlowOnDamageModifier
-    modifier: 0.5 # Euphoria - M3739 - #706 - Steadfast isn't in yet. For now, consistency with combat boots. Just like the old days.
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformCorpsmanThong
   name: corpsman thong
   description: Styled for a Corpsmen, but is this even considered a piece of clothing?
@@ -850,7 +840,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksService
   name: service thigh-high socks
   description: A pair of thigh-high socks, styled for Service workers.
@@ -861,7 +851,7 @@
     sprite: _Floof/Clothing/Departmental/Service/servicesocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformServiceThong
   name: service thong
   description: Styled for a Service workers, but is this even considered a piece of clothing?
@@ -899,7 +889,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksJanitor
   name: rubber thigh-high socks
   description: A pair of thigh-high socks, styled for Janitorial.
@@ -911,7 +901,7 @@
   - type: NoSlip
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformJanitorThong
   name: rubber thong
   description: Styled for a Janitorial, but is this even considered a piece of clothing?
@@ -938,7 +928,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksBartender
   name: bartender thigh-high socks
   description: A pair of thigh-high socks, styled for Bartenders.
@@ -949,7 +939,7 @@
     sprite: _Floof/Clothing/Departmental/Service/bartendersocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformBartenderThong
   name: bartender thong
   description: Styled for a Bartenders, but is this even considered a piece of clothing?
@@ -976,7 +966,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksMusician
   name: musician thigh-high socks
   description: A pair of thigh-high socks, styled for musicians.
@@ -987,7 +977,7 @@
     sprite: _Floof/Clothing/Departmental/Service/musiciansocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformMusicianThong
   name: musician thong
   description: Styled for a musicians, but is this even considered a piece of clothing?
@@ -1014,7 +1004,7 @@
   - type: FingerprintMask
 
 - type: entity
-  parent: ClothingShoesBase
+  parent: ClothingUndergarmentSocksBase
   id: ClothingUnderSocksChef
   name: chef thigh-high socks
   description: A pair of thigh-high socks, styled for a Chef.
@@ -1025,7 +1015,7 @@
     sprite: _Floof/Clothing/Departmental/Service/chefsocks.rsi
 
 - type: entity
-  parent: ClothingUniformThongBase
+  parent: ClothingUndergarmentBottomBase
   id: ClothingUniformChefThong
   name: chef thong
   description: Styled for a Chef, but is this even considered a piece of clothing?

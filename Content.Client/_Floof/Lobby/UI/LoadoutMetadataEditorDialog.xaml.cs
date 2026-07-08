@@ -20,7 +20,7 @@ public sealed partial class LoadoutMetadataEditorDialog : FancyWindow
     [Dependency] private readonly IEntityManager _entMan = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
 
-    public event Action<Loadout>? OnSave;
+    public event Action<(Loadout loadout, bool copyMetadata, bool copyLoadout)>? OnSave;
 
     private readonly ProtoId<LoadoutPrototype> _loadoutProto;
     private readonly ProtoId<LoadoutGroupPrototype> _groupProto;
@@ -59,6 +59,19 @@ public sealed partial class LoadoutMetadataEditorDialog : FancyWindow
         {
             ColorSelector.Visible = args.Pressed;
         };
+
+        ColorSelector.OnColorChanged += color =>
+        {
+            // Update entity color on user input as well
+            ColorEntity(_previewContainer.SpriteEntity, color, _entMan);
+        };
+
+        CopyMetadataToAllCheckbox.OnToggled += args =>
+        {
+            // The "copy loadout to all" check does nothing if "copy metadata to all" is not checked
+            CopyLoadoutToAllCheckbox.Pressed = false;
+            CopyLoadoutToAllCheckbox.Disabled = !args.Pressed;
+        };
     }
 
     public void Load(Loadout currentState)
@@ -72,7 +85,7 @@ public sealed partial class LoadoutMetadataEditorDialog : FancyWindow
             ? Color.FromHex(customColor, Color.White)
             : Color.White;
 
-        ColorEntity(_previewContainer.SpriteEntity, ColorSelector.Color, _entMan);
+        ColorEntity(_previewContainer.SpriteEntity, currentState.ColorOverride, _entMan);
     }
 
     public void Save(bool raiseEvent = true)
@@ -95,7 +108,11 @@ public sealed partial class LoadoutMetadataEditorDialog : FancyWindow
         _loadout.ColorOverride = customColor?.ToHexNoAlpha();
 
         if (raiseEvent)
-            OnSave?.Invoke(_loadout);
+        {
+            var copyMetadata = CopyMetadataToAllCheckbox.Pressed;
+            var copyLoadout = copyMetadata && CopyLoadoutToAllCheckbox.Pressed;
+            OnSave?.Invoke((_loadout, copyMetadata, copyLoadout));
+        }
 
         Load(_loadout); // Just to update the fields with sanitized values
     }

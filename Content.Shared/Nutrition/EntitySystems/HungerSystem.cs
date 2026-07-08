@@ -273,4 +273,26 @@ public sealed class HungerSystem : EntitySystem
             DoContinuousHungerEffects(uid, hunger);
         }
     }
+
+    #region Euphoria: Add access to BaseHungerDecay for ModifyHungerDecayEffect
+    /// <summary>
+    /// Sets an entity's base hunger decay in a safe way. Silently fails if entity has no Hunger component.
+    /// </summary>
+    /// <param name="ent">The entity to which the hunger component belongs.</param>
+    /// <param name="baseDecayRate">The value to set the base decay rate to.</param>
+    /// <param name="component">The Hunger component to set the base decay rate for, or null.</param>
+    public void SetBaseDecayRate(EntityUid ent, float baseDecayRate, HungerComponent? component = null)
+    {
+        if (!Resolve(ent, ref component))
+            return;
+
+        // First calculate and set current hunger value.
+        SetHunger(ent, GetHunger(component), component);
+        component.BaseDecayRate = baseDecayRate;
+
+        // Force hunger threshold effects to set actual decay based on base decay and threshold modifier.
+        // Current threshold does not need to be re-calculated.
+        DoHungerThresholdEffects(ent, component, true);
+    }
+    #endregion
 }

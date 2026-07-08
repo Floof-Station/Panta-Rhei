@@ -1,8 +1,4 @@
 ﻿# mantis outfits
-- type: loadout
-  id: UniformMantisEpiThong
-  equipment:
-    jumpsuit: ClothingUniformMantisEpiThong
 
 # gloves
 - type: loadout
@@ -11,10 +7,6 @@
     gloves: ClothingHandsMantisEpiWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksMantisEpi
-  equipment:
-    shoes: ClothingUnderSocksMantisEpi
 
 # emotional support collar
 - type: loadout
@@ -26,3 +18,18 @@
   id: PsionicMantisPDA
   equipment:
     id: PsionicMantisPDA
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformMantisEpiThong
+  equipment:
+    undergarmentBottom: ClothingUniformMantisEpiThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksMantisEpi
+  equipment:
+    undergarmentSocks: ClothingUnderSocksMantisEpi
+
