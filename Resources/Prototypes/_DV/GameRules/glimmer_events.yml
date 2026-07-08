@@ -85,7 +85,7 @@
 - type: entity
   id: MassMindSwap
   parent: BaseGlimmerEvent
-  abstracT: true # Floof - disabled beacuse it RRs people
+  abstract: true # Floof - disabled beacuse it RRs people
   components:
   - type: GlimmerEvent
     minimumGlimmer: 900
