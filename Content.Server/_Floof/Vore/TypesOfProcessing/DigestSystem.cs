@@ -131,8 +131,12 @@ public sealed class DigestSystem : EntitySystem
     /// Finishes the digestion of a prey by removing it from the container 
     /// and sending it to cryostorage after which they get deleted
     /// </summary>
-    private void FinishDigest(EntityUid prey){
-        
+    private void FinishDigest(EntityUid prey, DigestComponent comp){
+        comp.Health.Remove(prey);
+        comp.Timer.Remove(prey);
+        comp.ActiveDigesting.Remove(prey);
+        comp.DigestPopupStage.Remove(prey);
+
         // to avoid escape popup
         if (TryComp<VoreComponent>(prey, out var preyComp))
             preyComp.IntentionalRelease = true;
@@ -272,11 +276,7 @@ public sealed class DigestSystem : EntitySystem
             }
             // safety check to remove any prey that might have been left in the tracking after digestion or deletion
             foreach (var p in fullydigest){
-                comp.Health.Remove(p);
-                comp.Timer.Remove(p);
-                comp.ActiveDigesting.Remove(p); 
-                comp.DigestPopupStage.Remove(p);
-                FinishDigest(p);
+                FinishDigest(p, comp);
             }                
         }
     }
