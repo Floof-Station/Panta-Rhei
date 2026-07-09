@@ -386,24 +386,6 @@
   - type: NpcFactionMember
     factions:
       - Critter
-  - type: LanguageKnowledge
-    speaks:
-    - Mouse
-    - Scurret # I'll be honest I'm not sure what a whimperlet is even based on so it'll be funny they understand and can talk to most animals
-    - Fox
-    - Dog
-    - Cat
-    - Monkey
-    - Kobold
-    understands:
-    - TauCetiBasic
-    - Mouse
-    - Scurret
-    - Fox
-    - Dog
-    - Cat
-    - Monkey
-    - Kobold
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
