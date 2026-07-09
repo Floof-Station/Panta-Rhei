@@ -1,18 +1,9 @@
-﻿#below addtions are for ce
-- type: loadout
-  id: UniformChiefEngiThong
-  equipment:
-    jumpsuit: ClothingUniformChiefEngiThong
-
+﻿# ======================================================== #
+# ce additions
 - type: loadout
   id: HandsChiefEngiWarmers
   equipment:
     gloves: ClothingHandsChiefEngiWarmers
-
-- type: loadout
-  id: UnderSocksChiefEngi
-  equipment:
-    shoes: ClothingUnderSocksChiefEngi
 
 #pdas
 - type: loadout
@@ -80,3 +71,18 @@
   id: ClothingNeckCollarEmotionalSupportCE
   equipment:
     neck: ClothingNeckCollarEmotionalSupportCE
+
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformChiefEngiThong
+  equipment:
+    undergarmentBottom: ClothingUniformChiefEngiThong
+
+# socks
+- type: loadout
+  id: UnderSocksChiefEngi
+  equipment:
+    undergarmentSocks: ClothingUnderSocksChiefEngi

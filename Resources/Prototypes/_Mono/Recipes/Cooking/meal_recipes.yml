@@ -1,7 +1,11 @@
 - type: microwaveMealRecipe
   id: RecipeBiscuitSimple
   name: simple cookie recipe
-  result: FoodBakedBiscuitSimple
+  result:
+  - FoodBakedBiscuitSimple
+  - FoodBakedBiscuitSimple
+  - FoodBakedBiscuitSimple
+  - FoodBakedBiscuitSimple
   # Euphoria - M3739 - #485 - resultCount commented out as we don't have it. Behold, Euphoria's most inefficient recipe as a result, and as of writing.
   # resultCount: 4 # Frontier
   time: 10 # Frontier - 5<10

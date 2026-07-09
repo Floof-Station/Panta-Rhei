@@ -1,0 +1,43 @@
+# Mind Role
+- type: entity
+  parent: MindRoleGhostRoleFreeAgentHarmless
+  id: MindRoleFoodCritic
+  name: Food Critic Role
+  components:
+  - type: MindRole
+    subtype: role-subtype-food-critic
+  - type: FoodCriticRole
+
+# Starting Gear
+- type: startingGear
+  id: FoodCriticGear
+  equipment:
+    id: VisitorPDA
+    ears: ClothingHeadsetService
+    #pocket1: EncryptionKeyTraffic # They do not need this IF they are not spawning on a ship.
+    jumpsuit: ClothingUniformSeniorBartender
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpack
+
+# Spawner
+- type: entity
+  categories: [ Spawner ]
+  parent: MarkerBase
+  id: SpawnPointFoodCritic
+  name: ghost role spawn point
+  suffix: food critic
+  components:
+  - type: GhostRole
+    name: ghost-role-information-food-critic-name
+    description: ghost-role-information-food-critic-description
+    mindRoles:
+    - MindRoleFoodCritic
+    raffle:
+      settings: default
+  - type: GhostRoleCharacterSpawner
+    outfitPrototype: FoodCriticGear
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Objects/Consumable/Food/burger.rsi

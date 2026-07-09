@@ -1,8 +1,4 @@
 ﻿# detective outfits
-- type: loadout
-  id: UniformCorpsmanThong
-  equipment:
-    jumpsuit: ClothingUniformCorpsmanThong
 
 # gloves
 - type: loadout
@@ -11,10 +7,6 @@
     gloves: ClothingHandsCorpsmanWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksCorpsman
-  equipment:
-    shoes: ClothingUnderSocksCorpsman
 
 # emotional support collar
 - type: loadout
@@ -27,3 +19,17 @@
   id: BrigmedicPDA
   equipment:
     id: BrigmedicPDA
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformCorpsmanThong
+  equipment:
+    undergarmentBottom: ClothingUniformCorpsmanThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksCorpsman
+  equipment:
+    undergarmentSocks: ClothingUnderSocksCorpsman

@@ -15,6 +15,9 @@
   - Glasses
   - Survival
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCourier # Floof
+  - FloofUndergarmentBottomCourier # Floof
+  - FloofSocksCourier # Floof
 
 - type: roleLoadout
   id: JobCargoAssistant
@@ -48,6 +51,9 @@
   - GroupSpeciesBreathToolCorpsman
   - SecurityFirearm
   - SecurityFirearmAmmo
+  - FloofUndergarmentTopCorpsman # Floof
+  - FloofUndergarmentBottomCorpsman # Floof
+  - FloofSocksCorpsman # Floof
 
 # Medical
 - type: roleLoadout
@@ -68,6 +74,9 @@
   - SurvivalMedical
   - MedicalDoctorJobTrinkets # Euphoria
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopMedicalDoctor # Floof
+  - FloofUndergarmentBottomMedicalDoctor # Floof
+  - FloofSocksMedicalDoctor # Floof
 
 # Justice
 - type: roleLoadout
@@ -152,6 +161,16 @@
   - Trinkets
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
+  # Floof section
+  - PassengerShoes
+  - ServiceWorkerGloves
+  - ServiceWorkerNeck
+  - PassengerOuterClothing
+  - Glasses
+  - FloofUndergarmentTopSerivceWorker
+  - FloofUndergarmentBottomSerivceWorker
+  - FloofSocksSerivceWorker
+  # Floof section end
 
 - type: roleLoadout
   id: JobBoxer
@@ -170,3 +189,8 @@
   - Trinkets
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
+  # Floof section
+  - FloofUndergarmentTopSerivceWorker
+  - FloofUndergarmentBottomSerivceWorker
+  - FloofSocksSerivceWorker
+  # Floof section end

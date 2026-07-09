@@ -1,8 +1,4 @@
 ﻿# detective outfits
-- type: loadout
-  id: UniformDetectiveThong
-  equipment:
-    jumpsuit: ClothingUniformDetectiveThong
 
 # outer cloathing
 - type: loadout
@@ -22,10 +18,6 @@
     gloves: ClothingHandsGlovesForensic
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksDetective
-  equipment:
-    shoes: ClothingUnderSocksDetective
 
 # emotional support collar
 - type: loadout
@@ -38,3 +30,18 @@
   id: DetectivePDA
   equipment:
     id: DetectivePDA
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformDetectiveThong
+  equipment:
+    undergarmentBottom: ClothingUniformDetectiveThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksDetective
+  equipment:
+    undergarmentSocks: ClothingUnderSocksDetective
+

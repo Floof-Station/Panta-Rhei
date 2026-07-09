@@ -4,3 +4,10 @@
   icon: { sprite: _Floof/Objects/Fun/prizeticket.rsi, state: ticket }
   spawn: PrizeTicket1
   maxCount: 100
+
+- type: stack
+  id: CasinoChip
+  name: stack-casino-chip
+  icon: { sprite: _Floof/Objects/Misc/Casino/casino_chips.rsi, state: spacecasinocash1 }
+  spawn: CasinoChip1
+  maxCount: 10000

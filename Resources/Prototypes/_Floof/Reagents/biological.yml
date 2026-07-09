@@ -65,6 +65,7 @@
     collection: FootstepSticky
     params:
       volume: 6
+  evaporationSpeed: 0.1 # evaporates on its own in time
 
 - type: reagent
   id: NaturalLubricant
@@ -90,6 +91,6 @@
   tileReactions:
   - !type:SpillTileReaction
   friction: 0.05
-
+  evaporationSpeed: 0.1 # evaporates on its own in time
 
 

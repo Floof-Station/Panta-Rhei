@@ -1,8 +1,4 @@
 ﻿# cargotech outfits
-- type: loadout
-  id: UniformLogisThong
-  equipment:
-    jumpsuit: ClothingUniformLogisThong
 
 # gloves
 - type: loadout
@@ -11,10 +7,6 @@
     gloves: ClothingHandsLogisWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksLogis
-  equipment:
-    shoes: ClothingUnderSocksLogis
 
 # emotional support collar
 - type: loadout
@@ -85,3 +77,18 @@
   id: ClothingShoesBootsPilot
   equipment:
     shoes: ClothingShoesBootsPilot
+
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformLogisThong
+  equipment:
+    undergarmentBottom: ClothingUniformLogisThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksLogis
+  equipment:
+    undergarmentSocks: ClothingUnderSocksLogis

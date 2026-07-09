@@ -8,12 +8,22 @@
   - type: MovementSpeedModifier
     baseWalkSpeed: 4.25
     baseSprintSpeed: 5.5
+  # Floofstation - fox form movement changes start
   - type: Sprite
-    sprite: _DV/Mobs/Customization/kitsune/foxform.rsi
+    sprite: _Floof/Mobs/Customization/kitsune/foxform.rsi
     layers:
-    - state: kitsune_fox_body
-      map: ["enum.KitsuneColorVisuals.Layer"]
-    - state: kitsune_fox_innerear
+    - map: ["enum.KitsuneColorVisuals.Layer", "movement"] # Floofstation - handles movement
+      state: fox-moving
+    - map: ["enum.KitsuneColorVisuals.InnerLayer"] # Floofstation - inner layer
+      state: kitsune_fox_innerear
+  - type: SpriteMovement
+    movementLayers: # floofstation - layer that moves the legs and tail when moving
+      movement:
+        state: fox-moving
+    noMovementLayers: # floofstation - layer when standing still
+      movement:
+        state: fox
+  # Floofstation - fox form movement changes end
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -81,4 +91,10 @@
       Male: MaleKitsune
       Female: FemaleKitsune
       Unsexed: MaleKitsune
+  - type: Puller # let fox form pull because funny fox move slow when dragging big thing
+    needsHands: false
+  - type: LeashAnchor # let fox form be leashed
+    kind: Intrinsic
+  - type: NightVision # night vision, this is a maybe leaving for now while people debate
+    color: "#808080"
   # Floofstation additions end

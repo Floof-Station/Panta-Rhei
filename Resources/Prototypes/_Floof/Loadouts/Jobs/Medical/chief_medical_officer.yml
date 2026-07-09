@@ -1,18 +1,10 @@
-﻿#below additions are for cmo
-- type: loadout
-  id: UniformCMOThong
-  equipment:
-    jumpsuit: ClothingUniformCMOThong
+﻿# ======================================================== #
+# cmo additions
 
 - type: loadout
   id: HandsCMOWarmers
   equipment:
     gloves: ClothingHandsCMOWarmers
-
-- type: loadout
-  id: UnderSocksCMO
-  equipment:
-    shoes: ClothingUnderSocksCMO
 
 # pdas
 - type: loadout
@@ -30,3 +22,17 @@
   id: ClothingNeckCollarEmotionalSupportCMO
   equipment:
     neck: ClothingNeckCollarEmotionalSupportCMO
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformCMOThong
+  equipment:
+    undergarmentBottom: ClothingUniformCMOThong
+
+# socks
+- type: loadout
+  id: UnderSocksCMO
+  equipment:
+    undergarmentSocks: ClothingUnderSocksCMO
