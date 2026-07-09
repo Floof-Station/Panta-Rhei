@@ -201,13 +201,13 @@
         conditions:
         - !type:ReagentCondition
           reagent: Ethanol
-          min: 12
+          min: 25
         # dwarves immune to vomiting from alcohol
         - !type:MetabolizerTypeCondition
           type: [ Dwarf ]
           inverted: true
       - !type:Drunk
-        boozePower: 1 # Euphoria - People getting drunk too fast
+        boozePower: 2
 
 - type: reagent
   id: Gin
