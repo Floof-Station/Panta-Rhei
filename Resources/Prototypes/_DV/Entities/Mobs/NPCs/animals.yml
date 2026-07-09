@@ -314,6 +314,14 @@
     damage:
       types:
         Piercing: 0.5 # Minimal damage, 'mostly harmless'.
+  - type: LanguageKnowledge # Euphoria
+    speaks:
+    - Mouse
+    - Scurret
+    understands:
+    - TauCetiBasic
+    - Mouse
+    - Scurret
 
 - type: entity
   parent: SimpleMobBase # Not parenting off from MobMothroach to remove the ghost role components
