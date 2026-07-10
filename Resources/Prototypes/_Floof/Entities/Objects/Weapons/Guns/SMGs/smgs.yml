@@ -77,12 +77,12 @@
   - type: Wieldable
     unwieldOnUse: false
   - type: GunWieldBonus
-    minAngle: -23
-    maxAngle: -30
+    minAngle: -20
+    maxAngle: -25
   - type: Gun
     minAngle: 25
     maxAngle: 45
-    fireRate: 10
+    fireRate: 8
     burstFireRate: 30
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg
@@ -92,7 +92,7 @@
     - SemiAuto
     - FullAuto
     shotsPerBurst: 2
-    burstCooldown: 0.255
+    burstCooldown: 0.25
   - type: ItemSlots
     slots:
       gun_magazine:
