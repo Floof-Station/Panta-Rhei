@@ -1,15 +1,6 @@
 using Content.Server._Floof.StationEvents.Components;
-using Content.Server.Research.Systems;
 using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Research.Components;
-using Content.Shared.Research.Systems;
-using Robust.Shared.Random;
-using Content.Shared.Popups;
-using Robust.Shared.Audio.Systems;
-using Content.Server.Radio.EntitySystems;
-using Content.Shared.Radio;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server._Floof.StationEvents.Events;
 
