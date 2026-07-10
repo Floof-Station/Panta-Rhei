@@ -13,3 +13,15 @@
     message: psionic-power-precognition-food-critic-result-message
   - type: RandomSpawnRule
     prototype: SpawnPointFoodCritic
+
+# Does literally nothing. You'd never guess.
+- type: entity
+  parent: BaseGameRule
+  id: NothingHappens
+  components:
+  - type: StationEvent
+    weight: 0
+    duration: 0
+    earliestStart: 0 # You won't believe it, this is required because delta-v edits to the StationEventManager are shitcode that rely on the AllEvents() method
+    reoccurrenceDelay: 0
+  - type: NothingHappensRule # And this shit is needed because if there's an active gamerule of prototype T, AllEvents() won't return T's
