@@ -24,9 +24,9 @@
   id: MeteorSwarm
   components:
   - type: StationEvent
-    earliestStart: 0
+    earliestStart: 30
     weight: 7.5
-    minimumPlayers: 0 #Enough to hopefully have at least one engineering guy
+    minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
     startAnnouncement: station-event-meteor-swarm-start-announcement
     endAnnouncement: station-event-meteor-swarm-end-announcement
     startAudio:
