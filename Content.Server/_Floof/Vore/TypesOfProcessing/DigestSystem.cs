@@ -74,7 +74,7 @@ public sealed class DigestSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = $"Digest {preyName}",
-                    Category = VerbCategory.Vore,
+                    Category = VoreVerbCategory.VoreDigest,
                     Act = () => TryDigest(prey)
                 });
             }
@@ -84,7 +84,7 @@ public sealed class DigestSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = $"Stop digesting {preyName}",
-                    Category = VerbCategory.Vore,
+                    Category = VoreVerbCategory.VoreDigest,
                     Act = () => StopDigest(user, prey)
                 });
             }
@@ -136,10 +136,6 @@ public sealed class DigestSystem : EntitySystem
         comp.Timer.Remove(prey);
         comp.ActiveDigesting.Remove(prey);
         comp.DigestPopupStage.Remove(prey);
-
-        // to avoid escape popup
-        if (TryComp<VoreComponent>(prey, out var preyComp))
-            preyComp.IntentionalRelease = true;
 
         if (_containerSystem.TryGetContainingContainer(prey, out var container))
             _popupSystem.PopupEntity("You feel satiated as you feel your belly shrinks down in size", container.Owner, container.Owner);

@@ -291,3 +291,34 @@
     - SiikTajr
     languagesUnderstood:
     - SiikTajr
+
+- type: trait
+  id: SiikMaas
+  name: trait-SiikMaas-name
+  description: trait-SiikMaas-desc
+  category: Languages
+  cost: 1
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - SiikMaas
+    languagesUnderstood:
+    - SiikMaas
+
+- type: trait
+  id: SintaUnathi
+  name: trait-Draconic-name
+  description: trait-Draconic-desc
+  category: Languages
+  cost: 1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Reptilian
+  effects:
+  - !type:ModifyLanguagesTraitEffect
+    languagesSpoken:
+    - Draconic
+    languagesUnderstood:
+    - Draconic

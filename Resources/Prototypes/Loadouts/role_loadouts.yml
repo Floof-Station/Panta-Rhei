@@ -14,6 +14,9 @@
   - Survival
   - CaptainJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCommand # Floof
+  - FloofUndergarmentBottomCommand # Floof
+  - FloofSocksCommand # Floof
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -32,6 +35,9 @@
   - Survival
   - HoPJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCommand # Floof
+  - FloofUndergarmentBottomCommand # Floof
+  - FloofSocksCommand # Floof
 
 # Silicons
 - type: roleLoadout
@@ -64,6 +70,9 @@
   - Survival
   - PassengerJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopPassenger # Floof
+  - FloofUndergarmentBottomPassenger # Floof
+  - FloofSocksPassenger # Floof
 
 - type: roleLoadout
   id: JobBartender
@@ -82,21 +91,30 @@
   - Survival
   - BartenderJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopBartender # Floof
+  - FloofUndergarmentBottomBartender # Floof
+  - FloofSocksBartender # Floof
 
 - type: roleLoadout
   id: JobServiceWorker
   parent: JobBaseLoadout # Floofstation
   groups:
   - ServiceWorkerHead # DeltaV
-  - Scarfs # DeltaV
+  - ServiceWorkerNeck # DeltaV # Floof - dedicated loadout group
   - ServiceWorkerJumpsuit # DeltaV, was BartenderJumpsuit
+  - PassengerOuterClothing # Floofstation - give them outer clothing too
+  - FloofServiceWorkerPDAs # Floofstation pda
   - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - ServiceWorkerGloves # Floof
   - GroupTankHarness
   - CommonBackpack
   - Glasses
   - Survival
   - ServiceWorkerJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopSerivceWorker # Floof
+  - FloofUndergarmentBottomSerivceWorker # Floof
+  - FloofSocksSerivceWorker # Floof
 
 - type: roleLoadout
   id: JobChef
@@ -116,6 +134,9 @@
   - Survival
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopChef # Floof
+  - FloofSocksChef # Floof
+  - FloofChefPdas # Floof
 
 - type: roleLoadout
   id: JobLibrarian
@@ -127,6 +148,7 @@
   - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
   - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - PassengerOuterClothing # Floofstation let Librarians have drip
+  - FloofCatalogerPDAs # Floofstation
   - CommonBackpack
   - Glasses
   - Survival
@@ -142,6 +164,7 @@
   - LawyerJumpsuit
   - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
   - PassengerGloves # Floofstation, give them access to basic gloves from passengers
+  - FloofServiceLawyerPDAs # Floofstation pda
   - PassengerOuterClothing # Floofstation
   - JusticePaperworkBelt # Floofstation
   - CommonBackpack
@@ -187,6 +210,9 @@
   - Survival
   - JanitorJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopJanitor # Floof
+  - FloofUndergarmentBottomJanitor # Floof
+  - FloofSocksJanitor # Floof
 
 - type: roleLoadout
   id: JobBotanist
@@ -198,12 +224,16 @@
   - BotanistJumpsuit
   - BotanistBackpack
   - BotanistOuterClothing
+  - FloofServiceBotanistPDAs # Floofstation pda
   - FloofBotanistGloves # Floofstation - give botanists gloves
   - FloofBotanistShoes # Floofstation - give botanists shoes
   - Glasses
   - Survival
   - BotanistJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopBotanist # Floof
+  - FloofUndergarmentBottomBotanist # Floof
+  - FloofSocksBotanist # Floof
 
 - type: roleLoadout
   id: JobClown
@@ -232,6 +262,7 @@
   - MimeHead
   - MimeMask
   - MimeNeck # DeltaV
+  - FloofServiceMimePDAs # Floofstatoin pda
   - EuphoriaMimeShoes # Euphoria - Add mime shoe loadouts
   - MimeJumpsuit
   - MimeBackpack
@@ -250,6 +281,7 @@
   - MusicianJumpsuit
   - MusicianNeck
   - CommonBackpack
+  - FloofServiceMusicianPDAs # Floofsatation - give pda
   - FloofMusicianGloves # Floofstation -  give musician access to gloves
   - FloofMusicianShoes # Floofstation - give musician access to shoes
   - MusicianOuterClothing
@@ -257,6 +289,9 @@
   - Survival
   - MusicianJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopMusician # Floof
+  - FloofUndergarmentBottomMusician # Floof
+  - FloofSocksMusician # Floof
 
 # Cargo
 - type: roleLoadout
@@ -276,6 +311,9 @@
   - Survival
   - QuartermasterJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopLO # Floof
+  - FloofUndergarmentBottomLO # Floof
+  - FloofSocksLO # Floof
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -287,13 +325,17 @@
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
   - FloofCargotechGloves # Floofstation, give them access to basic gloves from passengers
+  - FloofCargotechBelts # Floofstation, give pilot belt
   - CargoTechnicianOuterClothing
   - CargoPDADelta # DeltaV
   - CargoTechnicianShoes
-  - Glasses
+  - FloofCargoTechGlasses # Floofstation, give pilot goggles
   - Survival
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCargotech # Floof
+  - FloofUndergarmentBottomCargotech # Floof
+  - FloofSocksCargotech # Floof
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -312,6 +354,9 @@
   - Survival
   - SalvageSpecialistJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCargotech # Floof
+  - FloofUndergarmentBottomCargotech # Floof
+  - FloofSocksCargotech # Floof
 
 # Engineering
 - type: roleLoadout
@@ -331,6 +376,9 @@
   - SurvivalExtended
   - ChiefEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCE # Floof
+  - FloofUndergarmentBottomCE # Floof
+  - FloofSocksCE # Floof
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -341,6 +389,7 @@
   - StationEngineerNeck # DeltaV
   - FloofEngineeringGlasses # Floofstation glasses
   - TechnicalAssistantJumpsuit
+  - FloofTechnicalAssistantPDAs # Floofstation - let them pick pda
   - StationEngineerGloves # floostation - give them access to gloves
   - StationEngineerBelts # floofstation - give them access to belts
   - StationEngineerBackpack
@@ -349,6 +398,9 @@
   - SurvivalExtended
   - TechnicalAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopEngineer # Floof
+  - FloofUndergarmentBottomEngineer # Floof
+  - FloofSocksEngineer # Floof
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -368,6 +420,9 @@
   - SurvivalExtended
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopEngineer # Floof
+  - FloofUndergarmentBottomEngineer # Floof
+  - FloofSocksEngineer # Floof
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -387,6 +442,9 @@
   - SurvivalExtended
   - AtmosphericTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopEngineer # Floof
+  - FloofUndergarmentBottomEngineer # Floof
+  - FloofSocksEngineer # Floof
 
 # Science
 - type: roleLoadout
@@ -406,6 +464,9 @@
   - Survival
   - ResearchDirectorJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopMystagogue # Floof
+  - FloofUndergarmentBottomMystagogue # Floof
+  - FloofSocksMystagogue # Floof
 
 - type: roleLoadout
   id: JobScientist
@@ -424,6 +485,9 @@
   - Survival
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopScientist # Floof
+  - FloofUndergarmentBottomScientist # Floof
+  - FloofSocksScientist # Floof
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -443,6 +507,9 @@
   - Survival
   - ResearchAssistantJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopScientist # Floof
+  - FloofUndergarmentBottomScientist # Floof
+  - FloofSocksScientist # Floof
 
 # Security
 - type: roleLoadout
@@ -463,6 +530,9 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
   - SecurityAllAmmo # DeltaV - loadouts
+  - FloofUndergarmentTopHOS # Floof
+  - FloofUndergarmentBottomHOS # Floof
+  - FloofSocksHOS # Floof
 
 - type: roleLoadout
   id: JobWarden
@@ -474,6 +544,7 @@
   - SecurityBackpack
   - SecurityBelt
   - WardenOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was WardenOuterClothing
+  - FloofSecurityWardenPdas # Floofstation pda
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityShoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
@@ -482,6 +553,9 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityAllFirearm # DeltaV - loadouts
   - SecurityAllAmmo # DeltaV - loadouts
+  - FloofUndergarmentTopHOS # Floof
+  - FloofUndergarmentBottomHOS # Floof
+  - FloofSocksHOS # Floof
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -502,6 +576,9 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
   - SecurityFirearmAmmo # DeltaV - loadouts
+  - FloofUndergarmentTopSecurityOfficer # Floof
+  - FloofUndergarmentBottomSecurityOfficer # Floof
+  - FloofSocksSecurityOfficer # Floof
 
 - type: roleLoadout
   id: JobDetective
@@ -512,6 +589,7 @@
   - DetectiveJumpsuitDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveJumpsuit
   - SecurityBackpack
   - DetectiveOuterClothingDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveOuterClothing
+  - FloofSecurityDetectivePdas # Detective pdas
   - FloofDetectiveGloves # Floofstation - detective gloves
   - FloofDetectiveShoes # Floofstation - detective shoes
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
@@ -520,6 +598,9 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityRevolverFirearm # DeltaV - loadouts
   - SecurityRevolverAmmo # DeltaV - loadouts
+  - FloofUndergarmentTopDetective # Floof
+  - FloofUndergarmentBottomDetective # Floof
+  - FloofSocksDetective # Floof
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -530,6 +611,7 @@
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityCadetJumpsuit
   - SecurityOuterClothingDeltaV # Floofstation - Let cadets customize their outer clothing
+  - FloofSecurityCadetPdas # Floofstation
   - SecurityShoes  # Floofstation - Let cadets customize their shoes
   - SecurityBackpack
   - SecurityEyewear # Floofstation - let cadets customize their eye wear
@@ -539,6 +621,9 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # Floofstation - let cadets choose their fire arm
   - SecurityFirearmAmmo # Floofstation - let cadets choose their ammo
+  - FloofUndergarmentTopSecurityOfficer # Floof
+  - FloofUndergarmentBottomSecurityOfficer # Floof
+  - FloofSocksSecurityOfficer # Floof
 
 # Medical
 - type: roleLoadout
@@ -560,6 +645,9 @@
   - SurvivalMedical
   - ChiefMedicalOfficerJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopCMO # Floof
+  - FloofUndergarmentBottomCMO # Floof
+  - FloofSocksCMO # Floof
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -580,6 +668,9 @@
   - SurvivalMedical
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopMedicalDoctor # Floof
+  - FloofUndergarmentBottomMedicalDoctor # Floof
+  - FloofSocksMedicalDoctor # Floof
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -600,6 +691,9 @@
   - SurvivalMedical
   - MedicalInternJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopMedicalDoctor # Floof
+  - FloofUndergarmentBottomMedicalDoctor # Floof
+  - FloofSocksMedicalDoctor # Floof
 
 - type: roleLoadout
   id: JobChemist
@@ -619,6 +713,9 @@
   - SurvivalMedical
   - ChemistJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopChemist # Floof
+  - FloofUndergarmentBottomChemist # Floof
+  - FloofSocksChemist # Floof
 
 - type: roleLoadout
   id: JobParamedic
@@ -638,6 +735,9 @@
   - SurvivalMedical
   - ParamedicJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopParamed # Floof
+  - FloofUndergarmentBottomParamed # Floof
+  - FloofSocksParamed # Floof
 
 # Wildcards
 - type: roleLoadout
@@ -651,6 +751,7 @@
   - PassengerGloves # Floofstation let reporters have drip
   - ReporterJumpsuit
   - PassengerOuterClothing # Floofstation let reporters have drip
+  - FloofServiceReporterPDAs # Floofstation pda
   - PassengerShoes # Floofstation let reporters have drip
   - CommonBackpack
   - Glasses
@@ -677,6 +778,9 @@
   - Glasses
   - PsychologistJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopMedicalDoctor # Floof
+  - FloofUndergarmentBottomMedicalDoctor # Floof
+  - FloofSocksMedicalDoctor # Floof
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit

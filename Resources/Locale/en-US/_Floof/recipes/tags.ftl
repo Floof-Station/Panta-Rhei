@@ -20,3 +20,18 @@ construction-graph-tag-carpet-simple-white = carpet simple white
 
 #masks
 construction-graph-tag-welding-mask = welding mask
+
+#hats
+construction-graph-tag-bluespaceanomcore = anomaly core
+construction-graph-tag-floralanaomlycore = anomaly core
+construction-graph-tag-firealanaomlycore = anomaly core
+construction-graph-tag-fleshalanaomlycore = anomaly core
+construction-graph-tag-frostalanaomlycore = anomaly core
+construction-graph-tag-gravalanaomlycore = anomaly core
+construction-graph-tag-rockalanaomlycore = anomaly core
+construction-graph-tag-shadowalanaomlycore = anomaly core
+construction-graph-tag-shockalanaomlycore = anomaly core
+construction-graph-tag-techalanaomlycore = anomaly core
+
+#ammo
+construction-graph-tag-coconut-pellet = coconut

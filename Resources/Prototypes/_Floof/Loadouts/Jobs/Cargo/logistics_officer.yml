@@ -1,18 +1,9 @@
-﻿#below addtions are for LO
-- type: loadout
-  id: UniformLOLogisThong
-  equipment:
-    jumpsuit: ClothingUniformLOLogisThong
-
+﻿# ======================================================== #
+# LO additions
 - type: loadout
   id: HandsLOLogisWarmers
   equipment:
     gloves: ClothingHandsLOLogisWarmers
-
-- type: loadout
-  id: UnderSocksLOLogis
-  equipment:
-    shoes: ClothingUnderSocksLOLogis
 
 - type: loadout
   id: ClothingHandsGlovesPapercutProof
@@ -33,3 +24,23 @@
   id: HeadOfAcquisitionsPDA
   equipment:
     id: HeadOfAcquisitionsPDA
+
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportLO
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportLO
+
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformLOLogisThong
+  equipment:
+    undergarmentBottom: ClothingUniformLOLogisThong
+
+# socks
+- type: loadout
+  id: UnderSocksLOLogis
+  equipment:
+    undergarmentSocks: ClothingUnderSocksLOLogis

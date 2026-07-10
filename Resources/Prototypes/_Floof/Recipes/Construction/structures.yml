@@ -52,3 +52,31 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
+
+- type: construction
+  id: DanceFloorFixture
+  graph: LightFixture
+  startNode: start
+  targetNode: dancefloor
+  category: construction-category-structures
+  description: dance-floor-construction
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: BathTub
+  graph: BathTub
+  startNode: start
+  targetNode: bathtub
+  category: construction-category-structures
+  description: bathtub-construction-description
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

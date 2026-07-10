@@ -1,0 +1,48 @@
+﻿- type: entity
+  name: pet bowl
+  id: PetBowlEmpty
+  suffix: empty
+  parent: [DrinkVisualsFill, DrinkBase]
+  description: A bowl for holding drinks for station pets.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/dog_bowl.rsi
+    scale: 0.8, 0.8
+  - type: Destructible # let it spill its chems when it gets broken
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+          params:
+            volume: -2
+      - !type:SpillBehavior
+        solution: beaker
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 0
+            max: 1
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 5
+    fillBaseName: fill-
+    inHandsMaxFillLevels: 0
+    inHandsFillBaseName: -fill-
+
+- type: entity
+  parent: PetBowlEmpty
+  id: PetBowlFilled
+  suffix: filled, water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water # prefill the filled tub
+          Quantity: 30

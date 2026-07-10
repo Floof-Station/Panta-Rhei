@@ -1,0 +1,60 @@
+﻿- type: entity
+  parent: Dresser
+  id: DresserLargeDorms
+  suffix: Empty, Dorms
+  components:
+  - type: Storage
+    maxItemSize: Huge
+    grid:
+    - 0,0,7,5  # shrunk this down to fit the items in the below tables & room for players clothings to safely store it
+
+- type: entity
+  id: DresserDormsFilled
+  suffix: Filled, Dorms
+  parent: DresserLargeDorms
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        # Outfits - only one - need more outfits probably
+        - !type:GroupSelector
+          children:
+          - id: UniformMaid
+            weight: 0.1
+          - id: ClothingUniformJumpskirtJanimaid
+            weight: 0.1
+          - id: ClothingUniformJumpskirtJanimaidmini
+            weight: 0.1
+        # Cuffs/Toys
+        - id: FuzzyHandcuffs # one pair with no rng
+        - id: ClothingEyesBlindfold
+        - id: ClothingMaskMuzzle
+          #Flesh lights - only one
+        - !type:GroupSelector
+          children:
+          - id: LewdFleshlightGreen
+            weight: 0.1
+          - id: LewdFleshlightTeal
+            weight: 0.1
+          - id: LewdFleshlightRed
+            weight: 0.1
+          # Dildos - only one
+        - !type:GroupSelector
+          children:
+          - id: AvianDildo
+            weight: 0.1
+          - id: CanineDildo
+            weight: 0.1
+          - id: NormalDildo
+            weight: 0.1
+          # vibrator - only one
+        - !type:GroupSelector
+          children:
+          - id: LewdVibeRed
+            weight: 0.1
+          - id: LewdVibePink
+            weight: 0.1
+          - id: LewdVibeGreen
+            weight: 0.1
+        - id: RagItem # one rag to clean

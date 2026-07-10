@@ -492,3 +492,8 @@
       - !type:EmptyAllContainersBehaviour
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Floofstation additions start
+  - type: Construction
+    graph: Envelope
+    node: envelope
+  # Floofstation aditions end

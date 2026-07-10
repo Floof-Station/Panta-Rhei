@@ -260,3 +260,14 @@
   parent: BasePaperTemplateServiceRecipe
   id: PaperTemplateServiceRestrictedPlantPermitRecipe
   result: PaperTemplateServiceRestrictedPlantPermit
+
+# Misc
+- type: latheRecipe
+  parent: BasePaperTemplateRecipe
+  id: PaperEnvelope
+  result: Envelope
+
+- type: latheRecipe
+  parent: BasePaperTemplateRecipe
+  id: PaperCoupon
+  result: PaperCoupon

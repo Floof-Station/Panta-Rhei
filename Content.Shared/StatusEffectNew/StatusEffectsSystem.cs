@@ -23,6 +23,7 @@ public sealed partial class StatusEffectsSystem : EntitySystem
     private EntityQuery<StatusEffectContainerComponent> _containerQuery;
     private EntityQuery<StatusEffectComponent> _effectQuery;
 
+    // Floof - lock on SEP to avoid parallel modification in integration tests
     public static HashSet<string> StatusEffectPrototypes = [];
 
     public override void Initialize()
@@ -78,12 +79,18 @@ public sealed partial class StatusEffectsSystem : EntitySystem
 
     private void ReloadStatusEffectsCache()
     {
+        // Floof - lock on SEP to avoid parallel modification in integration tests
+        // Violating formatting style here to make dealing with the upcoming merge conflict more easily
+        lock (StatusEffectPrototypes) {
+
         StatusEffectPrototypes.Clear();
 
         foreach (var ent in _proto.EnumeratePrototypes<EntityPrototype>())
         {
             if (ent.TryGetComponent<StatusEffectComponent>(out _, _factory))
                 StatusEffectPrototypes.Add(ent.ID);
+        }
+
         }
     }
 

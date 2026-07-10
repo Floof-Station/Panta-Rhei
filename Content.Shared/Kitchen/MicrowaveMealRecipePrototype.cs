@@ -1,10 +1,11 @@
-﻿using Content.Shared.Chemistry.Reagent;
+﻿using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Dictionary;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
-using Robust.Shared.Serialization; // Frontier
+using Robust.Shared.Serialization;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array; // Frontier
 
 namespace Content.Shared.Kitchen
 {
@@ -30,8 +31,13 @@ namespace Content.Shared.Kitchen
         [DataField("solids", customTypeSerializer: typeof(PrototypeIdDictionarySerializer<FixedPoint2, EntityPrototype>))]
         private Dictionary<string, FixedPoint2> _ingsSolids = new ();
 
-        [DataField("result", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
-        public string Result { get; private set; } = string.Empty;
+        //Euphoria, allow for multiple results from a single recipe
+        [DataField("result", customTypeSerializer: typeof(AbstractPrototypeIdArraySerializer<EntityPrototype>))]
+        public string[] Results = [];
+
+        //Euph, allow for liquid output in microwave recipes
+        [DataField("resultReagents")]
+        public Solution? ResultReagents;
 
         [DataField("time")]
         public uint CookTime { get; private set; } = 5;

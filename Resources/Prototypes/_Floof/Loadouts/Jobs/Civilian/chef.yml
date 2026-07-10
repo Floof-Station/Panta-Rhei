@@ -1,8 +1,4 @@
 ﻿# chef additions
-- type: loadout
-  id: UniformChefThong
-  equipment:
-    jumpsuit: ClothingUniformChefThong
 
 # gloves
 - type: loadout
@@ -12,11 +8,6 @@
 
 # shoes
 - type: loadout
-  id: ClothingUnderSocksChef
-  equipment:
-    shoes: ClothingUnderSocksChef
-
-- type: loadout
   id: ClothingShoesChef
   equipment:
     shoes: ClothingShoesChef
@@ -25,3 +16,23 @@
   id: ClothingShoesBootsWinterChef
   equipment:
     shoes: ClothingShoesBootsWinterChef
+
+# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportChef
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportChef
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformChefThong
+  equipment:
+    undergarmentBottom: ClothingUniformChefThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksChef
+  equipment:
+    undergarmentSocks: ClothingUnderSocksChef

@@ -165,8 +165,8 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: ReplacementAccent
-    accent: dog
+#  - type: ReplacementAccent # Euphoria - M3739 - #706 - Consistency with FloofStation changes
+#    accent: dog
   - type: InteractionPopup
     successChance: 0.5
     interactSuccessString: petting-success-dog
@@ -314,6 +314,14 @@
     damage:
       types:
         Piercing: 0.5 # Minimal damage, 'mostly harmless'.
+  - type: LanguageKnowledge # Euphoria
+    speaks:
+    - Mouse
+    - Scurret
+    understands:
+    - TauCetiBasic
+    - Mouse
+    - Scurret
 
 - type: entity
   parent: SimpleMobBase # Not parenting off from MobMothroach to remove the ghost role components

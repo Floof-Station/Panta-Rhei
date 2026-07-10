@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by WinstonThrasher (DocThrasher on newgrounds and bsky hi hello), based on the high capacity tanks taken from tgstation at commit https://github.com/tgstation/tgstation/commit/8442af39ee82b813194f71db82edd2923d97818d",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "milktank"
+    },
+    {
+      "name": "unlit"
+    },
+    {
+      "name": "milktank-1",
+	  "delays": [
+	    [
+		0.25,
+		0.25,
+		0.25,
+		0.25
+	    ]
+      ]
+    },
+    {
+      "name": "milktank-2-1"
+    },
+    {
+      "name": "milktank-2-2"
+    },
+    {
+      "name": "milktank-2-3"
+    },
+    {
+      "name": "milktank-2-4"
+    },
+    {
+      "name": "milktank-2-5"
+    },
+    {
+      "name": "milktank-2-6"
+    },
+    {
+      "name": "milktank-2-7"
+    }
+  ]
+}
