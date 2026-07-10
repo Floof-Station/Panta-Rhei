@@ -115,7 +115,7 @@
   - type: DamageOnDispel
     damage:
       types:
-        Heat: 100
+        Heat: 150 # Euphoria - Increased so Wisp are weaker to it
   - type: SlowOnDamage
     speedModifierThresholds:
       150: 0.8
