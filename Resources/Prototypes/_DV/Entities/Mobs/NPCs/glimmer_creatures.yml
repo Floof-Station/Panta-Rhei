@@ -115,7 +115,7 @@
   - type: DamageOnDispel
     damage:
       types:
-        Holy: 50 # Euphoria - Increased so Wisp are weaker to it
+        Holy: 150 # Euphoria - 2 Hits Wisp (instead of 3) for future reference dispel ignores resistances thus weaknesses too.
   - type: SlowOnDamage
     speedModifierThresholds:
       150: 0.8
