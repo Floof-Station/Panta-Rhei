@@ -1,0 +1,45 @@
+﻿# Mind Role
+- type: entity
+  parent: MindRoleGhostRoleFreeAgentHarmless
+  id: MindRoleCasinoManager
+  name: Casino Manager Role
+  components:
+  - type: MindRole
+    subtype: role-subtype-casino-manager
+  - type: CasinoManagerRole
+
+# Starting Gear
+- type: startingGear
+  id: CasinoManagerGear
+  equipment:
+    id: FreelancerPDA # giving freelancer gear for now till something better is added
+    ears: ClothingHeadsetFreelance
+    pocket1: EncryptionKeyTraffic
+    jumpsuit: ClothingUniformBrosBlazer
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpackSatchelLeather
+    outerClothing: ClothingOuterVest
+
+# Spawner
+- type: entity
+  categories: [ Spawner ]
+  parent: MarkerBase
+  id: SpawnPointCasinoManager
+  name: ghost role spawn point
+  suffix: casino manager
+  components:
+  - type: GhostRole
+    name: ghost-role-information-casino-manager-name
+    description: ghost-role-information-casino-manager-description
+    mindRoles:
+    - MindRoleCasinoManager
+    raffle:
+      settings: default
+  - type: GhostRoleCharacterSpawner
+    outfitPrototype: CasinoManagerGear
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - sprite: Markers/jobs.rsi
+      state: serviceworker

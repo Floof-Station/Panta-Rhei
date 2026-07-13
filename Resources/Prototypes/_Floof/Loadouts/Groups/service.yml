@@ -1,12 +1,5 @@
-﻿# bartender additions
-- type: loadoutGroup
-  id: FloofBartenderJumpsuit
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformBartenderThong
-
+﻿# ======================================================== #
+# bartender additions
 - type: loadoutGroup
   id: FloofBartenderGloves
   name: loadout-group-service-bartender-gloves
@@ -24,17 +17,33 @@
   maxLimit: 1
   loadouts:
   - ClothingShoesColorBlack
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopBartender
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomBartender
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformBartenderThong
+
+- type: loadoutGroup
+  id: FloofSocksBartender
+  parent: FloofSocksPassenger
+  loadouts:
   - ClothingUnderSocksBartender
 
-# musician additions
 - type: loadoutGroup
-  id: FloofMusicianJumpsuit
+  id: FloofBartenderPda
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
-  - UniformMusicianThong
+  - ClothingNeckCollarEmotionalSupportBartender
 
+
+# ======================================================== #
+# musician additions
 - type: loadoutGroup
   id: FloofMusicianGloves
   name: loadout-group-service-musician-gloves
@@ -52,17 +61,36 @@
   maxLimit: 1
   loadouts:
   - LaceupShoes
-  - ClothingUnderSocksMusician
 
-# janitor additions
 - type: loadoutGroup
-  id: FloofJanitorJumpsuit
-  abstract: true
+  id: FloofServiceMusicianPDAs
+  name: loadout-group-musician-pda
   minLimit: 1
   maxLimit: 1
   loadouts:
-  - UniformJanitorThong
+  - MusicianPDA
+  - ClothingNeckCollarEmotionalSupportMusician
 
+- type: loadoutGroup
+  id: FloofUndergarmentTopMusician
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomMusician
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformMusicianThong
+
+- type: loadoutGroup
+  id: FloofSocksMusician
+  parent: FloofSocksPassenger
+  loadouts:
+  - ClothingUnderSocksMusician
+
+
+# ======================================================== #
+# janitor additions
 - type: loadoutGroup
   id: FloofJanitorGloves
   parent: [PassengerGloves]
@@ -80,17 +108,32 @@
   maxLimit: 1
   loadouts:
   - ClothingShoesGaloshes
+
+- type: loadoutGroup
+  id: FloofJanitorPda
+  abstract: true
+  loadouts:
+  - ClothingNeckCollarEmotionalSupportJanitor
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopJanitor
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomJanitor
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformJanitorThong
+
+- type: loadoutGroup
+  id: FloofSocksJanitor
+  parent: FloofSocksPassenger
+  loadouts:
   - ClothingUnderSocksJanitor
 
+# ======================================================== #
 # chef additions
-- type: loadoutGroup
-  id: FloofChefJumpsuit
-  abstract: true
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - UniformChefThong
-
 - type: loadoutGroup
   id: FloofChefGloves
   name: loadout-group-service-chef-gloves
@@ -110,17 +153,31 @@
   - ClothingShoesColorBlack
   - ClothingShoesChef
   - ClothingShoesBootsWinterChef
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopChef
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomChef
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformChefThong
+
+- type: loadoutGroup
+  id: FloofSocksChef
+  parent: FloofSocksPassenger
+  loadouts:
   - ClothingUnderSocksChef
 
-# botanist additions
 - type: loadoutGroup
-  id: FloofBotanistJumpsuit
+  id: FloofChefPdas
   abstract: true
-  minLimit: 1
-  maxLimit: 1
   loadouts:
-  - UniformServiceThong
+  - ClothingNeckCollarEmotionalSupportChef
 
+# ======================================================== #
 - type: loadoutGroup
   id: FloofBotanistGloves
   name: loadout-group-service-botanist-gloves
@@ -141,6 +198,35 @@
   - ClothingShoesColorBlack
   - ClothingUnderSocksService
 
+- type: loadoutGroup
+  id: FloofServiceBotanistPDAs
+  name: loadout-group-botanist-pda
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - BotanistPDA
+  - ClothingNeckCollarEmotionalSupportBotanist
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopBotanist
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomBotanist
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformServiceThong
+
+- type: loadoutGroup
+  id: FloofSocksBotanist
+  parent: FloofSocksPassenger
+  loadouts:
+  - ClothingUnderSocksService
+
+
+
+# ======================================================== #
 # mime additions
 - type: loadoutGroup
   id: EuphoriaMimeShoes
@@ -152,6 +238,8 @@
   - WhiteShoes
   - ClothingShoesBootsWinterMime
 
+
+# ======================================================== #
 # gladiator additions
 - type: loadoutGroup
   id: FloofGladiatorPDAs
@@ -161,6 +249,8 @@
   loadouts:
   - GladiatorPDA
 
+
+# ======================================================== #
 # martial artist pda
 - type: loadoutGroup
   id: FloofMartialArtistPDAs
@@ -170,6 +260,8 @@
   loadouts:
   - MartialArtistPDA
 
+
+# ======================================================== #
 # boxer pda
 - type: loadoutGroup
   id: FloofBoxerPDAs
@@ -180,58 +272,56 @@
   - BoxerPDA
   - ClothingNeckCollarEmotionalSupportBoxer
 
-# emotional support
+
+# ======================================================== #
+# Service worker additions
 - type: loadoutGroup
-  id: FloofBartenderPda
-  abstract: true
-  loadouts:
-  - ClothingNeckCollarEmotionalSupportBartender
+  id: ServiceWorkerNeck
+  parent: [CommonCollars, Scarfs]
+  minLimit: 0
+  loadouts: []
 
 - type: loadoutGroup
-  id: FloofChefPdas
-  abstract: true
+  id: ServiceWorkerGloves
+  parent: [PassengerGloves]
+  minLimit: 0
   loadouts:
-  - ClothingNeckCollarEmotionalSupportChef
+  - ClothingHandsServiceWarmers
 
 - type: loadoutGroup
   id: FloofServiceWorkerPDAs
   name: loadout-group-service-worker-pdas
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - ServiceWorkerPDA
   - ClothingNeckCollarEmotionalSupportServiceWorker
 
 - type: loadoutGroup
-  id: FloofServiceBotanistPDAs
-  name: loadout-group-botanist-pda
-  minLimit: 1
-  maxLimit: 1
-  loadouts:
-  - BotanistPDA
-  - ClothingNeckCollarEmotionalSupportBotanist
+  id: FloofUndergarmentTopSerivceWorker
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
 
 - type: loadoutGroup
-  id: FloofJanitorPda
-  abstract: true
+  id: FloofUndergarmentBottomSerivceWorker
+  parent: FloofUndergarmentBottomPassenger
   loadouts:
-  - ClothingNeckCollarEmotionalSupportJanitor
+  - UniformServiceThong
 
 - type: loadoutGroup
-  id: FloofServiceMusicianPDAs
-  name: loadout-group-musician-pda
-  minLimit: 1
-  maxLimit: 1
+  id: FloofSocksSerivceWorker
+  parent: FloofSocksPassenger
   loadouts:
-  - MusicianPDA
-  - ClothingNeckCollarEmotionalSupportMusician
+  - ClothingUnderSocksService
 
+
+# ======================================================== #
 - type: loadoutGroup
   id: FloofClownPda
   abstract: true
   loadouts:
   - ClothingNeckCollarEmotionalSupportClown
 
+
+# ======================================================== #
 - type: loadoutGroup
   id: FloofServiceMimePDAs
   name: loadout-group-mime-pda
@@ -241,6 +331,8 @@
   - MimePDA
   - ClothingNeckCollarEmotionalSupportMime
 
+
+# ======================================================== #
 - type: loadoutGroup
   id: FloofServiceReporterPDAs
   name: loadout-group-reporters-pda
@@ -250,6 +342,8 @@
   - ReporterPDA
   - ClothingNeckCollarEmotionalSupportReporter
 
+
+# ======================================================== #
 - type: loadoutGroup
   id: FloofServicePrisonerPDAs
   name: loadout-group-prisoner-pda

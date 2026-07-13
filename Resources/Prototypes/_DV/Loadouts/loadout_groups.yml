@@ -639,7 +639,7 @@
 
 - type: loadoutGroup
   id: ChemistShoes
-  parent: [FloofChemistShoes, FloofShoes] # Floofstation
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-chemist-shoes
   loadouts:
   - WhiteShoes
@@ -936,7 +936,7 @@
 
 - type: loadoutGroup
   id: CaptainShoes
-  parent: [FloofCaptainSocks, FloofShoes] # Floofstation
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-captain-shoes
   loadouts:
   - BrownLeatherShoes
@@ -956,7 +956,7 @@
 
 - type: loadoutGroup
   id: HoPShoes
-  parent: [FloofHopSocks,FloofShoes] # Floofstation
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-hop-shoes
   loadouts:
   - BrownLeatherShoes
