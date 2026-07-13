@@ -8,7 +8,7 @@
     layers:
       - state: ring
         color: "#ffc833"
-  - type: Clothing
+  - type: Clothing  # Euphoria - Make rings show on character sprite
     clothingVisuals:
       gloves:
       - state: equipped-HAND
@@ -23,7 +23,7 @@
   - type: Sprite
     layers:
       - state: ring
-  - type: Clothing
+  - type: Clothing  # Euphoria - Make rings show on character sprite
     clothingVisuals:
       gloves:
       - state: equipped-HAND
@@ -40,7 +40,7 @@
         color: "#ffc833"
       - state: gem
         color: "#c1ffff"
-  - type: Clothing
+  - type: Clothing  # Euphoria - Make rings show on character sprite
     clothingVisuals:
       gloves:
       - state: equipped-HAND
@@ -59,7 +59,7 @@
       - state: ring
       - state: gem
         color: "#c1ffff"
-  - type: Clothing
+  - type: Clothing  # Euphoria - Make rings show on character sprite
     clothingVisuals:
       gloves:
       - state: equipped-HAND
@@ -78,7 +78,7 @@
         color: "#ffc833"
       - state: gem
         map: [ "gemColor" ]
-  - type: Clothing
+  - type: Clothing  # Euphoria - Make rings show on character sprite
     clothingVisuals:
       gloves:
       - state: equipped-HAND
@@ -103,7 +103,7 @@
       - state: gem
         map: [ "gemColor" ]
       - state:
-  - type: Clothing
+  - type: Clothing  # Euphoria - Make rings show on character sprite
     clothingVisuals:
       gloves:
       - state: equipped-HAND
