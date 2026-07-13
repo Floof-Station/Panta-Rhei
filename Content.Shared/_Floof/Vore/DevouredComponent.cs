@@ -1,7 +1,10 @@
+using Robust.Shared.GameObjects;
+using Robust.Shared.GameStates;
 using Content.Shared.Medical.SuitSensor;
-namespace Content.Server._Floof.Vore;
 
-[RegisterComponent]
+namespace Content.Shared._Floof.Vore;
+
+[RegisterComponent, NetworkedComponent]
 public sealed partial class DevouredComponent : Component
 {
     public bool AddedPressure;

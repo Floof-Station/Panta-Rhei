@@ -16,6 +16,8 @@ using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
 using Robust.Server.Player;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Audio.Systems;
+using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Gibbing;
 namespace Content.Server._Floof.Vore;
 
@@ -29,6 +31,7 @@ public sealed class VoreSystem : EntitySystem
     [Dependency] private readonly CarryingSystem _carryingSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
 
     public static readonly ProtoId<ConsentTogglePrototype> isPred = "PredVore";
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
@@ -152,6 +155,7 @@ public sealed class VoreSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = "Release all prey",
+                    Category = VoreVerbCategory.VoreGeneral,
                     Act = () => TryReleasePrey(target, comp)
                 });
             }
@@ -163,6 +167,7 @@ public sealed class VoreSystem : EntitySystem
             args.Verbs.Add(new Verb
             {
                 Text = "Devour",
+                Category = VoreVerbCategory.VoreGeneral,
                 Act = () => TryVore(user, target)
             });
         }
@@ -171,8 +176,29 @@ public sealed class VoreSystem : EntitySystem
                 args.Verbs.Add(new Verb
                 {
                     Text = "Insert Self",
+                    Category = VoreVerbCategory.VoreGeneral,
                     Act = () => TryVore(target, user)
                 });
+        }
+        // 3. insert someone else if you pull or carry them
+        // vorecomponent implies consent to feed other
+        if (HasComp<VoreComponent>(user)){
+            EntityUid? carried = null;
+            if (TryComp<CarryingComponent>(user, out var carrying) && carrying.Carried != default)
+                carried  = carrying.Carried;
+            else if (TryComp<PullerComponent>(user, out var puller) && puller.Pulling is EntityUid pulling)
+                carried  = pulling;
+            
+            if (carried != null && carried is EntityUid prey && prey != target){
+                if (IsDevourable(target, prey)){
+                    args.Verbs.Add(new Verb
+                    {
+                        Text = $"Insert {Name(prey)}",
+                        Category = VoreVerbCategory.VoreGeneral,
+                        Act = () => TryVore(target, prey)
+                    });
+                }
+            }
         }
     }
 
@@ -221,10 +247,15 @@ public sealed class VoreSystem : EntitySystem
             return;
         }
 
-        //makes sure prey will be dropped from bags and hands
-        EnsureEntityFree(pred, prey, comp);
+        //gulp sound only for both entities involved
+        if (comp.SoundDevour != null){
+            if (_playerManager.TryGetSessionByEntity(pred, out var predSession))
+                _audioSystem.PlayEntity(comp.SoundDevour, predSession, pred);
+            if (_playerManager.TryGetSessionByEntity(prey, out var preySession))
+                _audioSystem.PlayEntity(comp.SoundDevour, preySession, pred);
+        }
 
-        //moves prey inside the person
+        EnsureEntityFree(pred, prey, comp);
         _containerSystem.Insert(prey, container);
     }
 

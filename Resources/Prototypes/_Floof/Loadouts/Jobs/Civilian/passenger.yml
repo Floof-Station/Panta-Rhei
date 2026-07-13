@@ -1489,6 +1489,34 @@
     back:
     - Clicker
 
+- type: loadout
+  id: FlippableCoinNT
+  storage:
+    back:
+    - FlippableCoinNT
+  groupBy: "coins"
+
+- type: loadout
+  id: FlippableCoinClown
+  storage:
+    back:
+    - FlippableCoinClown
+  groupBy: "coins"
+
+- type: loadout
+  id: FlippableCoinDiamond
+  storage:
+    back:
+    - FlippableCoinDiamond
+  groupBy: "coins"
+
+- type: loadout
+  id: FlippableCoinPlasma
+  storage:
+    back:
+    - FlippableCoinPlasma
+  groupBy: "coins"
+
 #lewd trinkets
 - type: loadout
   id: AvianDildo

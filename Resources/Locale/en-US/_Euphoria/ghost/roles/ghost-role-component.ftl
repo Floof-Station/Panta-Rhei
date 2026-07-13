@@ -27,3 +27,5 @@ ghost-role-information-friendly-beast-rules = [color=red]This is an admin spawne
         Listen to admins about any additional rules.
 
 ghost-role-information-pet-spider-name = Pet Spider
+
+ghost-role-information-pet-whimperlet-name = Pet Whimperlet
