@@ -95,7 +95,7 @@
 
 - type: humanoidBaseSprite
   id: MobSlimeMarkingFollowSkin
-  markingsMatchSkin: false # Euphoria - LET US HAVE OUR FANCY DIFFERENT HAIR COLORS!!!
+  markingsMatchSkin: true # Euphoria - Once Alphalayer issues are fixed, we can allow the color changes and set this false.
   layerAlpha: 0.72
 
 - type: humanoidBaseSprite
