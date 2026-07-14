@@ -1211,28 +1211,7 @@ namespace Content.Client.Lobby.UI
                 ReloadPreview();
             };
 
-            _loadoutWindow.OnRequestLoadoutMetadataEdit += (groupProto, loadoutProto) =>
-            {
-                if (!roleLoadout.SelectedLoadouts.TryGetValue(groupProto, out var group)
-                    || group.Find(it => it.Prototype == loadoutProto) is not { } loadout)
-                    return;
-
-                var dlg = new LoadoutMetadataEditorDialog(loadout, loadoutProto, groupProto);
-                dlg.OnSave += (newLoadout) =>
-                {
-                    // The role loadouts could have changed, we cant trust the old value
-                    if (!roleLoadout.SelectedLoadouts.TryGetValue(groupProto, out var newGroup))
-                        return;
-
-                    newGroup.RemoveAll(it => it.Prototype == loadoutProto);
-                    newGroup.Add(newLoadout);
-                    Profile = Profile?.WithLoadout(roleLoadout);
-                    _loadoutWindow.RefreshLoadouts(roleLoadout, session, collection);
-                    SetDirty();
-                    ReloadPreview();
-                };
-                dlg.OpenCentered();
-            };
+            OpenLoadoutFloof(jobProto, roleLoadout, roleLoadoutProto, session, collection); // Floofstation
 
             JobOverride = jobProto;
             ReloadPreview();

@@ -124,6 +124,9 @@
     whitelist:
       components:
       - Temperature
+      - FitsInDispenser # Floofstation - let beakers and other objects be heated by an oven
+  - type: SolutionHeater # Floofstation - let beakers and other objects be heated by an oven
+    heatPerSecond: 100
 
 - type: entity
   id: SyndicateKitchenElectricRange

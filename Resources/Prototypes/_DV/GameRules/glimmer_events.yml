@@ -5,8 +5,8 @@
     - id: MundaneDischarge
     - id: NoosphericZap
     - id: NoosphericFry
-    - id: PsionicCatGotYourTongue
-    - id: MassMindSwap
+    - id: NoosphericSilence
+#    - id: MassMindSwap # Floof - disabled because it RRs peopel
     - id: GlimmerWispSpawn
     - id: FreeProber
     - id: GlimmerRevenantSpawn
@@ -72,7 +72,7 @@
   - type: NoosphericFryRule
 
 - type: entity
-  id: PsionicCatGotYourTongue
+  id: NoosphericSilence
   parent: BaseGlimmerEvent
   components:
   - type: GlimmerEvent
@@ -80,11 +80,12 @@
     maximumGlimmer: 900
     glimmerBurnLower: 18
     glimmerBurnUpper: 40
-  - type: PsionicCatGotYourTongueRule
+  - type: NoosphericSilenceRule
 
 - type: entity
   id: MassMindSwap
   parent: BaseGlimmerEvent
+  abstract: true # Floof - disabled beacuse it RRs people
   components:
   - type: GlimmerEvent
     minimumGlimmer: 900

@@ -103,7 +103,7 @@
   parent: LeftArmCyberneticBase
   id: JawsOfLifeLeftArm
   name: J.W.L left arm
-  description: A cybernetic left arm with the ability to pry doors open.
+  description: A cybernetic left arm with the ability to pry powered doors open. # Euphoria | Description to differentiate from prybar arm
   components:
   - type: BodyPart
     onAdd:
@@ -115,7 +115,7 @@
   parent: RightArmCyberneticBase
   id: JawsOfLifeRightArm
   name: J.W.L right arm
-  description: A cybernetic right arm with the ability to pry doors open.
+  description: A cybernetic right arm with the ability to pry powered doors open. # Euphoria | Description to differentiate from prybar arm
   components:
   - type: BodyPart
     onAdd:

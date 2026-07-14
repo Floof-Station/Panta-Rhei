@@ -4,6 +4,7 @@
   description: trait-marked-teach-desc
   category: Meta
   cost: 0
+  usesSlots: false
   conditions:
   - !type:InDepartmentCondition
     department: Command
@@ -26,6 +27,7 @@
   description: trait-marked-remove-desc
   category: Meta
   cost: 0
+  usesSlots: false
   conditions:
   - !type:HasCompCondition
     component: TargetObjectiveImmune
@@ -35,3 +37,23 @@
     components:
     - type: Marked
       targetType: Remove
+
+- type: trait
+  id: ConversionImmune
+  name: trait-conversion-immune-name
+  description: trait-conversion-immune-desc
+  category: Meta
+  cost: 1
+  usesSlots: false
+  conditions:
+  - !type:IsAntagEligibleCondition
+    antag: CosmicAntagCultist # Can you sell faith you can't lose?
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: ConversionImmune
+      protectionType: All # If more granular traits get added, make sure to add a new trait effect that adds protection types instead of overwriting them

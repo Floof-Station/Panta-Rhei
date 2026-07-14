@@ -1,13 +1,22 @@
 using Content.Shared.Chat;
+using Content.Shared.Chat.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Language;
 
-[Prototype("language")]
-public sealed partial class LanguagePrototype : IPrototype
+[Prototype]
+public sealed partial class LanguagePrototype : IPrototype, IInheritingPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
+
+    [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<LanguagePrototype>))]
+    public string[]? Parents { get; private set; }
+
+    [AbstractDataField, NeverPushInheritance]
+    public bool Abstract { get; private set; }
 
     /// <summary>
     ///     Whether this language will display its name in chat behind a player's name.
@@ -18,7 +27,7 @@ public sealed partial class LanguagePrototype : IPrototype
     /// <summary>
     ///     Obfuscation method used by this language. By default, uses <see cref="ObfuscationMethod.Default"/>
     /// </summary>
-    [DataField("obfuscation")]
+    [DataField]
     public ObfuscationMethod Obfuscation = ObfuscationMethod.Default;
 
     /// <summary>
@@ -26,6 +35,12 @@ public sealed partial class LanguagePrototype : IPrototype
     /// </summary>
     [DataField("speech")]
     public SpeechOverrideInfo SpeechOverride = new();
+
+    /// <summary>
+    ///     Icon to display in the chat in place of LanguageIconTag.
+    /// </summary>
+    [DataField, AlwaysPushInheritance]
+    public SpriteSpecifier? Icon = new SpriteSpecifier.Rsi(new("/Textures/_Floof/Interface/Misc/language_icons.rsi"), "default.png");
 
     #region utility
     /// <summary>
@@ -36,6 +51,7 @@ public sealed partial class LanguagePrototype : IPrototype
     /// <summary>
     ///     The in-world chat abbreviation of this language, localized.
     /// </summary>
+    [Obsolete("Currently returns Name. Abbreviations are obsolete.")]
     public string ChatName => Name;// Loc.GetString($"chat-language-{ID}-name");
 
     /// <summary>

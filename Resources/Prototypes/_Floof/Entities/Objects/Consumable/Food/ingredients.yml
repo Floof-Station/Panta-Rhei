@@ -102,3 +102,21 @@
       - state: plain-inhand-left
       right:
       - state: plain-inhand-right
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerPeanutButter
+  name: peanut butter
+  description: A big jar of peanut butter. Good for baking!
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter.rsi
+    state: peanutbutter
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100 # DeltaV - More reagents for chefs
+        reagents:
+        - ReagentId: PeanutButter
+          Quantity: 100 # DeltaV - More reagents for chefs

@@ -78,7 +78,7 @@
   - type: SolutionContainerManager
     solutions:
       output:
-        maxVol: 400 #*slaps roof of machine* This baby can fit so much omnizine in it
+        maxVol: 1000 # Euphoria - I scream when botany sends me 400 plants
   - type: MaterialReclaimer
     whitelist:
       components:
@@ -117,3 +117,4 @@
     solution: output
   - type: ExaminableSolution
     solution: output
+    exactVolume: true # Euphoria

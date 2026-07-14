@@ -94,11 +94,6 @@
   - ClothingUniformJumpskirtJanimaidmini
   - UniformMaid
   - ClothingUniformJumpskirtTacticalMaid
-  - ClothingThongCoder
-  - ClothingThongBee
-  - ClothingThongRainbow
-  - ClothingThongCoderValid
-  - ClothingUniformFishnetThong
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
   - ClothingCostumeBunnySuit
@@ -108,6 +103,8 @@
   - ClothingUniformRedSidelessDress
   - ClothingUniformPurpleNightclubDress
   - ClothingUniformBlackPetticoatDress
+  - ClothingUniformJumpskirtBlazer
+  - ClothingUniformJumpskirtDressGothic
 
 # gloves
 - type: loadoutGroup
@@ -133,6 +130,7 @@
 - type: loadoutGroup
   id: FloofShoes
   abstract: true
+  parent: [EuphoriaShoes] # Euphoria
   name: loadout-group-passenger-shoes
   loadouts:
   - ClothingShoesBootsJack
@@ -146,18 +144,6 @@
   - ClothingShoesBootsWinter
   - ShoesBootsFishing
   - ClothingClothWrap
-  - ClothingSocksRainbow
-  - ClothingSocksAce
-  - ClothingSocksAro
-  - ClothingSocksBi
-  - ClothingSocksGay
-  - ClothingSocksLesbian
-  - ClothingSocksNon
-  - ClothingSocksPan
-  - ClothingSocksTrans
-  - ClothingSocksCoderValid
-  - ClothingSocksCowprint
-  - ClothingUnderSocksFishnets
 
 # backpacks
 - type: loadoutGroup
@@ -271,7 +257,58 @@
   abstract: true
   loadouts:
   - ClothingNeckCollarBlackPetId
+  - ClothingNeckCollarBlackPetIdAlternative
   - ClothingNeckCollarBluePetId
+  - ClothingNeckCollarBluePetIdAlternative
   - ClothingNeckCollarPinkPetId
+  - ClothingNeckCollarPinkPetIdAlternative
   - ClothingNeckCollarSyndiPetId
+  - ClothingNeckCollarSyndiPetIdAlternative
   - ClothingNeckCollarShockPetId
+  - ClothingNeckCollarShockPetIdAlternative
+  - ClothingNeckCollarBellPetId
+  - ClothingNeckCollarBellPetIdAlternative
+
+# Undergarment
+- type: loadoutGroup
+  id: FloofUndergarmentTopPassenger
+  name: loadout-group-undergarment-top
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingUniformFishnet
+  - ClothingUniformFishnetAlt
+  - ClothingUniformFishnetSleeves
+  - ClothingUniformFishnetSleevesGloves
+  - ClothingUniformFishnetSimpleTop
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomPassenger
+  name: loadout-group-undergarment-bottom
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingThongCoder
+  - ClothingThongBee
+  - ClothingThongRainbow
+  - ClothingThongCoderValid
+  - ClothingUniformFishnetThong
+
+- type: loadoutGroup
+  id: FloofSocksPassenger
+  name: loadout-group-socks
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingSocksRainbow
+  - ClothingSocksAce
+  - ClothingSocksAro
+  - ClothingSocksBi
+  - ClothingSocksGay
+  - ClothingSocksLesbian
+  - ClothingSocksNon
+  - ClothingSocksPan
+  - ClothingSocksTrans
+  - ClothingSocksCoderValid
+  - ClothingSocksCowprint
+  - ClothingUnderSocksFishnets

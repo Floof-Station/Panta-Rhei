@@ -1,0 +1,22 @@
+﻿- type: reagent
+  id: PeanutOil # the oil to make peanut butter
+  name: reagent-name-peanutoil
+  parent: BaseJuice
+  desc: reagent-desc-peanutoil
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#795C32"
+
+- type: reagent
+  id: PeanutButter # actual peanut butter
+  name: reagent-name-peanut-butter
+  parent: BaseJuice
+  desc: reagent-desc-peanut-butter
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#DCA465"
+  metabolisms:
+    Food:
+      effects:
+      - !type:SatiateHunger
+        factor: 0.5

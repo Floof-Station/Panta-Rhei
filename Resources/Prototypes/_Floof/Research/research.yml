@@ -12,3 +12,17 @@
   cost: 15000
   recipeUnlocks:
   - WeaponLaserSvalinn
+
+- type: technology
+  id: ExtendedPistolMagazines
+  name: research-technology-extended-pistol-magazines
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_high_capacity_mag.rsi
+    state: base-icon
+  discipline: Arsenal
+  tier: 1
+  cost: 5000
+  recipeUnlocks:
+  - MagazinePistolHighCapacity
+  - MagazinePistolHighCapacityRubber
+  - MagazinePistolHighCapacityPractice

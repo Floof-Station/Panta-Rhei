@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseGameRule
+  id: FoodCriticSpawn
+  components:
+  - type: StationEvent
+    weight: 2
+    duration: 1
+    earliestStart: 5
+    minimumPlayers: 20
+    occursDuringRoundEnd: false
+    maxOccurrences: 1
+  - type: PrecognitionResult
+    message: psionic-power-precognition-food-critic-result-message
+  - type: RandomSpawnRule
+    prototype: SpawnPointFoodCritic

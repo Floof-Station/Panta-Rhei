@@ -1,6 +1,7 @@
 - type: language
   id: ValyrianStandard
-  isVisibleLanguage: true
+  parent: BaseLanguage
+  icon: { state: valyrian }
   speech:
     fontId: Cambria
     color: "#008ecc"

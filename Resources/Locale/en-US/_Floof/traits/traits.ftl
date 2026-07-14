@@ -22,6 +22,12 @@ trait-marked-remove-desc = Someone or something wants you REMOVED. Antags can re
 trait-marked-teach-name = Marked for Death
 trait-marked-teach-desc = Someone or something wants you taught a lesson. Antags can recieve objectives to kill you.
 
+trait-conversion-immune-name = Unconvertible
+trait-conversion-immune-desc =
+    This trait prevents you from being converted mid-round by certain antags.
+    Currently only affects the Cosmic Cult.
+    NOTE: This trait DOES NOT protect you from being killed if you abuse it (e.g baiting antags into failing to convert you).
+
 trait-name-CyberEyes = Cyber-Eyes Basic System
 trait-description-CyberEyes =
     One or more of your eyes have been replaced with modular cybernetic optical implants.
@@ -96,3 +102,6 @@ trait-description-OniShooting = Due to an innate skill issue, you can't aim at a
 
 trait-name-BadShooting = Bad Aim
 trait-description-BadShooting = Due to a lack of training or simply a lack of skill or talent, you can't aim very well.
+
+trait-rrrolling-accent-name = Rrrolling Accent
+trait-rrrolling-accent-desc = Whether it's from culture, physicality, or just an affectation you roll your 'r's.

@@ -43,12 +43,13 @@
     requiredLegs: 2
   - type: Speech
     speechVerb: Parrot
-    speechSounds: MaleAvali
+    speechSounds: UnisexResomi
+    allowedEmotes: ['Chirp', 'Purr', 'Growl', 'HarpySquawk', 'HarpyCaw', 'Coo']
   - type: Vocal # Floofstation - uncommented
     sounds:
-      Male: RMCMaleAvali
-      Unsexed: RMCMaleAvali
-      Female: RMCFemaleAvali
+      Male: MaleResomi
+      Unsexed: MaleResomi
+      Female: FemaleResomi
   - type: Hands
     handDisplacement:
       sizeMaps:
@@ -173,10 +174,10 @@
     leftBarePrint: "footprint-left-bare-lizard"
     rightBarePrint: "footprint-right-bare-lizard"
   - type: Bloodstream # Goobstation - lore stuff
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: AmmoniaBlood
-        Quantity: 1
+        Quantity: 200
   - type: MeleeWeapon # Goobstation - aliem raptors probably use their claws
     soundHit:
       collection: AlienClaw
@@ -187,7 +188,7 @@
         Slash: 5
   - type: Damageable # Goobstation - resomi damage modifiers
     damageModifierSet: Resomi
-  - type: Temperature
+  - type: TemperatureDamage
     coldDamageThreshold: 195.4 # Goobstation - freezing point of ammonia is -77.75°C
     heatDamageThreshold: 320.15 # Goobstation - space chickens can't tolerate reasonable temperatures, but requiring them to stay icy would be cringe, so instead make their heat damage threshold dangerously close to standard atmos, at 47°C
     coldDamage:

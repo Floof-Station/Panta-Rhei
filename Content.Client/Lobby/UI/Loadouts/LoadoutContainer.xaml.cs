@@ -66,4 +66,11 @@ public sealed partial class LoadoutContainer : BoxContainer
 
         _entManager.DeleteEntity(_entity);
     }
+
+    protected override void ExitedTree()
+    {
+        // Floofstation - for some reason, delta-v decided to only delete the entity when disposing the control with disposing = true
+        // This causes a memory leak
+        _entManager.DeleteEntity(_entity);
+    }
 }

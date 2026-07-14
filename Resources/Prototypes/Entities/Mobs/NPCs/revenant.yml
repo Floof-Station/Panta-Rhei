@@ -93,8 +93,13 @@
   - type: Reactive
     groups:
       Acidic: [Touch]
+  - type: Psionic # DeltaV - Revenant is of Noospheric Origin
   - type: Tag
     tags:
     - SlowImmune
     - KnockdownImmune
   - type: UniversalLanguageSpeaker # Floofstation - boo.
+  - type: DamageOnDispel # Euphoria - requires more then 1 dispel to kill
+    damage:
+      types:
+        Holy: 25
