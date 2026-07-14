@@ -7,7 +7,7 @@ trait-replace-blood-slime-name = Blood: Slime
 trait-replace-blood-yellow-name = Blood: Yellow
 trait-replace-blood-clown-name = Blood: Laughter / Clown Blood
 trait-replace-blood-mime-name = Blood: Nothing / Mime Blood
-trait-replace-blood-xenos-name = Blood: Xenos
+trait-replace-blood-xenos-name = Blood: Fluorosulfuric Acid / Xenos Blood
 trait-blood-desc = Your blood is unusual for your species. This doesn't affect what medicines work on you.
 
 trait-healing-minus-name = Regeneration: Compromised
