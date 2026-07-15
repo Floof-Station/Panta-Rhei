@@ -1,39 +1,5 @@
 # Generic Modules
 - type: entity
-  id: BorgModuleOffice
-  parent: [ BaseBorgModule, BaseProviderBorgModule ]
-  name: office drone cyborg module
-  description: Allows cyborgs to write, sign, and stamp paperwork. Paperwork not included.
-  components:
-  - type: Sprite
-    layers:
-    - state: generic
-    - state: icon-pen
-  - type: ItemBorgModule
-    hands:
-    - item: Pen
-    - hand:
-        emptyLabel: borg-slot-documents-empty
-        emptyRepresentative: Paper
-        whitelist:
-          tags:
-          - Book
-          - Document
-          - Write
-    - hand:
-        emptyLabel: borg-slot-documents-empty
-        emptyRepresentative: Paper
-        whitelist:
-          tags:
-          - Book
-          - Document
-          - Write
-    - item: RubberStampApproved
-    - item: RubberStampDenied
-  - type: BorgModuleIcon
-    icon: { sprite: _Floof/Interface/Actions/actions_borg.rsi, state: office-module }
-
-- type: entity
   id: BorgModuleFoamForce
   parent: [ BaseBorgModule, BaseProviderBorgModule ]
   name: foam force cyborg module
