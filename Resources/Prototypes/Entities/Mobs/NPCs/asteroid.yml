@@ -68,12 +68,12 @@
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
     angle: 0
-    attackRate: 0.75
+    attackRate: 0.5 #Euphoria. Was 0.75, which caused a perpetual stunlock from the Goliath hitting you before you could stand up.
     animation: WeaponArcPunch
     damage:
-      types:
-        Slash: 10
-        Piercing: 10
+      types: #Euphoria. Was 10 and 10. Increased by 33% since attackRate decreased by 33%
+        Slash: 13
+        Piercing: 13
     range: 1.12 # Goob - Allows kinetic crushers to fight them without taking guaranteed damage.
   - type: NpcFactionMember
     factions:
