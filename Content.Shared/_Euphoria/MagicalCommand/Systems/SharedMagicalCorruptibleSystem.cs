@@ -54,11 +54,13 @@ public abstract class SharedMagicalCorruptibleSystem : EntitySystem
         _popupSystem.PopupPredicted(popup, ent, args.User);
         ent.Comp.CorruptStream ??= _audio.PlayPredicted(ent.Comp.CorruptStartSound, ent.Owner, args.User)?.Entity;
         _tools.UseTool(args.Used, args.User, ent.Owner, ent.Comp.Time, requiredQuality, new CorruptionFinishedEvent());
+        ent.Comp.CurrentEffect = PredictedSpawnAtPosition(ent.Comp.CorruptionStartEffect, Transform(ent.Owner).Coordinates);
     }
 
     private void OnCorruptionFinished(Entity<CorruptibleComponent> ent, ref CorruptionFinishedEvent args)
     {
         ent.Comp.CorruptStream = _audio.Stop(ent.Comp.CorruptStream);
+        PredictedQueueDel(ent.Comp.CurrentEffect);
         if (args.Cancelled)
             return;
 
@@ -69,6 +71,7 @@ public abstract class SharedMagicalCorruptibleSystem : EntitySystem
             ? Loc.GetString("corruptible-component-decorruption-finish", ("target", ent.Owner))
             : Loc.GetString("corruptible-component-corruption-finish", ("target", ent.Owner));
         _popupSystem.PopupPredicted(popup, spawnedEnt, args.User);
+        var spawnedEffect = PredictedSpawnAtPosition(ent.Comp.CorruptionEndEffect, Transform(ent.Owner).Coordinates);
         if (args.Used != null)
             // Would be nicer if I could set it to the created entity, but that only plays for a split second.
             _audio.PlayPredicted(ent.Comp.CorruptFinishSound, args.Used.Value, args.User);

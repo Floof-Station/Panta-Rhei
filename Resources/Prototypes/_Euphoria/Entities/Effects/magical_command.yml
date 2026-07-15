@@ -1,0 +1,21 @@
+- type: entity
+  id: MagicalCommandEffectCorruptBegin
+  parent: AdminInstantEffectBase
+  name: corruption begin effect
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/anomaly.rsi
+    state: anom4
+    visible: true
+  - type: TimedDespawn
+    lifetime: 3
+
+- type: entity
+  id: MagicalCommandEffectCorruptEnd
+  parent: AdminInstantEffectBase
+  name: corruption end effect
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/shadow_anom.rsi
+    state: anom
+    visible: true

@@ -42,4 +42,12 @@ public sealed partial class CorruptibleComponent : Component
 
     [DataField]
     public SoundSpecifier CorruptFinishSound = new SoundPathSpecifier("/Audio/_Euphoria/Magic/corruption-crack.ogg");
+
+    [DataField]
+    public EntProtoId CorruptionStartEffect = "MagicalCommandEffectCorruptBegin";
+
+    public EntityUid? CurrentEffect;
+
+    [DataField]
+    public EntProtoId CorruptionEndEffect = "MagicalCommandEffectCorruptEnd";
 }
