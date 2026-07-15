@@ -763,7 +763,7 @@
 
 - type: loadoutGroup
   id: ClownJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [EuphoriaClownInnerClothing, FloofJumpsuits] # Floofstation
   name: loadout-group-clown-jumpsuit
   loadouts:
   - ClownSuit
@@ -791,7 +791,7 @@
 
 - type: loadoutGroup
   id: ClownShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [EuphoriaClownShoes, FloofShoes] # Floofstation
   name: loadout-group-clown-shoes
   loadouts:
   - ClownShoes
