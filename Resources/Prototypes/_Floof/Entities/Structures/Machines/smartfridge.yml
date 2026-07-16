@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: DVSmartFridge
+  id: SmartFridgeService
+  name: Service SmartFridge
+  description: A refrigerated storage unit for keeping plants, food and beverages cold and fresh.
+  components:
+  - type: AccessReader
+    access: [["Service"], ["Bar"], ["Kitchen"], ["Hydroponics"]]
+  - type: Machine
+    board: SmartFridgeServiceCircuitboard

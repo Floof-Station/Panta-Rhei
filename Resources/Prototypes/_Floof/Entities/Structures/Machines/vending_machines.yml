@@ -99,3 +99,31 @@
     rotateWhileAnchored: false
   - type: DatasetVocalizer
     dataset: VendingMachineBepisAds
+
+# chip vending machine
+- type: entity
+  parent: VendingMachineWallmount
+  id: VendingMachineWallChipDispenser
+  name: Chip Dispenser
+  description: Lets go gambling, winning one speso at a time.
+  components:
+  - type: VendingMachine
+    pack: ChipDispenserInventory
+    offState: chipmachine-off
+    brokenState: chipmachine-broken
+    normalState: chipmachine-on
+    denyState: chipmachine-deny
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/Casino/casino_chip_dispenser.rsi
+    layers:
+    - state: "chipmachine-off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "chipmachine-off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: chipmachine-panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.3
+    energy: 3.0
+    color: "#43ccb5"

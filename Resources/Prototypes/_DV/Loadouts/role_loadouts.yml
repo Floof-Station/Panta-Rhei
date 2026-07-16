@@ -15,6 +15,9 @@
   - Glasses
   - Survival
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCourier # Floof
+  - FloofUndergarmentBottomCourier # Floof
+  - FloofSocksCourier # Floof
 
 - type: roleLoadout
   id: JobCargoAssistant
@@ -22,6 +25,7 @@
   groups:
   - GroupTankHarness
   - CargoAssistantHead
+  - CargoTechnicianNeck # Euphoria
   - CargoAssistantJumpsuit
   - CargoAssistantBackpack
   - CargoAssistantOuterClothing
@@ -48,6 +52,9 @@
   - GroupSpeciesBreathToolCorpsman
   - SecurityFirearm
   - SecurityFirearmAmmo
+  - FloofUndergarmentTopCorpsman # Floof
+  - FloofUndergarmentBottomCorpsman # Floof
+  - FloofSocksCorpsman # Floof
 
 # Medical
 - type: roleLoadout
@@ -68,6 +75,9 @@
   - SurvivalMedical
   - MedicalDoctorJobTrinkets # Euphoria
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopMedicalDoctor # Floof
+  - FloofUndergarmentBottomMedicalDoctor # Floof
+  - FloofSocksMedicalDoctor # Floof
 
 # Justice
 - type: roleLoadout
@@ -93,6 +103,7 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # Euphoria
   - ClerkJumpsuit
   - ClerkNeck
   - ClerkOuterClothing
@@ -110,6 +121,7 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # Euphoria
   - ProsecutorJumpsuit
   - ProsecutorNeck
   - ProsecutorOuterClothing
@@ -146,12 +158,24 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
+  - AssistantHead # Euphoria
+  - PassengerNeck # Euphoria
   - CommonBackpack
   - Glasses
   - Survival
   - Trinkets
   - ZookeeperJobTrinkets
   - GroupSpeciesBreathTool
+  # Floof section
+  - PassengerShoes
+  - ServiceWorkerGloves
+  - ServiceWorkerNeck
+  - PassengerOuterClothing
+  - Glasses
+  - FloofUndergarmentTopSerivceWorker
+  - FloofUndergarmentBottomSerivceWorker
+  - FloofSocksSerivceWorker
+  # Floof section end
 
 - type: roleLoadout
   id: JobBoxer
@@ -170,3 +194,8 @@
   - Trinkets
   - BoxerJobTrinkets
   - GroupSpeciesBreathTool
+  # Floof section
+  - FloofUndergarmentTopSerivceWorker
+  - FloofUndergarmentBottomSerivceWorker
+  - FloofSocksSerivceWorker
+  # Floof section end

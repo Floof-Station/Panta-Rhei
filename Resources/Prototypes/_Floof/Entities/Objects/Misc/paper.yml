@@ -31,17 +31,27 @@
     maxWritableArea: 256.0, 0.0
   - type: Construction
     graph: PaperCoupon
-    node: start
+    node: coupon
 
 - type: entity
-  parent: BaseItem
+  parent: Paper # using base paper
   id: PaperPlane
   name: Paper Plane
   description: It's a bird! No its a plane! No is just a paper plane.
   components:
   - type: Sprite
     sprite: _Floof/Objects/Misc/paper_plane.rsi
-    state: icon
+    layers:
+    - state: icon # actual sprite of the plane
+    - state: icon # we dont have a written on paper plane sprite so overriding this with our icon
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - sprite: /Textures/Objects/Misc/bureaucracy.rsi # point to the stamp sprites so we can use them
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+      state: paper_stamp-generic
+      scale: 0.3, 0.3 # scale them down so we can have a tiny stamp on the wing
+      offset: -0.13, 0.07 # offset just enough so the stamp is on the wing
   - type: Fixtures
     fixtures:
       fix1:
@@ -66,7 +76,7 @@
     - Trash
   - type: Construction
     graph: PaperPlane
-    node: start
+    node: paperplane
 
 - type: entity
   parent: BaseItem
@@ -85,4 +95,4 @@
     - Trash
   - type: Construction
     graph: PaperPlane
-    node: start
+    node: origamiswan

@@ -1,10 +1,10 @@
-﻿#below addtions are for ce
+﻿# ======================================================== #
+# ce additions
 - type: loadoutGroup
   id: FloofCeJumpsuits
   abstract: true
   loadouts:
   - ChiefEngineerLegacyJumpsuit
-  - UniformChiefEngiThong
 
 - type: loadoutGroup
   id: FloofCeGloves
@@ -18,9 +18,7 @@
   abstract: true
   loadouts:
   - BootsWorkWorn
-  - UnderSocksChiefEngi
 
-# ce pdas
 - type: loadoutGroup
   id: FloofCEPDAs
   name: loadout-group-chief-engineer-pdas
@@ -44,12 +42,29 @@
   loadouts:
   - ChiefEngineerLegacyCloak
 
+- type: loadoutGroup
+  id: FloofUndergarmentTopCE
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomCE
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformChiefEngiThong
+
+- type: loadoutGroup
+  id: FloofSocksCE
+  parent: FloofSocksPassenger
+  loadouts:
+  - UnderSocksChiefEngi
+
+# ======================================================== #
 # engineer & atmos additions
 - type: loadoutGroup
   id: FloofEngineeringJumpsuit
   abstract: true
   loadouts:
-  - UniformEngiThong
   - UniformEngiCatsuit
 
 - type: loadoutGroup
@@ -63,7 +78,6 @@
   abstract: true
   loadouts:
   - BootsWorkWorn
-  - ClothingUnderSocksEngi
 
 - type: loadoutGroup
   id: FloofEngineeringGlasses
@@ -75,6 +89,23 @@
   - ClothingHeadHatWeldingMaskPainted
   - ClothingHeadHatWeldingMaskFlame
   - ClothingHeadHatWeldingMaskFlameBlue
+
+- type: loadoutGroup
+  id: FloofUndergarmentTopEngineer
+  parent: FloofUndergarmentTopPassenger
+  loadouts: [] # Nuthing here yet
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomEngineer
+  parent: FloofUndergarmentBottomPassenger
+  loadouts:
+  - UniformEngiThong
+
+- type: loadoutGroup
+  id: FloofSocksEngineer
+  parent: FloofSocksPassenger
+  loadouts:
+  - ClothingUnderSocksEngi
 
 # technical assistant pdas
 - type: loadoutGroup

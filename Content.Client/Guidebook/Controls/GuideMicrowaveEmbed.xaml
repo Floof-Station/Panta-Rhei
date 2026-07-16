@@ -8,8 +8,11 @@
     <BoxContainer Orientation="Vertical">
         <PanelContainer HorizontalExpand="True">
             <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
+                <!-- Euphoria changes -->
+                <GridContainer Columns="3" Name="ResultsGrid"/>
+                <!-- Euphoria changes
                 <BoxContainer Name="IconContainer"/>
-                <RichTextLabel Name="ResultName"/>
+                <RichTextLabel Name="ResultName"/> -->
             </BoxContainer>
             <PanelContainer.PanelOverride>
                 <gfx:StyleBoxFlat BackgroundColor="#393c3f"/>
@@ -24,6 +27,7 @@
 
             <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                 <Label Text="{Loc 'guidebook-microwave-cook-time-header'}"/>
+                <BoxContainer Name="Machines"/><!-- Frontier: show entities that can cook a recipe. -->
                 <RichTextLabel Name="CookTimeLabel"/>
             </BoxContainer>
         </GridContainer>

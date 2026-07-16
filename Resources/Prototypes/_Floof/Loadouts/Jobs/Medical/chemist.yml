@@ -1,8 +1,4 @@
 ﻿# chemist outfits
-- type: loadout
-  id: UniformChemistsThong
-  equipment:
-    jumpsuit: ClothingUniformChemistsThong
 
 # gloves
 - type: loadout
@@ -11,10 +7,6 @@
     gloves: ClothingHandsChemistsWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksChemists
-  equipment:
-    shoes: ClothingUnderSocksChemists
 
 # eyes
 - type: loadout
@@ -45,3 +37,18 @@
   id: ClothingNeckCollarEmotionalSupportChemist
   equipment:
     neck: ClothingNeckCollarEmotionalSupportChemist
+
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformChemistsThong
+  equipment:
+    undergarmentBottom: ClothingUniformChemistsThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksChemists
+  equipment:
+    undergarmentSocks: ClothingUnderSocksChemists
