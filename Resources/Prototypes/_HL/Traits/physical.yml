@@ -1,0 +1,15 @@
+- type: trait
+  id: HardSkin
+  name: trait-hardskin-name
+  description: trait-hardskin-desc
+  category: DisabilitiesPhysical
+  cost: -4
+  speciesBlacklist:
+  - IPC
+  - Chitinid
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BlockInjection
+      blockHypospray: true
+      blockReason: hardskin

@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._DV.Chemistry.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
@@ -199,15 +200,29 @@ public sealed partial class InjectorSystem : EntitySystem
             || !GetMobsDoAfterTime(injector, user, target, out var doAfterTime, out var amount)) // Get the DoAfter time.
             return false;
 
-        if (!_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
+        // Euphoria start
+        if (TryComp<BlockInjectionComponent>(target, out var blockComponent))
         {
-            BreakOnMove = true,
-            BreakOnWeightlessMove = false,
-            BreakOnDamage = true,
-            NeedHand = injector.Comp.NeedHand,
-            BreakOnHandChange = injector.Comp.BreakOnHandChange,
-            MovementThreshold = injector.Comp.MovementThreshold,
-        }))
+            if (blockComponent.BlockHypospray || !injector.Comp.AllowedModes.Contains("HyposprayDynamicMode"))
+            {
+                var err = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}",
+                    ("target", Identity.Entity(target, EntityManager)));
+
+                _popup.PopupClient(err, target, user);
+                return false;
+            }
+        }
+        // Euphoria end
+
+        if (!_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
+            {
+                BreakOnMove = true,
+                BreakOnWeightlessMove = false,
+                BreakOnDamage = true,
+                NeedHand = injector.Comp.NeedHand,
+                BreakOnHandChange = injector.Comp.BreakOnHandChange,
+                MovementThreshold = injector.Comp.MovementThreshold,
+            }))
             return false;
 
         // If the DoAfter was instant, don't send popups and logs indicating an attempt.
