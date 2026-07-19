@@ -205,7 +205,7 @@ public sealed partial class InjectorSystem : EntitySystem
         {
             if (blockComponent.BlockHypospray || !injector.Comp.AllowedModes.Contains("HyposprayDynamicMode"))
             {
-                var err = Loc.GetString($"injector-component-deny-{blockComponent.BlockReason}",
+                var err = Loc.GetString($"injector-component-deny-{blockComponent.ReasonLocId}",
                     ("target", Identity.Entity(target, EntityManager)));
 
                 _popup.PopupClient(err, target, user);
