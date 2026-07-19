@@ -12,7 +12,7 @@ public sealed partial class BlockInjectionComponent : Component
     /// If true, this component will block injections from hypospray.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool BlockHypospray = true;
+    public bool BlockHypospray;
 
     /// <summary>
     /// Reason why injections are blocked. Used for localization keys like "injector-component-deny-{BlockReason}".
