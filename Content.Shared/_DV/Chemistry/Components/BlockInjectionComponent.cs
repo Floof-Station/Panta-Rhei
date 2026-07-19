@@ -18,5 +18,5 @@ public sealed partial class BlockInjectionComponent : Component
     /// Reason why injections are blocked. Used for localization keys like "injector-component-deny-{BlockReason}".
     /// </summary>
     [DataField]
-    public string ReasonLocId { get; set; } = "chitinid";
+    public string ReasonLocId { get; set; } = "injector-component-deny-chitinid";
 }
