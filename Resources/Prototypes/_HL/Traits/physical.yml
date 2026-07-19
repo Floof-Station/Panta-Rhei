@@ -4,9 +4,15 @@
   description: trait-hardskin-desc
   category: DisabilitiesPhysical
   cost: -4
-  speciesBlacklist:
-  - IPC
-  - Chitinid
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+    - Chitinid
   effects:
   - !type:AddCompsEffect
     components:
