@@ -215,14 +215,14 @@ public sealed partial class InjectorSystem : EntitySystem
         // Euphoria end
 
         if (!_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
-            {
-                BreakOnMove = true,
-                BreakOnWeightlessMove = false,
-                BreakOnDamage = true,
-                NeedHand = injector.Comp.NeedHand,
-                BreakOnHandChange = injector.Comp.BreakOnHandChange,
-                MovementThreshold = injector.Comp.MovementThreshold,
-            }))
+        {
+            BreakOnMove = true,
+            BreakOnWeightlessMove = false,
+            BreakOnDamage = true,
+            NeedHand = injector.Comp.NeedHand,
+            BreakOnHandChange = injector.Comp.BreakOnHandChange,
+            MovementThreshold = injector.Comp.MovementThreshold,
+        }))
             return false;
 
         // If the DoAfter was instant, don't send popups and logs indicating an attempt.
