@@ -85,6 +85,7 @@ phrase-breakfast = breakfast
 phrase-lunch = lunch
 phrase-dinner = dinner
 phrase-snack = snack
+phrase-was = was
 
 ## Body Parts
 phrase-arm = arm

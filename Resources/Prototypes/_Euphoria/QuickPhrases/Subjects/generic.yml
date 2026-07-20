@@ -414,6 +414,11 @@
   id: SnackPhrase
   parent: BaseSubjectPhrase
   text: phrase-snack
+
+- type: quickPhrase
+  id: WasPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-was
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase

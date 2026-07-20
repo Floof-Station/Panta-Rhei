@@ -98,3 +98,4 @@ phrase-before = before
 phrase-soon = soon
 phrase-next = next
 phrase-again = again
+phrase-we = we
