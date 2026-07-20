@@ -54,6 +54,7 @@ phrase-brother = brother
 phrase-sister = sister
 phrase-sibling = sibling
 phrase-relative = relative
+phrase-offspring = offspring
 
 ## Misc
 phrase-understand = understand
@@ -73,6 +74,12 @@ phrase-all-done = all done
 phrase-or = or
 phrase-but = but
 phrase-like = like
+phrase-is = is
+phrase-god = God
+phrase-materials = materials
+phrase-kink = kink
+phrase-bone = bone
+phrase-pornography = pornography
 
 ## Body Parts
 phrase-arm = arm
@@ -109,6 +116,9 @@ phrase-balls = balls
 phrase-fuck = fuck
 phrase-shit = shit
 phrase-slut = slut
+phrase-tits = tits
+phrase-boobs = boobs
+phrase-dick = dick
 
 ## Fluids
 phrase-squirt = squirt

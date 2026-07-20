@@ -27,3 +27,13 @@
   id: SpeciesPuppyPhrase
   parent: BaseAnimalSpeciesPhrase
   text: phrase-species-puppy
+
+- type: quickPhrase
+  id: SpeciesFrogPhrase
+  parent: BaseAnimalSpeciesPhrase
+  text: phrase-species-frog
+
+- type: quickPhrase
+  id: SpeciesHorsePhrase
+  parent: BaseAnimalSpeciesPhrase
+  text: phrase-species-horse
