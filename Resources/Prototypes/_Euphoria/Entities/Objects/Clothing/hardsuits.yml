@@ -1177,6 +1177,15 @@
         evil:
           True: {state: icon-evil}
           False: {state: icon}
+  - type: ToggleableVisuals
+    spriteLayer: enum.ToggleableVisuals.Enabled
+    inhandVisuals:
+      left:
+      - state: fake-inhand-right
+      right:
+      - state: fake-inhand-right
+    replaceInHands: true
+    toggledKeyword: fake
   - type: ItemToggle
     onActivate: false
     onUse: false

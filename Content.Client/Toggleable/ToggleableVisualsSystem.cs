@@ -120,21 +120,28 @@ public sealed class ToggleableVisualsSystem : VisualizerSystem<ToggleableVisuals
 
         var modulateColor = AppearanceSystem.TryGetData<Color>(uid, ToggleableVisuals.Color, out var color, appearance);
 
-        var i = 0;
-        var defaultKey = $"inhand-{args.Location.ToString().ToLowerInvariant()}-toggle";
-        foreach (var layer in layers)
+        if (component.ReplaceInHands) // Start Euphoria changes
         {
-            var key = layer.MapKeys?.FirstOrDefault();
-            if (key == null)
-            {
-                key = i == 0 ? defaultKey : $"{defaultKey}-{i}";
-                i++;
-            }
-
-            if (modulateColor)
-                layer.Color = color;
-
-            args.Layers.Add((key, layer));
+            _item.SetHeldPrefix(uid, component.ToggledKeyword);
         }
+        else
+        {
+            var i = 0;
+            var defaultKey = $"inhand-{args.Location.ToString().ToLowerInvariant()}-toggle";
+            foreach (var layer in layers)
+            {
+                var key = layer.MapKeys?.FirstOrDefault();
+                if (key == null)
+                {
+                    key = i == 0 ? defaultKey : $"{defaultKey}-{i}";
+                    i++;
+                }
+
+                if (modulateColor)
+                    layer.Color = color;
+
+                args.Layers.Add((key, layer));
+            }
+        } // End Euphoria changes
     }
 }

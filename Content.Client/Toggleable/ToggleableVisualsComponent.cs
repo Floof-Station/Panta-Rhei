@@ -27,4 +27,17 @@ public sealed partial class ToggleableVisualsComponent : Component
     /// </summary>
     [DataField]
     public Dictionary<string, List<PrototypeLayerData>> ClothingVisuals = new();
+
+    // Begin Euphoria changes
+
+    /// <summary>
+    /// Determines whether the layer is just added and removed or whether it overwrites the previous appearance entirely.
+    /// </summary>
+    [DataField]
+    public bool ReplaceInHands;
+
+    [DataField]
+    public string ToggledKeyword = "toggled";
+
+    //End Euphoria changes
 }
