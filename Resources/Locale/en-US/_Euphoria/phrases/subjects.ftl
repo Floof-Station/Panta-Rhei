@@ -80,6 +80,11 @@ phrase-materials = materials
 phrase-kink = kink
 phrase-bone = bone
 phrase-pornography = pornography
+phrase-meal = meal
+phrase-breakfast = breakfast
+phrase-lunch = lunch
+phrase-dinner = dinner
+phrase-snack = snack
 
 ## Body Parts
 phrase-arm = arm

@@ -389,6 +389,31 @@
   id: PornographyPhrase
   parent: BaseSubjectPhrase
   text: phrase-pornography
+
+- type: quickPhrase
+  id: MealPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-meal
+
+- type: quickPhrase
+  id: BreakfastPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-breakfast
+
+- type: quickPhrase
+  id: LunchPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-lunch
+
+- type: quickPhrase
+  id: DinnerPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-dinner
+
+- type: quickPhrase
+  id: SnackPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-snack
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase

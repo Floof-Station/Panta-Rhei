@@ -257,3 +257,23 @@
   id: NowPhrase
   parent: BaseQualitativePhrase
   text: phrase-now
+
+- type: quickPhrase
+  id: BeforePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-before
+
+- type: quickPhrase
+  id: SoonPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-soon
+
+- type: quickPhrase
+  id: NextPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-next
+
+- type: quickPhrase
+  id: AgainPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-again
