@@ -170,6 +170,31 @@
     slots:
     - HeadSide
 
+#Empowered Cap hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitEmpoweredMagicalCAPHat
+  name: POWER
+  description: placeholder
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-cap-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-cap-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#ffffff"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
 #Cmo hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -245,7 +270,32 @@
     slots:
     - HeadSide
 
-#tide Hardsuit (placeholder)
+#Empowered Generic Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitEmpoweredMagicalGenericBow
+  name: POWER
+  description: placeholder
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-generic-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-generic-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#fdbec8"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Tider Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
   id: ClothingOuterHardsuitMagicalTiderGear
@@ -263,6 +313,31 @@
     energy: 4
     mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
     color: "#fcd4ec"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: HideLayerClothing
+    slots:
+    - HeadSide
+
+#Empowered Tider Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitEmpoweredMagicalTiderGear
+  name: POWER
+  description: placeholder
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-tider-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-tider-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 4
+    energy: 4
+    mask: /Textures/_Euphoria/Effects/LightMasks/null.png 
+    color: "#e3c786"
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
@@ -303,6 +378,42 @@
   - type: HideLayerClothing
     slots:
     - Hair
+
+#Empowered Syndie Nemesis Hardsuit
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: ClothingOuterHardsuitEmpoweredMagicalSyndieHood
+  name: Hydra Hood
+  description: Cut off one head, two more will take its place.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-syndicate-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/Hardsuit/empowered-syndicate-magical.rsi
+    equipSound: /Audio/Magic/staff_healing.ogg
+    unequipSound: /Audio/Magic/staff_healing.ogg
+  - type: PointLight
+    radius: 5
+    energy: 5
+    mask: /Textures/_Euphoria/Effects/LightMasks/snake2.png 
+    color: "#e60243"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: IdentityBlocker
+  - type: HideLayerClothing
+    slots:
+    - Hair
+    - Snout
+    - HeadTop
+    - HeadSide
 
 #Syndie Henchman Hardsuit
 - type: entity

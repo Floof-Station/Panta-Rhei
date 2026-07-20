@@ -326,7 +326,7 @@
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalCAP
   - type: PowerOfFriendship
-    empoweredResult: ClothingHeadKyuSkinHat
+    empoweredResult: ClothingOuterHardsuitEmpoweredMagicalCAP
 
 #Empowered Cap Hardsuit
 - type: entity
@@ -337,9 +337,9 @@
   description: A ornate pendant, passed down from someone very important to you. You always keep it close to your heart.
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/empowered-cap-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/cap-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/empowered-cap-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
     unequipSound: /Audio/_Euphoria/Magic/magical-transformation2.ogg
   - type: PressureProtection
@@ -367,7 +367,7 @@
     walkModifier: 0.8
     sprintModifier: 0.8
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalCAPHat
+    clothingPrototype: ClothingOuterHardsuitEmpoweredMagicalCAPHat
   - type: Item
     size: Large
   - type: Tag
@@ -554,7 +554,7 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalGenericBow
+    clothingPrototype: ClothingOuterHardsuitEmpoweredMagicalGenericBow
   - type: Item
     size: Large
   - type: Tag
@@ -625,9 +625,9 @@
   description: Greed Equals Justice, desire everything for all.
   components:
   - type: Sprite
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/empowered-tider-magical.rsi
   - type: Clothing
-    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/tider-magical.rsi
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/empowered-tider-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/tide-transformation.ogg
     unequipSound: /Audio/_Euphoria/Magic/tide-transformation3.ogg
   - type: PressureProtection
@@ -641,9 +641,10 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: ToggleableClothing
-    clothingPrototype: ClothingOuterHardsuitMagicalTiderGear
+    clothingPrototype: ClothingOuterHardsuitEmpoweredMagicalTiderGear
   - type: Item
     size: Large
+  - type: IdentityBlocker
   - type: Tag
     tags:
     - Hardsuit
@@ -662,7 +663,6 @@
   - type: Tool
     qualities:
     - Decorrupting
-
 
 #-------------------------- Evil part ----------------------------------------------
 
@@ -730,6 +730,68 @@
     empoweredResult: ClothingOuterHardsuitEmpoweredMagicalTide
     keyword: evil
 
+#Empowered Syndie Nemesis Hardsuit
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
+  id: ClothingOuterHardsuitEmpoweredMagicalSyndie
+  suffix: Empowered m.Trinket
+  name: STRONG Hydra pendant
+  description: placeholder
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/empowered-syndicate-magical.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/empowered-syndicate-magical.rsi
+    equipSound: /Audio/_Euphoria/Magic/magical-transformation-evil.ogg
+    unequipSound: /Audio/_Euphoria/Magic/magical-transformation-evil2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
+  - type: FireProtection
+    reduction: 0.8
+  - type: StaminaResistance # DeltaV - uncommented
+    damageCoefficient: 0.3 # DeltaV - was 0.6
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.2 # DeltaV - was 0.6
+        Slash: 0.2 # DeltaV - was 0.6
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0.01
+        Caustic: 0.5
+        Cold: 0.4 # DeltaV - Cold res
+  - type: DamageOnShootProtection # imp
+    slots: OUTERCLOTHING
+    damageProtection:
+      flatReductions:
+        Blunt: 10
+  - type: Item
+    size: Large
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: ClothingOuterHardsuitEmpoweredMagicalSyndieHood
+  - type: Tag
+    tags:
+    - Hardsuit
+    - WhitelistChameleon
+  - type: Tool
+    qualities:
+    - Corrupting
+  - type: Corruptible
+    entityId: ClothingOuterHardsuitMagicalGeneric
+    corrupted: true
+    requiresEmpowered: true
+
+
 #Syndie Henchman Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseSyndicateContraband]
@@ -784,6 +846,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-hop-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-hop-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation5.ogg
@@ -837,17 +902,35 @@
       params:
         variation: 0.09
         volume: -6
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+  - type: FriendshipContributor
+    keyword: evil
 
-#CORRUPTED Head of Security's Hardsuit
+#CORRUPTED HOS Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCorruptedMagicalHOS
   suffix: Corrupted m.Trinket
-  name: CORRUPTED Wings of the law wand
+  name: CORRUPTED Chain Whip
   description: PLACHOLDER
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-hos-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-hos-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -895,6 +978,21 @@
     entityId: ClothingOuterHardsuitMagicalHOS
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED QM Hardsuit
 - type: entity
@@ -906,6 +1004,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-qm-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-qm-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -958,6 +1059,21 @@
     entityId: ClothingOuterHardsuitMagicalQM
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED RD Hardsuit
 - type: entity
@@ -969,6 +1085,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-rd-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-rd-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -1021,7 +1140,21 @@
       params:
         variation: 0.09
         volume: -6
-
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED CJ Hardsuit
 - type: entity
@@ -1033,6 +1166,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cj-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cj-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -1075,6 +1211,21 @@
     entityId: ClothingOuterHardsuitMagicalCJ
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED Cap Hardsuit
 - type: entity
@@ -1086,6 +1237,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cap-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-cap-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -1127,13 +1281,28 @@
     entityId: ClothingOuterHardsuitMagicalCAP
     corrupted: true
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED Cmo Hardsuit
 - type: entity
   parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCorruptedMagicalCMO
   suffix: Corrupted m.Trinket
-  name: CORRUPTED Panacea flask
+  name: CORRUPTED Desised Heart
   description: PLACHOLDER
   components:
   - type: Sprite
@@ -1196,6 +1365,8 @@
     slots:
     - Hair
     - HeadSide
+  - type: FriendshipContributor
+    keyword: evil
 
 #CORRUPTED CE Hardsuit
 - type: entity
@@ -1207,6 +1378,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-ce-magical.rsi
+    layers:
+    - state: icon
+      map: ["evil"]
   - type: Clothing
     sprite: _Euphoria/Clothing/OuterClothing/Hardsuits/evil-ce-magical.rsi
     equipSound: /Audio/_Euphoria/Magic/magical-transformation4.ogg
@@ -1268,3 +1442,31 @@
     slots:
     - Hair
     - HeadSide
+  - type: FriendshipContributor
+    keyword: evil
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        evil:
+          True: {state: icon-evil}
+          False: {state: icon}
+  - type: ItemToggle
+    onActivate: false
+    onUse: false
+    # because it can't be changed in-hand
+    predictable: false
+  - type: ItemToggleFirstEquip
+
+- type: entity
+  id: AnimationMagical
+  name: Sparkle test
+  components:
+    - type: TimedDespawn
+      lifetime: 1
+    - type: EvaporationSparkle
+    - type: Sprite
+      layers:
+        - sprite: Fluids/wet_floor_sparkles.rsi
+          state: sparkles
+      drawdepth: Puddles
