@@ -56,6 +56,7 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalHOS
+  - type: IdentityBlocker
 
 
 #HOP Hardsuit
@@ -107,6 +108,7 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalHOP
+  - type: IdentityBlocker
 
 #QM Hardsuit
 - type: entity
@@ -169,7 +171,7 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalQM
-
+  - type: IdentityBlocker
 
 #RD Hardsuit
 - type: entity
@@ -222,6 +224,7 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalRDMysta
+  - type: IdentityBlocker
 
 #CJ Hardsuit
 - type: entity
@@ -274,6 +277,7 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalCJ
+  - type: IdentityBlocker
 
 #Cap Hardsuit
 - type: entity
@@ -327,6 +331,7 @@
     entityId: ClothingOuterHardsuitCorruptedMagicalCAP
   - type: PowerOfFriendship
     empoweredResult: ClothingOuterHardsuitEmpoweredMagicalCAP
+  - type: IdentityBlocker
 
 #Empowered Cap Hardsuit
 - type: entity
@@ -380,6 +385,7 @@
   - type: Tool
     qualities:
     - Decorrupting
+  - type: IdentityBlocker
 
 #Cmo Hardsuit
 - type: entity
@@ -419,6 +425,9 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalCMO
+    corruptionStartEffect: AnimationMagicalEffectPurification
+    corruptionEndEffect: AnimationMagicalEffectCorruption
+  - type: IdentityBlocker
 
 #CE Hardsuit
 - type: entity
@@ -486,6 +495,7 @@
   - type: FriendshipContributor
   - type: Corruptible
     entityId: ClothingOuterHardsuitCorruptedMagicalCE
+  - type: IdentityBlocker
 
 #Generic Hardsuit 
 - type: entity
@@ -528,6 +538,7 @@
     - Decorrupting
   - type: PowerOfFriendship
     empoweredResult: ClothingOuterHardsuitEmpoweredMagicalGeneric
+  - type: IdentityBlocker
 
 #Empowered Generic Hardsuit 
 - type: entity
@@ -567,6 +578,7 @@
   - type: Tool
     qualities:
     - Decorrupting
+  - type: IdentityBlocker
 
 #Tider Hardsuit
 - type: entity
@@ -615,6 +627,7 @@
     - Decorrupting
   - type: PowerOfFriendship
     empoweredResult: ClothingOuterHardsuitEmpoweredMagicalTide
+  - type: IdentityBlocker
 
 #Empowered Tider Hardsuit
 - type: entity
@@ -729,6 +742,7 @@
   - type: PowerOfFriendship
     empoweredResult: ClothingOuterHardsuitEmpoweredMagicalTide
     keyword: evil
+  - type: IdentityBlocker
 
 #Empowered Syndie Nemesis Hardsuit
 - type: entity
@@ -790,6 +804,7 @@
     entityId: ClothingOuterHardsuitMagicalGeneric
     corrupted: true
     requiresEmpowered: true
+  - type: IdentityBlocker
 
 
 #Syndie Henchman Hardsuit
@@ -835,6 +850,7 @@
     corruptFinishSound: /Audio/_Euphoria/Magic/magical-transformation.ogg
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
 
 #CORRUPTED HOP Hardsuit
 - type: entity
@@ -993,10 +1009,11 @@
   - type: ItemToggleFirstEquip
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
 
 #CORRUPTED QM Hardsuit
 - type: entity
-  parent: [ClothingOuterHardsuitBase, BaseCommandContraband, BaseJetpack]
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
   id: ClothingOuterHardsuitCorruptedMagicalQM
   suffix: Corrupted m.Trinket
   name: CORRUPTED Black credit card
@@ -1014,28 +1031,17 @@
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.6
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.9
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.7
-        Slash: 0.5
-        Piercing: 0.7
-        Heat: 0.6
-        Radiation: 0.3
-        Caustic: 0.7
+        Caustic: 0.3
   - type: ClothingSpeedModifier
-    walkModifier: 0.7
-    sprintModifier: 0.7
-  - type: GasTank
-    outputPressure: 21.3
-    air:
-      volume: 5
-      temperature: 293.15
-      moles:
-        - 1.025689525 # oxygen
-        - 1.025689525 # nitrogen
+    walkModifier: 1.1
+    sprintModifier: 1.1
   - type: ToggleableClothing
     clothingPrototype: ClothingOuterHardsuitCorruptedMagicalQMHat
   - type: Item
@@ -1074,6 +1080,7 @@
   - type: ItemToggleFirstEquip
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
 
 #CORRUPTED RD Hardsuit
 - type: entity
@@ -1098,24 +1105,24 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.8
-        Piercing: 0.9
-        Heat: 0.3
-        Radiation: 0.1
+        Blunt: 0.2
+        Slash: 0.2
+        Piercing: 0.2
+        Heat: 0.2
+        Radiation: 0
         Caustic: 0.2
-        Holy: 0.7 # DeltaV
-        Shadow: 0.7 # DeltaV
   - type: DamageOnShootProtection # imp
     slots: OUTERCLOTHING
     damageProtection:
       flatReductions:
         Blunt: 10
+        Slash: 10
+        Piercing: 10
   - type: ExplosionResistance
-    damageCoefficient: 0.1
+    damageCoefficient: 0
   - type: ClothingSpeedModifier
-    walkModifier: 0.75
-    sprintModifier: 0.75
+    walkModifier: 0.2
+    sprintModifier: 0.2
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingOuterHardsuitCorruptedMagicalRDWig
@@ -1155,6 +1162,8 @@
   - type: ItemToggleFirstEquip
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
+
 
 #CORRUPTED CJ Hardsuit
 - type: entity
@@ -1226,6 +1235,7 @@
   - type: ItemToggleFirstEquip
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
 
 #CORRUPTED Cap Hardsuit
 - type: entity
@@ -1296,6 +1306,7 @@
   - type: ItemToggleFirstEquip
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
 
 #CORRUPTED Cmo Hardsuit
 - type: entity
@@ -1367,6 +1378,7 @@
     - HeadSide
   - type: FriendshipContributor
     keyword: evil
+  - type: IdentityBlocker
 
 #CORRUPTED CE Hardsuit
 - type: entity
@@ -1457,16 +1469,72 @@
     # because it can't be changed in-hand
     predictable: false
   - type: ItemToggleFirstEquip
+  - type: IdentityBlocker
 
 - type: entity
-  id: AnimationMagical
-  name: Sparkle test
+  id: DeviceQuantumSpinInverterMagicalCard
+  parent: BaseItem
+  name: Calling card
+  description: A calling card, apperently someone will steal your stuff.
   components:
-    - type: TimedDespawn
-      lifetime: 1
-    - type: EvaporationSparkle
-    - type: Sprite
-      layers:
-        - sprite: Fluids/wet_floor_sparkles.rsi
-          state: sparkles
-      drawdepth: Puddles
+  - type: Item
+    size: Tiny
+  - type: PhysicalComposition
+  - type: EmitSoundOnPickup # Euphoria - Bring back interaction SFX from EE
+    sound: /Audio/_EE/Items/Handling/disk_pickup.ogg
+  - type: EmitSoundOnDrop
+    sound: /Audio/_EE/Items/Handling/disk_drop.ogg
+  - type: EmitSoundOnLand
+    sound: /Audio/_EE/Items/Handling/disk_drop.ogg
+  - type: Sprite
+    sprite: _Euphoria/callingcard.rsi
+    layers:
+    - state: icon
+      map: ["base"]
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      color: "#ffffff" 
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: Appearance
+  - type: ArrivalsBlacklist
+  - type: SwapTeleporter
+    teleporterWhitelist:
+      tags:
+      - QuantumSpinInverter
+  - type: GenericVisualizer
+    visuals:
+      enum.SwapTeleporterVisuals.Linked:
+        base:
+          True: { state: linked }
+          False: { state: icon }
+  - type: Tag
+    tags:
+    - QuantumSpinInverter
+  - type: PaperVisuals
+    backgroundImagePath: "/Textures/_Euphoria/Interface/Paper/paper_background_black.svg.96dpi.png"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+    contentMargin: 4.0, 4.0, 4.0, 4.0
+    maxWritableArea: 300.0, 156.0
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 5
+  - type: ThrowingAngle
+    angle: 180
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+  - type: Paper
+  - type: PaperLabelType
+  - type: ActivatableUI
+    key: enum.PaperUiKey.Key
+    requiresComplex: false
+  - type: UserInterface
+    interfaces:
+      enum.PaperUiKey.Key:
+        type: PaperBoundUserInterface
+  - type: FaxableObject
+

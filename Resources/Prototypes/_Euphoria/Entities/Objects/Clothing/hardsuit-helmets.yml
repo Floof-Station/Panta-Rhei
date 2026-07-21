@@ -316,6 +316,16 @@
   - type: PressureProtection
     highPressureMultiplier: 0.45
     lowPressureMultiplier: 1000
+  - type: ThermalVision
+    flashDurationMultiplier: 1
+    pulseTime: 4
+    color: "#fcba03"
+    lightRadius: 15
+    activateSound: /Audio/_Euphoria/Magic/tide-transformation3.ogg
+    useDelay: 10
+    deactivateSound: null
+    isEquipment: true
+    toggleAction: PulseThermalVision
   - type: HideLayerClothing
     slots:
     - HeadSide

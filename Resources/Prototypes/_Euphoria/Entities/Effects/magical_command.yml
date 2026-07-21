@@ -19,3 +19,29 @@
     sprite: Structures/Specific/Anomalies/shadow_anom.rsi
     state: anom
     visible: true
+
+- type: entity
+  id: AnimationMagicalEffectPurification
+  name: Purification
+  components:
+    - type: TimedDespawn
+      lifetime: 5
+    - type: EvaporationSparkle
+    - type: Sprite
+      layers:
+        - sprite: _Euphoria/Effects/Particle/purification.rsi
+          state: purification
+      drawdepth: Effects
+
+- type: entity
+  id: AnimationMagicalEffectCorruption
+  name: Corruption
+  components:
+    - type: TimedDespawn
+      lifetime: 4
+    - type: EvaporationSparkle
+    - type: Sprite
+      layers:
+        - sprite: _Euphoria/Effects/Particle/corruption.rsi
+          state: corruption
+      drawdepth: Effects
