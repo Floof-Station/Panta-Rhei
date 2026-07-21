@@ -43,6 +43,7 @@
         Heat: -3.22 # DeltaV was -1.66
         Shock: -3.22 # DeltaV was -1.66
         Cold: -3.22 # DeltaV
+        Ion: -5 # Euphoria - This is mostly a fix for organics with cybernetics which don't autoheal but works as a way to get someone EMP'd up faster
   # EE Change End
   - type: GuideHelp
     guides:
