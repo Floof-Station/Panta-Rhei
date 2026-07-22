@@ -3,8 +3,8 @@
 # Everyone can understand a message if it is spoken in Universal.
 - type: language
   id: Universal
-  chatPrefix: uni # Euphoria/Starlight
   parent: BaseLanguage
+  chatPrefix: uni # Euphoria/Starlight
   isVisibleLanguage: false
   obfuscation:
     !type:ReplacementObfuscation
@@ -32,8 +32,8 @@
 # Example of a sign language. Used by the Sign Language trait.
 - type: language
   id: Sign
-  chatPrefix: sgn # Euphoria/Starlight
   parent: BaseLanguage
+  chatPrefix: sgn # Euphoria/Starlight
   icon: { state: "sign" }
   speech:
     allowRadio: false

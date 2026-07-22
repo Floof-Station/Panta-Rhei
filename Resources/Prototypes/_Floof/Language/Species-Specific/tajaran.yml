@@ -3,8 +3,8 @@
 # To quote: "The traditionally employed tongue of Adhomai, comprised of expressive yowls and chirps. Native to the Tajara"
 - type: language
   id: SiikMaas
-  chatPrefix: maa # Euphoria/Starlight
   parent: BaseLanguage
+  chatPrefix: maa # Euphoria/Starlight
   isVisibleLanguage: true
   icon: { state: "nekomimetic" } # Placeholder
   speech:
@@ -82,8 +82,8 @@
 # (if they cut off your tail or ears you shouldn't be able to speak it, but well)
 - type: language
   id: NalRasan
-  chatPrefix: nal # Euphoria/Starlight
   parent: BaseLanguage
+  chatPrefix: nal # Euphoria/Starlight
   icon: { state: "nekomimetic" } # Placeholder
   speech:
     allowRadio: false

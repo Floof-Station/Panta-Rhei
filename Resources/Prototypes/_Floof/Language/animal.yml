@@ -1,8 +1,8 @@
 # Languages spoken by various critters.
 - type: language
   id: Bee
-  chatPrefix: bee # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: bee # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -15,8 +15,8 @@
 
 - type: language
   id: Cat
-  chatPrefix: fel # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: fel # Euphoria/Starlight
   icon: { state: felidae }
   obfuscation:
     !type:SyllableObfuscation
@@ -30,8 +30,8 @@
 
 - type: language
   id: Dog
-  chatPrefix: dog # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: dog # Euphoria/Starlight ## ^can is already used by canilunzt
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -46,8 +46,8 @@
 
 - type: language
   id: Fox
-  chatPrefix: vul # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: vul # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -62,8 +62,8 @@
 
 - type: language
   id: Xeno
-  chatPrefix: xen # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: xen # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -74,8 +74,8 @@
 
 - type: language
   id: Monkey
-  chatPrefix: mnk # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: sim # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -86,8 +86,8 @@
 
 - type: language
   id: Mouse
-  chatPrefix: mau # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: mou # Euphoria/Starlight
   isVisibleLanguage: true
   icon: { state: mouse }
   obfuscation:
@@ -106,8 +106,8 @@
 
 - type: language
   id: Chicken
-  chatPrefix: chk # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: chk # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -119,8 +119,8 @@
 
 - type: language
   id: Duck
-  chatPrefix: qaq # Euphoria/Starlight ## mind's reflection :3
   parent: BaseAnimalLanguage
+  chatPrefix: qaq # Euphoria/Starlight ## mind's reflection :3
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -132,8 +132,8 @@
 
 - type: language
   id: Cow
-  chatPrefix: cow # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: cow # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -144,8 +144,8 @@
 
 - type: language
   id: Sheep
-  chatPrefix: shp # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: shp # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -158,6 +158,7 @@
 - type: language
   id: Kangaroo
   parent: BaseAnimalLanguage
+  chatPrefix: kan # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -170,8 +171,8 @@
 
 - type: language
   id: Pig
-  chatPrefix: pig # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: pig # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -181,8 +182,8 @@
 
 - type: language
   id: Crab
-  chatPrefix: crb # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: crb # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
@@ -198,8 +199,8 @@
 
 - type: language
   id: Kobold
-  chatPrefix: drc # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: drc # Euphoria/Starlight
   isVisibleLanguage: true
   obfuscation:
     !type:SyllableObfuscation
@@ -220,8 +221,8 @@
 
 - type: language
   id: Hissing
-  chatPrefix: hss # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: hss # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -234,8 +235,8 @@
 
 - type: language
   id: Penguin
-  chatPrefix: png # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: png # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 2
@@ -249,8 +250,8 @@
 
 - type: language
   id: Scurret
-  chatPrefix: waw # Euphoria/Starlight
   parent: BaseAnimalLanguage
+  chatPrefix: waw # Euphoria/Starlight
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1
