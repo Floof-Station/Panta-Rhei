@@ -229,9 +229,8 @@ public sealed partial class ChatSystem : SharedChatSystem
         message = SanitizeInGameICMessage(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI);
 
         var prefix = _languages.GetLanguageFromPrefix(source, ref message, out var parsed, true); // Starlight start: Language prefixes
-        IDisposable? subsitution = null;
-        if (parsed && _languages.CanSpeak(source, prefix))
-            subsitution = _languages.SubstituteEntityLanguage(source, prefix); // Starlight end
+        using var _ = parsed && _languages.CanSpeak(source, prefix)
+            ? _languages.SubstituteEntityLanguage(source, prefix.ID) : null;
 
         // Was there an emote in the message? If so, send it.
         if (player != null && emoteStr != message && emoteStr != null)
@@ -250,7 +249,6 @@ public sealed partial class ChatSystem : SharedChatSystem
         if (targetEv.Targets.Count > 0)
         {
             SendEntityDirect(source, message, range, nameOverride, targetEv.Targets);
-            subsitution?.Dispose(); // Starlight: Language prefixes
             return;
         }
         // End Mono Changes - Is this being sent direct
@@ -261,7 +259,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             if (TryProcessRadioMessage(source, message, out var modMessage, out var channel))
             {
                 SendEntityWhisper(source, modMessage, range, channel, nameOverride, hideLog, ignoreActionBlocker);
-                subsitution?.Dispose(); // Starlight: Language prefixes
                 return;
             }
         }
@@ -271,26 +268,21 @@ public sealed partial class ChatSystem : SharedChatSystem
         {
             case InGameICChatType.Speak:
                 SendEntitySpeak(source, message, range, nameOverride, hideLog, ignoreActionBlocker);
-                subsitution?.Dispose(); // Starlight: Language prefixes
                 break;
             case InGameICChatType.Whisper:
                 SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker);
-                subsitution?.Dispose(); // Starlight: Language prefixes
                 break;
             case InGameICChatType.Emote:
                 SendEntityEmote(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
-                subsitution?.Dispose(); // Starlight: Language prefixes
                 break;
             // Floofstation section
             case InGameICChatType.Subtle:
                 SendEntitySubtle(source, message, range, nameOverride, hideLog: hideLog, ignoreActionBlocker: ignoreActionBlocker);
-                subsitution?.Dispose(); // Starlight: Language prefixes
                 break;
             // Floofstation section end
             //Nyano - Summary: case adds the telepathic chat sending ability.
             case InGameICChatType.Telepathic:
                 _nyanoChatSystem.SendTelepathicChat(source, message, range == ChatTransmitRange.HideChat);
-                subsitution?.Dispose(); // Starlight: Language prefixes
                 break;
         }
     }
