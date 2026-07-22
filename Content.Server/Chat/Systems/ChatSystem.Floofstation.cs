@@ -20,7 +20,6 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem
 {
-    [Dependency] private readonly LanguageSystem _languages = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
 
