@@ -74,7 +74,6 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly LanguageSystem? _lang = default!; // Starlight
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
-    private static readonly string SendingLanguageLocId = "language-chat-confirmation"; // Starlight: Language prefixes
     private string[] _chatNameColors = default!;
     private bool _chatNameColorsEnabled;
 
@@ -1046,7 +1045,7 @@ public sealed partial class ChatUIController : UIController
             box.SelectedLanguage.Visible = false;
         else
         {
-            box.SelectedLanguage.Text = Loc.GetString(SendingLanguageLocId, ("lang", language.Name));
+            box.SelectedLanguage.Text = Loc.GetString("language-chat-confirmation", ("lang", language.Name));
             box.SelectedLanguage.Visible = true;
         }
     }

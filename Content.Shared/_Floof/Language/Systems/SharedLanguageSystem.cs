@@ -189,11 +189,10 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     {
         parsed = false;
         // Fallback if unable to get the current selected language. Selected language is used if unable to parse.
-        if (!Resolve(ent, ref ent.Comp, logMissing: false)
-            || string.IsNullOrEmpty(ent.Comp.CurrentLanguage)
-            || !_prototype.TryIndex<LanguagePrototype>(ent.Comp.CurrentLanguage, out var proto))
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
             return Universal;
 
+        var proto = GetLanguage(ent);
         // Begin parsing
         var text = input;
         if (text.Length<4 || !text.StartsWith(ChatPrefixChar)) return proto;
@@ -207,12 +206,15 @@ public abstract partial class SharedLanguageSystem : EntitySystem
                 continue;
             if (lang.ChatPrefix.Length != 3)
             {
-                throw new Exception(
-                    $"Chat prefixes must be 3 characters long. {lang.Name}'s prefix is {lang.ChatPrefix}");
+                Log.Error($"Chat prefixes must be 3 characters long. {lang.Name}'s prefix is {lang.ChatPrefix}");
+                return Universal;
             }
 
-            if (!lang.ChatPrefix.Equals(prefix, StringComparison.CurrentCultureIgnoreCase)) continue;
-            if(modifyText) input = text[3..];
+            if (!lang.ChatPrefix.Equals(prefix, StringComparison.CurrentCultureIgnoreCase))
+                continue;
+
+            if(modifyText)
+                input = text[3..];
             parsed = true;
             return lang;
         }
