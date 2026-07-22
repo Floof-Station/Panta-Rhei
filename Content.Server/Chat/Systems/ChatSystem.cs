@@ -20,6 +20,8 @@ using Content.Shared.Speech.Hushing; // DeltaV
 using Content.Server.Nyanotrasen.Chat;
 using Content.Server.Speech.Prototypes;
 using Content.Server.Station.Systems;
+using Content.Shared._Floof.Language;
+using Content.Shared._Floof.Language.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -74,6 +76,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
     [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+    [Dependency] private readonly SharedLanguageSystem _language = default!;
 
     //Nyano - Summary: pulls in the nyano chat system for psionics.
     [Dependency] private readonly NyanoChatSystem _nyanoChatSystem = default!;
@@ -439,6 +442,9 @@ public sealed partial class ChatSystem : SharedChatSystem
             return;
 
         var speech = GetSpeechVerb(source, message);
+
+        if (message.StartsWith(SharedLanguageSystem.ChatPrefixChar)) // Starlight: Language prefixes
+            language = _language.GetLanguageFromPrefix(source, ref message, out _, true);
 
         // get the entity's apparent name (if no override provided).
         string name;
