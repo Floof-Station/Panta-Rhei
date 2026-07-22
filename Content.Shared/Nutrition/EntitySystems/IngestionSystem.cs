@@ -24,6 +24,8 @@ using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Prototypes;
+using Content.Shared._Euphoria.FoodEffects.Components; //Euphoria
+using Content.Shared.StatusEffectNew; //Euphoria
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -55,6 +57,7 @@ public sealed partial class IngestionSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private readonly StatusEffectsSystem _effects = default!; //Euphoria
 
     // Body Component Dependencies
     [Dependency] private readonly SharedBodySystem _body = default!;

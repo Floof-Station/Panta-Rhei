@@ -266,7 +266,7 @@
   description: A dirty collar from a hard days work.
   components:
   - type: Pda
-    id: AtmosIDCard
+    id: EmotionalSupportAtmos
   - type: PdaBorderColor
     borderColor: "#949137"
     accentVColor: "#447987"
@@ -278,7 +278,7 @@
   description: A dirty collar from a hard days work.
   components:
   - type: Pda
-    id: SeniorEngineerIDCard
+    id: EmotionalSupportSeniorEngi
   - type: PdaBorderColor
     borderColor: "#949137"
     accentVColor: "#CD6900"
@@ -798,7 +798,7 @@
   - type: Pda
     id: EmotionalSupportLogisticsCargotechIDCard
   - type: PdaBorderColor
-    borderColor: "#611528"
+    borderColor: "#e39751"
 
 - type: entity
   parent: ClothingNeckCollarEmotionalSupportLogisticsBase
@@ -838,7 +838,6 @@
     - NanoTaskCartridge
     - NewsReaderCartridge
     - NanoChatCartridge
-    - MedTekCartridge # needed for medical roles
 
 - type: entity
   parent: ClothingNeckCollarEmotionalSupportLogisticsBase
@@ -1023,7 +1022,7 @@
 - type: entity
   parent: [ClothingNeckCollarCJ, ClothingNeckCollarBasetId]
   id: ClothingNeckCollarEmotionalSupportCJ # cj
-  name: chief justice officer emotoinal support collar
+  name: chief justice officer emotional support collar
   description: A law abiding and cute justice id collar.
   components:
   - type: Pda

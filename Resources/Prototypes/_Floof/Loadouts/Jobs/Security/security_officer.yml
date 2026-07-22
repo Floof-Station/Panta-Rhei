@@ -4,11 +4,6 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitSecSummer
 
-- type: loadout
-  id: UniformSecurityThong
-  equipment:
-    jumpsuit: ClothingUniformSecurityThong
-
 # gloves
 - type: loadout
   id: ClothingHandsSecurityWarmers
@@ -16,13 +11,23 @@
     gloves: ClothingHandsSecurityWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksSecurity
-  equipment:
-    shoes: ClothingUnderSocksSecurity
 
 # emotional support collar
 - type: loadout
   id: ClothingNeckCollarEmotionalSupportSecOfficer
   equipment:
     neck: ClothingNeckCollarEmotionalSupportSecOfficer
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformSecurityThong
+  equipment:
+    undergarmentBottom: ClothingUniformSecurityThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksSecurity
+  equipment:
+    undergarmentSocks: ClothingUnderSocksSecurity

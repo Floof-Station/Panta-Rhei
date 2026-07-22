@@ -2,7 +2,7 @@
   name: geras
   description: A geras of a slime - the name is ironic, isn't it?
   id: MobSlimesGeras
-  parent: [BaseMobAdultSlimes, StripableInventoryBase]
+  parent: [BaseMobAdultSlimesNoAi, StripableInventoryBase]
   categories: [ HideSpawnMenu ]
   components:
   # they portable...
@@ -14,6 +14,13 @@
   - type: MultiHandedItem
   - type: Stripping
   - type: ComplexInteraction
+  - type: OfferItem
+  - type: SSDIndicator
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
+  - type: CanEscapeInventory
+  - type: Climbing
+  - type: Buckle
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -23,6 +30,12 @@
     - NanoTrasen
   - type: Item
     size: Huge
+  #- type: Clothing # Awaiting Sprite
+    #quickEquip: false
+    #sprite: Mobs/Aliens/slimes.rsi
+    #equippedPrefix: 0
+    #slots:
+    #- HEAD
   - type: Sprite
     layers:
     - map: [ "colorMap" ]
@@ -47,9 +60,11 @@
         Blunt: 4
   - type: Tag # Floof
     tags:
+    - CanPilot
     - FootstepSound
     - DoorBumpOpener
     - SlimeEmotes
+  - type: MindContainer
   - type: Vocal # Floof. This is 100% more of a bandaid fix until I learn more about how sounds work, but now Geras emotes will have sound.
     sounds:
         Male: MaleSlime

@@ -1158,14 +1158,15 @@
     SyndicateBomb: 2
 
 - type: reaction
-  id: Tea
+  id: Tea # Mono Edit
+  minTemp: 369.15 # 96C
   reactants:
     TeaPowder:
       amount: 1
     Water:
       amount: 5
   products:
-    Tea: 6
+    Tea: 5
 
 - type: reaction
   id: TequilaSunrise

@@ -35,3 +35,22 @@
         reagents:
         - ReagentId: Caramexinin
           Quantity: 50
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketPeanutButter
+  name: peanut butter
+  description: A nutty and buttery spread for snacks and desserts.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: PeanutButter
+          Quantity: 10
+  - type: Icon
+    state: packet-caramexinin # seems we can re-use the sprite here since it will fill with peanutbutter
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-

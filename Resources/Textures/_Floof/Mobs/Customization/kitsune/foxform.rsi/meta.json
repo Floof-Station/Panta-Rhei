@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "size":
+  {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": " Fox-Moving & Fox Taken from TG git https://github.com/tgstation/tgstation/blob/master/icons/mob/pets.dmi Edited by Dunrab (Github), kitsune_fox_innerear taken from commit at https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b and modified by @absoli",
+  "states":
+  [
+    {
+      "name": "fox-moving",
+      "directions": 4,
+      "delays": [
+	    [
+	      0.2,
+		  0.2,
+		  0.2,
+		  0.2
+	    ],
+	    [
+	      0.2,
+		  0.2,
+		  0.2,
+		  0.2
+	    ],
+		[
+	      0.2,
+		  0.2,
+		  0.2,
+		  0.2
+	    ],
+	    [
+	      0.2,
+		  0.2,
+		  0.2,
+		  0.2
+	    ]
+	  ]
+    },
+      {
+          "name": "fox",
+          "directions": 4
+      },
+      {
+          "name": "kitsune_fox_innerear",
+          "directions": 4
+      }
+  ]
+}

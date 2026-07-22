@@ -72,7 +72,7 @@
 
 - type: loadoutGroup
   id: MantisShoes
-  parent: [FloofMantisShoes, FloofShoes] # Floofstation
+  parent: [FloofShoes] # Floofstation
   name: loadout-group-mantis-shoes
   loadouts:
   - MantisBoots

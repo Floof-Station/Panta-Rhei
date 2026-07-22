@@ -15,6 +15,7 @@ using Robust.Shared.Random;
 using Content.Shared.Damage.Components;
 using Content.Shared.PowerCell;
 using Content.Shared.Power.EntitySystems;
+using Content.Shared.Traits.Assorted;
 
 namespace Content.Server._EE.Silicon.DeadStartupButton;
 
@@ -50,12 +51,19 @@ public sealed class DeadStartupButtonSystem : SharedDeadStartupButtonSystem
             || !_mobThreshold.TryGetThresholdForState(uid, MobState.Critical, out var criticalThreshold, mobThresholdsComponent))
             return;
 
-        if (damageable.TotalDamage < criticalThreshold)
+        //Euphoria | Added check so IPCs can be unrevivable too.
+        var unrevivable = HasComp<UnrevivableComponent>(uid);
+
+        if (damageable.TotalDamage < criticalThreshold && !unrevivable)
             _mobState.ChangeMobState(uid, MobState.Alive, mobStateComponent);
         else
         {
             _audio.PlayPvs(comp.BuzzSound, uid, AudioParams.Default.WithVariation(0.05f));
-            _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-failed", ("target", MetaData(uid).EntityName)), uid);
+            //Euphoria | Check to let unrevivable IPCs show a different message
+            if (unrevivable)
+                _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-unrevivable", ("target", MetaData(uid).EntityName)), uid);
+            else
+                _popup.PopupEntity(Loc.GetString("dead-startup-system-reboot-failed", ("target", MetaData(uid).EntityName)), uid);
             Spawn("EffectSparks", Transform(uid).Coordinates);
         }
     }

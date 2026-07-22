@@ -1,18 +1,9 @@
-﻿#below addtions are for hos
-- type: loadout
-  id: UniformHeadSecurityThong
-  equipment:
-    jumpsuit: ClothingUniformHeadSecurityThong
-
+﻿# ======================================================== #
+# hos additions
 - type: loadout
   id: HandsHeadSecurityWarmers
   equipment:
     gloves: ClothingHandsHeadSecurityWarmers
-
-- type: loadout
-  id: UnderSocksHeadSecurity
-  equipment:
-    shoes: ClothingUnderSocksHeadSecurity
 
 #pdas
 - type: loadout
@@ -40,3 +31,18 @@
   id: ClothingNeckCollarEmotionalSupportHOS
   equipment:
     neck: ClothingNeckCollarEmotionalSupportHOS
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformHeadSecurityThong
+  equipment:
+    undergarmentBottom: ClothingUniformHeadSecurityThong
+
+# socks
+- type: loadout
+  id: UnderSocksHeadSecurity
+  equipment:
+    undergarmentSocks: ClothingUnderSocksHeadSecurity
+

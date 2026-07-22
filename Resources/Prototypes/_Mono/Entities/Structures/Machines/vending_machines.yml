@@ -1,0 +1,37 @@
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineBarista
+  name: Barista Vendor
+  description: Sells a variety of coffees, teas, and pastries.
+  components:
+    - type: VendingMachine
+      pack: BaristaVendInventory
+      dispenseOnHitChance: 0.25
+      dispenseOnHitThreshold: 2
+      offState: off
+      brokenState: broken
+      normalState: normal-unshaded
+      # ejectState: eject-unshaded
+      # denyState: deny-unshaded
+      ejectDelay: 1.9
+      initialStockQuality: 0.33
+#    - type: MarketModifier # Euphoria - M3739 - #485 - Component does not exist.
+#      mod: 8
+    - type: DatasetVocalizer # Euphoria - M3739 - #485 - Originally 'Advertise', which we don't have. This will do for now.
+      dataset: BaristaAds
+    - type: SpeakOnUIClosed
+      pack: BaristaGoodbyes
+    - type: Sprite
+      sprite: _Mono/Structures/Machines/VendingMachines/barista.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+          shader: unshaded
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: PointLight
+      radius: 1.5
+      energy: 1.6
+      color: "#D82929"

@@ -7,7 +7,7 @@
   - Smokeables
   - Pets
   - Instruments
-  - SexToys # Floofstation
+  - SexToys
 
 - type: roleLoadout
   id: JobSeniorEngineer
@@ -28,6 +28,9 @@
   - Smokeables
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopEngineer
+  - FloofUndergarmentBottomEngineer
+  - FloofSocksEngineer
 
 - type: roleLoadout
   id: JobSeniorPhysician
@@ -49,6 +52,9 @@
   - Smokeables
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopMedicalDoctor
+  - FloofUndergarmentBottomMedicalDoctor
+  - FloofSocksMedicalDoctor
 
 - type: roleLoadout
   id: JobSeniorResearcher
@@ -68,6 +74,9 @@
   - Smokeables
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopScientist
+  - FloofUndergarmentBottomScientist
+  - FloofSocksScientist
 
 - type: roleLoadout
   id: JobSeniorOfficer
@@ -89,6 +98,9 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
   - SecurityFirearmAmmo # DeltaV - loadouts
+  - FloofUndergarmentTopSecurityOfficer # Floof
+  - FloofUndergarmentBottomSecurityOfficer # Floof
+  - FloofSocksSecurityOfficer # Floof
 
 - type: roleLoadout
   id: JobInventorySpecialist
@@ -109,6 +121,9 @@
   - Smokeables
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCargotech
+  - FloofUndergarmentBottomCargotech
+  - FloofSocksCargotech
 
 - type: roleLoadout
   id: JobSecurityTechnician
@@ -129,3 +144,6 @@
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm
   - SecurityFirearmAmmo
+  - FloofUndergarmentTopSecurityOfficer # Floof
+  - FloofUndergarmentBottomSecurityOfficer # Floof
+  - FloofSocksSecurityOfficer # Floof

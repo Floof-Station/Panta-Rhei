@@ -549,34 +549,39 @@ public sealed class DeepFryerSystem : SharedDeepFryerSystem
             _container.Remove(item, container);
             QueueDel(item);
         }
-
+        //Euph changes start - Let recipes make multiple results
         // Spawn the result (from the microwave recipe)
-        var result = Spawn(microwaveRecipe.Result, coords);
+        foreach (var resultOut in microwaveRecipe.Results)
+        {
+            var result = Spawn(resultOut, coords);
+            // Transfer solution from fryer to food (includes oil AND any contaminants!)
+            TransferOilToFood(ent, result, deepFryerRecipe.OilConsumption);
 
-        // Transfer solution from fryer to food (includes oil AND any contaminants!)
-        TransferOilToFood(ent, result, deepFryerRecipe.OilConsumption);
+            // Add flavors based on oil quality
+            AddOilQualityFlavors(result, ent.Comp, qualityLevel);
 
-        // Add flavors based on oil quality
-        AddOilQualityFlavors(result, ent.Comp, qualityLevel);
+            // Try to put it back in the fryer
+            if (!_container.Insert(result, container))
+            {
+                // If we can't insert it (container full?), just leave it at the fryer's location
+                Xform.SetCoordinates(result, xform, Xform.GetMoverCoordinates(ent, xform));
+            }
+            else
+            {
+                // Track the result and start burning timer
+                ent.Comp.CookingItems[result] = new CookingItem(cookingItem.Recipe, _timing.CurTime, isBurning: true);
+            }
+
+            // Show a popup
+            Popup.PopupEntity(Loc.GetString("deep-fryer-item-finished", ("item", result)), ent, PopupType.Medium);
+            _audio.PlayPvs(ent.Comp.FinishedCookingSound, ent);
+
+        }
 
         // Degrade oil quality
         DegradeOilQuality(ent);
 
-        // Try to put it back in the fryer
-        if (!_container.Insert(result, container))
-        {
-            // If we can't insert it (container full?), just leave it at the fryer's location
-            Xform.SetCoordinates(result, xform, Xform.GetMoverCoordinates(ent, xform));
-        }
-        else
-        {
-            // Track the result and start burning timer
-            ent.Comp.CookingItems[result] = new CookingItem(cookingItem.Recipe, _timing.CurTime, isBurning: true);
-        }
-
-        // Show a popup
-        Popup.PopupEntity(Loc.GetString("deep-fryer-item-finished", ("item", result)), ent, PopupType.Medium);
-        _audio.PlayPvs(ent.Comp.FinishedCookingSound, ent);
+        //End Euph changes
     }
 
     /// <summary>

@@ -1843,7 +1843,7 @@
   icon: { sprite: /Textures/Clothing/OuterClothing/Hardsuits/syndieelite.rsi, state: icon }
   productEntity: ClothingBackpackDuffelSyndicateEliteHardsuitBundle
   cost:
-    Telecrystal: 14 # DeltaV - was 12
+    Telecrystal: 10 # Euphoria - was 14
   categories:
   - UplinkWearables
 #  conditions: # DeltaV - Traitors can now buy Elite suit!
@@ -1852,9 +1852,9 @@
 #      tags:
 #      - NukeOpsUplink
 # Begin DeltaV additions
-  discountCategory: veryRareDiscounts
+  discountCategory: rareDiscounts # Euphoria
   discountDownTo:
-    Telecrystal: 8
+    Telecrystal: 4 # Euphoria - was 8
 # End DeltaV additions
 
 - type: listing

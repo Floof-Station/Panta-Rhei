@@ -110,7 +110,7 @@
       tags:
       - CartridgeCap
       - SpeedLoaderCap
-      - ConcealCarry # DeltaV - can be stowed in military boots for now
+      #- ConcealCarry # Floofstation - not sure why delta-v whitelited every tag with conceal carry but that means every side arm and knife can go into the capgun so bye bye it goes DeltaV - can be stowed in military boots for now
     proto: CartridgeCap
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
@@ -138,6 +138,7 @@
 - type: entity
   parent: [ BaseItem, BaseToyGun ]
   id: WeaponStickyHand
+  categories: [ HideSpawnMenu ] # Floofstation - remove this because of bug abuse.
   name: sticky hand
   description: They're saying you're reaching. They're saying it's a stretch. You'll show them all, and you'll stick it to them.
   components:

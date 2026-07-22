@@ -46,7 +46,7 @@
           enum.PaperLabelVisuals.Layer:
             True: { visible: false }
         enum.PaperLabelVisuals.LabelType:
-          enum.PaperLabelVisuals.Layer: # Euphoria - M3739 - PaperLabelFixes - Base sprite lacks such states, point to Wizden sprites
+          enum.PaperLabelVisuals.Layer: # Euphoria - M3739 - #682 - Base sprite lacks such states, point to Wizden sprites
             Paper: { sprite: Structures/Storage/canister.rsi, state: paper }
             Bounty: { sprite: Structures/Storage/canister.rsi, state: bounty }
             CaptainsPaper: { sprite: Structures/Storage/canister.rsi, state: captains_paper }

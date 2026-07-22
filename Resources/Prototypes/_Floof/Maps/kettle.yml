@@ -2,8 +2,8 @@
   id: Kettle
   mapName: 'Kettle'
   mapPath: /Maps/Floof/kettle.yml
-  minPlayers: 35
-  maxPlayers: 70
+  minPlayers: 40
+  maxPlayers: 80
   stations:
     Kettle:
       stationProto: StandardNanotrasenStation
@@ -33,7 +33,7 @@
             SeniorEngineer: [ 1, 1 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 2, 3 ]
+            Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 4 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
@@ -81,5 +81,5 @@
             Prosecutor: [ 1, 1 ]
             # Silicon
             StationAi: [ 1, 1 ]
-            Borg: [ 1, 2 ]
+            Borg: [ 2, 3 ]
             MedicalBorg: [ 1, 2 ]

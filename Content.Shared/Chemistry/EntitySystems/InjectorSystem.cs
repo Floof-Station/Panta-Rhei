@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._DV.Chemistry.Components;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Body.Components;
 using Content.Shared.Chemistry.Components;
@@ -198,6 +199,20 @@ public sealed partial class InjectorSystem : EntitySystem
         if (_useDelay.IsDelayed(injector.Owner) // Check for Delay.
             || !GetMobsDoAfterTime(injector, user, target, out var doAfterTime, out var amount)) // Get the DoAfter time.
             return false;
+
+        // Euphoria start
+        if (TryComp<BlockInjectionComponent>(target, out var blockComponent))
+        {
+            if (blockComponent.BlockHypospray || !injector.Comp.AllowedModes.Contains("HyposprayDynamicMode"))
+            {
+                var err = Loc.GetString($"{blockComponent.ReasonLocId}",
+                    ("target", Identity.Entity(target, EntityManager)));
+
+                _popup.PopupClient(err, target, user);
+                return false;
+            }
+        }
+        // Euphoria end
 
         if (!_doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager, user, doAfterTime, new InjectorDoAfterEvent(), injector.Owner, target: target, used: injector.Owner)
         {

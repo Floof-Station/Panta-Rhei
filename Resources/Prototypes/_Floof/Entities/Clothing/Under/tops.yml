@@ -1,0 +1,562 @@
+﻿# misc tops (top slot)
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscBinder
+  name: binder
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: binder_s
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: binder_s
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscStraplessBinder
+  name: strapless binder
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: straplessbinder_s
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: straplessbinder_s
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscHyperBinder
+  name: hyper binder
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: hyper_binder
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: hyper_binder
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscTubeTop
+  name: tube top
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: tubetop
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tubetop
+
+# leotards
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscLeotard
+  name: leotard
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: leotard
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: leotard
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscLeotardTurtleneck
+  name: turtleneck leotard
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: leotard_turtleneck
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: leotard_turtleneck
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscLeotardSleevless
+  name: sleeveless turtleneck leotard
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: leotard_turtleneck_sleeveless
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: leotard_turtleneck_sleeveless
+
+# undershirt turtlenecks
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtTurtleneck
+  name: turtleneck undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: turtleneck
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: turtleneck
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtTurtleneckSleevless
+  name: sleeveless undershirt turtleneck
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: turtleneck_sleeveless
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: turtleneck_sleeveless
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtTurtleneckSmooth
+  name: smooth undershirt turtleneck
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: turtleneck_smooth
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: turtleneck_smooth
+
+# pasties becuase why the fuck not
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscPasties
+  name: pasties
+  description: "For when you really want to show off."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: pasties_alt
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: pasties_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscShibari
+  name: shibari
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: shibari
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shibari
+
+# one swim top
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimTop # we arent going to bikini bottom know what im saying?
+  name: swimming top
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: swimtop
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: swimtop
+
+# undershirt
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirt
+  name: undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: undershirt
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: undershirt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtDress
+  name: dress undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: undershirt_dress
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: undershirt_dress
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtDressAlt
+  name: dress undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: undershirt_dress_fem
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: undershirt_dress_fem
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtMidRiffShoulders
+  name: midriff undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    state: t-shirt_midriff_shoulders
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/misc_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: t-shirt_midriff_shoulders
+
+# tanktops (top slot)
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopFire
+  name: fire tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tank_fire_fem_s
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tank_fire_fem_s
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopMidRiff
+  name: midriff tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tank_midriff
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tank_midriff
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopMidRiffShort
+  name: midriff tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tank_midriff_short
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tank_midriff_short
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopRainbow
+  name: rainbow tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tank_rainbow_s
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tank_rainbow_s
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopStripes
+  name: stripes tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tank_stripes_s
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tank_stripes_s
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopSun
+  name: sun tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tank_sun_s
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tank_sun_s
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktop
+  name: tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tanktop
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tanktop
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopAlt
+  name: tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tanktop_alt
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tanktop_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopAlt2
+  name: tanktop
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tanktop_alt_fem
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tanktop_alt_fem
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopVneck
+  name: vneck tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tanktop_alt_fem_vneck
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tanktop_alt_fem_vneck
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopTanktopVneckCroptop
+  name: crop top vneck tank top
+  description: "A very comfy tank top to be worn on a nice hot day."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    state: tanktop_cropped_vneck
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/tanktops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: tanktop_cropped_vneck
+
+# bras (top slot)
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBra
+  name: bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: bra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraNeko
+  name: bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: bra_neko
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_neko
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraHalterneck
+  name: bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: halterneck_bra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: halterneck_bra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraLacy
+  name: lacy bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: lacy_bra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: lacy_bra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraLacyAlt
+  name: lacy bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: lacy_bra_alt
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: lacy_bra_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraLacyAltStriped
+  name: striped lacy bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: lacy_bra_alt_stripe
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: lacy_bra_alt_stripe
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraSports
+  name: sports bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: sports_bra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: sports_bra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraSportsAlt
+  name: sports bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: sports_bra_alt
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: sports_bra_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraStriped
+  name: striped bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    state: striped_bra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/bras.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: striped_bra

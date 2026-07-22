@@ -1,23 +1,14 @@
-﻿#below additions are for mysta
+﻿# ======================================================== #
+# mysta additions
 - type: loadout
   id: ClothingNeckCloakRd
   equipment:
     neck: ClothingNeckCloakRd
 
 - type: loadout
-  id: UniformEpiHeadThong
-  equipment:
-    jumpsuit: ClothingUniformEpiHeadThong
-
-- type: loadout
   id: HandsEpiHeadWarmers
   equipment:
     gloves: ClothingHandsEpiHeadWarmers
-
-- type: loadout
-  id: UnderSocksEpiHead
-  equipment:
-    shoes: ClothingUnderSocksEpiHead
 
 # pdas
 - type: loadout
@@ -35,3 +26,18 @@
   id: ClothingNeckCollarEmotionalSupportRD
   equipment:
     neck: ClothingNeckCollarEmotionalSupportRD
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformEpiHeadThong
+  equipment:
+    undergarmentBottom: ClothingUniformEpiHeadThong
+
+# socks
+- type: loadout
+  id: UnderSocksEpiHead
+  equipment:
+    undergarmentSocks: ClothingUnderSocksEpiHead
+
