@@ -12,14 +12,13 @@ using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
-using Content.Shared.Item; // 🌟Starlight🌟
-using Content.Shared.Movement.Events; // 🌟Starlight🌟
+using Content.Shared.Movement.Events; // Starlight
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Standing;
-using Content.Shared.Weapons.Ranged.Events; // 🌟Starlight🌟
-using Content.Shared.Weapons.Ranged.Systems; // 🌟Starlight🌟
+using Content.Shared.Weapons.Ranged.Events; // Starlight
+using Content.Shared.Weapons.Ranged.Systems; // Starlight
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
@@ -43,7 +42,7 @@ public abstract partial class SharedStunSystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
-    [Dependency] private readonly SharedGunSystem _gun = default!; // 🌟Starlight🌟
+    [Dependency] private readonly SharedGunSystem _gun = default!; // Starlight
     // Floofstation
     [Dependency] private readonly ClimbSystem _climb = default!;
 
@@ -62,7 +61,7 @@ public abstract partial class SharedStunSystem
         // Action blockers
         SubscribeLocalEvent<KnockedDownComponent, BuckleAttemptEvent>(OnBuckleAttempt);
         SubscribeLocalEvent<KnockedDownComponent, StandAttemptEvent>(OnStandAttempt);
-        SubscribeLocalEvent<KnockedDownComponent, ShotAttemptedEvent>(OnShootAttempt); // 🌟Starlight🌟
+        SubscribeLocalEvent<KnockedDownComponent, ShotAttemptedEvent>(OnShootAttempt); // Starlight
 
         // Updating movement and friction
         SubscribeLocalEvent<KnockedDownComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshKnockedSpeed);
@@ -610,7 +609,7 @@ public abstract partial class SharedStunSystem
             args.Cancelled = true;
     }
 
-    // 🌟Starlight🌟
+    // Starlight
     private void OnShootAttempt(Entity<KnockedDownComponent> entity, ref ShotAttemptedEvent args)
     {
         args.Cancel();
