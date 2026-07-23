@@ -1,11 +1,9 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Timers;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Climbing.Components;
 using Content.Shared.Climbing.Systems;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
@@ -14,11 +12,14 @@ using Content.Shared.Gravity;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Input;
-using Content.Shared.Movement.Events;
+using Content.Shared.Item; // 🌟Starlight🌟
+using Content.Shared.Movement.Events; // 🌟Starlight🌟
 using Content.Shared.Movement.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Rejuvenate;
 using Content.Shared.Standing;
+using Content.Shared.Weapons.Ranged.Events; // 🌟Starlight🌟
+using Content.Shared.Weapons.Ranged.Systems; // 🌟Starlight🌟
 using Robust.Shared.Audio;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input.Binding;
@@ -42,6 +43,7 @@ public abstract partial class SharedStunSystem
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly StandingStateSystem _standingState = default!;
     [Dependency] private readonly IConfigurationManager _cfgManager = default!;
+    [Dependency] private readonly SharedGunSystem _gun = default!; // 🌟Starlight🌟
     // Floofstation
     [Dependency] private readonly ClimbSystem _climb = default!;
 
@@ -60,6 +62,7 @@ public abstract partial class SharedStunSystem
         // Action blockers
         SubscribeLocalEvent<KnockedDownComponent, BuckleAttemptEvent>(OnBuckleAttempt);
         SubscribeLocalEvent<KnockedDownComponent, StandAttemptEvent>(OnStandAttempt);
+        SubscribeLocalEvent<KnockedDownComponent, ShotAttemptedEvent>(OnShootAttempt); // 🌟Starlight🌟
 
         // Updating movement and friction
         SubscribeLocalEvent<KnockedDownComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshKnockedSpeed);
@@ -605,6 +608,17 @@ public abstract partial class SharedStunSystem
     {
         if (args.User == entity && entity.Comp.NextUpdate > GameTiming.CurTime)
             args.Cancelled = true;
+    }
+
+    // 🌟Starlight🌟
+    private void OnShootAttempt(Entity<KnockedDownComponent> entity, ref ShotAttemptedEvent args)
+    {
+        args.Cancel();
+        if (args.Used.Comp.NextFire <= GameTiming.CurTime)
+        {
+            _popup.PopupClient(Loc.GetString("knockdown-component-shoot-fail"), entity, entity, PopupType.MediumCaution);
+            _gun.DelayFire(args.Used!, TimeSpan.FromSeconds(0.5f)); // Same time as a safety delay.
+        }
     }
 
     #endregion

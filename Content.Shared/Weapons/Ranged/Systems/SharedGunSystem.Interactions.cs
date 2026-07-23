@@ -138,4 +138,14 @@ public abstract partial class SharedGunSystem
         component.NextFire = minimum;
         Dirty(uid, component);
     }
+
+    // Starlight start
+    public void DelayFire(Entity<GunComponent?> entity, TimeSpan delay)
+    {
+        if (!Resolve(entity, ref entity.Comp, logMissing: false))
+            return;
+
+        entity.Comp.NextFire = Timing.CurTime + delay;
+    }
+    // Starlight end
 }
