@@ -26,6 +26,26 @@ marking-LizardVisorSynthAlt-alt_synthsnout_visor = Face
 marking-LizardVisorSynthAlt-alt_synthsnout_eyes = Eyes
 marking-LizardSnoutSynthAlt-alt_synthsnout_jaw = Jaw
 
+# Euphoria - Added Short Snout Versions
+
+marking-LizardSnoutSynthShort = Synth-Lizard Faceplate (Short)
+marking-LizardVisorSynthShort = Synth-Lizard Visor (Slim)
+marking-LizardSnoutSynthShort-short_synthsnout_frame = Base
+marking-LizardSnoutSynthShort-short_synthsnout_snout = Snout
+marking-LizardVisorSynthShort-short_synthsnout_visor = Face
+marking-LizardVisorSynthShort-short_synthsnout_eyes = Eyes
+marking-LizardSnoutSynthShort-short_synthsnout_jaw = Jaw
+
+marking-LizardSnoutSynthAltShort = Synth-Lizard Faceplate (Alternate/Short)
+marking-LizardVisorSynthAltShort = Synth-Lizard Visor (Alternate/Slim)
+marking-LizardSnoutSynthAltShort-alt_short_synthsnout_frame = Base
+marking-LizardSnoutSynthAltShort-alt_short_synthsnout_snout = Snout
+marking-LizardVisorSynthAltShort-alt_short_synthsnout_visor = Face
+marking-LizardVisorSynthAltShort-alt_short_synthsnout_eyes = Eyes
+marking-LizardSnoutSynthAltShort-alt_short_synthsnout_jaw = Jaw
+
+# Euphoria End
+
 marking-SyntheticHornCurl = Synth-Lizard Antenna (Curl)
 marking-SyntheticHornCurl-horn_antenna_curl = Horn
 

@@ -73,6 +73,60 @@
   - sprite: _CD/Mobs/Customization/Synthliz/altsnouts.rsi
     state: alt_synthsnout_visor
 
+# short snouts added by ASaltySeabass for use on Euphoria
+
+- type: marking
+  id: LizardSnoutSynthShort
+  bodyPart: Snout
+  markingCategory: Snout #Euphoria - Needed for our marking system.
+  speciesRestriction: [Reptilian] #Euphoria - Needed for our marking system.
+  sprites:
+  - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
+    state: short_synthsnout_frame
+  - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
+    state: short_synthsnout_snout
+  - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
+    state: short_synthsnout_jaw
+
+- type: marking
+  id: LizardVisorSynthShort #Euphoria - Breaks the Synth Faceplate into two markings so that certain masks/helmets don't break it.
+  bodyPart: Head
+  markingCategory: Head #Euphoria - Needed for our marking system.
+  speciesRestriction: [Reptilian] #Euphoria - Needed for our marking system.
+  sprites:
+  - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
+    state: short_synthsnout_eyes
+  - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
+    state: short_synthsnout_visor
+
+# alternate short snouts
+
+- type: marking
+  id: LizardSnoutSynthAltShort
+  bodyPart: Snout
+  markingCategory: Snout #Euphoria - Needed for our marking system.
+  speciesRestriction: [Reptilian] #Euphoria - Needed for our marking system.
+  sprites:
+  - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
+    state: alt_short_synthsnout_frame
+  - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
+    state: alt_short_synthsnout_snout
+  - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
+    state: alt_short_synthsnout_jaw
+
+- type: marking
+  id: LizardVisorSynthAltShort #Euphoria - Breaks the Synth Faceplate into two markings so that certain masks/helmets don't break it.
+  bodyPart: Head
+  markingCategory: Head #Euphoria - Needed for our marking system.
+  speciesRestriction: [Reptilian] #Euphoria - Needed for our marking system.
+  sprites:
+  - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
+    state: alt_short_synthsnout_eyes
+  - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
+    state: alt_short_synthsnout_visor
+
+# Euphoria End
+
 # horns
 
 - type: marking
