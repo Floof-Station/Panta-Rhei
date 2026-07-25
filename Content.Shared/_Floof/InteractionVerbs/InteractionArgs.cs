@@ -37,7 +37,7 @@ public sealed partial class InteractionArgs
     /// <summary>
     ///     Which entity fascilated this verb. Can be checked to make a verb do different things based on where its coming from.
     /// </summary>
-    public InteractionVerbSource Source = InteractionVerbSource.Unknown;
+    public InteractionVerbSource Source;
 
     public InteractionArgs(EntityUid user, EntityUid target, EntityUid? used, bool canAccess, bool canInteract, bool hasHands, float? contestAdvantage, bool allowRepeat, InteractionVerbSource source)
     {

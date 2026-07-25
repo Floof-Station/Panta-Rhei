@@ -164,9 +164,10 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public ContestType AllowedContests = ContestType.None;
 
     /// <summary>
-    ///     Flags of allowed sources. This determines which of the entities participating in an interaction can fascilate this verb (user, target, used)...
+    ///     Flags of allowed sources. This determines which of the entities participating in an interaction can facilitate this verb (user, target, used)...
+    ///     By default, only excludes tools as including those would allow you to e.g. hold a plushie and hug any entity.
     /// </summary>
-    public InteractionVerbSource AllowedSource = InteractionVerbSource.All;
+    public InteractionVerbSource AllowedSource = InteractionVerbSource.AllExceptTools;
 
     /// <summary>
     ///     Whether this interaction implies direct body contact (transfer of fibers, fingerprints, etc).
