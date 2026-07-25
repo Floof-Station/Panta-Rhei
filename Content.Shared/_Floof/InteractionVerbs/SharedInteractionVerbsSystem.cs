@@ -444,7 +444,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
             [
                 ("user", Identity.Entity(user, EntityManager)), // Floof - use identity
                 ("target", Identity.Entity(target, EntityManager)), // Floof - use identity
-                ("used", used ?? EntityUid.Invalid),
+                ("used", used != null ? Identity.Entity(used.Value, EntityManager) : EntityUid.Invalid),
                 ("selfTarget", user == target),
                 ("hasUsed", used != null)
             ];
