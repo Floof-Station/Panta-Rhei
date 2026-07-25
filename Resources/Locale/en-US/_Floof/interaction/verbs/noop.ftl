@@ -49,6 +49,12 @@ interaction-WaveAt-success-others-popup = {THE($user)} waves {$hasUsed ->
     *[true] {POSS-ADJ($user)} {$used} at {THE($target)}.
 }
 
+interaction-PointGunAt-name = Point gun
+interaction-PointGunAt-description = Point your gun at them, probably in a threatening manner.
+interaction-PointGunAt-success-self-popup = You point your gun at {THE($target)}.
+interaction-PointGunAt-success-target-popup = {THE($user)} is pointing {POSS-ADJ} gun at you!
+interaction-PointGunAt-success-others-popup = {THE($user)} is pointing {POSS-ADJ} gun at {THE($target)}!
+
 interaction-Kiss-name = Kiss
 interaction-Kiss-description = A kiss to melt the pain away. Requires your mouth to be free.
 interaction-Kiss-success-self-popup = You kiss {THE($target)}.
