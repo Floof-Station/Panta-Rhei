@@ -8,7 +8,7 @@
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
-    - BorgModuleScience
+    # - BorgModuleScience
   defaultModules:
   - BorgModuleTool
   - BorgModuleInflatable
@@ -425,3 +425,116 @@
   # Euphoria start: Borg PDA
   pdaBorderColor: "#5D2D56"
   # Euphoria end
+
+# Science borg
+- type: borgType
+  id: research
+  # Description
+  dummyPrototype: BorgChassisResearch
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleSpecializedArtifact
+  - BorgModuleSpecializedAnomaly
+  lawset: Research
+  job: Scientist
+  addComponents: # DeltaV - fibers, departmental access
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-grey
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  radioChannels:
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/research.rsi
+    layers:
+    - state: research
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: research_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: research_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTall
+  spriteBodyState: research
+  spriteHasMindState: research_e
+  spriteNoMindState: research_e_r
+  spriteToggleLightState: research_l
+  # Pet
+  petSuccessString: petting-success-research-cyborg
+  petFailureString: petting-failure-research-cyborg
+  # Euphoria start: Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#8900c9"
+  # Euphoria end
+
+# Science quadborg
+- type: borgType
+  id: quadresearch
+  # Description
+  dummyPrototype: QuadChassisResearch
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleSpecializedArtifact
+  - BorgModuleSpecializedAnomaly
+  radioChannels:
+  - Science
+  lawset: Research
+  job: Scientist
+  addComponents: # DeltaV - departmental access
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-grey
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.75, 0.75
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadres
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadres_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadres_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadres
+  spriteHasMindState: quadres_e
+  spriteNoMindState: quadres_e_r
+  spriteToggleLightState: quadres_l
+  # Pet
+  petSuccessString: petting-success-research-cyborg
+  petFailureString: petting-failure-research-cyborg
+  # Euphoria start: Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#8900c9"
+  # Euphoria end
+  

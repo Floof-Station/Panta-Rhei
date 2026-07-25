@@ -1,0 +1,29 @@
+- type: reaction
+  id: DrGibbCreamsoda
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    DrGibb:
+      amount: 3
+    Cream:
+      amount: 2
+    SodaWater:
+      amount: 1
+  products:
+    DrGibbCreamsoda: 6
+
+- type: reaction
+  id: WolfsLustfulInferno
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    DrGibbCreamsoda:
+      amount: 1
+    Cum:
+      amount: 1
+    Pomelustine:
+      amount: 1
+    Grenadine:
+      amount: 1
+  products:
+    WolfsLustfulInferno: 4

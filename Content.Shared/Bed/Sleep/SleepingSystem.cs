@@ -203,6 +203,7 @@ public sealed partial class SleepingSystem : EntitySystem
     {
         // Shh the Urist McHands is sleeping...
         args.Cancelled = true;
+        args.Autostand = false; // Floof - why wasnt this set?!
     }
 
     private void OnExamined(Entity<SleepingComponent> ent, ref ExaminedEvent args)

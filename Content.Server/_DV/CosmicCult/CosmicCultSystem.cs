@@ -75,7 +75,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
+        // SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart); // Euphoria - lazyload
 
         SubscribeLocalEvent<CosmicCultComponent, ComponentInit>(OnStartCultist);
         SubscribeLocalEvent<CosmicCultLeadComponent, ComponentInit>(OnStartCultLead);
@@ -120,11 +120,11 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     /// <summary>
     /// Creates the Cosmic Void pocket dimension map.
     /// </summary>
-    private void OnRoundStart(RoundStartingEvent ev)
-    {
-        if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
-            _map.SetPaused(map.Value.Comp.MapId, false);
-    }
+    // private void OnRoundStart(RoundStartingEvent ev) // Euphoria: AFAICT, we don't have rogue ascendants - couldn't find them in the codebase, so we don't need to load this.
+    // {
+    //     if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
+    //         _map.SetPaused(map.Value.Comp.MapId, false);
+    // }
 
     #endregion
 

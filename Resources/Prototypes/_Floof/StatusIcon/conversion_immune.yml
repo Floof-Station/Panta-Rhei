@@ -1,0 +1,8 @@
+- type: factionIcon
+  id: ConversionImmune
+  visibleToGhosts: false
+  priority: 20
+  showTo: null # Handled by the system itself
+  icon:
+    sprite: /Textures/_Floof/Interface/Misc/misc_icons.rsi
+    state: conversion_immune

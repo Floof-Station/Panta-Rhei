@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Components;
@@ -12,6 +13,7 @@ using Content.Shared.Database;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared.Chat;
+using Content.Shared.Chemistry.Reagent;
 
 namespace Content.Server.Roboisseur.Roboisseur
 {
@@ -182,9 +184,15 @@ namespace Content.Server.Roboisseur.Roboisseur
 
             var allRecipes = _prototypeManager.EnumeratePrototypes<FoodRecipePrototype>();
             var allProtos = new List<String>();
-
+            //Euph edits start - read all results from all recipes
             foreach (var recipe in allRecipes)
-                allProtos.Add(recipe.Result);
+            {
+                foreach (var result in recipe.Results)
+                {
+                    allProtos.Add(result);
+                }
+            }
+            //Euph edits end
 
             foreach (var proto in component.BlacklistedProtos)
                 allProtos.Remove(proto);

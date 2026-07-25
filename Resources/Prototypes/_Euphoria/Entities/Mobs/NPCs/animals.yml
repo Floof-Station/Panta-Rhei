@@ -377,3 +377,20 @@
         Base: midwife
       Dead:
         Base: midwife_dead
+
+- type: entity
+  parent: MobWhimperlet
+  id: MobWhimperletPet
+  suffix: Pet
+  components:
+  - type: NpcFactionMember
+    factions:
+      - Critter
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-pet-whimperlet-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules

@@ -112,6 +112,7 @@
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
+  - BorgModuleAdvAnomaly # Euphoria Addition
   technologyPrerequisites:
   - BasicAnomalousResearch
 
@@ -154,6 +155,7 @@
   cost: 10000
   recipeUnlocks:
   - DeviceQuantumSpinInverter
+  - BorgModuleQuantum # Euphoria Addition
 
 - type: technology
   id: BluespaceTimeManipulation

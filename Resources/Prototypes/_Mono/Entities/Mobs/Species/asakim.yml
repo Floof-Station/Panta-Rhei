@@ -124,6 +124,11 @@
     - Azaziba
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
+  - type: MobThresholds #Euphoria Change
+    thresholds: #A bit larger health pool so the bio-engineered warrior doesn't have the same HP as John Tider.
+      0: Alive
+      150: Critical
+      250: Dead
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: GenemoddedScale

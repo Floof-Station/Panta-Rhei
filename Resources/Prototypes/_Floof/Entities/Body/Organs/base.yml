@@ -9,6 +9,10 @@
   - type: RotInto
     entity: AshOrganic
     stage: 2
+    # Floof: Let organs be preserved in cold environments
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 290 #copied from meat
 
 - type: entity
   id: BioSynthOrganBase

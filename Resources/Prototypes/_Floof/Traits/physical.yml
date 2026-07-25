@@ -561,6 +561,7 @@
   conflicts:
     - GlassJaw
     - BrittleBones
+    - Tenacity
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -582,6 +583,7 @@
   conflicts:
     - WillToDie
     - Redshirt
+    - IllFated
   effects:
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 1.05 #+5%
@@ -605,4 +607,36 @@
   effects:
   - !type:ModifyCritDeadThresholdEffect
     critModifier: 0.5 #-50%
+
+- type: trait
+  id: Frail
+  name: trait-frail-name
+  description: trait-frail-desc
+  category: Skills
+  cost: -5
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.75 #-25%
+
+- type: trait
+  id: IllFated
+  name: trait-illfated-name
+  description: trait-illfated-desc
+  category: Skills
+  cost: -3
+  conflicts:
+    - WillToLive
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.75 #-25%
 # =================================================== #

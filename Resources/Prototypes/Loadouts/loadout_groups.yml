@@ -156,7 +156,7 @@
 
 - type: loadoutGroup
   id: CaptainNeck
-  parent: [CommandCollars] # Floofstation
+  parent: [FloofNeck, CommandCollars] # Floofstation
   name: loadout-group-captain-neck
   minLimit: 0
   loadouts:
@@ -217,7 +217,7 @@
 
 - type: loadoutGroup
   id: HoPNeck
-  parent: [CommandCollars] # Floofstation
+  parent: [FloofNeck, CommandCollars] # Floofstation
   name: loadout-group-hop-neck
   minLimit: 0
   loadouts:
@@ -378,7 +378,7 @@
 
 - type: loadoutGroup
   id: PassengerNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-passenger-neck
   minLimit: 0
   loadouts:
@@ -574,7 +574,7 @@
 
 - type: loadoutGroup
   id: LawyerNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-lawyer-neck
   minLimit: 0
   loadouts:
@@ -639,7 +639,7 @@
 
 - type: loadoutGroup
   id: ChaplainNeck
-  parent: [EuphoriaChaplainNeck, ScientistNeck] # Floofstation
+  parent: [FloofNeck, EuphoriaChaplainNeck, ScientistNeck] # Floofstation
   name: loadout-group-chaplain-neck
   minLimit: 0
   loadouts:
@@ -763,7 +763,7 @@
 
 - type: loadoutGroup
   id: ClownJumpsuit
-  parent: [FloofJumpsuits] # Floofstation
+  parent: [EuphoriaClownInnerClothing, FloofJumpsuits] # Floofstation
   name: loadout-group-clown-jumpsuit
   loadouts:
   - ClownSuit
@@ -791,7 +791,7 @@
 
 - type: loadoutGroup
   id: ClownShoes
-  parent: [FloofShoes] # Floofstation
+  parent: [EuphoriaClownShoes, FloofShoes] # Floofstation
   name: loadout-group-clown-shoes
   loadouts:
   - ClownShoes
@@ -978,7 +978,7 @@
 
 - type: loadoutGroup
   id: QuartermasterNeck
-  parent: [CargoCollars] # Floofstation
+  parent: [FloofNeck, CargoCollars] # Floofstation
   name: loadout-group-quartermaster-neck
   minLimit: 0
   loadouts:
@@ -1119,7 +1119,7 @@
 
 - type: loadoutGroup
   id: ChiefEngineerNeck
-  parent: [FloofCeCloak, EngineeringCollars] # Floofstation
+  parent: [FloofNeck, FloofCeCloak, EngineeringCollars] # Floofstation
   name: loadout-group-chief-engineer-neck
   minLimit: 0
   loadouts:
@@ -1327,7 +1327,7 @@
 
 - type: loadoutGroup
   id: ResearchDirectorNeck
-  parent: [ScientistNeck] # Floofstation
+  parent: [FloofNeck, ScientistNeck] # Floofstation
   name: loadout-group-research-director-neck
   minLimit: 0
   loadouts:
@@ -1386,7 +1386,7 @@
 
 - type: loadoutGroup
   id: ScientistNeck
-  parent: [ScienceCollars] # Floofstation
+  parent: [FloofNeck, ScienceCollars] # Floofstation
   name: loadout-group-scientist-neck
   minLimit: 0
   loadouts:
@@ -1515,7 +1515,7 @@
 
 - type: loadoutGroup
   id: HeadofSecurityNeck
-  parent: [SecurityCollars] # Floofstation
+  parent: [FloofNeck, SecurityCollars] # Floofstation
   name: loadout-group-head-of-security-neck
   minLimit: 0
   loadouts:
@@ -1695,7 +1695,7 @@
 
 - type: loadoutGroup
   id: DetectiveNeck
-  parent: [SecurityCollars] # Floofstation
+  parent: [FloofNeck, SecurityCollars] # Floofstation
   name: loadout-group-detective-neck
   minLimit: 0
   loadouts:
@@ -1796,7 +1796,7 @@
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
-  parent: [MedicalCollars] # Floofstation
+  parent: [FloofNeck, MedicalCollars] # Floofstation
   name: loadout-group-chief-medical-officer-neck
   minLimit: 0
   loadouts:

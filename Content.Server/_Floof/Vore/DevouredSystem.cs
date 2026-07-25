@@ -19,14 +19,17 @@ using Content.Shared.Movement.Events;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement;
 using Content.Server.Radiation.Components;
+using Content.Shared.Flash.Components;
+using Content.Shared.Inventory;
 namespace Content.Server._Floof.Vore;
 
-public sealed class VoreImmunitySystem : EntitySystem
+public sealed class DevouredSystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
     [Dependency] private readonly SharedSuitSensorSystem _suitSensorSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
     
     private readonly HashSet<EntityUid> _pendingImmunityUpdates = new();
 
@@ -51,6 +54,9 @@ public sealed class VoreImmunitySystem : EntitySystem
         _pendingImmunityUpdates.Clear();
     }
 
+    /// <summary>
+    /// responsible for giving the component that gives the prey immunities
+    /// </summary>
     private void OnPreyInsertedIntoContainer(EntityUid uid, VoreComponent comp, EntInsertedIntoContainerMessage args){
         //double check making sure its a vore_container
         if (args.Container.ID != comp.ContainerId)
@@ -86,6 +92,7 @@ public sealed class VoreImmunitySystem : EntitySystem
         args.Verbs.Add(new Verb
         {
             Text = "Struggle Free",
+            Category = VoreVerbCategory.VoreGeneral,
             Act = () => 
             {
                 _popupSystem.PopupEntity("You struggle free!", prey, prey);
@@ -138,7 +145,7 @@ public sealed class VoreImmunitySystem : EntitySystem
     }
 
     /// <summary>
-    /// the prey needs to have certain components such as pressure immunity
+    /// the prey needs to have certain components such as pressure immunity and their cords off
     /// for consent purposes -> having others avoid stumbling on scenarios
     /// </summary>
     private void ApplyStomachImmunities(EntityUid prey){
@@ -168,12 +175,23 @@ public sealed class VoreImmunitySystem : EntitySystem
             EnsureComp<RadiationProtectionComponent>(prey);
             tracker.AddedRadiation = true;
         }
+        if (!HasComp<FlashImmunityComponent>(prey)){
+            EnsureComp<FlashImmunityComponent>(prey);
+            tracker.AddedFlash = true;
+        }
 
-        _suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorOff);
+        var slotEnumerator = _inventorySystem.GetSlotEnumerator(prey, SlotFlags.All);
+        while (slotEnumerator.NextItem(out var item, out var slot)){
+            if (TryComp<SuitSensorComponent>(item, out var sensorComp)){
+                tracker.OriginalSensorModes[item] = sensorComp.Mode;
+                _suitSensorSystem.SetSensor((item, sensorComp), SuitSensorMode.SensorOff);
+            }
+        }
     }
 
     /// <summary>
     /// the removal of the devouredcomponent and immunities after leaving a container
+    /// and the reset of their cords to their original state
     /// to avoid intentional and accidental exploitation
     /// </summary>
     private void RemoveStomachImmunities(EntityUid prey){
@@ -199,7 +217,15 @@ public sealed class VoreImmunitySystem : EntitySystem
             RemComp<RadiationProtectionComponent>(prey);
             tracker.AddedRadiation = false;
         }
-        _suitSensorSystem.SetAllSensors(prey, SuitSensorMode.SensorCords);
+        if (tracker.AddedFlash){
+            RemComp<FlashImmunityComponent>(prey);
+            tracker.AddedFlash = false;
+        }
+        foreach (var (item, originalMode) in tracker.OriginalSensorModes){
+            if (TryComp<SuitSensorComponent>(item, out var sensorComp))
+                _suitSensorSystem.SetSensor((item, sensorComp), originalMode);
+        }
+        tracker.OriginalSensorModes.Clear();
         RemComp<DevouredComponent>(prey);
     }
 }

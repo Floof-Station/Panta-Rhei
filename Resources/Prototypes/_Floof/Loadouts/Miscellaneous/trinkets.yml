@@ -118,3 +118,17 @@
   storage:
     back:
     - WristwatchGold
+
+- type: loadout
+  id: CombBrush
+  storage:
+    back:
+    - CombBrush
+  groupBy: "Brushes"
+
+- type: loadout
+  id: HairBrush
+  storage:
+    back:
+    - HairBrush
+  groupBy: "Brushes"

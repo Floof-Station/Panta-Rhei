@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: SmartFridgeCircuitboard
+  id: SmartFridgeServiceCircuitboard
+  name: Service SmartFridge machine board
+  description: A machine printed circuit board for a Service SmartFridge.
+  components:
+  - type: MachineBoard
+    prototype: SmartFridgeService

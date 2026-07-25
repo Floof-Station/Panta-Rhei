@@ -264,6 +264,11 @@
   id: RelativePhrase
   parent: BaseSubjectPhrase
   text: phrase-relative
+
+- type: quickPhrase
+  id: OffspringPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-offspring
 ## Misc
 - type: quickPhrase
   id: MoneyPhrase
@@ -355,6 +360,65 @@
   parent: BaseSubjectPhrase
   text: phrase-like
 
+- type: quickPhrase
+  id: IsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-is
+
+- type: quickPhrase
+  id: GodPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-god
+
+- type: quickPhrase
+  id: MaterialsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-materials
+
+- type: quickPhrase
+  id: KinkPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-kink
+
+- type: quickPhrase
+  id: BonePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-bone
+
+- type: quickPhrase
+  id: PornographyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pornography
+
+- type: quickPhrase
+  id: MealPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-meal
+
+- type: quickPhrase
+  id: BreakfastPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-breakfast
+
+- type: quickPhrase
+  id: LunchPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-lunch
+
+- type: quickPhrase
+  id: DinnerPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-dinner
+
+- type: quickPhrase
+  id: SnackPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-snack
+
+- type: quickPhrase
+  id: WasPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-was
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase
@@ -516,6 +580,21 @@
   id: SlutPhrase
   parent: BaseSubjectPhrase
   text: phrase-slut
+
+- type: quickPhrase
+  id: TitsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-tits
+
+- type: quickPhrase
+  id: BoobsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-boobs
+
+- type: quickPhrase
+  id: DickPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-dick
 
 ##Fluids
 - type: quickPhrase
