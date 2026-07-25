@@ -164,6 +164,11 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public ContestType AllowedContests = ContestType.None;
 
     /// <summary>
+    ///     Flags of allowed sources. This determines which of the entities participating in an interaction can fascilate this verb (user, target, used)...
+    /// </summary>
+    public InteractionVerbSource AllowedSource = InteractionVerbSource.All;
+
+    /// <summary>
     ///     Whether this interaction implies direct body contact (transfer of fibers, fingerprints, etc).
     /// </summary>
     [DataField("contactInteraction")]

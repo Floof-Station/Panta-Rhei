@@ -10,19 +10,30 @@ namespace Content.Shared._Floof.InteractionVerbs.Events;
 ///     Note that this is raised before IsAllowed checks are performed on any of the verbs.
 /// </summary>
 [ByRefEvent]
-public sealed class GetInteractionVerbsEvent(EntityUid user, EntityUid target, IEnumerable<ProtoId<InteractionVerbPrototype>> verbs)
+public sealed class GetInteractionVerbsEvent(EntityUid user, EntityUid target, IEnumerable<InteractionVerbIdSource> verbs)
 {
     public EntityUid
         User = user,
         Target = target;
 
-    public HashSet<ProtoId<InteractionVerbPrototype>> Verbs = new(verbs);
+    public HashSet<InteractionVerbIdSource> Verbs = new(verbs);
 
-    public bool Add(ProtoId<InteractionVerbPrototype> verb)
+    public bool Add(ProtoId<InteractionVerbPrototype> verb, InteractionVerbSource source)
     {
-        if (!Verbs.Add(verb))
+        if (!Verbs.Add(new(verb, source)))
             return false;
 
         return true;
+    }
+}
+
+/// <summary>
+///   Combination of an interaction verb ID and its source.
+/// </summary>
+public record class InteractionVerbIdSource(ProtoId<InteractionVerbPrototype> Proto, InteractionVerbSource Source)
+{
+    public (InteractionVerbPrototype, InteractionVerbSource) Index(IPrototypeManager protoMan)
+    {
+        return (protoMan.Index(Proto), Source);
     }
 }

@@ -5,6 +5,7 @@ namespace Content.Shared._Floof.InteractionVerbs;
 
 /// <summary>
 ///     Specifies which verbs this entity may perform on its own, on any entity that the verb allows.
+///     This component adds verbs with <see cref="InteractionVerbSource.UserVerbs"/>.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class OwnInteractionVerbsComponent : Component

@@ -29,6 +29,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
 
     private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
+    private List<(InteractionVerbPrototype, InteractionVerbSource)> _globalPrototypesWithSource = default!;
 
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -57,6 +58,9 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         _globalPrototypes = _protoMan.EnumeratePrototypes<InteractionVerbPrototype>()
             .Where(v => v is { Global: true, Abstract: false })
             .ToList();
+        _globalPrototypesWithSource = _globalPrototypes
+            .Select(it => (it, InteractionVerbSource.Global))
+            .ToList();
     }
 
     #region event handling
@@ -72,19 +76,30 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     private void OnGetOthersVerbs(Entity<InteractionVerbsComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
     {
         // Global verbs are not added here since OnGetOwnVerbs already adds them
-        AddAll(entity.Comp.AllowedVerbs.Select(_protoMan.Index), args, () => new InteractionVerb());
+        AddAll(
+            entity.Comp.AllowedVerbs.Select(it => (_protoMan.Index(it), InteractionVerbSource.TargetVerbs)),
+            args,
+        () => new InteractionVerb());
     }
 
     private void OnGetOwnVerbs(Entity<OwnInteractionVerbsComponent> entity, ref GetVerbsEvent<InnateVerb> args)
     {
-        var allVerbs = entity.Comp.AllowedVerbs;
+        if (args.User != entity.Owner)
+            return;
+
+        var allVerbs = entity.Comp.AllowedVerbs.Select(it =>
+            new InteractionVerbIdSource(it, InteractionVerbSource.UserVerbs));
 
         var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, allVerbs);
         RaiseLocalEvent(entity, ref getVerbsEv, true);
-        allVerbs = getVerbsEv.Verbs.ToList();
+
+        var allVerbsIndexed =
+            getVerbsEv.Verbs.Select(it => it.Index(_protoMan)).ToList();
+
+        allVerbsIndexed.AddRange(_globalPrototypesWithSource);
 
         // Global verbs are added here because they should be allowed even on entities that do not define any interactions
-        AddAll(allVerbs.Select(_protoMan.Index).Union(_globalPrototypes), args, () => new InnateVerb());
+        AddAll(allVerbsIndexed, args, () => new InnateVerb());
     }
 
     private void OnDoAfterFinished(InteractionVerbDoAfterEvent ev)
@@ -209,14 +224,14 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     ///     Creates verbs for all listed prototypes that match their own requirements. Uses the provided factory to create new verb instances.
     /// </summary>
     // Note: using `where T : Verb, new()` here results in a sandbox violation... Yea we peasants don't get OOP in ss14.
-    private void AddAll<T>(IEnumerable<InteractionVerbPrototype> verbs, GetVerbsEvent<T> args, Func<T> factory) where T : Verb
+    private void AddAll<T>(IEnumerable<(InteractionVerbPrototype, InteractionVerbSource)> verbs, GetVerbsEvent<T> args, Func<T> factory) where T : Verb
     {
         // Don't add verbs to ghosts. Ghost system will also cancel all verbs by/on non-admin ghosts.
         if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
             return;
 
         var ownInteractions = EnsureComp<OwnInteractionVerbsComponent>(args.User);
-        foreach (var proto in verbs)
+        foreach (var (proto, source) in verbs)
         {
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
 
@@ -225,6 +240,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
                 continue;
 
             var verbArgs = InteractionArgs.From(args);
+            verbArgs.Source = source;
             var isEnabled = PerformChecks(proto, ref verbArgs, out var skipAdding, out var errorLocale);
 
             if (skipAdding)
@@ -254,6 +270,13 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     /// </summary>
     private bool PerformChecks(InteractionVerbPrototype proto, ref InteractionArgs args, out bool skipAdding, [NotNullWhen(false)] out string? errorLocale)
     {
+        if (args.Source == InteractionVerbSource.Unknown || !proto.AllowedSource.HasFlag(args.Source))
+        {
+            skipAdding = true; // Shouldn't be here in the first place
+            errorLocale = "interaction-verb-invalid";
+            return false;
+        }
+
         if (!proto.AllowSelfInteract && args.User == args.Target
             || !Transform(args.User).Coordinates.TryDistance(EntityManager, Transform(args.Target).Coordinates, out var distance))
         {
