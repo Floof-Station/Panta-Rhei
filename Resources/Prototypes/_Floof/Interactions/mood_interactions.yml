@@ -7,8 +7,8 @@
   delay: 0.7
   range: {max: 1}
   hideByRequirement: true
-  requirement:
-    !type:ComplexRquirement &mobOrSpeciallyDesignatedVerb # either the verb is specific to the target, or the target is a mob
+  requirement: &mobOrSpeciallyDesignatedVerb
+    !type:ComplexRequirement # either the verb is specific to the target, or the target is a mob
     requireAll: false
     requirements:
     - !type:MobStateRequirement
@@ -66,7 +66,7 @@
   requirement:
     !type:ComplexRequirement
     requirements:
-    - !type:ComplexRquirement &mobOrSpeciallyDesignatedVerb # either the verb is specific to the target, or the target is a mob/something else
+    - !type:ComplexRequirement # either the verb is specific to the target, or the target is a mob/something else
       requireAll: false
       requirements:
       - !type:EntityWhitelistRequirement
