@@ -167,6 +167,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     ///     Flags of allowed sources. This determines which of the entities participating in an interaction can facilitate this verb (user, target, used)...
     ///     By default, only excludes tools as including those would allow you to e.g. hold a plushie and hug any entity.
     /// </summary>
+    [DataField]
     public InteractionVerbSource AllowedSource = InteractionVerbSource.AllExceptTools;
 
     /// <summary>

@@ -8,12 +8,10 @@ using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Interaction;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -50,8 +48,8 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         LoadGlobalVerbs();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
-        SubscribeLocalEvent<Components.InteractionVerbsComponent, GetVerbsEvent<InteractionVerb>>(OnGetOthersVerbs);
-        SubscribeLocalEvent<Components.OwnInteractionVerbsComponent, GetVerbsEvent<InnateVerb>>(OnGetOwnVerbs);
+        SubscribeLocalEvent<InteractionVerbsComponent, GetVerbsEvent<InteractionVerb>>(OnGetOthersVerbs);
+        SubscribeLocalEvent<OwnInteractionVerbsComponent, GetVerbsEvent<InnateVerb>>(OnGetOwnVerbs);
         SubscribeLocalEvent<HandsComponent, GetInteractionVerbsEvent>(OnHandsInteractionVerbs);
         SubscribeLocalEvent<InteractionVerbDoAfterEvent>(OnDoAfterFinished);
     }
@@ -76,25 +74,33 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         LoadGlobalVerbs();
     }
 
-    private void OnGetOthersVerbs(Entity<Components.InteractionVerbsComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
+    private void OnGetOthersVerbs(Entity<InteractionVerbsComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
     {
         // TODO: everything was moved under GetVerbsEvent<InnateVerb> because otherwise verbs will be grouped by verb type which is gonna be confusing to players
         // Dunrab suggested allowing the verb prototype to choose which verb type to use, but i dont see a point since they are all effectively the same.
     }
 
-    private void OnGetOwnVerbs(Entity<Components.OwnInteractionVerbsComponent> entity, ref GetVerbsEvent<InnateVerb> args)
+    private void OnGetOwnVerbs(Entity<OwnInteractionVerbsComponent> entity, ref GetVerbsEvent<InnateVerb> args)
     {
         // GetVerbsEvent<InnateVerb> is only ever raised on the user. Rework this system if that ever changes.
         // It primarily depends on the fact that raising an event on [entity] is equivalent to raising it on [args.User] and so on
         DebugTools.Assert(entity.Owner == args.User);
 
         // List all innate verbs of the user
-        var allVerbs = entity.Comp.AllowedVerbs.Select(it =>
+        var initialVerbs = entity.Comp.AllowedVerbs.Select(it =>
             new InteractionVerbIdSource(it, InteractionVerbSource.UserVerbs));
 
         // Add all interaction verbs from the user via an event
-        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, args.Using, allVerbs);
+        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, args.Using, initialVerbs);
         RaiseLocalEvent(entity, ref getVerbsEv, true);
+
+        // Add all innate verbs on the target as well
+        // TODO should this go through GetInteractionVerbsEvent on the event bus? currently it's only raised on the user.
+        if (TryComp<InteractionVerbsComponent>(args.Target, out var targetVerbsComp))
+        {
+            foreach (var verb in targetVerbsComp.AllowedVerbs)
+                getVerbsEv.Add(verb, InteractionVerbSource.TargetVerbs);
+        }
 
         // Index and add global ones
         var allVerbsIndexed =
@@ -138,7 +144,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     // TODO this function is an active battlefield
     public bool StartVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {
-        if (!TryComp<Components.OwnInteractionVerbsComponent>(args.User, out var ownInteractions)
+        if (!TryComp<OwnInteractionVerbsComponent>(args.User, out var ownInteractions)
             || !force && !CheckVerbCooldown(proto, args, out _, ownInteractions))
             return false;
 
@@ -243,7 +249,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
             return;
 
-        var ownInteractions = EnsureComp<Components.OwnInteractionVerbsComponent>(args.User);
+        var ownInteractions = EnsureComp<OwnInteractionVerbsComponent>(args.User);
         foreach (var (proto, source) in verbs)
         {
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
@@ -390,7 +396,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     /// <summary>
     ///     Checks if the verb is on cooldown. Returns true if the verb can be used right now.
     /// </summary>
-    private bool CheckVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, out TimeSpan remainingTime, Components.OwnInteractionVerbsComponent? comp = null)
+    private bool CheckVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, out TimeSpan remainingTime, OwnInteractionVerbsComponent? comp = null)
     {
         remainingTime = TimeSpan.Zero;
         if (!Resolve(args.User, ref comp))
@@ -404,7 +410,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         return remainingTime <= TimeSpan.Zero;
     }
 
-    private void StartVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, TimeSpan cooldown, Components.OwnInteractionVerbsComponent? comp = null)
+    private void StartVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, TimeSpan cooldown, OwnInteractionVerbsComponent? comp = null)
     {
         if (!Resolve(args.User, ref comp))
             return;
@@ -428,6 +434,11 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
             return;
 
         var (user, target, used) = (args.User, args.Target, args.Used);
+
+        // If the tool is a virtual item, use the blocking item in the name
+        // We DON'T do this in Start() because that would allow someone to e.g. hold a gun and "point" it at someone else. Which is silly.
+        if (TryComp<VirtualItemComponent>(used, out var usedVirtItem))
+            used = usedVirtItem.BlockingEntity;
 
         // Effect targets for different players
         var userTarget = specifier.EffectTarget is User or UserThenTarget or TargetThenUser ? user : target;
