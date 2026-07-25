@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Floof.InteractionVerbs.Components;
 using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
+using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
@@ -48,8 +50,9 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         LoadGlobalVerbs();
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
-        SubscribeLocalEvent<InteractionVerbsComponent, GetVerbsEvent<InteractionVerb>>(OnGetOthersVerbs);
-        SubscribeLocalEvent<OwnInteractionVerbsComponent, GetVerbsEvent<InnateVerb>>(OnGetOwnVerbs);
+        SubscribeLocalEvent<Components.InteractionVerbsComponent, GetVerbsEvent<InteractionVerb>>(OnGetOthersVerbs);
+        SubscribeLocalEvent<Components.OwnInteractionVerbsComponent, GetVerbsEvent<InnateVerb>>(OnGetOwnVerbs);
+        SubscribeLocalEvent<HandsComponent, GetInteractionVerbsEvent>(OnHandsInteractionVerbs);
         SubscribeLocalEvent<InteractionVerbDoAfterEvent>(OnDoAfterFinished);
     }
 
@@ -73,33 +76,43 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         LoadGlobalVerbs();
     }
 
-    private void OnGetOthersVerbs(Entity<InteractionVerbsComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
+    private void OnGetOthersVerbs(Entity<Components.InteractionVerbsComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
     {
-        // Global verbs are not added here since OnGetOwnVerbs already adds them
-        AddAll(
-            entity.Comp.AllowedVerbs.Select(it => (_protoMan.Index(it), InteractionVerbSource.TargetVerbs)),
-            args,
-        () => new InteractionVerb());
+        // TODO: everything was moved under GetVerbsEvent<InnateVerb> because otherwise verbs will be grouped by verb type which is gonna be confusing to players
+        // Dunrab suggested allowing the verb prototype to choose which verb type to use, but i dont see a point since they are all effectively the same.
     }
 
-    private void OnGetOwnVerbs(Entity<OwnInteractionVerbsComponent> entity, ref GetVerbsEvent<InnateVerb> args)
+    private void OnGetOwnVerbs(Entity<Components.OwnInteractionVerbsComponent> entity, ref GetVerbsEvent<InnateVerb> args)
     {
-        if (args.User != entity.Owner)
-            return;
+        // GetVerbsEvent<InnateVerb> is only ever raised on the user. Rework this system if that ever changes.
+        // It primarily depends on the fact that raising an event on [entity] is equivalent to raising it on [args.User] and so on
+        DebugTools.Assert(entity.Owner == args.User);
 
+        // List all innate verbs of the user
         var allVerbs = entity.Comp.AllowedVerbs.Select(it =>
             new InteractionVerbIdSource(it, InteractionVerbSource.UserVerbs));
 
-        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, allVerbs);
+        // Add all interaction verbs from the user via an event
+        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, args.Using, allVerbs);
         RaiseLocalEvent(entity, ref getVerbsEv, true);
 
+        // Index and add global ones
         var allVerbsIndexed =
             getVerbsEv.Verbs.Select(it => it.Index(_protoMan)).ToList();
 
         allVerbsIndexed.AddRange(_globalPrototypesWithSource);
 
-        // Global verbs are added here because they should be allowed even on entities that do not define any interactions
+        // Add to GetVerbsEvent
         AddAll(allVerbsIndexed, args, () => new InnateVerb());
+    }
+
+    private void OnHandsInteractionVerbs(Entity<HandsComponent> ent, ref GetInteractionVerbsEvent args)
+    {
+        if (args.Used is not { } used || !TryComp<ToolInteractionVerbsComponent>(used, out var toolVerbsComp))
+            return;
+
+        foreach (var verb in toolVerbsComp.AllowedVerbs)
+            args.Add(verb, InteractionVerbSource.ToolVerbs);
     }
 
     private void OnDoAfterFinished(InteractionVerbDoAfterEvent ev)
@@ -125,7 +138,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     // TODO this function is an active battlefield
     public bool StartVerb(InteractionVerbPrototype proto, InteractionArgs args, bool force = false)
     {
-        if (!TryComp<OwnInteractionVerbsComponent>(args.User, out var ownInteractions)
+        if (!TryComp<Components.OwnInteractionVerbsComponent>(args.User, out var ownInteractions)
             || !force && !CheckVerbCooldown(proto, args, out _, ownInteractions))
             return false;
 
@@ -230,10 +243,16 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
             return;
 
-        var ownInteractions = EnsureComp<OwnInteractionVerbsComponent>(args.User);
+        var ownInteractions = EnsureComp<Components.OwnInteractionVerbsComponent>(args.User);
         foreach (var (proto, source) in verbs)
         {
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
+            DebugTools.AssertNotEqual(source, InteractionVerbSource.Unknown, "Verb source evaluated to unknown?");
+
+            // If the prototype doesn't allow coming from this source, skip it outright
+            // We do it here instead of inside PerformChecks to skip all the overhead. Verb source won't change down the line so it doesn't matter.
+            if (!proto.AllowedSource.HasFlag(source))
+                continue;
 
             var name = proto.Name;
             if (args.Verbs.Any(v => v.Text == name))
@@ -270,13 +289,6 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     /// </summary>
     private bool PerformChecks(InteractionVerbPrototype proto, ref InteractionArgs args, out bool skipAdding, [NotNullWhen(false)] out string? errorLocale)
     {
-        if (args.Source == InteractionVerbSource.Unknown || !proto.AllowedSource.HasFlag(args.Source))
-        {
-            skipAdding = true; // Shouldn't be here in the first place
-            errorLocale = "interaction-verb-invalid";
-            return false;
-        }
-
         if (!proto.AllowSelfInteract && args.User == args.Target
             || !Transform(args.User).Coordinates.TryDistance(EntityManager, Transform(args.Target).Coordinates, out var distance))
         {
@@ -378,7 +390,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     /// <summary>
     ///     Checks if the verb is on cooldown. Returns true if the verb can be used right now.
     /// </summary>
-    private bool CheckVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, out TimeSpan remainingTime, OwnInteractionVerbsComponent? comp = null)
+    private bool CheckVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, out TimeSpan remainingTime, Components.OwnInteractionVerbsComponent? comp = null)
     {
         remainingTime = TimeSpan.Zero;
         if (!Resolve(args.User, ref comp))
@@ -392,7 +404,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         return remainingTime <= TimeSpan.Zero;
     }
 
-    private void StartVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, TimeSpan cooldown, OwnInteractionVerbsComponent? comp = null)
+    private void StartVerbCooldown(InteractionVerbPrototype proto, InteractionArgs args, TimeSpan cooldown, Components.OwnInteractionVerbsComponent? comp = null)
     {
         if (!Resolve(args.User, ref comp))
             return;

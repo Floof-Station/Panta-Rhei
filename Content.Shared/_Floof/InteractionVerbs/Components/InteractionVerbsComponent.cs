@@ -1,7 +1,7 @@
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared._Floof.InteractionVerbs;
+namespace Content.Shared._Floof.InteractionVerbs.Components;
 
 /// <summary>
 ///     Specifies which verbs can be performed on THIS entity.

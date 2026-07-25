@@ -106,7 +106,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public float SelfInteractDelayFactor = 1f;
 
     /// <summary>
-    ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and before the do-after.
+    ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and checked before the do-after.
     /// </summary>
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(0.5f);
@@ -119,7 +119,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
 
     /// <summary>
     ///     If true, the cooldown of this verb will be applied regardless of the verb target,
-    ///     i.e. a user won't be able to apply the same verb to any different entity until the cooldown ends.
+    ///     i.e. after using the verb, the user won't be able to use it again on another entity until the cooldown ends.
     /// </summary>
     [DataField]
     public bool GlobalCooldown = false;

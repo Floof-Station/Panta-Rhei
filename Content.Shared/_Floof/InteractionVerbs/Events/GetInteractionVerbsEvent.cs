@@ -1,3 +1,4 @@
+using Content.Shared.Verbs;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Floof.InteractionVerbs.Events;
@@ -10,11 +11,13 @@ namespace Content.Shared._Floof.InteractionVerbs.Events;
 ///     Note that this is raised before IsAllowed checks are performed on any of the verbs.
 /// </summary>
 [ByRefEvent]
-public sealed class GetInteractionVerbsEvent(EntityUid user, EntityUid target, IEnumerable<InteractionVerbIdSource> verbs)
+public sealed class GetInteractionVerbsEvent(EntityUid user, EntityUid target, EntityUid? used, IEnumerable<InteractionVerbIdSource> verbs)
 {
-    public EntityUid
+    public readonly EntityUid
         User = user,
         Target = target;
+
+    public readonly EntityUid? Used = used;
 
     public HashSet<InteractionVerbIdSource> Verbs = new(verbs);
 
