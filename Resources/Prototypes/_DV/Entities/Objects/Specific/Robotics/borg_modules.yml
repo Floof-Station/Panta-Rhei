@@ -51,7 +51,7 @@
   - type: ItemBorgModule
     hands:
     - item: HoloprojectorSecurity
-    - item: Crowbar
+    - item: Crowbar # Euphoria
     - item: SecurityWhistle
     - item: FlashlightSecliteRecharging
   - type: BorgModuleIcon
@@ -96,15 +96,16 @@
         whitelist:
           tags:
           - Handcuffs
-    - item: Handcuffs
+    # - item: Zipties # Euphoria - Replaced zipties with actual handcuffs.
+    - item: Handcuffs # Euphoria
       hand:
         emptyRepresentative: Handcuffs
         emptyLabel: borg-slot-handcuffs-empty
         whitelist:
           tags:
           - Handcuffs
-    - item: SecurityWhistle
-    - item: FlashlightSecliteRecharging
+    - item: SecurityWhistle # Euphoria
+    - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: deescalation-module }
 
@@ -123,9 +124,11 @@
     - item: Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
     - item: CombatKnife # Anti-fauna for blunt resistant slimes
     - item: WeaponRiotShotgunBorg
-    - item: WeaponEnergyGunPistolBorg
-    - item: SecurityWhistle
-    - item: FlashlightSecliteRecharging
+    # Begin Euphoria additions
+    - item: WeaponEnergyGunPistolBorg # Euphoria - nerfed PDW-9, lethal only
+    - item: SecurityWhistle # Euphoria
+    - item: FlashlightSecliteRecharging # Euphoria
+    # End Euphoria additions
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: escalation-module }
 
@@ -141,8 +144,8 @@
   - type: ItemBorgModule
     hands:
     - item: WeaponDisablerSelfCharge
-    - item: SecurityWhistle
-    - item: FlashlightSecliteRecharging
+    - item: SecurityWhistle # Euphoria
+    - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: chase-module }
 
@@ -209,8 +212,8 @@
             - HandLabeler
       - item: Syringe
       - item: Soap
-      - item: SecurityWhistle
-      - item: FlashlightSecliteRecharging
+      - item: SecurityWhistle # Euphoria
+      - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: detective-module }
 
