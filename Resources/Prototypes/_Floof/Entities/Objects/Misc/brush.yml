@@ -12,6 +12,12 @@
     popUpDoAfterTime: 3
     userPopUpMsg: self-brushing-success
     targetPopUpMsg: target-brushing-success
+    popUpDoAfterSound:
+      path: /Audio/Items/wirebrushing.ogg # Same as wirebrush
+      params:
+        volume: -5
+        variation: 0.05
+        maxDistance: 4
     repeat: true
     whitelist:
       components:

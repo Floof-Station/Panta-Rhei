@@ -44,7 +44,12 @@ public sealed class PopUpOnUseSystem : EntitySystem
             ent.Comp.AudioStream = _audio.PlayPvs(ent.Comp.PopUpDoAfterSound, ent)?.Entity;
         }
 
-        var doAfterArgs = new DoAfterArgs(EntityManager, args.User, ent.Comp.PopUpDoAfterTime, new PopUpOnUseDoAfterEvent(), ent, args.Target.Value, ent);
+        var doAfterArgs = new DoAfterArgs(EntityManager, args.User, ent.Comp.PopUpDoAfterTime, new PopUpOnUseDoAfterEvent(), ent, args.Target.Value, ent)
+        {
+            BreakOnDamage = true,
+            BreakOnHandChange = true,
+            NeedHand = true,
+        };
         _doAfter.TryStartDoAfter(doAfterArgs);
 
         args.Handled = true;
@@ -60,12 +65,14 @@ public sealed class PopUpOnUseSystem : EntitySystem
         if (args.Target == null)
             return;
 
+        // For some reason, no one but the user can predict the do-after. Oh well.
         var locKey = args.Target == args.User ? ent.Comp.UserPopUpMsg : ent.Comp.TargetPopUpMsg;
-        _popup.PopupClient(
+        _popup.PopupPredicted(
             Loc.GetString(locKey,
                 ("target", Identity.Entity(args.Target.Value, EntityManager)),
                 ("user", Identity.Entity(args.User, EntityManager)),
                 ("used", Identity.Entity(args.Used ?? EntityUid.Invalid, EntityManager))),
+            args.User,
             args.User);
 
         if (ent.Comp.Repeat)
