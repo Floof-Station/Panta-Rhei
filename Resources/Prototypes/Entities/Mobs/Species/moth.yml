@@ -119,7 +119,8 @@
       - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "back" ]
       - map: [ "neck" ]
