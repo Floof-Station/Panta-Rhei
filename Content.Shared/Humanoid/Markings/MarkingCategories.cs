@@ -42,7 +42,6 @@ namespace Content.Shared.Humanoid.Markings
         {
             return layer switch
             {
-
                 HumanoidVisualLayers.Special => MarkingCategories.Special,
                 HumanoidVisualLayers.Hair => MarkingCategories.Hair,
                 HumanoidVisualLayers.FacialHair => MarkingCategories.FacialHair,
