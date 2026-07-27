@@ -1,8 +1,11 @@
 using Content.Shared._Common.Consent;
 using Content.Shared.Actions;
+using Content.Shared.DoAfter;
+using JetBrains.Annotations;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._CS.Traits.Abilities;
 
@@ -31,7 +34,5 @@ public sealed partial class AphrodesiacBiteComponent : Component
     public ProtoId<ConsentTogglePrototype> ConsentToggleId = "Aphrodisiacs";
 }
 
-public sealed partial class AphrodesiacBiteEvent : EntityTargetActionEvent
-{
-
-}
+public sealed partial class AphrodesiacBiteEvent : EntityTargetActionEvent;
+[Serializable, NetSerializable] public sealed partial class ABDoafterEvent : SimpleDoAfterEvent;
