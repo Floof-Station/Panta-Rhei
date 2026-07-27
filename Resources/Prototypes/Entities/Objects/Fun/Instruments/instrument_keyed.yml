@@ -44,6 +44,9 @@
     slots:
     - neck
     - belt
+    clothingVisuals:
+      belt:
+        - state: equipped-NECK
     sprite: Objects/Fun/Instruments/h_synthesizer.rsi
   - type: Item
     heldPrefix: super
