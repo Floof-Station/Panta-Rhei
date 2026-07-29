@@ -6,4 +6,44 @@
   group: Biological
   desc: reagent-desc-yellow-blood
   color: "#ffc900"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/bloodglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
   recognizable: true
+
+- type: reagent
+  parent: Blood
+  id: BlackBlood
+  name: reagent-name-black-blood
+  group: Biological
+  desc: reagent-desc-black-blood
+  flavor: bitter
+  color: "#1c1624"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/bloodglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  recognizable: true
+  physicalDesc: reagent-physical-desc-inky
+
+- type: reagent
+  parent: Blood
+  id: WhiteBlood
+  name: reagent-name-white-blood
+  group: Biological
+  desc: reagent-desc-white-blood
+  flavor: strange
+  color: "#EFEFEF"
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/bloodglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  recognizable: true
+  physicalDesc: reagent-physical-desc-milky
