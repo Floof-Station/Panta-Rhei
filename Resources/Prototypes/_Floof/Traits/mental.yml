@@ -113,8 +113,8 @@
   - !type:HasJobCondition
     invert: true
     job: Chaplain
-  effects:
-  - !type:RemCompsEffect
-    components:
-    - type: Psionic
-    - type: PotentialPsionic
+  #effects:
+  #- !type:RemCompsEffect
+  #  components:
+    #- type: Psionic
+  #  - type: PotentialPsionic
