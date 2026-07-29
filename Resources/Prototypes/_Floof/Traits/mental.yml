@@ -83,3 +83,19 @@
   - !type:AddCompsEffect
     components:
     - type: BibleUser
+
+- type: trait
+  id: NoPsionicPotential
+  name: trait-nopsionicpotential-name
+  description: trait-nopsionicpotential-desc
+  category: Psionics
+  cost: -1
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: ForensicMantis
+  effects:
+  - !type:RemCompsEffect
+    components:
+    - type: Psionic
+    - type: PotentialPsionic
