@@ -107,6 +107,12 @@
   - !type:HasJobCondition
     invert: true
     job: ForensicMantis
+  - !type:HasJobCondition
+    invert: true
+    job: ResearchDirector
+  - !type:HasJobCondition
+    invert: true
+    job: Chaplain
   effects:
   - !type:RemCompsEffect
     components:
