@@ -7,7 +7,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Numerics;
-using Content.Shared._Euphoria.CCVars;
+using Content.Shared._Floof.CCVar;
 using Content.Shared._Goobstation.Overlays;
 using Robust.Client.Graphics;
 using Robust.Shared.Configuration; // Euphoria: Grey night vision
@@ -51,7 +51,7 @@ public sealed class BaseSwitchableOverlay<TComp> : Overlay where TComp : Switcha
         var accumulator = Math.Clamp(Comp.PulseAccumulator, 0f, Comp.PulseTime);
         var alpha = Comp.PulseTime <= 0f ? 1f : float.Lerp(1f, 0f, accumulator / Comp.PulseTime);
 
-        var colour = _config.GetCVar(EuphoriaCCVars.GreyNightVision) ? Color.Gray : Comp.Color; // Euphoria: Grey night vision
+        var colour = _config.GetCVar(FloofCCVars.GreyNightVision) ? Color.Gray : Comp.Color; // Euphoria: Grey night vision
         worldHandle.SetTransform(Matrix3x2.Identity);
         worldHandle.UseShader(_shader);
         worldHandle.DrawRect(args.WorldBounds, colour.WithAlpha(alpha)); // Euphoria: Grey night vision
