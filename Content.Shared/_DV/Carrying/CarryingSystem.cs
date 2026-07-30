@@ -364,8 +364,12 @@ public sealed class CarryingSystem : EntitySystem
         _slowdown.SetModifier(carrier, (float) modifier);
     }
 
-    public bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried)
+    public bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried) // Euphoria - Allulalo - Ported Delta-v's solution for carring one handed critters as apposed to Imp
     {
+        var handsRequired = carried.Comp.FreeHandsRequired; // imp
+        if (TryComp<CarrierOneHandComponent>(carrier, out _))// && !carried.Comp.OneHandOverride)
+            handsRequired = 1;
+
         return
             carrier != carried.Owner &&
             // can't carry multiple people, even if you have 4 hands it will break invariants when removing carryingcomponent for first carried person
@@ -376,8 +380,9 @@ public sealed class CarryingSystem : EntitySystem
             !HasComp<BeingCarriedComponent>(carrier) &&
             !HasComp<BeingCarriedComponent>(carried) &&
             // finally check that there are enough free hands
-            TryComp<HandsComponent>(carrier, out var hands) && _hands.CountFreeHands((carrier, hands)) >= carried.Comp.FreeHandsRequired;
+            TryComp<HandsComponent>(carrier, out var hands) && _hands.CountFreeHands((carrier, hands)) >= handsRequired;
     }
+
 
     private float MassContest(EntityUid roller, EntityUid target)
     {

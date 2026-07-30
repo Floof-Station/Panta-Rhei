@@ -33,6 +33,10 @@
       effects:
       # Main effects
       - !type:MovementSpeedModifier
+        conditions: #imp
+        - !type:MetabolizerTypeCondition #imp, effects for non-allu
+          type: [ Allulalo ]
+          inverted: true
         walkSpeedModifier: 1.20
         sprintSpeedModifier: 1.20
       - !type:ModifyStatusEffect
@@ -88,8 +92,11 @@
   metabolisms:
     Narcotic:
       effects:
-      # Main effects
       - !type:MovementSpeedModifier
+        conditions: #imp
+        - !type:MetabolizerTypeCondition #imp, effects for non-allu
+          type: [ Allulalo ]
+          inverted: true
         walkSpeedModifier: 1.15
         sprintSpeedModifier: 1.15
       - !type:ModifyStatusEffect
@@ -150,6 +157,10 @@
       effects:
       # Main effects
       - !type:MovementSpeedModifier
+        conditions: #imp
+        - !type:MetabolizerTypeCondition #imp, effects for non-allu
+          type: [ Allulalo ]
+          inverted: true
         walkSpeedModifier: 1.25
         sprintSpeedModifier: 1.25
       - !type:ModifyStatusEffect

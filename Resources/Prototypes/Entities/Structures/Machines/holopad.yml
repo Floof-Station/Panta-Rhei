@@ -104,7 +104,8 @@
         node: machineFrame
       - !type:DoActsBehavior
         acts: ["Destruction"]
- 
+  - type: TooShortForUIWhitelist #imp change
+
 - type: entity
   name: long-range holopad
   description: "A floor-mounted device for projecting holographic images to similar devices that are far away."
@@ -117,7 +118,7 @@
     - Map
     - Unlimited
     ignoreTelephonesOnSameGrid: true
-    
+
 - type: entity
   name: quantum entangling holopad
   description: "An floor-mounted device for projecting holographic images to similar devices at extreme distances."

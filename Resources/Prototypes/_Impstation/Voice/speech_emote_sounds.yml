@@ -151,3 +151,51 @@
   params:
     variation: 0.05
     pitch: 1.25
+
+- type: emoteSounds
+  id: Allulalo
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      path: /Audio/_Impstation/Allulalo/allulalo_scream.ogg
+    Laugh:
+      path: /Audio/_Impstation/Allulalo/allulalo_laugh.ogg
+    Hiss:
+      collection: VoxHiss
+      params:
+        volume: -5
+    Chitter:
+      path: /Audio/_Impstation/Allulalo/allulalo_chitter.ogg
+    # Begin Euphoria removal - Replacing sounds with more fitting ones (also we don't have the )
+    # Sneeze:
+    #   collection: UnisexSneezes #placeholder
+    # Cough:
+    #   collection: UnisexCoughs #placeholder
+    # End Euphoria removal
+    Cough:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_cough.ogg # Euphoria - Resomi cough seems the most fitting
+    Yawn:
+      path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
+    # Honk: # Euphoria
+    #   collection: BikeHorn
+    Sigh:
+        path: /Audio/_Starlight/Voice/Resomi/resomi_sigh.ogg # Euphoria - Resomi again
+    # Sigh:
+    #   path: /Audio/_Impstation/Allulalo/allulalo_say.ogg #placeholder
+    Whistle:
+      collection: Whistles
+    Crying:
+      path: /Audio/_Impstation/Allulalo/allulalo_cry.ogg
+    # Begin Euphoria removal- We don't have these sounds
+    # Weh:
+    #   collection: Weh
+    # Wuhey:
+    #   collection: Wuhey
+    # Ungh:
+    #   collection: Ungh
+    # End Euphoria removal
+    Gasp:
+      path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
+    DefaultDeathgasp:
+      /Audio/_Impstation/Allulalo/allulalo_deathgasp.ogg
