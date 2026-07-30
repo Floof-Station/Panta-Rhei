@@ -22,7 +22,6 @@ namespace Content.Client.Options.UI
             Tabs.SetTabTitle(4, Loc.GetString("ui-options-tab-accessibility"));
             Tabs.SetTabTitle(5, Loc.GetString("ui-options-tab-admin"));
             Tabs.SetTabTitle(6, Loc.GetString("ui-options-tab-deltav")); // DeltaV specific settings
-            Tabs.SetTabTitle(7, Loc.GetString("ui-options-tab-euphoria")); // Euphoria, obviously
 
             UpdateTabs();
         }
@@ -38,7 +37,6 @@ namespace Content.Client.Options.UI
             AudioTab.Control.ReloadValues();
             AdminOptionsTab.Control.ReloadValues();
             DeltaTab.Control.ReloadValues(); // DeltaV
-            EuphoriaTab.Control.ReloadValues(); // Euphoria, obviously
         }
     }
 }
