@@ -94,6 +94,91 @@
   text: phrase-learn
 
 - type: quickPhrase
-  id: SmellPhrase
+  id: HitPhrase
   parent: BaseActionPhrase
-  text: phrase-smell
+  text: phrase-hit
+
+- type: quickPhrase
+  id: DreamPhrase
+  parent: BaseActionPhrase
+  text: phrase-dream
+
+- type: quickPhrase
+  id: BouncePhrase
+  parent: BaseActionPhrase
+  text: phrase-bounce
+
+- type: quickPhrase
+  id: CleanPhrase
+  parent: BaseActionPhrase
+  text: phrase-clean
+
+- type: quickPhrase
+  id: HearPhrase
+  parent: BaseActionPhrase
+  text: phrase-hear
+
+- type: quickPhrase
+  id: SeePhrase
+  parent: BaseActionPhrase
+  text: phrase-see
+
+- type: quickPhrase
+  id: SayPhrase
+  parent: BaseActionPhrase
+  text: phrase-say
+
+- type: quickPhrase
+  id: TellPhrase
+  parent: BaseActionPhrase
+  text: phrase-tell
+
+- type: quickPhrase
+  id: BlowPhrase
+  parent: BaseActionPhrase
+  text: phrase-blow
+
+- type: quickPhrase
+  id: BePhrase
+  parent: BaseActionPhrase
+  text: phrase-be
+
+- type: quickPhrase
+  id: FlirtPhrase
+  parent: BaseActionPhrase
+  text: phrase-flirt
+
+- type: quickPhrase
+  id: IWantPhrase
+  parent: BaseActionPhrase
+  text: phrase-iwant
+
+- type: quickPhrase
+  id: PullPhrase
+  parent: BaseActionPhrase
+  text: phrase-pull
+
+- type: quickPhrase
+  id: PushPhrase
+  parent: BaseActionPhrase
+  text: phrase-push
+
+- type: quickPhrase
+  id: ComePhrase
+  parent: BaseActionPhrase
+  text: phrase-come
+
+- type: quickPhrase
+  id: GetPhrase
+  parent: BaseActionPhrase
+  text: phrase-get
+
+- type: quickPhrase
+  id: JokePhrase
+  parent: BaseActionPhrase
+  text: phrase-joke
+
+- type: quickPhrase
+  id: TouchPhrase
+  parent: BaseActionPhrase
+  text: phrase-touch

@@ -188,7 +188,7 @@
   components:
   - type: BorgModule
     borgFitTypes:
-    - borg-type-generic
+    - borg-type-research # Euphoria Change
   - type: Tag
     tags:
     - BorgModuleScience
@@ -803,6 +803,18 @@
     - item: GasAnalyzer
     - item: HolofanProjectorBorg
     - item: GeigerCounter
+    - hand: # Euph addition (engiborgs can refuel the AME yay)
+        emptyRepresentative: AmeJar
+        emptyLabel: borg-slot-ame-jar-empty
+        whitelist:
+          components:
+          - AmeFuelContainer
+    - hand: # Euph addition too (engiborgs can fill canisters yay)
+        emptyRepresentative: PlasmaTank
+        emptyLabel: borg-slot-gas-canisters-empty
+        whitelist:
+          components:
+          - GasTank
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: rcd-module }
 
@@ -1069,12 +1081,13 @@
 # todo: if science ever gets their own custom robot, add more "sci" modules.
 - type: entity
   id: BorgModuleArtifact
-  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule ] # Euphoria change, generic
   name: artifact cyborg module
   components:
   - type: Sprite
     layers:
-    - state: science
+    - state: genscience
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi # Euphoria change, making generic again
     - state: icon-artifacts
   - type: ItemBorgModule
     hands:
@@ -1095,12 +1108,13 @@
 
 - type: entity
   id: BorgModuleAnomaly
-  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule ] # Euphoria change, generic
   name: anomaly cyborg module
   components:
   - type: Sprite
     layers:
-    - state: science
+    - state: genscience
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi  # Euphoria change, making generic again
     - state: icon-anomalies
   - type: ItemBorgModule
     hands:

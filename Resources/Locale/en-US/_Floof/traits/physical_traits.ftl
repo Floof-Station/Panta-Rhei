@@ -99,3 +99,13 @@ trait-brittlebone-name = Brittle Bones
 trait-brittlebone-desc = 
     People with this genetic disorder have bones that are easily broken, often simply by moving. 
     This trait reduces your threshold for critical injury by 50%.
+
+trait-frail-name = Frail
+trait-frail-desc = 
+    Your body is unfortunately quite frail, resulting in a greater susceptibility to critical injuries
+    Your damage threshold for becoming Critical is decreased by 25%.
+
+trait-illfated-name = Ill-Fated
+trait-illfated-desc = 
+    Bad things tend to happen to you, and you'll likely die sooner than others.
+    Your damage threshold for becoming Dead is decreased by 25%.

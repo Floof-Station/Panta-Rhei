@@ -1,0 +1,37 @@
+﻿- type: entity
+  parent: BaseItem
+  id: CombBrush
+  name: comb brush
+  description: A small fine toothed comb used to brush hair and fur.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/brush.rsi
+    state: brush
+    scale: 0.7, 0.7 # these should be smaller so they arent bigger than your character
+  - type: PopUpOnUse
+    popUpDoAfterTime: 3
+    userPopUpMsg: self-brushing-success
+    targetPopUpMsg: target-brushing-success
+    whitelist:
+      components:
+        - MobState
+        - Clothing
+    blacklist:
+      components:
+        - Silicon
+  - type: MeleeWeapon
+    wideAnimationRotation: 180
+    attackRate: 0.5 # slow the attack rate its silly to rapidly swing this
+    damage:
+      types:
+        Blunt: 0
+
+- type: entity
+  parent: CombBrush # parent off of the comb so we don't have duplicate lines
+  id: HairBrush
+  name: hair brush
+  description: A hair brush used to brush hair and or fur.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Misc/hair_brush.rsi
+    state: hair_brush

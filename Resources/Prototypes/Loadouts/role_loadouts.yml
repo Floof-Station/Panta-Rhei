@@ -135,8 +135,9 @@
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
   - FloofUndergarmentTopChef # Floof
+  - FloofUndergarmentBottomChef # Floof
   - FloofSocksChef # Floof
-  - FloofChefPdas # Floof
+  - ChefPDADelta # Floof
 
 - type: roleLoadout
   id: JobLibrarian
@@ -146,10 +147,13 @@
   - LibrarianNeck # DeltaV
   - GroupTankHarness
   - LibrarianJumpsuit
-  - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
+  - PassengerShoes # Floofstation -  this job doesn't get to pick shoes for some reason
   - PassengerGloves # Floofstation, give them access to basic gloves from passengers
   - PassengerOuterClothing # Floofstation let Librarians have drip
   - FloofCatalogerPDAs # Floofstation
+  - FloofUndergarmentTopScientist # Floof
+  - FloofUndergarmentBottomScientist # Floof
+  - FloofSocksScientist # Floof
   - CommonBackpack
   - Glasses
   - Survival
@@ -169,6 +173,9 @@
   - FloofServiceLawyerPDAs # Floofstation pda
   - PassengerOuterClothing # Floofstation
   - JusticePaperworkBelt # Floofstation
+  - FloofUndergarmentTopPassenger # Floof
+  - FloofUndergarmentBottomPassenger # Floof
+  - FloofSocksPassenger # Floof
   - CommonBackpack
   - Glasses
   - Survival
@@ -190,6 +197,9 @@
   - ChaplainOuterClothing
   - FloofChaplainPDAs # Floofstation - PDA selection
   - ChaplainBible
+  - FloofUndergarmentTopPassenger # Floof
+  - FloofUndergarmentBottomChaplain # Floof
+  - FloofSocksChaplain # Floof
   - Glasses
   - Survival
   - ChaplainJobTrinkets
@@ -253,6 +263,9 @@
   - ClownPDADelta # DeltaV
   - ClownShoes
   - ClownGloves
+  - FloofUndergarmentTopPassenger # Floof
+  - FloofUndergarmentBottomPassenger # Floof
+  - FloofSocksPassenger # Floof
   - Glasses
   - SurvivalClown
   - ClownJobTrinkets
@@ -273,6 +286,9 @@
   - MimeOuterClothing
   - MimeBelt
   - Glasses
+  - FloofUndergarmentTopPassenger # Floof
+  - FloofUndergarmentBottomPassenger # Floof
+  - FloofSocksPassenger # Floof
   - SurvivalMime
   - MimeJobTrinkets
 
@@ -502,7 +518,7 @@
   - GroupTankHarness
   - ScientistHead # floofstation - let research assistant have acess to hats
   - ScientistNeck # floofsatation - give research assistant access to other clothing options
-  - PassengerFace # floofstation - give prisoners access to other clothing options
+  - PassengerFace # floofstation - give research assistant access to other clothing options
   - ResearchAssistantJumpsuit
   - FloofResearchAssistantPdas # Floofstation - let RAs choose their pda
   - ScientistBackpack

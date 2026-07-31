@@ -1,0 +1,15 @@
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkDrGibbCreamsodaCan
+  name: Dr. Gibb Creamsoda can
+  description:  That authentic 42 flavors just got creamier!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: DrGibbCreamsoda
+          Quantity: 30
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/dr_gibb_cs.rsi

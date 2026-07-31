@@ -5,3 +5,5 @@ phrase-species-shark = shark
 phrase-species-dragon = dragon
 phrase-species-kitty = kitty
 phrase-species-puppy = puppy
+phrase-species-frog = frog
+phrase-species-horse = horse
