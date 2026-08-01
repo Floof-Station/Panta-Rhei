@@ -136,14 +136,14 @@
         - map: ["ears"]
         - map: ["outerClothing"]
         - map: ["eyes"]
-        - map: ["belt"]
         - map: ["back"]
         - map: ["neck"] # DeltaV - moved on top of back
         - map: ["enum.HumanoidVisualLayers.FacialHair"]
         - map: ["enum.HumanoidVisualLayers.Hair"]
         - map: ["enum.HumanoidVisualLayers.HeadSide"]
         - map: ["enum.HumanoidVisualLayers.HeadTop"]
-        - map: ["mask"]
+        - map: [ "mask" ]
+        - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
         - map: ["head"]
         - map: ["pocket1"]
         - map: ["pocket2"]

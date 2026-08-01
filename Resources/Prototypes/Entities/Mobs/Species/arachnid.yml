@@ -105,7 +105,6 @@
       - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
       - map: ["enum.HumanoidVisualLayers.RHand"] # ^
       - map: [ "gloves" ]
-      - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
@@ -121,6 +120,7 @@
       - map: [ "eyes" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]

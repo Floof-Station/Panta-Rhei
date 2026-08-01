@@ -74,7 +74,7 @@
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
-      - map: [ "belt" ]
+      
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -91,6 +91,7 @@
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
       - map: [ enum.InstrumentVisuals.Layer ]
         sprite: _DV/Effects/harpysinger.rsi
@@ -218,7 +219,6 @@
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
-      - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -235,6 +235,7 @@
       - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
 
 - type: entity
