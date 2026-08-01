@@ -64,7 +64,7 @@ namespace Content.Server.Ghost.Roles
             var component = ent.Comp;
 	 
 	    //The expression here always evaluates to true, unlike in OnSpawnerTakeCharacter.
-	    //Maybe something else is handling this?
+	    //Maybe something else is handling this? Look, I got no idea.
             // if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
             //     ghostRole.Taken)
             // {
