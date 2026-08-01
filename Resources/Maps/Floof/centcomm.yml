@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 267.3.0
+  engineVersion: 270.1.0
   forkId: ""
   forkVersion: ""
-  time: 02/05/2026 20:00:06
-  entityCount: 20835
+  time: 07/31/2026 15:26:05
+  entityCount: 20856
 maps: []
 grids:
 - 1668
@@ -4841,7 +4841,7 @@ entities:
           4,-7:
             0: 48127
           4,-6:
-            0: 47803
+            0: 47675
           4,-9:
             0: 65523
           5,-8:
@@ -6419,13 +6419,13 @@ entities:
         - volume: 2500
           temperature: 293.15
           moles:
-            Oxygen: 23.903439
-            Nitrogen: 80.02455
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
           temperature: 235
           moles:
-            Oxygen: 29.818268
-            Nitrogen: 99.82637
+            Oxygen: 27.225372
+            Nitrogen: 102.419266
         - volume: 2500
           immutable: True
           moles: {}
@@ -6454,6 +6454,9 @@ entities:
     - type: IFF
       color: '#32CD32FF'
     - type: ImplicitRoof
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
 - proto: AirAlarm
   entities:
   - uid: 4120
@@ -8712,13 +8715,19 @@ entities:
     - type: Transform
       pos: -6.5,0.5
       parent: 1668
+    - type: Door
+      secondsUntilStateChange: -415.63455
+      state: Opening
+    - type: DeviceLinkSource
+      lastSignals:
+        DoorStatus: True
   - uid: 15515
     components:
     - type: Transform
       pos: -6.5,-0.5
       parent: 1668
     - type: Door
-      secondsUntilStateChange: -46143.56
+      secondsUntilStateChange: -46574.125
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9323,24 +9332,6 @@ entities:
     - type: Transform
       pos: -39.5,-49.5
       parent: 1668
-  - uid: 12856
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 48.5,42.5
-      parent: 1668
-  - uid: 12857
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 48.5,41.5
-      parent: 1668
-  - uid: 12858
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 48.5,40.5
-      parent: 1668
   - uid: 12859
     components:
     - type: Transform
@@ -9396,21 +9387,6 @@ entities:
     components:
     - type: Transform
       pos: 10.5,-66.5
-      parent: 1668
-  - uid: 13114
-    components:
-    - type: Transform
-      pos: 17.5,-71.5
-      parent: 1668
-  - uid: 13115
-    components:
-    - type: Transform
-      pos: 18.5,-71.5
-      parent: 1668
-  - uid: 13116
-    components:
-    - type: Transform
-      pos: 19.5,-71.5
       parent: 1668
   - uid: 13118
     components:
@@ -9487,6 +9463,41 @@ entities:
       rot: 3.141592653589793 rad
       pos: -40.5,59.5
       parent: 1668
+- proto: AirlockExternalGlassShuttleShipyard
+  entities:
+  - uid: 4295
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,42.5
+      parent: 1668
+  - uid: 4296
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,40.5
+      parent: 1668
+  - uid: 4297
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,41.5
+      parent: 1668
+  - uid: 4298
+    components:
+    - type: Transform
+      pos: 17.5,-71.5
+      parent: 1668
+  - uid: 4371
+    components:
+    - type: Transform
+      pos: 19.5,-71.5
+      parent: 1668
+  - uid: 4567
+    components:
+    - type: Transform
+      pos: 18.5,-71.5
+      parent: 1668
 - proto: AirlockFreezer
   entities:
   - uid: 18006
@@ -9503,7 +9514,7 @@ entities:
       pos: -19.5,-24.5
       parent: 1668
     - type: Door
-      secondsUntilStateChange: -63668.35
+      secondsUntilStateChange: -64098.918
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -12772,6 +12783,22 @@ entities:
       parent: 1668
     - type: Fixtures
       fixtures: {}
+  - uid: 12837
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 36.5,-32.5
+      parent: 1668
+    - type: Fixtures
+      fixtures: {}
+  - uid: 15172
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 29.5,-41.5
+      parent: 1668
+    - type: Fixtures
+      fixtures: {}
 - proto: Ashtray
   entities:
   - uid: 3204
@@ -12972,6 +12999,39 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 52.5,2.5
       parent: 1668
+  - uid: 4568
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,42.5
+      parent: 1668
+  - uid: 4569
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,40.5
+      parent: 1668
+  - uid: 4640
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 48.5,41.5
+      parent: 1668
+  - uid: 4641
+    components:
+    - type: Transform
+      pos: 19.5,-71.5
+      parent: 1668
+  - uid: 4661
+    components:
+    - type: Transform
+      pos: 18.5,-71.5
+      parent: 1668
+  - uid: 4698
+    components:
+    - type: Transform
+      pos: 17.5,-71.5
+      parent: 1668
 - proto: AtmosDeviceFanTiny
   entities:
   - uid: 4496
@@ -12991,24 +13051,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -70.5,19.5
-      parent: 1668
-  - uid: 4567
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,42.5
-      parent: 1668
-  - uid: 4568
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,41.5
-      parent: 1668
-  - uid: 4569
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 48.5,40.5
       parent: 1668
   - uid: 4570
     components:
@@ -13159,24 +13201,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 33.5,-66.5
-      parent: 1668
-  - uid: 12991
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,-71.5
-      parent: 1668
-  - uid: 12992
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 18.5,-71.5
-      parent: 1668
-  - uid: 12993
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 19.5,-71.5
       parent: 1668
   - uid: 12997
     components:
@@ -13673,11 +13697,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,-44.5
       parent: 1668
-  - uid: 15172
-    components:
-    - type: Transform
-      pos: -2.5,1.5
-      parent: 1668
   - uid: 15418
     components:
     - type: Transform
@@ -13711,23 +13730,6 @@ entities:
     components:
     - type: Transform
       pos: -23.5,-35.5
-      parent: 1668
-  - uid: 19645
-    components:
-    - type: Transform
-      pos: -0.5,1.5
-      parent: 1668
-  - uid: 19949
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 0.5,0.5
-      parent: 1668
-  - uid: 19953
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -3.5,0.5
       parent: 1668
   - uid: 20168
     components:
@@ -14455,49 +14457,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 7.5,-33.5
       parent: 1668
-- proto: BenchSofaCorpLeft
-  entities:
-  - uid: 2741
-    components:
-    - type: Transform
-      pos: -50.5,48.5
-      parent: 1668
-  - uid: 10140
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -42.5,-29.5
-      parent: 1668
-  - uid: 12890
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -52.5,-24.5
-      parent: 1668
-  - uid: 14609
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -44.5,-28.5
-      parent: 1668
-  - uid: 16056
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 15.5,29.5
-      parent: 1668
-  - uid: 16057
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 22.5,22.5
-      parent: 1668
-  - uid: 17136
-    components:
-    - type: Transform
-      pos: 1.5,-39.5
-      parent: 1668
-- proto: BenchSofaCorpRight
+- proto: BenchSofaCorpLeftDV
   entities:
   - uid: 1902
     components:
@@ -14538,6 +14498,48 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-39.5
+      parent: 1668
+- proto: BenchSofaCorpRightDV
+  entities:
+  - uid: 2741
+    components:
+    - type: Transform
+      pos: -50.5,48.5
+      parent: 1668
+  - uid: 10140
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -42.5,-29.5
+      parent: 1668
+  - uid: 12890
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -52.5,-24.5
+      parent: 1668
+  - uid: 14609
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -44.5,-28.5
+      parent: 1668
+  - uid: 16056
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 15.5,29.5
+      parent: 1668
+  - uid: 16057
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 22.5,22.5
+      parent: 1668
+  - uid: 17136
+    components:
+    - type: Transform
+      pos: 1.5,-39.5
       parent: 1668
 - proto: BenchSteelLeft
   entities:
@@ -27217,11 +27219,6 @@ entities:
     - type: Transform
       pos: 28.5,-39.5
       parent: 1668
-  - uid: 12837
-    components:
-    - type: Transform
-      pos: 29.5,-39.5
-      parent: 1668
   - uid: 12838
     components:
     - type: Transform
@@ -27876,6 +27873,11 @@ entities:
     components:
     - type: Transform
       pos: 37.5,-5.5
+      parent: 1668
+  - uid: 13116
+    components:
+    - type: Transform
+      pos: 35.5,-32.5
       parent: 1668
   - uid: 13208
     components:
@@ -28547,6 +28549,26 @@ entities:
     - type: Transform
       pos: -67.5,-8.5
       parent: 1668
+  - uid: 14608
+    components:
+    - type: Transform
+      pos: 36.5,-32.5
+      parent: 1668
+  - uid: 15243
+    components:
+    - type: Transform
+      pos: 30.5,-40.5
+      parent: 1668
+  - uid: 15424
+    components:
+    - type: Transform
+      pos: 30.5,-41.5
+      parent: 1668
+  - uid: 16083
+    components:
+    - type: Transform
+      pos: 29.5,-41.5
+      parent: 1668
   - uid: 16170
     components:
     - type: Transform
@@ -28706,11 +28728,6 @@ entities:
     components:
     - type: Transform
       pos: -0.5,47.5
-      parent: 1668
-  - uid: 20261
-    components:
-    - type: Transform
-      pos: 29.5,-32.5
       parent: 1668
   - uid: 20262
     components:
@@ -31315,6 +31332,11 @@ entities:
     components:
     - type: Transform
       pos: -13.5,16.5
+      parent: 1668
+  - uid: 6569
+    components:
+    - type: Transform
+      pos: 28.5,-40.5
       parent: 1668
   - uid: 7493
     components:
@@ -36371,6 +36393,51 @@ entities:
     - type: Transform
       pos: -7.5,0.5
       parent: 1668
+  - uid: 12651
+    components:
+    - type: Transform
+      pos: 36.5,-32.5
+      parent: 1668
+  - uid: 12856
+    components:
+    - type: Transform
+      pos: 34.5,-32.5
+      parent: 1668
+  - uid: 12857
+    components:
+    - type: Transform
+      pos: 33.5,-32.5
+      parent: 1668
+  - uid: 12858
+    components:
+    - type: Transform
+      pos: 35.5,-32.5
+      parent: 1668
+  - uid: 12991
+    components:
+    - type: Transform
+      pos: 32.5,-32.5
+      parent: 1668
+  - uid: 12992
+    components:
+    - type: Transform
+      pos: 31.5,-32.5
+      parent: 1668
+  - uid: 12993
+    components:
+    - type: Transform
+      pos: 28.5,-32.5
+      parent: 1668
+  - uid: 13114
+    components:
+    - type: Transform
+      pos: 30.5,-32.5
+      parent: 1668
+  - uid: 13115
+    components:
+    - type: Transform
+      pos: 29.5,-32.5
+      parent: 1668
   - uid: 14715
     components:
     - type: Transform
@@ -36415,6 +36482,16 @@ entities:
     components:
     - type: Transform
       pos: -50.5,-1.5
+      parent: 1668
+  - uid: 16084
+    components:
+    - type: Transform
+      pos: 29.5,-40.5
+      parent: 1668
+  - uid: 16086
+    components:
+    - type: Transform
+      pos: 29.5,-41.5
       parent: 1668
   - uid: 19532
     components:
@@ -41807,6 +41884,17 @@ entities:
     - type: Transform
       pos: 37.5,17.5
       parent: 1668
+- proto: CentcommComputerComms
+  entities:
+  - uid: 4701
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 0.5,0.5
+      parent: 1668
+    - type: AccessReader
+      accessListsOriginal:
+      - - CentralCommand
 - proto: Chair
   entities:
   - uid: 2195
@@ -44341,6 +44429,13 @@ entities:
     - type: Transform
       pos: -27.5,9.5
       parent: 1668
+- proto: ClosetJanitorFilled
+  entities:
+  - uid: 18695
+    components:
+    - type: Transform
+      pos: 21.5,13.5
+      parent: 1668
 - proto: ClosetMaintenanceFilledRandom
   entities:
   - uid: 17780
@@ -45420,6 +45515,14 @@ entities:
     - type: Transform
       pos: -22.5,-35.5
       parent: 1668
+- proto: ComputerRadar
+  entities:
+  - uid: 4754
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,0.5
+      parent: 1668
 - proto: ComputerRoboticsControl
   entities:
   - uid: 4973
@@ -45439,8 +45542,20 @@ entities:
       rot: 3.141592653589793 rad
       pos: 11.5,-56.5
       parent: 1668
+- proto: ComputerShipyardAdmin
+  entities:
+  - uid: 4699
+    components:
+    - type: Transform
+      pos: -2.5,1.5
+      parent: 1668
 - proto: ComputerStationRecords
   entities:
+  - uid: 4700
+    components:
+    - type: Transform
+      pos: -0.5,1.5
+      parent: 1668
   - uid: 20560
     components:
     - type: Transform
@@ -99907,13 +100022,6 @@ entities:
       angularDamping: 0
       linearDamping: 0
       bodyType: Static
-- proto: LockerJanitor
-  entities:
-  - uid: 18695
-    components:
-    - type: Transform
-      pos: 21.5,13.5
-      parent: 1668
 - proto: LockerQuarterMaster
   entities:
   - uid: 15408
@@ -114305,6 +114413,36 @@ entities:
     components:
     - type: Transform
       pos: 33.5,26.5
+      parent: 1668
+    - type: Fixtures
+      fixtures: {}
+- proto: Shower
+  entities:
+  - uid: 16092
+    components:
+    - type: Transform
+      pos: -10.5,-11.5
+      parent: 1668
+    - type: Fixtures
+      fixtures: {}
+  - uid: 16093
+    components:
+    - type: Transform
+      pos: -9.5,-11.5
+      parent: 1668
+    - type: Fixtures
+      fixtures: {}
+  - uid: 16099
+    components:
+    - type: Transform
+      pos: -8.5,-11.5
+      parent: 1668
+    - type: Fixtures
+      fixtures: {}
+  - uid: 16100
+    components:
+    - type: Transform
+      pos: -7.5,-11.5
       parent: 1668
     - type: Fixtures
       fixtures: {}

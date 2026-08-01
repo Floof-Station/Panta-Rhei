@@ -20,7 +20,6 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem
 {
-    [Dependency] private readonly LanguageSystem _languages = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
 
@@ -80,6 +79,10 @@ public sealed partial class ChatSystem
     {
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
+            //Blocks non-admin ghosts from seeing subtle
+            if (!data.Subtle)
+                continue;
+
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 

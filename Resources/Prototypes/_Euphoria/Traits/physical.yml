@@ -13,6 +13,8 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -27,6 +29,7 @@
     - Resomi #AmmoniaBlood
     - SlimePerson #Slime
     - Vox #AmmoniaBlood
+    - Shadowkin #BlackBlood
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: Blood
@@ -45,6 +48,8 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -73,6 +78,8 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -99,6 +106,8 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -126,6 +135,8 @@
   - ReplaceBloodInsect
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -152,6 +163,8 @@
   - ReplaceBloodInsect
   - ReplaceBloodSap
   - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -178,6 +191,8 @@
   - ReplaceBloodInsect
   - ReplaceBloodSap
   - ReplaceBloodSlime
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -185,6 +200,58 @@
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: YellowBlood
+
+- type: trait
+  id: ReplaceBloodBlack
+  name: trait-replace-blood-black-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  - ReplaceBloodWhite
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Shadowkin
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: BlackBlood
+
+- type: trait
+  id: ReplaceBloodWhite
+  name: trait-replace-blood-white-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  - ReplaceBloodBlack
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: WhiteBlood
 
 # Regeneration
 - type: trait

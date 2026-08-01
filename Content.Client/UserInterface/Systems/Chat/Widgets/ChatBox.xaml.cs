@@ -31,6 +31,7 @@ public partial class ChatBox : UIWidget
     public bool Main { get; set; }
 
     public ChatSelectChannel SelectedChannel => ChatInput.ChannelSelector.SelectedChannel;
+    public RichTextLabel SelectedLanguage => LanguageNotifier; // Starlight
 
     // EE - Chat stacking
     private int _chatStackAmount = 0;
@@ -149,6 +150,7 @@ public partial class ChatBox : UIWidget
     private void OnChannelSelect(ChatSelectChannel channel)
     {
         _controller.UpdateSelectedChannel(this);
+        _controller.UpdateLanguageNotifier(this); // Starlight
     }
 
     public void Repopulate()

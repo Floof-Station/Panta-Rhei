@@ -1,6 +1,6 @@
 - type: entity
   name: BasePistol
-  parent: BaseItem
+  parent: [BaseItem, BaseGun] # Euph - add gun parent
   id: BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
