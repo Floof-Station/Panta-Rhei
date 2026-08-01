@@ -86,14 +86,20 @@
   - ClothingHandsMantisEpiWarmers
 
 - type: loadoutGroup
-  id: FloofMantisShoes
-  abstract: true
-  minLimit: 1
+  id: FloofUndergarmentBottomMantis
+  parent: [FloofUndergarmentBottomScientist]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - UniformChaplainThong
+
+- type: loadoutGroup
+  id: FloofSocksMantis
+  parent: [FloofUndergarmentBottomScientist]
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - ClothingUnderSocksMantisEpi
-
-
 # ======================================================== #
 # chaplain additions
 - type: loadoutGroup
@@ -106,7 +112,22 @@
   - ChaplainLustro
   - ChaplainInfernusLustro
   - ChaplainInfernusLustroAlt
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomChaplain
+  parent: [FloofUndergarmentBottomPassenger]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
   - UniformChaplainThong
+
+- type: loadoutGroup
+  id: FloofSocksChaplain
+  parent: [FloofSocksPassenger]
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingUnderSocksChaplain
 
 - type: loadoutGroup
   id: FloofChaplainGloves
@@ -119,13 +140,11 @@
 
 - type: loadoutGroup
   id: FloofChaplainShoes
-  name: loadout-group-epistemics-chaplain-shoes
   parent: [PassengerShoes]
   minLimit: 1
   maxLimit: 1
   loadouts:
   - ChaplainLustroSandals
-  - ClothingUnderSocksChaplain
 
 - type: loadoutGroup
   id: FloofChaplainPDAs

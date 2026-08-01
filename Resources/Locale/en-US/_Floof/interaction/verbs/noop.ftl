@@ -22,12 +22,6 @@ interaction-Pet-success-self-popup = You pet {THE($target)} on {POSS-ADJ($target
 interaction-Pet-success-target-popup = {THE($user)} pets you on your head.
 interaction-Pet-success-others-popup = {THE($user)} pets {THE($target)}.
 
-interaction-PetAnimal-name = {interaction-Pet-name}
-interaction-PetAnimal-description = Pet an animal.
-interaction-PetAnimal-success-self-popup = {interaction-Pet-success-self-popup}
-interaction-PetAnimal-success-target-popup = {interaction-Pet-success-target-popup}
-interaction-PetAnimal-success-others-popup = {interaction-Pet-success-others-popup}
-
 interaction-KnockOn-name = Knock
 interaction-KnockOn-description = Knock on the target to attract attention.
 interaction-KnockOn-success-self-popup = You knock on {THE($target)}.
@@ -54,6 +48,12 @@ interaction-WaveAt-success-others-popup = {THE($user)} waves {$hasUsed ->
     [false] at {THE($target)}.
     *[true] {POSS-ADJ($user)} {$used} at {THE($target)}.
 }
+
+interaction-PointGunAt-name = Point gun
+interaction-PointGunAt-description = Point your gun at them, probably in a threatening manner.
+interaction-PointGunAt-success-self-popup = You point your gun at {THE($target)}.
+interaction-PointGunAt-success-target-popup = {THE($user)} is pointing {POSS-ADJ} gun at you!
+interaction-PointGunAt-success-others-popup = {THE($user)} is pointing {POSS-ADJ} gun at {THE($target)}!
 
 interaction-Kiss-name = Kiss
 interaction-Kiss-description = A kiss to melt the pain away. Requires your mouth to be free.

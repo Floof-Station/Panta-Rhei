@@ -48,10 +48,10 @@
     blacklist:
       components:
       - SurplusBundle
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - NukeOpsUplink
+  #- !type:StoreWhitelistCondition # Euphoria - More Hostages
+  #  whitelist:
+  #    tags:
+  #    - NukeOpsUplink
 
 - type: listing
   id: NukeopsUplinkUplinkImplanter

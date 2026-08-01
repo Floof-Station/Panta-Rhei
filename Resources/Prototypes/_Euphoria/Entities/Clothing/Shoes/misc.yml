@@ -66,3 +66,14 @@
     damage:
       types:
         Piercing: 6
+
+- type: entity
+  parent: ClothingShoesJester
+  id: ClothingShoesGeiru
+  name: pretty clown shoes
+  description: Go on you clown! There is more to see! More courtrooms to walk down!
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/geiru_clown_shoes.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/geiru_clown_shoes.rsi

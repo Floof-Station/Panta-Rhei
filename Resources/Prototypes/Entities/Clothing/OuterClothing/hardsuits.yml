@@ -826,7 +826,7 @@
       outerClothing-dog:
       - state: equipped-OUTERCLOTHING-dog
   - type: PressureProtection
-    highPressureMultiplier: 0.02
+    highPressureMultiplier: 0.001 # Euphoria - was 0.02
     lowPressureMultiplier: 1000
   - type: TemperatureProtection
     heatingCoefficient: 0.001
@@ -834,19 +834,21 @@
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: FireProtection
-    reduction: 0.8
+    reduction: 0.95
   - type: StaminaResistance # DeltaV - uncommented
-    damageCoefficient: 0.3 # DeltaV - was 0.6
+    damageCoefficient: 0.5 # Euphoria - was 0.3
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.1 # Euphoria - Added 90% Zombie Resistance // This effect will only ever show up in planned events on Euphoria
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.8 # DeltaV - was 0.6
-        Slash: 0.8 # DeltaV - was 0.6
+        Blunt: 0.6 # Euphoria - was 0.8
+        Slash: 0.6 # Euphoria - was 0.8
         Piercing: 0.6
         Heat: 0.2
         Radiation: 0.01
         Caustic: 0.5
-        Cold: 0.4 # DeltaV - Cold res
+        Cold: 0.2 # Euphoria - was 0.4 // In the unlikely event that syndies end up fighting coscult
   - type: DamageOnShootProtection # imp
     slots: OUTERCLOTHING
     damageProtection:
@@ -854,9 +856,9 @@
         Blunt: 10
   - type: Item
     size: Huge
-  - type: ClothingSpeedModifier
-    walkModifier: 0.9
-    sprintModifier: 0.9
+  - type: ClothingSpeedModifier # Euphoria
+    walkModifier: 1
+    sprintModifier: 1
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitSyndieElite

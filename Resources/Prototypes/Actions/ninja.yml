@@ -81,10 +81,11 @@
       sprite: Objects/Magic/magicactions.rsi
       state: blink
     itemIconStyle: NoItem
-    sound:
-      path: /Audio/Magic/blink.ogg
-      params:
-        volume: 5
+    #Euphoria | Dash handling changed for do after
+#    sound:
+#      path: /Audio/Magic/blink.ogg
+#      params:
+#        volume: 5
     priority: -12
   - type: TargetAction
     checkCanAccess: false

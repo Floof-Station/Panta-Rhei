@@ -1,6 +1,8 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using Content.Client._Floof.Language.Systems;
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -41,6 +43,7 @@ using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Client.Nyanotrasen.Chat; //Nyano - Summary: chat namespace.
+using Content.Shared._Floof.Language; // Starlight: Language prefixes
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -68,6 +71,7 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+    [UISystemDependency] private readonly LanguageSystem? _lang = default!; // Starlight
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
@@ -728,7 +732,7 @@ public sealed partial class ChatUIController : UIController
 
     public void UpdateSelectedChannel(ChatBox box)
     {
-        var (prefixChannel, _, radioChannel) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
+        var (prefixChannel, _, radioChannel, _) = SplitInputContents(box.ChatInput.Input.Text.ToLower()); // Starlight edit
 
         if (prefixChannel == ChatSelectChannel.None)
             box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null);
@@ -743,36 +747,47 @@ public sealed partial class ChatUIController : UIController
         // DeltaV end
     }
 
-    public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel) SplitInputContents(string text)
+    public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel, LanguagePrototype? language) SplitInputContents(string text)
     {
         text = text.Trim();
         if (text.Length == 0)
-            return (ChatSelectChannel.None, text, null);
+            return (ChatSelectChannel.None, text, null, null); // Starlight: Language prefixes
 
         // We only cut off prefix only if it is not a radio or local channel, which both map to the same /say command
         // because ????????
 
+        //Starlight begin - detect language prefix. don't modify text directly here and use modText for radio channel checks.
+        var modText = text;
+        LanguagePrototype? language = null;
+        if (TryGetLanguage(ref text, out var foundLanguage))
+        {
+            language = foundLanguage;
+            if(text.Length<5) return (ChatSelectChannel.None, text, null, foundLanguage);
+            modText = text[4..];
+        }
+        //Starlight end
+
         ChatSelectChannel chatChannel;
-        if (TryGetRadioChannel(text, out var radioChannel))
+        if (TryGetRadioChannel(modText, out var radioChannel))
             chatChannel = ChatSelectChannel.Radio;
         else
             chatChannel = PrefixToChannel.GetValueOrDefault(text[0]);
 
         if ((CanSendChannels & chatChannel) == 0)
-            return (ChatSelectChannel.None, text, null);
+            return (ChatSelectChannel.None, text, null, language);
 
         if (chatChannel == ChatSelectChannel.Radio)
-            return (chatChannel, text, radioChannel);
+            return (chatChannel, text, radioChannel, language);
 
         if (chatChannel == ChatSelectChannel.Local)
         {
             if (_ghost?.IsGhost != true)
-                return (chatChannel, text, null);
+                return (chatChannel, text, null, language);
             else
                 chatChannel = ChatSelectChannel.Dead;
         }
 
-        return (chatChannel, text[1..].TrimStart(), null);
+        return (chatChannel, text[1..].TrimStart(), null, language);
     }
 
     public void SendMessage(ChatBox box, ChatSelectChannel channel)
@@ -783,11 +798,12 @@ public sealed partial class ChatUIController : UIController
         box.ChatInput.Input.Clear();
         box.ChatInput.Input.ReleaseKeyboardFocus();
         UpdateSelectedChannel(box);
+        UpdateLanguageNotifier(box); // Starlight: Language prefixes
 
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        (var prefixChannel, text, var _) = SplitInputContents(text);
+        (var prefixChannel, text, _, _) = SplitInputContents(text); // Starlight: Language prefixes
 
         // Check if message is longer than the character limit
         if (text.Length > MaxMessageLength)
@@ -1012,4 +1028,26 @@ public sealed partial class ChatUIController : UIController
 
         public Queue<SpeechBubbleData> MessageQueue { get; } = new();
     }
+
+    //Starlight begin
+    private bool TryGetLanguage(ref string text, [NotNullWhen(true)] out LanguagePrototype? language)
+    {
+        language = null;
+        if (_player.LocalEntity is not { Valid: true } uid || _lang == null) return false;
+        language = _lang.GetLanguageFromPrefix(uid, ref text, out var parsed);
+        return parsed;
+    }
+
+    public void UpdateLanguageNotifier(ChatBox box)
+    {
+        var (_, _, _, language) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
+        if (language is null)
+            box.SelectedLanguage.Visible = false;
+        else
+        {
+            box.SelectedLanguage.Text = Loc.GetString("language-chat-confirmation", ("lang", language.Name));
+            box.SelectedLanguage.Visible = true;
+        }
+    }
+    //Starlight end
 }
