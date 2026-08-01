@@ -147,8 +147,8 @@
         - map: ["head"]
         - map: ["pocket1"]
         - map: ["pocket2"]
-        - map: [ "enum.HumanoidVisualLayers.Tail" ]
         - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
+        - map: [ "enum.HumanoidVisualLayers.Tail" ]
         - map: ["clownedon"] # Dynamically generated
           sprite: "Effects/creampie.rsi"
           state: "creampie_human"
