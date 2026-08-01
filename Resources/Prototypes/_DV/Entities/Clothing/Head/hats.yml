@@ -402,7 +402,7 @@
       head:
       - state: equipped-HELMET
         offset: "0, 0.12"
-# Euphoria start: Parity with other HoS hats.
+# Euphoria start: Parity with other HoS hats. Copied armor coefficients instead of parenting from the HOS hat since the cav hat lacks the proper sprites for animals.
   - type: Armor
     modifiers:
       coefficients:
