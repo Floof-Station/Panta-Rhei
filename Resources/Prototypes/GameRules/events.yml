@@ -290,9 +290,9 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
+      #- type: AutoImplant #Euphoria, making the acidifier implant optional.
+      #  implants:
+      #  - DeathAcidifierImplant
       - type: RandomMetadata
         nameSegments:
         - NamesNinjaTitle
