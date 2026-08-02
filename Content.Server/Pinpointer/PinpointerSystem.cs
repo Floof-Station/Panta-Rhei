@@ -2,6 +2,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Pinpointer;
 using System.Linq;
 using System.Numerics;
+using Content.Server.Bible.Components;
 using Robust.Shared.Utility;
 using Content.Server.Shuttles.Events;
 using Content.Shared.IdentityManagement;
@@ -88,6 +89,11 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
             var target = FindTargetFromComponent(uid, reg.Type);
             SetTarget(uid, target, component);
         }
+        // #IMP For anomalites to find their cores, use familiar component to get core EntityUid
+        else if (args is not null && TryComp<FamiliarComponent>(args.User, out var familiarComp))
+        {
+            SetTarget(uid, familiarComp.Source, component);
+        }
     }
 
     public override void Update(float frameTime)
@@ -100,6 +106,19 @@ public sealed class PinpointerSystem : SharedPinpointerSystem
         while (query.MoveNext(out var uid, out var pinpointer))
         {
             UpdateDirectionToTarget(uid, pinpointer);
+            //#IMP automatically turn on the pinpointer ONCE if ActivateImmediately is true.
+            if (pinpointer.ActivateImmediately)
+            {
+                pinpointer.ActivateImmediately = false;
+                // Anomalite check
+                if (TryComp<FamiliarComponent>(_transform.GetParentUid(uid), out var familiar))
+                {
+                    SetTarget(uid, familiar.Source, pinpointer);
+                }
+
+                TogglePinpointer(uid, pinpointer);
+                LocateTarget(uid, pinpointer);
+            }
         }
     }
 

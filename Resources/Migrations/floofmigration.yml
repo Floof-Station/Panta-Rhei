@@ -82,14 +82,14 @@ ClothingOuterJacketChefOrion: null
 #LewdLootSpawnerKinky: null # commenting out since ths is back
 #LewdLootSpawnerToys: null # commenting out since ths is back
 #StripperPole: null # commenting out since ths is back
-ClothingHandsSexCompGlovesBlue: null
-ClothingHandsSexCompGlovesRed: null
-ClothingHeadSexCompCirclet: null
-ClothingOuterSexCompBeltGold: null
-ClothingUnderSexCompBootsBlue: null
-ClothingUnderSexCompBootsRed: null
-ClothingUniformSexCompBlue: null
-ClothingUniformSexCompRed: null
+#ClothingHandsSexCompGlovesBlue: null # commenting out since ths is back
+#ClothingHandsSexCompGlovesRed: null # commenting out since ths is back
+#ClothingHeadSexCompCirclet: null # commenting out since ths is back
+#ClothingOuterSexCompBeltGold: null # commenting out since ths is back
+#ClothingUnderSexCompBootsBlue: null # commenting out since ths is back
+#ClothingUnderSexCompBootsRed: null # commenting out since ths is back
+#ClothingUniformSexCompBlue: null # commenting out since ths is back
+#ClothingUniformSexCompRed: null # commenting out since ths is back
 #CrateLewdToys: null # commenting out since ths is back
 
 #insturments
@@ -99,15 +99,15 @@ DrumkitInstrument: null
 FoodMealCarpSushi: null
 FoodSnackAncientPizza: null
 FoodSnackOortrocks: null
-HumpShroomSeeds: null
+#HumpShroomSeeds: null # This has been back not sure why have it commented out?
 SpesosTreeSeeds: null
 
 #drinks
-DrinkBoykisserEnergy: null
-DrinkEggnogBottleFull: null
-DrinkEggnogGlass: null
-DrinkSyndicateEggnogBottleFull: null
-DrinkKoboldKorkscrewGlass: null
+#DrinkBoykisserEnergy: null # This has been back not sure why have it commented out?
+#DrinkEggnogBottleFull: null # This has been back not sure why have it commented out?
+#DrinkEggnogGlass: null # This has been back not sure why have it commented out?
+#DrinkSyndicateEggnogBottleFull: null # This has been back not sure why have it commented out?
+#DrinkKoboldKorkscrewGlass: null # This has been back not sure why have it commented out?
 
 #lockers - need to bring these over all maps have these
 LockerBartenderFilled: LockerBoozeFilled
@@ -161,6 +161,9 @@ NitrousOxideMixCanister: NitrousOxideCanister #delta-v dosent have a save mix ca
 
 #mechs:
 SpawnMechSeraphFilled: null # we do not have mechs
+
+# smile (station pet)
+SpawnMobSmileCore: SpawnMobSmile # bring msile back
 
 ####################################################
 # Everything below here does not need to be ported #

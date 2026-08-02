@@ -220,6 +220,7 @@
   parent: MobCarp
   suffix: Dungeon
   components:
+  - type: AshStormImmune #Euphoria
   - type: MobThresholds
     thresholds:
       0: Alive

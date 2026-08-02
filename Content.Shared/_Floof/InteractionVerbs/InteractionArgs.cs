@@ -34,7 +34,12 @@ public sealed partial class InteractionArgs
     /// </summary>
     public bool AllowRepeat = true;
 
-    public InteractionArgs(EntityUid user, EntityUid target, EntityUid? used, bool canAccess, bool canInteract, bool hasHands, float? contestAdvantage)
+    /// <summary>
+    ///     Which entity fascilated this verb. Can be checked to make a verb do different things based on where its coming from.
+    /// </summary>
+    public InteractionVerbSource Source;
+
+    public InteractionArgs(EntityUid user, EntityUid target, EntityUid? used, bool canAccess, bool canInteract, bool hasHands, float? contestAdvantage, bool allowRepeat, InteractionVerbSource source)
     {
         User = user;
         Target = target;
@@ -43,11 +48,25 @@ public sealed partial class InteractionArgs
         CanInteract = canInteract;
         HasHands = hasHands;
         ContestAdvantage = contestAdvantage;
+        AllowRepeat = allowRepeat;
+        Source = source;
     }
 
-    public InteractionArgs(InteractionArgs other) : this(other.User, other.Target, other.Used, other.CanAccess, other.CanInteract, other.HasHands, other.ContestAdvantage) {}
+    public InteractionArgs(InteractionArgs other) : this(other.User, other.Target, other.Used, other.CanAccess, other.CanInteract, other.HasHands, other.ContestAdvantage, other.AllowRepeat, other.Source) {}
 
-    public static InteractionArgs From<T>(GetVerbsEvent<T> ev) where T : Verb => new(ev.User, ev.Target, ev.Using, ev.CanAccess, ev.CanInteract, ev.Hands is not null, null);
+    /// <summary>
+    ///     COpies all relevant info from the GetVerbsEvent.
+    /// </summary>
+    public static InteractionArgs From<T>(GetVerbsEvent<T> ev) where T : Verb =>
+        new(ev.User,
+            ev.Target,
+            ev.Using,
+            ev.CanAccess,
+            ev.CanInteract,
+            ev.Hands is not null,
+            null,
+            true,
+            InteractionVerbSource.Unknown);
 
     /// <summary>
     ///     Tries to get a value from the blackboard as an instance of a specific type.

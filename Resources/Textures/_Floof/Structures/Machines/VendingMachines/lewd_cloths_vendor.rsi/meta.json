@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "lewdclothing lewdclothing-off taken from S.P.L.U.R.T-Station-13 Commit: https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/commit/d2422de379bf7139808b33b39e1eabeba78a27ee#diff-34173d670aca65c110ef18312c32abc4e05c84f33a9402248a32000e45acd0d3, lewclothing-broken, lewdclothing-deny and refill-lewdclothing taken from https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/commit/a5e688b25d1e790d6980f6d1aaba0ed254801ed7 and edit by Dunrab (Github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "lewdclothing-broken"
+        },
+        {
+            "name": "lewdclothing-panel"
+        },
+        {
+            "name": "lewdclothing",
+            "delays": [
+                [
+                    1,
+                    0.4,
+                    1,
+                    0.4,
+                    1,
+                    0.4
+                ]
+            ]
+        },
+        {
+            "name": "lewdclothing-deny"
+        },
+        {
+            "name": "lewdclothing-off"
+        },
+        {
+            "name": "refill-lewdclothing"
+        }
+    ]
+}

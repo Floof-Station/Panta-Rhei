@@ -127,3 +127,69 @@
     radius: 1.3
     energy: 3.0
     color: "#43ccb5"
+
+# lewd items vendor
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineLewdVendor
+  name: Lewd Toy Vendor
+  description: Grab your self some "tools", a man needs his tools!!
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_vendor.rsi
+    layers:
+    - state: "kink-off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "kink"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: kink-panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#702963"
+  - type: VendingMachine
+    pack: LewdVendorInventory
+    offState: kink-off
+    brokenState: kink-broken
+    normalState: kink
+    denyState: kink-deny
+  - type: Wires
+    layoutId: ShopVendor
+  - type: Rotatable
+    rotateWhileAnchored: false
+  - type: DatasetVocalizer
+    dataset: VendingMachineLewdToyVendor
+
+# lewd clothing
+- type: entity
+  parent: VendingMachine
+  id: VendingMachineLewdClothingVendor
+  name: Lewd Clothing Vendor
+  description: Grab your self some "tools", a man needs his tools!!
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_cloths_vendor.rsi
+    layers:
+    - state: "lewdclothing-off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "lewdclothing"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+    - state: lewdclothing-panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#702963"
+  - type: VendingMachine
+    pack: LewdClothingVendorInventory
+    offState: lewdclothing-off
+    brokenState: lewdclothing-broken
+    normalState: lewdclothing
+    denyState: lewdclothing-deny
+  - type: Wires
+    layoutId: ShopVendor
+  - type: Rotatable
+    rotateWhileAnchored: false
+  - type: DatasetVocalizer
+    dataset: VendingMachineLewdClothingVendor
