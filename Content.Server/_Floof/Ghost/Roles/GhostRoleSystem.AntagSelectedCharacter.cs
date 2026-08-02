@@ -56,8 +56,7 @@ namespace Content.Server.Ghost.Roles
             ref AntagSelectEntityEvent args)
         {
 
-            if (args.Handled ||
-		!(args.Session != null)) //If the session is null then fuck you I'm outta here
+            if (args.Handled ||	(args.Session == null)) //If the session is null then fuck you I'm outta here
             return;
 	    
             var uid = ent.Owner;
@@ -66,9 +65,8 @@ namespace Content.Server.Ghost.Roles
 
 	    //Get the player's selected character
 
-	    var character = args.Session != null
-            ? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
-            : HumanoidCharacterProfile.RandomWithSpecies();
+            var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Session.UserId).SelectedCharacter;
+
 	    
              args.Entity = _ent.System<StationSpawningSystem>()
                  .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
@@ -80,7 +78,8 @@ namespace Content.Server.Ghost.Roles
             EnsureComp<MindContainerComponent>(args.Entity.Value);
 
 	    //This call occasionally errored out and froze the client until they ghosted again
-	    //because it's attempting to get a GhostRoleComponent on AntagFoodCriticSpawn
+	    //because it's attempting to get a GhostRoleComponent on the gamerule
+	    //I gave that prototype its own GhostRoleComponent, but this may still happen
 	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, args.Entity.Value);
 
             _outfit.SetOutfit(args.Entity.Value, component.OutfitPrototype);
