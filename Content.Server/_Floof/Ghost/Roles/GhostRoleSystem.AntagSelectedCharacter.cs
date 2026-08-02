@@ -62,18 +62,13 @@ namespace Content.Server.Ghost.Roles
 	    
             var uid = ent.Owner;
             var component = ent.Comp;
-	 
-	    //The expression here always evaluates to true, unlike in OnSpawnerTakeCharacter.
-	    //Maybe something else is handling this? NO idea, I sure hope this isn't important!
-            // if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
-            //     ghostRole.Taken)
-            // {
-            //     //args.TookRole = false;
-            //     return;
-            // }
+
 
 	    //Get the player's selected character
-            var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Session.UserId).SelectedCharacter;
+
+	    var character = args.Session != null
+            ? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
+            : HumanoidCharacterProfile.RandomWithSpecies();
 	    
              args.Entity = _ent.System<StationSpawningSystem>()
                  .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
@@ -84,6 +79,8 @@ namespace Content.Server.Ghost.Roles
 
             EnsureComp<MindContainerComponent>(args.Entity.Value);
 
+	    //This call occasionally errored out and froze the client until they ghosted again
+	    //because it's attempting to get a GhostRoleComponent on AntagFoodCriticSpawn
 	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, args.Entity.Value);
 
             _outfit.SetOutfit(args.Entity.Value, component.OutfitPrototype);
