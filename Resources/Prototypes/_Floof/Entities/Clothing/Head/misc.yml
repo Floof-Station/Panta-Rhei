@@ -129,3 +129,19 @@
     maxItemSize: Huge
     grid:
     - 0,0,5,4
+
+- type: entity
+  parent: ClothingHeadEVAHelmetBase
+  id: ClothingHeadHelmetHorse
+  name: horse mask
+  description: A mask for horsing around.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/horsemask.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/horsemask.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
