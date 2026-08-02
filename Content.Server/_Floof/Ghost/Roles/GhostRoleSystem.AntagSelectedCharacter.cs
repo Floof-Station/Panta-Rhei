@@ -39,12 +39,12 @@ Is there anything I can do about that? No, not really. AntagLoadProfileRuleSyste
 and GhostRoleSystem's OnSpawnerTakeCharacter is from DeltaV. These architectural decisions are above me, but I also wanted
 to acknowledge them because I don't like them and want to be up-front about the fact this source file would not need
 to exist if when making AntagLoadProfileRule they accounted for a desire to make an antagonist fully into the player's
-selected character. Maybe this could be done by making the aspects of the character the system must copy 
-a datafield in the component. I did not try to do this because I did not want to interfere with upstream files.
-Even better, not separating spawning functionality between antagonists and regular ghost roles.
-Even better even better, not separating spawning functionality between anything at all so that I could just
+selected character. Maybe this could be done by making the aspects of the character the system must copy (or must
+not copy) a datafield in the component. I did not try to do this because I did not want to interfere with upstream files.
+Perhaps even better would be to not separate spawning functionality between antagonists and regular ghost roles.
+Even better even better, not separating spawning functionality between any character so that I could just
 access the functionality for spawning regular player characters. I think that if that was done, I would
-actually not have had to write any code at all. However, fixing that would involve fucking with
+not have had to write any code at all. However, fixing that would involve messing with
 some of the most fundamental systems of the game. So... can't do much about that. Rant over :3
 */
 
@@ -64,7 +64,7 @@ namespace Content.Server.Ghost.Roles
             var component = ent.Comp;
 	 
 	    //The expression here always evaluates to true, unlike in OnSpawnerTakeCharacter.
-	    //Maybe something else is handling this? Look, I got no idea.
+	    //Maybe something else is handling this? NO idea, I sure hope this isn't important!
             // if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
             //     ghostRole.Taken)
             // {
@@ -72,6 +72,7 @@ namespace Content.Server.Ghost.Roles
             //     return;
             // }
 
+	    //Get the player's selected character
             var character = (HumanoidCharacterProfile) _prefs.GetPreferences(args.Session.UserId).SelectedCharacter;
 	    
              args.Entity = _ent.System<StationSpawningSystem>()
