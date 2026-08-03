@@ -52,30 +52,46 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// Checks if an entity can understand a given language. Universal speakers are assumed to understand every language.
     /// On the client side, this method is only guaranteed to work if the entity is the local player.
     /// </summary>
-    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
-        languageId == UniversalPrototype || _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
+    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId)
+    {
+        // Entities with no LanguageSpeakerComponent understand everything - skip the expensive index in that case
+        // Also universal is understood by everyone, so also skip if it's that
+        if (languageId == Universal || !SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
+            return true;
+
+        return _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
+    }
 
     /// <inheritdoc cref="CanUnderstand(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
-        if (language == Universal || UniversalQuery.TryComp(ent, out var uni) && uni.Enabled)
+        // Entities with no LanguageSpeakerComponent or with UniversalSpeakerComponent understand everything
+        if (language == Universal
+            || UniversalQuery.TryComp(ent, out var uni) && uni.Enabled
+            || !SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
             return true;
 
-        return SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
+        return ent.Comp.UnderstoodLanguages.Contains(language.ID);
     }
 
     /// <summary>
     /// Checks if an entity can speak a given language.
     /// On the client side, this method is only guaranteed to work if the entity is the local player.
     /// </summary>
-    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
-        _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
+    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId)
+    {
+        // Entities with no LanguageSpeakerComponent only speak universal - skip the expensive indexing in that case
+        if (!SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
+            return languageId == Universal;
+
+        return _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
+    }
 
     /// <inheritdoc cref="CanSpeak(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
         if (!SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
-            return false;
+            return language == UniversalPrototype;
 
         return ent.Comp.SpokenLanguages.Contains(language.ID);
     }
@@ -100,7 +116,8 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <remarks>This simply returns the value of <see cref="Components.LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
     public List<ProtoId<LanguagePrototype>> GetSpokenLanguages(EntityUid uid)
     {
-        return SpeakerQuery.TryComp(uid, out var component) ? component.SpokenLanguages : [];
+        // Note: using [Universal] will cause a sandbox violation on the client sidwase
+        return SpeakerQuery.TryComp(uid, out var component) ? component.SpokenLanguages : new() { Universal };
     }
 
     /// <summary>
