@@ -220,6 +220,16 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
         // DeltaV - End hushed trait logic
 
+        // Begin Euphoria additions: language prefixes (partial port from starlight)
+        var prefixLanguage = _languages.GetLanguageFromPrefix(source, ref message, modifyText: true, out var invalid);
+        if (invalid)
+            return;
+
+        using var _ = prefixLanguage != null && _languages.CanSpeak(source, prefixLanguage)
+            ? _languages.SubstituteEntityLanguage(source, prefixLanguage.ID)
+            : null;
+        // End Euphoria additions
+
         bool shouldCapitalize = (desiredType is not (InGameICChatType.Emote or InGameICChatType.Subtle)); // Floofstation edit
         bool shouldPunctuate = _configurationManager.GetCVar(CCVars.ChatPunctuation);
         // Capitalizing the word I only happens in English, so we check language here
@@ -227,10 +237,6 @@ public sealed partial class ChatSystem : SharedChatSystem
             || (CultureInfo.CurrentCulture.IsNeutralCulture && CultureInfo.CurrentCulture.Name == "en");
 
         message = SanitizeInGameICMessage(source, message, out var emoteStr, shouldCapitalize, shouldPunctuate, shouldCapitalizeTheWordI);
-
-        var prefix = _languages.GetLanguageFromPrefix(source, ref message, out var parsed, true); // Starlight start: Language prefixes
-        using var _ = parsed && _languages.CanSpeak(source, prefix)
-            ? _languages.SubstituteEntityLanguage(source, prefix.ID) : null;
 
         // Was there an emote in the message? If so, send it.
         if (player != null && emoteStr != message && emoteStr != null)

@@ -2,6 +2,7 @@ using System.Text;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Language.Systems;
 
@@ -178,48 +179,42 @@ public abstract partial class SharedLanguageSystem : EntitySystem
 
     // Starlight start
     /// <summary>
-    /// Attempt to resolve language based off a given prefix.
+    ///     Attempt to resolve language based off a given prefix.
+    ///     Returns null if there's no prefix or language doesn't exist. Never returns a language the entity cannot speak.
     /// </summary>
     /// <param name="ent">Entity to get language from</param>
     /// <param name="input">Input to parse for prefix. Should start with <c><see cref="ChatPrefixChar"/></c>.</param>
-    /// <param name="parsed">Whether the function managed to parse the prefix or not.</param>
     /// <param name="modifyText">Whether to allow this function to modify the resulting text string or not.</param>
-    /// <returns></returns>
-    public LanguagePrototype GetLanguageFromPrefix(Entity<LanguageSpeakerComponent?> ent, ref string input, out bool parsed, bool modifyText = false)
+    /// <param name="invalid">True if prefix was found but was invalid. False otherwise.</param>
+    public LanguagePrototype? GetLanguageFromPrefix(Entity<LanguageSpeakerComponent?> ent, ref string input, bool modifyText, out bool invalid)
     {
-        parsed = false;
-        // Fallback if unable to get the current selected language. Selected language is used if unable to parse.
+        // This method has been rewritten on Euph because starlight's implementation is just slop.
+        invalid = false;
         if (!Resolve(ent, ref ent.Comp, logMissing: false))
-            return Universal;
+            return null;
 
-        var proto = GetLanguage(ent);
-        // Begin parsing
         var text = input;
-        if (text.Length<4 || !text.StartsWith(ChatPrefixChar)) return proto;
+        if (text.Length < 3 || !text.StartsWith(ChatPrefixChar)) // Shortest possible message: "^g."
+            return null;
+
         text = text[1..];
-        var prefix = text[..3];
         foreach (var langId in ent.Comp.SpokenLanguages)
         {
-            if (!_prototype.TryIndex(langId, out var lang))
+            if (!_prototype.TryIndex(langId, out var lang) || lang.ChatPrefix is null)
                 continue;
-            if (lang.ChatPrefix is null)
-                continue;
-            if (lang.ChatPrefix.Length != 3)
-            {
-                Log.Error($"Chat prefixes must be 3 characters long. {lang.Name}'s prefix is {lang.ChatPrefix}");
-                return Universal;
-            }
 
-            if (!lang.ChatPrefix.Equals(prefix, StringComparison.CurrentCultureIgnoreCase))
+            if (!text.StartsWith(lang.ChatPrefix, StringComparison.CurrentCultureIgnoreCase))
                 continue;
 
             if(modifyText)
-                input = text[3..];
-            parsed = true;
+                input = text[lang.ChatPrefix.Length..];
+
             return lang;
         }
 
-        return proto;
+        // Fallback to avoid sending the message with an invalid prefix.
+        invalid = true;
+        return null;
     }
     // Starlight end
 }
