@@ -1,0 +1,59 @@
+<PanelContainer
+    xmlns="https://spacestation14.io"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    StyleClasses="PdaBorderRect">
+
+    <BoxContainer Name="MainContainer" Orientation="Vertical">
+        <!-- Header -->
+        <BoxContainer
+            Orientation="Horizontal"
+            HorizontalExpand="True">
+
+            <!-- Name -->
+            <Label Name="NameLabel" MinWidth="25" HorizontalExpand="True"/>
+            <!-- Choose button -->
+            <Button Name="ChooseButton" Text="Choose"/>
+        </BoxContainer>
+
+        <!-- Description and actions container -->
+        <BoxContainer Orientation="Horizontal">
+            <!-- Description container (left) -->
+            <Collapsible HorizontalExpand="True">
+                <CollapsibleHeading Title="{Loc 'language-menu-description-header'}"/>
+                <CollapsibleBody HorizontalExpand="true" Margin="4 4">
+                    <BoxContainer Orientation="Vertical">
+                        <RichTextLabel
+                            Name="DescriptionLabel"
+                            HorizontalExpand="true">
+                        </RichTextLabel>
+
+                        <controls:HLine />
+
+                        <!-- Chat prefix (partial port from starlight) -->
+                        <Label Name="ChatPrefixLabel"/>
+                    </BoxContainer>
+                </CollapsibleBody>
+            </Collapsible>
+
+            <!-- Actions container (right) -->
+            <BoxContainer Orientation="Vertical">
+                <!-- Note for those who want to port this: for some godforsaken reason ss14 doesnt have and has never had generic arrow sprites -->
+                <!-- I've opted to use the sprites we coincidentally ported from FarHorizons. You may need to port them as well or use different ones. -->
+                <!-- Move up -->
+                <TextureButton
+                    Name="MoveUpButton"
+                    TexturePath="/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_part_inserted/arrow_up.png"
+                    SetSize="16,16"/>
+
+                <controls:HSpacer Spacing="2"/>
+
+                <!-- Move down -->
+                <TextureButton
+                    Name="MoveDownButton"
+                    TexturePath="/Textures/_FarHorizons/Structures/Power/Generation/FissionGenerator/reactor_part_inserted/arrow_down.png"
+                    SetSize="16,16"/>
+            </BoxContainer>
+        </BoxContainer>
+    </BoxContainer>
+</PanelContainer>
