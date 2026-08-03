@@ -22,18 +22,18 @@
             <Collapsible HorizontalExpand="True">
                 <CollapsibleHeading Title="{Loc 'language-menu-description-header'}"/>
                 <CollapsibleBody HorizontalExpand="true" Margin="4 4">
+                    <!-- Chat prefix (partial port from starlight) -->
+                    <Label Name="ChatPrefixLabel"/>
+                    <!-- Alternative chat prefix as a number -->
+                    <Label Name="ChatPrefixAltLabel"/>
+
+                    <controls:HLine />
+
                     <BoxContainer Orientation="Vertical">
                         <RichTextLabel
                             Name="DescriptionLabel"
                             HorizontalExpand="true">
                         </RichTextLabel>
-
-                        <controls:HLine />
-
-                        <!-- Chat prefix (partial port from starlight) -->
-                        <Label Name="ChatPrefixLabel"/>
-                        <!-- Alternative chat prefix as a number -->
-                        <Label Name="ChatPrefixAltLabel"/>
                     </BoxContainer>
                 </CollapsibleBody>
             </Collapsible>
