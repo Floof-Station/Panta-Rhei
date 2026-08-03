@@ -1,0 +1,17 @@
+- type: entity
+  parent: BaseAction
+  id: ActionPumpCursedHeart
+  name: Heartbeat
+  description: Pump your own blood to live!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon:
+      sprite: _Lavaland/Objects/Specific/loot.rsi
+      state: cursed_heart
+    checkCanInteract: false
+    checkConsciousness: false
+    itemIconStyle: BigAction
+    useDelay: 1
+  - type: InstantAction
+    event: !type:PumpHeartActionEvent

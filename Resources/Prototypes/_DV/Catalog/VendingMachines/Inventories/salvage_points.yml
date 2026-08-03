@@ -47,7 +47,17 @@
     cost: 3500
   - id: PKAUpgradeDamage
     cost: 5000
-  #BEGIN floofstation addtions
+    #BEGIN floofstation addtions
+  - id: PKAUpgradeFireRate
+    cost: 5000
+  - id: LavalandWeaponKineticMachete
+    cost: 750
+  - id: LavalandWeaponKineticClaws
+    cost: 750
+  - id: WeaponCrusherHammer
+    cost: 1000
+  - id: WeaponCrusherHalberd
+    cost: 1000
   - id: WeaponSniperMosin
     cost: 5000
   - id: WeaponPistolForged
@@ -79,6 +89,5 @@
   # TODO: mining drone stuff
   - id: MedicalTrackingImplanter
     cost: 10000
-  - id: LavalandJaunter    
+  - id: LavalandJaunter
     cost: 2500
-          
