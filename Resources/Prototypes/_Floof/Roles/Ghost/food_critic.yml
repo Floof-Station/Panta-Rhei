@@ -116,10 +116,6 @@
   - type: AntagRandomSpawn
   - type: GhostRoleCharacterSpawner
     outfitPrototype: FoodCriticGear
-  - type: GhostRole
-    name: ghost-role-information-food-critic-name
-    description: ghost-role-information-food-critic-description
-    rules: ghost-role-information-peaceful-antagonist-rules
   - type: AntagObjectives
     objectives:
     - FoodCriticSurviveObjective
