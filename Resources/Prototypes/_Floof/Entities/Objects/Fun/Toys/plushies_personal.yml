@@ -304,9 +304,14 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
-    sound: *avaliSpeak
+    sound: &avaliSpeak
+      path: /Audio/_Floof/Voice/Avali/avali_1.ogg
+      params:
+        volume: 1
   - type: EmitSoundOnLand
-    sound: *landAvali
+    sound: &landAvali
+      path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
+    path: /Audio/_Floof/Voice/Avali/avali_scream.ogg
   - type: EmitSoundOnCollide
     sound: *landAvali
   - type: EmitSoundOnActivate
