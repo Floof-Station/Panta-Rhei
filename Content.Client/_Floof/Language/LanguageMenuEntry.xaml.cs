@@ -15,6 +15,7 @@ public sealed partial class LanguageMenuEntry : PanelContainer
 
     public readonly LanguagePrototype? Language;
     public bool CanChoose { get; private set; } = true;
+    public int Index { get; private set; } = 1;
 
     public LanguageMenuEntry(LanguagePrototype language)
     {
@@ -37,6 +38,19 @@ public sealed partial class LanguageMenuEntry : PanelContainer
     {
         ChooseButton.Disabled = !canChoose;
         CanChoose = canChoose;
+    }
+
+    /// <summary>
+    ///     Set the index of this entry and specify how many entries there are. Used to disable move up/down buttons and provide a chat prefix.
+    /// </summary>
+    public void SetIndex(int index, int count)
+    {
+        Index = index;
+
+        MoveUpButton.Disabled = index == 0;
+        MoveDownButton.Disabled = index == count - 1;
+
+        ChatPrefixAltLabel.Text = $"alt. prefix: {SharedLanguageSystem.ChatPrefixChar}{index + 1}";
     }
 }
 

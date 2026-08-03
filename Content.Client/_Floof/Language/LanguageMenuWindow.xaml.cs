@@ -32,9 +32,11 @@ public sealed partial class LanguageMenuWindow : DefaultWindow
         OptionsList.RemoveAllChildren();
         _entries.Clear();
 
-        foreach (var language in spokenLanguages)
+        for (var i = 0; i < spokenLanguages.Count; i++)
         {
+            var language = spokenLanguages[i];
             var entry = AddLanguageEntry(language);
+            entry?.SetIndex(i, spokenLanguages.Count);
             // Disable the button for the currently chosen language
             if (entry is not null && entry.CanChoose)
                 entry.SetCanChoose(entry.Language?.ID != currentLanguage.Id);

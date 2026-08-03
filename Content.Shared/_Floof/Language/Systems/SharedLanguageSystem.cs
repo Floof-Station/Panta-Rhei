@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Text;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared.GameTicking;
@@ -227,6 +228,27 @@ public abstract partial class SharedLanguageSystem : EntitySystem
                 input = text[lang.ChatPrefix.Length..];
 
             return lang;
+        }
+
+        // Euph addition - if no language matched, try to parse it as an index (up to 2 digits) in the form "^1" or "^10"
+        var maybeNumber = 0;
+        var parsedDigits = 0;
+        for (var i = 0; i < 2; i++)
+        {
+            var ch = text[parsedDigits];
+            if (!char.IsDigit(ch))
+                break;
+            maybeNumber = maybeNumber * 10 + (ch - '0');
+            parsedDigits++;
+        }
+
+        if (maybeNumber > 0 && maybeNumber <= ent.Comp.SpokenLanguages.Count)
+        {
+            if (modifyText)
+                input = text[parsedDigits..];
+
+            var id = ent.Comp.SpokenLanguages[maybeNumber - 1];
+            return _prototype.TryIndex(id, out var proto) ? proto : null;
         }
 
         // Fallback to avoid sending the message with an invalid prefix.

@@ -105,7 +105,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
 
     private void UpdateWindowState()
     {
-        var languageSpeaker = _languages.GetLocalSpeaker();
+        var languageSpeaker = _languages?.GetLocalSpeaker();
         if (languageSpeaker == null || LanguageWindow == null)
             return;
 
@@ -114,10 +114,10 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
 
     private void OnLanguageChosen(LanguagePrototype language)
     {
-        _languages.RequestSetLanguage(language);
+        _languages?.RequestSetLanguage(language);
 
         // Predict the change
-        if (_languages.GetLocalSpeaker()?.SpokenLanguages is {} languages)
+        if (_languages?.GetLocalSpeaker()?.SpokenLanguages is {} languages)
             LanguageWindow?.UpdateState(language.ID, languages);
     }
 
@@ -126,7 +126,7 @@ public sealed class LanguageMenuUIController : UIController, IOnStateEntered<Gam
     /// </summary>
     private void MoveLanguage(ProtoId<LanguagePrototype> languageId, int offset)
     {
-        if (_languages.GetLocalSpeaker() is not { } speakerComp)
+        if (_languages?.GetLocalSpeaker() is not { } speakerComp)
             return;
 
         var order = _languages.GetLocalPreferredLanguageOrder();

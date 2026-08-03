@@ -32,6 +32,8 @@
 
                         <!-- Chat prefix (partial port from starlight) -->
                         <Label Name="ChatPrefixLabel"/>
+                        <!-- Alternative chat prefix as a number -->
+                        <Label Name="ChatPrefixAltLabel"/>
                     </BoxContainer>
                 </CollapsibleBody>
             </Collapsible>
