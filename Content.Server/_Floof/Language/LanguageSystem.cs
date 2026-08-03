@@ -19,7 +19,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         SubscribeLocalEvent<LanguageSpeakerComponent, MapInitEvent>(OnInitLanguageSpeaker);
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentGetState>(OnGetLanguageState);
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, DetermineEntityLanguagesEvent>(OnDetermineUniversalLanguages);
-        SubscribeNetworkEvent<LanguagesSetMessage>(OnClientSetLanguage);
+        SubscribeNetworkEvent<LanguageSetRequest>(OnClientSetLanguage);
 
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>((uid, _, _) => UpdateEntityLanguages(uid));
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentRemove>((uid, _, _) => UpdateEntityLanguages(uid));
@@ -52,7 +52,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             ev.SpokenLanguages.Add(UniversalPrototype);
     }
 
-    private void OnClientSetLanguage(LanguagesSetMessage message, EntitySessionEventArgs args)
+    private void OnClientSetLanguage(LanguageSetRequest message, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { Valid: true } uid)
             return;

@@ -54,7 +54,7 @@ public sealed class LanguageSystem : SharedLanguageSystem
         if (GetLocalSpeaker()?.CurrentLanguage?.Equals(language) == true)
             return;
 
-        RaiseNetworkEvent(new LanguagesSetMessage(language));
+        RaiseNetworkEvent(new LanguageSetRequest(language));
     }
 
     private void OnPlayerAttached(EntityUid entity)
