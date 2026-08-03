@@ -171,13 +171,13 @@
 
 - type: entity
   parent: BowtieBase
-  id: BowtieUSSP
-  name: USSP bowtie
+  id: BowtieHero
+  name: Hero bowtie
   components:
   - type: Sprite
-    sprite: _HL/Clothing/Bunnysuit/Bowties/ussp.rsi
+    sprite: _HL/Clothing/Bunnysuit/Bowties/hero.rsi
   - type: Clothing
-    sprite: _HL/Clothing/Bunnysuit/Bowties/ussp.rsi
+    sprite: _HL/Clothing/Bunnysuit/Bowties/hero.rsi
 
 - type: entity
   parent: BowtieBase
@@ -335,9 +335,9 @@
   name: head of security's bowtie
   components:
   - type: Sprite
-    sprite: _HL/Clothing/Bunnysuit/Bowties/ussp.rsi
+    sprite: _HL/Clothing/Bunnysuit/Bowties/hero.rsi
   - type: Clothing
-    sprite: _HL/Clothing/Bunnysuit/Bowties/ussp.rsi
+    sprite: _HL/Clothing/Bunnysuit/Bowties/hero.rsi
 
 - type: entity
   parent: BowtieBase

@@ -312,13 +312,13 @@
 
 - type: entity
   parent: BunnyJacketBase
-  id: BunnyJacketUSSP
-  name: USSP bunnysuit jacket
+  id: BunnyJacketHero
+  name: hero's bunnysuit jacket
   components:
   - type: Sprite
-    sprite: _HL/Clothing/Bunnysuit/Jackets/ussp.rsi
+    sprite: _HL/Clothing/Bunnysuit/Jackets/hero.rsi
   - type: Clothing
-    sprite: _HL/Clothing/Bunnysuit/Jackets/ussp.rsi
+    sprite: _HL/Clothing/Bunnysuit/Jackets/hero.rsi
 
 - type: entity
   parent: BunnyJacketBase

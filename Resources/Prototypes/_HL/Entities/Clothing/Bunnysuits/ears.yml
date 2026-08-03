@@ -515,15 +515,15 @@
 
 - type: entity
   parent: BunnyEarsBase
-  id: BunnyEarsUSSP
-  name: USSP bunny ears
+  id: BunnyEarsHero
+  name: hero's bunny ears
   components:
   - type: Sprite
     sprite: _HL/Clothing/Bunnysuit/Ears/icons.rsi
-    state: ussp
+    state: hero
   - type: Clothing
     sprite: _HL/Clothing/Bunnysuit/Ears/equipped.rsi
-    equippedState: ussp
+    equippedState: hero
 
 - type: entity
   parent: BunnyEarsBase

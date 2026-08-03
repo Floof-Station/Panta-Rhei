@@ -311,17 +311,17 @@
 
 - type: entity
   parent: BunnysuitBox
-  id: BunnysuitBoxUSSP
-  name: USSP bunnysuit box
+  id: BunnysuitBoxHero
+  name: hero's bunnysuit box
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: BunnysuitUSSP
-        - id: BunnyJacketUSSP
-        - id: BowtieUSSP
-        - id: BunnyEarsUSSP
+        - id: BunnysuitHero
+        - id: BunnyJacketHero
+        - id: BowtieHero
+        - id: BunnyEarsHero
 
 - type: entity
   parent: BunnysuitBox
