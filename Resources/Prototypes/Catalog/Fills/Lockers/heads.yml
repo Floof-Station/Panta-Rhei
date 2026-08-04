@@ -20,8 +20,9 @@
     - id: ClothingHeadsetAltCargo
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
-    #- id: ClothingHandsKnuckleDustersQM # DeltaV - No weaponry for LO.
+    - id: ClothingHandsKnuckleDustersQM # DeltaV - No weaponry for LO. # Euphoria - Re-enabled due to steal objectives
     - id: PrinterDocFlatpack #Corvax - Printer
+    - id: ClothingOuterHardsuitRhino # Euphoria - the Hardsuit locker isn't mapped in any station so the objective to steal the suit is impossible
 
 - type: entity
   id: LockerQuarterMasterFilled
