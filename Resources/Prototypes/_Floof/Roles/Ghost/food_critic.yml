@@ -102,6 +102,7 @@
     state: human
 
 - type: entity
+  categories: [ Spawner ]
   parent: BaseGameRule
   id: AntagFoodCriticSpawn
   components:
@@ -119,13 +120,6 @@
   - type: AntagObjectives
     objectives:
     - FoodCriticSurviveObjective
-  - type: AntagRandomObjectives # DeltaV: Random objectives for hacking and killing
-    sets:
-    - groups: NinjaHackingObjectiveGroups
-      maxPicks: 2 # only pick 2 of 3 of them to reduce metagaming
-    - groups: NinjaBonusObjectiveGroups
-      maxPicks: 2 # 2 kill or steal objectives max
-    maxDifficulty: 100 # ignore difficulty, use maxPicks instead
   - type: AntagSelection
     agentName: food-critic-round-end-agent-name
     definitions:
