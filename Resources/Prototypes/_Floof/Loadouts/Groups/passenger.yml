@@ -94,21 +94,18 @@
   - ClothingUniformJumpskirtJanimaidmini
   - UniformMaid
   - ClothingUniformJumpskirtTacticalMaid
-  - ClothingThongCoder
-  - ClothingThongBee
-  - ClothingThongRainbow
-  - ClothingThongCoderValid
-  - ClothingUniformFishnetThong
   - ClothingUniformJumpsuitCatsuit
   - ClothingUniformJumpsuitCatsuitShiny
+  - ClothingUniformLoinClothWhite
+  - ClothingUniformLoinClothBlack
   - ClothingCostumeBunnySuit
-  - ClothingCowprintBikini
   - UniformNudityPermit
   - ClothingUniformBandedDancersGarb
   - ClothingUniformRedSidelessDress
   - ClothingUniformPurpleNightclubDress
   - ClothingUniformBlackPetticoatDress
   - ClothingUniformJumpskirtBlazer
+  - ClothingUniformJumpskirtDressGothic
 
 # gloves
 - type: loadoutGroup
@@ -129,6 +126,9 @@
   - ClothingArmwarmersPan
   - ClothingArmwarmersTrans
   - ClothingArmwarmersValid
+  - ClothingHandsMittens
+  - ClothingHandsMittensBall
+  - ClothingHandsMittensKittenMitten
 
  #shoes
 - type: loadoutGroup
@@ -148,18 +148,6 @@
   - ClothingShoesBootsWinter
   - ShoesBootsFishing
   - ClothingClothWrap
-  - ClothingSocksRainbow
-  - ClothingSocksAce
-  - ClothingSocksAro
-  - ClothingSocksBi
-  - ClothingSocksGay
-  - ClothingSocksLesbian
-  - ClothingSocksNon
-  - ClothingSocksPan
-  - ClothingSocksTrans
-  - ClothingSocksCoderValid
-  - ClothingSocksCowprint
-  - ClothingUnderSocksFishnets
 
 # backpacks
 - type: loadoutGroup
@@ -253,6 +241,9 @@
   - HeadHatBlacksoft
   - HeadHatCorpsoft
   - HeadHatSolidHeadband
+  - ClothingHeadHatHijabColorable
+  - ClothingHeadHatTurbanColorable
+  - ClothingHeadHatKippahColorable
 
 # glasses/eyewear
 - type: loadoutGroup
@@ -284,3 +275,127 @@
   - ClothingNeckCollarShockPetIdAlternative
   - ClothingNeckCollarBellPetId
   - ClothingNeckCollarBellPetIdAlternative
+
+# Undergarment
+- type: loadoutGroup
+  id: FloofUndergarmentTopPassenger
+  name: loadout-group-undergarment-top
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingUniformFishnet
+  - ClothingUniformFishnetAlt
+  - ClothingUniformFishnetSleeves
+  - ClothingUniformFishnetSleevesGloves
+  - ClothingUniformFishnetSimpleTop
+  - ClothingUnderTopBra
+  - ClothingUnderTopBraNeko
+  - ClothingUnderTopBraHalterneck
+  - ClothingUnderTopBraLacy
+  - ClothingUnderTopBraLacyAlt
+  - ClothingUnderTopBraLacyAltStriped
+  - ClothingUnderTopBraSports
+  - ClothingUnderTopBraSportsAlt
+  - ClothingUnderTopBraStriped
+  - ClothingUnderTopMiscSwimTop
+  - ClothingUnderTopMiscBinder
+  - ClothingUnderTopMiscStraplessBinder
+  - ClothingUnderTopMiscHyperBinder
+  - ClothingUnderTopMiscTubeTop
+  - ClothingUnderTopMiscLeotard
+  - ClothingUnderTopMiscLeotardTurtleneck
+  - ClothingUnderTopMiscLeotardSleevless
+  - ClothingUnderTopMiscUndershirt
+  - ClothingUnderTopMiscUndershirtDress
+  - ClothingUnderTopMiscUndershirtDressAlt
+  - ClothingUnderTopMiscUndershirtMidRiffShoulders
+  - ClothingUnderTopMiscUndershirtTurtleneck
+  - ClothingUnderTopMiscUndershirtTurtleneckSleevless
+  - ClothingUnderTopMiscUndershirtTurtleneckSmooth
+  - ClothingUnderTopMiscPasties
+  - ClothingUnderTopMiscShibari
+  - ClothingCowprintBikini
+
+
+
+- type: loadoutGroup
+  id: FloofUndergarmentBottomPassenger
+  name: loadout-group-undergarment-bottom
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingThongCoder
+  - ClothingThongBee
+  - ClothingThongRainbow
+  - ClothingThongCoderValid
+  - ClothingUniformFishnetThong
+  - ClothingUnderUnderwearBoxers
+  - ClothingUnderUnderwearBoxersBlueGreen
+  - ClothingUnderUnderwearBoxersHeart
+  - ClothingUnderUnderwearBoxerHyper
+  - ClothingUnderUnderwearBoxerBrief
+  - ClothingUnderUnderwearBoxerBriefHyper
+  - ClothingUnderUnderwearBoxerBriefCompression
+  - ClothingUnderUnderwearPanties
+  - ClothingUnderUnderwearPantiesAlt
+  - ClothingUnderUnderwearPantiesNeko
+  - ClothingUnderUnderwearPantiesStriped
+  - ClothingUnderUnderwearPantiesThin
+  - ClothingUnderUnderwearThongLacy
+  - ClothingUnderUnderwearThongLacyAlt
+  - ClothingUnderUnderwearThongPlain
+
+- type: loadoutGroup
+  id: FloofSocksPassenger
+  name: loadout-group-socks
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClothingSocksRainbow
+  - ClothingSocksAce
+  - ClothingSocksAro
+  - ClothingSocksBi
+  - ClothingSocksGay
+  - ClothingSocksLesbian
+  - ClothingSocksNon
+  - ClothingSocksPan
+  - ClothingSocksTrans
+  - ClothingSocksCoderValid
+  - ClothingSocksCowprint
+  - ClothingUnderSocksFishnets
+  - ClothingUnderThighHighsAssBlastUSA
+  - ClothingUnderThighHighsUK
+  - ClothingUnderSocksKneehighStriped
+  - ClothingUnderSocksKneehighAssBlastUSA
+  - ClothingUnderSocksKneehighUK
+  - ClothingUnderSocksKneehighBee
+  - ClothingUnderSocksKneehighBlack
+  - ClothingUnderSocksKneehighRainbow
+  - ClothingUnderSocksKneehighPlain
+  - ClothingUnderSocksKneehighPlainStir
+  - ClothingUnderSocksKneehighThin
+  - ClothingUnderSocksKneehighTrans
+  - ClothingUnderSocksKneehighAce
+  - ClothingUnderSocksKneehighWhite
+  - ClothingUnderSocksNormalBlack
+  - ClothingUnderSocksNormalPlain
+  - ClothingUnderSocksNormalPlainStir
+  - ClothingUnderSocksNormalWhite
+  - ClothingUnderSocksShortBlack
+  - ClothingUnderSocksShortPlain
+  - ClothingUnderSocksShortWhite
+  - ClothingUnderSocksThighhighPlain
+  - ClothingUnderSocksThocks
+  - ClothingUnderStockingsBlue
+  - ClothingUnderStockingsCyan
+  - ClothingUnderStockingsDarkPink
+  - ClothingUnderStockingsGreen
+  - ClothingUnderStockingsLightPink
+  - ClothingUnderStockingsOrange
+  - ClothingUnderStockingsPurple
+  - ClothingUnderStockingsYellow
+  - ClothingUnderSockPanthoseLeggings
+  - ClothingUnderSockPanthoseLjonb
+  - ClothingUnderSockPanthose
+  - ClothingUnderSockPanthoseStir
+  - ClothingUnderSockPanthoseRipped

@@ -4,11 +4,6 @@
   equipment:
     jumpsuit: ClothingUniformCourierDevy
 
-- type: loadout
-  id: UniformCourierThong
-  equipment:
-    jumpsuit: ClothingUniformCourierThong
-
 # outer clothing (jackets)
 - type: loadout
   id: ClothingOuterDevy
@@ -25,11 +20,6 @@
   id: ClothingShoesCourierDevy
   equipment:
     shoes: ClothingShoesCourierDevy
-
-- type: loadout
-  id: ClothingUnderSocksCourier
-  equipment:
-    shoes: ClothingUnderSocksCourier
 
 # backpacks
 - type: loadout
@@ -48,3 +38,17 @@
   id: ClothingNeckCollarEmotionalLogisticsCourier
   equipment:
     neck: ClothingNeckCollarEmotionalLogisticsCourier
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformCourierThong
+  equipment:
+    undergarmentBottom: ClothingUniformCourierThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksCourier
+  equipment:
+    undergarmentSocks: ClothingUnderSocksCourier

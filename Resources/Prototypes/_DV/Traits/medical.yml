@@ -95,6 +95,7 @@
   description: trait-synth-desc
   category: Cybernetics # Euphoria
   cost: 0
+  usesSlots: false # Euphoria - RP flavour
   conditions:
   - !type:HasCompCondition
     component: Silicon

@@ -1,6 +1,6 @@
 - type: entity
   id: BaseWeaponBattery
-  parent: BaseItem
+  parent: [BaseItem, BaseGun] # Euph - base gun parent
   abstract: true
   components:
   - type: Sprite

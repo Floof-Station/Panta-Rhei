@@ -235,7 +235,7 @@ namespace Content.Client.Inventory
 
             // If this is a full pocket, obscure the real entity
             // this does not work for modified clients because they are still sent the real entity
-            if (entity != null && _strippable.IsStripHidden(slotDef, _player.LocalEntity))
+            if ((entity != null || slotDef.HiddenWhenEmpty) && _strippable.IsStripHidden(slotDef, _player.LocalEntity, (invUid, inv))) // Floof - allow slots to always be hidden if certain slot is occupied
                 entity = _virtualHiddenEntity;
 
             var button = new SlotButton(new SlotData(slotDef, container));

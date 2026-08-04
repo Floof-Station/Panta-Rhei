@@ -99,3 +99,7 @@
     - SlowImmune
     - KnockdownImmune
   - type: UniversalLanguageSpeaker # Floofstation - boo.
+  - type: DamageOnDispel # Euphoria - requires more then 1 dispel to kill
+    damage:
+      types:
+        Holy: 25
