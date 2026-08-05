@@ -11,9 +11,9 @@
   name: syndicate agent
   suffix: Human, Base
   components:
-  - type: RandomHumanoidAppearance
-    randomizeName: false
-    hair: HairBald
+  #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+  #  randomizeName: false
+  #  hair: HairBald
   - type: Loadout
     prototypes: [SyndicateOperativeGearExtremelyBasic]
     roleLoadout: [ RoleSurvivalSyndicate ]
@@ -81,8 +81,8 @@
   id: MobHumanNukeOp
   components:
   - type: NukeOperative
-  - type: RandomHumanoidAppearance
-    randomizeName: false
+  #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+  #  randomizeName: false
   - type: PotentialPsionic # DeltaV - Psionic Refactor
     jobBonusChance: 0.05 # Additional 5% chance to roll a psionic power.
 
@@ -92,9 +92,9 @@
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
   components:
-  - type: RandomHumanoidAppearance # DeltaV - randomize antag appearance
-    randomizeName: false
-    keepGender: true
+  #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+  #  randomizeName: false
+  #  keepGender: true
   - type: NukeOperative
   - type: Loadout
     prototypes: [SyndicateLoneOperativeGearFull]
@@ -117,7 +117,7 @@
   parent: MobHuman
   id: MobHumanWizard
   components:
-  - type: RandomHumanoidAppearance
+  #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
   - type: NpcFactionMember
     factions:
     - Wizard
