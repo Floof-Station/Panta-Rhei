@@ -651,9 +651,9 @@
       components:
       - type: NukeOperative
       - type: TargetObjectiveImmune # DeltaV - Nukies are no longer targets of kill objectives, this includes lone ops.
-      - type: RandomHumanoidAppearance # DeltaV - add nukies random appearance
-        randomizeName: false
-        keepGender: true
+      #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+      #  randomizeName: false
+      #  keepGender: true
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicatePrefix
