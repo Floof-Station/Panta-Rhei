@@ -92,13 +92,6 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
-    - type: Body # Shitmed: Special carp organs
-      prototype: Carp
-    - type: SurgeryTarget # Shitmed
-    - type: UserInterface # Shitmed
-      interfaces:
-        enum.SurgeryUIKey.Key:
-          type: SurgeryBui
     - type: LanguageKnowledge # Floofstation. Fish don't speak tau ceti, but the dragon does.
       speaks:
       - Xeno
@@ -275,11 +268,6 @@
     - type: Body
       prototype: Bloodsucker
       requiredLegs: 1
-    - type: SurgeryTarget # Shitmed
-    - type: UserInterface # Shitmed
-      interfaces:
-        enum.SurgeryUIKey.Key:
-          type: SurgeryBui
     - type: Butcherable
       spawned:
         - id: FoodMeatFish

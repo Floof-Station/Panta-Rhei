@@ -9,7 +9,6 @@
   - type: Lathe
     staticPacks:
     - BorgModulesSyndicateStatic
-    - RoboticsStaticDeltaV
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
@@ -24,13 +23,13 @@
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
+    snapCardinals: true
   - type: Lathe
     idleState: icon
     runningState: icon
     unlitIdleState: unlit
     unlitRunningState: unlit-building
   - type: EmagLatheRecipes
-
     emagStaticPacks:
     - SecurityAmmoStatic
     # Floof (Why the fuck is this not a thing?)
@@ -97,6 +96,7 @@
     - UpgradeKits_Goob
     - EngineeringHardsuits
     - AtmosToolsFloofstation # Floofstation - handheld atmos monitor
+    - LightingEquipment # DeltaV
   - type: Machine
     board: EngineeringTechFabCircuitboard
   - type: StealTarget
@@ -137,6 +137,7 @@
     - Mining
     - SalvageWeapons
     - SalvageHardsuits
+    - LightingEquipment # DeltaV
   - type: Machine
     board: LogisticsTechFabCircuitboard
   - type: StealTarget
@@ -227,6 +228,7 @@
     - ReportingStatic
     - SimpleElectronicsStatic
     - EVASuit
+    - EpistemicsStaticDeltaV
     dynamicPacks:
     - ScienceEquipment
     - ScienceClothing

@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Shared._DV.Silicon.IPC; // DeltaV
 using Content.Shared._Floof.Paint;
 using Content.Shared._Floof.Util;
 using Content.Shared.Hands.Components;
@@ -26,7 +25,6 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metadata = default!;
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
-    [Dependency] private readonly InternalEncryptionKeySpawner _internalEncryption = default!; // DeltaV
     [Dependency] private readonly SharedColorPaintSystem _colorPaint = default!; // Floofstation
 
     private EntityQuery<HandsComponent> _handsQuery;
@@ -151,12 +149,6 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// </summary>
     public void EquipStartingGear(EntityUid entity, StartingGearPrototype? startingGear, bool raiseEvent = true)
     {
-        // Begin DeltaV Additions: Fix nukie IPCs not having comms
-        if (startingGear is not {} proto)
-            return;
-
-        _internalEncryption.TryInsertEncryptionKey(entity, proto);
-        // End DeltaV Additions
         EquipStartingGear(entity, (IEquipmentLoadout?) startingGear, raiseEvent);
     }
 
