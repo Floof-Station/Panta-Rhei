@@ -35,7 +35,6 @@ using Content.Shared.Verbs;
 using Robust.Shared.Collections;
 using Content.Shared.Ghost.Roles.Components;
 using Content.Shared.Roles.Components;
-using Content.Server.Antag; // Euphoria - to have access to AntagSelectEntityEvent
 
 namespace Content.Server.Ghost.Roles;
 
@@ -92,7 +91,6 @@ public sealed partial class GhostRoleSystem : EntitySystem // Converted to parti
 
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeRole);
         SubscribeLocalEvent<GhostRoleCharacterSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeCharacter); // DeltaV - Character ghost roles, see Content.Server/_DV/Ghost/Roles/GhostRoleSystem.Character.cs
-	SubscribeLocalEvent<GhostRoleCharacterSpawnerComponent, AntagSelectEntityEvent>(OnSpawnerTakeAntagSelectedCharacter); // Euphoria - Character ghost roles that can be antagonists, see Content.Server/_Floof/Ghost/Roles/GhostRoleSystem.AntagSelectedCharacter.cs
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GetVerbsEvent<Verb>>(OnVerb);
         SubscribeLocalEvent<GhostRoleMobSpawnerComponent, GhostRoleRadioMessage>(OnGhostRoleRadioMessage);
         _playerManager.PlayerStatusChanged += PlayerStatusChanged;
