@@ -107,3 +107,46 @@
     icon:
       sprite: _DV/Objects/Misc/first_bill.rsi
       state: icon
+
+#Euphoria
+- type: entity
+  parent: BaseNTAgentTestDepartment
+  id: RuinServiceRecord
+  name: Sabotage Service.
+  description: This station has received far too much praise for its service. See that they lose at least one point to their ratings.
+
+- type: entity
+  parent: BaseNTAgentObjective
+  id: DefameRandomCommandObjective
+  description: They currently have too much clout. Do something about that.
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Misc/id_cards.rsi
+      state: icon-captain
+    difficulty: 2
+    unique: false
+  - type: TargetObjective
+    title: objective-condition-defame-person-title
+  - type: PickRandomPerson
+    filters:
+    - !type:BodyMindFilter
+      whitelist:
+        components:
+        - CommandStaff
+    - !type:TargetObjectiveMindFilter
+      blacklist:
+        components:
+        - KillPersonCondition
+        - TargetObjectiveImmune # DeltaV
+
+- type: entity
+  parent: BaseNTAgentObjective
+  id: ObjectiveCounterInsurgent
+  name: Secretly Fight the Forces of Evil
+  description: I have a lot of money invested in this station. Safeguard my asset, but do not reveal our involvement.
+  components:
+  - type: Objective
+    icon:
+      sprite: Clothing/Ears/Headsets/centcom.rsi
+      state: icon

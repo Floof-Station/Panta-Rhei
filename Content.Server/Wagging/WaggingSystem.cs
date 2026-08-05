@@ -1,6 +1,6 @@
 ﻿using Content.Server.Actions;
 using Content.Server.Humanoid;
-using Content.Shared._Shitmed.Humanoid.Events;
+using Content.Shared._Floof.Humanoid;
 using Content.Shared.Cloning.Events;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -25,7 +25,7 @@ public sealed class WaggingSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<WaggingComponent, ProfileLoadFinishedEvent>(OnMapInit); // Floofstation - listen on profile load as well as map init
+        SubscribeLocalEvent<WaggingComponent, HumanoidProfileImportedEvent>(OnMapInit); // Floofstation - listen on profile load as well as map init
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
         SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);

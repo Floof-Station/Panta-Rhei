@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMittens
+  name: mittens
+  description: A pair of mittens to keep your hands or paws warm.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Hands/Mittens/mittens.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Hands/Mittens/mittens.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMittensBall
+  name: ball mittens
+  description: A pair of ball mittens to keep your hands or paws warm.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Hands/Mittens/ball_mittens.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Hands/Mittens/ball_mittens.rsi
+
+- type: entity
+  parent: ClothingHandsBase
+  id: ClothingHandsMittensKittenMitten
+  name: kitten mittens
+  description: A pair of kitten  mittens to keep your hands or paws warm.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Hands/Mittens/kitten_mittens.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Hands/Mittens/kitten_mittens.rsi
+
