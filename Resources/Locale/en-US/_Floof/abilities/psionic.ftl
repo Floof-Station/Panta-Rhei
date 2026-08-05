@@ -12,10 +12,14 @@ food-critic-role-greeting = You are a professional food critic, sent out to crit
 roles-antag-food-critic-objective = Write a review of the station's culinary capabilities.
 roles-antag-food-critic-name = Food Critic
 objective-issuer-donk-co = [color=orange]Donk Co![/color]
-ghost-role-information-peaceful-antagonist-rules = Your objectives have been described to you. You are here to do a job, same as anyone. Good luck!
+
+
+ghost-role-information-civil-antagonist-rules = Your objectives have been described to you. You are here to do a job, same as anyone. Good luck!
                                                You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
                                                You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
                                                You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+
+
 
 
 

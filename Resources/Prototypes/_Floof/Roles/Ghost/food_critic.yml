@@ -42,10 +42,7 @@
   antagonist: true
   setPreference: false
   objective: roles-antag-food-critic-objective
-  #requirements:
-  #- !type:OverallPlaytimeRequirement # DeltaV - Playtime requirement
-    #time: 10h
-  #guides: [ SpaceNinja ]
+
 
 
 
@@ -55,7 +52,6 @@
   equipment:
     id: VisitorPDA
     ears: ClothingHeadsetService
-    #pocket1: EncryptionKeyTraffic # They do not need this IF they are not spawning on a ship.
     jumpsuit: ClothingUniformSeniorBartender
     shoes: ClothingShoesBootsLaceup
     back: ClothingBackpack
@@ -92,7 +88,7 @@
   - type: GhostRole
     name: ghost-role-information-food-critic-name
     description: ghost-role-information-food-critic-description
-    rules: ghost-role-information-peaceful-antagonist-rules
+    rules: ghost-role-information-civil-antagonist-rules
     mindRoles:
     - MindRoleFoodCritic
     raffle:
@@ -114,8 +110,6 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-food-critic-result-message
   - type: AntagRandomSpawn
-  # - type: GhostRoleCharacterSpawner
-  #   outfitPrototype: FoodCriticGear
   - type: AntagLoadPlayerCharacterRule
   - type: AntagObjectives
     objectives:
@@ -134,7 +128,6 @@
         text: food-critic-role-greeting
         color: Lime
         sound: /Audio/Items/beep.ogg
-      #components:
       mindRoles:
       - MindRoleFoodCritic
   - type: DynamicRuleCost
