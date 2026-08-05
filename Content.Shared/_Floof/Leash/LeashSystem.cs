@@ -80,6 +80,8 @@ public sealed partial class LeashSystem : EntitySystem
             foreach (var data in leash.Leashed.ToList())
                 UpdateLeash(data, sourceXForm, leash, leashEnt);
 
+            // I give up. Just do the refresh on each tick and pray for the best.
+            RefreshJoints((leashEnt, leash));
             RefreshRelays((leashEnt, leash, sourceXForm));
         }
         leashQuery.Dispose();
@@ -114,13 +116,15 @@ public sealed partial class LeashSystem : EntitySystem
         {
             RemoveLeash(target.Value, (leashEnt, leash));
             _popups.PopupEntity(Loc.GetString("leash-snap-popup", ("leash", leashEnt)), target.Value);
+            return;
         }
 
         // Server: update leash lengths if necessary/possible
         // The length can be increased freely, but can only be decreased if the pulled entity is close enough
-        // TODO this never worked and probably because of joint.Length not actually containing the length between the entities
-        if (joint is not null && joint.MaxLength > leash.Length && joint.Length < joint.MaxLength)
-            joint.MaxLength = Math.Max(joint.Length, leash.Length);
+        // NOTE: joint.length is the NATURAL distance between bodies, to which they gravitate. Joint.MaxLength is the MAXIMUM distance (at which positions are clamped)
+        // We do not care about joint.length as leash joints are supposed to allow entities to freely come closer/further within the leash length.
+        if (joint is not null && joint.MaxLength > leash.Length && dst < joint.MaxLength)
+            joint.MaxLength = Math.Max(dst, leash.Length);
 
         if (joint is not null && joint.MaxLength < leash.Length)
             joint.MaxLength = leash.Length;
@@ -435,6 +439,8 @@ public sealed partial class LeashSystem : EntitySystem
     public void SetLeashLength(Entity<LeashComponent> leash, float length)
     {
         leash.Comp.Length = length;
+        Dirty(leash);
+
         RefreshJoints(leash);
         _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", length)), leash.Owner, null);
 

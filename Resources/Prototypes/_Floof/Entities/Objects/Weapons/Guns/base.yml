@@ -1,0 +1,12 @@
+# Wizden didn't add a common parent to all guns. Crazy.
+- type: entity
+  id: BaseGun
+  abstract: true
+  components:
+  - type: InteractionVerbs
+    allowedVerbs:
+    - KnockOn
+    - ShakeOther
+  - type: ToolInteractionVerbs # Euph - guns can be pointed at people and shit.
+    allowedVerbs:
+    - PointGunAt

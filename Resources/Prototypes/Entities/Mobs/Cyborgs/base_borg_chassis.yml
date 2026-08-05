@@ -82,7 +82,10 @@
       enum.RingerUiKey.Key:
         type: RingerBoundUserInterface
       # End DeltaV - borg PDAs
-  - type: Targeting # Shitmed Change
+      # Begin DeltaV - borg wires
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+      # End DeltaV
   - type: ActivatableUI
     key: enum.BorgUiKey.Key
   - type: SiliconLawBound
@@ -118,9 +121,6 @@
     fuelCost: 0.5
     allowSelfRepair: true # DeltaV - was false
   - type: BorgChassis
-  - type: SurgerySelfDirty # DeltaV: borgs get dirty from doing surgery
-  - type: Fiber # DeltaV - borgs leave metal fibers
-    fiberMaterial: fibers-plasteel
   - type: LockingWhitelist
     blacklist:
       components:
@@ -165,9 +165,9 @@
     speechVerb: Robotic
     speechSounds: Borg
   - type: Vocal
-    wilhelm: "/Audio/_EE/Voice/IPC/wilhelm.ogg" # DeltaV
     sounds:
       Unsexed: UnisexSilicon
+    wilhelm: "/Audio/_DV/Machines/robotwilhelm.ogg" # DeltaV - "There seems to be someone among us".
     wilhelmProbability: 0.001 # DeltaV
   # Floofstation section
   - type: LanguageKnowledge # The borg doesn't understand much unless they have a brain
@@ -268,7 +268,6 @@
     - FootstepSound
     - CanPilot
     - SiliconEmotes
-    - SiliconOrIPCEmotes # DeltaV
     - Honker # DeltaV - Can honk
     - Unimplantable
   - type: Emoting
@@ -301,6 +300,7 @@
     requiredMobState:
     - Critical
     - Dead
+  - type: CanEnterCryostorage # Floofstation - let borgs cryo
 
 - type: entity
   abstract: true
@@ -371,16 +371,18 @@
   - type: NpcFactionMember
     factions:
     - NanoTrasen
-  - type: Access
-    groups:
-    - AllAccessBorg # DeltaV
-    tags:
-    - Borg
+  #- type: Access # DeltaV - Borgs ID Chips
+  #  groups:
+  #  - AllAccessBorg
+  #  tags:
+  #  - Borg
   - type: AccessReader
     access: [["Command"], ["Research"], ["Robotics"]] # DeltaV - add Robotics
     breakOnAccessBreaker: false # DeltaV - prevent emag metachecking by unlocking without an id
   - type: SlavedBorg # DeltaV: NT borgs are enslaved to the AI by default
     law: ObeyAI
+  - type: Wires # DeltaV: NT borgs have a circuit panel
+    layoutId: Cyborg
   - type: ShowJobIcons
 #  - type: InteractionPopup # Floofstation - interaction verb system replaces popups
 #    interactSuccessSound:
@@ -573,7 +575,6 @@
     allowedEmotes:
     - Laugh
   - type: Vocal
-    wilhelm: "/Audio/_EE/Voice/IPC/wilhelm.ogg" # DeltaV
     sounds:
       Unsexed: UnisexSiliconXenoborg
     wilhelmProbability: 0.001 # DeltaV

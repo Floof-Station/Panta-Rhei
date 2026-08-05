@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponSniper
-  parent: BaseItem
+  parent: [BaseItem, BaseGun] # Euph - base gun parent
   id: BaseWeaponSniper
   description: A rooty tooty point and shooty.
   abstract: true
@@ -23,6 +23,7 @@
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
+    cameraRecoilScalar: 1.5 # DeltaV - higher screenshake on snipers
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
