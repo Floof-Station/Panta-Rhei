@@ -114,8 +114,9 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-food-critic-result-message
   - type: AntagRandomSpawn
-  - type: GhostRoleCharacterSpawner
-    outfitPrototype: FoodCriticGear
+  # - type: GhostRoleCharacterSpawner
+  #   outfitPrototype: FoodCriticGear
+  - type: AntagLoadPlayerCharacterRule
   - type: AntagObjectives
     objectives:
     - FoodCriticSurviveObjective
@@ -126,7 +127,7 @@
       min: 1
       max: 1
       pickPlayer: false
-      #startingGear: FoodCriticGear
+      startingGear: FoodCriticGear
       #roleLoadout:
       #- RoleSurvivalSpaceNinja
       briefing:
