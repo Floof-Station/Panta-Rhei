@@ -19,9 +19,8 @@
       state: chain
     pullInterval: 0.75
     length: 3
-    lengthConfigs: [1.5, 2.25, 3]
     maxDistance: 6
-    attachDelay: 1 # If it becomes possible to leash other characters, increase this for consent purposes
+    attachDelay: 5 # If it becomes possible to leash other characters, increase this for consent purposes
     detachDelay: 1
     selfDetachDelay: 10
   - type: Anchorable
