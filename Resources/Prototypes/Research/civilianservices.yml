@@ -14,6 +14,7 @@
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
+  - BorgModuleAdvancedBotany # DeltaV
   - MilkingMachineCircuitboard # Euphoria
 
 - type: technology
@@ -82,6 +83,7 @@
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
     - BorgModuleFoamForce # Euphoria Addition
+    - BorgModuleDJ # DeltaV
 
 - type: technology
   id: MeatManipulation
@@ -97,6 +99,8 @@
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - AdvancedMicrowaveMachineCircuitBoard # DeltaV
+  - BorgModuleAdvancedChef # DeltaV
+  - BorgModuleAdvancedBartender # DeltaV
 
 # Tier 2
 
@@ -149,6 +153,7 @@
   cost: 5000
   recipeUnlocks:
   - BorgModuleAdvancedTopical
+  - BorgModuleAdvancedChemicalDV # DeltaV - Readd Chemical Module
   - AdvancedJetInjector
 
 - type: technology
@@ -165,6 +170,7 @@
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
   - TrashBagOfHolding # DeltaV
+  - PortablePumpMachineCircuitBoard # Froniter - Portal scrubber
 
 # Begin DeltaV Removals - waste of points nobody makes, moved into civilian mechs
 #- type: technology

@@ -17,6 +17,6 @@
   effects:
   - !type:JobRequirementLoadoutEffect
     requirement:
-      !type:RoleTimeRequirement
-      role: JobMedicalDoctor
-      time: 20h # for workin extra hard to save people
+      !type:DepartmentTimeRequirement
+      department: Medical
+      time: 20h

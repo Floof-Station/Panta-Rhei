@@ -31,6 +31,12 @@ public sealed partial class PopUpOnUseComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan PopUpDoAfterTime = TimeSpan.Zero;
 
+    /// <summary>
+    /// Whether to repeat the do-after.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool Repeat = false;
+
     // Used to cancel the played sound.
     public EntityUid? AudioStream;
 

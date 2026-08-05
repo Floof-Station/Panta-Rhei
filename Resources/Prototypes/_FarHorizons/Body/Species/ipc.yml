@@ -1,0 +1,543 @@
+# Nubody shit
+#- type: markingsGroup
+#  id: IPC
+#  onlyGroupWhitelisted: true
+#  limits:
+#    enum.HumanoidVisualLayers.HeadTop:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.HeadSide:
+#      limit: 1
+#      required: false
+#      default: [ ScreenBsod ]
+#    enum.HumanoidVisualLayers.Head:
+#      limit: 1
+#      required: false
+#      default: [ MarkingBishopHead ]
+#    enum.HumanoidVisualLayers.Chest:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.Tail:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RArm:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LHand:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RHand:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LFoot:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RFoot:
+#      limit: 1
+#      required: false
+#
+#- type: entity
+#  parent: BaseSpeciesAppearance
+#  id: AppearanceIPC
+#  name: IPC Appearance
+#  components:
+#  - type: InitialBody
+#    organs:
+#      Torso: OrganIPCTorso
+#      Head: OrganIPCHead
+#      ArmLeft: OrganIPCArmLeft
+#      ArmRight: OrganIPCArmRight
+#      HandRight: OrganIPCHandRight
+#      HandLeft: OrganIPCHandLeft
+#      LegLeft: OrganIPCLegLeft
+#      LegRight: OrganIPCLegRight
+#      FootLeft: OrganIPCFootLeft
+#      FootRight: OrganIPCFootRight
+#      Eyes: OrganIPCEyes
+#      Tongue: OrganIPCTongue
+#      Ears: OrganIPCEars
+#      Heart: OrganIPCHeart
+#  - type: HumanoidProfile
+#    species: IPC
+#
+#- type: entity
+#  parent:
+#  - ActiveCritBase
+#  - AppearanceIPC
+#  - BaseMobIPC
+#  id: MobIPC
+#  name: Urist McRobot
+
+# Euph - pre-nubody version
+- type: body
+  id: IPC
+  name: ipc
+  root: torso
+  slots:
+    head:
+      part: OrganIPCHead
+      connections:
+      - torso
+      organs: # brain isn't part of the body
+        eyes: OrganIPCEyes
+    torso:
+      part: OrganIPCTorso
+      connections:
+      - right arm
+      - left arm
+      - right leg
+      - left leg
+      organs:
+        heart: OrganIPCHeart
+    right arm:
+      part: OrganIPCArmRight
+      connections:
+      - right hand
+    left arm:
+      part: OrganIPCArmLeft
+      connections:
+      - left hand
+    right hand:
+      part: OrganIPCHandRight
+    left hand:
+      part: OrganIPCHandLeft
+    right leg:
+      part: OrganIPCLegRight
+      connections:
+      - right foot
+    left leg:
+      part: OrganIPCLegLeft
+      connections:
+      - left foot
+    right foot:
+      part: OrganIPCFootRight
+    left foot:
+      part: OrganIPCFootLeft
+
+# Pre-nubody doesn't have OrganBase, we alias it to human organ
+- type: entity
+  id: OrganBase
+  parent: BaseHumanOrgan
+  abstract: true
+
+# Organs
+
+- type: entity
+  parent: OrganBase
+  id: OrganIPC
+  abstract: true
+  suffix: IPC
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Oil
+        Quantity: 10
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 5
+        reagents:
+        - ReagentId: Oil
+          Quantity: 10
+
+- type: entity
+  parent: OrganIPC
+  id: OrganIPCInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _FarHorizons/Mobs/Species/IPC/organs.rsi
+  - type: Icon # Euph - also specify the icon path
+    sprite: _FarHorizons/Mobs/Species/IPC/organs.rsi
+
+# We dont have visualorgan, visualorganmarkings, limbdamageeffect, organemptarget
+- type: entity
+  parent: OrganIPC
+  id: OrganIPCExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+  - type: Icon # Euph - also specify the icon path
+    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+#  - type: VisualOrgan
+#    data:
+#      sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+#  - type: VisualOrganMarkings
+#    markingData:
+#      group: IPC
+
+# unused
+#- type: entity
+#  id: DamageableLimbVisualsIPC
+#  abstract: true
+#  components:
+#  - type: LimbDamageVisuals
+#    damageOverlayGroups:
+#      Brute:
+#        rsi: /Textures/Mobs/Effects/brute_damage.rsi
+#        color: "#B67823"
+
+# Limbs
+
+- type: entity
+  parent: [ BaseTorso, OrganIPCExternal ] #  OrganBaseTorsoSexed, OrganBaseTorso, OrganIPCExternal ]
+  id: OrganIPCTorso
+  components:
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseHead, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseHeadSexed, OrganBaseHeadVitalNonEdible, OrganIPCExternal ]
+  id: OrganIPCHead
+  components:
+#  - type: VisualOrganMarkings
+#    markingData:
+#      layers:
+#      - Head
+#      - HeadSide
+#      - HeadTop
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseLeftArm, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseArmLeftNonEdible, OrganIPCExternal ]
+  id: OrganIPCArmLeft
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 2
+#    thresholds:
+#      5:
+#        dropItemsFrom:
+#        - left
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach # Amputate limb when it takes slash damage
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 100
+#    - effect: !type:LimbEffectDestroy # Gib limb. If it has organs (head), it will drop them
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 250
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 500
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseRightArm, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseArmRightNonEdible, OrganIPCExternal ]
+  id: OrganIPCArmRight
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 2
+#    thresholds:
+#      5:
+#        dropItemsFrom:
+#        - right
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach # Amputate limb when it takes slash damage
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 100
+#    - effect: !type:LimbEffectDestroy # Gib limb. If it has organs (head), it will drop them
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 250
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 500
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseLeftHand, OrganIPCExternal ] # OrganBaseHandLeftNonEdible, OrganIPCExternal ]
+  id: OrganIPCHandLeft
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 1
+#    thresholds:
+#      5:
+#        dropItemsFrom:
+#        - left
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 50
+#    - effect: !type:LimbEffectDestroy
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 150
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 300
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseRightHand, OrganIPCExternal ] # OrganBaseHandRightNonEdible, OrganIPCExternal ]
+  id: OrganIPCHandRight
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 1
+#    thresholds:
+#      5:
+#        dropItemsFrom:
+#        - right
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 50
+#    - effect: !type:LimbEffectDestroy
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 150
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 300
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseLeftLeg, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseLegLeftNonEdible, OrganIPCExternal ]
+  id: OrganIPCLegLeft
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 2
+#    thresholds:
+#      3:
+#        slowdownAmount: 2.5
+#        walkSpeedModifier: 0.5
+#        sprintSpeedModifier: 0.5
+#      7:
+#        knockdownAmount: 0.25
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach # Amputate limb when it takes slash damage
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 100
+#    - effect: !type:LimbEffectDestroy # Gib limb. If it has organs (head), it will drop them
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 250
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 500
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseRightLeg, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseLegRightNonEdible, OrganIPCExternal ]
+  id: OrganIPCLegRight
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 2
+#    thresholds:
+#      3:
+#        slowdownAmount: 2.5
+#        walkSpeedModifier: 0.5
+#        sprintSpeedModifier: 0.5
+#      7:
+#        knockdownAmount: 0.25
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach # Amputate limb when it takes slash damage
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 100
+#    - effect: !type:LimbEffectDestroy # Gib limb. If it has organs (head), it will drop them
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 250
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 500
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseLeftFoot, OrganIPCExternal ] # OrganBaseFootLeftNonEdible, OrganIPCExternal ]
+  id: OrganIPCFootLeft
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 1
+#    thresholds:
+#      3:
+#        slowdownAmount: 2.5
+#        walkSpeedModifier: 0.5
+#        sprintSpeedModifier: 0.5
+#      7:
+#        knockdownAmount: 0.25
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 50
+#    - effect: !type:LimbEffectDestroy
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 150
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 300
+  - type: Tag
+    tags:
+    - Inorganic
+
+- type: entity
+  parent: [ BaseRightFoot, OrganIPCExternal ] # OrganBaseFootRightNonEdible, OrganIPCExternal ]
+  id: OrganIPCFootRight
+  components:
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 3
+#        Heat: 1
+#    thresholds:
+#      3:
+#        slowdownAmount: 2.5
+#        walkSpeedModifier: 0.5
+#        sprintSpeedModifier: 0.5
+#      7:
+#        knockdownAmount: 0.25
+#  - type: LimbDamageEffect
+#    effects:
+#    - effect: !type:LimbEffectDetach
+#      condition: !type:LimbConditionSpecificDamage
+#        damageType: Slash
+#        damageAmount: 50
+#    - effect: !type:LimbEffectDestroy
+#      condition: !type:LimbConditionOr
+#        conditions:
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Blunt
+#          damageAmount: 150
+#        - !type:LimbConditionSpecificDamage
+#          damageType: Heat
+#          damageAmount: 300
+  - type: Tag
+    tags:
+    - Inorganic
+
+# Organs
+
+- type: entity
+  parent: [ OrganIPCInternal, OrganHumanEyes ] #OrganBaseEyes, OrganIPCInternal, OrganIPCExternal ]
+  id: OrganIPCEyes
+  name: Robotic Eyes
+  description: "Decidedly not squishy. Kinda sharp, actually."
+  components:
+  - type: Icon # Euph, human organs dont specify icons and there's no proper BaseEyes
+    state: eyes
+#  - type: VisualOrgan
+#    data:
+#      sprite: Mobs/Customization/eyes.rsi
+#      state: no_eyes
+#  - type: OrganEmpTarget
+#    baseDamage:
+#      types:
+#        Shock: 1
+#    thresholds:
+#      1:
+#        glitchDuration: 10.0
+#      6:
+#        additionalEffects:
+#          StatusEffectBlinded: 2.0
+  - type: Tag
+    tags:
+    - Inorganic
+
+#- type: entity
+#  parent: [ OrganBaseTongue, OrganIPCInternal ]
+#  id: OrganIPCTongue
+#  name: Vocal Modulator
+#  description: "A vocal modulator, typically used for lying."
+#  components:
+#  - type: Tag
+#    tags:
+#    - Inorganic
+
+#- type: entity
+#  parent: [ OrganBaseEars, OrganIPCInternal ]
+#  id: OrganIPCEars
+#  name: Robotic Ears
+#  description: "Process audio at the same quality of station-side cyborgs"
+#  components:
+#  - type: Tag
+#    tags:
+#    - Inorganic
+
+- type: entity
+  parent: [ OrganIPCInternal, OrganHumanHeart ] # OrganBaseHeart, OrganIPCInternal ]
+  id: OrganIPCHeart
+  name: Micro Pump
+  description: "Circulates coolant in a sickingly familiar way."
+  components:
+  - type: Icon # Euph, human organs dont specify icons and there's no proper BaseHeart
+    state: heart-on
+  - type: Metabolizer
+    maxReagents: 0
+  - type: Tag
+    tags:
+    - Inorganic

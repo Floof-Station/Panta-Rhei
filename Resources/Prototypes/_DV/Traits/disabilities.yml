@@ -88,8 +88,10 @@
   description: trait-amputee-left-arm-desc
   category: DisabilitiesPhysical # Euphoria
   cost: -3 #floof
-  conflicts:
-  - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
   effects:
   - !type:AddCompsEffect
     components:
@@ -101,10 +103,11 @@
   id: ArmAmputeeRight
   name: trait-amputee-right-arm-name
   description: trait-amputee-right-arm-desc
-  category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
-  conflicts:
-  - ArmAmputeeLeft
+  category: DisabilitiesPhysical
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+      - ArmAmputeeLeft
   effects:
   - !type:AddCompsEffect
     components:
