@@ -41,9 +41,9 @@ to acknowledge them because I don't like them and want to be up-front about the 
 to exist if when making AntagLoadProfileRule they accounted for a desire to make an antagonist fully into the player's
 selected character. Maybe this could be done by making the aspects of the character the system must copy (or must
 not copy) a datafield in the component. I did not try to do this because I did not want to interfere with upstream files.
-Perhaps even better would be to not separate spawning functionality between antagonists and regular ghost roles.
-Even better even better, not separating spawning functionality between any character so that I could just
-access the functionality for spawning regular player characters. I think that if that was done, I would
+Perhaps even better would be to not separate spawning functionality between antagonist ghost roles and regular ghost roles.
+Even better even better, not separating spawning functionality between any character so we could use the same standard
+functionality for spawning any kind of character. I think that if that was done, I would
 not have had to write any code at all. However, fixing that would involve messing with
 some of the most fundamental systems of the game. So... can't do much about that. Rant over :3
 */
