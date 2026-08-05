@@ -77,14 +77,6 @@ namespace Content.Server.Ghost.Roles
 
             EnsureComp<MindContainerComponent>(args.Entity.Value);
 
-	    /*
-	    This call occasionally throws an error and freezes the client until they manually ghost again
-	    when attempting to take the ghost role. This is because it's attempting to get a
-	    GhostRoleComponent on the gamerule, which does not exist on the gamerule.
-	    This only happens *sometimes*, not often, and I do not know why.
-	    */
-	    GhostRoleInternalCreateMindAndTransfer(args.Session, uid, args.Entity.Value);
-
             _outfit.SetOutfit(args.Entity.Value, component.OutfitPrototype);
 
             EntityManager.AddComponents(args.Entity.Value, component.AddedComponents);
