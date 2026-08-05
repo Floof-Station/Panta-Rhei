@@ -97,38 +97,3 @@
     sprite: Objects/Consumable/Food/burger.rsi
     state: human
 
-- type: entity
-  parent: BaseGameRule
-  id: AntagFoodCriticSpawn
-  components:
-  - type: StationEvent
-    weight: 5 # DeltaV - was 6
-    duration: null
-    earliestStart: 30
-    reoccurrenceDelay: 60 # DeltaV - was 20
-    minimumPlayers: 40 # DeltaV - was 30
-  - type: PrecognitionResult # DeltaV - Precogniton
-    message: psionic-power-precognition-food-critic-result-message
-  - type: AntagRandomSpawn
-  - type: AntagLoadPlayerCharacterRule
-  - type: AntagObjectives
-    objectives:
-    - FoodCriticSurviveObjective
-  - type: AntagSelection
-    agentName: food-critic-round-end-agent-name
-    definitions:
-    - spawnerPrototype: SpawnPointGhostAntagFoodCritic
-      min: 1
-      max: 1
-      pickPlayer: false
-      startingGear: FoodCriticGear
-      #roleLoadout:
-      #- RoleSurvivalSpaceNinja
-      briefing:
-        text: food-critic-role-greeting
-        color: Lime
-        sound: /Audio/Items/beep.ogg
-      mindRoles:
-      - MindRoleFoodCritic
-  - type: DynamicRuleCost
-    cost: 20

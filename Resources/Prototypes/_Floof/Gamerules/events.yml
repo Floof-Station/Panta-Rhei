@@ -1,3 +1,42 @@
+
+- type: entity
+  parent: BaseGameRule
+  id: AntagFoodCriticSpawn
+  components:
+  - type: StationEvent
+    weight: 8
+    duration: null
+    earliestStart: 30
+    reoccurrenceDelay: 60 # I don't think this makes sense to be here but eh
+    minimumPlayers: 10
+  - type: PrecognitionResult
+    message: psionic-power-precognition-food-critic-result-message
+  - type: AntagRandomSpawn
+  - type: AntagLoadPlayerCharacterRule
+  - type: AntagObjectives
+    objectives:
+    - FoodCriticSurviveObjective
+  - type: AntagSelection
+    agentName: food-critic-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointGhostAntagFoodCritic
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: FoodCriticGear
+      #roleLoadout:
+      #- RoleSurvivalSpaceNinja
+      briefing:
+        text: food-critic-role-greeting
+        color: Lime
+        sound: /Audio/Items/beep.ogg
+      mindRoles:
+      - MindRoleFoodCritic
+  - type: DynamicRuleCost
+    cost: 5
+   
+#basic--------------------
+
 - type: entity
   parent: BaseGameRule
   id: FoodCriticSpawn
