@@ -83,16 +83,12 @@ namespace Content.Server.Ghost.Roles
 
             if (++component.CurrentTakeovers < component.AvailableTakeovers)
             {
-                //args.TookRole = true; //Doesn't exist for AntagSelectEntityEvent
                 return;
             }
-
-            // ghostRole.Taken = true; //Doesn't exist for AntagSelectEntityEvent
 
             if (component.DeleteOnSpawn)
                 QueueDel(uid);
 
-            //args.TookRole = true; //Doesn't exist for AntagSelectEntityEvent
         }
     }
 }
