@@ -26,22 +26,21 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
 
     private void OnSelectEntity(Entity<AntagLoadPlayerCharacterRuleComponent> ent, ref AntagSelectEntityEvent args)
     {
-        if (args.Handled ||	(args.Session == null)) //If the session is null then fuck you I'm outta here
+        if (args.Handled) //If something already handled this, don't handle it! 
             return;
 	    
-            var uid = ent.Owner;
-            var component = ent.Comp;
+	var uid = ent.Owner;
+	var component = ent.Comp;
 
 
-	    //Get the player's selected character
-	    var character = args.Session != null
-		? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
-		: HumanoidCharacterProfile.RandomWithSpecies();
+	//Get the player's selected character or, if the session is null, whatever the fuck.
+	var character = args.Session != null
+	    ? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
+	    : HumanoidCharacterProfile.RandomWithSpecies();
 
-	    
-             args.Entity = _ent.System<StationSpawningSystem>()
-                 .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
-
-            //EnsureComp<MindContainerComponent>(args.Entity.Value); //Perhaps unnecessary?
+	//Spawn it like it was a player
+	//Where does this spawn it at first? Hell if I know. It ends up where it's supposed to be anyways.
+	args.Entity = _ent.System<StationSpawningSystem>()
+	    .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
     }
 }
