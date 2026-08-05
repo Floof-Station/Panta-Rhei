@@ -24,7 +24,7 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
         SubscribeLocalEvent<AntagLoadPlayerCharacterRuleComponent, AntagSelectEntityEvent>(OnSelectEntity);
     }
 
-    private void OnSelectEntity(Entity<AntagLoadProfileRuleComponent> ent, ref AntagSelectEntityEvent args)
+    private void OnSelectEntity(Entity<AntagLoadPlayerCharacterRuleComponent> ent, ref AntagSelectEntityEvent args)
     {
         if (args.Handled ||	(args.Session == null)) //If the session is null then fuck you I'm outta here
             return;
@@ -34,7 +34,6 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
 
 
 	    //Get the player's selected character
-
 	    var character = args.Session != null
 		? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
 		: HumanoidCharacterProfile.RandomWithSpecies();
