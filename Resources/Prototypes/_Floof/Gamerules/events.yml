@@ -9,6 +9,7 @@
     earliestStart: 30
     reoccurrenceDelay: 60 # I don't think this makes sense to be here but eh
     minimumPlayers: 10
+    maxOccurrences: 1 #This event can only occur once in a given round
   - type: PrecognitionResult
     message: psionic-power-precognition-food-critic-result-message
   - type: AntagRandomSpawn
