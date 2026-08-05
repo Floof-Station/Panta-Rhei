@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: Airlock
   parent: BaseStructure
   name: airlock
@@ -186,6 +186,11 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+  # ES START
+  - type: ESSparkOnHit
+    prob: 0.25
+    count: 2
+  # ES END
   placement:
     mode: SnapgridCenter
 

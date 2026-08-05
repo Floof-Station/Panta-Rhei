@@ -54,6 +54,7 @@
     categories:
     - CentComm
     - ERT
+    - ERTFilled # Floofstation - Our ERT Shuttles with pre-mapped ghostroles
     - Transport
     - Shipping
     - Medical
@@ -65,7 +66,7 @@
     - Small
     - Medium
     - Large
-    defaultCategory: ERT # Probably switch to CentComm once we have ships in that category
+    defaultCategory: ERTFilled #  # Floofstation - set defualt to ERTFIlled instead of the defualt ERT, Probably switch to CentComm once we have ships in that category
   - type: AccessReader
     access: [[ CentralCommand ]]
 

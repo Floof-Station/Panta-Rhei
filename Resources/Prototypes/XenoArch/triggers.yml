@@ -259,7 +259,11 @@
     - AmmoniaBlood
     - ZombieBlood
     - Sap
-    - YellowBlood # Euphoria: Add yellow blood.
+# Euphoria Start: Adds new blood types to triggers.
+    - YellowBlood
+    - BlackBlood
+    - WhiteBlood
+# Euphoria End
 
 - type: xenoArchTrigger
   id: TriggerThrow

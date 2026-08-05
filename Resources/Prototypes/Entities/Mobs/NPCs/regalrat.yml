@@ -1,7 +1,7 @@
 - type: entity
   name: rat king
   id: MobRatKing
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # DeltaV - node crawling
   description: He's da rat. He make da roolz.
   components:
   - type: CombatMode
@@ -59,12 +59,7 @@
         Piercing: 8
   - type: Body
     prototype: Rat
-    requiredLegs: 0 # TODO: Make more than 1 leg, set to 0 to avoid sprint speed being reset by the body system
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
+    requiredLegs: 0 # TODO: More than 1 leg
   - type: Hunger # probably should be prototyped
     thresholds:
       Overfed: 200
@@ -107,11 +102,13 @@
   - type: NoSlip
   - type: Rummager
   - type: RatKing
-    hungerPerArmyUse: 25
+    hungerPerArmyUse: 10 # DeltaV changed from 25 to 10. Gets multiplied with a modifier to be dynamic
     hungerPerDomainUse: 50
-  - type: MobsterAccent
+  - type: ReplacementAccent # DeltaV - replace mobster accent with mouse speech replacement
+    accent: mouse
   - type: Speech
     speechVerb: SmallMob
+    speechSounds: Squeak # DeltaV addition
   - type: Butcherable
     spawned:
     - id: ClothingHeadHatFancyCrown #how did that get there?
@@ -182,7 +179,7 @@
 - type: entity
   name: rat servant
   id: MobRatServant
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # DeltaV - node crawling
   description: He's da mini rat. He don't make da roolz.
   categories: [ HideSpawnMenu ] #Must be configured to a King or the AI breaks.
   components:
@@ -268,12 +265,7 @@
         Piercing: 2 #Delta-V was 3
   - type: Body
     prototype: Rat
-    requiredLegs: 0 # TODO: Make more than 1 leg, set to 0 to avoid sprint speed being reset by the body system
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
+    requiredLegs: 0 # TODO: More than 1 leg
   - type: Hunger # probably should be prototyped
     thresholds:
       Overfed: 200
@@ -381,7 +373,7 @@
   parent: BaseAction
   id: ActionRatKingDomain
   name: Rat King's Domain
-  description: Spend some hunger to release a cloud of ammonia into the air.
+  description: Spend some hunger to release a cloud of miasma into the air. # DeltaV
   components:
   - type: Action
     useDelay: 6

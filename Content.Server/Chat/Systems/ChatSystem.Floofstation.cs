@@ -79,6 +79,10 @@ public sealed partial class ChatSystem
     {
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
+            //Blocks non-admin ghosts from seeing subtle
+            if (!data.Subtle)
+                continue;
+
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 

@@ -64,7 +64,7 @@ public abstract partial class SharedPuddleSystem
             foreach (var (reagent, factor) in reagentProportions)
             {
                 // Floofstation - ensure evaporation is at least 0.05x fast since the above expression can evaluate to 0
-                var reagentTick = FixedPoint2.Max(evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds * evaporationSpeed * factor, 0.1f);
+                var reagentTick = FixedPoint2.Max(evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds * evaporationSpeed * factor, 0.01f); // Floofstation - changed from 0.1 to 0.01
                 puddleSolution.SplitSolutionWithOnly(reagentTick, reagent);
             }
 

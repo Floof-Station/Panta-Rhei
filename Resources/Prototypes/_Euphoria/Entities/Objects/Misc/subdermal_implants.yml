@@ -1,0 +1,23 @@
+# Preserved from DV upstream merge
+- type: entity
+  parent: BaseSubdermalImplant
+  id: MedicalTrackingImplant
+  categories: [ HideSpawnMenu ]
+  name: medical tracking implant
+  description: This implants transmits a message on the medical channel in case the user goes into critical state or dies.
+  components:
+  - type: TriggerOnMobstateChange
+    mobState:
+    - Critical
+    - Dead
+  - type: RattleOnTrigger
+    targetUser: true
+    radioChannel: Medical
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: MedicalTrackingImplanter
+  name: medical tracking implanter
+  components:
+  - type: Implanter
+    implant: MedicalTrackingImplant

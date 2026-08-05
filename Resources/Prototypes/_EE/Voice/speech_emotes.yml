@@ -3,6 +3,10 @@
   name: chat-emote-name-deathgasp
   icon: Interface/Emotes/deathgasp.png
   chatMessages: ["chat-emote-msg-deathgasp-silicon"]
+  available: true # Euph - silicon deathgasp is available to all silicons
+  whitelist:
+    tags:
+    - SiliconEmotes
 
 - type: emote
   id: Boop
@@ -11,18 +15,18 @@
   category: Vocal
   whitelist:
     tags: # DeltaV - let borgs, bots, and IPCs use it
-    - SiliconOrIPCEmotes
+    - SiliconEmotes
   chatMessages: [ boops. ] # DeltaV - period
   chatTriggers:
-    - boops
+  - boops
 
 - type: emote
   id: Whirr # uncategorized as it is generic
   whitelist:
     tags: # DeltaV - let borgs, bots, and IPCs use it
-    - SiliconOrIPCEmotes
+    - SiliconEmotes
   name: chat-emote-name-whirr
   chatMessages: [ whirrs. ] # DeltaV - period
   chatTriggers:
-    - whirr
-    - whirrs
+  - whirr
+  - whirrs

@@ -8,11 +8,10 @@ namespace Content.Shared._Floof.Vore;
 public sealed partial class DevouredComponent : Component
 {
     public bool AddedPressure;
-    public bool AddedBreathing;
     public bool AddedTemperature;
     public bool AddedRadiation;
     public bool AddedFlash;
 
     [DataField("originalSensorModes")]
-    public Dictionary<EntityUid, SuitSensorMode> OriginalSensorModes = new(); 
+    public Dictionary<EntityUid, SuitSensorMode> OriginalSensorModes = new();
 }

@@ -90,7 +90,7 @@ public sealed partial class LeashSystem
                           && leashXform.Coordinates.TryDistance(EntityManager, leashedXform.Coordinates, out var dst)
                           && dst <= leash.Comp.MaxDistance;
             // The anchor must be either the entity itself or something parented to them (clothing)
-            canRestore &= anchor.Owner == leashed.Owner || _container.ContainsEntity(leashed, anchor);
+            canRestore &= anchor.Owner == leashed.Owner || _xform.ContainsEntity(leashed, anchor.Owner);
         }
 
         RemoveLeash(leashed!, leash!, false);
