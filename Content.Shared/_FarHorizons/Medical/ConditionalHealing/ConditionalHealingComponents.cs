@@ -29,15 +29,17 @@ public sealed partial class ConditionalHealingData
     public SoundSpecifier? HealingBeginSound = null;
     [DataField]
     public SoundSpecifier? HealingEndSound = null;
-    [DataField]
-    public bool SolutionDrain = false;
-    [DataField]
-    public List<ReagentQuantity> ReagentsToDrain = [];
 
-    [DataField]
-    public int AdjustEyeDamage = 0;
+    // Euph - unused
+    // [DataField]
+    // public bool SolutionDrain = false;
+    // [DataField]
+    // public List<ReagentQuantity> ReagentsToDrain = [];
+    //
+    // [DataField]
+    // public int AdjustEyeDamage = 0;
 
-    public HealingComponent MakeComponent(EntityUid owner) => // Euph - add owner
+    public HealingComponent MakeComponent() =>
         new()
         {
             Damage = Damage,
@@ -48,12 +50,6 @@ public sealed partial class ConditionalHealingData
             SelfHealPenaltyMultiplier = SelfHealPenaltyMultiplier,
             HealingBeginSound = HealingBeginSound,
             HealingEndSound = HealingEndSound,
-
-            // Euph - this ai-generated system passes the HealingComponent straight to the healing system without adding it anywhere
-            // This results in a debug assert in the constructor of Entity<T>
-            // What the fuck?
-            #pragma warning disable CS0618 // Type or member is obsolete
-            Owner = owner,
         };
 }
 

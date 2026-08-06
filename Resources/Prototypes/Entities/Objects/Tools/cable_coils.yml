@@ -96,8 +96,9 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
           delay: 1.6
           damage:
             types:
@@ -175,8 +176,9 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
           delay: 1.6
           damage:
             types:
@@ -253,8 +255,9 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
           delay: 1.6
           damage:
             types:
