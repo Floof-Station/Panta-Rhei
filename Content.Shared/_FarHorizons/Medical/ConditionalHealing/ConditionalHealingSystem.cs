@@ -28,9 +28,6 @@ public sealed class ConditionalHealingSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _meta = default!; // Euph
     [Dependency] private readonly BlindableSystem _blindables = default!;
 
-    // Euph
-    public static EntProtoId HealingVirtualItemProto = "VirtualItemHealing";
-
     public override void Initialize()
     {
         base.Initialize();
