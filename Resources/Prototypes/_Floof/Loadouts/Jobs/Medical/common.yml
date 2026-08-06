@@ -18,4 +18,16 @@
   id: UniformMedCatsuit
   equipment:
     jumpsuit: ClothingUniformMedCatsuit
-    
+
+# comically large syringe
+- type: loadout
+  id: SyringeComicallyLarge
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Medical
+      time: 100h
+  storage:
+    back:
+    - SyringeComicallyLarge

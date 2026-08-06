@@ -35,8 +35,6 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key: # Shitmed
-        type: SurgeryBui
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -145,6 +143,8 @@
           False: {visible: false}
           True: {visible: true}
   - type: MovementSpeedModifier
+    baseWalkSpeed: 4.95
+    baseSprintSpeed: 4.95
     weightlessAcceleration: 2.5
   - type: Inventory
     speciesId: harpy

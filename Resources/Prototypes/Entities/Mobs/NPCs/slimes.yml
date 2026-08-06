@@ -1,7 +1,7 @@
 - type: entity
   name: basic slime
   id: BaseMobAdultSlimes
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # DeltaV - node crawling
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
@@ -93,11 +93,6 @@
   - type: Body
     prototype: Slimes
     requiredLegs: 1
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: MeleeWeapon
     altDisarm: false
     soundHit:

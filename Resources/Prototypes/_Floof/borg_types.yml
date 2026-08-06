@@ -277,8 +277,6 @@
   - type: AccessReader # DeltaV - departmental access
     access: [["Command"], ["Robotics"], ["Medical"]]
   - type: Crawler
-  - type: SurgeryTarget # Shitmed
-  - type: Sanitized # Shitmed
   # Visual
   clientComponents:
   - type: Sprite
@@ -537,4 +535,3 @@
   pdaBorderColor: "#d7d7d0"
   pdaAccentVerticalColor: "#8900c9"
   # Euphoria end
-  
