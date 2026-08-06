@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared.DoAfter;
+using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -25,6 +26,7 @@ public sealed class ConditionalHealingSystem : EntitySystem
     [Dependency] private readonly SharedVirtualItemSystem _virtualItems = default!; // Euph
     [Dependency] private readonly SharedStackSystem _stacks = default!; // Euph
     [Dependency] private readonly MetaDataSystem _meta = default!; // Euph
+    [Dependency] private readonly BlindableSystem _blindables = default!;
 
     // Euph
     public static EntProtoId HealingVirtualItemProto = "VirtualItemHealing";
@@ -64,6 +66,11 @@ public sealed class ConditionalHealingSystem : EntitySystem
 
     private void OnHealing(Entity<ConditionalHealingVirtualItemComponent> ent, ref HealingDoAfterEvent args)
     {
+        // If it's handled, that means the healing has succeeded
+        // The healing system doesn't account for eye damage healing so we need to do a little fucking in here
+        if (args.Handled && ent.Comp.HealingData is { } healingData)
+            _blindables.AdjustEyeDamage(args.Target!.Value, healingData.AdjustEyeDamage);
+
         // Doesn't give you back the materials even if cancelled, idc
         // This is mostly to avoid leaving the virtual item lingering if the do-after is cancelled
         PredictedQueueDel(ent);
@@ -80,9 +87,10 @@ public sealed class ConditionalHealingSystem : EntitySystem
         }
 
         _meta.SetEntityName(ent, MetaData(ent).EntityName);
-
         EnsureComp<TimedDespawnComponent>(virtItem.Value).Lifetime = 10; // Just in case.
-        EnsureComp<ConditionalHealingVirtualItemComponent>(virtItem.Value);
+
+        var marker = EnsureComp<ConditionalHealingVirtualItemComponent>(virtItem.Value);
+        marker.HealingData = healing;
 
         var healingComp = healing.MakeComponent();
         AddComp(virtItem.Value, healingComp, overwrite: true);
@@ -116,6 +124,9 @@ public sealed class ConditionalHealingSystem : EntitySystem
                 .FirstOrDefault((ConditionalHealingData?)null);
 }
 
-// Euph. Marker component.
+// Euph. Mostly a marker component.
 [RegisterComponent]
-public sealed partial class ConditionalHealingVirtualItemComponent : Component;
+public sealed partial class ConditionalHealingVirtualItemComponent : Component
+{
+    public ConditionalHealingData? HealingData;
+}

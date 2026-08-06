@@ -36,8 +36,8 @@ public sealed partial class ConditionalHealingData
     // [DataField]
     // public List<ReagentQuantity> ReagentsToDrain = [];
     //
-    // [DataField]
-    // public int AdjustEyeDamage = 0;
+    [DataField]
+    public int AdjustEyeDamage = 0;
 
     public HealingComponent MakeComponent() =>
         new()
