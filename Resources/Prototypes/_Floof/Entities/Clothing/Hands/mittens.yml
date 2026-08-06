@@ -9,6 +9,7 @@
     damage:
       types: {}
     animation: WeaponArcClaw
+    wideAnimationRotation: 135
     mustBeEquippedToUse: true
   - type: Fiber
     fiberMaterial: fibers-synthetic
@@ -17,6 +18,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - ClothMade
 
 - type: entity
   parent: ClothingHandsMittensBase
