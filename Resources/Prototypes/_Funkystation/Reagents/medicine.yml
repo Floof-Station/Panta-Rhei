@@ -182,19 +182,19 @@
       - !type:EvenHealthChange
         conditions:
         - !type:TemperatureCondition
-          min: 343.3 # completely arbitrary
+          min: 338.15 # completely arbitrary # Euphoria - Pyro Chems buff - this is 65c
         damage: # Better than Trinox (RIP Trinox)
-          Brute: -3 # Was -4 with HealthChange
-          Burn: -3 # Was -6 with HealthChange
-          Airloss: -3 # Was -6 with HealthChange
-          Toxin: -3 # Was -4 with HealthChange
+          Brute: -4.5 # Was -4 with HealthChange
+          Burn: -4.5 # Was -6 with HealthChange
+          Airloss: -4.5 # Was -6 with HealthChange
+          Toxin: -4.5 # Was -4 with HealthChange
       - !type:HealthChange
         conditions:
         - !type:TemperatureCondition
-          min: 343.3 # Parity with the other Pyrochems
+          min: 338.15 # Parity with the other Pyrochems
         damage:
           types:
-            Heat: -3 # offsets heat damage from the pod
+            Heat: -4.5 # offsets heat damage from the pod
       # End DeltaV additions
 
 - type: reagent
@@ -213,16 +213,16 @@
       - !type:EvenHealthChange
         conditions:
         - !type:TemperatureCondition
-          min: 343.3
+          min: 338.15
         damage:
-          Burn: -7 # Delta-V - Same as Aloxadone.
+          Burn: -10.5 # Delta-V - Same as Aloxadone.
       - !type:HealthChange
         conditions:
         - !type:TemperatureCondition
-          min: 343.3
+          min: 338.15
         damage:
           types:
-            Heat: -3 # offsets heat damage from the pod
+            Heat: -4.5 # offsets heat damage from the pod
       # Previous values with HealthChange were: -3 Heat/Shock, -5 Cold.
       # End DeltaV additions
 
@@ -241,8 +241,8 @@
       - !type:HealthChange
         conditions:
         - !type:TemperatureCondition
-          min: 343.3
+          min: 338.15
         damage:
           types:
-            Cellular: -4
-            Heat: -3
+            Cellular: -6
+            Heat: -4.5
