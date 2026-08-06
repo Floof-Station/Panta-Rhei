@@ -99,7 +99,7 @@
           damageContainers: # Euph
           - Robotic
           - Silicon
-          delay: 1.6
+          delay: 6.4 # Euph - HV wires heal less but take less time
           damage:
             types:
               Heat: -10
@@ -179,7 +179,7 @@
           damageContainers: # Euph
           - Robotic
           - Silicon
-          delay: 1.6
+          delay: 3.2  # Euph - LV wires heal less but take less time
           damage:
             types:
               Heat: -5
@@ -258,7 +258,7 @@
           damageContainers: # Euph
           - Robotic
           - Silicon
-          delay: 1.6
+          delay: 2 # Euph - LV wires heal less but take less time
           damage:
             types:
               Heat: -3
