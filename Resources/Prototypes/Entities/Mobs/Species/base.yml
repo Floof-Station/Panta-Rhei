@@ -312,8 +312,9 @@
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # Floof
-  - type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
-    revealTime: 1
+  #Euph - disable RevealRevenantOnCollide for mobs. It increases radius on mobs, and thus they cannot fit through doors.
+  #- type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
+  #  revealTime: 1
 
 - type: entity
   save: false
