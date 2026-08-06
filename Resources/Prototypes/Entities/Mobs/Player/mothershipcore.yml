@@ -236,6 +236,14 @@
   - type: ShowElectrocutionHUD
   - type: PowerMonitoringCableNetworks
   - type: RadarConsole
+  - type: LanguageKnowledge # Euph
+    speaks:
+    - Binary
+    - TauCetiBasicf
+    understands:
+    - Binary
+    - TauCetiBasic
+    naturalLanguage: Binary
 
 - type: entity
   parent: BaseAGhostAction
