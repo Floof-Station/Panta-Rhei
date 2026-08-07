@@ -4833,3 +4833,17 @@ Entries:
       message: The HoS's cavalier hat now has the same armor as other HoS hats
   id: 603
   time: '2026-08-05T08:51:06.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: 'Fixed a bunch of things. See the PR #909 for detials'
+    - type: Tweak
+      message: >-
+        The unarmed melee granted by the Claws and Talons traits now uses the
+        same sound as the Rodentia unarmed melee.
+    - type: Tweak
+      message: >-
+        Mittens now make you deal no physical damage when worn, mask your
+        fingerprints, and leave fibers.
+  id: 604
+  time: '2026-08-07T05:52:22.0000000+00:00'

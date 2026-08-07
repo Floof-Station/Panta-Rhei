@@ -117,8 +117,9 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
           delay: 1.6
           damage:
             groups:
