@@ -1878,8 +1878,8 @@
   # Begin DeltaV additions - Jugsuit buy limit #5462
   #    - CommanderUplink
   #    - LoneOpUplink
-  #- !type:ListingLimitedStockCondition
-  #  stock: 1
+  - !type:ListingLimitedStockCondition
+    stock: 1
   # End DeltaV additions
 
 - type: listing
