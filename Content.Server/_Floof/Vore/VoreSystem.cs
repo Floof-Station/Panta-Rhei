@@ -35,7 +35,8 @@ public sealed class VoreSystem : EntitySystem
 
     public static readonly ProtoId<ConsentTogglePrototype> isPred = "PredVore";
     public static readonly ProtoId<ConsentTogglePrototype> isPrey = "PreyVore";
-
+    public static readonly ProtoId<ConsentTogglePrototype> isDigest = "Digestable";
+    
     private readonly HashSet<EntityUid> _pendingConsentUpdates = new();
 
     public override void Initialize()
@@ -71,7 +72,9 @@ public sealed class VoreSystem : EntitySystem
     /// </summary>
     private void OnConsentUpdated(EntityUid uid, ConsentComponent comp, EntityConsentToggleUpdatedEvent args){
         // only if the updated toggle is prey or pred
-        if (args.ConsentToggleProtoId != isPred && args.ConsentToggleProtoId != isPrey)
+        if (args.ConsentToggleProtoId != isPred && 
+        args.ConsentToggleProtoId != isPrey &&
+        args.ConsentToggleProtoId != isDigest)
             return;
         _pendingConsentUpdates.Add(uid);
     }
@@ -116,13 +119,16 @@ public sealed class VoreSystem : EntitySystem
 
         //give the mob the needed component to be able to see the verbs
         if (hasPred || hasPrey){
-            EnsureComp<VoreComponent>(uid);
+            // to avoid item ghostroles like trays getting vore components
+            if (HasComp<BodyComponent>(uid)){
+                EnsureComp<VoreComponent>(uid);
+                EnsureComp<DigestComponent>(uid);
+            }
         }
         else{
             RemComp<VoreComponent>(uid);
+            RemComp<DigestComponent>(uid);
         }
-
-        //TODO component for digest
     }
 
     /// <summary>

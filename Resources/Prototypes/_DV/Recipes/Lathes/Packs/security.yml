@@ -20,7 +20,7 @@
   recipes:
   - MagazineBoxSpecialPractice
   - SpeedLoaderSpecialPractice
-  #- MagazinePistolHighCapacityPractice
+  #- MagazinePistolHighCapacityPractice # floof - someone commented this out?
 
 - type: latheRecipePack
   id: SecurityAmmoStaticDeltaV
@@ -32,8 +32,7 @@
   - BoxBeanbag
   - BoxShellTranquilizer
   - MagazineShotgunBeanbag
-  - MagazineLaser
-  #- MagazinePistolHighCapacity
+  #- MagazinePistolHighCapacity # floof - someone commented this out?
 
 - type: latheRecipePack
   id: SecurityShotgunDrumsStatic
@@ -74,12 +73,13 @@
   - MagazineBoxSpecialIncendiary
   - MagazineBoxSpecialUranium
   - MagazineBoxSpecialHoly
-  - MagazineBoxSpecialMindbreaker
+  - MagazineBoxSpecialLernaea
   - MagazinePistolHighCapacityUranium
   - MagazinePistolHighCapacityIncendiary
   - MagazinePistolHighCapacity # Euphoria - Extended Mags to research
-  - MagazinePistolHighCapacityRubber
-  - MagazinePistolHighCapacityPractice
+  - MagazinePistolHighCapacityRubber #   ^
+  - MagazinePistolHighCapacityPractice # ^
+  - MagazineLaser
 
 - type: latheRecipePack
   parent: SecurityHardsuits
@@ -118,9 +118,3 @@
   recipes:
   - ClothingOuterHardsuitEVAPrisoner
   - ClothingHeadHelmetEVALarge
-
-- type: latheRecipePack
-  id: AdvancedPsionicProsthetics
-  recipes:
-  - PyroLeftArm
-  - ZapLeftArm

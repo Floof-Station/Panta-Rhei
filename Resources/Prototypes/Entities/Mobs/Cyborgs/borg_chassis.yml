@@ -31,20 +31,6 @@
     inherentRadioChannels:
     - Common
     - Binary
-  # Floofstation section
-  - type: LanguageKnowledge # Floofstation - languages
-    speaks:
-    - TauCetiBasic
-    - Binary
-    understands:
-    - TauCetiBasic
-    - Binary
-    naturalLanguage: Binary
-  - type: LeashAnchor
-    kind: Intrinsic
-  - type: Crawler
-  - type: CrawlingExtensions
-  # Floofstation section end
   # Begin Impstation - Borg PDAs
   - type: Pda
     idSlot:
@@ -80,6 +66,20 @@
   - type: StationAiWhitelist
   - type: BorgPda
   # End Impstation - Borg PDAs
+  # Floofstation section
+  - type: LanguageKnowledge # Floofstation - languages
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
+  - type: LeashAnchor
+    kind: Intrinsic
+  - type: Crawler
+  - type: CrawlingExtensions
+  # Floofstation section end
 
 - type: entity
   id: BorgChassisGeneric

@@ -42,8 +42,6 @@
         - id: MedicalTechFabCircuitboard
         - id: CargoRequestMedicalComputerCircuitboard
         - id: IDComputerCircuitboard # DeltaV
-        - id: MedicalBiofabMachineBoard # DeltaV
-        - id: AutoclaveMachineCircuitboard # DeltaV
         - id: MedicalRecordsComputerCircuitboard # Euphoria
         - id: CrewMonitoringComputerCircuitboard # Euphoria
 
@@ -89,7 +87,7 @@
 - type: entity
   parent: ToteBase
   id: BoxQMCircuitboards
-  name: cargo circuit tote
+  name: logistics circuit tote # DeltaV - Logistics Department replacing Cargo
   components:
   - type: EntityTableContainerFill
     containers:
@@ -127,7 +125,7 @@
 - type: entity
   parent: ToteBase
   id: BoxRDCircuitboards
-  name: science circuit tote
+  name: epistemics circuit tote # DeltaV - Epistemics Department replacing Science
   components:
   - type: EntityTableContainerFill
     containers:

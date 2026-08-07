@@ -97,6 +97,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+#    Hiss: # moved to base
+#      collection: ReptillianHiss # Impstation
     Honk:
       collection: BikeHorn
     Whistle:
@@ -134,6 +136,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    Hiss: # moved to base
+      collection: ReptillianHiss # Impstation
     Honk:
       collection: BikeHorn
     Whistle:
@@ -506,15 +510,18 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
-    Boop: # DeltaV (EE)
+    # Floofstation - preserved from EE
+    Boop:
       path: /Audio/_EE/Voice/IPC/beep_500.ogg
-    Whirr: # DeltaV (EE)
+    Whirr:
       collection: IPCWhirrs
       params:
         variation: 0
+    # Floofstation section end
 
 - type: emoteSounds
   id: UnisexSiliconSyndicate
+  parent: UnisexSilicon # Floofstation
   params:
     variation: 0.05
   sounds:
@@ -534,15 +541,10 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
-    Boop: # DeltaV (EE)
-      path: /Audio/_EE/Voice/IPC/beep_500.ogg
-    Whirr: # DeltaV (EE)
-      collection: IPCWhirrs
-      params:
-        variation: 0
 
 - type: emoteSounds
   id: UnisexSiliconXenoborg
+  parent: UnisexSilicon # Floofstation
   params:
     variation: 0.05
   sounds:
@@ -562,18 +564,12 @@
       collection: XenoborgBikeHorn
     Ping:
       collection: XenoborgPing
-    Boop: # DeltaV (EE)
-      path: /Audio/_EE/Voice/IPC/beep_500.ogg
-    Whirr: # DeltaV (EE)
-      collection: IPCWhirrs
-      params:
-        variation: 0
 
 # body emotes
 - type: emoteSounds
   id: GeneralBodyEmotes
   sounds:
-    Thump:
+    Thump: # Floof
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
       params:
         variation: 0.125

@@ -22,6 +22,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using System.Linq;
 using Content.Server._Floof.Language;
+using Content.Shared._DV.Pager;
 
 namespace Content.Server.Telephone;
 
@@ -38,6 +39,7 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
     [Dependency] private readonly IAdminLogManager _adminLogger = default!;
     [Dependency] private readonly IReplayRecordingManager _replay = default!;
     [Dependency] private readonly LanguageSystem _languages = default!; // Floofstation
+    [Dependency] private readonly PageSenderSystem _pageSender = default!; // DeltaV - pagers
 
     // Has set used to prevent telephone feedback loops
     private HashSet<(EntityUid, string, Entity<TelephoneComponent>)> _recentChatMessages = new();
@@ -248,6 +250,12 @@ public sealed class TelephoneSystem : SharedTelephoneSystem
         // Otherwise start ringing the receiver
         SetTelephoneState(source, TelephoneState.Calling);
         SetTelephoneState(receiver, TelephoneState.Ringing);
+        // Begin DeltaV - pagers
+        _pageSender.Notify(receiver.Owner,
+            Loc.GetString("pager-message-call",
+                ("name", callerInfo.Item1 ?? Loc.GetString("pager-message-unknown-caller")),
+                ("job", callerInfo.Item2 ?? Loc.GetString("pager-message-unknown-job"))));
+        // End DeltaV - pagers
 
         return true;
     }

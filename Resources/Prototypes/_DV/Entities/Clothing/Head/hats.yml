@@ -402,6 +402,15 @@
       head:
       - state: equipped-HELMET
         offset: "0, 0.12"
+# Euphoria start: Parity with other HoS hats. Copied armor coefficients instead of parenting from the HOS hat since the cav hat lacks the proper sprites for animals.
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+# Euphoria end
 
 - type: entity
   parent: ClothingHeadBase
@@ -432,3 +441,59 @@
       head:
       - state: equipped-HELMET
         offset: "0, 0.12"
+
+
+# Wrestling masks
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWrestlingMaskLuchaRed
+  name: Red Lucha Libre Mask
+  description: The luchador never removes his mask.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaRed.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaRed.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatWrestlingMaskLuchaBlue
+  name: Blue Lucha Libre Mask
+  description: Don't touch the mask.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaBlue.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/WrestlerMaskLuchaBlue.rsi
+  - type: HideLayerClothing
+    slots:
+    - Hair
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatBeretViro
+  name: virology beret
+  description: A white beret with a green stripe that reminds you to wash your hands.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/beret_viro.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/beret_viro.rsi
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSodaJerkCap
+  name: soda jerk cap
+  description: I was a wimp before the soda jerk.
+  components:
+  - type: Sprite
+    sprite: _DV/Clothing/Head/Hats/SodaJerkCap.rsi
+  - type: Clothing
+    sprite: _DV/Clothing/Head/Hats/SodaJerkCap.rsi
