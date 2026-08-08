@@ -58,7 +58,10 @@ rules_file = "FloofstationRuleset"
 [control] # DeltaV
 storage_limit = 3
 
-
 # Floof - annoying
 [vote]
 autovote_enabled = false
+
+[audio] # DeltaV
+attenuation = 4 # inversedistanceclamped 1 << 2, see audioparams.cs
+z_offset = -2

@@ -47,8 +47,6 @@ public sealed class LewdOrganSystem : EntitySystem
             Log.Warning($"LewdOrganComponent added to an entity without Organ: {ent.Owner}.");
             return;
         }
-
-        organ.SlotId = ent.Comp.Data.OrganKind.ToString().ToLowerInvariant();
     }
 
     private void OnLewdAdded(Entity<LewdOrganComponent> ent, ref OrganAddedToBodyEvent args)

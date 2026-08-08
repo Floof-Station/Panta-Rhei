@@ -29,7 +29,14 @@ public sealed partial class RadioSystem
         string senderName,
         LanguagePrototype? languageOverride)
     {
-        var msg = new ChatMessage(channel, message, wrappedMessage, GetNetEntity(sender), senderKey);
+        var msg = new ChatMessage(
+            channel,
+            message,
+            wrappedMessage,
+            GetNetEntity(sender),
+            senderKey,
+            radioChannelProto: radioChannel.ID // DeltaV - Add RadioChannel for committing sins
+        );
         var language = (languageOverride ?? _language.GetLanguage(sender));
         msg.Language = language;
 
