@@ -83,7 +83,7 @@ public sealed class ConditionalHealingSystem : EntitySystem
             return false;
         }
 
-        _meta.SetEntityName(ent, MetaData(ent).EntityName);
+        _meta.SetEntityName(virtItem.Value, MetaData(ent).EntityName);
         EnsureComp<TimedDespawnComponent>(virtItem.Value).Lifetime = 10; // Just in case.
 
         var marker = EnsureComp<ConditionalHealingVirtualItemComponent>(virtItem.Value);
@@ -92,7 +92,7 @@ public sealed class ConditionalHealingSystem : EntitySystem
         var healingComp = healing.MakeComponent();
         AddComp(virtItem.Value, healingComp, overwrite: true);
 
-        if (!_healing.TryHeal((virtItem.Value, healingComp), user, target))
+        if (!_healing.TryHeal((virtItem.Value, healingComp), target, user))
         {
             PredictedQueueDel(virtItem);
             return false;
