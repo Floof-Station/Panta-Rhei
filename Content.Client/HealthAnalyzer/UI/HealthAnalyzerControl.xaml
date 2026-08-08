@@ -74,9 +74,6 @@
 
     </BoxContainer>
 
-    <PanelContainer Name="AllergiesDivider" Visible="False" StyleClasses="LowDivider" /> <!-- Euphoria - Allergies -->
-    <BoxContainer Name="AllergiesContainer" Visible="False" Orientation="Vertical" Margin="0 5" /> <!-- Euphoria - Allergies -->
-
     <PanelContainer StyleClasses="LowDivider" />
 
     <BoxContainer
@@ -85,4 +82,6 @@
         Orientation="Vertical">
     </BoxContainer>
 
+    <PanelContainer Name="AllergiesDivider" Visible="False" StyleClasses="LowDivider" /> <!-- Euphoria - Allergies -->
+    <BoxContainer Name="AllergiesContainer" Visible="False" Orientation="Vertical" Margin="0 5" /> <!-- Euphoria - Allergies -->
 </BoxContainer>

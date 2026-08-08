@@ -203,6 +203,37 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 MaxWidth = 300
             });
 
+        // Damage Groups
+
+        var damageSortedGroups =
+            damageable.DamagePerGroup.OrderByDescending(damage => damage.Value)
+                .ToDictionary(x => x.Key, x => x.Value);
+
+        IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
+
+        DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+
+        // Begin DeltaV - Medical Records
+        if (state.MedicalRecord is not { } records)
+        {
+            TriageControls.Visible = false;
+            return;
+        }
+
+        TriageControls.Visible = true;
+        _triageControls[records.Status].Pressed = true;
+
+        // Update claim button based on claimed status
+        if (records.ClaimedName != null)
+        {
+            ClaimButton.Text = Loc.GetString("health-analyzer-window-triage-unclaim", ("claimedBy", records.ClaimedName));
+        }
+        else
+        {
+            ClaimButton.Text = Loc.GetString("health-analyzer-window-triage-claim");
+        }
+        // End DeltaV - Medical Records
+
         // Euphoria - Allergies
         var hasAllergies = state.Allergies.Count > 0;
         if (hasAllergies)
@@ -244,40 +275,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 AllergiesContainer.AddChild(reagentContainer);
             }
         }
-        AllergiesDivider.Visible = hasAllergies;
+        AllergiesDivider.Visible = hasAllergies && GroupsContainer.ChildCount > 0; // Don't show two dividers if there is no damage.
         AllergiesContainer.Visible = hasAllergies;
         // END Euphoria
-
-        // Damage Groups
-
-        var damageSortedGroups =
-            damageable.DamagePerGroup.OrderByDescending(damage => damage.Value)
-                .ToDictionary(x => x.Key, x => x.Value);
-
-        IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
-
-        DrawDiagnosticGroups(damageSortedGroups, damagePerType);
-
-        // Begin DeltaV - Medical Records
-        if (state.MedicalRecord is not { } records)
-        {
-            TriageControls.Visible = false;
-            return;
-        }
-
-        TriageControls.Visible = true;
-        _triageControls[records.Status].Pressed = true;
-
-        // Update claim button based on claimed status
-        if (records.ClaimedName != null)
-        {
-            ClaimButton.Text = Loc.GetString("health-analyzer-window-triage-unclaim", ("claimedBy", records.ClaimedName));
-        }
-        else
-        {
-            ClaimButton.Text = Loc.GetString("health-analyzer-window-triage-claim");
-        }
-        // End DeltaV - Medical Records
     }
 
     private static string GetStatus(MobState mobState)
