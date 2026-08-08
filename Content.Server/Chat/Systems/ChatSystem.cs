@@ -715,8 +715,8 @@ public sealed partial class ChatSystem : SharedChatSystem
             !TryEmoteChatInput(source, action))
             return;
 
-        // Floof - supply empty message wrap data for the third arg as emotes are never obfuscated
-        SendInVoiceRange(ChatChannel.Emotes, new MessageWrapData(action, wrappedMessage, LanguageSystem.Universal), MessageWrapData.Empty, source, range, author);
+        // Floof - supply empty message wrap data for the third arg as emotes are never obfuscated, also check LOS
+        SendInVoiceRange(ChatChannel.Emotes, new MessageWrapData(action, wrappedMessage, LanguageSystem.Universal), MessageWrapData.Empty, source, range, author, checkLOS: true);
         if (!hideLog)
             if (name != Name(source))
                 _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Emote from {source} as {name}: {action}");
