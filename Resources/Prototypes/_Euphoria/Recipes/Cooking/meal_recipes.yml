@@ -1,0 +1,17 @@
+﻿- type: microwaveMealRecipe
+  id: RecipeBun
+  name: bun recipe
+  result: FoodBreadBun
+  time: 5
+  group: Breads
+  solids:
+    FoodUncookedBun: 1
+
+- type: microwaveMealRecipe
+  id: RecipeHotdogBun
+  name: bun recipe
+  result: FoodHotdogBun
+  time: 5
+  group: Breads
+  solids:
+    FoodUncookedHotdogBun: 1
