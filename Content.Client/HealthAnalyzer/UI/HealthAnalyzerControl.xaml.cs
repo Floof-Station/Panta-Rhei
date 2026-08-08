@@ -24,6 +24,7 @@ using Content.Client._DV.Traits.Assorted; // DeltaV
 using Content.Shared._DV.Traits.Assorted; // DeltaV
 using Content.Shared._DV.Medical; // DeltaV - Uncloneable
 using Content.Shared._DV.MedicalRecords; // DeltaV - Medical Records
+using Content.Shared.Chemistry.Reagent; // Euphoria - Allergies
 
 // Health analyzer UI is split from its window because it's used by both the
 // health analyzer item and the cryo pod UI.
@@ -201,6 +202,51 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
                 Margin = new Thickness(0, 4),
                 MaxWidth = 300
             });
+
+        // Euphoria - Allergies
+        var hasAllergies = state.Allergies.Count > 0;
+        if (hasAllergies)
+        {
+            // Would be nice not to re-draw this each time, but if the UI doesn't close and the scan target switches,
+            // the allergies would not be redrawn. Plus, maybe an admeme adds an allergy or something. Oh well, at
+            // least its client-side.
+            AllergiesContainer.RemoveAllChildren();
+            var headerContainer = new BoxContainer
+            {
+                Align = AlignMode.Begin,
+                Orientation = LayoutOrientation.Vertical
+            };
+
+            headerContainer.AddChild(new RichTextLabel
+            {
+                Text = Loc.GetString("health-analyzer-window-entity-header-allergy-text")
+            });
+            AllergiesContainer.AddChild(headerContainer);
+
+            foreach (var allergy in state.Allergies)
+            {
+                var reagentPrototype = _prototypes.Index<ReagentPrototype>(allergy);
+                var reagentContainer = new BoxContainer
+                {
+                    Align = AlignMode.Begin,
+                    Orientation = LayoutOrientation.Vertical
+                };
+
+                reagentContainer.AddChild(new RichTextLabel
+                {
+                    Text = Loc.GetString("health-analyzer-window-entity-reagent-allergy-text",
+                        ("reagentColor", reagentPrototype.SubstanceColor),
+                        ("reagentName", reagentPrototype.LocalizedName)
+                    ),
+                    Margin = new Thickness(15f, 0f) // Small horizontal indentation
+                });
+
+                AllergiesContainer.AddChild(reagentContainer);
+            }
+        }
+        AllergiesDivider.Visible = hasAllergies;
+        AllergiesContainer.Visible = hasAllergies;
+        // END Euphoria
 
         // Damage Groups
 

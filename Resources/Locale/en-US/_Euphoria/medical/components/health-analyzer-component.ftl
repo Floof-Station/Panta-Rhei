@@ -3,6 +3,8 @@ health-analyzer-window-entity-bleeding-text-short = [color=red]Has open wounds![
 health-analyzer-window-entity-unborgable-text-short = [color=red]Incompatible with MMI technology![/color]
 health-analyzer-window-entity-redshirt-text-short = [color=red]Lacks recoverable critical state.[/color]
 health-analyzer-window-entity-uncloneable-text-short = [color=orange]Cloning is impossible.[/color]
+health-analyzer-window-entity-header-allergy-text = [bold]Allergies[/bold]
+health-analyzer-window-entity-reagent-allergy-text = [color={$reagentColor}]█[/color] {$reagentName}
 
 rotting-rotting-short = [color=orange]Corpse is rotting![/color]
 rotting-bloated-short = [color=orangered]Corpse is bloated![/color]

@@ -25,6 +25,8 @@ using Content.Server._NF.Medical;
 using Content.Server._DV.MedicalRecords;
 using Content.Shared._DV.MedicalRecords;
 // End DeltaV
+using Content.Server._CD.Body.Components; // Euphoria
+using System.Linq; // Euphoria
 
 namespace Content.Server.Medical;
 
@@ -281,6 +283,14 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
+        // BEGIN Euphoria 
+        List<string> allergies = []; // Assume no allergies unless they have the comp.
+        if (TryComp<AllergyComponent>(entity, out var allergy))
+        {
+            allergies = [.. allergy.Reagents.Select(a => a.Key)];
+        }
+        // END Euphoria
+
         var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
         return new HealthAnalyzerUiState(
             GetNetEntity(entity),
@@ -290,7 +300,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             bleeding,
             unrevivable,
             _medicalRecords.GetMedicalRecords(entity), // DeltaV - Medical Records
-            printable // Frontier
+            printable, // Frontier
+            allergies // Euphoria - allergies
         );
     }
 }

@@ -31,10 +31,11 @@ public struct HealthAnalyzerUiState
     public bool? Unrevivable;
     public MedicalRecord? MedicalRecord; // DeltaV - Medical Records
     public bool Printable; // Frontier
+    public List<string> Allergies = []; // Euphoria - Allergies
 
     public HealthAnalyzerUiState() {}
 
-    public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, MedicalRecord? medicalRecord = null, bool printable = false) // DeltaV - Medical Records // Floof - printing port from frontier
+    public HealthAnalyzerUiState(NetEntity? targetEntity, float temperature, float bloodLevel, bool? scanMode, bool? bleeding, bool? unrevivable, MedicalRecord? medicalRecord = null, bool printable = false, List<string>? allergies = null) // DeltaV - Medical Records // Floof - printing port from frontier // Euphoria - Allergies
     {
         TargetEntity = targetEntity;
         Temperature = temperature;
@@ -44,6 +45,11 @@ public struct HealthAnalyzerUiState
         Unrevivable = unrevivable;
         MedicalRecord = medicalRecord; // DeltaV - Medical Records
         Printable = printable; // Frontier
+
+        if (allergies != null)  // Euphoria - Allergies
+        {
+            Allergies = allergies;
+        }
     }
 }
 
