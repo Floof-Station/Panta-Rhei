@@ -6,12 +6,15 @@ using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Server.Tools;
+using Content.Shared._DV.Fax; // DeltaV - fax
+using Content.Shared._DV.Pager; // DeltaV - pagers
 using Content.Shared.Administration.Logs;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork.Events;
+using Content.Shared.DeviceNetwork.Systems; // DeltaV - map init ordering
 using Content.Shared.Emag.Systems;
 using Content.Shared.Fax;
 using Content.Shared.Fax.Components;
@@ -53,10 +56,11 @@ public sealed class FaxSystem : EntitySystem
     [Dependency] private readonly MetaDataSystem _metaData = default!;
     [Dependency] private readonly FaxecuteSystem _faxecute = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
-    #region Euphoria: Allow for handheld fax or copy machines
+    [Dependency] private readonly PageSenderSystem _pageSender = default!; // DeltaV - pagers
+    // Begin Euphoria additions
     [Dependency] private readonly PowerCellSystem _cell = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
-    #endregion
+    // End Euphoria additions
 
     private static readonly ProtoId<ToolQualityPrototype> ScrewingQuality = "Screwing";
 
@@ -68,7 +72,7 @@ public sealed class FaxSystem : EntitySystem
 
         // Hooks
         SubscribeLocalEvent<FaxMachineComponent, ComponentInit>(OnComponentInit);
-        SubscribeLocalEvent<FaxMachineComponent, MapInitEvent>(OnMapInit);
+        SubscribeLocalEvent<FaxMachineComponent, MapInitEvent>(OnMapInit, after: [typeof(SharedDeviceNetworkSystem)]); // DeltaV - map init order, we need address assigned first
         SubscribeLocalEvent<FaxMachineComponent, ComponentRemove>(OnComponentRemove);
 
         SubscribeLocalEvent<FaxMachineComponent, EntInsertedIntoContainerMessage>(OnItemSlotChanged);
@@ -93,23 +97,11 @@ public sealed class FaxSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        #region Euphoria: Allow unpowered or battery-powered fax machines
-        /*
-        var query = EntityQueryEnumerator<FaxMachineComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out var uid, out var fax, out var receiver))
-        {
-            if (!receiver.Powered)
-                continue;
-        */
         var query = EntityQueryEnumerator<FaxMachineComponent>();
-        while (query.MoveNext(out var uid, out var fax))
+        while (query.MoveNext(out var uid, out var fax)) // DeltaV - faxes aren't necessarily powered
         {
-            if (!this.IsPowered(uid, EntityManager))
-                return;
-
-            if (!_cell.HasActivatableCharge(uid))
-                return;
-            #endregion
+            if (TryComp<ApcPowerReceiverComponent>(uid, out var receiver) && !receiver.Powered) // DeltaV - faxes aren't necessarily powered
+                continue;
 
             ProcessPrintingAnimation(uid, frameTime, fax);
             ProcessInsertingAnimation(uid, frameTime, fax);
@@ -317,6 +309,11 @@ public sealed class FaxSystem : EntitySystem
                     if (!args.Data.TryGetValue(FaxConstants.FaxPaperNameData, out string? name) ||
                         !args.Data.TryGetValue(FaxConstants.FaxPaperContentData, out string? content))
                         return;
+                    // Begin DeltaV - we removed the power requirement from device network but we still don't want
+                    // unpowered faxes to happen
+                    if (TryComp<ApcPowerReceiverComponent>(uid, out var receiver) && !receiver.Powered)
+                        return;
+                    // End DeltaV
 
                     args.Data.TryGetValue(FaxConstants.FaxPaperLabelData, out string? label);
                     args.Data.TryGetValue(FaxConstants.FaxPaperStampStateData, out string? stampState);
@@ -402,7 +399,7 @@ public sealed class FaxSystem : EntitySystem
         var canCopy = isPaperInserted &&
                       component.SendTimeoutRemaining <= 0 &&
                       component.InsertingTimeRemaining <= 0;
-        var state = new FaxUiState(component.FaxName, component.KnownFaxes, canSend, canCopy, isPaperInserted, component.DestinationFaxAddress);
+        var state = new FaxUiState(component.FaxName, component.KnownFaxes, canSend, canCopy, isPaperInserted, component.DestinationFaxAddress, component.SendTimeoutRemaining <= 0); // DeltaV - AI fax
         _userInterface.SetUiState(uid, FaxUiKey.Key, state);
     }
 
@@ -471,7 +468,7 @@ public sealed class FaxSystem : EntitySystem
     ///     Copies the paper in the fax. A timeout is set after copying,
     ///     which is shared by the send button.
     /// </summary>
-    public void Copy(EntityUid uid, FaxMachineComponent? component, FaxCopyMessage args)
+    public void Copy(EntityUid uid, FaxMachineComponent? component, BoundUserInterfaceMessage args, EntityUid? item = null) // DeltaV - station AI fax
     {
         if (!Resolve(uid, ref component))
             return;
@@ -479,7 +476,7 @@ public sealed class FaxSystem : EntitySystem
         if (component.SendTimeoutRemaining > 0)
             return;
 
-        var sendEntity = component.PaperSlot.Item;
+        var sendEntity = item ?? component.PaperSlot.Item; // DeltaV - station AI fax
         if (sendEntity == null)
             return;
 
@@ -521,7 +518,7 @@ public sealed class FaxSystem : EntitySystem
     ///     Sends message to addressee if paper is set and a known fax is selected
     ///     A timeout is set after sending, which is shared by the copy button.
     /// </summary>
-    public void Send(EntityUid uid, FaxMachineComponent? component, FaxSendMessage args)
+    public void Send(EntityUid uid, FaxMachineComponent? component, BoundUserInterfaceMessage args, EntityUid? item = null) // DeltaV - station AI fax
     {
         if (!Resolve(uid, ref component))
             return;
@@ -529,7 +526,7 @@ public sealed class FaxSystem : EntitySystem
         if (component.SendTimeoutRemaining > 0)
             return;
 
-        var sendEntity = component.PaperSlot.Item;
+        var sendEntity = item ?? component.PaperSlot.Item; // DeltaV - station AI fax
         if (sendEntity == null)
             return;
 
@@ -603,6 +600,7 @@ public sealed class FaxSystem : EntitySystem
 
         _popupSystem.PopupEntity(Loc.GetString("fax-machine-popup-received", ("from", faxName)), uid);
         _appearanceSystem.SetData(uid, FaxMachineVisuals.VisualState, FaxMachineVisualState.Printing);
+        _pageSender.Notify(uid, Loc.GetString("pager-message-fax", ("faxname", faxName))); // DeltaV - pagers
 
         if (component.NotifyAdmins)
             NotifyAdmins(faxName);
@@ -649,6 +647,10 @@ public sealed class FaxSystem : EntitySystem
         }
 
         _adminLogger.Add(LogType.Action, LogImpact.Low, $"\"{component.FaxName}\" {ToPrettyString(uid):tool} printed {ToPrettyString(printed):subject}: {printout.Content}");
+        // Begin DeltaV - notify on fax printing
+        var evt = new FaxPrintedEvent(printed);
+        RaiseLocalEvent(uid, ref evt);
+        // End DeltaV - notify on fax printing
     }
 
     private void NotifyAdmins(string faxName)

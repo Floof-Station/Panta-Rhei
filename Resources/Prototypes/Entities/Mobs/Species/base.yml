@@ -203,9 +203,6 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      # Shitmed
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -231,8 +228,6 @@
     - FootstepSound
     - DoorBumpOpener
     - AnomalyHost # MAKE SURE TO UPDATE FLOOFSTATION SPECIES TAGS IF THESE EVER CHANGE
-  - type: Targeting # Shitmed Change
-  - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
   - type: Carriable # DeltaV
   - type: GrappleTarget # DeltaV - Allow targets to be grappled
@@ -313,10 +308,13 @@
         Asphyxiation: -1.0
   - type: FireVisuals
     alternateState: Standing
-  #- type: StunVisuals # DeltaV - No stars
+  - type: StunVisuals
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
-  - type: FootPrints
+  - type: FootPrints # Floof
+  #Euph - disable RevealRevenantOnCollide for mobs. It increases radius on mobs, and thus they cannot fit through doors.
+  #- type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
+  #  revealTime: 1
 
 - type: entity
   save: false

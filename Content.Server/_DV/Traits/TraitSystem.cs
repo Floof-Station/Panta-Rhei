@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Server.Database;
 using Content.Server.Ghost.Roles.Events;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.Traits;
@@ -22,7 +21,7 @@ namespace Content.Server._DV.Traits;
 /// <summary>
 /// Server system that validates and applies traits to players on spawn.
 /// </summary>
-public sealed class TraitSystem : EntitySystem
+public sealed partial class TraitSystem : EntitySystem // Euph - made partial
 {
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
@@ -79,32 +78,13 @@ public sealed class TraitSystem : EntitySystem
     // Euphoria - Let's ghost role character spawns use traits
     private void OnGhostRoleSpawnerUsed(GhostRoleSpawnerUsedEvent args)
     {
-        // Check if there's a profile
-        if (args.Character == null)
+        if (args.Character == null || args.Session == null)
             return;
 
-        // Use the species ID from the profile if for some reason we can't get the humanoid appearance
-        ProtoId<SpeciesPrototype>? speciesId = args.Character.Species;
-        if (TryComp<HumanoidAppearanceComponent>(args.Spawned, out var humanoid))
-            speciesId = humanoid.Species;
-
-        // Track disabled traits and reasons
-        var disabledTraits = new Dictionary<ProtoId<TraitPrototype>, List<string>>();
-
-        var ghostjob = "Passenger";
-        // Validate and collect valid traits
-        var validTraits = ValidateTraits(args.Spawned, args.Character.TraitPreferences, args.Session, ghostjob, speciesId, args.Character, disabledTraits);
-
-        // Apply valid traits
-        // Euphoria: Move trait resolution and ordering to static methods.
-        foreach (var trait in OrderTraitPrototypesForApplication(ResolveTraitPrototypes(validTraits)))
-            ApplyTrait(args.Spawned, trait);
-
-        // Send disabled traits notification to client if any were rejected
-        if (disabledTraits.Count > 0 && args.Session != null)
-        {
-            RaiseNetworkEvent(new DisabledTraitsEvent(disabledTraits), args.Session);
-        }
+        // We fake an event here to avoid code duplication
+        // Ideally OnPlayerSpawnComplete should be a separate method (ApplyTraits or smth) but i can't be fucked to rework it
+        var ev = new PlayerSpawnCompleteEvent(args.Spawned, args.Session, "Passenger", true, true, 0, EntityUid.Invalid, args.Character);
+        OnPlayerSpawnComplete(ev);
     }
 
 
@@ -138,7 +118,8 @@ public sealed class TraitSystem : EntitySystem
             JobId = jobId,
             SpeciesId = speciesId,
             Profile = profile,
-            StatusEffects = _statusEffects
+            StatusEffects = _statusEffects,
+            SelectedTraits = selectedTraits
         };
 
         #region Euphoria: Fix order-dependant trait validation
@@ -234,61 +215,6 @@ public sealed class TraitSystem : EntitySystem
 
         return validTraits;
     }
-
-    #region Euphoria: Fix order-dependant trait validation.
-    /**
-     * Trait validation is order-dependant due to counting point limits. Try to put traits in an order that makes sense.
-     * This means add all point-negative traits first, then all the positive traits, so that traits can never get rejected for points
-     * if the final total points are under the limit.
-     * Finally, evaluate more expensive traits before less expensive traits, so that the final validated set is as close to the point
-     * limit as possible.
-     */
-
-    /// <summary>
-    /// Orders traits to prevent errors in order-dependant trait validation. When iterating accross the returned enumerable, a trait with
-    /// zero or negative cost will never be encountered after a trait with positive cost. Among traits with positive cost, lowest-cost
-    /// traits will be encountered last.
-    /// </summary>
-    /// <param name="traitPrototypes">An enumerable of trait prototypes.</param>
-    /// <returns>An ordered enumerable of trait prototypes ready to run through trait validation.</returns>
-    public static IOrderedEnumerable<TraitPrototype> OrderTraitPrototypesForValidation(IEnumerable<TraitPrototype> traitPrototypes)
-    {
-        return traitPrototypes.OrderBy((trait) => trait.Cost > 0).ThenByDescending((trait) => trait.Cost);
-    }
-
-    /// <summary>
-    /// Orders traits ready for to apply. Higher priority traits are ordered first.
-    /// </summary>
-    /// <param name="traitPrototypes">An enumerable of trait prototypes.</param>
-    /// <returns>An ordered enumerable of trait prototypes ready to apply.</returns>
-    private static IOrderedEnumerable<TraitPrototype> OrderTraitPrototypesForApplication(IEnumerable<TraitPrototype> traitPrototypes)
-    {
-        return traitPrototypes.OrderByDescending((a) => a.Priority);
-    }
-
-    /// <summary>
-    /// Resolve each trait ID in selectedTraits to its corresponding trait, where that trait exists. Invalid trait IDs are rejected.
-    /// </summary>
-    /// <param name="traitIds">A collection of arbitrary trait ids</param>
-    /// <returns>An enumerable containing trait prototypes</returns>
-    public IEnumerable<TraitPrototype> ResolveTraitPrototypes(IReadOnlyCollection<ProtoId<TraitPrototype>> traitIds)
-    {
-        var resolvedTraits = new List<TraitPrototype>(traitIds.Count);
-
-        foreach (var traitId in traitIds)
-        {
-            if (!_prototype.TryIndex(traitId, out var trait))
-            {
-                Log.Warning($"Unknown trait ID in player preferences: {traitId}");
-                continue;
-            }
-
-            resolvedTraits.Add(trait);
-        }
-
-        return resolvedTraits;
-    }
-    #endregion
 
     /// <summary>
     /// Validates that adding a trait wouldn't exceed category-specific limits.

@@ -1135,6 +1135,11 @@
     head: ClothingHeadHatCorpsoft
 
 - type: loadout
+  id: HeadHelmetHorse
+  equipment:
+    head: ClothingHeadHelmetHorse
+
+- type: loadout
   id: ClothingHeadHatHijabColorable
   equipment:
     head: ClothingHeadHatHijabColorable
@@ -1521,6 +1526,20 @@
   storage:
     back:
     - CigPackMixed
+  groupBy: "smokeables"
+
+- type: loadout
+  id: CigarBluespace
+  storage:
+    back:
+    - CigarBluespace
+  groupBy: "smokeables"
+
+- type: loadout
+  id: DelightsPackMixed
+  storage:
+    back:
+    - DelightsPackMixed
   groupBy: "smokeables"
 
 - type: loadout
