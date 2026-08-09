@@ -54,3 +54,22 @@
   - type: SolutionContainerVisuals
     maxFillLevels: 2
     fillBaseName: packet-solid-
+
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: FoodCondimentPacketMayo
+  name: mayo
+  description: A thick, creamy sauce with a rich and tangy taste. Made from beating egg yolk and oil till white and creamy, a similar result may come from doing the same to someone.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Mayo
+          Quantity: 10
+  - type: Icon
+    state: packet-mustard
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-

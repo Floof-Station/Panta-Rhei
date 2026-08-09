@@ -35,8 +35,6 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key: # Shitmed
-        type: SurgeryBui
   - type: Sprite
     scale: 0.9, 0.9
     layers:
@@ -56,13 +54,13 @@
       - map: [ "socks" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      - map: ["enum.HumanoidVisualLayers.LHand"]
-      - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "undergarmentSocks" ] # Floof
       - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
       - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
       - map: [ "shoes" ] # Floof - moved above jumpsuit
       - map: [ "jumpsuit" ] # Floof - moved below hands and feet
+      - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
+      - map: ["enum.HumanoidVisualLayers.RHand"] # ^
       - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
         color: "#ffffff"
         sprite: Objects/Misc/handcuffs.rsi
@@ -74,11 +72,12 @@
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
-      - map: [ "belt" ]
+      
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
@@ -90,6 +89,7 @@
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
       - map: [ enum.InstrumentVisuals.Layer ]
         sprite: _DV/Effects/harpysinger.rsi
@@ -145,6 +145,8 @@
           False: {visible: false}
           True: {visible: true}
   - type: MovementSpeedModifier
+    baseWalkSpeed: 4.95
+    baseSprintSpeed: 4.95
     weightlessAcceleration: 2.5
   - type: Inventory
     speciesId: harpy
@@ -205,24 +207,24 @@
       - map: [ "undershirt" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      - map: ["enum.HumanoidVisualLayers.LHand"]
-      - map: ["enum.HumanoidVisualLayers.RHand"]
       - map: [ "undergarmentSocks" ] # Floof
       - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
       - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
       - map: [ "shoes" ] # Floof - moved above jumpsuit
       - map: [ "jumpsuit" ] # Floof - moved below hands and feet
+      - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
+      - map: ["enum.HumanoidVisualLayers.RHand"] # ^
       - map: [ "id" ]
       - map: [ "gloves" ]
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
-      - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
@@ -233,6 +235,7 @@
       - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
 
 - type: entity

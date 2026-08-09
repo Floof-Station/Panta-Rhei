@@ -46,25 +46,40 @@ public sealed class IdExaminableSystem : EntitySystem
         return GetInfo(uid) ?? Loc.GetString("id-examinable-component-verb-no-id");
     }
 
+    // Start Floofstation
     public string? GetInfo(EntityUid uid)
     {
-        if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid) || _inventorySystem.TryGetSlotEntity(uid, "neck", out idUid)) // Floofstation Pet IDs to check neck slot
+        // Check ID slot
+        if (_inventorySystem.TryGetSlotEntity(uid, "id", out var idUid))
         {
-            // PDA
-            if (TryComp(idUid, out PdaComponent? pda) &&
-                TryComp<IdCardComponent>(pda.ContainedId, out var id))
-            {
-                return GetNameAndJob(id);
-            }
-            // ID Card
-            if (TryComp(idUid, out id))
-            {
-                return GetNameAndJob(id);
-            }
+            var idInfo = GetIdInfo((EntityUid)idUid);
+            if (idInfo != null) return idInfo;
+        }
+        // Check neck slot
+        if (_inventorySystem.TryGetSlotEntity(uid, "neck", out idUid))
+        {
+            var idInfo = GetIdInfo((EntityUid)idUid);
+            if (idInfo != null) return idInfo;
         }
         return null;
     }
 
+    private string? GetIdInfo(EntityUid uid)
+    {
+        // PDA
+        if (TryComp(uid, out PdaComponent? pda) &&
+            TryComp<IdCardComponent>(pda.ContainedId, out var id))
+        {
+            return GetNameAndJob(id);
+        }
+        // ID Card
+        if (TryComp(uid, out id))
+        {
+            return GetNameAndJob(id);
+        }
+        return null;
+    }
+    // End Floofstation
     private string GetNameAndJob(IdCardComponent id)
     {
         var jobSuffix = string.IsNullOrWhiteSpace(id.LocalizedJobTitle) ? string.Empty : $" ({id.LocalizedJobTitle})";

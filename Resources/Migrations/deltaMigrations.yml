@@ -129,7 +129,7 @@ AlwaysPoweredSmallLightMaintenanceRed: PoweredDimSmallLight
 VendingMachineRestockSalvageEquipment: null
 
 # 2025-01-11 Additional edit: 2026-03-07
-SpawnMobSmile: SpawnMobSmileCore
+#SpawnMobSmile: SpawnMobSmileCore # Floofstation - we want smile so we will flip this migration in FloofMigrations
 
 #2025-01-12
 ForensicMantisPDA: PsionicMantisPDA
@@ -233,3 +233,20 @@ HoloprojectorEngineering: HolotapeProjector
 
 # 2026-03-07
 SentientSmileCore: SpawnMobSmileCore
+
+# 2026-05-21
+HatSpawner: RandomHatSpawner
+
+# 2026-05-16
+# Euph - reverted.
+# ClothingUniformJumpsuitSecBlue : ClothingUniformJumpsuitSecWhite
+ClothingUniformJumpsuitSecWhite: null # Euph
+
+# 2026-06-22
+PaperStickyNoteStack : PaperStickyNoteStackFilled
+PaperStickyNoteStackPink : PaperStickyNoteStackFilledPink
+PaperStickyNoteStackGreen : PaperStickyNoteStackFilledGreen
+PaperStickyNoteStackBlue : PaperStickyNoteStackFilledBlue
+
+# 2026-06-09
+BoxPerformer: BoxPerformerDV

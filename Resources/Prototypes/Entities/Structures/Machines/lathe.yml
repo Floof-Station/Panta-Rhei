@@ -146,6 +146,7 @@
     # Begin DeltaV Additions
     - RingsStatic
     - ReportingStatic
+    - CutterMachineStaticDen
     # End DeltaV Additions
     - ToolsStatic
     - PartsStatic
@@ -164,6 +165,9 @@
     # Floofstation section
     - CollarsAutolatheFloofstation
     # Floofstation section end
+    # Den section
+    - NSFWHolos
+    # Den section end
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -241,7 +245,6 @@
     - Instruments
     - Equipment
     - Botany # DeltaV
-    - Surgery # Shitmed change
     # Floofstation section - add your recipes here
     - AdvancedTranslation
     - UpgradeKits_Goob
@@ -294,6 +297,7 @@
     - CargoBoardsStatic
     - MedicalBoardsStatic
     - EngineeringBoardsStatic
+    - FloofstationServiceCircuitBoards # service smartfridge
     dynamicPacks:
     - EngineeringBoards
     - CargoBoards
@@ -350,11 +354,7 @@
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
-    - RoboticsStaticDeltaV # DeltaV
-    - PowerAugments # DeltaV - augments
-    - ToolAugments # DeltaV - augments
     - BorgDVModulesStatic # DeltaV - modules
-    - BorgModulesStaticShitmed # Shitmed
     - BorgIdentificationStaticDeltaV # DeltaV - Borg IDs
     - BorgModulesStaticEuphoria # Euphoria
     dynamicPacks:
@@ -363,23 +363,19 @@
     - MechParts
     - MechEquipment
     - RoboticsDeltaV # DeltaV
-    - BorgModulesDeltaV # DeltaV
-    - Surgery # DeltaV - Share Surgery Parts between Epi and Med.
-    - CyberneticsRobotics # DeltaV - Share Surgery Parts between Epi and Med.
-    - PsionicProsthetics # DeltaV
+    - BorgModulesServiceDynamicDV # DeltaV
+    - BorgModulesEuphoria # Euphoria
   - type: EmagLatheRecipes # DeltaV
     emagStaticPacks:
     - RoboticsEmagStatic
     # Being DeltaV Additions
     - EVASuit
     emagDynamicPacks:
-    - SecurityCybernetics # having sechud eyes is good for evil people
     - SecurityHardsuits
     - BorgModulesSecurityDeltaV
     - SalvageHardsuits
     - ParamedicHardsuit
     - EngineeringHardsuits
-    - AdvancedPsionicProsthetics
     # End DeltaV Additions
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
@@ -435,6 +431,7 @@
   components:
   - type: Sprite
     sprite: _DV/Structures/Machines/techfab.rsi # DeltaV - resprite armoury fabs
+    snapCardinals: true #DeltaV - Follow Camera Rotation
     layers:
     - state: icon
       map: ["enum.LatheVisualLayers.IsRunning"]
@@ -477,7 +474,6 @@
     - SecurityWeapons
     - SpecOpsGoogles # DeltaV
     #- SecurityDisablers # DeltaV - made roundstart
-    - AdvancedPsionicProsthetics # DeltaV
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
@@ -507,6 +503,7 @@
   components:
     - type: Sprite
       sprite: _DV/Structures/Machines/techfab.rsi # DeltaV - resprite armoury fabs
+      snapCardinals: true #DeltaV - Follow Camera Rotation
       layers:
         - state: icon
           map: ["enum.LatheVisualLayers.IsRunning"]
@@ -586,20 +583,14 @@
     - ReportingStatic
     - EVASuit
     - PowerCellsStatic
-    - IPCLimbsStatic
-    - PowerAugments
-    - ToolAugments
     - SimpleToolsStaticDeltaV
     # End DeltaV Additions
     - AtmosToolsForCryogenics #Euphoria - So that medfabs can make gas analyzers
     dynamicPacks:
     - Chemistry
-    - CyberneticsMedical # Shitmed change
-    - Surgery # Shitmed change
     # Being DeltaV Additions
     - MedicalDeltaV
     - ParamedicHardsuit
-    - Cybernetics
     # End DeltaV Additions
     # Floofstation section
     - BasicTranslation

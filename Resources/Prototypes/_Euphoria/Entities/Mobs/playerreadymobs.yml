@@ -39,8 +39,6 @@
   parent: [BasePlayableFeralMob, MobLaserRaptor, StripableInventoryBase]
   description: From the Viking age. Bizarrely civilized.
   components:
-    - type: Body
-      prototype: LaserRaptor
     - type: HTN
     - type: MeleeWeapon
       soundHit:

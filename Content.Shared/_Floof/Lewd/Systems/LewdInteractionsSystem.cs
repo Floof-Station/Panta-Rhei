@@ -1,4 +1,5 @@
 using System.Collections;
+using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared._Floof.Lewd.Components;
 using Content.Shared.Verbs;
@@ -59,7 +60,7 @@ public sealed class LewdInteractionsSystem : EntitySystem
                 if (!_protoMan.Resolve(interactionVerbId, out var interactionVerb))
                     continue;
 
-                ev.Add(interactionVerb);
+                ev.Add(interactionVerb, InteractionVerbSource.TargetVerbs);
             }
         }
     }

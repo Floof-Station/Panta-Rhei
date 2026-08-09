@@ -1,0 +1,83 @@
+﻿- type: entity
+  name: wood tub
+  id: WoodBathTubEmpty
+  suffix: empty
+  parent: [SeatBase, DrinkVisualsFill]
+  description: A wooden bath tub that can be used to wash your self. Soap and bubbles not included.
+  components:
+  - type: Strap
+    position: Stand
+    rotation: 0
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100 # 1L of wata (or other liquids)
+  - type: SolutionContainerVisuals
+    maxFillLevels: 3
+    inHandsFillBaseName: null
+  - type: Appearance
+  - type: Sprite
+    sprite: _Floof/Structures/Furniture/Bathroom/bathtub.rsi
+    layers:
+    - state: icon
+      map: [ "enum.SolutionContainerLayers.Base" ]
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
+  - type: Pullable
+  - type: Damageable
+  - type: Anchorable
+  - type: Edible
+    edible: Drink # Namesake. This entity is a sort of cup you can drink directly from.
+    destroyOnEmpty: false
+    utensil: None # Spoons don't fit in cups, also conflicts with bar spoon stirring
+    solution: &sol drink # solution name alias
+  - type: Spillable
+    solution: *sol
+  - type: DrawableSolution
+    solution: *sol
+  - type: RefillableSolution
+    solution: *sol
+  - type: InjectableSolution # Injectors (syringe) will fall back to RefillableSolution. This adds support for hyposprays and liquid anomalies.
+    solution: *sol
+  - type: ExaminableSolution
+    solution: *sol
+  - type: SolutionItemStatus
+    solution: *sol
+  - type: Construction
+    graph: BathTub
+    node: bathtub
+  - type: Destructible # let it spill its chems when it gets broken
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50 # may need to ajdust the damage here, but tested at 75 and felt like a lot so dropped it a bit
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+          params:
+            volume: -2
+      - !type:SpillBehavior
+        solution: beaker
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialWoodPlank:
+            min: 1
+            max: 5
+        transferForensics: true
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  name: wood tub
+  parent: WoodBathTubEmpty
+  id: WoodBathTubFull
+  suffix: filled, water
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water # prefill the filled tub
+          Quantity: 100
+

@@ -270,7 +270,9 @@
 - type: microwaveMealRecipe
   id: RecipeHotX
   name: hotcross bun recipe
-  result: FoodBakedBunHotX
+  result:
+  - FoodBakedBunHotX
+  - FoodBakedBunHotX
   #resultCount: 2 #MicrowaveSystem must be modified to allow for multiple products from the same recipe
   time: 10
   reagents:
@@ -282,7 +284,9 @@
 - type: microwaveMealRecipe
   id: RecipeMeatBun
   name: meat bun recipe
-  result: FoodBakedBunMeat
+  result:
+  - FoodBakedBunMeat
+  - FoodBakedBunMeat
   #resultCount: 2
   time: 10
   solids:

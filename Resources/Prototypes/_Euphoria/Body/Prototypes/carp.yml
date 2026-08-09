@@ -10,14 +10,14 @@
       - left hand # Floof
       - tail
       organs:
-        lungs: OrganSpaceAnimalLungs # Immunity to airloss
-        stomach: OrganAnimalStomach
-        liver: OrganAnimalLiver
-        heart: OrganSpaceAnimalHeart # Immunity to cold
+        lungs: OrganAnimalLungs # used to be "OrganSpaceAnimalLungs # Immunity to airloss", changed to match upstream Bloodsucker
+        stomach: OrganBloodsuckerStomach # Used to be animal, changed to match upstream
+        liver: OrganBloodsuckerLiver # Used to be animal, changed to match upstream
+        heart: OrganBloodsuckerHeart # used to be "OrganSpaceAnimalHeart # Immunity to cold", changed to match upstream Bloodsucker
         kidneys: OrganAnimalKidneys
     tail:
-      part: TailCarp
+      part: LegsAnimal # was TailCarp, shitmed removal nuked it
     right hand:
-      part: RightHandFish
+      part: RightHandFeroxi # was RightHandFish, shitmed removal nuked it
     left hand:
-      part: LeftHandFish
+      part: LeftHandFeroxi # was LeftHandFish, shitmed removal nuked it

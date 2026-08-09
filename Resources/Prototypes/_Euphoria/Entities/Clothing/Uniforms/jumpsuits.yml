@@ -63,3 +63,15 @@
     - ClothMade
     - WhitelistChameleon
     - Skirt
+
+- type: entity
+  parent: ClothingUniformJumpskirtClown
+  id: ClothingUniformJumpskirtGeiru
+  name: suggestive clown dress
+  description: Perfect for a clown tending to making their guests happy in multiple ways. Or perhaps for a clown who has witnessed a crime!
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/geiru.rsi
+  - type: Clothing
+    slots: [innerclothing]
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/geiru.rsi

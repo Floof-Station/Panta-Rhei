@@ -9,6 +9,7 @@
   name: Urist McShadow
   abstract: true
   components:
+  - type: PotentialPsionic
   - type: Hunger
   - type: Thirst
   - type: Perishable
@@ -53,6 +54,10 @@
       48: 0.85
       64: 0.65
   - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: BlackBlood #Pretty sure this is intended. All their organs are black.
+        Quantity: 300
     bloodlossDamage:
       types:
         Bloodloss: 1

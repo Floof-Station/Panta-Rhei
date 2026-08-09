@@ -36,7 +36,7 @@
 
 - type: loadoutGroup
   id: BartenderNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-bartender-neck
   minLimit: 0
   loadouts:
@@ -46,7 +46,7 @@
 ## Librarian
 - type: loadoutGroup
   id: LibrarianNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-librarian-neck
   minLimit: 0
   loadouts:
@@ -56,7 +56,7 @@
 ## Janitor
 - type: loadoutGroup
   id: JanitorNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-janitor-neck
   minLimit: 0
   loadouts:
@@ -65,7 +65,7 @@
 ## Botanist
 - type: loadoutGroup
   id: BotanistNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-botanist-neck
   minLimit: 0
   loadouts:
@@ -83,7 +83,7 @@
 ## Mime
 - type: loadoutGroup
   id: MimeNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-mime-neck
   minLimit: 0
   loadouts:
@@ -93,7 +93,7 @@
 ## Musician
 - type: loadoutGroup
   id: MusicianNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-musician-neck
   minLimit: 0
   loadouts:
@@ -152,7 +152,7 @@
 
 - type: loadoutGroup
   id: CourierNeck
-  parent: [CargoTechnicianNeck] # Floofstation
+  parent: [FloofNeck, CargoTechnicianNeck] # Floofstation
   name: loadout-group-courier-neck
   minLimit: 0
   loadouts:
@@ -250,7 +250,7 @@
 ## Cargo Technician
 - type: loadoutGroup
   id: CargoTechnicianNeck
-  parent: [FloofCargotechNeck, CargoCollars] # Floofstation
+  parent: [FloofNeck, FloofCargotechNeck, CargoCollars] # Floofstation
   name: loadout-group-cargo-technician-neck
   minLimit: 0
   loadouts:
@@ -259,7 +259,7 @@
 ## Salvage Specialist
 - type: loadoutGroup
   id: SalvageSpecialistNeck
-  parent: [CargoCollars] # Floofstation
+  parent: [FloofNeck, CargoCollars] # Floofstation
   name: loadout-group-salvage-specialist-neck
   minLimit: 0
   loadouts:
@@ -289,7 +289,7 @@
 
 - type: loadoutGroup
   id: BrigMedicNeck
-  parent: [SecurityCollars] # Floofstation
+  parent: [FloofNeck, SecurityCollars] # Floofstation
   name: loadout-group-brig-medic-neck
   minLimit: 0
   loadouts:
@@ -321,6 +321,7 @@
 
 - type: loadoutGroup
   id: CorpsmanEyewear
+  parent: [Glasses] # Euphoria
   name: loadout-group-corpsman-eyewear
   minLimit: 1
   maxLimit: 1
@@ -330,9 +331,9 @@
   - MedicalHud
   - MedicalEyePatchHud
   - PrescriptionMedHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 - type: loadoutGroup
   id: BrigMedicBack
@@ -382,6 +383,7 @@
   - SecurityFirearmWeaponPistolPollock
   - SecurityFirearmWeaponPistolSLP57
   - SecurityFirearmWeaponPistolMk58
+  - SecurityFirearmWeaponPistolSV213
   - SecurityFirearmWeaponDisabler
   - SecurityFirearmTruncheon
 
@@ -395,6 +397,7 @@
   - SecurityRevolverInspector
   - SecurityFirearmWeaponRevolverFitz
   - SecurityRevolverWeaponRevolverLucky
+  - SecurityFirearmWeaponPistolSV213
   - SecurityFirearmTruncheon
 
 - type: loadoutGroup
@@ -406,6 +409,7 @@
   loadouts:
   - SecurityFirearmMagazinePistol
   - SecurityFirearmMagazinePistolRubber
+  - SecurityFirearmPowercellMedium
 
 - type: loadoutGroup
   id: SecurityRevolverAmmo
@@ -418,6 +422,7 @@
   - SecurityFirearmSpeedLoaderMagnum
   - SecurityFirearmSpeedLoaderSpecialRubber
   - SecurityFirearmSpeedLoaderSpecial
+  - SecurityFirearmPowercellMedium
 
 - type: loadoutGroup
   id: SecurityAllFirearm
@@ -451,6 +456,21 @@
   - SecurityFirearmSpeedLoaderSpecialRubber
   - SecurityFirearmSpeedLoaderSpecial
 
+## Security utility
+- type: loadoutGroup
+  id: SecurityUtility
+  name: security-utility
+  minLimit: 0
+  maxLimit: 4
+  loadouts:
+  - FlashBangLoadout
+  - TearGasLoadout
+  - StingerGrenadeLoadout
+  - RadioHandheldSecurityLoadout
+  - SecHoloProjectorLoadout
+  - HandcuffsLoadout
+  - SecLiteLoadout
+
 ## Security Gloves
 - type: loadoutGroup
   id: SecurityGloves
@@ -463,6 +483,7 @@
 
 ## Security Glasses
 - type: loadoutGroup
+  parent: [Glasses] # Euphoria
   id: SecurityEyewear
   name: loadout-group-security-eyewear
   minLimit: 1
@@ -473,14 +494,14 @@
   - SecurityHud
   - SecurityEyePatchHud
   - PrescriptionSecurityHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 ## Security Officer
 - type: loadoutGroup
   id: SecurityNeck
-  parent: [SecurityCollars] # Floofstation
+  parent: [FloofNeck, SecurityCollars] # Floofstation
   name: loadout-group-security-neck
   minLimit: 0
   loadouts:
@@ -511,6 +532,7 @@
   - WardenLongcoat
   - StasecWinterCoatWarden
   - ArmorVestSlim
+  - WardenArmoredWinterCoat
 
 ## Head of Security
 - type: loadoutGroup
@@ -524,6 +546,7 @@
   - StasecWinterCoatHoS
   - HeadOfSecurityTrenchcoat
   - ArmorVestSlim
+  - HeadofSecurityWinterCoat
 
 ## Detective
 - type: loadoutGroup
@@ -597,7 +620,7 @@
 ## Medical Doctor
 - type: loadoutGroup
   id: MedicalDoctorNeck
-  parent: [MedicalCollars] # Floofstation
+  parent: [FloofNeck, MedicalCollars] # Floofstation
   name: loadout-group-medical-doctor-neck
   minLimit: 0
   loadouts:
@@ -609,6 +632,7 @@
 
 - type: loadoutGroup
   id: ChemistHead
+  parent: [FloofHats] # Euphoria
   name: loadout-group-chemist-head
   minLimit: 0
   loadouts:
@@ -618,7 +642,7 @@
 
 - type: loadoutGroup
   id: ChemistNeck
-  parent: [MedicalCollars] # Floofstation
+  parent: [FloofNeck, MedicalCollars] # Floofstation
   name: loadout-group-chemist-neck
   minLimit: 0
   loadouts:
@@ -721,7 +745,7 @@
 
 - type: loadoutGroup
   id: ChiefJusticeNeck
-  parent: [ClerkNeck] # Floofstation
+  parent: [FloofNeck, ClerkNeck] # Floofstation
   name: loadout-group-chiefjustice-neck
   minLimit: 0
   loadouts:
@@ -748,7 +772,7 @@
 ## Station Engineer
 - type: loadoutGroup
   id: StationEngineerNeck
-  parent: [EngineeringCollars] # Floofstation
+  parent: [FloofNeck, EngineeringCollars] # Floofstation
   name: loadout-group-station-engineer-neck
   minLimit: 0
   loadouts:
@@ -758,7 +782,7 @@
 ## Atmospheric Technician
 - type: loadoutGroup
   id: AtmosphericTechnicianNeck
-  parent: [EngineeringCollars] # Floofstation
+  parent: [FloofNeck, EngineeringCollars] # Floofstation
   name: loadout-group-atmospheric-technician-neck
   minLimit: 0
   loadouts:
@@ -788,7 +812,7 @@
 
 - type: loadoutGroup
   id: ClerkNeck
-  parent: [CommonCollars] # Floofstation
+  parent: [FloofNeck] # Floofstation
   name: loadout-group-clerk-neck
   minLimit: 0
   loadouts:
@@ -836,7 +860,7 @@
 
 - type: loadoutGroup
   id: ProsecutorNeck
-  parent: [ClerkNeck] # Floofstation
+  parent: [FloofNeck, ClerkNeck] # Floofstation
   name: loadout-group-prosecutor-neck
   minLimit: 0
   loadouts:
@@ -913,15 +937,16 @@
 
 - type: loadoutGroup
   id: RoboticistGlasses
+  parent: [Glasses] # Euphoria
   name: loadout-group-roboticist-glasses
   minLimit: 0
   loadouts:
   - ClothingEyesHudDiagnostic
   - ClothingEyesPrescriptionDiagHud
   - ClothingEyesEyepatchHudDiag
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 # Command
 ## Captain
@@ -1097,15 +1122,6 @@
   - ScarfBlack
   - ScarfZebra
 
-# Species
-- type: loadoutGroup
-  id: GroupHumanoidSilicon
-  name: loadout-group-humanoid-silicon
-  minLimit: 1
-  hidden: true
-  loadouts:
-  - EmergencyIPCBox
-
 # ERT
 - type: loadoutGroup
   id: GroupEVATankERT
@@ -1130,6 +1146,10 @@
   loadouts:
   - BoxerShorts
   - BoxerShortsWithTop
+  - WrestlerCostumeGreen
+  - WrestlerCostumeRed
+  - WrestlerCostumeBlue
+  - WrestlerCostumeYellow
 
 - type: loadoutGroup
   id: BoxerGloves
@@ -1140,6 +1160,15 @@
   - BlueBoxingGloves
   - GreenBoxingGloves
   - YellowBoxingGloves
+
+- type: loadoutGroup
+  id: BoxerMask
+  name: loadout-group-boxer-mask
+  minLimit: 0
+  loadouts:
+  - BoxerDominoMask
+  - WrestlingMaskLuchaRed
+  - WrestlingMaskLuchaBlue
 
 - type: loadoutGroup
   id: BoxerJobTrinkets
