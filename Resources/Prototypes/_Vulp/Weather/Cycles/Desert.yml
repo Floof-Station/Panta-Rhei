@@ -1,0 +1,83 @@
+# Currently unused on Floof, port from Vulpstation. Serves as an example.
+- type: weatherCycle
+  id: Desert
+  weathers:
+    # Default
+    default:
+      proto: null
+      weight: 25
+      onTransition:
+      - !type:WeatherSetAtmos
+        mixture:
+          volume: 2500
+          temperature: 313.15
+          moles:
+          - 21.824879 # O2
+          - 82.10312  # N2
+      - !type:WeatherDispatchAnnouncement
+        dataset: WeatherStabilizing
+
+    # Cold
+    cold:
+      proto: null
+      weight: 10
+      onTransition:
+      - !type:WeatherSetAtmos
+        mixture:
+          volume: 2500
+          temperature: 293.15
+          moles:
+          - 23.327806  # O2
+          - 87.75699  # N2
+      - !type:WeatherDispatchAnnouncement
+        dataset: WeatherCold
+
+    # Rain
+    rain:
+      proto: Rain
+      weight: 5
+      durationMinutes:
+        min: 10
+        max: 20
+      transitions:
+        default: 1
+        storm: 0.4
+      onUpdate:
+      - !type:WeatherCleanPuddles
+        cleanChance: 0.02
+        maxCleaned: 25
+        cleanAmount: 2.5
+      - !type:WeatherRefillSolutions
+        refillChance: 0.02
+        maxRefilled: 25
+        amount: 10
+        reagent: Water
+
+    # Ashfall. Adds some CO2 to the air.
+    ashfall:
+      proto: AshfallLight
+      weight: 10
+      durationSeconds: # I'm afraid people might suffocate
+        min: 30
+        max: 70
+      transitions:
+        default: 1
+      onTransition:
+      - !type:WeatherSetAtmos
+        mixture:
+          volume: 2500
+          temperature: 313.15
+          moles:
+          - 19.381002 # O2
+          - 72.687904 # N2
+          - 2.9237726 # CO2
+      - !type:WeatherDispatchAnnouncement
+        dataset: WeatherAshfall
+      onUpdate:
+      - !type:WeatherRefillSolutions
+        refillChance: 0.02
+        maxRefilled: 25
+        amount: 2
+        reagent: Ash
+
+
