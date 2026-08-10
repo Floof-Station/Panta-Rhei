@@ -1,0 +1,86 @@
+﻿- type: gameMap
+  id: Mesa
+  mapName: Mesa
+  mapPath: /Maps/Floof/Mesa.yml # Euphoria
+  minPlayers: 60
+  maxPlayers: 120
+  stations:
+    Getaway:
+      stationProto: StandardNanotrasenStation
+      components:
+      - type: StationEmergencyShuttle #floofstation
+        emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/Locomotive_evac.yml #Euphoria
+      - type: StationCargoShuttle
+        path: /Maps/Floof/Shuttles/Cargo/Hoodoo.yml
+      - type: StationNameSetup
+        mapNameTemplate: '{0} Mesa station {1}'
+        nameGenerator:
+          !type:NanotrasenNameGenerator
+          prefixCreator: 'FS'
+      - type: StationJobs
+        availableJobs:
+          Passenger: [ -1, -1 ]
+#          Anomaly: [ 4, 4 ] # Floofstation
+          Captain: [ 1, 1 ]
+          # Service
+          HeadOfPersonnel: [ 1, 1 ]
+          Bartender: [ 1, 1 ]
+          Botanist: [ 2, 3 ]
+          Boxer: [ 1, 2 ]
+          Chef: [ 1, 2 ]
+          Clown: [ 1, 1 ]
+          Reporter: [ 1, 2 ]
+          Musician: [ 1, 2 ]
+          ServiceWorker: [ 2, 4] 
+          Janitor: [ 1, 2 ]
+          Mime: [ 1, 1 ]
+          # Engineering
+          ChiefEngineer: [ 1, 1 ]
+          AtmosphericTechnician: [ 2, 2 ]
+          StationEngineer: [ 4, 6 ]
+          TechnicalAssistant: [ 2, 3 ]
+          SeniorEngineer: [ 1, 1 ]
+          # Justice added by FloofStation
+          ChiefJustice: [ 1, 1 ] #FloofStation
+          Clerk: [ 1, 1 ] #FloofStation
+          Lawyer: [ 1, 1 ] #FloofStation
+          Prosecutor: [ 1, 1 ] #FloofStation
+          # Medical
+          ChiefMedicalOfficer: [ 1, 1 ]
+          Chemist: [ 2, 2 ]
+          Paramedic: [1, 2 ]
+          Psychologist: [ 1, 1 ]
+          MedicalDoctor: [ 4, 6 ]
+          MedicalIntern: [ 2, 4 ]
+          Surgeon: [ 1, 1 ]
+          SeniorPhysician: [ 1, 1 ]
+          # Science (Epistemics)
+          ResearchDirector: [ 1, 1 ]
+          Chaplain: [ 1, 1 ]
+          ForensicMantis: [ 1, 1 ]
+          Scientist: [ 3, 4 ]
+          ResearchAssistant: [ 2, 3 ]
+          Roboticist: [ 1, 2 ]
+          Librarian: [ 1, 1 ]
+          SeniorResearcher: [ 1, 1 ]
+          # Security
+          HeadOfSecurity: [ 1, 1 ]
+          Warden: [ 1, 1 ]
+          Detective: [ 1, 1 ]
+          SecurityOfficer: [ 4, 6 ]
+          SecurityCadet: [ 2, 4 ]
+          Brigmedic: [ 1, 1 ]
+          Prisoner: [ 2, 3 ]
+          PrisonGuard: [ 2, 2 ]
+          SeniorOfficer: [ 1, 1 ]
+          SecurityTechnician: [ 1, 1 ]
+          # Logistics
+          Quartermaster: [ 1, 1 ]
+          InventorySpecialist: [ 1, 1 ] #FloofStation
+          Courier: [ 2, 2 ]
+          SalvageSpecialist: [ 4, 5 ]
+          CargoTechnician: [ 3, 4 ]
+          # Silicon
+          StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+          Borg: [ 2, 3 ]
+          MedicalBorg: [ 2, 3 ]
