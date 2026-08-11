@@ -39,6 +39,7 @@
   description: Boo!
   categories: [ HideSpawnMenu ]
   components:
+  - type: TargetObjectiveImmune #Euphoria - prevent observers from becoming targets of antags, specifically IAA
   - type: Sprite
     sprite: Mobs/Ghosts/ghost_human.rsi
     color: "#fff8"
@@ -98,7 +99,7 @@
       Poison: 1
       Asphyxiation: 1
     prefix: "ghost_"
-  - type: GhostHearing
+  # - type: GhostHearing # Euphoria | Global hearing off by default
   - type: ShowElectrocutionHUD
   - type: IntrinsicRadioReceiver
   - type: ActiveRadio

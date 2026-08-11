@@ -1,0 +1,52 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Kink Vendor & Restock Taken from S.P.L.U.R.T-Station-13 Commit: https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/commit/a5e688b25d1e790d6980f6d1aaba0ed254801ed7",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "kink",
+            "delays": [
+                [
+                    0.1,
+                    1,
+                    0.1,
+                    1,
+                    0.1,
+                    1,
+                    0.1,
+                    1
+                ]
+            ]
+        },
+        {
+            "name": "kink-off"
+        },
+        {
+            "name": "kink-deny",
+            "delays": [
+                [
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.05,
+                    0.1,
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "kink-broken"
+        },
+        {
+            "name": "kink-panel"
+        },
+        {
+            "name": "refill_kink"
+        }
+    ]
+}

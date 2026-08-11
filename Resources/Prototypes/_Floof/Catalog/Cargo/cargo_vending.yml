@@ -17,3 +17,23 @@
   cost: 750
   category: cargoproduct-category-name-service
   group: market
+
+- type: cargoProduct
+  id: CrateVendingMachineRestockLewdToysRestock
+  icon:
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_vendor.rsi
+    state: refill_kink
+  product: CrateVendingMachineRestockLewdVendorFilled
+  cost: 4500
+  category: cargoproduct-category-name-service
+  group: market
+
+- type: cargoProduct
+  id: CrateVendingMachineRestockLewdClothingRestock
+  icon:
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_cloths_vendor.rsi
+    state: refill-lewdclothing
+  product: CrateVendingMachineRestockLewdClothingVendorFilled
+  cost: 2000
+  category: cargoproduct-category-name-service
+  group: market

@@ -1,0 +1,21 @@
+# clown
+- type: loadoutGroup
+  id: EuphoriaClownInnerClothing
+  abstract: true
+  loadouts:
+  - ClownGeiruDress
+
+- type: loadoutGroup
+  id: EuphoriaClownShoes
+  abstract: true
+  loadouts:
+  - ClownGeiruShoes
+
+- type: loadoutGroup
+  id: ClownGloves
+  parent: [FloofGloves] # Floofstation
+  name: loadout-group-clown-gloves
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - ClownGeiruGloves

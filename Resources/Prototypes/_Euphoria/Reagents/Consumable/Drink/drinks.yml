@@ -1,0 +1,28 @@
+- type: reagent
+  id: WolfsLustfulInferno
+  name: reagent-name-wolfslustfulinferno
+  parent: BaseAlcohol
+  desc: reagent-desc-wolfslustfulinferno
+  physicalDesc: reagent-physical-desc-blazing
+  flavor: wolfslustfulinferno
+  color: "#D44848"
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/wolfslustfulinferno.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3
+      - !type:AdjustReagent
+        reagent: Pomelustine
+        amount: 0.16
+      - !type:AdjustReagent
+        reagent: Libidozenithizine
+        amount: 0.08
+      - !type:AdjustReagent
+        reagent: Cum
+        amount: 0.25

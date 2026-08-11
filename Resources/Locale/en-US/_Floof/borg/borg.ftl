@@ -27,3 +27,11 @@ borg-type-quadmedical-transponder = medical cyborg
 borg-type-quadservice-name = Service Quad
 borg-type-quadservice-desc = Help out with a wide range of crew services, ranging from serving snacks and drinks to botany to entertainment.
 borg-type-quadservice-transponder = service cyborg
+
+borg-type-research-name = Research
+borg-type-research-desc = Study the noosphere, dispense knowledge to the crew, and experiment with new technologies.
+borg-type-research-transponder = research cyborg
+
+borg-type-quadresearch-name = Research Quad
+borg-type-quadresearch-desc = Study the noosphere, dispense knowledge to the crew, and experiment with new technologies.
+borg-type-quadresearch-transponder = research cyborg

@@ -15,10 +15,6 @@
     back: ClothingBackpackSatchelParamed
 
 # paramed outfits
-- type: loadout
-  id: UniformParaMedicThong
-  equipment:
-    jumpsuit: ClothingUniformParaMedicThong
 
 # gloves
 - type: loadout
@@ -27,10 +23,6 @@
     gloves: ClothingHandsParaMedicWarmers
 
 # shoes
-- type: loadout
-  id: ClothingUnderSocksParaMedic
-  equipment:
-    shoes: ClothingUnderSocksParaMedic
 
 #base paramed pda (it didnt have a loadout prototype)
 - type: loadout
@@ -49,3 +41,18 @@
   id: ClothingNeckCollarEmotionalSupportParamed
   equipment:
     neck: ClothingNeckCollarEmotionalSupportParamed
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformParaMedicThong
+  equipment:
+    undergarmentBottom: ClothingUniformParaMedicThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksParaMedic
+  equipment:
+    undergarmentSocks: ClothingUnderSocksParaMedic
+

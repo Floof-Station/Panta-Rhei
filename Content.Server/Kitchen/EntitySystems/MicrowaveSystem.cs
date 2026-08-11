@@ -26,7 +26,7 @@ using Content.Server.Lightning;
 using Content.Shared.Item;
 using Content.Shared.Kitchen;
 using Content.Shared.Kitchen.Components;
-using Content.Shared.Popups;
+using Content.Shared.Popups; //Euphoria
 using Content.Shared.Power;
 using Content.Shared.Tag;
 using Robust.Server.GameObjects;
@@ -38,10 +38,14 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Stacks;
 using Content.Server.Construction.Components;
+using Content.Server.Fluids.EntitySystems; //Euphoria
+using Content.Server.Popups;
 using Content.Shared.Chat;
 using Content.Shared.Damage.Components;
 using Content.Shared.Temperature.Components;
-using Content.Shared._NF.Kitchen.Components; // Frontier
+using Content.Shared._NF.Kitchen.Components;
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent; // Frontier
 
 namespace Content.Server.Kitchen.EntitySystems
 {
@@ -69,6 +73,8 @@ namespace Content.Server.Kitchen.EntitySystems
         [Dependency] private readonly IPrototypeManager _prototype = default!;
         [Dependency] private readonly IAdminLogManager _adminLogger = default!;
         [Dependency] private readonly SharedSuicideSystem _suicide = default!;
+        [Dependency] private readonly PuddleSystem _puddle = default!; //Euphoria
+        [Dependency] private readonly PopupSystem _popup = default!; //Euphoria
 
         private static readonly EntProtoId MalfunctionSpark = "Spark";
 
@@ -755,7 +761,47 @@ namespace Content.Server.Kitchen.EntitySystems
                     for (var i = 0; i < active.PortionedRecipe.Item2; i++)
                     {
                         SubtractContents(microwave, active.PortionedRecipe.Item1);
-                        Spawn(active.PortionedRecipe.Item1.Result, coords);
+                        //Euph edits start - allow for spawning multiple results from a single recipe
+                        foreach (var result in active.PortionedRecipe.Item1.Results)
+                        {
+                            Spawn(result, coords);
+                        }
+
+                        if (active.PortionedRecipe.Item1.ResultReagents != null)
+                        {
+                            Solution toAdd = new Solution(active.PortionedRecipe.Item1.ResultReagents);
+                            foreach (var item in microwave.Storage.ContainedEntities)
+                            {
+
+                                // use the same reagents as when we selected the recipe
+                                if (!_solutionContainer.TryGetRefillableSolution(item,
+                                        out var solutionEntity,
+                                        out var solution))
+                                    continue;
+
+                                _solutionContainer.TryMixAndOverflow(solutionEntity.Value, toAdd,solutionEntity.Value.Comp.Solution.MaxVolume,out var overflow);
+
+                                toAdd.RemoveAllSolution();
+
+                                if (overflow != null && overflow.Volume > 0)
+                                {
+                                    toAdd.SetContents(overflow);
+                                }
+                                else
+                                {
+                                    break;
+                                }
+                            }
+
+                            if (toAdd.Volume > 0)
+                            {
+                                _popup.PopupEntity(Loc.GetString("lathe-reagent-dispense-no-container",
+                                        ("name", uid)),
+                                    uid);
+                                _puddle.TrySpillAt(uid, toAdd, out _);
+                            }
+                        }
+                        //Euph edits end
                     }
                 }
 

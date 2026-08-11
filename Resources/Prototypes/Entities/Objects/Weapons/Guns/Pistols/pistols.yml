@@ -1,6 +1,6 @@
 - type: entity
   name: BasePistol
-  parent: BaseItem
+  parent: [BaseItem, BaseGun] # Euph - add gun parent
   id: BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
@@ -49,7 +49,7 @@
         whitelist:
           tags:
             - MagazinePistol
-            - MagazinePistolHighCapacity
+            #- MagazinePistolHighCapacity Delta V - not all pistols can take machine pistol mags
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -82,15 +82,16 @@
 
 - type: entity
   name: viper
-  parent: [BaseWeaponPistol, BaseSyndicateContraband]
+  parent: [BaseWeaponPistol, BaseSecurityContraband] # Euphoria
   id: WeaponPistolViper
-  description: A common handgun illegally modified by the Syndicate. The Viper sports a selector switch between semi-auto and ‘rock and roll’. The standard sidearm for any soldier who fights under the three serpents. Feeds from .35 pistol magazines.
+  description: A small, easily concealable, but somewhat underpowered gun, produced by a bulk arms manufacturer now defunct for over a century. This one has been modified for improved firerate. Uses .35 auto ammo.
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
   - type: Gun
-    availableModes: # DeltaV - force semi for balance
+    availableModes:
     - SemiAuto
+    - FullAuto
   - type: ItemSlots
     slots:
       gun_magazine:

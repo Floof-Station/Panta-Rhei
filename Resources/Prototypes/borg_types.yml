@@ -10,7 +10,7 @@
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
-    - BorgModuleScience #until sciborgs are added
+    # - BorgModuleScience #until sciborgs are added (Sciborgs are added)
 
   defaultModules:
   - BorgModuleTool
@@ -77,12 +77,8 @@
   petFailureString: petting-failure-engineer-cyborg
 
   # Begin DeltaV - Borg PDAs
-  # Euphoria start - Fix Engineering borg PDA colour
-  #pdaBorderColor: "#bf803a"
-  #pdaAccentVerticalColor: "#ffd187"
-  pdaBorderColor: "#949137"
-  pdaAccentVerticalColor: "#A32D26"
-  # Euphoria end
+  pdaBorderColor: "#bf803a"
+  pdaAccentVerticalColor: "#ffd187"
   # End DeltaV - Borg PDAs
 
 
@@ -152,6 +148,7 @@
     - BorgModuleJanitor
 
   defaultModules:
+  - BorgModuleTool # DeltaV - Readd Tool Module
   - BorgModuleCleaning
   - BorgModuleCustodial
 
@@ -200,7 +197,8 @@
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleChemical
+  - BorgModuleTool # DeltaV - Readd Tool Module
+  - BorgModuleChemicalDV # DeltaV - Was BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
 
@@ -221,7 +219,7 @@
     damageContainers:
     - Biological
     - BiologicalMetaphysical # DeltaV - Kitsune
-  - type: ShowTriageIcons # Euphoria - Add triage icons to standard crew-aligned medical HUDs
+  - type: ShowTriageIcons # DeltaV - Display Triage Icons
   - type: FabricateCandy # DeltaV - The medical cyborg can generate candies filled with medicine.
     actions:
     - ActionFabricateLollipop
@@ -231,8 +229,6 @@
     fiberColor: fibers-white
   - type: AccessReader # DeltaV - departmental access
     access: [["Command"], ["Robotics"], ["Medical"]]
-  - type: SurgeryTarget # Shitmed
-  - type: Sanitized # Shitmed
 
   # Visual
   inventoryTemplateId: borgDutch
@@ -271,11 +267,16 @@
     - BorgModuleService
 
   defaultModules:
-  - BorgModuleMusique
-  - BorgModuleService
-  - BorgModuleClowning
-  - BorgModuleGardening
-  - BorgModuleHarvesting
+# Start of DeltaV Additions - Rework Service Borg
+#  - BorgModuleMusique
+#  - BorgModuleService
+#  - BorgModuleClowning
+#  - BorgModuleHarvesting
+  - BorgModuleTool # Readd Tool Module
+  - BorgModuleGardeningDV
+  - BorgModuleChef
+  - BorgModuleBartender
+# End of DeltaV Additions - Rework Service Borg
   radioChannels:
   - Science
   - Service

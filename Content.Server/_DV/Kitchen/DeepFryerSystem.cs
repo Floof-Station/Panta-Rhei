@@ -90,6 +90,7 @@ public sealed class DeepFryerSystem : SharedDeepFryerSystem
     private void OnPowerChanged(Entity<DeepFryerComponent> ent, ref PowerChangedEvent args)
     {
         UpdateAppearance(ent);
+        ResetCookingItemsStartTime(ent);
     }
 
     private void OnThrowHitBy(Entity<DeepFryerComponent> ent, ref ThrowHitByEvent args)
@@ -549,34 +550,39 @@ public sealed class DeepFryerSystem : SharedDeepFryerSystem
             _container.Remove(item, container);
             QueueDel(item);
         }
-
+        //Euph changes start - Let recipes make multiple results
         // Spawn the result (from the microwave recipe)
-        var result = Spawn(microwaveRecipe.Result, coords);
+        foreach (var resultOut in microwaveRecipe.Results)
+        {
+            var result = Spawn(resultOut, coords);
+            // Transfer solution from fryer to food (includes oil AND any contaminants!)
+            TransferOilToFood(ent, result, deepFryerRecipe.OilConsumption);
 
-        // Transfer solution from fryer to food (includes oil AND any contaminants!)
-        TransferOilToFood(ent, result, deepFryerRecipe.OilConsumption);
+            // Add flavors based on oil quality
+            AddOilQualityFlavors(result, ent.Comp, qualityLevel);
 
-        // Add flavors based on oil quality
-        AddOilQualityFlavors(result, ent.Comp, qualityLevel);
+            // Try to put it back in the fryer
+            if (!_container.Insert(result, container))
+            {
+                // If we can't insert it (container full?), just leave it at the fryer's location
+                Xform.SetCoordinates(result, xform, Xform.GetMoverCoordinates(ent, xform));
+            }
+            else
+            {
+                // Track the result and start burning timer
+                ent.Comp.CookingItems[result] = new CookingItem(cookingItem.Recipe, _timing.CurTime, isBurning: true);
+            }
+
+            // Show a popup
+            Popup.PopupEntity(Loc.GetString("deep-fryer-item-finished", ("item", result)), ent, PopupType.Medium);
+            _audio.PlayPvs(ent.Comp.FinishedCookingSound, ent);
+
+        }
 
         // Degrade oil quality
         DegradeOilQuality(ent);
 
-        // Try to put it back in the fryer
-        if (!_container.Insert(result, container))
-        {
-            // If we can't insert it (container full?), just leave it at the fryer's location
-            Xform.SetCoordinates(result, xform, Xform.GetMoverCoordinates(ent, xform));
-        }
-        else
-        {
-            // Track the result and start burning timer
-            ent.Comp.CookingItems[result] = new CookingItem(cookingItem.Recipe, _timing.CurTime, isBurning: true);
-        }
-
-        // Show a popup
-        Popup.PopupEntity(Loc.GetString("deep-fryer-item-finished", ("item", result)), ent, PopupType.Medium);
-        _audio.PlayPvs(ent.Comp.FinishedCookingSound, ent);
+        //End Euph changes
     }
 
     /// <summary>
@@ -673,5 +679,27 @@ public sealed class DeepFryerSystem : SharedDeepFryerSystem
 
         // Add the split solution to the food
         Solution.AddSolution(foodSolutionEnt.Value, transferredSolution);
+    }
+
+    /// <summary>
+    /// Resets the starttime for cooking items (on power change)
+    /// </summary>
+    private void ResetCookingItemsStartTime(Entity<DeepFryerComponent> ent)
+    {
+        if (_power.IsPowered(ent.Owner) && !ent.Comp.WasPreviouslyPowered)
+        {
+            // Power just came back on - reset all cooking timers
+            foreach (var itemUid in ent.Comp.CookingItems.Keys.ToList())
+            {
+                var cookingItem = ent.Comp.CookingItems[itemUid];
+                cookingItem.TimeStarted = _timing.CurTime;
+                ent.Comp.CookingItems[itemUid] = cookingItem;
+            }
+            ent.Comp.WasPreviouslyPowered = true;
+        }
+        else if (!_power.IsPowered(ent.Owner) && ent.Comp.WasPreviouslyPowered)
+        {
+            ent.Comp.WasPreviouslyPowered = false;
+        }
     }
 }

@@ -33,6 +33,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Wieldable;
 using Content.Shared.Zombies;
+using Content.Shared.Examine; //Harmony
 
 
 namespace Content.Shared.Inventory;
@@ -64,6 +65,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, BeforeEmoteEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, StoodEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, DownedEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, ExaminedEvent>(RelayInventoryEvent); // Harmony - added for lanyards.
 
         // by-ref events
         SubscribeLocalEvent<InventoryComponent, RefreshFrictionModifiersEvent>(RefRelayInventoryEvent);
@@ -86,6 +88,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, PsionicPowerUseAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, TargetedByPsionicPowerEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, NoosphericFryEvent>(RefRelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, WeightlessnessChangedEvent>(RefRelayInventoryEvent); // Heavy Clothing
         // DeltaV End - Psionic Events
 
         // Eye/vision events
@@ -159,7 +162,7 @@ public partial class InventorySystem
         var enumerator = new InventorySlotEnumerator(component);
         while (enumerator.NextItem(out var item, out var slotDef))
         {
-            if (!_strippable.IsStripHidden(slotDef, args.User) || args.User == uid)
+            if (!_strippable.IsStripHidden(slotDef, args.User, uid) || args.User == uid)
                 RaiseLocalEvent(item, ev);
         }
     }

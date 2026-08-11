@@ -31,8 +31,6 @@
     damage:
       types:
         Holy: 100
-  - type: Body
-    prototype: Goliath
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
 
@@ -60,7 +58,6 @@
     thresholds:
       0: Alive
       350: Dead
-  - type: Dispellable
   - type: DamageOnDispel
     damage:
       types:
