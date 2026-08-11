@@ -127,6 +127,7 @@ def process_target(mask_img, target_path) -> None:
 
         if COPYRIGHT_APPEND in meta['copyright']:
             print(f"Skipping {meta_path} as it already contains the appended string.")
+            return
 
         try:
             meta['copyright'] += COPYRIGHT_APPEND
