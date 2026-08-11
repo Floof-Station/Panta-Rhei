@@ -6,7 +6,7 @@
 # 3. Change the code of create_icon_for_masked to match your sprites
 # 4. Provide an image mask (white pixels = separate from target image, transparent = keep)
 #
-# Invocation example (this was used to separate socks from suit sprites, the rest was done manually):
+# Invocation example:
 # > python ./Socks/separate_suits_into_socks.py Socks/mask.png Suits/*/equipped-INNERCLOTHING.png
 # (note: calling from the parent directory of Socks and Suits)
 #
@@ -19,36 +19,38 @@
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
 from PIL import Image
 
-COPYRIGHT_APPEND = " | modified by Mnemotechnician - removed leotard sprites, socks are now separate clothing entities." # appended to the copyright field in meta.json
+# appended to the copyright field in meta.json
+COPYRIGHT_APPEND = " | modified by Mnemotechnician - removed leotard sprites, socks are now separate clothing entities."
 
 
 def get_masked_filename(original_path) -> Path:
     """Generate the sibling filename for the masked output."""
     p = Path(original_path)
-    # From Suits/*/ to Socks/*/
+    # Hardcoded path change from Suits/*/ to Socks/*/
     # Yeah i dont want to waste time making this customizable.
-    return p.parent.parent.parent / "Socks" / (p.parent.stem) / (p.stem + ".png")
+    return p.parent.parent.parent / "Socks" / p.parent.stem / (p.stem + ".png")
 
-def create_blank_image(ref_img):
+def create_blank_image(ref_img) -> Image.Image:
     """Create a blank image with the same mode and size as ref_img."""
     mode = ref_img.mode
     size = ref_img.size
-    # ss14 sprites are RGBA
-    if mode == 'RGBA':
-        return Image.new('RGBA', size, (0, 0, 0, 0))
-    else:
+
+    # ss14 sprites are RGBA, original code tried to preserve old mode for some reason
+    if mode != 'RGBA':
         raise ValueError(f"Unsupported image mode: {mode}")
 
-def create_icon_for_masked(sprite_path):
+    return Image.new('RGBA', size, (0, 0, 0, 0))
+
+
+def create_icon_for_masked(sprite_path) -> None:
     """Takes the resulting masked image (socks equipped- sprite) and makes an icon for it by cropping it to 32x32"""
     icon_path = Path(sprite_path).parent / "icon.png"
-    if (icon_path.is_file()):
+    if icon_path.is_file():
         print(f"{icon_path} already exists, skipping.")
         return
 
@@ -60,7 +62,7 @@ def create_icon_for_masked(sprite_path):
     icon = img.crop((0, y_offset, 32, 32 + y_offset))
     icon.save(icon_path)
 
-def process_target(mask_img, target_path):
+def process_target(mask_img, target_path) -> None:
     """Process a single target image."""
     target_path = Path(target_path)
     if not target_path.is_file():
@@ -74,14 +76,14 @@ def process_target(mask_img, target_path):
         print(f"Error opening {target_path}: {e}")
         return
 
-    # Ensure mask is same size (assumed; optionally resize)
+    # Ensure mask is same size
     if img.size != mask_img.size:
         print(f"Warning: {target_path} size {img.size} != mask size {mask_img.size}. Skipping.")
         return
 
     # Check if the result already exists to support re-runs
     masked_path = get_masked_filename(target_path)
-    if (masked_path.is_file()):
+    if masked_path.is_file():
         print(f"Skipping generating a masked image for {masked_path} as it already exists")
         create_icon_for_masked(masked_path)
         return
@@ -116,22 +118,25 @@ def process_target(mask_img, target_path):
             return
 
         # Update copyright field
-        if 'copyright' in meta:
-            meta['copyright'] += COPYRIGHT_APPEND
-        else:
+        if 'copyright' not in meta:
             print(f"Malformed meta.json: {meta_path}")
             return
 
+        if COPYRIGHT_APPEND in meta['copyright']:
+            print(f"Skipping {meta_path} as it already contains the appended string.")
+
         try:
+            meta['copyright'] += COPYRIGHT_APPEND
             with open(meta_path, 'w', encoding='utf-8') as f:
                 json.dump(meta, f, indent=2, ensure_ascii=False)
+
             print(f"Updated copyright in {meta_path}")
         except Exception as e:
             print(f"Error writing {meta_path}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Apply a mask to images: save masked part, overwrite original with unmasked."
+        description="Apply a mask to images: save masked part, overwrite original with unmasked. Also updates meta.json copyright and generates icon.png if not present."
     )
     parser.add_argument("mask", help="Path to the mask image (must be same dimensions as targets)")
     parser.add_argument("targets", nargs="+", help="List of target image files")
@@ -144,7 +149,6 @@ def main():
         print(f"Error loading mask {args.mask}: {e}")
         sys.exit(1)
 
-    # Process each target
     for t in args.targets:
         process_target(mask, t)
 
