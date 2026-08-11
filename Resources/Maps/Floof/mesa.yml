@@ -4,8 +4,8 @@ meta:
   engineVersion: 270.1.1
   forkId: ""
   forkVersion: ""
-  time: 08/10/2026 19:37:54
-  entityCount: 25965
+  time: 08/11/2026 15:25:35
+  entityCount: 26034
 maps:
 - 1
 grids:
@@ -3888,7 +3888,7 @@ entities:
           -4,-2:
             0: 61696
           -5,-2:
-            0: 65534
+            0: 64510
           -4,-1:
             0: 15
           -5,-1:
@@ -4212,7 +4212,7 @@ entities:
           -7,-5:
             0: 5344
           -7,-2:
-            0: 59980
+            0: 60104
           -7,-3:
             0: 16392
           -6,-4:
@@ -4222,7 +4222,7 @@ entities:
           -6,-3:
             0: 65535
           -6,-2:
-            0: 65535
+            0: 63999
           -6,-5:
             0: 29936
           -5,-4:
@@ -4608,7 +4608,7 @@ entities:
           -9,-17:
             0: 65262
           -8,-16:
-            0: 65296
+            0: 65294
           -8,-15:
             0: 1
           -16,-16:
@@ -4620,7 +4620,8 @@ entities:
           -17,-15:
             0: 3311
           -16,-14:
-            0: 1911
+            0: 1907
+            2: 4
           -17,-14:
             0: 15291
           -17,-13:
@@ -4763,8 +4764,12 @@ entities:
             0: 115
           -17,-21:
             0: 13107
+          -8,-17:
+            0: 61158
           -7,-16:
-            0: 65280
+            0: 65315
+          -7,-17:
+            0: 13112
           -7,-15:
             0: 140
           -6,-16:
@@ -4832,8 +4837,7 @@ entities:
           4,-11:
             0: 51
           4,-9:
-            0: 65035
-            2: 4
+            0: 65039
           0,-16:
             0: 13075
           0,-17:
@@ -4887,7 +4891,7 @@ entities:
           -3,-15:
             0: 56799
           -3,-13:
-            0: 65521
+            0: 65457
           -3,-14:
             0: 56797
           -2,-16:
@@ -5101,6 +5105,8 @@ entities:
             0: 65529
           -2,-22:
             0: 65535
+          -8,-18:
+            0: 26112
           -8,-20:
             5: 26214
             0: 34952
@@ -5115,8 +5121,6 @@ entities:
             0: 61167
           -7,-18:
             0: 60006
-          -7,-17:
-            0: 74
           -6,-20:
             0: 65073
             4: 12
@@ -6018,6 +6022,8 @@ entities:
             0: 61664
           -19,-22:
             0: 65535
+          -19,-24:
+            0: 1024
           -18,-23:
             0: 61936
           -18,-22:
@@ -6227,9 +6233,11 @@ entities:
           17,-18:
             0: 2251
           18,-19:
-            0: 43233
+            0: 43235
           18,-18:
             0: 4371
+          18,-20:
+            0: 8704
           19,-19:
             0: 4400
           19,-18:
@@ -6261,10 +6269,10 @@ entities:
           moles:
             Nitrogen: 103.92799
         - volume: 2500
-          temperature: 293.15
+          temperature: 293.14975
           moles:
-            Oxygen: 21.6852
-            Nitrogen: 81.57766
+            Oxygen: 20.078888
+            Nitrogen: 75.53487
         - volume: 2500
           temperature: 293.15
           moles:
@@ -6274,7 +6282,10 @@ entities:
           moles: {}
         - volume: 2500
           immutable: True
-          moles: {}
+          temperature: 313.15
+          moles:
+            Oxygen: 21.824879
+            Nitrogen: 82.10312
         - volume: 2500
           temperature: 235
           moles:
@@ -6374,96 +6385,6 @@ entities:
       storage: 18
 - proto: ActionBibleSummon
   entities:
-  - uid: 30
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 29
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 29
-  - uid: 32
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 31
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 31
-  - uid: 34
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 33
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 33
-  - uid: 36
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 35
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 35
-  - uid: 38
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 37
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 37
-  - uid: 40
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 39
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 39
-  - uid: 42
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 41
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 41
-  - uid: 44
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 43
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 43
-  - uid: 46
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 45
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 45
-  - uid: 48
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 47
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 47
   - uid: 50
     mapInit: true
     paused: true
@@ -6473,15 +6394,6 @@ entities:
     - type: Action
       originalIconColor: '#FFFFFFFF'
       container: 49
-  - uid: 52
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 51
-    - type: Action
-      originalIconColor: '#FFFFFFFF'
-      container: 51
 - proto: ActionToggleLight
   entities:
   - uid: 54
@@ -6495,6 +6407,83 @@ entities:
       container: 53
 - proto: AirAlarm
   entities:
+  - uid: 37
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-84.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 29
+    - type: Fixtures
+      fixtures: {}
+  - uid: 38
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-90.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 28
+    - type: Fixtures
+      fixtures: {}
+  - uid: 39
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -9.5,-72.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 30
+    - type: Fixtures
+      fixtures: {}
+  - uid: 40
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -9.5,-88.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 32
+    - type: Fixtures
+      fixtures: {}
+  - uid: 41
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -9.5,-80.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 31
+    - type: Fixtures
+      fixtures: {}
+  - uid: 42
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,-80.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 34
+    - type: Fixtures
+      fixtures: {}
+  - uid: 43
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -17.5,-88.5
+      parent: 2
+    - type: DeviceList
+      devices:
+      - 33
+    - type: Fixtures
+      fixtures: {}
   - uid: 55
     components:
     - type: Transform
@@ -6730,90 +6719,6 @@ entities:
     - type: DeviceList
       devices:
       - 393
-    - type: Fixtures
-      fixtures: {}
-  - uid: 69
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,-80.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 394
-    - type: Fixtures
-      fixtures: {}
-  - uid: 70
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,-88.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 397
-    - type: Fixtures
-      fixtures: {}
-  - uid: 71
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -9.5,-88.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 396
-    - type: Fixtures
-      fixtures: {}
-  - uid: 72
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -9.5,-80.5
-      parent: 2
-    - type: AccessReader
-      accessListsOriginal:
-      - - Atmospherics
-    - type: DeviceList
-      devices:
-      - 395
-    - type: Fixtures
-      fixtures: {}
-  - uid: 73
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -9.5,-72.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 392
-    - type: AccessReader
-      accessListsOriginal:
-      - - Atmospherics
-    - type: Fixtures
-      fixtures: {}
-  - uid: 74
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,-84.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 398
-    - type: Fixtures
-      fixtures: {}
-  - uid: 75
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -0.5,-90.5
-      parent: 2
-    - type: DeviceList
-      devices:
-      - 399
-      - 13978
     - type: Fixtures
       fixtures: {}
   - uid: 76
@@ -7472,7 +7377,7 @@ entities:
       pos: -14.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -186741.16
+      secondsUntilStateChange: -189639.78
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -8413,17 +8318,16 @@ entities:
       parent: 2
 - proto: AirlockJusticeLocked
   entities:
-  - uid: 270
+  - uid: 35
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -21.5,2.5
       parent: 2
-    - type: DeviceNetwork
-      configurators:
-      - invalid
-  - uid: 271
+  - uid: 36
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -21.5,8.5
       parent: 2
 - proto: AirlockKitchenGlassLocked
@@ -8781,16 +8685,15 @@ entities:
     - type: Transform
       pos: -71.5,-97.5
       parent: 2
-- proto: AirlockMedicalMorgueMaintLocked
+- proto: AirlockMedicalMorgueLocked
   entities:
-  - uid: 324
+  - uid: 13
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 26.5,-29.5
       parent: 2
-    - type: AccessReader
-      accessListsOriginal: []
+- proto: AirlockMedicalMorgueMaintLocked
+  entities:
   - uid: 325
     components:
     - type: Transform
@@ -9008,7 +8911,7 @@ entities:
       pos: 51.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -149512.31
+      secondsUntilStateChange: -152410.94
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9252,14 +9155,69 @@ entities:
       accessListsOriginal: []
 - proto: AirSensor
   entities:
-  - uid: 392
+  - uid: 28
     components:
     - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,-90.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 38
+  - uid: 29
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 2.5,-84.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 37
+  - uid: 30
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
       pos: -12.5,-72.5
       parent: 2
     - type: DeviceNetwork
       deviceLists:
-      - 73
+      - 39
+  - uid: 31
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -12.5,-80.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 41
+  - uid: 32
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -12.5,-88.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 40
+  - uid: 33
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -20.5,-88.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 43
+  - uid: 34
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -20.5,-80.5
+      parent: 2
+    - type: DeviceNetwork
+      deviceLists:
+      - 42
   - uid: 393
     components:
     - type: Transform
@@ -9268,55 +9226,6 @@ entities:
     - type: DeviceNetwork
       deviceLists:
       - 68
-  - uid: 394
-    components:
-    - type: Transform
-      pos: -20.5,-80.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 69
-  - uid: 395
-    components:
-    - type: Transform
-      pos: -12.5,-80.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 72
-  - uid: 396
-    components:
-    - type: Transform
-      pos: -12.5,-88.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 71
-  - uid: 397
-    components:
-    - type: Transform
-      pos: -20.5,-88.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 70
-  - uid: 398
-    components:
-    - type: Transform
-      pos: 2.5,-84.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 74
-  - uid: 399
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 2.5,-90.5
-      parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 75
   - uid: 400
     components:
     - type: Transform
@@ -12596,517 +12505,14 @@ entities:
       parent: 2
 - proto: Bible
   entities:
-  - uid: 31
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 32
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 32
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 33
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 34
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 34
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 35
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 36
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 36
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 37
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 38
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 38
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 39
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 40
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 40
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 41
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 42
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 42
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 43
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 44
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 44
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 45
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 46
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 46
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 47
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 48
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 48
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
   - uid: 49
     components:
     - type: MetaData
       desc: you DARE question the word of the MIGHTY JIMMY?!!!
       name: The Bibble
     - type: Transform
-      parent: 28
+      pos: 19.35535,-37.4354
+      parent: 2
     - type: Summonable
       summonActionEntity: 50
     - type: HandHeldArmor
@@ -13122,122 +12528,6 @@ entities:
           occludes: True
           ents:
           - 50
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-  - uid: 51
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 52
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 52
-    - type: Physics
-      canCollide: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - Impassable
-          - HighImpassable
-          layer: []
-          density: 20
-          hard: True
-          restitution: 0.3
-          friction: 0.2
-        revenantReveal:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.25
-            - 0.25,-0.25
-            - 0.25,0.25
-            - -0.25,0.25
-          mask:
-          - GhostImpassable
-          layer:
-          - GhostImpassable
-          density: 1
-          hard: False
-          restitution: 0
-          friction: 0.4
-    - type: ActionsContainer
-- proto: BibleChaddiusThundercockis
-  entities:
-  - uid: 29
-    components:
-    - type: Transform
-      parent: 28
-    - type: Summonable
-      summonActionEntity: 30
-    - type: HandHeldArmor
-      holder: invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents: []
-        actions: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 30
-    - type: Physics
-      canCollide: False
     - type: Fixtures
       fixtures:
         fix1:
@@ -13376,67 +12666,6 @@ entities:
       parent: 2
 - proto: Bookshelf
   entities:
-  - uid: 28
-    components:
-    - type: Transform
-      pos: 18.5,-37.5
-      parent: 2
-    - type: Storage
-      storedItems:
-        29:
-          position: 2,0
-          _rotation: South
-        31:
-          position: 1,0
-          _rotation: South
-        33:
-          position: 0,0
-          _rotation: South
-        35:
-          position: 3,0
-          _rotation: South
-        37:
-          position: 4,0
-          _rotation: South
-        39:
-          position: 5,0
-          _rotation: South
-        41:
-          position: 0,3
-          _rotation: South
-        43:
-          position: 1,3
-          _rotation: South
-        45:
-          position: 2,3
-          _rotation: South
-        47:
-          position: 3,3
-          _rotation: South
-        49:
-          position: 4,3
-          _rotation: South
-        51:
-          position: 5,3
-          _rotation: South
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 31
-          - 33
-          - 29
-          - 35
-          - 37
-          - 39
-          - 41
-          - 43
-          - 45
-          - 47
-          - 49
-          - 51
   - uid: 960
     components:
     - type: Transform
@@ -13459,6 +12688,11 @@ entities:
       parent: 2
 - proto: BookshelfFilled
   entities:
+  - uid: 48
+    components:
+    - type: Transform
+      pos: 18.5,-37.5
+      parent: 2
   - uid: 964
     components:
     - type: Transform
@@ -13882,16 +13116,6 @@ entities:
     - type: Transform
       pos: -39.70019,1.9918857
       parent: 2
-- proto: BoxShotgunSlug
-  entities:
-  - uid: 13
-    components:
-    - type: Transform
-      parent: 3
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-      storage: 3
 - proto: BoxSterileMask
   entities:
   - uid: 1041
@@ -28598,6 +27822,11 @@ entities:
     - type: Transform
       pos: -76.5,-99.5
       parent: 2
+  - uid: 15564
+    components:
+    - type: Transform
+      pos: 16.5,-86.5
+      parent: 2
   - uid: 25623
     components:
     - type: Transform
@@ -29039,6 +28268,11 @@ entities:
       count: 22
 - proto: CableHV
   entities:
+  - uid: 397
+    components:
+    - type: Transform
+      pos: -28.5,-61.5
+      parent: 2
   - uid: 3947
     components:
     - type: Transform
@@ -33538,6 +32772,11 @@ entities:
     components:
     - type: Transform
       pos: 56.5,-27.5
+      parent: 2
+  - uid: 26023
+    components:
+    - type: Transform
+      pos: -71.5,-52.5
       parent: 2
 - proto: CableMV
   entities:
@@ -42621,6 +41860,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -68.5,-22.5
       parent: 2
+  - uid: 26009
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 17.5,-74.5
+      parent: 2
 - proto: ChairFolding
   entities:
   - uid: 6499
@@ -44004,11 +43249,6 @@ entities:
     - type: Transform
       pos: 49.5,-57.5
       parent: 2
-  - uid: 6725
-    components:
-    - type: Transform
-      pos: 90.5,-32.5
-      parent: 2
   - uid: 6726
     components:
     - type: Transform
@@ -44023,6 +43263,11 @@ entities:
     components:
     - type: Transform
       pos: 96.5,-83.5
+      parent: 2
+  - uid: 26007
+    components:
+    - type: Transform
+      pos: 90.5,-31.5
       parent: 2
 - proto: ClosetJanitorFilled
   entities:
@@ -46502,7 +45747,7 @@ entities:
       pos: 21.5,-38.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -151586.48
+      secondsUntilStateChange: -154485.11
       state: Closing
   - uid: 7083
     components:
@@ -46716,7 +45961,7 @@ entities:
       pos: 58.5,-15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -102452.516
+      secondsUntilStateChange: -105351.13
       state: Closing
 - proto: CurtainsRedOpen
   entities:
@@ -48107,11 +47352,6 @@ entities:
     - type: Transform
       pos: -73.5,-23.5
       parent: 2
-  - uid: 7380
-    components:
-    - type: Transform
-      pos: -72.5,-22.5
-      parent: 2
   - uid: 7381
     components:
     - type: Transform
@@ -49445,6 +48685,11 @@ entities:
       anchored: False
       pos: 32.5,-47.5
       parent: 1
+  - uid: 26025
+    components:
+    - type: Transform
+      pos: -15.5,-27.5
+      parent: 2
 - proto: DecalSpawnerBloodSplatters
   entities:
   - uid: 7638
@@ -51206,6 +50451,26 @@ entities:
     - type: Transform
       pos: -64.5,-69.5
       parent: 2
+  - uid: 26000
+    components:
+    - type: Transform
+      pos: 84.5,7.5
+      parent: 2
+  - uid: 26001
+    components:
+    - type: Transform
+      pos: 78.5,2.5
+      parent: 2
+  - uid: 26002
+    components:
+    - type: Transform
+      pos: 84.5,5.5
+      parent: 2
+  - uid: 26003
+    components:
+    - type: Transform
+      pos: 78.5,-9.5
+      parent: 2
 - proto: DecalSpawnerFlowers
   entities:
   - uid: 7979
@@ -51369,6 +50634,11 @@ entities:
     components:
     - type: Transform
       pos: 46.5,-9.5
+      parent: 2
+  - uid: 26004
+    components:
+    - type: Transform
+      pos: 82.5,29.5
       parent: 2
 - proto: DecalSpawnerGrassAB
   entities:
@@ -52605,6 +51875,11 @@ entities:
       parent: 2
 - proto: DisposalPipe
   entities:
+  - uid: 47
+    components:
+    - type: Transform
+      pos: -17.5,1.5
+      parent: 2
   - uid: 8212
     components:
     - type: Transform
@@ -93010,9 +92285,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,-89.5
       parent: 2
-    - type: DeviceNetwork
-      deviceLists:
-      - 75
   - uid: 13979
     components:
     - type: Transform
@@ -94418,6 +93690,13 @@ entities:
     components:
     - type: Transform
       pos: 56.5,-47.5
+      parent: 2
+- proto: GlimmerProber
+  entities:
+  - uid: 395
+    components:
+    - type: Transform
+      pos: 61.5,-47.5
       parent: 2
 - proto: GoldenPersonalAI
   entities:
@@ -98368,16 +97647,6 @@ entities:
     - type: Transform
       pos: 65.55097,-7.4101334
       parent: 2
-- proto: IntercomJustice
-  entities:
-  - uid: 14805
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -20.5,6.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: IntercomMedical
   entities:
   - uid: 14806
@@ -98431,14 +97700,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -42.5,-64.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-  - uid: 14812
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -24.5,6.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -102502,26 +101763,20 @@ entities:
       fixtures: {}
 - proto: LockableButtonJustice
   entities:
-  - uid: 15564
+  - uid: 46
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -20.5,6.5
       parent: 2
-    - type: AccessReader
-      accessListsOriginal:
-      - - Justice
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: DeviceLinkSource
       linkedPorts:
-        271:
+        36:
         - - Pressed
-          - Open
-        270:
+          - AutoClose
+        35:
         - - Pressed
-          - Open
+          - AutoClose
     - type: Fixtures
       fixtures: {}
 - proto: LockableButtonSecurity
@@ -102537,13 +101792,7 @@ entities:
       - - Security
     - type: DeviceLinkSource
       linkedPorts:
-        270:
-        - - Pressed
-          - DoorBolt
         368:
-        - - Pressed
-          - DoorBolt
-        271:
         - - Pressed
           - DoorBolt
         367:
@@ -103183,15 +102432,14 @@ entities:
           showEnts: False
           occludes: True
           ents:
-          - 5
           - 12
-          - 9
-          - 8
-          - 11
-          - 7
-          - 10
-          - 13
           - 4
+          - 10
+          - 7
+          - 11
+          - 8
+          - 9
+          - 5
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -104415,6 +103663,11 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 6992
+  - uid: 14812
+    components:
+    - type: Transform
+      pos: 33.915497,-40.936604
+      parent: 2
   - uid: 15850
     components:
     - type: Transform
@@ -106391,6 +105644,56 @@ entities:
       parent: 2
 - proto: N14FloraDesertCactus
   entities:
+  - uid: 52
+    components:
+    - type: Transform
+      pos: -72.44438,-21.554337
+      parent: 2
+  - uid: 69
+    components:
+    - type: Transform
+      pos: 16.05037,-91.70918
+      parent: 2
+  - uid: 70
+    components:
+    - type: Transform
+      pos: 27.062935,-93.56293
+      parent: 2
+  - uid: 71
+    components:
+    - type: Transform
+      pos: -8.525064,-27.808626
+      parent: 2
+  - uid: 72
+    components:
+    - type: Transform
+      pos: -73.014694,-20.413712
+      parent: 2
+  - uid: 73
+    components:
+    - type: Transform
+      pos: -71.96001,-19.944962
+      parent: 2
+  - uid: 74
+    components:
+    - type: Transform
+      pos: -0.40977216,-28.125784
+      parent: 2
+  - uid: 75
+    components:
+    - type: Transform
+      pos: 102.52027,-25.941643
+      parent: 2
+  - uid: 399
+    components:
+    - type: Transform
+      pos: -7.7667656,-68.212616
+      parent: 2
+  - uid: 7380
+    components:
+    - type: Transform
+      pos: 9.565828,-96.248245
+      parent: 2
   - uid: 16115
     components:
     - type: Transform
@@ -106502,8 +105805,7 @@ entities:
   - uid: 16134
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 16.067986,-91.92987
+      pos: -8.28248,-68.3342
       parent: 2
   - uid: 16135
     components:
@@ -106704,8 +106006,7 @@ entities:
   - uid: 16169
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 2.8875685,-27.925055
+      pos: 6.8661327,-79.65384
       parent: 2
   - uid: 16170
     components:
@@ -106830,8 +106131,7 @@ entities:
   - uid: 16192
     components:
     - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -8.15913,-27.89384
+      pos: -1.3711756,-77.69166
       parent: 2
   - uid: 16193
     components:
@@ -106854,8 +106154,7 @@ entities:
   - uid: 16196
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -72.111435,-20.549639
+      pos: -0.7240634,-77.37408
       parent: 2
   - uid: 16197
     components:
@@ -106872,8 +106171,7 @@ entities:
   - uid: 16199
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -72.642685,-21.766478
+      pos: 9.397383,-80.575714
       parent: 2
   - uid: 16200
     components:
@@ -106978,8 +106276,7 @@ entities:
   - uid: 16217
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -0.20186067,-28.058416
+      pos: 73.70857,-76.4128
       parent: 2
   - uid: 16218
     components:
@@ -107844,8 +107141,7 @@ entities:
   - uid: 16370
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 93.23932,-27.052397
+      pos: 33.24849,-92.74312
       parent: 2
   - uid: 16371
     components:
@@ -108091,6 +107387,42 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -30.720215,-39.524223
       parent: 2
+  - uid: 20325
+    components:
+    - type: Transform
+      pos: 0.43397784,-25.789846
+      parent: 2
+  - uid: 20327
+    components:
+    - type: Transform
+      pos: 4.1924586,-12.807702
+      parent: 2
+  - uid: 20328
+    components:
+    - type: Transform
+      pos: 6.186719,-8.045653
+      parent: 2
+  - uid: 20329
+    components:
+    - type: Transform
+      pos: 2.2783961,-17.765114
+      parent: 2
+  - uid: 20330
+    components:
+    - type: Transform
+      pos: 38.356445,-5.365122
+      parent: 2
+  - uid: 20722
+    components:
+    - type: Transform
+      pos: 92.75319,-26.972893
+      parent: 2
+  - uid: 20724
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 101.91871,-26.988518
+      parent: 2
   - uid: 25850
     components:
     - type: Transform
@@ -108216,6 +107548,116 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -3.746801,20.496878
+      parent: 1
+  - uid: 25966
+    components:
+    - type: Transform
+      pos: 70.52129,-22.232954
+      parent: 2
+  - uid: 25967
+    components:
+    - type: Transform
+      pos: 41.446697,-14.768562
+      parent: 2
+  - uid: 25968
+    components:
+    - type: Transform
+      pos: 34.611073,-12.778502
+      parent: 2
+  - uid: 25969
+    components:
+    - type: Transform
+      pos: 40.504883,-1.7483106
+      parent: 2
+  - uid: 25970
+    components:
+    - type: Transform
+      pos: 32.883915,7.6499023
+      parent: 2
+  - uid: 25971
+    components:
+    - type: Transform
+      pos: 54.908535,9.142447
+      parent: 2
+  - uid: 25972
+    components:
+    - type: Transform
+      pos: 48.822815,11.783072
+      parent: 2
+  - uid: 25973
+    components:
+    - type: Transform
+      pos: 68.512825,10.017447
+      parent: 2
+  - uid: 25974
+    components:
+    - type: Transform
+      pos: 71.09095,10.033072
+      parent: 2
+  - uid: 25975
+    components:
+    - type: Transform
+      pos: 73.2472,8.790885
+      parent: 2
+  - uid: 25976
+    components:
+    - type: Transform
+      pos: 42.812332,-39.687355
+      parent: 2
+  - uid: 25977
+    components:
+    - type: Transform
+      pos: 69.29718,4.51349
+      parent: 2
+  - uid: 25979
+    components:
+    - type: Transform
+      pos: 29.874374,-35.63747
+      parent: 2
+  - uid: 26026
+    components:
+    - type: Transform
+      pos: -31.789392,-38.996094
+      parent: 1
+  - uid: 26027
+    components:
+    - type: Transform
+      pos: 14.956619,-92.80293
+      parent: 1
+  - uid: 26028
+    components:
+    - type: Transform
+      pos: -67.030014,-95.60103
+      parent: 1
+  - uid: 26029
+    components:
+    - type: Transform
+      pos: -15.818574,22.525454
+      parent: 1
+  - uid: 26030
+    components:
+    - type: Transform
+      pos: 96.96057,-76.53168
+      parent: 1
+  - uid: 26031
+    components:
+    - type: Transform
+      pos: 76.66117,-74.1628
+      parent: 1
+  - uid: 26032
+    components:
+    - type: Transform
+      pos: 56.8357,9.509635
+      parent: 1
+  - uid: 26033
+    components:
+    - type: Transform
+      pos: 64.54202,-23.787642
+      parent: 1
+  - uid: 26034
+    components:
+    - type: Transform
+      pos: 33.946415,8.446777
       parent: 1
 - proto: N14FloraDesertTree1
   entities:
@@ -112632,6 +112074,26 @@ entities:
       accessListsOriginal:
       - - Atmospherics
       - - Engineering
+- proto: PagerButtonJustice
+  entities:
+  - uid: 44
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -20.5,6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: PagerButtonSecurity
+  entities:
+  - uid: 45
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -24.5,6.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: Paper
   entities:
   - uid: 1027
@@ -112929,7 +112391,13 @@ entities:
           restitution: 0
           friction: 0.4
     - type: SolutionContainerManager
-      solutions: null
+      solutions:
+        food:
+          temperature: 293.15
+          canReact: True
+          maxVol: 0
+          name: food
+          reagents: []
       containers:
       - food
     - type: EmitSoundOnCollide
@@ -113514,6 +112982,11 @@ entities:
       bodyType: Static
 - proto: PlasmaReinforcedWindowDirectional
   entities:
+  - uid: 398
+    components:
+    - type: Transform
+      pos: 75.5,-37.5
+      parent: 2
   - uid: 17278
     components:
     - type: Transform
@@ -113545,6 +113018,12 @@ entities:
       parent: 2
 - proto: PlasmaWindoorSecureCommandLocked
   entities:
+  - uid: 396
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 76.5,-38.5
+      parent: 2
   - uid: 17283
     components:
     - type: Transform
@@ -113780,6 +113259,13 @@ entities:
     - type: Transform
       pos: 67.5,-74.5
       parent: 2
+  - uid: 26006
+    components:
+    - type: Transform
+      pos: 80.56318,-32.500378
+      parent: 2
+    - type: Pullable
+      prevFixedRotation: True
 - proto: PortableGeneratorPacman
   entities:
   - uid: 17317
@@ -114219,6 +113705,11 @@ entities:
     components:
     - type: Transform
       pos: 70.5,-48.5
+      parent: 2
+  - uid: 25978
+    components:
+    - type: Transform
+      pos: -5.5,-26.5
       parent: 2
 - proto: Poweredlight
   entities:
@@ -115598,6 +115089,47 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 44.5,-44.5
+      parent: 2
+  - uid: 25980
+    components:
+    - type: Transform
+      pos: 55.5,-26.5
+      parent: 2
+  - uid: 25981
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 37.5,-28.5
+      parent: 2
+  - uid: 25982
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 5.5,-28.5
+      parent: 2
+  - uid: 25983
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 3.5,-18.5
+      parent: 2
+  - uid: 25984
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -22.5,-60.5
+      parent: 2
+  - uid: 25985
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 87.5,-43.5
+      parent: 2
+  - uid: 25987
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 86.5,-30.5
       parent: 2
 - proto: PoweredLightColoredBlack
   entities:
@@ -120560,6 +120092,12 @@ entities:
       parent: 2
 - proto: RailingCornerSmall
   entities:
+  - uid: 14805
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 76.5,-37.5
+      parent: 2
   - uid: 18452
     components:
     - type: Transform
@@ -122045,6 +121583,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 34.5,-61.5
+      parent: 2
+  - uid: 26024
+    components:
+    - type: Transform
+      pos: -72.5,-52.5
       parent: 2
 - proto: RandomDrinkBottle
   entities:
@@ -126208,6 +125751,141 @@ entities:
       rot: 3.141592653589793 rad
       pos: -61.09375,-64.11719
       parent: 1
+  - uid: 25986
+    components:
+    - type: Transform
+      pos: 80.5,5.5
+      parent: 2
+  - uid: 25988
+    components:
+    - type: Transform
+      pos: -67.5,-86.5
+      parent: 2
+  - uid: 25989
+    components:
+    - type: Transform
+      pos: 76.5,-11.5
+      parent: 2
+  - uid: 25990
+    components:
+    - type: Transform
+      pos: 81.5,-6.5
+      parent: 2
+  - uid: 25991
+    components:
+    - type: Transform
+      pos: 79.5,-8.5
+      parent: 2
+  - uid: 25992
+    components:
+    - type: Transform
+      pos: 83.5,-5.5
+      parent: 2
+  - uid: 25993
+    components:
+    - type: Transform
+      pos: 79.5,-3.5
+      parent: 2
+  - uid: 25994
+    components:
+    - type: Transform
+      pos: 80.5,2.5
+      parent: 2
+  - uid: 25995
+    components:
+    - type: Transform
+      pos: 77.5,1.5
+      parent: 2
+  - uid: 25996
+    components:
+    - type: Transform
+      pos: 78.5,6.5
+      parent: 2
+  - uid: 25997
+    components:
+    - type: Transform
+      pos: 83.5,8.5
+      parent: 2
+  - uid: 25998
+    components:
+    - type: Transform
+      pos: 82.5,11.5
+      parent: 2
+  - uid: 25999
+    components:
+    - type: Transform
+      pos: 84.5,18.5
+      parent: 2
+  - uid: 26008
+    components:
+    - type: Transform
+      pos: 90.5,-54.5
+      parent: 2
+  - uid: 26010
+    components:
+    - type: Transform
+      pos: -67.5,-80.5
+      parent: 2
+  - uid: 26011
+    components:
+    - type: Transform
+      pos: -69.5,-80.5
+      parent: 2
+  - uid: 26012
+    components:
+    - type: Transform
+      pos: -68.5,-80.5
+      parent: 2
+  - uid: 26013
+    components:
+    - type: Transform
+      pos: -68.5,-79.5
+      parent: 2
+  - uid: 26014
+    components:
+    - type: Transform
+      pos: -73.5,-78.5
+      parent: 2
+  - uid: 26015
+    components:
+    - type: Transform
+      pos: -75.5,-79.5
+      parent: 2
+  - uid: 26016
+    components:
+    - type: Transform
+      pos: -73.5,-80.5
+      parent: 2
+  - uid: 26017
+    components:
+    - type: Transform
+      pos: -71.5,-78.5
+      parent: 2
+  - uid: 26018
+    components:
+    - type: Transform
+      pos: -75.5,-82.5
+      parent: 2
+  - uid: 26019
+    components:
+    - type: Transform
+      pos: -75.5,-83.5
+      parent: 2
+  - uid: 26020
+    components:
+    - type: Transform
+      pos: -76.5,-87.5
+      parent: 2
+  - uid: 26021
+    components:
+    - type: Transform
+      pos: -75.5,-88.5
+      parent: 2
+  - uid: 26022
+    components:
+    - type: Transform
+      pos: -76.5,-81.5
+      parent: 2
 - proto: RandomSpawner100
   entities:
   - uid: 19522
@@ -129394,8 +129072,6 @@ entities:
     - type: Transform
       pos: -29.502327,-63.40174
       parent: 2
-    - type: Physics
-      sleepTime: 0.36666632
     - type: Pullable
       prevFixedRotation: True
 - proto: SecureCabinetReporter
@@ -131481,38 +131157,43 @@ entities:
     - type: Transform
       pos: 57.5,-42.5
       parent: 2
-- proto: SpaceCash10000
+- proto: SpaceCash
   entities:
-  - uid: 20325
+  - uid: 270
     components:
     - type: Transform
-      pos: -10.564678,-42.468597
+      pos: -9.471703,-42.25085
       parent: 2
+    - type: Stack
+      count: 2500
+  - uid: 271
+    components:
+    - type: Transform
+      pos: -10.21389,-42.52429
+      parent: 2
+    - type: Stack
+      count: 2500
+  - uid: 324
+    components:
+    - type: Transform
+      pos: -10.68264,-42.29968
+      parent: 2
+    - type: Stack
+      count: 2500
+  - uid: 392
+    components:
+    - type: Transform
+      pos: -9.540062,-42.582882
+      parent: 2
+- proto: SpaceCash10000
+  entities:
   - uid: 20326
     components:
     - type: Transform
-      pos: -9.978741,-42.468597
+      pos: -9.999046,-42.260616
       parent: 2
-  - uid: 20327
-    components:
-    - type: Transform
-      pos: -10.478741,-42.406097
-      parent: 2
-  - uid: 20328
-    components:
-    - type: Transform
-      pos: -10.064678,-42.398285
-      parent: 2
-  - uid: 20329
-    components:
-    - type: Transform
-      pos: -10.377178,-42.281097
-      parent: 2
-  - uid: 20330
-    components:
-    - type: Transform
-      pos: -10.041241,-42.273285
-      parent: 2
+    - type: Stack
+      count: 2500
 - proto: SpaceHeaterAnchored
   entities:
   - uid: 20331
@@ -134160,10 +133841,10 @@ entities:
       parent: 2
 - proto: SurveillanceCameraRouterCommand
   entities:
-  - uid: 20722
+  - uid: 6725
     components:
     - type: Transform
-      pos: 60.5,-50.5
+      pos: 75.5,-38.5
       parent: 2
 - proto: SurveillanceCameraRouterEngineering
   entities:
@@ -134174,10 +133855,10 @@ entities:
       parent: 2
 - proto: SurveillanceCameraRouterMedical
   entities:
-  - uid: 20724
+  - uid: 394
     components:
     - type: Transform
-      pos: 61.5,-47.5
+      pos: 60.5,-50.5
       parent: 2
 - proto: SurveillanceCameraRouterScience
   entities:
@@ -158344,6 +158025,11 @@ entities:
       parent: 2
 - proto: WaterTankFull
   entities:
+  - uid: 51
+    components:
+    - type: Transform
+      pos: 90.5,-32.5
+      parent: 2
   - uid: 25094
     components:
     - type: Transform
@@ -158358,6 +158044,11 @@ entities:
     components:
     - type: Transform
       pos: 90.5,-71.5
+      parent: 2
+  - uid: 26005
+    components:
+    - type: Transform
+      pos: 19.5,-0.5
       parent: 2
 - proto: WaterVaporCanister
   entities:
@@ -159371,6 +159062,8 @@ entities:
     - type: Transform
       pos: -56.5,-64.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: WindoorSecureUranium
   entities:
   - uid: 25244
@@ -161088,23 +160781,31 @@ entities:
     - type: Transform
       pos: -61.5,-55.5
       parent: 2
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+          Oxygen: 1.7459903
+          Nitrogen: 6.568249
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 6830
           - 6821
-          - 6823
-          - 6824
-          - 6825
-          - 6826
-          - 6827
-          - 6828
-          - 6829
-          - 6822
           - 6820
+          - 6822
+          - 6829
+          - 6828
+          - 6827
+          - 6826
+          - 6825
+          - 6824
+          - 6823
+          - 6830
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
