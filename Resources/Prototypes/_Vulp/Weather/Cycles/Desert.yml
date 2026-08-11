@@ -1,11 +1,11 @@
-# Currently unused on Floof, port from Vulpstation. Serves as an example.
+# Currently USED on Floof, port from Vulpstation. It does NOT serve as a example, but use it as one to make MORE
 - type: weatherCycle
   id: Desert
   weathers:
     # Default
     default:
       proto: null
-      weight: 25
+      weight: 30
       onTransition:
       - !type:WeatherSetAtmos
         mixture:
@@ -16,6 +16,21 @@
           - 82.10312  # N2
       - !type:WeatherDispatchAnnouncement
         dataset: WeatherStabilizing
+
+    # hotter
+    hotter:
+      proto: null
+      weight: 8
+      onTransition:
+      - !type:WeatherSetAtmos
+        mixture:
+          volume: 2500
+          temperature: 333.15
+          moles:
+          - 23.327806  # O2
+          - 87.75699  # N2
+      - !type:WeatherDispatchAnnouncement
+        dataset: Weatherhot
 
     # Cold
     cold:

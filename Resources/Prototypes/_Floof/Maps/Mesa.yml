@@ -1,11 +1,11 @@
 ﻿- type: gameMap
-  id: Mesa
+  id: mesa
   mapName: Mesa
   mapPath: /Maps/Floof/Mesa.yml # Euphoria
-  minPlayers: 60
-  maxPlayers: 120
+  minPlayers: 40
+  maxPlayers: 100
   stations:
-    Getaway:
+    Mesa:
       stationProto: StandardNanotrasenStation
       components:
       - type: StationEmergencyShuttle #floofstation
