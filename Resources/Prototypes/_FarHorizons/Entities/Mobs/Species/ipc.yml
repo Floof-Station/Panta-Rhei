@@ -91,10 +91,7 @@
     requiredLegs: 2
   - type: ZombieImmune
   - type: TypingIndicator
-    proto: robot
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepBorg
+    proto: robotS
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
