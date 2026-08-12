@@ -26,6 +26,17 @@
     sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
     layers:
     - state: hotdog-bun
+  - type: FoodSequenceStartPoint
+    key: Hotdog
+    maxLayers: 3
+    startPosition: -0.15, 0
+    offset: 0.15, 0
+    minLayerOffset: 0, 0
+    maxLayerOffset: 0, 0.05
+    nameGeneration: food-sequence-taco-gen
+    contentSeparator: ", "
+  - type: FoodMetamorphableByAdding
+    onlyFinal: false
   - type: SolutionContainerManager
     solutions:
       food:
