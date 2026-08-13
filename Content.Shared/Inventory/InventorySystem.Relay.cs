@@ -1,4 +1,5 @@
-using Content.Shared._DV.Overlays; // DeltaV
+using Content.Shared._DV.Overlays;
+using Content.Shared._DV.Psionics.Events; // DeltaV
 using Content.Shared.Armor;
 using Content.Shared.Atmos;
 using Content.Shared.Chat;
@@ -32,6 +33,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Wieldable;
 using Content.Shared.Zombies;
+using Content.Shared.Examine; //Harmony
 
 
 namespace Content.Shared.Inventory;
@@ -50,6 +52,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, GetDefaultRadioChannelEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshNameModifiersEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, TransformSpeakerNameEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, TransformSpeechEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SelfBeforeInjectEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, BeforeInjectTargetEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, SelfBeforeGunShotEvent>(RelayInventoryEvent);
@@ -62,6 +65,7 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, BeforeEmoteEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, StoodEvent>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, DownedEvent>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, ExaminedEvent>(RelayInventoryEvent); // Harmony - added for lanyards.
 
         // by-ref events
         SubscribeLocalEvent<InventoryComponent, RefreshFrictionModifiersEvent>(RefRelayInventoryEvent);
@@ -79,6 +83,13 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, WieldAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, UnwieldAttemptEvent>(RefRelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, IngestionAttemptEvent>(RefRelayInventoryEvent);
+        // DeltaV Start - Psionic Events
+        SubscribeLocalEvent<InventoryComponent, DispelledEvent>(RefRelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, PsionicPowerUseAttemptEvent>(RefRelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, TargetedByPsionicPowerEvent>(RefRelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, NoosphericFryEvent>(RefRelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, WeightlessnessChangedEvent>(RefRelayInventoryEvent); // Heavy Clothing
+        // DeltaV End - Psionic Events
 
         // Eye/vision events
         SubscribeLocalEvent<InventoryComponent, CanSeeAttemptEvent>(RelayInventoryEvent);
@@ -151,7 +162,7 @@ public partial class InventorySystem
         var enumerator = new InventorySlotEnumerator(component);
         while (enumerator.NextItem(out var item, out var slotDef))
         {
-            if (!_strippable.IsStripHidden(slotDef, args.User) || args.User == uid)
+            if (!_strippable.IsStripHidden(slotDef, args.User, uid) || args.User == uid)
                 RaiseLocalEvent(item, ev);
         }
     }

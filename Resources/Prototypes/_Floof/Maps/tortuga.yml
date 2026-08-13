@@ -47,6 +47,7 @@
             SecurityCadet: [ 2, 4 ]
             Warden: [ 1, 1 ]
             SeniorOfficer: [ 1, 1 ]
+            SecurityTechnician: [ 1, 1 ] #FloofStation
           #service
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
@@ -74,11 +75,11 @@
             SalvageSpecialist: [ 3, 4 ]
             Courier: [ 2, 2 ]
           # Justice added by FloofStation
-#            ChiefJustice: [ 1, 1 ] #FloofStation
-#            Clerk: [ 1, 1 ] #FloofStation
+            ChiefJustice: [ 1, 1 ] #FloofStation
+            Clerk: [ 1, 1 ] #FloofStation
             Lawyer: [ 2, 2 ] #FloofStation
-#            Prosecutor: [ 1, 1 ] #FloofStation
+            Prosecutor: [ 1, 1 ] #FloofStation
           # Silicon
-#            StationAi: [ 1, 1 ] #Floofstation - uncomment when we want enabled
+            StationAi: [ 1, 1 ]
             Borg: [ 2, 3 ]
             MedicalBorg: [ 2, 3 ]

@@ -47,7 +47,7 @@
   id: Orit
   name: NTCI-ME Orit
   description: A small medical vessel designed for the fast search and retrieval of patients in deep space.
-  price: 36000
+  price: 38000
   path: /Maps/_DV/Shuttles/Shipyard/ntsy_orit.yml
   categories:
   - Civilian
@@ -104,6 +104,17 @@
   description: A moderately sized shuttle intended for all-purpose use. It can comfortably accomodate a crew of up to ten people.
   price: 62000
   path: /Maps/_DV/Shuttles/Shipyard/ntsy_pulse.yml
+  categories:
+  - Civilian
+  - Medium
+  - Shipping
+
+- type: vessel
+  id: Express
+  name: NTCS Express
+  description: The standard all-purpose cargo shuttle that can travel to ATS.
+  price: 30000
+  path: /Maps/_DV/Shuttles/Cargo/ntcs_express.yml
   categories:
   - Civilian
   - Medium

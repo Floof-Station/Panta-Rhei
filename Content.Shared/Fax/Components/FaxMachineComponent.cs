@@ -63,7 +63,7 @@ public sealed partial class FaxMachineComponent : Component
     /// Sound to play when fax printing new message
     /// </summary>
     [DataField]
-    public SoundSpecifier PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg");
+    public SoundSpecifier? PrintSound = new SoundPathSpecifier("/Audio/Machines/printer.ogg"); // DeltaV - nullable
 
     /// <summary>
     /// Sound to play when fax successfully send message
@@ -142,7 +142,15 @@ public sealed partial class FaxMachineComponent : Component
     /// </summary>
     [DataField]
     public bool ReceiveStationGoal { get; set; } = false;
+
     /// Floofstation addition end
+    /// Euphoria addition start
+    /// <summary>
+    ///     Should this fax receive shift extension reviews?
+    /// </summary>
+    [DataField]
+    public bool ReceiveShiftExtensionReview { get; set; } = false;
+    // Euphoria addition end
 }
 
 [DataDefinition]

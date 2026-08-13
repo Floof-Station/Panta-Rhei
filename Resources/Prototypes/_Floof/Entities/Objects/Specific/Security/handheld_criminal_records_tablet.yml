@@ -1,0 +1,24 @@
+- type: entity
+  name: handheld criminal records tablet
+  parent: BaseItem
+  id: HandheldCriminalRecordsTablet
+  components:
+  - type: Item
+    heldPrefix: scanner
+    size: Small
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Security/handheldcriminalrecords.rsi
+    state: crimrecords
+  - type: Icon
+    sprite: _Floof/Objects/Specific/Security/handheldcriminalrecords.rsi
+    state: crimrecords
+  - type: ActivatableUI
+    key: enum.CriminalRecordsConsoleKey.Key
+  - type: UserInterface
+    interfaces:
+       enum.CriminalRecordsConsoleKey.Key:
+        type: CriminalRecordsConsoleBoundUserInterface
+  - type: CriminalRecordsConsole
+  - type: AccessReader
+    access:
+      [["Security"]]

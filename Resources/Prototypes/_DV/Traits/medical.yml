@@ -80,34 +80,27 @@
   description: trait-redshirt-desc
   category: DisabilitiesPhysical # Euphoria
   cost: -6 #floof
+  conflicts:
+    - WillToLive
   effects:
   - !type:AddCompsEffect
     components:
     - type: Redshirt
-  - !type:OverrideCompsEffect
-    components:
-    - type: MobThresholds
-      thresholds:
-        0: Alive
-        99.9: Critical
-        100: Dead
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.5 #-50%
 
 - type: trait
   id: Synthetic
   name: trait-synth-name
   description: trait-synth-desc
   category: Cybernetics # Euphoria
+  cost: 0
+  usesSlots: false # Euphoria - RP flavour
   conditions:
-  - !type:HasCompCondition
-    component: Silicon
-    invert: true
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
     tooltip: trait-condition-borg-not
-  - !type:IsSpeciesCondition
-    species: IPC
-    invert: true
   effects:
   - !type:AddCompsEffect
     components:

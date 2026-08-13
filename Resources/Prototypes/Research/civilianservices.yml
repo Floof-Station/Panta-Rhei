@@ -14,6 +14,8 @@
   - SeedExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard
   - ReagentGrinderIndustrialMachineCircuitboard
+  - BorgModuleAdvancedBotany # DeltaV
+  - MilkingMachineCircuitboard # Euphoria
 
 - type: technology
   id: CritterMechs
@@ -80,6 +82,8 @@
     - DawInstrumentMachineCircuitboard
     - MassMediaCircuitboard
     - JukeboxCircuitBoard
+    - BorgModuleFoamForce # Euphoria Addition
+    - BorgModuleDJ # DeltaV
 
 - type: technology
   id: MeatManipulation
@@ -95,6 +99,8 @@
   - BiofabricatorMachineCircuitboard
   - BiomassReclaimerMachineCircuitboard
   - AdvancedMicrowaveMachineCircuitBoard # DeltaV
+  - BorgModuleAdvancedChef # DeltaV
+  - BorgModuleAdvancedBartender # DeltaV
 
 # Tier 2
 
@@ -118,6 +124,8 @@
   - FauxTileMowedAstroSnow # DeltaV
   - FauxTileAstroAsteroidSand
   - FauxTileDesertAstroSand
+  - FauxTileAstroIronsand
+  - FauxTileAstroIronsandBorderless
 
 - type: technology
   id: BiochemicalStasis
@@ -144,7 +152,8 @@
   tier: 1 # DeltaV - was 2
   cost: 5000
   recipeUnlocks:
-  - BorgModuleAdvancedChemical
+  - BorgModuleAdvancedTopical
+  - BorgModuleAdvancedChemicalDV # DeltaV - Readd Chemical Module
   - AdvancedJetInjector
 
 - type: technology
@@ -161,6 +170,7 @@
   - MegaSprayBottle
   - BorgModuleAdvancedCleaning
   - TrashBagOfHolding # DeltaV
+  - PortablePumpMachineCircuitBoard # Froniter - Portal scrubber
 
 # Begin DeltaV Removals - waste of points nobody makes, moved into civilian mechs
 #- type: technology
@@ -224,18 +234,17 @@
 
 # Tier 3
 
-# DeltaV - Kill Speedboots
-# - type: technology
-#   id: QuantumFiberWeaving
-#   name: research-technology-quantum-fiber-weaving
-#   icon:
-#     sprite: Clothing/Shoes/Boots/speedboots.rsi
-#     state: icon
-#   discipline: CivilianServices
-#   tier: 3
-#   cost: 10000
-#   recipeUnlocks:
-#   - ClothingShoesBootsSpeed
+- type: technology # Euphoria Speed Boots Back
+  id: QuantumFiberWeaving
+  name: research-technology-quantum-fiber-weaving
+  icon:
+    sprite: Clothing/Shoes/Boots/speedboots.rsi
+    state: icon
+  discipline: CivilianServices
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+  - ClothingShoesBootsSpeed
 
 - type: technology
   id: BluespaceChemistry

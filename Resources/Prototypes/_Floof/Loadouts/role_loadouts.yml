@@ -7,7 +7,7 @@
   - Smokeables
   - Pets
   - Instruments
-  - SexToys # Floofstation
+  - SexToys
 
 - type: roleLoadout
   id: JobSeniorEngineer
@@ -15,19 +15,22 @@
   groups:
   - GroupTankHarness
   - StationEngineerHead
-  - StationEngineerNeck # DeltaV
   - FloofEngineeringGlasses # Floofstation glasses
+  - StationEngineerNeck # DeltaV
   - SeniorEngineerJumpsuit # floofstation
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
   - StationEngineerBackpack
   - StationEngineerOuterClothing
   - StationEngineerShoes
-  - StationEngineerID
+  - FloofSeniorEngineerPDAs
   - SurvivalExtended
   - Smokeables
   - StationEngineerJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopEngineer
+  - FloofUndergarmentBottomEngineer
+  - FloofSocksEngineer
 
 - type: roleLoadout
   id: JobSeniorPhysician
@@ -35,6 +38,7 @@
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
+  - MedicalEyewear
   - MedicalDoctorNeck # DeltaV
   - MedicalMask
   - SeniorPhysicianJumpsuits #floofstation
@@ -44,11 +48,13 @@
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalEyewear
   - SurvivalMedical
   - Smokeables
   - MedicalDoctorJobTrinkets
   - GroupSpeciesBreathToolMedical
+  - FloofUndergarmentTopMedicalDoctor
+  - FloofUndergarmentBottomMedicalDoctor
+  - FloofSocksMedicalDoctor
 
 - type: roleLoadout
   id: JobSeniorResearcher
@@ -56,6 +62,7 @@
   groups:
   - GroupTankHarness
   - ScientistHead
+  - Glasses
   - ScientistNeck
   - SeniorResearcherJumpsuits #floofstation
   - ScientistBackpack
@@ -63,32 +70,37 @@
   - ScientistGloves
   - ScientistShoes
   - FloofSeniorResearcherPdas # Floofstation let senior research choose pda
-  - Glasses
   - Survival
   - Smokeables
   - ScientistJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopScientist
+  - FloofUndergarmentBottomScientist
+  - FloofSocksScientist
 
 - type: roleLoadout
   id: JobSeniorOfficer
   parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
+  - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SecurityNeck # DeltaV
   - SeniorOfficerJumpsuits # floofstation
   - SecurityBackpack
   - SecurityOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was SecurityOuterClothing
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityShoes
-  - SecurityPDA
+  - FloofSecuritySeniorOfficerPdas
   - SecurityBelt
-  - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
   - Smokeables
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm # DeltaV - loadouts
   - SecurityFirearmAmmo # DeltaV - loadouts
+  - FloofUndergarmentTopSecurityOfficer # Floof
+  - FloofUndergarmentBottomSecurityOfficer # Floof
+  - FloofSocksSecurityOfficer # Floof
 
 - type: roleLoadout
   id: JobInventorySpecialist
@@ -96,6 +108,7 @@
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
+  - Glasses
   - CargoTechnicianNeck # DeltaV
   - CargoTechnicianJumpsuit # floofstation - there are no special jumpsuits/skirts for inventory spec so we will use cargo techs to make it easier
   - InventorySpecialistMisc # floofstation
@@ -104,28 +117,33 @@
   - CargoTechnicianOuterClothing
   - InventorySpecialistPDA # Euphoria
   - CargoTechnicianShoes
-  - Glasses
   - Survival
   - Smokeables
   - CargoTechnicianJobTrinkets
   - GroupSpeciesBreathTool
+  - FloofUndergarmentTopCargotech
+  - FloofUndergarmentBottomCargotech
+  - FloofSocksCargotech
 
 - type: roleLoadout
   id: JobSecurityTechnician
   parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
+  - RoboticistGlasses
   - SecurityNeck
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityOuterClothingDeltaV
   - StationEngineerGloves
   - SecurityShoes
-  - SecurityPDA
-  - RoboticistGlasses
+  - FloofSecurityTechnicianPdas
   - SurvivalSecurity
   - Smokeables
   - SecurityJobTrinkets
   - GroupSpeciesBreathToolSecurity
   - SecurityFirearm
   - SecurityFirearmAmmo
+  - FloofUndergarmentTopSecurityOfficer # Floof
+  - FloofUndergarmentBottomSecurityOfficer # Floof
+  - FloofSocksSecurityOfficer # Floof

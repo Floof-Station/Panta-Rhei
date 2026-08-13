@@ -24,7 +24,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#cd7314"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color: "#cd7314"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
@@ -33,10 +33,10 @@
       - id: FoodMeatPlant
         amount: 5
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: Sap
-        Quantity: 1
+        Quantity: 300
   - type: Reactive
     groups:
       Flammable: [ Touch ]
@@ -141,6 +141,15 @@
         Toxin: -0.1
         Airloss: -0.1
     darkMovementSpeedMultiplier: 0.7
+  # DeltaV additions - add rootsong
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Rootsong
+  - type: ActiveRadio
+    channels:
+    - Rootsong
+  # DeltaV changes end
 
 - type: entity
   parent: BaseSpeciesDummy

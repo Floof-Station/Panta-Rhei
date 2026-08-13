@@ -1,0 +1,26 @@
+﻿- type: constructionGraph
+  id: PaperPlane
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: paperplane
+      steps:
+      - tag: Paper
+        name: crafting-material-paper
+        icon:
+          sprite: Objects/Misc/bureaucracy.rsi
+          state: paper
+        doAfter: 5
+    - to: origamiswan
+      steps:
+      - tag: Paper
+        name: crafting-material-paper
+        icon:
+          sprite: Objects/Misc/bureaucracy.rsi
+          state: paper
+        doAfter: 5
+  - node: paperplane
+    entity: PaperPlane
+  - node: origamiswan
+    entity: PaperOrigamiSwan

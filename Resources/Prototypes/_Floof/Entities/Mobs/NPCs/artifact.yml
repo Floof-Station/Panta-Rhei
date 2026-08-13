@@ -27,13 +27,10 @@
       types:
         Blunt: 35
         Structural: 70
-  - type: Dispellable
   - type: DamageOnDispel
     damage:
       types:
-        Heat: 100
-  - type: Body
-    prototype: Goliath
+        Holy: 100
   - type: LanguageSpeaker
   - type: UniversalLanguageSpeaker
 
@@ -61,7 +58,6 @@
     thresholds:
       0: Alive
       350: Dead
-  - type: Dispellable
   - type: DamageOnDispel
     damage:
       types:

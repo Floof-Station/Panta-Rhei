@@ -1,7 +1,7 @@
 - type: weightedRandomXenoArchTrigger
   id: DefaultTriggers
   weights:
-    TriggerMetapsionic: 1 # DeltaV
+    TriggerPsionicUsage: 1 # DeltaV
     TriggerMusic: 1
     # DeltaV - make less frequent
     #TriggerHeat: 1
@@ -259,6 +259,11 @@
     - AmmoniaBlood
     - ZombieBlood
     - Sap
+# Euphoria Start: Adds new blood types to triggers.
+    - YellowBlood
+    - BlackBlood
+    - WhiteBlood
+# Euphoria End
 
 - type: xenoArchTrigger
   id: TriggerThrow

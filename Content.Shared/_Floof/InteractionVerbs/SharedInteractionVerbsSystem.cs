@@ -1,17 +1,17 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Floof.InteractionVerbs.Components;
 using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
+using Content.Shared.Hands.Components;
 using Content.Shared.IdentityManagement;
-using Content.Shared.Interaction;
+using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Containers;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -29,6 +29,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
 
     private readonly InteractionAction.VerbDependencies _verbDependencies = new();
     private List<InteractionVerbPrototype> _globalPrototypes = default!;
+    private List<(InteractionVerbPrototype, InteractionVerbSource)> _globalPrototypesWithSource = default!;
 
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
@@ -49,6 +50,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
 
         SubscribeLocalEvent<InteractionVerbsComponent, GetVerbsEvent<InteractionVerb>>(OnGetOthersVerbs);
         SubscribeLocalEvent<OwnInteractionVerbsComponent, GetVerbsEvent<InnateVerb>>(OnGetOwnVerbs);
+        SubscribeLocalEvent<HandsComponent, GetInteractionVerbsEvent>(OnHandsInteractionVerbs);
         SubscribeLocalEvent<InteractionVerbDoAfterEvent>(OnDoAfterFinished);
     }
 
@@ -56,6 +58,9 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     {
         _globalPrototypes = _protoMan.EnumeratePrototypes<InteractionVerbPrototype>()
             .Where(v => v is { Global: true, Abstract: false })
+            .ToList();
+        _globalPrototypesWithSource = _globalPrototypes
+            .Select(it => (it, InteractionVerbSource.Global))
             .ToList();
     }
 
@@ -71,20 +76,49 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
 
     private void OnGetOthersVerbs(Entity<InteractionVerbsComponent> entity, ref GetVerbsEvent<InteractionVerb> args)
     {
-        // Global verbs are not added here since OnGetOwnVerbs already adds them
-        AddAll(entity.Comp.AllowedVerbs.Select(_protoMan.Index), args, () => new InteractionVerb());
+        // TODO: everything was moved under GetVerbsEvent<InnateVerb> because otherwise verbs will be grouped by verb type which is gonna be confusing to players
+        // Dunrab suggested allowing the verb prototype to choose which verb type to use, but i dont see a point since they are all effectively the same.
     }
 
     private void OnGetOwnVerbs(Entity<OwnInteractionVerbsComponent> entity, ref GetVerbsEvent<InnateVerb> args)
     {
-        var allVerbs = entity.Comp.AllowedVerbs;
+        // GetVerbsEvent<InnateVerb> is only ever raised on the user. Rework this system if that ever changes.
+        // It primarily depends on the fact that raising an event on [entity] is equivalent to raising it on [args.User] and so on
+        DebugTools.Assert(entity.Owner == args.User);
 
-        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, allVerbs);
+        // List all innate verbs of the user
+        var initialVerbs = entity.Comp.AllowedVerbs.Select(it =>
+            new InteractionVerbIdSource(it, InteractionVerbSource.UserVerbs));
+
+        // Add all interaction verbs from the user via an event
+        var getVerbsEv = new GetInteractionVerbsEvent(args.User, args.Target, args.Using, initialVerbs);
         RaiseLocalEvent(entity, ref getVerbsEv, true);
-        allVerbs = getVerbsEv.Verbs.ToList();
 
-        // Global verbs are added here because they should be allowed even on entities that do not define any interactions
-        AddAll(allVerbs.Select(_protoMan.Index).Union(_globalPrototypes), args, () => new InnateVerb());
+        // Add all innate verbs on the target as well
+        // TODO should this go through GetInteractionVerbsEvent on the event bus? currently it's only raised on the user.
+        if (TryComp<InteractionVerbsComponent>(args.Target, out var targetVerbsComp))
+        {
+            foreach (var verb in targetVerbsComp.AllowedVerbs)
+                getVerbsEv.Add(verb, InteractionVerbSource.TargetVerbs);
+        }
+
+        // Index and add global ones
+        var allVerbsIndexed =
+            getVerbsEv.Verbs.Select(it => it.Index(_protoMan)).ToList();
+
+        allVerbsIndexed.AddRange(_globalPrototypesWithSource);
+
+        // Add to GetVerbsEvent
+        AddAll(allVerbsIndexed, args, () => new InnateVerb());
+    }
+
+    private void OnHandsInteractionVerbs(Entity<HandsComponent> ent, ref GetInteractionVerbsEvent args)
+    {
+        if (args.Used is not { } used || !TryComp<ToolInteractionVerbsComponent>(used, out var toolVerbsComp))
+            return;
+
+        foreach (var verb in toolVerbsComp.AllowedVerbs)
+            args.Add(verb, InteractionVerbSource.ToolVerbs);
     }
 
     private void OnDoAfterFinished(InteractionVerbDoAfterEvent ev)
@@ -95,7 +129,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
         PerformVerb(proto, ev.VerbArgs!, out var success);
         ev.Handled = true;
 
-        if (success && proto.Repeat && ev.VerbArgs!.AllowRepeat)
+        if (success && proto.Repeat && ev.VerbArgs?.AllowRepeat == true)
             ev.Repeat = true;
     }
 
@@ -209,22 +243,29 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     ///     Creates verbs for all listed prototypes that match their own requirements. Uses the provided factory to create new verb instances.
     /// </summary>
     // Note: using `where T : Verb, new()` here results in a sandbox violation... Yea we peasants don't get OOP in ss14.
-    private void AddAll<T>(IEnumerable<InteractionVerbPrototype> verbs, GetVerbsEvent<T> args, Func<T> factory) where T : Verb
+    private void AddAll<T>(IEnumerable<(InteractionVerbPrototype, InteractionVerbSource)> verbs, GetVerbsEvent<T> args, Func<T> factory) where T : Verb
     {
         // Don't add verbs to ghosts. Ghost system will also cancel all verbs by/on non-admin ghosts.
         if (TryComp<GhostComponent>(args.User, out var ghost) && !ghost.CanGhostInteract)
             return;
 
         var ownInteractions = EnsureComp<OwnInteractionVerbsComponent>(args.User);
-        foreach (var proto in verbs)
+        foreach (var (proto, source) in verbs)
         {
             DebugTools.AssertNotEqual(proto.Abstract, true, "Attempted to add a verb with an abstract prototype.");
+            DebugTools.AssertNotEqual(source, InteractionVerbSource.Unknown, "Verb source evaluated to unknown?");
+
+            // If the prototype doesn't allow coming from this source, skip it outright
+            // We do it here instead of inside PerformChecks to skip all the overhead. Verb source won't change down the line so it doesn't matter.
+            if (!proto.AllowedSource.HasFlag(source))
+                continue;
 
             var name = proto.Name;
             if (args.Verbs.Any(v => v.Text == name))
                 continue;
 
             var verbArgs = InteractionArgs.From(args);
+            verbArgs.Source = source;
             var isEnabled = PerformChecks(proto, ref verbArgs, out var skipAdding, out var errorLocale);
 
             if (skipAdding)
@@ -394,6 +435,11 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
 
         var (user, target, used) = (args.User, args.Target, args.Used);
 
+        // If the tool is a virtual item, use the blocking item in the name
+        // We DON'T do this in Start() because that would allow someone to e.g. hold a gun and "point" it at someone else. Which is silly.
+        if (TryComp<VirtualItemComponent>(used, out var usedVirtItem))
+            used = usedVirtItem.BlockingEntity;
+
         // Effect targets for different players
         var userTarget = specifier.EffectTarget is User or UserThenTarget or TargetThenUser ? user : target;
         var targetTarget = specifier.EffectTarget is Target or UserThenTarget or TargetThenUser ? target : user;
@@ -409,7 +455,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
             [
                 ("user", Identity.Entity(user, EntityManager)), // Floof - use identity
                 ("target", Identity.Entity(target, EntityManager)), // Floof - use identity
-                ("used", used ?? EntityUid.Invalid),
+                ("used", used != null ? Identity.Entity(used.Value, EntityManager) : EntityUid.Invalid),
                 ("selfTarget", user == target),
                 ("hasUsed", used != null)
             ];

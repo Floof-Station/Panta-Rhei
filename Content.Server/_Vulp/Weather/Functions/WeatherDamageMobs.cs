@@ -94,10 +94,7 @@ public sealed partial class WeatherDamageMobs : WeatherFunction
                 false,
                 false,
                 null,
-                false,
-                false,
-                false,
-                2f); // TODO: what is a good value for partMultiplier?
+                false);
         }
     }
 }

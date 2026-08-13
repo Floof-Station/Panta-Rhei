@@ -1,0 +1,245 @@
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: MobIPC
+  sprites: MobIPCSprites
+  markingLimits: MobIPCMarkingLimits
+  dollPrototype: MobIPCDummy
+  skinColoration: Hues
+  minAge: 18 #Euphoria
+  maxAge: 240
+  oldAge: 50
+  youngAge: 50
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  lastNames: IpcLast
+  naming: FirstDashLast
+  sexes:
+  - Unsexed
+
+- type: speciesBaseSprites
+  id: MobIPCSprites
+  sprites:
+    Head: MobIPCHead
+    Snout: MobHumanoidAnyMarking
+    Chest: MobIPCTorso
+    HeadTop: MobHumanoidAnyMarking
+    HeadSide: MobHumanoidAnyMarking
+    LArm: MobIPCLArm
+    RArm: MobIPCRArm
+    LHand: MobIPCLHand
+    RHand: MobIPCRHand
+    LLeg: MobIPCLLeg
+    RLeg: MobIPCRLeg
+    LFoot: MobIPCLFoot
+    RFoot: MobIPCRFoot
+    # Begin Euphoria Additions
+    SnoutCover: MobHumanoidAnyMarking
+    Eyes: MobHumanoidAnyMarking
+    Hair: MobHumanoidAnyMarking
+    Tail: MobHumanoidAnyMarking
+    TailBehind: MobHumanoidAnyMarking
+    TailOversuit: MobHumanoidAnyMarking
+    FacialHair: MobHumanoidAnyMarking
+    UndergarmentTop: MobHumanoidAnyMarking
+    UndergarmentBottom: MobHumanoidAnyMarking
+    Wings: MobHumanoidAnyMarking
+    # End Euphoria Additions
+
+- type: markingPoints
+  id: MobIPCMarkingLimits
+  points:
+    HeadTop:
+      points: 2
+      required: true
+    Hair:
+      points: 1 # Euphoria - Previously 2 for some reason.
+      required: false
+    FacialHair:
+      points: 1 # Euphoria - Same problem as hair
+      required: false
+    Head:
+      points: 6
+      required: true
+      defaultMarkings: [ MobIPCHeadStandard ]
+    HeadSide:
+      points: 6
+      required: false
+    Chest:
+      points: 10
+      required: true
+      defaultMarkings: [ MobIPCTorsoStandard ]
+    Legs:
+      points: 24
+      required: true
+      defaultMarkings: [ MobIPCLLegStandard, MobIPCLFootStandard, MobIPCRLegStandard, MobIPCRFootStandard ]
+    Arms:
+      points: 24
+      required: false
+      defaultMarkings: [ MobIPCLArmStandard, MobIPCLHandStandard, MobIPCRArmStandard, MobIPCRHandStandard ]
+    Snout: # DeltaV - Adds ability to use more marking types
+      points: 1
+      required: false
+    SnoutCover:
+      points: 1
+      required: false
+    UndergarmentTop:
+      points: 1
+      required: false
+    Eyes: # DeltaV - Moves screen to the eyes layer
+      points: 10
+      required: false
+
+- type: humanoidBaseSprite
+  id: MobIPCEyes
+  baseSprite:
+    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: light
+
+- type: humanoidBaseSprite
+  id: MobIPCAnyMarking
+
+- type: humanoidBaseSprite
+  id: MobIPCMarkingMatchSkin
+  markingsMatchSkin: true
+# Head
+
+- type: humanoidBaseSprite
+  id: MobIPCHeadMale
+
+- type: humanoidBaseSprite
+  id: MobIPCHeadFemale
+
+- type: humanoidBaseSprite
+  id: MobIPCHead
+
+- type: marking
+  id: MobIPCHeadStandard
+  bodyPart: Head
+  markingCategory: Head
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: head_m
+
+# Torso
+
+- type: humanoidBaseSprite
+  id: MobIPCTorso
+
+- type: humanoidBaseSprite
+  id: MobIPCTorsoFemale
+
+  # Alt Standard Chassis Marking is here to keep it consistent with the location of the rest of them.
+
+- type: marking
+  id: MobIPCTorsoStandardAlt
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: torso_f
+
+- type: humanoidBaseSprite
+  id: MobIPCTorsoMale
+
+- type: marking
+  id: MobIPCTorsoStandard
+  bodyPart: Chest
+  markingCategory: Chest
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: torso_m
+
+
+# Left Limbs
+
+- type: humanoidBaseSprite
+  id: MobIPCLLeg
+
+- type: marking
+  id: MobIPCLLegStandard
+  bodyPart: LLeg
+  markingCategory: Legs
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_leg
+
+- type: humanoidBaseSprite
+  id: MobIPCLArm
+
+- type: marking
+  id: MobIPCLArmStandard
+  bodyPart: LArm
+  markingCategory: Arms
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_arm
+
+- type: humanoidBaseSprite
+  id: MobIPCLHand
+
+- type: marking
+  id: MobIPCLHandStandard
+  bodyPart: LHand
+  markingCategory: Arms
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_hand
+
+- type: humanoidBaseSprite
+  id: MobIPCLFoot
+
+- type: marking
+  id: MobIPCLFootStandard
+  bodyPart: LFoot
+  markingCategory: Legs
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_foot
+
+# Right Limbs
+
+- type: humanoidBaseSprite
+  id: MobIPCRLeg
+
+- type: marking
+  id: MobIPCRLegStandard
+  bodyPart: RLeg
+  markingCategory: Legs
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_leg
+
+- type: humanoidBaseSprite
+  id: MobIPCRArm
+
+- type: marking
+  id: MobIPCRArmStandard
+  bodyPart: RArm
+  markingCategory: Arms
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_arm
+
+- type: humanoidBaseSprite
+  id: MobIPCRHand
+
+- type: marking
+  id: MobIPCRHandStandard
+  bodyPart: RHand
+  markingCategory: Arms
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_hand
+
+- type: humanoidBaseSprite
+  id: MobIPCRFoot
+
+- type: marking
+  id: MobIPCRFootStandard
+  bodyPart: RFoot
+  markingCategory: Legs
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_foot

@@ -9,7 +9,6 @@
   - type: Lathe
     staticPacks:
     - BorgModulesSyndicateStatic
-    - RoboticsStaticDeltaV
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
@@ -24,13 +23,13 @@
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
+    snapCardinals: true
   - type: Lathe
     idleState: icon
     runningState: icon
     unlitIdleState: unlit
     unlitRunningState: unlit-building
   - type: EmagLatheRecipes
-
     emagStaticPacks:
     - SecurityAmmoStatic
     # Floof (Why the fuck is this not a thing?)
@@ -96,6 +95,8 @@
     - UpgradeKits
     - UpgradeKits_Goob
     - EngineeringHardsuits
+    - AtmosToolsFloofstation # Floofstation - handheld atmos monitor
+    - LightingEquipment # DeltaV
   - type: Machine
     board: EngineeringTechFabCircuitboard
   - type: StealTarget
@@ -136,6 +137,7 @@
     - Mining
     - SalvageWeapons
     - SalvageHardsuits
+    - LightingEquipment # DeltaV
   - type: Machine
     board: LogisticsTechFabCircuitboard
   - type: StealTarget
@@ -175,6 +177,9 @@
     - EVASuit
     # Floofstation section
     - CollarsAutolatheFloofstation
+    - FloofstationServiceCookingEquipment # static packs for food related storage and cooking items
+    - FloofstationServiceFoodStorage
+    - FloofstationServiceCircuitBoards # service smartfridge
     # Floofstation section end
     dynamicPacks:
     - Janitor
@@ -186,6 +191,12 @@
     stealGroup: ServiceTechFabCircuitboard
   - type: LatheAnnouncing
     channels: [Service]
+  - type: MaterialStorage # Floofstation - allow cardboard as a material in the lathe
+    whitelist: &StandardMaterialWhitelist
+        tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
 
 - type: entity
   parent: BaseTechFabDepartmental
@@ -217,6 +228,7 @@
     - ReportingStatic
     - SimpleElectronicsStatic
     - EVASuit
+    - EpistemicsStaticDeltaV
     dynamicPacks:
     - ScienceEquipment
     - ScienceClothing

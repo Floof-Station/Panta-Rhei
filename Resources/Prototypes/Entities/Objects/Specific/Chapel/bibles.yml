@@ -1,5 +1,5 @@
 - type: entity
-  name: space bible
+  name: Space Bible
   description: New Interstellar Version 2340.
   parent: BaseStorageItem
   id: Bible
@@ -30,6 +30,7 @@
   - type: Summonable
     specialItem: SpawnPointGhostRemilia
   - type: RevealRevenantOnCollide # Imp
+    revealTime: 20 # DeltaV - from 5 to 20 seconds reveal
   - type: ReactionMixer
     mixMessage: "bible-mixing-success"
     reactionTypes:
@@ -67,7 +68,7 @@
         Cold: 0.7
         Asphyxiation: 0.7
         Holy: 0.3
-        Shadow: 0.3
+        Soul: 0.3
     whitelist:
       components:
         - BibleUser # Only if you're the Chaplain or Mystagogue
@@ -76,7 +77,7 @@
 
 - type: entity
   parent: [Bible, BaseSyndicateContraband]
-  name: necronomicon
+  name: Necronomicon
   description: "There's a note: Klatuu, Verata, Nikto -- Don't forget it again!"
   id: BibleNecronomicon
   components:
@@ -138,7 +139,7 @@
 
 - type: entity
   id: BibleNarsie
-  name: tome of nar'sie
+  name: Tome of Nar'Sie
   parent: Bible
   description: "What could possibly go wrong with a book covered in blood?"
   components:
@@ -149,7 +150,7 @@
 
 - type: entity
   id: BibleNanoTrasen
-  name: codex nanotrasimus
+  name: Codex NanoTrasimus
   parent: Bible
   description: "A familiar book containing the Sacred Operating Procedures."
   components:
@@ -160,7 +161,7 @@
 
 - type: entity
   id: BibleHonk
-  name: mirth of the honkmother
+  name: Mirth of the Honkmother
   parent: Bible
   description: "Oh great and glorious Mother, Mistress of Mirth, Matron of Mask and Merriments, Blessed is she amongst us jesters."
   components:
@@ -171,7 +172,7 @@
 
 - type: entity
   id: BibleRatvar
-  name: tablet of ratvar
+  name: Tablet of Ratvar
   parent: Bible
   description: "A holy relic of the Clockwork Cult, blessed by the Clockwork Justice, Ratvar."
   components:

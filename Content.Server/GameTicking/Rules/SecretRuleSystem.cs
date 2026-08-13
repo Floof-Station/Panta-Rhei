@@ -14,6 +14,8 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
+using Content.Shared.GameTicking; // imp
+using Robust.Server.Player; // imp
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -53,7 +55,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
 
-        if (_configurationManager.GetCVar(DCCVars.EnableBacktoBack) == true) // DeltaV
+        if (_configurationManager.GetCVar(DCCVars.EnablePresetCooldowns)) // DeltaV
         {
             if (preset.Cooldown > 0) // Begin Imp
             {
@@ -93,6 +95,28 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
         var options = _prototypeManager.Index(weights).Weights.ShallowClone();
         var players = GameTicker.ReadyPlayerCount();
         var totalPlayers = _player.PlayerCount; //DeltaV
+
+        // imp edit start
+        var unreadied = 0;
+
+        // get every UNREADIED player
+        foreach (var (userId, status) in GameTicker.PlayerGameStatuses)
+        {
+            if (status != PlayerGameStatus.NotReadyToPlay)
+                continue;
+
+            if (!_player.TryGetSessionById(userId, out _))
+                continue;
+
+            unreadied++;
+        }
+
+        // divide it by four because not all unreadied players will actually join the round
+        unreadied /= 4;
+
+        // add it to players. a quarter of the unreadied amount will count for game preset rolling
+        players += unreadied;
+        // imp edit end
 
         GamePresetPrototype? selectedPreset = null;
         var sum = options.Values.Sum();
@@ -187,7 +211,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
             if (ruleComp.MinTotalPlayers > totalPlayers) return false; // DeltaV
         }
 
-        if (_configurationManager.GetCVar(DCCVars.EnableBacktoBack) == true) // DeltaV
+        if (_configurationManager.GetCVar(DCCVars.EnablePresetCooldowns)) // DeltaV
         {
             if (_nextRoundAllowed.ContainsKey(selected.ID) && _nextRoundAllowed[selected.ID] > _ticker.RoundId) // Begin Imp
             {

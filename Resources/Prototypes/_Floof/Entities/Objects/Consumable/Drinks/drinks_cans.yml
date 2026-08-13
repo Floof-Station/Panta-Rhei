@@ -33,3 +33,38 @@
     sprite: _Floof/Objects/Consumable/Drinks/boykisserenergy.rsi
   - type: Item
     sprite: _Floof/Objects/Consumable/Drinks/boykisserenergy.rsi
+
+# Bepis
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkCanBepis
+  name: Bepis can
+  description: The great taste of Bepis! Now in a convenient can!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Bepis
+          Quantity: 30
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/bepis_can.rsi
+  - type: Item
+    sprite: _Floof/Objects/Consumable/Drinks/bepis_can.rsi
+
+- type: entity
+  parent: DrinkCanBepis
+  id: DrinkCanBepisCherry
+  name: Bepis Cherry can
+  description: The great taste of Bepis! Now with cherry juice!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Bepis
+          Quantity: 20
+        - ReagentId: JuiceCherry
+          Quantity: 10

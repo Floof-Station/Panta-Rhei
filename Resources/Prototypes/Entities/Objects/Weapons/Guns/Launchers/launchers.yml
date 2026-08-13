@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponLauncher
-  parent: BaseItem
+  parent: [BaseItem, BaseGun] # Euph - base gun parent
   id: BaseWeaponLauncher
   description: A rooty tooty point and shooty.
   abstract: true
@@ -102,6 +102,14 @@
       path: /Audio/Weapons/Guns/MagOut/sfrifle_magout.ogg
     soundInsert:
       path: /Audio/Weapons/Guns/MagIn/sfrifle_magin.ogg
+
+- type: entity
+  parent: [WeaponLauncherHydra]
+  id: WeaponLauncherHydraLethal
+  suffix: frag
+  components:
+  - type: RevolverAmmoProvider
+    proto: GrenadeFrag
 
 - type: entity
   name: RPG-7

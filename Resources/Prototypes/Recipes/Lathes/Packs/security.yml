@@ -75,7 +75,6 @@
   parent:
   - SecurityEquipmentDeltaV # DeltaV
   - BorgModulesSecurityDeltaV # DeltaV
-  - SecurityCybernetics # Shitmed change
   id: SecurityEquipment
   recipes:
   - ClothingBackpackElectropack
@@ -150,6 +149,7 @@
   - WeaponLaserCarbine
   - WeaponXrayCannon
   - WeaponTemperatureGun
+  - WeaponLaserSvalinn # Euphoria
 
 - type: latheRecipePack
   id: SecurityDisablers

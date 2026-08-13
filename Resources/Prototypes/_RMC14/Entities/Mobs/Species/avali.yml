@@ -29,11 +29,12 @@
   - type: Speech
     speechVerb: Parrot # Didn't come with one
     speechSounds: MaleAvali
+    allowedEmotes: ['Chirp', 'Purr', 'Growl', 'HarpySquawk', 'HarpyCaw', 'Coo']
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#7a8bf2"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color: "#7a8bf2"
       Burn: # DeltaV
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MeleeWeapon
@@ -84,10 +85,10 @@
         layer:
         - MobLayer
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution: # DeltaV - Upstream changes for blood solution
       reagents:
       - ReagentId: AmmoniaBlood
-        Quantity: 1
+        Quantity: 300
   - type: BonusStaminaDamage
     multiplier: 0.85 # less melee stamina damage
   - type: BonusMeleeDamage # significantly weaker with melee
@@ -98,10 +99,11 @@
   - type: Damageable
     damageModifierSet: Avali
   - type: Temperature # thrives in the cold, similar to moths
-    heatDamageThreshold: 310
-    coldDamageThreshold: 223
     currentTemperature: 296.15 # lower natural body temp
     specificHeat: 25 # makes temp more lethal
+  - type: TemperatureDamage # DeltaV - Update for TemperatureDamage
+    heatDamageThreshold: 310
+    coldDamageThreshold: 223
     coldDamage:
       types:
         Cold : 0.05
@@ -122,8 +124,23 @@
       279: 0.95
       265: 0.9
       240: 0.85
+  - type: EyeCursorOffset
+    maxOffset: 5
+    pvsIncrease: 0.5
+    enabled: false
+  - type: CursorOffsetAction
+  - type: Preenable
+    featherPrototype: AvaliFeather
   # End DeltaV additions
-
+  #euph Emote tags
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ResomiEmotes
+#euph emote tags
 - type: entity
   parent: BaseSpeciesDummy
   id: MobAvaliDummy

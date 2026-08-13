@@ -79,8 +79,13 @@
   effectDelayed: null
   hideByRequirement: true
   requirement:
-    !type:MobStateRequirement
-    allowedStates: [Alive, Critical]
+    !type:ComplexRequirement # either the verb is specific to the target, or the target is an alive mob
+    requireAll: false
+    requirements:
+    - !type:MobStateRequirement
+      allowedStates: [ Alive, Critical ]
+    - !type:SourceRequirement
+      sources: TargetVerbs
   action:
     !type:ComplexAction
     actions:

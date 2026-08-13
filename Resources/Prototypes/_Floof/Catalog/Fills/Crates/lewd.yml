@@ -19,6 +19,11 @@
           rolls: 4
         - id: DrinkCumBottleFull
           amount: 2
+        - id: FuzzyHandcuffs
+          amount: 2
+        - !type:NestedSelector
+          tableId: LewdCondoms
+          rolls: 2
 
 - type: entity
   id: CrateLewdKink
@@ -41,3 +46,8 @@
           rolls: 5
         - id: Brutepack
           prob: 0.5
+        - id: FuzzyHandcuffs
+          amount: 2
+        - !type:NestedSelector
+          tableId: LewdCondoms
+          rolls: 2

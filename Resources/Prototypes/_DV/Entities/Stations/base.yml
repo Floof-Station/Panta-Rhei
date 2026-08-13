@@ -47,6 +47,5 @@
   abstract: true
   id: BaseStationLavaland
   components:
-  - type: StationPlanetSpawner
-    planet: Lavaland
-    gridPath: /Maps/Floof/Nonstation/Lavaland/lavaland_mining_outpost.yml # Floofstation - our version of the lavaland mining outpost
+  - type: StationLavalandSpawner # Floofstation - changed to spawn lavaland
+    prototype: Lavaland

@@ -1,0 +1,76 @@
+#The gamerule is in events.yml. I didn't put any of these other things in their places because, well...
+#It's kinda invonvenient to create all those directories. I'll do it if someone says I should.
+
+#Objectives
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseFoodCriticObjective
+  components:
+  - type: Objective
+    # difficulty isn't used since all objectives are picked
+    difficulty: 1.5
+    issuer: objective-issuer-donk-co
+  - type: RoleRequirement
+    roles:
+    - FoodCriticRole
+
+- type: entity
+  parent: [BaseFoodCriticObjective, BaseSurviveObjective]
+  id: FoodCriticSurviveObjective
+  name: Live to write your review
+  description: The food can't be that bad...
+  components:
+  - type: Objective
+    icon:
+      sprite: Objects/Consumable/Food/burger.rsi
+      state: cheese
+
+# Mind Role
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleFoodCritic
+  name: Food Critic Role
+  components:
+  - type: MindRole
+    antagPrototype: FoodCriticAntagPrototype
+    subtype: role-subtype-food-critic
+    #exclusiveAntag: true #Uncommenting this breaks everything as of July 2nd 2026
+  - type: FoodCriticRole
+
+# Antag Prototype
+- type: antag
+  id: FoodCriticAntagPrototype
+  name: roles-antag-food-critic-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-food-critic-objective
+
+# Starting Gear
+- type: startingGear
+  id: FoodCriticGear
+  equipment:
+    id: VisitorPDA
+    ears: ClothingHeadsetService
+    jumpsuit: ClothingUniformSeniorBartender
+    shoes: ClothingShoesBootsLaceup
+    back: ClothingBackpack
+
+#Spawn Point
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostAntagFoodCritic
+  components:
+  - type: GhostRole
+    name: ghost-role-information-food-critic-name
+    description: ghost-role-information-food-critic-description
+    rules: ghost-role-information-civil-antagonist-rules
+    mindRoles:
+    - MindRoleFoodCritic
+    raffle:
+      settings: default
+  - type: Sprite
+    sprite: Objects/Consumable/Food/burger.rsi
+    state: human
+

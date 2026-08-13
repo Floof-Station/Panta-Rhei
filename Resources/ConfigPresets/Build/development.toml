@@ -4,12 +4,15 @@ lobbyenabled = false
 # Dev map for faster loading & convenience
 map = "Dev"
 role_timers = false
+admin_job_tracking = true
+role_loadout_timers = false
+# Euph
+role_whitelist = false
 
 contraband_examine = false # DeltaV
 secret_weight_prototype = "SecretFloofstation" # DeltaV #
 role_timer_override = "DeltaV" # DeltaV
 showgreentext = false # DeltaV
-role_loadout_timers = false
 station_planet_spawning = false # Floofstation
 
 [events]
@@ -56,3 +59,11 @@ rules_file = "FloofstationRuleset"
 
 [control] # DeltaV
 storage_limit = 3
+
+# Floof - annoying
+[vote]
+autovote_enabled = false
+
+[audio] # DeltaV
+attenuation = 4 # inversedistanceclamped 1 << 2, see audioparams.cs
+z_offset = -2

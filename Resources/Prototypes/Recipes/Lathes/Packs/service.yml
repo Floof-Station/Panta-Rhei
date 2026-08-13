@@ -27,6 +27,7 @@
   - Holoprojector
   - WetFloorSign
   - WireBrush
+  - PaperCup # Euphoria - M3739 - #485
 
 - type: latheRecipePack
   parent:
@@ -52,6 +53,7 @@
   - WeaponSprayNozzle
   - ClothingBackpackWaterTank
   - MegaSprayBottle
+  - PortablePumpMachineCircuitBoard # Froniter - Portal scrubber
 
 - type: latheRecipePack
   id: Instruments
@@ -62,6 +64,7 @@
 - type: latheRecipePack
   parent:
   - ServiceBoardsDeltaV # DeltaV
+  - ServiceBoardsEuphoria # Euphoria
   id: ServiceBoards
   recipes:
   - BiofabricatorMachineCircuitboard

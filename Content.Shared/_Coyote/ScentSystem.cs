@@ -16,6 +16,8 @@ using Robust.Shared.Configuration;
 using Content.Shared._Floof.CCVar;
 using Robust.Shared.Network;
 using Content.Shared._Floof.InteractionVerbs;
+using Content.Shared.Ghost; // Euphoria
+using Content.Shared.Mobs.Systems; // Euphoria
 
 namespace Content.Shared._Coyote.SniffAndSmell;
 
@@ -33,6 +35,7 @@ public sealed class ScentSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!; // Euphoria
 
 // Euphoria - no spam pls
     public TimeSpan BaseSmellCooldown = TimeSpan.FromSeconds(30);
@@ -379,6 +382,8 @@ public sealed class ScentSystem : EntitySystem
         // lewd check
         if (!LewdOkay(uid, scentProto.Lewd))
             return false; // cant detect lewd scents
+        if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+            return false; // cant detect scents at all
         if (SmellGuidIsOnCooldown(component, scentGuid))
             return false; // on cooldown
         // check LOS, if required
@@ -634,6 +639,8 @@ public sealed class ScentSystem : EntitySystem
             throw new InvalidOperationException($"Invalid scent prototype ID {ticket.ScentProto} in SmellScent.");
         if (!LewdOkay(uid, proto.Lewd))
             return;
+        if (!SniffaOkay(uid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+            return;
 
         IncurSmellCooldown(component, ticket);
         UpdatePositionAndDistance(uid, ticket);
@@ -725,6 +732,8 @@ public sealed class ScentSystem : EntitySystem
                 continue;
             if (!LewdOkay(smellerUid, scentProto.Lewd))
                 continue;
+            if (!SniffaOkay(smellerUid)) // Euphoria - Consent toggle for smelling at all. Shadekins, rejoice.
+                continue;
             availableScents.Add(scent);
         }
         // if its empty, just pick any scent
@@ -808,6 +817,15 @@ public sealed class ScentSystem : EntitySystem
             return true;
         return !_consent.HasConsent(uid, "CantSmellLewdScents");
         // dont like the fact that consents default to *ON*
+    }
+
+    /// <summary>
+    /// Check consent for no sniffa
+    /// </summary>
+    private bool SniffaOkay(EntityUid uid)
+    {
+        return !_consent.HasConsent(uid, "CantSmellScentsAtAll")
+            && !HasComp<GhostComponent>(uid) && _mobState.IsAlive(uid); // Euphoria
     }
    #endregion
 }

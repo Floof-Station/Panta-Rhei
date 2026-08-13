@@ -84,13 +84,6 @@
   - type: PhysicalComposition
     materialComposition:
       Plasma: 100
-  - type: Healing # DeltaV - Plasma heals IPC radiation
-    delay: 2.0
-    damageContainers:
-    - HumanoidSilicon
-    damage:
-      types:
-        Radiation: -5.0
   - type: Stack
     stackType: Plasma
     baseLayer: base
@@ -115,6 +108,32 @@
         - ReagentId: Plasma
           Quantity: 10
         canReact: false
+  - type: Tag # DeltaV - Added to include TiderAnvilParts
+    tags:
+    - Sheet
+    - TiderAnvilParts #SL
+    - ConstructionMaterial
+  - type: ConditionalHealing
+    healingDefinitions:
+      - allowedTags: [ IPC ]
+        healing:
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
+          delay: 1.6
+          damage:
+            groups:
+              Toxin: -40 # 20 each
+          healingBeginSound:
+            path: "/Audio/Items/Medical/ointment_begin.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+          healingEndSound:
+            path: "/Audio/Items/Medical/ointment_end.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
 
 - type: entity
   parent: SheetPlasma
@@ -132,6 +151,12 @@
   name: plasma
   suffix: Single
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: Plasma
+      Taco: Plasma
+  #Euphoria end
   - type: Sprite
     state: plasma
   - type: Stack
@@ -147,19 +172,12 @@
     tags:
     - Plastic
     - Sheet
+    - TiderAnvilParts #SL
     - ConstructionMaterial
   - type: Material
   - type: PhysicalComposition
     materialComposition:
       Plastic: 100
-  - type: Healing # DeltaV - plastic repairs stop bleeding
-    delay: 3.0
-    damageContainers:
-    - HumanoidSilicon
-    damage:
-      groups:
-        Brute: 0 # funny
-    bloodlossModifier: -20
   - type: Stack
     stackType: Plastic
     baseLayer: base

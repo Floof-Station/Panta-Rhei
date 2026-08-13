@@ -59,7 +59,8 @@
     #      FoodMeatChickenFriedVox:
     #        min: 3
     #        max: 5
-    #  - !type:BurnBodyBehavior { }
+    #  - !type:BurnBodyBehavior
+    #    popupMessage: bodyburn-vox-text-others
     #  - !type:PlaySoundBehavior
     #    sound:
     #      collection: MeatLaserImpact
@@ -84,14 +85,15 @@
         blunt: 0.0 #this is a bandaid fix to keep new vox consistant with old ee vox. if this gets removed and if there's vox armors and hardsuits pleasae also add pressure protection to said suits so vox players dont suddenly realize their suits dont work cuz of some ipc mains mald pr
         heat: 0.0 # and to said ipc mains sorry yall got left out should have done your prs when you had the chance. us vox players have been in the dust for a while especially upstream so we went ahead in terms of the infamous phrase "when you code it". consider it revenge for the lack of attention since they were playable
   #- type: PressureProtection #alot of this component is here as a left over for when i was trying to keep it ballenced ie still die from high pressures and not low pressures this is all still here incase later down the line me or someone else tries to fix it and get a vauge idea on what to do
-  #  highpressuremultiplier: 0.6 
+  #  highpressuremultiplier: 0.6
   #  lowpressuremodifier: 1
   #  lowpressuremultiplier: 1000
-  - type: Temperature 
-    heatDamageThreshold: 325 # still gotta wear a firesuit
-    coldDamageThreshold: -200 # Floof: Space-fairing chickens
+  - type: Temperature
     currentTemperature: 310.15
     specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 325 # still gotta wear a firesuit
+    coldDamageThreshold: -200 # Floof: Space-fairing chickens
     coldDamage:
       types:
         Cold: 0 #per second, scales with temperature & other constants
@@ -114,14 +116,14 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#7a8bf2"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color: "#7a8bf2"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: AmmoniaBlood
-        Quantity: 1
+        Quantity: 300
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -143,16 +145,18 @@
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: [ "jumpsuit" ]
     - map: [ "enum.HumanoidVisualLayers.LFoot" ]
     - map: [ "enum.HumanoidVisualLayers.RFoot" ]
-    - map: [ "enum.HumanoidVisualLayers.LHand" ]
-    - map: [ "enum.HumanoidVisualLayers.RHand" ]
+    - map: [ "undergarmentSocks" ] # Floof
+    - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "shoes" ] # Floof - moved above jumpsuit
+    - map: [ "jumpsuit" ] # Floof - moved below hands and feet
+    - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
+    - map: ["enum.HumanoidVisualLayers.RHand"] # ^
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -164,8 +168,10 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
+    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

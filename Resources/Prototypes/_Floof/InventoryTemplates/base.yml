@@ -1,0 +1,26 @@
+# This serves as a base for all human-like inventories, adding some extra slots for underwear
+- type: inventoryTemplate
+  id: BaseHumanoidUnderwear
+  slots:
+    - name: undergarmentBottom
+      slotTexture: undergarmentBottom
+      slotFlags: UNDERGARMENT_BOTTOM
+      uiWindowPos: 3,1
+      strippingWindowPos: 3,2
+      displayName: Bottom Undergarment
+      hiddenBySlot: jumpsuit
+      hiddenWhenEmpty: true
+    - name: undergarmentTop
+      slotTexture: undergarmentTop
+      slotFlags: UNDERGARMENT_TOP
+      uiWindowPos: 3,2
+      strippingWindowPos: 3,1
+      displayName: Top Undergarment
+      hiddenBySlot: jumpsuit
+      hiddenWhenEmpty: true
+    - name: undergarmentSocks
+      slotTexture: undergarmentSocks
+      slotFlags: UNDERGARMENT_SOCKS
+      uiWindowPos: 3,0
+      strippingWindowPos: 3,3
+      displayName: Socks

@@ -1,8 +1,4 @@
 ﻿# botany additions
-- type: loadout
-  id: UniformServiceThong
-  equipment:
-    jumpsuit: ClothingUniformServiceThong
 
 # gloves
 - type: loadout
@@ -11,7 +7,14 @@
     gloves: ClothingHandsServiceWarmers
 
 # shoes
+
+# emotional support collar
 - type: loadout
-  id: ClothingUnderSocksService
+  id: ClothingNeckCollarEmotionalSupportBotanist
   equipment:
-    shoes: ClothingUnderSocksService
+    neck: ClothingNeckCollarEmotionalSupportBotanist
+
+- type: loadout
+  id: BotanistPDA
+  equipment:
+    id: BotanistPDA

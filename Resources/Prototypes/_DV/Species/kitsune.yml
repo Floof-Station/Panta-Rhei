@@ -1,6 +1,6 @@
 - type: species
   id: Kitsune
-  name: Kitsune
+  name: species-name-kitsune
   roundStart: true
   prototype: MobKitsune
   sprites: MobHumanSprites
@@ -59,7 +59,7 @@
       points: 10
       required: false
     Wings:
-      points: 1
+      points: 5 # Euphoria: Allow combining wings
       required: false
     Legs:
       points: 24

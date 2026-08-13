@@ -1,6 +1,6 @@
 # Those are all abstract. You're supposed to make existing neck loadout groups inherit from these.
 - type: loadoutGroup
-  id: CommonCollars
+  id: FloofNeck
   abstract: true
   name: loadout-group-common-collars
   loadouts:
@@ -9,7 +9,11 @@
   - ClothingNeckCollarBlue
   - ClothingNeckCollarSyndi
   - ClothingNeckCollarBell
+  - ClothingNeckCowBellCollar #The Den
   - ClothingNeckShockCollarCivilian
+  - ClothingUncategorizedHarnessBlue
+  - ClothingUncategorizedHarnessPink
+  - ClothingUncategorizedHarnessGray
   - NeckNeckerchief
   - MothCloak
   - CloakWitchCloak
@@ -37,10 +41,19 @@
   - ClothingNeckScarfStripedNonBinary
   - ClothingNeckScarfStripedPan
   - ClothingNeckScarfStripedRainbow
+  - ClothingNeckCWPArctic
+  - ClothingNeckCrucifixColor
+  - ClothingNeckCrucifixColorSaintPeter
+  - ClothingNeckCrucifixGold
+  - ClothingNeckCrucifixGoldSaintPeter
+  - ClothingNeckCrucifixSilver
+  - ClothingNeckCrucifixSilverSaintPeter
+  - ClothingNeckScapular
+  - ClothingNeckTallit
 
 - type: loadoutGroup
   id: MedicalCollars
-  parent: CommonCollars
+  parent: FloofNeck
   abstract: true
   name: loadout-group-medical-collars
   loadouts:
@@ -49,7 +62,7 @@
 
 - type: loadoutGroup
   id: EngineeringCollars
-  parent: CommonCollars
+  parent: FloofNeck
   abstract: true
   name: loadout-group-engineering-collars
   loadouts:
@@ -58,7 +71,7 @@
 
 - type: loadoutGroup
   id: ScienceCollars
-  parent: CommonCollars
+  parent: FloofNeck
   abstract: true
   name: loadout-group-science-collars
   loadouts:
@@ -67,7 +80,7 @@
 
 - type: loadoutGroup
   id: CargoCollars
-  parent: CommonCollars
+  parent: FloofNeck
   abstract: true
   name: loadout-group-cargo-collars
   loadouts:
@@ -76,7 +89,7 @@
 
 - type: loadoutGroup
   id: SecurityCollars
-  parent: CommonCollars
+  parent: FloofNeck
   abstract: true
   name: loadout-group-security-collars
   loadouts:
@@ -85,7 +98,7 @@
 
 - type: loadoutGroup
   id: CommandCollars
-  parent: CommonCollars
+  parent: FloofNeck
   abstract: true
   name: loadout-group-command-collars
   loadouts:

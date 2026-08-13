@@ -163,6 +163,11 @@
       - id: ClothingNeckCollarBlack
       - id: ClothingNeckCollarPink
       - id: ClothingNeckCollarBell
+      - id: ClothingNeckCollarBlueAlternative
+      - id: ClothingNeckCollarBlackAlternative
+      - id: ClothingNeckCollarPinkAlternative
+      - id: ClothingNeckCollarBellAlternative
+      - id: ClothingNeckCollarSyndiAlternative
     # Schoolgirl uniforms
     - !type:GroupSelector
       children:
@@ -292,3 +297,10 @@
       children:
       - id: ClothingNeckShockCollarCivilian
       - id: RemoteSignaller
+
+- type: entityTable
+  id: LewdCondoms
+  table: !type:GroupSelector
+    children:
+    - id: CondomPackTeal
+    - id: CondomPackPink

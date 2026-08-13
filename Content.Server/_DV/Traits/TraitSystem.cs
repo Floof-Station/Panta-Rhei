@@ -1,5 +1,5 @@
 using System.Linq;
-using Content.Server.Database;
+using Content.Server.Ghost.Roles.Events;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.Traits;
 using Content.Shared._DV.Traits.Conditions;
@@ -11,6 +11,7 @@ using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Content.Shared.StatusEffectNew;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -20,13 +21,15 @@ namespace Content.Server._DV.Traits;
 /// <summary>
 /// Server system that validates and applies traits to players on spawn.
 /// </summary>
-public sealed class TraitSystem : EntitySystem
+public sealed partial class TraitSystem : EntitySystem // Euph - made partial
 {
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+
     private int _maxTraitCount;
     private int _maxTraitPoints;
 
@@ -35,6 +38,7 @@ public sealed class TraitSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<GhostRoleSpawnerUsedEvent>(OnGhostRoleSpawnerUsed);
 
         Subs.CVar(_config, DCCVars.MaxTraitCount, value => _maxTraitCount = value, true);
         Subs.CVar(_config, DCCVars.MaxTraitPoints, value => _maxTraitPoints = value, true);
@@ -60,20 +64,9 @@ public sealed class TraitSystem : EntitySystem
         var validTraits = ValidateTraits(args.Mob, args.Profile.TraitPreferences, args.Player, args.JobId, speciesId, args.Profile, disabledTraits);
 
         // Apply valid traits
-        // Floofstation edit: first, sort valid traits by cost
-        var sortedPrototypes = new List<TraitPrototype>();
-        foreach (var traitId in validTraits)
-        {
-            if (!_prototype.TryIndex(traitId, out var trait))
-                continue;
-
-            sortedPrototypes.Add(trait);
-        }
-
-        sortedPrototypes = sortedPrototypes.OrderBy(a => -a.Priority).ThenBy(a => a.Cost).ToList(); //Floof - get all traits from negative cost to positive cost
-        foreach (var trait in sortedPrototypes)
+        // Euphoria: Move trait resolution and ordering to static methods.
+        foreach (var trait in OrderTraitPrototypesForApplication(ResolveTraitPrototypes(validTraits)))
             ApplyTrait(args.Mob, trait);
-        // Floofstation edit end
 
         // Send disabled traits notification to client if any were rejected
         if (disabledTraits.Count > 0)
@@ -81,6 +74,19 @@ public sealed class TraitSystem : EntitySystem
             RaiseNetworkEvent(new DisabledTraitsEvent(disabledTraits), args.Player);
         }
     }
+
+    // Euphoria - Let's ghost role character spawns use traits
+    private void OnGhostRoleSpawnerUsed(GhostRoleSpawnerUsedEvent args)
+    {
+        if (args.Character == null || args.Session == null)
+            return;
+
+        // We fake an event here to avoid code duplication
+        // Ideally OnPlayerSpawnComplete should be a separate method (ApplyTraits or smth) but i can't be fucked to rework it
+        var ev = new PlayerSpawnCompleteEvent(args.Spawned, args.Session, "Passenger", true, true, 0, EntityUid.Invalid, args.Character);
+        OnPlayerSpawnComplete(ev);
+    }
+
 
     /// <summary>
     /// Validates a set of trait selections against all rules and returns the valid subset.
@@ -112,15 +118,16 @@ public sealed class TraitSystem : EntitySystem
             JobId = jobId,
             SpeciesId = speciesId,
             Profile = profile,
+            StatusEffects = _statusEffects,
+            SelectedTraits = selectedTraits
         };
 
-        foreach (var traitId in selectedTraits)
+        #region Euphoria: Fix order-dependant trait validation
+        // Resolution of traits from ids moved to static method.
+        foreach (var trait in OrderTraitPrototypesForValidation(ResolveTraitPrototypes(selectedTraits)))
         {
-            if (!_prototype.TryIndex(traitId, out var trait))
-            {
-                Log.Warning($"Unknown trait ID in player preferences: {traitId}");
-                continue;
-            }
+            var traitId = trait.ID;
+            #endregion
 
             var rejectionReasons = new List<string>();
 
@@ -280,6 +287,7 @@ public sealed class TraitSystem : EntitySystem
             CompFactory = _factory,
             LogMan = _log,
             Transform = transform,
+            StatusEffects = _statusEffects,
         };
 
         foreach (var effect in trait.Effects)

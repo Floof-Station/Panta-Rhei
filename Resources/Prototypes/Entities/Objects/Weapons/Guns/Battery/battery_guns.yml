@@ -1,6 +1,6 @@
 - type: entity
   id: BaseWeaponBattery
-  parent: BaseItem
+  parent: [BaseItem, BaseGun] # Euph - base gun parent
   abstract: true
   components:
   - type: Sprite
@@ -15,6 +15,7 @@
   - type: AmmoCounter
   - type: Gun
     fireRate: 2
+    cameraRecoilScalar: 0.5 # DeltaV - most laser guns have lower screenshake
     selectedMode: SemiAuto
     availableModes:
     - SemiAuto
@@ -25,11 +26,6 @@
     startingCharge: 1000
   - type: StaticPrice
     price: 500
-  - type: Cautery # Shitmed
-    speed: 0.9
-  - type: SurgeryTool # Shitmed
-    endSound:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
   - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
     sound:
       collection: LasersPickUp
@@ -113,11 +109,6 @@
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot
-  - type: Cautery # Shitmed
-    speed: 0.9
-  - type: SurgeryTool # Shitmed
-    endSound:
-      path: /Audio/Weapons/Guns/Gunshots/laser.ogg
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -156,6 +147,7 @@
     quickEquip: false
     slots:
     - Belt
+    - suitStorage # Delta V - to let you put in suit storage like every other gun
 
 - type: entity
   name: svalinn laser pistol
@@ -185,6 +177,7 @@
     tags:
     - Sidearm
     - LaserWeapon
+    - ConcealCarry # Delta V - allow storin em in boots
 
 - type: entity
   name: retro laser blaster
@@ -269,6 +262,7 @@
         shader: unshaded
   - type: Gun
     projectileSpeed: 10
+    cameraRecoilScalar: 1.0 # DeltaV
     soundGunshot:
       path: /Audio/Effects/Lightning/lightningshock.ogg
       params:
@@ -378,6 +372,7 @@
     tags:
     - Sidearm
     - LaserWeapon
+    - ConcealCarry #Delta V - allow storin em in boots
 
 - type: entity
   name: pulse carbine
@@ -443,15 +438,19 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/pulse_rifle.rsi
   - type: Gun
-    fireRate: 1.5
+    fireRate: 2 # Delta-V - was 1.5
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: BatteryAmmoProvider
     proto: Pulse
     fireCost: 100
   - type: Battery
-    maxCharge: 40000
-    startingCharge: 40000
+  # Begin DeltaV modifications - smaller battery and self recharge
+    maxCharge: 4000 # DeltaV -  was 40000
+    startingCharge: 4000 # DeltaV -  was 40000
+  - type: BatterySelfRecharger
+    autoRechargeRate: 10
+  # End DeltaV modifications
 
 - type: entity
   name: laser cannon
@@ -480,6 +479,7 @@
     sprite: Objects/Weapons/Guns/Battery/laser_cannon.rsi
   - type: Gun
     fireRate: .7 # Delta V - was 1.5
+    cameraRecoilScalar: 1.0 # DeltaV
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
@@ -516,6 +516,7 @@
           map: ["enum.GunVisualLayers.Base"]
     - type: Gun
       fireRate: 0.5
+      cameraRecoilScalar: 1.0 # DeltaV
       soundGunshot:
         path: /Audio/Weapons/emitter.ogg
         params:
@@ -548,6 +549,7 @@
   - type: Clothing
     sprite: Objects/Weapons/Guns/Battery/xray.rsi
   - type: Gun
+    cameraRecoilScalar: 1.0 # DeltaV
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
   - type: BatteryAmmoProvider
@@ -588,6 +590,7 @@
   - type: StaticPrice
     price: 100
   - type: Gun
+    cameraRecoilScalar: 0.25 # DeltaV
     fireRate: 2
     projectileSpeed: 35 # any higher and this causes issues in lag
     soundGunshot:
@@ -700,12 +703,13 @@
   - type: Gun
     fireRate: 0.2 # DeltaV - No taser spam, was 0.5
     resetOnHandSelected: false # DeltaV - Makes it so you dont have to wait 10 seconds to shoot a taser after pulling it out
+    cameraRecoilScalar: 0.25 # DeltaV
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/taser.ogg
     projectileSpeed: 25
   - type: BatteryAmmoProvider
     proto: BulletTaser
-    fireCost: 500
+    fireCost: 500 # Floof
   - type: MagazineVisuals
     magState: mag
     steps: 5
@@ -936,6 +940,7 @@
     sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
   - type: Gun
     fireRate: 2
+    cameraRecoilScalar: 1.0 # DeltaV
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
@@ -959,6 +964,8 @@
   - type: BatterySelfRecharger #Delta V - Self recharging not removed
     autoRechargeRate: 72 # Delta V - Was 10
     autoRechargePauseTime: 30
+  - type: StealTarget
+    stealGroup: WeaponEnergyShotgun # DeltaV- traitor steal target added
 
 - type: entity
   name: energy magnum
@@ -990,6 +997,7 @@
   - type: StealTarget
     stealGroup: HoSSidearm # Delta V - to work along side the X-01
   - type: Gun
+    cameraRecoilScalar: 1.0 # DeltaV
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
@@ -1064,11 +1072,11 @@
   components:
   - type: BatterySelfRecharger
     autoRechargeRate: 30
-  # "remove" wield bonus and penalty so borgs can use it 
+  # "remove" wield bonus and penalty so borgs can use it
   - type: GunWieldBonus
     minAngle: 0
     maxAngle: 0
   - type: Gun
-    fireRate: 2
+    fireRate: 1 # Delta V was 2
     minAngle: 1
     maxAngle: 2

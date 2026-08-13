@@ -2,6 +2,8 @@
   parent: BaseGameRule
   id: CosmicCult
   components:
+  - type: LoadMapRule # Euphoria: Lazy-load
+    mapPath: /Maps/_DV/Nonstations/cosmicvoid.yml
   - type: CosmicCultRule
   - type: GameRule
     minPlayers: 15

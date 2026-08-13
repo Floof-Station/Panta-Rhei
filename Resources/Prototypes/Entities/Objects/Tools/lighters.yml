@@ -89,13 +89,6 @@
     color: orange
   - type: ItemTogglePointLight
   - type: PhysicalComposition
-  - type: Cautery # Shitmed
-    speed: 0.45
-  - type: SurgeryTool # Shitmed
-    startSound:
-      collection: lighterOnSounds
-    endSound:
-      collection: lighterOffSounds
   - type: NFLighter # Frontier
   - type: Tag # DeltaV
     tags:
@@ -269,6 +262,11 @@
     activatedDamage:
         types:
             Heat: 1
+  - type: MeleeWeapon #Euph This is needed in order to make attacks.
+    wideAnimationRotation: 180
+    damage:
+      types:
+        Blunt: 1 # does a little bit of damage on hit when off
   - type: ItemToggleSize
     activatedSize: Small
   - type: ItemToggleHot
@@ -570,7 +568,7 @@
     sprite: Objects/Tools/Lighters/honkco.rsi
   - type: Item
     sprite: Objects/Tools/Lighters/honkco.rsi
-  - type: ComponentToggler
+  - type: ComponentToggler # This is super cursed and ends up deleting the fixtures when toggled off
     components:
     - type: Slippery
     - type: StepTrigger

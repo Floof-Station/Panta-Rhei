@@ -3,6 +3,9 @@
 # Everyone can understand a message if it is spoken in Universal.
 - type: language
   id: Universal
+  parent: BaseLanguage
+  chatPrefix: uni # Euphoria/Starlight
+  isVisibleLanguage: false
   obfuscation:
     !type:ReplacementObfuscation
     replacement:
@@ -13,7 +16,9 @@
 # Used by robots. Note: this used to be called RobotTalk pre-rebase. Update your references.
 - type: language
   id: Binary
-  isVisibleLanguage: true
+  chatPrefix: bin # Euphoria/Starlight
+  parent: BaseLanguage
+  icon: { state: "binary" }
   speech:
     fontId: Monospace
   obfuscation:
@@ -27,6 +32,9 @@
 # Example of a sign language. Used by the Sign Language trait.
 - type: language
   id: Sign
+  parent: BaseLanguage
+  chatPrefix: sgn # Euphoria/Starlight
+  icon: { state: "sign" }
   speech:
     allowRadio: false
     allowWriting: false

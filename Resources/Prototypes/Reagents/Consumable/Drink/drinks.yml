@@ -392,22 +392,26 @@
         type: Remove
 
 - type: reagent
-  id: Tea
+  id: Tea # Mono edit
   name: reagent-name-tea
   parent: BaseDrink
   desc: reagent-desc-tea
   physicalDesc: reagent-physical-desc-aromatic
   flavor: tea
-  color: "#8a5a3a"
+  color: "#3B2F2F"
   recognizable: true
   metabolisms:
     Drink:
       effects:
       - !type:SatiateThirst
         factor: 2
+      - !type:GenericStatusEffect
+        key: Drowsiness
+        time: 1.0
+        type: Remove
       - !type:AdjustReagent
         reagent: Theobromine
-        amount: 0.05
+        amount: 0.025
   metamorphicSprite:
     sprite: Objects/Consumable/Drinks/teaglass.rsi
     state: icon_empty

@@ -29,7 +29,14 @@ public sealed partial class RadioSystem
         string senderName,
         LanguagePrototype? languageOverride)
     {
-        var msg = new ChatMessage(channel, message, wrappedMessage, GetNetEntity(sender), senderKey);
+        var msg = new ChatMessage(
+            channel,
+            message,
+            wrappedMessage,
+            GetNetEntity(sender),
+            senderKey,
+            radioChannelProto: radioChannel.ID // DeltaV - Add RadioChannel for committing sins
+        );
         var language = (languageOverride ?? _language.GetLanguage(sender));
         msg.Language = language;
 
@@ -44,7 +51,7 @@ public sealed partial class RadioSystem
                 ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
                 ("channel", $"\\[{radioChannel.LocalizedName}\\]"),
                 ("name", senderName),
-                ("language", ChatSystem.LanguageNameForFluent(language)), // Floofstation
+                ("language", language.ID), // Floofstation
                 ("textColor", language.SpeechOverride.Color ?? radioChannel.Color), // Floofstation
                 ("textFont", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation
                 ("message", msg.ObfuscatedMessage)); // We shouldn't need to escape this because language obfuscation doesn't (shouldn't) preserve markup tags

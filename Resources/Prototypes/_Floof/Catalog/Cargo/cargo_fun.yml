@@ -27,3 +27,26 @@
   cost: 9500
   category: cargoproduct-category-name-fun
   group: market
+
+# instruments
+
+- type: cargoProduct
+  id: FunInstrumentsDrumKit
+  icon:
+    sprite: _GreyStation/Objects/Fun/Instruments/structureinstruments.rsi
+    state: drumkit
+  product: CrateFunInstrumentsDrumKit
+  cost: 2500
+  category: cargoproduct-category-name-fun
+  group: market
+
+# casino chips
+- type: cargoProduct
+  id: FunCasinoChipCrate
+  icon:
+    sprite: _Floof/Objects/Misc/Casino/chip_case.rsi
+    state: pokercase
+  product: CrateCasinoChips
+  cost: 4500
+  category: cargoproduct-category-name-fun
+  group: market

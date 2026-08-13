@@ -39,6 +39,7 @@
   description: trait-monochromacy-desc
   category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
+  usesSlots: false # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -50,6 +51,7 @@
   description: trait-deuteranopia-desc
   category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
+  usesSlots: false # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -61,6 +63,7 @@
   description: trait-ultravision-desc
   category: DisabilitiesPhysical # Euphoria
   cost: 0 #floof
+  usesSlots: false # Euphoria
   effects:
   - !type:AddCompsEffect
     components:
@@ -85,8 +88,10 @@
   description: trait-amputee-left-arm-desc
   category: DisabilitiesPhysical # Euphoria
   cost: -3 #floof
-  conflicts:
-  - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ArmAmputeeRight # TODO: AmputeeComponent doesn't stack, should be an effect instead
   effects:
   - !type:AddCompsEffect
     components:
@@ -98,10 +103,11 @@
   id: ArmAmputeeRight
   name: trait-amputee-right-arm-name
   description: trait-amputee-right-arm-desc
-  category: DisabilitiesPhysical # Euphoria
-  cost: -3 #floof
-  conflicts:
-  - ArmAmputeeLeft
+  category: DisabilitiesPhysical
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+      - ArmAmputeeLeft
   effects:
   - !type:AddCompsEffect
     components:
@@ -127,9 +133,9 @@
   category: DisabilitiesPhysical # Euphoria
   cost: -2
   effects:
-  - !type:AddCompsEffect
-    components:
-    - type: PainNumbness
+  - !type:ApplyStatusEffect
+    statusEffects:
+    - PainNumbnessTraitStatusEffect
 
 - type: trait
   id: Hemophilia
@@ -138,6 +144,6 @@
   category: DisabilitiesPhysical # Euphoria
   cost: -2 #floof
   effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Hemophilia
+  - !type:ApplyStatusEffect
+    statusEffects:
+    - StatusEffectHemophiliaTrait

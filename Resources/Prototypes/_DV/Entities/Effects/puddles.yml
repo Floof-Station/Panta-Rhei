@@ -22,6 +22,11 @@
     - AmmoniaBlood
     - Ichor
     - SynthBlood
+    # Euphoria start: Add more blood variants to random tables
+    - YellowBlood
+    - BlackBlood
+    - WhiteBlood
+    #Euphoria end
 
 - type: entity
   id: PuddleRandomDrinks
@@ -176,6 +181,8 @@
     - ToxinTrash
     - Nausium
     - LotophagoiOil
+    - Ambrosia
+    - Nectar
 
 - type: entity
   parent: MarkerBase

@@ -1,9 +1,13 @@
 using Content.Server.Administration.Logs;
+using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
+using Content.Server.Ghost;
 using Content.Server.Power.Components;
+using Content.Shared._DV.Chat;
 using Content.Shared._Floof.Language;
 using Content.Shared.Chat;
 using Content.Shared.Database;
+using Content.Shared.Ghost; // Nuclear-14 - handheld radio
 using Content.Shared.Radio;
 using Content.Shared.Radio.Components;
 using Content.Shared.Speech;
@@ -28,6 +32,8 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
+    [Dependency] private readonly GhostSystem _ghost = default!;
 
     // set used to prevent radio feedback loops.
     private readonly HashSet<string> _messages = new();
@@ -39,6 +45,7 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
         base.Initialize();
         SubscribeLocalEvent<IntrinsicRadioReceiverComponent, RadioReceiveEvent>(OnIntrinsicReceive);
         SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EntitySpokeEvent>(OnIntrinsicSpeak);
+        SubscribeLocalEvent<IntrinsicRadioTransmitterComponent, EntityAudiblyEmotedEvent>(OnIntrinsicAudibleEmote); // DeltaV - Robots should be allowed to emote over radio.
 
         _exemptQuery = GetEntityQuery<TelecomExemptComponent>();
     }
@@ -52,19 +59,59 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
         }
     }
 
+    //Nuclear-14
+    /// <summary>
+    /// Gets the message frequency, if there is no such frequency, returns the standard channel frequency.
+    /// </summary>
+    public int GetFrequency(EntityUid source, RadioChannelPrototype channel)
+    {
+        if (TryComp<RadioMicrophoneComponent>(source, out var radioMicrophone))
+            return radioMicrophone.Frequency;
+
+        return channel.Frequency;
+    }
+
+
     private void OnIntrinsicReceive(EntityUid uid, IntrinsicRadioReceiverComponent component, ref RadioReceiveEvent argsRaw)
     {
         var args = ApplyLanguageUnderstanding(argsRaw, uid); // Floofstation - languages
-        if (TryComp(uid, out ActorComponent? actor))
-            _netMan.ServerSendMessage(args.ChatMsg, actor.PlayerSession.Channel);
+        if (!TryComp(uid, out ActorComponent? actor))
+            return;
+
+        var msg = args.ChatMsg;
+        if (_ghost.CanGhostWarp(actor.PlayerSession, out _))
+        {
+            msg = new MsgChatMessage
+            {
+                Message = new ChatMessage(args.ChatMsg.Message)
+                {
+                    WrappedMessage = _chatManager.PrependFollowButtonIfAppropriate(
+                        args.ChatMsg.Message.WrappedMessage,
+                        args.MessageSource,
+                        actor.PlayerSession.Channel),
+                },
+            };
+        }
+
+        _netMan.ServerSendMessage(msg, actor.PlayerSession.Channel);
     }
+
+    // DeltaV
+    private void OnIntrinsicAudibleEmote(EntityUid uid, IntrinsicRadioTransmitterComponent component, EntityAudiblyEmotedEvent args)
+    {
+        if (args.Channel != null && component.Channels.Contains(args.Channel.ID))
+        {
+            SendRadioMessage(uid, args.Message, args.Channel, uid, emType: args.Type);
+        }
+    }
+    // DeltaV - End
 
     /// <summary>
     /// Send radio message to all active radio listeners
     /// </summary>
-    public void SendRadioMessage(EntityUid messageSource, string message, ProtoId<RadioChannelPrototype> channel, EntityUid radioSource, bool escapeMarkup = true)
+    public void SendRadioMessage(EntityUid messageSource, string message, ProtoId<RadioChannelPrototype> channel, EntityUid radioSource, bool escapeMarkup = true, int? frequency = null, EmoteType? emType = null) // Nuclear-14 - handheld radio - added frequency // DeltaV - EmoteType? added.
     {
-        SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup);
+        SendRadioMessage(messageSource, message, _prototype.Index(channel), radioSource, escapeMarkup: escapeMarkup, frequency: frequency, emType: emType); // Nuclear-14 - handheld radio - added frequency
     }
 
     /// <summary>
@@ -73,7 +120,7 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
     /// <param name="messageSource">Entity that spoke the message</param>
     /// <param name="radioSource">Entity that picked up the message and will send it, e.g. headset</param>
     /// <param name="languageOverride">Added by floofstation - allows overriding the language of the message. Defaults to the language of the radio source.</param>
-    public void SendRadioMessage(EntityUid messageSource, string message, RadioChannelPrototype channel, EntityUid radioSource, bool escapeMarkup = true, LanguagePrototype? languageOverride = null)
+    public void SendRadioMessage(EntityUid messageSource, string message, RadioChannelPrototype channel, EntityUid radioSource, bool escapeMarkup = true, LanguagePrototype? languageOverride = null, int? frequency = null, EmoteType? emType = null) // DeltaV - EmoteType? added. // N14 - frequency added
     {
         // TODO if radios ever garble / modify messages, feedback-prevention needs to be handled better than this.
         if (!_messages.Add(message))
@@ -95,27 +142,58 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
             ? FormattedMessage.EscapeText(message)
             : message;
 
-        // Floofstation notice: if the below gets changed, make sure to update ConstructChatMessage too
-        var language = languageOverride ?? _language.GetLanguage(messageSource);
-        if (!language.SpeechOverride.AllowRadio)
-            return;
-        // Floofstation section end
-        var wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
-            ("channelColor", channel.Color), // Floofstation edit: renamed to channelColor
-            ("fontType", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation edit
-            ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize), // Floofstation edit
-            ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
-            ("channel", $"\\[{channel.LocalizedName}\\]"),
-            ("name", name),
-            // Floofstation. Note that we explicitly don't use channel.Color here because this is only used for the language hint.
-            ("language", ChatSystem.LanguageNameForFluent(language)),
-            ("textColor", ChatSystem.LanguageColorForFluent(language, new(200, 200, 200))),
-            ("textFont", ChatSystem.LanguageFontForFluent(language)),
-            // Floofstation section end
-            ("message", content));
+        // Euphoria - most of this method was rewritten.
+        // This is an active minefield. Even if you think you know what you're doing, only step in if absolutely necessary.
+
+        // DeltaV - This change is to change up how the messages are wrapped up. Basically changing the formatting depending on the emote type.
+        string wrappedMessage;
+        LanguagePrototype? language = null; // Floof
+
+        if (emType == EmoteType.Audible)
+            wrappedMessage = Loc.GetString("chat-radio-message-audible-emote-wrap",
+                ("color", channel.Color),
+                ("channel", $"\\[{channel.LocalizedName}\\]"),
+                ("name", name),
+                ("message", content));
+        else if (emType == EmoteType.AudiblePossessive)
+            wrappedMessage = Loc.GetString("chat-radio-message-audible-possessive-emote-wrap",
+                ("color", channel.Color),
+                ("channel", $"\\[{channel.LocalizedName}\\]"),
+                ("name", name),
+                ("message", content));
+        else
+        {
+            language = languageOverride ?? _language.GetLanguage(messageSource);
+            if (!language.SpeechOverride.AllowRadio)
+                return;
+
+            // Nuclear-14 start
+            string channelText;
+            if (channel.ShowFrequency && frequency.HasValue)
+                channelText = $"\\[{frequency}\\]";
+            else
+                channelText = $"\\[{channel.LocalizedName}\\]";
+            // Nuclear-14 end
+
+            // Floofstation notice: if the below gets changed, make sure to update ConstructChatMessage too
+            wrappedMessage = Loc.GetString(speech.Bold ? "chat-radio-message-wrap-bold" : "chat-radio-message-wrap",
+                ("channelColor", channel.Color), // Floofstation edit: renamed to channelColor
+                ("fontType", language.SpeechOverride.FontId ?? speech.FontId), // Floofstation edit
+                ("fontSize", language.SpeechOverride.FontSize ?? speech.FontSize), // Floofstation edit
+                ("verb", Loc.GetString(_random.Pick(speech.SpeechVerbStrings))),
+                ("channel", channelText), // Floofstation - was this: //$"\\[{channel.LocalizedName}\\]"), was changed to the nuclear-14 channelText above
+                ("name", name),
+                // Floofstation. Note that we explicitly don't use channel.Color here because this is only used for the language hint.
+                ("language", language.ID),
+                ("textColor", ChatSystem.LanguageColorForFluent(language, new(200, 200, 200))),
+                ("textFont", ChatSystem.LanguageFontForFluent(language)),
+                // Floofstation section end
+                ("message", content));
+        }
+        // DeltaV - End
 
         // most radios are relayed to chat, so lets parse the chat message beforehand
-        var chat = MakeChatMessage( // Floofstation - replace with a method call
+        var chat = MakeChatMessage( // Euphoria - replace with a method call
             ChatChannel.Radio,
             message,
             wrappedMessage,
@@ -135,6 +213,10 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
         var sourceServerExempt = _exemptQuery.HasComp(radioSource);
 
         var radioQuery = EntityQueryEnumerator<ActiveRadioComponent, TransformComponent>();
+
+        if (frequency == null) // Nuclear-14
+            frequency = GetFrequency(messageSource, channel); // Nuclear-14
+
         while (canSend && radioQuery.MoveNext(out var receiver, out var radio, out var transform))
         {
             if (!radio.ReceiveAllChannels)
@@ -143,6 +225,9 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
                                                              !intercom.SupportedChannels.Contains(channel.ID)))
                     continue;
             }
+
+            if (!HasComp<GhostComponent>(receiver) && GetFrequency(receiver, channel) != frequency) // Nuclear-14 - handheld radio - added frequency check
+                continue;
 
             if (!channel.LongRange && transform.MapID != sourceMapId && !radio.GlobalReceive)
                 continue;
@@ -173,7 +258,7 @@ public sealed partial class RadioSystem : EntitySystem // Floofstation - made pa
     }
 
     /// <inheritdoc cref="TelecomServerComponent"/>
-    private bool HasActiveServer(MapId mapId, string channelId)
+    public bool HasActiveServer(MapId mapId, string channelId) // DeltaV - we need this
     {
         var servers = EntityQuery<TelecomServerComponent, EncryptionKeyHolderComponent, ApcPowerReceiverComponent, TransformComponent>();
         foreach (var (_, keys, power, transform) in servers)
