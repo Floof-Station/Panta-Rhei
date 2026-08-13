@@ -79,7 +79,7 @@
       points: 24
       required: false
       defaultMarkings: [ MobIPCLArmStandard, MobIPCLHandStandard, MobIPCRArmStandard, MobIPCRHandStandard ]
-    # Euphoria
+    # Euphoria start
     Snout: # DeltaV - Adds ability to use more marking types
       points: 1
       required: false
@@ -104,6 +104,7 @@
     Tail:
       points: 1
       required: false
+  # Euphoria End
 
 - type: humanoidBaseSprite
   id: MobIPCEyes
