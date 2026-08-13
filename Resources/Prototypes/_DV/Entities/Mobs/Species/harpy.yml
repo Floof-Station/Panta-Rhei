@@ -72,11 +72,12 @@
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
-      - map: [ "belt" ]
+      
       - map: [ "back" ]
       - map: [ "neck" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
@@ -88,6 +89,7 @@
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
       - map: [ enum.InstrumentVisuals.Layer ]
         sprite: _DV/Effects/harpysinger.rsi
@@ -217,12 +219,12 @@
       - map: [ "ears" ]
       - map: [ "outerClothing" ]
       - map: [ "eyes" ]
-      - map: [ "belt" ]
       - map: [ "neck" ]
       - map: [ "back" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]
@@ -233,6 +235,7 @@
       - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Frontier
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
 
 - type: entity

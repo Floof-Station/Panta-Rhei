@@ -229,11 +229,11 @@ public sealed class NukeOpsTest
         var totalSeconds = 30;
         var totalTicks = (int) Math.Ceiling(totalSeconds / server.Timing.TickPeriod.TotalSeconds);
         var increment = 5;
-        var resp = entMan.GetComponent<RespiratorComponent>(player);
+        var resp = entMan.GetComponentOrNull<RespiratorComponent>(player); // Euph - nullable
         var damage = entMan.GetComponent<DamageableComponent>(player);
         for (var tick = 0; tick < totalTicks; tick += increment)
         {
-            if (!entMan.HasComponent<RespiratorComponent>(player)) // Floof - confused cat.png
+            if (resp == null) // Floof - confused cat.png
                 continue;
 
             await pair.RunTicksSync(increment);

@@ -1,7 +1,9 @@
 ﻿using Content.Server.Actions;
 using Content.Server.Humanoid;
+using Content.Shared._DV.Humanoid;
 using Content.Shared._Floof.Humanoid;
 using Content.Shared.Cloning.Events;
+using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Mobs;
@@ -25,7 +27,7 @@ public sealed class WaggingSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<WaggingComponent, HumanoidProfileImportedEvent>(OnMapInit); // Floofstation - listen on profile load as well as map init
+        SubscribeLocalEvent<WaggingComponent, AppearanceLoadedEvent>(OnMapInit); // Floofstation - listen on profile load as well as map init
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
         SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);
@@ -41,7 +43,7 @@ public sealed class WaggingSystem : EntitySystem
     }
 
     // Floofstation - listen on both profile load and map init
-    private void OnMapInit(EntityUid uid, WaggingComponent component, object args)
+    private void OnMapInit<T>(EntityUid uid, WaggingComponent component, T args)
     {
         // Floofstation - this event can run before CompInit, at which point AddAction would throw an exception.
         if (!Initialized(uid))

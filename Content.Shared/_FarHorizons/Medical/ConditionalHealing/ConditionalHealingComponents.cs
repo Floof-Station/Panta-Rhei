@@ -29,11 +29,13 @@ public sealed partial class ConditionalHealingData
     public SoundSpecifier? HealingBeginSound = null;
     [DataField]
     public SoundSpecifier? HealingEndSound = null;
-    [DataField]
-    public bool SolutionDrain = false;
-    [DataField]
-    public List<ReagentQuantity> ReagentsToDrain = [];
 
+    // Euph - unused
+    // [DataField]
+    // public bool SolutionDrain = false;
+    // [DataField]
+    // public List<ReagentQuantity> ReagentsToDrain = [];
+    //
     [DataField]
     public int AdjustEyeDamage = 0;
 

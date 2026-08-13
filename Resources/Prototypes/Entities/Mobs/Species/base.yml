@@ -34,7 +34,6 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -45,8 +44,10 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wing layer
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
+    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -171,6 +172,7 @@
     angle: 30
     animation: WeaponArcFist
     attackRate: 1
+    altDisarm: true # Euph - altDisarm is false by default. Species can disarm, mobs wide-swing instead.
     damage:
       types:
         Blunt: 5
@@ -312,8 +314,9 @@
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # Floof
-  - type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
-    revealTime: 1
+  #Euph - disable RevealRevenantOnCollide for mobs. It increases radius on mobs, and thus they cannot fit through doors.
+  #- type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
+  #  revealTime: 1
 
 - type: entity
   save: false
@@ -360,7 +363,7 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
+
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -371,8 +374,10 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
+    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

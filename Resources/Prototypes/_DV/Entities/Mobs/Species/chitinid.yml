@@ -144,16 +144,17 @@
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
       - map: [ "eyes" ]
-      - map: [ "belt" ]
       - map: [ "id" ]
       - map: [ "back" ]
       - map: [ "neck" ]
-      - map: [ "enum.HumanoidVisualLayers.Tail" ] #in the utopian future we should probably have a wings enum inserted here so everyhting doesn't break
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
+      - map: [ "enum.HumanoidVisualLayers.Tail" ]
       - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
       - map: [ "enum.HumanoidVisualLayers.Hair" ]
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "mask" ]
+      - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
       - map: [ "head" ]
       - map: [ "pocket1" ]
       - map: [ "pocket2" ]

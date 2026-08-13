@@ -1,33 +1,68 @@
 ﻿- type: entity
+  id: ClothingHandsMittensBase
   parent: ClothingHandsBase
+  abstract: true
+  components:
+  - type: StaminaDamageOnHit # Replaces physical damage with really low stamina damage
+    damage: 2
+  - type: MeleeWeapon
+    damage:
+      types: {}
+    animation: WeaponArcClaw
+    altDisarm: true
+    mustBeEquippedToUse: true
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-red # Inheritors should override these
+  - type: FingerprintMask
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - ClothMade
+
+- type: entity
+  parent: ClothingHandsMittensBase
   id: ClothingHandsMittens
   name: mittens
-  description: A pair of mittens to keep your hands or paws warm.
+  description: A pair of soft mittens to keep your hands or paws warm.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Hands/Mittens/mittens.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Hands/Mittens/mittens.rsi
+  - type: Fiber
+    fiberColor: fibers-white
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: ClothingHandsMittensBase
   id: ClothingHandsMittensBall
   name: ball mittens
-  description: A pair of ball mittens to keep your hands or paws warm.
+  description: A pair of soft ball mittens to keep your hands or paws warm.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Hands/Mittens/ball_mittens.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Hands/Mittens/ball_mittens.rsi
+  - type: StaminaDamageOnHit
+    damage: 8 # On par with boxing gloves but with 33% lower attack speed
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    animation: WeaponArcFist
+  - type: Fiber
+    fiberMaterial: fibers-leather # I dunno what those would actually be made from
+    fiberColor: fibers-black
 
 - type: entity
-  parent: ClothingHandsBase
+  parent: ClothingHandsMittensBase
   id: ClothingHandsMittensKittenMitten
   name: kitten mittens
-  description: A pair of kitten  mittens to keep your hands or paws warm.
+  description: A pair of soft kitten  mittens to keep your hands or paws warm.
   components:
   - type: Sprite
     sprite: _Floof/Clothing/Hands/Mittens/kitten_mittens.rsi
   - type: Clothing
     sprite: _Floof/Clothing/Hands/Mittens/kitten_mittens.rsi
+  - type: Fiber
+    fiberColor: fibers-pink
 

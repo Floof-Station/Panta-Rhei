@@ -1,0 +1,16 @@
+﻿- type: constructionGraph
+  id: CondomHat
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: condomhat
+      steps:
+      - tag: Condom
+        name: construction-graph-tag-condomhat
+        icon:
+          sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+          state: condom_teal_unused
+        doAfter: 5
+  - node: condomhat
+    entity: ClothingHeadCondom
