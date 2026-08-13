@@ -95,6 +95,14 @@
       points: 1
       required: false
     Face:
+      points: 10
+      required: false
+    Wings:
+      points: 1
+      required: false
+    Tail:
+      points: 1
+      required: false
 
 - type: humanoidBaseSprite
   id: MobIPCEyes
@@ -136,7 +144,6 @@
   id: MobIPCTorsoFemale
 
   # Alt Standard Chassis Marking is here to keep it consistent with the location of the rest of them.
-
 - type: marking
   id: MobIPCTorsoStandardAlt
   bodyPart: Chest
