@@ -68,6 +68,26 @@
         amount: 10
         reagent: Water
 
+    storm:
+      proto: Storm
+      weight: 1 # Unlikely to happen on its own; most of the time will be an extension of a rain
+      durationMinutes:
+        min: 5
+        max: 10
+      transitions:
+        default: 0.4
+        rain: 1
+      onUpdate:
+      - !type:WeatherCleanPuddles
+        cleanChance: 0.06
+        maxCleaned: 50
+        cleanAmount: 2.5
+      - !type:WeatherRefillSolutions
+        refillChance: 0.02
+        maxRefilled: 50
+        amount: 10
+        reagent: Water
+
     # Ashfall. Adds some CO2 to the air.
     ashfall:
       proto: AshfallLight
