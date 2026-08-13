@@ -1,7 +1,13 @@
+# Euph - all of these boxes were modified to include socks
+#
+# Replacements used:
+# 1. "- id: Bunnysuit(\w+)" -> "- id: Bunnysuit$1\n        - id: ClothingUndergarmentSocksBunnysuit$1 # Euph"
+
 - type: entity
   parent: BoxBase
   id: BunnysuitBox
   name: bunnysuit box
+  abstract: true
   components:
   - type: Sprite
     sprite: _HL/Clothing/Bunnysuit/box.rsi
@@ -13,7 +19,7 @@
   - type: Storage
     maxItemSize: Normal
     grid:
-    - 0,0,3,2
+    - 0,0,4,2 # Euph - +1 width
     whitelist:
       tags:
         - Bunnysuit
@@ -34,6 +40,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitChemist
+        - id: ClothingUndergarmentSocksBunnysuitChemist # Euph - separate socks
         - id: BunnyJacketChemist
         - id: BowtieChemist
         - id: BunnyEarsChemist
@@ -48,6 +55,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitGenetics
+        - id: ClothingUndergarmentSocksBunnysuitGenetics # Euph - separate socks
         - id: BunnyJacketGenetics
         - id: BowtieGenetics
         - id: BunnyEarsGenetics
@@ -62,6 +70,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitPsychologist
+        - id: ClothingUndergarmentSocksBunnysuitPsychologist # Euph - separate socks
         - id: BunnyJacketPsychologist
         - id: BunnyEarsPsychologist
 
@@ -75,6 +84,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitHeadOfPersonnel
+        - id: ClothingUndergarmentSocksBunnysuitHeadOfPersonnel # Euph - separate socks
         - id: BunnyJacketHeadOfPersonnel
         - id: BowtieHeadOfPersonnel
         - id: BunnyEarsHeadOfPersonnel
@@ -89,6 +99,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitGreen
+        - id: ClothingUndergarmentSocksBunnysuitGreen # Euph - separate socks
         - id: BunnyJacketGreen
         - id: BunnyEarsGreen
 
@@ -102,6 +113,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitLawTeal
+        - id: ClothingUndergarmentSocksBunnysuitLawTeal # Euph - separate socks
         - id: BunnyJacketLawTeal
         - id: BunnyEarsLawTeal
 
@@ -115,6 +127,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitCaptain
+        - id: ClothingUndergarmentSocksBunnysuitCaptain # Euph - separate socks
         - id: BunnyJacketCaptain
         - id: BowtieCaptain
         - id: BunnyEarsCaptain
@@ -129,6 +142,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitSyndie
+        - id: ClothingUndergarmentSocksBunnysuitSyndie # Euph - separate socks
         - id: BunnyJacketSyndie
         - id: BowtieSyndie
         - id: BunnyEarsSyndie
@@ -143,6 +157,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitChef
+        - id: ClothingUndergarmentSocksBunnysuitChef # Euph - separate socks
         - id: BunnyJacketChef
         - id: BowtieChef
         - id: BunnyEarsChef
@@ -157,6 +172,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitRobotics
+        - id: ClothingUndergarmentSocksBunnysuitRobotics # Euph - separate socks
         - id: BunnyJacketRobotics
         - id: BowtieRobotics
         - id: BunnyEarsRobotics
@@ -171,6 +187,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitChiefMedicalOfficer
+        - id: ClothingUndergarmentSocksBunnysuitChiefMedicalOfficer # Euph - separate socks
         - id: BunnyJacketChiefMedicalOfficer
         - id: BowtieChiefMedicalOfficer
         - id: BunnyEarsChiefMedicalOfficer
@@ -185,6 +202,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitRed
+        - id: ClothingUndergarmentSocksBunnysuitRed # Euph - separate socks
         - id: BunnyJacketRed
         - id: BunnyEarsRed
 
@@ -198,6 +216,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitHoS
+        - id: ClothingUndergarmentSocksBunnysuitHoS # Euph - separate socks
         - id: BunnyJacketHoS
         - id: BowtieHoS
         - id: BunnyEarsHoS
@@ -212,6 +231,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitPrisoner
+        - id: ClothingUndergarmentSocksBunnysuitPrisoner # Euph - separate socks
         - id: BowtiePrisoner
         - id: BunnyEarsPrisoner
 
@@ -225,6 +245,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitMime
+        - id: ClothingUndergarmentSocksBunnysuitMime # Euph - separate socks
         - id: BunnyJacketMime
         - id: BunnyEarsMime
 - type: entity
@@ -237,6 +258,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitDoctor
+        - id: ClothingUndergarmentSocksBunnysuitDoctor # Euph - separate socks
         - id: BunnyJacketDoctor
         - id: BowtieDoctor
         - id: BunnyEarsDoctor
@@ -251,6 +273,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitEngineer
+        - id: ClothingUndergarmentSocksBunnysuitEngineer # Euph - separate socks
         - id: BunnyJacketEngineer
         - id: BowtieEngineer
         - id: BunnyEarsEngineer
@@ -265,6 +288,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitLawRed
+        - id: ClothingUndergarmentSocksBunnysuitLawRed # Euph - separate socks
         - id: BunnyJacketLawRed
         - id: BunnyEarsLawRed
 
@@ -278,6 +302,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitBartender
+        - id: ClothingUndergarmentSocksBunnysuitBartender # Euph - separate socks
         - id: BunnyJacketBartender
         - id: BunnyEarsBartender
 
@@ -291,6 +316,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitCoroner
+        - id: ClothingUndergarmentSocksBunnysuitCoroner # Euph - separate socks
         - id: BunnyJacketCoroner
         - id: BowtieCoroner
         - id: BunnyEarsCoroner
@@ -305,6 +331,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitQuartermaster
+        - id: ClothingUndergarmentSocksBunnysuitQuartermaster # Euph - separate socks
         - id: BunnyJacketQuartermaster
         - id: BowtieCargo
         - id: BunnyEarsQuartermaster
@@ -319,6 +346,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitHero
+        - id: ClothingUndergarmentSocksBunnysuitHero # Euph - separate socks
         - id: BunnyJacketHero
         - id: BowtieHero
         - id: BunnyEarsHero
@@ -333,6 +361,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitUnionJack
+        - id: ClothingUndergarmentSocksBunnysuitUnionJack # Euph - separate socks
         - id: BunnyJacketUnionJack
         - id: BowtieBlue
         - id: BunnyEarsUnionJack
@@ -347,6 +376,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitSecurity
+        - id: ClothingUndergarmentSocksBunnysuitSecurity # Euph - separate socks
         - id: BunnyJacketSecurity
         - id: BowtieSecurity
         - id: BunnyEarsSecurity
@@ -361,6 +391,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitWarden
+        - id: ClothingUndergarmentSocksBunnysuitWarden # Euph - separate socks
         - id: BunnyJacketWarden
         - id: BowtieSecurity
         - id: BunnyEarsWarden
@@ -375,6 +406,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitJanitor
+        - id: ClothingUndergarmentSocksBunnysuitJanitor # Euph - separate socks
         - id: BunnyJacketJanitor
         - id: BowtieJanitor
         - id: BunnyEarsJanitor
@@ -389,6 +421,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitNetrunner
+        - id: ClothingUndergarmentSocksBunnysuitNetrunner # Euph - separate socks
         - id: BunnyJacketNetrunner
         - id: BowtieNetrunner
         - id: BunnyEarsNetrunner
@@ -403,6 +436,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitScience
+        - id: ClothingUndergarmentSocksBunnysuitScience # Euph - separate socks
         - id: BunnyJacketScience
         - id: BowtieScience
         - id: BunnyEarsScience
@@ -417,6 +451,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitClown
+        - id: ClothingUndergarmentSocksBunnysuitClown # Euph - separate socks
         - id: BunnyJacketClown
         - id: BowtieClown
         - id: BunnyEarsClown
@@ -431,6 +466,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitAtmos
+        - id: ClothingUndergarmentSocksBunnysuitAtmos # Euph - separate socks
         - id: BunnyJacketAtmos
         - id: BowtieAtmos
         - id: BunnyEarsAtmos
@@ -445,6 +481,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitChaplain
+        - id: ClothingUndergarmentSocksBunnysuitChaplain # Euph - separate socks
         - id: BunnyJacketChaplain
         - id: BowtieChaplain
         - id: BunnyEarsChaplain
@@ -459,6 +496,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitParamedic
+        - id: ClothingUndergarmentSocksBunnysuitParamedic # Euph - separate socks
         - id: BunnyJacketParamedic
         - id: BowtieParamedic
         - id: BunnyEarsParamedic
@@ -473,6 +511,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitTeal
+        - id: ClothingUndergarmentSocksBunnysuitTeal # Euph - separate socks
         - id: BunnyJacketTeal
         - id: BunnyEarsTeal
 
@@ -486,6 +525,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitLiberty
+        - id: ClothingUndergarmentSocksBunnysuitLiberty # Euph - separate socks
         - id: BunnyJacketLiberty
         - id: BowtieBlue
         - id: BunnyEarsLiberty
@@ -500,6 +540,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitCargo
+        - id: ClothingUndergarmentSocksBunnysuitCargo # Euph - separate socks
         - id: BunnyJacketCargo
         - id: BowtieCargo
         - id: BunnyEarsCargo
@@ -514,6 +555,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitResearchDirector
+        - id: ClothingUndergarmentSocksBunnysuitResearchDirector # Euph - separate socks
         - id: BunnyJacketResearchDirector
         - id: BowtieResearchDirector
         - id: BunnyEarsResearchDirector
@@ -528,6 +570,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitMail
+        - id: ClothingUndergarmentSocksBunnysuitMail # Euph - separate socks
         - id: BowtieMail
         - id: BunnyEarsMail
 
@@ -541,6 +584,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitLawBlack
+        - id: ClothingUndergarmentSocksBunnysuitLawBlack # Euph - separate socks
         - id: BunnyJacketLawBlack
         - id: BunnyEarsLawBlack
 
@@ -554,6 +598,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitVirology
+        - id: ClothingUndergarmentSocksBunnysuitVirology # Euph - separate socks
         - id: BunnyJacketVirology
         - id: BowtieVirology
         - id: BunnyEarsVirology
@@ -568,6 +613,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitBotany
+        - id: ClothingUndergarmentSocksBunnysuitBotany # Euph - separate socks
         - id: BunnyJacketBotany
         - id: BowtieBotany
         - id: BunnyEarsBotany
@@ -582,6 +628,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitChiefEngineer
+        - id: ClothingUndergarmentSocksBunnysuitChiefEngineer # Euph - separate socks
         - id: BunnyJacketChiefEngineer
         - id: BowtieChiefEngineer
         - id: BunnyEarsChiefEngineer
@@ -596,6 +643,7 @@
       storagebase: !type:AllSelector
         children:
         - id: BunnysuitMiner
+        - id: ClothingUndergarmentSocksBunnysuitMiner # Euph - separate socks
         - id: BunnyJacketMiner
         - id: BowtieMiner
         - id: BunnyEarsMiner
