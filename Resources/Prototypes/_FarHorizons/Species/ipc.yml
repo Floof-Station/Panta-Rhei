@@ -78,6 +78,7 @@
       points: 24
       required: false
       defaultMarkings: [ MobIPCLArmStandard, MobIPCLHandStandard, MobIPCRArmStandard, MobIPCRHandStandard ]
+    # Euphoria
     Snout: # DeltaV - Adds ability to use more marking types
       points: 1
       required: false
@@ -90,6 +91,10 @@
     Eyes: # DeltaV - Moves screen to the eyes layer
       points: 10
       required: false
+    Special:
+      points: 1
+      required: false
+    Face:
 
 - type: humanoidBaseSprite
   id: MobIPCEyes
