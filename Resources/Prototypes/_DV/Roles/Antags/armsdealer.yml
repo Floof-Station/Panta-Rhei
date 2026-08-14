@@ -6,13 +6,13 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 48h
-  - !type:RoleTimeRequirement
-    role: JobSecurityOfficer
-    time: 12h
-  - !type:DepartmentTimeRequirement
-    department: Command
-    time: 12h
-
+  #- !type:RoleTimeRequirement Euphoria Why does arms dealer need so much playtime? Reduced to match other ghostroles
+  #  role: JobSecurityOfficer
+  #  time: 12h
+  #- !type:DepartmentTimeRequirement
+  #  department: Command
+  #  time: 12h
+  # Euphoria end
 - type: startingGear
   id: SyndicateArmsdealerGear
   equipment:

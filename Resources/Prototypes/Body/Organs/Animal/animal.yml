@@ -119,7 +119,7 @@
     metabolizerTypes: [ Animal ]
     groups:
     - id: Alcohol
-      rateModifier: 0.1
+      rateModifier: 1 # Euph - this has to be set to be >=1 otherwise everything will fall apart because of wizden's FP2 shitcode
   - type: Item
     size: Small
     heldPrefix: liver

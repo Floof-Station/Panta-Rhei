@@ -124,7 +124,7 @@
     metabolizerTypes: [Animal]
     groups:
     - id: Alcohol
-      rateModifier: 0.1 # removes alcohol very slowly along with the stomach removing it as a drink
+      rateModifier: 1 # removes alcohol very slowly along with the stomach removing it as a drink # Euph - this has to be set to be >=1 otherwise everything will fall apart because of wizden's FP2 shitcode
 
 - type: entity
   id: OrganArachnidKidneys
