@@ -297,3 +297,10 @@
       children:
       - id: ClothingNeckShockCollarCivilian
       - id: RemoteSignaller
+
+- type: entityTable
+  id: LewdCondoms
+  table: !type:GroupSelector
+    children:
+    - id: CondomPackTeal
+    - id: CondomPackPink

@@ -83,6 +83,7 @@
         sound:
           collection: MetalBreak
   - type: InteractionOutline
+  - type: Rotatable # Floof
 
 - type: entity
   parent: HeavyFlatpackBase
@@ -91,7 +92,7 @@
   description: A flatpack used for constructing a small nuclear reactor. Parts sold separately.
   components:
   - type: Flatpack
-    entity: NuclearReactorSmall
+    entity: NuclearReactorSmallEmpty # Floof | Was: NuclearReactorSmall
 
 - type: entity
   parent: HeavyFlatpackBase
