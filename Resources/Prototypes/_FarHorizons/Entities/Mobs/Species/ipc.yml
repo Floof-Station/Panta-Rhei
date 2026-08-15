@@ -92,6 +92,9 @@
   - type: ZombieImmune
   - type: TypingIndicator
     proto: robot
+  #- type: FootstepModifier # Euphoria
+  #  footstepSoundCollection:
+  #    collection: FootstepBorg
   - type: Speech
     speechVerb: Robotic
     speechSounds: Borg
