@@ -80,6 +80,37 @@ entities:
     - type: MetaData
       name: Mesa
     - type: Transform
+    - type: MapLight
+      ambientLightColor: '#06060A'
+    - type: DayNightCycle
+      timeEntries:
+      - colorHex: '#020303'
+      - time: 0.04
+        colorHex: '#02020b'
+      - time: 0.08
+        colorHex: '#312716'
+      - time: 0.17
+        colorHex: '#4E3D23'
+      - time: 0.25
+        colorHex: '#58372D'
+      - time: 0.33
+        colorHex: '#87613D'
+      - time: 0.42
+        colorHex: '#A07742'
+      - time: 0.5
+        colorHex: '#B0966A'
+      - time: 0.58
+        colorHex: '#C7A681'
+      - time: 0.67
+        colorHex: '#7D6244'
+      - time: 0.75
+        colorHex: '#8C6130'
+      - time: 0.83
+        colorHex: '#543521'
+      - time: 0.92
+        colorHex: '#02020b'
+      - time: 1
+        colorHex: '#020303'
     - type: Map
       mapPaused: True
     - type: GridTree
@@ -6290,7 +6321,6 @@ entities:
     - type: ExplosionAirtightGrid
     - type: BecomesStation
       id: Mesa
-    - type: ImplicitRoof
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
         path: /Audio/Effects/alert.ogg
