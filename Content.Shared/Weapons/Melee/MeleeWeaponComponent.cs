@@ -19,7 +19,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// Does this entity do a disarm on alt attack.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool AltDisarm = true;
+    public bool AltDisarm = false; // Euph - why the fuck was it true by default?
 
     /// <summary>
     /// Should the melee weapon's damage stats be examinable.
@@ -70,7 +70,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool ResistanceBypass = false;
-    
+
     /// <summary>
     /// Base damage for this weapon. Can be modified via heavy damage or other means.
     /// </summary>
