@@ -239,9 +239,10 @@
   id: DnaScramblerImplantDespawning
   name: DNA scrambler implant (dissolving)
   description: This implant lets the user randomly change their appearance and name once. The implant will dissolve if not used quickly.
+  categories: [ HideSpawnMenu ]
   components:
-  - type: SubdermalImplant
-    implantAction: ActionActivateDnaScramblerImplant #Do I need to mess with the action too? Will test.
+  #- type: SubdermalImplant
+  #  implantAction: ActionActivateDnaScramblerImplant #Do I need to mess with the action too? Will test.
   - type: TimedDespawn
     lifetime: 120
 
