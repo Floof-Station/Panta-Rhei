@@ -8,10 +8,18 @@
     Mesa:
       stationProto: StandardNanotrasenStation
       components:
+    groups:
+      mining: !type:GridSpawnGroup # Euphoria ; Salvage gets the Hobgoblin!
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/Hobgoblin.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Hobgoblin
       - type: StationEmergencyShuttle #floofstation
         emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/Locomotive_evac.yml #Euphoria
       - type: StationCargoShuttle
         path: /Maps/Floof/Shuttles/Cargo/Hoodoo.yml
+        nameGrid: true
+        name: Hoodoo
       - type: StationNameSetup
         mapNameTemplate: '{0} Mesa station {1}'
         nameGenerator:
