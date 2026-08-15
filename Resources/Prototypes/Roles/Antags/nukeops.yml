@@ -83,8 +83,6 @@
   equipment:
     pocket2: BaseUplinkRadio45TC # DeltaV - removal of armor
     outerClothing: ClothingOuterCoatSyndieCap # DeltaV - removal of armor
-  #inhand:
-  #  - DnaScramblerImplanterDespawning
 
 - type: chameleonOutfit
   id: NukeopsOutfit
@@ -106,7 +104,6 @@
     outerClothing: ClothingOuterCoatSyndieCapArmored # DeltaV - removal of armor
   inhand:
   - NukeOpsDeclarationOfWar
-  #- DnaScramblerImplanterDespawning
 
 - type: chameleonOutfit
   id: NukeopsCommanderOutfit
@@ -129,8 +126,6 @@
     id: SyndiAgentPDA
     belt: ClothingBeltMilitaryWebbingMedFilled
     pocket1: CorpsmanMedicalPouch # Euphoria
-  #inhand:
-  #  - DnaScramblerImplanterDespawning
   storage:
     back:
     - SyndiHypo
@@ -159,5 +154,3 @@
   parent: SyndicateOperativeGearFull
   equipment:
     pocket2: BaseUplinkRadio65TC # DeltaV - more TC less armor
-  #inhand:
-  #  - DnaScramblerImplanterDespawning
