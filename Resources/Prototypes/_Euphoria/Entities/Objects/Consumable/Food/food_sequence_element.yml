@@ -1,8 +1,8 @@
 ﻿- type: foodSequenceElement
-  id: CheeseHotdog
+  id: SausageHotdog
   name: food-sequence-content-cheese
   sprites:
-  - sprite: Objects/Consumable/Food/ingredients.rsi
-    state: cheesewedge
+  - sprite: _Euphotia/Objects/Consumable/Food/hotdog.rsi
+    state: hotdog-bun
   tags:
-  - Cheese
+  - Meat
