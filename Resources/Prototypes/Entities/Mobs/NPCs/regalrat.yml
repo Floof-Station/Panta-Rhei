@@ -104,8 +104,9 @@
   - type: RatKing
     hungerPerArmyUse: 10 # DeltaV changed from 25 to 10. Gets multiplied with a modifier to be dynamic
     hungerPerDomainUse: 50
-  - type: ReplacementAccent # DeltaV - replace mobster accent with mouse speech replacement
-    accent: mouse
+  #- type: ReplacementAccent # DeltaV - replace mobster accent with mouse speech replacement
+  #  accent: mouse
+  - type: MobsterAccent #Euphoria | We want antags to be easier to RP with, not harder.
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak # DeltaV addition
