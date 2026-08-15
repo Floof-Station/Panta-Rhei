@@ -23,6 +23,7 @@
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
     #- id: ClothingHandsKnuckleDustersQM # DeltaV - No weaponry for LO.
+    - id: BunnysuitBoxQuartermaster # Euphoria
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -58,8 +59,8 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
+    - id: BunnysuitBoxCaptain # Euphoria
     # Begin Euphoria additions
-    - id: PrinterDocFlatpack #Corvax - Printer
     - id: ClothingOuterCoatCapTrench # TheDen
     # End Euphoria additions
     - id: HeadSkeleton # A skull to accompany your skeleton crew
@@ -152,7 +153,7 @@
     #- id: WeaponDisabler # DeltaV - There is no reason for the service head to have a disabler.
     - id: ClothingEyesHudCommand
     # Begin Euphoria additions
-    - id: PrinterDocFlatpack #Corvax - Printer
+    - id: BunnysuitBoxHeadOfPersonnel # Euphoria
     # End Euphoria additions
 
 - type: entity
@@ -188,7 +189,7 @@
     - id: MetalFoamGrenade
     # Begin Euphoria additions
     - id: MachinePowerTransmissionLaserFlatpack # Goobstation
-    - id: PrinterDocFlatpack #Corvax - Printer
+    - id: BunnysuitBoxChiefEngineer # Euphoria
     # End Euphoria additions
 
 # Hardsuit table, used for suit storage as well
@@ -249,7 +250,7 @@
     - id: RubberStampCMO
     - id: MedTekCartridge
     # Begin Euphoria additions
-    - id: PrinterDocFlatpack #Corvax - Printer
+    - id: BunnysuitBoxChiefMedicalOfficer # Euphoria
     # End Euphoria additions
 
 # Hardsuit table, used for suit storage as well
@@ -304,7 +305,7 @@
     - id: RubberStampRd
     # Begin Euphoria additions
     - id: EncryptionKeyBinary
-    - id: PrinterDocFlatpack #Corvax - Printer
+    - id: BunnysuitBoxResearchDirector # Euphoria
     # End Euphoria additions
 
 # Hardsuit table, used for suit storage as well
@@ -370,7 +371,7 @@
     #- id: WantedListCartridge # DeltaV - replaced by secwatch
     - id: DrinkHosFlask
     # Begin Euphoria additions
-    - id: PrinterDocFlatpack #Corvax - Printer
+    - id: BunnysuitBoxHoS
     # End Euphoria additions
 
 # Hardsuit table, used for suit storage as well

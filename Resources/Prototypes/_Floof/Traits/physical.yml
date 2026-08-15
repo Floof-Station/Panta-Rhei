@@ -189,7 +189,7 @@
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
-        collection: AlienClaw
+        path: /Audio/Weapons/pierce.ogg
       animation: WeaponArcClaw
       damage:
         types:
@@ -219,7 +219,7 @@
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
-        collection: AlienClaw
+        path: /Audio/Weapons/pierce.ogg
       animation: WeaponArcClaw
       damage:
         types:

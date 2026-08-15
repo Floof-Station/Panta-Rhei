@@ -1529,6 +1529,20 @@
   groupBy: "smokeables"
 
 - type: loadout
+  id: CigarBluespace
+  storage:
+    back:
+    - CigarBluespace
+  groupBy: "smokeables"
+
+- type: loadout
+  id: DelightsPackMixed
+  storage:
+    back:
+    - DelightsPackMixed
+  groupBy: "smokeables"
+
+- type: loadout
   id: CrowbarRed
   storage:
     back:
@@ -1782,6 +1796,20 @@
     back:
     - WhipTeal
   groupBy: "lewd"
+
+- type: loadout
+  id: CondomPackTeal
+  storage:
+    back:
+    - CondomPackTeal
+  groupBy: "condom"
+
+- type: loadout
+  id: CondomPackPink
+  storage:
+    back:
+    - CondomPackPink
+  groupBy: "condom"
 
 # eyes/glasses
 - type: loadout

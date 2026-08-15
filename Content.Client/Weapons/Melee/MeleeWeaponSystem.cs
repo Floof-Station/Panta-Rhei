@@ -140,7 +140,7 @@ public sealed partial class MeleeWeaponSystem : SharedMeleeWeaponSystem
         if (altDown == BoundKeyState.Down)
         {
             // If it's an unarmed attack then do a disarm
-            if (weapon.AltDisarm && weaponUid == entity)
+            if (weapon.AltDisarm)// && weaponUid == entity) // Euph - remove the useless check preventing armed disarm
             {
                 ClientDisarm(entity, mousePos, coordinates);
                 return;

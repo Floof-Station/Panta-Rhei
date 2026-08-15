@@ -96,9 +96,10 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
-          delay: 1.6
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
+          delay: 6.4 # Euph - HV wires heal less but take less time
           damage:
             types:
               Heat: -10
@@ -175,9 +176,10 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
-          delay: 1.6
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
+          delay: 3.2  # Euph - LV wires heal less but take less time
           damage:
             types:
               Heat: -5
@@ -253,9 +255,10 @@
     healingDefinitions:
       - allowedTags: [ IPC ]
         healing:
-          damageContainers:
-            - Biological
-          delay: 1.6
+          damageContainers: # Euph
+          - Robotic
+          - Silicon
+          delay: 2 # Euph - LV wires heal less but take less time
           damage:
             types:
               Heat: -3
