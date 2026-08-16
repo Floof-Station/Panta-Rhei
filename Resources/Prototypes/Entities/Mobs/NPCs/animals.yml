@@ -374,7 +374,7 @@
 
 - type: entity
   name: cockroach
-  parent: SimpleMobBase
+  parent: [SimpleMobBase, DVNodeCrawler] # Floofstation - add vent crawling
   id: MobCockroach
   description: This station is just crawling with bugs.
   components:

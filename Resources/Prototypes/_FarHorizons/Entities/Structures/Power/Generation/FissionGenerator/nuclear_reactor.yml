@@ -268,7 +268,15 @@
       - !type:PlaySoundBehavior
         sound:
           collection: MetalBreak
-
+# Floof start
+- type: entity
+  id: NuclearReactorSmallEmpty
+  parent: NuclearReactorSmall
+  suffix: Empty
+  components:
+  - type: NuclearReactor
+    prefab: ReactorPrefabEmpty
+# Floof end
 - type: entity
   id: NuclearReactorSmallRandom
   parent: NuclearReactorSmall

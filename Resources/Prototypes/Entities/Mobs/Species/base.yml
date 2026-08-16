@@ -172,6 +172,7 @@
     angle: 30
     animation: WeaponArcFist
     attackRate: 1
+    altDisarm: true # Euph - altDisarm is false by default. Species can disarm, mobs wide-swing instead.
     damage:
       types:
         Blunt: 5
@@ -362,7 +363,7 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    
+
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
