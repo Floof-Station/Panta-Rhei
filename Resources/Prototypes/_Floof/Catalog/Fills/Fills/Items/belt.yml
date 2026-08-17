@@ -141,6 +141,14 @@
         - id: Screwdriver
         - id: Welder
         - id: NetworkConfigurator
+  - type: ItemSlots
+    slots:
+      jaunter:
+        name: clothing-belt-jaunter
+        whitelist:
+          tags:
+          - Jaunter
+        insertOnInteract: true
 
 - type: entity
   id: ClothingBeltMercWebbingSalvage
@@ -158,3 +166,11 @@
         - id: Screwdriver
         - id: Welder
         - id: NetworkConfigurator
+  - type: ItemSlots
+    slots:
+      jaunter:
+        name: clothing-belt-jaunter
+        whitelist:
+          tags:
+          - Jaunter
+        insertOnInteract: true
