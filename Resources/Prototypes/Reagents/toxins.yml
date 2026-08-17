@@ -388,7 +388,6 @@
   color: "#FA6464"
   metabolisms:
     Poison:
-      metabolismRate: 0.05 # Euphoria - Dramatically reduced metabolism rate to allow non-extreme allergies to build up histamine. Anti-histamine chems will also be more useful. 
       effects:
       - !type:HealthChange
         probability: 0.1
@@ -396,14 +395,7 @@
           groups:
             #Brute: 1 #Euphoria - remove brute damage to stop allergies causing limb loss
           types:
-            Poison: 0.75 #Euphoria - Reduced damage to compensate for slower metabolism.
-      - !type:AdjustReagent
-        reagent: Histamine
-        amount: -20
-        conditions:
-        - !type:ReagentCondition
-          reagent: Histamine # Purges Histamine if dosage is too high. Should "soft cap" at 100u. 80u is definitely enough to kill somebody without help.
-          min: 100
+            Poison: 1
       # todo: cough, sneeze
       - !type:HealthChange
         conditions:
@@ -413,9 +405,9 @@
         damage:
           groups:
             #Brute: 1 #Euphoria - remove brute damage to stop allergies causing limb loss
-            Airloss: 1 #Euphoria - Reduced damage to compensate for slower metabolism. Patient and Doctors have more time to react.
+            Airloss: 2
           types:
-            Poison: 1 #Euphoria - Reduced damage to compensate for slower metabolism. Patient and Doctors have more time to react.
+            Poison: 2
       - !type:Emote
         conditions:
         - !type:ReagentCondition # Start Change
