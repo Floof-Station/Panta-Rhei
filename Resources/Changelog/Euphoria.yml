@@ -5052,3 +5052,108 @@ Entries:
         Edge and Pebble.
   id: 631
   time: '2026-08-14T13:58:49.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: The Syndicate channel will no longer show up in examines.
+  id: 632
+  time: '2026-08-15T03:59:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: The language menu now allows you to reorder languages.
+    - type: Add
+      message: >-
+        You can now use index-based language prefixes. For example, typing "^1
+        hello" will send "Hello." using the first language in the list of
+        languages that you can speak. Typing "^2; hello" will send "Hello." over
+        the common radio using the second language.
+    - type: Fix
+      message: >-
+        Language prefixes now correctly display in the chat, and using an
+        invalid prefix will result in your message being ignored (to avoid
+        breaking immersion). 
+    - type: Fix
+      message: Entities without LanguageSpeaker should now understand everyone.
+  id: 633
+  time: '2026-08-15T04:11:26.0000000+00:00'
+- author: Aikakakah
+  changes:
+    - type: Tweak
+      message: Worn rings now show on character sprites
+  id: 634
+  time: '2026-08-15T04:12:40.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Ported the RPD (Rapid Pipe Dispenser)
+  id: 635
+  time: '2026-08-15T04:14:14.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Resomi now explicitly use displacement maps for underwear and
+        outerclothing. This means that most items will hug resomi bodies more
+        closely.
+  id: 636
+  time: '2026-08-16T05:54:37.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: >-
+        New Rule 11.9: Dorms is a antagonist free zone, no antag-related
+        activities of any kind may take place within dorms. If you are unsure if
+        your scene or idea is antagonist related, a-help first.
+    - type: Add
+      message: >-
+        New Rule 10.6: Security may breach dorms in regards to SOP related
+        matters if it is found someone from a previous crime is hiding within
+        (ERP'ing or in a scene), if this needs to be done. A-help first to get
+        admin assistance so you have the correct dorm.
+    - type: Tweak
+      message: >-
+        Rule 10.4 to read as: Sectexting or better known as security power
+        gaming is not tolerated. Security falls under the same purview as
+        antagonists. Attempt to roleplay, speak with, and follow SOP in regards
+        to ROE and general situations. Playing to win goes against the rules.
+  id: 637
+  time: '2026-08-16T06:43:00.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Hitman now only targets Marked individuals.
+  id: 638
+  time: '2026-08-16T11:19:27.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Tweak
+      message: 'Re-enabled paramedic voidsuit siren. '
+  id: 639
+  time: '2026-08-16T11:21:46.0000000+00:00'
+- author: torturedbymemes
+  changes:
+    - type: Tweak
+      message: IPCs no longer have heelies.
+  id: 640
+  time: '2026-08-16T11:24:37.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: Histamine deals less damage per second and metabolizes much more slowly.
+  id: 641
+  time: '2026-08-16T12:11:09.0000000+00:00'
+- author: torturedbymemes
+  changes:
+    - type: Fix
+      message: Certain markings on IPCs should work now.
+  id: 642
+  time: '2026-08-16T12:13:23.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Changed Scurret crate from 25,000 to 10,000. Also made Animal translator
+        translate Scurret instead of ScugSign.
+  id: 643
+  time: '2026-08-16T12:13:52.0000000+00:00'

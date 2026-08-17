@@ -158,9 +158,13 @@
     - id: GasAnalyzer
     - id: MedkitOxygenFilled
     - id: HolofanProjector
-    - id: RCD
+    - id: DoorRemoteFirefight # DeltaV - Re-added fire-fighting remote.
+    #- id: RCD # Floofstation - atmos doesn't need the rcd now
     - id: RCDAmmo
     - id: AirGrenade
+    - id: ClothingBeltUtilityAtmos # Euphoria
+    - id: AccessConfigurator # EE
+    - id: RPD # Floofstation - atmos gets the rpd not rcd
     # Begin Euphoria additions
     - id: ClothingBeltUtilityAtmos
     - id: AccessConfigurator
