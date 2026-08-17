@@ -182,7 +182,7 @@
         - NamesFakeHumanFirst
         - NamesFakeHumanLast
         nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomHumanoidAppearance #Euphoria, removing randomization so people can play their characters. Giving a temporary DNA scrambler instead. 
+      #  randomizeName: false
       mindRoles:
       - MindRoleHitman
