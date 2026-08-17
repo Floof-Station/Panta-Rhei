@@ -45,8 +45,8 @@
         - NamesFakeHumanFirst
         - NamesFakeHumanLast
         nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomHumanoidAppearance # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -89,8 +89,8 @@
         - NamesFakeHumanFirst
         - NamesFakeHumanLast
         nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomHumanoidAppearance # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
@@ -133,8 +133,8 @@
         - NamesFakeHumanFirst
         - NamesFakeHumanLast
         nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomHumanoidAppearance # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
