@@ -155,8 +155,8 @@
     message: psionic-power-precognition-hitman-spawn-result-message
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/Professional.yml
-  - type: AntagSpawner
-    prototype: MobHuman
+  #- type: AntagSpawner #Euphoria | Making it so ghost roles aren't forced to be human.
+  #  prototype: MobHuman
   - type: AntagObjectives
     objectives:
     - HitmanSurviveObjective
@@ -176,12 +176,12 @@
       startingGear: HitmanGhostGear
       roleLoadout:
       - RoleSurvivalStandard
-      components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
+      #components:
+      #- type: RandomMetadata
+      #  nameSegments:
+      #  - NamesFakeHumanFirst
+      #  - NamesFakeHumanLast
+      #  nameFormat: name-format-standard
       #- type: RandomHumanoidAppearance #Euphoria, removing randomization so people can play their characters. Giving a temporary DNA scrambler instead. 
       #  randomizeName: false
       mindRoles:
