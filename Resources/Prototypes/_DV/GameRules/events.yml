@@ -224,9 +224,9 @@
         - NamesFakeHumanFirst
         - NamesFakeHumanLast
         nameFormat: name-format-standard
-      #- type: RandomHumanoidAppearance #Euphoria | Giving people option of being their character for Fugitive, by giving them optional DNA scrambler.
-      #  randomizeName: false
-      #  keepGender: true
+      - type: RandomHumanoidAppearance
+        randomizeName: false
+        keepGender: true
       - type: EmitSoundOnSpawn # fell out of the ceiling
         sound: /Audio/Effects/clang.ogg
       mindRoles:
