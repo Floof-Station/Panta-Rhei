@@ -7,6 +7,9 @@
   - type: Sprite
     sprite: _Euphoria/Objects/Consumable/Food/burger.rsi
     state: uncooked-bun
+  - type: Construction
+    graph: DoughBuns
+    node: burgerBun
   - type: SolutionContainerManager
     solutions:
       food:

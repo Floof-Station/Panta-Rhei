@@ -8,6 +8,9 @@
     sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
     layers:
     - state: uncooked-hotdog-bun
+  - type: Construction
+    graph: DoughBuns
+    node: hotdogBun
   - type: SolutionContainerManager
     solutions:
       food:
