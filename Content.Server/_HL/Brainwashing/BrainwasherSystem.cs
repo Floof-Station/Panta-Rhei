@@ -73,7 +73,7 @@ public sealed class BrainwasherSystem : SharedBrainwasherSystem
             _flashSystem.FlashedKey,
             TimeSpan.FromSeconds(5),
             true);
-        _stun.TrySlowdown(user, TimeSpan.FromSeconds(5), true, 0, 0);
+        //_stun.TrySlowdown(user, TimeSpan.FromSeconds(5), true, 0, 0);
         EnsureComp<BrainwashedComponent>(user, out var newBrainwashedComponent);
         _sharedBrainwashedSystem.SetCompulsions(user, newBrainwashedComponent, component.Compulsions);
         var brainwashedEvent = new BrainwashedEvent();

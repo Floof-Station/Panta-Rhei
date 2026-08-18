@@ -15,11 +15,12 @@
   name: View Compulsions
   description: Review the compulsions in control of your mind.
   components:
-    - type: InstantAction
+    - type: Action
+      priority: -3
       itemIconStyle: NoItem
-      checkCanInteract: false
-      checkConsciousness: false
       icon:
         sprite: Interface/Actions/actions_ai.rsi
         state: state_laws
+      useDelay: 0.5
+    - type: InstantAction
       event: !type:OpenCompulsionsMenuAction
