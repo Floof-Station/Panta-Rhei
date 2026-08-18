@@ -1,0 +1,35 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="You've been brainwashed!"
+    MinSize="600 450"
+    MaxSize="600 450">
+    <BoxContainer
+        Orientation="Vertical"
+        Margin="0">
+        <BoxContainer
+            HorizontalAlignment="Center"
+            Orientation="Vertical"
+            VerticalExpand="True"
+            Margin="0">
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="[bold]You have been brainwashed, hypnotized, or mind-controlled![/bold] AKA you are compelled, or have compulsions. Similar rules apply as the [color=cyan]silicon laws[/color] rules. Your compulsions are server rules, with minor exceptions. Also alike silicons, you may deny truly unreasonable requests/orders. No one may stop you from leaving to go to cryosleep and log off."/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="However being 'compelled' has it's own quirks and behaviours. You [color=#DD0000][bold]CANNOT[/bold][/color] tell you are under any form of mind control, or that anything is even remotely amiss. Your memories of being brainwashed, hypnotised, or mind-controlled are [color=#DD0000]completely missing[/color]. Every compulsion you have is—to you—entirely [italic]your[/italic] idea and thoughts."/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="The only exception to these rules, is if the compulsions themselves allow it, or require it. Compulsions may make it so you are aware you're under influence. Compulsions may unshield hidden or erased memories."/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="[font size=8]P.S. Regardless of your consent settings or consent given, consent can be withdrawn at any time.[/font]"/>
+        </BoxContainer>
+        <Button
+            Name="AcknowledgeButton"
+            Text="Sounds Good!"
+            HorizontalAlignment="Center"
+            Margin="10"
+            MinWidth="150" />
+    </BoxContainer>
+</controls:FancyWindow>
