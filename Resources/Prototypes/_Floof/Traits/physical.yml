@@ -602,3 +602,37 @@
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 0.75 #-25%
 # =================================================== #
+
+- type: trait
+  id: Nosebleed
+  name: trait-nosebleed-name
+  description: trait-nosebleed-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed # uses the default
+
+- type: trait
+  id: NosebleedFrequent
+  name: trait-nosebleed-frequent-name
+  description: trait-nosebleed-frequent-description
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed
+      minDelay: 300 # bleeds more often, 5 minutes
+      maxDelay: 1800 # 30 minutes in seconds
