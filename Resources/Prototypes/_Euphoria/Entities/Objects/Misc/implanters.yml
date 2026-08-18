@@ -1,0 +1,10 @@
+- type: entity
+  id: DnaScramblerImplanterDespawning
+  name: optional DNA scrambler implanter (despawning)
+  parent: BaseImplantOnlyImplanterSyndi
+  description: This optional implanter will give you the ability to scramble your DNA and appearance, but the implanter and its ability must be used within two minutes, or it will dissolve into dust.
+  components:
+  - type: Implanter
+    implant: DnaScramblerImplantDespawning
+  - type: TimedDespawn
+    lifetime: 120
