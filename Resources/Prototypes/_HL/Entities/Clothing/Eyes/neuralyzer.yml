@@ -1,0 +1,25 @@
+- type: entity
+  parent: [ClothingEyesBase]
+  id: ClothingEyesNeuralyzer
+  name: Neuralyzer
+  description: A flash based configuration and installation tool for the P7T113L Cognitive Governor.
+  components:
+    - type: Sprite
+      sprite: Clothing/Eyes/Hud/syndagent.rsi
+    - type: Clothing
+      sprite: Clothing/Eyes/Hud/syndagent.rsi
+    - type: Brainwasher
+
+- type: entity
+  id: ActionOpenCompulsionsMenu
+  name: View Compulsions
+  description: Review the compulsions in control of your mind.
+  components:
+    - type: InstantAction
+      itemIconStyle: NoItem
+      checkCanInteract: false
+      checkConsciousness: false
+      icon:
+        sprite: Interface/Actions/actions_ai.rsi
+        state: state_laws
+      event: !type:OpenCompulsionsMenuAction
