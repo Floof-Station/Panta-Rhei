@@ -90,16 +90,20 @@ public sealed partial class ProfilePreviewSpriteView
 
         var spawnSys = EntMan.System<StationSpawningSystem>();
 
-        foreach (var group in roleLoadout.SelectedLoadouts.Values)
-        {
-            foreach (var loadout in group)
-            {
-                if (!_prototypeManager.Resolve(loadout.Prototype, out var loadoutProto))
-                    continue;
+        // Floofstation - replaced the below shitcode with a call to StationSpawningSystem to avoid code duplication
+        if (_prototypeManager.TryIndex(roleLoadout.Role, out var roleLoadoutPrototype))
+            spawnSys.EquipRoleLoadout(PreviewDummy, roleLoadout, roleLoadoutPrototype);
 
-                spawnSys.EquipStartingGear(PreviewDummy, loadoutProto);
-            }
-        }
+        // foreach (var group in roleLoadout.SelectedLoadouts.Values)
+        // {
+        //     foreach (var loadout in group)
+        //     {
+        //         if (!_prototypeManager.Resolve(loadout.Prototype, out var loadoutProto))
+        //             continue;
+        //
+        //         spawnSys.EquipStartingGear(PreviewDummy, loadoutProto);
+        //     }
+        // }
     }
 
     /// <summary>

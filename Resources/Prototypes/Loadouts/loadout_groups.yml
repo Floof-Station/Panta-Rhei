@@ -151,7 +151,7 @@
 # Command
 - type: loadoutGroup
   id: CaptainHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-captain-head
   minLimit: 0
   loadouts:
@@ -212,7 +212,7 @@
 
 - type: loadoutGroup
   id: HoPHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-hop-head
   minLimit: 0
   loadouts:
@@ -465,7 +465,7 @@
 
 - type: loadoutGroup
   id: BartenderHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-bartender-head
   minLimit: 0
   loadouts:
@@ -516,7 +516,7 @@
 
 - type: loadoutGroup
   id: ChefHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-chef-head
   minLimit: 0
   loadouts:
@@ -619,7 +619,7 @@
 
 - type: loadoutGroup
   id: ChaplainHead
-  parent: [EuphoriaChaplainHead, FloofHats, AssistantHead] # floofstation
+  parent: [EuphoriaChaplainHead, AssistantHead] # floofstation
   name: loadout-group-chaplain-head
   minLimit: 0
   loadouts:
@@ -692,7 +692,7 @@
 
 - type: loadoutGroup
   id: JanitorHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-janitor-head
   minLimit: 0
   loadouts:
@@ -734,7 +734,7 @@
 
 - type: loadoutGroup
   id: BotanistHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-botanist-head
   minLimit: 0
   loadouts:
@@ -779,7 +779,7 @@
 
 - type: loadoutGroup
   id: ClownHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-clown-head
   minLimit: 0
   loadouts:
@@ -843,7 +843,7 @@
 
 - type: loadoutGroup
   id: MimeHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-mime-head
   minLimit: 0
   loadouts:
@@ -991,7 +991,7 @@
 # Cargo
 - type: loadoutGroup
   id: QuartermasterHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-quartermaster-head
   minLimit: 0
   loadouts:
@@ -1049,7 +1049,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianHead
-  parent: [FloofCargotechHats, FloofHats] # floofstation
+  parent: [FloofCargotechHats, AssistantHead] # floofstation
   name: loadout-group-cargo-technician-head
   minLimit: 0
   loadouts:
@@ -1138,7 +1138,7 @@
 # Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
-  parent: [FloofCeHats, AtmosphericTechnicianHead, FloofHats] # floofstation
+  parent: [FloofCeHats, AtmosphericTechnicianHead, AssistantHead] # floofstation
   name: loadout-group-chief-engineer-head
   minLimit: 0
   loadouts:
@@ -1222,7 +1222,7 @@
 
 - type: loadoutGroup
   id: StationEngineerHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-station-engineer-head
   minLimit: 0
   loadouts:
@@ -1358,7 +1358,7 @@
 # Science
 - type: loadoutGroup
   id: ResearchDirectorHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-research-director-head
   minLimit: 0
   loadouts:
@@ -1418,7 +1418,7 @@
 
 - type: loadoutGroup
   id: ScientistHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
@@ -1528,7 +1528,7 @@
 # Security
 - type: loadoutGroup
   id: HeadofSecurityHead
-  parent: [Shoalenforcerhoshelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhoshelmet, AssistantHead] # floofstation
   name: loadout-group-head-of-security-head
   minLimit: 0
   loadouts:
@@ -1601,7 +1601,7 @@
 
 - type: loadoutGroup
   id: WardenHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-warden-head
   minLimit: 0
   loadouts:
@@ -1643,7 +1643,7 @@
 
 - type: loadoutGroup
   id: SecurityHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-security-head
   minLimit: 0
   loadouts:
@@ -1727,7 +1727,7 @@
 
 - type: loadoutGroup
   id: DetectiveHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-detective-head
   minLimit: 0
   loadouts:
@@ -1799,7 +1799,7 @@
 # Medical
 - type: loadoutGroup
   id: ChiefMedicalOfficerHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-chief-medical-officer-head
   minLimit: 0
   loadouts:
@@ -1870,7 +1870,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-medical-doctor-head
   minLimit: 0
   loadouts:
@@ -2063,7 +2063,7 @@
 
 - type: loadoutGroup
   id: ParamedicHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-paramedic-head
   minLimit: 0
   loadouts:
@@ -2147,6 +2147,7 @@
 
 - type: loadoutGroup
   id: ReporterHead
+  parent: AssistantHead # Euph
   name: loadout-group-reporter-head
   minLimit: 0
   loadouts:
@@ -2154,6 +2155,7 @@
 
 - type: loadoutGroup
   id: ReporterOuterClothing
+  parent: PassengerOuterClothing # Euph
   name: loadout-group-reporter-outerclothing
   minLimit: 0
   loadouts:

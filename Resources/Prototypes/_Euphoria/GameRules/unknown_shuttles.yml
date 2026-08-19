@@ -1,0 +1,31 @@
+# Delta-v seems to have nuked their unknown shuttle table, so we make our own
+- type: entityTable
+  id: UnknownShuttlesTable
+  table: !type:GroupSelector
+    children:
+    - id: UnknownShuttleSampleCollector
+    - id: UnknownShuttleCasinoManager
+
+- type: entity
+  id: UnknownShuttleSampleCollector
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    maxOccurrences: 1
+    startAnnouncement:  station-event-unknown-shuttle-incoming
+  - type: PrecognitionResult
+    message: psionic-power-precognition-unknown-shuttle-sample-collector-result-message
+  - type: LoadMapRule
+    gridPath: /Maps/Floof/Shuttles/Event/SampleCollector/samplecollector.yml
+
+- type: entity
+  id: UnknownShuttleCasinoManager
+  parent: BaseUnknownShuttleRule
+  components:
+  - type: StationEvent
+    maxOccurrences: 1
+    startAnnouncement:  station-event-unknown-shuttle-incoming
+  - type: PrecognitionResult
+    message: psionic-power-precognition-unknown-shuttle-casino
+  - type: LoadMapRule
+    gridPath: /Maps/Floof/Shuttles/Event/Casino/casino_manager.yml

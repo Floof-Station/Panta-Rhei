@@ -55,7 +55,7 @@ public sealed class HumanoidProfileSystem : EntitySystem
     private void OnExamined(Entity<HumanoidProfileComponent> ent, ref ExaminedEvent args)
     {
         var identity = Identity.Entity(ent, EntityManager);
-        var species = GetSpeciesRepresentation(ent.Comp.Species).ToLower();
+        var species = ent.Comp.CustomSpecieName != null ? ent.Comp.CustomSpecieName.ToLower() : GetSpeciesRepresentation(ent.Comp.Species).ToLower(); // Euph - csn
         var age = GetAgeRepresentation(ent.Comp.Species, ent.Comp.Age);
 
         args.PushText(Loc.GetString("humanoid-appearance-component-examine", ("user", identity), ("age", age), ("species", species)));

@@ -57,6 +57,7 @@ public sealed partial class HumanoidProfileEditor
             }
         }
 
+        Traits.ResetConditions(); //Euphoria | Clears previous profile's conditions.
         Traits.SetSelectedTraits(selectedTraits);
         Traits.UpdateConditions(Profile);
     }

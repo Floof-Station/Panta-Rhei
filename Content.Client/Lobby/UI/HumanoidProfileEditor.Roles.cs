@@ -92,6 +92,8 @@ public sealed partial class HumanoidProfileEditor
             ReloadPreview();
         };
 
+        OpenLoadoutFloof(jobProto, roleLoadout, roleLoadoutProto, session, collection); // Floofstation
+
         JobOverride = jobProto;
         ReloadPreview();
 

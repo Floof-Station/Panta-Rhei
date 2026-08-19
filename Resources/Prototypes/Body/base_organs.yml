@@ -18,9 +18,20 @@
   id: OrganBase
   name: organ
   abstract: true
-  parent: BaseItem
+  parent: [BaseItem, BaseOrganRotting] # Euph - organs can rot
   components:
   - type: Organ
+  # Begin Euphoria additions - Port Goob handling SFX
+  - type: EmitSoundOnPickup
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnDrop
+    sound:
+      collection: OrganInteraction
+  - type: EmitSoundOnLand
+    sound:
+      collection: OrganInteraction
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase
@@ -308,6 +319,12 @@
   - type: Sprite
     layers:
     - state: appendix
+  #Start Euphoria changes
+  - type: FoodSequenceElement
+    entries:
+      Burger: Appendix
+      Taco: Appendix
+  #End Euphoria changes
 
 - type: entity
   parent: OrganBase

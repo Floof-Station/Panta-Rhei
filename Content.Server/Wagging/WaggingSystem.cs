@@ -48,11 +48,11 @@ public sealed class WaggingSystem : EntitySystem
     private void OnWaggingMapInit<T>(Entity<WaggingComponent> ent, ref T args)
     {
         // Floofstation - this event can run before CompInit, at which point AddAction would throw an exception.
-        if (!Initialized(uid))
+        if (!Initialized(ent))
             return;
 
         // Floofstation - remove the old action and don't add the action if the entity can't wag
-        _actions.RemoveAction(ent, ref ent.Comp.ActionEntity);
+        _actions.RemoveAction(ent.Comp.ActionEntity);
         if (!CanWag(ent))
             return;
 
@@ -110,8 +110,6 @@ public sealed class WaggingSystem : EntitySystem
                 if (!TryGetNewMarkingId(ent!, currentMarkingId, out var newMarkingId))
                     continue;
 
-
-
                 layerMarkings[i] = new Marking(newMarkingId, layerMarkings[i].MarkingColors);
             }
         }
@@ -124,7 +122,12 @@ public sealed class WaggingSystem : EntitySystem
     }
 
     // Floofstation section - extracted from TryToggleWagging
-    public bool TryGetNewMarkingId(Entity<WaggingComponent> ent, ProtoId<MarkingPrototype> currentMarkingId, out string newMarkingId, bool silent = false, bool? isWagging = null)
+    public bool TryGetNewMarkingId(
+        Entity<WaggingComponent> ent,
+        ProtoId<MarkingPrototype> currentMarkingId,
+        out ProtoId<MarkingPrototype> newMarkingId,
+        bool silent = false,
+        bool? isWagging = null)
     {
         isWagging ??= ent.Comp.Wagging;
         newMarkingId = string.Empty;
@@ -180,6 +183,5 @@ public sealed class WaggingSystem : EntitySystem
 
         return false;
     }
-    // Floofstation section end
     // Floofstation section end
 }

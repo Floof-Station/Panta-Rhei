@@ -29,4 +29,9 @@ public sealed partial class HumanoidProfileComponent : Component
 
     [DataField, AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species = HumanoidCharacterProfile.DefaultSpecies;
+
+    // Begin Euphoria additions
+    [DataField, AutoNetworkedField]
+    public string CustomSpecieName = "";
+    // End Euphoria additions
 }

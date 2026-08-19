@@ -5,6 +5,7 @@
   - type: Sprite
     layers:
     # Torso
+    - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
     # Head
@@ -21,25 +22,39 @@
     # Underwear & clothing
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: ["jumpsuit"]
+    # - map: ["jumpsuit"] # Floof - below
 
     # Extremities
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: ["enum.HumanoidVisualLayers.LHand"]
-    - map: ["enum.HumanoidVisualLayers.RHand"]
+    # Floof - below
+    # - map: ["enum.HumanoidVisualLayers.LHand"]
+    # - map: ["enum.HumanoidVisualLayers.RHand"]
+
+    # Begin Euphoria changes - clothing undergarments
+    - map: [ "undergarmentSocks" ]
+    - map: [ "undergarmentTop" ]
+    - map: [ "undergarmentBottom" ]
+
+    - map: [ "shoes" ] # moved above jumpsuit
+    - map: [ "jumpsuit" ] # moved below hands and feet
+
+    - map: ["enum.HumanoidVisualLayers.LHand"] # moved to keep above jumpsuit (feet are intentionally kept below it)
+    - map: ["enum.HumanoidVisualLayers.RHand"] # ^
+    # End Euphoria changes
 
     # Stuff that goes over the body but below equipment
     - map: ["enum.HumanoidVisualLayers.Overlay"]
 
     # More equipment
     - map: [ "gloves" ]
-    - map: [ "shoes" ]
+    # - map: [ "shoes" ] # Floof - above
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    - map: [ "belt" ]
+    # - map: [ "belt" ] # Floof - below
     - map: [ "id" ]
     - map: [ "outerClothing" ]
+    - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation - some tails may want to draw over outer clothing
     - map: [ "back" ]
     - map: [ "neck" ]
     - map: [ "suitstorage" ]
@@ -50,12 +65,14 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
     - map: [ "enum.HumanoidVisualLayers.NeckFluff" ] # Delta V - Neck Fluff Mapping
 
     # Stuff that goes in front of stuff that goes in front of equipment
     - map: [ "mask" ]
+    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

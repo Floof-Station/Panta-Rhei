@@ -1,12 +1,10 @@
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Numerics;
 using Content.Client._CD.Humanoid;
+using Content.Client._CD.Records.UI;
 using Content.Client.Humanoid;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
+using Content.Shared._DV.Body.Systems;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -24,21 +22,6 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Direction = Robust.Shared.Maths.Direction;
-using Content.Client._CD.Records.UI;
-using Content.Client.Lobby.UI.Loadouts;
-using Content.Client.Lobby.UI.Roles;
-using Content.Client.UserInterface.Systems.Guidebook;
-using Content.Shared._CD.Records; // CD - Character Records
-using Content.Shared._DV.Body.Systems;
-using Content.Shared._DV.Species;
-using Content.Shared._DV.Traits;
-using Content.Shared.Clothing;
-using Content.Shared.Guidebook;
-using Content.Shared.Humanoid.Prototypes;
-using Content.Shared.Preferences.Loadouts;
-using Content.Shared.Roles;
-using Robust.Client.Graphics;
-using Robust.Shared.Utility; // DV - Traits
 
 namespace Content.Client.Lobby.UI
 {
@@ -84,9 +67,6 @@ namespace Content.Client.Lobby.UI
         private float _defaultHeight = 1f;
 
         private readonly RecordEditorGui _recordsTab;
-
-        // CD: Allergies editor
-        private readonly AllergyPicker _allergiesTab;
         // End CD - Station Records
 
         public bool IsDirty

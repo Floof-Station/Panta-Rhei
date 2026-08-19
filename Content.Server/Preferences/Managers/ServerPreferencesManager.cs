@@ -11,6 +11,7 @@ using Content.Shared._DV.Traits; // Delta-V Hidden species
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Construction.Prototypes;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -164,6 +165,9 @@ namespace Content.Server.Preferences.Managers
                         groupLoadouts.Add(new Loadout()
                         {
                             Prototype = profLoadout.LoadoutName,
+                            NameOverride = profLoadout.NameOverride, // Floofstation
+                            DescriptionOverride = profLoadout.DescriptionOverride, // Floofstation
+                            ColorOverride = profLoadout.ColorOverride, // Floofstation
                         });
                     }
                 }
@@ -175,12 +179,20 @@ namespace Content.Server.Preferences.Managers
             var cdRecords = profile.CDProfile?.CharacterRecords != null
                 ? RecordsSerialization.Deserialize(profile.CDProfile.CharacterRecords, profile.CDProfile.CharacterRecordEntries)
                 : PlayerProvidedCharacterRecords.DefaultRecords();
+
+            // Euph - CD allergies
+            var cdAllergies = profile.CDProfile?.CharacterAllergies != null
+                ? profile.CDProfile.CharacterAllergies
+                    .Select(allergy => (allergy.Allergen, FixedPoint2.FromCents(allergy.Intensity)))
+                    .ToDictionary()
+                : new();
             // End CD - Character Records
 
             return new HumanoidCharacterProfile(
                 profile.CharacterName,
                 profile.FlavorText,
                 species,
+                profile.CustomSpecieName, // Euph
                 profile.Age,
                 sex,
                 gender,
@@ -197,7 +209,8 @@ namespace Content.Server.Preferences.Managers
                 traits.ToHashSet(),
                 loadouts,
                 profile.CDProfile?.Height ?? 1.0f, // CD - Character Records
-                cdRecords // CD - Character Recordss
+                cdRecords, // CD - Character Recordss
+                cdAllergies // CD - Allergies // Euph
             );
         }
 
