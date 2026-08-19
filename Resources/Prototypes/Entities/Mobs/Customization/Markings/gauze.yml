@@ -1,9 +1,7 @@
 - type: marking
   id: GauzeLefteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
+  groupWhitelist: [Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -16,9 +14,7 @@
 - type: marking
   id: GauzeLefteyePad
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -31,9 +27,7 @@
 - type: marking
   id: GauzeRighteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
+  groupWhitelist: [Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -46,9 +40,7 @@
 - type: marking
   id: GauzeRighteyePad
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -61,9 +53,7 @@
 - type: marking
   id: GauzeBlindfold
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
+  groupWhitelist: [Human, Arachnid, Felinid, Oni, Harpy, Vulpkanin, Rodentia, Thaven, Feroxi] # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -76,9 +66,7 @@
 - type: marking
   id: GauzeShoulder
   bodyPart: Chest
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Avali
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Avali] # Delta V - Felinid-Avali
   coloring:
     default:
       type:
@@ -91,9 +79,7 @@
 - type: marking
   id: GauzeStomach
   bodyPart: Chest
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Felinid-Feroxi
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Thaven, Feroxi] # Delta V - Felinid-Feroxi
   coloring:
     default:
       type:
@@ -106,9 +92,7 @@
 - type: marking
   id: GauzeUpperArmRight
   bodyPart: RArm
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -120,10 +104,8 @@
 
 - type: marking
   id: GauzeLowerArmRight
-  bodyPart: RArm, RHand
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  bodyPart: RHand
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -135,10 +117,8 @@
 
 - type: marking
   id: GauzeLeftArm
-  bodyPart: LArm, LHand
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  bodyPart: LHand
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -151,9 +131,7 @@
 - type: marking
   id: GauzeLowerLegLeft
   bodyPart: LFoot
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  groupWhitelist: [Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -166,9 +144,7 @@
 - type: marking
   id: GauzeUpperLegLeft
   bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune, Avali] # DeltaV - Felinid-Avali
   coloring:
     default:
       type:
@@ -181,9 +157,7 @@
 - type: marking
   id: GauzeUpperLegRight
   bodyPart: RLeg
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Avali
+  groupWhitelist: [Human, Reptilian, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune, Avali] # DeltaV - Felinid-Avali
   coloring:
     default:
       type:
@@ -196,9 +170,7 @@
 - type: marking
   id: GauzeLowerLegRight
   bodyPart: RFoot
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  groupWhitelist: [Human, Arachnid, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -211,9 +183,7 @@
 - type: marking
   id: GauzeBoxerWrapRight
   bodyPart: RHand
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -226,9 +196,7 @@
 - type: marking
   id: GauzeBoxerWrapLeft
   bodyPart: LHand
-  markingCategory: Overlay
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # DeltaV - Felinid-Kitsune
+  groupWhitelist: [Human, Reptilian, Arachnid, Slime, Felinid, Oni, Vulpkanin, Rodentia, Thaven, Feroxi, Kitsune] # DeltaV - Felinid-Kitsune
   coloring:
     default:
       type:
@@ -241,9 +209,7 @@
 - type: marking
   id: GauzeHead
   bodyPart: Head
-  markingCategory: Overlay
-  speciesRestriction: [Harpy, Resomi, Avali, Vox] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions # Delta V - Chitinid-Feroxi
+  groupWhitelist: [Human, Reptilian, Arachnid, Moth, Chitinid, Thaven, Feroxi] # Delta V - Chitinid-Feroxi
   coloring:
     default:
       type:
@@ -257,8 +223,7 @@
 - type: marking
   id: GauzeLizardLefteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   coloring:
     default:
       type:
@@ -271,8 +236,7 @@
 - type: marking
   id: GauzeLizardRighteyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   coloring:
     default:
       type:
@@ -285,8 +249,7 @@
 - type: marking
   id: GauzeLizardFootRight
   bodyPart: RFoot
-  markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   coloring:
     default:
       type:
@@ -299,8 +262,7 @@
 - type: marking
   id: GauzeLizardFootLeft
   bodyPart: LFoot
-  markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   coloring:
     default:
       type:
@@ -313,8 +275,7 @@
 - type: marking
   id: GauzeLizardBlindfold
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   coloring:
     default:
       type:
@@ -328,8 +289,7 @@
 - type: marking
   id: GauzeMothBlindfold
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -342,8 +302,7 @@
 - type: marking
   id: GauzeMothShoulder
   bodyPart: Chest
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -356,8 +315,7 @@
 - type: marking
   id: GauzeMothStomach
   bodyPart: Chest
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -370,8 +328,7 @@
 - type: marking
   id: GauzeMothLeftEyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -384,8 +341,7 @@
 - type: marking
   id: GauzeMothLeftEyePad
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -398,8 +354,7 @@
 - type: marking
   id: GauzeMothRightEyePatch
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -412,8 +367,7 @@
 - type: marking
   id: GauzeMothRightEyePad
   bodyPart: Eyes
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -426,8 +380,7 @@
 - type: marking
   id: GauzeMothUpperArmRight
   bodyPart: RArm
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -440,8 +393,7 @@
 - type: marking
   id: GauzeMothUpperArmLeft
   bodyPart: LArm
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -454,8 +406,7 @@
 - type: marking
   id: GauzeMothUpperLegRight
   bodyPart: RLeg
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -468,8 +419,7 @@
 - type: marking
   id: GauzeMothUpperLegLeft
   bodyPart: LLeg
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -482,8 +432,7 @@
 - type: marking
   id: GauzeMothLowerLegRight
   bodyPart: RFoot
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:
@@ -496,8 +445,7 @@
 - type: marking
   id: GauzeMothLowerLegLeft
   bodyPart: LFoot
-  markingCategory: Overlay
-  speciesRestriction: [Moth, Chitinid] # DeltaV - Chitinid
+  groupWhitelist: [Moth, Chitinid] # DeltaV - Chitinid
   coloring:
     default:
       type:

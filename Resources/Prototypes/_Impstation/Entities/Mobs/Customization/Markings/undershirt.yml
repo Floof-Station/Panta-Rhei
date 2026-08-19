@@ -1,7 +1,7 @@
 - type: marking
   id: UndershirtDefault
   bodyPart: UndergarmentTop
-  markingCategory: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
   coloring:
     default:
       type:
@@ -12,9 +12,48 @@
     state: undershirt
 
 - type: marking
+  id: UndershirtRolled
+  bodyPart: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/undershirt.rsi
+    state: rolled_undershirt
+
+- type: marking
+  id: UndershirtSleeveless
+  bodyPart: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/undershirt.rsi
+    state: sleeveless
+
+- type: marking
+  id: UndershirtRolledSleeveless
+  bodyPart: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
+  coloring:
+    default:
+      type:
+        !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _Impstation/Mobs/Customization/undershirt.rsi
+    state: rolled_undershirt_sleeveless
+
+- type: marking
   id: UndershirtGrossSleeveless
   bodyPart: UndergarmentTop
-  markingCategory: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
   coloring:
     default:
       type:
@@ -27,7 +66,7 @@
 - type: marking
   id: UndershirtNanotrasen
   bodyPart: UndergarmentTop
-  markingCategory: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
   coloring:
     default:
       type:
@@ -40,7 +79,7 @@
 - type: marking
   id: UndershirtBraStrapless
   bodyPart: UndergarmentTop
-  markingCategory: UndergarmentTop
+  groupWhitelist: null # DeltaV - removed restrictions
   coloring:
     default:
       type:

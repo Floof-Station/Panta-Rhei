@@ -1,6 +1,6 @@
 - type: entity
   name: Syndicate Guard
-  parent: MobHumanNPC # Euphoria mob reparent
+  parent: [MobHumanNPC, MobHuman] # Euphoria mob reparent
   id: MobRadioGuard
   description: "Mindwiped and hypno-indoctrinated into perfect loyalty by the Syndicate. They will throw their life away to defend their objective."
   components:
@@ -72,7 +72,7 @@
       - map: [ "gloves" ]
       - map: [ "ears" ]
       - map: [ "eyes" ]
-      
+
       - map: [ "id" ]
       - map: [ "outerClothing" ]
       - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation

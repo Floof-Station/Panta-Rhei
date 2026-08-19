@@ -4,7 +4,7 @@
 - type: marking
   id: KitsuneTailDefault
   bodyPart: Tail
-  markingCategory: Tail
+  groupWhitelist: [Kitsune]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -21,7 +21,7 @@
 - type: marking
   id: KitsuneTailsNine
   bodyPart: Tail
-  markingCategory: Tail
+  groupWhitelist: [Kitsune]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -38,7 +38,7 @@
 - type: marking
   id: KitsuneTailsThree
   bodyPart: Tail
-  markingCategory: Tail
+  groupWhitelist: [Kitsune]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -55,7 +55,7 @@
 - type: marking
   id: KitsuneTailsTwo
   bodyPart: Tail
-  markingCategory: Tail
+  groupWhitelist: [Kitsune]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -73,8 +73,8 @@
 
 - type: marking
   id: KitsuneEarsDefault
-  bodyPart: Head
-  markingCategory: HeadTop
+  bodyPart: HeadTop
+  groupWhitelist: [Kitsune]
   coloring:
     default:
       type: !type:CategoryColoring
@@ -90,8 +90,8 @@
 
 - type: marking
   id: KitsuneEarsFox
-  bodyPart: Head
-  markingCategory: HeadTop
+  bodyPart: HeadTop
+  groupWhitelist: [Kitsune]
   coloring:
     default:
       type: !type:CategoryColoring

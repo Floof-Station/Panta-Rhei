@@ -1,4 +1,5 @@
 ﻿using Content.Server.Actions;
+using Content.Shared.Body;
 using Content.Server.Humanoid;
 using Content.Shared._DV.Humanoid;
 using Content.Shared._Floof.Humanoid;
@@ -10,6 +11,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Toggleable;
 using Content.Shared.Wagging;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Server.Wagging;
 
@@ -19,15 +21,15 @@ namespace Content.Server.Wagging;
 public sealed class WaggingSystem : EntitySystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
+    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<WaggingComponent, AppearanceLoadedEvent>(OnMapInit); // Floofstation - listen on profile load as well as map init
+        SubscribeLocalEvent<WaggingComponent, MapInitEvent>(OnWaggingMapInit);
+        SubscribeLocalEvent<WaggingComponent, AppearanceLoadedEvent>(OnWaggingMapInit); // Floofstation - listen on profile load as well as map init
         SubscribeLocalEvent<WaggingComponent, ComponentShutdown>(OnWaggingShutdown);
         SubscribeLocalEvent<WaggingComponent, ToggleActionEvent>(OnWaggingToggle);
         SubscribeLocalEvent<WaggingComponent, MobStateChangedEvent>(OnMobStateChanged);
@@ -43,71 +45,86 @@ public sealed class WaggingSystem : EntitySystem
     }
 
     // Floofstation - listen on both profile load and map init
-    private void OnMapInit<T>(EntityUid uid, WaggingComponent component, T args)
+    private void OnWaggingMapInit<T>(Entity<WaggingComponent> ent, ref T args)
     {
         // Floofstation - this event can run before CompInit, at which point AddAction would throw an exception.
         if (!Initialized(uid))
             return;
 
         // Floofstation - remove the old action and don't add the action if the entity can't wag
-        _actions.RemoveAction(uid, component.ActionEntity);
-        if (!CanWag((uid, component)))
+        _actions.RemoveAction(ent, ref ent.Comp.ActionEntity);
+        if (!CanWag(ent))
             return;
 
-        _actions.AddAction(uid, ref component.ActionEntity, component.Action, uid);
+        _actions.AddAction(ent, ref ent.Comp.ActionEntity, ent.Comp.Action, ent);
     }
 
-    private void OnWaggingShutdown(EntityUid uid, WaggingComponent component, ComponentShutdown args)
+    private void OnWaggingShutdown(Entity<WaggingComponent> ent, ref ComponentShutdown args)
     {
-        _actions.RemoveAction(uid, component.ActionEntity);
+        _actions.RemoveAction(ent.Owner, ent.Comp.ActionEntity);
     }
 
-    private void OnWaggingToggle(EntityUid uid, WaggingComponent component, ref ToggleActionEvent args)
+    private void OnWaggingToggle(Entity<WaggingComponent> ent, ref ToggleActionEvent args)
     {
         if (args.Handled)
             return;
 
-        TryToggleWagging(uid, wagging: component);
+        TryToggleWagging(ent.AsNullable());
     }
 
-    private void OnMobStateChanged(EntityUid uid, WaggingComponent component, MobStateChangedEvent args)
+    private void OnMobStateChanged(Entity<WaggingComponent> ent, ref MobStateChangedEvent args)
     {
-        if (component.Wagging)
-            TryToggleWagging(uid, wagging: component);
+        if (ent.Comp.Wagging)
+            TryToggleWagging(ent.AsNullable());
     }
 
-    public bool TryToggleWagging(EntityUid uid, WaggingComponent? wagging = null, HumanoidAppearanceComponent? humanoid = null)
+    private bool TryToggleWagging(Entity<WaggingComponent?> ent)
     {
-        if (!Resolve(uid, ref wagging, ref humanoid))
+        if (!Resolve(ent, ref ent.Comp))
             return false;
 
-        if (!humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Tail, out var markings))
-            return false;
-
-        if (markings.Count == 0)
-            return false;
-
-        wagging.Wagging = !wagging.Wagging;
-
-        for (var idx = 0; idx < markings.Count; idx++) // Animate all possible tails
+        if (!_visualBody.TryGatherMarkingsData(ent.Owner,
+                [ent.Comp.Layer],
+                out _,
+                out _,
+                out var applied))
         {
-            var currentMarkingId = markings[idx].MarkingId;
-            // Floofstation - moved into a method
-            if (!TryGetNewMarkingId((uid, wagging), currentMarkingId, out var newMarkingId))
-                continue;
-
-            _humanoidAppearance.SetMarkingId(uid, MarkingCategories.Tail, idx, newMarkingId,
-                humanoid: humanoid);
+            return false;
         }
 
-        // Floofstation - set action state
-        _actions.SetToggled(wagging.ActionEntity, wagging.Wagging);
+        if (!applied.TryGetValue(ent.Comp.Organ, out var markingsSet))
+            return false;
 
+        ent.Comp.Wagging = !ent.Comp.Wagging;
+
+        markingsSet = markingsSet.ShallowClone();
+        foreach (var (layers, markings) in markingsSet)
+        {
+            markingsSet[layers] = markingsSet[layers].ShallowClone();
+            var layerMarkings = markingsSet[layers];
+
+            for (int i = 0; i < layerMarkings.Count; i++)
+            {
+                var currentMarkingId = layerMarkings[i].MarkingId;
+                // Floofstation - moved into a method
+                if (!TryGetNewMarkingId(ent!, currentMarkingId, out var newMarkingId))
+                    continue;
+
+
+
+                layerMarkings[i] = new Marking(newMarkingId, layerMarkings[i].MarkingColors);
+            }
+        }
+
+        _visualBody.ApplyMarkings(ent, new()
+        {
+            [ent.Comp.Organ] = markingsSet
+        });
         return true;
     }
 
     // Floofstation section - extracted from TryToggleWagging
-    public bool TryGetNewMarkingId(Entity<WaggingComponent> ent, string currentMarkingId, out string newMarkingId, bool silent = false, bool? isWagging = null)
+    public bool TryGetNewMarkingId(Entity<WaggingComponent> ent, ProtoId<MarkingPrototype> currentMarkingId, out string newMarkingId, bool silent = false, bool? isWagging = null)
     {
         isWagging ??= ent.Comp.Wagging;
         newMarkingId = string.Empty;
@@ -118,17 +135,21 @@ public sealed class WaggingSystem : EntitySystem
         }
         else
         {
-            if (currentMarkingId.EndsWith(ent.Comp.Suffix))
+            if (currentMarkingId.Id.EndsWith(ent.Comp.Suffix))
             {
-                newMarkingId = currentMarkingId[..^ent.Comp.Suffix.Length];
+                newMarkingId = currentMarkingId.Id[..^ent.Comp.Suffix.Length];
             }
             else
             {
                 newMarkingId = currentMarkingId;
-                if (!silent)
-                    Log.Warning($"Unable to revert wagging for {currentMarkingId}");
-                return false;
+                Log.Warning($"Unable to revert wagging for {currentMarkingId}");
             }
+        }
+
+        if (!_prototype.HasIndex<MarkingPrototype>(newMarkingId))
+        {
+            Log.Warning($"{ToPrettyString(ent):ent} tried toggling wagging but {newMarkingId} marking doesn't exist");
+            return false;
         }
 
         if (_prototype.HasIndex<MarkingPrototype>(newMarkingId))
@@ -159,5 +180,6 @@ public sealed class WaggingSystem : EntitySystem
 
         return false;
     }
+    // Floofstation section end
     // Floofstation section end
 }

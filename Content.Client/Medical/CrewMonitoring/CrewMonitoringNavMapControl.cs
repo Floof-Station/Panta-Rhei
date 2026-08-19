@@ -1,4 +1,6 @@
+using System.Linq; // DeltaV
 using Content.Client.Pinpointer.UI;
+using Content.Client.Station; // DeltaV
 using Robust.Client.Graphics;
 using Robust.Client.Player; // DeltaV
 using Robust.Client.UserInterface.Controls;
@@ -10,6 +12,7 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
 {
     [Dependency] private IPlayerManager _playerManager = default!; // DeltaV
     private readonly SharedTransformSystem _xform; // DeltaV
+    private readonly StationSystem _station; // DeltaV
 
     public NetEntity? Focus;
     public Dictionary<NetEntity, string> LocalizedNames = new();
@@ -21,6 +24,7 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
     {
         IoCManager.InjectDependencies(this); // DeltaV - Gotta inject!
         _xform = EntManager.System<SharedTransformSystem>(); // DeltaV - Gotta inject!
+        _station = EntManager.System<StationSystem>(); // DeltaV - Gotta Inject!
 
         WallColor = new Color(192, 122, 196);
         TileColor = new(71, 42, 72);
@@ -71,9 +75,11 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
             if (!LocalizedNames.TryGetValue(netEntity, out var name))
                 name = Loc.GetString("navmap-unknown-entity");
 
+            var pos = _xform.ToMapCoordinates(blip.Coordinates); // DeltaV - map-coordinates
+
             var message = name + "\n" + Loc.GetString("navmap-location",
-                ("x", MathF.Round(blip.Coordinates.X)),
-                ("y", MathF.Round(blip.Coordinates.Y)));
+                ("x", MathF.Round(pos.X)), // DeltaV - map-coordinates
+                ("y", MathF.Round(pos.Y))); // DeltaV - map-coordinates
 
             _trackedEntityLabel.Text = message;
             _trackedEntityPanel.Visible = true;
@@ -97,7 +103,12 @@ public sealed partial class CrewMonitoringNavMapControl : NavMapControl
         if (!MapUid.HasValue && _playerManager.LocalEntity is { } player)
         {
             MapUid = _xform.GetGrid(player);
-            forceMapUpdate = true;
+
+            // If it still doesn't have a value, just use the largest grid of the station.
+            if (!MapUid.HasValue)
+                MapUid = _station.GetLargestGrid(_station.GetStations().First());
+
+            forceMapUpdate = MapUid.HasValue;
         }
 
         base.Draw(handle);

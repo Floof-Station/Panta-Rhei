@@ -1,9 +1,8 @@
 - type: marking
   id: ScarChestFemale
   bodyPart: Chest
-  markingCategory: Chest
+  groupWhitelist: [Human, Felinid, Oni, Feroxi, Kitsune]
   sexRestriction: [Female]
-  followSkinColor: true
   sprites:
   - sprite: _DV/Mobs/Customization/scars.rsi
     state: scar_chest_female
@@ -11,8 +10,7 @@
 - type: marking
   id: ScarVoxHeadLEyeSmall
   bodyPart: Head
-  markingCategory: Head
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_eye_left_small
@@ -20,8 +18,7 @@
 - type: marking
   id: ScarVoxHeadLEyeBig
   bodyPart: Head
-  markingCategory: Head
-  followSkinColor: false
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_eye_left_big
@@ -29,8 +26,7 @@
 - type: marking
   id: ScarVoxHeadREyeSmall
   bodyPart: Head
-  markingCategory: Head
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_eye_right_small
@@ -38,8 +34,7 @@
 - type: marking
   id: ScarVoxHeadREyeBig
   bodyPart: Head
-  markingCategory: Head
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_eye_right_big
@@ -47,8 +42,7 @@
 - type: marking
   id: ScarVoxHeadFaceLong
   bodyPart: Head
-  markingCategory: Head
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_face_long
@@ -56,8 +50,7 @@
 - type: marking
   id: ScarVoxChestBig
   bodyPart: Chest
-  markingCategory: Chest
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_chest_big
@@ -65,8 +58,7 @@
 - type: marking
   id: ScarVoxChestBullets
   bodyPart: Chest
-  markingCategory: Chest
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_chest_bullets
@@ -74,8 +66,7 @@
 - type: marking
   id: ScarVoxRArmSmall
   bodyPart: RArm
-  markingCategory: Arms
-  followSkinColor: true
+  groupWhitelist: [Vox]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_arm_right_small
@@ -83,8 +74,7 @@
 - type: marking
   id: ScarVoxLArmSmall
   bodyPart: LArm
-  markingCategory: Arms
-  followSkinColor: true
+  groupWhitelist: [ Vox ]
   sprites:
   - sprite: _DV/Mobs/Customization/Vox/scars.rsi
     state: scar_arm_left_small

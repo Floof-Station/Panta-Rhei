@@ -266,6 +266,8 @@
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
+    Sneeze:
+      path: /Audio/Voice/Vox/vox_sneeze.ogg
     Cough:
       path: /Audio/Voice/Vox/vox_cough.ogg
     Sigh:
@@ -316,6 +318,8 @@
       path: /Audio/Voice/Diona/diona_scream.ogg
     Laugh:
       collection: DionaLaugh
+    Sneeze:
+      collection: DionaSneeze
     Chirp:
       path: /Audio/Animals/nymph_chirp.ogg
     Honk:
@@ -510,14 +514,12 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
-    # Floofstation - preserved from EE
-    Boop:
+    Boop: # DeltaV (EE)
       path: /Audio/_EE/Voice/IPC/beep_500.ogg
-    Whirr:
+    Whirr: # DeltaV (EE)
       collection: IPCWhirrs
       params:
         variation: 0
-    # Floofstation section end
 
 - type: emoteSounds
   id: UnisexSiliconSyndicate
@@ -541,6 +543,12 @@
       path: /Audio/Items/bikehorn.ogg
     Ping:
       path: /Audio/Effects/Cargo/ping.ogg
+    Boop: # DeltaV (EE)
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
+    Whirr: # DeltaV (EE)
+      collection: IPCWhirrs
+      params:
+        variation: 0
 
 - type: emoteSounds
   id: UnisexSiliconXenoborg
@@ -564,6 +572,12 @@
       collection: XenoborgBikeHorn
     Ping:
       collection: XenoborgPing
+    Boop: # DeltaV (EE)
+      path: /Audio/_EE/Voice/IPC/beep_500.ogg
+    Whirr: # DeltaV (EE)
+      collection: IPCWhirrs
+      params:
+        variation: 0
 
 # body emotes
 - type: emoteSounds
@@ -624,6 +638,22 @@
       collection: Salutes
     Blink: # Imp
       collection: Blinks # Imp
+
+- type: emoteSounds
+  id: MothBodyEmotes
+  sounds:
+    Flap:
+      path: /Audio/Voice/Moth/moth_flap.ogg
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
 
 # mobs
 - type: emoteSounds

@@ -22,13 +22,16 @@
     - Kitsune
     - Avali
     # ImpStation additions
+    - Allulalo
     - Thaven
     # Den addition
-    # - Ovinia # Floof - missing? unknown
     # Floof section
+    # - Ovinia # Floof - no ovinia
     - Tajaran
     # - IPC
     # Floof section end
+    # Starlight addition
+    - Shadekin
 
 - type: guideEntry
   id: Arachnid
@@ -70,13 +73,14 @@
   name: species-name-vox
   text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
 
-# removed
-#- type: guideEntry
-#  id: IPC
-#  name: species-name-ipc
-#  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+- type: guideEntry
+  id: Shadekin
+  name: species-name-shadekin
+  text: "/ServerInfo/_Starlight/Guidebook/Mobs/Shadekin.xml"
 
-- type: guideEntry # Floof - Tajaran Update b7660b9
+# Begin Euphoria additions
+- type: guideEntry # b7660b9
   id: Tajaran
   name: species-name-tajaran
   text: "/ServerInfo/_Floof/Guidebook/Mobs/Tajaran.xml"
+# End Euphoria additions

@@ -89,6 +89,21 @@
   loadouts:
   - ScarfBlack
   - ScarfZebra
+  - MimeMantle
+  - MimeCloak
+  - MimeMantleOffShoulder
+  - MimeStole
+
+- type: loadoutGroup
+  id: MimeShoes
+  name: loadout-group-mime-shoes
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteShoes
+  - BlackShoes
+  - MimeWinterBoots
+  - MimeFurBoots
 
 ## Musician
 - type: loadoutGroup
@@ -238,6 +253,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
+  - BomberLogistic
 
 - type: loadoutGroup
   id: CargoAssistantShoes
@@ -296,7 +312,7 @@
   - ScarfRed
   - ScarfBlack
   - ScarfBlue
-  - SecurityPoncho
+  - ScarfLightBlue
 
 - type: loadoutGroup
   id: BrigMedicJumpsuit
@@ -315,6 +331,7 @@
   loadouts:
   - LongcoatBrigmedic
   - StasecWinterCoatCorpsman
+  - BomberSecurity
   - PlateCarrier
   - DuraVest
   - ArmorVestSlim
@@ -507,7 +524,6 @@
   loadouts:
   - ScarfRed
   - ScarfBlack
-  - SecurityPoncho
 
 - type: loadoutGroup
   id: SecurityOuterClothingDeltaV
@@ -519,6 +535,7 @@
   - StasecSweater
   - LongcoatSecurity
   - StasecWinterCoat
+  - BomberSecurity
   - ArmorVestSlim
 
 ## Warden
@@ -531,6 +548,7 @@
   - DuraVest
   - WardenLongcoat
   - StasecWinterCoatWarden
+  - BomberSecurity
   - ArmorVestSlim
   - WardenArmoredWinterCoat
 
@@ -547,6 +565,7 @@
   - HeadOfSecurityTrenchcoat
   - ArmorVestSlim
   - HeadofSecurityWinterCoat
+  - BomberSecurity
 
 ## Detective
 - type: loadoutGroup
@@ -570,6 +589,7 @@
   loadouts:
   - LongcoatSecurity
   - StasecWinterCoatDet
+  - BomberSecurity
   - PlateCarrier
   - DuraVest
   - DetPlatedCoat
@@ -599,6 +619,7 @@
   - PsychologistWinterCoat
   - WinterCoatPlaid
   - PsychologistCoatBomber
+  - BomberMedical
   - PsychologistSweater
 
 - type: loadoutGroup
@@ -1183,3 +1204,10 @@
   minLimit: 0
   loadouts:
   - LizardPlushieZookeeper
+
+- type: loadoutGroup
+  id: ChefShoes
+  name: loadout-group-chef-shoes-delta
+  loadouts:
+  - ChefShoes
+  - ChefSandals

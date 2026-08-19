@@ -1,9 +1,7 @@
 - type: marking
   id: CatEars
   bodyPart: Special
-  markingCategory: Special
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
+  groupWhitelist: [Human]
   coloring:
     default:
       type:
@@ -25,9 +23,7 @@
 - type: marking
   id: CatTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [] # Floofstation
-  invertedRestrictions: true # Floofstation - invert restrictions
+  groupWhitelist: [Human]
   coloring:
     default:
       type:

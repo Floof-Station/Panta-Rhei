@@ -1,3 +1,74 @@
+# Euph note: st*rlight for some reason put ovinia sounds in here. We don't have ovinia, so they are commented out.
+# Ovinia
+# - type: emoteSounds
+#   id: MaleOvinia
+#   params:
+#     variation: 0.125
+#   sounds:
+#     Scream:
+#       collection: MaleScreams
+#     Laugh:
+#       collection: MaleLaugh
+#     Sneeze:
+#       collection: MaleSneezes
+#     Cough:
+#       collection: MaleCoughs
+#     Yawn:
+#       collection: MaleYawn
+#     Snore:
+#       collection: Snores
+#     Honk:
+#       collection: BikeHorn
+#     Sigh:
+#       collection: MaleSigh
+#     Crying:
+#       collection: MaleCry
+#     Whistle:
+#       collection: Whistles
+#     Weh:
+#       collection: Weh
+#     Baa:
+#       collection: OviniaBaa
+#     Moo:
+#       collection: Moo
+#     Gulp: # Goob
+#       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+#
+# - type: emoteSounds
+#   id: FemaleOvinia
+#   params:
+#     variation: 0.125
+#   sounds:
+#     Scream:
+#       collection: FemaleScreams
+#     Laugh:
+#       collection: FemaleLaugh
+#     Sneeze:
+#       collection: FemaleSneezes
+#     Cough:
+#       collection: FemaleCoughs
+#     Yawn:
+#       collection: FemaleYawn
+#     Snore:
+#       collection: Snores
+#     Honk:
+#       collection: BikeHorn
+#     Sigh:
+#       collection: FemaleSigh
+#     Crying:
+#       collection: FemaleCry
+#     Whistle:
+#       collection: Whistles
+#     Weh:
+#       collection: Weh
+#     Baa:
+#       collection: OviniaBaa
+#     Moo:
+#       collection: Moo
+#     Gulp: # Goob
+#       path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+
+# Euph
 - type: emoteSounds
   id: ShadowkinBase
   abstract: true
@@ -29,10 +100,12 @@
 
 - type: emoteSounds
   id: MaleShadowkin
-  parent: ShadowkinBase
+  parent: ShadowkinBase # Euph
+  params:
+    variation: 0.125
   sounds:
     Scream:
-      collection: SlimeMaleScreams
+      collection: ShadowkinMaleScreams
     Laugh:
       collection: MaleLaugh
     Sneeze:
@@ -41,17 +114,41 @@
       collection: MaleCoughs
     Yawn:
       collection: MaleYawn
+    Snore:
+      collection: Snores
     Sigh:
       collection: MaleSigh
     Crying:
       collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+    Hiss:
+      collection: FelinidHisses
+    Purr:
+      collection: FelinidPurrs
+    Growl:
+      collection: FelinidGrowls
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg
 
 - type: emoteSounds
   id: FemaleShadowkin
-  parent: ShadowkinBase
+  parent: ShadowkinBase # Euph
+  params:
+    variation: 0.125
   sounds:
     Scream:
-      collection: SlimeFemaleScreams
+      collection: ShadowkinFemaleScreams
     Laugh:
       collection: FemaleLaugh
     Sneeze:
@@ -60,7 +157,27 @@
       collection: FemaleCoughs
     Yawn:
       collection: FemaleYawn
+    Snore:
+      collection: Snores
     Sigh:
       collection: FemaleSigh
     Crying:
       collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+    Hiss:
+      collection: FelinidHisses
+    Purr:
+      collection: FelinidPurrs
+    Growl:
+      collection: FelinidGrowls

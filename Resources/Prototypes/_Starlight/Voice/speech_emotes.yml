@@ -1,4 +1,43 @@
 - type: emote
+  id: Marr
+  name: chat-emote-name-marr
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-marr"]
+  chatTriggers:
+  - marr
+  - marr.
+  - marr!
+  - marr?
+  - marrs
+  - marrs.
+  - marrs!
+  - marrs?
+
+- type: emote
+  id: Wurble
+  name: chat-emote-name-wurble
+  category: Vocal
+  available: false
+  whitelist:
+    components:
+    - Vocal
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-wurble"]
+  chatTriggers:
+  - wurble
+  - wurbles
+
+# Begin Euphoria port
+- type: emote
   id: Scree
   name: chat-emote-name-scree
   category: Vocal
@@ -41,3 +80,4 @@
   - calling
   - calls
   - called
+# End Euphoria port
