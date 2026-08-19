@@ -1,3 +1,4 @@
+using Content.Server._Vulp.Weather;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Prototypes;
@@ -60,6 +61,7 @@ public sealed class WeatherAddCommand : LocalizedEntityCommands
         }
 
         _weather.TryAddWeather(mapId, weatherProto, out _, duration);
+
     }
 
 

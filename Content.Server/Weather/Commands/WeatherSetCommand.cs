@@ -1,3 +1,4 @@
+using Content.Server._Vulp.Weather;
 using Content.Server.Administration;
 using Content.Shared.Administration;
 using Content.Shared.Prototypes;
@@ -18,6 +19,7 @@ public sealed class WeatherSetCommand : LocalizedEntityCommands
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly WeatherSystem _weather = default!;
     [Dependency] private readonly IComponentFactory _compFactory = default!;
+    [Dependency] private readonly WeatherCycleSystem _weatherCycle = default!; // Euph
 
     public override string Command => "weatherset";
 
@@ -62,6 +64,7 @@ public sealed class WeatherSetCommand : LocalizedEntityCommands
         }
 
         _weather.TrySetWeather(mapId, weatherProto, out _, duration);
+        _weatherCycle.HandleExternalWeatherChange(mapId, weatherProto, duration ?? TimeSpan.MaxValue);
     }
 
 
