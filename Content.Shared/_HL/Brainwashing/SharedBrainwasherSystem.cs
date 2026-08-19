@@ -32,7 +32,7 @@ public sealed partial class BrainwasherComponent : Component
     public List<string> Compulsions = [];
 
     [DataField, AutoNetworkedField]
-    public string ConfigureText = "Configure Neuralyzer";
+    public string ConfigureText = "Configure Compulsions";
 }
 
 public abstract class SharedBrainwasherSystem : EntitySystem // HL: Move verbs to shared so the client can draw them without waiting for the server

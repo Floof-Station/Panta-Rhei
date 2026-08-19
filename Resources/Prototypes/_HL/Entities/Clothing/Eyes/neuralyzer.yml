@@ -1,26 +1,26 @@
 - type: entity
   parent: [ClothingEyesBase]
   id: ClothingEyesNeuralyzer
-  name: Neuralyzer
-  description: A flash based configuration and installation tool for the P7T113L Cognitive Governor.
+  name: Mesmerizer
+  description: A flash-based recreational hypnosis tool developed by Euphoria LLC based on Hypnotech sleepwear technology. Has a very... loyal user base.
   components:
     - type: Sprite
-      sprite: Clothing/Eyes/Hud/syndagent.rsi
+      sprite: _Euphoria/Clothing/Eyes/Hud/neuralyzer.rsi
     - type: Clothing
-      sprite: Clothing/Eyes/Hud/syndagent.rsi
+      sprite: _Euphoria/Clothing/Eyes/Hud/neuralyzer.rsi
     - type: Brainwasher
 
 - type: entity
   id: ActionOpenCompulsionsMenu
   name: View Compulsions
-  description: Review the compulsions in control of your mind.
+  description: Review the warm fuzzy compulsions embracing your mind.
   components:
     - type: Action
       priority: -3
       itemIconStyle: NoItem
       icon:
-        sprite: Interface/Actions/actions_ai.rsi
-        state: state_laws
+        sprite: _Euphoria/Interface/Actions/actions_hypno.rsi
+        state: compulsions
       useDelay: 0.5
     - type: InstantAction
       event: !type:OpenCompulsionsMenuAction
