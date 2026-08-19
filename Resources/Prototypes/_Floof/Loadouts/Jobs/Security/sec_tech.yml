@@ -10,3 +10,24 @@
   equipment:
     id: SecurityTechnicianPDA
 
+- type: loadout
+  id: SecuritySapperPDA
+  equipment:
+    id: SecuritySapperPDA
+
+# Gloves
+- type: loadout
+  id: ClothingHandsTacticalMaidGloves
+  equipment:
+    gloves: ClothingHandsTacticalMaidGloves
+
+# Belt
+- type: loadout
+  id: SecTechBeltAdvanced
+  equipment:
+    belt: ClothingBeltCombatUtilityAdvanced
+
+- type: loadout
+  id: SecTechBelt
+  equipment:
+    belt: ClothingBeltCombatUtilityFilled
