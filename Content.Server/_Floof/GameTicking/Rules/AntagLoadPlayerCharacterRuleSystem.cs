@@ -1,19 +1,13 @@
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Server.Humanoid;
 using Content.Server.Preferences.Managers;
-using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
-using Robust.Shared.Prototypes;
 using Content.Server.Station.Systems;
 
 namespace Content.Server.GameTicking.Rules;
 
 public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoadPlayerCharacterRuleComponent>
 {
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoid = default!;
-    [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
     [Dependency] private readonly IEntityManager _ent = default!;
 
@@ -29,17 +23,19 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
         if (args.Handled) //If something already handled this, don't handle it! 
             return;
 	    
-        var uid = ent.Owner;
-        var component = ent.Comp;
-        
-        //Get the player's selected character or, if the session is null, whatever the fuck.
-        var character = args.Session != null
-            ? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
-            : HumanoidCharacterProfile.RandomWithSpecies();
+	var uid = ent.Owner;
 
-        //Spawn it like it was a player
-        //Where does this spawn it at first? Hell if I know. It ends up where it's supposed to be anyways.
-        args.Entity = _ent.System<StationSpawningSystem>()
-            .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
+
+	//Get the player's selected character or, if the session is null, whatever the fuck.
+	var character = args.Session != null
+	    ? _prefs.GetPreferences(args.Session.UserId).SelectedCharacter as HumanoidCharacterProfile
+	    : HumanoidCharacterProfile.RandomWithSpecies();
+
+	//Spawn it like it was a player
+	//It seems this function technically spawns the entity somewhere first,
+	//but the only purpose of this system is to hand over an entity to
+	//AntagSelectEntityEvent. This doesn't matter in any case, but irks me.
+	args.Entity = _ent.System<StationSpawningSystem>()
+	    .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
     }
 }
