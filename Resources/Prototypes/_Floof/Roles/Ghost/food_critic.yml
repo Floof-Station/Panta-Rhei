@@ -60,7 +60,7 @@
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
-  id: SpawnPointGhostAntagFoodCritic
+  id: SpawnPointFoodCritic
   components:
   - type: GhostRole
     name: ghost-role-information-food-critic-name

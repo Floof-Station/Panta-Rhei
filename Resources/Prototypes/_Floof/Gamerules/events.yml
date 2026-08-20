@@ -1,7 +1,7 @@
 
 - type: entity
   parent: BaseGameRule
-  id: AntagFoodCriticSpawn
+  id: FoodCriticSpawn
   components:
   - type: StationEvent
     weight: 8
@@ -20,7 +20,7 @@
   - type: AntagSelection
     agentName: food-critic-round-end-agent-name
     definitions:
-    - spawnerPrototype: SpawnPointGhostAntagFoodCritic
+    - spawnerPrototype: SpawnPointFoodCritic
       min: 1
       max: 1
       pickPlayer: false
