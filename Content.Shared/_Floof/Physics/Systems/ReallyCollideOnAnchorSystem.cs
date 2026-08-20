@@ -35,7 +35,6 @@ public sealed class ReallyCollideOnAnchorSystem : EntitySystem
 
         var xform = Transform(args.BodyUid);
         var enabled = ShouldEnable(xform, collideOnAnchor);
-        Log.Info($"Should enable: {enabled}, is enabled: {args.CanCollide}");
 
         // Defer until the next tick to avoid recursion
         if (enabled != args.CanCollide)
@@ -51,7 +50,6 @@ public sealed class ReallyCollideOnAnchorSystem : EntitySystem
 
             var xform = Transform(uid);
             var enabled = ShouldEnable(xform, collideOnAnchor);
-            Log.Info($"Should enable: {enabled}, trying now");
 
             _physics.SetCanCollide(uid, enabled, force: false);
         }
