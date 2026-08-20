@@ -3,14 +3,14 @@
   id: BaseMobDragon
   suffix: ""
   name: space dragon
-  description: A flying leviathan, loosely related to space carps.
+  description: A flying dragon, capable of breathing fire and devouring anything in its path. # Euph - Added a new description.
   abstract: true
   components:
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:
       - ReagentId: Blood
-        Quantity: 700 # Euph - Increased dragons blood pool due to bleeding easily.
+        Quantity: 750 # Euph - Increased dragons blood pool due to bleeding easily.
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
@@ -98,8 +98,8 @@
       600: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      450: 0.7 # Euph - Rebalanced Speed to reflect health pool increase
-      550: 0.5
+      300: 0.7 # Euph - Rebalanced Speed to reflect health pool increase
+      500: 0.5
   # disable taking damage from fire, since its a fire breathing dragon
   - type: Flammable
     damage:
