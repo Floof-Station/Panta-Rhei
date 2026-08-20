@@ -10,7 +10,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: Blood
-        Quantity: 650
+        Quantity: 700 # Euph - Increased dragons blood pool due to bleeding easily.
   - type: GhostRole
     allowMovement: true
     allowSpeech: true
@@ -38,6 +38,9 @@
     - Dragon
   - type: Speech
     speechVerb: LargeMob
+  - type: NightVision # Euph - Dragons have night vision now, rejoice.
+    drawOverlay: true
+    color: "#FF0000"
   - type: CombatMode
   - type: MobMover
   - type: InputMover
@@ -90,13 +93,13 @@
       - ActionCritLastWords
   - type: MobThresholds
     thresholds:
-      0: Alive
-      450: Critical
-      500: Dead
+      0: Alive # Euph - Increased dragons health pool, a Solo sec off shouldnt be able to solo one.
+      550: Critical
+      600: Dead
   - type: SlowOnDamage
     speedModifierThresholds:
-      250: 0.7
-      400: 0.5
+      450: 0.7 # Euph - Rebalanced Speed to reflect health pool increase
+      550: 0.5
   # disable taking damage from fire, since its a fire breathing dragon
   - type: Flammable
     damage:
@@ -136,8 +139,8 @@
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
     damage:
       types:
-        Piercing: 20 # DeltaV - Increase piercing damage from 15 to 20
-        Slash: 20 # DeltaV - Increase slashing damage from 15 to 20
+        Piercing: 25 # Euph - Increased damage for dragons pierce and slash, 10 extra damage in total.
+        Slash: 25 # Euph - Increased damage for dragons pierce and slash, 10 extra damage in total.
   - type: Devourer
     foodPreferenceWhitelist:
       components:
@@ -146,7 +149,7 @@
       components:
       - MobState
     chemical: Ichor
-    healRate: 7.5
+    healRate: 8.5 # Euph - Increased heal rate to better match the increased health pool
     whitelist:
       components:
       - MobState
@@ -219,13 +222,15 @@
     soundGunshot:
       path: /Audio/Animals/space_dragon_roar.ogg
     soundEmpty: null
-    projectileSpeed: 7.5 # DeltaV - Increased from 5 to 7.5
+    projectileSpeed: 8 # Euph - Increased projectile speed to make it more reliable to hit with.
 
 - type: entity
   parent: BaseMobDragon
   id: MobDragonDungeon
   suffix: Dungeon
   components:
+  - type: NightVision # Euph - Added Nightvision to basic dragon.
+    drawOverlay: false
   - type: GhostRole
     description: ghost-role-information-space-dragon-dungeon-description
     rules: ghost-role-information-space-dragon-dungeon-rules
@@ -247,6 +252,9 @@
     damage:
       groups:
         Brute: 12
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Dragon #Relating to the dragon damage resistances.
 
 - type: entity
   parent: BaseAction

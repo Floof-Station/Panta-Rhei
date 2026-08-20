@@ -334,3 +334,19 @@
   id: ManifestedSpirit
   coefficients:
     Holy: 2
+
+- type: damageModifierSet #Euph - Added Damage Modifiers for Dragon Protection.
+  id: Dragon
+  coefficients:
+    Blunt: 0.75
+    Slash: 0.65
+    Piercing: 0.80
+    Heat: 0.25
+    Shock: 0.75
+    Cold: 0.50
+    Caustic: 0.75
+    Poison: 0.25
+    Radiation: 0.50
+    Asphyxiation: 0
+    Bloodloss: 1.0
+    Cellular: 0.75
