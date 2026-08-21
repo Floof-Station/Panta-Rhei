@@ -207,10 +207,10 @@ public sealed class OracleSystem : EntitySystem
     {
         if (!_solutionSystem.TryGetSolution(uid, OracleComponent.SolutionName, out var fountainSol))
             return;
-
-        var allReagents = _prototypeManager.EnumeratePrototypes<ReagentPrototype>()
-            .Where(x => !x.Abstract)
-            .Select(x => x.ID).ToList();
+        //Euphoria - remove chance at forbidden reagents
+        //var allReagents = _prototypeManager.EnumeratePrototypes<ReagentPrototype>()
+        //    .Where(x => !x.Abstract)
+        //    .Select(x => x.ID).ToList();
 
         var amount = 20 + _random.Next(1, 30) + _glimmerSystem.Glimmer / 10f;
         amount = (float) Math.Round(amount);
@@ -219,7 +219,7 @@ public sealed class OracleSystem : EntitySystem
         var reagent = "";
 
         if (_random.Prob(0.2f))
-            reagent = _random.Pick(allReagents);
+            reagent = _random.Pick(component.RewardReagents); //Euphoria - no chance at romerol. I know Mnemo, this is a terrible way to solve this, but I am tired
         else
             reagent = _random.Pick(component.RewardReagents);
 
