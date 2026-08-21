@@ -26,7 +26,7 @@
     - id: SpiderClownSpawn
     - id: SpiderSpawn
     - id: VentClog
-    - id: FoodCriticSpawn # Euphoria - Dunno where exactly to put this so it's here for now, this wasn't a thought-out decision to put it here specifically so if you feel like it should be somewhere else, be my guest.
+    - id: AntagFoodCriticSpawn # Euphoria - Dunno where exactly to put this so it's here for now, this wasn't a thought-out decision to put it here specifically so if you feel like it should be somewhere else, be my guest.
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -290,12 +290,12 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
-      - type: RandomHumanoidAppearance # DeltaV - make ninja have random appearance
-        randomizeName: false
-        keepGender: true
+      #- type: AutoImplant #Euphoria, making the acidifier implant optional.
+      #  implants:
+      #  - DeathAcidifierImplant
+      #- type: RandomHumanoidAppearance # Euphoria, we want people to be able to do recurring Ninja characters.
+      #  randomizeName: false
+      #  keepGender: true
       - type: RandomMetadata
         nameSegments:
         - NamesNinjaTitle
@@ -651,9 +651,9 @@
       components:
       - type: NukeOperative
       - type: TargetObjectiveImmune # DeltaV - Nukies are no longer targets of kill objectives, this includes lone ops.
-      - type: RandomHumanoidAppearance # DeltaV - add nukies random appearance
-        randomizeName: false
-        keepGender: true
+      #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+      #  randomizeName: false
+      #  keepGender: true
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicatePrefix

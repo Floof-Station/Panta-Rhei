@@ -32,6 +32,7 @@ construction-graph-tag-rockalanaomlycore = anomaly core
 construction-graph-tag-shadowalanaomlycore = anomaly core
 construction-graph-tag-shockalanaomlycore = anomaly core
 construction-graph-tag-techalanaomlycore = anomaly core
+construction-graph-tag-condomhat = any condom
 
 #ammo
 construction-graph-tag-coconut-pellet = coconut

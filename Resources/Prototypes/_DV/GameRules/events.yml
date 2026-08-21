@@ -123,9 +123,9 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomHumanoidAppearance
-        randomizeName: false
-        keepGender: true
+      #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+      #  randomizeName: false
+      #  keepGender: true
       - type: RandomMetadata
         nameSegments:
         - NamesDeathCommando

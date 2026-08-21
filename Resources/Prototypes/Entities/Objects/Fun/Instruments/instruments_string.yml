@@ -171,6 +171,14 @@
     program: 105
   - type: Sprite
     sprite: Objects/Fun/Instruments/banjo.rsi
+  # Floofstation additions
+  - type: MeleeWeapon
+    wideAnimationRotation: -45
+    soundHit:
+      path: /Audio/_DV/Weapons/electricguitarhit.ogg
+    damage:
+      types:
+        Blunt: 8
 
 - type: entity
   parent: BaseStringInstrument
