@@ -772,6 +772,7 @@
   loadouts:
   - JesterHat
   - JesterAltHat
+  - CircusClownHat # Euphoria
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -782,6 +783,16 @@
   - ClownSkirt # Starlight
   - JesterSuit
   - JesterAltSuit
+  # Euphoria
+  - CircusClownSuit
+  - CandyClownSuit
+  - SpottedClownSuit
+  - StripedClownSuit
+  - ClownFormalJumpsuit
+  - ClownFormalJumpskirt
+  - ClownClownJumpsuit
+  - ClownClownJumpskirt
+  # End Euphoria
 
 - type: loadoutGroup
   id: ClownBackpack
@@ -837,6 +848,7 @@
   - MimeHead
   - MimeFrenchBeret
   - MimeCap
+  - MimeBowler # Euphoria
 
 - type: loadoutGroup
   id: MimeMask
@@ -854,6 +866,15 @@
   loadouts:
   - MimeJumpsuit
   - MimeJumpskirt
+  # Euphoria
+  - MimeCroppedSuit
+  - MimeNouveauSuit
+  - MimePerformerSuit
+  - MimePerformerSkirt
+  - MimeSuaveWhite
+  - MimeSuaveBlack
+  - MimeFrillsDress
+  # End Euphoria
 
 - type: loadoutGroup
   id: MimeBackpack
@@ -872,6 +893,7 @@
   loadouts:
   - MimeWintercoat
   - MimeWintercoatLong # DeltaV
+  - MimePufferCoat # Euphoria
 
 - type: loadoutGroup
   id: MimeBelt
@@ -955,6 +977,7 @@
   - Ocarina
   - Bagpipe
   #- SuperSynthesizerInstrument # Floofstation - remove this from passenger loadouts
+  - Rickenbacker4003Instrument # Floofstation - add the non antag version its just a bass
 
 - type: loadoutGroup
   id: MusicianJobTrinkets
@@ -963,6 +986,7 @@
   loadouts:
   - LizardPlushieMusician
   - SuperSynthesizerInstrument # Euph
+  - DJSetInstrument # Floofstation - let the muscians become DJs if they want to be
 
 # Cargo
 - type: loadoutGroup
