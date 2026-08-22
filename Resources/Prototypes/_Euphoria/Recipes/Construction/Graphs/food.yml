@@ -9,7 +9,7 @@
       - tag: DoughSlice
         name: crafting-material-dough-slice
         icon:
-          sprite: Objects\Consumable\Food\ingredients.rsi
+          sprite: Objects/Consumable/Food/ingredients.rsi
           state: dough-slice
         doAfter: 5
     - to: hotdogBun
@@ -17,7 +17,7 @@
       - tag: DoughSlice
         name: crafting-material-dough-slice
         icon:
-          sprite: Objects\Consumable\Food\ingredients.rsi
+          sprite: Objects/Consumable/Food/ingredients.rsi
           state: dough-slice
         doAfter: 5
   - node: burgerBun
