@@ -141,6 +141,11 @@
         - id: Screwdriver
         - id: Welder
         - id: NetworkConfigurator
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      jaunter: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       jaunter:
@@ -148,7 +153,7 @@
         whitelist:
           tags:
           - Jaunter
-        insertOnInteract: true
+        insertOnInteract: false
 
 - type: entity
   id: ClothingBeltMercWebbingSalvage
@@ -166,6 +171,11 @@
         - id: Screwdriver
         - id: Welder
         - id: NetworkConfigurator
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      jaunter: !type:ContainerSlot {}
   - type: ItemSlots
     slots:
       jaunter:
@@ -173,4 +183,4 @@
         whitelist:
           tags:
           - Jaunter
-        insertOnInteract: true
+        insertOnInteract: false
