@@ -356,6 +356,7 @@
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolCorpsman
+  parent: [GroupSpeciesBreathTool] # floofstation
   name: loadout-group-breath-tool
   minLimit: 1
   maxLimit: 1
