@@ -1,6 +1,6 @@
 ## If you add a new trait, make sure to add the corresponding component to the whitelist in \Resources\Prototypes\Entities\Mobs\Player\clone.yml so it gets copied to clones correctly!
 
-- type: trait
+- #type: trait # Euphoria - Disabled accent due to racism issues related to East Adian bigotry, we don't know how to change the accent itself yet.
   id: DogAccent
   name: trait-dog-accent-name
   description: trait-dog-accent-desc
