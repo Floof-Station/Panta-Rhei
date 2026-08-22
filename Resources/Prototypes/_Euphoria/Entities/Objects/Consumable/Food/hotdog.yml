@@ -32,7 +32,7 @@
     - state: hotdog-bun
   - type: FoodSequenceStartPoint
     key: Hotdog
-    maxLayers: 3
+    maxLayers: 6
     startPosition: -0.15, 0
     offset: 0.15, 0
     minLayerOffset: 0, 0
@@ -266,3 +266,19 @@
     flavors:
     - bun
     - people
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogBacon
+  name: Humadog
+  description: A long piece of meat to pork you.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: bacon-supreme
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - bacon
+    - meaty
