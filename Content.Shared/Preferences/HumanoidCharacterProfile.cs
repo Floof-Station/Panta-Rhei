@@ -23,7 +23,8 @@ using YamlDotNet.RepresentationModel;
 using Content.Shared._CD.Records; // CD - Character Records
 using Content.Shared.FixedPoint; // CD - Allergies
 using Content.Shared._DV.Traits; // DeltaV - Traits rework
-using Content.Shared._DV.Species; // DeltaV - Species hiding
+using Content.Shared._DV.Species;
+using Content.Shared._Floof.Humanoid; // DeltaV - Species hiding
 
 namespace Content.Shared.Preferences
 {
@@ -927,6 +928,12 @@ namespace Content.Shared.Preferences
 
             var collection = IoCManager.Instance;
             profile.EnsureValid(session, collection!);
+
+            // Begin Euphoria additions - profile migrations
+            var migrations = IoCManager.Resolve<IHumanoidProfileMigrationsManager>();
+            migrations.MigrateProfile(root, profile);
+            // End Euphoria additions
+
             return profile;
         }
     }

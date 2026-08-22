@@ -1,5 +1,3 @@
-using System.Text.RegularExpressions;
-using Content.Shared.Humanoid;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using YamlDotNet.RepresentationModel;
@@ -8,93 +6,6 @@ namespace Content.Shared._Floof.Humanoid;
 
 // ReSharper disable BadExpressionBracesLineBreaks
 // ReSharper disable BadEmptyBracesLineBreaks
-
-/// <summary>
-///     Handles migrating old character profiles (EE Floofstation) to the new format (Project Panta-rhei/Euphoria Station)
-/// </summary>
-public sealed class HumanoidProfileMigrationsSystem : EntitySystem
-{
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-
-    /// <summary>
-    ///     Dictionary of simple migrations in the form of "old field path"->"setter function". <br/><br/>
-    ///
-    ///     Example of a field path: /profile/_traitPreferences[0]. This takes the root yaml data node,
-    ///     assumes it's a mapping (dict), takes the value at key "profile", assumes it's another mapping (dict), takes the value at its key "_traitPreferences",
-    ///     assumes it's a sequence (list), takes the value at index 0, and calls the setter function with that value.</br></br>
-    ///
-    ///     If the yaml doesn't contain the specified path, the setter function is not called.
-    /// </summary>
-    private readonly Dictionary<string, Action<YamlNode, HumanoidProfileExport, HumanoidProfileMigrationsSystem>> _simpleMigrations = new()
-    {
-        // Height was renamed
-        { "/profile/height", (n, p, _) => { p.Profile.Height = n.AsFloat(); } },
-        // During the loadouts rework, trait preferences were changed from simple ProtoIds to "{Prototype: <id>}" strings with plans to extend the format.
-        // This only affects SOME profiles, but not all of them.
-        { "/profile/_traitPreferences", (n, p, ctx) =>
-        {
-            var sequence = n as YamlSequenceNode;
-            if (sequence == null)
-                return;
-
-            var regex = new Regex(@"^\{Prototype: ([a-zA-Z0-9_]+).*\}$");
-            foreach (var node in sequence)
-            {
-                if (node is not YamlScalarNode { Value: {} value })
-                    continue;
-
-                var match = regex.Match(value);
-                if (match.Success)
-                    p.Profile = p.Profile.WithTraitPreference(match.Groups[1].Value, ctx._protoMan);
-            }
-        } },
-    };
-
-    public override void Initialize()
-    {
-        SubscribeLocalEvent<HumanoidProfileImportedEvent>(OnProfileImported);
-    }
-
-    private void OnProfileImported(HumanoidProfileImportedEvent ev)
-    {
-        MigrateProfile(ev.ProfileYaml, ev.DeserializedProfile);
-    }
-
-    public void MigrateProfile(YamlNode profileYaml, HumanoidProfileExport profile)
-    {
-        foreach (var (path, action) in _simpleMigrations)
-        {
-            try {
-                var value = GetValueOrNull(profileYaml, path);
-                if (value is null)
-                    continue;
-
-                action.Invoke(value, profile, this);
-            } catch (Exception e) {
-                Log.Error($"Cannot apply migration on {path}: {e}");
-            }
-        }
-    }
-
-    /// <summary>
-    ///     Tries to retrieve the value at the specified path in the YAML node. Can throw ArgumentException if the path is invalid.
-    /// </summary>
-    /// <param name="root">The root YAML node.</param>
-    /// <param name="path">The path to the value. For example, /dict1/innerdict/evenMoreInnerDict, or [1]/components[1]/someField.</param>
-    public YamlNode? GetValueOrNull(YamlNode root, string path)
-    {
-        var curr = root;
-        var parts = new YamlPathParser(path).Parse();
-        foreach (var part in parts)
-        {
-            curr = part.Resolve(curr);
-            if (curr is null)
-                break;
-        }
-
-        return curr;
-    }
-}
 
 // Yes I overengineered it
 public sealed class YamlPathParser(string input)
