@@ -1,5 +1,4 @@
 using Content.Shared._Floof.Clothing.SlotBlocker;
-using Content.Shared._Floof.Humanoid.ModifyUndies;
 using Content.Shared._Floof.Lewd.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
@@ -18,12 +17,6 @@ public sealed partial class LewdAccessibleRequirement : InteractionRequirement
     public bool CheckUserUnderwear, CheckTargetUnderwear;
 
     /// <summary>
-    ///     Which humanoid layer to consider for underwear. See UnderwearRequirement.
-    /// </summary>
-    [DataField]
-    public HumanoidVisualLayers LayerUser, LayerTarget;
-
-    /// <summary>
     ///     Virtual item used to check whether the relevant slots are accessible.
     /// </summary>
     [DataField]
@@ -36,23 +29,19 @@ public sealed partial class LewdAccessibleRequirement : InteractionRequirement
         InteractionVerbPrototype proto,
         InteractionAction.VerbDependencies deps)
     {
-        if (CheckUserUnderwear && !UnderwearAccessible(args.User, deps, LayerUser, VirtItemUser, UserSlot))
+        if (CheckUserUnderwear && !UnderwearAccessible(args.User, deps, VirtItemUser, UserSlot))
             return false;
 
-        if (CheckTargetUnderwear && !UnderwearAccessible(args.Target, deps, LayerTarget, VirtItemTarget, TargetSlot))
+        if (CheckTargetUnderwear && !UnderwearAccessible(args.Target, deps, VirtItemTarget, TargetSlot))
             return false;
 
         return true;
     }
 
-    private bool UnderwearAccessible(EntityUid mob, InteractionAction.VerbDependencies deps, HumanoidVisualLayers layer, EntProtoId virtItem, SlotFlags slot)
+    private bool UnderwearAccessible(EntityUid mob, InteractionAction.VerbDependencies deps, EntProtoId virtItem, SlotFlags slot)
     {
         if (deps.TryComp<LewdMobDataComponent>(mob, out var lewd) && lewd.BypassClothingChecks)
             return true;
-
-        var underwearSystem = deps.System<ModifyUndiesSystem>();
-        if (!underwearSystem.IsMissingUndergarment(mob, layer))
-            return false;
 
         // This is the most expensive part
         var blockerSystem = deps.System<SlotBlockerSystem>();

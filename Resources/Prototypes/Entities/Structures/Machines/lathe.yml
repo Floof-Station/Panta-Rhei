@@ -626,7 +626,10 @@
   - type: Machine
     board: UniformPrinterMachineCircuitboard
   - type: Lathe
-    producingSound: /Audio/Machines/uniformprinter.ogg
+    producingSound:
+      path: /Audio/Machines/uniformprinter.ogg
+      params:
+        volume: -10 # Euph - make 2x quieter
     idleState: icon
     runningState: building
     staticPacks:

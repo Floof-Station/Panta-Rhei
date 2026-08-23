@@ -24,6 +24,8 @@ public sealed class WeatherSystem : SharedWeatherSystem
     private EntityQuery<MapGridComponent> _gridQuery;
     private EntityQuery<RoofComponent> _roofQuery;
 
+    private int MaxOcclusion = 5; // Euph - added this field
+
     public override void Initialize()
     {
         base.Initialize();
@@ -107,7 +109,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                             {
                                 if (Math.Abs(x) == 1 && Math.Abs(y) == 1 ||
                                     x == 0 && y == 0 ||
-                                    (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > 3)
+                                    (new Vector2(x, y) + node.GridIndices - seed.GridIndices).Length() > MaxOcclusion) // Euph - increase max occlusion
                                 {
                                     continue;
                                 }
@@ -135,7 +137,7 @@ public sealed class WeatherSystem : SharedWeatherSystem
                 }
                 else
                 {
-                    occlusion = 3f;
+                    occlusion = MaxOcclusion; // Euph - increase max occlusion
                 }
             }
 
