@@ -4,6 +4,7 @@ namespace Content.Shared._Floof.Contests;
 
 /// <summary>
 ///     This system handles contests - checking how much stronger one mob (roller) is compared to another (responder).
+///     This replaces the old EE contests system which was largely unused post-rebase.
 /// </summary>
 public sealed class ContestSystem : EntitySystem
 {

@@ -1,5 +1,4 @@
 using Content.IntegrationTests.Fixtures;
-using Content.Server._DV.Footprints.Components;
 using Content.Shared._Floof.Footprint;
 
 namespace Content.IntegrationTests.Tests._DV;

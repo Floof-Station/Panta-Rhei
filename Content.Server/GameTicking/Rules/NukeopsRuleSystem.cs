@@ -321,7 +321,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     }
 
     /// <summary>
-    /// DeltaV - Check if the round should end if a nuke op is cuffed. CheckRoundShouldEnd checks if theres any more 
+    /// DeltaV - Check if the round should end if a nuke op is cuffed. CheckRoundShouldEnd checks if theres any more
     /// alive and non-cuffed nukies remaining.
     /// </summary>
     private void OnNukeOpCuffed(EntityUid uid, NukeOperativeComponent component, CuffedStateChangeEvent ev)

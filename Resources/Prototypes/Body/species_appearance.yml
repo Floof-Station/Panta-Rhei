@@ -51,7 +51,7 @@
     # - map: [ "shoes" ] # Floof - above
     - map: [ "ears" ]
     - map: [ "eyes" ]
-    # - map: [ "belt" ] # Floof - below
+    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation - some tails may want to draw over outer clothing
@@ -72,7 +72,6 @@
 
     # Stuff that goes in front of stuff that goes in front of equipment
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
