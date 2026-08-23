@@ -6,6 +6,12 @@ using Content.Server.Station.Systems;
 
 namespace Content.Server.GameTicking.Rules;
 
+/// <summary>
+/// System that responds to AntagSelectEntityEvent, gets the player's currently selected character, spawns
+/// it in the same way regular players are spawned, and sets args.Entity to the result. This is dinstinct functionality from 
+/// <see cref="AntagLoadProfileRuleSystem"/> in that while that system gets the appearance of the player's character,
+/// this one is for when you want the whole character, name, traits, and all.
+/// </summary>
 public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoadPlayerCharacterRuleComponent>
 {
     [Dependency] private readonly IServerPreferencesManager _prefs = default!;
