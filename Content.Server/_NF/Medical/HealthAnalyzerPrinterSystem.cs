@@ -254,7 +254,7 @@ public sealed class HealthAnalyzerPrinterSystem : EntitySystem
     private string GetEntitySpecies(EntityUid uid)
     {
         return Loc.GetString(
-            TryComp<HumanoidAppearanceComponent>(uid, out var appearance)
+            TryComp<HumanoidProfileComponent>(uid, out var appearance)
                 ? _prototypes.Index(appearance.Species).Name
                 : "health-analyzer-window-entity-unknown-species-text"
         );

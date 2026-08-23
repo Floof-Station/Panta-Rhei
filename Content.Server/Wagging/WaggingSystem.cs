@@ -167,18 +167,22 @@ public sealed class WaggingSystem : EntitySystem
     // Checks if the entity can wag
     public bool CanWag(Entity<WaggingComponent> ent)
     {
-        if (!TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
+        if (!_visualBody.TryGatherMarkingsData(ent.Owner, [ent.Comp.Layer], out var _, out var _, out var applied))
             return false;
 
-        if (!humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Tail, out var markings) || markings.Count == 0)
+        if (!applied.TryGetValue(ent.Comp.Organ, out var markingsSet))
             return false;
 
         // Check if any tail marking can be toggled on or off
-        for (var idx = 0; idx < markings.Count; idx++)
+        foreach (var (layers, markings) in markingsSet)
         {
-            if (TryGetNewMarkingId(ent, markings[idx].MarkingId, out _, true, isWagging: false)
-                || TryGetNewMarkingId(ent, markings[idx].MarkingId, out _, true, isWagging: true))
-                return true;
+            var layerMarkings = markingsSet[layers];
+            for (int i = 0; i < layerMarkings.Count; i++)
+            {
+                if (TryGetNewMarkingId(ent, layerMarkings[i].MarkingId, out _, true, isWagging: false)
+                    || TryGetNewMarkingId(ent, layerMarkings[i].MarkingId, out _, true, isWagging: true))
+                    return true;
+            }
         }
 
         return false;

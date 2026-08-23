@@ -148,6 +148,7 @@ namespace Content.Shared.Preferences
         [DataField("cosmaticDriftCharacterRecords")]
         public PlayerProvidedCharacterRecords? CDCharacterRecords;
 
+        // Euph - port from CD
         [DataField("cosmaticDriftAllergies")]
         public Dictionary<string, FixedPoint2> CDAllergies = new();
         // End CD - Character records

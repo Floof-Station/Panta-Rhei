@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared._CD.Records;
 using Content.Shared._DV.Traits;
+using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
@@ -68,6 +69,10 @@ public sealed partial class HumanoidCharacterProfileV1
     [DataField]
     public Sex Sex;
 
+    // Euph
+    [DataField]
+    public string Customspeciename { get; private set; } = "";
+
     [DataField]
     public Gender Gender;
 
@@ -86,12 +91,16 @@ public sealed partial class HumanoidCharacterProfileV1
 
     [DataField("cosmaticDriftCharacterRecords")]
     public PlayerProvidedCharacterRecords PlayerProvidedCharacterRecords;
+
+    // Euph - port from CD
+    [DataField("cosmaticDriftAllergies")]
+    public Dictionary<string, FixedPoint2> CDAllergies = new();
     // End CD - Character Records
 
 
     public HumanoidCharacterProfile ToV2()
     {
-        return new(Name, FlavorText, Species, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts, Height, PlayerProvidedCharacterRecords);
+        return new(Name, FlavorText, Species, Customspeciename, Age, Sex, Gender, Appearance.ToV2(Species), SpawnPriority, JobPriorities, PreferenceUnavailable, AntagPreferences, TraitPreferences, Loadouts, Height, PlayerProvidedCharacterRecords, CDAllergies);
     }
 }
 

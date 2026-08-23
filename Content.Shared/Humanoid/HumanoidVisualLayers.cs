@@ -26,7 +26,6 @@ namespace Content.Shared.Humanoid
         HeadTop,  // top parts (i.e., ears)
         NeckFluff, // TheDen - Ovinia, for fluff on necks
         TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
-        TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         Wings,
         Eyes,
         RArm,
@@ -45,7 +44,8 @@ namespace Content.Shared.Humanoid
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         TaurBodyConnector,// Floof: Required as "Mini-framework" for tauric species
-        TaurBody// Floof: Required as "Mini-framework" for tauric species
+        TaurBody, // Floof: Required as "Mini-framework" for tauric species
+        TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
     }
 }
 
