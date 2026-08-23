@@ -3,6 +3,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Preferences.Managers;
 using Content.Shared.Preferences;
 using Content.Server.Station.Systems;
+using Content.Server.Ghost.Roles.Events;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -28,9 +29,6 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
     {
         if (args.Handled) //If something already handled this, don't handle it! 
             return;
-	    
-	var uid = ent.Owner;
-
 
 	//Get the player's selected character or, if the session is null, whatever the fuck.
 	var character = args.Session != null
@@ -41,7 +39,14 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
 	//It seems this function technically spawns the entity somewhere first,
 	//but the only purpose of this system is to hand over an entity to
 	//AntagSelectEntityEvent. This doesn't matter in any case, but irks me.
-	args.Entity = _ent.System<StationSpawningSystem>()
-	    .SpawnPlayerMob(Transform(uid).Coordinates, null, character, null);
+	var spawnedCharacter = _ent.System<StationSpawningSystem>()
+	    .SpawnPlayerMob(Transform(ent.Owner).Coordinates, null, character, null);
+	
+        //Create and raise this event so the character is given their traits
+        var spawnedEvent = new GhostRoleSpawnerUsedEvent(ent.Owner, spawnedCharacter, character, args.Session);
+        RaiseLocalEvent(spawnedCharacter, spawnedEvent, true);
+
+	//Finally, hand over the player's character to the event raiser 
+	args.Entity = spawnedCharacter;
     }
 }
