@@ -23,16 +23,16 @@ public sealed class AddMuzzleAccentClothingSystem : EntitySystem
             || !_protoMan.TryIndex(ent.Comp.Prototype, out var prototype))
             return;
 
-        _muzzledSys.SetAccent(ent.Owner, prototype);
+        _muzzledSys.SetAccent(args.Wearer, prototype);
         ent.Comp.IsActive = true;
     }
 
-    private void OnGotUnequipped(EntityUid uid, AddMuzzleAccentClothingComponent component, ref ClothingGotUnequippedEvent args)
+    private void OnGotUnequipped(Entity<AddMuzzleAccentClothingComponent> ent, ref ClothingGotUnequippedEvent args)
     {
-        if (!component.IsActive)
+        if (!ent.Comp.IsActive)
             return;
 
-        RemComp<MuzzledAccentComponent>(args.Wearer);
-        component.IsActive = false;
+        _muzzledSys.SetAccent(args.Wearer, null);
+        ent.Comp.IsActive = false;
     }
 }
