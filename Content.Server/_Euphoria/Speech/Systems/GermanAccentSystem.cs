@@ -1,12 +1,13 @@
 using System.Text;
-using Content.Server._Floof.Speech.Components;
-using Robust.Shared.Random;
 using System.Text.RegularExpressions;
+using Content.Server._Euphoria.Speech.Components;
+using Content.Server.Speech.EntitySystems;
 using Content.Shared.Speech;
+using Robust.Shared.Random;
 
-namespace Content.Server.Speech.EntitySystems;
+namespace Content.Server._Euphoria.Speech.Systems;
 
-public sealed class GermanAccentSystem : EntitySystem
+public sealed class GermanAccentSystem : Robust.Shared.GameObjects.EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;

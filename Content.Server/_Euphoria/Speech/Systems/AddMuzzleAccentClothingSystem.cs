@@ -1,12 +1,11 @@
 using Content.Server._Euphoria.Speech.Components;
 using Content.Server._Vulp.Speech.Accents.Mumble;
-using Content.Server.Speech.Components;
 using Content.Shared.Clothing;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server._Euphoria.Speech.EntitySystem;
+namespace Content.Server._Euphoria.Speech.Systems;
 
-public sealed class AddMuzzleAccentClothingSystem : Robust.Shared.GameObjects.EntitySystem
+public sealed class AddMuzzleAccentClothingSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly MuzzledAccentSystem _muzzledSys = default!;

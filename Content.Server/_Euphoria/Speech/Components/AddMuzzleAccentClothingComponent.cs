@@ -9,11 +9,12 @@ namespace Content.Server._Euphoria.Speech.Components;
 [RegisterComponent]
 public sealed partial class AddMuzzleAccentClothingComponent : Component
 {
-    [DataField("replacement")]
+    [DataField]
     public ProtoId<MuzzleAccentPrototype> Prototype;
 
     /// <summary>
     ///     Is that clothing is worn and affecting someones accent?
     /// </summary>
+    [ViewVariables]
     public bool IsActive = false;
 }
