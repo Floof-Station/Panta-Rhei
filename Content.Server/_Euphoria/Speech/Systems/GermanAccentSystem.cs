@@ -7,7 +7,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Euphoria.Speech.Systems;
 
-public sealed class GermanAccentSystem : Robust.Shared.GameObjects.EntitySystem
+public sealed class GermanAccentSystem : EntitySystem
 {
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly ReplacementAccentSystem _replacement = default!;
