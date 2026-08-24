@@ -53,12 +53,20 @@ public sealed class MuzzledAccentSystem : EntitySystem
             // Try to find a suitable replacement
             start:
             var maxSubstr = Math.Min(args.Message.Length - i, accent.MaxCharacterLength);
+            if (maxSubstr == 0)
+                break;
+
             for (var substrLen = maxSubstr; substrLen > 0; substrLen--)
             {
-                var span = args.Message.AsMemory(i, substrLen);
                 var lookup = accent.Lookups![substrLen - 1];
+                if (lookup.Dictionary.Count == 0) // Skip length group if there's no replacements to make
+                    continue;
+
+                var span = args.Message.AsMemory(i, substrLen);
                 if (lookup.TryGetValue(span, out var replacement))
                 {
+                    // If a replacement is found, insert it, skip the replaced characters in the original character, and repeat the outer loop
+                    // I couldn't a good solution without using goto here
                     result.Append(replacement);
                     i += substrLen;
                     goto start;
