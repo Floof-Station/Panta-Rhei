@@ -367,8 +367,8 @@
   - type: Clothing
     sprite: Clothing/Mask/muzzle.rsi
   - type: IngestionBlocker
-  - type: AddAccentClothing
-    accent: MuzzledAccent # Vulpstation/Floofstation - better muzzle. If we get more mumble accents, we need to add a way to choose the proto here.
+  - type: AddMuzzleAccentClothing # Vulpstation/Floofstation - better muzzle. If we get more mumble accents, we need to add a way to choose the proto here.
+    prototype: BasicMuzzle
   - type: EmoteBlocker
     blocksCategories:
     - Vocal
