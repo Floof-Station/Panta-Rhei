@@ -5327,3 +5327,37 @@ Entries:
       message: Dog Accent no longer changes L's to R's automatically.
   id: 664
   time: '2026-08-23T04:05:15.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Lowered the sale price of a stack of diamonds to 9k spesos.
+  id: 665
+  time: '2026-08-24T09:47:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Botany can now grow Strawberries.
+    - type: Add
+      message: >-
+        Additional food and drink recipes for Strawberries have been added.
+        Strawberry Pilk is now a thing be afraid.
+    - type: Tweak
+      message: Some recipes have been tweaked to use Strawberries.
+  id: 666
+  time: '2026-08-24T09:48:28.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Added a rude gesture (works like waving) and a suggestive gesture (works
+        like checkout).
+  id: 667
+  time: '2026-08-24T09:49:39.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: >-
+        Ninjas should no longer be asked to bomb places they shouldn't. (Ask in
+        AHELP if unsure about your target!)
+  id: 668
+  time: '2026-08-24T12:31:02.0000000+00:00'

@@ -522,6 +522,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-pa
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeaconEngineering
@@ -546,6 +549,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-atmos
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeaconEngineering
@@ -647,6 +653,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-evac
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -687,6 +696,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-dorms
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -722,6 +734,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -730,6 +745,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-N
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -738,6 +756,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-NE
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -746,6 +767,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-E
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -754,6 +778,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-SE
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -762,6 +789,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-S
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -770,6 +800,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-SW
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -778,6 +811,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-W
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
@@ -786,6 +822,9 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-escape-pod-NW
+  - type: Tag # Euphoria | Parity with warp point blocklist
+    tags:
+    - NinjaBombingTargetBlocker
 
 - type: entity
   parent: DefaultStationBeacon
