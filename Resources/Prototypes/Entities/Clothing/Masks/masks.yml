@@ -366,6 +366,11 @@
     sprite: Clothing/Mask/muzzle.rsi
   - type: Clothing
     sprite: Clothing/Mask/muzzle.rsi
+    # Begin Euphoria additions
+    stripDelay: 4
+    equipDelay: 4
+    unequipDelay: 4
+    # End Euphoria additions
   - type: IngestionBlocker
   - type: AddMuzzleAccentClothing # Vulpstation/Floofstation - better muzzle. If we get more mumble accents, we need to add a way to choose the proto here.
     prototype: BasicMuzzle
