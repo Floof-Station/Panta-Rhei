@@ -1,0 +1,316 @@
+- type: markingsGroup
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
+  id: Resomi
+  onlyGroupWhitelisted: true
+  limits: {} # Only common ones
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceResomi
+  name: resomi appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganResomiTorso
+      Head: OrganResomiHead
+      ArmLeft: OrganResomiArmLeft
+      ArmRight: OrganResomiArmRight
+      HandRight: OrganResomiHandRight
+      HandLeft: OrganResomiHandLeft
+      LegLeft: OrganResomiLegLeft
+      LegRight: OrganResomiLegRight
+      FootLeft: OrganResomiFootLeft
+      FootRight: OrganResomiFootRight
+      Brain: OrganResomiBrain
+      Eyes: OrganResomiEyes
+      Tongue: OrganResomiTongue
+      Appendix: OrganResomiAppendix
+      Ears: OrganResomiEars
+      Lungs: OrganResomiLungs
+      Heart: OrganResomiHeart
+      Stomach: OrganResomiStomach
+      Liver: OrganResomiLiver
+      Kidneys: OrganResomiKidneys
+  - type: HumanoidProfile
+    species: Resomi
+  - type: Inventory
+    speciesId: Resomi
+    displacements: &allDisplacements
+      jumpsuit:
+        sizeMaps:
+          32: &standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
+            state: jumpsuit
+      eyes:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: eyes
+      gloves:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: hands
+      head:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: head
+      back:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: back
+      ears:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: ears
+      shoes:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: feet
+      neck:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: neck
+      mask:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: mask
+      suitstorage:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: suitStorage
+      belt:
+        sizeMaps:
+          32:
+            <<: *standardDisplacement
+            state: belt
+    femaleDisplacements:
+      <<: *allDisplacements # afaik female resomi use the same displacements as male ones.
+
+- type: entity
+  parent:
+  - AppearanceResomi
+  - BaseSpeciesMobOrganic
+  id: MobResomi
+  name: Urist McRaptor
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Schechi
+    understands:
+    - TauCetiBasic
+    - Schechi
+    naturalLanguage: Schechi
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 185
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Speech
+    speechVerb: Parrot
+    speechSounds: UnisexResomi
+    allowedEmotes: [ 'Chirp', 'Purr', 'Growl', 'HarpySquawk', 'HarpyCaw', 'Coo' ]
+  - type: Vocal # Floofstation - uncommented
+    sounds:
+      Male: MaleResomi
+      Unsexed: MaleResomi
+      Female: FemaleResomi
+  - type: Hands # Note: not placing this in the appearence prototype because it doesn't inherit any hands
+    handDisplacement:
+      sizeMaps:
+        32:
+          sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
+          state: inHand
+  - type: FootPrints # Goobstation - resomi footprints
+    leftBarePrint: "footprint-left-bare-lizard"
+    rightBarePrint: "footprint-right-bare-lizard"
+  - type: Bloodstream # Goobstation - lore stuff
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: AmmoniaBlood
+        Quantity: 200
+  - type: MeleeWeapon # Goobstation - aliem raptors probably use their claws
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+  - type: Damageable # Goobstation - resomi damage modifiers
+    damageModifierSet: Resomi
+  - type: TemperatureDamage
+    coldDamageThreshold: 195.4 # Goobstation - freezing point of ammonia is -77.75°C
+    heatDamageThreshold: 320.15 # Goobstation - space chickens can't tolerate reasonable temperatures, but requiring them to stay icy would be cringe, so instead make their heat damage threshold dangerously close to standard atmos, at 47°C
+    coldDamage:
+      types:
+        Cold: 0.05 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 3 #per second, scales with temperature & other constants
+  - type: MovementSpeedModifier
+    weightlessAcceleration: 2.5 # Goobstation - Birb move fast in zero-g
+  - type: PseudoItem # Goobstation - Baggable; certified smol ops
+    storedOffset: -10,0
+    shape:
+    - 0, 0, 3, 2
+    - 0, 2, 5, 4
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ResomiEmotes # Added
+
+
+# Organs
+- type: entity
+  parent: OrganBase
+  id: OrganResomi
+  abstract: true
+  suffix: Resomi
+
+- type: entity
+  id: OrganResomiMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: [OrganAnimalInternal, OrganResomi] # parent from animal organ for sprites
+  id: OrganResomiInternal
+  abstract: true
+  components: []
+
+- type: entity
+  id: OrganResomiVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Floof/Mobs/Species/Resomi/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Resomi
+
+- type: entity
+  parent: [ OrganResomi, OrganResomiVisual ]
+  id: OrganResomiExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _DV/Mobs/Species/Resomi/parts.rsi # Delta V - Changed to our Sprites
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganResomiExternal ]
+  id: OrganResomiTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganResomiExternal ]
+  id: OrganResomiHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.FacialHair
+    dependentHidingLayers:
+      enum.HumanoidVisualLayers.Snout:
+      - enum.HumanoidVisualLayers.SnoutCover
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganResomiExternal ]
+  id: OrganResomiArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganResomiExternal ]
+  id: OrganResomiArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganResomiExternal ]
+  id: OrganResomiHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganResomiExternal ]
+  id: OrganResomiHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganResomiExternal ]
+  id: OrganResomiLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganResomiExternal ]
+  id: OrganResomiLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganResomiExternal ]
+  id: OrganResomiFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganResomiExternal ]
+  id: OrganResomiFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganResomiInternal ]
+  id: OrganResomiBrain
+
+- type: entity
+  parent: [ OrganResomiVisual, OrganBaseEyes, OrganResomiInternal ]
+  id: OrganResomiEyes
+  components:
+  - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.Eyes
+    data:
+      sprite: Mobs/Customization/eyes.rsi # Delta V - Different eyes
+      state: eyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganResomiInternal ]
+  id: OrganResomiTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganResomiInternal ]
+  id: OrganResomiAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganResomiInternal ]
+  id: OrganResomiEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganResomiInternal, OrganResomiMetabolizer ]
+  id: OrganResomiLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganResomiInternal, OrganResomiMetabolizer ]
+  id: OrganResomiHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganResomiInternal, OrganResomiMetabolizer ]
+  id: OrganResomiStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganResomiInternal, OrganResomiMetabolizer ]
+  id: OrganResomiLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganResomiInternal, OrganResomiMetabolizer ]
+  id: OrganResomiKidneys
