@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Harpy
   onlyGroupWhitelisted: true
   limits:
@@ -157,6 +157,7 @@
     baseSprintSpeed: 5
   - type: HarpyVisuals
   - type: UltraVision
+  # Begin Euphoria additions
   - type: Tag
     tags:
     - CanPilot
@@ -164,10 +165,19 @@
     - DoorBumpOpener
     - AnomalyHost
     - OviniaEmotes
-      - HarpyEmotes # Floofstation
-  - type: FootPrints # DeltaV port from EE, blood splatter # Floofstation - delta-v removed those, but we're keeping them
-    leftBarePrint: "footprint-left-bare-lizard" # DeltaV port from EE, blood splatter
-    rightBarePrint: "footprint-right-bare-lizard" # DeltaV port from EE, blood splatter
+    - HarpyEmotes # Added
+  - type: FootPrints # # delta-v removed those, but we're keeping them
+    leftBarePrint: footprint-left-bare-lizard
+    rightBarePrint: footprint-right-bare-lizard
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - ValyrianStandard
+    understands:
+    - TauCetiBasic
+    - ValyrianStandard
+    naturalLanguage: ValyrianStandard
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

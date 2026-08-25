@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Vulpkanin
   limits:
     enum.HumanoidVisualLayers.Hair:
@@ -180,6 +180,23 @@
   - type: TemperatureProtection
     heatingCoefficient: 1.2
     coolingCoefficient: 0.3
+  # Begin Euphoria additions
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Canilunzt
+    understands:
+    - TauCetiBasic
+    - Canilunzt
+    naturalLanguage: Canilunzt
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - VulpEmotes # Added
+  # End Euphoria additions
     # DV - No jumps for Vulpy
 #  - type: JumpAbility
 #    action: ActionVulpkaninGravityJump

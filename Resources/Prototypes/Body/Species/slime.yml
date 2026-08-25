@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Slime
   limits:
     enum.HumanoidVisualLayers.Hair:
@@ -91,8 +91,9 @@
     grid:
     - 0,0,1,2
     maxItemSize: Large
-    storageInsertSound:
+    storageInsertSound: &storageSound
       path: /Audio/Voice/Slime/slime_squish.ogg
+    storageRemoveSound: *storageSound # Euphoria: add removal sound
   - type: ContainerContainer
     containers:
       storagebase: !type:Container
@@ -133,7 +134,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#2cf274"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Bloodstream
@@ -161,7 +162,7 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 0.05
+            Heat: 2 # Reupped to 2 from Floof. Slimes should be hurt by water, not tickled...
       - !type:PopupMessage
         type: Local
         visualType: Large
@@ -179,7 +180,33 @@
     damageRecovery:
       types:
         Asphyxiation: -1.0
-    maxSaturation: 15
+    maxSaturation:
+  # Begin Euphoria additions
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Bubblish
+    understands:
+    - TauCetiBasic
+    - Bubblish
+    naturalLanguage: Bubblish
+  - type: Geras # Euphoria - Readded this component to allow Geras to work.
+  - type: FootPrints # Floofstation - delta-v removed these, we're keeping them
+    leftBarePrint: "footprint-left-bare-slime"
+    rightBarePrint: "footprint-right-bare-slime"
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - SlimeEmotes # Added
+  - type: StorageBlockedByClothing # Euphoria: Adding the component and tags
+    slots:
+    - INNERCLOTHING
+    allowedTags:
+    - ShirtlessClothing
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

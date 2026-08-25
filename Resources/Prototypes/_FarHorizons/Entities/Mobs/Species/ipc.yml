@@ -33,7 +33,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#b67823"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MeleeWeapon

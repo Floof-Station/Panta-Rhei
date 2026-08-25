@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Rodentia
   limits:
     enum.HumanoidVisualLayers.Hair:
@@ -136,6 +136,20 @@
   - type: DrawDepthVisualizer
     key: enum.SneakingVisuals.Sneaking
     depth: SmallMobs
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Mouse # squeaaak
+    understands:
+    - TauCetiBasic
+    - Mouse
+    naturalLanguage: Mouse
+  - type: NightVisione
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Arachnid
   onlyGroupWhitelisted: true
   limits:
@@ -123,7 +123,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#162581"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color: "#162581"
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Speech
@@ -137,6 +137,16 @@
       Unsexed: UnisexArachnid
   - type: TypingIndicator
     proto: spider
+  # Begin Euphoria additions
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Arachnic
+    understands:
+    - TauCetiBasic
+    - Arachnic
+    naturalLanguage: Arachnic
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

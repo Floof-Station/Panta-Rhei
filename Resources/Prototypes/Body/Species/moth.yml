@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Moth
   onlyGroupWhitelisted: true
   limits:
@@ -145,6 +145,7 @@
     accent: zombieMoth
   - type: Speech
     speechVerb: Moth
+    speechSounds: Moth # Euphoria - bring over moth speech from frontier
     allowedEmotes: ['Chitter', 'Squeak', 'Flap']
   - type: TypingIndicator
     proto: moth
@@ -157,7 +158,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#808A51"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
@@ -193,6 +194,23 @@
       289: 0.9
       275: 0.8
       250: 0.7
+  # Begin Euphoria additions
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - Moffic
+    understands:
+    - TauCetiBasic
+    - Moffic
+    naturalLanguage: Moffic
+  - type: Tag # Floofstation
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - MothEmotes # Added
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

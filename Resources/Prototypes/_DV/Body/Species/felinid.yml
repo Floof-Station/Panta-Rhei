@@ -130,6 +130,29 @@
     transferRate: 0
     speedModifier: 0.1
     rootSound: "/Audio/Nyanotrasen/Voice/Felinid/cat_growl1.ogg"
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    - Nekomimetic
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    - Nekomimetic
+    naturalLanguage: Nekomimetic
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - FelinidEmotes # Added
+  # End Euphoria additions
 
 
 - type: entity

@@ -53,7 +53,7 @@
     damageOverlayGroups:
       Brute:
         sprite: _Impstation/Mobs/Effects/allulalo_brute_damage.rsi
-        color: "#e5efff"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -118,6 +118,16 @@
     baseSprintSpeed: 5
   - type: Carriable # Delta V - grips the bird
     freeHandsRequired: 1
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - ValyrianStandard # Idk what these goobers speak
+    understands:
+    - TauCetiBasic
+    - ValyrianStandard # Idk what these goobers speak
+  naturalLanguage: ValyrianStandard
+  # End Euphoria additions
 
 # Begin Delta V addition - Nubody
 - type: entity
@@ -227,7 +237,7 @@
   # base scale to determine the metric/imperial height values, so we're just correcting the scale
   # because Allulalo have to be the special kid on the block.
   - type: ScaleVisuals
-    scale: 2.0, 2.0 
+    scale: 2.0, 2.0
     originalScale: 2.0, 2.0
   # END DeltaV
 
@@ -335,7 +345,7 @@
 
 
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Allulalo
   onlyGroupWhitelisted: true
   limits:

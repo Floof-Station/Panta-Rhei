@@ -112,7 +112,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#7a8bf2"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn: # DeltaV
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MeleeWeapon
@@ -187,6 +187,23 @@
   - type: Preenable
     featherPrototype: AvaliFeather
   # End DeltaV additions
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Schechi
+    understands:
+    - TauCetiBasic
+    - Schechi
+    naturalLanguage: Schechi
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ResomiEmotes # Added
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

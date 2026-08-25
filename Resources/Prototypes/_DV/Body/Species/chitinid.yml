@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Chitinid
   onlyGroupWhitelisted: true
   limits:
@@ -164,6 +164,16 @@
     softness: 5
     color: "#2CFA1F"
     autoRot: true
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Chittin
+    understands:
+    - TauCetiBasic
+    - Chittin
+    naturalLanguage: Chittin
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

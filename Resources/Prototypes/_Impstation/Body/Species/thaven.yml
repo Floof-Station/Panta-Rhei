@@ -173,7 +173,17 @@
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: CosmicMarkVisuals # DeltaV - cosmic cult
-    offset: 0, 0.0625 #2 pixels up
+    offset: 0, 0.0625 #2 pixels
+  # Begin Euphoria additions
+  - type: LanguageKnowledge # Floofstation. Idfk what a thaven is. Replace this with something if you care.
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    naturalLanguage: SolCommon
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

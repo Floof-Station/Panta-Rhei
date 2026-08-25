@@ -1,6 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
-  id: Reptilian
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]  id: Reptilian
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 1 # Delta V - Reptilians got hair
@@ -179,6 +178,26 @@
       295: 0.8
       285: 0.7
   - type: Wagging
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Draconic
+    understands:
+    - TauCetiBasic
+    - Draconic
+    naturalLanguage: Draconic
+  - type: FootPrints # Delta-v removed these, we're keeping them
+    leftBarePrint: footprint-left-bare-lizard
+    rightBarePrint: footprint-right-bare-lizard
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - UnathiEmotes # Added
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

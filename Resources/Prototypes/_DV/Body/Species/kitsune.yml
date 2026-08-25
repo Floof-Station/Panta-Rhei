@@ -98,7 +98,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#808A51"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Speech
@@ -134,6 +134,23 @@
     - 0,0,1,4
     - 0,2,3,4
     - 4,0,5,4
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Kagebun
+    understands:
+    - TauCetiBasic
+    - Kagebun
+    naturalLanguage: Kagebun
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - KitsuneEmotes # Added
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

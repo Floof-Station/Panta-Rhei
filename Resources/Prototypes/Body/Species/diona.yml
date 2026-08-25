@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Diona
   onlyGroupWhitelisted: true
   limits:
@@ -88,7 +88,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#cd7314"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Butcherable
@@ -200,6 +200,16 @@
     channels:
     - Rootsong
   # DeltaV changes end
+  # Begin Euphoria additions
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
+    naturalLanguage: RootSpeak
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

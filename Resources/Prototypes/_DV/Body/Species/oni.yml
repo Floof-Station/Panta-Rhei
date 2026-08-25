@@ -110,6 +110,16 @@
     damageModifierSet: Oni
   - type: Stamina
     baseCritThreshold: 115
+  # Begin Euphoria additions
+  - type: LanguageKnowledge #Euphoria - Languages
+    speaks:
+    - TauCetiBasic
+    - Kagebun
+    understands:
+    - TauCetiBasic
+    - Kagebun
+    naturalLanguage: Kagebun
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

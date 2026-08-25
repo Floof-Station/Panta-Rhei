@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Feroxi
   limits:
     enum.HumanoidVisualLayers.Hair:
@@ -117,6 +117,16 @@
     pulseTime: 5
     activateSound: null
     deactivateSound: null
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Nehina
+    understands:
+    - TauCetiBasic
+    - Nehina
+    naturalLanguage: Nehina
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

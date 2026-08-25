@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Vox
   limits:
     enum.HumanoidVisualLayers.Hair:
@@ -235,7 +235,7 @@
     damageOverlayGroups:
       Brute:
         sprite: Mobs/Effects/brute_damage.rsi
-        color: "#7a8bf2"
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
       Burn:
         sprite: Mobs/Effects/burn_damage.rsi
   - type: Bloodstream
@@ -252,6 +252,29 @@
       types:
         Slash: 5 # Reduce?
   - type: Wagging
+  # Begin Euphoria additions
+  - type: Temperature
+    currentTemperature: 310.15
+    specificHeat: 42
+  - type: TemperatureDamage
+    heatDamageThreshold: 325 # still gotta wear a firesuit
+    coldDamageThreshold: -200 # Floof: Space-fairing chickens
+    coldDamage:
+      types:
+        Cold: 0 #per second, scales with temperature & other constants
+    heatDamage:
+      types:
+        Heat: 1.5 #floof/euphoria changes end here
+  - type: LanguageKnowledge # Floofstation
+    speaks:
+    - TauCetiBasic
+    - NewKinPidgin
+    understands:
+    - TauCetiBasic
+    - NewKinPidgin
+    - OldKinPidgin
+    naturalLanguage: NewKinPidgin
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

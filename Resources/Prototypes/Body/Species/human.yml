@@ -1,5 +1,5 @@
 - type: markingsGroup
-  parent: Undergarments
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Human
   limits:
     enum.HumanoidVisualLayers.Hair:
@@ -93,6 +93,16 @@
     spawned:
     - id: FoodMeatHuman
       amount: 5
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    naturalLanguage: SolCommon
+  # End Euphoria additions
 
 - type: entity
   parent: OrganBase

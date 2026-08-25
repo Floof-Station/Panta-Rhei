@@ -12,7 +12,6 @@ namespace Content.Shared.Humanoid
     {
         Special, // for the cat ears
         Tail,
-        TailOverlay, // markings that go ontop of tails
         Hair,
         FacialHair,
         UndergarmentTop,    // Floofstation note: Undershirt has been changed to this
@@ -25,7 +24,6 @@ namespace Content.Shared.Humanoid
         HeadSide, // side parts (i.e., frills)
         HeadTop,  // top parts (i.e., ears)
         NeckFluff, // TheDen - Ovinia, for fluff on necks
-        TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         Wings,
         Eyes,
         RArm,
@@ -43,9 +41,13 @@ namespace Content.Shared.Humanoid
         Fire,
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
-        TaurBodyConnector,// Floof: Required as "Mini-framework" for tauric species
-        TaurBody, // Floof: Required as "Mini-framework" for tauric species
-        TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
+        // Begin Euphoria additions
+        TailOverlay,
+        TaurBodyConnector,// Required as "Mini-framework" for tauric species
+        TaurBody, // Required as "Mini-framework" for tauric species
+        TailBehind,
+        TailOversuit,
+        // End Euphoria additions
     }
 }
 
