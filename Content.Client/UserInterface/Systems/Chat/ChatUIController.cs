@@ -1,6 +1,9 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
+using System.Text.RegularExpressions; // DeltaV - Client-Side Radio Channel Colors
+using Content.Client._Floof.Language.Systems;
 using Content.Client.Administration.Managers;
 using Content.Client.Chat;
 using Content.Client.Chat.Managers;
@@ -41,6 +44,7 @@ using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Client.Nyanotrasen.Chat; //Nyano - Summary: chat namespace.
+using Content.Shared._Floof.Language; // Starlight: Language prefixes
 
 
 namespace Content.Client.UserInterface.Systems.Chat;
@@ -68,6 +72,7 @@ public sealed partial class ChatUIController : UIController
     [UISystemDependency] private readonly TransformSystem? _transform = default;
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
+    [UISystemDependency] private readonly LanguageSystem? _lang = default!; // Starlight
 
     private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
@@ -728,7 +733,7 @@ public sealed partial class ChatUIController : UIController
 
     public void UpdateSelectedChannel(ChatBox box)
     {
-        var (prefixChannel, _, radioChannel) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
+        var (prefixChannel, _, radioChannel, _) = SplitInputContents(box.ChatInput.Input.Text.ToLower()); // Starlight edit
 
         if (prefixChannel == ChatSelectChannel.None)
             box.ChatInput.ChannelSelector.UpdateChannelSelectButton(box.SelectedChannel, null);
@@ -743,36 +748,42 @@ public sealed partial class ChatUIController : UIController
         // DeltaV end
     }
 
-    public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel) SplitInputContents(string text)
+    public (ChatSelectChannel chatChannel, string text, RadioChannelPrototype? radioChannel, LanguagePrototype? language) SplitInputContents(string text)
     {
         text = text.Trim();
         if (text.Length == 0)
-            return (ChatSelectChannel.None, text, null);
+            return (ChatSelectChannel.None, text, null, null); // Starlight: Language prefixes
 
         // We only cut off prefix only if it is not a radio or local channel, which both map to the same /say command
         // because ????????
 
+        //Starlight begin - detect language prefix. don't modify text directly here and use modText for radio channel checks.
+        // Euph - rewritten
+        var modText = text;
+        var language = _lang?.GetLanguageFromPrefix(_player.LocalEntity ?? EntityUid.Invalid, ref text, modifyText: false, out var languageInvalid);
+        //Starlight end
+
         ChatSelectChannel chatChannel;
-        if (TryGetRadioChannel(text, out var radioChannel))
+        if (TryGetRadioChannel(modText, out var radioChannel))
             chatChannel = ChatSelectChannel.Radio;
         else
             chatChannel = PrefixToChannel.GetValueOrDefault(text[0]);
 
         if ((CanSendChannels & chatChannel) == 0)
-            return (ChatSelectChannel.None, text, null);
+            return (ChatSelectChannel.None, text, null, language);
 
         if (chatChannel == ChatSelectChannel.Radio)
-            return (chatChannel, text, radioChannel);
+            return (chatChannel, text, radioChannel, language);
 
         if (chatChannel == ChatSelectChannel.Local)
         {
             if (_ghost?.IsGhost != true)
-                return (chatChannel, text, null);
+                return (chatChannel, text, null, language);
             else
                 chatChannel = ChatSelectChannel.Dead;
         }
 
-        return (chatChannel, text[1..].TrimStart(), null);
+        return (chatChannel, text[1..].TrimStart(), null, language);
     }
 
     public void SendMessage(ChatBox box, ChatSelectChannel channel)
@@ -783,11 +794,12 @@ public sealed partial class ChatUIController : UIController
         box.ChatInput.Input.Clear();
         box.ChatInput.Input.ReleaseKeyboardFocus();
         UpdateSelectedChannel(box);
+        UpdateLanguageNotifier(box); // Starlight: Language prefixes
 
         if (string.IsNullOrWhiteSpace(text))
             return;
 
-        (var prefixChannel, text, var _) = SplitInputContents(text);
+        (var prefixChannel, text, _, _) = SplitInputContents(text); // Starlight: Language prefixes
 
         // Check if message is longer than the character limit
         if (text.Length > MaxMessageLength)
@@ -859,8 +871,38 @@ public sealed partial class ChatUIController : UIController
         }
     }
 
+    /// <summary>
+    /// DeltaV - Regex expression to match on the chat message text in order to replace it with another color.
+    /// </summary>
+    private static readonly Regex RadioChatColorRegex = new(@"color=#?([a-fA-F0-9]{8})", RegexOptions.Compiled);
+
+    /// <summary>
+    /// DeltaV - Replaces the channel color hex code in a message with the client-side hex color
+    /// overridden by <see cref="Content.Client._DV.Radio.RadioChannelColorSystem"/> .
+    /// </summary>
+    /// <param name="message">The message to find and replace the color hex code in.</param>
+    /// <param name="channelProtoId">The proto ID of the channel. Basically the replacement color.</param>
+    /// <returns>The message with the color hex code replaced, if it exists.</returns>
+    private string ReplaceRadioChannelColorFromServer(string message, string channelProtoId)
+    {
+        if (_prototypeManager.Resolve<RadioChannelPrototype>(channelProtoId, out var channel))
+        {
+            return RadioChatColorRegex.Replace(message, $"color={channel.Color.ToHex()}");
+        }
+
+        return message;
+    }
+
     public void ProcessChatMessage(ChatMessage msg, bool speechBubble = true)
     {
+        // BEGIN DeltaV
+        // Needs to happen before ANY other color or pattern matching so that we don't screw up the other colors in the message.
+        if (msg.Channel == ChatChannel.Radio && msg.RadioChannelProtoId is { } channel)
+        {
+            msg.WrappedMessage = ReplaceRadioChannelColorFromServer(msg.WrappedMessage, channel);
+        }
+        // END DeltaV
+
         // color the name unless it's something like "the old man"
         if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper) && _chatNameColorsEnabled)
         {
@@ -1012,4 +1054,18 @@ public sealed partial class ChatUIController : UIController
 
         public Queue<SpeechBubbleData> MessageQueue { get; } = new();
     }
+
+    //Starlight begin
+    public void UpdateLanguageNotifier(ChatBox box)
+    {
+        var (_, _, _, language) = SplitInputContents(box.ChatInput.Input.Text.ToLower());
+        if (language is null)
+            box.SelectedLanguage.Visible = false;
+        else
+        {
+            box.SelectedLanguage.Text = Loc.GetString("language-chat-confirmation", ("lang", language.Name));
+            box.SelectedLanguage.Visible = true;
+        }
+    }
+    //Starlight end
 }

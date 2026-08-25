@@ -1,0 +1,99 @@
+﻿- type: entity
+  parent: BaseItem
+  id: CondomPackTeal
+  name: Teal Condom Pack
+  description: A one size fits all single use condom packet.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_pack_teal
+  - type: StaticPrice
+    price: 10
+  - type: SpawnItemsOnUse
+    items:
+    - id: TealUnusedCondom
+    sound:
+      path: /Audio/Effects/packetrip.ogg
+  - type: Tag
+    tags:
+    - CondomWrapper
+
+- type: entity
+  parent: CondomPackTeal
+  id: CondomPackPink
+  name: Pink Condom Pack
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_pack_pink
+  - type: SpawnItemsOnUse
+    items:
+    - id: PinkUnusedCondom
+
+# This is going to get very fucky im not sure if this is a good way to do this
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: TealUnusedCondom
+  name: teal condom
+  description: A one size fits all single use condom.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_teal_unused
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: "blank" # going to have to leave this blank so we can equip in slot till sprites are made small enough to hide under cloths
+        shader: "unshaded"
+        visible: false
+  - type: Tag
+    tags:
+    - Condom
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: PinkUnusedCondom
+  name: teal condom
+  description: A one size fits all single use condom.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_pink_unused
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: "blank" # going to have to leave this blank so we can equip in slot till sprites are made small enough to hide under cloths
+        shader: "unshaded"
+        visible: false
+  - type: Tag
+    tags:
+    - Condom
+
+# Admeme versions for Phosphate i regret this entirely
+- type: entity
+  parent: WeaponWaterGunBase
+  id: TealUnusedCondomAdmeme
+  name: weirdly large condom
+  suffix: Admeme
+  description: Wear a condom so I can slingshot your semen back at you is what you wish someone would say...
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_teal_unused
+  - type: SolutionContainerManager
+    solutions:
+      chamber:
+        maxVol: 100 #20 shots
+
+- type: entity
+  parent: TealUnusedCondomAdmeme
+  id: PinkUnusedCondomAdmeme
+  name: weirdly large condom
+  suffix: Admeme
+  description: Wear a condom so I can slingshot your semen back at you is what you wish someone would say...
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_pink_unused

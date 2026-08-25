@@ -212,7 +212,6 @@
     tags:
     - ClownMask
     - WhitelistChameleon
-    - IPCMaskWearable # EE - IPCs
   - type: HideLayerClothing
     slots:
     - Snout
@@ -307,9 +306,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -333,7 +329,6 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - IPCMaskWearable # EE - IPCs
   - type: HideLayerClothing
     slots:
     - Snout
@@ -371,9 +366,14 @@
     sprite: Clothing/Mask/muzzle.rsi
   - type: Clothing
     sprite: Clothing/Mask/muzzle.rsi
+    # Begin Euphoria additions
+    stripDelay: 4
+    equipDelay: 4
+    unequipDelay: 4
+    # End Euphoria additions
   - type: IngestionBlocker
-  - type: AddAccentClothing
-    accent: MuzzledAccent # Vulpstation/Floofstation - better muzzle. If we get more mumble accents, we need to add a way to choose the proto here.
+  - type: AddMuzzleAccentClothing # Vulpstation/Floofstation - better muzzle. If we get more mumble accents, we need to add a way to choose the proto here.
+    prototype: BasicMuzzle
   - type: EmoteBlocker
     blocksCategories:
     - Vocal
@@ -480,6 +480,9 @@
     hideOnToggle: true
   - type: FlashImmunity
   - type: EyeProtection
+  - type: NightVision # DeltaV - Addition
+    flashDurationMultiplier: 2
+    isEquipment: true
   - type: Armor
     modifiers:
       coefficients:
@@ -510,6 +513,12 @@
         Slash: 0.80
         Piercing: 0.90
         Heat: 0.90
+  - type: ThermalVision # DeltaV
+    flashDurationMultiplier: 2
+    isEquipment: true
+    toggleAction: ToggleThermalVision
+  - type: Tag # DeltaV - Deathsquad isn't real, it can't hurt you.
+    tags: []
 
 - type: entity
   parent: ClothingMaskBase
@@ -526,7 +535,6 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-    - IPCMaskWearable # EE - IPCs
   - type: HideLayerClothing
     slots:
     - Snout
@@ -547,9 +555,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -566,9 +571,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -585,9 +587,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -604,9 +603,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -623,9 +619,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -642,9 +635,6 @@
   - type: HideLayerClothing
     slots:
     - Snout
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskBase
@@ -661,7 +651,6 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskNeckGaiter
@@ -766,9 +755,6 @@
   - type: EyeProtection
   - type: BreathMask
   - type: IdentityBlocker
-  - type: Tag
-    tags:
-    - IPCMaskWearable # EE - IPCs
 
 - type: entity
   parent: ClothingMaskGas
@@ -792,4 +778,3 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-    - IPCMaskWearable # EE - IPCs

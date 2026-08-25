@@ -1,43 +1,5 @@
 ﻿# =================     Bionics    ================== #
 - type: trait
-  id: LeftBionicPryArm
-  name: trait-name-LeftBionicPryArm
-  description: trait-description-BionicPryArm
-  category: Cybernetics
-  cost: 2
-  conflicts:
-  - ArmAmputeeRight
-  - ArmAmputeeLeft
-  - RightBionicPryArm
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Amputee
-      removeBodyPart: Arm
-      partSymmetry: Left
-      protoId: PrybarLeftArm
-      slotId: "left arm"
-
-- type: trait
-  id: RightBionicPryArm
-  name: trait-name-RightBionicPryArm
-  description: trait-description-BionicPryArm
-  category: Cybernetics
-  cost: 2
-  conflicts:
-  - ArmAmputeeRight
-  - ArmAmputeeLeft
-  - LeftBionicPryArm
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Amputee
-      removeBodyPart: Arm
-      partSymmetry: Right
-      protoId: PrybarRightArm
-      slotId: "right arm"
-
-- type: trait
   id: CyberEyesFlare
   name: trait-name-CyberEyesFlare
   description: trait-description-CyberEyesFlare
@@ -227,7 +189,7 @@
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
-        collection: AlienClaw
+        path: /Audio/Weapons/pierce.ogg
       animation: WeaponArcClaw
       damage:
         types:
@@ -257,7 +219,7 @@
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
-        collection: AlienClaw
+        path: /Audio/Weapons/pierce.ogg
       animation: WeaponArcClaw
       damage:
         types:
@@ -561,6 +523,7 @@
   conflicts:
     - GlassJaw
     - BrittleBones
+    - Tenacity
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -582,6 +545,7 @@
   conflicts:
     - WillToDie
     - Redshirt
+    - IllFated
   effects:
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 1.05 #+5%
@@ -605,4 +569,81 @@
   effects:
   - !type:ModifyCritDeadThresholdEffect
     critModifier: 0.5 #-50%
+
+- type: trait
+  id: Frail
+  name: trait-frail-name
+  description: trait-frail-desc
+  category: Skills
+  cost: -5
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.75 #-25%
+
+- type: trait
+  id: IllFated
+  name: trait-illfated-name
+  description: trait-illfated-desc
+  category: Skills
+  cost: -3
+  conflicts:
+    - WillToLive
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.75 #-25%
 # =================================================== #
+
+- type: trait
+  id: Nosebleed
+  name: trait-nosebleed-name
+  description: trait-nosebleed-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed # uses the default
+
+- type: trait
+  id: NosebleedFrequent
+  name: trait-nosebleed-frequent-name
+  description: trait-nosebleed-frequent-description
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed
+      minDelay: 300 # bleeds more often, 5 minutes
+      maxDelay: 1800 # 30 minutes in seconds
+
+- type: trait
+  id: Snoring
+  name: trait-snoring-name
+  description: trait-snoring-desc
+  category: DisabilitiesPhysical
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Snoring

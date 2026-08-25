@@ -1,0 +1,650 @@
+# Euph - all of these boxes were modified to include socks
+#
+# Replacements used:
+# 1. "- id: Bunnysuit(\w+)" -> "- id: Bunnysuit$1\n        - id: ClothingUndergarmentSocksBunnysuit$1 # Euph"
+
+- type: entity
+  parent: BoxBase
+  id: BunnysuitBox
+  name: bunnysuit box
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/box.rsi
+    state: icon
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,4,2 # Euph - +1 width
+    whitelist:
+      tags:
+        - Bunnysuit
+  - type: PhysicalComposition
+    materialComposition:
+      Cardboard: 100
+  - type: Tag
+    tags:
+    - BoxCardboard
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxChemist
+  name: chemistry bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitChemist
+        - id: ClothingUndergarmentSocksBunnysuitChemist # Euph - separate socks
+        - id: BunnyJacketChemist
+        - id: BowtieChemist
+        - id: BunnyEarsChemist
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxGenetics
+  name: genetics bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitGenetics
+        - id: ClothingUndergarmentSocksBunnysuitGenetics # Euph - separate socks
+        - id: BunnyJacketGenetics
+        - id: BowtieGenetics
+        - id: BunnyEarsGenetics
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxPsychologist
+  name: psychology bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitPsychologist
+        - id: ClothingUndergarmentSocksBunnysuitPsychologist # Euph - separate socks
+        - id: BunnyJacketPsychologist
+        - id: BunnyEarsPsychologist
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxHeadOfPersonnel
+  name: head of personnel's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitHeadOfPersonnel
+        - id: ClothingUndergarmentSocksBunnysuitHeadOfPersonnel # Euph - separate socks
+        - id: BunnyJacketHeadOfPersonnel
+        - id: BowtieHeadOfPersonnel
+        - id: BunnyEarsHeadOfPersonnel
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxGreen
+  name: green bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitGreen
+        - id: ClothingUndergarmentSocksBunnysuitGreen # Euph - separate socks
+        - id: BunnyJacketGreen
+        - id: BunnyEarsGreen
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxLawTeal
+  name: lawyer's teal bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitLawTeal
+        - id: ClothingUndergarmentSocksBunnysuitLawTeal # Euph - separate socks
+        - id: BunnyJacketLawTeal
+        - id: BunnyEarsLawTeal
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxCaptain
+  name: captain's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitCaptain
+        - id: ClothingUndergarmentSocksBunnysuitCaptain # Euph - separate socks
+        - id: BunnyJacketCaptain
+        - id: BowtieCaptain
+        - id: BunnyEarsCaptain
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxSyndie
+  name: blood-red bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitSyndie
+        - id: ClothingUndergarmentSocksBunnysuitSyndie # Euph - separate socks
+        - id: BunnyJacketSyndie
+        - id: BowtieSyndie
+        - id: BunnyEarsSyndie
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxChef
+  name: chef's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitChef
+        - id: ClothingUndergarmentSocksBunnysuitChef # Euph - separate socks
+        - id: BunnyJacketChef
+        - id: BowtieChef
+        - id: BunnyEarsChef
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxRobotics
+  name: robotics bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitRobotics
+        - id: ClothingUndergarmentSocksBunnysuitRobotics # Euph - separate socks
+        - id: BunnyJacketRobotics
+        - id: BowtieRobotics
+        - id: BunnyEarsRobotics
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxChiefMedicalOfficer
+  name: chief medical officer's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitChiefMedicalOfficer
+        - id: ClothingUndergarmentSocksBunnysuitChiefMedicalOfficer # Euph - separate socks
+        - id: BunnyJacketChiefMedicalOfficer
+        - id: BowtieChiefMedicalOfficer
+        - id: BunnyEarsChiefMedicalOfficer
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxRed
+  name: red bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitRed
+        - id: ClothingUndergarmentSocksBunnysuitRed # Euph - separate socks
+        - id: BunnyJacketRed
+        - id: BunnyEarsRed
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxHoS
+  name: head of security's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitHoS
+        - id: ClothingUndergarmentSocksBunnysuitHoS # Euph - separate socks
+        - id: BunnyJacketHoS
+        - id: BowtieHoS
+        - id: BunnyEarsHoS
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxPrisoner
+  name: prisoner's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitPrisoner
+        - id: ClothingUndergarmentSocksBunnysuitPrisoner # Euph - separate socks
+        - id: BowtiePrisoner
+        - id: BunnyEarsPrisoner
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxMime
+  name: mime's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitMime
+        - id: ClothingUndergarmentSocksBunnysuitMime # Euph - separate socks
+        - id: BunnyJacketMime
+        - id: BunnyEarsMime
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxDoctor
+  name: medical bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitDoctor
+        - id: ClothingUndergarmentSocksBunnysuitDoctor # Euph - separate socks
+        - id: BunnyJacketDoctor
+        - id: BowtieDoctor
+        - id: BunnyEarsDoctor
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxEngineer
+  name: engineering bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitEngineer
+        - id: ClothingUndergarmentSocksBunnysuitEngineer # Euph - separate socks
+        - id: BunnyJacketEngineer
+        - id: BowtieEngineer
+        - id: BunnyEarsEngineer
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxLawRed
+  name: lawyer's red bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitLawRed
+        - id: ClothingUndergarmentSocksBunnysuitLawRed # Euph - separate socks
+        - id: BunnyJacketLawRed
+        - id: BunnyEarsLawRed
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxBar
+  name: bartender's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitBartender
+        - id: ClothingUndergarmentSocksBunnysuitBartender # Euph - separate socks
+        - id: BunnyJacketBartender
+        - id: BunnyEarsBartender
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxCoroner
+  name: coroner's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitCoroner
+        - id: ClothingUndergarmentSocksBunnysuitCoroner # Euph - separate socks
+        - id: BunnyJacketCoroner
+        - id: BowtieCoroner
+        - id: BunnyEarsCoroner
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxQuartermaster
+  name: quartermaster's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitQuartermaster
+        - id: ClothingUndergarmentSocksBunnysuitQuartermaster # Euph - separate socks
+        - id: BunnyJacketQuartermaster
+        - id: BowtieCargo
+        - id: BunnyEarsQuartermaster
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxHero
+  name: hero's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitHero
+        - id: ClothingUndergarmentSocksBunnysuitHero # Euph - separate socks
+        - id: BunnyJacketHero
+        - id: BowtieHero
+        - id: BunnyEarsHero
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxUnionJack
+  name: union jack bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitUnionJack
+        - id: ClothingUndergarmentSocksBunnysuitUnionJack # Euph - separate socks
+        - id: BunnyJacketUnionJack
+        - id: BowtieBlue
+        - id: BunnyEarsUnionJack
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxSecurity
+  name: security bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitSecurity
+        - id: ClothingUndergarmentSocksBunnysuitSecurity # Euph - separate socks
+        - id: BunnyJacketSecurity
+        - id: BowtieSecurity
+        - id: BunnyEarsSecurity
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxWarden
+  name: warden's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitWarden
+        - id: ClothingUndergarmentSocksBunnysuitWarden # Euph - separate socks
+        - id: BunnyJacketWarden
+        - id: BowtieSecurity
+        - id: BunnyEarsWarden
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxJanitor
+  name: janitorial bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitJanitor
+        - id: ClothingUndergarmentSocksBunnysuitJanitor # Euph - separate socks
+        - id: BunnyJacketJanitor
+        - id: BowtieJanitor
+        - id: BunnyEarsJanitor
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxNetrunner
+  name: netrunner's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitNetrunner
+        - id: ClothingUndergarmentSocksBunnysuitNetrunner # Euph - separate socks
+        - id: BunnyJacketNetrunner
+        - id: BowtieNetrunner
+        - id: BunnyEarsNetrunner
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxScience
+  name: science bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitScience
+        - id: ClothingUndergarmentSocksBunnysuitScience # Euph - separate socks
+        - id: BunnyJacketScience
+        - id: BowtieScience
+        - id: BunnyEarsScience
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxClown
+  name: clown's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitClown
+        - id: ClothingUndergarmentSocksBunnysuitClown # Euph - separate socks
+        - id: BunnyJacketClown
+        - id: BowtieClown
+        - id: BunnyEarsClown
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxAtmos
+  name: atmospherics bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitAtmos
+        - id: ClothingUndergarmentSocksBunnysuitAtmos # Euph - separate socks
+        - id: BunnyJacketAtmos
+        - id: BowtieAtmos
+        - id: BunnyEarsAtmos
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxChaplain
+  name: chaplain's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitChaplain
+        - id: ClothingUndergarmentSocksBunnysuitChaplain # Euph - separate socks
+        - id: BunnyJacketChaplain
+        - id: BowtieChaplain
+        - id: BunnyEarsChaplain
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxParamedic
+  name: paramedic bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitParamedic
+        - id: ClothingUndergarmentSocksBunnysuitParamedic # Euph - separate socks
+        - id: BunnyJacketParamedic
+        - id: BowtieParamedic
+        - id: BunnyEarsParamedic
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxTeal
+  name: teal bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitTeal
+        - id: ClothingUndergarmentSocksBunnysuitTeal # Euph - separate socks
+        - id: BunnyJacketTeal
+        - id: BunnyEarsTeal
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxLiberty
+  name: lady liberty's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitLiberty
+        - id: ClothingUndergarmentSocksBunnysuitLiberty # Euph - separate socks
+        - id: BunnyJacketLiberty
+        - id: BowtieBlue
+        - id: BunnyEarsLiberty
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxCargo
+  name: cargo bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitCargo
+        - id: ClothingUndergarmentSocksBunnysuitCargo # Euph - separate socks
+        - id: BunnyJacketCargo
+        - id: BowtieCargo
+        - id: BunnyEarsCargo
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxResearchDirector
+  name: research director's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitResearchDirector
+        - id: ClothingUndergarmentSocksBunnysuitResearchDirector # Euph - separate socks
+        - id: BunnyJacketResearchDirector
+        - id: BowtieResearchDirector
+        - id: BunnyEarsResearchDirector
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxMail
+  name: mail bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitMail
+        - id: ClothingUndergarmentSocksBunnysuitMail # Euph - separate socks
+        - id: BowtieMail
+        - id: BunnyEarsMail
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxLawBlack
+  name: lawyer's black bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitLawBlack
+        - id: ClothingUndergarmentSocksBunnysuitLawBlack # Euph - separate socks
+        - id: BunnyJacketLawBlack
+        - id: BunnyEarsLawBlack
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxVirology
+  name: virology bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitVirology
+        - id: ClothingUndergarmentSocksBunnysuitVirology # Euph - separate socks
+        - id: BunnyJacketVirology
+        - id: BowtieVirology
+        - id: BunnyEarsVirology
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxBotanist
+  name: botany bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitBotany
+        - id: ClothingUndergarmentSocksBunnysuitBotany # Euph - separate socks
+        - id: BunnyJacketBotany
+        - id: BowtieBotany
+        - id: BunnyEarsBotany
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxChiefEngineer
+  name: chief engineer's bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitChiefEngineer
+        - id: ClothingUndergarmentSocksBunnysuitChiefEngineer # Euph - separate socks
+        - id: BunnyJacketChiefEngineer
+        - id: BowtieChiefEngineer
+        - id: BunnyEarsChiefEngineer
+
+- type: entity
+  parent: BunnysuitBox
+  id: BunnysuitBoxMiner
+  name: mining bunnysuit box
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: BunnysuitMiner
+        - id: ClothingUndergarmentSocksBunnysuitMiner # Euph - separate socks
+        - id: BunnyJacketMiner
+        - id: BowtieMiner
+        - id: BunnyEarsMiner
+

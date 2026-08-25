@@ -4,6 +4,7 @@
 - type: language
   id: SiikMaas
   parent: BaseLanguage
+  chatPrefix: maa # Euphoria/Starlight
   isVisibleLanguage: true
   icon: { state: "nekomimetic" } # Placeholder
   speech:
@@ -82,6 +83,7 @@
 - type: language
   id: NalRasan
   parent: BaseLanguage
+  chatPrefix: nal # Euphoria/Starlight
   icon: { state: "nekomimetic" } # Placeholder
   speech:
     allowRadio: false
@@ -118,6 +120,7 @@
 # To quote: "Language native to the Tajara, it employs both verbal and non-verbal elements"
 - type: language
   id: SiikTajr
+  chatPrefix: taj # Euphoria/Starlight
   parent: BaseLanguage
   isVisibleLanguage: true
   icon: { state: "nekomimetic" } # Placeholder

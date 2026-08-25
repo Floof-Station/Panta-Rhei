@@ -76,3 +76,59 @@
   requirement:
     !type:MobStateRequirement # Don't check out a wall
     inverted: true
+
+# Give someone the finger
+- type: Interaction
+  id: RudeGesture
+  parent: BaseGlobal
+  requiresHands: true
+  requiresCanInteract: false
+  contactInteraction: false
+  icon: /Textures/Interface/AdminActions/tricks.png # kinda a placeholder interface icon
+  range: {max: 20}
+  effectSuccess:
+    popup: Obvious # lets others see like waving, it's funny
+    sound: {path: /Audio/Effects/chime.ogg}
+    soundPerceivedByOthers: false
+  action:
+    !type:NoOpAction
+  hideByRequirement: true
+  requirement:
+    !type:MobStateRequirement
+    inverted: true
+
+# suggestive gesture, similar to checking out and needs to be subtle and near the bottom
+- type: Interaction
+  id: SuggestiveGesture
+  parent: BaseGlobal
+  priority: -99 # Very specific ERP meaning, should be at the bottom
+  requiresHands: false
+  requiresCanInteract: false
+  contactInteraction: false
+  icon: /Textures/Interface/Actions/eyeopen.png
+  range: {max: 20}
+  effectSuccess:
+    popup: Subtle
+    sound: {path: /Audio/_Floof/Lewd/blush.ogg}
+    soundPerceivedByOthers: false
+  action:
+    !type:NoOpAction
+  hideByRequirement: true
+  requirement:
+    !type:MobStateRequirement # Don't check out a wall
+# Point gun at someone.
+- type: Interaction
+  id: PointGunAt
+  parent: WaveAt
+  priority: 3 # Same as "wave at"
+  icon: /Textures/Interface/fist.svg.192dpi.png
+  allowedSource: ToolVerbs # ToolInteractionVerbsComponent-only.
+  effectSuccess:
+    popup: Obvious
+    sound:
+      collection: RiflesPickUp
+      params:
+        volume: -10
+  requirement:
+    !type:MobStateRequirement # Target must be a mob
+    inverted: true

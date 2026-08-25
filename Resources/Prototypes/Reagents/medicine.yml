@@ -1198,7 +1198,7 @@
       - !type:HealthChange # Delta-V
         damage:
           types:
-            Shadow: -2
+            Soul: -2
             Holy: 2
 
 
@@ -1527,7 +1527,7 @@
         type: Remove
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
-        time: 10.0
+        time: 30.0 # Euphoria - Made Halo work better
         type: Remove
       - !type:AdjustReagent
         reagent: Desoxyephedrine

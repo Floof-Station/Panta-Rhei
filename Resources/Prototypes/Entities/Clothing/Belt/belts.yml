@@ -154,13 +154,19 @@
     sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
   - type: Clothing
     sprite: _DV/Clothing/Belt/securitywebbing.rsi # DeltaV - resprite
-  - type: ItemSlots # DeltaV - add sidearm slot
+  - type: ItemSlots # DeltaV - add sidearm and radio slot
     slots:
       holster:
         name: clothing-belt-sidearm
         whitelist:
           tags:
           - Sidearm
+        insertOnInteract: false
+      radio:
+        name: clothing-belt-radio
+        whitelist:
+          tags:
+          - Radio
         insertOnInteract: false
   - type: Storage # DeltaV - Split Inventory
     grid:
@@ -178,6 +184,7 @@
       storagebase: !type:Container
         ents: []
       holster: !type:ContainerSlot {}
+      radio: !type:ContainerSlot {} # DeltaV - add radio holster
   - type: Appearance # DeltaV
 
 - type: entity
@@ -209,6 +216,19 @@
     grid:
     - 0,0,3,1
     - 5,0,8,1
+  - type: ContainerContainer # Floofstation - add jaunter holster
+    containers:
+      storagebase: !type:Container
+        ents: []
+      jaunter: !type:ContainerSlot {}
+  - type: ItemSlots
+    slots:
+      jaunter:
+        name: clothing-belt-jaunter
+        whitelist:
+          tags:
+          - Jaunter
+        insertOnInteract: false
 
 - type: entity
   parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband]

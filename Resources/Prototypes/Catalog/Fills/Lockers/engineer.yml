@@ -150,21 +150,25 @@
   id: FillLockerAtmospherics
   table: !type:AllSelector
     children:
+    - !type:NestedSelector # DeltaV
+      tableId: FillLockerAtmosphericsDeltaV
     - id: ClothingMaskGasAtmos
     - id: ClothingOuterSuitAtmosFire
     - id: ClothingHeadHelmetAtmosFire
-    - id: ClothingHandsGlovesColorYellow # DeltaV - Give atmos techs boots and insuls
     - id: GasAnalyzer
     - id: MedkitOxygenFilled
     - id: HolofanProjector
     - id: DoorRemoteFirefight # DeltaV - Re-added fire-fighting remote.
-    - id: RCD
+    #- id: RCD # Floofstation - atmos doesn't need the rcd now
     - id: RCDAmmo
-    - id: LunchboxEngineeringFilledRandom # DeltaV - Lunchboxes!
-      prob: 0.3
     - id: AirGrenade
     - id: ClothingBeltUtilityAtmos # Euphoria
     - id: AccessConfigurator # EE
+    - id: RPD # Floofstation - atmos gets the rpd not rcd
+    # Begin Euphoria additions
+    - id: ClothingBeltUtilityAtmos
+    - id: AccessConfigurator
+    # End Euphoria additions
 
 - type: entityTable
   id: FillAtmosphericsHardsuit
@@ -203,18 +207,18 @@
   id: FillLockerEngineer
   table: !type:AllSelector
     children:
+    - !type:NestedSelector # DeltaV
+      tableId: FillLockerEngineerDeltaV
     - id: ClothingHandsGlovesColorYellow
     - id: ClothingMaskGas
     - id: trayScanner
     - id: RCD
     - id: RCDAmmo
     - id: MetalFoamGrenade
-    - id: LunchboxEngineeringFilledRandom # DeltaV - Lunchboxes!
-      prob: 0.3
-    - id: AccessConfigurator # EE
-    - id: ClothingBeltUtilityEngineering # Euphoria
-    - id: HolotapeProjector # DeltaV - engineering tape
-    - id: PillCanisterPotassiumIodide # Far Horizons / Nuclear Reactor Port
+    # Begin Euphoria additions
+    - id: AccessConfigurator
+    - id: ClothingBeltUtilityEngineering
+    # End Euphoria additions
 
 - type: entityTable
   id: FillEngineerHardsuit

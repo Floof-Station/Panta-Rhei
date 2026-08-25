@@ -42,7 +42,7 @@
       - FireAlarm
   - type: Clickable
   - type: InteractionOutline
-  #- type: FireAlarm # DeltaV - disable fire alarms
+  - type: FireAlarm # Floofstation - idk why delta-v disabled this but un 1984 fire alarms
   - type: AtmosAlertsDevice
     group: FireAlarm
   - type: ContainerFill

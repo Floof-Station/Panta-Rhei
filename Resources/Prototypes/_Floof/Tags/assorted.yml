@@ -14,6 +14,12 @@
   id: ShirtlessClothing
 
 - type: Tag
+  id: BottomlessClothing # Different from BottomAccessible which is for slot blocking only; BottomlessClothing allows genitals to be theoretically visible
+
+- type: Tag
+  id: BottomAccessibleClothing # Different purpose than skirt: Skirt allows harpies to wear it, accessible allows underwear slots to be accessed.
+
+- type: Tag
   id: Sterilebag
 
 - type: Tag
@@ -43,9 +49,6 @@
 
 - type: Tag
   id: WeldbotFixableStructure # Euphoria - Used by Weldbot
-
-- type: Tag
-  id: MedicalMisc # Storage whitelist: Medical Belt and Medkits
 
 # casino chips
 - type: Tag
