@@ -110,10 +110,10 @@
   time: 5
   reagents:
     IceCream: 20
-    JuiceBerry: 15
+    StrawberryJuice: 15 # changed to strawberry juice
   solids:
     IceCreamBowl: 1
-    FoodBerries: 1
+    FoodStrawberry: 1 # changed to strawberry
 
 - type: microwaveMealRecipe
   id: RecipeIceCreamBananaSplit
@@ -123,7 +123,7 @@
   reagents:
     IceCream: 20
     CocoaPowder: 5
-    JuiceBerry: 5
+    StrawberryJuice: 5 # changed to strawberry juice
   solids:
     IceCreamBowl: 1
     FoodBanana: 1
@@ -476,7 +476,7 @@
     PeanutButter: 10
   solids:
     FoodBreadPlainSlice: 2
-    FoodBerries: 2 # till someone adds jelly for the pb&j
+    FoodStrawberry: 2 # good enough with strawberry imo
 
 - type: microwaveMealRecipe
   id: RecipePeanutButterBanana
@@ -500,3 +500,48 @@
     PeanutButter: 5
   solids:
     FoodBreadPlainSlice: 1
+
+- type: microwaveMealRecipe
+  id: RecipeStrawberryPie
+  name: strawberry pie recipe
+  result: FoodPieStrawberry
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodStrawberry: 5
+    FoodPlateTin: 1
+
+- type: microwaveMealRecipe
+  id: RecipeMuffinStrawberry
+  name: berry muffin recipe
+  result: FoodBakedMuffinStrawberry
+  time: 15
+  group: Dessert
+  solids:
+    FoodPlateMuffinTin: 1
+    FoodDoughSlice: 1
+    FoodStrawberry: 1
+  reagents:
+    Sugar: 10
+
+- type: microwaveMealRecipe
+  id: RecipeChocolateCoveredStrawberry
+  name: berry muffin recipe
+  result: FoodSnackChocolateCoveredStrawberry
+  time: 5
+  group: Dessert
+  solids:
+    FoodSnackChocolateBar: 1
+    FoodStrawberry: 1
+
+- type: microwaveMealRecipe
+  id: RecipeCandyStrawberry
+  name: strawberry candy recipe
+  result: FoodCandyStrawberry
+  time: 15
+  group: Dessert
+  solids:
+    FoodStrawberry: 1
+  reagents:
+    Sugar: 5

@@ -758,14 +758,9 @@ public sealed partial class ChatUIController : UIController
         // because ????????
 
         //Starlight begin - detect language prefix. don't modify text directly here and use modText for radio channel checks.
+        // Euph - rewritten
         var modText = text;
-        LanguagePrototype? language = null;
-        if (TryGetLanguage(ref text, out var foundLanguage))
-        {
-            language = foundLanguage;
-            if(text.Length<5) return (ChatSelectChannel.None, text, null, foundLanguage);
-            modText = text[4..];
-        }
+        var language = _lang?.GetLanguageFromPrefix(_player.LocalEntity ?? EntityUid.Invalid, ref text, modifyText: false, out var languageInvalid);
         //Starlight end
 
         ChatSelectChannel chatChannel;
@@ -1061,14 +1056,6 @@ public sealed partial class ChatUIController : UIController
     }
 
     //Starlight begin
-    private bool TryGetLanguage(ref string text, [NotNullWhen(true)] out LanguagePrototype? language)
-    {
-        language = null;
-        if (_player.LocalEntity is not { Valid: true } uid || _lang == null) return false;
-        language = _lang.GetLanguageFromPrefix(uid, ref text, out var parsed);
-        return parsed;
-    }
-
     public void UpdateLanguageNotifier(ChatBox box)
     {
         var (_, _, _, language) = SplitInputContents(box.ChatInput.Input.Text.ToLower());

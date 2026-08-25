@@ -7,15 +7,17 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 30h # DeltaV - was 5h
-  - !type:DepartmentTimeRequirement # DeltaV - engi dept time requirement
-    department: Engineering
-    time: 2h
-  - !type:RoleTimeRequirement # DeltaV - salvage time requirement
-    role: JobSalvageSpecialist
-    time: 2h
+  #Euphoria start: You really shouldnt need Engie and Salv hours to know how to hack doors
+  #- !type:DepartmentTimeRequirement # DeltaV - engi dept time requirement
+    #department: Engineering
+    #time: 2h
+  #- !type:RoleTimeRequirement # DeltaV - salvage time requirement
+  #  role: JobSalvageSpecialist
+  #  time: 2h
+  #Euphoria End
   - !type:DepartmentTimeRequirement # DeltaV - Security dept time requirement
     department: Security
-    time: 10h
+    time: 6h #Euphoria Reduced sec playtime because medic has no sec playtime and regular nukeop shouldnt take as much playtime as commander
   guides: [ NuclearOperatives ]
 
 - type: antag
@@ -65,6 +67,8 @@
     id: SyndiOperativePDA
     pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
+  inhand:
+    - DnaScramblerImplanterDespawning
   storage:
     back:
     - WeaponPistolViper

@@ -5,6 +5,7 @@
   groups:
   - GroupTankHarness
   - CourierHead
+  - Glasses
   - CourierNeck
   - CourierJumpsuit
   - CourierOuterClothing
@@ -12,7 +13,6 @@
   - CourierPDA
   - CourierBackpack
   - CourierShoes
-  - Glasses
   - Survival
   - GroupSpeciesBreathTool
   - FloofUndergarmentTopCourier # Floof
@@ -25,12 +25,12 @@
   groups:
   - GroupTankHarness
   - CargoAssistantHead
+  - Glasses
   - CargoTechnicianNeck # Euphoria
   - CargoAssistantJumpsuit
   - CargoAssistantBackpack
   - CargoAssistantOuterClothing
   - CargoAssistantShoes
-  - Glasses
   - Survival
   - GroupSpeciesBreathTool
 
@@ -40,6 +40,7 @@
   parent: JobBaseLoadout # Floofstation
   groups:
   - BrigMedicHead
+  - CorpsmanEyewear
   - BrigMedicNeck
   - BrigMedicJumpsuit
   - BrigMedicBack
@@ -47,7 +48,6 @@
   - BrigMedicOuterClothing
   - FloofSecurityCorpsmanPdas # Floofstation pdas
   - FloofCorpsmanShoes # Floofstation give corpsman shoes
-  - CorpsmanEyewear
   - SurvivalSecurity
   - GroupSpeciesBreathToolCorpsman
   - SecurityFirearm
@@ -63,6 +63,7 @@
   groups:
   - GroupTankHarness
   - SurgeonHead
+  - MedicalEyewear
   - MedicalDoctorNeck
   - SurgeonMask
   - SurgeonScrubs
@@ -71,7 +72,6 @@
   - MedicalDoctorOuterClothing
   - MedicalShoes
   - SurgeonPDA
-  - MedicalEyewear
   - SurvivalMedical
   - MedicalDoctorJobTrinkets # Euphoria
   - GroupSpeciesBreathToolMedical
@@ -86,8 +86,9 @@
   groups:
   - GroupTankHarness
   - ChiefJusticeHead
-  - ChiefJusticeJumpsuit
+  - Glasses
   - ChiefJusticeNeck
+  - ChiefJusticeJumpsuit
   - ChiefJusticeOuterClothing
   - FloofCJPDAs # Floofstation
   - JusticePaperworkBelt # Floofstation
@@ -97,7 +98,6 @@
   - FloofUndergarmentTopPassenger # Floof
   - FloofUndergarmentBottomPassenger # Floof
   - FloofSocksPassenger # Floof
-  - Glasses
   - Survival
   - GroupSpeciesBreathTool
 
@@ -107,8 +107,9 @@
   groups:
   - GroupTankHarness
   - AssistantHead # Euphoria
-  - ClerkJumpsuit
+  - Glasses
   - ClerkNeck
+  - ClerkJumpsuit
   - ClerkOuterClothing
   - FloofServiceClerkPDAs # Floofstation pda
   - JusticePaperworkBelt # Floofstation
@@ -118,7 +119,6 @@
   - FloofUndergarmentTopPassenger # Floof
   - FloofUndergarmentBottomPassenger # Floof
   - FloofSocksPassenger # Floof
-  - Glasses
   - Survival
   - GroupSpeciesBreathTool
 
@@ -128,8 +128,9 @@
   groups:
   - GroupTankHarness
   - AssistantHead # Euphoria
-  - ProsecutorJumpsuit
+  - Glasses
   - ProsecutorNeck
+  - ProsecutorJumpsuit
   - ProsecutorOuterClothing
   - PassengerShoes # Floofstation
   - FloofServiceProsecutorPDAs # Floofstation pdas
@@ -139,7 +140,6 @@
   - FloofUndergarmentTopPassenger # Floof
   - FloofUndergarmentBottomPassenger # Floof
   - FloofSocksPassenger # Floof
-  - Glasses
   - Survival
   - GroupSpeciesBreathTool
 
@@ -150,6 +150,7 @@
   groups:
   - GroupTankHarness
   - RoboticistHead
+  - RoboticistGlasses
   - ScientistNeck
   - RoboticistJumpsuit
   - ScientistBackpack
@@ -157,7 +158,6 @@
   - RoboticistGloves
   - RoboticistShoes
   - RoboticistPDA
-  - RoboticistGlasses
   - FloofUndergarmentTopScientist # Floof
   - FloofUndergarmentBottomScientist # Floof
   - FloofSocksScientist # Floof
@@ -171,9 +171,9 @@
   groups:
   - GroupTankHarness
   - AssistantHead # Euphoria
+  - Glasses
   - PassengerNeck # Euphoria
   - CommonBackpack
-  - Glasses
   - Survival
   - Trinkets
   - ZookeeperJobTrinkets
@@ -195,6 +195,7 @@
   groups:
   - GroupTankHarness
   - AssistantHead # Floofstation
+  - Glasses
   - PassengerNeck # Floofstation
   - PassengerFace # Floofstation
   - BoxerJumpsuit
@@ -202,7 +203,6 @@
   - BoxerMask
   - CommonBackpack
   - FloofBoxerPDAs # Floofstation - pda customization
-  - Glasses
   - Survival
   - Trinkets
   - BoxerJobTrinkets

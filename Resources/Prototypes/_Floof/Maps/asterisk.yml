@@ -1,3 +1,16 @@
+- type: entity
+  id: StationAsterisk
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/mining.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Reclaimer
+
 - type: gameMap
   id: Asterisk
   mapName: 'Asterisk'
@@ -6,7 +19,7 @@
   maxPlayers: 40
   stations:
     Asterisk:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationAsterisk
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/NTES_Kaeri.yml

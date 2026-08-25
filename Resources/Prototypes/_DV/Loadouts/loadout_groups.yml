@@ -321,6 +321,7 @@
 
 - type: loadoutGroup
   id: CorpsmanEyewear
+  parent: [Glasses] # Euphoria
   name: loadout-group-corpsman-eyewear
   minLimit: 1
   maxLimit: 1
@@ -330,9 +331,9 @@
   - MedicalHud
   - MedicalEyePatchHud
   - PrescriptionMedHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 - type: loadoutGroup
   id: BrigMedicBack
@@ -355,6 +356,7 @@
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolCorpsman
+  parent: [GroupSpeciesBreathTool] # floofstation
   name: loadout-group-breath-tool
   minLimit: 1
   maxLimit: 1
@@ -482,6 +484,7 @@
 
 ## Security Glasses
 - type: loadoutGroup
+  parent: [Glasses] # Euphoria
   id: SecurityEyewear
   name: loadout-group-security-eyewear
   minLimit: 1
@@ -492,9 +495,9 @@
   - SecurityHud
   - SecurityEyePatchHud
   - PrescriptionSecurityHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 ## Security Officer
 - type: loadoutGroup
@@ -935,15 +938,16 @@
 
 - type: loadoutGroup
   id: RoboticistGlasses
+  parent: [Glasses] # Euphoria
   name: loadout-group-roboticist-glasses
   minLimit: 0
   loadouts:
   - ClothingEyesHudDiagnostic
   - ClothingEyesPrescriptionDiagHud
   - ClothingEyesEyepatchHudDiag
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 # Command
 ## Captain
