@@ -4,8 +4,7 @@
   id: MothBodyClaw
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: moth_body_claw
@@ -14,8 +13,7 @@
   id: MothBurnLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: moth_burn_l
@@ -24,8 +22,7 @@
   id: MothBurnRight
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: moth_burn_r
@@ -34,8 +31,7 @@
   id: MothFaceClaw
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: moth_face_claw
@@ -44,8 +40,7 @@
   id: MothSlashLeft
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: moth_slash_l
@@ -54,8 +49,7 @@
   id: ChimeraArmLeftMoth
   bodyPart: LArm
   markingCategory: LArm
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -69,8 +63,7 @@
   id: ProstheticArmLeftMoth
   bodyPart: LArm
   markingCategory: LArm
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -84,8 +77,7 @@
   id: TwistingArmLeftMoth
   bodyPart: LArm
   markingCategory: LArm
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: arm_l_twisting_moth
@@ -94,8 +86,7 @@
   id: ProstheticArmRightMoth
   bodyPart: RArm
   markingCategory: RArm
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -109,8 +100,7 @@
   id: TwistingArmRightMoth
   bodyPart: RArm
   markingCategory: RArm
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: arm_r_twisting_moth
@@ -119,8 +109,7 @@
   id: WingsBackstabbed
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: wings_backstabbed
@@ -129,9 +118,8 @@
   id: ChestChimeraFemaleMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   sexRestriction: [Female]
-  followSkinColor: false
   coloring:
     default:
       type:
@@ -145,9 +133,8 @@
   id: ChestChimeraMaleMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   sexRestriction: [Male]
-  followSkinColor: false
   coloring:
     default:
       type:
@@ -161,9 +148,8 @@
   id: ChestTwistingLeftFemaleMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   sexRestriction: [Female]
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: chest_l_twisting_f_moth
@@ -172,9 +158,8 @@
   id: ChestTwistingLeftMaleMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   sexRestriction: [Male]
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: chest_l_twisting_m_moth
@@ -183,9 +168,8 @@
   id: ChestTwistingRightFemaleMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   sexRestriction: [Female]
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: chest_r_twisting_f_moth
@@ -194,9 +178,8 @@
   id: ChestTwistingRightMaleMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
+  groupWhitelist: [Moth]
   sexRestriction: [Male]
-  followSkinColor: false
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: chest_r_twisting_m_moth
@@ -205,8 +188,7 @@
   id: ChestStarMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: chest_star_moth
@@ -215,8 +197,7 @@
   id: HeterochromiaMoth
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   coloring:
     default:
       type:
@@ -230,8 +211,7 @@
   id: FootChimeraLeftMoth
   bodyPart: LFoot
   markingCategory: LLeg
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -245,8 +225,7 @@
   id: FootProstheticLeftMoth
   bodyPart: LFoot
   markingCategory: LFoot
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -260,8 +239,7 @@
   id: FootProstheticRightMoth
   bodyPart: RFoot
   markingCategory: RFoot
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -275,8 +253,7 @@
   id: HandChimeraLeftMoth
   bodyPart: LHand
   markingCategory: LHand
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -290,8 +267,7 @@
   id: HandProstheticLeftMoth
   bodyPart: LHand
   markingCategory: LHand
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -305,8 +281,7 @@
   id: HandTwistingLeftMoth
   bodyPart: LHand
   markingCategory: LHand
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: hand_l_twisting_moth
@@ -315,8 +290,7 @@
   id: HandProstheticRightMoth
   bodyPart: RHand
   markingCategory: RHand
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -330,8 +304,7 @@
   id: HandTwistingRightMoth
   bodyPart: RHand
   markingCategory: RHand
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: hand_r_twisting_moth
@@ -340,8 +313,7 @@
   id: BadmoltMoth
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: head_badmolt_moth
@@ -350,8 +322,7 @@
   id: HeadChimeraMoth
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -365,8 +336,7 @@
   id: EyebagsMoth
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: head_eyebags_moth
@@ -375,8 +345,7 @@
   id: HeadTwistingMoth
   bodyPart: Head
   markingCategory: Head
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: head_twisting_moth
@@ -385,8 +354,7 @@
   id: LegChimeraLeftMoth
   bodyPart: LLeg
   markingCategory: LLeg
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -400,8 +368,7 @@
   id: LegProstheticLeftMoth
   bodyPart: LLeg
   markingCategory: LLeg
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -415,8 +382,7 @@
   id: LegTwistingLeftMoth
   bodyPart: LLeg
   markingCategory: LLeg
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: leg_l_twisting_moth
@@ -425,8 +391,7 @@
   id: LegProstheticRightMoth
   bodyPart: RLeg
   markingCategory: RLeg
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   coloring:
     default:
       type:
@@ -440,8 +405,7 @@
   id: LegTwistingRightMoth
   bodyPart: RLeg
   markingCategory: RLeg
-  speciesRestriction: [Moth]
-  followSkinColor: false
+  groupWhitelist: [Moth]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: leg_r_twisting_moth
@@ -450,8 +414,7 @@
   id: TorsoIncisionMoth
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Moth, Chitinid]
-  followSkinColor: false
+  groupWhitelist: [Moth, Chitinid]
   sprites:
   - sprite: _Impstation/Mobs/Customization/moth.rsi
     state: torso_incision_moth

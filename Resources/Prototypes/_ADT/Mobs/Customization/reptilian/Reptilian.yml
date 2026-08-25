@@ -2,7 +2,7 @@
   id: ReptilianDrawingKhar
   bodyPart: Chest
   markingCategory: Overlay
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: drawing_khar
@@ -11,7 +11,7 @@
   id: ReptilianDrawingSkeletBody
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: drawing_skelet_body
@@ -20,7 +20,7 @@
   id: ReptilianDrawingSkeleton
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: drawing_skeleton
@@ -29,7 +29,7 @@
   id: ReptilianDrawingSun
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: drawing_sun
@@ -38,7 +38,7 @@
   id: ReptilianDrawingWarpaint
   bodyPart: Chest
   markingCategory: Chest
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: drawing_warpaint
@@ -47,7 +47,7 @@
   id: ReptilianLineEyes
   bodyPart: Eyes
   markingCategory: Head
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: lineeyes
@@ -56,7 +56,7 @@
   id: EarsLovelox
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian, Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune] # Floof - M3739 - #1084 - The fact this was originally restricted to unathi is a crime.
+  groupWhitelist: [Reptilian, Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Oni, Kitsune] # Floof - M3739 - #1084 - The fact this was originally restricted to unathi is a crime.
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
       state: lovelox_primary
@@ -69,7 +69,7 @@
   id: EarsResomi
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
       state: avali_inner
@@ -80,7 +80,7 @@
   id: EarsChemlight
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
       state: chemlight_outer
@@ -91,7 +91,7 @@
   id: EarsDragonLong
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
       state: dragonlong
@@ -100,7 +100,7 @@
   id: EarsEasternD
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
       state: easternd_ears
@@ -111,7 +111,7 @@
   id: EarsMagus
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
     - sprite: _ADT/Mobs/Customization/Reptilian/reptilian_ears.rsi
       state: magus_ears
@@ -122,7 +122,7 @@
   id: ReptilianHornsBaran
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_baran
@@ -131,7 +131,7 @@
   id: ReptilianHornsBullhorns
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_bullhorns
@@ -140,7 +140,7 @@
   id: ReptilianHornsCrown
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_crown
@@ -149,7 +149,7 @@
   id: ReptilianHornsFive
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_five
@@ -158,7 +158,7 @@
   id: ReptilianHornsHighback
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_highback
@@ -167,7 +167,7 @@
   id: ReptilianHornsJacksonchameleon
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_jacksonchameleon
@@ -176,7 +176,7 @@
   id: ReptilianHornsLong
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_long
@@ -185,7 +185,7 @@
   id: ReptilianHornsStagbeetle
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_stagbeetle
@@ -194,7 +194,7 @@
   id: ReptilianHornsSuperlong
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_superlong
@@ -203,7 +203,7 @@
   id: ReptilianHornsTwoago
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: horns_twoago
@@ -212,7 +212,7 @@
   id: ReptilianTattoSkeletArmL
   bodyPart: LArm
   markingCategory: LArm
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: tatto_skelet_arm_l
@@ -221,7 +221,7 @@
   id: ReptilianTattoSkeletArmR
   bodyPart: RArm
   markingCategory: RArm
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: tatto_skelet_arm_r
@@ -230,7 +230,7 @@
   id: ReptilianTattoSkeletLegL
   bodyPart: LLeg
   markingCategory: LLeg
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: tatto_skelet_leg_l
@@ -239,7 +239,7 @@
   id: ReptilianTattoSkeletLegR
   bodyPart: RLeg
   markingCategory: RLeg
-  speciesRestriction: [Reptilian]
+  groupWhitelist: [Reptilian]
   sprites:
   - sprite: _ADT/Mobs/Customization/Reptilian/custom.rsi
     state: tatto_skelet_leg_r

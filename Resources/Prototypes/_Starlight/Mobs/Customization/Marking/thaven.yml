@@ -4,7 +4,7 @@
   id: ThavenBasicTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: basic_front
@@ -15,7 +15,7 @@
   id: ThavenBigTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: big1_behind
@@ -30,7 +30,7 @@
   id: ThavenTadpoleTail
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: tadpole1_behind
@@ -45,8 +45,7 @@
   id: ThavenTailEel
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: eel1_behind
@@ -61,7 +60,7 @@
   id: ThavenTailEelOverlay
   bodyPart: Tail
   markingCategory: Overlay
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   coloring:
     default:
       type:
@@ -81,8 +80,7 @@
   id: ThavenTailNurse
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: nurse1_behind
@@ -97,8 +95,7 @@
   id: ThavenTailStub
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: stub1_behind
@@ -113,8 +110,7 @@
   id: ThavenTailThresher
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/tail.rsi
     state: thresher1

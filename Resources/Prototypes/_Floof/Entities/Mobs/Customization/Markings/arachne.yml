@@ -3,7 +3,7 @@
   id: ArachneBody1
   bodyPart: TaurBody
   markingCategory: TaurBody
-  speciesRestriction: [Arachne]
+  groupWhitelist: [Arachne]
   sprites:
   - sprite: _Floof/Mobs/Species/Arachne/parts.rsi
     state: spider_body
@@ -11,7 +11,7 @@
   id: ArachneBodyConnector
   bodyPart: TaurBody
   markingCategory: TaurBodyConnector
-  speciesRestriction: [Arachne]
+  groupWhitelist: [Arachne]
   sprites:
   - sprite: _Floof/Mobs/Species/Arachne/parts.rsi
     state: spider_body_front
