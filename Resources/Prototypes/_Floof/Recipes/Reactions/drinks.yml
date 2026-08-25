@@ -991,3 +991,41 @@
       amount: 1
   products:
     PeanutButterWhiskey: 2
+
+- type: reaction
+  id: StrawberryMilk
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    StrawberryJuice:
+      amount: 1
+    Milk:
+      amount: 1
+  products:
+    StrawberryMilk: 2
+
+- type: reaction
+  id: StrawberryPilk
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Cola:
+      amount: 1
+    StrawberryMilk:
+      amount: 1
+  products:
+    StrawberryPilk: 2
+
+- type: reaction
+  id: BepisStrawberry
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Bepis:
+      amount: 1
+    StrawberryJuice:
+      amount: 1
+    Cream:
+      amount: 1
+  products:
+    BepisStrawberry: 3
