@@ -1,16 +1,15 @@
 # SpiderBody
 - type: marking
   id: ArachneBody1
-  bodyPart: TaurBody
-  markingCategory: TaurBody
+  bodyPart: Chest
   groupWhitelist: [Arachne]
   sprites:
   - sprite: _Floof/Mobs/Species/Arachne/parts.rsi
     state: spider_body
+
 - type: marking
   id: ArachneBodyConnector
-  bodyPart: TaurBody
-  markingCategory: TaurBodyConnector
+  bodyPart: Chest
   groupWhitelist: [Arachne]
   sprites:
   - sprite: _Floof/Mobs/Species/Arachne/parts.rsi
