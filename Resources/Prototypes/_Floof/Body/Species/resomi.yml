@@ -34,7 +34,7 @@
   - type: HumanoidProfile
     species: Resomi
   - type: Inventory
-    speciesId: Resomi
+    speciesId: resomi
     displacements: &allDisplacements
       jumpsuit:
         sizeMaps:
@@ -216,7 +216,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Resomi/parts.rsi # Delta V - Changed to our Sprites
+    sprite: _DV/Mobs/Species/Resomi/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganResomiExternal ]
@@ -225,17 +225,6 @@
 - type: entity
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganResomiExternal ]
   id: OrganResomiHead
-  components:
-  - type: VisualOrganMarkings
-    hideableLayers:
-    - enum.HumanoidVisualLayers.Snout
-    - enum.HumanoidVisualLayers.HeadTop
-    - enum.HumanoidVisualLayers.HeadSide
-    - enum.HumanoidVisualLayers.Hair
-    - enum.HumanoidVisualLayers.FacialHair
-    dependentHidingLayers:
-      enum.HumanoidVisualLayers.Snout:
-      - enum.HumanoidVisualLayers.SnoutCover
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganResomiExternal ]
@@ -278,7 +267,6 @@
   id: OrganResomiEyes
   components:
   - type: VisualOrgan
-    layer: enum.HumanoidVisualLayers.Eyes
     data:
       sprite: Mobs/Customization/eyes.rsi # Delta V - Different eyes
       state: eyes

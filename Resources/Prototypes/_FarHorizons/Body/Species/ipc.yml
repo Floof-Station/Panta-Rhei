@@ -1,136 +1,387 @@
-# Nubody shit
-#- type: markingsGroup
-#  id: IPC
-#  onlyGroupWhitelisted: true
-#  limits:
-#    enum.HumanoidVisualLayers.HeadTop:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.HeadSide:
-#      limit: 1
-#      required: false
-#      default: [ ScreenBsod ]
-#    enum.HumanoidVisualLayers.Head:
-#      limit: 1
-#      required: false
-#      default: [ MarkingBishopHead ]
-#    enum.HumanoidVisualLayers.Chest:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.Tail:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.LArm:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.RArm:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.LHand:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.RHand:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.LLeg:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.RLeg:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.LFoot:
-#      limit: 1
-#      required: false
-#    enum.HumanoidVisualLayers.RFoot:
-#      limit: 1
-#      required: false
-#
-#- type: entity
-#  parent: BaseSpeciesAppearance
-#  id: AppearanceIPC
-#  name: IPC Appearance
-#  components:
-#  - type: InitialBody
-#    organs:
-#      Torso: OrganIPCTorso
-#      Head: OrganIPCHead
-#      ArmLeft: OrganIPCArmLeft
-#      ArmRight: OrganIPCArmRight
-#      HandRight: OrganIPCHandRight
-#      HandLeft: OrganIPCHandLeft
-#      LegLeft: OrganIPCLegLeft
-#      LegRight: OrganIPCLegRight
-#      FootLeft: OrganIPCFootLeft
-#      FootRight: OrganIPCFootRight
-#      Eyes: OrganIPCEyes
-#      Tongue: OrganIPCTongue
-#      Ears: OrganIPCEars
-#      Heart: OrganIPCHeart
-#  - type: HumanoidProfile
-#    species: IPC
-#
-#- type: entity
-#  parent:
-#  - ActiveCritBase
-#  - AppearanceIPC
-#  - BaseMobIPC
-#  id: MobIPC
-#  name: Urist McRobot
-
-# Euph - pre-nubody version
-- type: body
+- type: markingsGroup
+- parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
   id: IPC
-  name: ipc
-  root: torso
-  slots:
-    head:
-      part: OrganIPCHead
-      connections:
-      - torso
-      organs: # brain isn't part of the body
-        eyes: OrganIPCEyes
-    torso:
-      part: OrganIPCTorso
-      connections:
-      - right arm
-      - left arm
-      - right leg
-      - left leg
-      organs:
-        heart: OrganIPCHeart
-    right arm:
-      part: OrganIPCArmRight
-      connections:
-      - right hand
-    left arm:
-      part: OrganIPCArmLeft
-      connections:
-      - left hand
-    right hand:
-      part: OrganIPCHandRight
-    left hand:
-      part: OrganIPCHandLeft
-    right leg:
-      part: OrganIPCLegRight
-      connections:
-      - right foot
-    left leg:
-      part: OrganIPCLegLeft
-      connections:
-      - left foot
-    right foot:
-      part: OrganIPCFootRight
-    left foot:
-      part: OrganIPCFootLeft
+  onlyGroupWhitelisted: true
+  limits: {} # Everything is common
 
-# Pre-nubody doesn't have OrganBase, we alias it to human organ
-#- type: entity
-#  id: OrganBase
-#  parent: BaseHumanOrgan
-#  abstract: true
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceIPC
+  name: IPC Appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganIPCTorso
+      Head: OrganIPCHead
+      ArmLeft: OrganIPCArmLeft
+      ArmRight: OrganIPCArmRight
+      HandRight: OrganIPCHandRight
+      HandLeft: OrganIPCHandLeft
+      LegLeft: OrganIPCLegLeft
+      LegRight: OrganIPCLegRight
+      FootLeft: OrganIPCFootLeft
+      FootRight: OrganIPCFootRight
+      Eyes: OrganIPCEyes
+      Tongue: OrganIPCTongue
+      Ears: OrganIPCEars
+      Heart: OrganIPCHeart
+  - type: HumanoidProfile
+    species: IPC
+  - type: Sprite
+    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi # Euph - DO NOT OVERRIDE THE LAYERING! IF YOU EVER DO, I WILL TELL DUNRAB TO SEND HIS GOONS AFTER YOU!
 
+- type: entity
+  parent:
+  - ActiveCritBase
+  - AppearanceIPC
+  - MobBloodstream
+  - MobFlammable
+  - BaseMobSpecies
+  id: MobIPC
+  name: Urist McRobot
+  components:
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
+    # people overriding species sprite layering for 0 reason other than failing to understand how RobustToolbox sprites work gives everyone a headache when trying to modify saying layering!
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: IPCHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+  - type: WiresPanel
+  - type: DamageVisuals
+    thresholds: [ 10, 20, 30, 50, 70, 100 ]
+    targetLayers:
+    - "enum.HumanoidVisualLayers.Chest"
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        colorFromBlood: true # Euphoria: Add damage overlay colours from blood, was color
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      collection: MetalThud
+    damage:
+      types:
+        Blunt: 6
+  - type: PassiveDamage # Need it here to disable it.
+    allowedStates:
+    - Alive
+    damageCap: 0
+    damage:
+      types:
+        Heat: 0
+        Blunt: 0
+        Piercing: 0
+        Slash: 0
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - IPC
+    - SiliconEmotes # Euph
+  - type: Damageable
+    damageContainer: Robotic
+    damageModifierSet: IPC
+  - type: SolutionContainerManager
+    solutions:
+      bloodstream:
+        canReact: false # My robots aren't beakers! (oil -> ash conversion is evil and needs to go)
+      bloodstreamTemporary:
+        canReact: false
+      metabolites:
+        canReact: false
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Oil
+        Quantity: 300
+    # minBloodDamage: 8 # Euph - no clue what this field is supposed to be.
+    bleedReductionAmount: 0 # No natural wound closing whatsoever
+    bloodlossThreshold: 0.75 # Everyone else start taking bloodloss damage at 90%, but with no natural bleeding stop - IPC can last for a bit longer
+  - type: IPCWeldClosesWounds
+  - type: ZombieImmune
+  - type: TypingIndicator
+    proto: robot
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepBorg
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+  - type: Vocal
+    sounds:
+      Male: UnisexIPC
+      Female: UnisexIPC
+      Unsexed: UnisexIPC
+  # IPC slots
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot { }
+      key_slots: !type:Container
+      borg_brain: !type:ContainerSlot { }
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  # Brain
+  - type: IPCBrainHolder
+  - type: ContainerFill
+    containers:
+      borg_brain: [ PositronicBrain ]
+      key_slots: [] # - EncryptionKeyTrinary # Euph, dont have this channel and i dont want to bother porting it
+  #  - type: GlitchOnIonStorm # Euph, dont have this
+  #    duration: 40
+  #    ramp: 5
+  # Battery
+  - type: IPCBattery
+    dieWithoutPowerAfter: 15.0 # 10 was too short
+    numWarnings: 2 #warn player that they are about to die
+    warningText: ipc-warning-critical-charge
+    warningSound:
+      params:
+        loop: true
+        volume: -10 # Euph - make the fuckass alert quieter and limited in range
+        maxDistance: 4
+      path: /Audio/_FarHorizons/Effects/Alerts/healthpanel-alert.ogg
+    drainAllowedTargets:
+    - APCBasic
+    - APCHighCapacity
+    - APCSuperCapacity
+    - APCHyperCapacity
+    - SubstationBasic
+    - SubstationWallBasic
+    noPowerDeathEmote: SiliconDeathgasp # Euph - from EE
+  - type: Deathgasp
+    prototype: SiliconDeathgasp # Euph - from EE
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+    fitsInCharger: true
+  - type: PowerCellDraw
+    drawRate: 0.6
+  - type: BatteryDrainer
+    drainEfficiency: 0.005
+    drainTime: 0.8
+  #    disableHandInteraction: true # Euph - dont have this
+  # Radio
+  - type: IPCRadio
+    keysCapacity: 2
+    copyHeadsetKeys: false  # Copy contents on headset when starting gear is equipped
+    removeHeadset: false # Delete headset when starting gear is equipped (after copying keys)
+  - type: ActiveRadio
+  - type: IntrinsicRadioTransmitter
+  - type: IntrinsicRadioReceiver
+  # Music player
+  - type: ActionGrant
+    actions:
+    - ActionSiliconPlayMidi
+  - type: Instrument
+    allowPercussion: true
+    allowProgramChange: false # Euph
+    handheld: false
+    bank: 1 # Euph
+    program: 2 # Euph
+  # Health
+  - type: Blindable
+  - type: IPCRevive
+    rebootButton: true
+    rebootTime: 6.0
+    defibBatteryDrain: true
+    defibDamage:
+      types:
+        Shock: 20 # It already does 5 shock to everyone, take that into account
+        Heat: 20
+    damagedSound:
+      params:
+        loop: true
+        volume: -10 # Euph - make the fuckass alert quieter and limited in range
+        maxDistance: 4
+      path: /Audio/_FarHorizons/Effects/Alerts/healthpanel-alert.ogg
+    damagedThreshold:
+      min: 85
+  - type: Repairable # So welder is just a special little snowflake in the code. I tried making healing with welder work through ConditionalHealing component, but it would require too many changes in too many places. So we will keep on the trend and have brute healing defined here. /shrug
+    doAfterDelay: 10 # Euph - same as borgs, we dont have insta-heal topicals that the original comment refers to
+    allowSelfRepair: true
+    fuelCost: 5
+    damage:
+      types:
+        Blunt: -10
+        Piercing: -10
+        Slash: -10
+    selfRepairPenalty: 1.5
+  - type: HumanoidEMP # HumanoidEMP is needed to receive EMP effects, it may carry its own innate effects, but doesn't have to
+    effectCooldown: 2
+    baseDamage:
+      types:
+        Shock: 1
+        Heat: 1
+    thresholds:
+      6:
+        additionalEffects:
+          StatusEffectIPCFanDisabled: 20.0
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Blunt
+        damage: 400
+      behaviors:
+      - !type:GibBehavior { }
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 2500 # Due to being extremely ash prone as a result of tempature mechanics. Also it's metal, that takes longer to melt.
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash: # Should totally make this like, metallic slag or something later on. Thematically fitting.
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
+  # Lock
+  - type: IPCLock
+    instantSelfUnlock: true
+    unlockTime: 10.0
+    lockSoundsEnabled: true # beeps and boops during unlock doafter
+    lockSoundsCooldown: 0.9
+  - type: LockedWiresPanel
+  - type: Lock
+    locked: true
+    breakOnAccessBreaker: true # Access breaker instantly unlocks. It lock can be instantly locked right away by IPC and no lasting changes to lock are made. Disable if undesireable
+    useAccess: false # IPCLock handles this
+    unlockOnClick: false # IPCLock handles this
+    showLockVerbs: false # IPCLock handles this
+  - type: IPCUserInterface
+  - type: UserInterface
+    interfaces:
+      # Euph, dont have/dont need many any of those that were specified in the original. Why the hell are they hardcoded into the UI comp?
+      enum.IPCUiKey.Key:
+        type: IPCBoundUserInterface
+      enum.StrippingUiKey.Key:
+        type: StrippableBoundUserInterface
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+        requireInputValidation: false
+      enum.HumanoidMarkingModifierKey.Key:
+        type: HumanoidMarkingModifierBoundUserInterface
+  - type: ActivatableUI
+    key: enum.IPCUiKey.Key
+  - type: UIRequiresLock
+    userInterfaceKeys:
+    - enum.IPCUiKey.Key
+  # Thermals
+  - type: Temperature
+    currentTemperature: 313
+    specificHeat: 10 # IPC's metal body has very low heat capacity. Fast to heat and fast to cool
+  - type: TemperatureDamage
+    heatDamageThreshold: 373 # ~100C
+    coldDamageThreshold: 285 # Temperature alert works funky, basically requred for "ideal temperature" to be in the middle between 2
+    coldDamage: {} # Since we had to set treshold for damage, but we don't actually want any damage
+    heatDamage:
+      types:
+        Heat: 2.5 #per second, scales with temperature & other constants
+  - type: IPCThermalRegulation
+    produceHeat: 2000 # How much heat generated inside the body per second (only when on)
+    radiateHeatEfficiency: 2 # Proportional to temperature outside
+    minEffectivePressure: 80
+    maxEffectivePressure: 200 # Outside of optimal window fans become less effective
+    minPressure: 10
+    maxPressure: 500 # Outside of this window fans stop working entirely
+    maxTemperature: 414 # ~140C just above highest mode
+    # External cooling completely turns off natual heat generation and loss.
+    # Active cooling will still work until the temperature is normal, then it will stay unchanging until external cooling is removed
+    externalCoolingTag: IPCExternalCooling # Items must have this tag on them
+    externalCoolingCheckSlots: # All slots must have item in them, and all these items must have tag
+    - outerClothing
+    - suitstorage
+    - suitstorage2
+    - belt
+    - back
+    - pocket1
+    - pocket2
+    #- head # uncomment and add tags to helmets if you want them to be closed in space
+    fansEfficiencyLowThreshold: 0.15 # Efficiency has to be lower than this before fansEfficiencyLowAlert is shown (percentage, from 0 to 1)
+    fansOffExamineText: ipc-thermals-examine-off
+    fansOffDiagnosticsText: ipc-thermals-diagnostics-off
+    fansOKAlert: IPCFansOk
+    fansOffAlert: IPCFansOff
+    fansEfficiencyLowAlert: IPCFansEfficiencyLow
+    alertsCategory: IPCCirculation
+    fanModes:
+    - minTemp: 323 # Fans turn on at ~50C
+      bodyHeatEffect: -2500 # And release just enough heat to keep temperature stable in normal conditions
+      atmosHeatEffect: 50 # In a perfect simulation heat would be transferred from IPC to atmos, but in current state of the game we can't do that
+      staysOnFor: 10 # Every time this fan mode activated, it can't be switched off for this long, to prevent fans constantly switching back and forth
+      examineText: ipc-thermals-examine-low # Text you see when examining IPC upclose (hearing or not hearing sound of fans)
+      diagnosticsText: ipc-thermals-diagnostics-low # Text to show in control panel
+    - minTemp: 343 # At ~70C fans speed up to medium
+      bodyHeatEffect: -3500
+      atmosHeatEffect: 80
+      staysOnFor: 10
+      examineText: ipc-thermals-examine-medium
+      diagnosticsText: ipc-thermals-diagnostics-medium
+      modeAlert: IPCFansSpeedMedium
+    - minTemp: 373 # At ~100C fans go into high
+      bodyHeatEffect: -4500
+      atmosHeatEffect: 100
+      staysOnFor: 10
+      examineText: ipc-thermals-examine-high
+      diagnosticsText: ipc-thermals-diagnostics-high
+      modeAlert: IPCFansSpeedHigh
+    - minTemp: 393 # At ~120C fans go into overdrive
+      bodyHeatEffect: -6000
+      atmosHeatEffect: 150
+      staysOnFor: 10
+      examineText: ipc-thermals-examine-extreme
+      diagnosticsText: ipc-thermals-diagnostics-extreme
+      modeAlert: IPCFansSpeedExtreme
+  - type: Flammable
+    firestackFade: -0.8 # Not much to burn + they take way too much damage even from a bit
+  # Euph, dont have those
+#  - type: NeedsOrgansForInventorySlots
+#    slots:
+#    - head
+#    - ears
+#    - mask
+#    - gloves
+#    - shoes
+#  - type: LimbDamageable # Far Horizons
+#    proto: LimbTargetIPC
+
+
+
+
+
+# ========================================================================================================= #
 # Organs
-
 - type: entity
   parent: OrganBase
   id: OrganIPC
@@ -149,6 +400,11 @@
         reagents:
         - ReagentId: Oil
           Quantity: 10
+  - type: Edible
+    requiresSpecialDigestion: true # Better solution than FH's ai-generated -NonEdible base organs
+  - type: Tag
+    tags:
+    - Inorganic
 
 - type: entity
   parent: OrganIPC
@@ -157,10 +413,7 @@
   components:
   - type: Sprite
     sprite: _FarHorizons/Mobs/Species/IPC/organs.rsi
-  - type: Icon # Euph - also specify the icon path
-    sprite: _FarHorizons/Mobs/Species/IPC/organs.rsi
 
-# We dont have visualorgan, visualorganmarkings, limbdamageeffect, organemptarget
 - type: entity
   parent: OrganIPC
   id: OrganIPCExternal
@@ -168,20 +421,18 @@
   components:
   - type: Sprite
     sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
-  - type: Icon # Euph - also specify the icon path
-    sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
-#  - type: VisualOrgan
-#    data:
-#      sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
-#  - type: VisualOrganMarkings
-#    markingData:
-#      group: IPC
+  - type: VisualOrgan
+    data:
+      sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: IPC
 
-# unused
-#- type: entity
-#  id: DamageableLimbVisualsIPC
-#  abstract: true
-#  components:
+# We dont have limbdamageeffect, organemptarget
+- type: entity
+  id: DamageableLimbVisualsIPC
+  abstract: true
+  # components: # dont have this
 #  - type: LimbDamageVisuals
 #    damageOverlayGroups:
 #      Brute:
@@ -191,29 +442,23 @@
 # Limbs
 
 - type: entity
-  parent: [ BaseTorso, OrganIPCExternal ] #  OrganBaseTorsoSexed, OrganBaseTorso, OrganIPCExternal ]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganIPCExternal ]
   id: OrganIPCTorso
-  components:
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseHead, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseHeadSexed, OrganBaseHeadVitalNonEdible, OrganIPCExternal ]
+  parent: [ DamageableLimbVisualsIPC, OrganBaseHeadSexed, OrganBaseHead, OrganIPCExternal ]
   id: OrganIPCHead
-  components:
+  # components:
+  # Not using this cause we allow ipcs to take any markings
 #  - type: VisualOrganMarkings
 #    markingData:
 #      layers:
 #      - Head
 #      - HeadSide
 #      - HeadTop
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseLeftArm, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseArmLeftNonEdible, OrganIPCExternal ]
+  parent: [ DamageableLimbVisualsIPC, OrganBaseArmLeft, OrganIPCExternal ]
   id: OrganIPCArmLeft
   components:
 #  - type: OrganEmpTarget
@@ -240,12 +485,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 500
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseRightArm, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseArmRightNonEdible, OrganIPCExternal ]
+  parent: [ DamageableLimbVisualsIPC, OrganBaseArmRight, OrganIPCExternal ]
   id: OrganIPCArmRight
   components:
 #  - type: OrganEmpTarget
@@ -272,12 +514,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 500
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseLeftHand, OrganIPCExternal ] # OrganBaseHandLeftNonEdible, OrganIPCExternal ]
+  parent: [ OrganBaseHandLeft, OrganIPCExternal ]
   id: OrganIPCHandLeft
   components:
 #  - type: OrganEmpTarget
@@ -304,12 +543,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 300
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseRightHand, OrganIPCExternal ] # OrganBaseHandRightNonEdible, OrganIPCExternal ]
+  parent: [ OrganBaseHandRight, OrganIPCExternal ]
   id: OrganIPCHandRight
   components:
 #  - type: OrganEmpTarget
@@ -336,12 +572,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 300
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseLeftLeg, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseLegLeftNonEdible, OrganIPCExternal ]
+  parent: [  DamageableLimbVisualsIPC, OrganBaseLegLeft, OrganIPCExternal ]
   id: OrganIPCLegLeft
   components:
 #  - type: OrganEmpTarget
@@ -371,12 +604,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 500
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseRightLeg, OrganIPCExternal ] # DamageableLimbVisualsIPC, OrganBaseLegRightNonEdible, OrganIPCExternal ]
+  parent: [ DamageableLimbVisualsIPC, OrganBaseLegRight, OrganIPCExternal ]
   id: OrganIPCLegRight
   components:
 #  - type: OrganEmpTarget
@@ -406,12 +636,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 500
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseLeftFoot, OrganIPCExternal ] # OrganBaseFootLeftNonEdible, OrganIPCExternal ]
+  parent: [ OrganBaseFootLeft, OrganIPCExternal ]
   id: OrganIPCFootLeft
   components:
 #  - type: OrganEmpTarget
@@ -441,12 +668,9 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 300
-  - type: Tag
-    tags:
-    - Inorganic
 
 - type: entity
-  parent: [ BaseRightFoot, OrganIPCExternal ] # OrganBaseFootRightNonEdible, OrganIPCExternal ]
+  parent: [ OrganBaseFootRight, OrganIPCExternal ]
   id: OrganIPCFootRight
   components:
 #  - type: OrganEmpTarget
@@ -476,14 +700,11 @@
 #        - !type:LimbConditionSpecificDamage
 #          damageType: Heat
 #          damageAmount: 300
-  - type: Tag
-    tags:
-    - Inorganic
 
 # Organs
 
 - type: entity
-  parent: [ OrganIPCInternal, OrganHumanEyes ] #OrganBaseEyes, OrganIPCInternal, OrganIPCExternal ]
+  parent: [ OrganBaseEyes, OrganIPCInternal, OrganIPCExternal ]
   id: OrganIPCEyes
   name: Robotic Eyes
   description: "Decidedly not squishy. Kinda sharp, actually."
@@ -504,40 +725,40 @@
 #      6:
 #        additionalEffects:
 #          StatusEffectBlinded: 2.0
-  - type: Tag
-    tags:
-    - Inorganic
-
-#- type: entity
-#  parent: [ OrganBaseTongue, OrganIPCInternal ]
-#  id: OrganIPCTongue
-#  name: Vocal Modulator
-#  description: "A vocal modulator, typically used for lying."
-#  components:
-#  - type: Tag
-#    tags:
-#    - Inorganic
-
-#- type: entity
-#  parent: [ OrganBaseEars, OrganIPCInternal ]
-#  id: OrganIPCEars
-#  name: Robotic Ears
-#  description: "Process audio at the same quality of station-side cyborgs"
-#  components:
-#  - type: Tag
-#    tags:
-#    - Inorganic
 
 - type: entity
-  parent: [ OrganIPCInternal, OrganHumanHeart ] # OrganBaseHeart, OrganIPCInternal ]
+  parent: [ OrganBaseTongue, OrganIPCInternal ]
+  id: OrganIPCTongue
+  name: Vocal Modulator
+  description: "A vocal modulator, typically used for lying."
+
+- type: entity
+  parent: [ OrganBaseEars, OrganIPCInternal ]
+  id: OrganIPCEars
+  name: Robotic Ears
+  description: "Process audio at the same quality of station-side cyborgs"
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganIPCInternal ]
   id: OrganIPCHeart
   name: Micro Pump
   description: "Circulates coolant in a sickingly familiar way."
   components:
-  - type: Icon # Euph, human organs dont specify icons and there's no proper BaseHeart
-    state: heart-on
   - type: Metabolizer
     maxReagents: 0
-  - type: Tag
-    tags:
-    - Inorganic
+
+
+# Actions
+
+- type: entity
+  parent: BaseMentalAction
+  id: ActionSiliconPlayMidi
+  name: Play MIDI
+  description: Open your in-built MIDI program to jam to some electronic tunes.
+  components:
+  - type: Action
+    icon: _FarHorizons/Interface/Actions/silicon-midi.png
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:OpenUiActionEvent
+      key: enum.InstrumentUiKey.Key
