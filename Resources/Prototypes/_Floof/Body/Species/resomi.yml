@@ -44,55 +44,54 @@
       eyes:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: eyes
       gloves:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: hands
       head:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: head
       back:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: back
       ears:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: ears
       shoes:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: feet
       neck:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: neck
       mask:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: mask
       suitstorage:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: suitStorage
       belt:
         sizeMaps:
           32:
-            <<: *standardDisplacement
+            sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: belt
-    femaleDisplacements:
-      <<: *allDisplacements # afaik female resomi use the same displacements as male ones.
+    femaleDisplacements: *allDisplacements # afaik female resomi use the same displacements as male ones.
 
 - type: entity
   parent:
@@ -216,7 +215,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Resomi/parts.rsi
+    sprite: _Floof/Mobs/Species/Resomi/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganResomiExternal ]

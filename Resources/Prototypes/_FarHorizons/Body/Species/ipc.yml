@@ -32,11 +32,10 @@
 
 - type: entity
   parent:
-  - ActiveCritBase
   - AppearanceIPC
   - MobBloodstream
   - MobFlammable
-  - BaseMobSpecies
+  - BaseSpeciesMob
   id: MobIPC
   name: Urist McRobot
   components:

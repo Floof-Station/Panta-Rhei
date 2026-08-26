@@ -59,7 +59,7 @@
   metabolisms:
     Bloodstream:
       metabolismRate: 0.2
-      effects:Z
+      effects:
       - !type:HealthChange
         conditions:
         - !type:TotalDamageCondition

@@ -161,7 +161,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _Floof/Mobs/Species/Tajaran/parts.rsi
+      sprite: _EE/Mobs/Species/Tajaran/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Tajaran
@@ -172,7 +172,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _DV/Mobs/Species/Tajaran/parts.rsi
+    sprite: _EE/Mobs/Species/Tajaran/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganTajaranExternal ]
