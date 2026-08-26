@@ -121,3 +121,6 @@ trait-nosebleed-frequent-description =
     You will experience one every 5-30 minutes.
 
 nosebleed-message = You feel blood dripping from your nose!
+
+trait-jump-ability-name = Pounce
+trait-jump-ability-description = Being nature's most fearsome predator, you developed the ability to pounce forward in the direction of your gaze.

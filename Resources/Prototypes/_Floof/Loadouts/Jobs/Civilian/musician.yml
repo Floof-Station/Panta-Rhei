@@ -31,3 +31,16 @@
   id: ClothingUnderSocksMusician
   equipment:
     undergarmentSocks: ClothingUnderSocksMusician
+
+# dj kit for musicians
+- type: loadout
+  id: DJSetInstrument
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 250h
+  storage:
+    back:
+    - DJSetInstrument

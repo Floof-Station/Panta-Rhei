@@ -636,3 +636,29 @@
     - type: Nosebleed
       minDelay: 300 # bleeds more often, 5 minutes
       maxDelay: 1800 # 30 minutes in seconds
+
+- type: trait
+  id: Snoring
+  name: trait-snoring-name
+  description: trait-snoring-desc
+  category: DisabilitiesPhysical
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Snoring
+
+- type: trait
+  id: JumpAbility
+  name: trait-jump-ability-name
+  description: trait-jump-ability-description
+  category: Skills
+  cost: 4
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: JumpAbility
+      jumpThrowSpeed: 8 # make it a little slower
+      jumpDistance: 3
+      canCollide: true # you may be pouncing but its funny watching poeple flop over
+      action: ActionPounce
