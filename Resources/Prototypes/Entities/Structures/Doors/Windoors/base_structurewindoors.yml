@@ -62,11 +62,6 @@
       shader: unshaded
       visible: false
   - type: AnimationPlayer
-  - type: Tag
-    tags:
-    - ForceFixRotations
-    - Window
-    - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: ApcPowerReceiver
   - type: ExtensionCableReceiver
   - type: DoorSignalControl
@@ -190,8 +185,10 @@
 # ES End
   - type: Tag
     tags:
-      - DoorRemoteWhitelist
-      # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
+      - DoorRemoteWhitelist # This tag is used by door remotes to allow or not a door remote to normally be able to interact with a door
+      - ForceFixRotations # Euph
+      - Window  # Euph
+      - WeldbotFixableStructure # Euphoria - Welbot fixable
 
 - type: entity
   id: BaseSecureWindoor

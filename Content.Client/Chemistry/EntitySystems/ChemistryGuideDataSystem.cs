@@ -10,6 +10,7 @@ using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Prototypes;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Chemistry.EntitySystems;
 
@@ -109,7 +110,8 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
                     juiceSolution);
                 foreach (var (id, _) in juiceSolution.Contents)
                 {
-                    _reagentSources[id.Prototype].Add(data);
+                    // Euph - get or new
+                    _reagentSources.GetOrNew(id.Prototype).Add(data);
                 }
 
                 usedNames.Add(entProto.Name);
@@ -126,7 +128,8 @@ public sealed class ChemistryGuideDataSystem : SharedChemistryGuideDataSystem
                     grindableSolution);
                 foreach (var (id, _) in grindableSolution.Contents)
                 {
-                    _reagentSources[id.Prototype].Add(data);
+                    // Euph - get or new
+                    _reagentSources.GetOrNew(id.Prototype).Add(data);
                 }
                 usedNames.Add(entProto.Name);
             }

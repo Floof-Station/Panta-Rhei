@@ -153,8 +153,6 @@
   id: MobCarpPlayable
   parent: [BasePlayableFeralMob, BaseMobCarp, StripableInventoryBase]
   components:
-  - type: Body
-    prototype: CarpHands
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -204,8 +202,6 @@
   id: MobSharkPlayable
   parent: [BasePlayableFeralMob, MobShark, StripableInventoryBase]
   components:
-  - type: Body
-    prototype: CarpHands
   - type: MobThresholds
     thresholds:
       0: Alive

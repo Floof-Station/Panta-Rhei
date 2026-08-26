@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseHumanOrgan
+  parent: [OrganBase]
   id: BaseLewdOrgan
   description: Ew.
   abstract: true
@@ -8,9 +8,11 @@
     sprite: _Floof/Mobs/Organs/placeholder-organ.rsi
     state: icon
     scale: 0.7,0.7
-  - type: Organ
-#    removable: false # There is currently no surgeries defined for these organs. Even if you could detach them, you wouldn't be able to reattach it to someone without the relevant organ slot.
   - type: LewdOrgan
+  # TODO?
+  #- type: VisualOrgan
+  #  data:
+  #    sprite: _Floof/Mobs/Organs/placeholder-organ.rsi
 
 # This is silly.
 # None of these have sprites now and also can't be removed/added via surgeries. If you want to make them transplantable, you'll have to make sprites for them.

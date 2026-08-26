@@ -17,13 +17,6 @@ chat-emote-name-bubble = Bubble
 chat-emote-msg-bubble = bubbles.
 chat-emote-msg-pop = pops!
 
-# Shadowkin
-chat-emote-name-mars = Mars
-chat-emote-name-wurble = Wurble
-
-chat-emote-msg-mars = mars!
-chat-emote-msg-wurble = wurbles.
-
 # Tajaran
 chat-emote-name-softtrill = Soft Trill
 chat-emote-msg-softtrill = trills softly.

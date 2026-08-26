@@ -147,6 +147,27 @@
         Heat: 1.5
   - type: TypingIndicator
     proto: alien
+  # Begin Euphoria additions
+  - type: NightVision # Euphoria
+    color: "#A58ECC"
+    activateSound: null
+    deactivateSound: null
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Marish
+    understands:
+    - TauCetiBasic
+    - Marish
+    naturalLanguage: Marish
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - ShadowkinEmotes # Added
+  # End Euphoria additions
   # - type: Destructible
   #   thresholds:
   #     - trigger: !type:DamageTypeTrigger
