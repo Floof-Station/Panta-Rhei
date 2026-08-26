@@ -1,0 +1,62 @@
+﻿- type: entity
+  id: BinglePitCollapse commentComment on line R2Aviu00 commented on Jan 25, 2025 Aviu00on Jan 25, 2025ContributorMore actionsAdd RequireProjectileTarget component to it so it can be shot if targeted directly by the shooter.Reactjorgun replied on Jan 27, 2025 jorgunon Jan 27, 2025ContributorAuthorMore actionsi added this but its still not able to be targeted by gunsReactWrite a replyResolve comment
+  name: binglepit
+  description: Looks Hungry
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: BinglePit
+  - type: StepTrigger
+    requiredTriggeredSpeed: 0
+    intersectRatio: 0.4
+    blacklist:
+      tags:
+      - Catwalk
+    triggerGroups:
+      types:
+      - Chasm
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        layer:
+        - WallLayer
+        mask:
+        - ItemMask
+        density: 1000
+        hard: false
+  - type: Sprite
+    drawdepth: FloorTiles
+    layers:
+    - sprite: _Goobstation/Mobs/Bingle/bingle.rsi
+      state: pit
+    - type: InteractionOutline
+    - type: Clickable
+    - type: Damageable
+      damageContainer: Inorganic
+      damageModifierSet: Metallic
+    - type: Destructible
+      thresholds:
+      - trigger:
+          !type:DamageTrigger
+          damage: 256
+        behaviors:
+        - !type:DoActsBehavior
+          acts: [ "Destruction" ]
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Weapons/Guns/Gunshots/rocket_launcher.ogg
+  - type: RequireProjectileTarget
+  - type: SolutionContainerManager
+    solutions:
+        drainBuffer:
+          maxVol: 1000
+  - type: Drain
+    unitsPerSecond: 10
+    unitsDestroyedPerSecond: 10
