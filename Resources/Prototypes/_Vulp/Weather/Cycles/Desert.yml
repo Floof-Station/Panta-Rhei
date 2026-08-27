@@ -27,8 +27,8 @@
           volume: 2500
           temperature: 325.15
           moles:
-          - 21.824879 # O2
-          - 82.10312  # N2
+          - 19.969536 # O2
+          - 75.1235  # N2
       - !type:WeatherDispatchAnnouncement
         dataset: WeatherHot
 
@@ -103,9 +103,9 @@
           volume: 2500
           temperature: 313.15
           moles:
-          - 19.381002 # O2
-          - 72.687904 # N2
-          - 2.9237726 # CO2
+          - 21.023476 # O2
+          - 78.84795 # N2
+          - 3.1715524 # CO2
       - !type:WeatherDispatchAnnouncement
         dataset: WeatherAshfall
       onUpdate:
