@@ -37,15 +37,20 @@
     - Alive
     - Dead
   - type: DamageStateVisuals
-    rotate: true
+    #rotate: true
     states:
       Alive:
         Base: alive
       Dead:
         Base: dead
+  #- type: Bloodstream
+  #  bloodMaxVolume: 100
+  #  bloodReagent: Nitrogen # by request
   - type: Bloodstream
-    bloodMaxVolume: 100
-    bloodReagent: Nitrogen # by request
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Nitrogen
+        Quantity: 100
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -61,10 +66,10 @@
     baseWalkSpeed : 2 # same as slime
     baseSprintSpeed : 4
   - type: Stamina
-    critThreshold: 120
+    baseCritThreshold: 120
   - type: StaminaDamageOnHit # from stunbaton
     damage: 15
-    overtime: 40
+    #overtime: 40
     sound: /Audio/Weapons/egloves.ogg
   - type: Damageable
     damageContainer: Biological # Euphoria
@@ -80,8 +85,8 @@
     #speechVerb: Bingle
     speechSounds: Lizard #Euphoria
     allowedEmotes: ['Hiss'] # Euphoria
-  - type: ReplacementAccent # prevent talking
-    accent: bingle
+  #- type: ReplacementAccent # prevent talking
+  #  accent: bingle #Euphoria
   - type: PassiveDamage #passive Healing
     allowedStates:
     - Alive
