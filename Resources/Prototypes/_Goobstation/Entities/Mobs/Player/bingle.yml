@@ -1,8 +1,8 @@
 ﻿- type: entity
-  name: bingle
+  name: trash lizard #Euphoria
   id: MobBingle
   parent: MobSpaceBasic
-  description: bingle
+  description: A parallel evolution of the kobold that seeks interesting goodies. #Euphoria
   components:
   - type: Bingle
     upgradeDamage:
@@ -67,7 +67,7 @@
     overtime: 40
     sound: /Audio/Weapons/egloves.ogg
   - type: Damageable
-    damageContainer: OrganicPart # unsure if this is the right type
+    damageContainer: Biological # Euphoria
     damageModifierSet: Bingle
   - type: FootstepModifier
     footstepSoundCollection:
@@ -77,8 +77,9 @@
   - type: TypingIndicator
     proto: alien
   - type: Speech
-    speechVerb: Bingle
-    speechSounds: Slime
+    #speechVerb: Bingle
+    speechSounds: Lizard #Euphoria
+    allowedEmotes: ['Hiss'] # Euphoria
   - type: ReplacementAccent # prevent talking
     accent: bingle
   - type: PassiveDamage #passive Healing
@@ -94,6 +95,11 @@
     color: "#008080"
     activateSound: null
     deactivateSound: null
+  - type: LanguageKnowledge #Euphoria
+    speaks:
+    - Draconic
+    understands:
+    - Draconic
 
 - type: entity
   id: MobBinglePrime
