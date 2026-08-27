@@ -1,5 +1,5 @@
 - type: markingsGroup
-- parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
+  parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
   id: IPC
   onlyGroupWhitelisted: true
   limits: {} # Everything is common
@@ -459,7 +459,7 @@
 - type: entity
   parent: [ DamageableLimbVisualsIPC, OrganBaseArmLeft, OrganIPCExternal ]
   id: OrganIPCArmLeft
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -488,7 +488,7 @@
 - type: entity
   parent: [ DamageableLimbVisualsIPC, OrganBaseArmRight, OrganIPCExternal ]
   id: OrganIPCArmRight
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -517,7 +517,7 @@
 - type: entity
   parent: [ OrganBaseHandLeft, OrganIPCExternal ]
   id: OrganIPCHandLeft
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -546,7 +546,7 @@
 - type: entity
   parent: [ OrganBaseHandRight, OrganIPCExternal ]
   id: OrganIPCHandRight
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -575,7 +575,7 @@
 - type: entity
   parent: [  DamageableLimbVisualsIPC, OrganBaseLegLeft, OrganIPCExternal ]
   id: OrganIPCLegLeft
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -607,7 +607,7 @@
 - type: entity
   parent: [ DamageableLimbVisualsIPC, OrganBaseLegRight, OrganIPCExternal ]
   id: OrganIPCLegRight
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -639,7 +639,7 @@
 - type: entity
   parent: [ OrganBaseFootLeft, OrganIPCExternal ]
   id: OrganIPCFootLeft
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -671,7 +671,7 @@
 - type: entity
   parent: [ OrganBaseFootRight, OrganIPCExternal ]
   id: OrganIPCFootRight
-  components:
+#  components:
 #  - type: OrganEmpTarget
 #    baseDamage:
 #      types:
@@ -707,9 +707,6 @@
   id: OrganIPCEyes
   name: Robotic Eyes
   description: "Decidedly not squishy. Kinda sharp, actually."
-  components:
-  - type: Icon # Euph, human organs dont specify icons and there's no proper BaseEyes
-    state: eyes
 #  - type: VisualOrgan
 #    data:
 #      sprite: Mobs/Customization/eyes.rsi

@@ -29,7 +29,7 @@
     - Resomi #AmmoniaBlood
     - SlimePerson #Slime
     - Vox #AmmoniaBlood
-    - Shadowkin #BlackBlood
+    - Shadekin #BlackBlood
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: Blood
@@ -224,7 +224,7 @@
   - !type:OneOfSpeciesCondition
     invert: true
     species:
-    - Shadowkin
+    - Shadekin
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: BlackBlood
@@ -280,7 +280,6 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 50 # +30 over default
       damage:
         types:
           Heat: -0.14 # -0.07 over default
@@ -351,7 +350,6 @@
     - type: PassiveDamage # Half of base, with 75% of the cap
       allowedStates:
       - Alive
-      damageCap: 15
       damage:
         types:
           Heat: -0.03

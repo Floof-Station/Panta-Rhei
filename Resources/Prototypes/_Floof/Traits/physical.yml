@@ -32,7 +32,7 @@
     invert: true
     species:
     - Felinid
-    - Shadowkin
+    - Shadekin
     - Rodentia
     - Tajaran
   effects:
@@ -211,7 +211,7 @@
         - Felinid # Felinids already have cat claws.
         - Tajaran # Tajaran also have cat claws
         - Reptilian # Reptilians also have cat claws.
-        - Shadowkin # Shadowkins also have claws.
+        - Shadekin # Shadowkins also have claws.
         # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
         - Rodentia # Floof - Rodentia already has it
         - Resomi # Floof - they have claws after port of Goob changes
@@ -292,7 +292,7 @@
     #- Avali #223
     #- Tajaran #248.15
     - Resomi #195.4
-    - Shadowkin #195
+    - Shadekin #195
     #- Reptilian #285
   effects:
   - !type:ModifyTemperatureToleranceEffect
@@ -321,7 +321,7 @@
     - Avali #223
     #- Tajaran #248.15
     - Resomi #195.4
-    - Shadowkin #195
+    - Shadekin #195
     #- Reptilian #285
   effects:
   - !type:ModifyTemperatureToleranceEffect
@@ -348,7 +348,7 @@
     #- Chitinid #320
     #- Avali #310
     #- Resomi #320.15
-    #- Shadowkin #330
+    #- Shadekin #330
   effects:
   - !type:ModifyTemperatureToleranceEffect
     heatToleranceModifier: 20 # 20 better (more tolerant) than base (which should be 325).
@@ -374,7 +374,7 @@
     #- Chitinid #320
     #- Avali #310
     #- Resomi #320.15
-    #- Shadowkin #330
+    #- Shadekin #330
   effects:
   - !type:ModifyTemperatureToleranceEffect
     heatToleranceModifier: 40 # 40 better (more tolerant) than base (which should be 325).
@@ -402,7 +402,7 @@
     #- Avali #223
     #- Tajaran #248.15
     #- Resomi #195.4
-    #- Shadowkin #195
+    #- Shadekin #195
     - Reptilian #285 #At 20 intolerance, they're just barely on the cusp. The "you're too cold" warning keeps going back and forth.
   effects:
   - !type:ModifyTemperatureToleranceEffect
@@ -431,7 +431,7 @@
     #- Avali #223
     #- Tajaran #248.15
     #- Resomi #195.4
-    #- Shadowkin #195
+    #- Shadekin #195
     - Reptilian #285
   effects:
   - !type:ModifyTemperatureToleranceEffect
@@ -475,7 +475,7 @@
     - Chitinid #320
     - Avali #310 Too dangerous.
     - Resomi #320.15 Constant warning at 10 below their normal.
-    #- Shadowkin #330
+    #- Shadekin #330
   effects:
   - !type:ModifyTemperatureToleranceEffect
     heatToleranceModifier: -10 # 10 worse (less tolerant) than base (which should be 325).

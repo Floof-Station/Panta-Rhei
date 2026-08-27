@@ -125,7 +125,6 @@ namespace Content.Shared.Humanoid.Markings
  *
 - type: marking
   id: TailDebugPro
-  markingCategory: Tail
   groupWhitelist: [Reptilian, SlimePerson, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
   layering:
     tail_oversuit: TailOversuit <--------------\

@@ -31,9 +31,9 @@
       - ConstructionMaterial
     #  components:
     #  - ConstructionMaterials # Was not ported due to tag.
-    #blacklist:
-    #  tags:
-    #  - PrizeTicket
+    blacklist: # Euph - uncomment
+      tags:
+      - PrizeTicket
     # End DeltaV Changes
   - type: Dumpable
   - type: StaticPrice

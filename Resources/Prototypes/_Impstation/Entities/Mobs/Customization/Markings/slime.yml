@@ -55,7 +55,6 @@
 - type: marking
   id: SlimeMouth
   bodyPart: Head
-  markingCategory: Head
   groupWhitelist: [SlimePerson]
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
@@ -64,7 +63,6 @@
 - type: marking
   id: SlimeEyeglow
   bodyPart: Eyes
-  markingCategory: Eyes
   groupWhitelist: [ SlimePerson ]
   coloring:
     default:
@@ -78,7 +76,6 @@
 - type: marking
   id: SlimeEyesCyclopsGlowing
   bodyPart: Eyes
-  markingCategory: Eyes
   groupWhitelist: [ SlimePerson ]
   coloring:
     default:

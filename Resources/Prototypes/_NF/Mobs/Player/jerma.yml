@@ -3,7 +3,7 @@
   id: MobJerma
   suffix: Admeme
   name: Jerma
-  description: A homunculus made with old Earth livestreamer Jerma985''s DNA. How it got here is beyond you. 
+  description: A homunculus made with old Earth livestreamer Jerma985''s DNA. How it got here is beyond you.
   components:
   - type: Bloodstream
     bloodReferenceSolution:
@@ -102,7 +102,7 @@
   - type: Devourer
     foodPreferenceWhitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     stomachStorageWhitelist:
       components:
       - MobState

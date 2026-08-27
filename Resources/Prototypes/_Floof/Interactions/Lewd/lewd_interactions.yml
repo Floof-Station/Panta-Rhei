@@ -16,7 +16,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentTop
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
@@ -34,7 +33,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
@@ -52,7 +50,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
@@ -73,7 +70,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentTop
     - !type:ConsentRequirement &filledByOthersConsent
       consent: LewdContainerFillByOthers
       inverted: true
@@ -93,7 +89,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - *filledByOthersConsent
   action:
     !type:LewdFillContainerFromTarget
@@ -111,7 +106,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - *filledByOthersConsent
   action:
     !type:LewdFillContainerFromTarget
@@ -132,7 +126,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SlotObstructionRequirement &accessibleMouthUser
       checkUser: true
       slot: MASK # Must have accessible mouth - this is a hack because LewdAccessibleRequirement can't sanely handle this
@@ -152,7 +145,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentTop
     - *accessibleMouthUser
   action:
     !type:LewdDrinkFromOrgan
@@ -173,8 +165,6 @@
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
       checkUserUnderwear: true
-      layerTarget: UndergarmentBottom
-      layerUser: UndergarmentBottom
   action:
     !type:LewdOrganFluidTransfer
     donorOrgan: Penis
@@ -190,8 +180,6 @@
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
       checkUserUnderwear: true
-      layerTarget: UndergarmentBottom
-      layerUser: UndergarmentBottom
   action:
     !type:LewdOrganFluidTransfer
     donorOrgan: Penis
@@ -211,7 +199,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdOrganFluidTransfer
@@ -228,7 +215,6 @@
     requirements:
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdOrganFluidTransfer

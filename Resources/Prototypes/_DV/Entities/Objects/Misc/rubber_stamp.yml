@@ -72,7 +72,7 @@
     stampedColor: "#0000af"
     stampState: "paper_stamp-warden"
   - type: Sprite
-    sprite: _DV/Objects/Misc/stamps.rsi
+    # sprite: _DV/Objects/Misc/stamps.rsi # Euph - use wizden version
     state: stamp-warden
 
 - type: entity
@@ -88,7 +88,7 @@
     stampedColor: "#5b0000"
     stampState: "paper_stamp-armorer"
   - type: Sprite
-    sprite: _DV/Objects/Misc/stamps.rsi
+    # sprite: _DV/Objects/Misc/stamps.rsi # Euph - use wizden version
     state: stamp-warden
 
 - type: entity

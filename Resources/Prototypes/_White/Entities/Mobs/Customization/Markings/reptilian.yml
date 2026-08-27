@@ -2,7 +2,6 @@
 - type: marking
   id: LizardHeadVirtuasaur
   bodyPart: Eyes
-  markingCategory: Head
   groupWhitelist: [Reptilian, Vulpkanin, Rodentia, SlimePerson, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Oni, Kitsune] # Floof - M3739 - #1084
   sprites:
   - sprite: _White/Mobs/Customization/snouts.rsi
@@ -11,7 +10,6 @@
 - type: marking
   id: LizardHeadCobraHood
   bodyPart: HeadSide
-  markingCategory: HeadSide
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian_parts.rsi
@@ -23,7 +21,6 @@
 - type: marking
   id: LizardShoutEasternDragon
   bodyPart: Snout
-  markingCategory: Snout
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/snouts.rsi
@@ -34,7 +31,6 @@
 - type: marking
   id: LizardShoutEasternDragonUsiki
   bodyPart: Snout
-  markingCategory: Snout
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/snouts.rsi
@@ -48,7 +44,6 @@
 - type: marking
   id: SnakeLargeTail
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: [Reptilian]
   sprites:
     - sprite: _White/Mobs/Customization/reptilian_64x32.rsi
@@ -59,7 +54,6 @@
 - type: marking
   id: SnakeLargeTailAnimated
   bodyPart: Tail
-  markingCategory: Tail
   groupWhitelist: []
   sprites:
     - sprite: _White/Mobs/Customization/reptilian_64x32.rsi
@@ -71,7 +65,6 @@
 - type: marking
   id: LizardChestSpinesAquatic
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -80,7 +73,6 @@
 - type: marking
   id: LizardChestSpinesAquaticWithoutTail
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -89,7 +81,6 @@
 - type: marking
   id: LizardChestSpinesLong
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -98,7 +89,6 @@
 - type: marking
   id: LizardChestSpinesLongWithoutTail
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -107,7 +97,6 @@
 - type: marking
   id: LizardChestSpinesLongMembrane
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -116,7 +105,6 @@
 - type: marking
   id: LizardChestSpinesLongMembraneWithoutTail
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -125,7 +113,6 @@
 - type: marking
   id: LizardChestSpinesShort
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -134,7 +121,6 @@
 - type: marking
   id: LizardChestSpinesShortWithoutTail
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -143,7 +129,6 @@
 - type: marking
   id: LizardChestSpinesShortMembrane
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
@@ -152,7 +137,6 @@
 - type: marking
   id: LizardChestSpinesShortMembraneWithoutTail
   bodyPart: Chest
-  markingCategory: Chest
   groupWhitelist: [Reptilian]
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
