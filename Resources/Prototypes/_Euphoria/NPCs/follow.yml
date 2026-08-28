@@ -16,6 +16,10 @@
       task: FollowCompound
 
   # Fall back to idling around
-  - tasks:
+  - preconditions:
+    - !type:CoordinatesNotInRangePrecondition # Note: this will return true if there's no target
+      targetKey: FollowTarget
+      rangeKey: FollowRange
+    tasks:
     - !type:HTNCompoundTask
       task: IdleCompound
