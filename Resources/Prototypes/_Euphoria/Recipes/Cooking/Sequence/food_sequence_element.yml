@@ -1,0 +1,79 @@
+﻿- type: foodSequenceElement
+  id: SausageHotdog
+  name: food-sequence-content-hotdog
+  sprites:
+  - sprite: _NF/Objects/Consumable/Food/meat.rsi
+    state: sausagecooked
+  tags:
+  - Meat
+  - Cooked
+  - Sausage
+
+- type: foodSequenceElement
+  id: FoodSoupChiliHot
+  name: food-sequence-content-hot-chili
+  sprites:
+  - sprite: Objects/Consumable/Food/bowl.rsi
+    state: chili-hot
+  tags:
+  - Cooked
+  - Chili
+
+- type: foodSequenceElement
+  id: FoodHotdogCondom
+  name: food-sequence-content-condom
+  sprites:
+  - sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_teal_unused
+  - sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
+    state: condom_pink_unused
+  tags:
+  - Condom
+
+- type: foodSequenceElement
+  id: FoodDildo
+  name: food-sequence-content-dildo
+  sprites:
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_avian.rsi
+    state: icon
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_canine.rsi
+    state: icon
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_canine_red.rsi
+    state: icon
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_dragon.rsi
+    state: icon
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_human.rsi
+    state: icon
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_tentacle.rsi
+    state: icon
+  - sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_double.rsi
+    state: icon
+  tags:
+  - Dildo
+
+- type: foodSequenceElement
+  id: Fries
+  name: food-sequence-content-fries
+  sprites:
+  - sprite: Objects/Consumable/Food/meals.rsi
+    state: fries
+  tags:
+  - Fries
+
+- type: foodSequenceElement
+  id: Sushi
+  name: food-sequence-content-sushi
+  sprites:
+  - sprite: _NF/Objects/Consumable/Food/sushi.rsi
+    state: carpsushi
+  tags:
+  - Sushi
+
+- type: foodSequenceElement
+  id: Rod
+  name: food-sequence-content-rod
+  sprites:
+  - sprite: Objects/Materials/parts.rsi
+    state: rods
+  tags:
+  - Rod

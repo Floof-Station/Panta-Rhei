@@ -20,3 +20,30 @@
       effects:
       - !type:SatiateHunger
         factor: 0.5
+
+- type: reagent
+  id: StrawberryJuice # the juice of a strawberry
+  name: reagent-name-strawberryjuice
+  parent: BaseJuice
+  desc: reagent-desc-strawberryjuice
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#FA5053"
+
+- type: reagent
+  id: StrawberryMilk
+  name: reagent-name-strawberrymilk
+  parent: BaseJuice
+  desc: reagent-desc-strawberrymilk
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#FDC5C6"
+
+- type: reagent
+  id: BepisStrawberry
+  name: reagent-name-strawberrbepis
+  parent: BaseJuice
+  desc: reagent-desc-strawberrybepis
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#E8AFAF"
