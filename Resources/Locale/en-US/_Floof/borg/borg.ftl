@@ -35,3 +35,19 @@ borg-type-research-transponder = research cyborg
 borg-type-quadresearch-name = Research Quad
 borg-type-quadresearch-desc = Study the noosphere, dispense knowledge to the crew, and experiment with new technologies.
 borg-type-quadresearch-transponder = research cyborg
+
+borg-type-quadsecurity2-name = Security Quad
+borg-type-quadsecurity2-desc = Assist security in the fight for justice by detaining dangerous criminals.
+borg-type-quadsecurity2-transponder = security cyborg
+
+borg-type-quadmining2-name = Salvage Quad
+borg-type-quadmining2-desc = Join salvage and help them mine for materials, scavenge wrecks, and fight off hostile wildlife.
+borg-type-quadmining2-transponder = salvage cyborg
+
+borg-type-quadmedical2-name = Medical Quad
+borg-type-quadmedical2-desc = Provide medical attention to crew who need it, either in medbay or in hazardous areas conventional paramedics cannot reach.
+borg-type-quadmedical2-transponder = medical cyborg
+
+borg-type-quadservice2-name = Service Quad
+borg-type-quadservice2-desc = Help out with a wide range of crew services, ranging from serving snacks and drinks to botany to entertainment.
+borg-type-quadservice2-transponder = service cyborg

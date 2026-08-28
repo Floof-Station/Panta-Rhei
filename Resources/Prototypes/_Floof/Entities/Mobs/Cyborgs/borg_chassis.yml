@@ -70,6 +70,54 @@
   - type: BorgSwitchableType
     selectedBorgType: quadresearch
 
+- type: entity
+  id: QuadChassisSecurity2
+  parent: BorgChassisSelectable
+  name: security quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadsecurity2
+  - type: BorgTransponder
+    sprite:
+      sprite: _Floof/Mobs/Silicon/chassis.rsi
+      state: quadsec2
+
+- type: entity
+  id: QuadChassisMining2
+  parent: BorgChassisSelectable
+  name: salvage quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadmining2
+  - type: BorgTransponder
+    sprite:
+      sprite: _Floof/Mobs/Silicon/chassis.rsi
+      state: quadsalv2
+
+- type: entity
+  id: QuadChassisMedical2
+  parent: BorgChassisSelectable
+  name: medical quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadmedical2
+  - type: BorgTransponder
+    sprite:
+      sprite: _Floof/Mobs/Silicon/chassis.rsi
+      state: quadmed2
+
+- type: entity
+  id: QuadChassisService2
+  parent: BorgChassisSelectable
+  name: service cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadservice2
+  - type: BorgTransponder
+    sprite:
+      sprite: _Floof/Mobs/Silicon/chassis.rsi
+      state: quadserv2
+
 # Admin Spawnable - Floofstation
 
 - type: entity

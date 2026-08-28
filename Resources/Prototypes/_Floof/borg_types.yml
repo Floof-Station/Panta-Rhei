@@ -535,3 +535,267 @@
   pdaBorderColor: "#d7d7d0"
   pdaAccentVerticalColor: "#8900c9"
   # Euphoria end
+
+# Security quadborg
+- type: borgType
+  id: quadsecurity2
+  # Description
+  dummyPrototype: QuadChassisSecurity2
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+  defaultModules:
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+  lawset: SiliconPolice
+  job: SecurityOfficer
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: Fiber # red plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-red
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  radioChannels:
+  - Science
+  - Security
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadsec2
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadsec2_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadsec2_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadsec2
+  spriteBodyMovementState: quadsec2_m
+  spriteHasMindState: quadsec2_e_r
+  spriteNoMindState: quadsec2_e_r
+  spriteToggleLightState: quadsec2_l
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+  # Euphoria start: Borg PDA
+  pdaBorderColor: "#A32D26"
+  # Euphoria end
+
+# Salvage quadborg
+- type: borgType
+  id: quadmining2
+  # Description
+  dummyPrototype: QuadChassisMining2
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  lawset: Salvage #DeltaV - Custom Lawset
+  job: SalvageSpecialist # DeltaV - borg job requirements
+  addComponents: # DeltaV - fibers, departmental access
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-brown
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  radioChannels:
+  - Supply
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadsalv2
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadsalv2_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadsalv2_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadsalv2
+  spriteBodyMovementState: quadsalv2_m
+  spriteHasMindState: quadsalv2_e_r
+  spriteNoMindState: quadsalv2_e_r
+  spriteToggleLightState: quadsalv2_l
+  # Pet
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg
+  # Euphoria start: Borg PDA
+  pdaBorderColor: "#af9366"
+  pdaAccentVerticalColor: "#8900c9"
+  # Euphoria end
+
+
+
+  # Medical quadborg
+- type: borgType
+  id: quadmedical2
+  # Description
+  dummyPrototype: QuadChassisMedical2
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  lawset: Medical # DeltaV: Custom lawset
+  job: MedicalDoctor # DeltaV - borg job requirements
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical # DeltaV - Kitsune
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical # DeltaV - Kitsune
+  - type: FabricateCandy # DeltaV - The medical cyborg can generate candies filled with medicine.
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: Fiber # DeltaV - white plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-white
+  - type: AccessReader # DeltaV - departmental access
+    access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadmed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadmed2_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadmed2_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadmed2
+  spriteBodyMovementState: quadmed2_m
+  spriteHasMindState: quadmed2_e_r
+  spriteNoMindState: quadmed2_e_r
+  spriteToggleLightState: quadmed2_l
+  # Pet
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+  # Euphoria start: Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#447987"
+  # Euphoria end
+  
+
+
+# Service quadborg
+- type: borgType
+  id: quadservice2
+  # Description
+  dummyPrototype: QuadChassisService2
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - Science
+  - Service
+  job: Bartender # DeltaV - borg job requirements
+  addComponents: # DeltaV - departmental access
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.7, 0.7
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadserv2
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadserv2_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadserv2_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadserv2
+  spriteBodyMovementState: quadserv2_m
+  spriteHasMindState: quadserv2_e_r
+  spriteNoMindState: quadserv2_e_r
+  spriteToggleLightState: quadserv2_l
+  # Pet
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg
+  # Euphoria start: Borg PDA
+  pdaBorderColor: "#5D2D56"
+  # Euphoria end
