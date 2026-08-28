@@ -1,5 +1,6 @@
 ﻿- type: inventoryTemplate
   id: thaven
+  parent: BaseHumanoidUnderwear # Floofsatation - let thaven have undies
   slots:
     - name: shoes
       slotTexture: shoes

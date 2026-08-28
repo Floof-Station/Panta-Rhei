@@ -808,6 +808,11 @@
   id: FoodSoupChiliHot
   description: A Texan five-alarm chili!
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Hotdog: FoodSoupChiliHot
+  #Euphoria end
   - type: FlavorProfile
     flavors:
       - spicy

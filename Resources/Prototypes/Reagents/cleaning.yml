@@ -42,6 +42,7 @@
   recognizable: true
   boilingPoint: 147.0 # Made this up, loosely based on bleach
   meltingPoint: -11.0
+  evaporationSpeed: 0.1 # Euph - make space cleaner slowly evaporate because otherwise it can only be mopped up
   tileReactions:
     - !type:CleanTileReaction {}
     - !type:CleanDecalsReaction {}

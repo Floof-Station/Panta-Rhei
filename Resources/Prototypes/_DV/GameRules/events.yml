@@ -242,6 +242,7 @@
     reoccurrenceDelay: 30
     duration: null # so it shows up in round end
     maxOccurrences: 1
+    earliestStart: 30 # Euphoria | No showing up round start
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/haibu.yml # was /Maps/_DV/Shuttles/Admin/roboneuroticist_ship.yml
@@ -250,10 +251,16 @@
   - type: AntagObjectives
     objectives:
     - RoboNeuroticistSurviveObjective
-    - RoboNeuroticistBorgObjective
+    #- RoboNeuroticistBorgObjective #Euphoria | No borging random crew
     - RoboNeuroticistKillObjective
     - RoboNeuroticistPlutoniumCoreStealObjective
     - RoboNeuroticistUploadAILawObjective
+    - RoboNeuroticistKillObjective #Euphoria | Giving a mass amount of targets to list everyone that qualifies on station
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective #Euphoria | End
   - type: AntagSelection
     agentName: roboneuroticist-round-end-agent-name
     definitions:

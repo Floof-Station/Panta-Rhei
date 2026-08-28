@@ -1,4 +1,5 @@
-﻿- type: cargoProduct
+﻿# vending machine restocks
+- type: cargoProduct
   id: CrateVendingMachineRestockPetStore
   icon:
     sprite: Objects/Specific/Service/vending_machine_restock.rsi
@@ -36,4 +37,179 @@
   product: CrateVendingMachineRestockLewdClothingVendorFilled
   cost: 2000
   category: cargoproduct-category-name-service
+  group: market
+
+# Actual vending machines, prices are based on restock cost
+# drinks
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineBepis
+  icon:
+    sprite: _Floof/Structures/Machines/VendingMachines/bepis.rsi
+    state: Bepis_Machine
+  product: VendingMachineBepis
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineDrGibb
+  icon:
+    sprite: Structures/Machines/VendingMachines/gib.rsi
+    state: off
+  product: VendingMachineDrGibb
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineCola
+  icon:
+    sprite: Structures/Machines/VendingMachines/cola.rsi
+    state: off
+  product: VendingMachineCola
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineCoffee
+  icon:
+    sprite: Structures/Machines/VendingMachines/coffee.rsi
+    state: off
+  product: VendingMachineCoffee
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+# snacks
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineDiscount
+  icon:
+    sprite: Structures/Machines/VendingMachines/discount.rsi
+    state: off
+  product: VendingMachineDiscount
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineSnack
+  icon:
+    sprite: Structures/Machines/VendingMachines/random.rsi
+    state: snack
+  product: VendingMachineSnack
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineChang
+  icon:
+    sprite: Structures/Machines/VendingMachines/changs.rsi
+    state: off
+  product: VendingMachineChang
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineDonut
+  icon:
+    sprite: Structures/Machines/VendingMachines/donut.rsi
+    state: off
+  product: VendingMachineDonut
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+# cloths
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineClothing
+  icon:
+    sprite: Structures/Machines/VendingMachines/clothing.rsi
+    state: off
+  product: VendingMachineClothing
+  cost: 7500
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineTheater
+  icon:
+    sprite: Structures/Machines/VendingMachines/theater.rsi
+    state: off
+  product: VendingMachineTheater
+  cost: 5000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineMNKDrobe
+  icon:
+    sprite: Nyanotrasen/Structures/Machines/VendingMachines/mnkdrobe.rsi
+    state: off
+  product: VendingMachineMNKDrobe
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachinePride
+  icon:
+    sprite: Structures/Machines/VendingMachines/pride.rsi
+    state: off
+  product: VendingMachinePride
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineWinter
+  icon:
+    sprite: Structures/Machines/VendingMachines/winterdrobe.rsi
+    state: off
+  product: VendingMachineWinter
+  cost: 3500
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineCrescentMoon
+  icon:
+    sprite: _DV/Structures/Machines/VendingMachines/crescentmoon.rsi
+    state: off
+  product: VendingMachineCrescentMoon
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+# other
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineLewdClothingVendor
+  icon:
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_cloths_vendor.rsi
+    state: lewdclothing
+  product: VendingMachineLewdClothingVendor
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasableVendingMachineLewdVendor
+  icon:
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_vendor.rsi
+    state: kink
+  product: VendingMachineLewdVendor
+  cost: 4500
+  category: cargoproduct-category-name-vending-machines
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasablePetStoreVendingMachine
+  icon:
+    sprite: _Floof/Structures/Machines/VendingMachines/petstore.rsi
+    state: unpowered-base
+  product: PetStoreVendingMachine
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
   group: market
