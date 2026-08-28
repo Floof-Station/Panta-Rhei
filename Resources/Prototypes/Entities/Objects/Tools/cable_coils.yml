@@ -185,7 +185,7 @@
               Heat: -5
               Cold: -5
               Shock: -5
-              Caustic: -2
+              Caustic: -5 # Euphoria - buffed Caustic heal to be more impactful.
           healingBeginSound:
             path: "/Audio/Items/Medical/ointment_begin.ogg"
             params:
@@ -264,6 +264,7 @@
               Heat: -3
               Cold: -3
               Shock: -3
+              Caustic: -1 # Euphoria - Adds Caustic heal to LV if people are SOL.
           healingBeginSound:
             path: "/Audio/Items/Medical/ointment_begin.ogg"
             params:
