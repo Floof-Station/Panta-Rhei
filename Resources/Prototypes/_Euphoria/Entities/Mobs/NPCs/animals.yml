@@ -10,14 +10,14 @@
     - Critter
   - type: HTN
     rootTask:
-      task: FollowOrIdleCompound
+      task: FollowOrRummageCompound
     blackboard:
       IdleRange: !type:Single
-        1.5
+        1.0 # just so it doesn't wander off too far
       FollowCloseRange: !type:Single
         1.0 # When following starts, how close the entity must get before stopping to follow
       FollowRange: !type:Single
-        2.0 # How far the followed entity must be before following starts
+        5.0 # How far the followed entity must be before following starts
 
 # Pets
 - type: entity

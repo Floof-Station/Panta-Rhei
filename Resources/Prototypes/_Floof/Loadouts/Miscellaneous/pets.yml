@@ -5,7 +5,7 @@
     - MobHamsterPet
   spawnEffects:
   - &followUserEffect
-    !type:LoadoutSetHtnBlackboardToUserEffect
+    !type:LoadoutPutUserCoordinatesInBlackboardEffect
     key: FollowTarget
 
 - type: loadout

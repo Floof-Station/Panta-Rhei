@@ -1,6 +1,6 @@
-# Follows the specified target, or idles around if the target is unreachable or absent
+# Follows the specified target, or idles around if the target is unreachable or absent. Also seeks food when hungry.
 - type: htnCompound
-  id: FollowOrIdleCompound
+  id: FollowOrRummageCompound
   branches:
   # Try to find food if hungry or thirsty
   - tasks:
