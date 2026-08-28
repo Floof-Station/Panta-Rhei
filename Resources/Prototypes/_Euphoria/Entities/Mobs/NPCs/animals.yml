@@ -1,12 +1,30 @@
-# Pets
+# Base pet (follows a single entity)
+# Note: when spawning any of these mobs from the admin spawn menu, you need to set a FollowTarget (EntityUid)
 - type: entity
-  parent: MobHamster
-  id: MobHamsterPet
-  suffix: Pet
+  id: BaseMobPet
+  abstract: true
+  suffix: Pet, Follower HTN
   components:
   - type: NpcFactionMember
     factions:
-      - Critter
+    - Critter
+  - type: HTN
+    rootTask:
+      task: FollowOrIdleCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.5
+      FollowCloseRange: !type:Single
+        1.0 # When following starts, how close the entity must get before stopping to follow
+      FollowRange: !type:Single
+        2.0 # How far the followed entity must be before following starts
+
+# Pets
+- type: entity
+  parent: [BaseMobPet, MobHamster]
+  id: MobHamsterPet
+  suffix: Pet
+  components:
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -21,25 +39,12 @@
     name: ghost-role-information-hamster-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobMouse
+  parent: [BaseMobPet, MobMouse]
   id: MobMousePet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -54,25 +59,12 @@
     name: ghost-role-information-mouse-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobMothroach
+  parent: [BaseMobPet, MobMothroach]
   id: MobMothroachPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Moffic
@@ -87,27 +79,14 @@
     name: ghost-role-information-mothroach-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 # New Stuff -
 
 - type: entity
-  parent: MobFrog
+  parent: [BaseMobPet, MobFrog]
   id: MobFrogPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Draconic
@@ -128,25 +107,12 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobSnake
+  parent: [BaseMobPet, MobSnake]
   id: MobSnakePet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Draconic
@@ -167,25 +133,12 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobFerret
+  parent: [BaseMobPet, MobFerret]
   id: MobFerretPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -204,27 +157,14 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
   name: trained cortical borer
-  parent: MobCorticalBorer
+  parent: [BaseMobPet, MobCorticalBorer]
   id: MobCorticalBorerPet
   description: A worm that burrows into brains and lays its eggs. This one appears tamed.
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Xeno
@@ -247,17 +187,8 @@
     - type: PressureImmunity
     removeOnInfest:
     - type: CanEscapeInventory
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
+# Can't do anything about this
 - type: entity
   parent: BaseItem
   id: CorticalBorerEggPet
@@ -281,7 +212,7 @@
 # spider pet
 - type: entity
   id: MobPetSpiderTarantula
-  parent: [MobGiantSpider, BaseItem]
+  parent: [BaseMobPet, MobGiantSpider, BaseItem]
   name: pet spider
   description: A small spider that was found in station maints and taken home to help recover. It took a liking to you and now follows you around.
   suffix: Pet
@@ -329,9 +260,6 @@
     damage:
       types:
         Piercing: 1 # very weak bite
-  - type: NpcFactionMember
-    factions:
-    - Critter
   - type: LanguageKnowledge
     speaks:
     - Arachnic
@@ -379,13 +307,10 @@
         Base: midwife_dead
 
 - type: entity
-  parent: MobWhimperlet
+  parent: [BaseMobPet, MobWhimperlet]
   id: MobWhimperletPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: GhostTakeoverAvailable
   - type: GhostRole
     makeSentient: true
