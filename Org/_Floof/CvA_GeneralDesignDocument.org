@@ -76,12 +76,10 @@ implementation vs. Euphoria-specific.
   could also be interesting.
 - They must be able to spawn at Arrivals, where regular station
   employees can spawn. They must not be crawling through the vents or
-  randomly appearing in the vault. 
-  - The rule that allows this must be able to choose what station to
-    spawn on by qeurying statistics about the station. Technically,
-    this is pointless because I don't know any servers that do
-    multiple stations, but the code for spawning crew accounts for it
-    and thus so will I.
+  randomly appearing in the vault.
+  - Choosing the station to be selected out of the available stations
+    should be done in a way that allows for various methods of
+    selecting the correct station to be defined and used with this.
 
 **Euphoria-specific
 - The ghost roles must put the player's character into the role rather
@@ -93,6 +91,3 @@ implementation vs. Euphoria-specific.
 *Implementation
 
 **AntagCivilSpawnRule
-
-
-
