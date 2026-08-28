@@ -67,22 +67,22 @@ implementation vs. Euphoria-specific.
 
 *Requirements
 **General
-- They must be rollable ghost roles. These roles aren't the kind of
-  roles that should be available every round. They should role every
-  so often and appear as ghost roles.
-- They must have objectives, goals to spur them on. It doesn't quite
-  matter how vague, or even that the goals be particular challenging.
-  They just need some direction they can look to. Challenging goals
-  could also be interesting.
-- They must be able to spawn at Arrivals, where regular station
-  employees can spawn. They must not be crawling through the vents or
-  randomly appearing in the vault.
-  - Choosing the station to be selected out of the available stations
-    should be done in a way that allows for various methods of
-    selecting the correct station to be defined and used with this.
+1. They must be rollable ghost roles. These roles aren't the kind of
+   roles that should be available every round. They should role every
+   so often and appear as ghost roles.
+2. They must have objectives, goals to spur them on. It doesn't quite
+   matter how vague, or even that the goals be particular challenging.
+   They just need some direction they can look to. Challenging goals
+   could also be interesting.
+3. They must be able to spawn at Arrivals, where regular station
+   employees can spawn. They must not be crawling through the vents or
+   randomly appearing in the vault.
+   3.1 Choosing the station to be selected out of the available stations
+   should be done in a way that allows for various methods of
+   selecting the correct station to be defined and used with this.
 
 **Euphoria-specific
-- The ghost roles must put the player's character into the role rather
+1. The ghost roles must put the player's character into the role rather
   than randomly generating a character for the ghost role. Euphoria's
   players often engage deeply with their characters, and may want to
   put them in the situations allowed by these ghost roles.
