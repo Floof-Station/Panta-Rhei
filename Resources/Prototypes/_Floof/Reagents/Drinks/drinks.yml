@@ -1,20 +1,25 @@
+# For reagents that are sticky and vicous
+- type: reagent
+  id: BaseViscous
+  viscosity: 0.15
+  recognizable: false
+  footstepSound:
+    collection: FootstepSticky
+    params:
+      volume: 3
+
 - type: reagent
   id: NikkosNaughtyNectar
   name: reagent-name-NNN
-  parent: BaseDrink
+  parent: [BaseViscous, BaseDrink]
   desc: reagent-desc-NNN
   physicalDesc: reagent-physical-desc-creamy
   flavor: nikkonectar
   color: "#deebff"
-  recognizable: true
   viscosity: 0.15
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-    Medicine:
-      metabolismRate : 0.5
+    Bloodstream:
+      metabolismRate: 0.1
       effects:
       - !type:PopupMessage
         type: Local
@@ -32,27 +37,18 @@
             max: 50
           - !type:ConsentCondition
             consent: Aphrodisiacs
-  footstepSound:
-    collection: FootstepSticky
-    params:
-      volume: 3
 
 - type: reagent
   id: BoykissersEnergy
   name: reagent-name-boykisser-energy
-  parent: BaseDrink
+  parent: [BaseViscous, BaseDrink]
   desc: reagent-desc-boykisser-energy
   physicalDesc: reagent-physical-desc-bubbly
   flavor: nutty
   color: "#FD3DB5"
-  recognizable: false
-  viscosity: 0.15
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-    Narcotic:
+    Bloodstream:
+      metabolismRate: 0.25
       effects:
       - !type:MovementSpeedModifier
         walkSpeedModifier: 1.15
@@ -65,17 +61,11 @@
         key: Drowsiness
         time: 10
         type: Remove
-    Medicine:
-      effects:
       - !type:ResetNarcolepsy
         conditions:
         - !type:ReagentCondition
           reagent: BoykissersEnergy
           min: 20
-  footstepSound:
-    collection: FootstepSticky
-    params:
-      volume: 3
 
 - type: reagent
   id: VBBeer
@@ -87,21 +77,10 @@
   color: "#e3e77b"
   recognizable: true
   fizziness: 0.6
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
-      - !type:AdjustReagent # Will find a way to make it so only someone with the Australian Accent component heals later
-        reagent: Ichor
-        amount: 0.2
 
 - type: reagent # You may ask me why, but I got sick of seeing green come of cream pies.
   id: BananaCreamPie
-  parent: Nutriment
+  parent: [BaseViscous, Nutriment]
   name: reagent-name-bananacreampie
   desc: reagent-desc-bananacreampie
   physicalDesc: reagent-physical-desc-creamy
@@ -109,19 +88,10 @@
   color: "#fffdd0"
   recognizable: true
   metabolisms:
-    Food:
-      effects:
-      - !type:SatiateHunger
-      - !type:SatiateThirst
-        factor: 0.5
-      - !type:HealthChange # I folded vitamins into it
-        probability: 0.5
-        damage:
-          groups:
-            Brute: -0.1 # For reference vitamins are -0.5
-            Burn: -0.1
-      - !type:ModifyBleed
-        amount: -0.1 # 0.25
+    Digestion:
+      metabolites:
+        Nutriment: 0.8
+        Vitamin: 0.2
 
 - type: reagent
   id: PeanutButterWhiskey
@@ -132,8 +102,3 @@
   flavor: sweet
   color: "#DCA465"
   recognizable: true
-  metabolisms:
-    Food:
-      effects:
-      - !type:SatiateThirst
-        factor: 0.5

@@ -81,7 +81,7 @@
           type: [Slime]
           inverted: true
       - !type:ModifyBloodLevel
-        amount: 0.5 # drawing 15u removes 5% blood level from a slimeperson, this will add 5% when injecting 15u
+        amount: 0.5 # drawing 15u removes 5% blood level from a Slime, this will add 5% when injecting 15u
         conditions:
         - !type:MetabolizerTypeCondition
           type: [Slime]

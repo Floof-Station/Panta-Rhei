@@ -173,7 +173,7 @@
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/grandnavy.rsi
     state: icon
-    
+
 - type: entity
   parent: DrinkGlass
   id: DrinkHarpySnowfallGlass
@@ -189,7 +189,7 @@
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/harpysnowfall.rsi
     state: icon
-  
+
 - type: entity
   parent: DrinkGlass
   id: DrinkHornyStallionGlass
@@ -588,6 +588,23 @@
           Quantity: 30
   - type: Icon
     sprite: _Floof/Objects/Consumable/Drinks/yeolhandy.rsi
+    state: icon
+
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkSyndicateEggnogGlass
+  suffix: eggnog
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: SyndicateEggnog
+          Quantity: 30
+  - type: Icon
+    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
     state: icon
 
 - type: entity

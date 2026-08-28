@@ -13,16 +13,15 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.5
+        Blood: 0.07
       effects:
-      - !type:SatiateThirst
-        factor: 1
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
-      - !type:AdjustReagent
-        reagent: Blood
-        amount: 0.07
+      - &defaultSatiateThirst
+        !type:SatiateThirst
+          factor: 2
 
 - type: reagent
   id: ABLustine
@@ -39,13 +38,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.5
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: Anisette
@@ -56,13 +53,10 @@
   flavor: anisette
   color: "#f9f8c6"
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.02
+    Digestion:
+      metabolites:
+        Ethanol: 0.04
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: AppleberryFizz
@@ -78,11 +72,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: BandE
@@ -99,16 +88,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: BethanysCumLust
@@ -125,16 +109,12 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.14
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.3
+        Pomelustine: 0.5
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: BethanysSluttyCumLust
@@ -151,19 +131,13 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
-      - !type:AdjustReagent
-        reagent: Philterex
-        amount: 0.5
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.14
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.3
+        Philtrex: 0.3
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: BlueBaller
@@ -180,16 +154,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.5
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: CafeDeCacao
@@ -206,13 +175,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.04
+    Digestion:
+      metabolites:
+        Ethanol: 0.08
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: CalicoSunrise
@@ -228,11 +194,6 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: CremeDeCacao
@@ -248,14 +209,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.04
 
 - type: reagent
   id: DeadMansDraught
@@ -271,14 +224,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.4
 
 - type: reagent
   id: DarkOasis
@@ -294,14 +239,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.08
 
 - type: reagent
   id: DemonSeed
@@ -318,22 +255,13 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 1
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.08
-      - !type:AdjustReagent
-        reagent: Blood
-        amount: 0.08
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+        Pomelustine: 0.5
+        Cum: 0.16
+        Blood: 0.6
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: DirtyWastelander
@@ -350,13 +278,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: DoubleCreamBlaster
@@ -373,13 +298,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: DragonsBlood
@@ -396,16 +319,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
-      - !type:AdjustReagent
-        reagent: Blood
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.1
+        Blood: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: DragonsBreath
@@ -422,13 +340,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: DragonsSeed
@@ -445,16 +360,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.12
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+        Cum: 0.24
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: EmeraldSwinger
@@ -471,13 +381,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.04
+    Digestion:
+      metabolites:
+        Ethanol: 0.08
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: Eminence
@@ -494,13 +401,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.3
+    Digestion:
+      metabolites:
+        Ethanol: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: GoldbloomSpecial
@@ -516,14 +420,6 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
 
 - type: reagent
   id: GrandNavy
@@ -539,14 +435,7 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
+
 
 - type: reagent
   id: HeartbreakMountain
@@ -563,13 +452,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: HolyVice
@@ -586,16 +473,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.15
-      - !type:AdjustReagent
-        reagent: Blood
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.3
+        Blood: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: HornyStallion
@@ -612,16 +494,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
-      - !type:AdjustReagent
-        reagent: Libidozenithizine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Libidozenithizine: 0.5
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: KoboldKooler
@@ -637,11 +514,6 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: KoboldKorkscrew
@@ -658,13 +530,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: Lamplight
@@ -681,10 +551,9 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
       effects:
-      - !type:SatiateThirst
-        factor: 2
+      - *defaultSatiateThirst
       - !type:AdjustReagent
         conditions:
         - !type:ReagentCondition
@@ -720,11 +589,6 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: LoversKiss
@@ -741,16 +605,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.03
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.006
+        Pomulustine: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: MarieJulep
@@ -766,14 +625,7 @@
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
+
 
 - type: reagent
   id: MarsBar
@@ -790,16 +642,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: MossBloodShot
@@ -816,13 +663,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.03
+    Digestion:
+      metabolites:
+        Ethanol: 0.06
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: NumberOne
@@ -838,14 +682,7 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
+
 
 - type: reagent
   id: OpsShine
@@ -862,8 +699,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.5
       effects:
+      - *defaultSatiateThirst
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -875,11 +715,6 @@
         damage:
           types:
             Poison: 0.5
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.5
 
 - type: reagent
   id: OrgasmOnTheBeach
@@ -896,16 +731,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.1
+    Digestion:
+      metabolites:
+        Ethanol: 0.1
+        Cum: 0.2
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: Pomonade
@@ -921,11 +751,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: PomPassion
@@ -942,13 +767,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.03
+    Digestion:
+      metabolites:
+        Ethanol: 0.06
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: PomTwist
@@ -965,13 +787,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Pomelustine: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: PrairieOyster
@@ -988,13 +807,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.04
+    Digestion:
+      metabolites:
+        Ethanol: 0.08
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: PrisonWine
@@ -1010,11 +826,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: QuadrupleCreamChalice
@@ -1031,13 +842,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.12
+    Digestion:
+      metabolites:
+        Cum: 0.24
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: RandyStallion
@@ -1054,16 +862,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 
 - type: reagent
@@ -1080,14 +883,7 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
+
 
 - type: reagent
   id: SalvagersDelight
@@ -1104,13 +900,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.4
+    Digestion:
+      metabolites:
+        Ethanol: 0.4
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: SemenBomb
@@ -1127,16 +920,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.04
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.08
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: SemenHemorrhage
@@ -1153,16 +941,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.03
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: SilverStallion
@@ -1179,16 +962,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: SlimesDelight
@@ -1205,19 +983,17 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
       effects:
+      - *defaultSatiateThirst
       - !type:SatiateHunger
         factor: 2
         conditions:
           - !type:MetabolizerTypeCondition
             type: [Slime] # Feeds Slimes
             inverted: true
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.2
       - !type:HealthChange
         conditions:
         - !type:ReagentCondition
@@ -1245,13 +1021,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.12
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Cum: 0.24
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: SpecialSundae
@@ -1268,16 +1042,12 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.05
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.1
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: SyndicatesOverseer
@@ -1294,16 +1064,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.08
-      - !type:AdjustReagent
-        reagent: Blood
-        amount: 0.08
+    Digestion:
+      metabolites:
+        Ethanol: 0.16
+        Blood: 0.16
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: TripleCitrus
@@ -1319,11 +1084,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: Voltage
@@ -1340,13 +1100,14 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.16
       effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.08
+      - *defaultSatiateThirst
+      - !type:Electrocute # funny voltage
+        electrocuteTime: 0.3
+        probability: 0.2
 
 - type: reagent
   id: WakeUpJuice
@@ -1362,11 +1123,6 @@
   metamorphicMaxFillLevels: 4
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
 
 - type: reagent
   id: WatermelonGinJizz
@@ -1383,16 +1139,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.1
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: TheWaterslide
@@ -1409,16 +1160,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+        Cum: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: YeOlHandy
@@ -1435,13 +1181,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.05
+    Digestion:
+      metabolites:
+        Ethanol: 0.1
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: TheCuteCaptain
@@ -1458,13 +1201,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.25
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: AxelsAle
@@ -1481,16 +1222,11 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.5
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.1
+    Digestion:
+      metabolites:
+        Ethanol: 0.2
+        Pomelustine: 0.5
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: JennTonic
@@ -1507,13 +1243,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.08
+    Digestion:
+      metabolites:
+        Ethanol: 0.16
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: Hallelujah
@@ -1529,14 +1262,6 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 5
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.06
 
 - type: reagent
   id: SyndicateEggnog
@@ -1553,29 +1278,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 1
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.08
-
-- type: entity
-  parent: DrinkGlass
-  id: DrinkSyndicateEggnogGlass
-  suffix: eggnog
-  components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: SyndicateEggnog
-          Quantity: 30
-  - type: Icon
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog.rsi
-    state: icon
+    Digestion:
+      metabolites:
+        Ethanol: 0.16
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: GinandPussy
@@ -1592,13 +1298,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: PussyTonic
@@ -1614,11 +1317,6 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
 
 
 
@@ -1637,13 +1335,10 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.15
+    Digestion:
+      metabolites:
+        Ethanol: 0.3
+      effects: [ *defaultSatiateThirst ]
 
 - type: reagent
   id: HarpySnowfall
@@ -1660,10 +1355,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
-        effects:
-        - !type:SatiateThirst
-          factor: 2
-        - !type:AdjustReagent
-          reagent: Ethanol
-          amount: 0.07
+    Digestion:
+      metabolites:
+        Ethanol: 0.14
+      effects: [ *defaultSatiateThirst ]

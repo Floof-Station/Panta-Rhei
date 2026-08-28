@@ -76,15 +76,9 @@
       types:
         Blunt: 6
   - type: PassiveDamage # Need it here to disable it.
-    allowedStates:
-    - Alive
-    damageCap: 0
+    allowedStates: []
     damage:
-      types:
-        Heat: 0
-        Blunt: 0
-        Piercing: 0
-        Slash: 0
+      types: {}
   - type: Tag
     tags:
     - CanPilot

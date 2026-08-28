@@ -122,8 +122,9 @@
           - Silicon
           delay: 1.6
           damage:
-            groups:
-              Toxin: -40 # 20 each
+            types:
+              Poison: -20
+              Radiation: -20
           healingBeginSound:
             path: "/Audio/Items/Medical/ointment_begin.ogg"
             params:

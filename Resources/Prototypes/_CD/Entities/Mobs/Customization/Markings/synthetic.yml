@@ -6,7 +6,6 @@
 - type: marking
   id: LizardTailSynth
   bodyPart: Tail
-  markingCategory: Tail #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/tails.rsi
@@ -15,7 +14,6 @@
 - type: marking
   id: LizardTailSynthAnimated
   bodyPart: Tail
-  markingCategory: Tail #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/tails.rsi
     state: tail_synthliz_wagging
@@ -25,7 +23,6 @@
 - type: marking
   id: LizardSnoutSynth
   bodyPart: Snout
-  markingCategory: Snout #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/snouts.rsi
@@ -38,7 +35,6 @@
 - type: marking
   id: LizardVisorSynth #Euphoria - Breaks the Synth Faceplate into two markings so that certain masks/helmets don't break it.
   bodyPart: Head
-  markingCategory: Head #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/snouts.rsi
@@ -51,7 +47,6 @@
 - type: marking
   id: LizardSnoutSynthAlt
   bodyPart: Snout
-  markingCategory: Snout #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/altsnouts.rsi
@@ -64,7 +59,6 @@
 - type: marking
   id: LizardVisorSynthAlt #Euphoria - Breaks the Synth Faceplate into two markings so that certain masks/helmets don't break it.
   bodyPart: Head
-  markingCategory: Head #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/altsnouts.rsi
@@ -77,7 +71,6 @@
 - type: marking
   id: LizardSnoutSynthShort
   bodyPart: Snout
-  markingCategory: Snout #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
@@ -90,7 +83,6 @@
 - type: marking
   id: LizardVisorSynthShort #Euphoria - Breaks the Synth Faceplate into two markings so that certain masks/helmets don't break it.
   bodyPart: Head
-  markingCategory: Head #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/shortsnouts.rsi
@@ -103,7 +95,6 @@
 - type: marking
   id: LizardSnoutSynthAltShort
   bodyPart: Snout
-  markingCategory: Snout #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
@@ -116,7 +107,6 @@
 - type: marking
   id: LizardVisorSynthAltShort #Euphoria - Breaks the Synth Faceplate into two markings so that certain masks/helmets don't break it.
   bodyPart: Head
-  markingCategory: Head #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/altshortsnouts.rsi
@@ -131,7 +121,6 @@
 - type: marking
   id: SyntheticHornCurl
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -140,7 +129,6 @@
 - type: marking
   id: SyntheticHornShort
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -149,7 +137,6 @@
 - type: marking
   id: SyntheticHornSlash
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -158,7 +145,6 @@
 - type: marking
   id: SyntheticHornSharp
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -167,7 +153,6 @@
 - type: marking
   id: SyntheticHornTwin
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -176,7 +161,6 @@
 - type: marking
   id: SyntheticHornThick
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -187,7 +171,6 @@
 - type: marking
   id: SyntheticHornSharpLight
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -198,7 +181,6 @@
 - type: marking
   id: SyntheticHornTwinLight
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -209,7 +191,6 @@
 - type: marking
   id: SyntheticHornThickLight
   bodyPart: HeadTop
-  markingCategory: HeadTop #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/antennas.rsi
@@ -222,7 +203,6 @@
 - type: marking
   id: SyntheticBodyScute
   bodyPart: Chest
-  markingCategory: Chest #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/body_markings.rsi
@@ -231,7 +211,6 @@
 - type: marking
   id: SyntheticBodyPlate
   bodyPart: Chest
-  markingCategory: Chest #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/body_markings.rsi
@@ -242,7 +221,6 @@
 - type: marking
   id: SyntheticBodyPecs
   bodyPart: Chest
-  markingCategory: Chest #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/body_markings.rsi
@@ -253,7 +231,6 @@
 - type: marking
   id: SyntheticBodyLights
   bodyPart: Chest
-  markingCategory: Chest #Euphoria - Needed for our marking system.
   groupWhitelist: [Reptilian] #Euphoria - Needed for our marking system.
   sprites:
   - sprite: _CD/Mobs/Customization/Synthliz/body_markings.rsi
