@@ -39,14 +39,6 @@
   id: MobIPC
   name: Urist McRobot
   components:
-  - type: LanguageKnowledge
-    speaks:
-    - TauCetiBasic
-    - Binary
-    understands:
-    - TauCetiBasic
-    - Binary
-    naturalLanguage: Binary
     # people overriding species sprite layering for 0 reason other than failing to understand how RobustToolbox sprites work gives everyone a headache when trying to modify saying layering!
   - type: MobThresholds
     thresholds:
@@ -104,7 +96,7 @@
       - ReagentId: Oil
         Quantity: 300
     # minBloodDamage: 8 # Euph - no clue what this field is supposed to be.
-    bleedReductionAmount: 0 # No natural wound closing whatsoever
+    # bleedReductionAmount: 0 # No natural wound closing whatsoever # Euph - defualt wound closing
     bloodlossThreshold: 0.75 # Everyone else start taking bloodloss damage at 90%, but with no natural bleeding stop - IPC can last for a bit longer
   - type: IPCWeldClosesWounds
   - type: ZombieImmune
@@ -368,6 +360,17 @@
 #    - shoes
 #  - type: LimbDamageable # Far Horizons
 #    proto: LimbTargetIPC
+  # Begin Euphoria additions
+  - type: PotentialPsionic
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Binary
+    understands:
+    - TauCetiBasic
+    - Binary
+    naturalLanguage: Binary
+  # End Euphoria additions
 
 
 

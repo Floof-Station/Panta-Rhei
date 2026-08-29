@@ -314,7 +314,6 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 60 # +10 over lower trait
       damage:
         types:
           Heat: -0.14 # same as lower trait
@@ -355,5 +354,6 @@
       damage:
         types:
           Heat: -0.03
-        groups:
-          Brute: -0.03
+          Blunt: -0.03
+          Slash: -0.03
+          Piercing: -0.03

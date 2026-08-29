@@ -13,16 +13,12 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Ethanol: 0.12
+        Pomelustine: 0.16
+        Libidozenithizine: 0.08
+        Cum: 0.25
       effects:
       - !type:SatiateThirst
-        factor: 3
-      - !type:AdjustReagent
-        reagent: Pomelustine
-        amount: 0.16
-      - !type:AdjustReagent
-        reagent: Libidozenithizine
-        amount: 0.08
-      - !type:AdjustReagent
-        reagent: Cum
-        amount: 0.25
+        factor: 2

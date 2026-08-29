@@ -55,7 +55,7 @@
 - type: marking
   id: SlimeMouth
   bodyPart: Head
-  groupWhitelist: [SlimePerson]
+  groupWhitelist: [ Slime ]
   sprites:
   - sprite: _Impstation/Mobs/Customization/slime_parts.rsi
     state: mouth
@@ -63,7 +63,7 @@
 - type: marking
   id: SlimeEyeglow
   bodyPart: Eyes
-  groupWhitelist: [ SlimePerson ]
+  groupWhitelist: [ Slime ]
   coloring:
     default:
       type:
@@ -76,7 +76,7 @@
 - type: marking
   id: SlimeEyesCyclopsGlowing
   bodyPart: Eyes
-  groupWhitelist: [ SlimePerson ]
+  groupWhitelist: [ Slime ]
   coloring:
     default:
       type:
