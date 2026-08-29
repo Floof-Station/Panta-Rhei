@@ -602,3 +602,147 @@
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 0.75 #-25%
 # =================================================== #
+
+- type: trait
+  id: Nosebleed
+  name: trait-nosebleed-name
+  description: trait-nosebleed-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed # uses the default
+
+- type: trait
+  id: NosebleedFrequent
+  name: trait-nosebleed-frequent-name
+  description: trait-nosebleed-frequent-description
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed
+      minDelay: 300 # bleeds more often, 5 minutes
+      maxDelay: 1800 # 30 minutes in seconds
+
+- type: trait
+  id: Snoring
+  name: trait-snoring-name
+  description: trait-snoring-desc
+  category: DisabilitiesPhysical
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Snoring
+
+- type: trait
+  id: MessyDrinker
+  name: trait-messy-drinker-name
+  description: trait-messy-drinker-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - VeryMessyDrinker
+    - MessyEater
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
+      spillMessagePopup: trait-messy-traits-popup
+
+- type: trait
+  id: VeryMessyDrinker
+  name: trait-very-messy-drinker-name
+  description: trait-very-messy-drinker-description
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - MessyDrinker
+    - MessyEater
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
+      spillChance: 0.5 # 50% chance i think is fair
+      spillAmount: 2.0 # lets double the spill amount to
+      spillMessagePopup: trait-messy-traits-popup
+
+- type: trait
+  id: MessyEater
+  name: trait-messy-eater-name
+  description: trait-messy-eater-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - MessyDrinker
+    - VeryMessyDrinker
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
+      spillMessagePopup: trait-messy-traits-popup
+      spillableTypes: # make it so they can drink fine
+      - Food
+
+- type: trait
+  id: SmokingSpitter
+  name: trait-messy-smoker-name
+  description: trait-messy-smoke-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessySmoker
+      spitMessagePopup: trait-messy-smoker-popup
+
+- type: trait
+  id: JumpAbility
+  name: trait-jump-ability-name
+  description: trait-jump-ability-description
+  category: Skills
+  cost: 4
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: JumpAbility
+      jumpThrowSpeed: 8 # make it a little slower
+      jumpDistance: 3
+      canCollide: true # you may be pouncing but its funny watching poeple flop over
+      action: ActionPounce

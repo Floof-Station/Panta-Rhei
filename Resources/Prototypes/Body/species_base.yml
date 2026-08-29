@@ -116,6 +116,7 @@
     angle: 30
     animation: WeaponArcFist
     attackRate: 1
+    altDisarm: true # Euph - altDisarm is false by default. Species can disarm, mobs wide-swing instead.
     damage:
       types:
         Blunt: 5
@@ -258,6 +259,5 @@
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # Floof
-  #Euph - disable RevealRevenantOnCollide for mobs. It increases radius on mobs, and thus they cannot fit through doors.
-  #- type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
-  #  revealTime: 1
+  - type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
+    revealTime: 1

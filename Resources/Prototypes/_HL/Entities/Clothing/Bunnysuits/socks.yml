@@ -1,0 +1,471 @@
+# All of these entities were added on Euph
+# Most of these entities are just regex-replacements of the ones in suits.yml
+#
+# Used replacements:
+# 1. "_HL/Clothing/Bunnysuit/Suits/(\w+).rsi" -> "_HL/Clothing/Bunnysuit/Socks/$1.rsi"
+# 2. "id: Bunnysuit(\w+)" -> "id: ClothingUndergarmentSocksBunnysuit$1"
+# 3. "name: ([^.$]*) bunny ?suit" -> "name: $1 bunnysuit socks"
+# 4. "parent: BunnysuitBase" -> "parent: ClothingUndergarmentSocksBunnysuitBase"
+
+- type: entity
+  parent: ClothingUndergarmentSocksBase
+  id: ClothingUndergarmentSocksBunnysuitBase
+  abstract: true
+  description: The socks part of a bunny suit.
+  components:
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - Bunnysuit
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitCargo
+  name: cargo bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/cargo.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/cargo.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitVirology
+  name: virology bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/virology.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/virology.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitLawTeal
+  name: lawyer's teal bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_teal.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_teal.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitMiner
+  name: mining bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/miner.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/miner.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitChemist
+  name: chemistry bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/chemistry.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/chemistry.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitLawRed
+  name: lawyer's red bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_red.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_red.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitLawBlack
+  name: lawyer's black bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_black.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_black.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitMagician
+  name: magician's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/magician.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/magician.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitNetrunner
+  name: netrunner bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/netrunner.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/netrunner.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitChiefEngineer
+  name: chief engineer's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/chief_engineer.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/chief_engineer.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitAtmos
+  name: atmospherics bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/atmos.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/atmos.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitChaplain
+  name: chaplain's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/chaplain.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/chaplain.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitWarden
+  name: warden's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/warden.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/warden.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitUnionJack
+  name: union jack bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/union_jack.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/union_jack.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitScience
+  name: science bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/science.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/science.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitJanitor
+  name: janitorial bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/janitor.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/janitor.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitCentComm
+  name: central command bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/centcomm.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/centcomm.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitPsychologist
+  name: psychology bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/psychologist.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/psychologist.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitCoroner
+  name: coroner's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/coroner.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/coroner.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitResearchDirector
+  name: research director's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/rd.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/rd.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitEngineer
+  name: engineering bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/engineer.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/engineer.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitPrisoner
+  name: prisoner's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/prisoner.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/prisoner.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitGenetics
+  name: genetics bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/genetics.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/genetics.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitLiberty
+  name: lady liberty's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/liberty.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/liberty.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitBotany
+  name: botany bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/botany.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/botany.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitChef
+  name: chef's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/chef.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/chef.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitLawBlue
+  name: lawyer's blue bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_blue.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/law_blue.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitParamedic
+  name: paramedic bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/paramedic.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/paramedic.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitTeal
+  name: curator's teal bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/teal.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/teal.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitHoS
+  name: head of security's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/hos.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/hos.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitRobotics
+  name: robotics bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/robotics.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/robotics.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitQuartermaster
+  name: quartermaster's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/qm.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/qm.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitCaptain
+  name: captain's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/captain.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/captain.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitSyndie
+  name: blood-red bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/syndicate.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/syndicate.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitRed
+  name: curator's red bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/red.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/red.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitChiefMedicalOfficer
+  name: chief medical officer's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/cmo.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/cmo.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitHero
+  name: hero's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/hero.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/hero.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitHeadOfPersonnel
+  name: head of personnel's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/hop.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/hop.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitGreen
+  name: curator's green bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/green.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/green.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitBartender
+  name: bartender's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/bar.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/bar.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitDoctor
+  name: medical bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/doctor.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/doctor.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitMail
+  name: mailman's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/mail.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/mail.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitClown
+  name: clown's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/clown.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/clown.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitMime
+  name: mime's bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/mime.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/mime.rsi
+
+- type: entity
+  parent: ClothingUndergarmentSocksBunnysuitBase
+  id: ClothingUndergarmentSocksBunnysuitSecurity
+  name: security bunnysuit socks
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Socks/security.rsi
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Socks/security.rsi
+

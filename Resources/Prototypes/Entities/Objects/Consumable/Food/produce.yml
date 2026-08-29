@@ -369,6 +369,7 @@
     entries:
       Burger: Banana
       Taco: Banana
+      Hotdog: Banana #Euphoria
 
 - type: entity
   name: mimana
@@ -416,6 +417,7 @@
     entries:
       Burger: Mimana
       Taco: Mimana
+      Hotdog: Mimana #Euphoria
 
 - type: entity
   parent: BaseItem
@@ -581,6 +583,7 @@
     entries:
       Burger: CarrotBurger
       Taco: Carrot
+      Hotdog: Carrot #Euphoria
 
 - type: entity
   name: cabbage
@@ -613,6 +616,7 @@
     entries:
       Burger: CabbageBurger
       Taco: Cabbage
+      Hotdog: Cabbage #Euphoria
 
 - type: entity
   name: garlic
@@ -645,6 +649,7 @@
     entries:
       Burger: GarlicBurger
       Taco: Garlic
+      Hotdog: Garlic #Euphoria
 
 - type: entity
   name: lemon
@@ -683,6 +688,7 @@
     entries:
       Burger: Lemon
       Taco: Lemon
+      Hotdog: Lemon #Euphoria
 
 - type: entity
   name: lemoon
@@ -720,6 +726,7 @@
     entries:
       Burger: Lemoon
       Taco: Lemoon
+      Hotdog: Lemoon #Euphoria
 
 - type: entity
   name: lime
@@ -749,6 +756,7 @@
     entries:
       Burger: Lime
       Taco: Lime
+      Hotdog: Lime #Euphoria
 
 - type: entity
   name: orange
@@ -777,6 +785,7 @@
     entries:
       Burger: Orange
       Taco: Orange
+      Hotdog: Orange #Euphoria
 
 - type: entity
   name: extradimensional orange
@@ -820,6 +829,7 @@
     entries:
       Burger: ExtradimensionalOrangeBurger
       Taco: ExtradimensionalOrange
+      Hotdog: ExtradimensionalOrange #Euphoria
 
 - type: entity
   name: pineapple
@@ -863,7 +873,7 @@
   name: potato
   parent: FoodProduceBase
   id: FoodPotato
-  description: The space Irish starved to death after their potato crops died. Sadly they were unable to fish for space carp due to it being the queen's space. Bringing this up to any space IRA member will drive them insane with anger.
+  description: Boil them, mash them, stick them in a stew. # Euphoria - Removed the Irish Potato Famine joke for obvious reasons. 
   components:
   - type: FlavorProfile
     flavors:
@@ -896,6 +906,7 @@
     entries:
       Burger: Potato
       Taco: Potato
+      Hotdog: Potato #Euphoria
 
 
 - type: entity
@@ -959,6 +970,7 @@
       Skewer: TomatoSkewer
       Burger: Tomato
       Taco: Tomato
+      Hotdog: Tomato #Euphoria
 
 - type: entity
   name: blue tomato
@@ -1010,6 +1022,7 @@
     entries:
       Burger: BlueTomato
       Taco: BlueTomato
+      Hotdog: BlueTomato #Euphoria
 
 - type: entity
   name: blood tomato
@@ -1060,6 +1073,7 @@
       Skewer: TomatoSkewer
       Burger: BloodTomato
       Taco: BloodTomato
+      Hotdog: BloodTomato #Euphoria
 
 - type: entity
   name: eggplant
@@ -1126,6 +1140,7 @@
     entries:
       Burger: Apple
       Taco: Apple
+      Hotdog: Apple #Euphoria
 
 - type: entity
   name: golden apple
@@ -1168,6 +1183,7 @@
     entries:
       Burger: GoldenApple
       Taco: GoldenApple
+      Hotdog: GoldenApple #Euphoria
 
 - type: entity
   name: cocoa pod
@@ -1248,6 +1264,7 @@
       Burger: Corn
       Taco: Corn
       Skewer: CornSkewer
+      Hotdog: Corn #Euphoria
 
 - type: entity
   name: corn cob
@@ -1406,6 +1423,7 @@
     entries:
       Burger: PineappleSliceBurger
       Taco: PineappleSlice
+      Hotdog: PineappleSlice #Euphoria
 
 - type: entity
   name: onion slice
@@ -1437,6 +1455,7 @@
     entries:
       Burger: OnionSliceBurger
       Taco: OnionSlice
+      Hotdog: OnionSlice #Euphoria
 
 - type: entity
   name: red onion slice
@@ -1468,6 +1487,7 @@
     entries:
       Burger: OnionRedSliceBurger
       Taco: OnionRedSlice
+      Hotdog: OnionRedSlice #Euphoria
 
 - type: entity
   name: chili pepper
@@ -1504,6 +1524,7 @@
       Burger: ChiliPepper
       Skewer: ChiliPepperSkewer
       Nachos: ChiliPepper # DeltaV
+      Hotdog: ChiliPepper #Euphoria
 
 - type: entity
   name: chilly pepper
@@ -1537,6 +1558,7 @@
       Taco: ChillyPepper
       Burger: ChillyPepper
       Skewer: ChillyPepperSkewer
+      Hotdog: ChillyPepper #Euphoria
 
 - type: entity
   name: aloe
@@ -1571,6 +1593,7 @@
     entries:
       Taco: Aloe
       Burger: Aloe
+      Hotdog: Aloe #Euphoria
 
 - type: entity
   name: poppy
@@ -1607,6 +1630,7 @@
     entries:
       Taco: Poppy
       Burger: Poppy
+      Hotdog: Poppy #Euphoria
 
 - type: entity
   name: lily
@@ -1639,6 +1663,7 @@
     entries:
       Taco: Lily
       Burger: Lily
+      Hotdog: Lily #Euphoria
 
 - type: entity
   name: lingzhi
@@ -1671,6 +1696,7 @@
     entries:
       Taco: Lingzhi
       Burger: Lingzhi
+      Hotdog: Lingzhi #Euphoria
   - type: Tag
     tags:
     - Mushroom
@@ -1717,6 +1743,7 @@
     entries:
       Taco: AmbrosiaVulgaris
       Burger: AmbrosiaVulgarisBurger
+      Hotdog: AmbrosiaVulgaris #Euphoria
 
 - type: entity
   name: ambrosia deus
@@ -1758,6 +1785,7 @@
     entries:
       Taco: AmbrosiaDeus
       Burger: AmbrosiaDeusBurger
+      Hotdog: AmbrosiaDeus #Euphoria
 
 - type: entity
   name: galaxythistle
@@ -1791,6 +1819,7 @@
     entries:
       Taco: Galaxythistle
       Burger: GalaxythistleBurger
+      Hotdog: Galaxythistle #Euphoria
 
 - type: entity
   name: glasstle
@@ -1861,6 +1890,7 @@
     entries:
       Taco: Glasstle
       Burger: GlasstleBurger
+      Hotdog: Glasstle #Euphoria
 
 - type: entity
   name: fly amanita
@@ -1893,6 +1923,7 @@
     entries:
       Taco: FlyAmanita
       Burger: FlyAmanita
+      Hotdog: FlyAmanita #Euphoria
   - type: Tag
     tags:
     - Mushroom
@@ -1933,6 +1964,7 @@
     entries:
       Taco: Gatfruit
       Burger: GatfruitBurger
+      Hotdog: Gatfruit #Euphoria
 
 - type: entity
   name: capfruit
@@ -1972,6 +2004,7 @@
     entries:
       Taco: Capfruit
       Burger: CapfruitBurger
+      Hotdog: Capfruit #Euphoria
 
 - type: entity
   name: capfruit
@@ -2037,6 +2070,7 @@
     entries:
       Taco: Soybeans
       Burger: SoybeansBurger
+      Hotdog: Soybeans #Euphoria
 
 - type: entity
   name: spaceman's trumpet
@@ -2071,6 +2105,7 @@
     entries:
       Taco: SpacemansTrumpet
       Burger: SpacemansTrumpetBurger
+      Hotdog: SpacemansTrumpet #Euphoria
 
 - type: entity
   name: koibean
@@ -2103,6 +2138,7 @@
     entries:
       Taco: Koibean
       Burger: KoibeanBurger
+      Hotdog: Koibean #Euphoria
 
 - type: entity
   name: watermelon
@@ -2205,6 +2241,7 @@
       Burger: WatermelonSliceBurger
       Taco: WatermelonSlice
       Skewer: WatermelonSliceSkewer
+      Hotdog: WatermelonSlice #Euphoria
 
 - type: entity
   name: holymelon
@@ -2309,6 +2346,7 @@
       Burger: HolymelonSliceBurger
       Taco: HolymelonSlice
       Skewer: HolymelonSliceSkewer
+      Hotdog: HolymelonSlice #Euphoria
 
 - type: entity
   name: grapes
@@ -2379,6 +2417,7 @@
     entries:
       Taco: Berries
       Burger: BerriesBurger
+      Hotdog: Berries #Euphoria
 
 - type: entity
   name: bungo fruit
@@ -2421,6 +2460,7 @@
     entries:
       Taco: Bungo
       Burger: Bungo
+      Hotdog: Bungo #Euphoria
 
 - type: entity
   name: bungo pit
@@ -2481,6 +2521,7 @@
     entries:
       Taco: Pea
       Burger: Pea
+      Hotdog: Pea #Euphoria
 
 - type: entity
   parent: FoodProduceBase
@@ -2515,6 +2556,7 @@
     entries:
       Taco: WorldPea
       Burger: WorldPeaBurger
+      Hotdog: WorldPea #Euphoria
 
 - type: entity
   name: pumpkin
@@ -2726,6 +2768,7 @@
     entries:
       Taco: Cherry
       Burger: Cherry
+      Hotdog: Cherry #Euphoria
 
 - type: entity
   name: cherry pit
@@ -2794,6 +2837,7 @@
     entries:
       Taco: AnomalyBerry
       Burger: AnomalyBerryBurger
+      Hotdog: AnomalyBerry #Euphoria
 
 - type: entity
   name: bloonion bulb

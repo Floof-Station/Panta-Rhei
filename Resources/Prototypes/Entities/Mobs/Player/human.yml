@@ -85,9 +85,9 @@
   id: MobHumanLoneNuclearOperative
   name: Lone Operative
   components:
-  - type: RandomHumanoidAppearance # DeltaV - randomize antag appearance
-    randomizeName: false
-    keepGender: true
+  #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+  #  randomizeName: false
+  #  keepGender: true
   - type: NukeOperative
   - type: Loadout
     prototypes: [SyndicateLoneOperativeGearFull]

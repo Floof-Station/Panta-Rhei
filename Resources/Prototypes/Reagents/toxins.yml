@@ -389,13 +389,21 @@
   color: "#FA6464"
   metabolisms:
     Bloodstream:
+      metabolismRate: 0.05 # Euphoria - Dramatically reduced metabolism rate to allow non-extreme allergies to build up histamine. Anti-histamine chems will also be more useful.
       effects:
       - !type:HealthChange
         probability: 0.1
         damage:
           types:
-            Blunt: 0.3 # Euph - less blunt damage
-            Poison: 0.66
+            Blunt: 0.15 # Euph - less blunt and poison damage
+            Poison: 0.6
+      - !type:AdjustReagent
+        reagent: Histamine
+        amount: -20
+        conditions:
+        - !type:ReagentCondition
+          reagent: Histamine # Purges Histamine if dosage is too high. Should "soft cap" at 100u. 80u is definitely enough to kill somebody without help.
+          min: 100
       # todo: cough, sneeze
       - !type:HealthChange
         conditions:
@@ -404,9 +412,9 @@
           min: 45
         damage:
           types:
-            Blunt: 2
-            Asphyxiation: 2
-            Poison: 2
+            Blunt: 1 # Euph - lowered drastically
+            Asphyxiation: 1
+            Poison: 1
       - !type:Emote
         conditions:
         - !type:ReagentCondition # Start Change

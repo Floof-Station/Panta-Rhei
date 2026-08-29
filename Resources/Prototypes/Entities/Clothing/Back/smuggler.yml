@@ -6,6 +6,7 @@
   - type: SubFloorHide
   - type: Anchorable
   - type: CollideOnAnchor
+  - type: ReallyCollideOnAnchor # Euph - bugfix for subfloor items becoming collidable
   - type: Transform
     anchored: false
   - type: BlockAnchorOn
