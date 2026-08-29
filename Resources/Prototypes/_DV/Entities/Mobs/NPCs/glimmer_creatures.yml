@@ -107,6 +107,12 @@
           Ectoplasm:
             min: 2
             max: 3
+          AncientBookDamagedUncommon: #Euphoria - Drops books for Archivists to research, letting Epi do a little bit of research during higher glimmer amounts instead of being almost entirely paused. Uncommon Books give 5000 points
+            min: 0
+            max: 1
+          AncientBookDamagedCommon: # Euphoria - Common books give 1000 points each
+            min: 1
+            max: 3
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Damageable
