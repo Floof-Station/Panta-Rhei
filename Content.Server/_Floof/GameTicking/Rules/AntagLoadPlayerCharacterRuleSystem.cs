@@ -1,3 +1,4 @@
+// [[file:../../../../Org/_Floof/CivilAntagonists/CivilAntagonistDesignDocument.org::Antagonist Load Player Character System][Antagonist Load Player Character System]]
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Preferences.Managers;
@@ -50,3 +51,4 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
         args.Entity = spawnedCharacter;
     }
 }
+// Antagonist Load Player Character System ends here

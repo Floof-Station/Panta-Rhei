@@ -1,10 +1,9 @@
-using Content.Shared.Humanoid.Prototypes;
-using Robust.Shared.Prototypes;
-
+// [[file:../../../../../Org/_Floof/CivilAntagonists/CivilAntagonistDesignDocument.org::Antagonist Load Player Character Component][Antagonist Load Player Character Component]]
 namespace Content.Server.GameTicking.Rules.Components;
 
 /// <summary>
-/// Makes this rules antags spawn the player session's selected character.
+/// Attach to an entity with <see cref="AntagSelectionComponent"/> to have it spawn the player's currently selected character.
 /// </summary>
 [RegisterComponent]
 public sealed partial class AntagLoadPlayerCharacterRuleComponent : Component;
+// Antagonist Load Player Character Component ends here
