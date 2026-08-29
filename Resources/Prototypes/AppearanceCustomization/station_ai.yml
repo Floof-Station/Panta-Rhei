@@ -1,16 +1,66 @@
-# # Groups
-# - type: stationAiCustomizationGroup
-#   id: StationAiCoreIconography
-#   name: station-ai-customization-core
-#   category: CoreIconography
-#   protoIds:
-#   - StationAiIconAi
-#   - StationAiIconAngel
-#   - StationAiIconBliss
-#   - StationAiIconClown
-#   - StationAiIconDorf
-#   - StationAiIconHeartline
-#   - StationAiIconSmiley
+# Groups
+- type: stationAiCustomizationGroup
+  id: StationAiCoreIconography
+  name: station-ai-customization-core
+  category: CoreIconography
+  protoIds:
+  - StationAiIconAi
+  - StationAiIconAngel
+  - StationAiIconBliss
+  - StationAiIconClown
+  - StationAiIconDorf
+  - StationAiIconHeartline
+  - StationAiIconSmiley
+  # Starlight Start
+  - StationAiIconAlien
+  - StationAiIconThinking
+  - StationAiIconDatabase
+  - StationAiIconFirewall
+  - StationAiIconGlitchman
+  - StationAiIconGoon
+  - StationAiIconHades
+  - StationAiIconHelios
+  - StationAiIconInverted
+  - StationAiIconMatrix
+  - StationAiIconMonochrome
+  - StationAiIconMurica
+  - StationAiIconNanoTrasen
+  - StationAiIconNotMalf
+  - StationAiIconPresident
+  - StationAiIconRainbow
+  - StationAiIconRed
+  - StationAiIconRedOctober
+  - StationAiIconStatic
+  - StationAiIconMeow
+  - StationAiIconText
+  - StationAiIconTooDeep
+  - StationAiIconTriumvirate
+  - StationAiIconWeird
+  - StationAiIconCat
+  - StationAiIconBlob
+  - StationAiIconGondola
+  - StationAiIconMalicious
+  - StationAiIconPlain
+  - StationAiIconFox
+  - StationAiIconBee
+  - StationAiIconBorb
+  - StationAiIconDarkmatter
+  - StationAiIconNadBurn
+  - StationAiIconVoiddonut
+  - StationAiIconTiger
+  - StationAiIconVox
+  - StationAiIconLiz
+  - StationAiIconSparkles
+  - StationAiIconAhasuerus
+  - StationAiIconAlterEgo
+  - StationAiIconChild
+  - StationAiIconGodfrey
+  - StationAiIconHoneycomb
+  - StationAiIconHourglass
+  - StationAiIconRat
+  - StationAiIconRoyal
+  - StationAiIconSillycon
+  # Starlight End
 
 - type: stationAiCustomizationGroup
   id: StationAiHolograms
@@ -46,97 +96,100 @@
   # Starlight End
 
 # Iconography
-# - type: stationAiCustomization
-#   abstract: true
-#   id: StationAiIconBase
-#   previewKey: Occupied
-#   previewBackground:
-#     sprite: Mobs/Silicon/station_ai.rsi
-#     state: base
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconAi
-#   name: station-ai-icon-ai
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_dead
+# floofstation Start - Upstream -> Starlight 
+- type: stationAiCustomization
+  abstract: true
+  id: StationAiIconBase
+  previewKey: Occupied
+  previewBackground:
+    sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+    state: base
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconAngel
-#   name: station-ai-icon-angel
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_angel
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_angel_dead
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconAi
+  name: station-ai-icon-ai
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_dead
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconBliss
-#   name: station-ai-icon-bliss
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_bliss
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_dead
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconAngel
+  name: station-ai-icon-angel
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_angel
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_angel_dead
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconClown
-#   name: station-ai-icon-clown
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_clown
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_clown_dead
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconBliss
+  name: station-ai-icon-bliss
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_bliss
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_dead
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconDorf
-#   name: station-ai-icon-dorf
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_dorf
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: ai_dead
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconClown
+  name: station-ai-icon-clown
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_clown
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_clown_dead
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconHeartline
-#   name: station-ai-icon-heartline
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: "ai_heartline"
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: "ai_heartline_dead"
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconDorf
+  name: station-ai-icon-dorf
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_dorf
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_dead
 
-# - type: stationAiCustomization
-#   parent: StationAiIconBase
-#   id: StationAiIconSmiley
-#   name: station-ai-icon-smiley
-#   layerData:
-#     Occupied:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: "ai_smiley"
-#     Dead:
-#       sprite: Mobs/Silicon/station_ai.rsi
-#       state: "ai_dead"
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconHeartline
+  name: station-ai-icon-heartline
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: "ai_heartline"
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: "ai_heartline_dead"
+
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconSmiley
+  name: station-ai-icon-smiley
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: "ai_smiley"
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: "ai_dead"
+# floofstation End - Upstream -> Starlight 
 
 # Holograms
 - type: stationAiCustomization
