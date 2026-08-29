@@ -80,7 +80,7 @@
       - ReagentId: Oil
         Quantity: 300
     # minBloodDamage: 8 # Euph - no clue what this field is supposed to be.
-    bleedReductionAmount: 1 # No natural wound closing whatsoever # Euphoria - set this to 1 instead of 0 because we currently lack easy access to "IPC Blood" and a lot of their relevant topicals. REVERT THIS WHEN THOSE ARE ADDED.
+    # bleedReductionAmount: 1 # No natural wound closing whatsoever # Euphoria - set this to default instead of 0 because we currently lack easy access to "IPC Blood" and a lot of their relevant topicals. REVERT THIS WHEN THOSE ARE ADDED.
     bloodlossThreshold: 0.75 # Everyone else start taking bloodloss damage at 90%, but with no natural bleeding stop - IPC can last for a bit longer
   - type: IPCWeldClosesWounds
   - type: Icon
