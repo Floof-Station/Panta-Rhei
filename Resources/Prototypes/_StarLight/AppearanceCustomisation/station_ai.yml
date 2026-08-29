@@ -36,7 +36,7 @@
   - StationAiIconWeird
   - StationAiIconCat
   - StationAiIconBlob
-  #- StationAiIconGondola
+  - StationAiIconGondola
   - StationAiIconMalicious
   - StationAiIconPlain
   - StationAiIconSmiley
@@ -549,20 +549,20 @@
       sprite: Objects/Devices/ai_card.rsi
       state: full
 
-# - type: stationAiCustomization
-  # parent: StationAiIconBase
-  # id: StationAiIconGondola
-  # name: station-ai-icon-gondola
-  # layerData:
-    # Occupied:
-      # sprite: _Starlight/Mobs/Silicon/station_ai.rsi
-      # state: ai_gondola
-    # Dead:
-      # sprite: _Starlight/Mobs/Silicon/station_ai.rsi
-      # state: ai_dead
-    # Intellicard:
-      # sprite: Objects/Devices/ai_card.rsi
-      # state: full
+- type: stationAiCustomization
+  parent: StationAiIconBase
+  id: StationAiIconGondola
+  name: station-ai-icon-gondola
+  layerData:
+    Occupied:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_gondola
+    Dead:
+      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
+      state: ai_dead
+    Intellicard:
+      sprite: Objects/Devices/ai_card.rsi
+      state: full
 
 - type: stationAiCustomization
   parent: StationAiIconBase
