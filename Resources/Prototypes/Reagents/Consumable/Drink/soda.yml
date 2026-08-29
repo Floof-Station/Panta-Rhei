@@ -296,8 +296,8 @@
           type: [Slime]
           inverted: true
         damage:
-          groups:
-            Airloss: 125 # Here's the heart attack
+          types:
+            Asphyxiation: 125 # Here's the heart attack [that's not how a heart attack works... - mnemo]
         probability: 0.001
       - !type:Drunk # Euphoria - Here's the Drunk-ness
         conditions:
@@ -306,7 +306,7 @@
           inverted: true
         boozePower: 10
         probability: 0.2
-    Narcotic:
+    Bloodstream:
       effects:
       - !type:GenericStatusEffect # Euphoria - This gives the heart on the side of the screen
         key: Adrenaline

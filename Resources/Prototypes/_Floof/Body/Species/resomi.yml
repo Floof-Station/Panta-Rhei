@@ -36,9 +36,9 @@
   - type: Inventory
     speciesId: resomi
     displacements: &allDisplacements
-      jumpsuit:
+      jumpsuit: &standardDisplacement
         sizeMaps:
-          32: &standardDisplacement
+          32:
             sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: jumpsuit
       eyes:
@@ -66,7 +66,7 @@
           32:
             sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: ears
-      shoes:
+      shoes: &feetDisplacement
         sizeMaps:
           32:
             sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
@@ -91,6 +91,11 @@
           32:
             sprite: _Floof/Mobs/Species/Resomi/displacement.rsi
             state: belt
+      # We just alias outer clothing and undergarments to the jumpsuit/feet displacements. This isnt perfect, but it works for most clothing.
+      outerClothing: *standardDisplacement
+      undergarmentTop: *standardDisplacement
+      undergarmentBottom: *standardDisplacement
+      undergarmentSocks: *feetDisplacement
     femaleDisplacements: *allDisplacements # afaik female resomi use the same displacements as male ones.
 
 - type: entity

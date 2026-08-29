@@ -1373,9 +1373,4 @@
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true # we want to reuse the das boot sprite for pilk but change the color
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 3 # same as pilk
   fizziness: 0.3
