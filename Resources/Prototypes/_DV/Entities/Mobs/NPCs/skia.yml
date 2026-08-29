@@ -119,11 +119,11 @@
     - id: Ectoplasm
       amount: 1
     - id: AncientBookDamagedUncommon # Euphoria: Drops a guaranteed Uncommon book on butcher, with a chance for a second one, for Archivists. 5000 research per book
-      min: 1
-      max: 2
+      amount: 1
+      maxAmount: 2
     - id: AncientBookDamagedCommon # Euphoria - sometimes drops extra Common books. 1000 points per book
-      min: 0
-      max: 2
+      amount: 0
+      maxAmount: 2
   - type: Prying
     pryPowered: true
     force: true

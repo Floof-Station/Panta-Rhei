@@ -154,14 +154,14 @@
     - id: CosmicCultMindSink
       amount: 1
     - id: AncientBookDamagedRare #Euphoria - Drops multiple ruined books on butcher, for Archivists to process. Should be a range of 16000 to 46000 research per Colossus depending on RNG. 10000 Research Points per rare book
-      min: 1
-      max: 2
+      amount: 1
+      maxAmount: 2
     - id: AncientBookDamagedUncommon # Euphoria - 5000 research per uncommon book
-      min: 1
-      max: 4
+      amount: 1
+      maxAmount: 4
     - id: AncientBookDamagedCommon # Euphoria - 1000 research per common book
-      min: 1
-      max: 6
+      amount: 1
+      maxAmount: 6
   - type: PointLight
     color: "#42a4ae"
     radius: 4
