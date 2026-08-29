@@ -7,6 +7,8 @@
   categories:
   - Tiles
   completetime: 0.5
+  materials: # Euph - make tiles cost something by default so they arent free
+    Steel: 25
 
 - type: latheRecipe
   abstract: true
