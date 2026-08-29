@@ -243,7 +243,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
         //    : "guidebook-microwave-cook-time-deltav";
         //Euphoria - add deep fry time, but use frontier times instead
         if(recipe.DeepFried)
-            msg.AddMarkupOrThrow(Loc.GetString("guideboook-microwave-fry-time", ("time", recipe.CookTime)));
+            msg.AddMarkupOrThrow(Loc.GetString("guidebook-food-processing-type-deepfryer"));
         // End DV
         msg.Pop();
 
@@ -251,7 +251,7 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
         //Euphoria modified - couldn't get the texture thing to work, and I am so tired.
         List<string> processingTypes = new();
         var recipeType = (MicrowaveRecipeType)recipe.RecipeType;
-        if (recipeType.HasFlag(MicrowaveRecipeType.Microwave))
+        if (recipeType.HasFlag(MicrowaveRecipeType.Microwave) && !recipe.DeepFried) //I know Mnemo, this is bad. I AM GOING TO CONVERT DEEP FRIER TO RECIPETYPE LATER!
         {
             //if (recipe.SecretRecipe)
                 //AppendMachineTexture("/Textures/Structures/Machines/microwave_syndie.rsi", "mw");

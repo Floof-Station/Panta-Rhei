@@ -5038,3 +5038,493 @@ Entries:
         in 1 glass, now it's 2 glasses.
   id: 629
   time: '2026-08-13T09:12:09.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Socks should now be drawn above underwear.
+  id: 630
+  time: '2026-08-14T12:28:54.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        The Salvage Reclaimer shuttle has been spotted in use again on Asterisk,
+        Edge and Pebble.
+  id: 631
+  time: '2026-08-14T13:58:49.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: The Syndicate channel will no longer show up in examines.
+  id: 632
+  time: '2026-08-15T03:59:52.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: The language menu now allows you to reorder languages.
+    - type: Add
+      message: >-
+        You can now use index-based language prefixes. For example, typing "^1
+        hello" will send "Hello." using the first language in the list of
+        languages that you can speak. Typing "^2; hello" will send "Hello." over
+        the common radio using the second language.
+    - type: Fix
+      message: >-
+        Language prefixes now correctly display in the chat, and using an
+        invalid prefix will result in your message being ignored (to avoid
+        breaking immersion). 
+    - type: Fix
+      message: Entities without LanguageSpeaker should now understand everyone.
+  id: 633
+  time: '2026-08-15T04:11:26.0000000+00:00'
+- author: Aikakakah
+  changes:
+    - type: Tweak
+      message: Worn rings now show on character sprites
+  id: 634
+  time: '2026-08-15T04:12:40.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Ported the RPD (Rapid Pipe Dispenser)
+  id: 635
+  time: '2026-08-15T04:14:14.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Resomi now explicitly use displacement maps for underwear and
+        outerclothing. This means that most items will hug resomi bodies more
+        closely.
+  id: 636
+  time: '2026-08-16T05:54:37.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: >-
+        New Rule 11.9: Dorms is a antagonist free zone, no antag-related
+        activities of any kind may take place within dorms. If you are unsure if
+        your scene or idea is antagonist related, a-help first.
+    - type: Add
+      message: >-
+        New Rule 10.6: Security may breach dorms in regards to SOP related
+        matters if it is found someone from a previous crime is hiding within
+        (ERP'ing or in a scene), if this needs to be done. A-help first to get
+        admin assistance so you have the correct dorm.
+    - type: Tweak
+      message: >-
+        Rule 10.4 to read as: Sectexting or better known as security power
+        gaming is not tolerated. Security falls under the same purview as
+        antagonists. Attempt to roleplay, speak with, and follow SOP in regards
+        to ROE and general situations. Playing to win goes against the rules.
+  id: 637
+  time: '2026-08-16T06:43:00.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Hitman now only targets Marked individuals.
+  id: 638
+  time: '2026-08-16T11:19:27.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Tweak
+      message: 'Re-enabled paramedic voidsuit siren. '
+  id: 639
+  time: '2026-08-16T11:21:46.0000000+00:00'
+- author: torturedbymemes
+  changes:
+    - type: Tweak
+      message: IPCs no longer have heelies.
+  id: 640
+  time: '2026-08-16T11:24:37.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: Histamine deals less damage per second and metabolizes much more slowly.
+  id: 641
+  time: '2026-08-16T12:11:09.0000000+00:00'
+- author: torturedbymemes
+  changes:
+    - type: Fix
+      message: Certain markings on IPCs should work now.
+  id: 642
+  time: '2026-08-16T12:13:23.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Changed Scurret crate from 25,000 to 10,000. Also made Animal translator
+        translate Scurret instead of ScugSign.
+  id: 643
+  time: '2026-08-16T12:13:52.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Two new nosebleed traits have been added.
+  id: 644
+  time: '2026-08-17T10:28:53.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: >-
+        Late Joins are now announced in Common rather than their respective
+        departments.
+  id: 645
+  time: '2026-08-18T09:18:49.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: Lamplight now affects moths and non-moths as intended.
+  id: 646
+  time: '2026-08-18T11:48:42.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        Full-tile tiny fans are now hidden from the spawn menu. Use directional
+        ones instead.
+  id: 647
+  time: '2026-08-19T12:01:06.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Tweak
+      message: Skirts and nudity permits no longer block underwear bottom slots
+  id: 648
+  time: '2026-08-19T12:03:52.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: >-
+        Radiation Collector Crates hold 2 collectors instead of 1, and price has
+        been adjusted accordingly. Cargo Techs rejoice!
+  id: 649
+  time: '2026-08-19T12:05:29.0000000+00:00'
+- author: TheSlapper
+  changes:
+    - type: Add
+      message: Various clown clothing items to the clown loadout and autodrobe.
+    - type: Add
+      message: Various mime clothing items to the mime loadout and autodrobe.
+    - type: Add
+      message: Various clown and mime facepaint markings.
+  id: 650
+  time: '2026-08-19T12:06:50.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added a DNA Scrambler implanter/implant variant that will despawn if not
+        used. within 2 minutes. 
+    - type: Tweak
+      message: >-
+        Changed many ghost roles (Ninja, LPO, all Nukies (including LoneOp),
+        Syndie Recruit, Syndie Arms Dealer, Synthesis Specialist, Hitman) to not
+        have randomized appearances, and spawn with my optional "despawning" DNA
+        Scrambler implanter in-hand. You can choose whether to be your
+        character, or a use the scrambler to be a randomized character. You have
+        2 minutes to decide before the implanter/implant despawns.
+  id: 651
+  time: '2026-08-19T14:10:58.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The Rickenbacker  to passenger instrument loadouts
+    - type: Add
+      message: The portable disc jockey control system is in musicians job trinkets
+    - type: Tweak
+      message: The banjo can be swung like other guitars
+  id: 652
+  time: '2026-08-20T10:31:36.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The snoring trait is back.
+  id: 653
+  time: '2026-08-20T10:32:25.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: >-
+        Autolabelers will now be off by default, you can toggle them on if you
+        wish to use them.
+  id: 654
+  time: '2026-08-20T10:33:07.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Disposal pipes should no longer become collidable when underground
+  id: 655
+  time: '2026-08-21T10:22:31.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Centcomm is sick of Thavens going commando and has provided proper
+        undergarments that fit.
+  id: 656
+  time: '2026-08-22T01:48:28.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Smile should be able to eat and drink again.
+  id: 657
+  time: '2026-08-22T02:36:36.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Moved engineering's welding masks to the right equipment slot when
+        chosen.
+    - type: Fix
+      message: Vox specific breath mask options given to clown, corpsman and mime
+    - type: Fix
+      message: Gives reporter undergarment selection
+  id: 658
+  time: '2026-08-22T02:38:05.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Cargo can now purchase a select amount of vending machines such as a few
+        food, drinks, clothing and lewd vendors.
+    - type: Add
+      message: These vending machines can be found under the Vending Machines category.
+  id: 659
+  time: '2026-08-22T02:39:29.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Tweak
+      message: Oracle can no longer dispense Romerol.
+  id: 660
+  time: '2026-08-22T02:43:17.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Remove
+      message: Romerol is no longer a fill option for random toilets and puddle spawns.
+    - type: Remove
+      message: >-
+        Removed rule 7.1. It was left in by accident, having meant to be
+        replaced by 7.2
+  id: 661
+  time: '2026-08-22T03:05:52.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        An option in the audio menu has been added for admins to mute chelp
+        notification sounds if they so desire.
+  id: 662
+  time: '2026-08-22T03:12:44.0000000+00:00'
+- author: badlanduser
+  changes:
+    - type: Tweak
+      message: Admin RCD now gets extra options.
+  id: 663
+  time: '2026-08-22T05:52:52.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Dog Accent no longer changes L's to R's automatically.
+  id: 664
+  time: '2026-08-23T04:05:15.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Lowered the sale price of a stack of diamonds to 9k spesos.
+  id: 665
+  time: '2026-08-24T09:47:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Botany can now grow Strawberries.
+    - type: Add
+      message: >-
+        Additional food and drink recipes for Strawberries have been added.
+        Strawberry Pilk is now a thing be afraid.
+    - type: Tweak
+      message: Some recipes have been tweaked to use Strawberries.
+  id: 666
+  time: '2026-08-24T09:48:28.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Added a rude gesture (works like waving) and a suggestive gesture (works
+        like checkout).
+  id: 667
+  time: '2026-08-24T09:49:39.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: >-
+        Ninjas should no longer be asked to bomb places they shouldn't. (Ask in
+        AHELP if unsure about your target!)
+  id: 668
+  time: '2026-08-24T12:31:02.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: >-
+        Changed description of space medipen to mention stabilizine instead of
+        lepo.
+  id: 669
+  time: '2026-08-25T07:44:13.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Fix
+      message: Various Food Critic improvements.
+  id: 670
+  time: '2026-08-25T07:45:08.0000000+00:00'
+- author: badlanduser
+  changes:
+    - type: Tweak
+      message: Jaunter slot added to salvage webbing
+  id: 671
+  time: '2026-08-25T07:47:40.0000000+00:00'
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: Added busty bosom markings and bras to fit.
+    - type: Tweak
+      message: >-
+        Increased species marking limits for undergarments, head top and head
+        side.
+  id: 672
+  time: '2026-08-25T09:09:54.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Hitman (ghost role), Synthesis Specialist, Syndicate Arms Dealer,
+        and Syndicate Recruiter spawning with default Urist names.
+  id: 673
+  time: '2026-08-25T09:18:33.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Chem should now be able to make colored crystals again.
+  id: 674
+  time: '2026-08-26T09:46:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Fix some epi research not being craftable in the right lathe types.
+  id: 675
+  time: '2026-08-26T09:49:19.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: New Pounce trait has been added.
+  id: 676
+  time: '2026-08-26T09:50:42.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Goliath stunlock by decreasing melee attack rate by 33%. Increased
+        damage by 33% to compensate.
+  id: 677
+  time: '2026-08-26T09:53:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Security can now purchase Vulcan and Patos gun crates for the armory.
+  id: 678
+  time: '2026-08-26T09:59:12.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Metamorphic hotdogs. Hotdog buns can hold a maximum of 6 ingredients.
+    - type: Add
+      message: >-
+        Uncooked hotdog bun which is made from a dough slice through the build
+        menu
+    - type: Add
+      message: Recipe cards to chef's locker detailing mainstream hotdog recipes.
+    - type: Add
+      message: >-
+        The following hotdogs: Los Angeles, Chicago, Chili, Condog, Coney
+        Island, Dildog, Dirty Water, Fishdog, Half Smoke, Polish Boy, Roddog,
+        Sushidog, Tofudog, Humadog, Bacon Supreme
+    - type: Tweak
+      message: >-
+        Burger buns are now made by shaping dough slice into a burger bun
+        through the build menu, then cooking.
+    - type: Add
+      message: >-
+        Cooked sausages can be made faster in the microwave, producing hotdog
+        water in the process.
+    - type: Add
+      message: Water recipe - hotdog water + holy water
+  id: 679
+  time: '2026-08-26T10:04:10.0000000+00:00'
+- author: CastitoWae
+  changes:
+    - type: Add
+      message: Increased Musician job slots from 1 to 2 in most stations.
+  id: 680
+  time: '2026-08-27T05:54:20.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Fix
+      message: >-
+        Salvage's "Survival" selection on the mining voucher mentioned including
+        a medical tracking implanter, but it did not. It now does.
+  id: 681
+  time: '2026-08-27T06:51:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Added a few new traits, Messy Drinker, Very Messy Drinker, Messy Eater
+        and Messy Smoker.
+  id: 682
+  time: '2026-08-27T06:53:16.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The tether and force guns are researchable T3 tech again.
+  id: 683
+  time: '2026-08-27T06:54:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Puddles of space cleaner will now slowly evaporate.
+  id: 684
+  time: '2026-08-27T10:50:49.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: Robo-neuro will no longer be told to borg everyone.
+    - type: Tweak
+      message: Robo-neuro will receive objectives for all eligible targets for borging.
+  id: 685
+  time: '2026-08-27T10:52:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Revenants will now reveal themselves when colliding with species mobs
+        (this feature was perviously disabled due to a bug)
+  id: 686
+  time: '2026-08-28T08:37:22.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: >-
+        Express Space Courier Trunk removed from CourierDrobe. Now only
+        available in Courier loadout.
+  id: 687
+  time: '2026-08-28T09:33:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Any role will now be able to take the No Paradox Clone trait.
+  id: 688
+  time: '2026-08-28T23:01:01.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Actually add the Strawberry seeds to the seed vending machine.
+  id: 689
+  time: '2026-08-28T23:01:53.0000000+00:00'

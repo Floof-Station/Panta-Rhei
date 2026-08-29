@@ -523,6 +523,7 @@
     entries:
       Burger: Mothroach
       Taco: Mothroach
+      Hotdog: Mothroach #Euphoria
   #Euphoria end
   - type: GhostRole
     makeSentient: true
@@ -1466,6 +1467,7 @@
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "eyes" ]
+    - map: [ "belt" ]
     - map: [ "neck" ]
     - map: [ "back" ]
     - map: [ "enum.HumanoidVisualLayers.FacialHair" ]
@@ -1475,7 +1477,6 @@
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "clownedon" ]
       sprite: "Effects/creampie.rsi"
@@ -1604,7 +1605,6 @@
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "clownedon" ]
       sprite: "Effects/creampie.rsi"

@@ -24,9 +24,9 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
     - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "shoes" ] # Floof - moved above jumpsuit
     - map: [ "jumpsuit" ] # Floof - moved below hands and feet
     - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
@@ -34,6 +34,7 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
+    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -47,7 +48,6 @@
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wing layer
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -314,9 +314,8 @@
   - type: CanDoCPR # DeltaV - Addition of CPR
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # Floof
-  #Euph - disable RevealRevenantOnCollide for mobs. It increases radius on mobs, and thus they cannot fit through doors.
-  #- type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
-  #  revealTime: 1
+  - type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
+    revealTime: 1
 
 - type: entity
   save: false
@@ -348,9 +347,9 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
     - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "shoes" ] # Floof - moved above jumpsuit
     - map: [ "jumpsuit" ] # Floof - moved below hands and feet
     - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
@@ -363,7 +362,7 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
-
+    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -377,7 +376,6 @@
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

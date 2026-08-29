@@ -214,6 +214,10 @@ public sealed partial class EncryptionKeySystem : EntitySystem
         {
             proto = _protoManager.Index<RadioChannelPrototype>(id);
 
+			// Euphoria | Stealth channels
+            if (!HasComp<EncryptionKeyComponent>(examineEvent.Examined) && proto.Stealth)
+                continue;
+
             var key = id == SharedChatSystem.CommonChannel
                 ? SharedChatSystem.RadioCommonPrefix.ToString()
                 : $"{SharedChatSystem.RadioChannelPrefix}{proto.KeyCode}";

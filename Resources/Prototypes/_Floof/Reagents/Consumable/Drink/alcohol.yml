@@ -702,7 +702,6 @@
           min: 1
         - !type:MetabolizerTypeCondition
           type: [Moth] # Get them moffy fucks horny
-          inverted: true
         reagent: Philterex
         amount: 0.5
 
@@ -1667,3 +1666,24 @@
         - !type:AdjustReagent
           reagent: Ethanol
           amount: 0.07
+
+- type: reagent
+  id: StrawberryPilk
+  name: reagent-name-strawberrypilk
+  parent: BaseDrink
+  desc: reagent-desc-strawberrypilk
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: pilk
+  color: "#FDC5C6"
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/pilk.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true # we want to reuse the das boot sprite for pilk but change the color
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: 3 # same as pilk
+  fizziness: 0.3

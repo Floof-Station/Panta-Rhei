@@ -22,8 +22,8 @@
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/census.yml # Was /Maps/_DV/Shuttles/Admin/recruiter_ship.yml
-  - type: AntagSpawner
-    prototype: MobHuman
+  #- type: AntagSpawner #Euphoria | Removing forced human. 
+  #  prototype: MobHuman
   - type: AntagObjectives
     objectives:
     - RecruiterEscapeObjective
@@ -40,18 +40,19 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomMetadata # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  nameSegments:
+      #  - NamesFakeHumanFirst
+      #  - NamesFakeHumanLast
+      #  nameFormat: name-format-standard
+      #- type: RandomHumanoidAppearance # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
       mindRoles:
       - MindRoleRecruiter
+  - type: AntagLoadPlayerCharacterRule #Euphoria | Using this for spawning antag instead of AntagSpawner
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -67,8 +68,8 @@
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/synthesis_ship.yml
-  - type: AntagSpawner
-    prototype: MobHuman
+  #- type: AntagSpawner #Euphoria | Removing forced human. 
+  #  prototype: MobHuman
   - type: AntagObjectives
     objectives:
     - SynthesisSurviveObjective
@@ -84,18 +85,19 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomMetadata # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  nameSegments:
+      #  - NamesFakeHumanFirst
+      #  - NamesFakeHumanLast
+      #  nameFormat: name-format-standard
+      #- type: RandomHumanoidAppearance # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
       mindRoles:
       - MindRoleSynthesis
+  - type: AntagLoadPlayerCharacterRule #Euphoria | Using this for spawning antag instead of AntagSpawner
 
 - type: entity
   parent: BaseUnknownShuttleRule
@@ -111,8 +113,8 @@
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/strongbox.yml
-  - type: AntagSpawner
-    prototype: MobHuman
+  #- type: AntagSpawner #Euphoria | Removing forced human. 
+  #  prototype: MobHuman
   - type: AntagObjectives
     objectives:
     - ArmsdealerSurviveObjective
@@ -128,18 +130,19 @@
       roleLoadout:
       - RoleSurvivalStandard
       components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #- type: RandomMetadata # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  nameSegments:
+      #  - NamesFakeHumanFirst
+      #  - NamesFakeHumanLast
+      #  nameFormat: name-format-standard
+      #- type: RandomHumanoidAppearance # Euphoria, removing randomized appearance so people can play their characters. Giving optional DNA scrambler instead. 
+      #  randomizeName: false
       - type: NpcFactionMember
         factions:
         - Syndicate
       mindRoles:
       - MindRoleArmsdealer
+  - type: AntagLoadPlayerCharacterRule #Euphoria | Using this for spawning antag instead of AntagSpawner
 
 # Hitman (for the admeme spawn)
 - type: entity
@@ -155,8 +158,8 @@
     message: psionic-power-precognition-hitman-spawn-result-message
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/Professional.yml
-  - type: AntagSpawner
-    prototype: MobHuman
+  #- type: AntagSpawner #Euphoria | Making it so ghost roles aren't forced to be human.
+  #  prototype: MobHuman
   - type: AntagObjectives
     objectives:
     - HitmanSurviveObjective
@@ -176,13 +179,14 @@
       startingGear: HitmanGhostGear
       roleLoadout:
       - RoleSurvivalStandard
-      components:
-      - type: RandomMetadata
-        nameSegments:
-        - NamesFakeHumanFirst
-        - NamesFakeHumanLast
-        nameFormat: name-format-standard
-      - type: RandomHumanoidAppearance
-        randomizeName: false
+      #components:
+      #- type: RandomMetadata #Euphoria, removing randomization so people can play their characters. Giving a temporary DNA scrambler instead. 
+      #  nameSegments:
+      #  - NamesFakeHumanFirst
+      #  - NamesFakeHumanLast
+      #  nameFormat: name-format-standard
+      #- type: RandomHumanoidAppearance #Euphoria, removing randomization so people can play their characters. Giving a temporary DNA scrambler instead. 
+      #  randomizeName: false
       mindRoles:
       - MindRoleHitman
+  - type: AntagLoadPlayerCharacterRule #Euphoria | Using this for spawning antag instead of AntagSpawner
