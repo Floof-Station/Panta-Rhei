@@ -12,7 +12,7 @@
     maxOccurrences: 1 #This event can only occur once in a given round
   - type: PrecognitionResult
     message: psionic-power-precognition-food-critic-result-message
-  - type: AntagRandomSpawn
+  - type: AntagStationSpawnRule
   - type: AntagLoadPlayerCharacterRule
   - type: AntagObjectives
     objectives:
