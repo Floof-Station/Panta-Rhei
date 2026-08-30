@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Floof.Sprite;
 using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Humanoid.Markings;
@@ -175,8 +176,40 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
             if (!_marking.TryGetMarking(marking, out var proto))
                 continue;
 
-            if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, true))
-                continue;
+            // Floofstation - this is done per-sprite, not per-marking
+            // if (!_sprite.LayerMapTryGet(target, proto.BodyPart, out var index, true))
+            //     continue;
+            // FLOOF ADD START
+            // make a handy dict of sprite -> color
+            // cus we might need to access it by filename to link
+            // one sprite's colors to another
+            var colorDict = new Dictionary<string, Color>();
+            for (var i = 0; i < proto.Sprites.Count; i++)
+            {
+                var spriteName = proto.Sprites[i].GetFilename();
+                var colors = marking.MarkingColors;
+                if (colors != null && i < colors.Count)
+                    colorDict.Add(spriteName, colors[i]);
+                else
+                    colorDict.Add(spriteName, colors is { Count: > 0 } ? colors[0] : Color.White);
+            }
+            // now, rearrange them, copying any parented colors to children set to
+            // inherit them
+            if (proto.ColorLinks != null)
+            {
+                foreach (var (child, parent) in proto.ColorLinks)
+                {
+                    if (colorDict.TryGetValue(parent, out var color))
+                        colorDict[child] = color;
+                    else
+                        Log.Error($"Invalid marking color link {parent}->{child} in {proto.ID}");
+                }
+            }
+            // and, since we can't rely on the iterator knowing where the heck to put
+            // each sprite when we have one marking setting multiple layers,
+            // lets just kinda sorta do that ourselves
+            var layerDict = new Dictionary<string, int>();
+            // FLOOF ADD END
 
             for (var i = 0; i < proto.Sprites.Count; i++)
             {
@@ -186,19 +219,45 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                 if (sprite is not SpriteSpecifier.Rsi rsi)
                     continue;
 
+                // FLOOF CHANGE START. We can't just add layers sequentially as some of them may want to be placed on different layers.
+                var layerSlot = proto.BodyPart;
+                // first, try to see if there are any custom layers for this marking
+                if (proto.Layering != null)
+                {
+                    var name = rsi.RsiState;
+                    if (proto.Layering.TryGetValue(name, out var layerName))
+                        layerSlot = Enum.Parse<HumanoidVisualLayers>(layerName);
+                }
+                // update the layerDict
+                // if it doesnt have this, add it at 0, otherwise increment it
+                if (layerDict.TryGetValue(layerSlot.ToString(), out var layerIndex))
+                    layerDict[layerSlot.ToString()] = layerIndex + 1;
+                else
+                    layerDict.Add(layerSlot.ToString(), 0);
+
+                if (!_sprite.LayerMapTryGet(target, layerSlot, out var index, true))
+                    continue;
+                // FLOOF CHANGE END
+
                 var layerId = $"{proto.ID}-{rsi.RsiState}";
 
                 if (!_sprite.LayerMapTryGet(target, layerId, out _, false))
                 {
-                    var layer = _sprite.AddLayer(target, sprite, index + i + 1);
+                    // Floofstation: for layers that are supposed to be behind everything,
+                    // adding 1 to the layer index makes it not be behind the target (marker) layer.
+                    var targetLayerAdj = index + layerDict[layerSlot.ToString()] + 1;
+                    var layer = _sprite.AddLayer(target, sprite, targetLayerAdj); // Was index + i + 1
                     _sprite.LayerMapSet(target, layerId, layer);
                     _sprite.LayerSetSprite(target, layerId, rsi);
                 }
 
-                if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
-                    _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
-                else
-                    _sprite.LayerSetColor(target, layerId, Color.White);
+                // if (marking.MarkingColors is not null && i < marking.MarkingColors.Count)
+                //     _sprite.LayerSetColor(target, layerId, marking.MarkingColors[i]);
+                // else
+                //     _sprite.LayerSetColor(target, layerId, Color.White);
+                // Floofstation - replaced the above
+                _sprite.LayerSetColor(target, layerId,
+                    colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
             }
 
             applied.Add(marking);

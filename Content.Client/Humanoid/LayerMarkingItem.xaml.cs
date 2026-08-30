@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Client.Guidebook.Controls;
+using Content.Shared._Floof.Sprite;
 using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
@@ -151,6 +152,20 @@ public sealed partial class LayerMarkingItem : BoxContainer, ISearchableControl
 
         for (var i = 0; i < _markingPrototype.Sprites.Count; i++)
         {
+            // Floofstation edit: first, check if the coloration is parented to another marking
+            // and if so, just kinda sorta dont display it
+            var skipdraw = false;
+            if (_markingPrototype.ColorLinks?.Count > 0)
+            {
+                var name = _markingPrototype.Sprites[i].GetFilename();
+                if (_markingPrototype.ColorLinks.ContainsKey(name))
+                    skipdraw = true; // dont show it, cus its parented to another marking
+            }
+            if (skipdraw)
+                continue;
+            // Floofstation edit end
+
+
             var container = new BoxContainer()
             {
                 Orientation = LayoutOrientation.Vertical,
