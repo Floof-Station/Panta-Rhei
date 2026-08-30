@@ -26,3 +26,17 @@
   - MagazinePistolHighCapacity
   - MagazinePistolHighCapacityRubber
   - MagazinePistolHighCapacityPractice
+
+- type: technology
+  id: EnergySwordResearch
+  name: research-technology-energy-sword-research
+  icon:
+    sprite: Objects/Weapons/Guns/Battery/svalinn.rsi
+    state: icon
+  discipline: Arsenal
+  tier: 3
+  cost: 25000
+  recipeUnlocks:
+  - EnergySword
+  - EnergyCutlass
+  - EnergySwordDouble
