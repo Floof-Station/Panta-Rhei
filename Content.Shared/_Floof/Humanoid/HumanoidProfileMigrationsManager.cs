@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -37,6 +38,12 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
     /// </summary>
     private Dictionary<List<YamlPathParser.Part>, Action<ProfileMigrationContext>> _simpleMigrations = new();
 
+    // Species migrations (old -> new)
+    Dictionary<string, ProtoId<SpeciesPrototype>> _speciesMigrationMap = new()
+    {
+        { "Shadowkin", "Shadekin" }, // 2026-08-30 - EE shadowkin replaced with Starlight shadekin
+    };
+
     private ISawmill Log = null!;
 
     public void Initialize()
@@ -63,6 +70,13 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
                 if (match.Success)
                     ctx.Profile = ctx.Profile.WithTraitPreference(match.Groups[1].Value, _protoMan);
             }
+        });
+
+        // Species migrations
+        AddMigration("/species", ctx =>
+        {
+            if (_speciesMigrationMap.TryGetValue(ctx.Profile.Species, out var replacementSpecies))
+                ctx.Profile.Species = replacementSpecies;
         });
     }
 

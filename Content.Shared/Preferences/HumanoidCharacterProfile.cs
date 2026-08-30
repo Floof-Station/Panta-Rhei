@@ -927,13 +927,13 @@ namespace Content.Shared.Preferences
                 throw new InvalidOperationException($"Unknown version {root["version"]}");
             }
 
-            var collection = IoCManager.Instance;
-            profile.EnsureValid(session, collection!);
-
-            // Begin Euphoria additions - profile migrations
+            // Begin Euphoria additions - profile migrations (applied before validation)
             var migrations = IoCManager.Resolve<IHumanoidProfileMigrationsManager>();
             migrations.MigrateProfile(root, profile);
             // End Euphoria additions
+
+            var collection = IoCManager.Instance;
+            profile.EnsureValid(session, collection!);
 
             return profile;
         }
