@@ -1,0 +1,9 @@
+# Loadouts-only items
+
+# The linking behavior is handled in a loadout spawn effect
+- type: entity
+  id: RemoteSignallerCollarLink
+  parent: RemoteSignaller
+  name: shock collar remote
+  description: A handheld device used for remotely sending signals to electronic devices. This one claims to be linked to the owner's shock collar.
+  categories: [ HideSpawnMenu ]

@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleLazarus
+  name: Lazarus Officer's Mantle
+  description: A durathread piece of cloth worn by Officers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Neck/Mantles/lzp_mantle.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Neck/Mantles/lzp_mantle.rsi

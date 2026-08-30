@@ -533,7 +533,7 @@ public sealed partial class ServerApi : IPostInjectInit
                 }
 
                 var serverBwoinkSystem = _entitySystemManager.GetEntitySystem<BwoinkSystem>();
-                var message = new SharedBwoinkSystem.BwoinkTextMessage(player.UserId, SharedBwoinkSystem.SystemUserId, body.Text);
+                var message = new SharedBwoinkSystem.BwoinkTextMessage(player.UserId, SharedBwoinkSystem.SystemUserId, body.Text, adminOnly: body.AdminOnly); //Frontier
                 serverBwoinkSystem.OnWebhookBwoinkTextMessage(message, body);
 
                 // Respond with OK
