@@ -33,7 +33,7 @@
 - type: entity
   parent: OrganBase
   id: OrganBaseTaurConnector
-  name: torso
+  name: taur body
   abstract: true
   components:
   - type: Organ
@@ -41,7 +41,7 @@
   - type: Sprite
     state: taur_body_connector
   - type: VisualOrgan
-    layer: enum.HumanoidVisualLayers.Chest # I have no fucking clue
+    layer: enum.HumanoidVisualLayers.ChestBelow1 # I have no fucking clue
     data:
       state: taur_body_connector
   - type: VisualOrganMarkings
@@ -51,7 +51,7 @@
 - type: entity
   parent: OrganBase
   id: OrganBaseTaurBody
-  name: torso
+  name: taur body connector
   abstract: true
   components:
   - type: Organ
@@ -59,7 +59,7 @@
   - type: Sprite
     state: taur_body
   - type: VisualOrgan
-    layer: enum.HumanoidVisualLayers.Chest # I have no fucking clue
+    layer: enum.HumanoidVisualLayers.ChestBelow2 # I have no fucking clue
     data:
       state: taur_body
   - type: VisualOrganMarkings

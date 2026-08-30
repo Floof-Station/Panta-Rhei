@@ -5,8 +5,6 @@ namespace Content.Shared._Floof.Humanoid;
 
 public interface IHumanoidProfileMigrationsManager
 {
-    public void Initialize();
-
     /// <summary>
     ///     Migrates a profile using predefined migrations.
     /// </summary>

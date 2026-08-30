@@ -44,19 +44,19 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
         { "Shadowkin", "Shadekin" }, // 2026-08-30 - EE shadowkin replaced with Starlight shadekin
     };
 
-    private ISawmill Log = null!;
+    private ISawmill Log;
 
-    public void Initialize()
+    public HumanoidProfileMigrationsManager()
     {
         Log = Logger.GetSawmill("profile.migrations");
         _simpleMigrations.Clear();
 
         // Height was renamed
-        AddMigration("/height", ctx => { ctx.Profile.Height = ctx.ExtractedNode.AsFloat(); });
+        AddMigration("/profile/height", ctx => { ctx.Profile.Height = ctx.ExtractedNode.AsFloat(); });
 
         // During the loadouts rework, trait preferences were changed from simple ProtoIds to "{Prototype: <id>}" strings with plans to extend the format.
         // This only affects SOME profiles, but not all of them.
-        AddMigration("/_traitPreferences", ctx => {
+        AddMigration("/profile/_traitPreferences", ctx => {
             if (ctx.ExtractedNode is not YamlSequenceNode sequence)
                 return;
 
@@ -73,7 +73,7 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
         });
 
         // Species migrations
-        AddMigration("/species", ctx =>
+        AddMigration("/profile/species", ctx =>
         {
             if (_speciesMigrationMap.TryGetValue(ctx.Profile.Species, out var replacementSpecies))
                 ctx.Profile.Species = replacementSpecies;

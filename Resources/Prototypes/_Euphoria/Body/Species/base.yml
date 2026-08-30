@@ -55,7 +55,7 @@
       limit: 10
       required: false
     # Extra limbs?
-    enum.HumanoidVisualLayers.Tail:
+    enum.HumanoidVisualLayers.Tail: # TailBehind and TailOversuit technically exist, but are non-selectable
       limit: 2
       required: false
     enum.HumanoidVisualLayers.Wings:

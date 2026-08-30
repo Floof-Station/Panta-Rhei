@@ -6,6 +6,8 @@
     layers:
     # Torso
     - map: [ "enum.HumanoidVisualLayers.TailBehind" ] # Floofstation
+    - map: [ "enum.HumanoidVisualLayers.ChestBelow1" ] # Euph - i'm not fucking duplicating the sprite order just for arachne
+    - map: [ "enum.HumanoidVisualLayers.ChestBelow2" ] # Euph - i'm not fucking duplicating the sprite order just for arachne
     - map: [ "enum.HumanoidVisualLayers.Chest" ]
 
     # Head

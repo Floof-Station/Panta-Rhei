@@ -45,6 +45,8 @@ namespace Content.Shared.Humanoid
         TailOverlay,
         TailBehind,
         TailOversuit,
+        ChestBelow1, // Extra layers below the chest
+        ChestBelow2,
         // End Euphoria additions
     }
 }

@@ -1,6 +1,7 @@
 # For reagents that are sticky and vicous
 - type: reagent
   id: BaseViscous
+  abstract: true
   viscosity: 0.15
   recognizable: false
   footstepSound:
