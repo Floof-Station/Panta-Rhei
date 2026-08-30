@@ -41,6 +41,7 @@ research-technology-advanced-shuttle-weapon = Advanced Shuttle Weapons
 research-technology-thermal-weaponry = Thermal Weaponry
 research-technology-dual-wielding-technology = Dual Wielding Technology
 research-technology-extended-pistol-magazines = Extended Pistol Magazines
+research-technology-energy-sword-research = Energy Sword Research
 
 research-technology-basic-robotics = Basic Robotics
 research-technology-basic-anomalous-research = Basic Anomalous Research
