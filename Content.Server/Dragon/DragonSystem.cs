@@ -19,7 +19,6 @@ namespace Content.Server.Dragon;
 
 public sealed partial class DragonSystem : EntitySystem
 {
-    [Dependency] private readonly DamageableSystem _damageable = default!; // DeltaV
     [Dependency] private readonly CarpRiftsConditionSystem _carpRifts = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;

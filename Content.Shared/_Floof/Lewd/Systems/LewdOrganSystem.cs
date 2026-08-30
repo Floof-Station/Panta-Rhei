@@ -24,7 +24,6 @@ namespace Content.Shared._Floof.Lewd.Systems;
 public sealed class LewdOrganSystem : EntitySystem
 {
     [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly BodySystem _body = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solContainer = default!;
     [Dependency] private readonly SharedPuddleSystem _puddles = default!;
     [Dependency] private readonly ExamineSystemShared _examines = default!;

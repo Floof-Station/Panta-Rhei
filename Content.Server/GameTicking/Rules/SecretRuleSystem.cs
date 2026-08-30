@@ -1,21 +1,24 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
-using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Shared._DV.CCVars; // DeltaV
-using Content.Shared.GameTicking.Components;
-using Content.Shared.Random;
+using Content.Shared._DV.CCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Robust.Server.Player; // DeltaV
+using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Random;
+using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
-using Content.Shared.GameTicking; // imp
-using Robust.Server.Player; // imp
+// DeltaV
+// DeltaV
+// imp
+
+// imp
 
 namespace Content.Server.GameTicking.Rules;
 

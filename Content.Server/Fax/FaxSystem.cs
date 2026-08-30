@@ -60,10 +60,6 @@ public sealed class FaxSystem : EntitySystem
     [Dependency] private readonly FaxecuteSystem _faxecute = default!;
     [Dependency] private readonly EmagSystem _emag = default!;
     [Dependency] private readonly PageSenderSystem _pageSender = default!; // DeltaV - pagers
-    // Begin Euphoria additions
-    [Dependency] private readonly PowerCellSystem _cell = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    // End Euphoria additions
 
     private static readonly ProtoId<ToolQualityPrototype> ScrewingQuality = "Screwing";
 

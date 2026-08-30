@@ -20,6 +20,7 @@ public sealed class WizdenContentFreeze : GameTest
     public async Task MicrowaveRecipesFreezeTest()
     {
         return; // Floofstation - no.
+#pragma warning disable CS0162 // Unreachable code detected
         var pair = Pair;
         var server = pair.Server;
 
@@ -37,5 +38,6 @@ public sealed class WizdenContentFreeze : GameTest
         {
             Assert.Fail($"Oh, you deleted the microwave recipes? YOU ARE SO COOL! Please lower the number of recipes in MicrowaveRecipesFreezeTest from {recipesLimit} to {recipesCount} so that future contributors cannot add new recipes back.");
         }
+#pragma warning restore CS0162 // Unreachable code detected
     }
 }

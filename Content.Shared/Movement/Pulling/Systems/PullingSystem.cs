@@ -2,7 +2,6 @@ using Content.Shared._DV.Body.Components; // DeltaV
 using Content.Shared._DV.Body.Systems; // DeltaV
 using Content.Shared._ST.Interaction; // Stellar - interaction particles
 using Content.Shared._Floof.OfferItem; // Floof
-using Content.Shared._Floof.OfferItem;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Alert;

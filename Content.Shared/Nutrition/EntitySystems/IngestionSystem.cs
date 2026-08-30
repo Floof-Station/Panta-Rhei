@@ -57,7 +57,6 @@ public sealed partial class IngestionSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly StatusEffectsSystem _effects = default!; //Euphoria
 
     // Body Component Dependencies
     [Dependency] private readonly BodySystem _body = default!;

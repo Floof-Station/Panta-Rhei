@@ -7,12 +7,13 @@ using System.Runtime.CompilerServices;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Content.Server._CD.Records;
 using Content.Server.Administration.Logs;
-using Content.Server.Administration.Managers;
+using Content.Shared._CD.Records;
 using Content.Shared._Common.Consent;
+using Content.Shared._DV.Tips;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Construction.Prototypes;
-using Content.Shared._Common.Consent;
 using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
@@ -22,11 +23,12 @@ using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Utility;
-using Content.Server._CD.Records; // CD - Character Records
-using Content.Shared._CD.Records; // CD - Character Records
-using Content.Shared.FixedPoint; // CD - Allergies
-using Content.Shared._DV.Tips; // DV - Tips
-using Content.Shared._DV.Traits; // DV - Traits
+// CD - Character Records
+// CD - Character Records
+// CD - Allergies
+// DV - Tips
+
+// DV - Traits
 
 namespace Content.Server.Database
 {

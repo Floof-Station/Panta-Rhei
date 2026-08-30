@@ -1,9 +1,10 @@
 using Content.Client._Common.Consent;
+using Content.Client._NF.Emp.Overlays;
+using Content.Client._RMC14.Xenonids.Screech;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
 using Content.Client.Chat.Managers;
 using Content.Client.DebugMon;
-using Content.Client._Common.Consent;
 using Content.Client.Eui;
 using Content.Client.FeedbackPopup;
 using Content.Client.Fullscreen;
@@ -27,8 +28,6 @@ using Content.Client.UserInterface;
 using Content.Client.Viewport;
 using Content.Client.Voting;
 using Content.Shared.Ame.Components;
-using Content.Shared.FeedbackSystem;
-using Content.Shared.Gravity;
 using Content.Shared.Localizations;
 using Robust.Client;
 using Robust.Client.Graphics;
@@ -42,8 +41,9 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Timing;
-using Content.Client._NF.Emp.Overlays; // Frontier
-using Content.Client._RMC14.Xenonids.Screech; // RMC14
+// Frontier
+
+// RMC14
 
 namespace Content.Client.Entry
 {
