@@ -10,6 +10,15 @@
 
 - type: entity
   parent: PosterBase
+  id: maybe-erp
+  name: "Maybe ERP"
+  description: "This poster reminds the crew that erotic acts are simultaneously allowed and disallowed. Confusing."
+  components:
+  - type: Sprite
+    state: maybe-erp
+
+- type: entity
+  parent: PosterBase
   id: PosterFih
   name: "fih"
   description: "A public notice that highlights the dangers of traveling space carps. Stuck neatly beside it is a post-it note, bearing the readout from a health analyzer: according to its data, the individual in question turns out to be a one-of-a-kind half-human, half-fish hybrid!"
@@ -22,10 +31,30 @@
   parent: PosterBase
   id: glorious-leader-poster
   name: "A poster of a Glorious leader"
-  description: "A poster depicting a glorious USSP leader who escaped to the one place not yet corrupted by capitalism." # Euphoria - This poster is a reference to Jim carrey who passed recently; specifically his appearance in Command and conquer 3
+  description: "A poster depicting a glorious USSP leader who escaped to the one place not yet corrupted by capitalism." # This poster is a reference to Jim carrey who passed recently; specifically his appearance in Command and conquer 3
   components:
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: glorious-leader-poster
 
+- type: entity
+  parent: PosterBase
+  id: Join-poster-salv
+  name: "Join your salvage team!"
+  description: "A poster telling YOU that you should sign up to provide resources for your station today!" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Join-poster-salv
+
 # Legit
+
+- type: entity
+  parent: PosterBase
+  id: cat-pictures
+  name: "Cat pictures"
+  description: "A miscellaneous collection of beloved feline friends." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: cat-pictures
