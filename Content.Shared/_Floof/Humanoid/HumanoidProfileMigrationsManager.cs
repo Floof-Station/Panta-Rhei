@@ -44,11 +44,10 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
         { "Shadowkin", "Shadekin" }, // 2026-08-30 - EE shadowkin replaced with Starlight shadekin
     };
 
-    private ISawmill Log;
+    private ISawmill Log { get => field ??= Logger.GetSawmill("profile.migrations");  }
 
     public HumanoidProfileMigrationsManager()
     {
-        Log = Logger.GetSawmill("profile.migrations");
         _simpleMigrations.Clear();
 
         // Height was renamed
