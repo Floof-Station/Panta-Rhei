@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseMobSpeciesOrganic
   id: BaseMobVox
   abstract: true
@@ -196,6 +196,7 @@
             state: hair
   - type: Inventory
     speciesId: vox
+    templateId: wideback #Euphoria
     displacements:
       jumpsuit:
         sizeMaps:
