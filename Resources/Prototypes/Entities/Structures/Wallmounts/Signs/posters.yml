@@ -62,7 +62,7 @@
   parent: PosterBase
   id: PosterContrabandFreeTonto
   name: "Free Tonto"
-  description: "A salvaged shred of a much larger flag, colors bled together and faded from age."
+  description: "A salvaged shred of a much larger flag, colors bled together and faded from age." # Euphoria Archival Info - This is unchanged, however I will note the origin of it is a player, said to be a griefer, under the name Tonto who was banned
   components:
   - type: Sprite
     state: poster1_contraband
@@ -98,7 +98,7 @@
   parent: PosterBase
   id: PosterContrabandSyndicateRecruitment
   name: "Syndicate Recruitment"
-  description: "See the galaxy! Shatter corrupt megacorporations! Join today!"
+  description: "See the galaxy! Get top of the line equipment! Join today!" # Euphoria - Replacement of "Shatter Corrupt Megacorporations", risks biting many Syndicate involved groups in the ass.
   components:
   - type: Sprite
     state: poster5_contraband
@@ -134,7 +134,7 @@
   parent: PosterBase
   id: PosterContrabandMissingGloves
   name: "Missing Gloves"
-  description: "This poster references the uproar that followed Nanotrasen's financial cuts toward insulated-glove purchases."
+  description: "This poster references the uproar that followed Hestia Galactic Incorporated's financial cuts toward insulated-glove purchases." # Euphoria - NanoTrasen does not buy our generic equipment
   components:
   - type: Sprite
     state: poster9_contraband
@@ -143,7 +143,7 @@
   parent: PosterBase
   id: PosterContrabandHackingGuide
   name: "Hacking Guide"
-  description: "This poster details the internal workings of the common Nanotrasen airlock. Sadly, it appears out of date."
+  description: "This poster details the internal workings of a standard station airlock. If only the control panel's wiring wasn't changed for safety." # Euphoria - NanoTrasen does not produce our airlocks, as far as I am aware.
   components:
   - type: Sprite
     state: poster10_contraband
@@ -152,7 +152,7 @@
   parent: PosterBase
   id: PosterContrabandRIPBadger
   name: "RIP Badger"
-  description: "This seditious poster references Nanotrasen's genocide of a space station full of badgers."
+  description: "A poster commemorating a pet badger that was lost to space. The badger may be gone, but this poster ensure they are not forgotten." # Euphoria - Replaced flippant mention of genocide of badgers by NanoTrasen with poster mourning loss of a pet.
   components:
   - type: Sprite
     state: poster11_contraband
@@ -197,7 +197,7 @@
   parent: PosterBase
   id: PosterContrabandPower
   name: "Power"
-  description: "A poster that positions the seat of power outside Nanotrasen."
+  description: "A poster that positions the seat of power outside Central Command." # Euphoria - CentComm is more significant than NanoTrasen to HGI broadly, emphasis placed on CC over NT
   components:
   - type: Sprite
     state: poster16_contraband
@@ -213,9 +213,9 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandCommunistState
-  name: "Communist State"
-  description: "All hail the Communist party!"
+  id: PosterContrabandSovietState # Euphoria - ID made consistent with name
+  name: "Soviet State" # Euphoria - Hammer and Sickle is primarily Soviet iconography
+  description: "The dream of a people, their fortress secure!" # Euphoria - Lyrics of Paul Robeson's adaption of Soviet Anthem (1949)
   components:
   - type: Sprite
     state: poster18_contraband
@@ -251,7 +251,7 @@
   parent: PosterBase
   id: PosterContrabandKosmicheskayaStantsiya
   name: "Kosmicheskaya Stantsiya 13 Does Not Exist"
-  description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
+  description: "A poster mocking NanoTrasen's historic denial of the existence of the derelict station near Space Station 14." # Euphoria - The wreck exists near our station, Space Station 14. NanoTrasen historically denies this station, suggested by Lore Head and SS13.
   components:
   - type: Sprite
     state: poster22_contraband
@@ -260,7 +260,7 @@
   parent: PosterBase
   id: PosterContrabandRebelsUnite
   name: "Rebels Unite"
-  description: "A poster urging the viewer to rebel against Nanotrasen."
+  description: "A poster urging the viewer to rebel against corporate interests." # Euphoria - We don't specifically work for NanoTrasen
   components:
   - type: Sprite
     state: poster23_contraband
@@ -332,7 +332,7 @@
   parent: PosterBase
   id: PosterContrabandCC64KAd
   name: "CC 64K Ad"
-  description: "The latest portable computer from Comrade Computing, with a whole 64kB of ram!"
+  description: "The latest portable computer from Comrade Computing, with a whole 64kB of ram! Computers for your lap was a gimmick that never caught on." # Euphoria - Either failed retrofuturism or another communism joke that's coming from SS13
   components:
   - type: Sprite
     state: poster31_contraband
@@ -341,7 +341,7 @@
   parent: PosterBase
   id: PosterContrabandPunchShit
   name: "Punch Shit"
-  description: "Fight things for no reason, like a man!"
+  description: "Fight things for no reason, the cops can't stop you!" # Euphoria - Women and Non-Binaries can also do violence now, yippee.
   components:
   - type: Sprite
     state: poster32_contraband
@@ -458,7 +458,7 @@
   parent: PosterBase
   id: PosterContrabandFreeSyndicateEncryptionKey
   name: "Free Syndicate Encryption Key"
-  description: "A poster about traitors begging for more."
+  description: "A poster about ease of access to Syndicate Encryption Key." # Euphoria - Syndicate get a free key, changed from joke about syndicate wanting free key. Rejoice.
   components:
   - type: Sprite
     state: poster46_contraband
@@ -476,7 +476,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
-  description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
+  description: "All the interns at Central Command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?" # Euphoria - Removed lizardpeople reference, there are literally lizards as your coworkers. Fixed spelling. Removed weird first sentence, poster does not need to tell you not to believe it.
   components:
   - type: Sprite
     state: poster48_contraband
@@ -540,7 +540,7 @@
   parent: PosterBase
   id: PosterContrabandRevolt
   name: "Revolt"
-  description: "Revolutionist propaganda, manufactured by the Syndicate."
+  description: "Dissent made concrete - or, well, paper." # Euphoria - Not every "bad guy" is Syndicate, many companies in Syndicate invest in HGI and would not be in favour of revolt, total rewrite.
   components:
   - type: Sprite
     state: poster56_contraband
@@ -576,7 +576,7 @@
   parent: PosterBase
   id: PosterContrabandEnlistGorlex
   name: "Enlist"
-  description: "Enlist with the Gorlex Marauders today! See the galaxy, kill corpos, get paid!"
+  description: "Enlist with the Gorlex Marauders today! See the galaxy, pilot your own shuttle, get paid!" # Euphoria - Gorlex Marauders do not invest in HGI however are reliant on Cybersun, anti-corprate messaging expunged.
   components:
     - type: Sprite
       state: poster60_contraband
@@ -585,7 +585,7 @@
   parent: PosterBase
   id: PosterContrabandInterdyne
   name: "Interdyne Pharmaceutics: For the Health of Humankind"
-  description: "An advertisement for Interdyne Pharmaceutics' GeneClean clinics. 'Become the master of your own body!'"
+  description: "An advertisement for Interdyne Pharmaceutics' GeneClean clinics. \"Become the master of your own body!\"" # Euphoria - Quotation mark standardization
   components:
     - type: Sprite
       state: poster61_contraband
@@ -594,7 +594,7 @@
   parent: PosterBase
   id: PosterContrabandWaffleCorp
   name: "Make Mine a Waffle Corp: Fine Rifles, Economic Prices"
-  description: "An old advertisement for Waffle Corp rifles. 'Better weapons, lower prices!'"
+  description: "An old advertisement for Waffle Corp rifles. \"Better weapons, lower prices!\"" # Euphoria - Quotation mark standardization
   components:
     - type: Sprite
       state: poster62_contraband
@@ -648,8 +648,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitNanotrasenLogo
-  name: "Nanotrasen Logo"
-  description: "A poster depicting the Nanotrasen logo."
+  name: "NanoTrasen Logo" # Euphoria - Capitalization
+  description: "A poster depicting the NanoTrasen logo." # Euphoria - Capitalization
   components:
   - type: Sprite
     state: poster2_legit
@@ -694,7 +694,7 @@
   parent: PosterBase
   id: PosterLegitScience
   name: "Science"
-  description: "A poster depicting an atom."
+  description: "A modernized poster depicting an atom." # Euphoria - Referenced now 100th anniversary poster, as they are both SCIENCE with depiction of atom.
   components:
   - type: Sprite
     state: poster7_legit
@@ -863,9 +863,9 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterLegit50thAnniversaryVintageReprint
-  name: "50th Anniversary Vintage Reprint"
-  description: "A reprint of a poster from 2505, commemorating the 50th Anniversary of Nanoposters Manufacturing, a subsidiary of Nanotrasen."
+  id: PosterLegit100thAnniversaryVintageReprint # Euphoria - Time adjustment
+  name: "100th Anniversary Vintage Reprint" # Euphoria - Time adjustment
+  description: "A reprint of a poster from 2425, commemorating the 100th Anniversary of Nanoposters Manufacturing, a subsidiary of NanoTrasen." # Euphoria - Capitalization, time adjustment, use of time adjustment due to term Science rather than Epistemics
   components:
   - type: Sprite
     state: poster26_legit
@@ -883,7 +883,7 @@
   parent: PosterBase
   id: PosterLegitPDAAd
   name: "PDA Ad"
-  description: "A poster advertising the latest PDA from Nanotrasen suppliers."
+  description: "A poster advertising a new commercial PDA from NanoTrasen, the fourth that year." # Euphoria - PDA design on poster is an old sprite, thus changed description to reflect it a little bit, while also adding in a joke based on Apple's iPhone releases
   components:
   - type: Sprite
     state: poster28_legit
@@ -892,7 +892,7 @@
   parent: PosterBase
   id: PosterLegitEnlist
   name: "Enlist"
-  description: "Enlist in the NanoTrasen ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads
+  description: "Enlist in the GALPOL ERT reserves today!" # DeltaV - expunged blatant reference to Division of Asset Protection death squads | Euphoria - ERT is under GALPOL not NanoTrasen per Euphoria Lore
   components:
   - type: Sprite
     sprite: _DV/Structures/Wallmounts/Posters/legit.rsi # DeltaV - resprite to an ERT
@@ -938,7 +938,7 @@
   parent: PosterBase
   id: PosterLegitNoERP
   name: "No ERP"
-  description: "This poster reminds the crew that Eroticism and Pornography are banned on Nanotrasen stations."
+  description: "This poster reminds the crew that Eroticism and Pornography are banned when there's work to be done." # Euphoria - Banned on the job for HGI employees, not defacto by NanoTrasen, job comes first after all.
   components:
   - type: Sprite
     state: poster34_legit
@@ -965,7 +965,7 @@
   parent: PosterBase
   id: PosterLegitThereIsNoGasGiant
   name: "There Is No Gas Giant"
-  description: "Nanotrasen has issued posters, like this one, to all stations reminding them that rumours of a gas giant are false."
+  description: "Central Command reminds the crew to avoid undue speculation surrounding gas miners harvesting from a gas giant due increased interrogation of interns." # Euphoria - Referencing the Gas Giant contra poster, replacing NanoTrasen with Central Command, broadly rewritten to keep same idea but phrased better
   components:
   - type: Sprite
     state: poster37_legit
@@ -974,7 +974,7 @@
   parent: PosterBase
   id: PosterLegitJustAWeekAway
   name: "Just a Week Away..."
-  description: A poster advertising a long delayed project, it still claims it to be 'just a week away...'
+  description: "A poster advertising a long delayed project, it still claims it to be \"just a week away...\"" # Euphoria - Quotation mark standardization.
   components:
   - type: Sprite
     state: poster38_legit
@@ -991,8 +991,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitAnatomyPoster
-  name: "Anatomy of a spessman"
-  description: "A poster showing the bits and bobs that makes you... you!"
+  name: "Anatomy of a human" # Euphoria - Human specifically.
+  description: "A poster showing the bits and bobs that makes you... you! Unfortunately, it only depicts a standard Terran Human." # Euphoria - What the poster actually depicts, possibly would want a resprite to be more generic anatomy?
   components:
   - type: Sprite
     state: poster40_legit
@@ -1063,8 +1063,8 @@
 - type: entity
   parent: PosterBase
   id: PosterLegitVacation
-  name: "Nanotrasen Corporate Perks: Vacation"
-  description: "This informational poster provides information on some of the prizes available via the NT Corporate Perks program, including a two-week vacation for two on the resort world Idyllus."
+  name: "Resort: Getaway" # Euphoria - Changing to Getaway Station advertisement, sprite needs NT logo removed, out of current scope.
+  description: "This informational poster provides information on another one of Hestia Galactic Incorporated's stations." # Euphoria - Changed entirely to reference Getaway Station
   components:
     - type: Sprite
       state: poster48_legit
@@ -1091,7 +1091,7 @@
   parent: PosterBase
   id: PosterLegitNTTGC
   name: "Nanotrasen Tactical Game Cards"
-  description: "An advertisement for Nanotrasen's TCG cards: BUY MORE CARDS."
+  description: "An advertisement for NanoTrasen's TCG cards: BUY MORE CARDS." # Euphoria - Capitalization
   components:
     - type: Sprite
       state: poster51_legit
@@ -1127,7 +1127,7 @@
   parent: PosterBase
   id: PosterLegitHelio
   name: Helio Logistics ad
-  description: "A poster advertising Helio Logistics and their adorable mascot. The slogan reads 'Come rain or shine, we deliver on time.'"
+  description: "A poster advertising Helio Logistics and their adorable mascot. The slogan reads \"Come rain or shine, we deliver on time.\"" # Euphoria - Quotation mark standradization
   components:
   - type: Sprite
     state: poster55_legit
