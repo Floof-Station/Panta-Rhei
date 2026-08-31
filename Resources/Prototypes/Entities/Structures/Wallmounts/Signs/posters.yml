@@ -635,16 +635,6 @@
   - type: Sprite
     state: poster66_contraband
 
-- type: entity
-  parent: PosterBase
-  id: glorious-leader-poster
-  name: "A poster of a Glorious leader"
-  description: "A poster depicting a glorious USSP leader who escaped to the one place not yet corrupted by capitalism." # Euphoria - This poster is a reference to Jim carrey who passed recently; specifically his appearance in Command and conquer 3
-  components:
-  - type: Sprite
-    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
-    state: glorious-leader-poster
-
 # Legit
 - type: entity
   parent: PosterBase
