@@ -57,14 +57,9 @@
   components:
   - type: Sprite
     sprite: _Euphoria/Clothing/Back/duffel-napsack.rsi
-  #- type: Clothing
-  #  quickEquip: false
-  #  slots:
-  #  - back
-  #  - suitStorage
   - type: Storage
     grid:
-    - 0,0,11,4
+    - 0,0,11,4 #Just large enough for 2 people.
     whitelist:
       tags:
       - CanPilot # ONLY carries player characters, nothing else!
