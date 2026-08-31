@@ -48,3 +48,23 @@
     whitelist:
       tags:
       - CanPilot # ONLY carries player characters, nothing else!
+
+- type: entity #Euphoria | Bigger napsack for cuddling!
+  parent: ClothingBackpackNapsack
+  id: ClothingBackpackNapsackDuffel
+  name: duffel napsack
+  description: A very large, padded bag with breathable mesh sides. Advertised as a portable camping tent for felinids.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Back/duffel-napsack.rsi
+  #- type: Clothing
+  #  quickEquip: false
+  #  slots:
+  #  - back
+  #  - suitStorage
+  - type: Storage
+    grid:
+    - 0,0,11,4
+    whitelist:
+      tags:
+      - CanPilot # ONLY carries player characters, nothing else!
