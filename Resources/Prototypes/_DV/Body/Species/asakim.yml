@@ -106,7 +106,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.48
+          radius: 0.39 #Euph change. Was 0.48, gets stuck in doors. 0.39 is same as Chitinid.
         density: 275 # Its an abandoned bioweapon species with 4 arms, of course it should be able to fight a Oni.
         restitution: 0.0
         mask:
@@ -142,13 +142,13 @@
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
-  #- type: LanguageKnowledge # DeltaV - ee language port when
-  #  speaks:
-  #  - Draconic
-  #  - Azaziba
-  #  understands:
-  #  - Draconic
-  #  - Azaziba
+  - type: LanguageKnowledge # DeltaV - ee language port when # Floofstation - now
+    speaks:
+    - Draconic
+    - Azaziba
+    understands:
+    - Draconic
+    - Azaziba
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable
@@ -205,8 +205,8 @@
     factions:
     - Syndicate # Making new AI factions is annoying with all the hostilities I have to add, whatever.
   # Begin DeltaV Additions
-  - type: SyllableObfuscationAccent # unintelligable language
-    accent: draconian
+  #  - type: SyllableObfuscationAccent # unintelligable language # Floof - intelligible language
+  #    accent: draconian
   - type: BlockWriting # can't speak common can't write common. better get an AAC tablet
   # End DeltaV Additions
   - type: NightVision

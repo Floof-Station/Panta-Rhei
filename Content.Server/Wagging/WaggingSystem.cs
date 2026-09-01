@@ -149,12 +149,6 @@ public sealed class WaggingSystem : EntitySystem
             }
         }
 
-        if (!_prototype.HasIndex<MarkingPrototype>(newMarkingId))
-        {
-            Log.Warning($"{ToPrettyString(ent):ent} tried toggling wagging but {newMarkingId} marking doesn't exist");
-            return false;
-        }
-
         if (_prototype.HasIndex<MarkingPrototype>(newMarkingId))
             return true;
 

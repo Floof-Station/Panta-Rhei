@@ -80,7 +80,7 @@
         Base: splat
   - type: Edible
   - type: Hunger
-    baseDecayRate: 0.1
+    baseDecayRate: 0.066 # Euph - * 0.66
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager

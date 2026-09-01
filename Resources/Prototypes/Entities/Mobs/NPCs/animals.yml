@@ -429,7 +429,7 @@
     - terrible
     - chewy
   - type: Hunger
-    baseDecayRate: 0.25
+    baseDecayRate: 0.16 # Euph - *0.66
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -2078,7 +2078,7 @@
       Peckish: 15
       Starving: 10
       Dead: 0
-    baseDecayRate: 0.5 # I'm very hungry! Give me. The cheese.
+    baseDecayRate: 0.2 # I'm very hungry! Give me. The cheese. # Euph - 0.5->0.2 as this makes mice both annoying to play and annoying to deal with
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -3964,7 +3964,7 @@
     flavors:
     - meaty
   - type: Hunger
-    baseDecayRate: 0.3
+    baseDecayRate: 0.12 # Euph - *2/5 just like the mouse
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager

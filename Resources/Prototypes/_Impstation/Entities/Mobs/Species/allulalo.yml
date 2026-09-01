@@ -10,7 +10,7 @@
   # - type: GoobAbsorbable # Delta V - not a system we have
   #  biomassRestored: 1.0
   - type: Hunger
-    baseDecayRate: 0.02 # 30% ish more than default
+    baseDecayRate: 0.013 # 30% ish more than default # Euph - * 0.66
   - type: Thirst
     baseDecayRate: 0.02 # 30% ish more than default
   - type: Fixtures

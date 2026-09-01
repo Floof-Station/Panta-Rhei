@@ -282,7 +282,7 @@
       30: Critical # Whimpier than mothroaches (40/60)
       50: Dead
   - type: Hunger
-    baseDecayRate: 0.15 # slower than mouse (0.5), even if they will act similarly
+    baseDecayRate: 0.11 # slower than mouse (0.5), even if they will act similarly # Euph - * 0.66
   - type: Butcherable
     spawned:
     - id: FoodMeat
