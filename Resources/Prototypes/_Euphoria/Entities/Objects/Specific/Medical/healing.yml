@@ -13,8 +13,9 @@
     - Robotic
     damage:
       types:
-        Bloodloss: -5 # Since IPCs do not naturally heal from bloodloss
-    modifyBloodLevel: 15 #restores about 5% blood per use on standard humanoids.
+        Bloodloss: -10 # Since IPCs do not naturally heal from bloodloss
+    modifyBloodLevel: 30 # about 1/0 of the blood pool of an average humanoid
+    delay: 6 # about 2x than long as normal ones
   - type: Stack
     stackType: BloodpackOil
     count: 10
