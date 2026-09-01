@@ -167,7 +167,8 @@ public sealed class WaggingSystem : EntitySystem
     // Checks if the entity can wag
     public bool CanWag(Entity<WaggingComponent> ent)
     {
-        if (!_visualBody.TryGatherMarkingsData(ent.Owner, [ent.Comp.Layer], out var _, out var _, out var applied))
+        if (!TryComp<VisualBodyComponent>(ent, out var visBodyComp)
+            || !_visualBody.TryGatherMarkingsData((ent.Owner, visBodyComp), [ent.Comp.Layer], out var _, out var _, out var applied))
             return false;
 
         if (!applied.TryGetValue(ent.Comp.Organ, out var markingsSet))
