@@ -10,10 +10,15 @@
   maleFirstNames: names_shadekin
   femaleFirstNames: names_shadekin
   naming: First
-  baseScale: "0.9, 0.9"
-  # Delta V - Comment out
-  # minAge: 18
-  # maxAge: 300
-  # youngAge: 30
-  # oldAge: 250
+  # Begin Euphoria changes - species use height
+  #  baseScale: "0.9, 0.9"
+  minHeight: 0.63
+  maxHeight: 1.12
+  defaultHeight: 0.8
+  # End Euphoria changes - species use height
+  # Delta V - Comment out # Euph - uncommented
+  minAge: 18
+  maxAge: 300
+  youngAge: 30
+  oldAge: 250
   # customName: true

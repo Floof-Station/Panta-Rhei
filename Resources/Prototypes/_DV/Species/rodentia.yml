@@ -10,8 +10,9 @@
   femaleFirstNames: NamesRodentiaFemale
   lastNames: NamesRodentiaLast
   naming: LastFirst
-  # baseScale: "0.8, 0.8" # Floofstation
-  # minHeight: 0.95 # Floofstation
-  minHeight: 0.65 # Floofstation
-  maxHeight: 1.1 # Floofstation
-  defaultHeight: 0.8 # Floofstation
+  # Begin Euphoria changes - species use height
+  #  baseScale: "0.8, 0.8"
+  minHeight: 0.56
+  maxHeight: 1.1 # 1.2 * 0.8 = 0.96, but we set it higher to allow more expression
+  defaultHeight: 0.8
+  # End Euphoria changes

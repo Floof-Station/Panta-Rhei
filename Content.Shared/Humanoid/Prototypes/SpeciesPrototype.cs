@@ -62,7 +62,7 @@ public sealed partial class SpeciesPrototype : IPrototype
     public EntProtoId DollPrototype { get; private set; } = default!;
 
     /// <summary>
-    /// Allow Custom Specie Name for this Specie.
+    /// Euph - whether to allow setting custom species name for this species.
     /// </summary>
     [DataField]
     public Boolean CustomName { get; private set; } = true;
