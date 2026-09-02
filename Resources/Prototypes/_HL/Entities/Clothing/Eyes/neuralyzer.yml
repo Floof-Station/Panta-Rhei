@@ -11,6 +11,18 @@
     - type: Brainwasher
 
 - type: entity
+  parent: [ClothingEyesBase]
+  id: ClothingEyesSyndilyzer
+  name: Syndicate Hypnovisor
+  description: The syndicate's pet project in hypnosis therapy, adapted from Euphoria-developed prototypes. It has multiple strength settings, ranging from mild hypnosis to full brainwashing - but all of them have the potential to eventually be permanent should the subject be willing.
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Clothing/Eyes/Hud/syndilyzer.rsi
+    - type: Clothing
+      sprite: _Euphoria/Clothing/Eyes/Hud/syndilyzer.rsi
+    - type: Brainwasher
+
+- type: entity
   id: ActionOpenCompulsionsMenu
   name: View Compulsions
   description: Review the warm fuzzy compulsions embracing your mind.

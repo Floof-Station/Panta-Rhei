@@ -2,8 +2,8 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     Title="You've been brainwashed!"
-    MinSize="600 525"
-    MaxSize="600 525">
+    MinSize="600 550"
+    MaxSize="600 570">
     <BoxContainer
         Orientation="Vertical"
         Margin="0">
@@ -20,7 +20,7 @@
                 Text="Compulsions are akin to 'soft' silicon laws - RP-guiding thoughts that your character feels the urge to follow. [bold]However, they are strictly [color=#FFC0CB]suggestions or urges[/color], not binding laws.[/bold] Compulsions only have as much control over your character as you (or they) are willing, and you do not have to follow any compulsions that you do not consent to or feel uncomfortable with."/>
             <RichTextLabel
                 Margin="15 15 15 0"
-                Text="[bold]Remember that your role and job come first:[/bold] compulsions may be temporarily ignored if they threaten to get in the way of your duties, and they do [bold]not[/bold] override server rules in cases where they apply."/>
+                Text="[bold]Remember that your role and job come first:[/bold] compulsions may be temporarily ignored if they threaten to get in the way of your duties, and they do [bold]not[/bold] override server rules in cases where they apply. [bold]You cannot be hypnotised into becoming an antagonist - doing so is still considered self-antagging.[/bold]"/>
             <RichTextLabel
                 Margin="15 15 15 0"
                 Text="Your compulsions may dictate whether or not you know or remember that you are being hypnotised. How you interpret your character being hypnotised is up to you, but remember - to you, every compulsion you have is to you entirely [italic]your[/italic] ideas and thoughts, things that feel [italic]right[/italic] to do. Most importantly... enjoy the experience~!"/>
