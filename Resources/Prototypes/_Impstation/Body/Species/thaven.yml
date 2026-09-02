@@ -1,6 +1,6 @@
 ﻿- type: markingsGroup
   id: Thaven
-  onlyGroupWhitelisted: true
+  onlyGroupWhitelisted: false # Euph - species can use common markings
   limits:
     enum.HumanoidVisualLayers.Hair:
       limit: 1

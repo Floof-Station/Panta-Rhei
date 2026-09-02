@@ -3,7 +3,7 @@
 - type: marking
   id: HarpyEarsDefault
   bodyPart: HeadTop
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type: !type:CategoryColoring
@@ -18,7 +18,7 @@
 - type: marking
   id: HarpyTailPhoenix
   bodyPart: Tail
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type: !type:CategoryColoring
@@ -33,7 +33,7 @@
 - type: marking
   id: HarpyTailRooster
   bodyPart: Tail
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type: !type:CategoryColoring
@@ -47,7 +47,7 @@
 - type: marking
   id: HarpyTailFinch
   bodyPart: Tail
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type: !type:CategoryColoring
@@ -61,7 +61,7 @@
 - type: marking
   id: HarpyChestDefault
   bodyPart: Chest
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type: !type:CategoryColoring
@@ -78,7 +78,7 @@
 - type: marking
   id: HarpyLegsDefault
   bodyPart: LLeg
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type: !type:CategoryColoring
@@ -93,7 +93,7 @@
 - type: marking
   id: HarpyFeetDefault
   bodyPart: RFoot
-  groupWhitelist: [Harpy]
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       fallbackTypes:

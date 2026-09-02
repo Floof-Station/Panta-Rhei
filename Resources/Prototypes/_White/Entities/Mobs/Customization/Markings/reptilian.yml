@@ -2,7 +2,7 @@
 - type: marking
   id: LizardHeadVirtuasaur
   bodyPart: Eyes
-  groupWhitelist: [Reptilian, Vulpkanin, Rodentia, Slime, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Oni, Kitsune] # Floof - M3739 - #1084
+# groupWhitelist: [Reptilian, Vulpkanin, Rodentia, Slime, Human, Harpy, IPC, Arachne, Felinid, Tajaran, Oni, Kitsune] # Euph - free markings # Floof - M3739 - #1084
   sprites:
   - sprite: _White/Mobs/Customization/snouts.rsi
     state: virtuasaur
@@ -10,7 +10,7 @@
 - type: marking
   id: LizardHeadCobraHood
   bodyPart: HeadSide
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian_parts.rsi
     state: cobra_hood_with_ears
@@ -21,7 +21,7 @@
 - type: marking
   id: LizardShoutEasternDragon
   bodyPart: Snout
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/snouts.rsi
     state: eastern_dragon
@@ -31,7 +31,7 @@
 - type: marking
   id: LizardShoutEasternDragonUsiki
   bodyPart: Snout
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/snouts.rsi
     state: eastern_dragon
@@ -44,7 +44,7 @@
 - type: marking
   id: SnakeLargeTail
   bodyPart: Tail
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
     - sprite: _White/Mobs/Customization/reptilian_64x32.rsi
       state: snake_large
@@ -65,7 +65,7 @@
 - type: marking
   id: LizardChestSpinesAquatic
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_aquatic
@@ -73,7 +73,7 @@
 - type: marking
   id: LizardChestSpinesAquaticWithoutTail
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_aquatic_alt
@@ -81,7 +81,7 @@
 - type: marking
   id: LizardChestSpinesLong
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_long
@@ -89,7 +89,7 @@
 - type: marking
   id: LizardChestSpinesLongWithoutTail
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_long_alt
@@ -97,7 +97,7 @@
 - type: marking
   id: LizardChestSpinesLongMembrane
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_longmembrane
@@ -105,7 +105,7 @@
 - type: marking
   id: LizardChestSpinesLongMembraneWithoutTail
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_longmembrane_alt
@@ -113,7 +113,7 @@
 - type: marking
   id: LizardChestSpinesShort
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_short
@@ -121,7 +121,7 @@
 - type: marking
   id: LizardChestSpinesShortWithoutTail
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_short_alt
@@ -129,7 +129,7 @@
 - type: marking
   id: LizardChestSpinesShortMembrane
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_shortmembrane
@@ -137,7 +137,7 @@
 - type: marking
   id: LizardChestSpinesShortMembraneWithoutTail
   bodyPart: Chest
-  groupWhitelist: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   sprites:
   - sprite: _White/Mobs/Customization/reptilian.rsi
     state: spines_shortmembrane_alt
