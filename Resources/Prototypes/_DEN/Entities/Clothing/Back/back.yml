@@ -60,6 +60,7 @@
   - type: Storage
     grid:
     - 0,0,11,4 #Just large enough for 2 people.
-    whitelist:
-      tags:
-      - CanPilot # ONLY carries player characters, nothing else!
+  - type: ClothingSpeedModifier #Same "debuff" as the duffel bag.
+    walkModifier: 1
+    sprintModifier: 0.9
+  - type: HeldSpeedModifier
