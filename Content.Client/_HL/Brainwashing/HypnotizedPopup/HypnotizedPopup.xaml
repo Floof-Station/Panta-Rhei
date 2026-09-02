@@ -2,8 +2,8 @@
     xmlns="https://spacestation14.io"
     xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
     Title="You've been brainwashed!"
-    MinSize="600 450"
-    MaxSize="600 450">
+    MinSize="600 525"
+    MaxSize="600 525">
     <BoxContainer
         Orientation="Vertical"
         Margin="0">
@@ -14,16 +14,19 @@
             Margin="0">
             <RichTextLabel
                 Margin="15 15 15 0"
-                Text="[bold]You have been brainwashed, hypnotized, or mind-controlled![/bold] AKA you are compelled, or have compulsions. Similar rules apply as the [color=cyan]silicon laws[/color] rules. Your compulsions are server rules, with minor exceptions. Also alike silicons, you may deny truly unreasonable requests/orders. No one may stop you from leaving to go to cryosleep and log off."/>
+                Text="You have been [bold][color=#FFC0CB]mesmerized![/color][/bold] The soft pulsating lights from the visor have sunk into your mind as a set of hypnotic compulsions!"/>
             <RichTextLabel
                 Margin="15 15 15 0"
-                Text="However being 'compelled' has it's own quirks and behaviours. You [color=#DD0000][bold]CANNOT[/bold][/color] tell you are under any form of mind control, or that anything is even remotely amiss. Your memories of being brainwashed, hypnotised, or mind-controlled are [color=#DD0000]completely missing[/color]. Every compulsion you have is—to you—entirely [italic]your[/italic] idea and thoughts."/>
+                Text="Compulsions are akin to 'soft' silicon laws - RP-guiding thoughts that your character feels the urge to follow. [bold]However, they are strictly [color=#FFC0CB]suggestions or urges[/color], not binding laws.[/bold] Compulsions only have as much control over your character as you (or they) are willing, and you do not have to follow any compulsions that you do not consent to or feel uncomfortable with."/>
             <RichTextLabel
                 Margin="15 15 15 0"
-                Text="The only exception to these rules, is if the compulsions themselves allow it, or require it. Compulsions may make it so you are aware you're under influence. Compulsions may unshield hidden or erased memories."/>
+                Text="[bold]Remember that your role and job come first:[/bold] compulsions may be temporarily ignored if they threaten to get in the way of your duties, and they do [bold]not[/bold] override server rules in cases where they apply."/>
             <RichTextLabel
                 Margin="15 15 15 0"
-                Text="[font size=8]P.S. Regardless of your consent settings or consent given, consent can be withdrawn at any time.[/font]"/>
+                Text="Your compulsions may dictate whether or not you know or remember that you are being hypnotised. How you interpret your character being hypnotised is up to you, but remember - to you, every compulsion you have is to you entirely [italic]your[/italic] ideas and thoughts, things that feel [italic]right[/italic] to do. Most importantly... enjoy the experience~!"/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="[font size=8]P.S. Regardless of your consent settings or consent given, remember that consent can be withdrawn at any time.[/font]"/>
         </BoxContainer>
         <Button
             Name="AcknowledgeButton"
