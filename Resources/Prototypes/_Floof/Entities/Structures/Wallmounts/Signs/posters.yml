@@ -48,6 +48,38 @@
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: Join-poster-salv
 
+- type: entity
+  parent: PosterBase
+  id: Sax-poster
+  name: "Sax poster"
+  description: "A poster advertising a 'sex having contest' with a snazzy saxophone player" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Sax-poster
+
+- type: entity
+  parent: PosterBase
+  id: Saftey-moth-club
+  name: "Safety moth - Safe partying"
+  description: "Safety moth™ reminds you to drink any drinks given to you, and to always carry a condom." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Saftey-moth-club
+
+- type: entity
+  parent: PosterBase
+  id: Gorlex-Girlfriends
+  name: "Gorlex Girlfriends poster"
+  description: "A limited edition pinup that was given for FREE with every 32'nd anniversary magazine of Gorlex Girlfriends!"
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Gorlex-Girlfriends
+
+
+
 # Legit
 
 - type: entity
@@ -59,3 +91,33 @@
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: cat-pictures
+
+- type: entity
+  parent: PosterBase
+  id: Sex-poster
+  name: "Sex poster"
+  description: "A poster advertising a 'saxophone playing contest' with a sexy sex-haver"  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Sex-poster
+
+- type: entity
+  parent: PosterBase
+  id: Saftey-moth-bar
+  name: "Safety moth - Safe drinking"
+  description: "Safety moth™ reminds you to cross-reference any drink you do not imminently recognize with the PDA's built in guidebook feature, and to drink responsibly by keeping your intake under 3.5 liters of alcohol a day!" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Saftey-moth-bar
+
+- type: entity
+  parent: PosterBase
+  id: Centcom-Chads-Poster
+  name: "Centcom Chads Limited edition Hangup"
+  description: "A limited edition reshooting of Chadious Thundercock for the 50'th aniversery for Centcom chads! Now in pinup form!" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Centcom-Chads-Poster
