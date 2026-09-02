@@ -96,7 +96,7 @@
       - ReagentId: Oil
         Quantity: 300
     # minBloodDamage: 8 # Euph - no clue what this field is supposed to be.
-    # bleedReductionAmount: 0 # No natural wound closing whatsoever # Euph - defualt wound closing
+    bleedReductionAmount: 0.1 # No natural wound closing whatsoever # Euph - slow wound closing
     bloodlossThreshold: 0.75 # Everyone else start taking bloodloss damage at 90%, but with no natural bleeding stop - IPC can last for a bit longer
   - type: IPCWeldClosesWounds
   - type: ZombieImmune
