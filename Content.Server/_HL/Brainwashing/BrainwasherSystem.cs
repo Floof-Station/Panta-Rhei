@@ -11,11 +11,13 @@ using Content.Shared.Flash;
 using Content.Shared.Flash.Components;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs.Components;
+using Robust.Shared.Network;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.StatusEffect;
 using Robust.Server.Audio;
 using Robust.Server.Player;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._HL.Brainwashing;
 
@@ -27,18 +29,28 @@ public sealed class BrainwasherSystem : SharedBrainwasherSystem
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly EuiManager _euiManager = default!;
     [Dependency] private readonly AudioSystem _audioSystem = default!;
+    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffectsSystem = default!;
     [Dependency] private readonly SharedFlashSystem _flashSystem = default!;
     [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly ConsentSystem _consentSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    private List<(EntityUid uid, EntityUid target, BrainwasherComponent component)> _pendingBrainwashUpdates = new();
     public override void Initialize()
     {
         base.Initialize(); // HL: We've added an Init to the Shared System for the client-side verb drawing
 
-        SubscribeLocalEvent<BrainwasherComponent, ClothingGotEquippedEvent>((uid, component, args) => StartBrainwashing(uid, args.Wearer, component));
+        SubscribeLocalEvent<BrainwasherComponent, ClothingGotEquippedEvent>((uid, component, args) => ReadyBrainwashing(uid, args.Wearer, component));
         SubscribeLocalEvent<BrainwasherComponent, ClothingGotUnequippedEvent>(OnUnequipped);
         SubscribeLocalEvent<BrainwasherComponent, EngagedEvent>(Engaged);
+    }
+
+    public override void Update(float frameTime)
+    {
+        if (_net.IsServer)
+            foreach (var (uid, target, component) in _pendingBrainwashUpdates)
+                StartBrainwashing(uid, target, component);
+        _pendingBrainwashUpdates.Clear();
     }
 
     private void OnUnequipped(EntityUid uid, BrainwasherComponent component, ClothingGotUnequippedEvent args)
@@ -79,6 +91,13 @@ public sealed class BrainwasherSystem : SharedBrainwasherSystem
         var brainwashedEvent = new BrainwashedEvent();
         RaiseLocalEvent(user, brainwashedEvent);
         RaiseNetworkEvent(brainwashedEvent, user);
+    }
+
+    private void ReadyBrainwashing(EntityUid uid, EntityUid target, BrainwasherComponent component)
+    {
+        if (_net.IsClient) return;
+
+        _pendingBrainwashUpdates.Add((uid, target, component));
     }
 
     private void StartBrainwashing(EntityUid uid, EntityUid target, BrainwasherComponent component)

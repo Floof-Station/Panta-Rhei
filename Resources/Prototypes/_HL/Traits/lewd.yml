@@ -2,9 +2,11 @@
   id: Brainwasher
   name: hl-trait-Brainwasher-name
   description: hl-trait-Brainwasher-desc
-  category: Physical
-  cost: 1
-  components:
+  category: Lewd
+  cost: 2
+  effects:
+  - !type:AddCompsEffect
+    components:
     - type: Brainwasher
       chardingDuration: 10
       configureText: Configure Brainwashing Compulsions
