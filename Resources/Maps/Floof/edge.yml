@@ -104191,7 +104191,6 @@ entities:
     - type: Transform
       pos: 6.5,-19.5
       parent: 2
-    - type: Timer
   - uid: 13020
     components:
     - type: Transform
@@ -104838,7 +104837,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -43.5,36.5
       parent: 2
-    - type: Timer
   - uid: 12666
     components:
     - type: Transform
@@ -105134,13 +105132,11 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -46.5,-3.5
       parent: 2
-    - type: Timer
   - uid: 12730
     components:
     - type: Transform
       pos: -48.5,-6.5
-      parent: 2
-    - type: Timer
+      parent: 2F
   - uid: 12731
     components:
     - type: Transform
