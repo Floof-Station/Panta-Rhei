@@ -24,3 +24,25 @@
   - type: PressureProtection
     highPressureMultiplier: 0.7
     lowPressureMultiplier: 1000
+
+#Lazarus M91-A - Lore Related
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetHardsuitLazarusM91
+  name: Lazarus M91-A Combat Hardsuit Helmet
+  description: A modified variant of the Solarian Military M91 Combat Suits helmet.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Head/Hardsuits/lazarus.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Head/Hardsuits/lazarus.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: NightVision
+    color: "#FFFFFF"
+    isEquipment: true

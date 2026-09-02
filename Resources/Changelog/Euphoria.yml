@@ -5458,3 +5458,117 @@ Entries:
       message: Water recipe - hotdog water + holy water
   id: 679
   time: '2026-08-26T10:04:10.0000000+00:00'
+- author: CastitoWae
+  changes:
+    - type: Add
+      message: Increased Musician job slots from 1 to 2 in most stations.
+  id: 680
+  time: '2026-08-27T05:54:20.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Fix
+      message: >-
+        Salvage's "Survival" selection on the mining voucher mentioned including
+        a medical tracking implanter, but it did not. It now does.
+  id: 681
+  time: '2026-08-27T06:51:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Added a few new traits, Messy Drinker, Very Messy Drinker, Messy Eater
+        and Messy Smoker.
+  id: 682
+  time: '2026-08-27T06:53:16.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The tether and force guns are researchable T3 tech again.
+  id: 683
+  time: '2026-08-27T06:54:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Puddles of space cleaner will now slowly evaporate.
+  id: 684
+  time: '2026-08-27T10:50:49.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: Robo-neuro will no longer be told to borg everyone.
+    - type: Tweak
+      message: Robo-neuro will receive objectives for all eligible targets for borging.
+  id: 685
+  time: '2026-08-27T10:52:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Revenants will now reveal themselves when colliding with species mobs
+        (this feature was perviously disabled due to a bug)
+  id: 686
+  time: '2026-08-28T08:37:22.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: >-
+        Express Space Courier Trunk removed from CourierDrobe. Now only
+        available in Courier loadout.
+  id: 687
+  time: '2026-08-28T09:33:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Any role will now be able to take the No Paradox Clone trait.
+  id: 688
+  time: '2026-08-28T23:01:01.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Actually add the Strawberry seeds to the seed vending machine.
+  id: 689
+  time: '2026-08-28T23:01:53.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Loadout pets will now follow you around (but will prioritize looking for
+        food when hungry).
+    - type: Add
+      message: >-
+        Loadouts now have a new version of the remote signaller that
+        automatically links to your shock collar.
+    - type: Tweak
+      message: Players can now choose up to 5 trinkets instead of 4.
+  id: 690
+  time: '2026-08-29T10:47:27.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Roboticists can now make clown cars.
+  id: 691
+  time: '2026-08-30T03:09:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: >-
+        Admin only to a bwoink message for admins to send through comments to a
+        player through discord.
+  id: 692
+  time: '2026-08-30T05:11:51.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: >-
+        Added admin spawn only Project Lazarus Combat Gear, as well as GALPOL &
+        TSF banners and clothing.
+    - type: Add
+      message: Added a generic CC Job Icon
+  id: 693
+  time: '2026-08-30T11:17:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Like doctors, paramedics now have access to an advanced topicals belt.
+  id: 694
+  time: '2026-09-01T13:23:22.0000000+00:00'
