@@ -35,7 +35,7 @@ namespace Content.IntegrationTests.Tests
 
         [Test]
         [PairConfig(nameof(Disconnected))]
-        // [Explicit] // Floofstation - OOM bait
+        [Explicit] // Floofstation - OOM bait
         public async Task SpawnAndDeleteAllEntitiesOnDifferentMaps()
         {
             // This test dirties the pair as it simply deletes ALL entities when done. Overhead of restarting the round
@@ -98,7 +98,7 @@ namespace Content.IntegrationTests.Tests
         [Test]
         [Retry(3)] // DeltaV - Ignore intermittent fails
         [PairConfig(nameof(Disconnected))]
-        // [Explicit] // Floofstation - OOM bait
+        [Explicit] // Floofstation - OOM bait
         public async Task SpawnAndDeleteAllEntitiesInTheSameSpot()
         {
             var pair = Pair;
@@ -154,7 +154,7 @@ namespace Content.IntegrationTests.Tests
         ///     all components on every entity.
         /// </summary>
         [Test]
-        // [Explicit] // Floofstation - OOM bait
+        [Explicit] // Floofstation - OOM bait
         public async Task SpawnAndDirtyAllEntities()
         {
             var pair = Pair;
