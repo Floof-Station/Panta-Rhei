@@ -19,6 +19,8 @@
   - type: Stack
     stackType: BloodpackOil
     count: 10
+  - type: StackPrice
+    price: 2 # I suppose oil is more common than blood. This is mainly to avoid exploding the cost of the robotech restock.
 
 - type: entity
   parent: BloodpackOil
