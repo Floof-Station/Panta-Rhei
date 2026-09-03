@@ -1,3 +1,16 @@
+- type: entity
+  id: StationSubmarine
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Pathfinder
+
 - type: gameMap
   id: Submarine
   mapName: 'Submarine'
@@ -5,7 +18,7 @@
   minPlayers: 60
   stations:
     Submarine:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationSubmarine
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Submarine {1}'

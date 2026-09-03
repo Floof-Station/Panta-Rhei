@@ -1459,6 +1459,13 @@
   groupBy: "instrument"
 
 - type: loadout
+  id: Rickenbacker4003Instrument
+  storage:
+    back:
+    - Rickenbacker4003Instrument
+  groupBy: "instrument"
+
+- type: loadout
   id: CheapLighter
   storage:
     back:
@@ -1796,6 +1803,20 @@
     back:
     - WhipTeal
   groupBy: "lewd"
+
+- type: loadout
+  id: CondomPackTeal
+  storage:
+    back:
+    - CondomPackTeal
+  groupBy: "condom"
+
+- type: loadout
+  id: CondomPackPink
+  storage:
+    back:
+    - CondomPackPink
+  groupBy: "condom"
 
 # eyes/glasses
 - type: loadout

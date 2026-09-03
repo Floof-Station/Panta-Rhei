@@ -3,7 +3,7 @@
   name: department-Logistics # DeltaV
   description: department-Logistics-description # DeltaV
   color: "#A46106"
-  radioChannel: Supply # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   roles:
   - CargoTechnician
   - Quartermaster
@@ -19,7 +19,7 @@
   name: department-Civilian
   description: department-Civilian-description
   color: "#9FED58"
-  radioChannel: Service # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   weight: -10
   roles:
   - Bartender
@@ -67,7 +67,7 @@
   name: department-Command
   description: department-Command-description
   color: "#334E6D"
-  radioChannel: Command # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   roles:
   - Captain
   - ChiefEngineer
@@ -95,7 +95,7 @@
   name: department-Engineering
   description: department-Engineering-description
   color: "#EFB341"
-  radioChannel: Engineering # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
@@ -108,7 +108,7 @@
   name: department-Medical
   description: department-Medical-description
   color: "#52B4E9"
-  radioChannel: Medical # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   roles:
   - Chemist
   - ChiefMedicalOfficer
@@ -127,7 +127,7 @@
   name: department-Security
   description: department-Security-description
   color: "#DE3A3A"
-  radioChannel: Security # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   weight: 20
   roles:
   - HeadOfSecurity
@@ -149,7 +149,7 @@
   name: department-Epistemics # DeltaV
   description: department-Epistemics-description # DeltaV
   color: "#D381C9"
-  radioChannel: Science # DeltaV
+  radioChannel: Common # DeltaV, Euphoria - change to common
   roles:
   - ResearchDirector
   - Scientist

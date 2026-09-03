@@ -1,4 +1,17 @@
-﻿- type: gameMap
+﻿- type: entity
+  id: StationGetaway
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Pathfinder
+
+- type: gameMap
   id: Getaway
   mapName: Getaway
   mapPath: /Maps/Floof/getaway.yml # Floofstation
@@ -6,7 +19,7 @@
   maxPlayers: 120
   stations:
     Getaway:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationGetaway
       components:
       - type: StationEmergencyShuttle #floofstation
         emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/evac_getaway.yml #floofstation

@@ -1,7 +1,6 @@
 using System.Text.RegularExpressions;
-using Content.Server.GameTicking;
-using Content.Server.GameTicking.Events;
 using Content.Server.Fax;
+using Content.Server.GameTicking;
 using Content.Server.Station.Systems;
 using Content.Shared._EE.CCVars;
 using Content.Shared._DV.CCVars;
@@ -38,15 +37,24 @@ public sealed class StationGoalPaperSystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarted);
+        // Was: SubscribeLocalEvent<RoundStartingEvent>(OnRoundStarted);
+        // Changed to GameRunLevelChangedEvent so we can check if the round is running
+        // our event needs to happen AFTER the round has started so we know the fax machines
+        // have finished initializing, and we don't have the fax que cleared.
+        SubscribeLocalEvent<GameRunLevelChangedEvent>(OnRunLevelChanged);
     }
 
-
-    private void OnRoundStarted(RoundStartingEvent ev)
+    private void OnRunLevelChanged(GameRunLevelChangedEvent ev)
     {
+        // if we are not in round return (other otions are in lobby or post round
+        if (ev.New != GameRunLevel.InRound)
+            return;
+
         if (_config.GetCVar(EECVars.StationGoalsEnabled)
-        	&& _random.Prob(_config.GetCVar(EECVars.StationGoalsChance))) // changed this to be in the _EE namespace
+            && _random.Prob(_config.GetCVar(EECVars.StationGoalsChance))) // changed this to be in the _EE namespace
+        {
             SendRandomGoal();
+        }
     }
 
     /// <summary>

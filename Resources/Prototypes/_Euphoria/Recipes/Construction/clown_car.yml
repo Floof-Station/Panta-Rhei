@@ -1,0 +1,40 @@
+﻿- type: constructionGraph
+  id: ClownCar
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bot
+      steps:
+      - material: Steel
+        amount: 10
+      - tag: CluwneHappyHonk
+        icon:
+          sprite: Objects/Storage/Happyhonk/cluwne.rsi
+          state: box
+        name: construction-graph-tag-happy-honk-meal
+      - tag: BananiumHorn
+        icon:
+          sprite: Objects/Fun/bananiumhorn.rsi
+          state: icon
+        name: construction-graph-tag-clown-bannium-bike-horn
+        doAfter: 2
+      - tag: ProximitySensor
+        icon:
+          sprite: Objects/Misc/proximity_sensor.rsi
+          state: icon
+        name: construction-graph-tag-proximity-sensor
+      - tag: BorgArm
+        icon:
+          sprite: Mobs/Silicon/drone.rsi
+          state: l_hand
+        name: construction-graph-tag-borg-arm
+        doAfter: 2
+      - tag: ClothingShoesClownBanana
+        icon:
+          sprite: Clothing/Shoes/Specific/clown_banana.rsi
+          state: icon
+        name: construction-graph-tag-clown-banana-shoes
+        doAfter: 2
+  - node: bot
+    entity: MobSiliconClownCar

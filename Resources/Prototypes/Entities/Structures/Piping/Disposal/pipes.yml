@@ -57,6 +57,7 @@
   - type: Rotatable
   - type: Pullable
   - type: CollideOnAnchor
+  - type: ReallyCollideOnAnchor # Euph - bugfix for subfloor items becoming collidable
   - type: ContainerContainer
     containers:
       DisposalTube: !type:Container

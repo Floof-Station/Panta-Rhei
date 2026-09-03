@@ -29,7 +29,7 @@ trait-talons-desc =
 
 trait-claws-name = Claws
 trait-claws-desc =
-    Your Fingertips have been replaced with sharp claws. 
+    Your Fingertips have been replaced with sharp claws.
     Your unarmed melee attacks deal Slashing damage instead of the standard type for your species.
 
 trait-natural-weapon-removal-name = Natural Weapon Removal
@@ -43,69 +43,103 @@ trait-Improved-Unarmed-desc =
     Increases unarmed melee damage by 1 blunt. Does not confer any benefit to armed melee.
 
 trait-coldtolerance-name = Cold Tolerance
-trait-coldtolerance-desc = 
+trait-coldtolerance-desc =
     Your tolerance for cold temperatures is a bit more robust than most of your species.
 
 trait-coldtoleranceadvanced-name = Cold Tolerance - Advanced
-trait-coldtoleranceadvanced-desc = 
+trait-coldtoleranceadvanced-desc =
     Those who complain about the cold are just whining. Your tolerance for cold temperatures is much more robust than most.
     (Equivalent to Vulpkanin cold tolerance)
 
 trait-heattolerance-name = Heat Tolerance
-trait-heattolerance-desc = 
+trait-heattolerance-desc =
     Your tolerance for hot temperatures is a bit more robust than most of your species.
 
 trait-heattoleranceadvanced-name = Heat Tolerance - Advanced
-trait-heattoleranceadvanced-desc = 
+trait-heattoleranceadvanced-desc =
     Those who complain about the heat are just whining. Your tolerance for hot temperatures is much more robust than most.
 
 trait-coldintolerance-name = Cold Intolerance
-trait-coldintolerance-desc = 
+trait-coldintolerance-desc =
     Whether by growing up in a hot place, or from some genetic reason, your tolerance for cold temperatures is worse than others of your species.
 
 trait-coldintoleranceadvanced-name = Cold Intolerance - Advanced
-trait-coldintoleranceadvanced-desc = 
+trait-coldintoleranceadvanced-desc =
     You simply can't handle the cold.
 
 trait-heatintolerance-name = Heat Intolerance
-trait-heatintolerance-desc = 
+trait-heatintolerance-desc =
     Whether by growing up in a cold place, or from some genetic reason, your tolerance for hot temperatures is worse than others of your species.
 
 trait-heatintoleranceadvanced-name = Heat Intolerance - Advanced
-trait-heatintoleranceadvanced-desc = 
-    You simply can't handle the heat. 
+trait-heatintoleranceadvanced-desc =
+    You simply can't handle the heat.
 
 trait-glassjaw-name = Glass Jaw
-trait-glassjaw-desc = 
+trait-glassjaw-desc =
     Your body is more fragile than others, resulting in a greater susceptibility to critical injuries
     Your damage threshold for becoming Critical is decreased by 15%.
 
 trait-willtodie-name = Will To Die
-trait-willtodie-desc = 
+trait-willtodie-desc =
     You have an unusually weak "will to live", and will succumb to injuries sooner than others.
     Your damage threshold for becoming Dead is decreased by 10%.
 
 trait-tenacity-name = Tenacity
-trait-tenacity-desc = 
+trait-tenacity-desc =
     Whether it be through raw grit, willpower, or subtle bionic augmentations, you are hardier than others.
     Your damage threshold for becoming Critical is increased by 5%.
 
 trait-willtolive-name = Will To Live
-trait-willtolive-desc = 
+trait-willtolive-desc =
     You have an unusually strong "will to live", and will resist death more than others.
     Your damage threshold for becoming Dead is increased by 5%.
 
 trait-brittlebone-name = Brittle Bones
-trait-brittlebone-desc = 
-    People with this genetic disorder have bones that are easily broken, often simply by moving. 
+trait-brittlebone-desc =
+    People with this genetic disorder have bones that are easily broken, often simply by moving.
     This trait reduces your threshold for critical injury by 50%.
 
 trait-frail-name = Frail
-trait-frail-desc = 
+trait-frail-desc =
     Your body is unfortunately quite frail, resulting in a greater susceptibility to critical injuries
     Your damage threshold for becoming Critical is decreased by 25%.
 
 trait-illfated-name = Ill-Fated
-trait-illfated-desc = 
+trait-illfated-desc =
     Bad things tend to happen to you, and you'll likely die sooner than others.
     Your damage threshold for becoming Dead is decreased by 25%.
+
+trait-nosebleed-name = Nosebleed
+trait-nosebleed-description =
+    Due to a prior accident, genetic misfortune, or some other reason, your body suffers from periodic nosebleeds.
+    You will experience one every 15-60 minutes.
+
+trait-nosebleed-frequent-name = Nosebleed (frequent)
+trait-nosebleed-frequent-description =
+    Due to a prior accident, genetic misfortune, or some other reason, your body suffers from periodic nosebleeds.
+    You will experience one every 5-30 minutes.
+
+nosebleed-message = You feel blood dripping from your nose!
+
+trait-messy-drinker-name = Messy Drinker
+trait-messy-drinker-description =
+    You have trouble creating proper suction when drinking liquids, due to this you sometimes spill your drink all over your self and the floor.
+
+
+trait-very-messy-drinker-name = Very Messy Drinker
+trait-very-messy-drinker-description =
+    You have trouble creating proper suction when drinking liquids, due to this you frequently spill your drink all over your self and the floor.
+
+trait-messy-eater-name = Messy Eater
+trait-messy-eater-description =
+    You eat rather quickly, sometimes making a mess while doing so.
+trait-messy-traits-popup = You feel some of what you are consuming spill onto your cloths and floor...
+
+trait-messy-smoker-name = Messy Smoker
+trait-messy-smoke-description = Whether you do it because you are rude or sometimes you just do not fully enjoy the taste of your cigarettes...
+    You sometimes have the need to spit on the floor...
+trait-messy-smoker-popup = You feel the need to spit from what you are smoking...
+
+trait-jump-ability-name = Pounce
+trait-jump-ability-description = Being nature's most fearsome predator, you developed the ability to pounce forward in the direction of your gaze.

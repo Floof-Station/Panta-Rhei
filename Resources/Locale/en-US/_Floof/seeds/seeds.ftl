@@ -10,3 +10,5 @@ seeds-coconut-gun-name = coconut gun
 seeds-coconut-gun-display-name = coconut gun
 seeds-peanut-name = peanut
 seeds-peanut-display-name = peanut
+seeds-strawberry-name = strawberry
+seeds-strawberry-display-name = strawberry

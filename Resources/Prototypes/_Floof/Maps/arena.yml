@@ -1,3 +1,16 @@
+- type: entity
+  id: StationArena
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Pathfinder
+
 - type: gameMap
   id: Arena
   mapName: 'Arena'
@@ -6,7 +19,7 @@
   maxPlayers: 80
   stations:
     Arena:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationArena
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Arena Station {1}'
@@ -57,7 +70,7 @@
             HeadOfPersonnel: [ 1, 1 ]
             Janitor: [ 2, 2 ]
             Mime: [ 1, 1 ]
-            Musician: [ 1, 1 ]
+            Musician: [ 1, 2 ] # FloofStation, was 1, 1
             Reporter: [ 2, 2 ]
             ServiceWorker: [ 1, 3 ]
           #science

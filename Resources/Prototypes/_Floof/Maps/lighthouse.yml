@@ -1,3 +1,16 @@
+- type: entity
+  id: StationLighthouse
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Pathfinder
+
 - type: gameMap
   id: Lighthouse
   mapName: Lighthouse
@@ -6,7 +19,7 @@
   maxPlayers: 55
   stations:
     Lighthouse:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationLighthouse
       components:
       - type: StationEmergencyShuttle
         emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/NTES_BC20.yml
@@ -27,7 +40,7 @@
           Chef: [ 1, 2 ]
           Clown: [ 1, 1 ]
           Reporter: [ 0, 2 ]
-          Musician: [ 1, 1 ]
+          Musician: [ 1, 2 ] # FloofStation, was 1, 1
           Janitor: [ 1, 2 ]
           Mime: [ 1, 1 ]
         #engineering

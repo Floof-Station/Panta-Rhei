@@ -1,3 +1,4 @@
+using Content.Shared._Floof.Language.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -34,6 +35,14 @@ public sealed partial class LanguageSpeakerComponent : Component
     /// </summary>
     [DataField]
     public List<ProtoId<LanguagePrototype>> UnderstoodLanguages = new();
+
+    /// <summary>
+    ///     The order of languages set by the player in the language menu. Can be empty.
+    ///     This list CAN contain languages the entity neither speaks nor understands. This list can also be missing languages the entity does speak.
+    ///     <see cref="SpokenLanguages"/> and <see cref="UnderstoodLanguages"/> are ordered according to this list. Unlisted languages appear last.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<LanguagePrototype>> PreferredOrder = new();
 
     [Serializable, NetSerializable]
     public sealed class State : ComponentState

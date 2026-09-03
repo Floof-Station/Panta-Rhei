@@ -26,7 +26,7 @@
       points: 1
       required: false
     Head:
-      points: 1
+      points: 10
       required: false
     Face:
       points: 10
@@ -38,11 +38,11 @@
       points: 1
       required: false
     HeadTop:
-      points: 1
+      points: 10
       required: true
       defaultMarkings: [ OniHornDoubleCurved ]
     HeadSide:
-      points: 1
+      points: 10
       required: false
       defaultMarkings: [ PointyEarsUpwards ]
     Hair:
@@ -52,10 +52,10 @@
       points: 1
       required: false
     UndergarmentTop:
-      points: 1
+      points: 6
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 6
       required: false
     Eyes:
       points: 10

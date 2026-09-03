@@ -30,9 +30,9 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
     - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "shoes" ] # Floof - moved above jumpsuit
     - map: [ "jumpsuit" ] # Floof - moved below hands and feet
     - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
@@ -40,6 +40,7 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
+    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "enum.HumanoidVisualLayers.TailOversuit" ] # Floofstation
@@ -51,7 +52,6 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]
@@ -333,9 +333,9 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
     - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "shoes" ] # Floof - moved above jumpsuit
     - map: [ "jumpsuit" ] # Floof - moved below hands and feet
     - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
@@ -348,6 +348,7 @@
     - map: [ "gloves" ]
     - map: [ "ears" ]
     - map: [ "eyes" ]
+    - map: [ "belt" ]
     - map: [ "id" ]
     - map: [ "outerClothing" ]
     - map: [ "back" ]
@@ -358,7 +359,6 @@
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
     - map: [ "mask" ]
-    - map: [ "belt" ] # Euphoria: Move the belt slot down the chain
     - map: [ "head" ]
     - map: [ "pocket1" ]
     - map: [ "pocket2" ]

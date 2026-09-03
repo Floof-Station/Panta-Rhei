@@ -1,0 +1,113 @@
+# SPDX-FileCopyrightText: 2026 Aikakakah
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: marking
+  id: BustyBreasts
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      busty_breasts:
+        type:
+          !type:SkinColoring
+      busty_nipples:
+        type:
+          !type:SimpleColoring
+            color: "#f29835"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+      state: busty_breasts
+    - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+      state: busty_nipples
+
+- type: marking
+  id: BustySleeveless
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_shortsleeve
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_collar
+
+- type: marking
+  id: BustyLongsleeve
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_longsleeve
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_collar
+
+- type: marking
+  id: BustyWindowedTop
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_windowedtop
+
+- type: marking
+  id: BustyBra
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_bra
+
+- type: marking
+  id: BustySportsBra
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_sportsbra
+
+- type: marking
+  id: BustyHalterneck
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_halterneck
+
+- type: marking
+  id: BustyStraplessBra
+  bodyPart: UndergarmentTop
+  markingCategory: UndergarmentTop
+  coloring:
+    default:
+      type: !type:SimpleColoring
+          color: "#FFFFFF"
+  sprites:
+  - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+    state: busty_strapless
