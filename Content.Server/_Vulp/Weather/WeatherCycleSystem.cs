@@ -1,15 +1,14 @@
 using System.Linq;
 using Content.Server.Weather;
+using Content.Shared._Floof.CCVar;
 using Content.Shared._Vulp.Weather;
 using Content.Shared.StatusEffectNew.Components;
-using Content.Shared.Weather;
+using Robust.Shared.Configuration;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
-
 
 namespace Content.Server._Vulp.Weather;
 
@@ -21,6 +20,7 @@ public sealed class WeatherCycleSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedMapSystem _maps = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
 
     public override void Initialize()
     {
@@ -61,6 +61,9 @@ public sealed class WeatherCycleSystem : EntitySystem
 
     public override void Update(float frameTime)
     {
+        if (!_cfg.GetCVar(FloofCCVars.WeatherCycleEnabled))
+            return;
+
         var query = EntityQueryEnumerator<WeatherCycleComponent, MapComponent>();
 
         while (query.MoveNext(out var uid, out var weatherCycle, out var map))

@@ -1,6 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 using Content.IntegrationTests.Fixtures.Attributes;
+using Content.Shared._Floof.CCVar;
 using Robust.Shared.Configuration;
 
 namespace Content.IntegrationTests.Fixtures;
@@ -16,7 +17,10 @@ public abstract partial class GameTest
     [SidedDependency(Side.Client)] private readonly IConfigurationManager _clientCfg = default!;
 
     private readonly Dictionary<string, object> _clientCVarOverrides = new();
-    private readonly Dictionary<string, object> _serverCVarOverrides = new();
+    private readonly Dictionary<string, object> _serverCVarOverrides = new()
+    {
+        { FloofCCVars.WeatherCycleEnabled.Name, false }, // There's a bug in the weather or container or status effect system that causes weather entities to be spawned off-center
+    };
 
     /// <summary>
     ///     Adds a setup-time override for a given cvar, for use by <see cref="IGameTestModifier"/>s.
