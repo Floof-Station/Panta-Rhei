@@ -4,8 +4,8 @@ meta:
   engineVersion: 270.1.1
   forkId: ""
   forkVersion: ""
-  time: 08/31/2026 07:25:27
-  entityCount: 42513
+  time: 09/04/2026 21:09:49
+  entityCount: 42524
 maps:
 - 18185
 grids:
@@ -108064,11 +108064,6 @@ entities:
     - type: Transform
       pos: 13.689143,4.6450024
       parent: 2
-  - uid: 1527
-    components:
-    - type: Transform
-      pos: 27.060135,-3.4577832
-      parent: 2
   - uid: 1927
     components:
     - type: Transform
@@ -108107,17 +108102,17 @@ entities:
   - uid: 7422
     components:
     - type: Transform
-      pos: -49.705414,14.664018
+      pos: 57.515186,-9.737263
       parent: 2
   - uid: 7545
     components:
     - type: Transform
-      pos: -51.532696,-17.42208
+      pos: -20.215748,27.700657
       parent: 2
   - uid: 7546
     components:
     - type: Transform
-      pos: -51.474102,-20.269735
+      pos: 3.5756717,-24.22921
       parent: 2
   - uid: 8403
     components:
@@ -108127,12 +108122,12 @@ entities:
   - uid: 12095
     components:
     - type: Transform
-      pos: 3.5756717,-24.22921
+      pos: -14.470832,57.760975
       parent: 2
   - uid: 15395
     components:
     - type: Transform
-      pos: -20.215748,27.700657
+      pos: -49.496456,15.688549
       parent: 2
   - uid: 37661
     components:
@@ -108546,12 +108541,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 9.5,12.5
       parent: 2
-  - uid: 17586
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 32.5,13.5
-      parent: 2
   - uid: 17632
     components:
     - type: Transform
@@ -108708,12 +108697,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 77.5,67.5
       parent: 2
-  - uid: 35864
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 32.5,15.5
-      parent: 2
   - uid: 35917
     components:
     - type: Transform
@@ -108753,6 +108736,18 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 57.5,60.5
+      parent: 2
+  - uid: 37681
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 33.5,12.5
+      parent: 2
+  - uid: 37682
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,12.5
       parent: 2
   - uid: 41334
     components:
@@ -109147,6 +109142,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 53.5,18.5
       parent: 2
+  - uid: 16770
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 32.5,20.5
+      parent: 2
   - uid: 16789
     components:
     - type: Transform
@@ -109311,6 +109312,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 48.5,-13.5
+      parent: 2
+  - uid: 1035
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,16.5
       parent: 2
   - uid: 1059
     components:
@@ -110157,7 +110164,7 @@ entities:
   - uid: 16768
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
+      rot: -1.5707963267948966 rad
       pos: 29.5,20.5
       parent: 2
   - uid: 16769
@@ -110165,18 +110172,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 30.5,20.5
-      parent: 2
-  - uid: 16770
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 32.5,20.5
-      parent: 2
-  - uid: 16771
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.5,20.5
       parent: 2
   - uid: 16772
     components:
@@ -110589,12 +110584,6 @@ entities:
     components:
     - type: Transform
       pos: -44.5,-18.5
-      parent: 2
-  - uid: 16863
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -5.5,-15.5
       parent: 2
   - uid: 16864
     components:
@@ -114597,22 +114586,17 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 70.5,65.5
       parent: 2
+  - uid: 35864
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,17.5
+      parent: 2
   - uid: 35865
     components:
     - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.5,15.5
-      parent: 2
-  - uid: 35866
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.5,13.5
-      parent: 2
-  - uid: 35867
-    components:
-    - type: Transform
-      pos: 32.5,14.5
+      rot: 3.141592653589793 rad
+      pos: 33.5,14.5
       parent: 2
   - uid: 35882
     components:
@@ -114875,6 +114859,12 @@ entities:
       rot: 3.141592653589793 rad
       pos: -9.5,-12.5
       parent: 2
+  - uid: 36399
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,18.5
+      parent: 2
   - uid: 36512
     components:
     - type: Transform
@@ -114986,6 +114976,54 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 76.5,71.5
+      parent: 2
+  - uid: 37533
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,19.5
+      parent: 2
+  - uid: 37591
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,19.5
+      parent: 2
+  - uid: 37607
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,18.5
+      parent: 2
+  - uid: 37608
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,17.5
+      parent: 2
+  - uid: 37613
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,16.5
+      parent: 2
+  - uid: 37617
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,15.5
+      parent: 2
+  - uid: 37621
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,14.5
+      parent: 2
+  - uid: 37680
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 32.5,13.5
       parent: 2
   - uid: 40547
     components:
@@ -117889,6 +117927,15 @@ entities:
       parent: 2
 - proto: DisposalRouter
   entities:
+  - uid: 1385
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,15.5
+      parent: 2
+    - type: DisposalRouter
+      tags:
+      - Morgue Secure Storage
   - uid: 16394
     components:
     - type: Transform
@@ -117897,8 +117944,8 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - library
-      - chaplain
+      - Library
+      - Chaplain
   - uid: 16905
     components:
     - type: Transform
@@ -117907,7 +117954,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - medical
+      - Medical
   - uid: 16928
     components:
     - type: Transform
@@ -117924,7 +117971,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - bridge
+      - Bridge
   - uid: 17056
     components:
     - type: Transform
@@ -117933,7 +117980,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - mailroom
+      - Mail
   - uid: 17179
     components:
     - type: Transform
@@ -117942,7 +117989,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - logistics
+      - Logistics
   - uid: 17571
     components:
     - type: Transform
@@ -117950,9 +117997,18 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - zookeeper
-      - service
-      - engineering
+      - Zookeeper
+      - Service
+      - Engineering
+  - uid: 17586
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 33.5,13.5
+      parent: 2
+    - type: DisposalRouter
+      tags:
+      - Morgue
   - uid: 22555
     components:
     - type: Transform
@@ -117961,7 +118017,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - security
+      - Security
   - uid: 42292
     components:
     - type: Transform
@@ -117970,7 +118026,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - epistemics
+      - Epistemics
   - uid: 42304
     components:
     - type: Transform
@@ -117979,7 +118035,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - bridge
+      - Bridge
   - uid: 42363
     components:
     - type: Transform
@@ -117988,7 +118044,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - engineering
+      - Engineering
   - uid: 42410
     components:
     - type: Transform
@@ -117996,7 +118052,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - botany
+      - Botany
   - uid: 42428
     components:
     - type: Transform
@@ -118005,9 +118061,9 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - bar
-      - kitchen 1
-      - kitchen 2
+      - Bar
+      - Kitchen 1
+      - Kitchen 2
   - uid: 42470
     components:
     - type: Transform
@@ -118016,7 +118072,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - checkpoint
+      - Checkpoint
   - uid: 42497
     components:
     - type: Transform
@@ -118025,7 +118081,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - chemistry
+      - Chemistry
 - proto: DisposalRouterFlipped
   entities:
   - uid: 16684
@@ -118036,7 +118092,17 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - library
+      - Library
+  - uid: 16771
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 33.5,20.5
+      parent: 2
+    - type: DisposalRouter
+      tags:
+      - Morgue
+      - Morgue Secure Storage
   - uid: 17058
     components:
     - type: Transform
@@ -118045,7 +118111,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - psychologist
+      - Psychologist
   - uid: 17196
     components:
     - type: Transform
@@ -118054,7 +118120,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - detective
+      - Detective
   - uid: 17197
     components:
     - type: Transform
@@ -118063,7 +118129,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - reporter
+      - Reporter
   - uid: 17572
     components:
     - type: Transform
@@ -118072,7 +118138,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - zookeeper
+      - Zookeeper
   - uid: 17727
     components:
     - type: Transform
@@ -118080,7 +118146,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - bar
+      - Bar
   - uid: 42267
     components:
     - type: Transform
@@ -118089,7 +118155,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - chaplain
+      - Chaplain
   - uid: 42341
     components:
     - type: Transform
@@ -118098,7 +118164,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - service
+      - Service
   - uid: 42353
     components:
     - type: Transform
@@ -118107,7 +118173,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - kitchen 2
+      - Kitchen 2
   - uid: 42418
     components:
     - type: Transform
@@ -118116,7 +118182,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - kitchen 1
+      - Kitchen 1
   - uid: 42480
     components:
     - type: Transform
@@ -118125,8 +118191,18 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - chemistry
-      - medical
+      - Chemistry
+      - Medical
+- proto: DisposalTagger
+  entities:
+  - uid: 16863
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-15.5
+      parent: 2
+    - type: DisposalTagger
+      tag: Mail
 - proto: DisposalTrunk
   entities:
   - uid: 334
@@ -186452,7 +186528,7 @@ entities:
       pos: 21.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16416.717
+      secondsUntilStateChange: -18111.354
       state: Closing
   - uid: 1492
     components:
@@ -186768,7 +186844,7 @@ entities:
       pos: 21.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -16415.35
+      secondsUntilStateChange: -18109.986
       state: Closing
   - uid: 28352
     components:
@@ -189806,225 +189882,226 @@ entities:
       parent: 2
 - proto: MailingUnit
   entities:
-  - uid: 1035
-    components:
-    - type: MetaData
-      name: secure storage mailing unit
-    - type: Transform
-      pos: 34.5,15.5
-      parent: 2
-    - type: MailingUnit
-      tag: Secure Storage
-  - uid: 1385
-    components:
-    - type: MetaData
-      desc: Send sensitive belongings to the storeroom above using this mailing unit.
-      name: morgue mailing unit
-    - type: Transform
-      pos: 34.5,13.5
-      parent: 2
-    - type: MailingUnit
-      tag: Morgue
   - uid: 22040
     components:
     - type: Transform
       pos: -23.5,-10.5
       parent: 2
     - type: MailingUnit
-      tag: detective
+      tag: Detective
     - type: Configuration
       config:
-        tag: detective
+        tag: Detective
   - uid: 22745
     components:
     - type: Transform
       pos: 17.5,1.5
       parent: 2
     - type: MailingUnit
-      tag: chemistry
+      tag: Chemistry
     - type: Configuration
       config:
-        tag: chemistry
+        tag: Chemistry
   - uid: 23288
     components:
     - type: Transform
       pos: -51.5,18.5
       parent: 2
     - type: MailingUnit
-      tag: engineering
+      tag: Engineering
     - type: Configuration
       config:
-        tag: engineering
+        tag: Engineering
   - uid: 25895
     components:
     - type: Transform
       pos: -67.5,17.5
       parent: 2
     - type: MailingUnit
-      tag: zookeeper
+      tag: Zookeeper
     - type: Configuration
       config:
-        tag: zookeeper
+        tag: Zookeeper
   - uid: 27633
     components:
     - type: Transform
       pos: -16.5,-25.5
       parent: 2
     - type: MailingUnit
-      tag: logistics
+      tag: Logistics
     - type: Configuration
       config:
-        tag: logistics
+        tag: Logistics
   - uid: 30087
     components:
     - type: Transform
       pos: 16.5,52.5
       parent: 2
     - type: MailingUnit
-      tag: bridge
+      tag: Bridge
     - type: Configuration
       config:
-        tag: bridge
+        tag: Bridge
   - uid: 30176
     components:
     - type: Transform
       pos: -13.5,28.5
       parent: 2
     - type: MailingUnit
-      tag: security
+      tag: Security
     - type: Configuration
       config:
-        tag: security
+        tag: Security
+  - uid: 35866
+    components:
+    - type: Transform
+      pos: 34.5,15.5
+      parent: 2
+    - type: MailingUnit
+      tag: Morgue Secure Storage
+    - type: Configuration
+      config:
+        tag: Morgue Secure Storage
+  - uid: 35867
+    components:
+    - type: Transform
+      pos: 34.5,13.5
+      parent: 2
+    - type: MailingUnit
+      tag: Morgue
+    - type: Configuration
+      config:
+        tag: Morgue
   - uid: 40298
     components:
     - type: Transform
       pos: 28.5,30.5
       parent: 2
     - type: MailingUnit
-      tag: epistemics
+      tag: Epistemics
     - type: Configuration
       config:
-        tag: epistemics
+        tag: Epistemics
   - uid: 42111
     components:
     - type: Transform
       pos: -69.5,-0.5
       parent: 2
     - type: MailingUnit
-      tag: service
+      tag: Service
     - type: Configuration
       config:
-        tag: service
+        tag: Service
   - uid: 42227
     components:
     - type: Transform
       pos: 11.5,9.5
       parent: 2
     - type: MailingUnit
-      tag: medical
+      tag: Medical
     - type: Configuration
       config:
-        tag: medical
+        tag: Medical
   - uid: 42228
     components:
     - type: Transform
       pos: 7.5,-20.5
       parent: 2
     - type: MailingUnit
-      tag: checkpoint
+      tag: Checkpoint
     - type: Configuration
       config:
-        tag: checkpoint
+        tag: Checkpoint
   - uid: 42229
     components:
     - type: Transform
       pos: -5.5,-25.5
       parent: 2
     - type: MailingUnit
-      tag: mailroom
+      tag: Mail
     - type: Configuration
       config:
-        tag: mailroom
+        tag: Mail
   - uid: 42230
     components:
     - type: Transform
       pos: -25.5,-11.5
       parent: 2
     - type: MailingUnit
-      tag: reporter
+      tag: Reporter
     - type: Configuration
       config:
-        tag: reporter
+        tag: Reporter
   - uid: 42231
     components:
     - type: Transform
       pos: -13.5,-11.5
       parent: 2
     - type: MailingUnit
-      tag: psychologist
+      tag: Psychologist
     - type: Configuration
       config:
-        tag: psychologist
+        tag: Psychologist
   - uid: 42232
     components:
     - type: Transform
       pos: -41.5,-25.5
       parent: 2
     - type: MailingUnit
-      tag: bar
+      tag: Bar
     - type: Configuration
       config:
-        tag: bar
+        tag: Bar
   - uid: 42233
     components:
     - type: Transform
       pos: -52.5,-24.5
       parent: 2
     - type: MailingUnit
-      tag: kitchen 2
+      tag: Kitchen 2
     - type: Configuration
       config:
-        tag: kitchen 2
+        tag: Kitchen 2
   - uid: 42234
     components:
     - type: Transform
       pos: -55.5,-14.5
       parent: 2
     - type: MailingUnit
-      tag: kitchen 1
+      tag: Kitchen 1
     - type: Configuration
       config:
-        tag: kitchen 1
+        tag: Kitchen 1
   - uid: 42235
     components:
     - type: Transform
       pos: -54.5,1.5
       parent: 2
     - type: MailingUnit
-      tag: botany
+      tag: Botany
     - type: Configuration
       config:
-        tag: botany
+        tag: Botany
   - uid: 42236
     components:
     - type: Transform
       pos: 55.5,26.5
       parent: 2
     - type: MailingUnit
-      tag: library
+      tag: Library
     - type: Configuration
       config:
-        tag: library
+        tag: Library
   - uid: 42237
     components:
     - type: Transform
       pos: 67.5,26.5
       parent: 2
     - type: MailingUnit
-      tag: chaplain
+      tag: Chaplain
     - type: Configuration
       config:
-        tag: chaplain
+        tag: Chaplain
 - proto: MailTeleporter
   entities:
   - uid: 6530
@@ -258611,373 +258688,198 @@ entities:
     - type: Transform
       pos: -27.5,-45.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 6719
     components:
     - type: Transform
       pos: -30.5,-45.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 6731
     components:
     - type: Transform
       pos: -28.5,-45.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 8995
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,-45.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 9021
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,-44.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 11856
     components:
     - type: Transform
       pos: -31.5,-45.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 11876
     components:
     - type: Transform
       pos: -28.5,-45.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 17367
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -4.5,47.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 17369
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -56.5,36.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 17370
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -15.5,57.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 17847
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -52.5,37.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 18990
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -56.5,34.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 20828
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -42.5,30.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 22288
     components:
     - type: Transform
       pos: -46.5,36.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 22331
     components:
     - type: Transform
       pos: -45.5,36.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 22657
     components:
     - type: Transform
       pos: -47.5,36.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23035
     components:
     - type: Transform
       pos: -48.5,36.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23174
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -13.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23268
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -12.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23588
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -16.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23605
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -10.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23685
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,-41.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 24440
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,-43.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 25317
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -9.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 26059
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -12.5,-42.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 26616
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -11.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 26891
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -15.5,-38.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 27089
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 80.5,-11.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 27756
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 79.5,-11.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 27806
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 86.5,-11.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 27902
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 87.5,-11.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 34372
     components:
     - type: Transform
       pos: 86.5,-21.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 34373
     components:
     - type: Transform
       pos: 87.5,-21.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 34374
     components:
     - type: Transform
       pos: 80.5,-21.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 34375
     components:
     - type: Transform
       pos: 79.5,-21.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
 - proto: WindoorAssembly
   entities:
   - uid: 32364
@@ -258992,11 +258894,6 @@ entities:
     - type: Transform
       pos: -40.5,-28.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
     - type: AccessReader
       accessListsOriginal: []
 - proto: WindoorHydroponicsLocked
@@ -259007,22 +258904,12 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -48.5,2.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 3071
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -48.5,3.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
 - proto: WindoorKitchenLocked
   entities:
   - uid: 23569
@@ -259031,44 +258918,24 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -51.5,-16.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23576
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -51.5,-17.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23578
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -51.5,-20.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
   - uid: 23618
     components:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -51.5,-21.5
       parent: 2
-    - type: Tag
-      tags:
-      - ForceFixRotations
-      - Window
-      - WeldbotFixableStructure
 - proto: WindoorSecure
   entities:
   - uid: 562
