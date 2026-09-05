@@ -1,4 +1,4 @@
-// [[file:../../../../../Org/_Floof/CivilAntagonists/CivilAntagonistDesignDocument.org::Antagonist Load Player Character Component][Antagonist Load Player Character Component]]
+// [[file:../../../../../Org/_Floof/CivilAntagonists/AntagLoadPlayerCharacterRule.org::Antagonist Load Player Character Component][Antagonist Load Player Character Component]]
 namespace Content.Server.GameTicking.Rules.Components;
 
 /// <summary>

@@ -1,4 +1,24 @@
-// [[file:../../../../Org/_Floof/CivilAntagonists/AntagLoadPlayerCharacterRule.org::Antagonist Load Player Character System][Antagonist Load Player Character System]]
+:PROPERTIES:
+:Title: AntagLoadPlayerCharacterRule Code
+:ID:       3020ec2e-62fd-4b5d-934b-9befcde09bb5
+:END:
+----------------
+---
+*AntagLoadPlayerCharacterRuleComponent
+#+NAME: Antagonist Load Player Character Component
+#+BEGIN_SRC csharp :exports code :comments link :tangle ../../../Content.Server/_Floof/GameTicking/Rules/Components/AntagLoadPlayerCharacterRuleComponent.cs
+namespace Content.Server.GameTicking.Rules.Components;
+
+/// <summary>
+/// Attach to an entity with <see cref="AntagSelectionComponent"/> to have it spawn the player's currently selected character.
+/// </summary>
+[RegisterComponent]
+public sealed partial class AntagLoadPlayerCharacterRuleComponent : Component;
+#+END_SRC
+---
+*AntagLoadPlayerCharacterRuleSystem
+#+NAME: Antagonist Load Player Character System
+#+BEGIN_SRC csharp :exports code :comments link :tangle ../../../Content.Server/_Floof/GameTicking/Rules/AntagLoadPlayerCharacterRuleSystem.cs
 using Content.Server.Antag;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Preferences.Managers;
@@ -51,4 +71,6 @@ public sealed class AntagLoadPlayerCharacterRuleSystem : GameRuleSystem<AntagLoa
         args.Entity = spawnedCharacter;
     }
 }
-// Antagonist Load Player Character System ends here
+
+#+END_SRC
+----------------
