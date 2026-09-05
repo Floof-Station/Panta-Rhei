@@ -88,7 +88,7 @@ namespace Content.IntegrationTests.Tests
             testSystem.Enabled = false;
         }
 
-        private new const string TestMap = "Maps/pebble.yml";
+        private new const string TestMap = "Maps/Floof/pebble.yml"; // Euph - use our map
 
         /// <summary>
         ///     Loads the default map, runs it for 5 ticks, then assert that it did not change.

@@ -2,7 +2,7 @@
   id: Surgeon
   name: job-name-surgeon
   description: job-description-surgeon
-  setPreference: false
+  setPreference: true # Euph - RP role, for now
   playTimeTracker: JobSurgeon
   requirements:
     - !type:DepartmentTimeRequirement
