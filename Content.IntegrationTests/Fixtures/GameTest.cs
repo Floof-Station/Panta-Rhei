@@ -236,6 +236,8 @@ public abstract partial class GameTest
             if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
             {
                 _pairDestroyed = true; // Blow it up, we failed and it might be screwed.
+                // Euph - set pair state because nothing else does. DisposeAsync below will throw when invoked with an InUse pair.
+                Pair.Kill();
                 return;
             }
 
@@ -250,6 +252,8 @@ public abstract partial class GameTest
         catch (Exception)
         {
             _pairDestroyed = true;
+            // Euph - set pair state because nothing else does. DisposeAsync below will throw when invoked with an InUse pair.
+            Pair.Kill();
             throw;
         }
         finally
@@ -258,7 +262,7 @@ public abstract partial class GameTest
 
             if (!_pairDestroyed)
                 await Pair.CleanReturnAsync();
-            else
+            else // Euph note - remove the workaround above if wizden adds something changing the state of the pair
                 await Pair.DisposeAsync();
         }
     }
