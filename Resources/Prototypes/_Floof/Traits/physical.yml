@@ -746,3 +746,55 @@
       jumpDistance: 3
       canCollide: true # you may be pouncing but its funny watching poeple flop over
       action: ActionPounce
+
+- type: trait
+  id: SlightlyClumsy
+  name: trait-slight-clumsy-name
+  description: trait-slightly-clumsy-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:HasJobCondition # we dont want clowns taking this
+    job: Clown
+    invert: true
+  - !type:TraitDependencyCondition
+    conflicts:
+    - VeryClumsy
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Clumsy
+      clumsyDefib: false
+      clumsyHypo: false
+      clumsyGuns: false # we let them shoot with this
+
+- type: trait
+  id: VeryClumsy
+  name: trait-very-clumsy-name
+  description: trait-very-clumsy-description
+  category: DisabilitiesPhysical
+  cost: -4
+  conditions:
+  - !type:HasJobCondition # we dont want clowns taking this
+    job: Clown
+    invert: true
+  - !type:TraitDependencyCondition
+    conflicts:
+    - SlightlyClumsy
+  - !type:OneOfSpeciesCondition # oni cant shoot guns so feel like we should prevent them from taking this
+    invert: true
+    species:
+    - Oni
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Clumsy
+      gunShootFailDamage:
+        types:
+          Blunt: 5
+          Piercing: 4
+          Heat: 3
+      catchingFailDamage:
+        types:
+          Blunt: 1
+      clumsyGunShootCheck: 0.2 # 80% chance of success

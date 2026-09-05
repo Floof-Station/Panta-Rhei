@@ -1,6 +1,7 @@
 using System.Numerics;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
+using Content.Shared.Tools.Components;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
@@ -141,6 +142,10 @@ public sealed class NodeCrawlerMovementSystem : EntitySystem
 
         foreach (var reachable in nodeCrawl.ReachableNodes)
         {
+            // Euphoria - we need to check if the vent is welded, this wll stop critters from popping out of welded vents if they are in the pipe net
+            if (TryComp<WeldableComponent>(reachable, out var weldable) && weldable.IsWelded)
+                continue;
+
             var reachableXform = Transform(reachable);
             var reachableWorld = _transform.GetWorldPosition(reachableXform);
             var delta = reachableWorld - nodeWorld;
