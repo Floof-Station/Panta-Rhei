@@ -78,6 +78,38 @@
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: Gorlex-Girlfriends
 
+- type: entity
+  parent: PosterBase
+  id: Clowncar-poster
+  name: "The Clown-car"
+  description: "A really old, really cheesy horror movie, nearly lost to time." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Clowncar-poster
+
+- type: entity
+  parent: PosterBase
+  id: Evil-dead-2-poster
+  name: "Evil dead 2 poster."
+  description: "You most certainly have seen this EXACT poster elsewhere, but you cant quite recall where." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Evil-dead-2-poster
+
+
+- type: entity
+  parent: PosterBase
+  id: PrioriLogos-duae-poster
+  name: "Priori-Logos duae poster"
+  description: "A poster for the peak of gaming. No other game bypasses where this game stood. except maybe Priori-Logos Tria. And the original Shiver. And also Wizards fortress three." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: PrioriLogos-duae-poster
+
+
 
 
 # Legit
@@ -91,6 +123,17 @@
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: cat-pictures
+
+- type: entity
+  parent: PosterBase
+  id: Changeling-poster
+  name: "Jhon carp's; 'The Ling (2485) poster"
+  description: "A poster of a universally beloved horror movie." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Changeling-poster
+
 
 - type: entity
   parent: PosterBase
@@ -121,3 +164,14 @@
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: Centcom-Chads-Poster
+
+- type: entity
+  parent: PosterBase
+  id: Redsec-epsilon-poster
+  name: "Redsec:epsilon poster"
+  description: "A game that spent more money on its advertisement than its development, which sucks, because before its release the series was beloved by many."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Redsec-epsilon-poster
+
