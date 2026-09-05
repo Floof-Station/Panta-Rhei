@@ -61,6 +61,10 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
         if (!args.CanAccess)
             return;
 
+        // Euphoria - we need to check if the vent is welded stops critters from entering welded vents
+        if (TryComp<WeldableComponent>(target, out var weldable) && weldable.IsWelded)
+            return;
+
         args.Verbs.Add(new AlternativeVerb
         {
             Act = () => StartEntryDoAfter((user, nodeCrawler), target),
@@ -94,6 +98,10 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
     private void NodeCrawl(Entity<NodeCrawlerComponent> ent, EntityUid target)
     {
         if (!_net.IsServer)
+            return;
+
+        // Euphoria - we need to check if the vent is welded, stops critters from entering welded vents
+        if (TryComp<WeldableComponent>(target, out var weldable) && weldable.IsWelded)
             return;
 
         var mover = Spawn(MoverProto, Transform(target).Coordinates);
@@ -187,14 +195,14 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
 
     private void OnMovementShutdown(Entity<NodeCrawlerMovementComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Comp.Node is { } node)
+        if (ent.Comp.Node is { } node && node.IsValid())
         {
             var nodeComp = Comp<CrawlableNodeComponent>(node);
             nodeComp.Crawlers.Remove(ent);
             Dirty(node, nodeComp);
         }
 
-        if (ent.Comp.HeldCrawler is { } crawler && !TerminatingOrDeleted(crawler) && TryComp<NodeCrawlerComponent>(crawler, out var nodeCrawler))
+        if (ent.Comp.HeldCrawler is { } crawler && crawler.IsValid() && !TerminatingOrDeleted(crawler) && TryComp<NodeCrawlerComponent>(crawler, out var nodeCrawler))
         {
             ExitNodeCrawl((crawler, nodeCrawler));
         }

@@ -5566,3 +5566,55 @@ Entries:
       message: Added a generic CC Job Icon
   id: 693
   time: '2026-08-30T11:17:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Like doctors, paramedics now have access to an advanced topicals belt.
+  id: 694
+  time: '2026-09-01T13:23:22.0000000+00:00'
+- author: Ludolphous
+  changes:
+    - type: Tweak
+      message: Changed descriptions of many posters, and names of a handful of posters.
+  id: 695
+  time: '2026-09-02T14:49:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Mobs that can vent crawl should no longer be able to enter or exit a
+        welded vent.
+  id: 696
+  time: '2026-09-04T10:52:11.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: You should now be able to craft the clown car.
+  id: 697
+  time: '2026-09-05T01:01:36.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Added two clumsy traits.
+  id: 698
+  time: '2026-09-05T01:03:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Rude gestures should now display properly when witnessing someone use it
+        on someone else.
+    - type: Fix
+      message: The suggestive gesture should now appear in the interact verb menu.
+  id: 699
+  time: '2026-09-05T01:28:58.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Crash as a result of vent crawlers trying to exit into a freezer/heater
+        attached to pipes.
+    - type: Fix
+      message: Client spam from nodecrawling
+  id: 700
+  time: '2026-09-05T03:03:19.0000000+00:00'
