@@ -209,7 +209,10 @@
       map: ["scan"]
       visible: false
   - type: ApcPowerReceiver
-    powerLoad: 400
+    powerLoad: 50
+  - type: PowerState # Euph
+    idlePowerDraw: 50
+    workingPowerDraw: 400
   - type: Machine
     board: KitchenAssemblerMachineCircuitboard
   - type: ActivatableUI

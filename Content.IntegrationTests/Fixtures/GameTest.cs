@@ -237,7 +237,8 @@ public abstract partial class GameTest
             {
                 _pairDestroyed = true; // Blow it up, we failed and it might be screwed.
                 // Euph - set pair state because nothing else does. DisposeAsync below will throw when invoked with an InUse pair.
-                Pair.Kill();
+                if (Pair.State is PairState.InUse or PairState.Ready)
+                    Pair.Kill();
                 return;
             }
 
@@ -253,7 +254,8 @@ public abstract partial class GameTest
         {
             _pairDestroyed = true;
             // Euph - set pair state because nothing else does. DisposeAsync below will throw when invoked with an InUse pair.
-            Pair.Kill();
+            if (Pair.State is PairState.InUse or PairState.Ready)
+                Pair.Kill();
             throw;
         }
         finally
