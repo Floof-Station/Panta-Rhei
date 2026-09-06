@@ -4,6 +4,8 @@
   description: trait-dispel-desc
   category: Psionics
   cost: 5
+  conflicts:
+    - NoPsionicPotential
   conditions:
   - !type:HasJobCondition
     invert: true
@@ -20,6 +22,8 @@
   description: trait-precognition-desc
   category: Psionics
   cost: 4
+  conflicts:
+    - NoPsionicPotential
   effects:
   - !type:AddCompsEffect
     components:
@@ -32,6 +36,8 @@
   description: trait-metapsionic-desc
   category: Psionics
   cost: 2
+  conflicts:
+    - NoPsionicPotential
   conditions:
   - !type:HasJobCondition
     invert: true
@@ -48,6 +54,8 @@
   description: trait-psychokinetic-scream-desc
   category: Psionics
   cost: 6
+  conflicts:
+    - NoPsionicPotential
   effects:
   - !type:AddCompsEffect
     components:
@@ -83,3 +91,30 @@
   - !type:AddCompsEffect
     components:
     - type: BibleUser
+
+- type: trait
+  id: NoPsionicPotential
+  name: trait-nopsionicpotential-name
+  description: trait-nopsionicpotential-desc
+  category: Psionics
+  cost: -1
+  conflicts:
+    - TraitDispel
+    - TraitPrecognition
+    - TraitMetapsionic
+    - TraitPsychokineticScream
+  conditions:
+  - !type:HasJobCondition
+    invert: true
+    job: ForensicMantis
+  - !type:HasJobCondition
+    invert: true
+    job: ResearchDirector
+  - !type:HasJobCondition
+    invert: true
+    job: Chaplain
+  effects:
+  - !type:RemCompsEffect
+    components:
+    #- type: Psionic
+    - type: PotentialPsionic
