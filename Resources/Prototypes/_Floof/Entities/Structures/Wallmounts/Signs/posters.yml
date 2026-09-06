@@ -90,13 +90,13 @@
 
 - type: entity
   parent: PosterBase
-  id: Evil-dead-2-poster
-  name: "Evil dead 2 poster."
+  id: Evil-bones-2-poster
+  name: "Evil bones 2 poster."
   description: "You most certainly have seen this EXACT poster elsewhere, but you cant quite recall where." 
   components:
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
-    state: Evil-dead-2-poster
+    state: Evil-bones-2-poster
 
 
 - type: entity
@@ -108,6 +108,28 @@
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: PrioriLogos-duae-poster
+
+- type: entity
+  parent: PosterBase
+  id: Evil-mothroach-evidence
+  name: "Evidence of EVIL mothroach"
+  description: "A pinned photograph of a mysterious evil creature; known as 'EVIL MOTHROACH', a creature so vile and evil, that it has not been sine since." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Evil-mothroach-evidence
+
+- type: entity
+  parent: PosterBase
+  id: Jimmy-cheese-evidence
+  name: "The only photograph of a 'Jimmy cheese'"
+  description: "A pinned photograph of a mysterious 'Jimmy cheese', a person so mysterious that legend states, he smells like cheese." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Jimmy-cheese-evidence
+
+
 
 
 
@@ -174,4 +196,58 @@
   - type: Sprite
     sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
     state: Redsec-epsilon-poster
+
+- type: entity
+  parent: PosterBase
+  id: mounted-dragon-red
+  name: "Mounted spacedragon head"
+  description: "The head of a mounted space dragon. Ones of crimson scale are prised pets of many wizards, as they say."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: mounted-dragon-red
+    #The Mounted dragon head (Red) is intended to be admin-spawn only
+
+- type: entity
+  parent: PosterBase
+  id: Prosparity-poster
+  name: "Prosparity"
+  description: "Keep mooov'in and eventually all will be fine."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Prosparity-poster
+
+- type: entity
+  parent: PosterBase
+  id: mounted-dragon-purple
+  name: "Mounted spacedragon head"
+  description: "The head of a mounted space dragon. The ones of violet scale are common in open space."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: mounted-dragon-purple
+
+- type: entity
+  parent: PosterBase
+  id: mounted-dragon-silver
+  name: "Mounted spacedragon head"
+  description: "The head of a mounted space dragon. The ones of Silver coloration are extreemly rare, being far older than most dragons ever should be."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: mounted-dragon-silver
+        #The Mounted dragon head (Silver) is intended to be admin-spawn only
+
+
+- type: entity
+  parent: PosterBase
+  id: Bearin-poster
+  name: "Remember; only you can prevent bear attacks"
+  description: "The poster is here to remind crew to make sure the landmines are armed whenever they are on planetside stations inorder to prevent bear attacks!"  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Bearin-poster
+
 
