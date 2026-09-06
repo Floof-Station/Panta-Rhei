@@ -172,7 +172,7 @@ public sealed class MobThresholdSystem : EntitySystem
         MobThresholdsComponent? thresholdComponent = null)
     {
         threshold = null;
-        if (!Resolve(target, ref thresholdComponent))
+        if (!Resolve(target, ref thresholdComponent, false)) // Floof - dont log an error since HTN uses this
             return false;
 
         return TryGetThresholdForState(target, MobState.Critical, out threshold, thresholdComponent)

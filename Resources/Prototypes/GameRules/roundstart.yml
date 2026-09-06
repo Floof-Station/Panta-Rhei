@@ -569,8 +569,17 @@
 
 - type: entityTable
   id: SpaceTrafficControlTable
-  table: !type:NestedSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp
-    tableId: UnknownShuttlesHostileTable
+  table: !type:GroupSelector # Euph - make a group
+    children:
+    - !type:NestedSelector # we need to pass a list of rules, since rules have further restrictions to consider via StationEventComp # Euph - make a group
+      tableId: UnknownShuttlesHostileTable
+      weight: 0.2
+    - !type:NestedSelector # Euph
+      tableId: UnknownShuttlesTable
+    - !type:NestedSelector # Euph - it wasn't added anywhere by d-v
+      tableId: UnknownShuttlesFreelanceTableDeltaV
+      weight: 0.5 # Can contain
+
 
 - type: entity
   id: BasicStationEventScheduler

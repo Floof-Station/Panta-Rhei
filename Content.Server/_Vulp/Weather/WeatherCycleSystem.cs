@@ -128,7 +128,6 @@ public sealed class WeatherCycleSystem : EntitySystem
 
     /// <summary>
     ///     Transitions the weather on the map associated with this weather cycle into the specified state.
-    ///     Does NOT clear the old weather!
     /// </summary>
     public void SetState(Entity<WeatherCycleComponent> ent, WeatherCycleData state)
     {
@@ -142,7 +141,12 @@ public sealed class WeatherCycleSystem : EntitySystem
         var proto = state.Proto == null ? null : _protoMan.TryIndex(state.Proto, out var weather) ? weather : null;
         if (Transform(ent).MapID is { } map && proto is not null)
         {
+            // Clear the old weather
+            if (ent.Comp.CurrentWeatherEntity is { } oldWeatherEnt && oldState?.Proto != null)
+                _weather.TryRemoveWeather(map, oldState.Proto.Value); // Rn there's no way to directly modify the status effect entity.
+
             _weather.TryAddWeather(map, proto, out var weatherEnt, duration);
+            ent.Comp.CurrentWeatherEntity = weatherEnt;
         }
 
         // Run any transition functions on the new state

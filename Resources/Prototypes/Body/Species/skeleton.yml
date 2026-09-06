@@ -176,11 +176,11 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-  - type: InteractionPopup
-    successChance: 1
-    interactSuccessString: hugging-success-generic
-    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
-    messagePerceivedByOthers: hugging-success-generic-others
+#  - type: InteractionPopup # Euph - interaction verbs replace popups
+#    successChance: 1
+#    interactSuccessString: hugging-success-generic
+#    interactSuccessSound: /Audio/Effects/thudswoosh.ogg
+#    messagePerceivedByOthers: hugging-success-generic-others
 
 - type: entity
   parent: OrganBase
