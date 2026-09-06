@@ -134,7 +134,7 @@
   id: ShuttersRadiation
   parent: [BaseDeltaPressureGlass, BaseShutter]
   name: radiation shutters
-  description: Why did they make these shutters radioactive?
+  description: A relatively fragile set of shutters, made of radiation blocking lead plates. # EE - Changed from "Why did they make these shutters radioactive?"
   components:
   - type: Sprite
     sprite: Structures/Doors/Shutters/shutters_radiation.rsi
@@ -151,6 +151,16 @@
     - board
   - type: RadiationBlocker
     resistance: 4
+  # imp - Begin destructible radiation shutters
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # imp - End destructible radiation shutters
 
 - type: entity
   id: ShuttersRadiationOpen
