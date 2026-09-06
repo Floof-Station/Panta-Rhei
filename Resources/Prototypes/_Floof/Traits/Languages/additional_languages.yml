@@ -88,11 +88,11 @@
   description: trait-FoxLanguage-desc
   category: Languages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    species:
-    - Vulpkanin
-    - Kitsune
+  #conditions:
+  #- !type:OneOfSpeciesCondition
+  #  species:
+  #  - Vulpkanin
+  #  - Kitsune
   effects:
   - !type:ModifyLanguagesTraitEffect
     languagesSpoken:
@@ -106,9 +106,9 @@
   description: trait-DogLanguage-desc
   category: Languages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    species: [Vulpkanin]
+  #conditions:
+  #- !type:OneOfSpeciesCondition 
+  #  species: [Vulpkanin]
   effects:
   - !type:ModifyLanguagesTraitEffect
     languagesSpoken:
@@ -123,10 +123,10 @@
   description: trait-CatLanguage-desc
   category: Languages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    species:
-    - Felinid
+  #conditions: 
+  #- !type:OneOfSpeciesCondition
+    #species:
+    #- Felinid
     #- Tajaran | Euphoria - Tajaran have cat by default
   effects:
   - !type:ModifyLanguagesTraitEffect
@@ -142,11 +142,11 @@
   description: trait-MonkeyLanguage-desc
   category: Languages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    species:
-    - Human
-    - Felinid # According to TG lore, felinids were creating due to a sabotage of cloning
+  #conditions: 
+  #- !type:OneOfSpeciesCondition
+  #  species:
+  #  - Human
+  #  - Felinid # According to TG lore, felinids were creating due to a sabotage of cloning
   effects:
   - !type:ModifyLanguagesTraitEffect
     languagesSpoken:
@@ -161,11 +161,11 @@
   description: trait-KoboldLanguage-desc
   category: Languages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    species:
-    - Human
-    - Reptilian
+  #conditions: 
+  #- !type:OneOfSpeciesCondition
+  #  species:
+  #  - Human
+  #  - Reptilian
   effects:
   - !type:ModifyLanguagesTraitEffect
     languagesSpoken:
