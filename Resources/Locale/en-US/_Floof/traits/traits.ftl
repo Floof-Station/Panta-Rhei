@@ -105,3 +105,9 @@ trait-description-BadShooting = Due to a lack of training or simply a lack of sk
 
 trait-rrrolling-accent-name = Rrrolling Accent
 trait-rrrolling-accent-desc = Whether it's from culture, physicality, or just an affectation you roll your 'r's.
+
+trait-name-cocooner = Cocooner
+trait-description-cocooner = You have the ability to spin web and put things... or people... into cocoons.
+
+trait-name-web-spinning = Web Spinning
+trait-description-web-spinning = Through a genetic mutation or a few surgeries you have the unique ability to spin web.
