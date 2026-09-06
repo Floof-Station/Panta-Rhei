@@ -5638,3 +5638,17 @@ Entries:
         Overhauled engineering department. Added chute to PA control.
   id: 702
   time: '2026-09-05T20:00:26.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Glimmer scaling for points is now capped at 1.5, down from 2.
+    - type: Tweak
+      message: Glimmer scaling gives reduced returns when approaching 1000 glimmer.
+    - type: Tweak
+      message: >-
+        Glimmer Research Stealer event should appear more often, and broadcast
+        on common rather than science.
+    - type: Fix
+      message: Glimmer Research Stealer event should trigger now (hopefully).
+  id: 703
+  time: '2026-09-06T02:21:30.0000000+00:00'
