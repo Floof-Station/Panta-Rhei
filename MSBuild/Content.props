@@ -9,4 +9,10 @@
     <IsPackable Condition="'$(IsPackable)' == ''">false</IsPackable>
     <Nullable Condition="'$(Nullable)' == ''">enable</Nullable>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- Euph - added RA0030 (consider using non-generic variant of this method) -->
+    <WarningsNotAsErrors>CS0618,CS0672,CS0612,CS1062,CS1064,NU1903,RA0030</WarningsNotAsErrors>
+  </PropertyGroup>
 </Project>

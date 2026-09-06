@@ -7,7 +7,7 @@
   flavor: fruity
   color: "#45072f"
   metabolisms:
-    Medicine:
+    Bloodstream:
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -69,7 +69,7 @@
   flavor: sweet
   color: "#ae0072"
   metabolisms:
-    Medicine:
+    Bloodstream:
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -157,7 +157,7 @@
   flavor: spooky
   color: "#c90084"
   metabolisms:
-    Narcotic:
+    Bloodstream:
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage

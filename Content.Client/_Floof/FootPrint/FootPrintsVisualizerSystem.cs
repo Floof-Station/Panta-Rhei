@@ -9,7 +9,6 @@ namespace Content.Client._Floof.FootPrint;
 public sealed class FootPrintsVisualizerSystem : VisualizerSystem<FootPrintComponent>
 {
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {

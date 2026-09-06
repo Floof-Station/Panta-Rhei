@@ -136,7 +136,7 @@ public sealed class MilkerSystem : EntitySystem
         if (entity.Comp.TubeSprite is { } sprite)
         {
             _container.EnsureContainer<ContainerSlot>(entity, MilkerComponent.VisualsContainerName);
-            if (EntityManager.TrySpawnInContainer(null, entity, MilkerComponent.VisualsContainerName, out var visualEntity))
+            if (TrySpawnInContainer(null, entity, MilkerComponent.VisualsContainerName, out var visualEntity))
             {
                 var visualComp = EnsureComp<LeashedVisualsComponent>(visualEntity.Value);
                 visualComp.Sprite = sprite;

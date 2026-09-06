@@ -1,7 +1,7 @@
 ﻿- type: reagent
   id: Bepis
   name: reagent-name-bepis
-  parent: BaseSoda
+  parent: Cola # Are we fr
   desc: reagent-desc-bepis
   physicalDesc: reagent-physical-desc-fizzy
   flavor: soda
@@ -13,12 +13,3 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
-  metabolisms:
-    Drink:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectDrowsiness
-        time: 1
-        type: Remove

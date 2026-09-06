@@ -1,26 +1,29 @@
-marking-SlimeNose-nose = Nose (Profile)
-marking-SlimeNose = Nose (Profile)
+marking-SlimeEyesDefault = Eyes (Default)
+marking-SlimeEyesDefault-default = Eyes (Default)
 
+marking-SlimeEyesDroopyLeft = Droopy Eyes (Left)
+marking-SlimeEyesDroopyLeft-droopyL = Droopy Eyes (Left)
+
+marking-SlimeEyesCyclops = Cyclops Eye
+marking-SlimeEyesCyclops-cyclops = Cyclops Eye
+
+marking-SlimeNose = Nose (Profile)
+marking-SlimeNose-nose = Nose (Profile)
+
+
+
+# Euph - i have no clue where these came from but they seem to be needed
 marking-SlimeMouth-mouth = Mouth
 marking-SlimeMouth = Mouth
 
 # marking-SlimeBrain-brain = Brain
 # marking-SlimeBrain = Brain
 
-marking-SlimeEyesDefault = Eyes
-marking-SlimeEyesDefault-eyes = Eyes (Default)
-
 marking-SlimeEyeglow = Glowing Eyes
 marking-SlimeEyeglow-glow = Glowing Eyes
 
-marking-SlimeEyesDroopy = Droopy Eyes
-marking-SlimeEyesDroopy-droopy = Droopy Eyes
-
 marking-SlimeEyesDroopyGlowing = Droopy Glowing Eyes
 marking-SlimeEyesDroopyGlowing-droopyglow = Droopy Glowing Eyes
-
-marking-SlimeEyesCyclops = Cyclops Eye
-marking-SlimeEyesCyclops-cyclops = Cyclops Eye
 
 marking-SlimeEyesCyclopsGlowing = Cyclops Glowing Eye
 marking-SlimeEyesCyclopsGlowing-cyclopsglow = Cyclops Glowing Eye

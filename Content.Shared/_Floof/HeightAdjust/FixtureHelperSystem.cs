@@ -6,7 +6,7 @@ using Robust.Shared.Serialization.Manager;
 
 namespace Content.Shared._Floof.HeightAdjust;
 
-public class FixtureHelperSystem : EntitySystem
+public sealed class FixtureHelperSystem : EntitySystem
 {
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ISerializationManager _serialization = default!;

@@ -44,7 +44,6 @@ phrase-sell = sell
 phrase-buy = buy
 phrase-speak = speak
 phrase-sleep = sleep
-phrase-teach = teach
 phrase-learn = learn
 phrase-smell = smell
 phrase-round = round

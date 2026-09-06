@@ -14,9 +14,11 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - &onlyMobs
+      !type:MobStateRequirement
+      allowedStates: [ Alive, Critical ]
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentTop
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
@@ -32,9 +34,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
@@ -50,9 +52,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdFillContainerFromTarget
@@ -71,9 +73,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentTop
     - !type:ConsentRequirement &filledByOthersConsent
       consent: LewdContainerFillByOthers
       inverted: true
@@ -91,9 +93,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - *filledByOthersConsent
   action:
     !type:LewdFillContainerFromTarget
@@ -109,9 +111,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - *filledByOthersConsent
   action:
     !type:LewdFillContainerFromTarget
@@ -130,9 +132,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SlotObstructionRequirement &accessibleMouthUser
       checkUser: true
       slot: MASK # Must have accessible mouth - this is a hack because LewdAccessibleRequirement can't sanely handle this
@@ -150,9 +152,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentTop
     - *accessibleMouthUser
   action:
     !type:LewdDrinkFromOrgan
@@ -170,11 +172,10 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
       checkUserUnderwear: true
-      layerTarget: UndergarmentBottom
-      layerUser: UndergarmentBottom
   action:
     !type:LewdOrganFluidTransfer
     donorOrgan: Penis
@@ -187,11 +188,10 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
       checkUserUnderwear: true
-      layerTarget: UndergarmentBottom
-      layerUser: UndergarmentBottom
   action:
     !type:LewdOrganFluidTransfer
     donorOrgan: Penis
@@ -209,9 +209,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdOrganFluidTransfer
@@ -226,9 +226,9 @@
   requirement:
     !type:ComplexRequirement
     requirements:
+    - *onlyMobs
     - !type:LewdAccessibleRequirement
       checkTargetUnderwear: true
-      layerTarget: UndergarmentBottom
     - !type:SelfTargetRequirement
   action:
     !type:LewdOrganFluidTransfer

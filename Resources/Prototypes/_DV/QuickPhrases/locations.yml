@@ -65,6 +65,11 @@
   id: LocationOutsidePhrase
   text: phrase-location-outside
 
+- type: quickPhrase
+  parent: BaseLocationPhrase
+  id: LocationUpPhrase
+  text: phrase-location-up
+
 ## Compass directions
 
 - type: quickPhrase

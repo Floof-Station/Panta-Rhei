@@ -3,8 +3,8 @@
   parent: BaseGlobal
   priority: 4
   requiresHands: false
-  requiresCanInteract: false
-  checkInteractionBlocker: false # Floof
+  requiresCanAccess: false
+  requiresCanInteract: false # Floof
   contactInteraction: false
   allowSelfInteract: true
   icon: /Textures/Interface/Actions/eyeopen.png
@@ -20,7 +20,7 @@
   id: WaveAt
   parent: [BaseHands, BaseGlobal]
   priority: 3
-  requiresCanInteract: false
+  requiresCanAccess: false
   contactInteraction: false
   range: {max: 20}
   effectSuccess:
@@ -62,7 +62,7 @@
   parent: BaseGlobal
   priority: -100 # Very specific ERP meaning, should be at the bottom
   requiresHands: false
-  requiresCanInteract: false
+  requiresCanAccess: false
   contactInteraction: false
   icon: /Textures/Interface/Actions/eyeopen.png
   range: {max: 20}

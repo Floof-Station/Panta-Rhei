@@ -4,7 +4,7 @@
 - type: marking
   id: HarpyWingDefaultHuescale
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -20,7 +20,7 @@
 - type: marking
   id: HarpyWingDefaultWhitescale
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -36,7 +36,7 @@
 - type: marking
   id: HarpyWingClassic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -52,7 +52,7 @@
 - type: marking
   id: HarpyWingFoldedHuescale
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -68,7 +68,7 @@
 - type: marking
   id: HarpyWingFoldedWhitescale
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -84,7 +84,7 @@
 - type: marking
   id: HarpyWingOwlHuescale
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -100,7 +100,7 @@
 - type: marking
   id: HarpyWingOwlWhitescale
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -115,8 +115,8 @@
 
 - type: marking
   id: HarpyEarsLarge
-  bodyPart: Head
-  markingCategory: HeadTop
+  bodyPart: HeadTop
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -132,7 +132,7 @@
 - type: marking
   id: HarpyTailForkedWhitescale
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -147,7 +147,7 @@
 - type: marking
   id: HarpyTailForkedHuescale
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -162,7 +162,7 @@
 - type: marking
   id: HarpyTailPeacock
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -179,7 +179,7 @@
 - type: marking
   id: HarpyTailHaven
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -196,7 +196,7 @@
 - type: marking
   id: HarpyTailForkedLong
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -211,7 +211,7 @@
 - type: marking
   id: HarpyTailSwallow
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Harpy] # Euph - free markings
   coloring:
     default:
       type:
@@ -226,7 +226,7 @@
 - type: marking
   id: HarpyWing2ToneClassic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_2tone_1
@@ -236,7 +236,7 @@
 - type: marking
   id: HarpyWing3ToneClassic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_3tone_1
@@ -248,7 +248,7 @@
 - type: marking
   id: HarpyWingSpeckledClassic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_speckled_1
@@ -258,7 +258,7 @@
 - type: marking
   id: HarpyWingUndertoneClassic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_undertone_1
@@ -268,7 +268,7 @@
 - type: marking
   id: HarpyWingTipsClassic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: harpy_wingtip_1
@@ -278,7 +278,7 @@
 - type: marking
   id: HarpyWingBat
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: bat_wings_tone_1
@@ -288,7 +288,7 @@
 - type: marking
   id: HarpyWingBionic
   bodyPart: RArmExtension # Frontier: RArm<RArmExtension
-  markingCategory: Arms
+# groupWhitelist: [Harpy] # Euph - free markings
   sprites:
     - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
       state: bionic_wings_tone_1

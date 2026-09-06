@@ -45,7 +45,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        50: Dead # DeltaV, was 40
+        40: Dead
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 3.5
@@ -97,6 +97,8 @@
       - Xeno
       understands:
       - Xeno
+    - type: NightVision #DeltaV - Added nightvision to animals
+      color: "#808080"
 
 - type: entity
   parent: BaseMobCarp
@@ -228,7 +230,7 @@
 
 - type: entity
   name: sharkminnow
-  parent: BaseMobCarp
+  parent: [ BaseMobBloodsucker, BaseMobCarp ]
   id: MobShark
   description: A dangerous shark from the blackness of endless space, who loves to drink blood.
   components:
@@ -265,9 +267,6 @@
         Dead:
           Base: dead
           BaseUnshaded: dead_mouth
-    - type: Body
-      prototype: Bloodsucker
-      requiredLegs: 1
     - type: Butcherable
       spawned:
         - id: FoodMeatFish

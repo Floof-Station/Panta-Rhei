@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
+using Content.IntegrationTests.Fixtures;
 using Content.Shared._Floof.Language;
 using Robust.Shared.Localization;
-using Robust.Shared.Prototypes;
 
 namespace Content.IntegrationTests.Tests._Floof.Language;
 
@@ -11,22 +11,18 @@ namespace Content.IntegrationTests.Tests._Floof.Language;
 /// </summary>
 [TestFixture]
 [TestOf(typeof(LanguagePrototype))]
-public sealed class LanguagePrototypeTest
+public sealed class LanguagePrototypeTest : GameTest
 {
     [Test]
     public async Task CheckLanguagePrototypes()
     {
-        await using var pair = await PoolManager.GetServerClient();
-        var server = pair.Server;
+        var locale = Server.ResolveDependency<ILocalizationManager>();
 
-        var locale = server.ResolveDependency<ILocalizationManager>();
-        var proto = server.ResolveDependency<IPrototypeManager>();
-
-        await server.WaitAssertion(() =>
+        await Server.WaitAssertion(() =>
         {
             var missingStrings = new List<string>();
 
-            foreach (var langProto in proto.EnumeratePrototypes<LanguagePrototype>().OrderBy(a => a.ID))
+            foreach (var langProto in SProtoMan.EnumeratePrototypes<LanguagePrototype>().OrderBy(a => a.ID))
                 foreach (var locString in new List<string> { $"language-{langProto.ID}-name", $"language-{langProto.ID}-description" })
                     if (!locale.HasString(locString))
                         missingStrings.Add($"\"{langProto.ID}\", \"{locString}\"");
@@ -35,10 +31,10 @@ public sealed class LanguagePrototypeTest
         });
 
         // Floofstation - also validate additional strings
-        await server.WaitAssertion(() =>
+        await Server.WaitAssertion(() =>
         {
             var missingLocaleIds = new List<(LanguagePrototype, LocId)>();
-            foreach (var langProto in proto.EnumeratePrototypes<LanguagePrototype>().OrderBy(a => a.ID))
+            foreach (var langProto in SProtoMan.EnumeratePrototypes<LanguagePrototype>().OrderBy(a => a.ID))
             {
                 foreach (var locString in langProto.SpeechOverride.MessageWrapOverrides.Values)
                     if (!locale.HasString(locString))
@@ -56,7 +52,7 @@ public sealed class LanguagePrototypeTest
                 $"{string.Join("\n", missingLocaleIds.Select(a => $"\"{a.Item1.ID}\": \"{a.Item2}\""))}");
 
             // Finally ensure all languages are valid
-            foreach (var langProto in proto.EnumeratePrototypes<LanguagePrototype>().OrderBy(a => a.ID))
+            foreach (var langProto in SProtoMan.EnumeratePrototypes<LanguagePrototype>().OrderBy(a => a.ID))
             {
                 var speech = langProto.SpeechOverride;
                 var id = langProto.ID;
@@ -65,7 +61,5 @@ public sealed class LanguagePrototypeTest
                 Assert.That(!(speech.AllowRadio && speech.RequireLOS), $"Language {id} requires LOS but can be transmitted over radio? Sus.");
             }
         });
-
-        await pair.CleanReturnAsync();
     }
 }

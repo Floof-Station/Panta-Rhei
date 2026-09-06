@@ -24,8 +24,6 @@ namespace Content.Shared.Humanoid
         HeadSide, // side parts (i.e., frills)
         HeadTop,  // top parts (i.e., ears)
         NeckFluff, // TheDen - Ovinia, for fluff on necks
-        TailBehind, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
-        TailOversuit, // FLOOF - add tails that dont have to go through a brutal cookiecutter to work
         Wings,
         Eyes,
         RArm,
@@ -36,14 +34,20 @@ namespace Content.Shared.Humanoid
         LLeg,
         RFoot,
         LFoot,
+        Overlay,
         Handcuffs,
         StencilMask,
         Ensnare,
         Fire,
         LArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
         RArmExtension, // Frontier: a species-specific extension layer, e.g. for harpy wings
-        TaurBodyConnector,// Floof: Required as "Mini-framework" for tauric species
-        TaurBody// Floof: Required as "Mini-framework" for tauric species
+        // Begin Euphoria additions
+        TailOverlay,
+        TailBehind,
+        TailOversuit,
+        ChestBelow1, // Extra layers below the chest
+        ChestBelow2,
+        // End Euphoria additions
     }
 }
 

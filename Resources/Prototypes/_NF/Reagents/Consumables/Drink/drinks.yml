@@ -7,16 +7,13 @@
   flavor: basic
   color: "#a45c08"
   metabolisms:
-    Drink:
+    Digestion:
+      metabolites:
+        Theobromine: 0.05
+        Sugar: 0.2
       effects:
       - !type:SatiateThirst
         factor: 2
-      - !type:AdjustReagent
-        reagent: Theobromine
-        amount: 0.05
-      - !type:AdjustReagent
-        reagent: Sugar
-        amount: 0.2
   metamorphicSprite:
     sprite: _NF/Objects/Consumable/Drinks/pumpkinspicelatte.rsi
     state: icon_empty
@@ -33,7 +30,7 @@
   flavor: cucumber
   color: "#b1ceb0"
   metabolisms:
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateThirst
         factor: 6
@@ -53,7 +50,7 @@
   flavor: honey
   color: "#E79A3F"
   metabolisms:
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateThirst
         factor: 0.6

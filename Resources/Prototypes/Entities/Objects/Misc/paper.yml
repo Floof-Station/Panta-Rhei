@@ -101,7 +101,7 @@
     materialComposition:
       SheetPrinter: 100
   # Corvax-Printer-End
-  # Euphoria | Slip paper under doors.
+  # Begin Euphoria additions - Slip paper under doors.
   - type: Fixtures
     fixtures:
       fix1:
@@ -114,6 +114,8 @@
         - SmallMobMask # Euphoria | Slip papers under doors
         restitution: 0.3  # fite me
         friction: 0.2
+  # End Euphoria additions
+  - type: StationAiWhitelist
 
 - type: entity
   name: paper scrap
@@ -498,3 +500,4 @@
     graph: Envelope
     node: envelope
   # Floofstation aditions end
+  - type: StationAiWhitelist

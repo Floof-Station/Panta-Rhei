@@ -16,6 +16,15 @@
   - PlushieBee
   # End DeltaV Additions
   - ThreeCandles
+  # Begin Euphoria removals - moved into TrinketsFloofstation
+  # - Lighter
+  # - CigPackGreen
+  # - CigPackRed
+  # - CigPackBlue
+  # - CigPackBlack
+  # - CigarCase
+  # - CigarGold
+  # End Euphoria removals
   - BoxFolderBaseThreePapers
   - BoxFolderPlasticClipboardThreePapers
   - BoxFolderClipboardThreePapers
@@ -71,7 +80,6 @@
   - TapeRecorder
   - ClothingHeadHatUshanka
   - Eyepatch
-  # - SuperSynthesizerInstrument #Delta-V - Ports Super Synth Trinket from Starlight # Euph - no
   - LighterFlippo
   - LighterDonkCo
   - LighterHonkCo
@@ -80,6 +88,7 @@
   - LighterInterdyne
   - LighterNanotrasen
   - MatchboxGorlex
+  - NoviceMark # from imp
   # End DeltaV Additions
 
 - type: loadoutGroup
@@ -142,7 +151,7 @@
 # Command
 - type: loadoutGroup
   id: CaptainHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-captain-head
   minLimit: 0
   loadouts:
@@ -203,7 +212,7 @@
 
 - type: loadoutGroup
   id: HoPHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-hop-head
   minLimit: 0
   loadouts:
@@ -405,6 +414,8 @@
   - LongcoatBlack
   - LongcoatBrown
   - LongcoatNanoTrasen
+  - BomberJacket
+  - BomberCheckered
   - BlackWinterCoat
   - PurpleWinterCoat
   - RedWinterCoat
@@ -454,7 +465,7 @@
 
 - type: loadoutGroup
   id: BartenderHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-bartender-head
   minLimit: 0
   loadouts:
@@ -505,7 +516,7 @@
 
 - type: loadoutGroup
   id: ChefHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-chef-head
   minLimit: 0
   loadouts:
@@ -525,6 +536,7 @@
   loadouts:
   - ChefJumpsuit
   - ChefJumpskirt
+  - ChefKimono # DeltaV - Adding kimono for chefs
 
 - type: loadoutGroup
   id: ChefOuterClothing
@@ -607,7 +619,7 @@
 
 - type: loadoutGroup
   id: ChaplainHead
-  parent: [EuphoriaChaplainHead, FloofHats, AssistantHead] # floofstation
+  parent: [EuphoriaChaplainHead, AssistantHead] # floofstation
   name: loadout-group-chaplain-head
   minLimit: 0
   loadouts:
@@ -680,7 +692,7 @@
 
 - type: loadoutGroup
   id: JanitorHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-janitor-head
   minLimit: 0
   loadouts:
@@ -722,7 +734,7 @@
 
 - type: loadoutGroup
   id: BotanistHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-botanist-head
   minLimit: 0
   loadouts:
@@ -756,6 +768,7 @@
   loadouts:
   - BotanistApron
   - BotanistWintercoat
+  - BomberService # DeltaV
 
 - type: loadoutGroup
   id: BotanistJobTrinkets
@@ -766,7 +779,7 @@
 
 - type: loadoutGroup
   id: ClownHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-clown-head
   minLimit: 0
   loadouts:
@@ -841,13 +854,17 @@
 
 - type: loadoutGroup
   id: MimeHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-mime-head
   minLimit: 0
   loadouts:
   - MimeHead
   - MimeFrenchBeret
   - MimeCap
+  # Begin DeltaV Additions
+  - MimeBeretTassledBlack
+  - MimeBeretTassledWhite
+  # End DeltaV Additions
   - MimeBowler # Euphoria
 
 - type: loadoutGroup
@@ -866,6 +883,10 @@
   loadouts:
   - MimeJumpsuit
   - MimeJumpskirt
+  # Begin DeltaV Additions
+  - MimeTurtleneckPants
+  - MimeTurtleneckSkirt
+  # End DeltaV Additions
   # Euphoria
   - MimeCroppedSuit
   - MimeNouveauSuit
@@ -892,7 +913,10 @@
   minLimit: 0
   loadouts:
   - MimeWintercoat
-  - MimeWintercoatLong # DeltaV
+  # Begin DeltaV Additions
+  - MimeWintercoatLong
+  - MimeFurCoat
+  # End DeltaV Additions
   - MimePufferCoat # Euphoria
 
 - type: loadoutGroup
@@ -976,7 +1000,7 @@
   - PanFlute
   - Ocarina
   - Bagpipe
-  #- SuperSynthesizerInstrument # Floofstation - remove this from passenger loadouts
+  #- SuperSynthesizerInstrument # Floofstation/Delta-V - remove this from passenger loadouts and make it musician only
   - Rickenbacker4003Instrument # Floofstation - add the non antag version its just a bass
 
 - type: loadoutGroup
@@ -991,7 +1015,7 @@
 # Cargo
 - type: loadoutGroup
   id: QuartermasterHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-quartermaster-head
   minLimit: 0
   loadouts:
@@ -1029,6 +1053,7 @@
   loadouts:
   - QuartermasterLongcoat # DeltaV - Longcoats
   - QuartermasterWintercoat
+  - BomberLogistic # DeltaV
 
 - type: loadoutGroup
   id: QuartermasterShoes
@@ -1048,7 +1073,7 @@
 
 - type: loadoutGroup
   id: CargoTechnicianHead
-  parent: [FloofCargotechHats, FloofHats] # floofstation
+  parent: [FloofCargotechHats, AssistantHead] # floofstation
   name: loadout-group-cargo-technician-head
   minLimit: 0
   loadouts:
@@ -1082,6 +1107,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
+  - BomberLogistic # DeltaV
 
 - type: loadoutGroup
   id: CargoTechnicianShoes
@@ -1136,7 +1162,7 @@
 # Engineering
 - type: loadoutGroup
   id: ChiefEngineerHead
-  parent: [FloofCeHats, AtmosphericTechnicianHead, FloofHats] # floofstation
+  parent: [FloofCeHats, AtmosphericTechnicianHead, AssistantHead] # floofstation
   name: loadout-group-chief-engineer-head
   minLimit: 0
   loadouts:
@@ -1176,6 +1202,7 @@
   loadouts:
   - ChiefEngineerLongcoat # DeltaV - Longcoats
   - ChiefEngineerWintercoat
+  - BomberEngineering # DeltaV
 
 - type: loadoutGroup
   id: ChiefEngineerShoes
@@ -1219,7 +1246,7 @@
 
 - type: loadoutGroup
   id: StationEngineerHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-station-engineer-head
   minLimit: 0
   loadouts:
@@ -1256,6 +1283,7 @@
   loadouts:
   - StationEngineerOuterVest
   - StationEngineerWintercoat
+  - BomberEngineering # DeltaV
 
 - type: loadoutGroup
   id: StationEngineerShoes
@@ -1280,6 +1308,7 @@
   # Begin DeltaV additions
   - ElectricianPDA
   - MechanicPDA
+  - NuclearScientistPDA
   # End DeltaV additions
 
 - type: loadoutGroup
@@ -1306,6 +1335,7 @@
   minLimit: 0
   loadouts:
   - AtmosphericTechnicianWintercoat
+  - BomberEngineering # DeltaV
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
@@ -1352,7 +1382,7 @@
 # Science
 - type: loadoutGroup
   id: ResearchDirectorHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-research-director-head
   minLimit: 0
   loadouts:
@@ -1392,6 +1422,7 @@
   - MystaLabCoat # DeltaV
   - ResearchDirectorLongcoat # DeltaV - Longcoats
   - ResearchDirectorWintercoat
+  - BomberEpistemic # DeltaV
 
 - type: loadoutGroup
   id: ResearchDirectorShoes
@@ -1411,7 +1442,7 @@
 
 - type: loadoutGroup
   id: ScientistHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-scientist-head
   minLimit: 0
   loadouts:
@@ -1463,6 +1494,7 @@
   - LongLabCoat # DeltaV
   - ScienceLabCoat
   - ScienceWintercoat
+  - BomberEpistemic # DeltaV
   - SeniorResearcherLabCoat
 
 - type: loadoutGroup
@@ -1520,7 +1552,7 @@
 # Security
 - type: loadoutGroup
   id: HeadofSecurityHead
-  parent: [Shoalenforcerhoshelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhoshelmet, AssistantHead] # floofstation
   name: loadout-group-head-of-security-head
   minLimit: 0
   loadouts:
@@ -1559,7 +1591,6 @@
   # Begin DeltaV changes
   - ScarfRed
   - ScarfBlack
-  - SecurityPoncho
   - HeadOfSecurityRobe
   - HeadOfSecurityCloakBoat
   # End DeltaV changes
@@ -1594,7 +1625,7 @@
 
 - type: loadoutGroup
   id: WardenHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-warden-head
   minLimit: 0
   loadouts:
@@ -1636,7 +1667,7 @@
 
 - type: loadoutGroup
   id: SecurityHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-security-head
   minLimit: 0
   loadouts:
@@ -1720,7 +1751,7 @@
 
 - type: loadoutGroup
   id: DetectiveHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-detective-head
   minLimit: 0
   loadouts:
@@ -1735,8 +1766,7 @@
   minLimit: 0
   loadouts:
   - DetectiveTie
-  - ScarfRed # DeltaV
-  - SecurityPoncho # DeltaV
+  - ScarfBlue # DeltaV - Was ScarfRed
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
@@ -1793,7 +1823,7 @@
 # Medical
 - type: loadoutGroup
   id: ChiefMedicalOfficerHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-chief-medical-officer-head
   minLimit: 0
   loadouts:
@@ -1827,6 +1857,7 @@
   - ChiefMedicalOfficerLongcoat # DeltaV - Longcoats
   - ChiefMedicalOfficerLongLabCoat # DeltaV - Medical Clothing Overhaul
   - ChiefMedicalOfficerWintercoat
+  - BomberMedical # DeltaV
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerNeck
@@ -1863,7 +1894,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-medical-doctor-head
   minLimit: 0
   loadouts:
@@ -1928,6 +1959,7 @@
   - LongLabCoat # DeltaV - Medical Clothing Overhaul
   - MedicalLongLabCoat # DeltaV - Medical Clothing Overhaul
   - MedicalDoctorWintercoat
+  - BomberMedical # DeltaV
   - SeniorPhysicianLabCoat
 
 - type: loadoutGroup
@@ -2012,6 +2044,9 @@
   # Begin of DeltaV Additions
   - ChemistFormalSuit
   - ChemistFormalSkirt # more jumpskirts
+  - PharmacistJumpsuit
+  - PharmacistJumpskirt
+  - PharmacistJumpsuitFormal
   - SeniorChemistJumpsuit # Medical Clothing Overhaul
   - SeniorChemistJumpskirt # Medical Clothing Overhaul
   - OrangeTurtleneckJumpsuit
@@ -2026,6 +2061,7 @@
   loadouts:
   - RegularLabCoat
   - ChemistLabCoat
+  - PharmacistLabCoat # DeltaV
   - SeniorChemistLabCoat # DeltaV - Medical Clothing Overhaul
   - LongLabCoat # DeltaV - Medical Clothing Overhaul
   - ChemistLongLabCoat # DeltaV - Medical Clothing Overhaul
@@ -2051,7 +2087,7 @@
 
 - type: loadoutGroup
   id: ParamedicHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-paramedic-head
   minLimit: 0
   loadouts:
@@ -2132,6 +2168,22 @@
   - JournalistJumpsuit
   - ClothingUniformBrosBlazer #imp
   - ClothingUniformBrosBlazerSkirt #imp
+
+- type: loadoutGroup
+  id: ReporterHead
+  parent: AssistantHead # Euph
+  name: loadout-group-reporter-head
+  minLimit: 0
+  loadouts:
+  - ReporterPressFedora
+
+- type: loadoutGroup
+  id: ReporterOuterClothing
+  parent: PassengerOuterClothing # Euph
+  name: loadout-group-reporter-outerclothing
+  minLimit: 0
+  loadouts:
+  - ReporterPressVest
 
 - type: loadoutGroup
   id: ReporterJobTrinkets

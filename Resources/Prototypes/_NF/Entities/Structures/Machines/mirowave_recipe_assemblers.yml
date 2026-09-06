@@ -100,7 +100,10 @@
       - !type:DoActsBehavior
         acts: ["Breakage"]
   - type: ApcPowerReceiver
-    powerLoad: 1000 # Assume the range is off.
+    powerLoad: 50
+  - type: PowerState # Euph
+    idlePowerDraw: 50
+    workingPowerDraw: 1000
   - type: Machine
     board: ElectricRangeMachineCircuitboard
   - type: ContainerContainer
@@ -209,7 +212,10 @@
       map: ["scan"]
       visible: false
   - type: ApcPowerReceiver
-    powerLoad: 400
+    powerLoad: 50
+  - type: PowerState # Euph
+    idlePowerDraw: 50
+    workingPowerDraw: 400
   - type: Machine
     board: KitchenAssemblerMachineCircuitboard
   - type: ActivatableUI
@@ -257,7 +263,10 @@
       map: ["enum.MicrowaveVisualizerLayers.BaseUnlit"]
       visible: false
   - type: ApcPowerReceiver
-    powerLoad: 500
+    powerLoad: 50
+  - type: PowerState # Euph
+    idlePowerDraw: 50
+    workingPowerDraw: 500
   - type: GuideHelp
     guides:
     - MedicalRecipes

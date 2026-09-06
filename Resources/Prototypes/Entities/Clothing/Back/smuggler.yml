@@ -9,10 +9,6 @@
   - type: ReallyCollideOnAnchor # Euph - bugfix for subfloor items becoming collidable
   - type: Transform
     anchored: false
-  - type: AnchoredStorageFilter
-    blacklist:
-      components:
-      - HumanoidAppearance # for forks with felines
   - type: BlockAnchorOn
     blacklist:
       components:

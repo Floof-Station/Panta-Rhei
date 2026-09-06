@@ -6,7 +6,7 @@ using Robust.Shared.GameStates;
 namespace Content.Shared._Common.Consent;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
-public partial class ConsentComponent : Component
+public sealed partial class ConsentComponent : Component
 {
     /// <summary>
     /// Contains the consent toggles and text.

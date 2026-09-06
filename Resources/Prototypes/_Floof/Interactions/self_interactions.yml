@@ -37,7 +37,7 @@
   id: MakeSleepSelf
   parent: [SelfInteractionBase, MakeSleepOther]
   cooldown: 5 # Floof
-  checkInteractionBlocker: false # Floof - don't check CanInteract
+  requiresCanInteract: false
   requiresHands: false # Floof
   delay: 4.5
   requirement:

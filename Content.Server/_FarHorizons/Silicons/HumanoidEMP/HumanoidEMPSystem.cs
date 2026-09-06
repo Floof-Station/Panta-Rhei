@@ -15,7 +15,6 @@ namespace Content.Server._FarHorizons.Silicons.HumanoidEMP;
 
 public sealed partial class HumanoidEMPSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
     [Dependency] private readonly StunSystem _stunSystem = default!;
     [Dependency] private readonly MovementModStatusSystem _movementMod = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
@@ -68,10 +67,10 @@ public sealed partial class HumanoidEMPSystem : EntitySystem
         ent.Comp.NextEffect = _timing.CurTime + ent.Comp.EffectCooldown;
 
         // Euph - args.Strength doesnt exist
-        ApplyDamage(ent.Owner, ent.Comp.BaseDamage, 1); // args.Strength);
+        ApplyDamage(ent.Owner, ent.Comp.BaseDamage, 10); // args.Strength);
 
-        var effect = ResolveThresholds(ent.Comp.Thresholds, 1); // args.Strength);
-        var ev = new GatherOrganEmpEffectEvent(effect, 1); // args.Strength);
+        var effect = ResolveThresholds(ent.Comp.Thresholds, 10); // args.Strength);
+        var ev = new GatherOrganEmpEffectEvent(effect, 10); // args.Strength);
         RaiseLocalEvent(ent, ref ev);
 
         ApplyEffect(ent, ev.Effect);

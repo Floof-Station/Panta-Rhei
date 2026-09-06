@@ -1,4 +1,51 @@
 - type: emote
+  id: Marr
+  name: chat-emote-name-marr
+  category: Vocal
+#  available: false
+#  whitelist:
+#    components:
+#    - Vocal
+  # Begin Euphoria changes - tag-based whitelist
+  available: true
+  whitelist:
+    tags:
+    - ShadowkinEmotes
+    - HarpyEmotes
+  # End Euphoria changes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-marr"]
+  chatTriggers:
+  - marr
+  - marrs # Euph - no duplicates
+
+- type: emote
+  id: Wurble
+  name: chat-emote-name-wurble
+  category: Vocal
+#  available: false
+#  whitelist:
+#    components:
+#    - Vocal
+  # Begin Euphoria changes - tag-based whitelist
+  available: true
+  whitelist:
+    tags:
+    - ShadowkinEmotes
+    - HarpyEmotes
+  # End Euphoria changes
+  blacklist:
+    components:
+    - BorgChassis
+  chatMessages: ["chat-emote-msg-wurble"]
+  chatTriggers:
+  - wurble
+  - wurbles
+
+# Begin Euphoria port
+- type: emote
   id: Scree
   name: chat-emote-name-scree
   category: Vocal
@@ -41,3 +88,4 @@
   - calling
   - calls
   - called
+# End Euphoria port

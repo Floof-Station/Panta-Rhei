@@ -3,17 +3,16 @@
 ##list of species with human faces: Humans, Dwarves, Slimepeople, Moths?, Felinids, Goblins, Shelegs, Harpies, Oni, Arachnid?, Diona?
 ##further testing required
 ##initial testing success, need strings/localization and to trim the list a bit
-##Newlist = [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+##Newlist = [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime]
 ##may need to make facepaint variants for goblins, moths, and non-standard nosed species
 ##BACK AGAIN, now this time with a ton of extra stuff for vulps and reptiles
 ##Oncemore, we return. This time, to fix reptilians and add in just one more thing.
 
-##Human Headed Species, use [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson] for restrictions
+##Human Headed Species, use [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] for restrictions
 - type: marking
   id: FacepaintClown
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -27,8 +26,7 @@
 - type: marking
   id: FacepaintClownMinimal
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -42,8 +40,7 @@
 - type: marking
   id: FacepaintClownSad
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -57,8 +54,7 @@
 - type: marking
   id: FacepaintClownSerious
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -72,8 +68,7 @@
 - type: marking
   id: FacepaintClownSmug
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -87,8 +82,7 @@
 - type: marking
   id: FacepaintMime
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -102,8 +96,7 @@
 - type: marking
   id: FacepaintMimeBlush
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -117,8 +110,7 @@
 - type: marking
   id: FacepaintMimeOdd
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -132,8 +124,7 @@
 - type: marking
   id: FacepaintMimeSad
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -147,8 +138,7 @@
 - type: marking
   id: FacepaintMimeSerious
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -162,8 +152,7 @@
 - type: marking
   id: FacepaintWhite
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -178,8 +167,7 @@
 - type: marking
   id: FacepaintClownReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -193,8 +181,7 @@
 - type: marking
   id: FacepaintClownMinimalReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -208,8 +195,7 @@
 - type: marking
   id: FacepaintClownSadReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -223,8 +209,7 @@
 - type: marking
   id: FacepaintClownSeriousReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -238,8 +223,7 @@
 - type: marking
   id: FacepaintClownSmugReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -253,8 +237,7 @@
 - type: marking
   id: FacepaintMimeReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -268,8 +251,7 @@
 - type: marking
   id: FacepaintMimeBlushReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -283,8 +265,7 @@
 - type: marking
   id: FacepaintMimeOddReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -298,8 +279,7 @@
 - type: marking
   id: FacepaintMimeSadReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -314,8 +294,7 @@
 - type: marking
   id: FacepaintMimeSeriousReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -330,8 +309,7 @@
 - type: marking
   id: FacepaintWhiteReptilian
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian]
+# groupWhitelist: [Reptilian] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -347,8 +325,7 @@
 - type: marking
   id: FacepaintClownVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -362,8 +339,7 @@
 - type: marking
   id: FacepaintClownMinimalVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -377,8 +353,7 @@
 - type: marking
   id: FacepaintClownSadVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -392,8 +367,7 @@
 - type: marking
   id: FacepaintClownSeriousVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -407,8 +381,7 @@
 - type: marking
   id: FacepaintClownSmugVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -422,8 +395,7 @@
 - type: marking
   id: FacepaintMimeVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -437,8 +409,7 @@
 - type: marking
   id: FacepaintMimeBlushVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -452,8 +423,7 @@
 - type: marking
   id: FacepaintMimeOddVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -467,8 +437,7 @@
 - type: marking
   id: FacepaintMimeSadVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -482,8 +451,7 @@
 - type: marking
   id: FacepaintMimeSeriousVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -497,8 +465,7 @@
 - type: marking
   id: FacepaintWhiteVulpkanin
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Vulpkanin]
+# groupWhitelist: [Vulpkanin] # Euph - free markings
   forcedColoring: true
   coloring:
     default:
@@ -513,8 +480,7 @@
 - type: marking
   id: FacepaintBlushHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   sprites:
   - sprite: _NF/Mobs/Customization/facepaints/shared.rsi
     state: facepaint_blush
@@ -522,8 +488,7 @@
 - type: marking
   id: FacepaintEyebrowsHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   sprites:
   - sprite: _NF/Mobs/Customization/facepaints/shared.rsi
     state: facepaint_eyebrows
@@ -531,8 +496,7 @@
 - type: marking
   id: FacepaintLipstickHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [Arachnid, Dwarf, Felinid, Goblin, Harpy, Human, Moth, Oni, Sheleg, SlimePerson]
+# groupWhitelist: [Arachnid, Felinid, Harpy, Human, Moth, Oni, Slime] # Euph - free markings
   sprites:
   - sprite: _NF/Mobs/Customization/facepaints/shared.rsi
     state: facepaint_lipstick
@@ -540,8 +504,7 @@
 - type: marking
   id: FacepaintBlushSnout
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian, Vulpkanin]
+# groupWhitelist: [Reptilian, Vulpkanin] # Euph - free markings
   sprites:
   - sprite: _NF/Mobs/Customization/facepaints/shared.rsi
     state: facepaint_blush
@@ -549,8 +512,7 @@
 - type: marking
   id: FacepaintEyebrowsSnout
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian, Vulpkanin]
+# groupWhitelist: [Reptilian, Vulpkanin] # Euph - free markings
   sprites:
   - sprite: _NF/Mobs/Customization/facepaints/shared.rsi
     state: facepaint_eyebrows
@@ -558,8 +520,7 @@
 - type: marking
   id: FacepaintLipstickSnout
   bodyPart: Snout
-  markingCategory: Head
-  speciesRestriction: [Reptilian, Vulpkanin]
+# groupWhitelist: [Reptilian, Vulpkanin] # Euph - free markings
   sprites:
   - sprite: _NF/Mobs/Customization/facepaints/shared.rsi
     state: facepaint_lipstick_snout

@@ -1,0 +1,119 @@
+# Euph note: ovinia is gone from here
+
+# Begin Euphoria additions
+# Euph
+- type: emoteSounds
+  id: ShadowkinBase
+  abstract: true
+  params:
+    variation: 0.125
+  sounds:
+    Snore:
+      collection: Snores
+    Honk:
+      collection: BikeHorn
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hiss:
+      collection: FelinidHisses
+    Meow:
+      collection: FelinidMeows
+    Mew:
+      collection: FelinidMews
+    Growl:
+      collection: FelinidGrowls
+    Purr:
+      collection: FelinidPurrs
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+# End Euphoria additions
+
+- type: emoteSounds
+  id: MaleShadowkin
+  parent: ShadowkinBase # Euph
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: ShadowkinMaleScreams
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+    Hiss:
+      collection: FelinidHisses
+    Purr:
+      collection: FelinidPurrs
+    Growl:
+      collection: FelinidGrowls
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg
+
+- type: emoteSounds
+  id: FemaleShadowkin
+  parent: ShadowkinBase # Euph
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: ShadowkinFemaleScreams
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+    Hiss:
+      collection: FelinidHisses
+    Purr:
+      collection: FelinidPurrs
+    Growl:
+      collection: FelinidGrowls
+    Gulp: # Goob
+      path: /Audio/_Goobstation/Voice/Human/gulp.ogg

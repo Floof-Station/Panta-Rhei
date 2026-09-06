@@ -132,6 +132,7 @@
   - FloofChefGloves # Floofstation - give chef gloves
   - FloofChefShoes # Floofstation, give chef shoes
   - ChefPDADelta # DeltaV
+  - ChefShoes # DeltaV - Adding group for chef shoes
   - Survival
   - ChefJobTrinkets
   - GroupSpeciesBreathTool
@@ -186,6 +187,7 @@
 - type: roleLoadout
   id: JobChaplain
   parent: JobBaseLoadout # Floofstation
+  canCustomizeName: true
   groups:
   - GroupTankHarness
   - ChaplainHead
@@ -289,6 +291,7 @@
   - MimeBelt
   - GroupSpeciesBreathTool # floof
   - GroupTankHarness
+  - MimeShoes # DeltaV
   - FloofUndergarmentTopPassenger # Floof
   - FloofUndergarmentBottomPassenger # Floof
   - FloofSocksPassenger # Floof
@@ -781,7 +784,8 @@
   - PassengerFace # Floofstation let reporters have drip
   - PassengerGloves # Floofstation let reporters have drip
   - ReporterJumpsuit
-  - PassengerOuterClothing # Floofstation let reporters have drip
+  - ReporterHead
+  - ReporterOuterClothing
   - FloofServiceReporterPDAs # Floofstation pda
   - PassengerShoes # Floofstation let reporters have drip
   - CommonBackpack

@@ -17,26 +17,6 @@
   - gekkers
 
 - type: emote
-  id: Yip
-  name: chat-emote-name-yip
-  category: Vocal
-  icon: Interface/Emotes/laugh.png
-  whitelist:
-    tags: # Note: under the hood, it is used by both vulps and kitsunes.
-    - UnathiEmotes
-    - VulpEmotes
-    - KitsuneEmotes
-  blacklist:
-    tags:
-    - SiliconEmotes
-    components:
-    - BorgChassis
-  chatMessages: [ chat-emote-msg-yip ]
-  chatTriggers:
-  - yip
-  - yips
-
-- type: emote
   id: Yap
   name: chat-emote-name-yap
   category: Vocal

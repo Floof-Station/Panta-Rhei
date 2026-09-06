@@ -167,8 +167,6 @@ public abstract partial class SharedGunSystem : EntitySystem
         gun.Comp.ShootCoordinates = GetCoordinates(msg.Coordinates);
         gun.Comp.Target = GetEntity(msg.Target);
         AttemptShoot(user.Value, gun);
-
-        // Floofstation - this was added by... someone? TODO: figure out or revert
         if (msg.Continuous)
             gun.Comp.ShotCounter = 0;
     }
