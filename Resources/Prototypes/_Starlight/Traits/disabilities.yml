@@ -2,7 +2,7 @@
   id: HighLightSensitivity
   name: trait-highlightsensitivity-name
   description: trait-highlightsensitivity-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euph
   cost: -1
   effects:
     - !type:OverrideCompsEffect
@@ -23,7 +23,7 @@
   id: ExtremeLightSensitivity
   name: trait-extremelightsensitivity-name
   description: trait-extremelightsensitivity-desc
-  category: Disabilities
+  category: DisabilitiesPhysical # Euph
   cost: -2
   effects:
     - !type:OverrideCompsEffect

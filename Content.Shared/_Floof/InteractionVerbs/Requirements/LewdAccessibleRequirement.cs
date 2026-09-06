@@ -2,6 +2,7 @@ using Content.Shared._Floof.Clothing.SlotBlocker;
 using Content.Shared._Floof.Lewd.Components;
 using Content.Shared.Humanoid;
 using Content.Shared.Inventory;
+using Content.Shared.Mobs.Components;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Floof.InteractionVerbs.Requirements;
