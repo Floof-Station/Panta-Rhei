@@ -304,7 +304,7 @@ public sealed class CarryingSystem : EntitySystem
         // Floofstation - store virtual items and add a special component to them
         if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out var virt))
             EnsureComp<OfferableVirtualItemComponent>(virt.Value);
-        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out virt))
+        if (TryComp<CarriableComponent>(carried, out var carriableComp) && (carriableComp.FreeHandsRequired > 1) && _virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out virt))
             EnsureComp<OfferableVirtualItemComponent>(virt.Value);
         // Floofstation section end
     }

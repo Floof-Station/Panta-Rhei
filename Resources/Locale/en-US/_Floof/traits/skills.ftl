@@ -9,6 +9,10 @@ trait-spearmaster-desc =
 trait-small-name = Small
 trait-small-desc = You are able to climb into spaces others would not normally be able to fit into, such as duffel bags.
 
+trait-tiny-name = Tiny
+trait-tiny-desc = You are able to climb into extremely small places! Beware, you are not as strong. 
+examine-tiny-trait-message = This person is very small, be careful!
+
 trait-swashbuckler-name = Swashbuckler
 trait-swashbuckler-desc =
     You are an expert in swordsmanship, wielding swords, knives, and other blades with unrivaled finesse.

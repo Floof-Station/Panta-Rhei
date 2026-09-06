@@ -22,7 +22,9 @@
   name: trait-small-name
   description: trait-small-desc
   category: Skills
-  cost: 2
+  cost: 1
+  conflicts:
+  - Tiny
   conditions:
   - !type:HasCompCondition
     invert: true
@@ -36,6 +38,41 @@
             - 0,0,1,4
             - 0,2,3,4
             - 4,0,5,4
+
+
+- type: trait
+  id: Tiny
+  name: trait-tiny-name
+  description: trait-tiny-desc
+  category: Skills
+  cost: 2
+  conflicts:
+  - Small
+  #conditions:
+  #- !type:HasCompCondition
+  #  invert: true  
+  #  component: PseudoItem
+  effects:
+    - !type:OverrideCompsEffect
+      components:
+        - type: PseudoItem
+          size: Normal #2x2, just like it was on Floof.
+        - type: Carriable
+          freeHandsRequired: 1 #Default is 2, they are tiny enough to be carried in one hand. A bit bugged, as picking up with 2 free hands will occupy both hands.
+          #pickupDuration: 2 # Default is 3, plus they will already be lighter. # Seems like this isn't a variable on the component anymore.        
+        - type: BonusMeleeDamage  
+          conditions:
+          - !type:OneOfSpeciesCondition
+            invert: true
+            species:
+            - Avali
+          damageModifierSet:
+            coefficients: #Do less physical damage, because tiny.
+              Blunt: 0.9
+              Slash: 0.9
+              Piercing: 0.9
+    - !type:ModifyStaminaThresholdEffect 
+      multiplier: 0.8 #Have less stamina. Takes 1 less shot with a disabler to stun, compared to human Urist. Could mitigate with Vigor trait if you want to use the points.
 
 # =================================================== #
 
