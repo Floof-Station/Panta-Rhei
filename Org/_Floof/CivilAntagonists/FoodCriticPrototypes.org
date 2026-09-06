@@ -1,5 +1,10 @@
-# BaseFoodCriticObjective
-
+:PROPERTIES:
+:ID:       6faa9586-eb24-46ba-84f8-385f6be3f753
+:END:
+-----
+* Food Critic
+** BaseFoodCriticObjective
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
 - type: entity
   abstract: true
   parent: BaseObjective
@@ -12,21 +17,23 @@
     roles:
     - FoodCriticRole
 
-# FoodCriticSurviveObjective
+#+end_src
+** FoodCriticSurviveObjective
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
+  - type: entity
+    parent: [BaseFoodCriticObjective, BaseSurviveObjective] #Inherit from both of these prototypes
+    id: FoodCriticSurviveObjective
+    name: Live to write your review
+    description: The food can't be that bad...
+    components:
+    - type: Objective
+      icon: #Make this objective's icon a cheeseburger
+        sprite: Objects/Consumable/Food/burger.rsi
+        state: cheese
 
-- type: entity
-  parent: [BaseFoodCriticObjective, BaseSurviveObjective] #Inherit from both of these prototypes
-  id: FoodCriticSurviveObjective
-  name: Live to write your review
-  description: The food can't be that bad...
-  components:
-  - type: Objective
-    icon: #Make this objective's icon a cheeseburger
-      sprite: Objects/Consumable/Food/burger.rsi
-      state: cheese
-
-# FoodCriticAntagPrototype
-
+#+end_src
+** FoodCriticAntagPrototype
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
 - type: antag
   id: FoodCriticAntagPrototype
   name: roles-antag-food-critic-name
@@ -34,8 +41,9 @@
   setPreference: false
   objective: roles-antag-food-critic-objective
 
-# Mind Role
-
+#+end_src
+** Mind Role
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleFoodCritic
@@ -47,8 +55,9 @@
     roleType: EmployeeDonkco
   - type: FoodCriticRole
 
-# Starting Gear
-
+#+end_src
+** Starting Gear
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
 - type: startingGear
   id: FoodCriticGear
   equipment:
@@ -58,8 +67,9 @@
     shoes: ClothingShoesBootsLaceup
     back: ClothingBackpack
 
-# Spawn Point
-
+#+end_src
+** Spawn Point
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
@@ -77,8 +87,9 @@
     sprite: Objects/Consumable/Food/burger.rsi
     state: human
 
-# Event that can be rolled
-
+#+end_src
+** Event that can be rolled
+#+begin_src yaml :exports code :comments org :tangle ../../../Resources/Prototypes/_Floof/Roles/Ghost/food_critic.yml
 - type: entity
   parent: BaseGameRule
   id: FoodCriticSpawn
@@ -115,3 +126,8 @@
       - MindRoleFoodCritic
   - type: DynamicRuleCost
     cost: 5
+
+#+end_src
+-----
+
+-----

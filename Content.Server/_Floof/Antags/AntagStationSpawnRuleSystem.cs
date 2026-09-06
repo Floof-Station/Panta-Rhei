@@ -1,4 +1,4 @@
-// [[file:../../../Org/_Floof/CivilAntagonists/CivilAntagonistDesignDocument.org::System that gets the desirable station and spawn coordinates for the antagonist][System that gets the desirable station and spawn coordinates for the antagonist]]
+// [[file:../../../Org/_Floof/CivilAntagonists/AntagStationSpawnRule.org::System that gets the desirable station and spawn coordinates for the antagonist][System that gets the desirable station and spawn coordinates for the antagonist]]
 using Content.Server.Antag.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
@@ -33,7 +33,6 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
 
 	//Attempt to get the coordinates
         HandlePlayerSpawningButNotStupid(out var coords);
-
         comp.Coords = coords;
 
         if (coords is null)

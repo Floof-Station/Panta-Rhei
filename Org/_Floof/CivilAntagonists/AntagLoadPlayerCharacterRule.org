@@ -3,8 +3,9 @@
 :ID:       3020ec2e-62fd-4b5d-934b-9befcde09bb5
 :END:
 ----------------
+* AntagLoadPlayerCharacterRule
 ---
-*AntagLoadPlayerCharacterRuleComponent
+** AntagLoadPlayerCharacterRuleComponent
 #+NAME: Antagonist Load Player Character Component
 #+BEGIN_SRC csharp :exports code :comments link :tangle ../../../Content.Server/_Floof/GameTicking/Rules/Components/AntagLoadPlayerCharacterRuleComponent.cs
 namespace Content.Server.GameTicking.Rules.Components;
@@ -16,7 +17,7 @@ namespace Content.Server.GameTicking.Rules.Components;
 public sealed partial class AntagLoadPlayerCharacterRuleComponent : Component;
 #+END_SRC
 ---
-*AntagLoadPlayerCharacterRuleSystem
+** AntagLoadPlayerCharacterRuleSystem
 #+NAME: Antagonist Load Player Character System
 #+BEGIN_SRC csharp :exports code :comments link :tangle ../../../Content.Server/_Floof/GameTicking/Rules/AntagLoadPlayerCharacterRuleSystem.cs
 using Content.Server.Antag;

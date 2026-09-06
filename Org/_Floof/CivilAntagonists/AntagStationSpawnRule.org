@@ -2,8 +2,9 @@
 :ID:       b67878ce-b3d7-4e25-9ce2-3de41d4a9302
 :END:
 -----
+* AntagStationSpawnRule
 ---
-*AntagStationSpawnRuleComponent
+** AntagStationSpawnRuleComponent
 #+NAME: Component that marks entities to be handled with the antagonist station spawning system.
 #+BEGIN_SRC csharp :exports code :comments link :tangle ../../../Content.Server/_Floof/Antags/Components/AntagStationSpawnRuleComponent.cs
   using Robust.Shared.Map;
@@ -26,7 +27,7 @@
   }
 #+END_SRC
 ---
-*AntagStationSpawnRuleSystem
+** AntagStationSpawnRuleSystem
 #+NAME: System that gets the desirable station and spawn coordinates for the antagonist
 #+BEGIN_SRC csharp :exports code :comments link :tangle ../../../Content.Server/_Floof/Antags/AntagStationSpawnRuleSystem.cs
   using Content.Server.Antag.Components;
@@ -63,7 +64,6 @@
 
   	//Attempt to get the coordinates
           HandlePlayerSpawningButNotStupid(out var coords);
-
           comp.Coords = coords;
 
           if (coords is null)

@@ -4,11 +4,19 @@
 
 -----
 -----
-*Implementation Details
+* Implementation
 
 Implementation up to date as of <2026-08-28 Fri>
 -----
-#+transclude: [[id:3020ec2e-62fd-4b5d-934b-9befcde09bb5][AntagLoadPlayerCharacterRule Code]]
-#+transclude: [[id:b67878ce-b3d7-4e25-9ce2-3de41d4a9302][AntagStationSpawnRule Code]]
+-----
+** Code
+#+transclude: [[file:AntagLoadPlayerCharacterRule.org::*AntagLoadPlayerCharacterRule]] :level 3
 
-#+transclude [[id:db3fc7b7-fb5c-44ab-a2e6-679b2679bab8][Food Critic YAML Prototypes]]
+#+transclude: [[file:AntagStationSpawnRule.org::*AntagStationSpawnRule]] :level 3
+-----
+-----
+** Prototypes
+The indentation on the YAML is wrong. I can't fix it. This is as good as it's gonna get.
+#+transclude: [[file:FoodCriticPrototypes.org::*Food Critic][Food Critic YAML]] :level 3
+-----
+-----
