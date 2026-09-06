@@ -1,0 +1,53 @@
+- type: reagent
+  id: AphrodesiacVenom
+  name: reagent-name-aphro-venom
+  group: Narcotics
+  desc: reagent-desc-aphro-venom
+  physicalDesc: reagent-physical-desc-milky
+  flavor: spooky
+  color: "#c90084"
+  metabolisms:
+    Narcotic:
+      metabolismRate : 0.03
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        probability: 0.10
+        messages:
+        - reagent-effect-aphrodisiac-strong1
+        - reagent-effect-aphrodisiac-strong2
+        - reagent-effect-aphrodisiac-strong3
+        conditions:
+        - !type:ReagentCondition
+          reagent: AphrodesiacVenom
+          max: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+      - !type:PopupMessage
+        type: Local
+        visualType: LargeCaution
+        probability: 0.2
+        messages:
+        - reagent-effect-aphrodisiac-strongoverdose1
+        - reagent-effect-aphrodisiac-strongoverdose2
+        - reagent-effect-aphrodisiac-strongoverdose3
+        - reagent-effect-aphrodisiac-strongoverdose4
+        conditions:
+        - !type:ReagentCondition
+          reagent: AphrodesiacVenom
+          min: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        probability: 0.2
+        messages:
+          - "reagent-effect-aphrodisiac-fade"
+        conditions:
+          - !type:ReagentCondition
+            reagent: AphrodesiacVenom
+            max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs

@@ -1,3 +1,16 @@
+- type: entity
+  id: StationFland
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Pathfinder
+
 - type: gameMap
   id: Fland
   mapName: 'Fland Installation'
@@ -5,7 +18,7 @@
   minPlayers: 50
   stations:
     Fland:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationFland
       components:
         - type: StationNameSetup
           mapNameTemplate: '{0} Fland Installation {1}'
@@ -72,7 +85,7 @@
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
-            Musician: [ 1, 1 ]
+            Musician: [ 1, 2 ] # FloofStation, was 1, 1
 #            Anomaly: [ 4, 4 ] # Floofstation
             # Justice added by FloofStation
             ChiefJustice: [ 1, 1 ] #FloofStation

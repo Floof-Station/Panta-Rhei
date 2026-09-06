@@ -9,6 +9,21 @@
   storage:
     back:
     - RemoteSignaller
+  groupBy: remoteSignaller
+
+# Automatically links to a shock collar
+- type: loadout
+  id: RemoteSignallerCollarLink
+  storage:
+    back:
+    - RemoteSignallerCollarLink
+  spawnEffects:
+  - !type:LoadoutLinkToEntitiesEffect
+    whitelist:
+      components:
+      - ShockOnTrigger
+    linkThisToOther: true # Links this signaller to activate the collar
+  groupBy: remoteSignaller
 
 - type: loadout
   id: Binoculars # added just for a bit, check out someone with binoculars right infront of em
@@ -118,3 +133,31 @@
   storage:
     back:
     - WristwatchGold
+
+- type: loadout
+  id: CombBrush
+  storage:
+    back:
+    - CombBrush
+  groupBy: "Brushes"
+
+- type: loadout
+  id: HairBrush
+  storage:
+    back:
+    - HairBrush
+  groupBy: "Brushes"
+
+- type: loadout
+  id: ClothingMaskMuzzle
+  storage:
+    back:
+    - ClothingMaskMuzzle
+  groupBy: muzzle
+
+- type: loadout
+  id: ClothingMaskMuzzleBasket
+  storage:
+    back:
+    - ClothingMaskMuzzleBasket
+  groupBy: muzzle

@@ -19,3 +19,25 @@
     containers:
       entity_storage:
         id: VendingMachineRestockBepis
+
+- type: entity
+  id: CrateVendingMachineRestockLewdVendorFilled
+  parent: CratePlastic
+  name: Lewd Toys restock crate
+  description: Contains a restock box for the Lewd Toys vending machine.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: VendingMachineRestockLewdVendor
+
+- type: entity
+  id: CrateVendingMachineRestockLewdClothingVendorFilled
+  parent: CratePlastic
+  name: Lewd Cloths restock crate
+  description: Contains a restock box for the Lewd Cloths vending machine.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: VendingMachineRestockLewdClothingVendor

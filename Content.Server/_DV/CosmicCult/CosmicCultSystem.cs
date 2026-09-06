@@ -12,7 +12,6 @@ using Content.Server.Radio;
 using Content.Server.Station.Systems;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
-using Content.Server._EE.Radio;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.Eye;
@@ -75,7 +74,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
+        // SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart); // Euphoria - lazyload
 
         SubscribeLocalEvent<CosmicCultComponent, ComponentInit>(OnStartCultist);
         SubscribeLocalEvent<CosmicCultLeadComponent, ComponentInit>(OnStartCultLead);
@@ -93,8 +92,6 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
         SubscribeLocalEvent<CosmicImposingComponent, ComponentInit>(OnStartImposition);
         SubscribeLocalEvent<CosmicImposingComponent, ComponentRemove>(OnEndImposition);
         SubscribeLocalEvent<CosmicImposingComponent, RefreshMovementSpeedModifiersEvent>(OnImpositionMoveSpeed);
-
-        SubscribeLocalEvent<CosmicCultComponent, EncryptionChannelsChangedEvent>(OnTransmitterChannelsChangedCult, after: new[] { typeof(IntrinsicRadioKeySystem) });
 
         SubscribeLocalEvent<RadioSendAttemptEvent>(OnRadioSendAttempt);
         SubscribeLocalEvent<CosmicJammerComponent, AnchorStateChangedEvent>(OnJammerAnchorStateChange);
@@ -120,11 +117,11 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     /// <summary>
     /// Creates the Cosmic Void pocket dimension map.
     /// </summary>
-    private void OnRoundStart(RoundStartingEvent ev)
-    {
-        if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
-            _map.SetPaused(map.Value.Comp.MapId, false);
-    }
+    // private void OnRoundStart(RoundStartingEvent ev) // Euphoria: AFAICT, we don't have rogue ascendants - couldn't find them in the codebase, so we don't need to load this.
+    // {
+    //     if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
+    //         _map.SetPaused(map.Value.Comp.MapId, false);
+    // }
 
     #endregion
 
@@ -250,23 +247,6 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     #endregion
 
     #region Edge cases
-    /// <summary>
-    /// Edge Case to handle IPCs losing astral murmur after panel operations.
-    /// </summary>
-    private void OnTransmitterChannelsChangedCult(EntityUid uid, CosmicCultComponent component, EncryptionChannelsChangedEvent args)
-    {
-        if (!TryComp<IntrinsicRadioTransmitterComponent>(uid, out IntrinsicRadioTransmitterComponent? transmitter) || !TryComp<ActiveRadioComponent>(uid, out ActiveRadioComponent? activeRadio))
-            return;
-
-        if (transmitter.Channels.Contains(CosmicRadio) && activeRadio.Channels.Contains(CosmicRadio))
-            return;
-
-        transmitter.Channels.Add(CosmicRadio);
-        activeRadio.Channels.Add(CosmicRadio);
-
-
-    }
-
     /// <summary>
     /// When a cultist gets polymorphed, ensure that the resulting entity has all the necessary components. Mostly there for kitsune my behated.
     /// </summary>

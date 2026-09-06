@@ -1,3 +1,37 @@
+# ================================================================================================
+# Topicals
+
+# Placeholder oilpack because i can't be fucked to port the ones from FarHorizons (which require changes to the healing system and more)
+- type: entity
+  name: oil pack
+  description: Contains a small amount of space lubricant that can substitute normal IPC oil.
+  parent: Bloodpack
+  id: BloodpackOil
+  components:
+  - type: Healing
+    damageContainers:
+    - Robotic
+    damage:
+      types:
+        Bloodloss: -10 # Since IPCs do not naturally heal from bloodloss
+    modifyBloodLevel: 30 # about 1/0 of the blood pool of an average humanoid
+    delay: 6 # about 2x than long as normal ones
+  - type: Stack
+    stackType: BloodpackOil
+    count: 10
+  - type: StackPrice
+    price: 2 # I suppose oil is more common than blood. This is mainly to avoid exploding the cost of the robotech restock.
+
+- type: entity
+  parent: BloodpackOil
+  id: BloodpackOil1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+# ================================================================================================
+# Pills
 - type: entity
   name: Libidozenithizine pill
   parent: Pill
@@ -23,7 +57,7 @@
           reagents:
             - ReagentId: Libidozenithizine # This will most likely kill you
               Quantity: 50
-            
+
 - type: entity
   parent: PresentRandom
   id: RhinoPillbox

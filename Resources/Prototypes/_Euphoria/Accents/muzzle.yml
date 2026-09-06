@@ -1,0 +1,41 @@
+# Most consonants remain unchanged because they only require lip closure or tongue movement and do not require the person to open their mouth
+# Keep in mind that longer replacements are tested first, so e.g. if there's a replacement for both "oo" and "o", only the first one will be applied
+- type: muzzleAccent
+  id: BasketMuzzle
+  emoteVolume: -5
+  doubleChance: 0.05 # approx. 1 in 20 non-replaced chars
+  dropChance: 0
+  replacements:
+  # Length 1. I couldnt think of any vowel that never can be pronounced without opening the jaw, and i dont want to accidentally replace too much.
+  - {}
+  # Length 2. Some diagraphs are hard to pronounce without opening the mouth.
+  - wh: w # i dunno, i feel like this is more fitting
+    ai: ee
+    ae: ee
+    ei: ee
+    ea: ee # ea can sound either like ee or a, latter requires opening the mouth
+    ua: ee
+    ou: u
+    au: u # pronounced exactly like o
+    th: z # requires tongue protrusion
+    oo: oo # usually prounounced as /u:/ so it stays the same
+    hi: ei # like in "hi!"
+    ow: ow # sounds like /aw/ usually
+    aw: ow
+  # Length 3
+  - squ: squ
+    the: de
+    you: yu
+    app: uhp
+    one: wan
+    two: too
+    our: oor
+  # Length 4
+  - thou: thou # Exception for th since it already sounds like /z/
+    high: hei
+  # Length 5
+  - {}
+  # Length 6
+  - {}
+  # Length 7
+  - thought: zought # Exception for thou... I love the English language

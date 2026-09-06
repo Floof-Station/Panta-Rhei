@@ -1,7 +1,9 @@
+using System.Linq;
 using System.Text;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared.GameTicking;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Language.Systems;
 
@@ -9,6 +11,13 @@ public abstract partial class SharedLanguageSystem : EntitySystem
 {
     [Dependency] protected readonly IPrototypeManager _prototype = default!;
     [Dependency] protected readonly SharedGameTicker _ticker = default!;
+
+    // Starlight start
+    /// <summary>
+    /// The chat prefix used to begin parsing a language. e.g. <c>^gcThis will parse to Galactic Common</c>.
+    /// </summary>
+    public static readonly char ChatPrefixChar = '^';
+    // Starlight end
 
     /// <summary>
     ///     The language used as a fallback in cases where an entity suddenly becomes a language speaker (e.g. the usage of make-sentient)
@@ -44,30 +53,46 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// Checks if an entity can understand a given language. Universal speakers are assumed to understand every language.
     /// On the client side, this method is only guaranteed to work if the entity is the local player.
     /// </summary>
-    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
-        languageId == UniversalPrototype || _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
+    public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId)
+    {
+        // Entities with no LanguageSpeakerComponent understand everything - skip the expensive index in that case
+        // Also universal is understood by everyone, so also skip if it's that
+        if (languageId == Universal || !SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
+            return true;
+
+        return _prototype.TryIndex(languageId, out var language) && CanUnderstand(ent, language);
+    }
 
     /// <inheritdoc cref="CanUnderstand(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanUnderstand(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
-        if (language == Universal || UniversalQuery.TryComp(ent, out var uni) && uni.Enabled)
+        // Entities with no LanguageSpeakerComponent or with UniversalSpeakerComponent understand everything
+        if (language == Universal
+            || UniversalQuery.TryComp(ent, out var uni) && uni.Enabled
+            || !SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
             return true;
 
-        return SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false) && ent.Comp.UnderstoodLanguages.Contains(language.ID);
+        return ent.Comp.UnderstoodLanguages.Contains(language.ID);
     }
 
     /// <summary>
     /// Checks if an entity can speak a given language.
     /// On the client side, this method is only guaranteed to work if the entity is the local player.
     /// </summary>
-    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId) =>
-        _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
+    public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, ProtoId<LanguagePrototype> languageId)
+    {
+        // Entities with no LanguageSpeakerComponent only speak universal - skip the expensive indexing in that case
+        if (!SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
+            return languageId == Universal;
+
+        return _prototype.TryIndex(languageId, out var language) && CanSpeak(ent, language);
+    }
 
     /// <inheritdoc cref="CanSpeak(Entity&lt;Components.LanguageSpeakerComponent&gt;, ProtoId&lt;LanguagePrototype&gt;)"/>
     public bool CanSpeak(Entity<LanguageSpeakerComponent?> ent, LanguagePrototype language)
     {
         if (!SpeakerQuery.Resolve(ent, ref ent.Comp, logMissing: false))
-            return false;
+            return language == UniversalPrototype;
 
         return ent.Comp.SpokenLanguages.Contains(language.ID);
     }
@@ -92,7 +117,8 @@ public abstract partial class SharedLanguageSystem : EntitySystem
     /// <remarks>This simply returns the value of <see cref="Components.LanguageSpeakerComponent.SpokenLanguages"/>.</remarks>
     public List<ProtoId<LanguagePrototype>> GetSpokenLanguages(EntityUid uid)
     {
-        return SpeakerQuery.TryComp(uid, out var component) ? component.SpokenLanguages : [];
+        // Note: using [Universal] will cause a sandbox violation on the client sidwase
+        return SpeakerQuery.TryComp(uid, out var component) ? component.SpokenLanguages : new() { Universal };
     }
 
     /// <summary>
@@ -168,4 +194,66 @@ public abstract partial class SharedLanguageSystem : EntitySystem
         var random = seed * 1103515245 + 12345;
         return min + Math.Abs(random) % (max - min + 1);
     }
+
+    // Starlight start
+    /// <summary>
+    ///     Attempt to resolve language based off a given prefix.
+    ///     Returns null if there's no prefix or language doesn't exist. Never returns a language the entity cannot speak.
+    /// </summary>
+    /// <param name="ent">Entity to get language from</param>
+    /// <param name="input">Input to parse for prefix. Should start with <c><see cref="ChatPrefixChar"/></c>.</param>
+    /// <param name="modifyText">Whether to allow this function to modify the resulting text string or not.</param>
+    /// <param name="invalid">True if prefix was found but was invalid. False otherwise.</param>
+    public LanguagePrototype? GetLanguageFromPrefix(Entity<LanguageSpeakerComponent?> ent, ref string input, bool modifyText, out bool invalid)
+    {
+        // This method has been rewritten on Euph because starlight's implementation is just slop.
+        invalid = false;
+        if (!Resolve(ent, ref ent.Comp, logMissing: false))
+            return null;
+
+        var text = input;
+        if (text.Length < 3 || !text.StartsWith(ChatPrefixChar)) // Shortest possible message: "^g."
+            return null;
+
+        text = text[1..];
+        foreach (var langId in ent.Comp.SpokenLanguages)
+        {
+            if (!_prototype.TryIndex(langId, out var lang) || lang.ChatPrefix is null)
+                continue;
+
+            if (!text.StartsWith(lang.ChatPrefix, StringComparison.CurrentCultureIgnoreCase))
+                continue;
+
+            if(modifyText)
+                input = text[lang.ChatPrefix.Length..];
+
+            return lang;
+        }
+
+        // Euph addition - if no language matched, try to parse it as an index (up to 2 digits) in the form "^1" or "^10"
+        var maybeNumber = 0;
+        var parsedDigits = 0;
+        for (var i = 0; i < 2; i++)
+        {
+            var ch = text[parsedDigits];
+            if (!char.IsDigit(ch))
+                break;
+            maybeNumber = maybeNumber * 10 + (ch - '0');
+            parsedDigits++;
+        }
+
+        if (maybeNumber > 0 && maybeNumber <= ent.Comp.SpokenLanguages.Count)
+        {
+            if (modifyText)
+                input = text[parsedDigits..];
+
+            var id = ent.Comp.SpokenLanguages[maybeNumber - 1];
+            return _prototype.TryIndex(id, out var proto) ? proto : null;
+        }
+
+        // Fallback to avoid sending the message with an invalid prefix.
+        invalid = true;
+        return null;
+    }
+    // Starlight end
 }

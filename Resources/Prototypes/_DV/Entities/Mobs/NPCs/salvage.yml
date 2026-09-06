@@ -62,9 +62,9 @@
       - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
       - map: ["enum.HumanoidVisualLayers.LFoot"]
       - map: ["enum.HumanoidVisualLayers.RFoot"]
-      - map: [ "undergarmentSocks" ] # Floof
       - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
       - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+      - map: [ "undergarmentSocks" ] # Floof
       - map: [ "shoes" ] # Floof - moved above jumpsuit
       - map: [ "jumpsuit" ] # Floof - moved below hands and feet
       - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
@@ -84,6 +84,7 @@
       - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
       - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
       - map: [ "enum.HumanoidVisualLayers.Tail" ]
+      - map: [ "enum.HumanoidVisualLayers.Wings" ] # Euphoria: Wings under tails
       - map: [ "mask" ]
       - map: [ "head" ]
       - map: [ "pocket1" ]

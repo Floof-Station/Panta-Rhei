@@ -30,9 +30,9 @@
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentBottom" ]
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
-    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
     - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "shoes" ] # Floof - moved above jumpsuit
     - map: [ "jumpsuit" ] # Floof - moved below hands and feet
     - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)
@@ -199,9 +199,6 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      # Shitmed
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -229,8 +226,6 @@
     - AnomalyHost
   - type: PotentialPsionic # DeltaV - organic species can all be psionic
   - type: FootPrints # DeltaV port from EE, blood splatter
-  - type: Targeting # Shitmed Change
-  - type: SurgeryTarget # Shitmed Change
   - type: CosmicCenserTarget # DeltaV - Cosmic Cult
   - type: Carriable # DeltaV
   - type: GrappleTarget # DeltaV - Allow targets to be grappled
@@ -338,9 +333,9 @@
     - map: [ "enum.HumanoidVisualLayers.UndergarmentTop" ]
     - map: ["enum.HumanoidVisualLayers.LFoot"]
     - map: ["enum.HumanoidVisualLayers.RFoot"]
-    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "undergarmentTop" ] # Floof - this one is for clothing-based undergarment
     - map: [ "undergarmentBottom" ] # Floof - this one is for clothing-based undergarment
+    - map: [ "undergarmentSocks" ] # Floof
     - map: [ "shoes" ] # Floof - moved above jumpsuit
     - map: [ "jumpsuit" ] # Floof - moved below hands and feet
     - map: ["enum.HumanoidVisualLayers.LHand"] # Floof - moved to keep above jumpsuit (feet and intentionally kept below it)

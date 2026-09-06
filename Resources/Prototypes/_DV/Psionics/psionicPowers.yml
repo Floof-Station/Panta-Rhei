@@ -13,9 +13,6 @@
       weight: 1
     - id: TelegnosisPowerEntity
       weight: 1
-    # Euphoria - disabled for now, pending fix regarding cryoed clone bodies
-#    - id: FracturedFormPowerEntity
-#      weight: 0.3
     - id: MassSleepPowerEntity
       weight: 0.3
     - id: MetapsionicPulsePowerEntity
@@ -23,10 +20,9 @@
     - id: NoosphericZapPowerEntity
       weight: 0.3
     - id: MindSwapPowerEntity
-      weight: 0.3
-    # Floofstation - no.
-#    - id: PsionicEruptionPowerEntity
-#      weight: 0.1
+      weight: 0.3 # Euphoria - to compensate
+    #- id: PsionicEruptionPowerEntity
+    #  weight: 0.1
 
 # Powers
 - type: entity
@@ -46,12 +42,6 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: PsionicEruptionPower
-
-#- type: entity # Euphoria - See above
-#  id: FracturedFormPowerEntity
-#  categories: [ HideSpawnMenu ]
-#  components:
-#  - type: FracturedFormPower
 
 - type: entity
   id: PsychokineticScreamPowerEntity

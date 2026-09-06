@@ -64,7 +64,7 @@
   - type: AnimationPlayer
   - type: Tag
     tags:
-    - ForceFixRotations
+#    - ForceFixRotations # Euphoria - Windoors are not rotation invariant
     - Window
     - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: ApcPowerReceiver
@@ -183,6 +183,11 @@
   - type: InteractionVerbs
     allowedVerbs:
     - KnockOn
+# ES Start
+  - type: ESSparkOnHit
+    prob: 0.25
+    count: 2
+# ES End
 
 - type: entity
   id: BaseSecureWindoor

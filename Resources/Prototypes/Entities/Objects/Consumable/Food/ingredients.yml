@@ -64,6 +64,9 @@
     damage:
       types:
         Blunt: 0
+  - type: Tag # DeltaV - Service Borg Module
+    tags:
+    - Ingredients
 
 - type: entity
   abstract: true
@@ -328,6 +331,9 @@
         reagents:
         - ReagentId: Nutriment
           Quantity: 15
+  - type: Tag # DeltaV - Service Borg Module
+    tags:
+    - Ingredients
 
 - type: entity
   parent: FoodBakingBase
@@ -365,6 +371,7 @@
   - type: Tag
     tags:
     - Slice
+    - DoughSlice #Euphoria
   - type: Construction
     graph: DoughRope
     node: start
@@ -812,6 +819,8 @@
     entries:
       Taco: CheeseTaco
       Burger: CheeseBurger
+      Nachos: CheeseTaco # DeltaV
+      Hotdog: CheeseBurger # Euphoria
   - type: Item
     size: Tiny
     storedOffset: 0,-3
@@ -919,6 +928,7 @@
     entries:
       Burger: TofuSlice
       Taco: TofuSlice
+      Hotdog: TofuSlice
   #Euphoria end
   - type: Item
     size: Tiny

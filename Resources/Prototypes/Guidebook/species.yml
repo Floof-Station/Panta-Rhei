@@ -18,15 +18,17 @@
     - Oni
     - Rodentia
     - Chitinid
-    - IPC
     - Feroxi
     - Kitsune
     - Avali
     # ImpStation additions
     - Thaven
     # Den addition
-    # Euphoria addition
+    # - Ovinia # Floof - missing? unknown
+    # Floof section
     - Tajaran
+    # - IPC
+    # Floof section end
 
 - type: guideEntry
   id: Arachnid
@@ -68,10 +70,11 @@
   name: species-name-vox
   text: "/ServerInfo/Guidebook/Mobs/Vox.xml"
 
-- type: guideEntry
-  id: IPC
-  name: species-name-ipc
-  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
+# removed
+#- type: guideEntry
+#  id: IPC
+#  name: species-name-ipc
+#  text: "/ServerInfo/Guidebook/Mobs/IPCs.xml"
 
 - type: guideEntry # Floof - Tajaran Update b7660b9
   id: Tajaran

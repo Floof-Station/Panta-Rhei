@@ -8,10 +8,12 @@
   markingLimits: MobDionaMarkingLimits
   dollPrototype: MobDionaDummy
   skinColoration: Hues
-  maleFirstNames: NamesDionaFirst
-  femaleFirstNames: NamesDionaFirst
-  lastNames: NamesDionaLast
-  naming: TheFirstofLast
+  # Begin DeltaV - Better Diona Name Generation
+  maleFirstNames: DVNamesDionaFirst
+  femaleFirstNames: DVNamesDionaFirst
+  lastNames: DVNamesDionaLast
+  naming: FirstLast
+  # End DeltaV
 
 - type: speciesBaseSprites
   id: MobDionaSprites
@@ -49,7 +51,7 @@
       points: 1
       required: false
     Head:
-      points: 5
+      points: 10
       required: false
     Face:
       points: 10
@@ -61,10 +63,10 @@
       points: 1
       required: false
     HeadSide:
-      points: 6
+      points: 10
       required: false
     HeadTop:
-      points: 6
+      points: 10
       required: false
     Hair:
       points: 1
@@ -73,10 +75,10 @@
       points: 1
       required: false
     UndergarmentTop:
-      points: 1
+      points: 6
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 6
       required: false
     Eyes:
       points: 10
@@ -85,7 +87,7 @@
       points: 10
       required: false
     Wings:
-      points: 1
+      points: 5 # Euphoria: Allow combining wings
       required: false
     Legs:
       points: 24
@@ -94,7 +96,7 @@
       points: 24
       required: false
     Overlay:
-      points: 1
+      points: 10
       required: true
       defaultMarkings: [ DionaVineOverlay ]
 

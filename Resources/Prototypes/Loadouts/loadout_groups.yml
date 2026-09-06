@@ -4,7 +4,7 @@
   parent: [TrinketsFloofstation] # Floofstation
   name: loadout-group-trinkets
   minLimit: 0
-  maxLimit: 4 # Floof - increase by 1
+  maxLimit: 5 # Floof - increase by 2
   loadouts:
   - FlowerWreath
   - Hairflower
@@ -37,6 +37,7 @@
   - ClothingNeckTransPin
   - ClothingNeckAutismPin
   - ClothingNeckGoldAutismPin
+  - ClothingNeckLanyard
   - OffsetCane
   - OffsetCaneWood
   - OffsetCaneClown
@@ -58,8 +59,8 @@
   - TowelColorMaroon
   - TowelColorMime
   - TowelColorSilver
-  - TowelColorWhite
-  - TowelColorYellow
+  #- TowelColorWhite # DeltaV - Removed due because of being a duplicate
+  #- TowelColorYellow # DeltaV - Removed due because of being a duplicate
   - TowelColorGold
   # Begin DeltaV Additions
   - AACTablet
@@ -70,6 +71,15 @@
   - TapeRecorder
   - ClothingHeadHatUshanka
   - Eyepatch
+  # - SuperSynthesizerInstrument #Delta-V - Ports Super Synth Trinket from Starlight # Euph - no
+  - LighterFlippo
+  - LighterDonkCo
+  - LighterHonkCo
+  - LighterWaffleCo
+  - LighterDiscountDan
+  - LighterInterdyne
+  - LighterNanotrasen
+  - MatchboxGorlex
   # End DeltaV Additions
 
 - type: loadoutGroup
@@ -100,7 +110,6 @@
   - EmergencyNitrogen
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVapor # DeltaV
 
 # nitrogen or oxygen tank, depending on what your species needs
@@ -190,6 +199,7 @@
   minLimit: 0
   loadouts:
   - LizardPlushieCaptain
+  - LighterCentComm # DeltaV
 
 - type: loadoutGroup
   id: HoPHead
@@ -450,6 +460,7 @@
   loadouts:
   - BartenderHead
   - BartenderBowler
+  - SodaJerkCap #DeltaV - Adding retro style outfit for ice cream connoisseurs
 
 - type: loadoutGroup
   id: BartenderJumpsuit
@@ -465,6 +476,7 @@
   - ClothingUniformSeniorBartender
   - ClothingUniformSeniorBartenderSkirt
   # End Imp additions
+  - SodaJerkUniform #DeltaV - Adding retro style outfit for ice cream connoisseurs
 
 - type: loadoutGroup
   id: BartenderOuterClothing
@@ -760,6 +772,7 @@
   loadouts:
   - JesterHat
   - JesterAltHat
+  - CircusClownHat # Euphoria
 
 - type: loadoutGroup
   id: ClownJumpsuit
@@ -770,6 +783,16 @@
   - ClownSkirt # Starlight
   - JesterSuit
   - JesterAltSuit
+  # Euphoria
+  - CircusClownSuit
+  - CandyClownSuit
+  - SpottedClownSuit
+  - StripedClownSuit
+  - ClownFormalJumpsuit
+  - ClownFormalJumpskirt
+  - ClownClownJumpsuit
+  - ClownClownJumpskirt
+  # End Euphoria
 
 - type: loadoutGroup
   id: ClownBackpack
@@ -806,7 +829,6 @@
   - EmergencyNitrogenClown
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporClown # DeltaV
 
 - type: loadoutGroup
@@ -826,6 +848,7 @@
   - MimeHead
   - MimeFrenchBeret
   - MimeCap
+  - MimeBowler # Euphoria
 
 - type: loadoutGroup
   id: MimeMask
@@ -843,6 +866,15 @@
   loadouts:
   - MimeJumpsuit
   - MimeJumpskirt
+  # Euphoria
+  - MimeCroppedSuit
+  - MimeNouveauSuit
+  - MimePerformerSuit
+  - MimePerformerSkirt
+  - MimeSuaveWhite
+  - MimeSuaveBlack
+  - MimeFrillsDress
+  # End Euphoria
 
 - type: loadoutGroup
   id: MimeBackpack
@@ -861,6 +893,7 @@
   loadouts:
   - MimeWintercoat
   - MimeWintercoatLong # DeltaV
+  - MimePufferCoat # Euphoria
 
 - type: loadoutGroup
   id: MimeBelt
@@ -880,7 +913,6 @@
   - EmergencyOxygenMime
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporMime # DeltaV
 
 - type: loadoutGroup
@@ -944,7 +976,8 @@
   - PanFlute
   - Ocarina
   - Bagpipe
-  - SuperSynthesizerInstrument # Floofstation
+  #- SuperSynthesizerInstrument # Floofstation - remove this from passenger loadouts
+  - Rickenbacker4003Instrument # Floofstation - add the non antag version its just a bass
 
 - type: loadoutGroup
   id: MusicianJobTrinkets
@@ -952,6 +985,8 @@
   minLimit: 0
   loadouts:
   - LizardPlushieMusician
+  - SuperSynthesizerInstrument # Euph
+  - DJSetInstrument # Floofstation - let the muscians become DJs if they want to be
 
 # Cargo
 - type: loadoutGroup
@@ -1018,6 +1053,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianHead
+  - CargoTechnicianBeret # DeltaV
 
 - type: loadoutGroup
   id: CargoTechnicianJumpsuit
@@ -1311,7 +1347,6 @@
   - EmergencyNitrogenExtended
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporExtended # DeltaV
 
 # Science
@@ -1753,7 +1788,6 @@
   - EmergencyNitrogenSecurity
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporSecurity # DeltaV
 
 # Medical
@@ -1822,6 +1856,7 @@
 - type: loadoutGroup
   id: ChiefMedicalOfficerJobTrinkets
   name: loadout-group-jobtrinkets
+  parent: [FloofMedicalDoctorJobTrinkets] # FLoofstation - medical trinket additions
   minLimit: 0
   loadouts:
   - LizardPlushieChiefMedicalOfficer
@@ -1942,6 +1977,7 @@
 
 - type: loadoutGroup
   id: MedicalDoctorJobTrinkets
+  parent: [FloofMedicalDoctorJobTrinkets] # FLoofstation - medical trinket additions
   name: loadout-group-jobtrinkets
   minLimit: 0
   loadouts:
@@ -1961,6 +1997,7 @@
 - type: loadoutGroup
   id: MedicalInternJobTrinkets
   name: loadout-group-jobtrinkets
+  parent: [FloofMedicalDoctorJobTrinkets] # FLoofstation - medical trinket additions
   minLimit: 0
   loadouts:
   - LizardPlushieMedicalIntern
@@ -2007,6 +2044,7 @@
 - type: loadoutGroup
   id: ChemistJobTrinkets
   name: loadout-group-jobtrinkets
+  parent: [FloofMedicalDoctorJobTrinkets] # FLoofstation - medical trinket additions
   minLimit: 0
   loadouts:
   - LizardPlushieChemist
@@ -2055,6 +2093,7 @@
 - type: loadoutGroup
   id: ParamedicJobTrinkets
   name: loadout-group-jobtrinkets
+  parent: [FloofMedicalDoctorJobTrinkets] # FLoofstation - medical trinket additions
   minLimit: 0
   loadouts:
   - LizardPlushieParamedic
@@ -2081,7 +2120,6 @@
   - EmergencyNitrogenMedical
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporMedical # DeltaV
 
 # Wildcards
@@ -2136,7 +2174,6 @@
   - EmergencyNitrogenSyndicate
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
-  - EmergencyIPCBox # DeltaV
   - EmergencyWaterVaporSyndicate # DeltaV
 
 - type: loadoutGroup

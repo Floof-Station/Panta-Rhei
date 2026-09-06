@@ -1,43 +1,5 @@
 ﻿# =================     Bionics    ================== #
 - type: trait
-  id: LeftBionicPryArm
-  name: trait-name-LeftBionicPryArm
-  description: trait-description-BionicPryArm
-  category: Cybernetics
-  cost: 2
-  conflicts:
-  - ArmAmputeeRight
-  - ArmAmputeeLeft
-  - RightBionicPryArm
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Amputee
-      removeBodyPart: Arm
-      partSymmetry: Left
-      protoId: PrybarLeftArm
-      slotId: "left arm"
-
-- type: trait
-  id: RightBionicPryArm
-  name: trait-name-RightBionicPryArm
-  description: trait-description-BionicPryArm
-  category: Cybernetics
-  cost: 2
-  conflicts:
-  - ArmAmputeeRight
-  - ArmAmputeeLeft
-  - LeftBionicPryArm
-  effects:
-  - !type:AddCompsEffect
-    components:
-    - type: Amputee
-      removeBodyPart: Arm
-      partSymmetry: Right
-      protoId: PrybarRightArm
-      slotId: "right arm"
-
-- type: trait
   id: CyberEyesFlare
   name: trait-name-CyberEyesFlare
   description: trait-description-CyberEyesFlare
@@ -227,7 +189,7 @@
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
-        collection: AlienClaw
+        path: /Audio/Weapons/pierce.ogg
       animation: WeaponArcClaw
       damage:
         types:
@@ -257,7 +219,7 @@
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
-        collection: AlienClaw
+        path: /Audio/Weapons/pierce.ogg
       animation: WeaponArcClaw
       damage:
         types:
@@ -561,6 +523,7 @@
   conflicts:
     - GlassJaw
     - BrittleBones
+    - Tenacity
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -582,6 +545,7 @@
   conflicts:
     - WillToDie
     - Redshirt
+    - IllFated
   effects:
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 1.05 #+5%
@@ -605,4 +569,270 @@
   effects:
   - !type:ModifyCritDeadThresholdEffect
     critModifier: 0.5 #-50%
+
+- type: trait
+  id: Frail
+  name: trait-frail-name
+  description: trait-frail-desc
+  category: Skills
+  cost: -5
+  conflicts:
+    - Tenacity
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.75 #-25%
+
+- type: trait
+  id: IllFated
+  name: trait-illfated-name
+  description: trait-illfated-desc
+  category: Skills
+  cost: -3
+  conflicts:
+    - WillToLive
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.75 #-25%
 # =================================================== #
+
+- type: trait
+  id: Nosebleed
+  name: trait-nosebleed-name
+  description: trait-nosebleed-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed # uses the default
+
+- type: trait
+  id: NosebleedFrequent
+  name: trait-nosebleed-frequent-name
+  description: trait-nosebleed-frequent-description
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Nosebleed
+      minDelay: 300 # bleeds more often, 5 minutes
+      maxDelay: 1800 # 30 minutes in seconds
+
+- type: trait
+  id: Snoring
+  name: trait-snoring-name
+  description: trait-snoring-desc
+  category: DisabilitiesPhysical
+  cost: 0
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Snoring
+
+- type: trait
+  id: MessyDrinker
+  name: trait-messy-drinker-name
+  description: trait-messy-drinker-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - VeryMessyDrinker
+    - MessyEater
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
+      spillMessagePopup: trait-messy-traits-popup
+
+- type: trait
+  id: VeryMessyDrinker
+  name: trait-very-messy-drinker-name
+  description: trait-very-messy-drinker-description
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - MessyDrinker
+    - MessyEater
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
+      spillChance: 0.5 # 50% chance i think is fair
+      spillAmount: 2.0 # lets double the spill amount to
+      spillMessagePopup: trait-messy-traits-popup
+
+- type: trait
+  id: MessyEater
+  name: trait-messy-eater-name
+  description: trait-messy-eater-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - MessyDrinker
+    - VeryMessyDrinker
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessyDrinker
+      spillMessagePopup: trait-messy-traits-popup
+      spillableTypes: # make it so they can drink fine
+      - Food
+
+- type: trait
+  id: SmokingSpitter
+  name: trait-messy-smoker-name
+  description: trait-messy-smoke-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MessySmoker
+      spitMessagePopup: trait-messy-smoker-popup
+
+- type: trait
+  id: JumpAbility
+  name: trait-jump-ability-name
+  description: trait-jump-ability-description
+  category: Skills
+  cost: 4
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: JumpAbility
+      jumpThrowSpeed: 8 # make it a little slower
+      jumpDistance: 3
+      canCollide: true # you may be pouncing but its funny watching poeple flop over
+      action: ActionPounce
+
+- type: trait
+  id: Singing
+  name: trait-singing-name
+  description: trait-singing-description
+  category: Skills
+  cost: 3
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Harpy # harpy have this already
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: HarpySinger
+    - type: Instrument
+      allowPercussion: false
+      program: 52
+    - type: SwappableInstrument
+      instrumentList:
+        "Voice": { 52: 0 }
+        "Trumpet": { 56: 0 }
+        "Electric": { 27: 0 }
+        "Bass": { 33: 0 }
+        "Rock": { 29: 0 }
+        "Acoustic": { 24: 0 }
+        "Flute": { 73: 0 }
+        "Sax": { 66: 0 }
+        "Piano": { 1: 0 }
+        "Church Organ": { 19: 0 }
+        "Harp": { 46: 0 }
+      onlySetBySelf: true
+    - type: InstrumentVisuals
+  - !type:AddCompUiEffect
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+
+- type: trait
+  id: SlightlyClumsy
+  name: trait-slight-clumsy-name
+  description: trait-slightly-clumsy-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:HasJobCondition # we dont want clowns taking this
+    job: Clown
+    invert: true
+  - !type:TraitDependencyCondition
+    conflicts:
+    - VeryClumsy
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Clumsy
+      clumsyDefib: false
+      clumsyHypo: false
+      clumsyGuns: false # we let them shoot with this
+
+- type: trait
+  id: VeryClumsy
+  name: trait-very-clumsy-name
+  description: trait-very-clumsy-description
+  category: DisabilitiesPhysical
+  cost: -4
+  conditions:
+  - !type:HasJobCondition # we dont want clowns taking this
+    job: Clown
+    invert: true
+  - !type:TraitDependencyCondition
+    conflicts:
+    - SlightlyClumsy
+  - !type:OneOfSpeciesCondition # oni cant shoot guns so feel like we should prevent them from taking this
+    invert: true
+    species:
+    - Oni
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Clumsy
+      gunShootFailDamage:
+        types:
+          Blunt: 5
+          Piercing: 4
+          Heat: 3
+      catchingFailDamage:
+        types:
+          Blunt: 1
+      clumsyGunShootCheck: 0.2 # 80% chance of success

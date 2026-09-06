@@ -177,3 +177,103 @@
   id: ComplicatedPhrase
   parent: BaseQualitativePhrase
   text: phrase-complicated
+
+- type: quickPhrase
+  id: SuspiciousPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-suspicious
+
+- type: quickPhrase
+  id: WeakPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-weak
+
+- type: quickPhrase
+  id: StrongPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-strong
+
+- type: quickPhrase
+  id: HardPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-hard
+
+- type: quickPhrase
+  id: SoftPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-soft
+
+- type: quickPhrase
+  id: NakedPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-naked
+
+- type: quickPhrase
+  id: TruePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-true
+
+- type: quickPhrase
+  id: FalsePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-false
+
+- type: quickPhrase
+  id: WetPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-wet
+
+- type: quickPhrase
+  id: DryPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-dry
+
+- type: quickPhrase
+  id: KinkyPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-kinky
+
+- type: quickPhrase
+  id: AlwaysPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-always
+
+- type: quickPhrase
+  id: NeverPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-never
+
+- type: quickPhrase
+  id: YearPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-year
+
+- type: quickPhrase
+  id: NowPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-now
+
+- type: quickPhrase
+  id: BeforePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-before
+
+- type: quickPhrase
+  id: SoonPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-soon
+
+- type: quickPhrase
+  id: NextPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-next
+
+- type: quickPhrase
+  id: AgainPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-again
+
+- type: quickPhrase
+  id: TimePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-time

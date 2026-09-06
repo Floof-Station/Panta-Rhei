@@ -112,6 +112,7 @@
   - WeaponPistolCHIMP
   - AnomalySynchronizerCircuitboard
   - AnomalyVesselExperimentalCircuitboard
+  - BorgModuleAdvAnomaly # Euphoria Addition
   technologyPrerequisites:
   - BasicAnomalousResearch
 
@@ -128,18 +129,20 @@
   - WeaponParticleDecelerator
   - HoloprojectorField
 
-#- type: technology # DeltaV - LRP
-#  id: GravityManipulation
-#  name: research-technology-gravity-manipulation
-#  icon:
-#    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
-#    state: base
-#  discipline: Experimental
-#  tier: 2
-#  cost: 10000
-#  recipeUnlocks:
-#    - WeaponForceGun
-#    - WeaponTetherGun
+# Floofstation changes start - we bring this back
+- type: technology # DeltaV - LRP
+  id: GravityManipulation
+  name: research-technology-gravity-manipulation
+  icon:
+    sprite: Objects/Weapons/Guns/Launchers/tether_gun.rsi
+    state: base
+  discipline: Experimental
+  tier: 3
+  cost: 10000
+  recipeUnlocks:
+    - WeaponForceGun
+    - WeaponTetherGun
+# Floofstation changes end - we bring this back
 
 # Tier 3
 
@@ -154,6 +157,7 @@
   cost: 10000
   recipeUnlocks:
   - DeviceQuantumSpinInverter
+  - BorgModuleQuantum # Euphoria Addition
 
 - type: technology
   id: BluespaceTimeManipulation

@@ -1,6 +1,7 @@
 using Content.Shared._Floof.Leash.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Dynamics.Joints;
 using Robust.Shared.Physics.Systems;
 
@@ -90,7 +91,7 @@ public sealed partial class LeashSystem
                           && leashXform.Coordinates.TryDistance(EntityManager, leashedXform.Coordinates, out var dst)
                           && dst <= leash.Comp.MaxDistance;
             // The anchor must be either the entity itself or something parented to them (clothing)
-            canRestore &= anchor.Owner == leashed.Owner || _container.ContainsEntity(leashed, anchor);
+            canRestore &= anchor.Owner == leashed.Owner || _xform.ContainsEntity(leashed, anchor.Owner);
         }
 
         RemoveLeash(leashed!, leash!, false);
@@ -113,9 +114,15 @@ public sealed partial class LeashSystem
         if (aXform.MapUid != bXform.MapUid)
             return false;
 
+        // If neither entity is in a container, allow it
         if (!_container.TryGetOuterContainer(a, aXform, out aOuter)
             && !_container.TryGetOuterContainer(b, bXform, out bOuter))
             return true;
+
+        // If one or more of the outer containers if non-collidable, do not create joints because this will fuck it up
+        if (aOuter != null && (!TryComp<PhysicsComponent>(aOuter.Owner, out var aPhysics) || !aPhysics.CanCollide)
+            || bOuter != null && (!TryComp<PhysicsComponent>(bOuter.Owner, out var bPhysics) || !bPhysics.CanCollide))
+            return false;
 
         // Otherwise, we need to make sure that neither of the entities contain the other, and that they are not in the same container.
         return a != bOuter?.Owner && b != aOuter?.Owner && aOuter?.Owner != bOuter?.Owner;

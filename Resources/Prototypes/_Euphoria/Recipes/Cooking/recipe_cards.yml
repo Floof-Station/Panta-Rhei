@@ -1,0 +1,229 @@
+﻿- type: entity
+  id: BoxFolderHotdogRecipes
+  parent: BoxFolderBaseEmpty
+  name: Hotdog Recipes
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/folders.rsi
+    layers:
+    - state: folder-colormap
+      color: "#9fed58"
+    - state: folder-base
+  - type: StorageFill
+    contents:
+    - id: PaperRecipeCardHotdogLA
+    - id: PaperRecipeCardHotdogHuman
+    - id: PaperRecipeCardHotdogTofu
+    - id: PaperRecipeCardHotdogDirty
+    - id: PaperRecipeCardHotdogChicago
+    - id: PaperRecipeCardHotdogChili
+    - id: PaperRecipeCardHotdogConey
+    - id: PaperRecipeCardHotdogHalfSmoke
+    - id: PaperRecipeCardHotdogBacon
+    - id: PaperRecipeCardHotdogFish
+    - id: PaperRecipeCardHotdogPolish
+
+- type: entity
+  id: PaperRecipeCardHotdogLA
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog LA"
+  name: The Los Angeles
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Los Angeles[/head]
+
+      1 - Cooked Sausage
+      1 - Chili
+      1 - Onion Slice
+      1 - Cooked Bacon
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogHuman
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog human"
+  name: The Humadog
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Humadog[/head]
+
+      1 - Cooked Sausage
+      1 - Raw Human Meat
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogTofu
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog tofu"
+  name: The Tofudog
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Tofudog[/head]
+
+      1 - Tofu
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogDirty
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog dirty"
+  name: The Dirty Water
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Dirty Water[/head]
+
+      1 - Cooked Sausage
+      1 - Cabbage
+      1 - Onion Slice
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogChicago
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog chicago"
+  name: The Chicago
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Chicago[/head]
+
+      1 - Cooked Sausage
+      1 - Tomato
+      1 - Onion Slice
+      1 - Chili
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogChili
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog chili"
+  name: The Chilidog
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Chilidog[/head]
+
+      1 - Cooked Sausage
+      1 - Bowl of Chili
+      1 - Cheese
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogConey
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog coney"
+  name: The Coney Island
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Coney Island[/head]
+
+      1 - Cooked Sausage
+      1 - Bowl of Chili
+      1 - Onion Slice
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogHalfSmoke
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog half smoke"
+  name: The Half Smoke
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Half Smoke[/head]
+
+      1 - Cooked Sausage
+      1 - Bowl of Chili
+      1 - BBQ Ribs
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogBacon
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog bacon"
+  name: The Bacon Supreme
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Bacon Supreme[/head]
+
+      1 - Cooked Sausage
+      2 - Cooked Bacon
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogFish
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog fish"
+  name: The Fishdog
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Fishdog[/head]
+
+      1 - Fish Fillet
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]
+
+- type: entity
+  id: PaperRecipeCardHotdogPolish
+  categories: [ HideSpawnMenu ]
+  suffix: "hotdog polish"
+  name: The Polish Boy
+  parent: Paper
+  components:
+  - type: Paper
+    content: |2
+      [head=2]The Polish Boy[/head]
+
+      1 - Cooked Sausage
+      1 - Serving of Space Fries
+      1 - Cabbage
+
+      Served in a hotdog bun.
+
+      [italic]Recipe provided by DonkCo.[/italic]

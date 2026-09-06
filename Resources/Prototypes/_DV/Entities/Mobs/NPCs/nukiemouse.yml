@@ -1,6 +1,6 @@
 - type: entity
   name: nuclear operative mouse
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # Floofstation - add vent crawling
   id: MobNukieMouse
   description: A Nuclear Operative... MOUSE?!
   suffix: syndicate
@@ -186,5 +186,6 @@
       Taco: RatTaco
       Burger: RatBurger
       Skewer: RatSkewer
+      Hotdog: RatTaco #Euphoria
   - type: Item # Euphoria | Pick up mouse
     size: Tiny

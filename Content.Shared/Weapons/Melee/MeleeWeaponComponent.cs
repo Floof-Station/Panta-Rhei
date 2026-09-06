@@ -19,7 +19,7 @@ public sealed partial class MeleeWeaponComponent : Component
     /// Does this entity do a disarm on alt attack.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public bool AltDisarm = true;
+    public bool AltDisarm = false; // Euph - why the fuck was it true by default?
 
     /// <summary>
     /// Should the melee weapon's damage stats be examinable.
@@ -174,26 +174,6 @@ public sealed partial class MeleeWeaponComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public bool MustBeEquippedToUse = false;
-
-    // Shitmed Change Start
-
-    /// <summary>
-    ///     Shitmed Change: Part damage is multiplied by this amount for single-target attacks
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float ClickPartDamageMultiplier = 1.00f;
-
-    /// <summary>
-    ///     Shitmed Change: Part damage is multiplied by this amount for heavy swings
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float HeavyPartDamageMultiplier = 0.5f;
-
-    // Shitmed Change End
-
-    // Goobstation
-    [DataField, AutoNetworkedField]
-    public bool CanWideSwing = true;
 }
 
 /// <summary>

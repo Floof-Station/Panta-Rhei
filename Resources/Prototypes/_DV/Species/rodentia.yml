@@ -58,7 +58,7 @@
       required: true
       defaultMarkings: [ RodentiaTailDefault ]
     Head:
-      points: 6
+      points: 10
       required: false
     Face:
       points: 10
@@ -70,11 +70,11 @@
       points: 1
       required: false
     HeadTop:
-      points: 1
+      points: 10
       required: true
       defaultMarkings: [ RodentiaHeadTopEarDefault ]
     HeadSide:
-      points: 6
+      points: 10
       required: false
     Hair:
       points: 1
@@ -83,10 +83,10 @@
       points: 1
       required: false
     UndergarmentTop:
-      points: 1
+      points: 6
       required: false
     UndergarmentBottom:
-      points: 1
+      points: 6
       required: false
     Eyes:
       points: 10
@@ -95,7 +95,7 @@
       points: 10
       required: false
     Wings:
-      points: 1
+      points: 5 # Euphoria: Allow combining wings
       required: false
     Legs:
       points: 24
