@@ -121,7 +121,8 @@ namespace Content.IntegrationTests.Tests
             "Train", //Floofstation
             "Saltern", //Floofstation
             "Fland", //Floofstation
-            "Getaway" //Floofstation
+            "Getaway", //Floofstation
+            "Mesa" //Euphoria
         };
 
         private static readonly ProtoId<EntityCategoryPrototype> DoNotMapCategory = "DoNotMap";

@@ -1,0 +1,9 @@
+﻿- type: parallax
+  id: Sand
+  layers:
+  - texture:
+      !type:ImageParallaxTextureSource
+      path: "/Textures/Tiles/Planet/Desert/desert.png"
+    slowness: 0
+    scale: "1, 1"
+    shader: ""
