@@ -1870,19 +1870,19 @@
   productEntity: CrateCybersunJuggernautBundle
   discountCategory: veryRareDiscounts # DeltaV
   discountDownTo: # DeltaV
-    Telecrystal: 12
+    Telecrystal: 8 # Euphoria - was 12
   cost:
-    Telecrystal: 20 # DeltaV - was 12
+    Telecrystal: 12 # DeltaV - was 12 / Euphoria - was 20
   categories:
   - UplinkWearables
   conditions:
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
+  #- !type:StoreWhitelistCondition
+  #  whitelist:
+  #    tags:
       # - NukeOpsUplink # DeltaV - Commented out as of #5462 (only commander and loneop can get suit)
   # Begin DeltaV additions - Jugsuit buy limit #5462
-      - CommanderUplink
-      - LoneOpUplink
+  #    - CommanderUplink
+  #    - LoneOpUplink
   - !type:ListingLimitedStockCondition
     stock: 1
   # End DeltaV additions
