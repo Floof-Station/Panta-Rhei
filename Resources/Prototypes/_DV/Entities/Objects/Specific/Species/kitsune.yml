@@ -45,3 +45,6 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: InteractionOutline
+  - type: Tag # Euphoria
+    tags:
+    - ForceableFollow
