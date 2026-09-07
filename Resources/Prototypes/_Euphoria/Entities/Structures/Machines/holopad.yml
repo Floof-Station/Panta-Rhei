@@ -1,0 +1,64 @@
+## Mapping prototypes
+# General
+- type: entity
+  parent: Holopad
+  id: HolopadGeneralDorms
+  suffix: Dorms
+  components:
+  - type: Label
+    currentLabel: holopad-general-dorms
+
+- type: entity
+  parent: Holopad
+  id: HolopadGeneralObservationDeck
+  suffix: Observation Deck
+  components:
+  - type: Label
+    currentLabel: holopad-general-observation-deck
+
+# Logistics
+- type: entity
+  parent: Holopad
+  id: HolopadCargoOffice
+  suffix: Logistics Office
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-office
+
+- type: entity
+  parent: Holopad
+  id: HolopadCargoSalvage
+  suffix: Salvage
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-salvage
+  - type: PageSender
+    autoLinkJobs: [SalvageSpecialist]
+
+- type: entity
+  parent: Holopad
+  id: HolopadCargoSalvageDock
+  suffix: Salvage Dock
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-salvage-dock
+  - type: PageSender
+    autoLinkJobs: [SalvageSpecialist]
+
+# Security
+
+- type: entity
+  parent: HolopadSecurity
+  id: HolopadSecurityOperations
+  suffix: Sec Operations
+  components:
+  - type: Label
+    currentLabel: holopad-security-operations
+
+- type: entity
+  parent: HolopadSecurity
+  id: HolopadSecurityEquipment
+  suffix: Sec Equipment
+  components:
+  - type: Label
+    currentLabel: holopad-security-equipment
