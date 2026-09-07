@@ -1,0 +1,15 @@
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconObservationDeck
+  suffix: Observation Deck
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-observation-deck
+
+- type: entity
+  parent: DefaultStationBeacon
+  id: DefaultStationBeaconDocking
+  suffix: General Docking
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-docking
