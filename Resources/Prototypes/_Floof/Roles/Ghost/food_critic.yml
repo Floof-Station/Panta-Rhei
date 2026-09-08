@@ -1,21 +1,25 @@
-# BaseFoodCriticObjective
+#Within this file are all the prototypes that makes up the food critic ghost role event.
+#These prototypes would normally go all in their own categorical directories and files,
+#but it seems more productive and clear to group them by the feature they're intended to
+#form by fitting together. It's not like any of this is going to be used for anything else,
+#and if someone wants to check out Food Critic prototypes, here's all of them.
 
+#A base objective in case we want to make more
 - type: entity
   abstract: true
   parent: BaseObjective
   id: BaseFoodCriticObjective
   components:
-  - type: Objective #Make this entity an objective
+  - type: Objective
     difficulty: 1.5 #Difficulty doesn't matter with how this is used, but it's set anyway
     issuer: objective-issuer-donk-co
-  - type: RoleRequirement #Must have FoodCriticRole to have this objective
+  - type: RoleRequirement
     roles:
     - FoodCriticRole
 
-# FoodCriticSurviveObjective
-
+#The Food Critic doesn't really have any attainable objectives rn, so just... don't die.
 - type: entity
-  parent: [BaseFoodCriticObjective, BaseSurviveObjective] #Inherit from both of these prototypes
+  parent: [BaseFoodCriticObjective, BaseSurviveObjective]
   id: FoodCriticSurviveObjective
   name: Live to write your review
   description: The food can't be that bad...
@@ -25,8 +29,7 @@
       sprite: Objects/Consumable/Food/burger.rsi
       state: cheese
 
-# FoodCriticAntagPrototype
-
+#The specific type of antagonist the Food Critic is
 - type: antag
   id: FoodCriticAntagPrototype
   name: roles-antag-food-critic-name
@@ -35,7 +38,6 @@
   objective: roles-antag-food-critic-objective
 
 # Mind Role
-
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleFoodCritic
@@ -47,8 +49,7 @@
     roleType: EmployeeDonkco
   - type: FoodCriticRole
 
-# Starting Gear
-
+#Gear/apparel for the Food Critic to spawn in with.
 - type: startingGear
   id: FoodCriticGear
   equipment:
@@ -58,8 +59,8 @@
     shoes: ClothingShoesBootsLaceup
     back: ClothingBackpack
 
-# Spawn Point
-
+#Spawn Point entity for the event to place somewhere.
+#Opens up a ghost role so people can take it.
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
@@ -77,8 +78,7 @@
     sprite: Objects/Consumable/Food/burger.rsi
     state: human
 
-# Event that can be rolled
-
+# Event that can be rolled to set up the ghost role
 - type: entity
   parent: BaseGameRule
   id: FoodCriticSpawn
@@ -87,13 +87,13 @@
     weight: 8
     duration: null
     earliestStart: 30
-    reoccurrenceDelay: 60 # I don't think this makes sense to be here but eh
+    reoccurrenceDelay: 60 # I don't think this makes sense to be here but oh well, no harm.
     minimumPlayers: 10
     maxOccurrences: 1 #This event can only occur once in a given round
   - type: PrecognitionResult
     message: psionic-power-precognition-food-critic-result-message
-  - type: AntagStationSpawnRule
-  - type: AntagLoadPlayerCharacterRule
+  - type: AntagStationSpawnRule #Place the spawner somewhere a player would be placed
+  - type: AntagLoadPlayerCharacterRule #Make the ghost role into the player's selected character.
   - type: AntagObjectives
     objectives:
     - FoodCriticSurviveObjective
@@ -106,7 +106,7 @@
       pickPlayer: false
       startingGear: FoodCriticGear
       roleLoadout:
-      - RoleSurvivalStandard
+      - RoleSurvivalStandard #ABSOLUTELY NECESSARY OR VOX WILL NOT HAVE NITROGEN GEAR
       briefing:
         text: food-critic-role-greeting
         color: Lime
