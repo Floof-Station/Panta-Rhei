@@ -17,6 +17,12 @@ public sealed partial class LeashAnchorComponent : Component
     [DataField]
     public AnchorKind Kind = AnchorKind.Any;
 
+    /// <summary>
+    ///     Leash this anchor is attached to, if any.
+    /// </summary>
+    [DataField]
+    public EntityUid? Leash;
+
     [Flags]
     public enum AnchorKind : int
     {

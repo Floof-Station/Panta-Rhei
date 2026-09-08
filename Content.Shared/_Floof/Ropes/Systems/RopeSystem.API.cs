@@ -7,12 +7,15 @@ using Content.Shared._Floof.Ropes.Prototypes;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Dynamics.Joints;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
+    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+
     // If the distance between two entities is x, then a joint of length AT LEAST x - tolerance can be created between them
     private float _connectionDstTolerance = 1;
     private string _invalidJointMarker = "<TEMPORARILY DELETED>";
@@ -68,6 +71,25 @@ public sealed partial class RopeSystem
 
         // Dirtying shouldn't be necessary since the rope has just been created
         return true;
+    }
+
+    /// <see cref="TryCreateRope(EntityUid,EntityUid?,RopeConfigurationPrototype,float,out Entity{RopeComponent}?,Vector2,Vector2)"/>
+    public bool TryCreateRope(
+        EntityUid leftAnchor,
+        EntityUid? rightAnchor,
+        ProtoId<RopeConfigurationPrototype> config,
+        float length,
+        [NotNullWhen(true)] out Entity<RopeComponent>? createdRope,
+        Vector2 offsetLeft = default,
+        Vector2 offsetRight = default)
+    {
+        if (!_protoMan.Resolve(config, out var prototype))
+        {
+            createdRope = null;
+            return false;
+        }
+
+        return TryCreateRope(leftAnchor, rightAnchor, prototype, length, out createdRope, offsetLeft, offsetRight);
     }
 
     private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope)

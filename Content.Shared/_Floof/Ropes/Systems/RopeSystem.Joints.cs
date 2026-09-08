@@ -20,7 +20,7 @@ public sealed partial class RopeSystem
             minimumDistance: 0f);
 
         joint.Damping = 0.1f;
-        joint.Stiffness = 500f; // Real ropes often have stiffness ranging from 10k to 100k N/m, but we set it way lower to avoid issues
+        joint.Stiffness = 5000f; // Real ropes often have stiffness ranging from 10k to 100k N/m, but we set it way lower to avoid issues
         SetLinkLength(joint, length);
 
         return joint;
@@ -30,7 +30,7 @@ public sealed partial class RopeSystem
     {
         // Note: length is how long the physics solver will try to make the joint. MaxLength is the hard limit before distances are clamped.
         joint.Length = length;
-        joint.MaxLength = length * 1.5f;
+        joint.MaxLength = length * 10f; // In case someone decides to go through a portal, we want to limit the impact, so we set it way higher than needed
         joint.Breakpoint = length * joint.Stiffness * 5f; // This should turn the joint off if it tries to pull from 5x its max length (such as after one of the entities teleported)
     }
 

@@ -12,12 +12,23 @@
     scale: 0.7, 0.7
   - type: Leash
     pullInterval: 0.75
-    leashSprite:
-      sprite: _Floof/Objects/Tools/leash-rope.rsi
-      state: rope
+    currentConfig:
+      ropeConfig: Leash10
+      length: 3
+    availableConfigs:
+    - ropeConfig: Leash10
+      length: 3
+    - ropeConfig: Leash10
+      length: 2.5
+    - ropeConfig: Leash10
+      length: 2
+    - ropeConfig: Leash10
+      length: 1.5
+    - ropeConfig: Leash10
+      length: 1
   - type: Anchorable
     delay: 3
-    snap: false # The first ever entity to set this field to false! However, this doesn't seem to work :c
+    snap: false # One day this will work. Not today though.
 
 - type: entity
   id: LeashBasic
@@ -25,7 +36,6 @@
   components:
   - type: Leash
     length: 3
-    lengthConfigs: &leashConfigs [1, 1.5, 2, 2.5, 3, 4]
     maxDistance: 6
     attachDelay: 4
     detachDelay: 4
@@ -37,7 +47,6 @@
   name: advanced leash
   components:
   - type: Leash
-    lengthConfigs: *leashConfigs
     maxJoints: 2
     attachDelay: 2.5
     detachDelay: 2
@@ -51,7 +60,6 @@
   suffix: DEBUG, DO NOT MAP
   components:
   - type: Leash
-    lengthConfigs: [1, 1.5, 2, 2.5, 3, 4, 5, 7.5, 10]
     maxDistance: 20
     maxJoints: 10
     attachDelay: 2.5

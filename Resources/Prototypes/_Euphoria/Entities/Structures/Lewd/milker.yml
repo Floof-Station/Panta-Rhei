@@ -53,3 +53,15 @@
   values:
     prefix: milker-popup-
     count: 16
+
+# Rope
+- type: ropeConfiguration
+  id: MilkingMachine10
+  parent: Leash10 # Don't give a fuck
+  segments: 10
+  linkPrototype: RopeLinkLeash
+
+- type: entity
+  parent: RopeLinkLeash
+  id: RopeLinkMilkingMachine
+  name: milking machine rope link
