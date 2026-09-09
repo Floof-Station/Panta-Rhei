@@ -7,6 +7,13 @@ using Robust.Shared.Random;
 
 namespace Content.Server.Antag;
 
+/// <remarks>
+/// This system could have been made to slim down the pool of possible spawnpoints
+/// based on the player's set preferences, but there's going to be an antag rework
+/// upstream (Wizden). Normally I'm a staunch advocate for doing things the best one
+/// can the first time, but this system may need to be changed regardless.
+/// That nice extra stuff might as well be implemented then, I think.
+/// </remarks>
 public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpawnRuleComponent>
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -27,10 +34,11 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
         // we have to select this here because AntagSelectLocationEvent is raised twice because MakeAntag is called twice
         // once when a ghost role spawner is created and once when someone takes the ghost role
 
-        //Attempt to get the coordinates
-        ChooseRandomPlayerSpawnCoords(out var coords);
+        //Attempt to get the coordinates of a random latejoin spawnpoint and assign it to the component
+        ChooseRandomLateJoinSpawnPointCoords(out var coords);
         comp.Coords = coords;
 
+        //If we couldn't get any spawnpoint coords, try and get any random tile on a station.
         if (coords is null)
         {
             if (TryFindRandomTile(out _, out _, out _, out var randomCoords))
@@ -44,7 +52,10 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
             args.Coordinates.Add(_transform.ToMapCoordinates(ent.Comp.Coords.Value));
     }
 
-    private void ChooseRandomPlayerSpawnCoords(out EntityCoordinates? coords)
+    /// <summary>
+    /// Choose random coordinates from all of the existing latejoin spawnpoints.
+    /// </summary>
+    private void ChooseRandomLateJoinSpawnPointCoords(out EntityCoordinates? coords)
     {
         coords = null;
 
