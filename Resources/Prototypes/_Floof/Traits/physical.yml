@@ -142,7 +142,6 @@
   conflicts:
   - Vigor
   - Lethargy
-  - Weakness
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -159,7 +158,6 @@
   cost: -5 # Getting stunned from 1-2 stunbaton or disabler hits is worth a lot.
   conflicts:
   - Vigor
-  - Lethargy
   - Weakness
   conditions:
   - !type:HasCompCondition
