@@ -2,8 +2,6 @@ using Content.Server.Antag.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
 using Robust.Shared.Map;
-using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Systems;
 using Content.Server.Spawners.Components;
 using Robust.Shared.Random;
 
@@ -50,18 +48,11 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
     {
         coords = null;
 
-        TryGetArrivals(out var arrivals);
-
-        if (!TryComp(arrivals, out TransformComponent? arrivalsXform))
-            return;
-
-        var mapId = arrivalsXform.MapID;
-
         var points = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
         var possiblePositions = new List<EntityCoordinates>();
         while (points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
-            if (spawnPoint.SpawnType != SpawnPointType.LateJoin || xform.MapID != mapId)
+            if (spawnPoint.SpawnType != SpawnPointType.LateJoin)
                 continue;
 
             possiblePositions.Add(xform.Coordinates);
@@ -71,24 +62,5 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
             return;
 
         coords = _random.Pick(possiblePositions);
-    }
-
-    //The method below is a carbon copy of the one of the same name in ArrivalsSystem.cs,
-    //which is marked as private. I don't want to make changes to upstream files, so
-    //hooray for code copying. TODO: Sort that out upstream or find a better way,
-    //because this is disgusting.
-    /// <summary>
-    /// Try to get an entity that has <see cref="ArrivalsSourceComponent"/>
-    /// </summary>
-    private bool TryGetArrivals(out EntityUid uid)
-    {
-        var arrivalsQuery = EntityQueryEnumerator<ArrivalsSourceComponent>();
-
-        while (arrivalsQuery.MoveNext(out uid, out _))
-        {
-            return true;
-        }
-
-        return false;
     }
 }
