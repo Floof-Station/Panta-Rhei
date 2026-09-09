@@ -1,8 +1,6 @@
-// [[file:../../../Org/_Floof/CivilAntagonists/AntagStationSpawnRule.org::System that gets the desirable station and spawn coordinates for the antagonist][System that gets the desirable station and spawn coordinates for the antagonist]]
 using Content.Server.Antag.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Server.GameTicking.Rules;
-using Content.Server.Shuttles.Components;
 using Robust.Shared.Map;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
@@ -31,8 +29,8 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
         // we have to select this here because AntagSelectLocationEvent is raised twice because MakeAntag is called twice
         // once when a ghost role spawner is created and once when someone takes the ghost role
 
-	//Attempt to get the coordinates
-        HandlePlayerSpawningButNotStupid(out var coords);
+        //Attempt to get the coordinates
+        ChooseRandomPlayerSpawnCoords(out var coords);
         comp.Coords = coords;
 
         if (coords is null)
@@ -48,7 +46,7 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
             args.Coordinates.Add(_transform.ToMapCoordinates(ent.Comp.Coords.Value));
     }
 
-    private void HandlePlayerSpawningButNotStupid(out EntityCoordinates? coords)
+    private void ChooseRandomPlayerSpawnCoords(out EntityCoordinates? coords)
     {
         coords = null;
 
@@ -75,38 +73,10 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
         coords = _random.Pick(possiblePositions);
     }
 
-    private PlayerSpawningEvent GetSpawnEventFromHandlePlayerSpawning()
-    {
-        var playerSpawnEv = new PlayerSpawningEvent(default, default, default);
-
-        _ent.System<ArrivalsSystem>().HandlePlayerSpawning(playerSpawnEv);
-
-        return playerSpawnEv;
-    }
-
-    /// <summary>
-    /// Try to get the coordinates of an entity that has <see cref="ArrivalsSourceComponent"/>,
-    /// or at least any tile on a station.
-    /// </summary>
-    private bool TryGetAnArrivalsOrRandomTileCoords(out EntityCoordinates coords)
-    {
-        if (TryGetArrivals(out var arrivals))
-        {
-            coords = Transform(arrivals).Coordinates;
-            return true;
-        }
-
-        if (TryFindRandomTile(out _, out _, out _, out coords))
-            return true;
-
-        return false;
-    }
-
     //The method below is a carbon copy of the one of the same name in ArrivalsSystem.cs,
     //which is marked as private. I don't want to make changes to upstream files, so
     //hooray for code copying. TODO: Sort that out upstream or find a better way,
     //because this is disgusting.
-
     /// <summary>
     /// Try to get an entity that has <see cref="ArrivalsSourceComponent"/>
     /// </summary>
@@ -122,4 +92,3 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
         return false;
     }
 }
-// System that gets the desirable station and spawn coordinates for the antagonist ends here
