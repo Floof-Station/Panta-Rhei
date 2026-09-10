@@ -12,7 +12,7 @@ public sealed partial class LeashSystem
 
     private void InitializeVerbs()
     {
-        SubscribeLocalEvent<LeashedComponent, InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>>>(OnGetLeashedVerbs);
+        SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<InnateVerb>>(OnGetLeashedVerbs);
         SubscribeLocalEvent<LeashComponent, GetVerbsEvent<AlternativeVerb>>(OnGetLeashVerbs);
         SubscribeLocalEvent<LeashComponent, ExaminedEvent>(OnLeashExamined);
 
@@ -20,9 +20,8 @@ public sealed partial class LeashSystem
         SubscribeLocalEvent<LeashedComponent, LeashDetachDoAfterEvent>(OnDetachDoAfter);
     }
 
-    private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref InventoryRelayedEvent<GetVerbsEvent<EquipmentVerb>> argsRelayed)
+    private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref GetVerbsEvent<InnateVerb> args)
     {
-        var args = argsRelayed.Args;
         if (!args.CanAccess
             || !args.CanInteract
             || GetEntity(ent.Comp.Leash) is not { } leash
@@ -61,8 +60,12 @@ public sealed partial class LeashSystem
     private void OnLeashExamined(Entity<LeashComponent> ent, ref ExaminedEvent args)
     {
         var config = ent.Comp.CurrentConfig;
+        if (!_protoMan.TryIndex(config.RopeConfig, out var configProto))
+            return;
+
         var length = config.Length;
-        args.PushMarkup(Loc.GetString("leash-length-examine-text", ("length", length)));
+        var links = configProto.Segments;
+        args.PushMarkup(Loc.GetString("leash-length-examine-text", ("length", length), ("segments", links)));
     }
 
     private void OnAttachDoAfter(Entity<LeashAnchorComponent> ent, ref LeashAttachDoAfterEvent args)

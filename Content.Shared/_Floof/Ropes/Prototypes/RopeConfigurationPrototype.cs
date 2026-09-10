@@ -39,6 +39,14 @@ public sealed partial class RopeConfigurationPrototype : IPrototype, IInheriting
     public int Segments;
 
     /// <summary>
+    ///     Stiffness in N/m.
+    ///     A stiffness of 10N/m means that if a joint making up the rope is 0.1m longer than its normal length, it will exert 1N of force trying to normalize itself.
+    ///     Real ropes often have stiffness ranging from 10k to 100k N/m. We keep it on the lower end to avoid issues.
+    /// </summary>
+    [DataField]
+    public float Stiffness = 1e4f;
+
+    /// <summary>
     ///     Sprite drawn in place of the joints making up this entity (if any).
     /// </summary>
     [DataField(required: true)]

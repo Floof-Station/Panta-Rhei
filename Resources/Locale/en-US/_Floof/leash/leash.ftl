@@ -19,4 +19,4 @@ leash-detaching-popup-others = {THE($user)} is trying to remove the leash {$isSe
 
 leash-set-length-popup = Length set to {$length}m.
 
-leash-length-examine-text = Its current length is {$length}m.
+leash-length-examine-text = Its current length is {$length}m with {$segments} segments.

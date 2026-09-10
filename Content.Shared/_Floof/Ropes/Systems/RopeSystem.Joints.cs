@@ -8,7 +8,7 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
-    private DistanceJoint CreateDistanceJoint(EntityUid a, EntityUid b, float length, Vector2 anchorA = default, Vector2 anchorB = default)
+    private DistanceJoint CreateDistanceJoint(EntityUid a, EntityUid b, RopeComponent rope, Vector2 anchorA = default, Vector2 anchorB = default)
     {
         var id = GetEffectiveJointId(a, b);
         var joint = _joints.CreateDistanceJoint(
@@ -19,9 +19,9 @@ public sealed partial class RopeSystem
             id: id,
             minimumDistance: 0f);
 
-        joint.Damping = 0.1f;
-        joint.Stiffness = 5000f; // Real ropes often have stiffness ranging from 10k to 100k N/m, but we set it way lower to avoid issues
-        SetLinkLength(joint, length);
+        joint.Damping = rope.LinkStiffness * 0.1f;
+        joint.Stiffness = rope.LinkStiffness;
+        SetLinkLength(joint, rope.LinkLength);
 
         return joint;
     }

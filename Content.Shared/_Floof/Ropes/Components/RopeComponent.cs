@@ -36,7 +36,7 @@ public sealed partial class RopeComponent : Component
     public List<Link> Links;
 
     [ViewVariables(VVAccess.ReadWrite)]
-    public float RopeLength, LinkLength;
+    public float RopeLength, LinkLength, LinkStiffness;
 
     /// <summary>
     ///     Optional color tint for the rope sprite.
@@ -88,7 +88,7 @@ public sealed partial class RopeComponent : Component
         public ProtoId<RopeConfigurationPrototype> Configuration;
         public (NetEntity Anchor, string JointId, Vector2 Offset)? ConnectedStart, ConnectedEnd;
         public List<LinkState> Links;
-        public float RopeLength, LinkLength;
+        public float RopeLength, LinkLength, LinkStiffness;
         public Color? Color;
         public bool IsTemporarilyNullspaced;
 
@@ -103,6 +103,7 @@ public sealed partial class RopeComponent : Component
             Links = comp.Links.Select(it => new LinkState(it, entMan)).ToList();
             RopeLength = comp.RopeLength;
             LinkLength = comp.LinkLength;
+            LinkStiffness = comp.LinkStiffness;
             Color = comp.Color;
             IsTemporarilyNullspaced = comp.IsDisabled;
         }
@@ -116,6 +117,7 @@ public sealed partial class RopeComponent : Component
             comp.Links = Links.Select(it => it.ToLink(entMan)).ToList();
             comp.RopeLength = RopeLength;
             comp.LinkLength = LinkLength;
+            comp.LinkStiffness = LinkStiffness;
             comp.Color = Color;
             comp.IsDisabled = IsTemporarilyNullspaced;
         }

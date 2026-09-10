@@ -331,7 +331,7 @@ public sealed partial class LeashSystem : EntitySystem
         Dirty(leash);
 
         RefreshRopes(leash, true);
-        _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", config)), leash.Owner, null);
+        _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", config.Length)), leash.Owner, null);
     }
 
     #endregion

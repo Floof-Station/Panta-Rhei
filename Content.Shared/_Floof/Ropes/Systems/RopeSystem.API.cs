@@ -128,8 +128,7 @@ public sealed partial class RopeSystem
         Vector2 offsetLeft,
         Vector2 offsetRight)
     {
-        var length = rope.Comp.RopeLength;
-        var joint = CreateDistanceJoint(leftAnchor, rightAnchor, length, offsetLeft, offsetRight);
+        var joint = CreateDistanceJoint(leftAnchor, rightAnchor, rope.Comp, offsetLeft, offsetRight);
 
         rope.Comp.ConnectedStart = new(leftAnchor, joint.ID, offsetLeft);
         rope.Comp.ConnectedEnd = new(rightAnchor, joint.ID, offsetRight);
@@ -153,13 +152,12 @@ public sealed partial class RopeSystem
 
         // Check distance
         var firstLink = rope.Comp.Links[0];
-        var linkLength = rope.Comp.LinkLength;
         var dist = GetEffectiveDistance(connector, firstLink.LinkEntity);
         if (float.IsInfinity(dist))
             return false;
 
         // Create a distance joint
-        var joint = CreateDistanceJoint(connector, firstLink.LinkEntity, linkLength, offset);
+        var joint = CreateDistanceJoint(connector, firstLink.LinkEntity, rope.Comp, offset);
         rope.Comp.ConnectedStart = new(connector, joint.ID, offset);
         firstLink.LeftJoint = joint.ID;
 
@@ -184,13 +182,12 @@ public sealed partial class RopeSystem
 
         // Check distance
         var lastLink = rope.Comp.Links[^1];
-        var linkLength = rope.Comp.LinkLength;
         var dist = GetEffectiveDistance(connector, lastLink.LinkEntity);
         if (float.IsInfinity(dist))
             return false;
 
         // Create a distance joint
-        var joint = CreateDistanceJoint(connector, lastLink.LinkEntity, linkLength, Vector2.Zero, offset);
+        var joint = CreateDistanceJoint(connector, lastLink.LinkEntity, rope.Comp, Vector2.Zero, offset);
         rope.Comp.ConnectedEnd = new(connector, joint.ID, offset);
         lastLink.RightJoint = joint.ID;
 
@@ -340,7 +337,7 @@ public sealed partial class RopeSystem
         {
             var a = rope.Comp.Links[i - 1];
             var b = rope.Comp.Links[i];
-            var joint = CreateDistanceJoint(a.LinkEntity, b.LinkEntity, rope.Comp.LinkLength);
+            var joint = CreateDistanceJoint(a.LinkEntity, b.LinkEntity, rope.Comp);
             a.RightJoint = b.LeftJoint = joint.ID;
         }
 
@@ -375,6 +372,7 @@ public sealed partial class RopeSystem
         rope.Configuration = config;
         rope.RopeLength = length;
         rope.LinkLength = segmentCount == 0 ? length : length / config.Segments;
+        rope.LinkStiffness = config.Stiffness;
         rope.IsDisabled = true;
 
         // Spawn links
