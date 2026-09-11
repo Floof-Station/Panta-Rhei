@@ -1,0 +1,234 @@
+﻿# The classic mount with storage tank
+- type: entity
+  name: breeding mount
+  id: BaseBreedingMount
+  abstract: true
+  parent: ChairBase
+  description: A cushioned tube with an inviting hole. It's mounted to a stand and features a grab bar.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 150
+        mask:
+        - TableMask
+  - type: Strap
+    position: Stand
+    buckleOffset: "0.0,-0.3"
+    facing: 180
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: StorageTank
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetPlastic1:
+            min: 2
+            max: 5
+  - type: Transform
+    anchored: true
+  - type: Anchorable
+  - type: Pullable
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: semenstorage
+  - type: SolutionContainerManager
+    solutions:
+      semenstorage:
+        maxVol: 100
+  - type: SolutionTransfer
+    transferAmount: 30
+    maxTransferAmount: 100
+    minTransferAmount: 10
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: semenstorage
+  - type: DrawableSolution
+    solution: semenstorage
+  - type: RefillableSolution
+    solution: semenstorage
+  - type: DrainableSolution
+    solution: semenstorage
+  - type: ExaminableSolution
+    solution: semenstorage
+
+# Colour variants
+- type: entity
+  name: blue breeding mount
+  id: BreedingMountBlue
+  parent: BaseBreedingMount
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Lewd/breedingmount.rsi
+    state: blue-breedingmount
+
+- type: entity
+  name: purple breeding mount
+  id: BreedingMountPurple
+  parent: BaseBreedingMount
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Lewd/breedingmount.rsi
+    state: purple-breedingmount
+
+- type: entity
+  name: red breeding mount
+  id: BreedingMountRed
+  parent: BaseBreedingMount
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Lewd/breedingmount.rsi
+    state: red-breedingmount
+
+- type: entity
+  name: teal breeding mount
+  id: BreedingMountTeal
+  parent: BaseBreedingMount
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Lewd/breedingmount.rsi
+    state: teal-breedingmount
+
+- type: entity
+  name: yellow breeding mount
+  id: BreedingMountYellow
+  parent: BaseBreedingMount
+  components:
+  - type: Sprite
+    sprite: _Floof/Structures/Lewd/breedingmount.rsi
+    state: yellow-breedingmount
+
+# Flatpacks
+- type: entity
+  parent: BaseFlatpack
+  id: ExtractorsFlatpack
+  abstract: true
+  name: extractor flatpack
+  description: A flatpack used for constructing something.
+  components:
+  - type: Item
+    size: Normal
+  - type: Sprite
+    layers:
+    - state: extractor
+
+- type: entity
+  parent: ExtractorsFlatpack
+  id: BreedingMountFlatpackBlue
+  name: breeding mount flatpack
+  description: A flatpack used for constructing a breeding mount.
+  components:
+  - type: Flatpack
+    entity: BreedingMountBlue
+
+- type: entity
+  parent: ExtractorsFlatpack
+  id: BreedingMountFlatpackPurple
+  name: breeding mount flatpack
+  description: A flatpack used for constructing a breeding mount.
+  components:
+  - type: Flatpack
+    entity: BreedingMountPurple
+
+- type: entity
+  parent: ExtractorsFlatpack
+  id: BreedingMountFlatpackRed
+  name: breeding mount flatpack
+  description: A flatpack used for constructing a breeding mount.
+  components:
+  - type: Flatpack
+    entity: BreedingMountRed
+
+- type: entity
+  parent: ExtractorsFlatpack
+  id: BreedingMountFlatpackTeal
+  name: breeding mount flatpack
+  description: A flatpack used for constructing a breeding mount.
+  components:
+  - type: Flatpack
+    entity: BreedingMountTeal
+
+- type: entity
+  parent: ExtractorsFlatpack
+  id: BreedingMountFlatpackYellow
+  name: breeding mount flatpack
+  description: A flatpack used for constructing a breeding mount.
+  components:
+  - type: Flatpack
+    entity: BreedingMountYellow
+
+# Table for random colour selection
+- type: entityTable
+  id: BreedingMounts
+  table: !type:GroupSelector
+    children:
+    - id: BreedingMountFlatpackBlue
+    - id: BreedingMountFlatpackPurple
+    - id: BreedingMountFlatpackRed
+    - id: BreedingMountFlatpackTeal
+    - id: BreedingMountFlatpackYellow
+
+# Cargo crate for breeding mounts
+- type: entity
+  id: CrateBreedingMount
+  parent: CrateLewd
+  name: breeding mount crate
+  description: Relief or research, either way this crate contains a valuable tool the crew is sure to enjoy.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: BreedingMounts
+          rolls: 1
+        - id: Multitool
+          amount: 1
+
+# Catalogue order for the breeding mount crate
+- type: cargoProduct
+  id: CrateBreedingMountOrder
+  icon:
+    sprite: Objects/Devices/flatpack.rsi
+    state: extractor
+  product: CrateBreedingMount
+  cost: 1000
+  category: cargoproduct-category-name-fun
+  group: market
+
+# Box for toy vendor
+- type: entity
+  parent: WrappedParcel
+  id: BreedingMountVendBox
+  name: breeding mount blind box
+  description: A discreetly wrapped package with the text "BREEDING MOUNT QTY 1" printed in large lettering.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      contents: !type:AllSelector
+        children:
+        - !type:NestedSelector
+          tableId: BreedingMounts
+          rolls: 1
