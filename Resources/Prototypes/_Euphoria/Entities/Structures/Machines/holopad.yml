@@ -16,6 +16,40 @@
   - type: Label
     currentLabel: holopad-general-observation-deck
 
+# Epistemics
+- type: entity
+  parent: HolopadEpistemics
+  id: HolopadScienceReception
+  suffix: Epistemics Reception
+  components:
+  - type: Label
+    currentLabel: holopad-epistemics-reception
+
+# Medical
+- type: entity
+  parent: HolopadMedical
+  id: HolopadMedicalCloning
+  suffix: Cloning
+  components:
+  - type: Label
+    currentLabel: holopad-medical-cloning
+
+- type: entity
+  parent: HolopadMedical
+  id: HolopadMedicalExam
+  suffix: Exam Room
+  components:
+  - type: Label
+    currentLabel: holopad-medical-exam-room
+
+- type: entity
+  parent: HolopadMedical
+  id: HolopadMedicalReception
+  suffix: Medical Reception
+  components:
+  - type: Label
+    currentLabel: holopad-medical-reception
+
 # Logistics
 - type: entity
   parent: Holopad
@@ -24,6 +58,15 @@
   components:
   - type: Label
     currentLabel: holopad-logistics-office
+
+
+- type: entity
+  parent: Holopad
+  id: HolopadCargoReception
+  suffix: Logistics Reception
+  components:
+  - type: Label
+    currentLabel: holopad-logistics-reception
 
 - type: entity
   parent: Holopad
@@ -45,7 +88,55 @@
   - type: PageSender
     autoLinkJobs: [SalvageSpecialist]
 
+# Engineering
+- type: entity
+  parent: HolopadEngineering
+  id: HolopadEngineeringLockerRoom
+  suffix: Engi Lockers
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-locker-room
+
+- type: entity
+  parent: HolopadEngineering
+  id: HolopadEngineeringOutpost
+  suffix: Engi Output
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-outpost
+
+- type: entity
+  parent: HolopadEngineering
+  id: HolopadEngineeringReception
+  suffix: Engi Reception
+  components:
+  - type: Label
+    currentLabel: holopad-engineering-reception
+
 # Security
+- type: entity
+  parent: HolopadSecurity
+  id: HolopadSecurityEquipment
+  suffix: Sec Equipment
+  components:
+  - type: Label
+    currentLabel: holopad-security-equipment
+
+- type: entity
+  parent: HolopadSecurity
+  id: HolopadSecurityFiringRange
+  suffix: Firing Range
+  components:
+  - type: Label
+    currentLabel: holopad-security-firing-range
+
+- type: entity
+  parent: HolopadSecurity
+  id: HolopadSecurityLockerRoom
+  suffix: Sec Lockers
+  components:
+  - type: Label
+    currentLabel: holopad-security-locker-room
 
 - type: entity
   parent: HolopadSecurity
@@ -57,8 +148,43 @@
 
 - type: entity
   parent: HolopadSecurity
-  id: HolopadSecurityEquipment
-  suffix: Sec Equipment
+  id: HolopadSecurityPermaReception
+  suffix: Perma Reception
   components:
   - type: Label
-    currentLabel: holopad-security-equipment
+    currentLabel: holopad-security-perma-reception
+
+- type: entity
+  parent: HolopadSecurity
+  id: HolopadSecurityReception
+  suffix: Sec Reception
+  components:
+  - type: Label
+    currentLabel: holopad-security-reception
+
+# Service
+- type: entity
+  parent: HolopadServiceJanitor
+  id: HolopadServiceJanitorCloset
+  suffix: Janitor Closet
+  components:
+  - type: Label
+    currentLabel: holopad-service-janitor-closet
+
+- type: entity
+  parent: Holopad
+  id: HolopadServiceTheater
+  suffix: Theater
+  components:
+  - type: Label
+    currentLabel: holopad-service-theater
+  - type: PageSender
+    autoLinkJobs: [Clown, Mime, Musician]
+
+- type: entity
+  parent: HolopadServiceTheater
+  id: HolopadServiceTheaterDorms
+  suffix: Theater Dorms
+  components:
+  - type: Label
+    currentLabel: holopad-service-theater-dorms
