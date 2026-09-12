@@ -750,7 +750,7 @@
   suffix: Courtroom
   components:
   - type: Label
-    currentLabel: holopad-security-courtroom
+    currentLabel: holopad-justice-courtroom #Euphoria: holopad-justice-courtroom<holopad-security-courtroom
 
 - type: entity
   parent: HolopadJustice # DeltaV
@@ -842,19 +842,19 @@
   suffix: Chapel
   components:
   - type: Label
-    currentLabel: holopad-service-chapel
+    currentLabel: holopad-epistemics-chapel # Euphoria: holopad-epistemics-chapel<holopad-science-chapel
   # Begin DeltaV
   - type: PageSender
     autoLinkJobs: [Chaplain]
   # End DeltaV
 
 - type: entity
-  parent: Holopad
+  parent: HolopadEpistemics # Euphoria: HolopadEpistemics<Holopad
   id: HolopadServiceLibrary
   suffix: Library
   components:
   - type: Label
-    currentLabel: holopad-service-library
+    currentLabel: holopad-epistemics-library # Euphoria: holopad-epistemics-library<holopad-service-library
   # Begin DeltaV
   - type: PageSender
     autoLinkJobs: [Librarian]
