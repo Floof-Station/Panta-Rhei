@@ -11,10 +11,6 @@ public sealed partial class AmputeeTraitEffect : BaseTraitEffect
 {
     [DataField("removeLimb", required: true)]
     public string RemoveLimb;
-
-    [DataField("replaceLimb")]
-    public string ReplaceLimb;
-
     public override void Apply(TraitEffectContext ctx)
     {
         var container = ctx.EntMan.System<SharedContainerSystem>();
