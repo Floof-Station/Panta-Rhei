@@ -5,6 +5,7 @@ using Content.Shared._Floof.Ropes.Components;
 using Content.Shared._Floof.Ropes.Prototypes;
 using Content.Shared._Floof.Ropes.Systems;
 using Content.Shared.Administration;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Toolshed;
 
 namespace Content.Server._Floof.Ropes.Commands;
@@ -15,7 +16,7 @@ public sealed class RopeCommand : ToolshedCommand
     private RopeSystem? _rope;
 
     [CommandImplementation("connect")]
-    public EntityUid Connect(EntityUid leftAnchor, EntityUid rightAnchor, RopeConfigurationPrototype prototype, float length = 0)
+    public EntityUid Connect(EntityUid leftAnchor, EntityUid rightAnchor, ProtoId<RopeConfigurationPrototype> prototype, float length = 0)
     {
         _rope ??= EntityManager.System<RopeSystem>();
         if (!Transform(leftAnchor).Coordinates.TryDistance(EntityManager, Transform(rightAnchor).Coordinates, out var dst))
@@ -33,7 +34,7 @@ public sealed class RopeCommand : ToolshedCommand
     }
 
     [CommandImplementation("create")]
-    public EntityUid Create(EntityUid leftAnchor, RopeConfigurationPrototype prototype, float length = 0)
+    public EntityUid Create(EntityUid leftAnchor, ProtoId<RopeConfigurationPrototype> prototype, float length = 0)
     {
         _rope ??= EntityManager.System<RopeSystem>();
         if (!_rope.TryCreateRope(leftAnchor, null, prototype, length, out var rope))

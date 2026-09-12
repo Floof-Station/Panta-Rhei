@@ -14,10 +14,8 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
-
-    // If the distance between two entities is x, then a joint of length AT LEAST x - tolerance can be created between them
-    private float _connectionDstTolerance = 1;
+    // If the distance between two entities is x, then a rope of length AT LEAST (x - tolerance) can be created between them
+    private float _connectionDstTolerance = 2;
     private string _invalidJointMarker = "<TEMPORARILY DELETED>";
 
     /// <summary>
@@ -36,22 +34,10 @@ public sealed partial class RopeSystem
         Vector2 offsetRight = default)
     {
         var leftXform = Transform(leftAnchor);
-        if (rightAnchor != null)
+        if (rightAnchor != null && !CanCreateRope(leftAnchor, rightAnchor.Value, length, leftXform))
         {
-            var rightXform = Transform(rightAnchor.Value);
-            // Can't joint entities on different maps.
-            if (leftXform.MapID != rightXform.MapID)
-            {
-                createdRope = null;
-                return false;
-            }
-
-            if (GetEffectiveDistance(leftXform, rightXform) > length + _connectionDstTolerance)
-            {
-                Log.Warning($"Refusing to create a rope shorter than the distance between the two entities: {ToPrettyString(leftAnchor)}, {ToPrettyString(rightAnchor)}");
-                createdRope = null;
-                return false;
-            }
+            createdRope = null;
+            return false;
         }
 
         var rope = CreateRopeEntityUninitialized(config, length, leftXform.Coordinates);
@@ -90,6 +76,23 @@ public sealed partial class RopeSystem
         }
 
         return TryCreateRope(leftAnchor, rightAnchor, prototype, length, out createdRope, offsetLeft, offsetRight);
+    }
+
+    public bool CanCreateRope(EntityUid left, EntityUid right, float length, TransformComponent? leftXform = null, TransformComponent? rightXform = null)
+    {
+        leftXform ??= Transform(left);
+        rightXform ??= Transform(right);
+        // Can't joint entities on different maps.
+        if (leftXform.MapID != rightXform.MapID)
+            return false;
+
+        if (GetEffectiveDistance(leftXform, rightXform) > length + _connectionDstTolerance)
+        {
+            Log.Warning($"Refusing to create a rope shorter than the distance between the two entities: {ToPrettyString(left)}, {ToPrettyString(right)}");
+            return false;
+        }
+
+        return true;
     }
 
     private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope)
@@ -276,7 +279,7 @@ public sealed partial class RopeSystem
     /// </summary>
     public void DisableRope(Entity<RopeComponent?> rope)
     {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.IsDisabled)
+        if (!_ropeQuery.Resolve(rope, ref rope.Comp) || IsDisabled(rope))
             return;
 
         Log.Debug($"Disabling rope {rope}");
@@ -308,7 +311,7 @@ public sealed partial class RopeSystem
     /// <remarks>Does not check if the anchors are on the same map.</remarks>
     public bool EnableRope(Entity<RopeComponent?> rope)
     {
-        if (!Resolve(rope, ref rope.Comp) || !rope.Comp.IsDisabled)
+        if (!_ropeQuery.Resolve(rope, ref rope.Comp) || !IsDisabled(rope))
             return false;
 
         Log.Debug($"Enabling rope {rope}");
@@ -319,6 +322,13 @@ public sealed partial class RopeSystem
 
         if (leftAnchor != null && rightAnchor != null)
         {
+            // If there are two anchors, we need to make sure their positions are valid
+            if (!CanCreateRope(leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rope.Comp.RopeLength))
+            {
+                Log.Warning($"Rope {ToPrettyString(rope)} has two anchors but they are too far away.");
+                return false;
+            }
+
             DistributeLinksBetweenAnchors(leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rope!);
         }
         else if (leftAnchor != null)
@@ -327,7 +337,7 @@ public sealed partial class RopeSystem
             SetLinksCoordinates(rope, Transform(rightAnchor.Value.Anchor).Coordinates);
         else
         {
-            Log.Error($"Rope {ToPrettyString(rope)} has neither a left nor a right connector. Cannot re-enable it.");
+            Log.Warning($"Rope {ToPrettyString(rope)} has neither a left nor a right connector. Cannot re-enable it.");
             return false;
         }
 
@@ -357,6 +367,14 @@ public sealed partial class RopeSystem
 
         rope.Comp.IsDisabled = false;
         return true;
+    }
+
+    public bool IsDisabled(Entity<RopeComponent?> rope)
+    {
+        if (!_ropeQuery.Resolve(rope, ref rope.Comp))
+            return false;
+
+        return rope.Comp.IsDisabled;
     }
 
     /// <summary>
