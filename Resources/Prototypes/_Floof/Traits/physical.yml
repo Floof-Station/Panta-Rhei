@@ -5,9 +5,11 @@
   description: trait-description-CyberEyesFlare
   category: Cybernetics
   cost: 8
-  conflicts:
-  - Blindness
-  - PoorVision
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Blindness
+    - PoorVision
   effects:
   - !type:AddCompsEffect
     components:
@@ -21,10 +23,11 @@
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
   cost: 8
-  conflicts:
-  - Blindness
-  - PoorVision
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Blindness
+    - PoorVision
   - !type:HasJobCondition
     invert: true
     job: Prisoner
@@ -46,9 +49,10 @@
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
   cost: 4
-  conflicts:
-  - CyberEyesOmni
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - CyberEyesOmni
   - !type:InDepartmentCondition
     department: Security
   effects:
@@ -64,7 +68,9 @@
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
   cost: 4
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - CyberEyesOmni
   effects:
   - !type:AddCompsEffect
@@ -85,10 +91,11 @@
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
   cost: 6
-  conflicts:
-  - CyberEyesMedical
-  - CyberEyesSecurity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - CyberEyesMedical
+    - CyberEyesSecurity
   - !type:InDepartmentCondition
     department: Command
   effects:
@@ -497,9 +504,10 @@
   description: trait-glassjaw-desc
   category: Skills
   cost: -2
-  conflicts:
-    - Tenacity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -517,7 +525,9 @@
   description: trait-willtodie-desc
   category: Skills
   cost: -1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - WillToLive
   effects:
   - !type:ModifyCritDeadThresholdEffect
@@ -529,11 +539,11 @@
   description: trait-tenacity-desc
   category: Skills
   cost: 3
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - GlassJaw
     - BrittleBones
-    - Tenacity
-  conditions:
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -551,7 +561,9 @@
   description: trait-willtolive-desc
   category: Skills
   cost: 2
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - WillToDie
     - Redshirt
     - IllFated
@@ -565,9 +577,10 @@
   description: trait-brittlebone-desc
   category: Skills
   cost: -10
-  conflicts:
-    - Tenacity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -585,9 +598,10 @@
   description: trait-frail-desc
   category: Skills
   cost: -5
-  conflicts:
-    - Tenacity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -605,7 +619,9 @@
   description: trait-illfated-desc
   category: Skills
   cost: -3
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - WillToLive
   effects:
   - !type:ModifyCritDeadThresholdEffect
