@@ -5,5 +5,70 @@
     children:
     - id: WeaponCrusher
     - id: WeaponCrusherGlaive
-    #- id: WeaponCrusherHammer -Euphoria
-    #- id: WeaponCrusherHalberd -Euphoria
+    - id: WeaponCrusherHammer
+    - id: WeaponCrusherHalberd
+
+- type: entity
+  parent: [WeaponCrusher, BaseSecurityCargoContraband]
+  id: WeaponCrusherHammer
+  name: crusher hammer
+  description: A beefy, two-handed weapon that inflicts knockback and heavier damage than a crusher.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Crushers/crusher_hammer.rsi
+    state: icon
+  - type: MeleeWeapon # Slower attack speed but higher damage makes it more risky and rewarding to use
+    attackRate: 0.6
+    damage:
+      types:
+        Blunt: 12
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 13
+        Structural: 15 # Breaks weak rocks effectively
+  - type: Item
+    size: Ginormous
+    sprite: _Lavaland/Objects/Weapons/Crushers/crusher_hammer-inhands.rsi
+  - type: Tool
+    speedModifier: 1.5
+    useSound:
+      path: /Audio/Items/trayhit2.ogg
+  - type: Clothing
+    sprite: _Lavaland/Objects/Weapons/Crushers/crusher_hammer.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+
+- type: entity
+  parent: [WeaponCrusher, BaseSecurityCargoContraband]
+  id: WeaponCrusherHalberd
+  name: crusher halberd
+  description: A universal weapon that combines the power of a crusher and the range of a spear.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Crushers/crusher_halberd.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+    sprite: _Lavaland/Objects/Weapons/Crushers/crusher_halberd-inhands.rsi
+  # Basically a crusher but better
+  - type: MeleeWeapon
+    range: 2.2
+    damage:
+      types:
+        Slash: 6
+        Blunt: 5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Piercing: 3
+        Slash: 3
+        Structural: 15 # Breaks weak rocks effectively
+  - type: Clothing
+    sprite: _Lavaland/Objects/Weapons/Crushers/crusher_halberd.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
