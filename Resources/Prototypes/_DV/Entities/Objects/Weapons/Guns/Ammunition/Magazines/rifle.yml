@@ -15,10 +15,18 @@
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
     - state: stripe
-      color: "#dbdbdb"
+      color: "#206eef" # Euphoria: Fix rubber magazine variant visuals (#206eef<#dbdbdb)
   - type: Item
     inhandVisuals:
       left:
       - state: inhand-left-mag
+      # Euphoria start: Fix rubber magazine variant visuals
+      - state: inhand-left-stripe
+        color: "#206eef"
+      # Euphoria end
       right:
       - state: inhand-right-mag
+      # Euphoria start: Fix rubber magazine variant visuals
+      - state: inhand-right-stripe
+        color: "#206eef"
+      # Euphoria end
