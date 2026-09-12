@@ -136,6 +136,9 @@ public sealed partial class RopeSystem
 
     private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope)
     {
+        if (rope.Comp.Links.Count == 0)
+            return;
+
         // Get world positions of the two anchors
         var leftXform = Transform(leftAnchor);
         var rightXform = Transform(rightAnchor);
@@ -400,10 +403,16 @@ public sealed partial class RopeSystem
 
         // Set invalid joint ids
         if (rope.Comp.ConnectedStart is { } start)
+        {
+            OnRopeDetached(rope, start.Anchor);
             rope.Comp.ConnectedStart = start with { JointId = _invalidJointMarker };
+        }
 
         if (rope.Comp.ConnectedEnd is { } end)
+        {
+            OnRopeDetached(rope, end.Anchor);
             rope.Comp.ConnectedEnd = end with { JointId = _invalidJointMarker };
+        }
 
         RaiseLocalEvent(rope, new RopeDisabledEvent());
     }

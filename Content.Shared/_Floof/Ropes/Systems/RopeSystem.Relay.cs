@@ -93,7 +93,9 @@ public sealed partial class RopeSystem
 
             DebugTools.Assert(relayComp.IndexOfRope(ropeInfo.Rope) == -1);
 
-            if (!ropeInfo.RelayedTo.Contains(relayTarget))
+            // We make sure the relay's AttachedRopes list doesn't already contain an entry for this one
+            // because it's possible that its owner is the same entity the rope is attached to
+            if (!ropeInfo.RelayedTo.Contains(relayTarget) && relayComp.IndexOfRope(ropeInfo.Rope) == -1)
             {
                 ropeInfo.RelayedTo.Add(relayTarget);
                 relayComp.AttachedRopes.Add(new(ropeInfo.Rope, null, connector));

@@ -39,21 +39,22 @@ public sealed partial class RopeAttachedComponent : Component
         return null;
     }
 
+    [DataDefinition]
     public sealed class AttachedRopeInfo
     {
-        [ViewVariables]
+        [DataField]
         public EntityUid Rope;
 
         /// <summary>
         ///     If the rope is an item that's held in someone's hand, the connection is relayed to all entities in this field.
         /// </summary>
-        [ViewVariables]
+        [DataField]
         public List<EntityUid>? RelayedTo;
 
         /// <summary>
         ///     If this "attachment" is the result of a held rope being relayed, this field contains the actual item that is attached.
         /// </summary>
-        [ViewVariables]
+        [DataField]
         public EntityUid? RelayedFrom;
 
         public AttachedRopeInfo(EntityUid rope, List<EntityUid>? relayedTo, EntityUid? relayedFrom)

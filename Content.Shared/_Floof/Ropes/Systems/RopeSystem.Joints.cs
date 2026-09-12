@@ -19,6 +19,8 @@ public sealed partial class RopeSystem
             id: id,
             minimumDistance: 0f);
 
+        joint.MinLength = 0f; // For some fuckass reason, CreateDistanceJoint sets it to non-zero
+
         joint.Damping = rope.LinkStiffness * 0.1f;
         joint.Stiffness = rope.LinkStiffness;
         SetLinkLength(joint, rope.LinkLength);

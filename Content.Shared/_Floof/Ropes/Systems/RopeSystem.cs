@@ -26,6 +26,7 @@ public sealed partial class RopeSystem : EntitySystem
         InitializeLifecycle();
         InitializeNetworking();
         InitializeRelay();
+        InitializeWorkarounds();
 
         _ropeQuery = GetEntityQuery<RopeComponent>();
         _ropeLinkQuery = GetEntityQuery<RopeLinkComponent>();

@@ -275,10 +275,9 @@ public sealed partial class LeashSystem : EntitySystem
 
             foreach (var data in leashedData)
             {
+                leash.Comp.Leashed.Remove(data); // Doing this first to avoid recursion
                 if (TryGetEntity(data.Rope, out var rope))
                     QueueDel(rope);
-
-                leash.Comp.Leashed.Remove(data);
             }
         }
 

@@ -40,6 +40,18 @@ public sealed partial class RopeSystem
             if (link.LinkEntity.Valid)
                 PredictedQueueDel(link.LinkEntity);
         }
+
+        // In case its a linkless rope, also destroy the start anchor joint (which is the same as the last)
+        if (ent.Comp.ConnectedStart is {} start)
+        {
+            _joints.RemoveJoint(start.Anchor, start.JointId);
+            OnRopeDetached(ent!, start.Anchor);
+        }
+        if (ent.Comp.ConnectedEnd is {} end)
+        {
+            _joints.RemoveJoint(end.Anchor, end.JointId);
+            OnRopeDetached(ent!, end.Anchor);
+        }
     }
 
     private void OnLinkShutdown(Entity<RopeLinkComponent> link, ref ComponentShutdown args)
@@ -60,9 +72,16 @@ public sealed partial class RopeSystem
             return;
 
         Log.Info($"Joint {args.Joint.ID} is removed. Will try to recreate the rope on the next tick.");
-        _pendingRopeUpdates.Add(link.Comp.Rope);
+        RecreateRope(link.Comp.Rope);
+    }
 
-        DisableRope(link.Comp.Rope);
+    /// <summary>
+    ///     Tries to respawn the rope on the neck tick.
+    /// </summary>
+    private void RecreateRope(EntityUid rope)
+    {
+        _pendingRopeUpdates.Add(rope);
+        DisableRope(rope);
     }
 
     private void OnJointBroken(Entity<RopeLinkComponent> link, ref JointBreakEvent args)

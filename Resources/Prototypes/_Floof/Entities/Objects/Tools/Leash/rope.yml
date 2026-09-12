@@ -1,9 +1,10 @@
-# Standard leash (10 segments)
+# Standard leash (10 segments), also base for the rest
 - type: ropeConfiguration
   id: Leash10
   parent: BaseRopeConfig
   links: 10
   linkPrototype: RopeLinkLeash
+  dataPrototype: RopeDataLeash
   sprite:
     sprite: _Floof/Objects/Tools/rope.rsi
     state: rope
@@ -13,6 +14,7 @@
   id: Leash5
   parent: Leash10
   links: 5
+  categories: [ HideSpawnMenu ]
 
 # Leash with 0 segments (pre-update behavior)
 - type: ropeConfiguration
@@ -20,8 +22,18 @@
   parent: Leash10
   links: 0
   stiffness: 0 # Only MaxDistance matters
+  categories: [ HideSpawnMenu ]
 
 - type: entity
   parent: RopeLinkBase
   id: RopeLinkLeash
   name: leash link
+  categories: [ HideSpawnMenu ]
+
+
+# Data entity
+- type: entity
+  id: RopeDataLeash
+  parent: RopeData
+  name: leash
+  categories: [ HideSpawnMenu ]
