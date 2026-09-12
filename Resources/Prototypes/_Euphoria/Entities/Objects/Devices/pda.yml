@@ -686,3 +686,12 @@
     borderColor: "#A32D26"
   - type: Icon
     state: pda-security
+
+- type: entity
+  parent: SecurityTechnicianPDA
+  id: SecuritySapperPDA
+  name: security sapper PDA
+  description: A pda that's hardened for a sappers duties.
+  components:
+  - type: Pda
+    id: SecuritySapperIDCard
