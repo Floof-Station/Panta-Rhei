@@ -1,13 +1,25 @@
-
 # Standard leash (10 segments)
 - type: ropeConfiguration
   id: Leash10
   parent: BaseRopeConfig
-  segments: 10
+  links: 10
   linkPrototype: RopeLinkLeash
   sprite:
     sprite: _Floof/Objects/Tools/rope.rsi
     state: rope
+
+# Standard leash (5 segments)
+- type: ropeConfiguration
+  id: Leash5
+  parent: Leash10
+  links: 5
+
+# Leash with 0 segments (pre-update behavior)
+- type: ropeConfiguration
+  id: Leash0
+  parent: Leash10
+  links: 0
+  stiffness: 0 # Only MaxDistance matters
 
 - type: entity
   parent: RopeLinkBase

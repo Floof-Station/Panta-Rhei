@@ -1,13 +1,11 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
-using Content.Shared._Floof.Leash.Components;
 using Content.Shared._Floof.Ropes.Components;
 using Content.Shared._Floof.Ropes.Events;
 using Content.Shared._Floof.Ropes.Prototypes;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Physics;
 using Robust.Shared.Physics.Dynamics.Joints;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -126,6 +124,14 @@ public sealed partial class RopeSystem
             return true;
 
         return false;
+    }
+
+    public void DistributeLinksBetweenAnchors(Entity<RopeComponent> rope)
+    {
+        if (rope.Comp.ConnectedStart is not { } left || rope.Comp.ConnectedEnd is not { } right)
+            return;
+
+        DistributeLinksBetweenAnchors(left.Anchor, right.Anchor, rope);
     }
 
     private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope)

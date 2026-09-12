@@ -16,15 +16,23 @@
       ropeConfig: Leash10
       length: 3
     availableConfigs:
+    # N links
     - ropeConfig: Leash10
       length: 3
     - ropeConfig: Leash10
-      length: 2.5
-    - ropeConfig: Leash10
       length: 2
-    - ropeConfig: Leash10
+    - ropeConfig: Leash5
       length: 1.5
-    - ropeConfig: Leash10
+    - ropeConfig: Leash5
+      length: 1
+    # 0 links
+    - ropeConfig: Leash0
+      length: 3
+    - ropeConfig: Leash0
+      length: 2
+    - ropeConfig: Leash0
+      length: 1.5
+    - ropeConfig: Leash0
       length: 1
   - type: Anchorable
     delay: 3

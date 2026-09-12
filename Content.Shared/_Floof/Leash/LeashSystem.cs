@@ -9,7 +9,6 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Movement.Pulling.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Throwing;
-using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
@@ -35,9 +34,9 @@ public sealed partial class LeashSystem : EntitySystem
     public override void Initialize()
     {
         InitializeVerbs();
+        InitializeRopes();
 
         SubscribeLocalEvent<LeashAnchorComponent, BeingUnequippedAttemptEvent>(OnAnchorUnequipping);
-        SubscribeLocalEvent<LeashAnchorComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
 
         CommandBinds.Builder
             .BindBefore(ContentKeyFunctions.MovePulledObject, new PointerInputCmdHandler(OnRequestPullLeash), before: [typeof(PullingSystem)])
@@ -61,42 +60,6 @@ public sealed partial class LeashSystem : EntitySystem
             && GetEntity(leashed.Anchor) == args.Equipment
            )
             args.Cancel();
-    }
-
-    private void OnGetEquipmentVerbs(Entity<LeashAnchorComponent> ent, ref GetVerbsEvent<EquipmentVerb> args)
-    {
-        if (!args.CanInteract
-            || !TryGetLeashTarget(ent!, out var leashTarget)
-            || !_interaction.InRangeUnobstructed(args.User, leashTarget) // Can't use CanAccess here since clothing
-            || args.Using is not { } leash
-            || !TryComp<LeashComponent>(leash, out var leashComp))
-            return;
-
-        var user = args.User;
-        var leashVerb = new EquipmentVerb { Text = Loc.GetString("verb-leash-text") };
-
-        if (CanLeash(ent, (leash, leashComp)))
-            leashVerb.Act = () => TryStartLeashing(ent, (leash, leashComp), user);
-        else
-        {
-            leashVerb.Message = Loc.GetString("verb-leash-error-message");
-            leashVerb.Disabled = true;
-        }
-
-        args.Verbs.Add(leashVerb);
-
-
-        if (!TryComp<LeashedComponent>(leashTarget, out var leashedComp)
-            || leashedComp.Leash != GetNetEntity(leash)
-            || HasComp<LeashedComponent>(ent)) // This one means that OnGetLeashedVerbs will add a verb to remove it
-            return;
-
-        var unleashVerb = new EquipmentVerb
-        {
-            Text = Loc.GetString("verb-unleash-text"),
-            Act = () => TryStartUnleashing((leashTarget, leashedComp), (leash, leashComp), user)
-        };
-        args.Verbs.Add(unleashVerb);
     }
 
     private bool OnRequestPullLeash(ICommonSession? session, EntityCoordinates targetCoords, EntityUid uid)
@@ -126,7 +89,7 @@ public sealed partial class LeashSystem : EntitySystem
         var pulledCoords = Transform(pulled).Coordinates;
         var pullDir = _xform.ToMapCoordinates(playerCoords).Position - _xform.ToMapCoordinates(pulledCoords).Position;
 
-        _throwing.TryThrow(pulled, pullDir * 0.6f, user: player, pushbackRatio: 1f, animated: false, recoil: false, playSound: false, doSpin: false);
+        _throwing.TryThrow(pulled, pullDir * 0.4f, user: player, pushbackRatio: 1f, animated: false, recoil: false, playSound: false, doSpin: false);
         return true;
     }
 

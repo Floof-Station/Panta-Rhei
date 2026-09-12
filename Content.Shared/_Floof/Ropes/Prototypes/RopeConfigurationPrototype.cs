@@ -36,7 +36,7 @@ public sealed partial class RopeConfigurationPrototype : IPrototype, IInheriting
     ///     Number of segments this rope is made from. Should never exceed ~10 to avoid performance issues.
     /// </summary>
     [DataField(required: true)]
-    public int Segments;
+    public int Links;
 
     /// <summary>
     ///     Stiffness in N/m.

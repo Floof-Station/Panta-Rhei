@@ -28,10 +28,17 @@ public sealed partial class RopeSystem
 
     private void SetLinkLength(DistanceJoint joint, float length)
     {
+        // In case someone decides to go through a portal, we want to limit the impact, so we set it way higher than needed
+        // However, if the link has no stiffness, we assume the caller wants to limit JUST the max length
+        // This is a terrible hack, but I'm really fucking tired already
+        var maxLengthMultiplier = joint.Stiffness <= 0.1f ? 1f : 10f;
+        // Likewise. This should turn the joint off if it tries to pull from 5x its max length (such as after one of the entities teleported)
+        var breakpoint = joint.Stiffness <= 0.1f ? float.PositiveInfinity : length * joint.Stiffness * 5f;
+
         // Note: length is how long the physics solver will try to make the joint. MaxLength is the hard limit before distances are clamped.
         joint.Length = length;
-        joint.MaxLength = length * 10f; // In case someone decides to go through a portal, we want to limit the impact, so we set it way higher than needed
-        joint.Breakpoint = length * joint.Stiffness * 5f; // This should turn the joint off if it tries to pull from 5x its max length (such as after one of the entities teleported)
+        joint.MaxLength = length * maxLengthMultiplier; // In case someone decides to go through a portal, we want to limit the impact, so we set it way higher than needed
+        joint.Breakpoint = breakpoint;
     }
 
     private bool ResolveJoint(EntityUid anchor, string jointId, [NotNullWhen(true)] out DistanceJoint? joint)

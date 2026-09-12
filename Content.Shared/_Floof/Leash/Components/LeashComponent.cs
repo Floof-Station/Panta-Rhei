@@ -41,7 +41,7 @@ public sealed partial class LeashComponent : Component
     ///     Interval at which the holder of the leash can pull attached entities closer to itself.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Ticker PullInterval = new(TimeSpan.FromSeconds(1.5f));
+    public Ticker PullInterval = new(TimeSpan.FromSeconds(0.5f));
 
     /// <summary>
     ///     List of all joints and their respective pulled entities created by this leash.
