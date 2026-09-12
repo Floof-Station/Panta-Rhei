@@ -177,6 +177,9 @@ public sealed partial class RopeSystem
 
         rope.Comp.ConnectedStart = new(leftAnchor, joint.ID, offsetLeft);
         rope.Comp.ConnectedEnd = new(rightAnchor, joint.ID, offsetRight);
+
+        OnRopeAttached(rope!, leftAnchor);
+        OnRopeAttached(rope!, rightAnchor);
     }
 
     // TODO code duplication?
@@ -258,10 +261,11 @@ public sealed partial class RopeSystem
         var firstLink = rope.Comp.Links[0];
         _joints.RemoveJoint(firstLink.LinkEntity, rope.Comp.ConnectedStart.Value.JointId);
 
+        var oldAnchor = rope.Comp.ConnectedStart.Value.Anchor;
         rope.Comp.ConnectedStart = null;
         firstLink.LeftJoint = null;
 
-        OnRopeDetached(rope, firstLink.LinkEntity);
+        OnRopeDetached(rope, oldAnchor);
 
         Dirty(rope, rope.Comp);
         return true;
@@ -281,10 +285,11 @@ public sealed partial class RopeSystem
         var lastLink = rope.Comp.Links[^1];
         _joints.RemoveJoint(lastLink.LinkEntity, rope.Comp.ConnectedEnd.Value.JointId);
 
+        var oldAnchor = rope.Comp.ConnectedEnd.Value.Anchor;
         rope.Comp.ConnectedEnd = null;
         lastLink.RightJoint = null;
 
-        OnRopeDetached(rope, lastLink.LinkEntity);
+        OnRopeDetached(rope, oldAnchor);
 
         Dirty(rope, rope.Comp);
         return true;
@@ -304,7 +309,7 @@ public sealed partial class RopeSystem
     private void OnRopeDetached(Entity<RopeComponent?> rope, EntityUid connector)
     {
         if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp)
-            || (ropeAttachedComp.IndexOfRope(rope) is var index && index != -1))
+            || (ropeAttachedComp.IndexOfRope(rope) is var index && index == -1))
             return;
 
         var relayInfo = ropeAttachedComp.AttachedRopes[index];
@@ -553,6 +558,14 @@ public sealed partial class RopeSystem
             if (ResolveJoint(link.LinkEntity, link.RightJoint!, out var joint))
                 yield return joint;
         }
+    }
+
+    private IEnumerable<EntityUid> EnumerateAnchors(Entity<RopeComponent> rope)
+    {
+        if (rope.Comp.ConnectedStart is { } start)
+            yield return start.Anchor;
+        if (rope.Comp.ConnectedEnd is { } end)
+            yield return end.Anchor;
     }
 
     // There could NOT be a worse transform API than RobustToolbox'es

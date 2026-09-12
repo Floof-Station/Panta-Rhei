@@ -40,7 +40,7 @@ public sealed partial class RopeAttachedComponent : Component
     }
 
     [DataDefinition]
-    public sealed class AttachedRopeInfo
+    public sealed partial class AttachedRopeInfo
     {
         [DataField]
         public EntityUid Rope;

@@ -1,3 +1,4 @@
+using Content.Shared._Floof.CCVar;
 using Content.Shared._Floof.Ropes.Components;
 using Content.Shared.Teleportation.Components;
 using Content.Shared.Teleportation.Systems;
@@ -7,14 +8,25 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
+    private bool _ropesFollowPortals;
+
     private void InitializeWorkarounds()
     {
         SubscribeLocalEvent<RopeAttachedComponent, BeforeTeleportedEvent>(OnBeforeTeleported);
         SubscribeLocalEvent<RopeAttachedComponent, TeleportedEvent>(OnTeleported);
+
+        Subs.CVar(_cfg, FloofCCVars.RopesFollowPortals, v => _ropesFollowPortals = v, true);
     }
 
     private void OnBeforeTeleported(Entity<RopeAttachedComponent> ent, ref BeforeTeleportedEvent args)
     {
+        if (_net.IsClient)
+        {
+            // On the client side, remove all joints to avoid prediction making it look like you've been sent into space in between
+            _joints.ClearJoints(ent);
+            return;
+        }
+
         foreach (var ropeInfo in ent.Comp.AttachedRopes)
         {
             if (CanTeleportRope(ropeInfo.Rope, out var reason))
@@ -73,7 +85,7 @@ public sealed partial class RopeSystem
             if (rope.Comp.Links.Count > 0)
                 DistributeLinksBetweenAnchors(rope);
 
-            Log.Info($"Teleporting {ToPrettyString(otherEnt)} to follow the teleportation of {teleported}.");
+            Log.Info($"Teleporting {ToPrettyString(otherEnt)} to follow the teleportation of {ToPrettyString(teleported)}.");
         }
     }
 
@@ -83,12 +95,25 @@ public sealed partial class RopeSystem
         if (!_ropeQuery.Resolve(rope, ref rope.Comp))
             return true;
 
-        // I don't even know man.
-        if (rope.Comp.Links.Count > 0 && !rope.Comp.IsDisabled)
-        {
-            reason = Loc.GetString("rope-portal-fail-too-few-links");
+        if (!_ropesFollowPortals)
             return false;
+
+        // If either end of the rope is anchored, prevent it as well
+        foreach (var anchor in EnumerateAnchors(rope!))
+        {
+            if (Transform(anchor).Anchored)
+            {
+                reason = Loc.GetString("rope-portal-fail-anchored");
+                return false;
+            }
         }
+
+        // ~~I don't even know man.~~ No longer relevant, the bug that caused it was fixed.
+        // if (rope.Comp.Links.Count == 0 && !rope.Comp.IsDisabled)
+        // {
+        //     reason = Loc.GetString("rope-portal-fail-too-few-links");
+        //     return false;
+        // }
 
         return true;
     }
