@@ -1,4 +1,10 @@
 - type: latheRecipePack
+  id: BorgModulesSecurityEuphoria
+  recipes:
+  - BorgModuleSecurityAdvancedMeasures
+  - BorgModuleSecurityAdvancedLaser
+
+- type: latheRecipePack
   id: BorgModulesStaticEuphoria
   recipes:
   - BorgModulePaperwork
