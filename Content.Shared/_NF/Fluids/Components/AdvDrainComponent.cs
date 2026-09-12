@@ -43,16 +43,10 @@ public sealed partial class AdvDrainComponent : Component
     public float UnitsPerSecond = 20f;
 
     /// <summary>
-    /// How many units are ejected from the buffer per second.
+    /// Maximum amount of solution the drain can hold.
     /// </summary>
     [DataField]
-    public float UnitsDestroyedPerSecond = 15f;
-
-    /// <summary>
-    /// Threshold of volume to begin destroying from the buffer. The effective capacity of the drain.
-    /// </summary>
-    [DataField]
-    public float UnitsDestroyedThreshold = 600f;
+    public float MaxCapacity = 600f;
 
     /// <summary>
     /// How many (unobstructed) tiles away the drain will
