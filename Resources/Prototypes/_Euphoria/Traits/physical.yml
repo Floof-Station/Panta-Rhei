@@ -13,6 +13,9 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -48,6 +51,9 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -78,6 +84,9 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -106,6 +115,9 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -135,6 +147,9 @@
   - ReplaceBloodInsect
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -163,6 +178,9 @@
   - ReplaceBloodInsect
   - ReplaceBloodSap
   - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -191,6 +209,9 @@
   - ReplaceBloodInsect
   - ReplaceBloodSap
   - ReplaceBloodSlime
+  - ReplaceBloodClown
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   - ReplaceBloodWhite
   conditions:
@@ -216,7 +237,10 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
   - ReplaceBloodWhite
+  - ReplaceBloodClown
   conditions:
   - !type:HasCompCondition
     component: BorgChassis
@@ -244,6 +268,9 @@
   - ReplaceBloodSap
   - ReplaceBloodSlime
   - ReplaceBloodYellow
+  - ReplaceBloodMime
+  - ReplaceBloodClown
+  - ReplaceBloodXenos
   - ReplaceBloodBlack
   conditions:
   - !type:HasCompCondition
@@ -252,6 +279,87 @@
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: WhiteBlood
+
+- type: trait
+  id: ReplaceBloodClown
+  name: trait-replace-blood-clown-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  - ReplaceBloodMime
+  - ReplaceBloodXenos
+  - ReplaceBloodWhite
+  - ReplaceBloodBlack
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: Laughter
+
+- type: trait
+  id: ReplaceBloodMime
+  name: trait-replace-blood-mime-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  - ReplaceBloodClown
+  - ReplaceBloodXenos
+  - ReplaceBloodWhite
+  - ReplaceBloodBlack
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: Nothing
+
+- type: trait
+  id: ReplaceBloodXenos
+  name: trait-replace-blood-xenos-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conflicts:
+  - ReplaceBloodRed
+  - ReplaceBloodAmmonia
+  - ReplaceBloodCopper
+  - ReplaceBloodInsect
+  - ReplaceBloodSap
+  - ReplaceBloodSlime
+  - ReplaceBloodYellow
+  - ReplaceBloodMime
+  - ReplaceBloodClown
+  - ReplaceBloodBlack
+  - ReplaceBloodWhite
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: FluorosulfuricAcid
 
 # Regeneration
 - type: trait
