@@ -1844,3 +1844,63 @@
     sound: *fox13
   - type: MeleeWeapon
     soundHit: *fox13
+
+- type: entity
+  parent: PlushieHuman
+  id: PlushieCJTajaran
+  name: Chief Justice Tajaran Plushie
+  description: The tag reads "Chief Justice Al-mari Samzar'Hrar asks that one treats this plushie with the dignity and respect it deserves. Sponsored by the DCIA."
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: cjtajaran
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &cat_growl1
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_growl1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *cat_growl1
+  - type: EmitSoundOnLand
+    sound: &cat_hiss1
+      path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss1.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: *cat_hiss1
+  - type: MeleeWeapon
+    soundHit: *cat_hiss1
+  - type: MultiHandedItem
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+  - type: SolutionContainerManager
+    solutions:
+      fleshlight:
+        maxVol: 10
+  - type: SolutionTransfer
+    transferAmount: 5
+    maxTransferAmount: 10
+    minTransferAmount: 1
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
