@@ -3,7 +3,9 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared._Floof.Leash.Components;
 using Content.Shared._Floof.Ropes.Components;
+using Content.Shared._Floof.Ropes.Events;
 using Content.Shared._Floof.Ropes.Prototypes;
+using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Dynamics.Joints;
@@ -34,7 +36,7 @@ public sealed partial class RopeSystem
         Vector2 offsetRight = default)
     {
         var leftXform = Transform(leftAnchor);
-        if (rightAnchor != null && !CanCreateRope(leftAnchor, rightAnchor.Value, length, leftXform))
+        if (rightAnchor != null && !CanRopeExistBetween(leftAnchor, rightAnchor.Value, length, leftXform))
         {
             createdRope = null;
             return false;
@@ -47,8 +49,7 @@ public sealed partial class RopeSystem
         if (rightAnchor != null)
             rope.Comp.ConnectedEnd = new(rightAnchor.Value, _invalidJointMarker, offsetRight);
 
-        if (!EnableRope(rope!))
-            return false;
+        UpdateRope(rope);
 
         // Make the data entity a child of either a middle link or the left anchor
         var linkCount = rope.Comp.Links.Count;
@@ -78,7 +79,7 @@ public sealed partial class RopeSystem
         return TryCreateRope(leftAnchor, rightAnchor, prototype, length, out createdRope, offsetLeft, offsetRight);
     }
 
-    public bool CanCreateRope(EntityUid left, EntityUid right, float length, TransformComponent? leftXform = null, TransformComponent? rightXform = null)
+    public bool CanRopeExistBetween(EntityUid left, EntityUid right, float length, TransformComponent? leftXform = null, TransformComponent? rightXform = null)
     {
         leftXform ??= Transform(left);
         rightXform ??= Transform(right);
@@ -93,6 +94,38 @@ public sealed partial class RopeSystem
         }
 
         return true;
+    }
+
+    /// <summary>
+    ///     Checks if the rope should be *temporarily* disabled.
+    /// </summary>
+    public bool ShouldTemporarilyDisableRope(EntityUid left, EntityUid right, TransformComponent? leftXform = null, TransformComponent? rightXform = null)
+    {
+        leftXform ??= Transform(left);
+        rightXform ??= Transform(right);
+
+        // If the two entities are in the same container... sucks
+        BaseContainer? leftContainer = null, rightContainer = null;
+        _containers.TryGetOuterContainer(left, leftXform, out leftContainer);
+        _containers.TryGetOuterContainer(right, rightXform, out rightContainer);
+        if (leftContainer != null && leftContainer.Owner == rightContainer?.Owner)
+            return true;
+
+        // Or if one of them directly or indirectly contains the other
+        if (_xform.IsParentOf(leftXform, right)
+            || _xform.IsParentOf(rightXform, left))
+            return true;
+
+        // Or if the outer container of either is a non-physics entity
+        if (leftContainer != null
+            && (!_physicsQuery.TryComp(leftContainer?.Owner, out var leftContainerPhysics) || !leftContainerPhysics.CanCollide))
+            return true;
+
+        if (rightContainer != null
+            && (!_physicsQuery.TryComp(rightContainer?.Owner, out var rightContainerPhysics) || !rightContainerPhysics.CanCollide))
+            return true;
+
+        return false;
     }
 
     private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope)
@@ -164,6 +197,8 @@ public sealed partial class RopeSystem
         rope.Comp.ConnectedStart = new(connector, joint.ID, offset);
         firstLink.LeftJoint = joint.ID;
 
+        OnRopeAttached(rope, connector);
+
         Dirty(rope, rope.Comp);
         return true;
     }
@@ -194,6 +229,8 @@ public sealed partial class RopeSystem
         rope.Comp.ConnectedEnd = new(connector, joint.ID, offset);
         lastLink.RightJoint = joint.ID;
 
+        OnRopeAttached(rope, connector);
+
         Dirty(rope, rope.Comp);
         return true;
     }
@@ -214,6 +251,8 @@ public sealed partial class RopeSystem
 
         rope.Comp.ConnectedStart = null;
         firstLink.LeftJoint = null;
+
+        OnRopeDetached(rope, firstLink.LinkEntity);
 
         Dirty(rope, rope.Comp);
         return true;
@@ -236,8 +275,33 @@ public sealed partial class RopeSystem
         rope.Comp.ConnectedEnd = null;
         lastLink.RightJoint = null;
 
+        OnRopeDetached(rope, lastLink.LinkEntity);
+
         Dirty(rope, rope.Comp);
         return true;
+    }
+
+    private void OnRopeAttached(Entity<RopeComponent?> rope, EntityUid connector)
+    {
+        if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp))
+            ropeAttachedComp = AddComp<RopeAttachedComponent>(connector);
+
+        var args = new RopeAttachedComponent.AttachedRopeInfo(rope, null, null);
+        ropeAttachedComp.AttachedRopes.Add(args);
+
+        ProcessRelay(connector, args);
+    }
+
+    private void OnRopeDetached(Entity<RopeComponent?> rope, EntityUid connector)
+    {
+        if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp)
+            || (ropeAttachedComp.IndexOfRope(rope) is var index && index != -1))
+            return;
+
+        var relayInfo = ropeAttachedComp.AttachedRopes[index];
+        ropeAttachedComp.AttachedRopes.RemoveAt(index);
+
+        RemoveRelay(connector, relayInfo);
     }
 
     /// <summary>
@@ -275,11 +339,42 @@ public sealed partial class RopeSystem
     }
 
     /// <summary>
+    ///     Enables or disables the rope based on whether it can or can not exist.
+    /// </summary>
+    public void UpdateRope(Entity<RopeComponent> rope)
+    {
+        if (_net.IsClient)
+            return;
+
+        var has1Anchor = rope.Comp.ConnectedStart != null || rope.Comp.ConnectedEnd != null;
+        var has2Anchors = rope.Comp.ConnectedStart != null && rope.Comp.ConnectedEnd != null;
+
+        // We can enable the rope in one of the two following scenarios:
+        // 1. It's attached to exactly 1 anchor
+        // 2. It's attached to two anchors, and a rope can exist between them
+        var disabled = rope.Comp.IsDisabled;
+        var shouldEnable = (!has2Anchors && has1Anchor)
+            || (has2Anchors && !ShouldTemporarilyDisableRope(rope.Comp.ConnectedStart!.Value.Anchor, rope.Comp.ConnectedEnd!.Value.Anchor));
+
+        if (disabled && shouldEnable)
+        {
+            // If we can't enable it, it's invalid
+            if (!EnableRope(rope!))
+            {
+                Log.Warning($"Rope {ToPrettyString(rope)} cannot be re-enabled. Deleting it.");
+                TryQueueDel(rope);
+            }
+        }
+        else if (!disabled && !shouldEnable)
+            DisableRope(rope!);
+    }
+
+    /// <summary>
     ///     Sends all links of the rope to nullspace and disables all relevant joints.
     /// </summary>
     public void DisableRope(Entity<RopeComponent?> rope)
     {
-        if (!_ropeQuery.Resolve(rope, ref rope.Comp) || IsDisabled(rope))
+        if (!_ropeQuery.Resolve(rope, ref rope.Comp) || rope.Comp.IsDisabled)
             return;
 
         Log.Debug($"Disabling rope {rope}");
@@ -303,15 +398,17 @@ public sealed partial class RopeSystem
 
         if (rope.Comp.ConnectedEnd is { } end)
             rope.Comp.ConnectedEnd = end with { JointId = _invalidJointMarker };
+
+        RaiseLocalEvent(rope, new RopeDisabledEvent());
     }
 
     /// <summary>
     ///     Enables a previously disabled rope and places all of its links either between the two anchors or near the left or right anchor (whichever exists).
     /// </summary>
     /// <remarks>Does not check if the anchors are on the same map.</remarks>
-    public bool EnableRope(Entity<RopeComponent?> rope)
+    public bool EnableRope(Entity<RopeComponent?> rope, bool skipChecks = false)
     {
-        if (!_ropeQuery.Resolve(rope, ref rope.Comp) || !IsDisabled(rope))
+        if (!_ropeQuery.Resolve(rope, ref rope.Comp) || !rope.Comp.IsDisabled)
             return false;
 
         Log.Debug($"Enabling rope {rope}");
@@ -323,7 +420,7 @@ public sealed partial class RopeSystem
         if (leftAnchor != null && rightAnchor != null)
         {
             // If there are two anchors, we need to make sure their positions are valid
-            if (!CanCreateRope(leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rope.Comp.RopeLength))
+            if (!skipChecks && !CanRopeExistBetween(leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rope.Comp.RopeLength))
             {
                 Log.Warning($"Rope {ToPrettyString(rope)} has two anchors but they are too far away.");
                 return false;
@@ -366,30 +463,33 @@ public sealed partial class RopeSystem
         }
 
         rope.Comp.IsDisabled = false;
+
+        RaiseLocalEvent(rope, new RopeEnabledEvent());
+
         return true;
     }
 
     public bool IsDisabled(Entity<RopeComponent?> rope)
     {
-        if (!_ropeQuery.Resolve(rope, ref rope.Comp))
-            return false;
+        if (!_ropeQuery.Resolve(rope, ref rope.Comp, logMissing: false))
+            return true; // We return true here because it likely means the rope was deleted (happens in OnJointRemoved)
 
         return rope.Comp.IsDisabled;
     }
 
     /// <summary>
     ///     Creates a rope entity and all of its links at the given coordinates (stacking them in the same spot).
-    ///     Before this rope can become usable, EnableRope needs to be called
+    ///     EnableRope needs to be called in order to actually create joints.
     /// </summary>
     public Entity<RopeComponent> CreateRopeEntityUninitialized(RopeConfigurationPrototype config, float length, EntityCoordinates coords)
     {
         var ropeUid = Spawn(config.DataPrototype, coords);
         var rope = EnsureComp<RopeComponent>(ropeUid);
-        var segmentCount = config.Segments;
+        var segmentCount = config.Links;
 
         rope.Configuration = config;
         rope.RopeLength = length;
-        rope.LinkLength = segmentCount == 0 ? length : length / config.Segments;
+        rope.LinkLength = segmentCount == 0 ? length : length / config.Links;
         rope.LinkStiffness = config.Stiffness;
         rope.IsDisabled = true;
 

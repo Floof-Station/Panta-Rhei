@@ -26,11 +26,7 @@ public sealed partial class RopeSystem
             if (TerminatingOrDeleted(rope) || !_ropeQuery.TryComp(rope, out var ropeComp))
                 continue;
 
-            if (!EnableRope(rope))
-            {
-                Log.Warning($"Rope {ToPrettyString(rope)} cannot be re-enabled. Deleting it.");
-                QueueDel(rope);
-            }
+            UpdateRope((rope, ropeComp));
         }
         _pendingRopeUpdates.Clear();
     }

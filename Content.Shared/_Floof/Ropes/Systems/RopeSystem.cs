@@ -1,6 +1,7 @@
 using Content.Shared._Floof.Ropes.Components;
 using Content.Shared.Popups;
 using Robust.Shared.Network;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
 
@@ -17,13 +18,18 @@ public sealed partial class RopeSystem : EntitySystem
 
     private EntityQuery<RopeComponent> _ropeQuery;
     private EntityQuery<RopeLinkComponent> _ropeLinkQuery;
+    private EntityQuery<RopeAttachedComponent> _ropeAttachedQuery;
+    private EntityQuery<PhysicsComponent> _physicsQuery;
 
     public override void Initialize()
     {
         InitializeLifecycle();
         InitializeNetworking();
+        InitializeRelay();
 
         _ropeQuery = GetEntityQuery<RopeComponent>();
         _ropeLinkQuery = GetEntityQuery<RopeLinkComponent>();
+        _ropeAttachedQuery = GetEntityQuery<RopeAttachedComponent>();
+        _physicsQuery = GetEntityQuery<PhysicsComponent>();
     }
 }
