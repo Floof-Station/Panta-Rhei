@@ -29,7 +29,7 @@
     - Resomi #AmmoniaBlood
     - SlimePerson #Slime
     - Vox #AmmoniaBlood
-    - Shadowkin #BlackBlood
+    - Shadekin #BlackBlood
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: Blood
@@ -224,7 +224,7 @@
   - !type:OneOfSpeciesCondition
     invert: true
     species:
-    - Shadowkin
+    - Shadekin
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: BlackBlood
@@ -280,12 +280,12 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 50 # +30 over default
       damage:
         types:
           Heat: -0.14 # -0.07 over default
-        groups:
-          Brute: -0.14 # -0.07 over default
+          Blunt: -0.05 # This was split over the entire Brute group
+          Slash: -0.05
+          Piercing: -0.05
   - !type:ModifyHungerDecayEffect
     amount: 0.00833333333 # +50% over default
 
@@ -314,13 +314,13 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 60 # +10 over lower trait
       damage:
         types:
           Heat: -0.14 # same as lower trait
           Poison: -0.07 # not present in lower trait
-        groups:
-          Brute: -0.21 # increased 50% over lower trait
+          Blunt: -0.07 # This was split over the entire Brute group
+          Slash: -0.07
+          Piercing: -0.07
   - !type:ModifyHungerDecayEffect
     amount: 0.00833333333 # same as lower trait
   - !type:ModifyThirstDecayEffect
@@ -351,9 +351,9 @@
     - type: PassiveDamage # Half of base, with 75% of the cap
       allowedStates:
       - Alive
-      damageCap: 15
       damage:
         types:
           Heat: -0.03
-        groups:
-          Brute: -0.03
+          Blunt: -0.03
+          Slash: -0.03
+          Piercing: -0.03

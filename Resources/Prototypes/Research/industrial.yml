@@ -185,9 +185,9 @@
     - JawsOfLife
     - BorgModuleAdvancedTool
     - TrayGoggles # DeltaV
+    - ExperimentalNaniteApplicator # Monolith
     #- Fulton # DeltaV - seperate tech Aerial Extraction
     #- FultonBeacon # DeltaV - seperate tech Aerial Extraction
-    - ConstructionBagOfHolding # Floofstation - construction bag
 
 - type: technology
   id: MassExcavation
@@ -204,6 +204,9 @@
     - AdvancedMineralScannerEmpty
     - BorgModuleAdvancedMining
     - BorgModuleEnvSurvey # Euphoria Addition
+    - PKAUpgradeDamage
+    - PKAUpgradeRange
+    - PKAUpgradeFireRate
 
 # Tier 3
 

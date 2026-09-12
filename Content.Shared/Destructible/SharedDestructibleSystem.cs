@@ -1,3 +1,4 @@
+using Content.Shared.Damage.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 
@@ -5,6 +6,8 @@ namespace Content.Shared.Destructible;
 
 public abstract class SharedDestructibleSystem : EntitySystem
 {
+    // TODO: I don't really like this but this is out of scope to re-do destructible triggers while refactoring damageable
+    [Dependency] public readonly DamageableSystem Damageable = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!; // Floofstation
 
     /// <summary>
