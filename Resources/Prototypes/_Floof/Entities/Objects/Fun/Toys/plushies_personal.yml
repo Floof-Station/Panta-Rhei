@@ -1882,7 +1882,7 @@
   - type: Sprite
     sprite: _Floof/Objects/Fun/floof_plush.rsi
     state: whiteman
-    type: UseDelay
+  - type: UseDelay
     delay: 2.0
   - type: EmitSoundOnActivate
     sound: &cat_growl1
