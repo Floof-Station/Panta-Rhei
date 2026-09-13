@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared._Euphoria.Selector;
 using Content.Shared._Floof.Leash.Components;
+using Content.Shared._Floof.Paint;
 using Content.Shared._Floof.Ropes.Systems;
 using Content.Shared.Popups;
 
@@ -10,11 +11,13 @@ public sealed partial class LeashSystem
 {
     [Dependency] private readonly RopeSystem _ropes = default!;
     [Dependency] private readonly EntityConfigurationSystem _entCfg = default!;
+    [Dependency] private readonly SharedColorPaintSystem _paint = default!;
 
     private void InitializeRopes()
     {
         SubscribeLocalEvent<LeashRopeComponent, ComponentShutdown>(OnRopeShutdown);
         SubscribeLocalEvent<LeashComponent, ComponentShutdown>(OnLeashShutdown);
+        SubscribeLocalEvent<LeashComponent, ColorPaintChangedEvent>(OnColorPainted);
     }
 
     private void OnRopeShutdown(Entity<LeashRopeComponent> ent, ref ComponentShutdown args)
@@ -26,7 +29,7 @@ public sealed partial class LeashSystem
             || leashComp.Leashed.Find(it => it.Rope == ropeNet) is not {} leashData)
             return;
 
-        if (GetEntity(leashData.Pulled) is {} pulled)
+        if (GetEntity(leashData.Pulled) is { Valid: true } pulled)
             RemoveLeash(pulled, ent.Comp.Leash);
     }
 
@@ -35,8 +38,17 @@ public sealed partial class LeashSystem
         foreach (var leashData in ent.Comp.Leashed.ToList())
         {
             // Clean up all attachments
-            if (GetEntity(leashData.Pulled) is {} pulled)
+            if (GetEntity(leashData.Pulled) is { Valid: true } pulled)
                 RemoveLeash(pulled, ent!);
+        }
+    }
+
+    private void OnColorPainted(Entity<LeashComponent> ent, ref ColorPaintChangedEvent args)
+    {
+        foreach (var leashData in ent.Comp.Leashed)
+        {
+            if (GetEntity(leashData.Rope) is { } rope)
+                _ropes.SetRopeColor(rope, args.NewColor);
         }
     }
 
@@ -89,6 +101,8 @@ public sealed partial class LeashSystem
                 destroyed.Add(data);
                 continue;
             }
+
+            _ropes.SetRopeColor(newRope.Value!, _paint.GetEffectiveColor(leash));
 
             data.Rope = GetNetEntity(newRope)!.Value;
             EnsureComp<LeashRopeComponent>(newRope.Value).Leash = leash;

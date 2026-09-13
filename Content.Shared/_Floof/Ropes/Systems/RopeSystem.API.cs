@@ -238,6 +238,15 @@ public sealed partial class RopeSystem
         DirtyAllLinkJoints(rope!);
     }
 
+    public void SetRopeColor(Entity<RopeComponent?> rope, Color? color)
+    {
+        if (!Resolve(rope, ref rope.Comp))
+            return;
+
+        rope.Comp.Color = color;
+        Dirty(rope);
+    }
+
     /// <summary>
     ///     Sets the number of links of the rope. Will partially re-create the rope.
     ///     Prototype and spawn coords are determined automatically if not specified.
