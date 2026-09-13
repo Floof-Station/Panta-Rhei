@@ -1872,3 +1872,31 @@
     sound: *cat_hiss1
   - type: MeleeWeapon
     soundHit: *cat_hiss1
+
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman]
+  id: WhiteManPlushie
+  name: White Man Plushie
+  description: Meet Potential Man! This plushie reeks of tobacco. Deckard not included.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: whiteman
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &zippo_open
+      path: /Audio/Items/Lighters/zippo_open.ogg
+      params:
+        volume: -5
+  - type: EmitSoundOnUse
+    sound: &zippo_open
+  - type: EmitSoundOnLand
+    sound: &glass_knock
+      path: /Audio/Effects/glass_knock.ogg
+      params:
+        variation: 0.05
+  - type: EmitSoundOnCollide
+    sound: &glass_knock
+  - type: MeleeWeapon
+    soundHit: &glass_knock
