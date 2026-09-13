@@ -83,7 +83,7 @@ public sealed partial class RopeSystem
             // At least one of the anchors has to have teleported, and we have set the position of the other, so it should be fine
             // If links == 0, it's a snowflake case that's handled in BeforeTeleport
             if (rope.Comp.Links.Count > 0)
-                DistributeLinksBetweenAnchors(rope);
+                DistributeLinksBetweenAnchors(rope!);
 
             Log.Info($"Teleporting {ToPrettyString(otherEnt)} to follow the teleportation of {ToPrettyString(teleported)}.");
         }

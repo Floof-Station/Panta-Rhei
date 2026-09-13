@@ -1,4 +1,5 @@
 using Content.Shared._Floof.Ropes.Components;
+using Content.Shared._Floof.Util;
 using Content.Shared.Popups;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Dynamics.Joints;
@@ -9,6 +10,8 @@ public sealed partial class RopeSystem
 {
     // All ropes that may need to be re-created on the next tick
     private HashSet<EntityUid> _pendingRopeUpdates = new(10);
+
+    private Ticker ForcedRopeUpdateTicker = new(TimeSpan.FromSeconds(5));
 
     public void InitializeLifecycle()
     {
@@ -29,6 +32,17 @@ public sealed partial class RopeSystem
             UpdateRope((rope, ropeComp));
         }
         _pendingRopeUpdates.Clear();
+
+        // Every few seconds we update every rope in case something like carrying has occurred
+        if (ForcedRopeUpdateTicker.TryUpdate(_timing))
+        {
+            var query = EntityQueryEnumerator<RopeComponent>();
+            while (query.MoveNext(out var uid, out var rope))
+            {
+                UpdateRope((uid, rope));
+            }
+            query.Dispose();
+        }
     }
 
     private void OnShutdown(Entity<RopeComponent> ent, ref ComponentShutdown args)
@@ -56,7 +70,7 @@ public sealed partial class RopeSystem
 
     private void OnLinkShutdown(Entity<RopeLinkComponent> link, ref ComponentShutdown args)
     {
-        if (_net.IsClient || TerminatingOrDeleted(link.Comp.Rope))
+        if (_net.IsClient || !link.Comp.Rope.IsValid() || TerminatingOrDeleted(link.Comp.Rope))
             return;
 
         if (TryQueueDel(link.Comp.Rope))
@@ -76,9 +90,9 @@ public sealed partial class RopeSystem
     }
 
     /// <summary>
-    ///     Tries to respawn the rope on the neck tick.
+    ///     Disables and tries to respawn the rope on the neck tick.
     /// </summary>
-    private void RecreateRope(EntityUid rope)
+    public void RecreateRope(EntityUid rope)
     {
         _pendingRopeUpdates.Add(rope);
         DisableRope(rope);

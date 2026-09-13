@@ -49,8 +49,6 @@ public sealed partial class LeashSystem : EntitySystem
         CommandBinds.Unregister<LeashSystem>();
     }
 
-    #region event handling
-
     private void OnAnchorUnequipping(Entity<LeashAnchorComponent> ent, ref BeingUnequippedAttemptEvent args)
     {
         // Prevent unequipping the anchor clothing until the leash is removed
@@ -93,10 +91,6 @@ public sealed partial class LeashSystem : EntitySystem
         return true;
     }
 
-    #endregion
-
-    #region private api
-
     /// <summary>
     ///     Tries to find the entity this anchor is attached to and returns it. May return EntityUid.Invalid.
     /// </summary>
@@ -120,10 +114,6 @@ public sealed partial class LeashSystem : EntitySystem
 
         return _xform.ContainsEntity(user, leash.Owner);
     }
-
-    #endregion
-
-    #region public api
 
     /// <summary>
     ///     Tries to find the entity that gets leashed for the given anchor entity.
@@ -157,7 +147,7 @@ public sealed partial class LeashSystem : EntitySystem
         return leash.Comp.Leashed.Count < leash.Comp.MaxJoints
             && GetLeashed(anchor).Comp?.Leash == null
             && Transform(anchor).Coordinates.TryDistance(EntityManager, Transform(leash).Coordinates, out var dst)
-            && dst <= leash.Comp.CurrentConfig.Length;
+            && _entCfg.TryGetConfigFloat(leash.Owner, "length", out var length) && dst <= length;
     }
 
     /// <summary>
@@ -283,18 +273,4 @@ public sealed partial class LeashSystem : EntitySystem
 
         Dirty(leash);
     }
-
-    /// <summary>
-    ///     Sets the desired length of the leash. The actual length will be updated on the next physics tick.
-    /// </summary>
-    public void SetLeashConfig(Entity<LeashComponent> leash, LeashComponent.LeashConfig config)
-    {
-        leash.Comp.CurrentConfig = config;
-        Dirty(leash);
-
-        RefreshRopes(leash, true);
-        _popups.PopupPredicted(Loc.GetString("leash-set-length-popup", ("length", config.Length)), leash.Owner, null);
-    }
-
-    #endregion
 }

@@ -14,28 +14,31 @@
     sprite: _Floof/Objects/Tools/leash.rsi
   - type: Leash
     pullInterval: 0.75
-    currentConfig:
-      ropeConfig: Leash10
-      length: 3
-    availableConfigs:
-    # N links
-    - ropeConfig: Leash10
-      length: 3
-    - ropeConfig: Leash10
-      length: 2
-    - ropeConfig: Leash5
-      length: 1.5
-    - ropeConfig: Leash5
-      length: 1
-    # 0 links
-    - ropeConfig: Leash0
-      length: 3
-    - ropeConfig: Leash0
-      length: 2
-    - ropeConfig: Leash0
-      length: 1.5
-    - ropeConfig: Leash0
-      length: 1
+  - type: EntityConfiguration
+    configGroups:
+      length:
+        name: leash-config-category-length
+        options:
+        - name: leash-config-length
+          value: 3
+        - name: leash-config-length
+          value: 2.5
+        - name: leash-config-length
+          value: 2
+        - name: leash-config-length
+          value: 1.5
+        - name: leash-config-length
+          value: 1
+      preset:
+        name: leash-config-category-preset
+        tooltip: leash-config-preset-tooltip
+        options:
+        - name: leash-config-preset
+          value: Leash10
+        - name: leash-config-preset
+          value: Leash5
+        - name: leash-config-preset
+          value: Leash0
   - type: Anchorable
     delay: 3
     snap: false # One day this will work. Not today though.
@@ -46,7 +49,6 @@
   components:
   - type: Leash
     length: 3
-    maxDistance: 6
     attachDelay: 4
     detachDelay: 4
     selfDetachDelay: 10
@@ -70,9 +72,38 @@
   suffix: DEBUG, DO NOT MAP
   components:
   - type: Leash
-    maxDistance: 20
     maxJoints: 10
     attachDelay: 2.5
     detachDelay: 5
     selfDetachDelay: 20
     pullInterval: 0.1
+  - type: EntityConfiguration
+    configGroups:
+      length:
+        name: leash-config-category-length
+        options:
+        - name: leash-config-length
+          value: 15
+        - name: leash-config-length
+          value: 10
+        - name: leash-config-length
+          value: 7.5
+        - name: leash-config-length
+          value: 5
+        - name: leash-config-length
+          value: 3
+        - name: leash-config-length
+          value: 2
+        - name: leash-config-length
+          value: 1
+      preset:
+        name: leash-config-category-preset
+        options:
+        - name: leash-config-preset
+          value: Leash20
+        - name: leash-config-preset
+          value: Leash10
+        - name: leash-config-preset
+          value: Leash5
+        - name: leash-config-preset
+          value: Leash0

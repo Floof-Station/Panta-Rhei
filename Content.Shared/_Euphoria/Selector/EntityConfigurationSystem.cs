@@ -72,6 +72,7 @@ public sealed class EntityConfigurationSystem : EntitySystem
             var currentValue = ent.Comp.CurrentConfig[groupId];
             var textCat = Loc.GetString(configGroup.Name, ("value", currentValue));
             var verbCat = new VerbCategory(textCat, configGroup.Icon, resolveLoc: false); // meow
+            var tooltip = configGroup.Tooltip is { } tooltipLoc ? Loc.GetString(tooltipLoc) : null;
 
             int index = 0;
             foreach (var option in configGroup.Options)
@@ -80,10 +81,11 @@ public sealed class EntityConfigurationSystem : EntitySystem
                 var verb = new Verb()
                 {
                     Category = verbCat,
-                    CloseMenu = true,
+                    CloseMenu = true, // This only closes the main menu but leaves the sub-menu lingering and makes the buttons non-interactible. Idfk man.
                     DoContactInteraction = true,
                     Priority = -(index++), // Preserve the order of verbs as defined in yaml
                     Text = message,
+                    Message = tooltip,
                     Act = () => TrySelect(ent!, user, groupId, option.Value),
                 };
 

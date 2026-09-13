@@ -1,3 +1,4 @@
+using Content.Shared._Euphoria.Selector.Events;
 using Content.Shared._Floof.Leash.Components;
 using Content.Shared.Examine;
 using Content.Shared.Verbs;
@@ -6,18 +7,40 @@ namespace Content.Shared._Floof.Leash;
 
 public sealed partial class LeashSystem
 {
-    public static readonly VerbCategory LeashLengthConfigurationCategory =
-        new("verb-categories-leash-config", "/Textures/_Floof/Interface/VerbIcons/resize.svg.192dpi.png");
-
     private void InitializeVerbs()
     {
+        SubscribeLocalEvent<LeashComponent, BeforeConfigurationSelectedEvent>(BeforeConfigSelected);
+        SubscribeLocalEvent<LeashComponent, ConfigurationSelectedEvent>(OnConfigSelected);
+
         SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<InnateVerb>>(OnGetLeashedVerbs);
-        SubscribeLocalEvent<LeashComponent, GetVerbsEvent<AlternativeVerb>>(OnGetLeashVerbs);
         SubscribeLocalEvent<LeashAnchorComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
-        SubscribeLocalEvent<LeashComponent, ExaminedEvent>(OnLeashExamined);
 
         SubscribeLocalEvent<LeashAnchorComponent, LeashAttachDoAfterEvent>(OnAttachDoAfter);
         SubscribeLocalEvent<LeashedComponent, LeashDetachDoAfterEvent>(OnDetachDoAfter);
+    }
+
+    private void BeforeConfigSelected(Entity<LeashComponent> ent, ref BeforeConfigurationSelectedEvent args)
+    {
+        if (args.User != null && !CanInteractWithLeash(args.User.Value, ent))
+        {
+            args.Cancel("leash-config-cancel-cant-interact");
+            return;
+        }
+    }
+
+    private void OnConfigSelected(Entity<LeashComponent> ent, ref ConfigurationSelectedEvent args)
+    {
+        if (args.Group.Id == "length")
+        {
+            ent.Comp.CurrentLength = args.GetValueAsFloat();
+            foreach (var rope in EnumerateRopes(ent))
+                _ropes.SetRopeLength(rope, ent.Comp.CurrentLength);
+        }
+        else if (args.Group.Id == "preset")
+        {
+            ent.Comp.RopeConfig = args.Value;
+            RefreshRopes(ent, true);
+        }
     }
 
     private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref GetVerbsEvent<InnateVerb> args)
@@ -34,32 +57,6 @@ public sealed partial class LeashSystem
             Text = Loc.GetString("verb-unleash-text"),
             Act = () => TryStartUnleashing(ent.Owner, (leash, leashComp), user)
         });
-    }
-
-    private void OnGetLeashVerbs(Entity<LeashComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
-    {
-        if (!args.CanAccess
-            || !args.CanInteract
-            || ent.Comp.AvailableConfigs is not { } configurations
-            || !CanInteractWithLeash(args.User, ent))
-            return;
-
-        // Add a menu listing each length configuration.
-        foreach (var config in configurations)
-        {
-            if (!_protoMan.TryIndex(config.RopeConfig, out var configProto))
-                return;
-
-            var length = config.Length;
-            var links = configProto.Links;
-
-            args.Verbs.Add(new()
-            {
-                Text = Loc.GetString("verb-leash-set-length-text", ("length", length), ("links", links)),
-                Act = () => SetLeashConfig(ent, config),
-                Category = LeashLengthConfigurationCategory
-            });
-        }
     }
 
     private void OnGetEquipmentVerbs(Entity<LeashAnchorComponent> ent, ref GetVerbsEvent<EquipmentVerb> args)
@@ -96,17 +93,6 @@ public sealed partial class LeashSystem
             Act = () => TryStartUnleashing((leashTarget, leashedComp), (leash, leashComp), user)
         };
         args.Verbs.Add(unleashVerb);
-    }
-
-    private void OnLeashExamined(Entity<LeashComponent> ent, ref ExaminedEvent args)
-    {
-        var config = ent.Comp.CurrentConfig;
-        if (!_protoMan.TryIndex(config.RopeConfig, out var configProto))
-            return;
-
-        var length = config.Length;
-        var links = configProto.Links;
-        args.PushMarkup(Loc.GetString("leash-length-examine-text", ("length", length), ("links", links)));
     }
 
     private void OnAttachDoAfter(Entity<LeashAnchorComponent> ent, ref LeashAttachDoAfterEvent args)

@@ -1,21 +1,23 @@
+using System.Linq;
+using Content.Shared._Euphoria.Selector;
 using Content.Shared._Floof.Leash.Components;
 using Content.Shared._Floof.Ropes.Systems;
 using Content.Shared.Popups;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Floof.Leash;
 
 public sealed partial class LeashSystem
 {
     [Dependency] private readonly RopeSystem _ropes = default!;
-    [Dependency] private readonly IPrototypeManager _protoMan = default!;
+    [Dependency] private readonly EntityConfigurationSystem _entCfg = default!;
 
     private void InitializeRopes()
     {
-        SubscribeLocalEvent<LeashRopeComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<LeashRopeComponent, ComponentShutdown>(OnRopeShutdown);
+        SubscribeLocalEvent<LeashComponent, ComponentShutdown>(OnLeashShutdown);
     }
 
-    private void OnShutdown(Entity<LeashRopeComponent> ent, ref ComponentShutdown args)
+    private void OnRopeShutdown(Entity<LeashRopeComponent> ent, ref ComponentShutdown args)
     {
         // The rope this leash was using was deleted. Remove the leash.
         var ropeNet = GetNetEntity(ent);
@@ -24,7 +26,29 @@ public sealed partial class LeashSystem
             || leashComp.Leashed.Find(it => it.Rope == ropeNet) is not {} leashData)
             return;
 
-        RemoveLeash(GetEntity(leashData.Pulled), ent.Comp.Leash);
+        if (GetEntity(leashData.Pulled) is {} pulled)
+            RemoveLeash(pulled, ent.Comp.Leash);
+    }
+
+    private void OnLeashShutdown(Entity<LeashComponent> ent, ref ComponentShutdown args)
+    {
+        foreach (var leashData in ent.Comp.Leashed.ToList())
+        {
+            // Clean up all attachments
+            if (GetEntity(leashData.Pulled) is {} pulled)
+                RemoveLeash(pulled, ent!);
+        }
+    }
+
+    private IEnumerable<EntityUid> EnumerateRopes(Entity<LeashComponent> leash)
+    {
+        foreach (var data in leash.Comp.Leashed)
+        {
+            if (GetEntity(data.Rope) is not {} rope)
+                continue;
+
+            yield return rope;
+        }
     }
 
     /// <summary>
@@ -34,10 +58,6 @@ public sealed partial class LeashSystem
     public void RefreshRopes(Entity<LeashComponent> leash, bool force)
     {
         if (_net.IsClient)
-            return;
-
-        var config = leash.Comp.CurrentConfig;
-        if (!_protoMan.Resolve(config.RopeConfig, out var ropeConfig))
             return;
 
         var destroyed = new List<LeashComponent.LeashData>();
@@ -58,11 +78,11 @@ public sealed partial class LeashSystem
                 continue;
             }
 
-            var length = Math.Max(dst, config.Length);
+            var ropeLength = Math.Max(dst, leash.Comp.CurrentLength);
             if (!_ropes.TryCreateRope(leash,
                     pulled,
-                    ropeConfig,
-                    length,
+                    leash.Comp.RopeConfig,
+                    ropeLength,
                     out var newRope,
                     offsetRight: anchorComp.Offset))
             {
@@ -82,5 +102,7 @@ public sealed partial class LeashSystem
             _popups.PopupEntity(Loc.GetString("rope-destroyed-popup", ("rope", uid)), uid, PopupType.Medium);
             RemoveLeash(uid, leash!);
         }
+
+        Dirty(leash);
     }
 }

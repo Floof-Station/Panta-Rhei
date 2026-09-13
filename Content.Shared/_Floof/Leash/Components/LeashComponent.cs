@@ -16,14 +16,7 @@ public sealed partial class LeashComponent : Component
     [DataField, AutoNetworkedField]
     public int MaxJoints = 1;
 
-    [DataField(required: true), AutoNetworkedField]
-    public LeashConfig CurrentConfig;
-
-    /// <summary>
-    ///     List of length configs that the user can choose.
-    /// </summary>
-    [DataField(required: true), AutoNetworkedField]
-    public LeashConfig[] AvailableConfigs;
+    public float CurrentLength = 3f;
 
     /// <summary>
     ///     The time it takes for one entity to attach/detach the leash to/from another entity.
@@ -49,6 +42,8 @@ public sealed partial class LeashComponent : Component
     [DataField, AutoNetworkedField]
     public List<LeashData> Leashed = new();
 
+    public ProtoId<RopeConfigurationPrototype> RopeConfig = "Leash10";
+
     [DataDefinition, Serializable, NetSerializable]
     public sealed partial class LeashData
     {
@@ -69,15 +64,5 @@ public sealed partial class LeashComponent : Component
             Rope = rope;
             Pulled = pulled;
         }
-    };
-
-    [DataDefinition, Serializable, NetSerializable]
-    public sealed partial class LeashConfig
-    {
-        [DataField(required: true)]
-        public ProtoId<RopeConfigurationPrototype> RopeConfig;
-
-        [DataField]
-        public float Length;
     }
 }

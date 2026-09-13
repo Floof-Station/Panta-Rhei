@@ -37,6 +37,12 @@ public sealed partial class EntityConfigurationComponent : Component
         public LocId Name;
 
         /// <summary>
+        ///     Tooltip shown when hovering over the verbs of this category.
+        /// </summary>
+        [DataField]
+        public LocId? Tooltip = null;
+
+        /// <summary>
         ///     If set, this is displayed instead of <see cref="Name"/> in the examine window. If not set, Name is used instead.
         /// </summary>
         [DataField]

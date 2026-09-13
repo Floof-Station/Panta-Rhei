@@ -6,18 +6,12 @@ using Content.Shared._Floof.Ropes.Events;
 using Content.Shared._Floof.Ropes.Prototypes;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
-using Robust.Shared.Physics.Dynamics.Joints;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
-    // If the distance between two entities is x, then a rope of length AT LEAST (x - tolerance) can be created between them
-    private float _connectionDstTolerance = 2;
-    private string _invalidJointMarker = "<TEMPORARILY DELETED>";
-
     /// <summary>
     ///     Creates a rope between the two entities. Returns the rope data entity. By default, the data entity is attached to a middle link (or left anchor if 0-link).
     ///     Callers are advised to move it to an appropriate spot.
@@ -110,8 +104,8 @@ public sealed partial class RopeSystem
             return true;
 
         // Or if one of them directly or indirectly contains the other
-        if (_xform.IsParentOf(leftXform, right)
-            || _xform.IsParentOf(rightXform, left))
+        if (_xform.ContainsEntity(left, (right, rightXform))
+            || _xform.ContainsEntity(right, (left, leftXform)))
             return true;
 
         // Or if the outer container of either is a non-physics entity
@@ -126,15 +120,25 @@ public sealed partial class RopeSystem
         return false;
     }
 
-    public void DistributeLinksBetweenAnchors(Entity<RopeComponent> rope)
+    /// <summary>
+    ///     Repositions all rope links so that they uniformly distributed between the two anchors of the rope.
+    ///     Does nothing if the rope lacks one or more of the anchors.
+    ///
+    ///     <p>If <paramref name="arcApproximation"/> is true,
+    ///     distributes the points on an approximated arc so that the length of the rope is roughly equal to its ideal length.</p>
+    /// </summary>
+    public void DistributeLinksBetweenAnchors(Entity<RopeComponent?> rope, bool arcApproximation = true)
     {
+        if (!Resolve(rope, ref rope.Comp))
+            return;
+
         if (rope.Comp.ConnectedStart is not { } left || rope.Comp.ConnectedEnd is not { } right)
             return;
 
-        DistributeLinksBetweenAnchors(left.Anchor, right.Anchor, rope);
+        DistributeLinksBetweenAnchors(left.Anchor, right.Anchor, rope!, arcApproximation);
     }
 
-    private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope)
+    private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope, bool arcApproximation = true)
     {
         if (rope.Comp.Links.Count == 0)
             return;
@@ -151,18 +155,35 @@ public sealed partial class RopeSystem
 
         var leftPos = _xform.GetWorldPosition(leftXform);
         var rightPos = _xform.GetWorldPosition(rightXform);
-        // If leftPos == rightPos, the direction vector becomes nan
-        var direction = leftPos != rightPos ? (rightPos - leftPos).Normalized() : Vector2.Zero;
-        var distance = direction.Length();
-
-        // Place each link along the line
-        var segmentCount = rope.Comp.Links.Count;
-        var step = distance / (segmentCount + 2);
-        for (var i = 0; i < segmentCount; i++)
+        if (arcApproximation)
         {
-            var pos = leftPos + (i + 1) * step * direction;
-            var link = rope.Comp.Links[i];
-            _xform.SetMapCoordinates(link.LinkEntity, new(pos, map));
+            using var arcPointsEnum = DistributePointsOnArc(leftPos, rightPos, rope.Comp.RopeLength, rope.Comp.LinkCount).GetEnumerator();
+            using var linksEnum = rope.Comp.Links.GetEnumerator();
+
+            while (linksEnum.MoveNext() && arcPointsEnum.MoveNext())
+            {
+                var link = linksEnum.Current;
+                var point = arcPointsEnum.Current;
+
+                _xform.SetMapCoordinates(link.LinkEntity, new(point, map));
+            }
+        }
+        else
+        {
+            // This was the original implementation
+            // If leftPos == rightPos, the direction vector becomes nan
+            var direction = leftPos != rightPos ? (rightPos - leftPos).Normalized() : Vector2.Zero;
+            var distance = direction.Length();
+
+            // Place each link along the line
+            var segmentCount = rope.Comp.Links.Count;
+            var step = distance / (segmentCount + 2);
+            for (var i = 0; i < segmentCount; i++)
+            {
+                var pos = leftPos + (i + 1) * step * direction;
+                var link = rope.Comp.Links[i];
+                _xform.SetMapCoordinates(link.LinkEntity, new(pos, map));
+            }
         }
     }
 
@@ -180,142 +201,6 @@ public sealed partial class RopeSystem
 
         OnRopeAttached(rope!, leftAnchor);
         OnRopeAttached(rope!, rightAnchor);
-    }
-
-    // TODO code duplication?
-    /// <summary>
-    ///     Connects the start of the rope to the specified anchor.
-    ///     If the rope has no links, this method will only have effect after both ConnectStart and ConnectEnd have been called.
-    /// </summary>
-    public bool TryConnectRopeStart(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default)
-    {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedStart is {} start && start.JointId != _invalidJointMarker)
-            return false; // already attached
-
-        if (rope.Comp.Links.Count == 0)
-        {
-            Log.Error("Cannot attach a rope with 0 links. Specify anchors in TryCreateRope!");
-            return false;
-        }
-
-        // Check distance
-        var firstLink = rope.Comp.Links[0];
-        var dist = GetEffectiveDistance(connector, firstLink.LinkEntity);
-        if (float.IsInfinity(dist))
-            return false;
-
-        // Create a distance joint
-        var joint = CreateDistanceJoint(connector, firstLink.LinkEntity, rope.Comp, offset);
-        rope.Comp.ConnectedStart = new(connector, joint.ID, offset);
-        firstLink.LeftJoint = joint.ID;
-
-        OnRopeAttached(rope, connector);
-
-        Dirty(rope, rope.Comp);
-        return true;
-    }
-
-    /// <summary>
-    ///     Connects the end of the rope to the specified anchor.
-    ///     If the rope has no links, this method will only have effect after both ConnectStart and ConnectEnd have been called.
-    /// </summary>
-    public bool TryConnectRopeEnd(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default)
-    {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedEnd is {} end && end.JointId != _invalidJointMarker)
-            return false; // already attached
-
-        if (rope.Comp.Links.Count == 0)
-        {
-            Log.Error("Cannot attach a rope with 0 links. Specify anchors in TryCreateRope!");
-            return false;
-        }
-
-        // Check distance
-        var lastLink = rope.Comp.Links[^1];
-        var dist = GetEffectiveDistance(connector, lastLink.LinkEntity);
-        if (float.IsInfinity(dist))
-            return false;
-
-        // Create a distance joint
-        var joint = CreateDistanceJoint(connector, lastLink.LinkEntity, rope.Comp, Vector2.Zero, offset);
-        rope.Comp.ConnectedEnd = new(connector, joint.ID, offset);
-        lastLink.RightJoint = joint.ID;
-
-        OnRopeAttached(rope, connector);
-
-        Dirty(rope, rope.Comp);
-        return true;
-    }
-
-    public bool TryDetachStart(Entity<RopeComponent?> rope)
-    {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedStart == null)
-            return false;
-
-        if (rope.Comp.Links.Count == 0)
-        {
-            Log.Error("Cannot detach a rope with 0 links. Delete the rope entity instead!");
-            return false;
-        }
-
-        var firstLink = rope.Comp.Links[0];
-        _joints.RemoveJoint(firstLink.LinkEntity, rope.Comp.ConnectedStart.Value.JointId);
-
-        var oldAnchor = rope.Comp.ConnectedStart.Value.Anchor;
-        rope.Comp.ConnectedStart = null;
-        firstLink.LeftJoint = null;
-
-        OnRopeDetached(rope, oldAnchor);
-
-        Dirty(rope, rope.Comp);
-        return true;
-    }
-
-    public bool TryDetachEnd(Entity<RopeComponent?> rope)
-    {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedEnd == null)
-            return false;
-
-        if (rope.Comp.Links.Count == 0)
-        {
-            Log.Error("Cannot detach a rope with 0 links. Delete the rope entity instead!");
-            return false;
-        }
-
-        var lastLink = rope.Comp.Links[^1];
-        _joints.RemoveJoint(lastLink.LinkEntity, rope.Comp.ConnectedEnd.Value.JointId);
-
-        var oldAnchor = rope.Comp.ConnectedEnd.Value.Anchor;
-        rope.Comp.ConnectedEnd = null;
-        lastLink.RightJoint = null;
-
-        OnRopeDetached(rope, oldAnchor);
-
-        Dirty(rope, rope.Comp);
-        return true;
-    }
-
-    private void OnRopeAttached(Entity<RopeComponent?> rope, EntityUid connector)
-    {
-        if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp))
-            ropeAttachedComp = AddComp<RopeAttachedComponent>(connector);
-
-        var args = new RopeAttachedComponent.AttachedRopeInfo(rope, null, null);
-        ropeAttachedComp.AttachedRopes.Add(args);
-
-        ProcessRelay(connector, args);
-    }
-
-    private void OnRopeDetached(Entity<RopeComponent?> rope, EntityUid connector)
-    {
-        if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp)
-            || (ropeAttachedComp.IndexOfRope(rope) is var index && index == -1))
-            return;
-
-        var relayInfo = ropeAttachedComp.AttachedRopes[index];
-        ropeAttachedComp.AttachedRopes.RemoveAt(index);
-
-        RemoveRelay(connector, relayInfo);
     }
 
     /// <summary>
@@ -337,7 +222,7 @@ public sealed partial class RopeSystem
     /// </summary>
     public void SetRopeLength(Entity<RopeComponent?> rope, float length)
     {
-        if (!Resolve(rope, ref rope.Comp))
+        if (!Resolve(rope, ref rope.Comp) || _net.IsClient)
             return;
 
         var linkCount = rope.Comp.Links.Count;
@@ -347,9 +232,61 @@ public sealed partial class RopeSystem
         rope.Comp.LinkLength = linkLength;
 
         foreach (var joint in EnumerateRopeJoints(rope!))
-        {
             SetLinkLength(joint, linkLength);
+
+        // This is very fucky-wucky. The client doesn't receive joint state updates when we modify fields, so we need to force-feed them to it.
+        DirtyAllLinkJoints(rope!);
+    }
+
+    /// <summary>
+    ///     Sets the number of links of the rope. Will partially re-create the rope.
+    ///     Prototype and spawn coords are determined automatically if not specified.
+    /// </summary>
+    /// <summary>If this method is called AFTER the rope is enabled, the caller must disable and re-enable the rope in order to create rope joints.</summary>
+    public void SetRopeLinks(Entity<RopeComponent?> rope, int linkCount, RopeConfigurationPrototype? prototype = null, EntityCoordinates? spawnCoords = null)
+    {
+        if (!Resolve(rope, ref rope.Comp) || _net.IsClient)
+            return;
+
+        if (prototype == null && !_protoMan.Resolve(rope.Comp.Configuration, out prototype))
+            return;
+
+        spawnCoords ??= Transform(rope).Coordinates;
+
+        var length = rope.Comp.RopeLength;
+        rope.Comp.LinkCount = linkCount;
+        rope.Comp.LinkLength = linkCount > 0 ? length / linkCount : length;
+
+        // Delete any previous links
+        foreach (var link in rope.Comp.Links)
+        {
+            if (_ropeLinkQuery.TryComp(link.LinkEntity, out var linkComp))
+                linkComp.Rope = EntityUid.Invalid;
+            QueueDel(link.LinkEntity);
         }
+
+        // Spawn new links
+        var links = rope.Comp.Links = new();
+        for (var i = 0; i < linkCount; i++)
+        {
+            var linkUid = Spawn(prototype.LinkPrototype, spawnCoords.Value);
+            EnsureComp<RopeLinkComponent>(linkUid).Rope = rope;
+
+            var link = new RopeComponent.Link()
+            {
+                LinkEntity = linkUid,
+            };
+            links.Add(link);
+        }
+    }
+
+    /// <summary>
+    ///     Queues an update on the next tick without disabling the rope.
+    /// </summary>
+    /// <seealso cref="RecreateRope"/>
+    public void QueueUpdate(Entity<RopeComponent?> rope)
+    {
+        _pendingRopeUpdates.Add(rope);
     }
 
     /// <summary>
@@ -381,6 +318,16 @@ public sealed partial class RopeSystem
         }
         else if (!disabled && !shouldEnable)
             DisableRope(rope!);
+        else if (disabled && !shouldEnable)
+        {
+            // This is a workaround - since the rope is only attached to anchors in EnableRope,
+            // if the rope gets created in a temporarily-disabled state (e.g. when attaching a leash to yourself),
+            // its anchors won't receive a RopeAttachedComponent and we won't be able to track when the rope leaves the temporarily-disabled state
+            if (rope.Comp.ConnectedStart is {} start)
+                OnRopeAttached(rope!, start.Anchor);
+            if (rope.Comp.ConnectedEnd is {} end)
+                OnRopeAttached(rope!, end.Anchor);
+        }
     }
 
     /// <summary>
@@ -408,16 +355,10 @@ public sealed partial class RopeSystem
 
         // Set invalid joint ids
         if (rope.Comp.ConnectedStart is { } start)
-        {
-            OnRopeDetached(rope, start.Anchor);
             rope.Comp.ConnectedStart = start with { JointId = _invalidJointMarker };
-        }
 
         if (rope.Comp.ConnectedEnd is { } end)
-        {
-            OnRopeDetached(rope, end.Anchor);
             rope.Comp.ConnectedEnd = end with { JointId = _invalidJointMarker };
-        }
 
         RaiseLocalEvent(rope, new RopeDisabledEvent());
     }
@@ -505,74 +446,16 @@ public sealed partial class RopeSystem
     {
         var ropeUid = Spawn(config.DataPrototype, coords);
         var rope = EnsureComp<RopeComponent>(ropeUid);
-        var segmentCount = config.Links;
+        var linkCount = config.Links;
 
         rope.Configuration = config;
         rope.RopeLength = length;
-        rope.LinkLength = segmentCount == 0 ? length : length / config.Links;
         rope.LinkStiffness = config.Stiffness;
         rope.IsDisabled = true;
 
         // Spawn links
-        var links = rope.Links = new();
-        for (var i = 0; i < segmentCount; i++)
-        {
-            var linkUid = Spawn(config.LinkPrototype, coords);
-            EnsureComp<RopeLinkComponent>(linkUid).Rope = ropeUid;
-
-            var link = new RopeComponent.Link()
-            {
-                LinkEntity = linkUid,
-            };
-            links.Add(link);
-        }
+        SetRopeLinks((ropeUid, rope), linkCount, config, coords);
 
         return (ropeUid, rope);
     }
-
-    private IEnumerable<DistanceJoint> EnumerateRopeJoints(Entity<RopeComponent> rope)
-    {
-        if (rope.Comp.IsDisabled)
-            yield break;
-
-        if (rope.Comp.ConnectedStart is { } start && ResolveJoint(start.Anchor, start.JointId, out var startJoint))
-            yield return startJoint;
-
-        // If this is a linkless rope, the joint we just fetched above is the only joint (the yield return below points to the same joint)
-        if (rope.Comp.Links.Count == 0)
-            yield break;
-
-        if (rope.Comp.ConnectedEnd is { } end && ResolveJoint(end.Anchor, end.JointId, out var endJoint))
-            yield return endJoint;
-
-        // Links also store joints connecting them on the left and right.
-        // We skip the last one cause it's the same as one found in the above ConnectedEnd clause
-        var linkCount = rope.Comp.Links.Count;
-        for (var i = 0; i < linkCount - 1; i++)
-        {
-            var link = rope.Comp.Links[i];
-
-            // RightJoint should never be null on any link other than the last
-            DebugTools.Assert(link.RightJoint != null);
-
-            if (ResolveJoint(link.LinkEntity, link.RightJoint!, out var joint))
-                yield return joint;
-        }
-    }
-
-    private IEnumerable<EntityUid> EnumerateAnchors(Entity<RopeComponent> rope)
-    {
-        if (rope.Comp.ConnectedStart is { } start)
-            yield return start.Anchor;
-        if (rope.Comp.ConnectedEnd is { } end)
-            yield return end.Anchor;
-    }
-
-    // There could NOT be a worse transform API than RobustToolbox'es
-    private float GetEffectiveDistance(EntityUid a, EntityUid b) => GetEffectiveDistance(Transform(a), Transform(b));
-
-    private float GetEffectiveDistance(TransformComponent a, TransformComponent b) =>
-        a.Coordinates.TryDistance(EntityManager, _xform, b.Coordinates, out var dst)
-            ? dst
-            : float.PositiveInfinity;
 }

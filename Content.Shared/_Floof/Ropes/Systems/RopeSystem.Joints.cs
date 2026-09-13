@@ -8,6 +8,8 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
+    private string _invalidJointMarker = "<TEMPORARILY DELETED>";
+
     private DistanceJoint CreateDistanceJoint(EntityUid a, EntityUid b, RopeComponent rope, Vector2 anchorA = default, Vector2 anchorB = default)
     {
         var id = GetEffectiveJointId(a, b);

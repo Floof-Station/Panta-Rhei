@@ -15,6 +15,12 @@
   parent: Leash10
   links: 5
 
+# Admeme leash (20 segments)
+- type: ropeConfiguration
+  id: Leash20
+  parent: Leash10
+  links: 20
+
 # Leash with 0 segments (pre-update behavior)
 - type: ropeConfiguration
   id: Leash0

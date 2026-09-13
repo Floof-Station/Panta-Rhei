@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Numerics;
 using Content.Shared._Floof.Ropes.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
@@ -7,7 +8,8 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
-    [Dependency] private readonly SharedContainerSystem _containers = default!;
+    // If the distance between two entities is x, then a rope of length AT LEAST (x - tolerance) can be created between them
+    private float _connectionDstTolerance = 2;
 
     private void InitializeRelay()
     {
@@ -24,6 +26,15 @@ public sealed partial class RopeSystem
         // The event will be intercepted and the rope will be re-created if possible.
         foreach (var ropeInfo in ent.Comp.AttachedRopes.ToList())
         {
+            if (!_ropeQuery.TryComp(ropeInfo.Rope, out var ropeComp))
+                continue;
+
+            QueueUpdate(ropeInfo.Rope);
+
+            // Only bother relaying if the rope is enabled. If it's in someone backpack, it's pointless
+            if (ropeComp.IsDisabled)
+                continue;
+
             // Refresh relays on each root anchor (which might or might not be this entity)
             var root = (ent.Owner, ropeInfo);
             if (!TryResolveRootAnchor(ref root))
@@ -40,13 +51,50 @@ public sealed partial class RopeSystem
 
         foreach (var ropeInfo in ent.Comp.AttachedRopes.ToList())
         {
+            QueueUpdate(ropeInfo.Rope);
+
             // Remove & re-process (if needed) relay on the root anchor
             var root = (ent.Owner, ropeInfo);
             if (!TryResolveRootAnchor(ref root))
                 continue;
 
+            // In this case we DO process relays even if the rope is disabled as this could mean that the rope was moved between the person's backpack and inventory or something
             RemoveRelay(root.Owner, root.ropeInfo);
             ProcessRelay(root.Owner, root.ropeInfo);
+        }
+    }
+
+    /// <summary>
+    ///     This is to be called whenever the rope is attached to a new anchor.
+    /// </summary>
+    private void OnRopeAttached(Entity<RopeComponent?> rope, EntityUid connector)
+    {
+        if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp))
+            ropeAttachedComp = AddComp<RopeAttachedComponent>(connector);
+
+        var args = new RopeAttachedComponent.AttachedRopeInfo(rope, null, null);
+        if (ropeAttachedComp.IndexOfRope(rope) == -1)
+            ropeAttachedComp.AttachedRopes.Add(args);
+
+        ProcessRelay(connector, args);
+    }
+
+    /// <summary>
+    ///     This is to be called whenever the rope is detached from an old anchor.
+    /// </summary>
+    private void OnRopeDetached(Entity<RopeComponent?> rope, EntityUid connector)
+    {
+        if (!_ropeAttachedQuery.TryComp(connector, out var ropeAttachedComp))
+            return;
+
+        for (var i = ropeAttachedComp.AttachedRopes.Count - 1; i >= 0; i--)
+        {
+            var ropeInfo = ropeAttachedComp.AttachedRopes[i];
+            if (ropeInfo.Rope != rope.Owner)
+                continue;
+
+            ropeAttachedComp.AttachedRopes.RemoveSwap(i);
+            RemoveRelay(connector, ropeInfo);
         }
     }
 
@@ -144,4 +192,122 @@ public sealed partial class RopeSystem
         if (relayComp.AttachedRopes.Count == 0)
             RemComp(relayTarget, relayComp);
     }
+
+    #region public API
+
+
+    // TODO code duplication?
+    /// <summary>
+    ///     Connects the start of the rope to the specified anchor.
+    ///     If the rope has no links, this method will only have effect after both ConnectStart and ConnectEnd have been called.
+    /// </summary>
+    public bool TryConnectRopeStart(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default)
+    {
+        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedStart is {} start && start.JointId != _invalidJointMarker)
+            return false; // already attached
+
+        if (rope.Comp.Links.Count == 0)
+        {
+            Log.Error("Cannot attach a rope with 0 links. Specify anchors in TryCreateRope!");
+            return false;
+        }
+
+        // Check distance
+        var firstLink = rope.Comp.Links[0];
+        var dist = GetEffectiveDistance(connector, firstLink.LinkEntity);
+        if (float.IsInfinity(dist))
+            return false;
+
+        // Create a distance joint
+        var joint = CreateDistanceJoint(connector, firstLink.LinkEntity, rope.Comp, offset);
+        rope.Comp.ConnectedStart = new(connector, joint.ID, offset);
+        firstLink.LeftJoint = joint.ID;
+
+        OnRopeAttached(rope, connector);
+
+        Dirty(rope, rope.Comp);
+        return true;
+    }
+
+    /// <summary>
+    ///     Connects the end of the rope to the specified anchor.
+    ///     If the rope has no links, this method will only have effect after both ConnectStart and ConnectEnd have been called.
+    /// </summary>
+    public bool TryConnectRopeEnd(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default)
+    {
+        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedEnd is {} end && end.JointId != _invalidJointMarker)
+            return false; // already attached
+
+        if (rope.Comp.Links.Count == 0)
+        {
+            Log.Error("Cannot attach a rope with 0 links. Specify anchors in TryCreateRope!");
+            return false;
+        }
+
+        // Check distance
+        var lastLink = rope.Comp.Links[^1];
+        var dist = GetEffectiveDistance(connector, lastLink.LinkEntity);
+        if (float.IsInfinity(dist))
+            return false;
+
+        // Create a distance joint
+        var joint = CreateDistanceJoint(connector, lastLink.LinkEntity, rope.Comp, Vector2.Zero, offset);
+        rope.Comp.ConnectedEnd = new(connector, joint.ID, offset);
+        lastLink.RightJoint = joint.ID;
+
+        OnRopeAttached(rope, connector);
+
+        Dirty(rope, rope.Comp);
+        return true;
+    }
+
+    public bool TryDetachStart(Entity<RopeComponent?> rope)
+    {
+        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedStart == null)
+            return false;
+
+        if (rope.Comp.Links.Count == 0)
+        {
+            Log.Error("Cannot detach a rope with 0 links. Delete the rope entity instead!");
+            return false;
+        }
+
+        var firstLink = rope.Comp.Links[0];
+        _joints.RemoveJoint(firstLink.LinkEntity, rope.Comp.ConnectedStart.Value.JointId);
+
+        var oldAnchor = rope.Comp.ConnectedStart.Value.Anchor;
+        rope.Comp.ConnectedStart = null;
+        firstLink.LeftJoint = null;
+
+        OnRopeDetached(rope, oldAnchor);
+
+        Dirty(rope, rope.Comp);
+        return true;
+    }
+
+    public bool TryDetachEnd(Entity<RopeComponent?> rope)
+    {
+        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedEnd == null)
+            return false;
+
+        if (rope.Comp.Links.Count == 0)
+        {
+            Log.Error("Cannot detach a rope with 0 links. Delete the rope entity instead!");
+            return false;
+        }
+
+        var lastLink = rope.Comp.Links[^1];
+        _joints.RemoveJoint(lastLink.LinkEntity, rope.Comp.ConnectedEnd.Value.JointId);
+
+        var oldAnchor = rope.Comp.ConnectedEnd.Value.Anchor;
+        rope.Comp.ConnectedEnd = null;
+        lastLink.RightJoint = null;
+
+        OnRopeDetached(rope, oldAnchor);
+
+        Dirty(rope, rope.Comp);
+        return true;
+    }
+
+    #endregion
 }
