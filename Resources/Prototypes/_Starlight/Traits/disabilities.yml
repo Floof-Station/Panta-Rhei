@@ -4,6 +4,12 @@
   description: trait-highlightsensitivity-desc
   category: DisabilitiesPhysical # Euph
   cost: -1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ExtremeLightSensitivity
+  - !type:IsSpeciesCondition
+    species: Shadekin
   effects:
     - !type:OverrideCompsEffect
       components:
@@ -13,11 +19,6 @@
             0.8: Annoying
             5: High
             10: Extreme
-  conditions:
-    - !type:IsSpeciesCondition
-      species: Shadekin
-  conflicts:
-    - ExtremeLightSensitivity
 
 - type: trait
   id: ExtremeLightSensitivity
@@ -25,6 +26,12 @@
   description: trait-extremelightsensitivity-desc
   category: DisabilitiesPhysical # Euph
   cost: -2
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HighLightSensitivity
+  - !type:IsSpeciesCondition
+    species: Shadekin
   effects:
     - !type:OverrideCompsEffect
       components:
@@ -34,8 +41,3 @@
             0.7: Annoying
             0.8: High
             5: Extreme
-  conditions:
-    - !type:IsSpeciesCondition
-      species: Shadekin
-  conflicts:
-    - HighLightSensitivity
