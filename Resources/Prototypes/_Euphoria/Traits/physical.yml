@@ -7,7 +7,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodAmmonia
     - ReplaceBloodCopper
@@ -43,7 +43,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodCopper
@@ -74,7 +74,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -103,7 +103,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -133,7 +133,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -162,7 +162,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -191,7 +191,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -216,7 +216,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -245,7 +245,7 @@
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - ReplaceBloodRed
     - ReplaceBloodAmmonia
@@ -270,7 +270,7 @@
   category: BonusPhysical
   cost: 4
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - HealingMinus
     - HealingPlus2
@@ -306,7 +306,7 @@
   category: BonusPhysical
   cost: 8
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - HealingMinus
     - HealingPlus
@@ -344,7 +344,7 @@
   category: DisabilitiesPhysical
   cost: -1
   conditions:
-  - !type:OneOfSpeciesCondition
+  - !type:TraitDependencyCondition
     conflicts:
     - HealingPlus
     - HealingPlus2
