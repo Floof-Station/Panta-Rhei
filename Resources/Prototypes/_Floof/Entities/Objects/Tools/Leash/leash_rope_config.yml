@@ -14,7 +14,6 @@
   id: Leash5
   parent: Leash10
   links: 5
-  categories: [ HideSpawnMenu ]
 
 # Leash with 0 segments (pre-update behavior)
 - type: ropeConfiguration
@@ -22,8 +21,9 @@
   parent: Leash10
   links: 0
   stiffness: 0 # Only MaxDistance matters
-  categories: [ HideSpawnMenu ]
 
+
+# Link entity
 - type: entity
   parent: RopeLinkBase
   id: RopeLinkLeash
@@ -34,6 +34,6 @@
 # Data entity
 - type: entity
   id: RopeDataLeash
-  parent: RopeData
+  parent: RopeDataBase
   name: leash
   categories: [ HideSpawnMenu ]

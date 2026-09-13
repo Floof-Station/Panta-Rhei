@@ -1,3 +1,9 @@
+# Base configuration
+- type: ropeConfiguration
+  id: BaseRopeConfig
+  abstract: true
+  dataPrototype: RopeDataBase
+
 # Base entity prototype for rope links
 - type: entity
   id: RopeLinkBase
@@ -29,8 +35,14 @@
     tags:
     - HideContextMenu
 
-# Base configuration
-- type: ropeConfiguration
-  id: BaseRopeConfig
-  abstract: true
-  dataPrototype: RopeData
+
+# Base rope data entity
+- type: entity
+  id: RopeDataBase
+  name: rope data entity
+  description: You shouldn't see this.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu
