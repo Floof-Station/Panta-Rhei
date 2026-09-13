@@ -108,7 +108,7 @@ public sealed class WaggingSystem : EntitySystem
             {
                 var currentMarkingId = layerMarkings[i].MarkingId;
                 // Floofstation - moved into a method
-                if (!TryGetNewMarkingId(ent!, currentMarkingId, out var newMarkingId))
+                if (!TryGetNewMarkingId(ent!, currentMarkingId, out var newMarkingId, true))
                     continue;
 
                 layerMarkings[i] = new Marking(newMarkingId, layerMarkings[i].MarkingColors);
@@ -146,7 +146,9 @@ public sealed class WaggingSystem : EntitySystem
             else
             {
                 newMarkingId = currentMarkingId;
-                Log.Warning($"Unable to revert wagging for {currentMarkingId}");
+                if(!silent)
+                    Log.Warning($"Unable to revert wagging for {currentMarkingId}");
+                return false;
             }
         }
 
