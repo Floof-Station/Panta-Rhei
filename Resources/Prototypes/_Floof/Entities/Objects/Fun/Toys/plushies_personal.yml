@@ -1882,7 +1882,7 @@
   - type: Sprite
     sprite: _Floof/Objects/Fun/floof_plush.rsi
     state: whiteman
-  - type: UseDelay
+    type: UseDelay
     delay: 2.0
   - type: EmitSoundOnActivate
     sound: &cat_growl1
@@ -1890,13 +1890,13 @@
       params:
         volume: 2
   - type: EmitSoundOnUse
-    sound: &cat_growl1
+    sound: *cat_growl1
   - type: EmitSoundOnLand
-    sound:  &cat_hiss1
+    sound: &cat_hiss1
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss1.ogg
       params:
         variation: 0.05
   - type: EmitSoundOnCollide
-    sound: &cat_hiss1
+    sound: *cat_hiss1
   - type: MeleeWeapon
-    soundHit: &cat_hiss1
+    soundHit: *cat_hiss1
