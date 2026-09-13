@@ -36,7 +36,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Pathfinder
+      name: Automobile
     - type: Transform
       parent: invalid
     - type: MapGrid
@@ -163,7 +163,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: BecomesStation
-      id: Pathfinder
+      id: Automobile
     - type: ImplicitRoof
     - type: TileHistory
       chunkHistory: {}
