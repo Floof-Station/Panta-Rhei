@@ -746,3 +746,93 @@
       jumpDistance: 3
       canCollide: true # you may be pouncing but its funny watching poeple flop over
       action: ActionPounce
+
+- type: trait
+  id: Singing
+  name: trait-singing-name
+  description: trait-singing-description
+  category: Skills
+  cost: 3
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Harpy # harpy have this already
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: HarpySinger
+    - type: Instrument
+      allowPercussion: false
+      program: 52
+    - type: SwappableInstrument
+      instrumentList:
+        "Voice": { 52: 0 }
+        "Trumpet": { 56: 0 }
+        "Electric": { 27: 0 }
+        "Bass": { 33: 0 }
+        "Rock": { 29: 0 }
+        "Acoustic": { 24: 0 }
+        "Flute": { 73: 0 }
+        "Sax": { 66: 0 }
+        "Piano": { 1: 0 }
+        "Church Organ": { 19: 0 }
+        "Harp": { 46: 0 }
+      onlySetBySelf: true
+    - type: InstrumentVisuals
+  - !type:AddCompUiEffect
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+
+- type: trait
+  id: SlightlyClumsy
+  name: trait-slight-clumsy-name
+  description: trait-slightly-clumsy-description
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:HasJobCondition # we dont want clowns taking this
+    job: Clown
+    invert: true
+  - !type:TraitDependencyCondition
+    conflicts:
+    - VeryClumsy
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Clumsy
+      clumsyDefib: false
+      clumsyHypo: false
+      clumsyGuns: false # we let them shoot with this
+
+- type: trait
+  id: VeryClumsy
+  name: trait-very-clumsy-name
+  description: trait-very-clumsy-description
+  category: DisabilitiesPhysical
+  cost: -4
+  conditions:
+  - !type:HasJobCondition # we dont want clowns taking this
+    job: Clown
+    invert: true
+  - !type:TraitDependencyCondition
+    conflicts:
+    - SlightlyClumsy
+  - !type:OneOfSpeciesCondition # oni cant shoot guns so feel like we should prevent them from taking this
+    invert: true
+    species:
+    - Oni
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Clumsy
+      gunShootFailDamage:
+        types:
+          Blunt: 5
+          Piercing: 4
+          Heat: 3
+      catchingFailDamage:
+        types:
+          Blunt: 1
+      clumsyGunShootCheck: 0.2 # 80% chance of success

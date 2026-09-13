@@ -64,7 +64,7 @@
   - type: AnimationPlayer
   - type: Tag
     tags:
-    - ForceFixRotations
+#    - ForceFixRotations # Euphoria - Windoors are not rotation invariant
     - Window
     - WeldbotFixableStructure # Euphoria - Welbot fixable
   - type: ApcPowerReceiver

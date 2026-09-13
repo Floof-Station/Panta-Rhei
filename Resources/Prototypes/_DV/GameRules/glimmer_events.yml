@@ -240,6 +240,8 @@
   parent: BaseGlimmerEvent
   id: GlimmerResearchStealer
   components:
+  - type: StationEvent
+    weight: 17
   - type: GlimmerEvent
     minimumGlimmer: 600
     glimmerBurnLower: 25
