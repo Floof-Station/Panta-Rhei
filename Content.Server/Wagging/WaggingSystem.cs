@@ -108,7 +108,7 @@ public sealed class WaggingSystem : EntitySystem
             {
                 var currentMarkingId = layerMarkings[i].MarkingId;
                 // Floofstation - moved into a method
-                if (!TryGetNewMarkingId(ent!, currentMarkingId, out var newMarkingId, true))
+                if (!TryGetNewMarkingId(ent!, currentMarkingId, out var newMarkingId))
                     continue;
 
                 layerMarkings[i] = new Marking(newMarkingId, layerMarkings[i].MarkingColors);
