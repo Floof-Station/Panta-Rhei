@@ -68,9 +68,10 @@ public sealed class PreySystem : EntitySystem
         /*in case prey is leashed remove it to prevent bug that keeps pred from 
         being able to move since prey is still leashed */
         if (TryComp<LeashedComponent>(prey, out var leashed)
-        && leashed.Leash is { } leashNet
-        && TryGetEntity(leashNet, out var leash)
-        && TryComp<LeashComponent>(leash.Value, out var leashComp)){
+            && leashed.Leash is not null
+            && TryGetEntity(leashed.Leash.Value, out var leash)
+            && TryComp<LeashComponent>(leash.Value, out var leashComp))
+        {
             _leash.RemoveLeash((prey, leashed), (leash.Value, leashComp));
         }
 

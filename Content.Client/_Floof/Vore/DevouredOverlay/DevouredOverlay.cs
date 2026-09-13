@@ -52,27 +52,26 @@ public sealed class DevouredOverlay : Overlay
         var viewport = args.WorldAABB;
         var viewWidth = args.ViewportBounds.Width;
         var time = (float) _timing.RealTime.TotalSeconds;
-        /* TODO REPLACE later with digestcomponent values to indicate digestion process by walls closing in*/
+        
         float digestprogress = 0f;
         var playerEntity = _playerManager.LocalSession?.AttachedEntity;
         if (playerEntity != null && _entityManager.TryGetComponent(playerEntity.Value, out PreyComponent? preyComp))
         {
             digestprogress = 1f - Math.Clamp(preyComp.Health / preyComp.MaxHealth, 0f, 1f);
         }
-
         // defining the stomach walls
-        float outerScale = 0.4f - (digestprogress * 0.4f);
-        float innerScale = 0.3f - (digestprogress * 0.3f);
+        float outerScale = 0.4f - (digestprogress * 0.39f);
+        float innerScale = 0;
         var outerRadius = outerScale * viewWidth;
         var innerRadius = innerScale * viewWidth;
-        var outerCircleMaxRadius = outerRadius + ((0.13f - (digestprogress * 0.13f)) * viewWidth);
-        var innerCircleMaxRadius = innerRadius + ((0.03f - (digestprogress * 0.03f)) * viewWidth);
+        var outerCircleMaxRadius = outerRadius + ((0.13f - (digestprogress * 0.12f)) * viewWidth);
+        var innerCircleMaxRadius = innerRadius;
 
         // simulating pulses of circle movement and coloring
         var pulsing = MathF.Cos(time * 0.5f - 1.5f) + 1f;
         _stomachShader.SetParameter("time", pulsing);
         _stomachShader.SetParameter("color", StomachWallColor); 
-        _stomachShader.SetParameter("darknessAlphaOuter", 0.99f);
+        _stomachShader.SetParameter("darknessAlphaOuter", 0.90f);
 
         // drawing of the actual circles
         _stomachShader.SetParameter("outerCircleRadius", outerRadius);
