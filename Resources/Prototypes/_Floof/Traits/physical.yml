@@ -1,13 +1,15 @@
-﻿# =================     Bionics    ================== #
+# =================     Bionics    ================== #
 - type: trait
   id: CyberEyesFlare
   name: trait-name-CyberEyesFlare
   description: trait-description-CyberEyesFlare
   category: Cybernetics
   cost: 8
-  conflicts:
-  - Blindness
-  - PoorVision
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Blindness
+    - PoorVision
   effects:
   - !type:AddCompsEffect
     components:
@@ -21,10 +23,11 @@
   name: trait-name-CyberEyesNightVision
   description: trait-description-CyberEyesNightVision
   cost: 8
-  conflicts:
-  - Blindness
-  - PoorVision
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Blindness
+    - PoorVision
   - !type:HasJobCondition
     invert: true
     job: Prisoner
@@ -46,9 +49,10 @@
   name: trait-name-CyberEyesSecurity
   description: trait-description-CyberEyesSecurity
   cost: 4
-  conflicts:
-  - CyberEyesOmni
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - CyberEyesOmni
   - !type:InDepartmentCondition
     department: Security
   effects:
@@ -64,7 +68,9 @@
   name: trait-name-CyberEyesMedical
   description: trait-description-CyberEyesMedical
   cost: 4
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - CyberEyesOmni
   effects:
   - !type:AddCompsEffect
@@ -85,10 +91,11 @@
   name: trait-name-CyberEyesOmni
   description: trait-description-CyberEyesOmni
   cost: 6
-  conflicts:
-  - CyberEyesMedical
-  - CyberEyesSecurity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - CyberEyesMedical
+    - CyberEyesSecurity
   - !type:InDepartmentCondition
     department: Command
   effects:
@@ -116,11 +123,11 @@
   description: trait-vigor-desc
   category: Skills
   cost: 4 # I don't think it's extremely useful in combat, but it can help you survive one extra stunbaton hit.
-  conflicts:
-  - Vigor
-  - Lethargy
-  - Weakness
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Lethargy
+    - Weakness
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -139,11 +146,10 @@
   description: trait-lethargy-desc
   category: DisabilitiesPhysical
   cost: -2
-  conflicts:
-  - Vigor
-  - Lethargy
-  - Weakness
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Vigor
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -157,11 +163,10 @@
   description: trait-weakness-desc
   category: DisabilitiesPhysical
   cost: -5 # Getting stunned from 1-2 stunbaton or disabler hits is worth a lot.
-  conflicts:
-  - Vigor
-  - Lethargy
-  - Weakness
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Vigor
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -177,15 +182,16 @@
   description: trait-talons-desc
   category: BonusPhysical
   cost: 0
-  conflicts:
-    - Claws
   conditions:
-    - !type:OneOfSpeciesCondition
-      invert: true
-      species:
-        - Harpy # Harpies already have talons
-        - Arachnid # Apparently they have a "piercing" bite
-        - Feroxi # Floof - They bite. Piercing damage. Nuff said.
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Claws
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - Harpy # Harpies already have talons
+      - Arachnid # Apparently they have a "piercing" bite
+      - Feroxi # Floof - They bite. Piercing damage. Nuff said.
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
@@ -202,20 +208,21 @@
   description: trait-claws-desc
   category: BonusPhysical
   cost: 0
-  conflicts:
-    - Talons
   conditions:
-    - !type:OneOfSpeciesCondition
-      invert: true
-      species:
-        - Felinid # Felinids already have cat claws.
-        - Tajaran # Tajaran also have cat claws
-        - Reptilian # Reptilians also have cat claws.
-        - Shadekin # Shadowkins also have claws.
-        # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
-        - Rodentia # Floof - Rodentia already has it
-        - Resomi # Floof - they have claws after port of Goob changes
-        - Feroxi # Floof - They bite. Nuff said.
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Talons
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - Felinid # Felinids already have cat claws.
+      - Tajaran # Tajaran also have cat claws
+      - Reptilian # Reptilians also have cat claws.
+      - Shadekin # Shadowkins also have claws.
+      # - Vulpkanin # Vulpkanin have "Blunt" claws. One could argue this trait "Sharpens" their claws.
+      - Rodentia # Floof - Rodentia already has it
+      - Resomi # Floof - they have claws after port of Goob changes
+      - Feroxi # Floof - They bite. Nuff said.
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
@@ -232,19 +239,20 @@
   description: trait-natural-weapon-removal-desc
   category: BonusPhysical
   cost: 0
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - Talons
     - Claws
-  conditions:
-    - !type:OneOfSpeciesCondition
-      invert: true
-      species:
-        - Human
-        - Oni
-        - SlimePerson
-        - Diona
-        - Arachne
-        - IPC # Other species could justify getting this trait for Blunt stamina damage,
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+      - Human
+      - Oni
+      - SlimePerson
+      - Diona
+      - Arachne
+      - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
   effects:
     - !type:ModifyUnarmedTraitEffect
@@ -275,11 +283,12 @@
   description: trait-coldtolerance-desc
   category: Skills
   cost: 1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - ColdIntolerance
     - ColdIntoleranceAdvanced
     #- ColdToleranceAdvanced
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which already have huge tolerance
@@ -304,11 +313,12 @@
   description: trait-coldtoleranceadvanced-desc
   category: Skills
   cost: 2
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - ColdIntolerance
     - ColdIntoleranceAdvanced
     #- ColdTolerance
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which already have extreme tolerance
@@ -333,11 +343,12 @@
   description: trait-heattolerance-desc
   category: Skills
   cost: 1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - HeatIntolerance
     - HeatIntoleranceAdvanced
     #- HeatToleranceAdvanced
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which already have this tolerance or something better (only reptilian?)
@@ -359,11 +370,12 @@
   description: trait-heattoleranceadvanced-desc
   category: Skills
   cost: 2
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - HeatIntolerance
     - HeatIntoleranceAdvanced
     #- HeatTolerance
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which already have this tolerance or something better (only reptilian?)
@@ -385,11 +397,12 @@
   description: trait-coldintolerance-desc
   category: Skills
   cost: -1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - ColdTolerance
     - ColdToleranceAdvanced
     #- ColdIntoleranceAdvanced
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger at room temperature (maybe reptilian)
@@ -414,11 +427,12 @@
   description: trait-coldintoleranceadvanced-desc
   category: Skills
   cost: -2
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - ColdTolerance
     - ColdToleranceAdvanced
     #- ColdIntolerance
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger at room temperature (reptilian)
@@ -443,11 +457,12 @@
   description: trait-heatintolerance-desc
   category: Skills
   cost: -1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - HeatTolerance
     - HeatToleranceAdvanced
     #- HeatIntoleranceAdvanced
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   effects:
@@ -460,11 +475,12 @@
   description: trait-heatintoleranceadvanced-desc
   category: Skills
   cost: -2
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - HeatTolerance
     - HeatToleranceAdvanced
     #- HeatIntolerance
-  conditions:
   - !type:HasCompCondition
     component: Temperature
   - !type:OneOfSpeciesCondition # Don't give it to species which would put them in danger of regular room temperature.
@@ -488,9 +504,10 @@
   description: trait-glassjaw-desc
   category: Skills
   cost: -2
-  conflicts:
-    - Tenacity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -508,7 +525,9 @@
   description: trait-willtodie-desc
   category: Skills
   cost: -1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - WillToLive
   effects:
   - !type:ModifyCritDeadThresholdEffect
@@ -520,11 +539,11 @@
   description: trait-tenacity-desc
   category: Skills
   cost: 3
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - GlassJaw
     - BrittleBones
-    - Tenacity
-  conditions:
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -542,7 +561,9 @@
   description: trait-willtolive-desc
   category: Skills
   cost: 2
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - WillToDie
     - Redshirt
     - IllFated
@@ -556,9 +577,10 @@
   description: trait-brittlebone-desc
   category: Skills
   cost: -10
-  conflicts:
-    - Tenacity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -576,9 +598,10 @@
   description: trait-frail-desc
   category: Skills
   cost: -5
-  conflicts:
-    - Tenacity
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -596,7 +619,9 @@
   description: trait-illfated-desc
   category: Skills
   cost: -3
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - WillToLive
   effects:
   - !type:ModifyCritDeadThresholdEffect

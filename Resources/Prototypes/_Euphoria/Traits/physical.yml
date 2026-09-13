@@ -6,16 +6,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -41,16 +42,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -71,16 +73,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -99,16 +102,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -128,16 +132,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -156,16 +161,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -184,16 +190,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -208,16 +215,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -236,16 +244,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -260,10 +269,11 @@
   description: trait-healing-plus-desc
   category: BonusPhysical
   cost: 4
-  conflicts:
-  - HealingMinus
-  - HealingPlus2
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HealingMinus
+    - HealingPlus2
   - !type:HasCompCondition
     component: Hunger
   - !type:HasCompCondition
@@ -295,10 +305,11 @@
   description: trait-healing-plus-2-desc
   category: BonusPhysical
   cost: 8
-  conflicts:
-  - HealingMinus
-  - HealingPlus
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HealingMinus
+    - HealingPlus
   - !type:HasCompCondition
     component: Hunger
   - !type:HasCompCondition
@@ -332,10 +343,11 @@
   description: trait-healing-minus-desc
   category: DisabilitiesPhysical
   cost: -1
-  conflicts:
-  - HealingPlus
-  - HealingPlus2
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HealingPlus
+    - HealingPlus2
   - !type:HasCompCondition
     component: Hunger
   - !type:HasCompCondition
