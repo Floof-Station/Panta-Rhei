@@ -173,7 +173,7 @@ public sealed class PredSystem : EntitySystem
                 {
                     Text = $"Digest {preyName}",
                     Category = VoreDigest,
-                    Act = () => _digestSystem.TryDigest(prey)
+                    Act = () => _digestSystem.TryDigest(uid, prey)
                 });
             }
 

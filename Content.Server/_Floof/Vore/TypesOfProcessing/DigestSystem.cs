@@ -39,10 +39,12 @@ public sealed class DigestSystem : EntitySystem
     /// main method of digestion, will start the digestion process and apply the required effects to the prey and predator
     /// also turns off suit sensors to prevent any possible interaction with them during digestion
     /// </summary>
-    internal void TryDigest(EntityUid prey){
-        if (!_containerSystem.TryGetContainingContainer(prey, out var container))
+    internal void TryDigest(EntityUid pred, EntityUid prey){
+        if (!TryComp<PredComponent>(pred, out var predComp)
+            || !_containerSystem.TryGetContainer(pred, predComp.ContainerId, out var container)
+            || !container.ContainedEntities.Contains(prey))
             return;
-        var pred = container.Owner;
+
         if (!TryComp<PreyComponent>(prey, out var comp)) 
             return;
 
