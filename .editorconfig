@@ -13,7 +13,7 @@ tab_width = 4
 #end_of_line = crlf
 insert_final_newline = true
 trim_trailing_whitespace = true
-max_line_length = 120
+max_line_length = 180 # Euph - fuck you editorconfig
 
 #### .NET Coding Conventions ####
 
@@ -359,3 +359,7 @@ indent_size = 2
 
 [{*.yaml,*.yml}]
 ij_yaml_indent_sequence_value = false
+
+# Euph
+[*.json]
+indent_size = 2

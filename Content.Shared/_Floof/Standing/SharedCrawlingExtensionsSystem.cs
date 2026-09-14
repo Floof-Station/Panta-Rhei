@@ -22,7 +22,6 @@ public sealed class SharedCrawlingExtensionsSystem : EntitySystem
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SharedRotationVisualsSystem _rotVisuals = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearence = default!;
 
     public override void Initialize()
     {

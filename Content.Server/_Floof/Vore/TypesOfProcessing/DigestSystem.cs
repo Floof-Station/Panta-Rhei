@@ -18,7 +18,7 @@ using Content.Server.Bed.Cryostorage;
 using Content.Shared.Bed.Cryostorage;
 using Robust.Shared.Configuration;
 using Content.Shared.Containers.ItemSlots;
-using Content.Shared.Body.Components;
+using Content.Shared.Body;
 using System.Linq;
 namespace Content.Server._Floof.Vore;
 
@@ -48,7 +48,7 @@ public sealed class DigestSystem : EntitySystem
 
         _popupSystem.PopupEntity("You begin digesting your prey...", pred, pred);
         _popupSystem.PopupEntity("You are being digested!", prey, prey, PopupType.LargeCaution);
-        
+
         //used to track the digestion progress and the active digestion status of the prey
         comp.ActiveDigesting = true;
         comp.Timer = 0f;
@@ -68,7 +68,7 @@ public sealed class DigestSystem : EntitySystem
     }
 
     /// <summary>
-    /// Finishes the digestion of a prey by removing it from the container 
+    /// Finishes the digestion of a prey by removing it from the container
     /// and sending it to cryostorage after which they get deleted
     /// </summary>
     private void FinishDigest(EntityUid prey, PreyComponent comp){
@@ -84,13 +84,17 @@ public sealed class DigestSystem : EntitySystem
         EjectPreyContainerContents(prey);
         SendToCryo(prey);
     }
-
+    
+    /// <summary>
+    /// goes through all containers of the prey till they find a body 
+    /// and eject from it to prevent them from being stuck in the cryo world
+    /// </summary>
     private void EjectPreyContainerContents(EntityUid prey)
     {
         if (!TryComp<ContainerManagerComponent>(prey, out var containerManager))
             return;
 
-        foreach (var container in containerManager.GetAllContainers())
+        foreach (var container in containerManager.Containers.Values)
         {
             foreach (var contained in container.ContainedEntities.ToArray())
             {
@@ -202,7 +206,8 @@ public sealed class DigestSystem : EntitySystem
                 }
                 else if (TryComp<BatteryComponent>(prey, out var preyBattery)){
                     if (preyBattery.CurrentCharge > (preyBattery.MaxCharge * 0.5f) && comp.Health < comp.MaxHealth){
-                        comp.Health += 0.1f;                        _battery.SetCharge((prey, preyBattery), preyBattery.CurrentCharge - 1f);
+                        comp.Health += 0.1f;
+                        _battery.SetCharge((prey, preyBattery), preyBattery.CurrentCharge - 1f);
                         continue;
                     }
                 }
@@ -213,7 +218,8 @@ public sealed class DigestSystem : EntitySystem
                     var preyCharge = _battery.GetCharge(cellUid);
 
                     if (preyCharge > batteryComp.MaxCharge * 0.5f && comp.Health < comp.MaxHealth){
-                        comp.Health += 0.1f;                        _battery.SetCharge((cellUid, batteryComp), preyCharge - 2f);
+                        comp.Health += 0.1f;
+                        _battery.SetCharge((cellUid, batteryComp), preyCharge - 2f);
                         continue;
                     }
                 }

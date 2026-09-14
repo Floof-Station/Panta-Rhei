@@ -1,24 +1,21 @@
-using Robust.Shared.GameObjects;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization;
-using Robust.Shared.Containers;
-using Content.Shared.Body.Components;
-using Content.Shared.DoAfter;
-using Content.Shared.Popups;
-using Content.Shared.FloofStation;
-using Content.Shared._Floof.Vore;
-using Content.Shared.Body.Events;
 using Content.Shared._Common.Consent;
-using Content.Shared.Verbs;
-using Content.Shared.Polymorph;
-using Content.Shared.Destructible;
-using Robust.Shared.Configuration;
 using Content.Shared._DV.Carrying;
-using Robust.Server.Player;
-using Content.Shared.Mobs.Systems;
-using Robust.Shared.Audio.Systems;
-using Content.Shared.Movement.Pulling.Components;
+using Content.Shared._Floof.Vore;
+using Content.Shared.Body;
+using Content.Shared.Destructible;
+using Content.Shared.DoAfter;
 using Content.Shared.Gibbing;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Movement.Pulling.Components;
+using Content.Shared.Polymorph;
+using Content.Shared.Popups;
+using Content.Shared.Verbs;
+using Robust.Server.Player;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Configuration;
+using Robust.Shared.Containers;
+using Robust.Shared.Prototypes;
+
 namespace Content.Server._Floof.Vore;
 
 public sealed class PredSystem : EntitySystem
@@ -113,14 +110,16 @@ public sealed class PredSystem : EntitySystem
         var target = args.Target;
         
         // 1. devour (pred → prey)
-        if (IsDevourable(user, target)){
-            args.Verbs.Add(new Verb
+        if (IsDevourable(user, target))
+        {
+            args.Verbs.Add(new()
             {
                 Text = "Devour",
                 Category = VoreGeneral,
                 Act = () => TryVore(user, target)
             });
         }
+
         // 2. insert self (prey → pred)
         if (IsDevourable(target, user)){
                 args.Verbs.Add(new Verb
@@ -130,18 +129,21 @@ public sealed class PredSystem : EntitySystem
                     Act = () => TryVore(target, user)
                 });
         }
+
         // 3. insert someone else if you pull or carry them
         // VoreComponents imply consent to feed others
         if (HasComp<PredComponent>(user) || HasComp<PreyComponent>(user)){
             EntityUid? carried = null;
             if (TryComp<CarryingComponent>(user, out var carrying) && carrying.Carried != default)
-                carried  = carrying.Carried;
+                carried = carrying.Carried;
             else if (TryComp<PullerComponent>(user, out var puller) && puller.Pulling is EntityUid pulling)
-                carried  = pulling;
-            
-            if (carried != null && carried is EntityUid prey && prey != target){
-                if (IsDevourable(target, prey)){
-                    args.Verbs.Add(new Verb
+                carried = pulling;
+
+            if (carried != null && carried is EntityUid prey && prey != target)
+            {
+                if (IsDevourable(target, prey))
+                {
+                    args.Verbs.Add(new()
                     {
                         Text = $"Insert {Name(prey)}",
                         Category = VoreGeneral,
@@ -192,18 +194,18 @@ public sealed class PredSystem : EntitySystem
     /// used for after selecting to insert into someone or devour
     /// will create a slow popup and warning to give both sides time to react on it
     /// </summary>
-    private void TryVore(EntityUid user, EntityUid target){
-
+    private void TryVore(EntityUid user, EntityUid target)
+    {
         //slow loading bar to avoid instant vore with warning pop ups
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new OnVoreDoAfter(), user, target: target, used: user)
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, 5f, new OnVoreDoAfter(), user, target, user)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
         };
         if (!_doAfterSystem.TryStartDoAfter(doAfterArgs))
             return;
-        _popupSystem.PopupEntity($"You are devouring someone!", user, user);
-        _popupSystem.PopupEntity($"You are being devoured!", target, target, PopupType.LargeCaution);
+        _popupSystem.PopupEntity("You are devouring someone!", user, user);
+        _popupSystem.PopupEntity("You are being devoured!", target, target, PopupType.LargeCaution);
     }
 
     /// <summary>
@@ -223,18 +225,22 @@ public sealed class PredSystem : EntitySystem
 
         var count = 0;
         //only counts entities with bodies meaning no items
-        foreach (var e in container.ContainedEntities){
+        foreach (var e in container.ContainedEntities)
+        {
             if (HasComp<BodyComponent>(e))
                 count++;
         }
+
         //as a way to prevent too many entities to be devoured
-        if (count >= args.MaxPrey){
+        if (count >= args.MaxPrey)
+        {
             _popupSystem.PopupEntity("You are too full to swallow more prey.", pred, pred);
             return;
         }
 
         //gulp sound only for both entities involved
-        if (comp.SoundDevour != null){
+        if (comp.SoundDevour != null)
+        {
             if (_playerManager.TryGetSessionByEntity(pred, out var predSession))
                 _audioSystem.PlayEntity(comp.SoundDevour, predSession, pred);
             if (_playerManager.TryGetSessionByEntity(prey, out var preySession))
@@ -263,11 +269,11 @@ public sealed class PredSystem : EntitySystem
             _carryingSystem.DropCarried(pred, prey);
         // 2. prey carrying pred
         if (TryComp<CarryingComponent>(prey, out var preyCarrying) &&
-        preyCarrying.Carried == pred)
+            preyCarrying.Carried == pred)
             _carryingSystem.DropCarried(prey, pred);
         // 3. prey being carried by someone else
         if (TryComp<BeingCarriedComponent>(prey, out var preyBeingCarried) &&
-        preyBeingCarried.Carrier != pred)
+            preyBeingCarried.Carrier != pred)
             _carryingSystem.DropCarried(preyBeingCarried.Carrier, prey);
     }
 
@@ -291,10 +297,12 @@ public sealed class PredSystem : EntitySystem
             return;
         var preyList = new List<EntityUid>(container.ContainedEntities);
         //remove everything from people to items
-        foreach (var prey in preyList){
+        foreach (var prey in preyList)
+        {
             _containerSystem.Remove(prey, container);
             _popupSystem.PopupEntity("You have been released!", prey, prey);
         }
+
         _popupSystem.PopupEntity("You release your prey.", pred, pred);
     }
 
@@ -339,7 +347,8 @@ public sealed class PredSystem : EntitySystem
     /// <returns>
     /// true if the entity is allowed to be eaten
     /// </returns>
-    private bool IsDevourable(EntityUid user, EntityUid target){
+    private bool IsDevourable(EntityUid user, EntityUid target)
+    {
         if (user == target)
             return false;
         if (!_playerManager.TryGetSessionByEntity(user, out _) || !_playerManager.TryGetSessionByEntity(target, out _))
@@ -352,7 +361,7 @@ public sealed class PredSystem : EntitySystem
             return false;
         if (_mobStateSystem.IsDead(target) || _mobStateSystem.IsCritical(target))
             return false;
-        
+
         return true;
     }
 
@@ -362,7 +371,8 @@ public sealed class PredSystem : EntitySystem
     /// <returns>
     /// false if only one is in a vore container or if both are inside another container
     /// </returns>
-    private bool IsValidVoreInteraction(EntityUid user, EntityUid target){
+    private bool IsValidVoreInteraction(EntityUid user, EntityUid target)
+    {
         var userInVore = IsInVoreContainer(user);
         var targetInVore = IsInVoreContainer(target);
 
