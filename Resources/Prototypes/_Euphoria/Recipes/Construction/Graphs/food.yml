@@ -1,0 +1,26 @@
+﻿- type: constructionGraph
+  id: DoughBuns
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: burgerBun
+      steps:
+      - tag: DoughSlice
+        name: crafting-material-dough-slice
+        icon:
+          sprite: Objects/Consumable/Food/ingredients.rsi
+          state: dough-slice
+        doAfter: 5
+    - to: hotdogBun
+      steps:
+      - tag: DoughSlice
+        name: crafting-material-dough-slice
+        icon:
+          sprite: Objects/Consumable/Food/ingredients.rsi
+          state: dough-slice
+        doAfter: 5
+  - node: burgerBun
+    entity: FoodUncookedBun
+  - node: hotdogBun
+    entity: FoodUncookedHotdogBun

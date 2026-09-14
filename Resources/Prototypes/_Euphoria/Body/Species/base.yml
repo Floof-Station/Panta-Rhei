@@ -1,0 +1,68 @@
+# I can't be fucked to add these to every mob manually
+- type: markingsGroup
+  id: EuphoriaCommonMarkingLayers
+  abstract: true
+  limits: # Put common shit in here
+    # Hair
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.FacialHair:
+      limit: 1
+      required: false
+    # Body parts (except limbs)
+    enum.HumanoidVisualLayers.Chest:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.SnoutCover:
+      limit: 10
+      required: false
+    # Standard limbs
+    enum.HumanoidVisualLayers.LArm:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.RArm:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.LHand:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.RHand:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 10
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 10
+      required: false
+    # Extra limbs?
+    enum.HumanoidVisualLayers.Tail: # TailBehind and TailOversuit technically exist, but are non-selectable
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Wings:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.Special:
+      limit: 10
+      required: false
+
+

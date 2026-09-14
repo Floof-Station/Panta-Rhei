@@ -23,6 +23,11 @@
     title: objective-condition-teach-person-title
   - type: PickRandomPerson
     filters:
+    - !type:MarkedMindFilter # Euphoria - Make Teach objective targets opt in
+      objType: Teach
+      overrideDepts:
+      - Security
+      - Command
     # Can't have multiple objectives to kill the same person.
     - !type:TargetObjectiveMindFilter
       blacklist:

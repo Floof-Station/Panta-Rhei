@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared._Floof.Language;
 using Content.Shared._Floof.Language.Components;
 using Content.Shared._Floof.Language.Events;
@@ -49,12 +50,24 @@ public sealed class LanguageSystem : SharedLanguageSystem
         return CompOrNull<LanguageSpeakerComponent>(_playerManager.LocalEntity);
     }
 
+    /// <summary>
+    ///     Sends a network request to change the local player's current language.
+    /// </summary>
     public void RequestSetLanguage(ProtoId<LanguagePrototype> language)
     {
         if (GetLocalSpeaker()?.CurrentLanguage?.Equals(language) == true)
             return;
 
-        RaiseNetworkEvent(new LanguagesSetMessage(language));
+        RaiseNetworkEvent(new LanguageSetRequest(language));
+    }
+
+    /// <summary>
+    ///     Sends a network request to change the order of the local player's languages.
+    /// </summary>
+    /// <seealso cref="GetLocalPreferredLanguageOrder"/>
+    public void RequestReorderLanguages(List<ProtoId<LanguagePrototype>> order)
+    {
+        RaiseNetworkEvent(new ReorderLanguagesRequest(order));
     }
 
     private void OnPlayerAttached(EntityUid entity)
@@ -91,5 +104,24 @@ public sealed class LanguageSystem : SharedLanguageSystem
         if (_playerManager.LocalEntity is not { } player)
             return false;
         return CanSpeak(player, language);
+    }
+
+    /// <summary>
+    ///     Returns the effective preferred order of languages of the local player. Returns a new list.
+    /// </summary>
+    public List<ProtoId<LanguagePrototype>>? GetLocalPreferredLanguageOrder()
+    {
+        if (GetLocalSpeaker() is not { } speaker)
+            return null;
+
+        var order = speaker.PreferredOrder.ToList();
+        // See the server-side system for explanation
+        foreach (var language in speaker.SpokenLanguages)
+        {
+            if (!order.Contains(language))
+                order.Add(language);
+        }
+
+        return order;
     }
 }

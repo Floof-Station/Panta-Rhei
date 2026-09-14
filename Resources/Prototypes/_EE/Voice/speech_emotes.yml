@@ -1,14 +1,4 @@
 - type: emote
-  id: SiliconDeathgasp
-  name: chat-emote-name-deathgasp
-  icon: Interface/Emotes/deathgasp.png
-  chatMessages: ["chat-emote-msg-deathgasp-silicon"]
-  available: true # Euph - silicon deathgasp is available to all silicons
-  whitelist:
-    tags:
-    - SiliconEmotes
-
-- type: emote
   id: Boop
   name: chat-emote-name-boop
   icon: _DV/Interface/Emotes/ecg.png # DeltaV - Added icon
@@ -18,7 +8,7 @@
     - SiliconEmotes
   chatMessages: [ boops. ] # DeltaV - period
   chatTriggers:
-  - boops
+    - boops
 
 - type: emote
   id: Whirr # uncategorized as it is generic
@@ -28,5 +18,16 @@
   name: chat-emote-name-whirr
   chatMessages: [ whirrs. ] # DeltaV - period
   chatTriggers:
-  - whirr
-  - whirrs
+    - whirr
+    - whirrs
+
+# Euph ipc port
+- type: emote
+  id: SiliconDeathgasp
+  name: chat-emote-name-deathgasp
+  icon: Interface/Emotes/deathgasp.png
+  chatMessages: ["chat-emote-msg-deathgasp-silicon"]
+  available: true # Euph - silicon deathgasp is available to all silicons
+  whitelist:
+    tags:
+    - SiliconEmotes
