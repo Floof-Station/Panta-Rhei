@@ -179,22 +179,20 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     [DataField]
     public bool RequiresHands = false;
 
-    // Floofstation section
     [DataField]
     public bool RequiresConsciousness = true;
 
     /// <summary>
     ///     The true "requires can interact", checks if the user is not cuffed and is not otherwise incapacitated.
     /// </summary>
-    [DataField("checkInteractionBlocker")]
+    [DataField]
     public bool RequiresCanInteract = true;
-    // Floofstation section end
 
     /// <summary>
     ///     Whether this verb requires the user to be able to access the target normally (with their hands or otherwise).
     /// </summary>
-    /// <remarks>The misleading yml name is kept for backwards compatibility with downstreams.</remarks>
-    [DataField("requiresCanInteract")]
+    /// <remarks>This used to be named "requiresCanInteract" in yaml. The misleading name was kept was backwards compatibility.</remarks>
+    [DataField]
     public bool RequiresCanAccess = true;
 
     /// <summary>
@@ -291,10 +289,8 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     [Serializable, Flags]
     public enum ContestType : byte
     {
-        Mass = 1,
-        Stamina = 1 << 1,
-        Health = 1 << 2,
-        All = Mass | Stamina | Health,
+        Strength = 1,
+        All = Strength,
         None = 0
     }
 }
