@@ -93,9 +93,12 @@
     damage:
       types:
         Poison: -0.1
-      groups:
-        Brute: -0.1
-        Burn: -0.1
+        Blunt: -0.1
+        Slash: -0.1
+        Piercing: -0.1
+        Heat: -0.1
+        Cold: -0.1
+        Shock: -0.1
   - type: NightVision
     color: "#008080"
     activateSound: null
