@@ -9,10 +9,10 @@ using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Stunnable;
-using Content.Shared.Humanoid;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Movement.Events;
 using Content.Shared._Goobstation.Bingle;
+using Content.Shared.Body;
 using Content.Shared.Popups;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Movement.Pulling.Systems;
@@ -88,7 +88,7 @@ public sealed class BinglePitSystem : EntitySystem
     public void StartFalling(EntityUid uid, BinglePitComponent component, EntityUid tripper, bool playSound = true)
     {
         component.BinglePoints += HasComp<MobStateComponent>(tripper)
-              ? component.PointsForAlive + (HasComp<HumanoidAppearanceComponent>(tripper)
+              ? component.PointsForAlive + (HasComp<VisualBodyComponent>(tripper)
               ? component.AdditionalPointsForHuman : 0) : 1;
 
         if (TryComp<PullableComponent>(tripper, out var pullable) && pullable.BeingPulled)
