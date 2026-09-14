@@ -28,11 +28,9 @@ public sealed class DigestSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedConsentSystem _consentSystem = default!;
-    [Dependency] private readonly SharedSuitSensorSystem _suitSensorSystem = default!;
     [Dependency] private readonly HungerSystem _hunger = default!;
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly CryostorageSystem _cryo = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
 
     /// <summary>
