@@ -14,6 +14,7 @@ holopad-epistemics-reception = Epistemics - Reception
 # Medical
 holopad-medical-cloning = Medical - Cloning
 holopad-medical-exam-room = Medical - Exam Room
+holopad-medical-icu = Medical - Intensive Care Unit
 holopad-medical-reception = Medical - Reception
 
 # Logistics

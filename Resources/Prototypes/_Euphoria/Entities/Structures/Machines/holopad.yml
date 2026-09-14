@@ -44,6 +44,14 @@
 
 - type: entity
   parent: HolopadMedical
+  id: HolopadMedicalIcu
+  suffix: ICU
+  components:
+  - type: Label
+    currentLabel: holopad-medical-icu
+
+- type: entity
+  parent: HolopadMedical
   id: HolopadMedicalReception
   suffix: Medical Reception
   components:
