@@ -146,7 +146,9 @@ public sealed class WaggingSystem : EntitySystem
             else
             {
                 newMarkingId = currentMarkingId;
-                Log.Warning($"Unable to revert wagging for {currentMarkingId}");
+                if(!silent)
+                    Log.Warning($"Unable to revert wagging for {currentMarkingId}");
+                return false;
             }
         }
 
@@ -175,8 +177,8 @@ public sealed class WaggingSystem : EntitySystem
             var layerMarkings = markingsSet[layers];
             for (int i = 0; i < layerMarkings.Count; i++)
             {
-                if (TryGetNewMarkingId(ent, layerMarkings[i].MarkingId, out _, true, isWagging: false)
-                    || TryGetNewMarkingId(ent, layerMarkings[i].MarkingId, out _, true, isWagging: true))
+                if (TryGetNewMarkingId(ent, layerMarkings[i].MarkingId, out _,  true, false)
+                    || TryGetNewMarkingId(ent, layerMarkings[i].MarkingId, out _, true, true))
                     return true;
             }
         }

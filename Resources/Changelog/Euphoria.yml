@@ -5685,3 +5685,18 @@ Entries:
       message: Fixed a lot of bugs and added more bugs to fix.
   id: 707
   time: '2026-09-10T12:08:02.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
+    - type: Tweak
+      message: >-
+        Shadekin have been replaced with an upstream implementation. Characters
+        may need to be manually migrated (export to yaml, edit the export's
+        species from "Shadowkin" to "Shadekin", import)
+    - type: Fix
+      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
+    - type: Fix
+      message: Fixed a lot of bugs and added more bugs to fix.
+  id: 708
+  time: '2026-09-10T12:08:02.0000000+00:00'

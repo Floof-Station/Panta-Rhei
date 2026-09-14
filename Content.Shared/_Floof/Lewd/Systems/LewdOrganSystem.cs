@@ -51,8 +51,7 @@ public sealed class LewdOrganSystem : EntitySystem
         if (_net.IsClient) // Client-side BodySystem spams mechanism attachments/removals whenever entities move in and out of PVS
             return;
 
-        // TODO: we're not checking if it's in a valid slot? I'm not sure if it's an issue, but if it is, idk how to check
-        AttachOrgan(ent, args.Target);
+        OrganAttached(ent, args.Target);
     }
 
     private void OnLewdRemoved(Entity<LewdOrganComponent> ent, ref OrganGotRemovedEvent args)
@@ -60,7 +59,7 @@ public sealed class LewdOrganSystem : EntitySystem
         if (_net.IsClient) // Client-side BodySystem spams mechanism attachments/removals whenever entities move in and out of PVS
             return;
 
-        DetachOrgan(ent, args.Target);
+        OrganDetached(ent, args.Target);
     }
 
     private void OnLewdExamine(Entity<LewdMobDataComponent> ent, ref GetVerbsEvent<ExamineVerb> args)
@@ -126,8 +125,6 @@ public sealed class LewdOrganSystem : EntitySystem
     /// </summary>
     public void UpdateOrgan(Entity<LewdOrganComponent> organ, EntityUid body)
     {
-        DebugTools.Assert(CompOrNull<OrganComponent>(organ)?.Body == body);
-
         // Original implementation removed and re-added the organ, which seemed to detach the solution from the mob and not add it back.
         // This approach just tries to update the relevant components without removing it.
         var bodyData = EnsureComp<LewdMobDataComponent>(body);
@@ -209,12 +206,12 @@ public sealed class LewdOrganSystem : EntitySystem
         return false;
     }
 
-    private void AttachOrgan(Entity<LewdOrganComponent> organ, EntityUid body)
+    private void OrganAttached(Entity<LewdOrganComponent> organ, EntityUid body)
     {
         UpdateOrgan(organ, body);
     }
 
-    private void DetachOrgan(Entity<LewdOrganComponent> ent, EntityUid body)
+    private void OrganDetached(Entity<LewdOrganComponent> ent, EntityUid body)
     {
         var bodyData = EnsureComp<LewdMobDataComponent>(body);
         var organData = ent.Comp.Data;
