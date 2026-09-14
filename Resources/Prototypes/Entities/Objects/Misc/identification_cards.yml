@@ -492,6 +492,7 @@
   parent: IDCardStandard
   id: WardenIDCard
   name: warden ID card
+  suffix: Security # DeltaV
   components:
   - type: Sprite
     layers:
@@ -1012,6 +1013,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Syndicate
+  - type: IdCard
+    jobIcon: JobIconSyndicate
   - type: Item
     heldPrefix: black
   - type: Access

@@ -18,8 +18,10 @@
 - type: startingGear
   id: ResearchAssistantGear
   equipment:
-    #shoes: ClothingShoesColorWhite # Floofstation - allow loadouts to handle shoe customization
-    #id: ResearchAssistantPDA # # Floofstation - allow loadouts to handle this
+    # Floof - loadouts
+    #shoes: ClothingShoesColorWhite
+    #neck: ClothingNeckNoviceMark # imp
+    #id: ResearchAssistantPDA
     ears: ClothingHeadsetScience
     pocket2: BookScientistsGuidebook
   #storage:

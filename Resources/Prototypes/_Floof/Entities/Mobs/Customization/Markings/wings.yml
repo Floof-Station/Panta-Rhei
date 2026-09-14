@@ -1,8 +1,6 @@
 - type: marking
   id: WingsFly
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/wings96x34.rsi
       state: fly
@@ -10,8 +8,6 @@
 - type: marking
   id: WingsRobotic
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/wings96x34.rsi
       state: robotic
@@ -19,8 +15,6 @@
 - type: marking
   id: WingsSkeleton
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/wings96x34.rsi
       state: skeleton
@@ -28,8 +22,6 @@
 - type: marking
   id: WingsHarpy
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
     - sprite: SimpleStation14/Mobs/Customization/wings64x32.rsi
       state: harpy
@@ -37,8 +29,6 @@
 - type: marking
   id: WingsHarpyBionic
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
     - sprite: _Floof/Mobs/Customization/wings64-32.rsi
       state: bionic_wings_tone_1
@@ -49,8 +39,6 @@
 - type: marking
   id: WingsDragon
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
   - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
     state: dragon
@@ -58,8 +46,6 @@
 - type: marking
   id: WingsDragonTwotone
   bodyPart: Wings
-  markingCategory: Wings
-  invertedRestrictions: true
   sprites:
   - sprite: _SimpleStation/Mobs/Customization/wings64x34.rsi
     state: dragon
