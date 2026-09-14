@@ -1,5 +1,8 @@
-﻿# emotional support collar
+# emotional support collar
 - type: loadout
   id: ClothingNeckCollarEmotionalSupportSeniorEngineer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: SeniorEngineering
   equipment:
     neck: ClothingNeckCollarEmotionalSupportSeniorEngineer
