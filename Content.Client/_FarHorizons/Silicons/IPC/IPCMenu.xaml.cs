@@ -164,7 +164,7 @@ public sealed partial class IPCMenu : FancyWindow
 
         var damage = new DamageSpecifier();
         if (Damage != null)
-            damage = _damageable.GetDamage((Entity, Damage));
+            damage = _damageable.GetPositiveDamage((Entity, Damage));
 
         var temp = 0f;
         LocId fanMode = "";

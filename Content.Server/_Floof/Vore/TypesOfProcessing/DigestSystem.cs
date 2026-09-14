@@ -52,15 +52,15 @@ public sealed class DigestSystem : EntitySystem
         // only the predator themself can see the verb when inspecting themself
         if (user != uid)
             return;
-        
+
         // only when reachable & interactable
         if (!args.CanInteract || !args.CanAccess)
             return;
-        
+
         //no container no verb
         if (!_containerSystem.TryGetContainer(uid, "vore_container", out var container))
             return;
-        
+
         //only shows verb if there is atleast one prey in the stomach
         if (container.ContainedEntities.Count == 0)
             return;
@@ -68,7 +68,7 @@ public sealed class DigestSystem : EntitySystem
         //goes through all prey inside the stomach
         foreach (var prey in container.ContainedEntities){
             var preyName = Name(prey);
-            
+
             //only shows verb if the prey has consented to being digested
             if (_consentSystem.HasConsent(prey, "Digestable") && !comp.ActiveDigesting.Contains(prey)){
                 args.Verbs.Add(new Verb
@@ -88,7 +88,7 @@ public sealed class DigestSystem : EntitySystem
                     Act = () => StopDigest(user, prey)
                 });
             }
-        }            
+        }
     }
 
     /// <summary>
@@ -99,12 +99,12 @@ public sealed class DigestSystem : EntitySystem
         if (!_containerSystem.TryGetContainingContainer(prey, out var container))
             return;
         var pred = container.Owner;
-        if (!TryComp<DigestComponent>(pred, out var comp)) 
+        if (!TryComp<DigestComponent>(pred, out var comp))
             return;
 
         _popupSystem.PopupEntity("You begin digesting your prey...", pred, pred);
         _popupSystem.PopupEntity("You are being digested!", prey, prey, PopupType.LargeCaution);
-        
+
         //used to track the digestion progress and the active digestion status of the prey
         comp.Health.TryAdd(prey, comp.Max);
         comp.ActiveDigesting.Add(prey);
@@ -128,7 +128,7 @@ public sealed class DigestSystem : EntitySystem
     }
 
     /// <summary>
-    /// Finishes the digestion of a prey by removing it from the container 
+    /// Finishes the digestion of a prey by removing it from the container
     /// and sending it to cryostorage after which they get deleted
     /// </summary>
     private void FinishDigest(EntityUid prey, DigestComponent comp){
@@ -139,7 +139,7 @@ public sealed class DigestSystem : EntitySystem
 
         if (_containerSystem.TryGetContainingContainer(prey, out var container))
             _popupSystem.PopupEntity("You feel satiated as you feel your belly shrinks down in size", container.Owner, container.Owner);
-        
+
         SendToCryo(prey);
     }
 
@@ -176,15 +176,15 @@ public sealed class DigestSystem : EntitySystem
     public override void Update(float frameTime){
         var preds = new List<(EntityUid pred, DigestComponent comp)>();
         var query = EntityQueryEnumerator<DigestComponent>();
-        
+
         // goes through all predators with a digest component
         while (query.MoveNext(out var pred, out var comp)){
             preds.Add((pred, comp));
         }
-        
+
         // goes through all the prey of each pred and applies digestion/healing effects
         foreach (var (pred, comp) in preds){
-            
+
             //in case a prey reaches 0 health
             var fullydigest = new List<EntityUid>();
 
@@ -196,13 +196,13 @@ public sealed class DigestSystem : EntitySystem
                 comp.Timer[prey] -= 1f;
 
                 //in case prey no longer exists
-                if (!EntityManager.EntityExists(prey)){
+                if (!Exists(prey)){
                     fullydigest.Add(prey);
                     continue;
                 }
 
-                // digestion path 
-                if (comp.ActiveDigesting.Contains(prey)){        
+                // digestion path
+                if (comp.ActiveDigesting.Contains(prey)){
                     /* in case prey is removed from container stop digestion and go through regeneration path
                     or in case consent is removed during digestion*/
                     if (!_containerSystem.TryGetContainingContainer(prey, out var container) ||
@@ -229,13 +229,13 @@ public sealed class DigestSystem : EntitySystem
                     && TryComp<BatteryComponent>(cellUid, out var batteryComp)){
                         var predCharge = _battery.GetCharge(cellUid);
                         _battery.SetCharge((cellUid, batteryComp), predCharge + 2f);
-                    }             
+                    }
 
                     //once health reaches 0 finish digestion and remove prey from tracking
                     if (comp.Health[prey] <= 0)
                         fullydigest.Add(prey);
                 }
-                    
+
                 // regeneration path
                 // fun fact principle is like trophic level in ecology!
                 else{
@@ -273,7 +273,7 @@ public sealed class DigestSystem : EntitySystem
             // safety check to remove any prey that might have been left in the tracking after digestion or deletion
             foreach (var p in fullydigest){
                 FinishDigest(p, comp);
-            }                
+            }
         }
     }
 

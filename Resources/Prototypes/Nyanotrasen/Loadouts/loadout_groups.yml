@@ -2,7 +2,7 @@
 ## Mail Carrier
 - type: loadoutGroup
   id: MailCarrierHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-mail-carrier-head
   minLimit: 0
   loadouts:
@@ -28,7 +28,7 @@
 ## Forensic Mantis
 - type: loadoutGroup
   id: MantisHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-mantis-head
   minLimit: 0
   loadouts:
@@ -70,7 +70,7 @@
 ## Prison Guard
 - type: loadoutGroup
   id: PrisonGuardHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-prison-guard-head
   minLimit: 0
   loadouts:

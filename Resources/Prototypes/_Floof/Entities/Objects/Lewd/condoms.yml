@@ -37,6 +37,9 @@
   name: teal condom
   description: A one size fits all single use condom.
   components:
+  - type: FoodSequenceElement
+    entries:
+      Hotdog: FoodHotdogCondom
   - type: Sprite
     sprite: _Floof/Clothing/Under/Underwear/condoms.rsi
     state: condom_teal_unused

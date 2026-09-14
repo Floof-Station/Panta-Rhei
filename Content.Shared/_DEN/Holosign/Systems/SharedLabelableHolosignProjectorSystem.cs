@@ -21,7 +21,6 @@ namespace Content.Shared._DEN.Holosign.Systems;
 public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
 {
     [Dependency] protected readonly SharedUserInterfaceSystem _uiSystem = default!;
-    [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly SharedChargesSystem _charges = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
@@ -101,7 +100,7 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
             }
         }
 
-        var holoUid = EntityManager.PredictedSpawnAtPosition(
+        var holoUid = PredictedSpawnAtPosition(
             ent.Comp.SignProto,
             args.ClickLocation.SnapToGrid(EntityManager));
 
@@ -129,7 +128,7 @@ public abstract class SharedLabelableHolosignProjectorSystem : EntitySystem
             ent,
             user);
 
-        EntityManager.PredictedDeleteEntity(sign);
+        PredictedQueueDel(sign);
 
         return true;
     }

@@ -6,9 +6,12 @@
   components:
   - type: EntityTableContainerFill
     containers:
-      entity_storage:
-        id: ClothingBackpackNapsack
-        amount: 3
+      entity_storage: !type:AllSelector
+        children:
+        - id: ClothingBackpackNapsack
+          amount: 2
+        - id: ClothingBackpackNapsackDuffel
+          amount: 2
 
 - type: entity
   id: CrateFunClothingHeels

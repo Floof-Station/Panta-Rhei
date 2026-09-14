@@ -5399,3 +5399,304 @@ Entries:
         and Syndicate Recruiter spawning with default Urist names.
   id: 673
   time: '2026-08-25T09:18:33.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Chem should now be able to make colored crystals again.
+  id: 674
+  time: '2026-08-26T09:46:39.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Fix some epi research not being craftable in the right lathe types.
+  id: 675
+  time: '2026-08-26T09:49:19.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: New Pounce trait has been added.
+  id: 676
+  time: '2026-08-26T09:50:42.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Fix
+      message: >-
+        Fixed Goliath stunlock by decreasing melee attack rate by 33%. Increased
+        damage by 33% to compensate.
+  id: 677
+  time: '2026-08-26T09:53:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Security can now purchase Vulcan and Patos gun crates for the armory.
+  id: 678
+  time: '2026-08-26T09:59:12.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Metamorphic hotdogs. Hotdog buns can hold a maximum of 6 ingredients.
+    - type: Add
+      message: >-
+        Uncooked hotdog bun which is made from a dough slice through the build
+        menu
+    - type: Add
+      message: Recipe cards to chef's locker detailing mainstream hotdog recipes.
+    - type: Add
+      message: >-
+        The following hotdogs: Los Angeles, Chicago, Chili, Condog, Coney
+        Island, Dildog, Dirty Water, Fishdog, Half Smoke, Polish Boy, Roddog,
+        Sushidog, Tofudog, Humadog, Bacon Supreme
+    - type: Tweak
+      message: >-
+        Burger buns are now made by shaping dough slice into a burger bun
+        through the build menu, then cooking.
+    - type: Add
+      message: >-
+        Cooked sausages can be made faster in the microwave, producing hotdog
+        water in the process.
+    - type: Add
+      message: Water recipe - hotdog water + holy water
+  id: 679
+  time: '2026-08-26T10:04:10.0000000+00:00'
+- author: CastitoWae
+  changes:
+    - type: Add
+      message: Increased Musician job slots from 1 to 2 in most stations.
+  id: 680
+  time: '2026-08-27T05:54:20.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Fix
+      message: >-
+        Salvage's "Survival" selection on the mining voucher mentioned including
+        a medical tracking implanter, but it did not. It now does.
+  id: 681
+  time: '2026-08-27T06:51:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Added a few new traits, Messy Drinker, Very Messy Drinker, Messy Eater
+        and Messy Smoker.
+  id: 682
+  time: '2026-08-27T06:53:16.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: The tether and force guns are researchable T3 tech again.
+  id: 683
+  time: '2026-08-27T06:54:24.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: Puddles of space cleaner will now slowly evaporate.
+  id: 684
+  time: '2026-08-27T10:50:49.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: Robo-neuro will no longer be told to borg everyone.
+    - type: Tweak
+      message: Robo-neuro will receive objectives for all eligible targets for borging.
+  id: 685
+  time: '2026-08-27T10:52:29.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Revenants will now reveal themselves when colliding with species mobs
+        (this feature was perviously disabled due to a bug)
+  id: 686
+  time: '2026-08-28T08:37:22.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Remove
+      message: >-
+        Express Space Courier Trunk removed from CourierDrobe. Now only
+        available in Courier loadout.
+  id: 687
+  time: '2026-08-28T09:33:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Any role will now be able to take the No Paradox Clone trait.
+  id: 688
+  time: '2026-08-28T23:01:01.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Actually add the Strawberry seeds to the seed vending machine.
+  id: 689
+  time: '2026-08-28T23:01:53.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Loadout pets will now follow you around (but will prioritize looking for
+        food when hungry).
+    - type: Add
+      message: >-
+        Loadouts now have a new version of the remote signaller that
+        automatically links to your shock collar.
+    - type: Tweak
+      message: Players can now choose up to 5 trinkets instead of 4.
+  id: 690
+  time: '2026-08-29T10:47:27.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Roboticists can now make clown cars.
+  id: 691
+  time: '2026-08-30T03:09:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: >-
+        Admin only to a bwoink message for admins to send through comments to a
+        player through discord.
+  id: 692
+  time: '2026-08-30T05:11:51.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: >-
+        Added admin spawn only Project Lazarus Combat Gear, as well as GALPOL &
+        TSF banners and clothing.
+    - type: Add
+      message: Added a generic CC Job Icon
+  id: 693
+  time: '2026-08-30T11:17:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Like doctors, paramedics now have access to an advanced topicals belt.
+  id: 694
+  time: '2026-09-01T13:23:22.0000000+00:00'
+- author: Ludolphous
+  changes:
+    - type: Tweak
+      message: Changed descriptions of many posters, and names of a handful of posters.
+  id: 695
+  time: '2026-09-02T14:49:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Mobs that can vent crawl should no longer be able to enter or exit a
+        welded vent.
+  id: 696
+  time: '2026-09-04T10:52:11.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: You should now be able to craft the clown car.
+  id: 697
+  time: '2026-09-05T01:01:36.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Added two clumsy traits.
+  id: 698
+  time: '2026-09-05T01:03:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Rude gestures should now display properly when witnessing someone use it
+        on someone else.
+    - type: Fix
+      message: The suggestive gesture should now appear in the interact verb menu.
+  id: 699
+  time: '2026-09-05T01:28:58.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Crash as a result of vent crawlers trying to exit into a freezer/heater
+        attached to pipes.
+    - type: Fix
+      message: Client spam from nodecrawling
+  id: 700
+  time: '2026-09-05T03:03:19.0000000+00:00'
+- author: Compilatron144
+  changes:
+    - type: Add
+      message: Radstation now has pipe sensors
+    - type: Add
+      message: Added a nuclear reactor to Radstation
+    - type: Tweak
+      message: Radstation's TEG has been rebuild
+    - type: Fix
+      message: Radstation's dirt decals are now cleanable
+  id: 701
+  time: '2026-09-05T19:46:38.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Tweak
+      message: >-
+        Submarine: Various improvements and fixes. Added mail unit network.
+        Overhauled engineering department. Added chute to PA control.
+  id: 702
+  time: '2026-09-05T20:00:26.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Glimmer scaling for points is now capped at 1.5, down from 2.
+    - type: Tweak
+      message: Glimmer scaling gives reduced returns when approaching 1000 glimmer.
+    - type: Tweak
+      message: >-
+        Glimmer Research Stealer event should appear more often, and broadcast
+        on common rather than science.
+    - type: Fix
+      message: Glimmer Research Stealer event should trigger now (hopefully).
+  id: 703
+  time: '2026-09-06T02:21:30.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: The Svalinn from Piolet locker has been removed.
+  id: 704
+  time: '2026-09-06T02:22:59.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Adds a trait that allows people to sing like harpies can.
+  id: 705
+  time: '2026-09-06T11:23:22.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Water takes a little longer to evaporate.
+  id: 706
+  time: '2026-09-06T11:24:16.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
+    - type: Tweak
+      message: >-
+        Shadekin have been replaced with an upstream implementation. Characters
+        may need to be manually migrated (export to yaml, edit the export's
+        species from "Shadowkin" to "Shadekin", import)
+    - type: Fix
+      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
+    - type: Fix
+      message: Fixed a lot of bugs and added more bugs to fix.
+  id: 707
+  time: '2026-09-10T12:08:02.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
+    - type: Tweak
+      message: >-
+        Shadekin have been replaced with an upstream implementation. Characters
+        may need to be manually migrated (export to yaml, edit the export's
+        species from "Shadowkin" to "Shadekin", import)
+    - type: Fix
+      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
+    - type: Fix
+      message: Fixed a lot of bugs and added more bugs to fix.
+  id: 708
+  time: '2026-09-10T12:08:02.0000000+00:00'
