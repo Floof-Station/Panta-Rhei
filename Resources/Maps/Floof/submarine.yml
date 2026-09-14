@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.1
   forkId: ""
   forkVersion: ""
-  time: 09/14/2026 04:20:22
-  entityCount: 42502
+  time: 09/14/2026 21:38:33
+  entityCount: 42504
 maps:
 - 18185
 grids:
@@ -34211,12 +34211,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -3.5,-1.5
       parent: 2
-  - uid: 1045
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 6.5,-0.5
-      parent: 2
   - uid: 1128
     components:
     - type: Transform
@@ -34562,6 +34556,18 @@ entities:
     - type: Transform
       pos: -44.5,-32.5
       parent: 2
+  - uid: 41598
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,0.5
+      parent: 2
+  - uid: 41599
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -3.5,-2.5
+      parent: 2
 - proto: BenchSofaCorpMiddle
   entities:
   - uid: 574
@@ -34575,6 +34581,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 3.5,-47.5
+      parent: 2
+  - uid: 1045
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 6.5,-0.5
       parent: 2
   - uid: 1694
     components:
@@ -118098,7 +118110,7 @@ entities:
       parent: 2
     - type: DisposalRouter
       tags:
-      - Checkpoint
+      - Arrivals Checkpoint
   - uid: 42497
     components:
     - type: Transform
@@ -123057,6 +123069,8 @@ entities:
     - type: Transform
       pos: -6.5,59.5
       parent: 2
+    - type: FaxMachine
+      name: Lawyer
 - proto: FaxMachineLibrarian
   entities:
   - uid: 11477
@@ -186312,28 +186326,13 @@ entities:
       parent: 2
 - proto: Holopad
   entities:
-  - uid: 22265
-    components:
-    - type: MetaData
-      name: holopad (General - Dorms)
-    - type: Transform
-      pos: 32.5,-40.5
-      parent: 2
-    - type: Label
-      currentLabel: General - Dorms
-    - type: NameModifier
-      baseName: holopad
   - uid: 34555
     components:
-    - type: MetaData
-      name: holopad (General - Cave Viewing Room)
     - type: Transform
       pos: 89.5,19.5
       parent: 2
     - type: Label
       currentLabel: General - Cave Viewing Room
-    - type: NameModifier
-      baseName: holopad
 - proto: HolopadAiCore
   entities:
   - uid: 35952
@@ -186502,6 +186501,13 @@ entities:
     - type: Transform
       pos: 27.5,-5.5
       parent: 2
+- proto: HolopadGeneralDorms
+  entities:
+  - uid: 22265
+    components:
+    - type: Transform
+      pos: 32.5,-40.5
+      parent: 2
 - proto: HolopadGeneralEvac
   entities:
   - uid: 34557
@@ -186572,19 +186578,19 @@ entities:
     - type: Transform
       pos: 4.5,5.5
       parent: 2
+- proto: HolopadMedicalIcu
+  entities:
+  - uid: 20635
+    components:
+    - type: Transform
+      pos: 14.5,14.5
+      parent: 2
 - proto: HolopadMedicalLobby
   entities:
   - uid: 20824
     components:
     - type: Transform
       pos: 1.5,2.5
-      parent: 2
-- proto: HolopadMedicalMedbay
-  entities:
-  - uid: 20635
-    components:
-    - type: Transform
-      pos: 14.5,13.5
       parent: 2
 - proto: HolopadMedicalPsychologist
   entities:
@@ -186663,6 +186669,13 @@ entities:
     - type: Transform
       pos: -1.5,38.5
       parent: 2
+- proto: HolopadSecurityFiringRange
+  entities:
+  - uid: 28941
+    components:
+    - type: Transform
+      pos: -33.5,44.5
+      parent: 2
 - proto: HolopadSecurityFront
   entities:
   - uid: 31071
@@ -186670,17 +186683,6 @@ entities:
     - type: Transform
       pos: -20.5,29.5
       parent: 2
-  - uid: 34545
-    components:
-    - type: MetaData
-      name: holopad (Security - Firing Range)
-    - type: Transform
-      pos: -33.5,44.5
-      parent: 2
-    - type: Label
-      currentLabel: Security - Firing Range
-    - type: NameModifier
-      baseName: holopad
 - proto: HolopadSecurityLawyer
   entities:
   - uid: 19582
@@ -186737,24 +186739,6 @@ entities:
     - type: Transform
       pos: 55.5,17.5
       parent: 2
-- proto: HolopadServiceClownMime
-  entities:
-  - uid: 29720
-    components:
-    - type: MetaData
-      name: holopad (Service - Theater Dorms)
-    - type: Transform
-      pos: -76.5,5.5
-      parent: 2
-    - type: Label
-      currentLabel: Service - Theater Dorms
-    - type: NameModifier
-      baseName: holopad
-    - type: PageSender
-      autoLinkJobs:
-      - Clown
-      - Mime
-      - Musician
 - proto: HolopadServiceJanitor
   entities:
   - uid: 29699
@@ -186762,47 +186746,42 @@ entities:
     - type: Transform
       pos: -38.5,8.5
       parent: 2
-  - uid: 34558
+- proto: HolopadServiceJanitorCloset
+  entities:
+  - uid: 34545
     components:
-    - type: MetaData
-      name: holopad (Service - Janitor Closet)
     - type: Transform
       pos: 35.5,-2.5
       parent: 2
-    - type: Label
-      currentLabel: Service - Janitor Closet
-    - type: NameModifier
-      baseName: holopad
 - proto: HolopadServiceKitchen
   entities:
   - uid: 23705
     components:
-    - type: MetaData
-      name: 'holopad (Service - Kitchen #2)'
     - type: Transform
       pos: -55.5,-22.5
       parent: 2
     - type: Label
       currentLabel: 'Service - Kitchen #2'
-    - type: NameModifier
-      baseName: holopad
   - uid: 26005
     components:
-    - type: MetaData
-      name: 'holopad (Service - Kitchen #1)'
     - type: Transform
       pos: -53.5,-18.5
       parent: 2
     - type: Label
       currentLabel: 'Service - Kitchen #1'
-    - type: NameModifier
-      baseName: holopad
 - proto: HolopadServiceLibrary
   entities:
   - uid: 34551
     components:
     - type: Transform
       pos: 53.5,28.5
+      parent: 2
+- proto: HolopadServiceTheaterDorms
+  entities:
+  - uid: 29720
+    components:
+    - type: Transform
+      pos: -76.5,5.5
       parent: 2
 - proto: HolopadServiceToolroom
   entities:
@@ -186924,7 +186903,7 @@ entities:
       pos: 21.5,15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38681.54
+      secondsUntilStateChange: -39220.684
       state: Closing
   - uid: 1492
     components:
@@ -187240,7 +187219,7 @@ entities:
       pos: 21.5,16.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -38680.17
+      secondsUntilStateChange: -39219.316
       state: Closing
   - uid: 28352
     components:
@@ -190405,10 +190384,10 @@ entities:
       pos: 7.5,-20.5
       parent: 2
     - type: MailingUnit
-      tag: Checkpoint
+      tag: Arrivals Checkpoint
     - type: Configuration
       config:
-        tag: Checkpoint
+        tag: Arrivals Checkpoint
   - uid: 42229
     components:
     - type: Transform
@@ -198403,6 +198382,15 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
+- proto: PosterContrabandYesERP
+  entities:
+  - uid: 34558
+    components:
+    - type: Transform
+      pos: -30.5,67.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
 - proto: PosterLegit12Gauge
   entities:
   - uid: 23345
@@ -199046,16 +199034,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -15.5,31.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
-- proto: PosterLegitNoERP
-  entities:
-  - uid: 28941
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -30.5,67.5
       parent: 2
     - type: Fixtures
       fixtures: {}
