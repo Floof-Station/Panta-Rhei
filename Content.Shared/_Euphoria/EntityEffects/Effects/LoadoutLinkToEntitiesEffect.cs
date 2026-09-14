@@ -15,7 +15,6 @@ public sealed partial class LoadoutLinkToEntitiesEffectSystem : EntityEffectSyst
 {
     [Dependency] private readonly EntityWhitelistSystem _whitelsts = default!;
     [Dependency] private readonly SharedDeviceLinkSystem _links = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
 
     // NOTE: DO NOT EVER COPY-PASTE THIS EFFECT
     // If you need a similar behavior, make two abstract classes (something like BaseLoadoutOnOtherLoadoutsEffect and Base...System), move Effect() there, and make Link() abstract!

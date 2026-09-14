@@ -1,8 +1,9 @@
 ﻿using Content.Shared.MedicalScanner;
-using Content.Shared._DV.MedicalRecords;
-using Content.Shared._NF.Medical;
-using JetBrains.Annotations; // DeltaV - Medical Records
+using Content.Shared._DV.Medical; // DeltaV
+using Content.Shared._DV.MedicalRecords; // DeltaV
+using JetBrains.Annotations; // DeltaV
 using Robust.Client.UserInterface;
+
 
 namespace Content.Client.HealthAnalyzer.UI
 {
@@ -23,9 +24,8 @@ namespace Content.Client.HealthAnalyzer.UI
             _window = this.CreateWindow<HealthAnalyzerWindow>();
             _window.HealthAnalyzer.OnTriageStatusChanged += SendTriageStatusMessage; // DeltaV - Medical Records
             _window.HealthAnalyzer.OnClaimPatient += SendTriageClaimMessage; // DeltaV - Medical Records
+            _window.HealthAnalyzer.OnPrintMedTekRecord += () => SendMessage(new HealthAnalyzerPrintReportMessage()); // DeltaV - MedTekReports
             _window.Title = EntMan.GetComponent<MetaDataComponent>(Owner).EntityName;
-
-            _window.HealthAnalyzer.OnPrintPatientRecord += () => SendMessage(new HealthAnalyzerPrintPatientRecordMessage()); // Frontier
         }
 
         protected override void ReceiveMessage(BoundUserInterfaceMessage message)

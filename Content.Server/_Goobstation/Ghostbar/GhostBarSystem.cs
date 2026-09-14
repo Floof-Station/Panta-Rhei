@@ -62,7 +62,7 @@ public sealed class GhostBarSystem : EntitySystem
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
     {
-        if (!EntityManager.HasComponent<GhostComponent>(args.SenderSession.AttachedEntity))
+        if (!HasComp<GhostComponent>(args.SenderSession.AttachedEntity))
         {
             Log.Warning($"User {args.SenderSession.Name} tried to spawn at ghost bar without being a ghost.");
             return;
@@ -72,7 +72,7 @@ public sealed class GhostBarSystem : EntitySystem
         var query = EntityQueryEnumerator<GhostBarSpawnComponent>();
         while (query.MoveNext(out var ent, out _))
         {
-            spawnPoints.Add(EntityManager.GetComponent<TransformComponent>(ent).Coordinates);
+            spawnPoints.Add(Comp<TransformComponent>(ent).Coordinates);
         }
 
         if (spawnPoints.Count == 0)
