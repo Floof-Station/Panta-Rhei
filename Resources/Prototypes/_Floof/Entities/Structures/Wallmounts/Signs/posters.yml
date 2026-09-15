@@ -1,4 +1,5 @@
-﻿- type: entity
+# Contra
+- type: entity
   parent: PosterBase
   id: PosterContrabandYesERP
   name: "Yes ERP"
@@ -9,6 +10,16 @@
 
 - type: entity
   parent: PosterBase
+  id: maybe-erp
+  name: "Maybe ERP"
+  description: "This poster reminds the crew that erotic acts are simultaneously allowed and disallowed. Confusing."
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: maybe-erp
+
+- type: entity
+  parent: PosterBase
   id: PosterFih
   name: "fih"
   description: "A public notice that highlights the dangers of traveling space carps. Stuck neatly beside it is a post-it note, bearing the readout from a health analyzer: according to its data, the individual in question turns out to be a one-of-a-kind half-human, half-fish hybrid!"
@@ -16,3 +27,227 @@
   - type: Sprite
     sprite: _Floof/Structures/Wallmounts/Posters/fih.rsi
     state: fih
+    
+- type: entity
+  parent: PosterBase
+  id: glorious-leader-poster
+  name: "A poster of a Glorious leader"
+  description: "A poster depicting a glorious USSP leader who escaped to the one place not yet corrupted by capitalism." # This poster is a reference to Jim carrey who passed recently; specifically his appearance in 'Command & Conquer: Red Alert 3'
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: glorious-leader-poster
+
+- type: entity
+  parent: PosterBase
+  id: Join-poster-salv
+  name: "Join your salvage team!"
+  description: "A poster telling YOU that you should sign up to provide resources for your station today!" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Join-poster-salv
+
+- type: entity
+  parent: PosterBase
+  id: Sax-poster
+  name: "Sax poster"
+  description: "A poster advertising a 'sex having contest' with a snazzy saxophone player" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Sax-poster
+
+- type: entity
+  parent: PosterBase
+  id: Saftey-moth-club
+  name: "Safety moth - Safe partying"
+  description: "Safety moth™ reminds you to drink any drinks given to you, and to always carry a condom." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Saftey-moth-club
+
+- type: entity
+  parent: PosterBase
+  id: Gorlex-Girlfriends
+  name: "Gorlex Girlfriends poster"
+  description: "A limited edition pinup that was given for FREE with every 132'nd anniversary magazine of Gorlex Girlfriends!"
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Gorlex-Girlfriends
+
+- type: entity
+  parent: PosterBase
+  id: Clowncar-poster
+  name: "The Clown-car"
+  description: "A really old, really cheesy horror movie, nearly lost to time." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Clowncar-poster
+
+- type: entity
+  parent: PosterBase
+  id: Evil-bones-2-poster
+  name: "Evil bones 2 poster."
+  description: "You most certainly have seen this EXACT poster elsewhere, but you cant quite recall where." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Evil-bones-2-poster
+
+
+- type: entity
+  parent: PosterBase
+  id: PrioriLogos-duae-poster
+  name: "Priori-Logos duae poster"
+  description: "A poster for the peak of gaming. No other game bypasses where this game stood. except maybe Priori-Logos Tria. And the original Shiver. And also Wizards fortress three." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: PrioriLogos-duae-poster
+
+- type: entity
+  parent: PosterBase
+  id: Evil-mothroach-evidence
+  name: "Evidence of EVIL mothroach"
+  description: "A pinned photograph of a mysterious evil creature; known as 'EVIL MOTHROACH', a creature so vile and evil, that it has not been sine since." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Evil-mothroach-evidence
+
+- type: entity
+  parent: PosterBase
+  id: Jimmy-cheese-evidence
+  name: "The only photograph of a 'Jimmy cheese'"
+  description: "A pinned photograph of a mysterious 'Jimmy cheese', a person so mysterious that legend states, he smells like cheese." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Jimmy-cheese-evidence
+
+
+
+
+
+
+# Legit
+
+- type: entity
+  parent: PosterBase
+  id: cat-pictures
+  name: "Cat pictures"
+  description: "A miscellaneous collection of beloved feline friends." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: cat-pictures
+
+- type: entity
+  parent: PosterBase
+  id: Changeling-poster
+  name: "Jhon carp's; 'The Ling (2485) poster"
+  description: "A poster of a universally beloved horror movie." 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Changeling-poster
+
+
+- type: entity
+  parent: PosterBase
+  id: Sex-poster
+  name: "Sex poster"
+  description: "A poster advertising a 'saxophone playing contest' with a sexy sex-haver"  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Sex-poster
+
+- type: entity
+  parent: PosterBase
+  id: Saftey-moth-bar
+  name: "Safety moth - Safe drinking"
+  description: "Safety moth™ reminds you to cross-reference any drink you do not imminently recognize with the PDA's built in guidebook feature, and to drink responsibly by keeping your intake under 3.5 liters of alcohol a day!" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Saftey-moth-bar
+
+- type: entity
+  parent: PosterBase
+  id: Centcom-Chads-Poster
+  name: "Centcom Chads Limited edition Hangup"
+  description: "A limited edition reshooting of Chadious Thundercock for the 50'th aniversery for Centcom chads! Now in pinup form!" 
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Centcom-Chads-Poster
+
+- type: entity
+  parent: PosterBase
+  id: Redsec-epsilon-poster
+  name: "Redsec:epsilon poster"
+  description: "A game that spent more money on its advertisement than its development, which sucks, because before its release the series was beloved by many."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Redsec-epsilon-poster
+
+- type: entity
+  parent: PosterBase
+  id: mounted-dragon-red
+  name: "Mounted spacedragon head"
+  description: "The head of a mounted space dragon. Ones of crimson scale are prised pets of many wizards, as they say."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: mounted-dragon-red
+    #The Mounted dragon head (Red) is intended to be admin-spawn only
+
+- type: entity
+  parent: PosterBase
+  id: Prosparity-poster
+  name: "Prosparity"
+  description: "Keep mooov'in and eventually all will be fine."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Prosparity-poster
+
+- type: entity
+  parent: PosterBase
+  id: mounted-dragon-purple
+  name: "Mounted spacedragon head"
+  description: "The head of a mounted space dragon. The ones of violet scale are common in open space."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: mounted-dragon-purple
+
+- type: entity
+  parent: PosterBase
+  id: mounted-dragon-silver
+  name: "Mounted spacedragon head"
+  description: "The head of a mounted space dragon. The ones of Silver coloration are extreemly rare, being far older than most dragons ever should be."  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: mounted-dragon-silver
+        #The Mounted dragon head (Silver) is intended to be admin-spawn only
+
+
+- type: entity
+  parent: PosterBase
+  id: Bearin-poster
+  name: "Remember; only you can prevent bear attacks"
+  description: "The poster is here to remind crew to make sure the landmines are armed whenever they are on planetside stations inorder to prevent bear attacks!"  
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/Posters/posters.rsi
+    state: Bearin-poster
+
+
