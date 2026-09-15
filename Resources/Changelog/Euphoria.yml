@@ -5685,50 +5685,35 @@ Entries:
       message: Fixed a lot of bugs and added more bugs to fix.
   id: 707
   time: '2026-09-10T12:08:02.0000000+00:00'
-- author: Mnemotechnician
-  changes:
-    - type: Add
-      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
-    - type: Tweak
-      message: >-
-        Shadekin have been replaced with an upstream implementation. Characters
-        may need to be manually migrated (export to yaml, edit the export's
-        species from "Shadowkin" to "Shadekin", import)
-    - type: Fix
-      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
-    - type: Fix
-      message: Fixed a lot of bugs and added more bugs to fix.
-  id: 708
-  time: '2026-09-10T12:08:02.0000000+00:00'
 - author: JaDiDo
   changes:
     - type: Tweak
       message: patch for the voresystem, adjusting components and bugfixes
-  id: 709
+  id: 708
   time: '2026-09-15T08:34:45.0000000+00:00'
 - author: Eagle0600
   changes:
     - type: Fix
       message: 'Submarine: Fixed janitor maints door access.'
-  id: 710
+  id: 709
   time: '2026-09-15T14:38:11.0000000+00:00'
 - author: Mnemotechnician
   changes:
     - type: Fix
       message: Fixed species names not displaying.
-  id: 711
+  id: 710
   time: '2026-09-12T02:31:07.0000000+00:00'
 - author: Eagle0600
   changes:
     - type: Tweak
       message: Anyone with a bible can exorcise a revenant
-  id: 712
+  id: 711
   time: '2026-09-12T08:41:49.0000000+00:00'
 - author: Eagle0600
   changes:
     - type: Fix
       message: Fixed visuals of rubber magazines for most magazine types.
-  id: 713
+  id: 712
   time: '2026-09-12T08:44:12.0000000+00:00'
 - author: Dunrab
   changes:
@@ -5737,19 +5722,19 @@ Entries:
         Added a trait for characters that take snouts from the Vulpkanin
         species, the trait will make things like gas masks display properly on
         your character.
-  id: 714
+  id: 713
   time: '2026-09-13T07:44:42.0000000+00:00'
 - author: SyaoranFox
   changes:
     - type: Fix
       message: Wagging now only shows up on characters who have tails that can wag.
-  id: 715
+  id: 714
   time: '2026-09-13T12:31:52.0000000+00:00'
 - author: SyaoranFox
   changes:
     - type: Fix
       message: Fixed Geras not being able to breath by giving them lungs.
-  id: 716
+  id: 715
   time: '2026-09-13T12:32:13.0000000+00:00'
 - author: kivdon
   changes:
@@ -5761,7 +5746,7 @@ Entries:
       message: >-
         Slightly adjusted loadouts and cargo napsack crate to account for duffel
         napsacks.
-  id: 717
+  id: 716
   time: '2026-09-14T07:10:29.0000000+00:00'
 - author: Raikyr0
   changes:
@@ -5769,43 +5754,31 @@ Entries:
       message: >-
         Bought Juggernaut suit back to normal syndicate uplinks and lowered to
         pre-rebase prices.
-  id: 718
+  id: 717
   time: '2026-09-14T07:14:31.0000000+00:00'
 - author: IcarusianFolly
   changes:
     - type: Add
       message: Added the esteemed Chief Justice Samzar'Hrar as a plushie!
-  id: 719
+  id: 718
   time: '2026-09-14T10:12:52.0000000+00:00'
 - author: SyaoranFox
   changes:
     - type: Add
       message: Trash Lizards - a port of bingles from goobstation
-  id: 720
+  id: 719
   time: '2026-09-14T10:13:13.0000000+00:00'
-- author: JaDiDo
-  changes:
-    - type: Tweak
-      message: patch for the voresystem, adjusting components and bugfixes
-  id: 721
-  time: '2026-09-15T08:34:45.0000000+00:00'
 - author: Dunrab
   changes:
     - type: Add
       message: For those that are the reel deal, you can now craft a Bass Guitar.
-  id: 722
-  time: '2026-09-15T08:38:07.0000000+00:00'
-- author: Dunrab
-  changes:
-    - type: Add
-      message: For those that are the reel deal, you can now craft a Bass Guitar.
-  id: 723
+  id: 720
   time: '2026-09-15T08:38:07.0000000+00:00'
 - author: Aikakakah
   changes:
     - type: Add
       message: 'Markings now support shaders. '
-  id: 724
+  id: 721
   time: '2026-09-15T08:38:38.0000000+00:00'
 - author: Mnemotechnician
   changes:
@@ -5813,5 +5786,5 @@ Entries:
       message: >-
         Importing a profile with "Shadowkin" in the `species` field should no
         longer cause profile import to fail.
-  id: 725
+  id: 722
   time: '2026-09-15T12:29:41.0000000+00:00'
