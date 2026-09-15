@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences;
 using Robust.Shared.Prototypes;
@@ -38,6 +39,11 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
     /// </summary>
     private Dictionary<List<YamlPathParser.Part>, Action<ProfileMigrationContext>> _simpleMigrations = new();
 
+    /// <summary>
+    ///     Similar to <see cref="_simpleMigrations"/>, but these migrations run BEFORE the profile is parsed in any way, and modify the yaml document.
+    /// </summary>
+    private Dictionary<List<YamlPathParser.Part>, Action<ProfileYamlMigrationContext>> _yamlMigrations = new();
+
     // Species migrations (old -> new)
     Dictionary<string, ProtoId<SpeciesPrototype>> _speciesMigrationMap = new()
     {
@@ -51,11 +57,11 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
         _simpleMigrations.Clear();
 
         // Height was renamed
-        AddMigration("/profile/height", ctx => { ctx.Profile.Height = ctx.ExtractedNode.AsFloat(); });
+        AddSimpleMigration("/profile/height", ctx => { ctx.Profile.Height = ctx.ExtractedNode.AsFloat(); });
 
         // During the loadouts rework, trait preferences were changed from simple ProtoIds to "{Prototype: <id>}" strings with plans to extend the format.
         // This only affects SOME profiles, but not all of them.
-        AddMigration("/profile/_traitPreferences", ctx => {
+        AddSimpleMigration("/profile/_traitPreferences", ctx => {
             if (ctx.ExtractedNode is not YamlSequenceNode sequence)
                 return;
 
@@ -71,15 +77,43 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
             }
         });
 
-        // Species migrations
-        AddMigration("/profile/species", ctx =>
+        // Species migrations are performed BEFORE parsing because, for example, HumanoidProfileV1.ToV2() throws an exception if its species are invalid
+        AddYamlMigration("/profile/species", ctx =>
         {
-            if (_speciesMigrationMap.TryGetValue(ctx.Profile.Species, out var replacementSpecies))
-                ctx.Profile.Species = replacementSpecies;
+            if (ctx.ExtractedNode is not YamlScalarNode { Value: {} speciesId })
+                return;
+
+            if (_speciesMigrationMap.TryGetValue(speciesId!, out var replacementSpecies))
+                ctx.ToWrite = new YamlScalarNode(replacementSpecies);
         });
     }
 
-    public void MigrateProfile(YamlNode profileYaml, HumanoidCharacterProfile profile)
+    public void MigrateProfileBeforeParse(YamlNode profileYaml)
+    {
+        foreach (var (path, action) in _yamlMigrations)
+        {
+            try
+            {
+                var value = GetValueOrNull(profileYaml, path);
+                if (value is null)
+                    continue;
+
+                var ctx = new ProfileYamlMigrationContext(profileYaml, value);
+                action.Invoke(ctx);
+
+                if (ctx.ToWrite == value || ctx.ToWrite is null)
+                    continue;
+
+                WriteValue(profileYaml, path, ctx.ToWrite);
+            }
+            catch (Exception e)
+            {
+                Log.Error($"Cannot apply migration on {path}: {e}");
+            }
+        }
+    }
+
+    public void MigrateProfileAfterParse(YamlNode profileYaml, HumanoidCharacterProfile profile)
     {
         foreach (var (path, action) in _simpleMigrations)
         {
@@ -98,9 +132,14 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
         }
     }
 
-    public void AddMigration(string path, Action<ProfileMigrationContext> action)
+    public void AddSimpleMigration(string path, Action<ProfileMigrationContext> action)
     {
         _simpleMigrations.Add(new YamlPathParser(path).Parse(), action);
+    }
+
+    public void AddYamlMigration(string path, Action<ProfileYamlMigrationContext> action)
+    {
+        _yamlMigrations.Add(new YamlPathParser(path).Parse(), action);
     }
 
     public YamlNode? GetValueOrNull(YamlNode root, List<YamlPathParser.Part> path)
@@ -118,4 +157,36 @@ public sealed class HumanoidProfileMigrationsManager : IHumanoidProfileMigration
 
     public YamlNode? GetValueOrNull(YamlNode root, string path) =>
         GetValueOrNull(root, new YamlPathParser(path).Parse());
+
+    /// Writes something to the root node at the specified path, overwriting existing values.
+    public static YamlNode WriteValue(YamlNode root, List<YamlPathParser.Part> path, YamlNode value)
+    {
+        if (path.Count == 0)
+            throw new ArgumentException("WriteValue doesn't support overwriting the root node. Do that yourself.");
+
+        var current = root;
+        // Resolve all parent parts, i.e. everything except the final part.
+        for (var i = 0; i < path.Count - 1; i++)
+        {
+            var part = path[i];
+            current = part.Resolve(current);
+
+            if (current is null)
+            {
+                throw new InvalidOperationException(
+                    $"Cannot write value because path part {part} did not resolve.");
+            }
+        }
+
+        // Overwrite something in the final part.
+        // The way this works is if e.g. the input is "/some/fields/here", we find the yaml node that represents "/some/fields" and overwrite its child "here"
+        var finalPart = path[^1];
+        finalPart.Write(current, value);
+
+        return root;
+    }
+
+    /// Writes something to the root node at the specified path, overwriting existing values.
+    public static YamlNode WriteValue(YamlNode root, string path, YamlNode value) =>
+        WriteValue(root, new YamlPathParser(path).Parse(), value);
 }
