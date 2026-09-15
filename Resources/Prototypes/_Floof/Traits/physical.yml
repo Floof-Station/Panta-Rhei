@@ -872,3 +872,19 @@
   - !type:SetInventoryEffect
     speciesId: vulpkanin # for the snooties
 
+- type: trait
+  id: Preening
+  name: trait-very-preening-name
+  description: trait-very-preening-description
+  category: Skills
+  cost: 2
+  conditions:
+  - !type:OneOfSpeciesCondition # Avali already have this
+    invert: true
+    species:
+    - Avali
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Preenable
+      featherPrototype: AvaliFeather
