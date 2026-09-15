@@ -39,10 +39,8 @@ public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpa
 
         //If we couldn't get any spawnpoint coords, try and get any random tile on a station.
         if (coords is null)
-        {
             if (TryFindRandomTile(out _, out _, out _, out var randomCoords))
                 comp.Coords = randomCoords;
-        }
     }
 
     private void OnSelectLocation(Entity<AntagStationSpawnRuleComponent> ent, ref AntagSelectLocationEvent args)
