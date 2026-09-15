@@ -765,6 +765,13 @@
   id: LoadoutNapsack
   equipment:
     back: ClothingBackpackNapsack
+  groupBy: "napsack"
+
+- type: loadout
+  id: LoadoutNapsackDuffel
+  equipment:
+    back: ClothingBackpackNapsackDuffel
+  groupBy: "napsack"
 
 # outer clothing (jackets)
 - type: loadout
