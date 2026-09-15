@@ -1,0 +1,25 @@
+# Follows the specified target, or idles around if the target is unreachable or absent. Also seeks food when hungry.
+- type: htnCompound
+  id: FollowOrRummageCompound
+  branches:
+  # Try to find food if hungry or thirsty
+  - tasks:
+    - !type:HTNCompoundTask
+      task: FoodCompound
+
+  # Try to follow the target if the key is specified
+  - preconditions:
+    - !type:KeyExistsPrecondition
+      key: FollowTarget
+    tasks:
+    - !type:HTNCompoundTask
+      task: FollowCompound
+
+  # Fall back to idling around
+  - preconditions:
+    - !type:CoordinatesNotInRangePrecondition # Note: this will return true if there's no target
+      targetKey: FollowTarget
+      rangeKey: FollowRange
+    tasks:
+    - !type:HTNCompoundTask
+      task: IdleCompound

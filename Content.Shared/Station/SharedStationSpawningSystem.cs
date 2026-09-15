@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared._Floof.Paint;
 using Content.Shared._Floof.Util;
+using Content.Shared.EntityEffects;
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Inventory;
@@ -26,6 +27,7 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     [Dependency] private readonly SharedStorageSystem _storage = default!;
     [Dependency] private readonly SharedTransformSystem _xformSystem = default!;
     [Dependency] private readonly SharedColorPaintSystem _colorPaint = default!; // Floofstation
+    [Dependency] private readonly SharedEntityEffectsSystem _entEffects = default!; // Floofstation
 
     private EntityQuery<HandsComponent> _handsQuery;
     private EntityQuery<InventoryComponent> _inventoryQuery;
@@ -46,6 +48,9 @@ public abstract class SharedStationSpawningSystem : EntitySystem
     /// </summary>
     public void EquipRoleLoadout(EntityUid entity, RoleLoadout loadout, RoleLoadoutPrototype roleProto)
     {
+        // Euph - keep track of all that was spawned
+        var allSpawned = new List<(EntityUid, LoadoutPrototype)>();
+
         // Order loadout selections by the order they appear on the prototype.
         foreach (var group in loadout.SelectedLoadouts.OrderBy(x => roleProto.Groups.FindIndex(e => e == x.Key)))
         {
@@ -60,12 +65,19 @@ public abstract class SharedStationSpawningSystem : EntitySystem
                 // Floofstation section - apply custom metadata to loadouts.
                 var spawned = EquipStartingGear(entity, loadoutProto, raiseEvent: false);
                 if (spawned.Count == 1 && spawned[0] is { Valid: true } spawnedEntity)
+                {
                     ApplyCustomLoadoutMetadata(spawnedEntity, items);
+                    allSpawned.Add((spawnedEntity, loadoutProto));
+                }
                 else if (items.HasCustomMetadata)
                     Log.Warning($"Refusing to apply custom metadata to a loadout containing more than 1 item: {loadoutProto}");
                 // Floofstation section end
             }
         }
+
+        // Euph - after all is spawned, apply entity effects (we postpone that to avoid race conditions due to undefined spawn order)
+        foreach (var (spawnedEntity, loadoutProto) in allSpawned)
+            ApplyEntityEffects(spawnedEntity, loadoutProto, entity);
 
         EquipRoleName(entity, loadout, roleProto);
     }
@@ -103,6 +115,13 @@ public abstract class SharedStationSpawningSystem : EntitySystem
             // ColorPaintSystem is server-side and I cant be bothered to move it.
             _colorPaint.Paint(null, null, spawnedEntity, parsedColor);
         }
+    }
+
+    // Applies custom loadout effects
+    private void ApplyEntityEffects(EntityUid spawnedEntity, LoadoutPrototype loadoutProto, EntityUid user)
+    {
+        if (loadoutProto.SpawnEffects is {} effects)
+            _entEffects.ApplyEffects(spawnedEntity, effects.ToArray(), 1f, user);
     }
     // Floofstation section end
 

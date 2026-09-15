@@ -47,10 +47,11 @@
   description: trait-spearmaster-desc
   category: Skills
   cost: 0
-  conflicts:
-  - Swashbuckler
-  - WeaponsGeneralist
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Swashbuckler
+    - WeaponsGeneralist
   - !type:OneOfSpeciesCondition
     species:
     - Oni
@@ -71,10 +72,11 @@
   description: trait-swashbuckler-desc
   category: Skills
   cost: 0
-  conflicts:
-  - Spearmaster
-  - WeaponsGeneralist
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Spearmaster
+    - WeaponsGeneralist
   - !type:OneOfSpeciesCondition
     species:
     - Oni
@@ -95,10 +97,11 @@
   description: trait-weaponsgeneralist-desc
   category: Skills
   cost: 0
-  conflicts:
-  - Spearmaster
-  - Swashbuckler
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Spearmaster
+    - Swashbuckler
   - !type:OneOfSpeciesCondition
     species:
     - Oni
@@ -122,9 +125,10 @@
   description: trait-description-OniShooting
   category: Skills
   cost: -6
-  conflicts:
-  - BadShooting
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - BadShooting
   - !type:OneOfSpeciesCondition
     invert: true
     species:
@@ -145,9 +149,10 @@
   description: trait-description-BadShooting
   category: Skills
   cost: -2
-  conflicts:
-  - OniShooting
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - OniShooting
   - !type:OneOfSpeciesCondition
     invert: true
     species:

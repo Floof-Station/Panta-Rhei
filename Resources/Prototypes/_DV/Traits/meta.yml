@@ -31,13 +31,15 @@
   name: trait-no-paradox-clone-name
   description: trait-no-paradox-clone-desc
   category: Meta
-  conditions:
-  - !type:InDepartmentCondition
-    department: Command
-    invert: true
-  - !type:InDepartmentCondition
-    department: Security
-    invert: true
+  # Euphoria changes start - any role can take this trait
+  #conditions:
+  #- !type:InDepartmentCondition
+  #  department: Command
+  #  invert: true
+  #- !type:InDepartmentCondition
+  #  department: Security
+  #  invert: true
+  # Euphoria changes end
   effects:
   - !type:AddCompsEffect
     components:

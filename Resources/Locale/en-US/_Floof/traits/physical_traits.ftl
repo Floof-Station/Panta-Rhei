@@ -143,3 +143,15 @@ trait-messy-smoker-popup = You feel the need to spit from what you are smoking..
 
 trait-jump-ability-name = Pounce
 trait-jump-ability-description = Being nature's most fearsome predator, you developed the ability to pounce forward in the direction of your gaze.
+
+trait-singing-name = Singing
+trait-singing-description = Your own body is a musical instrument! You can sing in a variety of tones.
+
+trait-slight-clumsy-name = Clumsy
+trait-slightly-clumsy-description = You have a nack for accidentally stubbing your toe or not jumping high enough to jump over a counter often hurting your self in an embracing way...
+
+trait-very-clumsy-name = Very Clumsy
+trait-very-clumsy-description = You have poor hand eye coordination and often mess up climbing over things, shooting weaponry and using electronics....
+
+trait-species-gas-mask = Snout Sprite Adjustments
+trait-species-gas-mask-description = Take this trait if your character is using a snout and you would like to have the snout display like it would on a Vulpkanin with gas masks and other wearables.

@@ -5516,3 +5516,302 @@ Entries:
         available in Courier loadout.
   id: 687
   time: '2026-08-28T09:33:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Any role will now be able to take the No Paradox Clone trait.
+  id: 688
+  time: '2026-08-28T23:01:01.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Actually add the Strawberry seeds to the seed vending machine.
+  id: 689
+  time: '2026-08-28T23:01:53.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        Loadout pets will now follow you around (but will prioritize looking for
+        food when hungry).
+    - type: Add
+      message: >-
+        Loadouts now have a new version of the remote signaller that
+        automatically links to your shock collar.
+    - type: Tweak
+      message: Players can now choose up to 5 trinkets instead of 4.
+  id: 690
+  time: '2026-08-29T10:47:27.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Roboticists can now make clown cars.
+  id: 691
+  time: '2026-08-30T03:09:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: >-
+        Admin only to a bwoink message for admins to send through comments to a
+        player through discord.
+  id: 692
+  time: '2026-08-30T05:11:51.0000000+00:00'
+- author: PhosphateWithManyOs
+  changes:
+    - type: Add
+      message: >-
+        Added admin spawn only Project Lazarus Combat Gear, as well as GALPOL &
+        TSF banners and clothing.
+    - type: Add
+      message: Added a generic CC Job Icon
+  id: 693
+  time: '2026-08-30T11:17:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Like doctors, paramedics now have access to an advanced topicals belt.
+  id: 694
+  time: '2026-09-01T13:23:22.0000000+00:00'
+- author: Ludolphous
+  changes:
+    - type: Tweak
+      message: Changed descriptions of many posters, and names of a handful of posters.
+  id: 695
+  time: '2026-09-02T14:49:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Mobs that can vent crawl should no longer be able to enter or exit a
+        welded vent.
+  id: 696
+  time: '2026-09-04T10:52:11.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: You should now be able to craft the clown car.
+  id: 697
+  time: '2026-09-05T01:01:36.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Added two clumsy traits.
+  id: 698
+  time: '2026-09-05T01:03:00.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Rude gestures should now display properly when witnessing someone use it
+        on someone else.
+    - type: Fix
+      message: The suggestive gesture should now appear in the interact verb menu.
+  id: 699
+  time: '2026-09-05T01:28:58.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: >-
+        Crash as a result of vent crawlers trying to exit into a freezer/heater
+        attached to pipes.
+    - type: Fix
+      message: Client spam from nodecrawling
+  id: 700
+  time: '2026-09-05T03:03:19.0000000+00:00'
+- author: Compilatron144
+  changes:
+    - type: Add
+      message: Radstation now has pipe sensors
+    - type: Add
+      message: Added a nuclear reactor to Radstation
+    - type: Tweak
+      message: Radstation's TEG has been rebuild
+    - type: Fix
+      message: Radstation's dirt decals are now cleanable
+  id: 701
+  time: '2026-09-05T19:46:38.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Tweak
+      message: >-
+        Submarine: Various improvements and fixes. Added mail unit network.
+        Overhauled engineering department. Added chute to PA control.
+  id: 702
+  time: '2026-09-05T20:00:26.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Glimmer scaling for points is now capped at 1.5, down from 2.
+    - type: Tweak
+      message: Glimmer scaling gives reduced returns when approaching 1000 glimmer.
+    - type: Tweak
+      message: >-
+        Glimmer Research Stealer event should appear more often, and broadcast
+        on common rather than science.
+    - type: Fix
+      message: Glimmer Research Stealer event should trigger now (hopefully).
+  id: 703
+  time: '2026-09-06T02:21:30.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Tweak
+      message: The Svalinn from Piolet locker has been removed.
+  id: 704
+  time: '2026-09-06T02:22:59.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Adds a trait that allows people to sing like harpies can.
+  id: 705
+  time: '2026-09-06T11:23:22.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: Water takes a little longer to evaporate.
+  id: 706
+  time: '2026-09-06T11:24:16.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
+    - type: Tweak
+      message: >-
+        Shadekin have been replaced with an upstream implementation. Characters
+        may need to be manually migrated (export to yaml, edit the export's
+        species from "Shadowkin" to "Shadekin", import)
+    - type: Fix
+      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
+    - type: Fix
+      message: Fixed a lot of bugs and added more bugs to fix.
+  id: 707
+  time: '2026-09-10T12:08:02.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
+    - type: Tweak
+      message: >-
+        Shadekin have been replaced with an upstream implementation. Characters
+        may need to be manually migrated (export to yaml, edit the export's
+        species from "Shadowkin" to "Shadekin", import)
+    - type: Fix
+      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
+    - type: Fix
+      message: Fixed a lot of bugs and added more bugs to fix.
+  id: 708
+  time: '2026-09-10T12:08:02.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Tweak
+      message: patch for the voresystem, adjusting components and bugfixes
+  id: 709
+  time: '2026-09-15T08:34:45.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: 'Submarine: Fixed janitor maints door access.'
+  id: 710
+  time: '2026-09-15T14:38:11.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: Fixed species names not displaying.
+  id: 711
+  time: '2026-09-12T02:31:07.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Tweak
+      message: Anyone with a bible can exorcise a revenant
+  id: 712
+  time: '2026-09-12T08:41:49.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: Fixed visuals of rubber magazines for most magazine types.
+  id: 713
+  time: '2026-09-12T08:44:12.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Added a trait for characters that take snouts from the Vulpkanin
+        species, the trait will make things like gas masks display properly on
+        your character.
+  id: 714
+  time: '2026-09-13T07:44:42.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Wagging now only shows up on characters who have tails that can wag.
+  id: 715
+  time: '2026-09-13T12:31:52.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Fixed Geras not being able to breath by giving them lungs.
+  id: 716
+  time: '2026-09-13T12:32:13.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added duffel napsack. Large enough for 2 Small crewmates to snuggle
+        together in. 
+    - type: Tweak
+      message: >-
+        Slightly adjusted loadouts and cargo napsack crate to account for duffel
+        napsacks.
+  id: 717
+  time: '2026-09-14T07:10:29.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Bought Juggernaut suit back to normal syndicate uplinks and lowered to
+        pre-rebase prices.
+  id: 718
+  time: '2026-09-14T07:14:31.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Add
+      message: Added the esteemed Chief Justice Samzar'Hrar as a plushie!
+  id: 719
+  time: '2026-09-14T10:12:52.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Trash Lizards - a port of bingles from goobstation
+  id: 720
+  time: '2026-09-14T10:13:13.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Tweak
+      message: patch for the voresystem, adjusting components and bugfixes
+  id: 721
+  time: '2026-09-15T08:34:45.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: For those that are the reel deal, you can now craft a Bass Guitar.
+  id: 722
+  time: '2026-09-15T08:38:07.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: For those that are the reel deal, you can now craft a Bass Guitar.
+  id: 723
+  time: '2026-09-15T08:38:07.0000000+00:00'
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: 'Markings now support shaders. '
+  id: 724
+  time: '2026-09-15T08:38:38.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Importing a profile with "Shadowkin" in the `species` field should no
+        longer cause profile import to fail.
+  id: 725
+  time: '2026-09-15T12:29:41.0000000+00:00'

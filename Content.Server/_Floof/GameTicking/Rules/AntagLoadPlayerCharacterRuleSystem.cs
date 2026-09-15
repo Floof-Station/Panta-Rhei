@@ -1,12 +1,13 @@
 // [[file:../../../../Org/_Floof/CivilAntagonists/AntagLoadPlayerCharacterRule.org::Antagonist Load Player Character System][Antagonist Load Player Character System]]
 using Content.Server.Antag;
+using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Server.Preferences.Managers;
-using Content.Shared.Preferences;
-using Content.Server.Station.Systems;
 using Content.Server.Ghost.Roles.Events;
+using Content.Server.Preferences.Managers;
+using Content.Server.Station.Systems;
+using Content.Shared.Preferences;
 
-namespace Content.Server.GameTicking.Rules;
+namespace Content.Server._Floof.GameTicking.Rules;
 
 /// <summary>
 /// System that responds to AntagSelectEntityEvent, gets the player's currently selected character, spawns

@@ -1,8 +1,8 @@
 - type: marking
   id: MothWingsClassicSelene
   bodyPart: Tail
-  markingCategory: Tail
   forcedColoring: true
+# groupWhitelist: [Moth] # Euph - free markings
   coloring:
     default:
       type:
@@ -15,7 +15,7 @@
 - type: marking
   id: MothWingsSelene
   bodyPart: Tail
-  markingCategory: Tail
+# groupWhitelist: [Moth] # Euph - free markings
   sprites:
   - sprite: _DV/Mobs/Customization/Moth/moth_wings.rsi
     state: selene_primary

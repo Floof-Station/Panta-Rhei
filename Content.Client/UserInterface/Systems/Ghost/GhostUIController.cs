@@ -2,12 +2,13 @@
 using Content.Client.Ghost;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
+using Content.Shared._DV.Ghost.Roles; // DeltaV - freeform ghosties
 using Content.Shared.Ghost;
 using Robust.Shared.Console; // Frontier
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Prototypes; // DeltaV - freeform ghosties
 using Content.Shared._Corvax.Respawn; // Frontier
-using Robust.Shared.Configuration; // Frontier
 
 namespace Content.Client.UserInterface.Systems.Ghost;
 
@@ -16,7 +17,6 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
 {
     [Dependency] private readonly IEntityNetworkManager _net = default!;
     [Dependency] private readonly IConsoleHost _consoleHost = default!; // Frontier
-    [Dependency] private readonly IConfigurationManager _cfg = default!; // Frontier
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
 
@@ -35,6 +35,7 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
 
         // DeltaV
         SubscribeNetworkEvent<RespawnResetEvent>(OnRespawnReseted);
+        SubscribeNetworkEvent<DVSpawnableGhostRoleCooldownUpdateEvent>(OnVentCritterCooldownUpdate); // DeltaV - freeform ghosties
     }
 
     private void OnScreenLoad()
@@ -153,6 +154,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.RequestWarpsPressed += RequestWarps;
         Gui.ReturnToBodyPressed += ReturnToBody;
         Gui.GhostRolesPressed += GhostRolesPressed;
+        Gui.VentCritterPressed += OnVentCritterPressed; // DeltaV - freeform ghosties
+        Gui.VentCritterSelected += OnVentCritterSelected; // DeltaV - freeform ghosties
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
         Gui.GhostRespawnPressed += GuiOnGhostRespawnPressed; // Frontier
@@ -177,6 +180,8 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         Gui.RequestWarpsPressed -= RequestWarps;
         Gui.ReturnToBodyPressed -= ReturnToBody;
         Gui.GhostRolesPressed -= GhostRolesPressed;
+        Gui.VentCritterPressed -= OnVentCritterPressed; // DeltaV - freeform ghosties
+        Gui.VentCritterSelected -= OnVentCritterSelected; // DeltaV - freeform ghosties
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
         Gui.GhostRespawnPressed -= GuiOnGhostRespawnPressed; // Frontier
         Gui.GhostBarPressed -= GhostBarPressed; // Goobstation - Ghost Bar
@@ -202,13 +207,32 @@ public sealed class GhostUIController : UIController, IOnSystemChanged<GhostSyst
         _system?.OpenGhostRoles();
     }
 
-    private void GhostBarPressed() // Goobstation - Ghost Bar
+    // Begin DeltaV - freeform ghosties
+    private void OnVentCritterPressed()
+    {
+        _net.SendSystemNetworkMessage(new DVSpawnableGhostRoleCooldownRequestEvent());
+    }
+
+    private void OnVentCritterSelected(ProtoId<DVSpawnableGhostRolePrototype> role)
+    {
+        _net.SendSystemNetworkMessage(new DVSpawnableGhostRoleRequestEvent(role));
+    }
+
+    private void OnVentCritterCooldownUpdate(DVSpawnableGhostRoleCooldownUpdateEvent msg, EntitySessionEventArgs args)
+    {
+        Gui?.VentCritterWindow.SetCooldownEnd(msg.CooldownEnd);
+    }
+    // End DeltaV - freeform ghosties
+
+    // Begin Goobstation - Ghost Bar
+    private void GhostBarPressed()
     {
         Gui?.GhostBarWindow.OpenCentered();
     }
 
-    private void GhostBarSpawnPressed() // Goobstation - Ghost Bar
+    private void GhostBarSpawnPressed()
     {
         _system?.GhostBarSpawn();
     }
+    // End Goobstation - Ghost Bar
 }
