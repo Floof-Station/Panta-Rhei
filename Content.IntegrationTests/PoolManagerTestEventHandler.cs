@@ -4,8 +4,8 @@
 public sealed class PoolManagerTestEventHandler
 {
     // This value is completely arbitrary.
-    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(20);
-    private static TimeSpan HardStopTimeLimit => MaximumTotalTestingTimeLimit.Add(TimeSpan.FromMinutes(1));
+    private static TimeSpan MaximumTotalTestingTimeLimit => TimeSpan.FromMinutes(50); // Euph - what the fuck why did you even make this?!
+    private static TimeSpan HardStopTimeLimit => MaximumTotalTestingTimeLimit.Add(TimeSpan.FromMinutes(10)); // Euph - extra time BECAUSE THIS SHIt WON'T EVER STOP IN 1 MINUTE
 
     [OneTimeSetUp]
     public void Setup()
@@ -23,7 +23,7 @@ public sealed class PoolManagerTestEventHandler
         _ = Task.Delay(HardStopTimeLimit).ContinueWith(_ =>
         {
             var deathReport = PoolManager.DeathReport();
-            Environment.FailFast($"Tests took way too ;\n Death Report:\n{deathReport}");
+            Environment.FailFast($"Tests took way too long and were hard-stopped;\n Death Report:\n{deathReport}");
         });
     }
 

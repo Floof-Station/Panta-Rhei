@@ -1,0 +1,67 @@
+# Base for organs that can rot and perish
+- type: entity
+  id: OrganBaseRotting
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Perishable
+    rotAfter: 7.5m # 7.5 minutes outside a body until rotting, 22.5 to completely perish
+  - type: RotInto
+    entity: AshOrganic
+    stage: 2
+    # Floof: Let organs be preserved in cold environments
+  - type: AtmosExposed
+  - type: Temperature
+    currentTemperature: 290 #copied from meat
+
+- type: entity
+  id: OrganBaseNoRotting
+  parent: OrganBaseRotting
+  abstract: true
+  components:
+  - type: Perishable
+    rotAfter: 10h # Whatever
+
+# Simply to distinguish from normal ash.
+- type: entity
+  id: AshOrganic
+  parent: Ash
+  name: perished remains
+
+
+# Front part of a taur body - usually around where the groin of a humanoid would be
+- type: entity
+  parent: OrganBase
+  id: OrganBaseTaurConnector
+  name: taur body
+  abstract: true
+  components:
+  - type: Organ
+    category: TaurBodyConnector
+  - type: Sprite
+    state: taur_body_connector
+  - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.ChestBelow1 # I have no fucking clue
+    data:
+      state: taur_body_connector
+  - type: VisualOrganMarkings
+    markingData:
+      layers: [] # I have no clue. Arachne are one shit of a species. And without surgery this doesn't matter much anyway.
+
+- type: entity
+  parent: OrganBase
+  id: OrganBaseTaurBody
+  name: taur body connector
+  abstract: true
+  components:
+  - type: Organ
+    category: TaurBody
+  - type: Sprite
+    state: taur_body
+  - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.ChestBelow2 # I have no fucking clue
+    data:
+      state: taur_body
+  - type: VisualOrganMarkings
+    markingData:
+      layers: []
