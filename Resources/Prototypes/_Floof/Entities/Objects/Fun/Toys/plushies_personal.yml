@@ -1913,14 +1913,14 @@
   - type: EmitSoundOnUse
     sound: *yap
   - type: EmitSoundOnLand
-    sound: &foxwhine13
-      path: /Audio/Animals/fox13.ogg
+    sound: &foxwhine1
+      path: /Audio/Animals/fox1.ogg
       params:
         volume: 1
   - type: EmitSoundOnCollide
-    sound: *foxwhine13
+    sound: *foxwhine1
   - type: MeleeWeapon
-    soundHit: *foxwhine13
+    soundHit: *foxwhine1
 
 - type: entity
   parent: [BaseFleshlight, PlushieHuman]
