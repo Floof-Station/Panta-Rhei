@@ -17,7 +17,6 @@ namespace Content.Server.Antag;
 public sealed class AntagStationSpawnRuleSystem : GameRuleSystem<AntagStationSpawnRuleComponent>
 {
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
