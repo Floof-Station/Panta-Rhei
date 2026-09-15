@@ -7,9 +7,9 @@
     groups:
       mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
         paths:
-        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        - /Maps/Floof/Shuttles/Salvage/seamoth.yml # Floofstation - change this to change salv shuttle
         nameGrid: true
-        name: Pathfinder
+        name: Seamoth
 
 - type: gameMap
   id: Submarine
