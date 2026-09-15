@@ -50,9 +50,10 @@
     - state: icon-patrol
   - type: ItemBorgModule
     hands:
-    - item: FlashlightSecliteRecharging
     - item: HoloprojectorSecurity
+    - item: Crowbar # Euphoria
     - item: SecurityWhistle
+    - item: FlashlightSecliteRecharging
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: patrol-module }
 
@@ -70,6 +71,7 @@
     - item: FlashRecharging
     - item: WeaponLauncherNonLethal
     - item: SecurityWhistle
+    - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: bastion-module }
 
@@ -87,8 +89,6 @@
     hands:
     - item: StunbatonSelfCharging
     - item: FlashRecharging
-    - item: FlashlightSecliteRecharging
-    - item: SecurityWhistle
     - item: Handcuffs
       hand:
         emptyRepresentative: Handcuffs
@@ -96,13 +96,16 @@
         whitelist:
           tags:
           - Handcuffs
-    - item: Zipties
+    # - item: Zipties # Euphoria - Replaced zipties with actual handcuffs.
+    - item: Handcuffs # Euphoria
       hand:
-        emptyRepresentative: Zipties
+        emptyRepresentative: Handcuffs
         emptyLabel: borg-slot-handcuffs-empty
         whitelist:
           tags:
           - Handcuffs
+    - item: SecurityWhistle # Euphoria
+    - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: deescalation-module }
 
@@ -121,7 +124,11 @@
     - item: Truncheon # Anti-Fauna option to stop them being relied on the Seclite (which will be removed when the Laws menu is fixed)
     - item: CombatKnife # Anti-fauna for blunt resistant slimes
     - item: WeaponRiotShotgunBorg
-    - item: SecurityWhistle
+    # Begin Euphoria additions
+    - item: WeaponEnergyGunPistolBorg # Euphoria - nerfed PDW-9, lethal only
+    - item: SecurityWhistle # Euphoria
+    - item: FlashlightSecliteRecharging # Euphoria
+    # End Euphoria additions
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: escalation-module }
 
@@ -137,8 +144,8 @@
   - type: ItemBorgModule
     hands:
     - item: WeaponDisablerSelfCharge
-    - item: FlashlightSecliteRecharging
-    - item: SecurityWhistle
+    - item: SecurityWhistle # Euphoria
+    - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: chase-module }
 
@@ -205,6 +212,8 @@
             - HandLabeler
       - item: Syringe
       - item: Soap
+      - item: SecurityWhistle # Euphoria
+      - item: FlashlightSecliteRecharging # Euphoria
   - type: BorgModuleIcon
     icon: { sprite: _DV/Interface/Actions/actions_borg.rsi, state: detective-module }
 
