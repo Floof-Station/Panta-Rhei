@@ -1,4 +1,3 @@
-// [[file:../../../../Org/_Floof/CivilAntagonists/AntagStationSpawnRule.org::Component that marks entities to be handled with the antagonist station spawning system.][Component that marks entities to be handled with the antagonist station spawning system.]]
 using Robust.Shared.Map;
 
 namespace Content.Server.Antag.Components;
@@ -17,4 +16,3 @@ public sealed partial class AntagStationSpawnRuleComponent : Component
     /// </summary>
     public EntityCoordinates? Coords;
 }
-// Component that marks entities to be handled with the antagonist station spawning system. ends here
