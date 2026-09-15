@@ -123,34 +123,5 @@ public sealed class YamlPathParser(string input)
             }
             throw new ArgumentException($"Cannot resolve part {this}!");
         }
-
-        /// <summary>
-        ///     Writes the given value into the given node using this path part.
-        /// </summary>
-        public void Write(YamlNode parent, YamlNode value)
-        {
-            if (IsMapping)
-            {
-                if (parent is not YamlMappingNode mapping)
-                    throw new ArgumentException($"Cannot write mapping part {this} on non-mapping node {parent}!");
-
-                mapping[Key!] = value;
-            }
-            else if (IsIndexing)
-            {
-                if (parent is not YamlSequenceNode sequence)
-                    throw new ArgumentException($"Cannot write indexing part {this} on non-sequence node {parent}!");
-
-                // Might be redundant, but we allow setting the last element as a means of adding new values
-                if (Index < sequence.Children.Count)
-                    sequence.Children[Index] = value;
-                else if (Index == sequence.Children.Count)
-                    sequence.Add(value);
-                else
-                    throw new ArgumentOutOfRangeException($"Cannot write index {Index} to a sequence with {sequence.Children.Count} children.");
-            }
-
-            throw new ArgumentException($"Cannot write part {this}!");
-        }
     }
 }
