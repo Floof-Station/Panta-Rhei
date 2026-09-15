@@ -1,0 +1,143 @@
+﻿- type: entity
+  name: blackberry
+  parent: FoodProduceBase
+  id: FoodBlackberry
+  description: These berries have a deep sweetness and refreshing tartness to them.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - blackberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/blackberry.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: blackberry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: BlackBerryJuice
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Blackberry
+
+- type: entity
+  name: blueberry
+  parent: FoodProduceBase
+  id: FoodBlueberry
+  description: Berry blue, sweet and lightly tart.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - blueberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/blueberry.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: blueberry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: BlueberryJuice
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Blueberry
+
+- type: entity
+  name: raspberry
+  parent: FoodProduceBase
+  id: FoodRaspberry
+  description: These delicious berries are often referred to as "natures candy."
+  components:
+  - type: FlavorProfile
+    flavors:
+    - raspberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/raspberry.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: raspberry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: RaspberryJuice
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: Raspberry
+
+- type: entity
+  name: blueraspberry
+  parent: FoodProduceBase
+  id: FoodBlueRaspberry
+  description: Who would of thought natures candy could be improved by adding more BERRY!?
+  components:
+  - type: FlavorProfile
+    flavors:
+    - blueraspberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/blueraspberry.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: blueraspberry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: BlueRaspberryJuice
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit
+  - type: FoodSequenceElement
+    entries:
+      Taco: BlueRaspberry

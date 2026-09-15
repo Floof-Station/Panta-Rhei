@@ -1,0 +1,8 @@
+﻿seeds-blackberry-name = blackberry
+seeds-blackberry-display-name = blackberry
+seeds-blueberry-name = blueberry
+seeds-blueberry-display-name = blueberry
+seeds-raspberry-name = raspberry
+seeds-raspberry-display-name = raspberry
+seeds-blueraspberry-name = blue raspberry
+seeds-blueraspberry-display-name = blue raspberry
