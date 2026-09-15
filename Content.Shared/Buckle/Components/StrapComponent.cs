@@ -90,6 +90,13 @@ public sealed partial class StrapComponent : Component
     /// </summary>
     [DataField]
     public bool BuckleOnInteractHand = true;
+
+    //Euphoria
+    /// <summary>
+    /// Which direction an entity will face when strapped in.
+    /// </summary>
+    [DataField]
+    public Angle Facing = 0;
 }
 
 public enum StrapPosition
@@ -109,6 +116,8 @@ public enum StrapPosition
     /// </summary>
     Down
 }
+
+//Euphoria
 
 [Serializable, NetSerializable]
 public enum StrapVisuals : byte
