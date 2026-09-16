@@ -1,4 +1,4 @@
-# Euphoria - M3739 - AllulaloTweaks - Marking names have been appended with species name to reduce confusion for the player.
+# Euphoria - M3739 - #1063 - Marking names have been appended with species name to reduce confusion for the player.
 # Chest
 
 marking-AllulaloUnderbelly = Underbelly (Allulalo)
