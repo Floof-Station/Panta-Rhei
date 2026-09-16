@@ -1888,25 +1888,12 @@
   - type: Sprite
     sprite: _Floof/Objects/Fun/eusplushie.rsi
     state: icon
-  - type: Clothing
-    clothingVisuals:
-      head:
-      - state: equipped-HELMET
-        shader: shaded
     quickEquip: false
-    sprite: _Floof/Objects/Fun/eusplushie.rsi
     equippedPrefix: eus
     slots:
     - HEAD
   - type: Item
     sprite: _Floof/Objects/Fun/eusplushie.rsi
-    inhandVisuals:
-      left:
-      - state: inhand-left
-        shader: shaded
-      right:
-      - state: inhand-right
-        shader: shaded
     heldPrefix: plushielizard
   - type: EmitSoundOnActivate
     sound: *yap
