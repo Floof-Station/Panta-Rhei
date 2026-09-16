@@ -235,9 +235,10 @@ public sealed partial class RopeSystem
             return false;
 
         // Create a distance joint
-        var joint = CreateDistanceJoint(connector, firstLink.LinkEntity, rope.Comp, offset);
-        rope.Comp.ConnectedStart = new(connector, joint.ID, offset);
-        firstLink.LeftJoint = joint.ID;
+        var joint = rope.Comp.IsDisabled ? null : CreateDistanceJoint(connector, firstLink.LinkEntity, rope.Comp, offset);
+        var jointId = joint?.ID ?? _invalidJointMarker;
+        rope.Comp.ConnectedStart = new(connector, jointId, offset);
+        firstLink.LeftJoint = jointId;
 
         OnRopeAttached(rope, connector);
 
@@ -267,9 +268,10 @@ public sealed partial class RopeSystem
             return false;
 
         // Create a distance joint
-        var joint = CreateDistanceJoint(connector, lastLink.LinkEntity, rope.Comp, Vector2.Zero, offset);
-        rope.Comp.ConnectedEnd = new(connector, joint.ID, offset);
-        lastLink.RightJoint = joint.ID;
+        var joint = rope.Comp.IsDisabled ? null : CreateDistanceJoint(connector, lastLink.LinkEntity, rope.Comp, Vector2.Zero, offset);
+        var jointId = joint?.ID ?? _invalidJointMarker;
+        rope.Comp.ConnectedEnd = new(connector, jointId, offset);
+        lastLink.RightJoint = jointId;
 
         OnRopeAttached(rope, connector);
 

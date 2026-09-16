@@ -1,3 +1,4 @@
+using Content.Shared._Euphoria.Selector.Events;
 using Content.Shared._Floof.Paint;
 using Content.Shared._Floof.Ropes.Components;
 using Content.Shared._Floof.Ropes.Events;
@@ -11,6 +12,17 @@ using Robust.Shared.Network;
 
 namespace Content.Shared._Floof.Ropes.Systems;
 
+/// <summary>
+///     Notes on terminology:
+///     - Rope = a rope entity managed by the rope system
+///     - Rope connector = an item that a player can use to connect ropes to objects
+///     - Anchor = an object to which a rope is connected
+///
+///     Rope sides:
+///     - Start - initially attached to a rope connector
+///     - End - initially free, attached to a handle or another object
+///     - Master - side that is attached to the connector. Once it is attached to something, the connector gets removed from the user's hands.
+/// </summary>
 public sealed class RopeConnectorSystem : EntitySystem
 {
     [Dependency] private readonly INetManager _net = default!;
@@ -27,6 +39,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         SubscribeLocalEvent<RopeConnectorComponent, GetVerbsEvent<UtilityVerb>>(OnGetConnectorVerbs);
         SubscribeLocalEvent<RopeConnectorComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<RopeConnectorComponent, ColorPaintChangedEvent>(OnColorPainted);
+        SubscribeLocalEvent<RopeConnectorComponent, ConfigurationSelectedEvent>(OnConfigured);
 
         SubscribeLocalEvent<RopeConnectorComponent, RopeConnectorAttachedDoAfterEvent>(OnAttachedDoAfter);
         SubscribeLocalEvent<RopeConnectorAttachedComponent, RopeConnectorDetachedDoAfterEvent>(OnDetachedDoAfter);
@@ -38,9 +51,7 @@ public sealed class RopeConnectorSystem : EntitySystem
             return;
 
         foreach (var side in Enum.GetValues<RopeConnectorComponent.Side>())
-        {
             TryAddAnchorVerb(ent, args.User, args.Target, args, side);
-        }
 
         void TryAddAnchorVerb(Entity<RopeConnectorComponent> connector, EntityUid user, EntityUid target, GetVerbsEvent<UtilityVerb> args, RopeConnectorComponent.Side side)
         {
@@ -102,6 +113,16 @@ public sealed class RopeConnectorSystem : EntitySystem
     {
         if (GetRope(ent) is { } rope)
             _ropes.SetRopeColor(rope!, args.NewColor);
+    }
+
+    private void OnConfigured(Entity<RopeConnectorComponent> ent, ref ConfigurationSelectedEvent args)
+    {
+        if (args.Group.Id == "length")
+        {
+            ent.Comp.CurrentLength = args.GetValueAsFloat();
+            if (ent.Comp.RopeEntity is {} rope)
+                _ropes.SetRopeLength(rope, ent.Comp.CurrentLength);
+        }
     }
 
     private void OnAttachedDoAfter(Entity<RopeConnectorComponent> connector, ref RopeConnectorAttachedDoAfterEvent args)
@@ -201,6 +222,8 @@ public sealed class RopeConnectorSystem : EntitySystem
         if (!result)
             return false;
 
+        _ropes.DistributeLinksBetweenAnchors(rope, true);
+
         var attachedComp = EnsureComp<RopeConnectorAttachedComponent>(anchor);
         attachedComp.Connector = connector;
         attachedComp.Side = side;
@@ -212,6 +235,8 @@ public sealed class RopeConnectorSystem : EntitySystem
             _containers.Insert(connector.Owner, container);
         }
 
+        Dirty(connector);
+        Dirty(anchor, attachedComp);
         return true;
     }
 
@@ -253,6 +278,8 @@ public sealed class RopeConnectorSystem : EntitySystem
         anchor.Comp.CanDetach = false;
         RemCompDeferred(anchor, anchor.Comp);
 
+        Dirty(connector, connectorComp);
+        Dirty(anchor);
         return true;
     }
 
@@ -260,7 +287,7 @@ public sealed class RopeConnectorSystem : EntitySystem
     {
         // Is the relevant side already attached?
         var currentAnchorData = GetAnchorInfo(connector, side);
-        if (currentAnchorData?.Anchor is { Valid: true })
+        if (currentAnchorData?.Anchor is { Valid: true } curAnchor && curAnchor != connector.Owner)
         {
             reasonLoc = "rope-connector-already-attached";
             return false;
@@ -332,6 +359,9 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         if (!_ropes.TryCreateRope(connector, null, connector.Comp.RopePrototype, connector.Comp.CurrentLength, out var rope))
             return null;
+
+        connector.Comp.RopeEntity =  rope;
+        Dirty(connector);
 
         _ropes.SetRopeColor(rope.Value!, _paint.GetEffectiveColor(connector));
         return rope;

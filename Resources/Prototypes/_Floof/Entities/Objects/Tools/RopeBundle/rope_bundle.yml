@@ -10,7 +10,7 @@
   - type: Item
     sprite: _Floof/Objects/Tools/rope_bundle.rsi
   - type: RopeConnector
-    connectDelay: 5
+    connectDelay: 3
     targetWhitelist:
       components:
       - Item
@@ -21,6 +21,21 @@
       components:
       - Incorporeal
       - VirtualItem
+  - type: EntityConfiguration
+    configGroups:
+      length:
+        name: leash-config-category-length
+        options:
+        - name: leash-config-length
+          value: 10
+        - name: leash-config-length
+          value: 7.5
+        - name: leash-config-length
+          value: 5
+        - name: leash-config-length
+          value: 4
+        - name: leash-config-length
+          value: 3
   - type: Anchorable
     delay: 3
     snap: false # One day this will work. Not today though.

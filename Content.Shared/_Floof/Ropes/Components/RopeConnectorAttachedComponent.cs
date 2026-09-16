@@ -1,9 +1,11 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._Floof.Ropes.Components;
 
 /// <summary>
 ///     Added to entities that have had a rope tied to them using the <see cref="RopeConnectorComponent"/>.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class RopeConnectorAttachedComponent : Component
 {
     /// <summary>
@@ -14,14 +16,18 @@ public sealed partial class RopeConnectorAttachedComponent : Component
     /// <summary>
     ///     The connector used to attach the rope.
     /// </summary>
+    [DataField, AutoNetworkedField]
     public EntityUid Connector;
 
     /// <summary>
     ///     Which side of the rope is attached here.
     /// </summary>
+    [DataField, AutoNetworkedField]
     public RopeConnectorComponent.Side Side;
 
+    [DataField, AutoNetworkedField]
     public bool CanDetach = true;
 
+    [DataField, AutoNetworkedField]
     public TimeSpan DetachDelay = new TimeSpan(3);
 }
