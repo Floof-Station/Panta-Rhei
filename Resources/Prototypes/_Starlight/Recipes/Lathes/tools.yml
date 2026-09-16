@@ -1,0 +1,20 @@
+﻿- type: latheRecipe
+  parent: BaseToolRecipe
+  id: RPDEmpty
+  result: RPDEmpty
+  completetime: 4
+  materials:
+    Steel: 1000
+    Plastic: 300
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: RPDRecharging
+  result: RPDRecharging
+  completetime: 8
+  materials:
+    Steel: 1500
+    Plastic: 500
+    Uranium: 400
+    Gold: 300
+    Bluespace: 150

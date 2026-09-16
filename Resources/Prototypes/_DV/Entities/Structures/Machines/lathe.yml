@@ -13,6 +13,7 @@
     - BorgModulesStatic
     - BorgLimbsStatic
     - BorgModulesResearched
+    - RoboticsEmagStatic
   - type: Machine
     board: SyndieExosuitFabricatorMachineCircuitboard
 
@@ -85,6 +86,7 @@
     - EVASuit
     - EngineeringStaticDeltaV
     - EngineeringStaticFloof # Floofstation
+    - EngineeringStaticStarlight # Floofstation - RPD empty recpie
     dynamicPacks:
     - AdvancedTools
     - PowerCells
@@ -96,7 +98,8 @@
     - UpgradeKits_Goob
     - EngineeringHardsuits
     - AtmosToolsFloofstation # Floofstation - handheld atmos monitor
-    - LightingEquipment # DeltaV
+    - AdvancedConstruction
+    - LightingEquipment
   - type: Machine
     board: EngineeringTechFabCircuitboard
   - type: StealTarget
@@ -137,7 +140,7 @@
     - Mining
     - SalvageWeapons
     - SalvageHardsuits
-    - LightingEquipment # DeltaV
+    - LightingEquipment
   - type: Machine
     board: LogisticsTechFabCircuitboard
   - type: StealTarget
@@ -181,6 +184,7 @@
     - FloofstationServiceFoodStorage
     - FloofstationServiceCircuitBoards # service smartfridge
     # Floofstation section end
+    - ServiceJanitorBoardsEuphoria # Put this pack under our namespace, board is from froniter
     dynamicPacks:
     - Janitor
     - Instruments

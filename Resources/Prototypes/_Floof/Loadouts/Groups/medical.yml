@@ -102,6 +102,14 @@
   - TRPDA
   - ClothingNeckCollarEmotionalSupportParamed
 
+- type: loadoutGroup
+  id: FloofParamedicBelts
+  name: loadout-group-medical-paramed-belts
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - ClothingBeltMedicalEMTFilled
+  - ClothingBeltMedicalEMTAdvancedFilled
 
 # ======================================================== #
 # medical doctor additions

@@ -2,19 +2,21 @@
   parent: ClothingUniformBase
   id: BunnysuitBase
   abstract: true
+  description: The suit part of the bunny suit. Socks not included.
   components:
   - type: Tag
     tags:
     - ClothMade
     - WhitelistChameleon
     - Bunnysuit
-  - type: Foldable
-    canFoldInsideContainer: true
-    unfoldVerbText: bunnysuit-unfold
-    foldVerbText: bunnysuit-fold
-  - type: FoldableClothing
-    foldedEquippedPrefix: leotard
-    foldedHeldPrefix: leotard
+# Euph - no foldable
+#  - type: Foldable
+#    canFoldInsideContainer: true
+#    unfoldVerbText: bunnysuit-unfold
+#    foldVerbText: bunnysuit-fold
+#  - type: FoldableClothing
+#    foldedEquippedPrefix: leotard
+#    foldedHeldPrefix: leotard
 
 - type: entity
   parent: BunnysuitBase

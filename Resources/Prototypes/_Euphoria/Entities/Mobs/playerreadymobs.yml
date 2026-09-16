@@ -6,6 +6,10 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Hands
+      activeHandId: Hand
+      hands:
+        Hand:
+          location: Left
     - type: ComplexInteraction
     - type: Inventory
       templateId: nakedcrew
@@ -153,8 +157,6 @@
   id: MobCarpPlayable
   parent: [BasePlayableFeralMob, BaseMobCarp, StripableInventoryBase]
   components:
-  - type: Body
-    prototype: CarpHands
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -204,8 +206,6 @@
   id: MobSharkPlayable
   parent: [BasePlayableFeralMob, MobShark, StripableInventoryBase]
   components:
-  - type: Body
-    prototype: CarpHands
   - type: MobThresholds
     thresholds:
       0: Alive

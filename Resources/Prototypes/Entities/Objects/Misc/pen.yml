@@ -40,6 +40,14 @@
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  # Euphoria additions
+  - type: EmbeddableProjectile
+    offset: 0.3,0.0
+    removalTime: 1.0
+    sound: /Audio/Weapons/punch3.ogg # funny sound
+  - type: ThrowingAngle
+    angle: 315
+  - type: LandAtCursor
 
 - type: entity
   parent: Pen

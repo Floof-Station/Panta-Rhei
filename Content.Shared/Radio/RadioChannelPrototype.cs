@@ -42,4 +42,11 @@ public sealed partial class RadioChannelPrototype : IPrototype
     [DataField, ViewVariables]
     public bool ShowFrequency = false;
     // End Frontier
+
+    //Euphoria
+    /// <summary>
+    /// If true, the channel will attempt to hide itself from examine events.
+    /// </summary>
+    [DataField("stealth"), ViewVariables]
+    public bool Stealth = false;
 }

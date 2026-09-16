@@ -259,3 +259,39 @@
   - type: Tag
     tags:
     - Nuts
+
+- type: entity
+  name: strawberries
+  parent: FoodProduceBase
+  id: FoodStrawberry
+  description: A delectable strawberry, its berry nice to meet you.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - strawberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 11
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/strawberry.rsi
+  - type: Item
+    heldPrefix: produce
+  - type: Produce
+    seedId: strawberry
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: StrawberryJuice
+        Quantity: 10
+  - type: Tag
+    tags:
+    - Fruit # needs its own tag probably
+  - type: FoodSequenceElement
+    entries:
+      Taco: Strawberry

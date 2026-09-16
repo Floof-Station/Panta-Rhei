@@ -14,6 +14,12 @@
   id: ShirtlessClothing
 
 - type: Tag
+  id: BottomlessClothing # Different from BottomAccessible which is for slot blocking only; BottomlessClothing allows genitals to be theoretically visible
+
+- type: Tag
+  id: BottomAccessibleClothing # Different purpose than skirt: Skirt allows harpies to wear it, accessible allows underwear slots to be accessed.
+
+- type: Tag
   id: Sterilebag
 
 - type: Tag

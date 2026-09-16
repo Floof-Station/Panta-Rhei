@@ -23,3 +23,12 @@ reagent-desc-peanut-butter = A creamy and slightly sticky butter made from peanu
 
 reagent-name-peanut-butter-whiskey = peanut butter whiskey
 reagent-desc-peanut-butter-whiskey = A smooth and creamy peanut butter whiskey blend.
+
+reagent-name-strawberryjuice = strawberry juice
+reagent-desc-strawberryjuice = A sweet and refreshing extract from strawberries.
+
+reagent-name-strawberrymilk = strawberry milk
+reagent-desc-strawberrymilk = Its strawberry juice and milk what did you really expect?
+
+reagent-name-strawberrypilk = strawberry pilk
+reagent-desc-strawberrypilk = A sickening mixture of strawberry milk and cola. Das boot!
