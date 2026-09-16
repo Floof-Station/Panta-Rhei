@@ -55,7 +55,7 @@ public sealed partial class RopeSystem
         }
     }
 
-    private IEnumerable<EntityUid> EnumerateAnchors(Entity<RopeComponent> rope)
+    public IEnumerable<EntityUid> EnumerateAnchors(Entity<RopeComponent> rope)
     {
         if (rope.Comp.ConnectedStart is { } start)
             yield return start.Anchor;

@@ -28,13 +28,14 @@ public sealed partial class RopeSystem
         Vector2 offsetRight = default)
     {
         var leftXform = Transform(leftAnchor);
-        if (rightAnchor != null && !CanRopeExistBetween(leftAnchor, rightAnchor.Value, length, leftXform))
+        if (rightAnchor != null && !CanRopeExistBetween(leftAnchor, rightAnchor.Value, length, leftXform)
+            || !_xform.TryGetMapOrGridCoordinates(leftAnchor, out var leftCoords, leftXform)) // We must make sure the links are spawned on ground
         {
             createdRope = null;
             return false;
         }
 
-        var rope = CreateRopeEntityUninitialized(config, length, leftXform.Coordinates);
+        var rope = CreateRopeEntityUninitialized(config, length, leftCoords.Value);
         createdRope = rope;
 
         rope.Comp.ConnectedStart = new(leftAnchor, _invalidJointMarker, offsetLeft);
@@ -165,7 +166,8 @@ public sealed partial class RopeSystem
                 var link = linksEnum.Current;
                 var point = arcPointsEnum.Current;
 
-                _xform.SetMapCoordinates(link.LinkEntity, new(point, map));
+                var xform = Transform(link.LinkEntity);
+                _xform.SetMapCoordinates((link.LinkEntity, xform), new(point, map));
             }
         }
         else
@@ -182,7 +184,9 @@ public sealed partial class RopeSystem
             {
                 var pos = leftPos + (i + 1) * step * direction;
                 var link = rope.Comp.Links[i];
-                _xform.SetMapCoordinates(link.LinkEntity, new(pos, map));
+
+                var xform = Transform(link.LinkEntity);
+                _xform.SetMapCoordinates((link.LinkEntity, xform), new(pos, map));
             }
         }
     }

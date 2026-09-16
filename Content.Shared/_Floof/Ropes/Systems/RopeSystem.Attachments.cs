@@ -13,8 +13,24 @@ public sealed partial class RopeSystem
 
     private void InitializeRelay()
     {
+        SubscribeLocalEvent<RopeAttachedComponent, EntityTerminatingEvent>(OnAnchorShutdown);
         SubscribeLocalEvent<RopeAttachedComponent, EntGotInsertedIntoContainerMessage>(OnAnchorInserted);
         SubscribeLocalEvent<RopeAttachedComponent, EntGotRemovedFromContainerMessage>(OnAnchorRemoved);
+    }
+
+    private void OnAnchorShutdown(Entity<RopeAttachedComponent> ent, ref EntityTerminatingEvent args)
+    {
+        foreach (var rope in ent.Comp.AttachedRopes)
+        {
+            if (!_ropeQuery.TryComp(rope.Rope, out var ropeComp))
+                continue;
+
+            // Try detaching the rope. This code duplication is turning into spaghetti.
+            if (ropeComp.ConnectedStart?.Anchor == ent)
+                TryDetachStart((rope.Rope, ropeComp));
+            if (ropeComp.ConnectedEnd?.Anchor == ent)
+                TryDetachEnd((rope.Rope, ropeComp));
+        }
     }
 
     private void OnAnchorInserted(Entity<RopeAttachedComponent> ent, ref EntGotInsertedIntoContainerMessage args)
