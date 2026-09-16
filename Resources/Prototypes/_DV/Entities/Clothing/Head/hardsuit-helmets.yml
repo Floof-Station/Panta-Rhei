@@ -100,6 +100,11 @@
   - type: Clothing
     sprite: _DV/Clothing/Head/Hardsuits/Combat/warden.rsi
 
+- type: entity
+  parent: ClothingHeadHelmetHardsuitCombatWarden
+  id: ClothingHeadHelmetHardsuitCombatArmorer
+  name: armorer's riot combat hardsuit helmet
+
 # Advanced Combat Hardsuits
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
@@ -399,7 +404,7 @@
 - type: entity
   parent: [ ClothingHeadHardsuitBase, BaseCentcommContraband ]
   id: ClothingHeadHelmetHardsuitSRT
-  name: Special Response Team hardsuit helmet
+  name: SRT hardsuit helmet
   description: A special hardsuit helmet worn by members of a NanoTrasen task force.
   components:
   - type: Sprite

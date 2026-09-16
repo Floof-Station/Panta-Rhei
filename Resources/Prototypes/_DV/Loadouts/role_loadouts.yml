@@ -102,7 +102,7 @@
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
-  id: JobClerk
+  id: JobClerk # TODO: Remove for Justice Rework
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
@@ -141,6 +141,19 @@
   - FloofUndergarmentBottomPassenger # Floof
   - FloofSocksPassenger # Floof
   - Survival
+  - GroupSpeciesBreathTool
+
+- type: roleLoadout
+  id: JobAttorney
+  groups:
+  - GroupTankHarness
+  - LawyerNeck
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - LawyerJobTrinkets
   - GroupSpeciesBreathTool
 
 # Epistemics

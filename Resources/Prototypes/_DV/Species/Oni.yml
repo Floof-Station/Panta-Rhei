@@ -3,72 +3,15 @@
   name: species-name-oni
   roundStart: true
   prototype: MobOni
-  dollPrototype: MobOniDummy
-  markingLimits: MobOniMarkingLimits
-  sprites: MobHumanSprites
+  dollPrototype: AppearanceOni
   skinColoration: Hues
   maleFirstNames: NamesOniMale
   femaleFirstNames: NamesOniFemale
   lastNames: NamesOniLocation
   naming: LastNoFirst
-  # baseScale: "1.2, 1.2" # Floofstation
-  minHeight: 0.9 # Floofstation
-  maxHeight: 1.3 # Floofstation
-  defaultHeight: 1.2 # Floofstation
-
-- type: markingPoints
-  id: MobOniMarkingLimits
-  points:
-    Special:
-      points: 1
-      required: false
-    Tail:
-      points: 1
-      required: false
-    Head:
-      points: 10
-      required: false
-    Face:
-      points: 10
-      required: false
-    Snout:
-      points: 2
-      required: false
-    SnoutCover:
-      points: 1
-      required: false
-    HeadTop:
-      points: 10
-      required: true
-      defaultMarkings: [ OniHornDoubleCurved ]
-    HeadSide:
-      points: 10
-      required: false
-      defaultMarkings: [ PointyEarsUpwards ]
-    Hair:
-      points: 1
-      required: false
-    FacialHair:
-      points: 1
-      required: false
-    UndergarmentTop:
-      points: 6
-      required: false
-    UndergarmentBottom:
-      points: 6
-      required: false
-    Eyes:
-      points: 10
-      required: false
-    Chest:
-      points: 10
-      required: false
-    Wings:
-      points: 5 # Euphoria: Allow combining wings
-      required: false
-    Legs:
-      points: 24
-      required: false
-    Arms:
-      points: 24
-      required: false
+  # Begin Euphoria changes - species use height
+  #  baseScale: "1.1, 1.1"
+  minHeight: 0.77
+  maxHeight: 1.32
+  defaultHeight: 1.2
+  # End Euphoria changes

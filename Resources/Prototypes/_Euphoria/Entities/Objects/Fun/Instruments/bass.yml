@@ -1,0 +1,12 @@
+﻿# Fishy guitar
+- type: entity
+  parent: BassGuitarInstrument
+  id: BassGuitarInstrumentFihEdition
+  name: bass guitar
+  description: Some say you can't handle the bass-ics, however this guitar is for those who want to scale things up with this reel deal fish guitar.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Fun/Instruments/bassguitar.rsi
+  - type: Construction
+    graph: FishGuitar
+    node: bassguitar

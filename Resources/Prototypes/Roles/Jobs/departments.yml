@@ -117,7 +117,6 @@
   - Psychologist
   - Paramedic
   # BEGIN DeltaV Med Jobs
-  - MedicalBorg
   - Surgeon
   # END DeltaV
   - SeniorPhysician # Euphoria
@@ -138,7 +137,6 @@
   # BEGIN DeltaV Sec Jobs
   - Brigmedic
   - PrisonGuard
-  - SecurityBorg
   - RoleLaika
   - RoleK9Officer
   # END DeltaV
@@ -170,10 +168,6 @@
   roles:
   - Borg
   - StationAi
-  # BEGIN DeltaV Silicon Jobs
-  - MedicalBorg
-  - SecurityBorg
-  # END DeltaV
   primary: false # DeltaV - removed from primary dept
 
 # DeltaV - get rid of 'station-specific' as a department. All of these

@@ -136,9 +136,13 @@ public abstract class SharedCustomExamineSystem : EntitySystem
         if (!CanSlowlyChangeExamine(args.User, target, out _))
             return;
 
+        // Client can't predict this for shit.
+        if (_net.IsClient)
+            return;
+
         SetData(args.PublicData, args.SubtleData, target);
         // Small popup to let other players know what happened
-        _popups.PopupPredicted(Loc.GetString("custom-examine-data-changed-visibly"), target, null);
+        _popups.PopupEntity(Loc.GetString("custom-examine-data-changed-visibly"), target);
     }
 
     /// <summary>

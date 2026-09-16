@@ -232,6 +232,28 @@
     - awooing
     - awooed
 
+- type: emote
+  id: Yip
+  name: delta-chat-emote-name-yip
+  category: Vocal
+  available: true # Floof - global
+  whitelist: # Floof
+    tags: # Note: under the hood, it is used by both vulps and kitsunes.
+    - UnathiEmotes
+    - VulpEmotes
+    - KitsuneEmotes
+  blacklist: # Floof
+    tags:
+    - SiliconEmotes
+    components:
+    - BorgChassis
+  chatMessages: ["delta-chat-emote-msg-yip"]
+  chatTriggers:
+  - yip
+  - yips
+  - yipping
+  - yipped
+
 # Feroxi
 - type: emote
   id: Gnash

@@ -1,0 +1,259 @@
+- type: markingsGroup
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
+  id: Tajaran
+  limits: {} # Only common ones
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceTajaran
+  name: Tajaran appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganTajaranTorso
+      Head: OrganTajaranHead
+      ArmLeft: OrganTajaranArmLeft
+      ArmRight: OrganTajaranArmRight
+      HandRight: OrganTajaranHandRight
+      HandLeft: OrganTajaranHandLeft
+      LegLeft: OrganTajaranLegLeft
+      LegRight: OrganTajaranLegRight
+      FootLeft: OrganTajaranFootLeft
+      FootRight: OrganTajaranFootRight
+      Brain: OrganTajaranBrain
+      Eyes: OrganTajaranEyes
+      Tongue: OrganTajaranTongue
+      Appendix: OrganTajaranAppendix
+      Ears: OrganTajaranEars
+      Lungs: OrganTajaranLungs
+      Heart: OrganTajaranHeart
+      Stomach: OrganTajaranStomach
+      Liver: OrganTajaranLiver
+      Kidneys: OrganTajaranKidneys
+  - type: HumanoidProfile
+    species: Tajaran
+
+- type: entity
+  parent:
+  - AppearanceTajaran
+  - BaseSpeciesMobOrganic
+  id: MobTajaran
+  name: Urist McMraow
+  components:
+  - type: Hunger
+    baseDecayRate: 0.03 # Euphoria - 25% more than base (updated: base 0.23 -> 0.3)
+  - type: Thirst
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35 # Floof
+        density: 140
+        restitution: 0.0
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Damageable
+    damageModifierSet: Tajaran
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      60: 0.85  # 0.7 is base speed.
+      80: 0.75  # 0.5 is base speed.
+  - type: NightVision
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: MeleeWeapon
+    soundHit:
+      collection: Punch
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 4
+        Piercing: 1
+  - type: Speech
+    speechSounds: Alto
+    speechVerb: Felinid # Euphoria
+    allowedEmotes: ['Meow', 'Hiss', 'Mew', 'Purr', 'Growl'] # Euphoria | Emote wheel
+  - type: DamageOnHighSpeedImpact # Landing on all fours!
+    damage:
+      types:
+        Blunt: 1
+  - type: Stamina
+    baseCritThreshold: 85
+    decay: 2.55 # 3 base decay multiplied by 0.85 = 2.55
+  - type: TypingIndicator
+    proto: felinid
+  - type: PseudoItem
+    storedOffset: 0,17
+    shape:
+    - 0,0,1,4
+    - 0,2,3,4
+    - 4,0,5,4
+  - type: Vocal
+    wilhelm: "/Audio/Nyanotrasen/Voice/Felinid/cat_wilhelm.ogg"
+    sounds:
+      Male: MaleTajaran
+      Female: FemaleTajaran
+      Unsexed: MaleTajaran
+  - type: LanguageKnowledge #Euphoria - Languages
+    speaks:
+    - TauCetiBasic
+    - SiikMaas
+    - SiikTajr
+    - Cat
+    understands:
+    - TauCetiBasic
+    - SiikMaas
+    - SiikTajr
+    - Cat
+    naturalLanguage: SiikMaas
+  - type: Felinid # real
+  - type: NoShoesSilentFootsteps
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - TajaranEmotes # Added
+  - type: Temperature
+    currentTemperature: 311.76  # Body temperature of cat
+  - type: TemperatureDamage
+    coldDamageThreshold: 248.15 # -25 degrees centigrade, like 12 degrees below normal
+    heatDamage:
+      types:
+        Heat: 2 # poor kitty
+    coldDamage:
+      types:
+        Cold: 0.65 # in line with cold resist
+  - type: ThermalRegulator
+    normalBodyTemperature: 311.76
+
+
+
+# Organs
+- type: entity
+  parent: OrganBase
+  id: OrganTajaran
+  abstract: true
+  suffix: Tajaran
+
+- type: entity
+  id: OrganTajaranMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: [OrganAnimalInternal, OrganTajaran] # parent from animal organ for sprites
+  id: OrganTajaranInternal
+  abstract: true
+  components: []
+
+- type: entity
+  id: OrganTajaranVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _EE/Mobs/Species/Tajaran/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Tajaran
+
+- type: entity
+  parent: [ OrganTajaran, OrganTajaranVisual ]
+  id: OrganTajaranExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _EE/Mobs/Species/Tajaran/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganTajaranExternal ]
+  id: OrganTajaranTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganTajaranExternal ]
+  id: OrganTajaranHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganTajaranExternal ]
+  id: OrganTajaranArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganTajaranExternal ]
+  id: OrganTajaranArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganTajaranExternal ]
+  id: OrganTajaranHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganTajaranExternal ]
+  id: OrganTajaranHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganTajaranExternal ]
+  id: OrganTajaranLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganTajaranExternal ]
+  id: OrganTajaranLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganTajaranExternal ]
+  id: OrganTajaranFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganTajaranExternal ]
+  id: OrganTajaranFootRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  id: OrganTajaranBrain
+
+- type: entity
+  parent: [ OrganTajaranVisual, OrganBaseEyes, OrganTajaranInternal ]
+  id: OrganTajaranEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi # Delta V - Different eyes
+      state: eyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganTajaranInternal ]
+  id: OrganTajaranTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  id: OrganTajaranAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganTajaranInternal ]
+  id: OrganTajaranEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganTajaranInternal, OrganTajaranMetabolizer ]
+  id: OrganTajaranKidneys
