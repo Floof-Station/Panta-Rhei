@@ -1,3 +1,4 @@
+using Content.Shared.EntityEffects;
 using Content.Shared.Preferences.Loadouts.Effects;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
@@ -49,4 +50,13 @@ public sealed partial class LoadoutPrototype : IPrototype, IEquipmentLoadout
     /// <inheritdoc />
     [DataField]
     public Dictionary<string, List<EntProtoId>> Storage { get; set; } = new();
+
+    // Begin Euphoria additions
+    /// <summary>
+    ///     Entity effects to be applied after this loadout is spawned in.
+    ///     The target of the effect is the loadout entity and the user is the entity on whom it's getting equipped.
+    /// </summary>
+    [DataField]
+    public List<EntityEffect>? SpawnEffects;
+    // End Euphoria additions
 }

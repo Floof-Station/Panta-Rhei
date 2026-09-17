@@ -19,6 +19,7 @@ public abstract class SharedRMCSetPoseSystem : EntitySystem
     private void OnSetPoseGetVerbs(Entity<RMCSetPoseComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         return; // Floofstation - this is redundant
+#pragma warning disable CS0162 // Unreachable code detected
         if (!args.CanInteract)
             return;
 

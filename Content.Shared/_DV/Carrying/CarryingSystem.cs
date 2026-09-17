@@ -30,6 +30,7 @@ using System.Numerics;
 using Content.Shared._DV.Polymorph;
 using Content.Shared._Floof.OfferItem;
 using Content.Shared.Hands.EntitySystems;
+using Content.Shared.Buckle;
 
 namespace Content.Shared._DV.Carrying;
 
@@ -70,7 +71,7 @@ public sealed class CarryingSystem : EntitySystem
         SubscribeLocalEvent<BeingCarriedComponent, GettingInteractedWithAttemptEvent>(OnInteractedWith);
         SubscribeLocalEvent<BeingCarriedComponent, PullAttemptEvent>(OnPullAttempt);
         SubscribeLocalEvent<BeingCarriedComponent, StartClimbEvent>(OnDrop);
-        SubscribeLocalEvent<BeingCarriedComponent, BuckledEvent>(OnDrop);
+        SubscribeLocalEvent<BeingCarriedComponent, BuckledEvent>(OnBuckle);
         SubscribeLocalEvent<BeingCarriedComponent, UnbuckledEvent>(OnDrop);
         SubscribeLocalEvent<BeingCarriedComponent, StrappedEvent>(OnDrop);
         SubscribeLocalEvent<BeingCarriedComponent, UnstrappedEvent>(OnDrop);
@@ -220,6 +221,13 @@ public sealed class CarryingSystem : EntitySystem
         DropCarried(ent.Comp.Carrier, ent);
     }
 
+    private void OnBuckle(Entity<BeingCarriedComponent> ent, ref BuckledEvent args)
+    {
+        // Buckling to a bed already handles the reparenting to the entity that the carried
+        // entity is buckled to, and then relays the BuckledEvent, so don't reparent to the grid.
+        DropCarried(ent.Comp.Carrier, ent, attachToGrid: false);
+    }
+
     private void OnRemoved(Entity<BeingCarriedComponent> ent, ref ComponentRemove args)
     {
         /*
@@ -301,12 +309,11 @@ public sealed class CarryingSystem : EntitySystem
         if (_net.IsClient) // no spawning prediction
             return;
 
-        // Floofstation - store virtual items and add a special component to them
-        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out var virt))
-            EnsureComp<OfferableVirtualItemComponent>(virt.Value);
-        if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out virt))
-            EnsureComp<OfferableVirtualItemComponent>(virt.Value);
-        // Floofstation section end
+        for (var x = 0; x < Comp<CarriableComponent>(carried).FreeHandsRequired; x++)
+        {
+            if (_virtualItem.TrySpawnVirtualItemInHand(carried, carrier, out var virtualItem))
+                EnsureComp<OfferableVirtualItemComponent>(virtualItem.Value);
+        }
     }
 
     public bool TryCarry(EntityUid carrier, Entity<CarriableComponent?> toCarry)
@@ -328,9 +335,9 @@ public sealed class CarryingSystem : EntitySystem
         return true;
     }
 
-    public void DropCarried(EntityUid carrier, EntityUid carried)
+    public void DropCarried(EntityUid carrier, EntityUid carried, bool attachToGrid = true)
     {
-        Drop(carried);
+        Drop(carried, attachToGrid);
         CleanupCarrier(carrier, carried);
     }
 
@@ -342,12 +349,15 @@ public sealed class CarryingSystem : EntitySystem
         _movementSpeed.RefreshMovementSpeedModifiers(carrier);
     }
 
-    private void Drop(EntityUid carried)
+    private void Drop(EntityUid carried, bool attachToGrid = true)
     {
         RemComp<BeingCarriedComponent>(carried);
         RemComp<KnockedDownComponent>(carried); // TODO SHITMED: make sure this doesnt let you make someone with no legs walk
         _actionBlocker.UpdateCanMove(carried);
-        Transform(carried).AttachToGridOrMap();
+
+        // Some systems will handle re-parenting and then throw an event, and this changes the parent when it should not
+        if (attachToGrid)
+            _transform.AttachToGridOrMap(carried);
         _standingState.Stand(carried);
     }
 
@@ -366,6 +376,10 @@ public sealed class CarryingSystem : EntitySystem
 
     public bool CanCarry(EntityUid carrier, Entity<CarriableComponent> carried)
     {
+        var handsRequired = carried.Comp.FreeHandsRequired; // imp
+        if (TryComp<CarrierOneHandComponent>(carrier, out _))// && !carried.Comp.OneHandOverride)
+            handsRequired = 1;
+
         return
             carrier != carried.Owner &&
             // can't carry multiple people, even if you have 4 hands it will break invariants when removing carryingcomponent for first carried person
@@ -376,7 +390,7 @@ public sealed class CarryingSystem : EntitySystem
             !HasComp<BeingCarriedComponent>(carrier) &&
             !HasComp<BeingCarriedComponent>(carried) &&
             // finally check that there are enough free hands
-            TryComp<HandsComponent>(carrier, out var hands) && _hands.CountFreeHands((carrier, hands)) >= carried.Comp.FreeHandsRequired;
+            TryComp<HandsComponent>(carrier, out var hands) && _hands.CountFreeHands((carrier, hands)) >= handsRequired;
     }
 
     private float MassContest(EntityUid roller, EntityUid target)

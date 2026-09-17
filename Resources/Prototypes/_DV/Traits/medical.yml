@@ -34,6 +34,11 @@
   description: trait-lightweight-desc
   category: DisabilitiesMental # Euphoria
   cost: -1 #floof
+  conditions:
+    - !type:OneOfSpeciesCondition
+      invert: true
+      species:
+        - Kitsune # Innately possesses a more intense version of this trait, at a multiplier of 3 instead of 2.
   effects:
   - !type:AddCompsEffect
     components:

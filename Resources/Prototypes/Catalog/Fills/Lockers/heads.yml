@@ -22,9 +22,9 @@
     - id: ClothingHeadsetAltCargo
     - id: DoorRemoteCargo
     - id: AstroNavCartridge
-    - id: ClothingHandsKnuckleDustersQM # DeltaV - No weaponry for LO. # Euphoria - Re-enabled due to steal objectives
-    - id: ClothingOuterHardsuitRhino # Euphoria - the Hardsuit locker isn't mapped in any station so the objective to steal the suit is impossible
+    - id: ClothingHandsKnuckleDustersQM
     - id: BunnysuitBoxQuartermaster # Euphoria
+    - id: ClothingOuterHardsuitRhino # Euphoria
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -60,14 +60,14 @@
     - id: SpaceCash1000
     - id: WeaponDisabler
     - id: ClothingEyesGlassesCommand
-    - id: BunnysuitBoxCaptain # Euphoria
-    # Begin Euphoria additions
-    - id: ClothingOuterCoatCapTrench # TheDen
-    # End Euphoria additions
-    - id: HeadSkeleton # A skull to accompany your skeleton crew
+    - id: OrganSkeletonPersonHead # A skull to accompany your skeleton crew
       conditions:
       - !type:PlayerCountCondition
         max: 15
+    # Begin Euphoria additions
+    - id: BunnysuitBoxCaptain
+    - id: ClothingOuterCoatCapTrench # TheDen
+    # End Euphoria additions
 
 # No laser table + Laser table
 - type: entityTable
@@ -251,7 +251,7 @@
     - id: RubberStampCMO
     - id: MedTekCartridge
     # Begin Euphoria additions
-    - id: BunnysuitBoxChiefMedicalOfficer # Euphoria
+    - id: BunnysuitBoxChiefMedicalOfficer
     # End Euphoria additions
 
 # Hardsuit table, used for suit storage as well
@@ -306,7 +306,7 @@
     - id: RubberStampRd
     # Begin Euphoria additions
     - id: EncryptionKeyBinary
-    - id: BunnysuitBoxResearchDirector # Euphoria
+    - id: BunnysuitBoxResearchDirector
     # End Euphoria additions
 
 # Hardsuit table, used for suit storage as well

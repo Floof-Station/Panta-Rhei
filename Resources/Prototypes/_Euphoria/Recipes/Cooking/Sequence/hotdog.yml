@@ -1,0 +1,403 @@
+﻿- type: metamorphRecipe
+  id: FoodHotdogLA
+  key: Hotdog
+  result: FoodHotdogLA
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 4
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 chili
+    tags:
+    - Vegetable
+    - Chili
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 onion
+    tags:
+    - Vegetable
+    - Slice
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 bacon
+    tags:
+    - Cooked
+    - Meat
+    - Bacon
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogHuman
+  key: Hotdog
+  result: FoodHotdogHuman
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 4
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 human meat
+    tags:
+    - Raw
+    - Meat
+    - Human
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogTofu
+  key: Hotdog
+  result: FoodHotdogTofu
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 tofu
+    tags:
+    - Tofu
+    - Slice
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogDirty
+  key: Hotdog
+  result: FoodHotdogDirty
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cabbage
+    tags:
+    - Vegetable
+    - Cabbage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 onion
+    tags:
+    - Vegetable
+    - Slice
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogChicago
+  key: Hotdog
+  result: FoodHotdogChicago
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 4
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 tomato
+    tags:
+    - Fruit
+    - Vegetable
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 onion
+    tags:
+    - Vegetable
+    - Slice
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 chili
+    tags:
+    - Vegetable
+    - Chili
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogChili
+  key: Hotdog
+  result: FoodHotdogChili
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 red hot chili
+    tags:
+    - Cooked
+    - Chili
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cheese
+    tags:
+    - Cheese
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogConey
+  key: Hotdog
+  result: FoodHotdogConey
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 red hot chili
+    tags:
+    - Cooked
+    - Chili
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 onion
+    tags:
+    - Vegetable
+    - Slice
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogHalfSmoke
+  key: Hotdog
+  result: FoodHotdogHalfSmoke
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 red hot chili
+    tags:
+    - Cooked
+    - Chili
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 ribs
+    tags:
+    - Meat
+    - Ribs
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogBacon
+  key: Hotdog
+  result: FoodHotdogBacon
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 5
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 2 bacon
+    tags:
+    - Cooked
+    - Meat
+    - Bacon
+    count:
+      min: 2
+      max: 3
+
+- type: metamorphRecipe
+  id: FoodHotdogCondom
+  key: Hotdog
+  result: FoodHotdogCondom
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 4
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 condom
+    tags:
+    - Condom
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogDildo
+  key: Hotdog
+  result: FoodHotdogDildo
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 dildo
+    tags:
+    - Dildo
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogFish
+  key: Hotdog
+  result: FoodHotdogFish
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 fish fillet
+    tags:
+    - Raw
+    - Meat
+    - Fish
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogPolish
+  key: Hotdog
+  result: FoodHotdogPolish
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 6
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 fries
+    tags:
+    - Fries
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cabbage
+    tags:
+    - Vegetable
+    - Cabbage
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogSushi
+  key: Hotdog
+  result: FoodHotdogSushi
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 sushi
+    tags:
+    - Sushi
+    count:
+      min: 1
+      max: 2
+
+- type: metamorphRecipe
+  id: FoodHotdogRod
+  key: Hotdog
+  result: FoodHotdogRod
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 4
+  - !type:IngredientsWithTags # 1 hotdog
+    tags:
+    - Meat
+    - Cooked
+    - Sausage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 rod
+    tags:
+    - Rod
+    count:
+      min: 1
+      max: 2

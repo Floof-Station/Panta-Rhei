@@ -2,7 +2,7 @@
 ## Service Worker
 - type: loadoutGroup
   id: ServiceWorkerHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-serviceworker-head
   minLimit: 0
   loadouts:
@@ -89,6 +89,22 @@
   loadouts:
   - ScarfBlack
   - ScarfZebra
+  - MimeMantle
+  - MimeCloak
+  - MimeMantleOffShoulder
+  - MimeStole
+
+- type: loadoutGroup
+  id: MimeShoes
+  parent: EuphoriaMimeShoes # Euph
+  name: loadout-group-mime-shoes
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - WhiteShoes
+  - BlackShoes
+  - MimeWinterBoots
+  - MimeFurBoots
 
 ## Musician
 - type: loadoutGroup
@@ -143,7 +159,7 @@
 ## Courier
 - type: loadoutGroup
   id: CourierHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-courier-head
   minLimit: 0
   loadouts:
@@ -208,7 +224,7 @@
 ## Cargo Assistant
 - type: loadoutGroup
   id: CargoAssistantHead
-  parent: [FloofCargotechHats, FloofHats] # floofstation
+  parent: [FloofCargotechHats, AssistantHead] # floofstation
   name: loadout-group-cargo-assistant-head
   minLimit: 0
   loadouts:
@@ -238,6 +254,7 @@
   minLimit: 0
   loadouts:
   - CargoTechnicianWintercoat
+  - BomberLogistic
 
 - type: loadoutGroup
   id: CargoAssistantShoes
@@ -280,7 +297,7 @@
 ## Brig Medic
 - type: loadoutGroup
   id: BrigMedicHead
-  parent: [Shoalenforcerhelmet, FloofHats] # floofstation
+  parent: [Shoalenforcerhelmet, AssistantHead] # floofstation
   name: loadout-group-brig-medic-head
   minLimit: 0
   loadouts:
@@ -296,7 +313,7 @@
   - ScarfRed
   - ScarfBlack
   - ScarfBlue
-  - SecurityPoncho
+  - ScarfLightBlue
 
 - type: loadoutGroup
   id: BrigMedicJumpsuit
@@ -315,12 +332,14 @@
   loadouts:
   - LongcoatBrigmedic
   - StasecWinterCoatCorpsman
+  - BomberSecurity
   - PlateCarrier
   - DuraVest
   - ArmorVestSlim
 
 - type: loadoutGroup
   id: CorpsmanEyewear
+  parent: [Glasses] # Euphoria
   name: loadout-group-corpsman-eyewear
   minLimit: 1
   maxLimit: 1
@@ -330,9 +349,9 @@
   - MedicalHud
   - MedicalEyePatchHud
   - PrescriptionMedHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 - type: loadoutGroup
   id: BrigMedicBack
@@ -355,17 +374,18 @@
 
 - type: loadoutGroup
   id: GroupSpeciesBreathToolCorpsman
+  parent: [GroupSpeciesBreathTool] # floofstation
   name: loadout-group-breath-tool
   minLimit: 1
   maxLimit: 1
-  hidden: true
+  #hidden: true # Floofstation why was this hidden
   loadouts:
   - LoadoutSpeciesBreathToolCorpsman
 
 ## Security Cadet
 - type: loadoutGroup
   id: SecurityCadetHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-security-cadet-head
   minLimit: 0
   loadouts:
@@ -482,6 +502,7 @@
 
 ## Security Glasses
 - type: loadoutGroup
+  parent: [Glasses] # Euphoria
   id: SecurityEyewear
   name: loadout-group-security-eyewear
   minLimit: 1
@@ -492,9 +513,9 @@
   - SecurityHud
   - SecurityEyePatchHud
   - PrescriptionSecurityHud
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 ## Security Officer
 - type: loadoutGroup
@@ -505,7 +526,6 @@
   loadouts:
   - ScarfRed
   - ScarfBlack
-  - SecurityPoncho
 
 - type: loadoutGroup
   id: SecurityOuterClothingDeltaV
@@ -517,6 +537,7 @@
   - StasecSweater
   - LongcoatSecurity
   - StasecWinterCoat
+  - BomberSecurity
   - ArmorVestSlim
 
 ## Warden
@@ -529,6 +550,7 @@
   - DuraVest
   - WardenLongcoat
   - StasecWinterCoatWarden
+  - BomberSecurity
   - ArmorVestSlim
   - WardenArmoredWinterCoat
 
@@ -545,6 +567,7 @@
   - HeadOfSecurityTrenchcoat
   - ArmorVestSlim
   - HeadofSecurityWinterCoat
+  - BomberSecurity
 
 ## Detective
 - type: loadoutGroup
@@ -568,6 +591,7 @@
   loadouts:
   - LongcoatSecurity
   - StasecWinterCoatDet
+  - BomberSecurity
   - PlateCarrier
   - DuraVest
   - DetPlatedCoat
@@ -577,7 +601,7 @@
 ## Psychologist
 - type: loadoutGroup
   id: PsychologistHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-psychologist-head
   minLimit: 0
   loadouts:
@@ -597,6 +621,7 @@
   - PsychologistWinterCoat
   - WinterCoatPlaid
   - PsychologistCoatBomber
+  - BomberMedical
   - PsychologistSweater
 
 - type: loadoutGroup
@@ -630,7 +655,7 @@
 
 - type: loadoutGroup
   id: ChemistHead
-  parent: [FloofHats] # Euphoria
+  parent: [AssistantHead] # Euphoria
   name: loadout-group-chemist-head
   minLimit: 0
   loadouts:
@@ -673,7 +698,7 @@
 ## Surgeon
 - type: loadoutGroup
   id: SurgeonHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-surgeon-head
   minLimit: 0
   loadouts:
@@ -724,7 +749,7 @@
 ## Chief Justice
 - type: loadoutGroup
   id: ChiefJusticeHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-chiefjustice-head
   minLimit: 0
   loadouts:
@@ -789,7 +814,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianHead
-  parent: [StationEngineerHead, FloofHats] # floofstation
+  parent: [StationEngineerHead, AssistantHead] # floofstation
   name: loadout-group-atmospheric-technician-head
   minLimit: 0
   loadouts:
@@ -876,7 +901,7 @@
 ## Roboticist
 - type: loadoutGroup
   id: RoboticistHead
-  parent: [FloofHats] # floofstation
+  parent: [AssistantHead] # floofstation
   name: loadout-group-roboticist-head
   minLimit: 0
   loadouts:
@@ -935,15 +960,16 @@
 
 - type: loadoutGroup
   id: RoboticistGlasses
+  parent: [Glasses] # Euphoria
   name: loadout-group-roboticist-glasses
   minLimit: 0
   loadouts:
   - ClothingEyesHudDiagnostic
   - ClothingEyesPrescriptionDiagHud
   - ClothingEyesEyepatchHudDiag
-  - Glasses
-  - GlassesJamjar
-  - GlassesJensen
+  #- Glasses # Euphoria | In parent loadout
+  #- GlassesJamjar # Euphoria | In parent loadout
+  #- GlassesJensen # Euphoria | In parent loadout
 
 # Command
 ## Captain
@@ -1180,3 +1206,10 @@
   minLimit: 0
   loadouts:
   - LizardPlushieZookeeper
+
+- type: loadoutGroup
+  id: ChefShoes
+  name: loadout-group-chef-shoes-delta
+  loadouts:
+  - ChefShoes
+  - ChefSandals

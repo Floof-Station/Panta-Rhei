@@ -1,0 +1,10 @@
+﻿- type: entity
+  parent: ClothingEyesBase
+  id: TajaranVeilBase
+  name: tajaran veil
+  description: A sleek, high-tech Tajaran veil, adapted from ancient designs and important to their culture and spirituality.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Eyes/tajaran_veils.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Eyes/tajaran_veils.rsi

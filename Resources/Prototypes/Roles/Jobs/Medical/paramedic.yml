@@ -19,13 +19,12 @@
   extendedAccess:
   - Chemistry
 
-
 - type: startingGear
   id: ParamedicGear
   equipment:
     #id: ParamedicPDA # Floofstation - let loadouts handle pdas
     ears: ClothingHeadsetMedical
-    belt: ClothingBeltMedicalEMTFilled
+    #belt: ClothingBeltMedicalEMTFilled # Euphoria - let loadouts handle belts
   storage:
     back:
 #    - EmergencyRollerBedSpawnFolded # DeltaV - move paramedic loadout to locker

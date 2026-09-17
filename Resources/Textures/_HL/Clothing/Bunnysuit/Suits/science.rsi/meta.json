@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from S.P.L.U.R.T-tg at https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/db5aa35b593866f4dfb8bf4360280d237f69e6e7/icons/map_icons/clothing/under/costume.dmi, https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/404d2b8f02bd2aef069e13f0eefc74276480248b/modular_zubbers/icons/obj/clothing/under/costume.dmi, https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/fac4f81e35fd10423af6c306ac52a4d35f8db68d/modular_zubbers/icons/mob/clothing/under/bunnysuits.dmi",
+  "copyright": "Taken from S.P.L.U.R.T-tg at https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/db5aa35b593866f4dfb8bf4360280d237f69e6e7/icons/map_icons/clothing/under/costume.dmi, https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/404d2b8f02bd2aef069e13f0eefc74276480248b/modular_zubbers/icons/obj/clothing/under/costume.dmi, https://github.com/SPLURT-Station/S.P.L.U.R.T-tg/blob/fac4f81e35fd10423af6c306ac52a4d35f8db68d/modular_zubbers/icons/mob/clothing/under/bunnysuits.dmi | modified by Mnemotechnician - removed leotard sprites, socks are now separate clothing entities.",
   "size": {
     "x": 32,
     "y": 32
@@ -12,10 +12,6 @@
     },
     {
       "name": "equipped-INNERCLOTHING",
-      "directions": 4
-    },
-    {
-      "name": "leotard-equipped-INNERCLOTHING",
       "directions": 4
     }
   ]

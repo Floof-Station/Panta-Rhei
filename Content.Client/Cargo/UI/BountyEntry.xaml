@@ -10,8 +10,8 @@
                 <BoxContainer Orientation="Vertical" HorizontalExpand="True">
                     <RichTextLabel Name="RewardLabel"/>
                     <RichTextLabel Name="ManifestLabel"/>
-					<RichTextLabel Name="ClaimedBylabel"/> <!--imp edit - bounty claiming & status-->
-					<RichTextLabel Name="StatusLabel"/> <!--imp edit - bounty claiming & status-->
+                    <RichTextLabel Name="ClaimedBylabel"/> <!-- DeltaV bounty claim -->
+                    <RichTextLabel Name="StatusLabel"/> <!-- DeltaV bounty claim     -->
                 </BoxContainer>
                 <Control MinWidth="10"/>
                 <BoxContainer Orientation="Vertical" MinWidth="120">
@@ -19,14 +19,13 @@
                         <Button Name="PrintButton"
                                 Text="{Loc 'bounty-console-label-button-text'}"
                                 HorizontalExpand="False"
-                                StyleClasses="OpenBoth"/> <!--imp edit - changed to openBoth & removed horizontal alignment-->
+                                StyleClasses="OpenBoth"/>
                         <Button Name="SkipButton"
                                 Text="{Loc 'bounty-console-skip-button-text'}"
-								HorizontalExpand="True"
-                                StyleClasses="OpenLeft"/> <!--imp edit - removed horizontal alignment, set horizontal expand to true-->
+                                HorizontalExpand="True"
+                                StyleClasses="OpenLeft"/>
                     </BoxContainer>
-					<!--imp edit start- bounty claiming & status-->
-					<BoxContainer Orientation="Horizontal" MinWidth="120">
+                    <BoxContainer Orientation="Horizontal" MinWidth="120"> <!-- Begin DeltaV bounty claim content -->
                         <Button Name="ClaimButton"
                                 Text= "{Loc 'bounty-console-claim-button-text'}"
                                 HorizontalExpand="False"
@@ -35,8 +34,7 @@
                                       Access="Public"
                                       StyleClasses="OpenBoth"
                                       HorizontalExpand="True"/>
-                    </BoxContainer>
-					<!--imp edit end-->
+                    </BoxContainer> <!-- End DeltaV content-->
                     <RichTextLabel Name="IdLabel" HorizontalAlignment="Right" Margin="0 0 5 0"/>
                 </BoxContainer>
             </BoxContainer>

@@ -275,6 +275,7 @@ public partial class ChatBox : UIWidget
         // Warn typing indicator about change
         // _controller.NotifyChatTextChange(); // DeltaV
         _controller.NotifySpecificChatTextChange(SelectedChannel); // DeltaV - Alt Chat Indicators
+        _controller.UpdateLanguageNotifier(this); // Euph - port from starlight
     }
 
     private void OnFocusEnter(LineEditEventArgs args)

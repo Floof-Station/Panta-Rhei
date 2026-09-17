@@ -15,8 +15,8 @@
   groups:
   - GroupTankHarness
   - StationEngineerHead
-  - StationEngineerNeck # DeltaV
   - FloofEngineeringGlasses # Floofstation glasses
+  - StationEngineerNeck # DeltaV
   - SeniorEngineerJumpsuit # floofstation
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
@@ -38,6 +38,7 @@
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
+  - MedicalEyewear
   - MedicalDoctorNeck # DeltaV
   - MedicalMask
   - SeniorPhysicianJumpsuits #floofstation
@@ -47,7 +48,6 @@
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalEyewear
   - SurvivalMedical
   - Smokeables
   - MedicalDoctorJobTrinkets
@@ -62,6 +62,7 @@
   groups:
   - GroupTankHarness
   - ScientistHead
+  - Glasses
   - ScientistNeck
   - SeniorResearcherJumpsuits #floofstation
   - ScientistBackpack
@@ -69,7 +70,6 @@
   - ScientistGloves
   - ScientistShoes
   - FloofSeniorResearcherPdas # Floofstation let senior research choose pda
-  - Glasses
   - Survival
   - Smokeables
   - ScientistJobTrinkets
@@ -83,6 +83,7 @@
   parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
+  - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SecurityNeck # DeltaV
   - SeniorOfficerJumpsuits # floofstation
   - SecurityBackpack
@@ -91,7 +92,6 @@
   - SecurityShoes
   - FloofSecuritySeniorOfficerPdas
   - SecurityBelt
-  - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
   - Smokeables
   - SecurityJobTrinkets
@@ -108,6 +108,7 @@
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
+  - Glasses
   - CargoTechnicianNeck # DeltaV
   - CargoTechnicianJumpsuit # floofstation - there are no special jumpsuits/skirts for inventory spec so we will use cargo techs to make it easier
   - InventorySpecialistMisc # floofstation
@@ -116,7 +117,6 @@
   - CargoTechnicianOuterClothing
   - InventorySpecialistPDA # Euphoria
   - CargoTechnicianShoes
-  - Glasses
   - Survival
   - Smokeables
   - CargoTechnicianJobTrinkets
@@ -130,6 +130,7 @@
   parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
+  - RoboticistGlasses
   - SecurityNeck
   - SecurityJumpsuit
   - SecurityBackpack
@@ -137,7 +138,6 @@
   - StationEngineerGloves
   - SecurityShoes
   - FloofSecurityTechnicianPdas
-  - RoboticistGlasses
   - SurvivalSecurity
   - Smokeables
   - SecurityJobTrinkets

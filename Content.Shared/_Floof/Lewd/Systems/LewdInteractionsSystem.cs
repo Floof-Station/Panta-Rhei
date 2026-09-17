@@ -13,7 +13,6 @@ namespace Content.Shared._Floof.Lewd.Systems;
 public sealed class LewdInteractionsSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly LewdOrganSystem _lewdOrgan = default!;
 
     // I wasn't sure where to put this, so I put it here.
     // Okay so

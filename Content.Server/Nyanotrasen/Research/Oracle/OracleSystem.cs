@@ -184,7 +184,8 @@ public sealed class OracleSystem : EntitySystem
 
         while (i != 0)
         {
-            Spawn("MaterialBluespace1", Transform(user).Coordinates);
+            var entityToSpawn = _random.Next(0, 2) == 0 ? "MaterialBluespace1" : "CrystalNormality";
+            Spawn(entityToSpawn, Transform(user).Coordinates);
             i--;
         }
 
@@ -209,7 +210,7 @@ public sealed class OracleSystem : EntitySystem
             return;
 
         var allReagents = _prototypeManager.EnumeratePrototypes<ReagentPrototype>()
-            .Where(x => !x.Abstract)
+            .Where(x => !x.Abstract && x.ID != "Romerol") //Euphoria - We can't have Romerol be a possibility
             .Select(x => x.ID).ToList();
 
         var amount = 20 + _random.Next(1, 30) + _glimmerSystem.Glimmer / 10f;

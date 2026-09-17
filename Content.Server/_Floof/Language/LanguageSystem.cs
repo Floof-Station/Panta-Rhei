@@ -19,7 +19,9 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
         SubscribeLocalEvent<LanguageSpeakerComponent, MapInitEvent>(OnInitLanguageSpeaker);
         SubscribeLocalEvent<LanguageSpeakerComponent, ComponentGetState>(OnGetLanguageState);
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, DetermineEntityLanguagesEvent>(OnDetermineUniversalLanguages);
-        SubscribeNetworkEvent<LanguagesSetMessage>(OnClientSetLanguage);
+
+        SubscribeNetworkEvent<LanguageSetRequest>(OnClientSetLanguage);
+        SubscribeNetworkEvent<ReorderLanguagesRequest>(OnClientReorderLanguages);
 
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, MapInitEvent>((uid, _, _) => UpdateEntityLanguages(uid));
         SubscribeLocalEvent<UniversalLanguageSpeakerComponent, ComponentRemove>((uid, _, _) => UpdateEntityLanguages(uid));
@@ -52,7 +54,7 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             ev.SpokenLanguages.Add(UniversalPrototype);
     }
 
-    private void OnClientSetLanguage(LanguagesSetMessage message, EntitySessionEventArgs args)
+    private void OnClientSetLanguage(LanguageSetRequest message, EntitySessionEventArgs args)
     {
         if (args.SenderSession.AttachedEntity is not { Valid: true } uid)
             return;
@@ -62,6 +64,20 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
             return;
 
         SetLanguage(uid, language.ID);
+    }
+
+    private void OnClientReorderLanguages(ReorderLanguagesRequest msg, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { Valid: true } uid
+            || !SpeakerQuery.TryComp(uid, out var speaker))
+            return;
+
+        // Truncate their list to just 16 languages to avoid performance overhead when ordering languages later.
+        // If someone speaks more than 16 languages... well, that's on them. The language menu isn't designed to handle that many anyway.
+        var order = msg.LanguageOrder.Take(16).ToList();
+        speaker.PreferredOrder = order;
+
+        UpdateEntityLanguages((uid, speaker)); // This will dirty the speaker
     }
 
     #endregion
@@ -168,17 +184,47 @@ public sealed partial class LanguageSystem : SharedLanguageSystem
 
         RaiseLocalEvent(ent, ref ev);
 
-        ent.Comp.SpokenLanguages.Clear();
-        ent.Comp.UnderstoodLanguages.Clear();
-
-        ent.Comp.SpokenLanguages.AddRange(ev.SpokenLanguages);
-        ent.Comp.UnderstoodLanguages.AddRange(ev.UnderstoodLanguages);
+        // We reorder the languages according to the player's preferences
+        ent.Comp.SpokenLanguages = OrderByPreferences(ev.SpokenLanguages, ent.Comp.PreferredOrder);
+        ent.Comp.UnderstoodLanguages = OrderByPreferences(ev.UnderstoodLanguages, ent.Comp.PreferredOrder);
 
         // If EnsureValidLanguage returns true, it also raises a LanguagesUpdateEvent, so we try to avoid raising it twice in that case.
         if (!EnsureValidLanguage(ent))
             RaiseLocalEvent(ent, new LanguagesUpdateEvent());
 
         Dirty(ent);
+    }
+
+    #endregion
+
+    #region private api
+
+    /// <summary>
+    ///     Orders the given list of <see cref="languages"/> according to the player's <see cref="preferences"/>. <br/>
+    ///     The resulting list contains the following: <br/>
+    ///     - First, all languages listed in <see cref="preferences"/> that are also present in <see cref="languages"/>  <br/>
+    ///     - Then all languages listed in `<see cref="languages"/> that are NOT present in <see cref="preferences"/>.
+    /// </summary>
+    private List<ProtoId<LanguagePrototype>> OrderByPreferences(ICollection<ProtoId<LanguagePrototype>> languages, List<ProtoId<LanguagePrototype>> preferences)
+    {
+        var result = new List<ProtoId<LanguagePrototype>>(languages.Count);
+        foreach (var language in preferences)
+        {
+            if (!languages.Contains(language))
+                continue;
+
+            result.Add(language);
+        }
+
+        foreach (var language in languages)
+        {
+            if (result.Contains(language))
+                continue;
+
+            result.Add(language);
+        }
+
+        return result;
     }
 
     #endregion
