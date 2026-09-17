@@ -191,11 +191,10 @@ public sealed class RopeConnectorSystem : EntitySystem
         if (!CanAttach(connector, anchor, side, out var reason))
             return false;
 
-        if (GetOrCreateRope(connector) is not {} rope
-            || !GetConnectionInfo(connector, rope, out var masterSide, out var startAttached, out var endAttached))
+        if (GetOrCreateRope(connector) is not {} rope)
             return false;
 
-        var isMaster = side == masterSide;
+        var isMaster = side == connector.Comp.MasterSide;
         // If this is the master side, we must remove the rope out of the user's hands first and detach the rope start
         if (isMaster)
         {
@@ -249,26 +248,31 @@ public sealed class RopeConnectorSystem : EntitySystem
         if (!TryComp<RopeConnectorComponent>(connector, out var connectorComp) || GetRope((connector, connectorComp)) is not { } rope)
             return false;
 
-        if (!_containers.TryRemoveFromContainer(connector))
-            return false;
-
-        _hands.PickupOrDrop(user, connector, true, true, true, true);
-
-        // Unmark other connectors as masters
-        foreach (var otherAnchor in _ropes.EnumerateAnchors(rope))
+        // If the connector is currently inside a container, it means that both of its rope sides have been attached
+        // We need to extract it from the container and set whichever side that was removed as the new master
+        bool shouldReconnectRope = false;
+        if (_containers.TryGetContainingContainer(connector, out var connectorContainer)
+            && connectorContainer.ID == RopeConnectorAttachedComponent.ConnectorContainer)
         {
-            if (otherAnchor != anchor.Owner && TryComp<RopeConnectorAttachedComponent>(otherAnchor, out var attachedComp)) { }
+            if (!_containers.TryRemoveFromContainer(connector))
+                return false;
+
+            _hands.PickupOrDrop(user, connector, true, true, true, true);
+
+            connectorComp.MasterSide = side;
+            shouldReconnectRope = true;
         }
 
+        // If it so happens that
         // Now after the connector is in-hand or on-ground, we need to actually move the rope
         switch (side)
         {
             case RopeConnectorComponent.Side.End:
-                if (_ropes.TryDetachEnd(rope!))
+                if (_ropes.TryDetachEnd(rope!) && shouldReconnectRope)
                     _ropes.TryConnectRopeEnd(rope!, connector);
                 break;
             case RopeConnectorComponent.Side.Start:
-                if (_ropes.TryDetachStart(rope!))
+                if (_ropes.TryDetachStart(rope!) && shouldReconnectRope)
                     _ropes.TryConnectRopeStart(rope!, connector);
                 break;
         }
@@ -295,7 +299,7 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         // By default, the start side is connected to the connector
         // We allow to connect the start side only after the end side
-        if (side == RopeConnectorComponent.Side.Start && GetAnchorInfo(connector, RopeConnectorComponent.Side.End) == null)
+        if (side == connector.Comp.MasterSide && GetAnchorInfo(connector, GetOpposite(connector.Comp.MasterSide)) == null)
         {
             reasonLoc = "rope-connector-attach-end-first";
             return false;
@@ -375,20 +379,11 @@ public sealed class RopeConnectorSystem : EntitySystem
             _ => null,
         };
 
-    private bool GetConnectionInfo(Entity<RopeConnectorComponent> connector,
-        Entity<RopeComponent> rope,
-        out RopeConnectorComponent.Side masterSide,
-        out bool startConnected,
-        out bool endConnected)
-    {
-        // This is fucked up, I don't want to duplicate this logic elsewhere
-        // We only say a rope is connected at this end if it is connected to anything other than the connector itself
-        startConnected = rope.Comp.ConnectedStart?.Anchor is {} startAnchor && startAnchor != connector.Owner;
-        endConnected = rope.Comp.ConnectedEnd?.Anchor is {} endAnchor && endAnchor != connector.Owner;
-        masterSide = !startConnected
-            ? RopeConnectorComponent.Side.Start
-            : RopeConnectorComponent.Side.End;
-
-        return true;
-    }
+    public RopeConnectorComponent.Side GetOpposite(RopeConnectorComponent.Side side) =>
+        side switch
+        {
+            RopeConnectorComponent.Side.End => RopeConnectorComponent.Side.Start,
+            RopeConnectorComponent.Side.Start => RopeConnectorComponent.Side.End,
+            _ => throw new ArgumentOutOfRangeException()
+        };
 }

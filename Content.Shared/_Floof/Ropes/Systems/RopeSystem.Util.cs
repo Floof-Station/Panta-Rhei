@@ -94,17 +94,22 @@ public sealed partial class RopeSystem
         if (desiredLength < d)
             desiredLength = d;
 
-        var normal = new Vector2(-(b.Y - a.Y), b.X - a.X) / d;
+        var normal = d > 0.01
+            ? new Vector2(-(b.Y - a.Y), b.X - a.X) / d
+            : new(0, 1); // That's not normal
 
         // Coefficient that gives the arc length approximately equal to desiredLength
-        var sagitta = MathF.Sqrt(3f * d * (desiredLength - d) / 8f);
+        var sagitta = d > 0.01
+            ? MathF.Sqrt(3f * d * (desiredLength - d) / 8f)
+            : desiredLength / 2; // It's going to be a line from point A, going up and then back down
+
         for (var i = 0; i < count; i++)
         {
             // Basically, we take a point on the line between a and b and offset it tangentially by a "bump" function
             // The size of the bump is multiplied by a sagitta coefficient which gives the resulting arc a length that's approximately equal to the desired length
             // The math for it was mostly done by an LLM, but it seems sane enough to me
             var t = (i + 1) / (count + 2f);
-            var bump = 4f * t * (1f - t);
+            var bump = 4f * t * (1f - t); // goes from 0 (t=0) to 1 (t=0.5) to 0 (t=1)
             yield return a + (b - a) * t + normal * (sagitta * bump);
         }
     }

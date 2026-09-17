@@ -41,6 +41,14 @@ public sealed partial class RopeConnectorComponent : Component
     [DataField, AutoNetworkedField]
     public EntityUid? RopeEntity, HandleEntity;
 
+    /// <summary>
+    ///     Which side of the rope is connected to the connector.
+    ///     This side cannot be connected until the other side is connected.
+    ///     Once the master side is connected, the connector is taken out of user's hands and placed inside a container on the target entity.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public Side MasterSide = Side.Start;
+
     public enum Side
     {
         /// Connects first. Can be unrolled into a second handle.
