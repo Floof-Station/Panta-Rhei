@@ -211,15 +211,20 @@ public sealed partial class RopeSystem
 
     #region public API
 
-
-    // TODO code duplication?
-    /// <summary>
-    ///     Connects the start of the rope to the specified anchor.
-    ///     If the rope has no links, this method will only have effect after both ConnectStart and ConnectEnd have been called.
-    /// </summary>
-    public bool TryConnectRopeStart(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default)
+    public RopeComponent.AnchorInfo? GetAnchor(Entity<RopeComponent> rope, RopeSide side) => side switch
     {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedStart is {} start && start.JointId != _invalidJointMarker)
+        RopeSide.Start => rope.Comp.ConnectedStart,
+        RopeSide.End => rope.Comp.ConnectedEnd,
+        _ => throw new ArgumentOutOfRangeException()
+    };
+
+    /// <summary>
+    ///     Connects the specified side of the rope to the specified anchor.
+    ///     If the rope has no links, this method will have no effect.
+    /// </summary>
+    public bool TryConnectRopeSide(Entity<RopeComponent?> rope, EntityUid connector, RopeSide side, Vector2 offset = default)
+    {
+        if (!Resolve(rope, ref rope.Comp) || GetAnchor(rope!, side) is {} existing)
             return false; // already attached
 
         if (rope.Comp.Links.Count == 0)
@@ -229,59 +234,51 @@ public sealed partial class RopeSystem
         }
 
         // Check distance
-        var firstLink = rope.Comp.Links[0];
-        var dist = GetEffectiveDistance(connector, firstLink.LinkEntity);
+        var closestLink = side switch
+        {
+            RopeSide.Start => rope.Comp.Links[0],
+            RopeSide.End => rope.Comp.Links[^1],
+            _ => throw new ArgumentOutOfRangeException(),
+        };
+        var dist = GetEffectiveDistance(connector, closestLink.LinkEntity);
         if (float.IsInfinity(dist))
             return false;
 
         // Create a distance joint
-        var joint = rope.Comp.IsDisabled ? null : CreateDistanceJoint(connector, firstLink.LinkEntity, rope.Comp, offset);
+        var joint = rope.Comp.IsDisabled ? null : CreateDistanceJoint(connector, closestLink.LinkEntity, rope.Comp, offset);
         var jointId = joint?.ID ?? _invalidJointMarker;
-        rope.Comp.ConnectedStart = new(connector, jointId, offset);
-        firstLink.LeftJoint = jointId;
+        switch (side)
+        {
+            case RopeSide.Start:
+                rope.Comp.ConnectedStart = new(connector, jointId, offset);
+                closestLink.LeftJoint = jointId;
+                break;
+            case RopeSide.End:
+                rope.Comp.ConnectedEnd = new(connector, jointId, offset);
+                closestLink.RightJoint = jointId;
+                break;
+        }
 
         OnRopeAttached(rope, connector);
-
         Dirty(rope, rope.Comp);
         return true;
     }
+
+    /// <see cref="TryConnectRopeSide"/>
+    public bool TryConnectRopeStart(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default) =>
+        TryConnectRopeSide(rope, connector, RopeSide.Start, offset);
+
+    /// <see cref="TryConnectRopeSide"/>
+    public bool TryConnectRopeEnd(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default) =>
+        TryConnectRopeSide(rope, connector, RopeSide.End, offset);
 
     /// <summary>
-    ///     Connects the end of the rope to the specified anchor.
-    ///     If the rope has no links, this method will only have effect after both ConnectStart and ConnectEnd have been called.
+    ///     Detaches the given side of the rope.
+    ///     If the rope has no links, this method will have no effect.
     /// </summary>
-    public bool TryConnectRopeEnd(Entity<RopeComponent?> rope, EntityUid connector, Vector2 offset = default)
+    public bool TryDetachRopeSide(Entity<RopeComponent?> rope, RopeSide side)
     {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedEnd is {} end && end.JointId != _invalidJointMarker)
-            return false; // already attached
-
-        if (rope.Comp.Links.Count == 0)
-        {
-            Log.Error("Cannot attach a rope with 0 links. Specify anchors in TryCreateRope!");
-            return false;
-        }
-
-        // Check distance
-        var lastLink = rope.Comp.Links[^1];
-        var dist = GetEffectiveDistance(connector, lastLink.LinkEntity);
-        if (float.IsInfinity(dist))
-            return false;
-
-        // Create a distance joint
-        var joint = rope.Comp.IsDisabled ? null : CreateDistanceJoint(connector, lastLink.LinkEntity, rope.Comp, Vector2.Zero, offset);
-        var jointId = joint?.ID ?? _invalidJointMarker;
-        rope.Comp.ConnectedEnd = new(connector, jointId, offset);
-        lastLink.RightJoint = jointId;
-
-        OnRopeAttached(rope, connector);
-
-        Dirty(rope, rope.Comp);
-        return true;
-    }
-
-    public bool TryDetachStart(Entity<RopeComponent?> rope)
-    {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedStart == null)
+        if (!Resolve(rope, ref rope.Comp) || GetAnchor(rope!, side) is not {} anchor)
             return false;
 
         if (rope.Comp.Links.Count == 0)
@@ -290,42 +287,38 @@ public sealed partial class RopeSystem
             return false;
         }
 
-        var firstLink = rope.Comp.Links[0];
-        _joints.RemoveJoint(firstLink.LinkEntity, rope.Comp.ConnectedStart.Value.JointId);
-
-        var oldAnchor = rope.Comp.ConnectedStart.Value.Anchor;
-        rope.Comp.ConnectedStart = null;
-        firstLink.LeftJoint = null;
-
-        OnRopeDetached(rope, oldAnchor);
-
-        Dirty(rope, rope.Comp);
-        return true;
-    }
-
-    public bool TryDetachEnd(Entity<RopeComponent?> rope)
-    {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.ConnectedEnd == null)
-            return false;
-
-        if (rope.Comp.Links.Count == 0)
+        var closestLink = side switch
         {
-            Log.Error("Cannot detach a rope with 0 links. Delete the rope entity instead!");
-            return false;
+            RopeSide.Start => rope.Comp.Links[0],
+            RopeSide.End => rope.Comp.Links[^1],
+            _ => throw new ArgumentOutOfRangeException(),
+        };
+        _joints.RemoveJoint(closestLink.LinkEntity, anchor.JointId);
+
+        switch (side)
+        {
+            case RopeSide.Start:
+                rope.Comp.ConnectedStart = null;
+                closestLink.LeftJoint = null;
+                break;
+            case RopeSide.End:
+                rope.Comp.ConnectedEnd = null;
+                closestLink.RightJoint = null;
+                break;
         }
 
-        var lastLink = rope.Comp.Links[^1];
-        _joints.RemoveJoint(lastLink.LinkEntity, rope.Comp.ConnectedEnd.Value.JointId);
-
-        var oldAnchor = rope.Comp.ConnectedEnd.Value.Anchor;
-        rope.Comp.ConnectedEnd = null;
-        lastLink.RightJoint = null;
-
-        OnRopeDetached(rope, oldAnchor);
-
+        OnRopeDetached(rope, anchor.Anchor);
         Dirty(rope, rope.Comp);
         return true;
     }
+
+    /// <see cref="TryDetachRopeSide"/>
+    public bool TryDetachStart(Entity<RopeComponent?> rope) =>
+        TryDetachRopeSide(rope, RopeSide.Start);
+
+    /// <see cref="TryDetachRopeSide"/>
+    public bool TryDetachEnd(Entity<RopeComponent?> rope) =>
+        TryDetachRopeSide(rope, RopeSide.End);
 
     #endregion
 }

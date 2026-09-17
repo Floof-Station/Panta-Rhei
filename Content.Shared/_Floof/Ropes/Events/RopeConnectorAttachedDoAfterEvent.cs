@@ -7,9 +7,9 @@ namespace Content.Shared._Floof.Ropes.Events;
 [Serializable, NetSerializable]
 public sealed partial class RopeConnectorAttachedDoAfterEvent : DoAfterEvent
 {
-    public readonly RopeConnectorComponent.Side Side;
+    public readonly RopeSide Side;
 
-    public RopeConnectorAttachedDoAfterEvent(EntityUid connector, RopeConnectorComponent.Side side)
+    public RopeConnectorAttachedDoAfterEvent(EntityUid connector, RopeSide side)
     {
         Side = side;
     }

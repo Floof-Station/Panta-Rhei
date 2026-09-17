@@ -50,10 +50,10 @@ public sealed class RopeConnectorSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract)
             return;
 
-        foreach (var side in Enum.GetValues<RopeConnectorComponent.Side>())
+        foreach (var side in Enum.GetValues<RopeSide>())
             TryAddAnchorVerb(ent, args.User, args.Target, args, side);
 
-        void TryAddAnchorVerb(Entity<RopeConnectorComponent> connector, EntityUid user, EntityUid target, GetVerbsEvent<UtilityVerb> args, RopeConnectorComponent.Side side)
+        void TryAddAnchorVerb(Entity<RopeConnectorComponent> connector, EntityUid user, EntityUid target, GetVerbsEvent<UtilityVerb> args, RopeSide side)
         {
             var canAttach = CanAttach(connector, target, side, out var reasonLoc);
             var verb = new UtilityVerb()
@@ -148,7 +148,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         TryDetach(anchor, args.User);
     }
 
-    private void StartAttaching(Entity<RopeConnectorComponent> connector, EntityUid target, EntityUid user, RopeConnectorComponent.Side side)
+    private void StartAttaching(Entity<RopeConnectorComponent> connector, EntityUid target, EntityUid user, RopeSide side)
     {
         var args = new DoAfterArgs(EntityManager,
             user,
@@ -186,7 +186,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         _doAfters.TryStartDoAfter(args);
     }
 
-    public bool TryAttach(Entity<RopeConnectorComponent> connector, EntityUid anchor, RopeConnectorComponent.Side side)
+    public bool TryAttach(Entity<RopeConnectorComponent> connector, EntityUid anchor, RopeSide side)
     {
         if (!CanAttach(connector, anchor, side, out var reason))
             return false;
@@ -201,21 +201,13 @@ public sealed class RopeConnectorSystem : EntitySystem
             if (!_containers.TryRemoveFromContainer(connector.Owner, false, out var inContainer) && inContainer)
                 return false;
 
-            switch (side)
-            {
-                case RopeConnectorComponent.Side.End:
-                    _ropes.TryDetachEnd(rope!);
-                    break;
-                case RopeConnectorComponent.Side.Start:
-                    _ropes.TryDetachStart(rope!);
-                    break;
-            }
+            _ropes.TryDetachRopeSide(rope, side);
         }
 
         var result = side switch
         {
-            RopeConnectorComponent.Side.End => _ropes.TryConnectRopeEnd(rope!, anchor),
-            RopeConnectorComponent.Side.Start => _ropes.TryConnectRopeStart(rope!, anchor),
+            RopeSide.End => _ropes.TryConnectRopeEnd(rope!, anchor),
+            RopeSide.Start => _ropes.TryConnectRopeStart(rope!, anchor),
             _ => false,
         };
         if (!result)
@@ -250,7 +242,7 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         // If the connector is currently inside a container, it means that both of its rope sides have been attached
         // We need to extract it from the container and set whichever side that was removed as the new master
-        bool shouldReconnectRope = false;
+        var shouldReconnectRope = false;
         if (_containers.TryGetContainingContainer(connector, out var connectorContainer)
             && connectorContainer.ID == RopeConnectorAttachedComponent.ConnectorContainer)
         {
@@ -265,17 +257,8 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         // If it so happens that
         // Now after the connector is in-hand or on-ground, we need to actually move the rope
-        switch (side)
-        {
-            case RopeConnectorComponent.Side.End:
-                if (_ropes.TryDetachEnd(rope!) && shouldReconnectRope)
-                    _ropes.TryConnectRopeEnd(rope!, connector);
-                break;
-            case RopeConnectorComponent.Side.Start:
-                if (_ropes.TryDetachStart(rope!) && shouldReconnectRope)
-                    _ropes.TryConnectRopeStart(rope!, connector);
-                break;
-        }
+        if (_ropes.TryDetachRopeSide(rope, side) && shouldReconnectRope)
+            _ropes.TryConnectRopeSide(rope, connector, side);
 
         // Just so it doesn't allow a second detach on the same tick
         anchor.Comp.Connector = EntityUid.Invalid;
@@ -287,7 +270,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         return true;
     }
 
-    public bool CanAttach(Entity<RopeConnectorComponent> connector, EntityUid anchor, RopeConnectorComponent.Side side, out string? reasonLoc)
+    public bool CanAttach(Entity<RopeConnectorComponent> connector, EntityUid anchor, RopeSide side, out string? reasonLoc)
     {
         // Is the relevant side already attached?
         var currentAnchorData = GetAnchorInfo(connector, side);
@@ -299,7 +282,7 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         // By default, the start side is connected to the connector
         // We allow to connect the start side only after the end side
-        if (side == connector.Comp.MasterSide && GetAnchorInfo(connector, GetOpposite(connector.Comp.MasterSide)) == null)
+        if (side == connector.Comp.MasterSide && GetAnchorInfo(connector, connector.Comp.MasterSide.Opposite()) == null)
         {
             reasonLoc = "rope-connector-attach-end-first";
             return false;
@@ -329,7 +312,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         return true;
     }
 
-    public (bool, RopeConnectorComponent.Side) CanDetach(Entity<RopeConnectorAttachedComponent> anchor, EntityUid user)
+    public (bool, RopeSide) CanDetach(Entity<RopeConnectorAttachedComponent> anchor, EntityUid user)
     {
         if (anchor.Comp.Connector is not { Valid: true } connector)
             return (false, default);
@@ -371,19 +354,6 @@ public sealed class RopeConnectorSystem : EntitySystem
         return rope;
     }
 
-    private RopeComponent.AnchorInfo? GetAnchorInfo(Entity<RopeConnectorComponent> connector, RopeConnectorComponent.Side side) =>
-        side switch
-        {
-            RopeConnectorComponent.Side.Start => GetRope(connector)?.Comp?.ConnectedStart,
-            RopeConnectorComponent.Side.End => GetRope(connector)?.Comp?.ConnectedEnd,
-            _ => null,
-        };
-
-    public RopeConnectorComponent.Side GetOpposite(RopeConnectorComponent.Side side) =>
-        side switch
-        {
-            RopeConnectorComponent.Side.End => RopeConnectorComponent.Side.Start,
-            RopeConnectorComponent.Side.Start => RopeConnectorComponent.Side.End,
-            _ => throw new ArgumentOutOfRangeException()
-        };
+    private RopeComponent.AnchorInfo? GetAnchorInfo(Entity<RopeConnectorComponent> connector, RopeSide side) =>
+        GetRope(connector) is { } rope ? _ropes.GetAnchor(rope, side) : null;
 }

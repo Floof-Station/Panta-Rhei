@@ -24,7 +24,7 @@ public sealed partial class RopeConnectorComponent : Component
     ///     Which ends can be connected by the user.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public List<Side> ConnectableSides = new() { Side.Start, Side.End };
+    public List<RopeSide> ConnectableSides = new() { RopeSide.Start, RopeSide.End };
 
     /// <summary>
     ///     If true, the rope can be "unrolled", spawning another handle on the other end.
@@ -47,14 +47,5 @@ public sealed partial class RopeConnectorComponent : Component
     ///     Once the master side is connected, the connector is taken out of user's hands and placed inside a container on the target entity.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public Side MasterSide = Side.Start;
-
-    public enum Side
-    {
-        /// Connects first. Can be unrolled into a second handle.
-        End,
-        /// Connects last. This side is held by the user at first.
-        Start,
-
-    }
+    public RopeSide MasterSide = RopeSide.Start;
 }

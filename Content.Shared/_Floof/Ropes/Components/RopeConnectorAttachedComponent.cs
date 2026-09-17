@@ -23,7 +23,7 @@ public sealed partial class RopeConnectorAttachedComponent : Component
     ///     Which side of the rope is attached here.
     /// </summary>
     [DataField, AutoNetworkedField]
-    public RopeConnectorComponent.Side Side;
+    public RopeSide Side;
 
     [DataField, AutoNetworkedField]
     public bool CanDetach = true;
