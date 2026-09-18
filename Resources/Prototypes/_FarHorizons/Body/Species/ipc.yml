@@ -201,14 +201,14 @@
       min: 85
   - type: Repairable # So welder is just a special little snowflake in the code. I tried making healing with welder work through ConditionalHealing component, but it would require too many changes in too many places. So we will keep on the trend and have brute healing defined here. /shrug
     doAfterDelay: 4 # Euph - same as borgs, we dont have insta-heal topicals that the original comment refers to 
-    # Euph - When first ported, the doAfterDelay was set to 10 seconds to be the same as cyborgs, but cyborg repair doAfter is 1 (unsure if this was a mistake). 10 made them incapable of being in combat in any capacity. Tinker with this number accordingly for balance.
+    # Euph - Making it faster in exchange for worse healing so that IPCs don't take 15 seconds to weld themselves (and bleed out because of it).
     allowSelfRepair: true
     fuelCost: 5
     damage:
-      types:
-        Blunt: -10
-        Piercing: -10
-        Slash: -10
+      types: # Euph - reducing the healing by half in trade-off for faster doAfter speed.
+        Blunt: -5 # Euph - was 10, made 5
+        Piercing: -5 # Euph - was 10, made 5
+        Slash: -5 # Euph - was 10, made 5
     selfRepairPenalty: 1.5
     qualityNeeded: Welding # Euph - With upstream/Nubody changes, the default was set to "Applicating" which meant IPCs couldn't be welded. This sets it to "Welding" so they can be welded. Duh.
   - type: HumanoidEMP # HumanoidEMP is needed to receive EMP effects, it may carry its own innate effects, but doesn't have to
@@ -244,15 +244,15 @@
     #  - !type:PlaySoundBehavior
      #   sound:
      #     collection: MeatLaserImpact
-   # - trigger:
-   #     !type:DamageTypeTrigger
-  #      damageType: Radiation
-   #     damage: 15
-    #  behaviors:
-     # - !type:PopupBehavior
-     #   popup: mouth-taste-metal
-    #    popupType: LargeCaution
-     #   targetOnly: true
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Radiation
+        damage: 15
+      behaviors:
+      - !type:PopupBehavior
+        popup: mouth-taste-metal
+        popupType: LargeCaution
+        targetOnly: true
   # Lock
   - type: IPCLock
     instantSelfUnlock: true
