@@ -40,7 +40,7 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
-   // [Dependency] private readonly IBanManager _banManager = default!; // Starlight //Euphoia, Unused.
+   // [Dependency] private readonly IBanManager _banManager = default!; // Starlight //Euphoria, Unused.
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
