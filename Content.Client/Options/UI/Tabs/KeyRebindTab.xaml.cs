@@ -37,13 +37,6 @@ namespace Content.Client.Options.UI.Tabs
 
         private readonly List<Action> _deferCommands = new();
 
-        // Floof note: unused, replaced with a generic method
-        private void HandleToggleUSQWERTYCheckbox(BaseButton.ButtonToggledEventArgs args)
-        {
-            _cfg.SetCVar(CVars.DisplayUSQWERTYHotkeys, args.Pressed);
-            _cfg.SaveToFile();
-        }
-
         private void InitToggleWalk()
         {
             if (_cfg.GetCVar(CCVars.ToggleWalk))

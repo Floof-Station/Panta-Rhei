@@ -15,11 +15,9 @@ namespace Content.Server._Floof.FootPrint;
 
 public sealed class PuddleFootPrintsSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
     [Dependency] private readonly SharedFlightSystem _flight = default!; // DeltaV
     [Dependency] private readonly IPrototypeManager _protoMan = default!; // Floofstation
-    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
 
     public override void Initialize()
     {

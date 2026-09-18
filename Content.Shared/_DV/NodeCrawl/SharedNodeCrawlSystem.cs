@@ -75,11 +75,7 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
 
     private void StartEntryDoAfter(Entity<NodeCrawlerComponent> ent, EntityUid target)
     {
-        var doAfterArgs = new DoAfterArgs(EntityManager, ent.Owner, ent.Comp.EnterDelay, new NodeCrawlEnterDoAfterEvent(), ent.Owner, target)
-        {
-            BreakOnMove = true,
-            BreakOnDamage = true,
-        };
+        var doAfterArgs = new DoAfterArgs(EntityManager, ent.Owner, ent.Comp.EnterDelay, new NodeCrawlEnterDoAfterEvent(), ent.Owner, target);
 
         _doAfter.TryStartDoAfter(doAfterArgs);
     }
@@ -90,6 +86,14 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
             return;
 
         NodeCrawl(ent, target);
+    }
+
+    protected virtual void SetupAir(Entity<NodeCrawlerMovementComponent> movement)
+    {
+    }
+
+    protected virtual void EjectAir(Entity<NodeCrawlerMovementComponent> movement)
+    {
     }
 
     private void NodeCrawl(Entity<NodeCrawlerComponent> ent, EntityUid target)
@@ -115,6 +119,8 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
 
         _nodeCrawler.SetNode((mover, crawler), target);
         _nodeCrawler.SetHeldCrawler((mover, crawler), ent);
+
+        SetupAir((mover, crawler));
 
         _mover.SetRelay(ent, mover);
         _physics.SetCanCollide(ent.Owner, false);
@@ -148,7 +154,12 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
 
         RemComp<RelayInputMoverComponent>(ent);
         if (_net.IsServer && !TerminatingOrDeleted(mover))
+        {
+            if (TryComp<NodeCrawlerMovementComponent>(mover, out var movement))
+                EjectAir((mover, movement));
+
             QueueDel(mover); // deletion isn't predicted because client queued deletion doesn't interact well with container stuff
+        }
 
         _physics.SetCanCollide(ent.Owner, true);
         _eye.RefreshVisibilityMask(ent.Owner);
@@ -185,16 +196,16 @@ public abstract class SharedNodeCrawlSystem : EntitySystem
 
     private void OnMovementShutdown(Entity<NodeCrawlerMovementComponent> ent, ref ComponentShutdown args)
     {
-        if (ent.Comp.Node is { } node)
+        if (ent.Comp.Node is { } node && node.IsValid())
         {
             var nodeComp = Comp<CrawlableNodeComponent>(node);
             nodeComp.Crawlers.Remove(ent);
             Dirty(node, nodeComp);
         }
 
-        if (ent.Comp.HeldCrawler is { } crawler)
+        if (ent.Comp.HeldCrawler is { } crawler && crawler.IsValid() && !TerminatingOrDeleted(crawler) && TryComp<NodeCrawlerComponent>(crawler, out var nodeCrawler))
         {
-            ExitNodeCrawl((crawler, Comp<NodeCrawlerComponent>(crawler)));
+            ExitNodeCrawl((crawler, nodeCrawler));
         }
     }
 

@@ -50,7 +50,6 @@ public sealed partial class LavalandSystem : EntitySystem
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly ITileDefinitionManager _tiledef = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly INetConfigurationManager _config = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly AtmosphereSystem _atmos = default!;
