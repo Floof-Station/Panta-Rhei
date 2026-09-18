@@ -8,6 +8,15 @@
     collection: ToySqueak
 
 - type: speechSounds
+  id: Suppy
+  saySound:
+    collection: SuppySay
+  askSound:
+    collection: SuppyAsk
+  exclaimSound:
+    collection: SuppyExclaim
+    
+- type: speechSounds    
   id: Allulalo
   saySound:
     path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
