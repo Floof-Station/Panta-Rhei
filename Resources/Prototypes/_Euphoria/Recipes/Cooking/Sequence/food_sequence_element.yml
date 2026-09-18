@@ -77,3 +77,40 @@
     state: rods
   tags:
   - Rod
+
+# berry central
+- type: foodSequenceElement
+  id: Blackberry
+  name: food-sequence-content-blackberry
+  sprites:
+  - sprite: _Euphoria/Objects/Specific/Hydroponics/blackberry.rsi
+    state: produce
+  tags:
+  - Fruit
+
+- type: foodSequenceElement
+  id: Blueberry
+  name: food-sequence-content-blueberry
+  sprites:
+  - sprite: _Euphoria/Objects/Specific/Hydroponics/blueberry.rsi
+    state: produce
+  tags:
+  - Fruit
+
+- type: foodSequenceElement
+  id: Raspberry
+  name: food-sequence-content-raspberry
+  sprites:
+  - sprite: _Euphoria/Objects/Specific/Hydroponics/raspberry.rsi
+    state: produce
+  tags:
+  - Fruit
+
+- type: foodSequenceElement
+  id: BlueRaspberry
+  name: food-sequence-content-blueraspberry
+  sprites:
+  - sprite: _Euphoria/Objects/Specific/Hydroponics/blueraspberry.rsi
+    state: produce
+  tags:
+  - Fruit

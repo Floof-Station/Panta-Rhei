@@ -1,0 +1,126 @@
+﻿- type: seed
+  id: blackberry
+  name: seeds-blackberry-name
+  noun: seeds-noun-seeds
+  displayName: seeds-blackberry-display-name
+  plantRsi: _Euphoria/Objects/Specific/Hydroponics/blackberry.rsi
+  packetPrototype: BlackberrySeeds
+  productPrototypes:
+  - FoodBlackberry
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 10
+  production: 10
+  yield: 4
+  potency: 10
+  idealLight: 8
+  growthStages: 3
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20
+    BlackBerryJuice:
+      Min: 5
+      Max: 10
+      PotencyDivisor: 25
+    Vitamin:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 50
+
+- type: seed
+  id: blueberry
+  name: seeds-blueberry-name
+  noun: seeds-noun-seeds
+  displayName: seeds-blueberry-display-name
+  plantRsi: _Euphoria/Objects/Specific/Hydroponics/blueberry.rsi
+  packetPrototype: BlueberrySeeds
+  productPrototypes:
+  - FoodBlueberry
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 10
+  production: 10
+  yield: 4
+  potency: 10
+  idealLight: 8
+  growthStages: 3
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20
+    BlueberryJuice:
+      Min: 5
+      Max: 10
+      PotencyDivisor: 25
+    Vitamin:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 50
+
+- type: seed
+  id: raspberry
+  name: seeds-raspberry-name
+  noun: seeds-noun-seeds
+  displayName: seeds-raspberry-display-name
+  plantRsi: _Euphoria/Objects/Specific/Hydroponics/raspberry.rsi
+  packetPrototype: RaspberrySeeds
+  productPrototypes:
+  - FoodRaspberry
+  mutationPrototypes:
+  - blueraspberry # mutates into blue raspberry
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 10
+  production: 10
+  yield: 4
+  potency: 10
+  idealLight: 8
+  growthStages: 3
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20
+    RaspberryJuice:
+      Min: 5
+      Max: 10
+      PotencyDivisor: 25
+    Vitamin:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 50
+
+- type: seed
+  id: blueraspberry
+  name: seeds-blueraspberry-name
+  noun: seeds-noun-seeds
+  displayName: seeds-blueraspberry-display-name
+  plantRsi: _Euphoria/Objects/Specific/Hydroponics/blueraspberry.rsi
+  packetPrototype: BlueRaspberrySeeds
+  productPrototypes:
+  - FoodBlueRaspberry
+  harvestRepeat: Repeat
+  lifespan: 55
+  maturation: 10
+  production: 10
+  yield: 4
+  potency: 10
+  idealLight: 8
+  growthStages: 3
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 20
+      PotencyDivisor: 20
+    BlueRaspberryJuice:
+      Min: 5
+      Max: 10
+      PotencyDivisor: 25
+    Vitamin:
+      Min: 1
+      Max: 2
+      PotencyDivisor: 50
+    # maybe give it a chem? i don't know what to give this thing...

@@ -1,0 +1,185 @@
+﻿# blackberry cake
+- type: entity
+  name: blackberry cake
+  parent: FoodCakeBase
+  id: FoodCakeBlackberry
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: black
+  - type: SliceableFood
+    slice: FoodCakeBlackberrySlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: black
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: black
+
+- type: entity
+  name: blackberry cake slice
+  parent: FoodCakeSliceBase
+  id: FoodCakeBlackberrySlice
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: black
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: black
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: black
+
+# blueberry cake is a base game food so will skip it here
+
+# raspberry cake
+- type: entity
+  name: raspberry cake
+  parent: FoodCakeBase
+  id: FoodCakeRaspberry
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: red
+  - type: SliceableFood
+    slice: FoodCakeRaspberrySlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: red
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: red
+
+- type: entity
+  name: raspberry cake slice
+  parent: FoodCakeSliceBase
+  id: FoodCakeRaspberrySlice
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: red
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: red
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: red
+
+# blueraspberry cake
+- type: entity
+  name: blueraspberry cake
+  parent: FoodCakeBase
+  id: FoodCakeBlueRaspberry
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain
+    - state: alpha-filling
+      color: cyan
+  - type: SliceableFood
+    slice: FoodCakeBlueRaspberrySlice
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-inhand-left
+      - state: alpha-filling-inhand-left
+        color: cyan
+      right:
+      - state: plain-inhand-right
+      - state: alpha-filling-inhand-right
+        color: cyan
+
+- type: entity
+  name: raspberry cake slice
+  parent: FoodCakeSliceBase
+  id: FoodCakeBlueRaspberrySlice
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: cyan
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+    - Slice
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: plain-slice-inhand-left
+      - state: alpha-slice-filling-inhand-left
+        color: cyan
+      right:
+      - state: plain-slice-inhand-right
+      - state: alpha-slice-filling-inhand-right
+        color: cyan
+
+# fruit cake
+- type: entity
+  name: fruit cake
+  parent: FoodCakeBase
+  id: FoodCakeFruitCake
+  description: Stains your teeth.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/berry_food.rsi
+    state: cake_fruit
+  - type: Tag
+    tags:
+    - Cake
+    - Fruit
+  - type: Item

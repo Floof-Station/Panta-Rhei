@@ -1169,7 +1169,10 @@
   group: Pie
   solids:
     FoodDoughPie: 1
-    FoodBerries: 3
+    #FoodBerries: 3 # Euphroia - swaping to other berries
+    FoodBlueberry: 1 # Euphroia
+    FoodBlackberry: 1 # Euphroia
+    FoodRaspberry: 1 # Euphroia
     FoodPlateTin: 1
 
 - type: microwaveMealRecipe
@@ -1447,7 +1450,8 @@
     Milk: 5
     Egg: 6
   solids:
-    FoodBerries: 2
+    #FoodBerries: 2 # Euphoria
+    FoodBlueberry: 3 # Euphoria switching to blueberry
 
 - type: microwaveMealRecipe
   id: RecipeWaffles
@@ -1574,7 +1578,8 @@
   solids:
     FoodCakePlain: 1
     FoodLemoon: 2
-    FoodBerries: 1 #dark colouring
+    #FoodBerries: 1 #dark colouring # Euphroia - swapping berries
+    FoodBlackberry: 1 # Euproia - it uses dark coloring so blackberry it is
 
 - type: microwaveMealRecipe
   id: RecipeOrangeCake
@@ -1594,7 +1599,8 @@
   group: Cake
   solids:
     FoodCakePlain: 1
-    FoodBerries: 3
+    #FoodBerries: 3 # Euphroia
+    FoodBlueberry: 3 # Euphroia switching to blueberry
 
 - type: microwaveMealRecipe
   id: RecipeLimeCake
@@ -1711,7 +1717,9 @@
   group: Cake
   solids:
     FoodCakeBlueberry: 1
-    FoodBerries: 2
+    #FoodBerries: 2 # Euphroia - adding the other berries
+    FoodBlackberry: 1 # Euphroia
+    FoodRaspberry: 1 # Euphroia
   reagents:
     Milk: 10
 
@@ -2084,7 +2092,8 @@
   solids:
     FoodPlateMuffinTin: 1
     FoodDoughSlice: 1
-    FoodBerries: 1
+    #FoodBerries: 1 # Euphoria - switching to other berries
+    FoodBlueberry: 1 # Euphoria
   reagents:
     Sugar: 10
 
