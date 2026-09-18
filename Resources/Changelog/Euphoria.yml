@@ -5685,18 +5685,156 @@ Entries:
       message: Fixed a lot of bugs and added more bugs to fix.
   id: 707
   time: '2026-09-10T12:08:02.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Tweak
+      message: patch for the voresystem, adjusting components and bugfixes
+  id: 708
+  time: '2026-09-15T08:34:45.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: 'Submarine: Fixed janitor maints door access.'
+  id: 709
+  time: '2026-09-15T14:38:11.0000000+00:00'
 - author: Mnemotechnician
   changes:
+    - type: Fix
+      message: Fixed species names not displaying.
+  id: 710
+  time: '2026-09-12T02:31:07.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Tweak
+      message: Anyone with a bible can exorcise a revenant
+  id: 711
+  time: '2026-09-12T08:41:49.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Fix
+      message: Fixed visuals of rubber magazines for most magazine types.
+  id: 712
+  time: '2026-09-12T08:44:12.0000000+00:00'
+- author: Dunrab
+  changes:
     - type: Add
-      message: Upstream merge up to 2026-08-12! Wizden and delta-v changes! Woo!
+      message: >-
+        Added a trait for characters that take snouts from the Vulpkanin
+        species, the trait will make things like gas masks display properly on
+        your character.
+  id: 713
+  time: '2026-09-13T07:44:42.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Wagging now only shows up on characters who have tails that can wag.
+  id: 714
+  time: '2026-09-13T12:31:52.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Fix
+      message: Fixed Geras not being able to breath by giving them lungs.
+  id: 715
+  time: '2026-09-13T12:32:13.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added duffel napsack. Large enough for 2 Small crewmates to snuggle
+        together in. 
     - type: Tweak
       message: >-
-        Shadekin have been replaced with an upstream implementation. Characters
-        may need to be manually migrated (export to yaml, edit the export's
-        species from "Shadowkin" to "Shadekin", import)
+        Slightly adjusted loadouts and cargo napsack crate to account for duffel
+        napsacks.
+  id: 716
+  time: '2026-09-14T07:10:29.0000000+00:00'
+- author: Raikyr0
+  changes:
+    - type: Tweak
+      message: >-
+        Bought Juggernaut suit back to normal syndicate uplinks and lowered to
+        pre-rebase prices.
+  id: 717
+  time: '2026-09-14T07:14:31.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Add
+      message: Added the esteemed Chief Justice Samzar'Hrar as a plushie!
+  id: 718
+  time: '2026-09-14T10:12:52.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Add
+      message: Trash Lizards - a port of bingles from goobstation
+  id: 719
+  time: '2026-09-14T10:13:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: For those that are the reel deal, you can now craft a Bass Guitar.
+  id: 720
+  time: '2026-09-15T08:38:07.0000000+00:00'
+- author: Aikakakah
+  changes:
+    - type: Add
+      message: 'Markings now support shaders. '
+  id: 721
+  time: '2026-09-15T08:38:38.0000000+00:00'
+- author: Mnemotechnician
+  changes:
     - type: Fix
-      message: Weather cycles should now correctly set map atmosphere on non-grid maps.
+      message: >-
+        Importing a profile with "Shadowkin" in the `species` field should no
+        longer cause profile import to fail.
+  id: 722
+  time: '2026-09-15T12:29:41.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Tweak
+      message: 'Changed the "No Paradox Clone" trait to not take up a trait slot. '
+  id: 723
+  time: '2026-09-16T03:29:28.0000000+00:00'
+- author: Dunrab
+  changes:
     - type: Fix
-      message: Fixed a lot of bugs and added more bugs to fix.
-  id: 708
-  time: '2026-09-10T12:08:02.0000000+00:00'
+      message: >-
+        Slimes and Kitunes should now be able to safely polymorph in the
+        ghostbar.
+    - type: Fix
+      message: >-
+        Players at the ghostbar should no longer be able to be telepathic or
+        marked for removal or marked to be taught a lesson.
+  id: 724
+  time: '2026-09-16T03:32:23.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Tweak
+      message: >-
+        Allulalos can no longer take Claws, Natural Weapon Removal, Talons, and
+        Small traits. They are already smol with a bite to match.
+    - type: Tweak
+      message: >-
+        Allulalo marking names are changed for better discernment from other
+        markings.
+    - type: Fix
+      message: >-
+        The Small trait should now be correctly restricted from species who can
+        be put into bags as an innate capability
+    - type: Tweak
+      message: >-
+        Kitsune can no longer take the 'lightweight drunk' trait as they already
+        possess it innately at a higher intensity.
+  id: 725
+  time: '2026-09-16T09:57:04.0000000+00:00'
+- author: Gaybritishcow
+  changes:
+    - type: Add
+      message: Added more AAC words
+  id: 726
+  time: '2026-09-16T09:58:06.0000000+00:00'
+- author: cyberjoel
+  changes:
+    - type: Tweak
+      message: Improved functionality of the Ahelp and Chelp systems.
+  id: 727
+  time: '2026-09-18T20:53:12.0000000+00:00'

@@ -104,6 +104,9 @@ public sealed class YamlPathParser(string input)
         public bool IsIndexing => Index >= 0;
         public bool IsError => !IsMapping && !IsIndexing;
 
+        /// <summary>
+        ///     Resolves the corresponding subnode in the given node. Throws an ArgumentException if the path doesn't match.
+        /// </summary>
         public YamlNode? Resolve(YamlNode parent)
         {
             if (IsMapping)
@@ -112,7 +115,6 @@ public sealed class YamlPathParser(string input)
                     throw new ArgumentException($"Cannot resolve mapping part {this} on non-mapping node {parent}!");
                 return mapping.TryGetNode(Key!, out var result) ? result : null;
             }
-
             if (IsIndexing)
             {
                 if (parent is not YamlSequenceNode sequence)

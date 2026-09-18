@@ -5,23 +5,26 @@ using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
 namespace Content.Shared._Floof.Vore;
 
+/// <summary>
+/// Handling of predator component for customization
+/// </summary>
 [RegisterComponent]
-public sealed partial class VoreComponent : Component
+public sealed partial class PredComponent : Component
 {
-    /// <summary>
     /// The ID of the container used for vore mechanics.
-    /// </summary>
     //TODO later include customizable containers for different vore types
     [DataField("containerId")]
     public string ContainerId = "vore_container";
     [DataField]
     public SoundSpecifier SoundDevour = new SoundPathSpecifier("/Audio/_Floof/Vore/gulp.ogg");
 }
+
+/// <summary>
+/// Event raised when a prey is devoured 
+/// </summary>
 [Serializable, NetSerializable]
 public sealed partial class OnVoreDoAfter : SimpleDoAfterEvent{
-    /// <summary>
-    /// Maximum number of prey this entity can hold.
-    /// </summary>
+    /// Harcoded max prey for balancing purpose
     [DataField("maxPrey")]
     public int MaxPrey = 3;
     public OnVoreDoAfter(int maxPrey)

@@ -9,32 +9,39 @@ using Content.Shared.Medical.SuitSensors;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Movement.Events;
+using Content.Shared.Movement.Components;
+using Content.Shared.Movement;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Content.Shared._Floof.Leash;
+using Content.Shared._Floof.Leash.Components;
 using Robust.Shared.Containers;
-
 namespace Content.Server._Floof.Vore;
 
-public sealed class DevouredSystem : EntitySystem
+public sealed class PreySystem : EntitySystem
 {
     [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
     [Dependency] private readonly SharedSuitSensorSystem _suitSensorSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly InventorySystem _inventorySystem = default!;
-
+    [Dependency] private readonly LeashSystem _leash = default!;
+    
     private readonly HashSet<EntityUid> _pendingImmunityUpdates = new();
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<VoreComponent, EntInsertedIntoContainerMessage>(OnPreyInsertedIntoContainer);
-        SubscribeLocalEvent<VoreComponent, EntRemovedFromContainerMessage>(OnPreyRemovedFromContainer);
-
+        SubscribeLocalEvent<PredComponent, EntInsertedIntoContainerMessage>(OnPreyInsertedIntoContainer);
+        SubscribeLocalEvent<PredComponent, EntRemovedFromContainerMessage>(OnPreyRemovedFromContainer);
+        
         SubscribeLocalEvent<DevouredComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<DevouredComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<DevouredComponent, MobStateChangedEvent>(OnPreyMobStateChanged);
         SubscribeLocalEvent<DevouredComponent, MoveInputEvent>(OnRelayMovement);
     }
 
+    /// <summary>
+    /// To get the most recent values for current container
+    /// </summary>
     public override void Update(float frameTime){
         base.Update(frameTime);
 
@@ -48,17 +55,28 @@ public sealed class DevouredSystem : EntitySystem
     /// <summary>
     /// responsible for giving the component that gives the prey immunities
     /// </summary>
-    private void OnPreyInsertedIntoContainer(EntityUid uid, VoreComponent comp, EntInsertedIntoContainerMessage args){
+    private void OnPreyInsertedIntoContainer(EntityUid uid, PredComponent comp, EntInsertedIntoContainerMessage args){
         //double check making sure its a vore_container
         if (args.Container.ID != comp.ContainerId)
             return;
-        EnsureComp<DevouredComponent>(args.Entity);
+        var prey = args.Entity;
+        /*in case prey is leashed remove it to prevent bug that keeps pred from 
+        being able to move since prey is still leashed */
+        if (TryComp<LeashedComponent>(prey, out var leashed)
+            && leashed.Leash is not null
+            && TryGetEntity(leashed.Leash.Value, out var leash)
+            && TryComp<LeashComponent>(leash.Value, out var leashComp))
+        {
+            _leash.RemoveLeash((prey, leashed), (leash.Value, leashComp));
+        }
+
+        EnsureComp<DevouredComponent>(prey);
     }
 
     /// <summary>
     /// responsible for removing components and immunities
     /// </summary>
-    private void OnPreyRemovedFromContainer(EntityUid uid, VoreComponent comp, EntRemovedFromContainerMessage args){
+    private void OnPreyRemovedFromContainer(EntityUid uid, PredComponent comp, EntRemovedFromContainerMessage args){
         if (TryComp<DevouredComponent>(args.Entity, out _))
             _pendingImmunityUpdates.Add(args.Entity);
     }
@@ -76,15 +94,13 @@ public sealed class DevouredSystem : EntitySystem
         if (args.User != args.Target)
             return;
 
-
         var pred = container.Owner;
         var prey = uid;
 
         args.Verbs.Add(new Verb
         {
             Text = "Struggle Free",
-            Category = VoreVerbCategory.VoreGeneral,
-            Act = () =>
+            Act = () => 
             {
                 _popupSystem.PopupEntity("You struggle free!", prey, prey);
                 _popupSystem.PopupEntity("Your prey escaped!", pred, pred);
@@ -100,13 +116,15 @@ public sealed class DevouredSystem : EntitySystem
     private void OnPreyMobStateChanged(EntityUid uid, DevouredComponent comp, ref MobStateChangedEvent args){
         if (args.NewMobState != MobState.Dead && args.NewMobState != MobState.Critical)
             return;
-        if (!TryComp<VoreComponent>(uid, out var vore))
-            return;
 
         var safety = 0;
-        while (_containerSystem.TryGetContainingContainer(uid, out var container) && container.ID == vore.ContainerId){
+        while (_containerSystem.TryGetContainingContainer(uid, out var container)){
             // prevention of possible infinite loop incase failed removal (better safe than sorry)
             if (++safety > 10)
+                break;
+            if (!TryComp<PredComponent>(container.Owner, out var vore))
+                break;
+            if (container.ID != vore.ContainerId)
                 break;
             if (!_containerSystem.Remove(uid, container))
                 break;
@@ -129,9 +147,10 @@ public sealed class DevouredSystem : EntitySystem
     /// true if the entity is inside a vore container
     /// </returns>
     private bool IsInVoreContainer(EntityUid uid){
-        if (!TryComp<VoreComponent>(uid, out var comp))
+        if (!_containerSystem.TryGetContainingContainer(uid, out var container))
             return false;
-        return _containerSystem.TryGetContainingContainer(uid, out var container) &&
+
+        return TryComp<PredComponent>(container.Owner, out var comp) &&
                container.ID == comp.ContainerId;
     }
 
