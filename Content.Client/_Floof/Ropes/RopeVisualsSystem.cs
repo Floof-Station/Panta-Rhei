@@ -1,21 +1,20 @@
-using Content.Client.Physics;
 using Robust.Client.Graphics;
 
-namespace Content.Client._Floof.Leash;
+namespace Content.Client._Floof.Ropes;
 
-public sealed class LeashVisualsSystem : EntitySystem
+public sealed class RopeVisualsSystem : EntitySystem
 {
     [Dependency] private readonly IOverlayManager _overlay = default!;
 
     public override void Initialize()
     {
         base.Initialize();
-        _overlay.AddOverlay(new LeashVisualsOverlay(EntityManager));
+        _overlay.AddOverlay(new RopeVisualsOverlay(EntityManager));
     }
 
     public override void Shutdown()
     {
         base.Shutdown();
-        _overlay.RemoveOverlay<LeashVisualsOverlay>();
+        _overlay.RemoveOverlay<RopeVisualsOverlay>();
     }
 }

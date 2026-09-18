@@ -1,0 +1,67 @@
+- type: entity
+  id: RopeBundleBase
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tools/rope_bundle.rsi
+    layers:
+    - state: icon
+  - type: Item
+    sprite: _Floof/Objects/Tools/rope_bundle.rsi
+  - type: RopeConnector
+    connectDelay: 3
+    targetWhitelist:
+      components:
+      - Item
+      - Machine
+      tags:
+      - Crate
+    targetBlacklist:
+      components:
+      - Incorporeal
+      - VirtualItem
+  - type: EntityConfiguration
+    configGroups:
+      length:
+        name: leash-config-category-length
+        options:
+        - name: leash-config-length
+          value: 10
+        - name: leash-config-length
+          value: 7.5
+        - name: leash-config-length
+          value: 5
+        - name: leash-config-length
+          value: 4
+        - name: leash-config-length
+          value: 3
+  - type: Anchorable
+    delay: 3
+    snap: false # One day this will work. Not today though.
+
+- type: entity
+  id: RopeBundleBasic
+  parent: RopeBundleBase
+  name: rope bundle
+  description: A bundle of rope used to connect objects together.
+  components:
+  - type: RopeConnector
+    ropePrototype: Leash20
+    handlePrototype: RopeBundleBasicHandle
+
+# Rope handle. Does nothing.
+- type: entity
+  id: RopeBundleBasicHandle
+  parent: BaseItem
+  name: handle
+  description: An end of a rope.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Tools/rope_bundle.rsi
+    layers:
+    - state: icon
+    scale: 0.7, 0.7
+  - type: Item
+    sprite: _Floof/Objects/Tools/rope_bundle.rsi

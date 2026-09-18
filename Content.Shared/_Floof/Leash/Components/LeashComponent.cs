@@ -1,5 +1,7 @@
+using Content.Shared._Floof.Ropes.Prototypes;
 using Content.Shared._Floof.Util;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -9,28 +11,12 @@ namespace Content.Shared._Floof.Leash.Components;
 public sealed partial class LeashComponent : Component
 {
     /// <summary>
-    ///     Maximum number of leash joints that this entity can create.
+    ///     Maximum number of ropes this leash can create.
     /// </summary>
     [DataField, AutoNetworkedField]
     public int MaxJoints = 1;
 
-    /// <summary>
-    ///     Default length of the leash joint.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float Length = 3.5f;
-
-    /// <summary>
-    ///     List of possible lengths this leash may be assigned to be the user. If null, the length cannot be changed.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float[]? LengthConfigs;
-
-    /// <summary>
-    ///     Maximum distance between the anchor and the puller beyond which the leash will break.
-    /// </summary>
-    [DataField, AutoNetworkedField]
-    public float MaxDistance = 8f;
+    public float CurrentLength = 3f;
 
     /// <summary>
     ///     The time it takes for one entity to attach/detach the leash to/from another entity.
@@ -44,11 +30,11 @@ public sealed partial class LeashComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan SelfDetachDelay = TimeSpan.FromSeconds(8f);
 
+    /// <summary>
+    ///     Interval at which the holder of the leash can pull attached entities closer to itself.
+    /// </summary>
     [DataField, AutoNetworkedField]
-    public SpriteSpecifier? LeashSprite;
-
-    [DataField, AutoNetworkedField]
-    public Ticker PullInterval = new(TimeSpan.FromSeconds(1.5f));
+    public Ticker PullInterval = new(TimeSpan.FromSeconds(0.5f));
 
     /// <summary>
     ///     List of all joints and their respective pulled entities created by this leash.
@@ -56,32 +42,27 @@ public sealed partial class LeashComponent : Component
     [DataField, AutoNetworkedField]
     public List<LeashData> Leashed = new();
 
+    public ProtoId<RopeConfigurationPrototype> RopeConfig = "Leash10";
+
     [DataDefinition, Serializable, NetSerializable]
     public sealed partial class LeashData
     {
         /// <summary>
-        ///     Id of the joint created by this leash. May be null if this leash does not currently create a joint
-        ///     (e.g. because it's attached to the same entity who holds it)
+        ///     ID of the rope data entity representing this leash. Can be null if it hasn't been created yet.
         /// </summary>
         [DataField]
-        public string? JointId = null;
+        public NetEntity? Rope;
 
         /// <summary>
         ///     The entity attached to this leash. NOT the anchor.
         /// </summary>
         [DataField]
-        public NetEntity Pulled = NetEntity.Invalid;
+        public NetEntity Pulled;
 
-        /// <summary>
-        ///     Entity used to visualize the leash. Created dynamically.
-        /// </summary>
-        [DataField]
-        public NetEntity? LeashVisuals = null;
-
-        public LeashData(string? jointId, NetEntity pulled)
+        public LeashData(NetEntity? rope, NetEntity pulled)
         {
-            JointId = jointId;
+            Rope = rope;
             Pulled = pulled;
         }
-    };
+    }
 }
