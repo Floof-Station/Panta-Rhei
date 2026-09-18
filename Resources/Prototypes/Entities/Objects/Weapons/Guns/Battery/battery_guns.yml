@@ -984,10 +984,12 @@
     sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
     layers:
     - state: base
-      map: [ "enum.GunVisualLayers.Base" ]
-    - state: mag-unshaded-1
-      visible: false
-      map: [ "enum.GunVisualLayers.MagUnshaded" ]
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mode-disabler
+      shader: unshaded
+      map: [ "Firemode" ]
+    - state: mag-unshaded-3
+      map: ["enum.GunVisualLayers.MagUnshaded"]
       shader: unshaded
   - type: MagazineVisuals
     magState: mag
@@ -1008,17 +1010,30 @@
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/laser_cannon.ogg
   - type: BatteryAmmoProvider
-    proto: BulletLaserMagnum
-    fireCost: 150
-  - type: BatteryWeaponFireModes
+    proto: BulletDisabler
+    fireCost: 62.5
+  - type: EnergyGun
     fireModes:
     - proto: BulletLaserMagnum
       fireCost: 150
+      name: magnum
+      state: special
     - proto: BulletEnergyGunLaser #Delta V - Energy guns pierce by default
       fireCost: 150
+      name: lethal
+      state: lethal
     - proto: BulletDisabler
       fireCost: 62.5
+      name: disable
+      state: disabler
       pacifismAllowedMode: true
+  - type: GenericVisualizer
+    visuals:
+      enum.EnergyGunFireModeVisuals.State:
+        Firemode:
+          Disabler: { state: mode-disabler }
+          Lethal: { state: mode-lethal }
+          Special: { state: mode-magnum }
   - type: BatterySelfRecharger
     autoRechargeRate: 48
     autoRechargePauseTime: 10
