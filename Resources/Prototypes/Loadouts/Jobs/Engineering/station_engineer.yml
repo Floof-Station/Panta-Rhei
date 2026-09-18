@@ -122,6 +122,6 @@
   id: SeniorEngineerPDA
   effects:
   - !type:GroupLoadoutEffect
-    proto: SeniorEngineering
-  equipment:
+    proto: FloofSeniorEngineering # Euphoria - need the hours for the PDA to
+  equipment:                      # match our different time requirement for the role
     id: SeniorEngineerPDA
