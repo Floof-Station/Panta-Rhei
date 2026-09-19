@@ -43,6 +43,8 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         SubscribeLocalEvent<RopeConnectorComponent, RopeConnectorAttachedDoAfterEvent>(OnAttachedDoAfter);
         SubscribeLocalEvent<RopeConnectorAttachedComponent, RopeConnectorDetachedDoAfterEvent>(OnDetachedDoAfter);
+
+        SubscribeLocalEvent<RopeConnectorRopeComponent, ComponentShutdown>(OnRopeShutdown);
     }
 
     private void OnGetConnectorVerbs(Entity<RopeConnectorComponent> ent, ref GetVerbsEvent<UtilityVerb> args)
@@ -112,7 +114,7 @@ public sealed class RopeConnectorSystem : EntitySystem
     private void OnColorPainted(Entity<RopeConnectorComponent> ent, ref ColorPaintChangedEvent args)
     {
         if (GetRope(ent) is { } rope)
-            _ropes.SetRopeColor(rope!, args.NewColor);
+            _ropes.SetRopeColor(rope.AsNullable(), args.NewColor);
     }
 
     private void OnConfigured(Entity<RopeConnectorComponent> ent, ref ConfigurationSelectedEvent args)
@@ -146,6 +148,20 @@ public sealed class RopeConnectorSystem : EntitySystem
             return;
 
         TryDetach(anchor, args.User);
+    }
+
+    private void OnRopeShutdown(Entity<RopeConnectorRopeComponent> ent, ref ComponentShutdown args)
+    {
+        if (!TryComp<RopeConnectorComponent>(ent.Comp.Connector, out var connectorComp)
+            || !TryComp<RopeComponent>(ent, out var ropeComp))
+            return;
+
+        // Cleanup anchors
+        foreach (var anchor in _ropes.EnumerateAnchors((ent.Owner, ropeComp)))
+            RemCompDeferred<RopeAttachedComponent>(anchor);
+
+        if (connectorComp.RopeEntity == ent)
+            connectorComp.RopeEntity = null;
     }
 
     private void StartAttaching(Entity<RopeConnectorComponent> connector, EntityUid target, EntityUid user, RopeSide side)
@@ -201,23 +217,24 @@ public sealed class RopeConnectorSystem : EntitySystem
             if (!_containers.TryRemoveFromContainer(connector.Owner, false, out var inContainer) && inContainer)
                 return false;
 
-            _ropes.TryDetachRopeSide(rope, side);
+            _ropes.TryDetachRopeSide(rope.AsNullable(), side);
         }
 
         var result = side switch
         {
-            RopeSide.End => _ropes.TryConnectRopeEnd(rope!, anchor),
-            RopeSide.Start => _ropes.TryConnectRopeStart(rope!, anchor),
+            RopeSide.End => _ropes.TryConnectRopeEnd(rope.AsNullable(), anchor),
+            RopeSide.Start => _ropes.TryConnectRopeStart(rope.AsNullable(), anchor),
             _ => false,
         };
         if (!result)
             return false;
 
-        _ropes.DistributeLinksBetweenAnchors(rope, true);
+        _ropes.DistributeLinksBetweenAnchors(rope.AsNullable(), true);
 
         var attachedComp = EnsureComp<RopeConnectorAttachedComponent>(anchor);
         attachedComp.Connector = connector;
         attachedComp.Side = side;
+        attachedComp.DetachDelay = connector.Comp.ConnectDelay;
 
         // If this is the master, we take the rope out of the user's hands and put it in a container on this connector
         if (isMaster)
@@ -240,9 +257,13 @@ public sealed class RopeConnectorSystem : EntitySystem
         if (!TryComp<RopeConnectorComponent>(connector, out var connectorComp) || GetRope((connector, connectorComp)) is not { } rope)
             return false;
 
+        // I tried, i genuinely tried. But the amount of edge cases... It was INSANE.
+        // Just delete the rope and forget it ever existed. This is better for everyone's sanity.
+        PredictedQueueDel(connectorComp.RopeEntity);
+        connectorComp.RopeEntity = null;
+
         // If the connector is currently inside a container, it means that both of its rope sides have been attached
         // We need to extract it from the container and set whichever side that was removed as the new master
-        var shouldReconnectRope = false;
         if (_containers.TryGetContainingContainer(connector, out var connectorContainer)
             && connectorContainer.ID == RopeConnectorAttachedComponent.ConnectorContainer)
         {
@@ -250,15 +271,8 @@ public sealed class RopeConnectorSystem : EntitySystem
                 return false;
 
             _hands.PickupOrDrop(user, connector, true, true, true, true);
-
             connectorComp.MasterSide = side;
-            shouldReconnectRope = true;
         }
-
-        // If it so happens that
-        // Now after the connector is in-hand or on-ground, we need to actually move the rope
-        if (_ropes.TryDetachRopeSide(rope, side) && shouldReconnectRope)
-            _ropes.TryConnectRopeSide(rope, connector, side);
 
         // Just so it doesn't allow a second detach on the same tick
         anchor.Comp.Connector = EntityUid.Invalid;
@@ -266,12 +280,18 @@ public sealed class RopeConnectorSystem : EntitySystem
         RemCompDeferred(anchor, anchor.Comp);
 
         Dirty(connector, connectorComp);
-        Dirty(anchor);
         return true;
     }
 
     public bool CanAttach(Entity<RopeConnectorComponent> connector, EntityUid anchor, RopeSide side, out string? reasonLoc)
     {
+        if (_whitelists.IsWhitelistFail(connector.Comp.TargetWhitelist, anchor)
+            || _whitelists.IsWhitelistPass(connector.Comp.TargetBlacklist, anchor))
+        {
+            reasonLoc = "rope-connector-whitelist-fail";
+            return false;
+        }
+
         // Is the relevant side already attached?
         var currentAnchorData = GetAnchorInfo(connector, side);
         if (currentAnchorData?.Anchor is { Valid: true } curAnchor && curAnchor != connector.Owner)
@@ -297,14 +317,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         // I couldn't be bothered to allow connecting multiple ropes to the same anchor here
         if (TryComp<RopeConnectorComponent>(anchor, out var existingAnchor) && existingAnchor.RopeEntity is { Valid: true })
         {
-            reasonLoc = "rope-connector-already-attached";
-            return false;
-        }
-
-        if (_whitelists.IsWhitelistFail(connector.Comp.TargetWhitelist, anchor)
-            || _whitelists.IsWhitelistPass(connector.Comp.TargetBlacklist, anchor))
-        {
-            reasonLoc = "rope-connector-whitelist-fail";
+            reasonLoc = "rope-connector-anchor-already-attached";
             return false;
         }
 
@@ -344,10 +357,13 @@ public sealed class RopeConnectorSystem : EntitySystem
         if (connector.Comp.RopeEntity is { } invalidRope)
             TryQueueDel(invalidRope);
 
+        connector.Comp.MasterSide = RopeSide.Start; // Nothing we can do
         if (!_ropes.TryCreateRope(connector, null, connector.Comp.RopePrototype, connector.Comp.CurrentLength, out var rope))
             return null;
 
-        connector.Comp.RopeEntity =  rope;
+        EnsureComp<RopeConnectorRopeComponent>(rope.Value).Connector = connector;
+
+        connector.Comp.RopeEntity = rope;
         Dirty(connector);
 
         _ropes.SetRopeColor(rope.Value!, _paint.GetEffectiveColor(connector));

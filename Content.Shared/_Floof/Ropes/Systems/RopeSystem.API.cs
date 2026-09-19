@@ -136,10 +136,16 @@ public sealed partial class RopeSystem
         if (rope.Comp.ConnectedStart is not { } left || rope.Comp.ConnectedEnd is not { } right)
             return;
 
-        DistributeLinksBetweenAnchors(left.Anchor, right.Anchor, rope!, arcApproximation);
+        DistributeLinksBetween(left.Anchor, right.Anchor, rope!, arcApproximation);
     }
 
-    private void DistributeLinksBetweenAnchors(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope, bool arcApproximation = true)
+    /// <summary>
+    ///     Repositions all rope links so that they uniformly distributed between the two specified entities.
+    ///
+    ///     <p>If <paramref name="arcApproximation"/> is true,
+    ///     distributes the points on an approximated arc so that the length of the rope is roughly equal to its ideal length.</p>
+    /// </summary>
+    private void DistributeLinksBetween(EntityUid leftAnchor, EntityUid rightAnchor, Entity<RopeComponent> rope, bool arcApproximation = true)
     {
         if (rope.Comp.Links.Count == 0)
             return;
@@ -150,7 +156,7 @@ public sealed partial class RopeSystem
         var map = leftXform.MapID;
         if (leftXform.MapID != rightXform.MapID)
         {
-            Log.Error($"Cannot distribute leash joints between {ToPrettyString(leftAnchor)} and {ToPrettyString(rightAnchor)} as they are on different maps.");
+            Log.Error($"Cannot distribute joints between {ToPrettyString(leftAnchor)} and {ToPrettyString(rightAnchor)} as they are on different maps.");
             return;
         }
 
@@ -400,7 +406,7 @@ public sealed partial class RopeSystem
                 return false;
             }
 
-            DistributeLinksBetweenAnchors(leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rope!);
+            DistributeLinksBetween(leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rope!);
         }
         else if (leftAnchor != null)
             SetLinksCoordinates(rope, Transform(leftAnchor.Value.Anchor).Coordinates);

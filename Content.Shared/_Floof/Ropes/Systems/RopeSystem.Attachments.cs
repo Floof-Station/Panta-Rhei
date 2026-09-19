@@ -22,7 +22,7 @@ public sealed partial class RopeSystem
     {
         foreach (var rope in ent.Comp.AttachedRopes)
         {
-            if (!_ropeQuery.TryComp(rope.Rope, out var ropeComp))
+            if (!_ropeQuery.TryComp(rope.Rope, out var ropeComp) || TerminatingOrDeleted(rope.Rope))
                 continue;
 
             // Try detaching the rope. This code duplication is turning into spaghetti.
@@ -224,8 +224,12 @@ public sealed partial class RopeSystem
     /// </summary>
     public bool TryConnectRopeSide(Entity<RopeComponent?> rope, EntityUid connector, RopeSide side, Vector2 offset = default)
     {
-        if (!Resolve(rope, ref rope.Comp) || GetAnchor(rope!, side) is {} existing)
-            return false; // already attached
+        // Note: we don't allow attaching the same side to another entity unless the rope is currently disabled (jointId == invalidJointMarker)
+        // In case the rope is disabled, this call could be from EnableRope, in which case we want to force it
+        // Ideally this should be made into a `force` parameter, but idc at this point
+        if (!Resolve(rope, ref rope.Comp)
+            || GetAnchor(rope!, side) is {} existing && existing.JointId != _invalidJointMarker)
+            return false;
 
         if (rope.Comp.Links.Count == 0)
         {

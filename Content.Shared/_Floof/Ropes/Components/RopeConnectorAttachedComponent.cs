@@ -29,5 +29,5 @@ public sealed partial class RopeConnectorAttachedComponent : Component
     public bool CanDetach = true;
 
     [DataField, AutoNetworkedField]
-    public TimeSpan DetachDelay = new TimeSpan(3);
+    public TimeSpan DetachDelay = TimeSpan.FromSeconds(3);
 }
