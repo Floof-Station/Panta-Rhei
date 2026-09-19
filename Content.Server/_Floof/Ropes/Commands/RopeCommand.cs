@@ -52,6 +52,33 @@ public sealed class RopeCommand : ToolshedCommand
         return comp.Links.Select(it => it.LinkEntity);
     }
 
+    [CommandImplementation("set_length")]
+    public EntityUid SetLength([PipedArgument] EntityUid rope, float length)
+    {
+        if (!TryComp<RopeComponent>(rope, out var comp))
+            throw new Exception("Not a rope");
+
+        _rope ??= EntityManager.System<RopeSystem>();
+        _rope.SetRopeLength(rope, length);
+
+        return rope;
+    }
+
+    [CommandImplementation("set_links")]
+    public EntityUid SetLinks([PipedArgument] EntityUid rope, int links)
+    {
+        if (!TryComp<RopeComponent>(rope, out var comp))
+            throw new Exception("Not a rope");
+
+        _rope ??= EntityManager.System<RopeSystem>();
+        _rope.SetRopeLinks(rope, links);
+
+        if (!comp.IsDisabled)
+            _rope.DistributeLinksBetweenAnchors(rope);
+
+        return rope;
+    }
+
     [CommandImplementation("connect_start")]
     public EntityUid ConnectStart([PipedArgument] EntityUid rope, EntityUid anchor)
     {
@@ -78,14 +105,27 @@ public sealed class RopeCommand : ToolshedCommand
         return rope;
     }
 
-    [CommandImplementation("detach")]
-    public EntityUid ConnectEnd([PipedArgument] EntityUid rope)
+    [CommandImplementation("detach_start")]
+    public EntityUid DetachStart([PipedArgument] EntityUid rope)
     {
         if (!TryComp<RopeComponent>(rope, out var comp))
             throw new Exception("Not a rope");
 
         _rope ??= EntityManager.System<RopeSystem>();
-        if (!_rope.TryDetachEnd(rope) || !_rope.TryDetachStart(rope))
+        if (!_rope.TryDetachStart(rope))
+            throw new Exception("System call failed");
+
+        return rope;
+    }
+
+    [CommandImplementation("detach_end")]
+    public EntityUid DetachEnd([PipedArgument] EntityUid rope)
+    {
+        if (!TryComp<RopeComponent>(rope, out var comp))
+            throw new Exception("Not a rope");
+
+        _rope ??= EntityManager.System<RopeSystem>();
+        if (!_rope.TryDetachEnd(rope))
             throw new Exception("System call failed");
 
         return rope;

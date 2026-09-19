@@ -255,7 +255,7 @@ public sealed partial class RopeSystem
     ///     Sets the number of links of the rope. Will partially re-create the rope.
     ///     Prototype and spawn coords are determined automatically if not specified.
     /// </summary>
-    /// <summary>If this method is called AFTER the rope is enabled, the caller must disable and re-enable the rope in order to create rope joints.</summary>
+    /// <summary>If this method is called AFTER the rope is enabled, the caller needs to either mark the rope for re-creation or distribute links manually.</summary>
     public void SetRopeLinks(Entity<RopeComponent?> rope, int linkCount, RopeConfigurationPrototype? prototype = null, EntityCoordinates? spawnCoords = null)
     {
         if (!Resolve(rope, ref rope.Comp) || _net.IsClient)
