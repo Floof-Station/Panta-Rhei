@@ -177,3 +177,38 @@
   id: TouchPhrase
   parent: BaseActionPhrase
   text: phrase-touch
+
+- type: quickPhrase
+  id: MakePhrase
+  parent: BaseActionPhrase
+  text: phrase-make
+
+- type: quickPhrase
+  id: PlacePhrase
+  parent: BaseActionPhrase
+  text: phrase-place
+
+- type: quickPhrase
+  id: BelievePhrase
+  parent: BaseActionPhrase
+  text: phrase-believe
+
+- type: quickPhrase
+  id: OpenPhrase
+  parent: BaseActionPhrase
+  text: phrase-open
+
+- type: quickPhrase
+  id: ClosePhrase
+  parent: BaseActionPhrase
+  text: phrase-close
+
+- type: quickPhrase
+  id: LivePhrase
+  parent: BaseActionPhrase
+  text: phrase-live
+
+- type: quickPhrase
+  id: LookPhrase
+  parent: BaseActionPhrase
+  text: phrase-look

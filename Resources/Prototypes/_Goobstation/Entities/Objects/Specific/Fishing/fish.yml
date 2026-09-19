@@ -95,6 +95,9 @@
     state: bass
   - type: Item
     sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+  - type: Tag # Euphoria tag for bass (fih) guitar crafting
+    tags:
+    - BassGuitarFish
 
 - type: entity
   id: FishBingle
