@@ -258,6 +258,13 @@ public sealed class VisualBodySystem : SharedVisualBodySystem
                 // Floofstation - replaced the above
                 _sprite.LayerSetColor(target, layerId,
                     colorDict.TryGetValue(rsi.RsiState, out var color) ? color : Color.White);
+
+                /// Euphoria - add shaders. Set shader: unshaded for glowing markings.
+                if (proto.Shader != null && TryComp<SpriteComponent>(target, out var spriteComp))
+                {
+                    spriteComp.LayerSetShader(layerId, proto.Shader);
+                }
+                /// end Euphoria
             }
 
             applied.Add(marking);

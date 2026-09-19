@@ -2,39 +2,39 @@
   parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Harpy
   onlyGroupWhitelisted: false # Euph - species can use common markings
-  limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 1
-      required: false
-      onlyGroupWhitelisted: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
-      required: false
-      onlyGroupWhitelisted: false
+  limits: # Euph - Switch to common markings
+#    enum.HumanoidVisualLayers.Hair:
+#      limit: 1
+#      required: false
+#      onlyGroupWhitelisted: false
+#    enum.HumanoidVisualLayers.FacialHair:
+#      limit: 1
+#      required: false
+#      onlyGroupWhitelisted: false
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: true
       default: [ HarpyTailPhoenix ]
     enum.HumanoidVisualLayers.HeadTop:
-      limit: 1
+      limit: 10 # Euph - More slots
       required: true
       default: [ HarpyEarsDefault ]
     enum.HumanoidVisualLayers.Chest:
-      limit: 2
+      limit: 10 # Euph - More slots
       required: true
       default: [ HarpyChestDefault ]
-    enum.HumanoidVisualLayers.LLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      limit: 2
-      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 2
+#      required: false
     enum.HumanoidVisualLayers.LArm:
-      limit: 1
+      limit: 10 # Euph - More slots
       required: false
       default: [ HarpyWingDefaultHuescale ]
     enum.HumanoidVisualLayers.RArmExtension:
-      limit: 1
+      limit: 10 # Euph - More slots
       required: true
       default: [ HarpyWingDefaultHuescale ]
 
