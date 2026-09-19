@@ -1,68 +1,68 @@
 - type: markingsGroup
   parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Reptilian
-  limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 1 # Delta V - Reptilians got hair
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      onlyGroupWhitelisted: true
-      limit: 0
-      required: false
+  limits: # Euph - Switch to common markings
+ #   enum.HumanoidVisualLayers.Hair:
+ #     limit: 1 # Delta V - Reptilians got hair
+ #     required: false
+ #   enum.HumanoidVisualLayers.FacialHair:
+ #     onlyGroupWhitelisted: true
+ #     limit: 0
+ #     required: false
     enum.HumanoidVisualLayers.Tail:
-      onlyGroupWhitelisted: true
+      #onlyGroupWhitelisted: true Euph- Common markings
       limit: 1
       required: true
       default: [ LizardTailSmooth ]
-    enum.HumanoidVisualLayers.Chest:
-      onlyGroupWhitelisted: true
-      limit: 3
-      required: false
+ #   enum.HumanoidVisualLayers.Chest:
+ #     onlyGroupWhitelisted: true
+ #     limit: 3
+ #     required: false
     enum.HumanoidVisualLayers.Snout:
-      onlyGroupWhitelisted: true
-      limit: 1
+      #onlyGroupWhitelisted: true Euph - Common markings
+      limit: 10 # Euph - More markings
       required: true
       default: [ LizardSnoutRound ]
-    enum.HumanoidVisualLayers.HeadTop:
-      onlyGroupWhitelisted: true
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.HeadSide:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.LArm:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.RArm:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.LHand:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.RHand:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.LLeg:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.LFoot:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.RFoot:
-      onlyGroupWhitelisted: true
-      limit: 1
-      required: false
+#    enum.HumanoidVisualLayers.HeadTop:
+#      onlyGroupWhitelisted: true
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.HeadSide:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RArm:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LHand:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RHand:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.LFoot:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.RFoot:
+#      onlyGroupWhitelisted: true
+#      limit: 1
+#      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance

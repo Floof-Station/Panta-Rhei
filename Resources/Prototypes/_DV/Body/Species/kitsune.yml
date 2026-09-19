@@ -1,16 +1,16 @@
 - type: markingsGroup
   id: Kitsune
-  parent: Undergarments
-  limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.Snout:
-      limit: 1
-      required: false
+  parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
+  limits: # Euph - Switch to common markings
+#    enum.HumanoidVisualLayers.Hair:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.FacialHair:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.Snout:
+#      limit: 1
+#      required: false
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: true
@@ -19,21 +19,21 @@
       limit: 1
       required: true
       default: [ KitsuneEarsDefault ]
-    enum.HumanoidVisualLayers.Chest:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LLeg:
-      limit: 4
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      limit: 4
-      required: false
-    enum.HumanoidVisualLayers.LArm:
-      limit: 4
-      required: false
-    enum.HumanoidVisualLayers.RArm:
-      limit: 4
-      required: false
+#    enum.HumanoidVisualLayers.Chest:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 4
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 4
+#      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      limit: 4
+#      required: false
+#    enum.HumanoidVisualLayers.RArm:
+#      limit: 4
+#      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
