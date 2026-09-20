@@ -1,3 +1,4 @@
+using Content.Shared._DV.Polymorph;
 using Content.Shared._Floof.CCVar;
 using Content.Shared._Floof.Ropes.Components;
 using Content.Shared.Teleportation.Components;
@@ -14,6 +15,7 @@ public sealed partial class RopeSystem
     {
         SubscribeLocalEvent<RopeAttachedComponent, BeforeTeleportedEvent>(OnBeforeTeleported);
         SubscribeLocalEvent<RopeAttachedComponent, TeleportedEvent>(OnTeleported);
+        SubscribeLocalEvent<RopeAttachedComponent, PolymorphAttemptEvent>(OnPolymorphAttempt);
 
         Subs.CVar(_cfg, FloofCCVars.RopesFollowPortals, v => _ropesFollowPortals = v, true);
     }
@@ -87,6 +89,15 @@ public sealed partial class RopeSystem
 
             Log.Info($"Teleporting {ToPrettyString(otherEnt)} to follow the teleportation of {ToPrettyString(teleported)}.");
         }
+    }
+
+    private void OnPolymorphAttempt(Entity<RopeAttachedComponent> ent, ref PolymorphAttemptEvent args)
+    {
+        if (ent.Comp.AttachedRopes.Count == 0)
+            return;
+
+        args.Cancel();
+        args.CancelReason = Loc.GetString("rope-polymorph-fail-attached");
     }
 
     private bool CanTeleportRope(Entity<RopeComponent?> rope, out string? reason)

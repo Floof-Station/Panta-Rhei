@@ -432,6 +432,9 @@ public sealed partial class RopeSystem
             a.RightJoint = b.LeftJoint = joint.ID;
         }
 
+        // Must be done before TryConnect is called, otherwise they will skip creating joints
+        rope.Comp.IsDisabled = false;
+
         // Connect start and end
         if (segmentCount > 0)
         {
@@ -445,8 +448,6 @@ public sealed partial class RopeSystem
             if (leftAnchor != null && rightAnchor != null)
                 ConnectRopeWithNoJoints(rope!, leftAnchor.Value.Anchor, rightAnchor.Value.Anchor, rightAnchor.Value.Offset, rightAnchor.Value.Offset);
         }
-
-        rope.Comp.IsDisabled = false;
 
         RaiseLocalEvent(rope, new RopeEnabledEvent());
 
