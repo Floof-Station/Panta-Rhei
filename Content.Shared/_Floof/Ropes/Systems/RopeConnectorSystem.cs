@@ -214,11 +214,13 @@ public sealed class RopeConnectorSystem : EntitySystem
         // If this is the master side, we must remove the rope out of the user's hands first and detach the rope start
         if (isMaster)
         {
-            if (!_containers.TryRemoveFromContainer(connector.Owner, false, out var inContainer) && inContainer)
+            if (!_containers.TryRemoveFromContainer(connector.Owner, false, out var wasInContainer) && wasInContainer)
                 return false;
         }
 
+        // At this point the rope is disabled and pending re-creation.
         _ropes.TryDetachRopeSide(rope.AsNullable(), side);
+
         var result = _ropes.TryConnectRopeSide(rope.AsNullable(), anchor, side);
         if (!result)
             return false;

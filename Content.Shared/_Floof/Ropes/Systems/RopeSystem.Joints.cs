@@ -35,7 +35,7 @@ public sealed partial class RopeSystem
         // In case someone decides to go through a portal, we want to limit the impact, so we set it way higher than needed
         // However, if the link has no stiffness, we assume the caller wants to limit JUST the max length
         // This is a terrible hack, but I'm really fucking tired already
-        var maxLengthMultiplier = joint.Stiffness <= 0.1f ? 1f : 10f;
+        var maxLengthMultiplier = joint.Stiffness <= 0.1f ? 1f : 1.3f;
         // Likewise. This should turn the joint off if it tries to pull from 5x its max length (such as after one of the entities teleported)
         var breakpoint = joint.Stiffness <= 0.1f ? float.PositiveInfinity : length * joint.Stiffness * 5f;
 

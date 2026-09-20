@@ -112,6 +112,7 @@ public sealed partial class RopeSystem
         // If either end of the rope is anchored, prevent it as well
         foreach (var anchor in EnumerateAnchors(rope!))
         {
+            var root = _containers.TryGetOuterContainer(anchor, Transform(anchor), out var container) ? container.Owner : anchor;
             if (Transform(anchor).Anchored)
             {
                 reason = Loc.GetString("rope-portal-fail-anchored");

@@ -20,7 +20,7 @@ public sealed partial class RopeSystem
 
     private void OnAnchorShutdown(Entity<RopeAttachedComponent> ent, ref EntityTerminatingEvent args)
     {
-        foreach (var rope in ent.Comp.AttachedRopes)
+        foreach (var rope in ent.Comp.AttachedRopes.ToList())
         {
             if (!_ropeQuery.TryComp(rope.Rope, out var ropeComp) || TerminatingOrDeleted(rope.Rope))
                 continue;
@@ -237,16 +237,16 @@ public sealed partial class RopeSystem
             return false;
         }
 
-        // Check distance
         var closestLink = side switch
         {
             RopeSide.Start => rope.Comp.Links[0],
             RopeSide.End => rope.Comp.Links[^1],
             _ => throw new ArgumentOutOfRangeException(),
         };
-        var dist = GetEffectiveDistance(connector, closestLink.LinkEntity);
-        if (float.IsInfinity(dist))
-            return false;
+        // Not doing this as it can lead to failures when creating attachments on a disabled rope... which is another edge case
+        // var dist = GetEffectiveDistance(connector, closestLink.LinkEntity);
+        // if (float.IsInfinity(dist))
+        //     return false;
 
         // Create a distance joint
         var joint = rope.Comp.IsDisabled ? null : CreateDistanceJoint(connector, closestLink.LinkEntity, rope.Comp, offset);
@@ -263,7 +263,9 @@ public sealed partial class RopeSystem
                 break;
         }
 
-        OnRopeAttached(rope, connector);
+        // We don't inform the system about the attachment if the rope is disabled. This will be handled in Enable()
+        if (!rope.Comp.IsDisabled)
+            OnRopeAttached(rope, connector);
         Dirty(rope, rope.Comp);
         return true;
     }
@@ -311,6 +313,7 @@ public sealed partial class RopeSystem
                 break;
         }
 
+        // We need to inform the system about the detachment even if the rope is disabled, in case there's something important going on.
         OnRopeDetached(rope, anchor.Anchor);
         Dirty(rope, rope.Comp);
         return true;
