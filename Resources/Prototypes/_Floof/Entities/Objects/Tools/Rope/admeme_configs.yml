@@ -1,0 +1,64 @@
+# ======== Phasing rope that doesn't collide with anything ======
+# Base configuration
+- type: ropeConfiguration
+  id: Phasing10
+  parent: Leash10 # I can't be fucked to make a unique sprite
+  links: 10
+  linkPrototype: RopeLinkPhasing
+  dataPrototype: RopeDataPhasing
+
+- type: ropeConfiguration
+  id: Phasing20
+  parent: Phasing10
+  links: 20
+
+# Link entity
+- type: entity
+  parent: RopeLinkBase
+  id: RopeLinkPhasing
+  name: phasing rope link
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures: [] # none
+
+# Data entity
+- type: entity
+  id: RopeDataPhasing
+  parent: RopeDataBase
+  name: phasing rope
+  description: Doesn't collide with walls.
+  categories: [ HideSpawnMenu ]
+
+
+# ======== Antigravity rope (not affected by gravitiy) ======
+# Base configuration
+- type: ropeConfiguration
+  id: Antigravity10
+  parent: Leash10 # I can't be fucked to make a unique sprite
+  links: 10
+  linkPrototype: RopeLinkAntigravity
+  dataPrototype: RopeDataAntigravity
+
+- type: ropeConfiguration
+  id: Antigravity20
+  parent: Antigravity10
+  links: 20
+
+# Link entity
+- type: entity
+  parent: RopeLinkBase
+  id: RopeLinkAntigravity
+  name: Antigravity rope link
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MovementIgnoreGravity
+    weightless: true
+
+# Data entity
+- type: entity
+  id: RopeDataAntigravity
+  parent: RopeDataBase
+  name: Antigravity rope
+  description: Isn't affected by gravity.
+  categories: [ HideSpawnMenu ]

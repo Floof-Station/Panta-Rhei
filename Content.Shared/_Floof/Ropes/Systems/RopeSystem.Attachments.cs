@@ -13,12 +13,12 @@ public sealed partial class RopeSystem
 
     private void InitializeRelay()
     {
-        SubscribeLocalEvent<RopeAttachedComponent, EntityTerminatingEvent>(OnAnchorShutdown);
+        SubscribeLocalEvent<RopeAttachedComponent, ComponentShutdown>(OnAnchorShutdown);
         SubscribeLocalEvent<RopeAttachedComponent, EntGotInsertedIntoContainerMessage>(OnAnchorInserted);
         SubscribeLocalEvent<RopeAttachedComponent, EntGotRemovedFromContainerMessage>(OnAnchorRemoved);
     }
 
-    private void OnAnchorShutdown(Entity<RopeAttachedComponent> ent, ref EntityTerminatingEvent args)
+    private void OnAnchorShutdown(Entity<RopeAttachedComponent> ent, ref ComponentShutdown args)
     {
         foreach (var rope in ent.Comp.AttachedRopes.ToList())
         {
