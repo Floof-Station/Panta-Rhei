@@ -1,38 +1,39 @@
 - type: markingsGroup
   id: Asakim
+  parent: [Undergarments, EuphoriaCommonMarkingLayers] # Floof
   onlyGroupWhitelisted: false # Euph - species can use common markings
-  limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 0
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 0
-      required: false
+  limits: # Euph - Switch to common markings
+#    enum.HumanoidVisualLayers.Hair:
+#      limit: 0
+#      required: false
+#    enum.HumanoidVisualLayers.FacialHair:
+#      limit: 0
+#      required: false
     enum.HumanoidVisualLayers.Tail:
       limit: 1
       required: true
       default: [ LizardTailSmooth ]
-    enum.HumanoidVisualLayers.HeadTop:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.HeadSide:
-      limit: 2 # WWDP-Edit
-      required: false
-    enum.HumanoidVisualLayers.Chest:
-      limit: 3
-      required: false
-    enum.HumanoidVisualLayers.LLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LArm:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RArm:
-      limit: 2
-      required: false
+#    enum.HumanoidVisualLayers.HeadTop:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.HeadSide:
+#      limit: 2 # WWDP-Edit
+#      required: false
+#    enum.HumanoidVisualLayers.Chest:
+#      limit: 3
+#      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RArm:
+#      limit: 2
+#      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
