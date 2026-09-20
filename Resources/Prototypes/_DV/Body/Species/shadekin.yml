@@ -136,6 +136,10 @@
         emote: Hiss
         showInChat: false
   - type: Bloodstream
+    bloodReferenceSolution: #Euphoria Start
+      reagents:
+      - ReagentId: BlackBlood
+        Quantity: 300 #Euphoria End
     bloodlossDamage:
       types:
         Bloodloss: 1
