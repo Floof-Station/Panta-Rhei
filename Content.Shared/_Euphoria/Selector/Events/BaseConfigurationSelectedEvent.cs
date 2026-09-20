@@ -19,12 +19,12 @@ public abstract class BaseConfigurationSelectedEvent(
     /// <summary>
     ///     Returns the changed value as a int
     /// </summary>
-    public int GetValueAsInt() => int.Parse(value);
+    public int GetValueAsInt() => int.Parse(Value);
 
     /// <summary>
     ///     Returns the changed value as a float
     /// </summary>
-    public float GetValueAsFloat() => float.Parse(value);
+    public float GetValueAsFloat() => float.Parse(Value);
 
     /// <summary>
     ///     Returns the value of the config group with the specified id.

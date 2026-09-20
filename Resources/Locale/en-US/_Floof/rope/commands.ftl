@@ -3,6 +3,7 @@ command-description-rope-create = Creates a rope next to the left anchor. Return
 command-description-rope-enumerate_links = Returns a list of all links the rope has. Example usage: `rope:create ... rope:enumerate_links`.
 command-description-rope-set_length = Sets the length of the rope. May cause non-physical behavior.
 command-description-rope-set_links = Sets the number of links in the rope, overriding the number in the prototype.
+command-description-rope-distribute_links = Distributes links of the rope between anchors.
 command-description-rope-connect_start = Connects one side of the rope to another entity. Example usage: `rope:create ... rope:connect_start .. rope:connect_end`.
 command-description-rope-connect_end = Connects one side of the rope to another entity. Example usage: `rope:create ... rope:connect_start .. rope:connect_end`.
 command-description-rope-detach = Detaches both anchors of a rope. Example usage: `rope:create ... rope:detach`

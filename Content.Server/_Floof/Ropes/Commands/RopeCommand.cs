@@ -79,6 +79,18 @@ public sealed class RopeCommand : ToolshedCommand
         return rope;
     }
 
+    [CommandImplementation("distribute_links")]
+    public EntityUid DistributeLinks([PipedArgument] EntityUid rope)
+    {
+        if (!TryComp<RopeComponent>(rope, out var comp))
+            throw new Exception("Not a rope");
+
+        _rope ??= EntityManager.System<RopeSystem>();
+        _rope.DistributeLinksBetweenAnchors(rope);
+
+        return rope;
+    }
+
     [CommandImplementation("connect_start")]
     public EntityUid ConnectStart([PipedArgument] EntityUid rope, EntityUid anchor)
     {

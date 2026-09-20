@@ -216,16 +216,10 @@ public sealed class RopeConnectorSystem : EntitySystem
         {
             if (!_containers.TryRemoveFromContainer(connector.Owner, false, out var inContainer) && inContainer)
                 return false;
-
-            _ropes.TryDetachRopeSide(rope.AsNullable(), side);
         }
 
-        var result = side switch
-        {
-            RopeSide.End => _ropes.TryConnectRopeEnd(rope.AsNullable(), anchor),
-            RopeSide.Start => _ropes.TryConnectRopeStart(rope.AsNullable(), anchor),
-            _ => false,
-        };
+        _ropes.TryDetachRopeSide(rope.AsNullable(), side);
+        var result = _ropes.TryConnectRopeSide(rope.AsNullable(), anchor, side);
         if (!result)
             return false;
 

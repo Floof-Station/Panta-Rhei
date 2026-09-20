@@ -162,6 +162,14 @@ public sealed partial class RopeSystem
 
         var leftPos = _xform.GetWorldPosition(leftXform);
         var rightPos = _xform.GetWorldPosition(rightXform);
+        // If leftPos == rightPos, the direction vector becomes nan
+        var direction = leftPos != rightPos ? (rightPos - leftPos).Normalized() : Vector2.Zero;
+        var distance = direction.Length();
+
+        // If the distance between entities is much lower than rope length, than arc approximation may cause the rope to end up spawning inside a wall
+        // Ideally this should be solved by making multiple arcs, but im too tired for this shit
+        arcApproximation = arcApproximation && distance > 0 && distance / rope.Comp.RopeLength > 0.5;
+
         if (arcApproximation)
         {
             using var arcPointsEnum = DistributePointsOnArc(leftPos, rightPos, rope.Comp.RopeLength, rope.Comp.LinkCount).GetEnumerator();
@@ -179,10 +187,6 @@ public sealed partial class RopeSystem
         else
         {
             // This was the original implementation
-            // If leftPos == rightPos, the direction vector becomes nan
-            var direction = leftPos != rightPos ? (rightPos - leftPos).Normalized() : Vector2.Zero;
-            var distance = direction.Length();
-
             // Place each link along the line
             var segmentCount = rope.Comp.Links.Count;
             var step = distance / (segmentCount + 2);
