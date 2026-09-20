@@ -39,7 +39,7 @@
 #      limit: 1
 #      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2 # Euph - Tail slots increased to 2
       required: true
       default: [TailShadekin]
     enum.HumanoidVisualLayers.HeadTop:
@@ -136,6 +136,10 @@
         emote: Hiss
         showInChat: false
   - type: Bloodstream
+    bloodReferenceSolution: #Euphoria Start
+      reagents:
+      - ReagentId: BlackBlood
+        Quantity: 300 #Euphoria End
     bloodlossDamage:
       types:
         Bloodloss: 1
