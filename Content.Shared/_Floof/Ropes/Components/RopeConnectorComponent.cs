@@ -14,8 +14,9 @@ public sealed partial class RopeConnectorComponent : Component
     [DataField(required: true), AutoNetworkedField]
     public ProtoId<RopeConfigurationPrototype> RopePrototype;
 
-    [DataField(required: true), AutoNetworkedField]
-    public EntProtoId HandlePrototype;
+    // Not implemented
+    // [DataField(required: true), AutoNetworkedField]
+    // public EntProtoId HandlePrototype;
 
     [DataField(required: true), AutoNetworkedField]
     public TimeSpan ConnectDelay;
@@ -38,6 +39,7 @@ public sealed partial class RopeConnectorComponent : Component
     [DataField, AutoNetworkedField]
     public EntityWhitelist? TargetWhitelist = null, TargetBlacklist = null;
 
+    // Note: handles were never implemented
     [DataField, AutoNetworkedField]
     public EntityUid? RopeEntity, HandleEntity;
 

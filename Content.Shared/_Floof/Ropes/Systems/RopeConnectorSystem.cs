@@ -158,7 +158,7 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         // Cleanup anchors
         foreach (var anchor in _ropes.EnumerateAnchors((ent.Owner, ropeComp)))
-            RemCompDeferred<RopeAttachedComponent>(anchor);
+            RemCompDeferred<RopeConnectorAttachedComponent>(anchor);
 
         if (connectorComp.RopeEntity == ent)
             connectorComp.RopeEntity = null;
@@ -223,7 +223,11 @@ public sealed class RopeConnectorSystem : EntitySystem
 
         var result = _ropes.TryConnectRopeSide(rope.AsNullable(), anchor, side);
         if (!result)
+        {
+            // Welp
+            NukeRopes(connector);
             return false;
+        }
 
         _ropes.DistributeLinksBetweenAnchors(rope.AsNullable(), true);
 
@@ -254,12 +258,10 @@ public sealed class RopeConnectorSystem : EntitySystem
             return false;
 
         // I tried, i genuinely tried. But the amount of edge cases... It was INSANE.
-        // Just delete the rope and forget it ever existed. This is better for everyone's sanity.
-        PredictedQueueDel(connectorComp.RopeEntity);
-        connectorComp.RopeEntity = null;
+        // Just delete the rope and forget it has ever existed. This is better for everyone's sanity.
+        NukeRopes((connector, connectorComp));
 
         // If the connector is currently inside a container, it means that both of its rope sides have been attached
-        // We need to extract it from the container and set whichever side that was removed as the new master
         if (_containers.TryGetContainingContainer(connector, out var connectorContainer)
             && connectorContainer.ID == RopeConnectorAttachedComponent.ConnectorContainer)
         {
@@ -267,7 +269,6 @@ public sealed class RopeConnectorSystem : EntitySystem
                 return false;
 
             _hands.PickupOrDrop(user, connector, true, true, true, true);
-            connectorComp.MasterSide = side;
         }
 
         // Just so it doesn't allow a second detach on the same tick
@@ -275,7 +276,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         anchor.Comp.CanDetach = false;
         RemCompDeferred(anchor, anchor.Comp);
 
-        Dirty(connector, connectorComp);
+        // NukeRopes dirties the connector, no need to dirty it again
         return true;
     }
 
@@ -288,9 +289,12 @@ public sealed class RopeConnectorSystem : EntitySystem
             return false;
         }
 
-        // Is the relevant side already attached?
+        // 1. Is the relevant side already attached?
+        // 2. Is the other side attached here? (this could cause weird bugs)
         var currentAnchorData = GetAnchorInfo(connector, side);
-        if (currentAnchorData?.Anchor is { Valid: true } curAnchor && curAnchor != connector.Owner)
+        var otherAnchorData = GetAnchorInfo(connector, side.Opposite());
+        if (currentAnchorData?.Anchor is { Valid: true } curAnchor && curAnchor != connector.Owner
+            || otherAnchorData?.Anchor is { Valid: true } otherAnchor && otherAnchor == anchor)
         {
             reasonLoc = "rope-connector-already-attached";
             return false;
@@ -311,7 +315,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         }
 
         // I couldn't be bothered to allow connecting multiple ropes to the same anchor here
-        if (TryComp<RopeConnectorComponent>(anchor, out var existingAnchor) && existingAnchor.RopeEntity is { Valid: true })
+        if (TryComp<RopeConnectorAttachedComponent>(anchor, out var existingAnchor) && existingAnchor.Connector is { Valid: true })
         {
             reasonLoc = "rope-connector-anchor-already-attached";
             return false;
@@ -368,4 +372,11 @@ public sealed class RopeConnectorSystem : EntitySystem
 
     private RopeComponent.AnchorInfo? GetAnchorInfo(Entity<RopeConnectorComponent> connector, RopeSide side) =>
         GetRope(connector) is { } rope ? _ropes.GetAnchor(rope, side) : null;
+
+    private void NukeRopes(Entity<RopeConnectorComponent> connector)
+    {
+        PredictedQueueDel(connector.Comp.RopeEntity);
+        connector.Comp.RopeEntity = null;
+        Dirty(connector);
+    }
 }

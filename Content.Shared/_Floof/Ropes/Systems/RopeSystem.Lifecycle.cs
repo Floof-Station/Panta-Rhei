@@ -47,6 +47,9 @@ public sealed partial class RopeSystem
 
     private void OnShutdown(Entity<RopeComponent> ent, ref ComponentShutdown args)
     {
+        // So other things don't attempt to queue the rope for re-creation
+        ent.Comp.IsDisabled = true;
+
         // On shutdown, destroy all links
         foreach (var link in ent.Comp.Links)
         {
@@ -85,6 +88,7 @@ public sealed partial class RopeSystem
             || TerminatingOrDeleted(link))
             return;
 
+        // TODO: this is a suboptimal way. In most cases, we only need to recreate one of the joints connecting the rope to one of the anchors
         Log.Info($"Joint {args.Joint.ID} is removed. Will try to recreate the rope on the next tick.");
         RecreateRope(link.Comp.Rope);
     }

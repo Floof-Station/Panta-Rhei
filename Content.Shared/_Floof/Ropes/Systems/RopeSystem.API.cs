@@ -190,11 +190,16 @@ public sealed partial class RopeSystem
             // Place each link along the line
             var segmentCount = rope.Comp.Links.Count;
             var step = distance / (segmentCount + 2);
+            var normal = distance > 0 ? new(-direction.Y, direction.X) : Vector2.UnitY;
+
             for (var i = 0; i < segmentCount; i++)
             {
                 var pos = leftPos + (i + 1) * step * direction;
-                var link = rope.Comp.Links[i];
+                // Add a slight jitter so that if rope length >> distance, it doesn't just end pushing the entities apart
+                // If we just stack the joints in a line, we'll create a giant spring, which is bad
+                pos += normal * 0.1f * (i % 2);
 
+                var link = rope.Comp.Links[i];
                 var xform = Transform(link.LinkEntity);
                 _xform.SetMapCoordinates((link.LinkEntity, xform), new(pos, map));
             }
@@ -222,13 +227,18 @@ public sealed partial class RopeSystem
     ///     Entities will end up stacked.
     ///     Does not teleport the attached entities.
     /// </summary>
-    public void SetLinksCoordinates(Entity<RopeComponent?> rope, EntityCoordinates coords)
+    public void SetLinksCoordinates(Entity<RopeComponent?> rope, EntityCoordinates refCoords)
     {
-        if (!Resolve(rope, ref rope.Comp) || rope.Comp.IsDisabled)
+        if (!Resolve(rope, ref rope.Comp) || rope.Comp.IsDisabled || _net.IsClient)
             return;
 
+        var coords = _xform.ToMapCoordinates(refCoords);
         foreach (var link in rope.Comp.Links)
-            _xform.SetCoordinates(link.LinkEntity, coords);
+        {
+            // Add small jitter so that we don't stack all the links on the same spot (this would cause infinite tension and would break the rope)
+            var jitter = _random.NextVector2(0.3f);
+            _xform.SetMapCoordinates(link.LinkEntity, coords.Offset(jitter));
+        }
     }
 
     /// <summary>
