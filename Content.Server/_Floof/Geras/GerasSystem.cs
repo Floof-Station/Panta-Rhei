@@ -61,7 +61,7 @@ public sealed class GerasSystem : EntitySystem
 
         if (colors is {} colorsfr) // Match Geras to Humanoid Skin color
         {
-            (var skinColor, var eyeColor) = (colorsfr.SkinColor, colorsfr.SkinColor);
+            (var skinColor, var eyeColor) = (colorsfr.SkinColor, colorsfr.EyeColor);
             if (TryComp<RandomSpriteComponent>(ent, out var randomSprite)) // has to use random sprite
             {
                 foreach (var entry in randomSprite.Selected)

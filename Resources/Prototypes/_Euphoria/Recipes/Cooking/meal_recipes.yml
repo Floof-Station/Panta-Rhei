@@ -6,3 +6,184 @@
   group: Breads
   solids:
     FoodUncookedHotdogBun: 1
+
+# pies
+- type: microwaveMealRecipe
+  id: RecipeBlackberryPie
+  name: blackberry pie recipe
+  result: FoodPieBlackberry
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodBlackberry: 5
+    FoodPlateTin: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBlueberryPie
+  name: blueberry pie recipe
+  result: FoodPieBlueberry
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodBlueberry: 5
+    FoodPlateTin: 1
+
+- type: microwaveMealRecipe
+  id: RecipeRaspberryPie
+  name: Raspberry pie recipe
+  result: FoodPieRaspberry
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodRaspberry: 5
+    FoodPlateTin: 1
+
+- type: microwaveMealRecipe
+  id: RecipeBlueRaspberryPie
+  name: Blue Raspberry pie recipe
+  result: FoodPieRaspberry
+  time: 15
+  group: Pie
+  solids:
+    FoodDoughPie: 1
+    FoodBlueRaspberry: 5
+    FoodPlateTin: 1
+
+# cakes - blueberry is already made from upstream, skipping in this file
+- type: microwaveMealRecipe
+  id: RecipeBlackberryCake
+  name: blackberry cake recipe
+  result: FoodCakeBlackberry
+  time: 5
+  group: Cake
+  solids:
+    FoodCakePlain: 1
+    FoodBlackberry: 3
+
+- type: microwaveMealRecipe
+  id: RecipeRaspberryCake
+  name: raspberry cake recipe
+  result: FoodCakeRaspberry
+  time: 5
+  group: Cake
+  solids:
+    FoodCakePlain: 1
+    FoodRaspberry: 3
+
+- type: microwaveMealRecipe
+  id: RecipeBlueRaspberryCake
+  name: blue raspberry cake recipe
+  result: FoodCakeBlueRaspberry
+  time: 5
+  group: Cake
+  solids:
+    FoodCakePlain: 1
+    FoodBlueRaspberry: 3
+
+- type: microwaveMealRecipe
+  id: RecipeFruitCake
+  name: fruit cake recipe
+  result: FoodCakeFruitCake
+  time: 5
+  group: Cake
+  solids:
+    FoodCakePlain: 1
+    FoodBlackberry:  1
+    FoodBlueberry: 1
+    FoodRaspberry: 1
+    FoodStrawberry: 1
+    FoodApple: 1
+
+# danish
+- type: microwaveMealRecipe
+  id: RecipeBlueberryDanish
+  name: blueberry danish recipe
+  result: FoodDanishBlueberry
+  time: 15
+  group: Pie
+  reagents:
+    Sugar: 5
+    Milk: 5
+    Flour: 5
+  solids:
+    FoodBlueberry: 3
+    FoodPlateMuffinTin: 1
+
+- type: microwaveMealRecipe
+  id: RecipeRaspberryDanish
+  name: raspberry danish recipe
+  result: FoodDanishRaspberry
+  time: 15
+  group: Pie
+  reagents:
+    Sugar: 5
+    Milk: 5
+    Flour: 5
+  solids:
+    FoodRaspberry: 3
+    FoodPlateMuffinTin: 1
+
+# taiyaki
+- type: microwaveMealRecipe
+  id: RecipeTaiyakiPlain
+  name: plain taiyaki recipe
+  result: FoodTaiyakiPlain
+  time: 15
+  group: Cake # they are technically a cake
+  reagents:
+    IceCream: 10
+  solids:
+    FoodCakePlainSlice: 1 # to make it a bit easier to make
+
+- type: microwaveMealRecipe
+  id: RecipeTaiyakiBlueberry
+  name: blueberry taiyaki recipe
+  result: FoodTaiyakiBlueberry
+  time: 15
+  group: Cake
+  solids:
+    FoodTaiyakiPlain: 1
+    FoodBlueberry: 3
+
+- type: microwaveMealRecipe
+  id: RecipeTaiyakiStrawberry
+  name: strawberry taiyaki recipe
+  result: FoodTaiyakiStrawberry
+  time: 15
+  group: Cake
+  solids:
+    FoodTaiyakiPlain: 1
+    FoodStrawberry: 3
+
+- type: microwaveMealRecipe
+  id: RecipeTaiyakiRaspberry
+  name: raspberry taiyaki recipe
+  result: FoodTaiyakiRaspberry
+  time: 15
+  group: Cake
+  solids:
+    FoodTaiyakiPlain: 1
+    FoodRaspberry: 3
+
+- type: microwaveMealRecipe
+  id: RecipeTaiyakiChocolate
+  name: chocolate taiyaki recipe
+  result: FoodTaiyakiChocolate
+  time: 15
+  group: Cake
+  solids:
+    FoodTaiyakiPlain: 1
+    FoodSnackChocolateBar: 1 # one bar
+
+- type: microwaveMealRecipe
+  id: RecipeTaiyakiBlueRaspberry
+  name: blue raspberry taiyaki recipe
+  result: FoodTaiyakiBlueRaspberry
+  time: 15
+  group: Cake
+  solids:
+    FoodTaiyakiPlain: 1
+    FoodBlueRaspberry: 3
