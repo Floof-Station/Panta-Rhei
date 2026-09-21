@@ -1,0 +1,43 @@
+﻿- type: entity
+  parent: SeedBase
+  name: packet of blackberry seeds
+  description: "So berry good."
+  id: BlackberrySeeds
+  components:
+  - type: Seed
+    seedId: blackberry
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/blackberry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of blueberry seeds
+  description: "So berry good."
+  id: BlueberrySeeds
+  components:
+  - type: Seed
+    seedId: blueberry
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/blueberry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of raspberry seeds
+  description: "So berry good."
+  id: RaspberrySeeds
+  components:
+  - type: Seed
+    seedId: raspberry
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/raspberry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of blue raspberry seeds
+  description: "So berry good."
+  id: BlueRaspberrySeeds
+  components:
+  - type: Seed
+    seedId: blueraspberry
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/blueraspberry.rsi
