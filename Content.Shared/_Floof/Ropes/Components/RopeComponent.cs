@@ -21,7 +21,7 @@ namespace Content.Shared._Floof.Ropes.Components;
 public sealed partial class RopeComponent : Component
 {
     [DataField]
-    public ProtoId<RopeConfigurationPrototype> Configuration;
+    public ProtoId<RopeConfigurationPrototype> Configuration = string.Empty;
 
     /// <summary>
     ///     Entities to which the rope is connected on the start and end, as well as the IDs of their respective joints.
