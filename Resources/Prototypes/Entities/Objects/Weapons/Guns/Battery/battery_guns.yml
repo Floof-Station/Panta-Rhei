@@ -984,10 +984,12 @@
     sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
     layers:
     - state: base
-      map: [ "enum.GunVisualLayers.Base" ]
-    - state: mag-unshaded-1
-      visible: false
-      map: [ "enum.GunVisualLayers.MagUnshaded" ]
+      map: ["enum.GunVisualLayers.Base"] # Euphoria start
+    - state: mode-magnum
+      shader: unshaded
+      map: [ "Firemode" ]
+    - state: mag-unshaded-3
+      map: ["enum.GunVisualLayers.MagUnshaded"] # Euphoria end
       shader: unshaded
   - type: MagazineVisuals
     magState: mag
@@ -1010,15 +1012,27 @@
   - type: BatteryAmmoProvider
     proto: BulletLaserMagnum
     fireCost: 150
-  - type: BatteryWeaponFireModes
+  - type: EnergyGun # Euphoria - BatteryWeaponFireModes -> EnergyGun
     fireModes:
     - proto: BulletLaserMagnum
       fireCost: 150
+      name: magnum # Euphoria
+      state: special # Euphoria
     - proto: BulletEnergyGunLaser #Delta V - Energy guns pierce by default
       fireCost: 150
+      name: lethal # Euphoria
+      state: lethal # Euphoria
     - proto: BulletDisabler
       fireCost: 62.5
-      pacifismAllowedMode: true
+      name: disable # Euphoria
+      state: disabler # Euphoria
+  - type: GenericVisualizer # Euphoria - fire mode sprite change
+    visuals:
+      enum.EnergyGunFireModeVisuals.State:
+        Firemode:
+          Disabler: { state: mode-disabler }
+          Lethal: { state: mode-lethal }
+          Special: { state: mode-magnum }
   - type: BatterySelfRecharger
     autoRechargeRate: 48
     autoRechargePauseTime: 10

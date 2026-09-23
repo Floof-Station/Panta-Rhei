@@ -342,5 +342,5 @@ public sealed partial class DCCVars
     /// Whether the round end is an OOC vote.
     /// </summary>
     public static readonly CVarDef<bool> RoundEndIsOOCVote =
-        CVarDef.Create("deltav.round_end_is_ooc_vote", false, CVar.SERVER);
+        CVarDef.Create("deltav.round_end_is_ooc_vote", true, CVar.SERVER); // Euphoria - was false but time to speed things up
 }
