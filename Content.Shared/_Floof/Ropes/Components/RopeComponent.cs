@@ -20,41 +20,41 @@ namespace Content.Shared._Floof.Ropes.Components;
 [RegisterComponent, NetworkedComponent, Access(typeof(Systems.RopeSystem), typeof(State))]
 public sealed partial class RopeComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public ProtoId<RopeConfigurationPrototype> Configuration;
 
     /// <summary>
     ///     Entities to which the rope is connected on the start and end, as well as the IDs of their respective joints.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public AnchorInfo? ConnectedStart, ConnectedEnd;
 
     /// <summary>
     ///     List of all links this rope is made of.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public List<Link> Links = new();
 
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public float RopeLength, LinkLength, LinkStiffness;
 
     /// <summary>
     ///     Link count, overrides the prototype if set.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public int LinkCount = -1;
 
     /// <summary>
     ///     Optional color tint for the rope sprite.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public Color? Color;
 
     /// <summary>
     ///     True if the links of this rope have been temporarily sent to nullspace for preservation while both entities are in the same container.
     ///     Links and anchors might have invalid joint IDs assigned to them.
     /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     public bool IsDisabled;
 
     public sealed class Link
@@ -62,20 +62,23 @@ public sealed partial class RopeComponent : Component
         /// <summary>
         ///     The entity that represents this link.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public EntityUid LinkEntity;
 
         /// <summary>
         ///     IDs of joints that connect this link to the ones to the left and right.
         /// </summary>
-        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField]
         public string? LeftJoint, RightJoint;
     }
 
     public record struct AnchorInfo
     {
+        [DataField]
         public EntityUid Anchor;
+        [DataField]
         public string JointId;
+        [DataField]
         public Vector2 Offset;
 
         public AnchorInfo(EntityUid anchor, string jointId, Vector2 offset)

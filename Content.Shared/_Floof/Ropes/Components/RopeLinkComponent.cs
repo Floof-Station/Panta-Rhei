@@ -8,5 +8,6 @@ namespace Content.Shared._Floof.Ropes.Components;
 [RegisterComponent]
 public sealed partial class RopeLinkComponent : Component
 {
+    [DataField]
     public EntityUid Rope;
 }

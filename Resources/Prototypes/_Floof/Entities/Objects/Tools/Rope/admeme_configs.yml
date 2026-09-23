@@ -20,9 +20,14 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Fixtures
-    fixtures: {} # none
-  - type: Physics
-    canCollide: false
+    fixtures:
+      fix1: # Needs a fixture to have canCollide: true
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.15
+        density: 15
+        layer:
+        - GhostImpassable
 
 # Data entity
 - type: entity
@@ -31,6 +36,9 @@
   name: phasing rope
   description: Doesn't collide with walls.
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Rope
+    color: "#55ffff90" # Semitransparent
 
 
 # ======== Antigravity rope (not affected by gravitiy) ======
@@ -64,3 +72,6 @@
   name: Antigravity rope
   description: Isn't affected by gravity.
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Rope
+    color: "#55ff5590" # Semitransparent
