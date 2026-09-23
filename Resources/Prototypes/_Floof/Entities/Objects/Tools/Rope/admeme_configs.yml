@@ -21,6 +21,8 @@
   components:
   - type: Fixtures
     fixtures: {} # none
+  - type: Physics
+    canCollide: false
 
 # Data entity
 - type: entity

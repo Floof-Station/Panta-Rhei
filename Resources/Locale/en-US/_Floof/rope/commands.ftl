@@ -6,4 +6,5 @@ command-description-rope-set_links = Sets the number of links in the rope, overr
 command-description-rope-distribute_links = Distributes links of the rope between anchors.
 command-description-rope-connect_start = Connects one side of the rope to another entity. Example usage: `rope:create ... rope:connect_start .. rope:connect_end`.
 command-description-rope-connect_end = Connects one side of the rope to another entity. Example usage: `rope:create ... rope:connect_start .. rope:connect_end`.
-command-description-rope-detach = Detaches both anchors of a rope. Example usage: `rope:create ... rope:detach`
+command-description-rope-detach_start = Detaches one side of a rope. Example usage: `rope:create ... rope:detach_start`
+command-description-rope-detach_end = Detaches one side of a rope. Example usage: `rope:create ... rope:detach_end`
