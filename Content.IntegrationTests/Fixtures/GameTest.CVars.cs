@@ -1,6 +1,7 @@
 #nullable enable
 using System.Collections.Generic;
 using Content.IntegrationTests.Fixtures.Attributes;
+using Content.Shared._DV.CCVars;
 using Content.Shared._Floof.CCVar;
 using Robust.Shared.Configuration;
 
@@ -21,6 +22,7 @@ public abstract partial class GameTest
     {
         { FloofCCVars.WeatherCycleEnabled.Name, false }, // There's a bug in the weather or container or status effect system that causes weather entities to be spawned off-center
         { FloofCCVars.AutoVoteEnabled.Name, false }, // Attempts to send vote messages over a dummy channel throw exceptions
+        { DCCVars.RoundEndIsOOCVote.Name, false }, // Same as the above
     };
 
     /// <summary>
