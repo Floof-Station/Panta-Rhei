@@ -5,12 +5,11 @@
   components:
   - type: Sprite
     sprite: _Floof/Objects/Tools/rope_bundle.rsi
-    layers:
-    - state: icon
   - type: Item
     sprite: _Floof/Objects/Tools/rope_bundle.rsi
   - type: RopeConnector
     connectDelay: 3
+    detachDelay: 3
     targetWhitelist:
       components:
       - Item
@@ -22,6 +21,8 @@
       - Ghost
       - VirtualItem
   - type: EntityConfiguration
+    currentConfig:
+      length: 5
     configGroups:
       length:
         name: leash-config-category-length
@@ -40,17 +41,23 @@
     delay: 3
     snap: false # One day this will work. Not today though.
 
+# Link entity
 - type: entity
-  id: RopeBundleBasic
-  parent: RopeBundleBase
-  name: rope bundle
-  description: A bundle of rope used to connect objects together.
-  components:
-  - type: RopeConnector
-    ropePrototype: RopeBundle20
-#    handlePrototype: RopeBundleBasicHandle
+  id: RopeLinkStandardRope
+  parent: RopeLinkBase
+  name: standard rope link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataStandardRope
+  parent: RopeDataBase
+  name: standard rope
+  categories: [ HideSpawnMenu ]
+
 
 # Rope handle. Does nothing.
+# Handles were never implemented and just sit as a to-do for now.
 #- type: entity
 #  id: RopeBundleBasicHandle
 #  parent: BaseItem

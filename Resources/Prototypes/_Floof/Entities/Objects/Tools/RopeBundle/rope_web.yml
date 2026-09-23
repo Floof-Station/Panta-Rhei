@@ -1,0 +1,34 @@
+- type: entity
+  id: RopeBundleWeb
+  parent: RopeBundleBase
+  name: Web ropes
+  description: A bundle of spider webs weaved into a thick rope.
+  components:
+  - type: Sprite
+    state: icon-web
+  - type: RopeConnector
+    ropePrototype: RopeWeb20
+
+# Rope configuration
+- type: ropeConfiguration
+  id: RopeWeb20
+  links: 20
+  linkPrototype: RopeLinkWeb
+  dataPrototype: RopeDataWeb
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: rope-web
+
+# Link entity
+- type: entity
+  id: RopeLinkWeb
+  parent: RopeLinkStandardRope
+  name: basic rope link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataWeb
+  parent: RopeDataStandardRope
+  name: basic rope
+  categories: [ HideSpawnMenu ]

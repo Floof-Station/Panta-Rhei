@@ -234,7 +234,7 @@ public sealed class RopeConnectorSystem : EntitySystem
         var attachedComp = EnsureComp<RopeConnectorAttachedComponent>(anchor);
         attachedComp.Connector = connector;
         attachedComp.Side = side;
-        attachedComp.DetachDelay = connector.Comp.ConnectDelay;
+        attachedComp.DetachDelay = connector.Comp.DetachDelay;
 
         // If this is the master, we take the rope out of the user's hands and put it in a container on this connector
         if (isMaster)

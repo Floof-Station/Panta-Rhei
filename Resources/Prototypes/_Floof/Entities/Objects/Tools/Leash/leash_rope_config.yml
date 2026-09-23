@@ -7,7 +7,7 @@
   dataPrototype: RopeDataLeash
   sprite:
     sprite: _Floof/Objects/Tools/rope.rsi
-    state: rope
+    state: rope-simple
 
 # Standard leash (5 segments)
 - type: ropeConfiguration
@@ -35,6 +35,19 @@
   id: RopeLinkLeash
   name: leash link
   categories: [ HideSpawnMenu ]
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.15 # This should be plenty enough to avoid phasing through walls, i think.
+          position: 0,0
+        density: 30 # Has to weigh much more to lower jittering. Leashes are used to move specifically kinemic controllers which like to create jitters when moving.
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
 
 
 # Data entity

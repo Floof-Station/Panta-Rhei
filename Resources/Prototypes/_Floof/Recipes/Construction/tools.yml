@@ -1,0 +1,10 @@
+- type: construction
+  id: RopeBundleWeb
+  graph: WebObjectsFloof
+  startNode: start
+  targetNode: ropeWeb
+  category: construction-category-tools
+  entityWhitelist:
+    tags:
+    - SpiderCraft
+  objectType: Item

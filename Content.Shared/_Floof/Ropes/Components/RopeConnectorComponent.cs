@@ -19,7 +19,7 @@ public sealed partial class RopeConnectorComponent : Component
     // public EntProtoId HandlePrototype;
 
     [DataField(required: true), AutoNetworkedField]
-    public TimeSpan ConnectDelay;
+    public TimeSpan ConnectDelay, DetachDelay;
 
     /// <summary>
     ///     Which ends can be connected by the user.

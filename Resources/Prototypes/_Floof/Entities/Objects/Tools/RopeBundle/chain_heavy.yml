@@ -1,0 +1,35 @@
+- type: entity
+  id: RopeBundleChainHeavy
+  parent: RopeBundleBase
+  name: heavy chains
+  description: A bundle of heavy chain that can be used to tie entities together.
+  components:
+  - type: Sprite
+    state: icon-chain-heavy
+  - type: RopeConnector
+    ropePrototype: ChainHeavy20
+
+# Rope configuration
+- type: ropeConfiguration
+  id: ChainHeavy20
+  links: 20
+  linkPrototype: RopeLinkChainHeavy
+  dataPrototype: RopeDataChainHeavy
+  stiffness: 100000 # 100 kN/m
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: chain-heavy
+
+# Link entity
+- type: entity
+  id: RopeLinkChainHeavy
+  parent: RopeLinkStandardRope
+  name: heavy chain link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataChainHeavy
+  parent: RopeDataStandardRope
+  name: heavy chain
+  categories: [ HideSpawnMenu ]
