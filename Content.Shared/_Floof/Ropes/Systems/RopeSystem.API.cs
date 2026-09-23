@@ -35,7 +35,8 @@ public sealed partial class RopeSystem
             return false;
         }
 
-        var rope = CreateRopeEntityUninitialized(config, length, leftCoords.Value);
+        var leftMapCoords = _xform.ToMapCoordinates(leftXform.Coordinates);
+        var rope = CreateRopeEntityUninitialized(config, length, leftMapCoords);
         createdRope = rope;
 
         rope.Comp.ConnectedStart = new(leftAnchor, _invalidJointMarker, offsetLeft);
@@ -276,7 +277,7 @@ public sealed partial class RopeSystem
     ///     Prototype and spawn coords are determined automatically if not specified.
     /// </summary>
     /// <summary>If this method is called AFTER the rope is enabled, the caller needs to either mark the rope for re-creation or distribute links manually.</summary>
-    public void SetRopeLinks(Entity<RopeComponent?> rope, int linkCount, RopeConfigurationPrototype? prototype = null, EntityCoordinates? spawnCoords = null)
+    public void SetRopeLinks(Entity<RopeComponent?> rope, int linkCount, RopeConfigurationPrototype? prototype = null, MapCoordinates? spawnCoords = null)
     {
         if (!Resolve(rope, ref rope.Comp) || _net.IsClient)
             return;
@@ -284,7 +285,7 @@ public sealed partial class RopeSystem
         if (prototype == null && !_protoMan.Resolve(rope.Comp.Configuration, out prototype))
             return;
 
-        spawnCoords ??= Transform(rope).Coordinates;
+        spawnCoords ??= _xform.GetMapCoordinates(rope);
 
         var length = rope.Comp.RopeLength;
         rope.Comp.LinkCount = linkCount;
@@ -476,7 +477,7 @@ public sealed partial class RopeSystem
     ///     Creates a rope entity and all of its links at the given coordinates (stacking them in the same spot).
     ///     EnableRope needs to be called in order to actually create joints.
     /// </summary>
-    public Entity<RopeComponent> CreateRopeEntityUninitialized(RopeConfigurationPrototype config, float length, EntityCoordinates coords)
+    public Entity<RopeComponent> CreateRopeEntityUninitialized(RopeConfigurationPrototype config, float length, MapCoordinates coords)
     {
         var ropeUid = Spawn(config.DataPrototype, coords);
         var rope = EnsureComp<RopeComponent>(ropeUid);

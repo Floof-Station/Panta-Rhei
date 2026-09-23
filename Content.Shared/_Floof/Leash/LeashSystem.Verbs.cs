@@ -23,7 +23,7 @@ public sealed partial class LeashSystem
     {
         if (args.User != null && !CanInteractWithLeash(args.User.Value, ent))
         {
-            args.Cancel("leash-config-cancel-cant-interact");
+            args.Cancel(Loc.GetString("leash-config-cancel-cant-interact"));
             return;
         }
     }

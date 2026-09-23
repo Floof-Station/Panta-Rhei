@@ -8,6 +8,20 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
+    /// <summary>
+    ///     The MaxLength of each joint is calculated as Length * (this field).
+    ///     When extended beyond max length, joints exert infinite force to pull themselves back into limit,
+    ///     which is required to fight back against mob movement (which seemingly overrides all forces on the body).
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float MaxLengthMultiplier = 1.3f;
+
+    /// <summary>
+    ///     The damping force of rope joints is calculated as Stiffness * (this field).
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite)]
+    public float DampingMultiplier = 0.1f;
+
     private string _invalidJointMarker = "<TEMPORARILY DELETED>";
 
     private DistanceJoint CreateDistanceJoint(EntityUid a, EntityUid b, RopeComponent rope, Vector2 anchorA = default, Vector2 anchorB = default)
@@ -23,7 +37,7 @@ public sealed partial class RopeSystem
 
         joint.MinLength = 0f; // For some fuckass reason, CreateDistanceJoint sets it to non-zero
 
-        joint.Damping = rope.LinkStiffness * 0.1f;
+        joint.Damping = rope.LinkStiffness * DampingMultiplier;
         joint.Stiffness = rope.LinkStiffness;
         SetLinkLength(joint, rope.LinkLength);
 
@@ -35,7 +49,7 @@ public sealed partial class RopeSystem
         // In case someone decides to go through a portal, we want to limit the impact, so we set it way higher than needed
         // However, if the link has no stiffness, we assume the caller wants to limit JUST the max length
         // This is a terrible hack, but I'm really fucking tired already
-        var maxLengthMultiplier = joint.Stiffness <= 0.1f ? 1f : 1.3f;
+        var maxLengthMultiplier = joint.Stiffness <= 0.1f ? 1f : MaxLengthMultiplier;
         // Likewise. This should turn the joint off if it tries to pull from 5x its max length (such as after one of the entities teleported)
         var breakpoint = joint.Stiffness <= 0.1f ? float.PositiveInfinity : length * joint.Stiffness * 5f;
 
