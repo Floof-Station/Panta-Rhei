@@ -20,6 +20,7 @@ public abstract partial class GameTest
     private readonly Dictionary<string, object> _serverCVarOverrides = new()
     {
         { FloofCCVars.WeatherCycleEnabled.Name, false }, // There's a bug in the weather or container or status effect system that causes weather entities to be spawned off-center
+        { FloofCCVars.AutoVoteEnabled.Name, false }, // Attempts to send vote messages over a dummy channel throw exceptions
     };
 
     /// <summary>
