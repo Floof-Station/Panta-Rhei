@@ -537,3 +537,17 @@
     sprite: _HL/Clothing/Bunnysuit/Ears/equipped.rsi
     equippedState: hop
 
+# Euph - Chief Justice Bunnysuit by IcarusianFolly
+
+- type: entity
+  parent: BunnyEarsBase
+  id: BunnyEarsChiefJustice
+  name: chief justice bunny ears
+  components:
+  - type: Sprite
+    sprite: _HL/Clothing/Bunnysuit/Ears/icons.rsi
+    state: chiefjustice
+  - type: Clothing
+    sprite: _HL/Clothing/Bunnysuit/Ears/equipped.rsi
+    equippedState: chiefjustice
+
