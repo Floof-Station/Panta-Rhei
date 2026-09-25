@@ -39,6 +39,7 @@
   components:
   - type: Rope
     color: "#55ffff90" # Semitransparent
+    configuration: Phasing10 # required by the yaml linter, updated on spawn
 
 
 # ======== Antigravity rope (not affected by gravitiy) ======
@@ -74,5 +75,5 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Rope
-    configuration: Antigravity10 # required by the yaml linter
+    configuration: Antigravity10 # required by the yaml linter, updated on spawn
     color: "#55ff5590" # Semitransparent
