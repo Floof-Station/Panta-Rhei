@@ -434,6 +434,7 @@ public sealed partial class IngestionSystem : EntitySystem
             // do-after will stop if item is dropped when trying to feed someone else
             // or if the item started out in the user's own hands
             NeedHand = forceFeed || _hands.IsHolding(user, food),
+            DuplicateCondition = DuplicateConditions.SameEvent, // Euph - this prevents the same user from eating multiple things at once. The same do-after event is used for each.
         };
 
         return doAfterArgs;
