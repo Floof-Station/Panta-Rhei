@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2025 Tabitha
+# SPDX-FileCopyrightText: 2025 Shaman
 #
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: MIT
 
 - type: entity
   parent: ClothingBackpackSatchel
@@ -64,3 +64,91 @@
     walkModifier: 1
     sprintModifier: 0.9
   - type: HeldSpeedModifier
+
+#Mantis Back Start
+
+- type: entity # The mantis backpacks are a bit smaller visually to show off their clothes
+  parent: [ClothingBackpack, BaseFoldable]
+  id: ClothingBackpackMantis
+  name: mantis backpack
+  description: "A low-profile backpack for the mantis, signified by the Greek psi in electrum. The strap can be flipped to the other side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Backpacks/mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: [ClothingBackpackDuffel, BaseFoldable]
+  id: ClothingBackpackDuffelMantis
+  name: mantis duffel bag
+  description: "A relatively low-profile duffel bag with a braided handle for the mantis. The strap can be flipped to the other side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Duffels/mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelMantis
+  name: mantis satchel
+  description: "A low-profile satchel for the mantis that hooks onto the back of your belt, bearing a Greek psi on the flap. Perhaps the only bag that won't get caught on the sleeves of your robes."
+  components: # Intentionally only visible when facing north, since multiple mantis gloves have big detached sleeves
+  - type: Sprite # Backpacks layer over gloves when facing east or west, so this is the only option that will never do that
+    sprite: _DEN/Clothing/Back/Satchels/mantis.rsi
+
+- type: entity
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelMantisPurse
+  name: mantis handbag
+  description: "A low-profile handbag for the mantis with a polished clasp. It can be worn on either shoulder, and it's easily hidden beneath a cloak."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Satchels/mantispurse.rsi
+
+- type: entity
+  parent: [ClothingBackpackSatchel, BaseFoldable]
+  id: ClothingBackpackMessengerMantis
+  name: mantis messenger bag
+  description: "A low-profile messenger bag for the mantis, within an electrum shell shaped like a watchful eye. The strap can be flipped to the other side."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Back/Messenger/mantis.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-flipped
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-flip-verb
+    unfoldVerbText: fold-flip-verb
+  - type: FoldableClothing
+    foldedEquippedPrefix: flipped
+
+#Mantis Back End
