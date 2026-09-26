@@ -140,6 +140,14 @@
 
 - type: entity
   parent: HolopadSecurity
+  id: HolopadSecurityHoldingCells
+  suffix: Holding Cells
+  components:
+  - type: Label
+    currentLabel: holopad-security-holding-cells
+
+- type: entity
+  parent: HolopadSecurity
   id: HolopadSecurityLockerRoom
   suffix: Sec Lockers
   components:
