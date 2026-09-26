@@ -113,13 +113,13 @@
     startAudio:
       path: /Audio/_Euphoria/Announcements/anomaly_appear.ogg # Euphoria - New Voice Lines
     weight: 12 # DeltaV - was 8
-    duration: 35
-  - type: PrecognitionResult # DeltaV - Precogniton
-    message: psionic-power-precognition-anomaly-spawn-result-message
     conditions: # Floof - at least one epi member
     - !type:DepartmentCountCondition
       department: Epistemics
       range: { min: 1 }
+    duration: 35
+  - type: PrecognitionResult # DeltaV - Precogniton
+    message: psionic-power-precognition-anomaly-spawn-result-message
   - type: AnomalySpawnRule
 # Bluespace Artifact
 - type: entity
@@ -535,7 +535,7 @@
 
 - type: entity
   id: SnakeSpawnHorde
-  parent: BaseGameRuleSecurityRequirement #Euph - reparented
+  parent: [BaseGameRuleSecurityRequirement, BaseStationEventShortDelay] #Euph - reparented
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
