@@ -116,6 +116,10 @@
     duration: 35
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-anomaly-spawn-result-message
+    conditions: # Floof - at least one epi member
+    - !type:DepartmentCountCondition
+      department: Epistemics
+      range: { min: 1 }
   - type: AnomalySpawnRule
 # Bluespace Artifact
 - type: entity
@@ -210,7 +214,7 @@
     prototype: MobSkeletonCloset
 # Dragon
 - type: entity
-  parent: BaseGameRule
+  parent: BaseGameRuleSecurityRequirement # Floof - changed parent
   id: DragonSpawn
   components:
   - type: StationEvent
@@ -244,7 +248,7 @@
 
 # Ninja
 - type: entity
-  parent: BaseGameRule
+  parent: BaseGameRuleSecurityRequirement # Floof - changed parent
   id: NinjaSpawn
   components:
   - type: StationEvent
@@ -531,7 +535,7 @@
 
 - type: entity
   id: SnakeSpawnHorde
-  parent: BaseStationEventShortDelay
+  parent: BaseGameRuleSecurityRequirement #Euph - reparented
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
@@ -573,7 +577,7 @@
 
 - type: entity
   id: SpiderClownSpawnHorde
-  parent: BaseStationEventShortDelay
+  parent: BaseGameRuleSecurityRequirement #Euph - reparented
   components:
   - type: StationEvent
     startAnnouncement: station-event-vent-creatures-start-horde-announcement
@@ -635,6 +639,10 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
+    conditions: #Euphoria
+    - !type:DepartmentCountCondition
+      department: Security
+      range: { min: 3 }
     earliestStart: 45 # DeltaV - was 35
     weight: 3 # DeltaV - was 5.5
     minimumPlayers: 30 # DeltaV - was 20

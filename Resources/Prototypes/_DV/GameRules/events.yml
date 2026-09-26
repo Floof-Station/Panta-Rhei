@@ -38,6 +38,10 @@
     duration: null #ending is handled by MeteorSwarmRule
   - type: PrecognitionResult
     message: psionic-power-precognition-meteor-swarm-result-message
+    conditions: # Floof
+    - !type:DepartmentCountCondition
+      department: Engineering
+      range: { min: 2 }
   - type: MeteorSwarmRule
 # Xeno Vents
 - type: entity
