@@ -1,0 +1,12 @@
+- type: entity
+  parent: BunnyEarsBase
+  id: BunnyEarsChiefJustice
+  name: chief justice bunny ears
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Head/BunnysuitEars/icons.rsi
+    state: chiefjustice
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Head/BunnysuitEars/equipped.rsi
+    equippedState: chiefjustice
+
