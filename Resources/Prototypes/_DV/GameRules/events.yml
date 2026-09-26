@@ -33,7 +33,6 @@
     - !type:DepartmentCountCondition
       department: Engineering
       range: { min: 2 }
-  - type: MeteorSwarmRule
     startAnnouncement: station-event-meteor-swarm-start-announcement
     endAnnouncement: station-event-meteor-swarm-end-announcement
     startAudio:
@@ -43,6 +42,8 @@
     duration: null #ending is handled by MeteorSwarmRule
   - type: PrecognitionResult
     message: psionic-power-precognition-meteor-swarm-result-message
+  - type: MeteorSwarmRule
+
 # Xeno Vents
 - type: entity
   parent: BaseGameRule
