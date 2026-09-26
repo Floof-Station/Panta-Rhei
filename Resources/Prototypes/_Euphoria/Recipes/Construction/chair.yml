@@ -1,0 +1,23 @@
+﻿- type: construction
+  id: ChairMushWood
+  graph: MushWoodFurniture
+  startNode: start
+  targetNode: mushwoodchair
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MushwoodDogBed
+  graph: MushWoodFurniture
+  startNode: start
+  targetNode: mushwooddogbed
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
