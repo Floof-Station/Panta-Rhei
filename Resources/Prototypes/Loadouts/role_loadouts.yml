@@ -6,6 +6,7 @@
   - CaptainHead
   - Glasses # Euphoria
   - CaptainNeck
+  - PassengerFace # Euphoria - give mask options
   - CaptainJumpsuit
   - CaptainBackpack
   - CaptainOuterClothing
@@ -27,6 +28,7 @@
   - HoPHead
   - Glasses # Euphoria
   - HoPNeck
+  - PassengerFace # Euphoria - give mask options
   - HoPJumpsuit
   - HoPBackpack
   - HoPOuterClothing
@@ -83,6 +85,7 @@
   - BartenderHead
   - BartenderGlasses # DeltaV - replaces Glasses
   - BartenderNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - BartenderJumpsuit
   - CommonBackpack
   - BartenderOuterClothing
@@ -103,6 +106,7 @@
   - ServiceWorkerHead # DeltaV
   - Glasses
   - ServiceWorkerNeck # DeltaV # Floof - dedicated loadout group
+  - PassengerFace # Euphoria - give mask options
   - ServiceWorkerJumpsuit # DeltaV, was BartenderJumpsuit
   - PassengerOuterClothing # Floofstation - give them outer clothing too
   - FloofServiceWorkerPDAs # Floofstation pda
@@ -125,6 +129,7 @@
   - ChefHead
   - Glasses
   - PassengerNeck
+  - PassengerFace # Euphoria - give mask options
   - ChefMask
   - ChefJumpsuit
   - CommonBackpack
@@ -139,7 +144,6 @@
   - FloofUndergarmentTopChef # Floof
   - FloofUndergarmentBottomChef # Floof
   - FloofSocksChef # Floof
-  - ChefPDADelta # Floof
 
 - type: roleLoadout
   id: JobLibrarian
@@ -148,6 +152,7 @@
   - AssistantHead # Euphoria
   - Glasses
   - LibrarianNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - LibrarianJumpsuit
   - PassengerShoes # Floofstation -  this job doesn't get to pick shoes for some reason
   - PassengerGloves # Floofstation, give them access to basic gloves from passengers
@@ -169,6 +174,7 @@
   - AssistantHead # Euphoria
   - Glasses
   - LawyerNeck
+  - PassengerFace # Euphoria - give mask options
   - LawyerJumpsuit
   - PassengerShoes # Floofstation -  this job dosent get to pick shoes for some reason
   - PassengerGloves # Floofstation, give them access to basic gloves from passengers
@@ -215,6 +221,7 @@
   - JanitorHead
   - Glasses
   - JanitorNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - JanitorJumpsuit
   - JanitorGloves
   - FloofJanitorShoes # Floofstation - let janitors pick their shoes
@@ -236,6 +243,7 @@
   - BotanistHead
   - Glasses
   - BotanistNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - BotanistJumpsuit
   - BotanistBackpack
   - BotanistOuterClothing
@@ -306,6 +314,7 @@
   - AssistantHead # Euphoria
   - Glasses
   - MusicianNeck
+  - PassengerFace # Euphoria - give mask options
   - MusicianJumpsuit
   - CommonBackpack
   - FloofServiceMusicianPDAs # Floofsatation - give pda
@@ -328,6 +337,7 @@
   - QuartermasterHead
   - Glasses
   - QuartermasterNeck
+  - PassengerFace # Euphoria - give mask options
   - QuartermasterJumpsuit
   - CargoTechnicianBackpack
   - FloofLoGloves # Floofstation let lo have gloves
@@ -349,6 +359,7 @@
   - CargoTechnicianHead
   - Glasses # Euphoria
   - CargoTechnicianNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - CargoTechnicianJumpsuit
   - CargoTechnicianBackpack
   - FloofCargotechGloves # Floofstation, give them access to basic gloves from passengers
@@ -372,6 +383,7 @@
   - AssistantHead # Euphoria
   - Glasses
   - SalvageSpecialistNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - SalvageSpecialistJumpsuit # DeltaV - more jumpskirts
   - GroupTankHarness
   - SalvageSpecialistBackpack
@@ -397,6 +409,7 @@
   - ChiefEngineerJumpsuit
   - StationEngineerBackpack
   - ChiefEngineerNeck
+  - PassengerFace # Euphoria - give mask options
   - ChiefEngineerOuterClothing
   - ChiefEngineerGloves # DeltaV
   - ChiefEngineerShoes
@@ -416,6 +429,7 @@
   - StationEngineerHead
   - FloofEngineeringGlasses # Floofstation glasses
   - StationEngineerNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - TechnicalAssistantJumpsuit
   - FloofTechnicalAssistantPDAs # Floofstation - let them pick pda
   - StationEngineerGloves # floostation - give them access to gloves
@@ -438,6 +452,7 @@
   - StationEngineerHead
   - FloofEngineeringGlasses # Floofstation glasses
   - StationEngineerNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - StationEngineerJumpsuit
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
@@ -460,6 +475,7 @@
   - AtmosphericTechnicianHead # DeltaV
   - FloofEngineeringGlasses # Floofstation glasses
   - AtmosphericTechnicianNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - AtmosphericTechnicianJumpsuit
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
@@ -483,6 +499,7 @@
   - ResearchDirectorHead
   - Glasses
   - ResearchDirectorNeck
+  - PassengerFace # Euphoria - give mask options
   - ResearchDirectorJumpsuit
   - ScientistBackpack
   - ResearchDirectorOuterClothing
@@ -504,6 +521,7 @@
   - ScientistHead
   - Glasses
   - ScientistNeck
+  - PassengerFace # Euphoria - give mask options
   - ScientistJumpsuit
   - ScientistBackpack
   - ScientistOuterClothing
@@ -548,6 +566,7 @@
   - HeadofSecurityHead
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - HeadofSecurityNeck
+  - PassengerFace # Euphoria - give mask options
   - HeadofSecurityJumpsuit
   - SecurityBackpack
   - SecurityBelt
@@ -571,6 +590,7 @@
   - WardenHead
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SecurityNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - WardenJumpsuit
   - SecurityBackpack
   - SecurityBelt
@@ -595,6 +615,7 @@
   - SecurityHead
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SecurityNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - SecurityJumpsuit
   - SecurityBackpack
   - SecurityOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was SecurityOuterClothing
@@ -619,6 +640,7 @@
   - DetectiveHead
   - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SecurityNeck # DeltaV - replace DetectiveNeck for incongruence
+  - PassengerFace # Euphoria - give mask options
   - DetectiveJumpsuitDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveJumpsuit
   - SecurityBackpack
   - DetectiveOuterClothingDeltaV # DeltaV - Replaced with DeltaV version, was DetectiveOuterClothing
@@ -641,6 +663,7 @@
   - SecurityHead # DeltaV
   - SecurityEyewear # Floofstation - let cadets customize their eye wear
   - SecurityNeck # DeltaV
+  - PassengerFace # Euphoria - give mask options
   - SecurityGloves # DeltaV - Security can start with gloves
   - SecurityCadetJumpsuit
   - SecurityOuterClothingDeltaV # Floofstation - Let cadets customize their outer clothing
@@ -805,6 +828,7 @@
   - PsychologistHead # Euphoria | Moved for order
   - Glasses
   - MedicalDoctorNeck # Euphoria
+  - PassengerFace # Euphoria - give mask options
   - PsychologistJumpsuit
   - MedicalBackpack
   # Begin DeltaV additions

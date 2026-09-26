@@ -453,28 +453,6 @@
 
 - type: entity
   parent: PlushieHuman
-  id: PlushieRescueFox
-  name: Rescue fox plushie
-  description: These plushies always struggle to stand upright due to misbalancing but their tails are very soft! Wait, doesn't this look familiar to someone...?
-  components:
-  - type: Sprite
-    sprite: _Floof/Objects/Fun/floof_plush.rsi
-    state: parafox
-  - type: UseDelay
-    delay: 3.0
-  - type: EmitSoundOnUse
-    sound: *yap
-  - type: EmitSoundOnActivate
-    sound: *yap
-  - type: EmitSoundOnCollide
-    sound: *yap
-  - type: EmitSoundOnLand
-    sound: *yap
-  - type: MeleeWeapon
-    soundHit: *yap
-
-- type: entity
-  parent: PlushieHuman
   id: PlushieArachneNobility
   name: Arachne Nobility Plushie
   description: Soft as spider silk, this arachne plushie is here to be of assistance. Do not poke, submit to them poking you instead!
@@ -1872,3 +1850,108 @@
     sound: *cat_hiss1
   - type: MeleeWeapon
     soundHit: *cat_hiss1
+
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman]
+  id: WhiteManPlushie
+  name: White Man Plushie
+  description: Meet Potential Man! This plushie reeks of tobacco. Deckard not included.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: whiteman
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &zippo_open1
+      path: /Audio/Items/Lighters/zippo_open.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnUse
+    sound: *zippo_open1
+  - type: EmitSoundOnLand
+    sound: &knocking
+      path: /Audio/Effects/glass_knock.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnCollide
+    sound: *knocking
+  - type: MeleeWeapon
+    soundHit: *knocking
+
+- type: entity
+  parent: [BaseFleshlight, PlushieExperiment]
+  id: PlushieRescueFox 
+  name: Rescue Fox Plushie
+  description: This plushie struggles to stand up straight but still wills itself to do so in order to sit nicely on your shelf. The pin atop the beret is both made of real silver and not removable. Yaps sourced from a real arctic fox!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/eusplushie.rsi
+    state: icon
+  - type: Item
+    sprite: _Floof/Objects/Fun/eusplushie.rsi
+    heldPrefix: plushielizard
+  - type: EmitSoundOnActivate
+    sound: *yap
+  - type: EmitSoundOnUse
+    sound: *yap
+  - type: EmitSoundOnLand
+    sound: &foxwhine1
+      path: /Audio/Animals/fox1.ogg
+      params:
+        volume: 1
+  - type: EmitSoundOnCollide
+    sound: *foxwhine1
+  - type: MeleeWeapon
+    soundHit: *foxwhine1
+
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman]
+  id: SleepyMGPlushie
+  name: sleepy mystagogue plushie
+  description: It's Moira! She's so lifelike that the psionic aura emanating off of this plushie is uncomfortable to be around. There's no tag on her. Who made this? Comes with a magnet in her left hand!
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: sleepymg
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &beep1
+      path: /Audio/Effects/beep1.ogg
+      params:
+        volume: 2
+  - type: EmitSoundOnUse
+    sound: *beep1
+  - type: EmitSoundOnLand
+    sound: &robot-scream
+      path: /Audio/_EE/Voice/IPC/robot-scream.ogg
+  - type: EmitSoundOnCollide
+    sound: *robot-scream
+  - type: MeleeWeapon
+    soundHit: *robot-scream
+
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman]
+  id: AngryOfficerPlushie
+  name: angry officer plushie
+  description: Made by Ars Vincendi's marketing department, this plushie whirrs just like the real thing. Watch out for the teeth, though! Comes with a magnet in her right hand.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/floof_plush.rsi
+    state: angryofficer
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &whirr1
+      path: /Audio/_EE/Voice/IPC/whirr1.ogg
+      params:
+        volume: 3
+  - type: EmitSoundOnUse
+    sound: *whirr1
+  - type: EmitSoundOnLand
+    sound: *robot-scream
+  - type: EmitSoundOnCollide
+    sound: *robot-scream
+  - type: MeleeWeapon
+    soundHit: *robot-scream
