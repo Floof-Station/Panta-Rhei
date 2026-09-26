@@ -118,7 +118,7 @@ public abstract partial class StationEventCondition
                     && Rolesystem.MindHasRole<JobRoleComponent>(mind, out var jobComp)
                     && jobComp.Value.Comp1.JobPrototype != null
                 )
-                    job = jobComp.Value.Comp1.JobPrototype;
+                    job = jobComp.Value.Comp1.JobPrototype.Value;
 
                 // If both have failed, skip the player
                 if (job == default)
