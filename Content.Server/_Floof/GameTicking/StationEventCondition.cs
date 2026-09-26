@@ -5,6 +5,7 @@ using Content.Server.StationEvents;
 using Content.Server.StationEvents.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Roles;
+using Content.Shared.Roles.Components;
 using Content.Shared.Roles.Jobs;
 //using Content.Shared.Roles.Components;
 using Robust.Server.Player;
@@ -51,6 +52,7 @@ public abstract partial class StationEventCondition
         [Dependency] public IPrototypeManager ProtoMan = default!;
         [Dependency] public IRobustRandom Random = default!;
         [Dependency] public IPlayerManager PlayerManager = default!;
+        [Dependency] public SharedRoleSystem Rolesystem = default!;
 
         /// <summary>
         ///     The list of all players along with their jobs.
@@ -113,10 +115,10 @@ public abstract partial class StationEventCondition
 
                 // 2: If failed, try to fetch it from the mind component instead
                 if (job == default
-                    && EntMan.TryGetComponent<JobComponent>(mind, out var jobComp)
-                    && jobComp.Prototype is {} mindJobProto
+                    && Rolesystem.MindHasRole<JobRoleComponent>(mind, out var jobComp)
+                    && jobComp.Value.Comp1.JobPrototype != null
                 )
-                    job = mindJobProto;
+                    job = jobComp.Value.Comp1.JobPrototype;
 
                 // If both have failed, skip the player
                 if (job == default)
