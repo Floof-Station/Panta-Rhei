@@ -34,6 +34,13 @@
   priority: 20
   accentColor: "#90D5FF" # lightblue
 
+- type: traitCategory # Euphoria
+  id: Emotes
+  name: trait-category-emotes
+  maxTraits: 1 # Can only choose one
+  priority: 25
+  accentColor: "#111184" # darkblue
+
 - type: traitCategory
   id: Languages
   name: trait-category-languages

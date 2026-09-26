@@ -9,3 +9,4 @@ trait-category-lewd = Lewd
 trait-category-bonusphysical = Strengths - Physical
 trait-category-bonusmental = Strengths - Mental
 trait-category-visuals = Visuals
+trait-category-emotes = Emotes

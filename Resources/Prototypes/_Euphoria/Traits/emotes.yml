@@ -1,0 +1,84 @@
+﻿# Allowed emotes are generally going to be what you see in emote_sounds.yml for a species or any other emote.yml
+# Some of these may be duplicates, but we are gonna roll with this and worry about that in the future if its a problem
+# Some of the emotes also don't display properly in the emote wheel but the chat trigger will work.
+- type: trait
+  id: TraitsEmoteVulpkanin
+  name: trait-emote-vulpkanin
+  description: trait-emote-vulpkanin-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
+    allowedEmotes:
+    - Growl
+    - Snarl
+    - Bark
+    - Howl
+    - Awoo
+    - Yip
+    - Yap
+    - Whine
+    - Whimper
+
+# felinid
+- type: trait
+  id: TraitsEmoteFelinid
+  name: trait-emote-felinid
+  description: trait-emote-felinid-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleFelinid
+      Female: FemaleFelinid
+      Unsexed: MaleFelinid
+    allowedEmotes:
+    - Hiss
+    - FelineTrill
+    - Meow
+    - Mew
+    - Purr
+
+# kitsune
+- type: trait
+  id: TraitsEmoteKitsune
+  name: trait-emote-kitsune
+  description: trait-emote-kitsune-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleKitsune
+      Female: FemaleKitsune
+      Unsexed: MaleKitsune
+    allowedEmotes:
+    - Growl
+    - Yip
+    - Yap
+    - Whine
+    - Whimper
+    - Squeak
+
+# slime person
+- type: trait
+  id: TraitsEmoteSlimePerson
+  name: trait-emote-slime
+  description: trait-emote-slime-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleSlime
+      Female: FemaleSlime
+      Unsexed: MaleSlime
+    allowedEmotes:
+    - Pop
+    - Bubble
+    - Squish
