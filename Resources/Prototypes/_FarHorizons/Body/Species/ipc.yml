@@ -200,14 +200,15 @@
     damagedThreshold:
       min: 85
   - type: Repairable # So welder is just a special little snowflake in the code. I tried making healing with welder work through ConditionalHealing component, but it would require too many changes in too many places. So we will keep on the trend and have brute healing defined here. /shrug
-    doAfterDelay: 10 # Euph - same as borgs, we dont have insta-heal topicals that the original comment refers to
+    doAfterDelay: 5 # Euph - same as borgs, we dont have insta-heal topicals that the original comment refers to 
+    # Euph - Making it faster in exchange for worse healing so that IPCs don't take 15 seconds to weld themselves (and bleed out because of it).
     allowSelfRepair: true
-    fuelCost: 5
+    fuelCost: 2.5
     damage:
-      types:
-        Blunt: -10
-        Piercing: -10
-        Slash: -10
+      types: # Euph - reducing the healing by half in trade-off for faster doAfter speed.
+        Blunt: -5 # Euph - was 10, made 5
+        Piercing: -5 # Euph - was 10, made 5
+        Slash: -5 # Euph - was 10, made 5
     selfRepairPenalty: 1.5
     qualityNeeded: Welding # Euph - With upstream/Nubody changes, the default was set to "Applicating" which meant IPCs couldn't be welded. This sets it to "Welding" so they can be welded. Duh.
   - type: HumanoidEMP # HumanoidEMP is needed to receive EMP effects, it may carry its own innate effects, but doesn't have to
@@ -228,21 +229,21 @@
         damage: 400
       behaviors:
       - !type:GibBehavior { }
-    - trigger:
-        !type:DamageTypeTrigger
-        damageType: Heat
-        damage: 2500 # Due to being extremely ash prone as a result of tempature mechanics. Also it's metal, that takes longer to melt.
-      behaviors:
-      - !type:SpawnEntitiesBehavior
-        spawnInContainer: true
-        spawn:
-          Ash: # Should totally make this like, metallic slag or something later on. Thematically fitting.
-            min: 1
-            max: 1
-      - !type:BurnBodyBehavior { }
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MeatLaserImpact
+   # - trigger: # Euph - DeltaV removed ashing in general, IPCs were the only species that could really "ash" still. 
+     #   !type:DamageTypeTrigger 
+     #   damageType: Heat
+     #   damage: 2500 # Due to being extremely ash prone as a result of tempature mechanics. Also it's metal, that takes longer to melt.
+    #  behaviors:
+    #  - !type:SpawnEntitiesBehavior
+    #    spawnInContainer: true
+     #   spawn:
+      #    Ash: # Should totally make this like, metallic slag or something later on. Thematically fitting.
+      #      min: 1
+      #      max: 1
+    #  - !type:BurnBodyBehavior { }
+    #  - !type:PlaySoundBehavior
+     #   sound:
+     #     collection: MeatLaserImpact
     - trigger:
         !type:DamageTypeTrigger
         damageType: Radiation

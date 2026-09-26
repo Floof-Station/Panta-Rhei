@@ -8,6 +8,18 @@
   parent: Bloodpack
   id: BloodpackOil
   components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Medical/oilpack.rsi
+    state: icon 
+  - type: Item
+    sprite: _Euphoria/Objects/Specific/Medical/oilpack.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
   - type: Healing
     damageContainers:
     - Robotic
