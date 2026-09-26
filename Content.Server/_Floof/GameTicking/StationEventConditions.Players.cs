@@ -1,5 +1,5 @@
 ﻿using Content.Server.StationEvents.Components;
-using Content.Shared.InteractionVerbs;
+using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared.Roles;
 using Robust.Shared.Prototypes;
 
