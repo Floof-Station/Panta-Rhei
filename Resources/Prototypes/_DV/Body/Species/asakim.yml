@@ -10,7 +10,7 @@
 #      limit: 0
 #      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2 # Euph - Tail slots increased to 2
       required: true
       default: [ LizardTailSmooth ]
 #    enum.HumanoidVisualLayers.HeadTop:

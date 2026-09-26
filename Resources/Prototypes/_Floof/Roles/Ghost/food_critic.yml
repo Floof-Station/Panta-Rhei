@@ -1,20 +1,23 @@
-#The gamerule is in events.yml. I didn't put any of these other things in their places because, well...
-#It's kinda invonvenient to create all those directories. I'll do it if someone says I should.
+#Within this file are all the prototypes that makes up the food critic ghost role event.
+#These prototypes would normally go all in their own categorical directories and files,
+#but it seems more productive and clear to group them by the feature they're intended to
+#form by fitting together. It's not like any of this is going to be used for anything else,
+#and if someone wants to check out Food Critic prototypes, here's all of them.
 
-#Objectives
+#A base objective in case we want to make more
 - type: entity
   abstract: true
   parent: BaseObjective
   id: BaseFoodCriticObjective
   components:
   - type: Objective
-    # difficulty isn't used since all objectives are picked
-    difficulty: 1.5
+    difficulty: 1.5 #Difficulty doesn't matter with how this is used, but it's set anyway
     issuer: objective-issuer-donk-co
   - type: RoleRequirement
     roles:
     - FoodCriticRole
 
+#The Food Critic doesn't really have any attainable objectives rn, so just... don't die.
 - type: entity
   parent: [BaseFoodCriticObjective, BaseSurviveObjective]
   id: FoodCriticSurviveObjective
@@ -22,9 +25,17 @@
   description: The food can't be that bad...
   components:
   - type: Objective
-    icon:
+    icon: #Make this objective's icon a cheeseburger
       sprite: Objects/Consumable/Food/burger.rsi
       state: cheese
+
+#The specific type of antagonist the Food Critic is
+- type: antag
+  id: FoodCriticAntagPrototype
+  name: roles-antag-food-critic-name
+  antagonist: true
+  setPreference: false
+  objective: roles-antag-food-critic-objective
 
 # Mind Role
 - type: entity
@@ -36,18 +47,9 @@
     antagPrototype: FoodCriticAntagPrototype
     subtype: role-subtype-food-critic
     roleType: EmployeeDonkco
-    #exclusiveAntag: true #Uncommenting this breaks everything as of July 2nd 2026
   - type: FoodCriticRole
 
-# Antag Prototype
-- type: antag
-  id: FoodCriticAntagPrototype
-  name: roles-antag-food-critic-name
-  antagonist: true
-  setPreference: false
-  objective: roles-antag-food-critic-objective
-
-# Starting Gear
+#Gear/apparel for the Food Critic to spawn in with.
 - type: startingGear
   id: FoodCriticGear
   equipment:
@@ -57,7 +59,8 @@
     shoes: ClothingShoesBootsLaceup
     back: ClothingBackpack
 
-#Spawn Point
+#Spawn Point entity for the event to place somewhere.
+#Opens up a ghost role so people can take it.
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: BaseAntagSpawner
@@ -75,3 +78,40 @@
     sprite: Objects/Consumable/Food/burger.rsi
     state: human
 
+# Event that can be rolled to set up the ghost role
+- type: entity
+  parent: BaseGameRule
+  id: FoodCriticSpawn
+  components:
+  - type: StationEvent
+    weight: 8
+    duration: null
+    earliestStart: 30
+    reoccurrenceDelay: 60 # I don't think this makes sense to be here but oh well, no harm.
+    minimumPlayers: 10
+    maxOccurrences: 1 #This event can only occur once in a given round
+  - type: PrecognitionResult
+    message: psionic-power-precognition-food-critic-result-message
+  - type: AntagStationSpawnRule #Place the spawner somewhere a player would be placed
+  - type: AntagLoadPlayerCharacterRule #Make the ghost role into the player's selected character.
+  - type: AntagObjectives
+    objectives:
+    - FoodCriticSurviveObjective
+  - type: AntagSelection
+    agentName: food-critic-round-end-agent-name
+    definitions:
+    - spawnerPrototype: SpawnPointFoodCritic
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: FoodCriticGear
+      roleLoadout:
+      - RoleSurvivalStandard #ABSOLUTELY NECESSARY OR VOX WILL NOT HAVE NITROGEN GEAR
+      briefing:
+        text: food-critic-role-greeting
+        color: Lime
+        sound: /Audio/Items/beep.ogg
+      mindRoles:
+      - MindRoleFoodCritic
+  - type: DynamicRuleCost
+    cost: 5
