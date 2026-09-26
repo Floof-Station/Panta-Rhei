@@ -1,0 +1,37 @@
+﻿- type: entity
+  name: blueberry danish
+  parent: FoodPieBase
+  id: FoodDanishBlueberry
+  description: A tasty dessert that reminds you of the berries you didn't grow.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/berry_food.rsi
+    state: danish_blueb
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Sugar
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+
+- type: entity
+  name: raspberry danish
+  parent: FoodDanishBlueberry # parenting off the other danish to save yml lines
+  id: FoodDanishRaspberry
+  description: A tasty dessert that reminds you of the berries you didn't grow.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/berry_food.rsi
+    state: danish_raspberry

@@ -39,7 +39,7 @@ namespace Content.Server.Administration.Systems
 
         [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IAdminManager _adminManager = default!;
-        [Dependency] private readonly IBanManager _banManager = default!; // Starlight
+        // [Dependency] private readonly IBanManager _banManager = default!; // Starlight //Euphoria, Unused.
         [Dependency] private readonly IConfigurationManager _config = default!;
         [Dependency] private readonly IGameTiming _timing = default!;
         [Dependency] private readonly IPlayerLocator _playerLocator = default!;
@@ -83,7 +83,7 @@ namespace Content.Server.Administration.Systems
         private const ushort MessageLengthCap = 3000;
 
         // Begin Starlight additions
-        private readonly TimeSpan _messageCooldown = TimeSpan.FromSeconds(2);
+        private readonly TimeSpan _messageCooldown = TimeSpan.FromSeconds(0); //Euphoria, Everyone is getting tired of dropped messages cause of this.
 
         private readonly Queue<(NetUserId Channel, string Text, TimeSpan Timestamp)> _recentMessages = new();
         private const int MaxRecentMessages = 10;
@@ -241,7 +241,7 @@ namespace Content.Server.Administration.Systems
                 }
 
                 // Check if the user has been banned
-                var ban = await _dbManager.GetServerBanAsync(null, e.Session.UserId, null, null);
+                var ban = await _dbManager.GetBanAsync(null, e.Session.UserId, null, null);
                 if (ban != null)
                 {
                     var banMessage = Loc.GetString("bwoink-system-player-banned", ("banReason", ban.Reason));
@@ -483,6 +483,7 @@ namespace Content.Server.Administration.Systems
 
                 var linkToPrevious = string.Empty;
 
+                _webhookData = await GetWebhookData(_webhookUrl); // Delta V - added so webhook doesn't scream
                 // If we have all the data required, we can link to the embed of the previous round or embed that was too long
                 if (_webhookData is { GuildId: { } guildId, ChannelId: { } channelId })
                 {
@@ -742,8 +743,10 @@ namespace Content.Server.Administration.Systems
             if (IsOnCooldown(message.UserId, currentTime))
                 return;
 
-            if (IsSpam(message.UserId, message.Text))
-                _banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 0, NoteSeverity.High, "Automatic AHELP Antispam system Ban, If this ban is wrong, file an appeal.");
+            //if (IsSpam(message.UserId, message.Text))
+            //_banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 0, NoteSeverity.High, "Automatic AHELP Antispam system Ban, If this ban is wrong, file an appeal.");
+            //Euphoria, Since we are a invite only server we dont need a autoban for raiders.
+
 
             AddToRecentMessages(message.UserId, message.Text, currentTime);
             // End Starlight Changes

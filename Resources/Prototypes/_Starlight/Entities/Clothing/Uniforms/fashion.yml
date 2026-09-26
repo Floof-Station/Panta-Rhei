@@ -1,0 +1,55 @@
+﻿- type: entity
+  parent: ClothingUniformBase
+  id: CandyClownUniformSuit
+  name: candy clown
+  description: Oh god this makes your eyes hurt!
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/candy_clown.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/candy_clown.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: SpottedClownUniformSuit
+  name: spotted clown
+  description: An older clown suit from a more civilized time.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/clown_spots.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/clown_spots.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: StripedClownUniformSuit
+  name: striped clown uniform
+  description: Somehow its brighter than anything youve ever seen.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/striped_clown.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/striped_clown.rsi
+  - type: Tag
+    tags:
+    - ClownSuit
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: MimeFrillsUniformSuit
+  name: frilly mime dress
+  description: How do they move so silently in these things?
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Uniforms/mime_frills.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Uniforms/mime_frills.rsi

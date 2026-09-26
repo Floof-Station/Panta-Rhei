@@ -61,23 +61,6 @@
   - Assembler
 
 - type: microwaveMealRecipe
-  id: RecipeSausageRawStomachRat
-  name: raw stomach sausage recipe
-  result:
-  - FoodSausageRaw
-  - FoodSausageRaw
-  - FoodSausageRaw
-  #resultCount: 3
-  time: 10
-  group: Savory # TODO: move to ingredients
-  solids:
-    OrganRatStomach: 1
-  reagents:
-    UncookedAnimalProteins: 9
-  recipeType:
-  - Assembler
-
-- type: microwaveMealRecipe
   id: RecipeSausageRawStomachHuman
   name: raw stomach sausage recipe
   result:
@@ -94,17 +77,25 @@
   recipeType:
   - Assembler
 
+#Euphoria - this is changed a lot
 - type: microwaveMealRecipe
   id: RecipeSausageCooked
   name: cooked sausage recipe
   result: FoodMeatSausage
-  time: 10
+  time: 5 #Euphoria
   group: Savory
   solids:
     FoodSausageRaw: 1
+  reagents:
+    Water: 10
+  resultReagents:
+    reagents:
+    - ReagentId: HotdogWater
+      Quantity: 10
   recipeType:
-  - Oven
+  #- Oven
   - Microwave
+#Euphoria - end changes
 
 - type: microwaveMealRecipe
   id: RecipeHotdog
@@ -116,7 +107,7 @@
     FoodMeatSausage: 1
     FoodBreadBun: 1
   recipeType:
-  - Oven
+  - Assembler #Euphoria
 
 # Sushi
 

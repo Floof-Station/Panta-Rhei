@@ -1,15 +1,14 @@
-using Content.Server.Polymorph.Systems;
-using Content.Shared.Zombies;
 using Content.Server.Actions;
+using Content.Server.Body;
+using Content.Server.Goobstation.Ghostbar.Components;
+using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Shared._Floof.Geras;
-using Robust.Shared.Player;
-using Content.Server.Body.Components;
-using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Body;
 using Content.Shared.Humanoid;
 using Content.Shared.Sprite;
-using Content.Shared.Polymorph;
-using Content.Shared.Speech.Components;
+using Content.Shared.Zombies;
+using Robust.Shared.Player;
 
 namespace Content.Server._Floof.Geras;
 
@@ -19,6 +18,7 @@ public sealed class GerasSystem : EntitySystem
     [Dependency] private readonly PolymorphSystem _polymorphSystem = default!;
     [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly VisualBodySystem _visualBody = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -47,22 +47,21 @@ public sealed class GerasSystem : EntitySystem
 
         var colors = GrabHumanoidColors(uid); // begin imp
 
-        var sex = CompOrNull<HumanoidAppearanceComponent>(uid)?.Sex;
+        var isGhostbarPlayer = HasComp<GhostBarPlayerComponent>(uid);
+        if (isGhostbarPlayer)
+            RemComp<GhostBarPlayerComponent>(uid);
 
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
 
-        if (sex != null)
-        {
-            if (TryComp<HumanoidAppearanceComponent>(ent, out var humanoid))
-            {
-                humanoid.Sex = sex.Value;
-                Dirty(ent.Value, humanoid);
-            }
-        }
+        if (ent is null)
+            return;
 
-        if (colors != null) // Match Geras to Humanoid Skin color
+        if (isGhostbarPlayer)
+            EnsureComp<GhostBarPlayerComponent>(ent.Value);
+
+        if (colors is {} colorsfr) // Match Geras to Humanoid Skin color
         {
-            (var skinColor, var eyeColor) = colors.Value;
+            (var skinColor, var eyeColor) = (colorsfr.SkinColor, colorsfr.EyeColor);
             if (TryComp<RandomSpriteComponent>(ent, out var randomSprite)) // has to use random sprite
             {
                 foreach (var entry in randomSprite.Selected)
@@ -80,8 +79,6 @@ public sealed class GerasSystem : EntitySystem
             }
         } // end imp
 
-
-
         if (!ent.HasValue)
             return;
 
@@ -91,15 +88,24 @@ public sealed class GerasSystem : EntitySystem
         args.Handled = true;
     }
 
-    private (Color, Color)? GrabHumanoidColors(EntityUid entity) //imp
+    // Original from imp, rewritten for euph
+    private OrganProfileData? GrabHumanoidColors(EntityUid entity)
     {
-        if (TryComp<HumanoidAppearanceComponent>(entity, out var humanoid)) // Get Humanoid Appearance
+        // Nubody
+        // it grabs the eye color, skin color, and sex from the character profile and shoves it into every marking
+        // Neither of these 3 properties are stored anywhere else
+        // I'm gonna lose my fucking shit if i spend another minute working with this code, so I'm just gonna leave this hack here
+        // We try to grab the skin and eye color from the first organ that specifies it, and if everything is default, we leave the random sprites as-is
+        // TODO free me from this nightmare
+        if (!_visualBody.TryGatherMarkingsData(entity, null, out var profiles, out _, out _))
+            return null;
+
+        foreach (var (organCategory, data) in profiles)
         {
-            var skinColor = humanoid.SkinColor;
-            var eyeColor = humanoid.EyeColor;
-            return (skinColor, eyeColor);
+            if (data.SkinColor != default && data.EyeColor != default)
+                return data;
         }
 
-        return null; // if a non-humanoid or someone with no bloodstream ascends, don't modify the colors
+        return null;
     }
 }
