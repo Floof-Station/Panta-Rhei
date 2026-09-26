@@ -7,3 +7,38 @@
     Plastic: 500
     Steel: 75
     Cloth: 50
+
+- type: latheRecipe
+  id: RopeBundleDurathread
+  result: RopeBundleDurathread
+  categories: [Tools]
+  completetime: 3.5
+  materials:
+    Steel: 200
+    Durathread: 450
+
+- type: latheRecipe
+  id: RopeBundleBasic
+  result: RopeBundleBasic
+  categories: [Tools]
+  completetime: 3.5
+  materials:
+    Steel: 200
+    Cloth: 450
+
+- type: latheRecipe
+  id: RopeBundleChainHeavy
+  result: RopeBundleChainHeavy
+  categories: [Tools]
+  completetime: 3.5
+  materials:
+    Steel: 1200
+
+- type: latheRecipe
+  id: RopeBundleCableSteel
+  result: RopeBundleCableSteel
+  categories: [Tools]
+  completetime: 3.5
+  materials:
+    Steel: 800
+    Durathread: 300

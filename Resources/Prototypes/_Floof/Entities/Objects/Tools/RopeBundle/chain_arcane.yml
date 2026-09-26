@@ -1,0 +1,46 @@
+# Admin-only for now
+- type: entity
+  id: RopeBundleArcane
+  parent: RopeBundleBase
+  name: Arcane chains
+  description: A simple spell to bind two entities together with an arcane rope.
+  suffix: Admeme
+  components:
+  - type: Sprite
+    state: icon-chain-arcane
+  - type: RopeConnector
+    ropePrototype: ChainArcane20
+    connectDelay: 1
+    detachDelay: 10 # Assuming it's used for admemes, we want to make it take longer to detach
+    targetWhitelist:
+      components:
+      - Item
+      - Machine
+      - MobState # It's just this good
+      tags:
+      - Crate
+
+# Rope configuration
+- type: ropeConfiguration
+  id: ChainArcane20
+  links: 20
+  linkPrototype: RopeLinkChainArcane
+  dataPrototype: RopeDataChainArcane
+  stiffness: 100000 # 100 kN/m
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: chain-arcane
+
+# Link entity
+- type: entity
+  id: RopeLinkChainArcane
+  parent: RopeLinkStandardRope
+  name: arcane chain link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataChainArcane
+  parent: RopeDataStandardRope
+  name: arcane chain
+  categories: [ HideSpawnMenu ]
