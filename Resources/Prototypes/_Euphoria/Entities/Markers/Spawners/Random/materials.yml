@@ -1,0 +1,25 @@
+
+- type: entity
+  name: random carpet item spawner
+  suffix: Full
+  id: RandomCarpetItemFull
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: pink
+    - sprite: Objects/Tiles/tile.rsi
+      state: carpet-red
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: FloorCarpetItemRedFull
+      - id: FloorCarpetItemBlackFull
+      - id: FloorCarpetItemBlueFull
+      - id: FloorCarpetItemGreenFull
+      - id: FloorCarpetItemOrangeFull
+      - id: FloorCarpetItemSkyBlueFull
+      - id: FloorCarpetItemPurpleFull
+      - id: FloorCarpetItemPinkFull
+      - id: FloorCarpetItemCyanFull
+      - id: FloorCarpetItemWhiteFull
