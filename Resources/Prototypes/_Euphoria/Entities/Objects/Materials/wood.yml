@@ -1,0 +1,71 @@
+﻿# mushwood
+- type: entity
+  parent: MaterialBase
+  id: MaterialMushwoodPlank
+  name: mushwood
+  suffix: Full
+  components:
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      MushWood: 100
+  - type: Stack
+    stackType: MushwoodPlank
+    baseLayer: base
+    layerStates:
+    - mushwood
+    - mushwood_2
+    - mushwood_3
+  - type: Sprite
+    sprite: _Euphoria/Objects/Materials/mush_wood.rsi
+    state: mushwood
+    layers:
+    - state: mushwood
+      map: ["base"]
+  - type: Appearance
+  - type: Item
+    sprite: _Euphoria/Objects/Materials/mush_wood.rsi
+    inhandVisuals:
+      left:
+      - state: mushwood-inhand-left
+      right:
+      - state: mushwood-inhand-right
+    heldPrefix: wood
+  - type: Tag
+    tags:
+    - Wooden
+    - RawMaterial
+    - TiderAnvilParts #SL
+    - ConstructionMaterial
+  - type: Extractable
+    grindableSolutionName: wood
+  - type: SolutionContainerManager
+    solutions:
+      wood:
+        reagents:
+        - ReagentId: Cellulose
+          Quantity: 10
+
+- type: entity
+  parent: MaterialMushwoodPlank
+  id: MaterialMushwoodPlank10
+  suffix: 10
+  components:
+  - type: Stack
+    count: 10
+
+- type: entity
+  parent: MaterialMushwoodPlank
+  id: MaterialMushwoodPlank5
+  suffix: 5
+  components:
+  - type: Stack
+    count: 5
+
+- type: entity
+  parent: MaterialMushwoodPlank
+  id: MaterialMushwoodPlank1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

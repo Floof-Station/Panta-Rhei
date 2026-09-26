@@ -1,0 +1,13 @@
+﻿- type: material
+  id: MushWood
+  stackEntity: MaterialMushwoodPlank1
+  name: materials-mushwood
+  unit: materials-unit-mushplank
+  icon: { sprite: _Euphoria/Objects/Materials/mush_wood.rsi, state: mushwood_3 }
+  color: "#966F33"
+  price: 0.15 # $15 for one unit
+  properties: # FH edit
+    electrical: 4
+    hard: 3
+    density: 5
+    flammable: 4

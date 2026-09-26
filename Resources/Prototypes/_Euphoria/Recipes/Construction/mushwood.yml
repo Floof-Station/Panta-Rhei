@@ -1,0 +1,23 @@
+﻿- type: construction
+  id: MushwoodBarricade
+  graph: MushWoodFurniture
+  startNode: start
+  targetNode: mushwoodbarricade
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked
+
+- type: construction
+  id: MushwoodDresser
+  graph: MushWoodFurniture
+  startNode: start
+  targetNode: mushwooddresser
+  category: construction-category-furniture
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canBuildInImpassable: false
+  conditions:
+  - !type:TileNotBlocked

@@ -1,0 +1,70 @@
+﻿# mushwood barricade
+- type: entity
+  id: MushwoodBarricade
+  description: A barricade made out of wood planks. It looks like it can take a few solid hits.
+  parent: BaseBarricade
+  name: mushwood barricade
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Euphoria/Structures/Furniture/Other/mush_wood_furniture.rsi
+    state: barricade_mushwood
+    drawdepth: BlastDoors
+    noRot: true
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 60
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMushwoodPlank1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: MushWoodFurniture
+    node: mushwoodbarricade
+
+# mushwood dresser
+- type: entity
+  id: MushwoodDresser
+  parent: Dresser
+  name: mushwood dresser
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Furniture/Other/mush_wood_furniture.rsi
+    state: dresser_mushwood
+  - type: Damageable
+    damageModifierSet: Wood
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMushwoodPlank1:
+            min: 3
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: MushWoodFurniture
+    node: mushwooddresser
