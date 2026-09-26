@@ -48,11 +48,11 @@ public abstract partial class StationEventCondition
 
         public MindSystem Minds = default!;
         public SharedIdCardSystem IdCard = default!;
+        public SharedRoleSystem Rolesystem = default!;
 
         [Dependency] public IPrototypeManager ProtoMan = default!;
         [Dependency] public IRobustRandom Random = default!;
         [Dependency] public IPlayerManager PlayerManager = default!;
-        [Dependency] public SharedRoleSystem Rolesystem = default!;
 
         /// <summary>
         ///     The list of all players along with their jobs.
