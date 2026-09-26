@@ -1,0 +1,19 @@
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: BorgModuleSecurityAdvancedMeasures
+  result: BorgModuleSecurityAdvancedMeasures
+  materials:
+    Steel: 1500
+    Glass: 500
+    Plastic: 250
+    Gold: 250
+
+- type: latheRecipe
+  parent: BaseWeaponRecipeLong
+  id: BorgModuleSecurityAdvancedLaser
+  result: BorgModuleSecurityAdvancedLaser
+  materials:
+    Steel: 1500
+    Glass: 1000
+    Gold: 500
+    Uranium: 300
