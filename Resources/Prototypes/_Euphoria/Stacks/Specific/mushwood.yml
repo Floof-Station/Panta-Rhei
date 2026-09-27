@@ -1,0 +1,15 @@
+﻿# mushwood tiles
+- type: stack
+  id: FloorTileMushWood
+  name: tiles-mushwood
+  spawn: FloorTileItemMushWood
+  maxCount: 30
+
+# mushplanks
+- type: stack
+  parent: WoodPlank
+  id: MushwoodPlank
+  name: mushwood-plank
+  icon: { sprite: _Euphoria/Objects/Materials/mush_wood.rsi, state: mushwood }
+  spawn: MaterialMushwoodPlank1
+  maxCount: 30

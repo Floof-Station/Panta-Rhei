@@ -6,3 +6,5 @@ seeds-raspberry-name = raspberry
 seeds-raspberry-display-name = raspberry
 seeds-blueraspberry-name = blue raspberry
 seeds-blueraspberry-display-name = blue raspberry
+seeds-walking-mushroom-name = walking mushroom
+seeds-walking-mushroom-display-name = walking mushroom

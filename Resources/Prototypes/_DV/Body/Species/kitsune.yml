@@ -111,11 +111,13 @@
       Unsexed: MaleKitsune
   - type: TypingIndicator
     proto: kitsune
-  - type: InteractionPopup
-    interactSuccessString: petting-success-soft-floofy-kitsune
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/fox_squeak.ogg
+  # Euphroia change start - we made this a trait so its opt in
+  #- type: InteractionPopup
+  #  interactSuccessString: petting-success-soft-floofy-kitsune
+  #  interactSuccessSpawn: EffectHearts
+  #  interactSuccessSound:
+  #    path: /Audio/Animals/fox_squeak.ogg
+  # Euphoria change end
   - type: Kitsune
   - type: PotentialPsionic
     speciesBonusChance: 0.05 # Additional 5% chance to roll a psionic power.
