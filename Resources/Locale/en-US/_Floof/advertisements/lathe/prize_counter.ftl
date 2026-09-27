@@ -4,3 +4,4 @@ advertisement-prize-counter-3 = Softer than a pillow!
 advertisement-prize-counter-4 = Plushies so soft, you'll want to hug them all day!
 advertisement-prize-counter-5 = Toys and trinkets galore! Come and claim your prize today!
 advertisement-prize-counter-6 = You too can have your own fluffy friend!
+advertisement-prize-counter-7 = Get your own SUPER SYNTHESIZER, TODAY! For only 749.99 tickets!
