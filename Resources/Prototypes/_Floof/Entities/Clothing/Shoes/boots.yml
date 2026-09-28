@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingShoesMilitaryBase
+  parent: [ClothingShoesMilitaryBase, ClothingShoesBaseHeelsNoisy, BaseSecurityContraband] # Euphoria: +BaseSecurityContraband, +ClothingShoesBaseHeelsNoisy
   id: ClothingShoesCombatHighheelBoots
   name: combat high-heeled boots
   description: Snazy boots for when you want to be stylish, yet very prepared.
@@ -12,9 +12,11 @@
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
   - type: Clothing
     sprite: Clothing/Shoes/Boots/highheelboots.rsi
-  - type: FootstepModifier
-    footstepSoundCollection:
-      collection: FootstepHighHeels
+# Euphoria start: FootstepModifier set by parent for maintainable consistency
+#  - type: FootstepModifier
+#    footstepSoundCollection:
+#      collection: FootstepHighHeels
+# Euphoria end
   - type: ClothingSlowOnDamageModifier
     modifier: 0.5
   - type: Construction

@@ -109,6 +109,13 @@
     guides:
     - AirAlarms
     - DeviceMonitoringAndControl
+  # Starlight Start: RPD
+  - type: RCDDeconstructable
+    cost: 3
+    delay: 2
+    fx: EffectRCDDeconstruct2
+    rpd: true
+  # Starlight End: RPD
 
 - type: entity
   parent: BaseWallmountMetallic
@@ -157,13 +164,16 @@
   id: AirAlarmXeno
   parent: AirAlarm
   name: air alarm
+  suffix: Xeno # DeltaV - Add suffix for clarity
   description: An alien air alarm. Hopefully they didn't breathe poison.
   components:
   - type: Sprite
     sprite: Structures/Wallmounts/air_monitors_xeno.rsi
     layers:
+    - state: alarmp
+      map: ["airAlarmBase"]  # TODO: fire alarm enum
     - state: alarm0
-      map: ["airAlarmBase"] # TODO: fire alarm enum
+      map: ["airAlarmState"]
     - state: alarmx
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: Construction
@@ -172,6 +182,7 @@
   id: AirAlarmAssemblyXeno
   parent: AirAlarmAssembly
   name: air alarm assembly
+  suffix: Xeno # DeltaV - Add suffix for clarity
   description: An alien air alarm. Why are the wires pulsating?...
   components:
   - type: Sprite

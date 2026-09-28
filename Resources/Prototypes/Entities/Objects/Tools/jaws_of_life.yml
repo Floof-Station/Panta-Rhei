@@ -1,6 +1,6 @@
 - type: entity
   name: jaws of life
-  parent: BaseItem
+  parent: [BaseItem, BaseEngineeringContraband] # Euphoria | Engineering Restricted
   id: JawsOfLife
   description: A set of jaws of life, compressed through the magic of science.
   components:
@@ -51,10 +51,10 @@
       collection: MetalThud
 
 - type: entity
-  name: syndicate jaws of life
+  name: syndicate jaws of death
   parent: [JawsOfLife, BaseSyndicateContraband]
   id: SyndicateJawsOfLife
-  description: Useful for entering the station or its departments.
+  description: Useful for breaking into secure areas and other nefarious activities.
   components:
   - type: Sprite
     sprite: Objects/Tools/jaws_of_life.rsi
@@ -67,6 +67,7 @@
       - state: syn_inhand-right
     size: Normal
   - type: Prying
+    force: true
     speedModifier: 3.0
   - type: MultipleTool
     entries:

@@ -1,0 +1,38 @@
+- type: entity
+  parent: BaseItem
+  id: Clicker
+  name: clicker
+  description: A clicker used for training animals, it also doubles as a nice stim toy.
+  components:
+  - type: Sprite
+    sprite: _DEN/Objects/Fun/clicker.rsi
+    state: icon
+  - type: Item
+    sprite: _DEN/Objects/Fun/clicker.rsi
+    size: Tiny
+  - type: Tag
+    tags:
+      - Payload
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/_DEN/Fun/clicker.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/_DEN/Fun/clicker.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_DEN/Fun/clicker.ogg
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/_DEN/Fun/clicker.ogg
+  - type: UseDelay
+    delay: 1.5
+  - type: TriggerOnSignal # Floofstation
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: BasicDevice
+  - type: WirelessNetworkConnection
+    range: 200
+  - type: DeviceLinkSink
+    ports:
+    - Trigger

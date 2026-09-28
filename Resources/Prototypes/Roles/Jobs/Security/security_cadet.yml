@@ -17,8 +17,6 @@
   - Maintenance
   - External
   #- Cryogenics # DeltaV - No looting cryo for cadets
-  - GenpopEnter
-  - GenpopLeave
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -26,12 +24,13 @@
 - type: startingGear
   id: SecurityCadetGear
   equipment:
-    shoes: ClothingShoesBootsJackFilled
-    outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets
-    id: SecurityCadetPDA
+    # shoes: ClothingShoesBootsJackFilled # Euph - loadouts
+    # neck: ClothingNeckNoviceMark # imp # Euph - loadouts
+    # outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets # Euph - loadouts
+    # id: SecurityCadetPDA  # Euph - loadouts
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponDisabler # DeltaV - loadouts, Security Cadet doesn't spawn with a gun
+    #pocket1: WeaponDisabler # DeltaV - loadouts, Security Cadet doesn't spawn with a gun # Floofstation - let loadouts handle this
     pocket2: BookSecurity
   storage:
     back:

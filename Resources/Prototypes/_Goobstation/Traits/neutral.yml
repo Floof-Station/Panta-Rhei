@@ -1,0 +1,25 @@
+﻿#Euphoria changes start
+- type: trait # Goobstation
+  id: BoganAccent
+  name: trait-name-BoganAccent
+  description: trait-description-BoganAccent
+  category: Accents
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BoganAccent
+
+- type: trait # Goobstation
+  id: MedievalAccent
+  name: trait-name-MedievalAccent
+  description: trait-description-MedievalAccent
+  category: Accents
+  cost: 0
+  usesSlots: false
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: MedievalAccent
+#Euphoria changes end

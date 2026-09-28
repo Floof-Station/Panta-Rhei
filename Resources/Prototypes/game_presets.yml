@@ -5,12 +5,11 @@
   name: survival-title
   showInVote: true # secret # DeltaV - Me when the survival. Used for periapsis.
   description: survival-description
-  cooldown: 2 # Imp - Can't occur thrice
+  cooldown: 1 # DeltaV
   rules:
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
-    #- SpaceTrafficControlFriendlyEventScheduler # DeltaV: spam of garbage roles nobody takes every 10-20 minutes
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
     - SubGamemodesRule # DeltaV
@@ -75,7 +74,6 @@
     - MeteorSwarmScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
-    - SpaceTrafficControlFriendlyEventScheduler
     - BasicRoundstartVariation
     - GlimmerEventScheduler # DeltaV
 
@@ -100,10 +98,9 @@
   - greenshift
   - shittersafarideluxeedition
   name: greenshift-title
-  showInVote: true #4boring4vote # DeltaV - Enable greenshift in gamemode vote
+  showInVote: false #4boring4vote # DeltaV - Enable greenshift in gamemode vote # Floof - disable
   description: greenshift-description
   rules:
-  - SpaceTrafficControlFriendlyEventScheduler
   - BasicRoundstartVariation
   - GlimmerEventScheduler # DeltaV
   - MeteorSwarmCalmScheduler # Floofstation - greenshift has calmer meteors
@@ -154,7 +151,7 @@
     - tator
   name: traitor-title
   description: traitor-description
-  cooldown: 2 # Imp - Can't occur thrice
+  cooldown: 1 # DeltaV
   showInVote: false
   rules:
   - DummyNonAntagChance
@@ -186,7 +183,7 @@
   name: nukeops-title
   description: nukeops-description
   showInVote: false
-  cooldown: 2 # Imp - Can't occur thrice
+  cooldown: 2 # DeltaV
   rules:
   - Nukeops
   - DummyNonAntagChance
@@ -239,6 +236,7 @@
     - xenoborgs
   name: xenoborgs-title
   description: xenoborgs-description
+  cooldown: 2 # DeltaV
   showInVote: false
   rules:
   - Xenoborgs
@@ -248,6 +246,8 @@
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler
   - BasicRoundstartVariation
+  - RampingStationEventScheduler # DeltaV
+  - GlimmerEventScheduler # DeltaV
 
 - type: gamePreset
   id: Zombie
@@ -259,7 +259,7 @@
   - zomber
   name: zombie-title
   description: zombie-description
-  cooldown: 2 # Imp - Can't occur thrice
+  cooldown: 2 # DeltaV
   showInVote: false
   rules:
   - Zombie

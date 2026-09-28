@@ -185,8 +185,10 @@
       amount: 1
     Sugar:
       amount: 1
+    Vodka:
+      amount: 1
   products:
-    BananaHonk: 3
+    BananaHonk: 4
 
 - type: reaction
   id: BeepskySmash
@@ -984,6 +986,8 @@
 
 - type: reaction
   id: RedMead
+  requiredMixerCategories:
+  - Stir
   reactants:
     Mead:
       amount: 1
@@ -1156,14 +1160,15 @@
     SyndicateBomb: 2
 
 - type: reaction
-  id: Tea
+  id: Tea # Mono Edit
+  minTemp: 369.15 # 96C
   reactants:
     TeaPowder:
       amount: 1
     Water:
       amount: 5
   products:
-    Tea: 6
+    Tea: 5
 
 - type: reaction
   id: TequilaSunrise

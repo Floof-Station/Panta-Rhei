@@ -1,12 +1,30 @@
-# Pets
+# Base pet (follows a single entity)
+# Note: when spawning any of these mobs from the admin spawn menu, you need to set a FollowTarget (EntityUid)
 - type: entity
-  parent: MobHamster
-  id: MobHamsterPet
-  suffix: Pet
+  id: BaseMobPet
+  abstract: true
+  suffix: Pet, Follower HTN
   components:
   - type: NpcFactionMember
     factions:
-      - Critter
+    - Critter
+  - type: HTN
+    rootTask:
+      task: FollowOrRummageCompound
+    blackboard:
+      IdleRange: !type:Single
+        1.0 # just so it doesn't wander off too far
+      FollowCloseRange: !type:Single
+        1.0 # When following starts, how close the entity must get before stopping to follow
+      FollowRange: !type:Single
+        5.0 # How far the followed entity must be before following starts
+
+# Pets
+- type: entity
+  parent: [BaseMobPet, MobHamster]
+  id: MobHamsterPet
+  suffix: Pet
+  components:
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -21,25 +39,12 @@
     name: ghost-role-information-hamster-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobMouse
+  parent: [BaseMobPet, MobMouse]
   id: MobMousePet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
@@ -54,25 +59,12 @@
     name: ghost-role-information-mouse-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobMothroach
+  parent: [BaseMobPet, MobMothroach]
   id: MobMothroachPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Moffic
@@ -87,27 +79,14 @@
     name: ghost-role-information-mothroach-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 # New Stuff -
 
 - type: entity
-  parent: MobFrog
+  parent: [BaseMobPet, MobFrog]
   id: MobFrogPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Draconic
@@ -128,25 +107,12 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobSnake
+  parent: [BaseMobPet, MobSnake]
   id: MobSnakePet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Draconic
@@ -167,32 +133,19 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
-  parent: MobFerret
+  parent: [BaseMobPet, MobFerret]
   id: MobFerretPet
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Mouse
     - Scurret
     understands:
     - TauCetiBasic
-    - Mouse   
+    - Mouse
     - Scurret
   - type: GhostTakeoverAvailable
   - type: GhostRole
@@ -204,27 +157,14 @@
     rules: ghost-role-information-familiar-rules
   - type: Item
     size: Normal
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
 - type: entity
   name: trained cortical borer
-  parent: MobCorticalBorer
+  parent: [BaseMobPet, MobCorticalBorer]
   id: MobCorticalBorerPet
   description: A worm that burrows into brains and lays its eggs. This one appears tamed.
   suffix: Pet
   components:
-  - type: NpcFactionMember
-    factions:
-      - Critter
   - type: LanguageKnowledge
     speaks:
     - Xeno
@@ -247,17 +187,8 @@
     - type: PressureImmunity
     removeOnInfest:
     - type: CanEscapeInventory
-#  - type: HTN
-#    rootTask:
-#      task: FollowCompound
-#    blackboard:
-#      IdleRange: !type:Single
-#        1.5
-#      FollowCloseRange: !type:Single
-#        1.0
-#      FollowRange: !type:Single
-#        2.0
 
+# Can't do anything about this
 - type: entity
   parent: BaseItem
   id: CorticalBorerEggPet
@@ -277,3 +208,178 @@
     - MindRoleGhostRoleFreeAgent
   - type: GhostRoleMobSpawner
     prototype: MobCorticalBorerPet
+
+# spider pet
+- type: entity
+  id: MobPetSpiderTarantula
+  parent: [BaseMobPet, MobGiantSpider, BaseItem]
+  name: pet spider
+  description: A small spider that was found in station maints and taken home to help recover. It took a liking to you and now follows you around.
+  suffix: Pet
+  components:
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: CopperBlood # give spiders copper blood
+        Quantity: 60
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Critical
+      20: Dead
+  - type: Item
+    size: Tiny
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: tarantula
+      sprite: Mobs/Animals/spider.rsi
+      scale: 0.5,0.5
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: tarantula-moving
+    noMovementLayers:
+      movement:
+        state: tarantula
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: tarantula
+      Critical:
+        Base: tarantula_dead
+      Dead:
+        Base: tarantula_dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 1 # very weak bite
+  - type: LanguageKnowledge
+    speaks:
+    - Arachnic
+    understands:
+    - Arachnic
+    - TauCetiBasic
+  - type: Prying # disable them from being used to pry open doors whether powered or unpowered
+    enabled: false
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Spider # we only let it make webs if its player controlled
+    spawnsWebsAsNonPlayer: false
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-pet-spider-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+
+- type: entity
+  parent: MobPetSpiderTarantula # using the other pet spider as a parent so we don't have to duplicate
+  id: MobPetSpiderPurple
+  components:
+  - type: Sprite  # state used for the old code bases spider pet
+    drawdepth: SmallMobs
+    scale: 0.5, 0.5
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: midwife
+      sprite: Mobs/Animals/spider.rsi
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: midwife-moving
+    noMovementLayers:
+      movement:
+        state: midwife
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: midwife
+      Dead:
+        Base: midwife_dead
+
+- type: entity
+  parent: [BaseMobPet, MobWhimperlet]
+  id: MobWhimperletPet
+  suffix: Pet
+  components:
+  - type: GhostTakeoverAvailable
+  - type: GhostRole
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    name: ghost-role-information-pet-whimperlet-name
+    description: ghost-role-information-pet-description
+    rules: ghost-role-information-familiar-rules
+
+# mushroom men testing
+- type: entity
+  parent: [ MobBaseAncestorNoShitmed, DVNodeCrawler ] # we give them vent crawling
+  id: MobMythicalMushroom
+  name: walking mushroom
+  description: A cheery fellow. Definitely not a goblin. Or an elf. Or a gnome.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: _Euphoria/Mobs/mythical_mushroom.rsi
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: GhostRole
+    name: ghost-role-information-walking-mushroom-name
+    description: ghost-role-information-walking-mushroom-description
+    rules: ghost-role-information-freeagent-rules
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: Butcherable
+    butcheringType: knife
+    spawned:
+    - id: MaterialMushwoodPlank5 # spawn five of our planks
+  # Speech
+  - type: Speech
+    speechSounds: Gnome
+  - type: Emoting
+  - type: Vocal
+    sounds:
+      Male: GnomeSounds
+      Female: GnomeSounds
+      Unsexed: GnomeSounds
+  # shroom powers
+  - type: Psionic
+  - type: MassSleepPower
+  # language
+  - type: LanguageKnowledge # they are a plant, let them speak rootspeak and basic
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
+  # leash because it's funny
+  - type: LeashAnchor # there's a specific person that knows who they are that this is for
+    kind: Intrinsic

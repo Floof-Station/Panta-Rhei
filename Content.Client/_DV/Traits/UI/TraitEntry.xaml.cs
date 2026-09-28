@@ -1,6 +1,7 @@
 using System.Linq;
 using Content.Shared._DV.Traits;
 using Content.Shared._DV.Traits.Conditions;
+using Content.Shared._Euphoria.Traits.Conditions;
 using Content.Shared._Floof.Traits.Condition;
 using Content.Shared._Floof.Util;
 using Content.Shared.Humanoid.Prototypes;
@@ -29,6 +30,9 @@ public sealed partial class TraitEntry : PanelContainer
     private readonly TraitPrototype _trait;
     private bool _isUpdating;
     private readonly List<string> _failedConditionTooltips = new();
+
+    private bool _isLockedByCategory;
+    private bool _isLockedByPoints;
 
     public TraitEntry(TraitPrototype trait)
     {
@@ -62,9 +66,17 @@ public sealed partial class TraitEntry : PanelContainer
 
         foreach (var condition in _trait.Conditions)
         {
-            var tooltip = condition.GetTooltip(_prototype, _loc);
-            if (!string.IsNullOrEmpty(tooltip))
-                tooltips.Add(tooltip);
+            if (condition is TraitDependencyCondition depCond)
+            {
+                // Use GetTooltips() to get individual lines without duplication
+                tooltips.AddRange(depCond.GetTooltips(_prototype, _loc));
+            }
+            else
+            {
+                var tooltip = condition.GetTooltip(_prototype, _loc);
+                if (!string.IsNullOrEmpty(tooltip))
+                    tooltips.Add(tooltip);
+            }
         }
 
         if (tooltips.Count > 0)
@@ -94,43 +106,115 @@ public sealed partial class TraitEntry : PanelContainer
     /// <summary>
     /// Updates whether conditions are met based on current job/species.
     /// </summary>
-    public void UpdateConditionsMet(ProtoId<JobPrototype>? jobId, ProtoId<SpeciesPrototype>? speciesId, IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences)
+    public void UpdateConditionsMet(
+        ProtoId<JobPrototype>? jobId,
+        ProtoId<SpeciesPrototype>? speciesId,
+        IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences,
+        IReadOnlySet<ProtoId<TraitPrototype>>? selectedTraits)
     {
         _failedConditionTooltips.Clear();
         MeetsConditions = true;
 
         foreach (var condition in _trait.Conditions)
         {
-            var result = EvaluateCondition(condition, jobId, speciesId, antagPreferences); // Floofstation
+            bool result;
 
-            // Apply inversion
-            result ^= condition.Invert;
+            if (condition is TraitDependencyCondition depCond)
+            {
+                result = CheckDependencyCondition(depCond, selectedTraits);
+                // CheckDependencyCondition adds its own tooltips directly
+            }
+            else
+            {
+                result = EvaluateCondition(condition, jobId, speciesId, antagPreferences, selectedTraits); // Euphoria
+
+                // Apply inversion for non-dependency conditions
+                result ^= condition.Invert;
+
+                if (!result)
+                {
+                    var tooltip = condition.GetTooltip(_prototype, _loc);
+                    if (!string.IsNullOrEmpty(tooltip))
+                        _failedConditionTooltips.Add(tooltip);
+                }
+            }
 
             if (!result)
-            {
                 MeetsConditions = false;
-                var tooltip = condition.GetTooltip(_prototype, _loc);
-                if (!string.IsNullOrEmpty(tooltip))
-                    _failedConditionTooltips.Add(tooltip);
-            }
         }
 
         UpdateDisabledState();
     }
 
-    // Floofstation - just to eliminate some of this code repetition above. This is still a terrible fucking joke.
-    private bool EvaluateCondition(BaseTraitCondition cond, ProtoId<JobPrototype>? jobId, ProtoId<SpeciesPrototype>? speciesId, IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences) => cond switch
+    // Begin Euphoria additions
+    //Euphoria | Clears previously set conditions.
+    public void ResetConditionsMet()
     {
+        _failedConditionTooltips.Clear();
+        MeetsConditions = true;
+        UpdateDisabledState();
+    }
+
+    // Euphoria - just to eliminate some of this code repetition above. This is still a terrible fucking joke.
+    private bool EvaluateCondition(BaseTraitCondition cond,
+        ProtoId<JobPrototype>? jobId,
+        ProtoId<SpeciesPrototype>? speciesId,
+        IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences,
+        IReadOnlySet<ProtoId<TraitPrototype>>? selectedTraits
+    ) => cond switch
+    {
+        ITraitConditionSkipLobbyCheck skipCond => !cond.Invert, // Euphoria: Skip conditions that can't be reliably checked in the lobby.
         IsSpeciesCondition speciesCond => CheckSpeciesCondition(speciesCond, speciesId),
         OneOfSpeciesCondition oneOfSpeciesCond => oneOfSpeciesCond.Species.Any(it => it == speciesId), // Floofstation - terrible hardcoding - I don't care, just rework the system someday
+        #region Euphoria: Skip conditions that can't be reliably checked in the lobby.
+        /*
         HasJobCondition jobCond => CheckJobCondition(jobCond, jobId),
         InDepartmentCondition deptCond => CheckDepartmentCondition(deptCond, jobId),
         HasCompCondition compCond => !compCond.Invert, // can't check in lobby but screws with the inversion logic
+        */
+        #endregion
         IsAntagEligibleCondition antagEligibleCond => CheckAntagEligibleCondition(antagEligibleCond, antagPreferences),
-        AnyOfCondition anyOfCond => CheckAnyOfCondition(anyOfCond, jobId, speciesId, antagPreferences),
+        AnyOfCondition anyOfCond => CheckAnyOfCondition(anyOfCond, jobId, speciesId, antagPreferences, selectedTraits),
         _ => WrapExpression.Return(true, _ => Log.Warning($"Condition {cond.GetType()} lacks a client-side handler. This code is horrible.")), // Floofstation - log error
     };
-    // Floofstation section end
+    // End Euphoria additions
+
+    /// <summary>
+    /// Checks a TraitDependencyCondition and adds failure tooltips directly.
+    /// Returns true if the condition passes.
+    /// </summary>
+    private bool CheckDependencyCondition(TraitDependencyCondition condition, IReadOnlySet<ProtoId<TraitPrototype>>? selectedTraits)
+    {
+        var passed = true;
+
+        foreach (var conflict in condition.Conflicts)
+        {
+            if (selectedTraits == null || !selectedTraits.Contains(conflict))
+                continue;
+
+            if (_prototype.TryIndex(conflict, out var conflictProto))
+            {
+                _failedConditionTooltips.Add(_loc.GetString("trait-condition-trait-conflict",
+                    ("trait", _loc.GetString(conflictProto.Name))));
+            }
+            passed = false;
+        }
+
+        foreach (var required in condition.Requires)
+        {
+            if (selectedTraits != null && selectedTraits.Contains(required))
+                continue;
+
+            if (_prototype.TryIndex(required, out var requiredProto))
+            {
+                _failedConditionTooltips.Add(_loc.GetString("trait-condition-trait-required",
+                    ("trait", _loc.GetString(requiredProto.Name))));
+            }
+            passed = false;
+        }
+
+        return passed;
+    }
 
     private bool CheckSpeciesCondition(IsSpeciesCondition condition, ProtoId<SpeciesPrototype>? speciesId)
     {
@@ -167,7 +251,12 @@ public sealed partial class TraitEntry : PanelContainer
         return antagPreferences.Contains(condition.Antag);
     }
 
-    private bool CheckAnyOfCondition(AnyOfCondition condition, ProtoId<JobPrototype>? jobId, ProtoId<SpeciesPrototype>? speciesId, IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences)
+    private bool CheckAnyOfCondition(
+        AnyOfCondition condition,
+        ProtoId<JobPrototype>? jobId,
+        ProtoId<SpeciesPrototype>? speciesId,
+        IReadOnlySet<ProtoId<AntagPrototype>>? antagPreferences,
+        IReadOnlySet<ProtoId<TraitPrototype>>? selectedTraits)
     {
         if (condition.Conditions.Count == 0)
             return false;
@@ -175,10 +264,18 @@ public sealed partial class TraitEntry : PanelContainer
         // Return true if ANY child condition evaluates to true
         foreach (var childCondition in condition.Conditions)
         {
-            var result = EvaluateCondition(childCondition, jobId, speciesId, antagPreferences); // Floofstation
+            bool result;
 
-            // Apply child's inversion
-            result ^= childCondition.Invert;
+            if (childCondition is TraitDependencyCondition depCond)
+            {
+                result = CheckDependencyCondition(depCond, selectedTraits);
+            }
+            else
+            {
+                result = EvaluateCondition(condition, jobId, speciesId, antagPreferences, selectedTraits); // Euphoria
+
+                result ^= childCondition.Invert;
+            }
 
             // If any child passes, the AnyOf passes
             if (result)
@@ -189,16 +286,50 @@ public sealed partial class TraitEntry : PanelContainer
         return false;
     }
 
+    /// <summary>
+    /// Called by <see cref="TraitCategory"/> whenever the category's trait or
+    /// points-cap state changes. Locking only applies to <em>unselected</em>
+    /// entries - the selected traits are the ones filling the cap and must
+    /// remain interactive so the player can deselect them.
+    /// </summary>
+    public void SetLockedByCategory(bool locked)
+    {
+        if (_isLockedByCategory == locked)
+            return;
+
+        _isLockedByCategory = locked;
+        UpdateDisabledState();
+    }
+
+    /// <summary>
+    /// Called by <see cref="TraitCategory"/> whenever the player's global point budget
+    /// changes.  Locks unselected entries whose cost the player can no longer afford.
+    /// Free (0-cost) and negative-cost traits are never locked by this.
+    /// </summary>
+    public void SetLockedByPoints(bool locked)
+    {
+        if (_isLockedByPoints == locked)
+            return;
+
+        _isLockedByPoints = locked;
+        UpdateDisabledState();
+    }
+
     private void UpdateDisabledState()
     {
-        if (!MeetsConditions)
+        var isSelected = TraitCheckbox.Pressed;
+        var conditionLocked = !MeetsConditions;
+        var categoryLocked = _isLockedByCategory && !isSelected;
+        var pointsLocked = _isLockedByPoints && !isSelected;
+        var isDisabled = conditionLocked || categoryLocked || pointsLocked;
+
+        if (isDisabled)
         {
             // Hide checkbox, show lock icon
             TraitCheckbox.Visible = false;
             LockIcon.Visible = true;
 
-            // Deselect if conditions no longer met
-            if (TraitCheckbox.Pressed)
+            if (isSelected && conditionLocked)
             {
                 _isUpdating = true;
                 TraitCheckbox.Pressed = false;
@@ -210,12 +341,22 @@ public sealed partial class TraitEntry : PanelContainer
             // Add disabled styling
             AddStyleClass("TraitsEntryDisabled");
 
-            // Update tooltip to show failed conditions
-            if (_failedConditionTooltips.Count > 0)
+            // Tooltip priority for conditions: condition failures > category full > insufficient points.
+            if (conditionLocked && _failedConditionTooltips.Count > 0)
             {
                 var tooltipText = Loc.GetString("trait-conditions-not-met-tooltip",
                     ("requirements", string.Join("\n", _failedConditionTooltips)));
 
+                TooltipSupplier = _ => CreateMarkupTooltip(tooltipText);
+            }
+            else if (categoryLocked)
+            {
+                var tooltipText = Loc.GetString("trait-category-full-tooltip");
+                TooltipSupplier = _ => CreateMarkupTooltip(tooltipText);
+            }
+            else if (pointsLocked)
+            {
+                var tooltipText = Loc.GetString("trait-insufficient-points-tooltip");
                 TooltipSupplier = _ => CreateMarkupTooltip(tooltipText);
             }
         }

@@ -1,6 +1,6 @@
 - type: entity
   name: nuclear operative mouse
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # DeltaV - node crawling
   id: MobNukieMouse
   description: A Nuclear Operative... MOUSE?!
   suffix: syndicate
@@ -80,7 +80,7 @@
         Base: splat
   - type: Edible
   - type: Hunger
-    baseDecayRate: 0.1
+    baseDecayRate: 0.066 # Euph - * 0.66
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -95,10 +95,10 @@
           Quantity: 5
   - type: Butcherable
     spawned:
-    - id: FoodMeat
+    - id: FoodMeatRat # Euphoria | Was FoodMeat
       amount: 1
-  - type: ReplacementAccent
-    accent: mouse
+  # - type: ReplacementAccent # Euphoria | Mice Mouse instead
+  #   accent: mouse
   - type: Tag
     tags:
     - VimPilot
@@ -107,12 +107,13 @@
     - Meat
     - FootstepSound
     - Radio
+    - ChefPilot # Euphoria | Nukatouille
   - type: Puller
     needsHands: False
   - type: NoSlip
   - type: Respirator #It just works?
     minSaturation: 5.0
-  - type: Temperature
+  - type: TemperatureDamage
     heatDamageThreshold: 423
     coldDamageThreshold: 0
   - type: PressureImmunity
@@ -137,11 +138,11 @@
         Slash: 5
         Piercing: 3
         Structural: 1.5
-  - type: Body
-    prototype: Rat
-    requiredLegs: 1 # TODO: More than 1 leg
   - type: Bloodstream
-    bloodMaxVolume: 60
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 60
   - type: CanEscapeInventory
     baseResistTime: 3
   - type: MobPrice
@@ -160,3 +161,28 @@
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
       path: /Audio/Animals/mouse_squeak.ogg
+  - type: NightVision # Euphoria | Mice see in the dark
+    color: "#808080"
+    activateSound: null
+    deactivateSound: null
+  - type: Clothing # Euphora | Mice go on your head
+    quickEquip: false
+    sprite: _DV/Mobs/Animals/nukiemouse.rsi
+    slots:
+    - HEAD
+  - type: LanguageKnowledge # Euphoria | Mice can mouse
+    speaks:
+    - Mouse
+    understands:
+    - TauCetiBasic # Euphoria | Trained mouse
+    - Mouse
+  - type: LeashAnchor # Euphoria | Take the nukie for a walk
+    kind: Intrinsic
+  - type: FoodSequenceElement # Euphoria | Mouse food
+    entries:
+      Taco: RatTaco
+      Burger: RatBurger
+      Skewer: RatSkewer
+      Hotdog: RatTaco #Euphoria
+  - type: Item # Euphoria | Pick up mouse
+    size: Tiny

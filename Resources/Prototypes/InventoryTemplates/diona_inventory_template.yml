@@ -1,6 +1,7 @@
 #human but no shoes
 - type: inventoryTemplate
   id: diona
+  parent: BaseHumanoidUnderwear # Floof
   slots:
     - name: jumpsuit
       slotTexture: uniform

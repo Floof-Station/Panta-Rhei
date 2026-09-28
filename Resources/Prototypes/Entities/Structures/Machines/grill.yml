@@ -26,6 +26,7 @@
     whitelist:
       components:
       - Temperature
+      - FitsInDispenser # Floofstation - let beakers and other objects be heated by a grill
   - type: PlaceableSurface
   - type: Machine
     board: ElectricGrillMachineCircuitboard
@@ -38,3 +39,5 @@
           Low: { visible: true, state: low }
           Medium: { visible: true, state: medium }
           High: { visible: true, state: high }
+  - type: SolutionHeater # Floofstation - let beakers and other objects be heated by a grill, gonna make it a tiny bit slower than other heat sources
+    heatPerSecond: 80

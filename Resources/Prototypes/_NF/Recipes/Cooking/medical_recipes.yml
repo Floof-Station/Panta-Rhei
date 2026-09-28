@@ -101,8 +101,8 @@
   solids:
     BlankMediPen: 1
   reagents:
-    Saline: 20
-    Salbutamol: 20 # Delta-v renamed DexPlus
+    Saline: 15 # Euphoria - DV adding funkychem which changed the amount in the pens but the recipe still needed the old amount
+    Salbutamol: 15 # Delta-v renamed DexPlus
   recipeType: MedicalAssembler
 
 #Frontier pen recipes

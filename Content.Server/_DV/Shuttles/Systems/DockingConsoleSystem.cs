@@ -1,3 +1,4 @@
+using Content.Server._Lavaland.Procedural.Components;
 using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Events;
 using Content.Server.Shuttles.Systems;
@@ -138,6 +139,10 @@ public sealed class DockingConsoleSystem : SharedDockingConsoleSystem
         {
             if (xform.MapID != map)
                 continue;
+
+            //Euphoria for lavaland docking
+            if (HasComp<LavalandStationComponent>(gridUid))
+                return gridUid;
 
             var size = grid.LocalAABB.Size.LengthSquared();
             if (size < largestSize)

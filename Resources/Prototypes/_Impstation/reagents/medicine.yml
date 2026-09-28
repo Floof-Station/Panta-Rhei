@@ -7,7 +7,7 @@
   color: "#bdfff3"
   recognizable: true
   metabolisms:
-    Medicine:
+    Bloodstream:
       metabolismRate: 0.1 #this should metabolise in the same amount of time as a drink in a 5:1 mix
       effects:
       - !type:AdjustReagent
@@ -16,4 +16,4 @@
       - !type:HealthChange
         damage:
           types:
-            Poison: -0.2
+            Poison: -0.3 # Euphoria: -0.3 < -0.2 - Increased to match theobromine damage

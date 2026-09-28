@@ -1,0 +1,18 @@
+﻿- type: entity
+  parent: CrateBaseWeldable
+  id: CrateNapsack
+  name: crate
+  components:
+  - type: Icon
+    sprite: Structures/Storage/Crates/generic.rsi
+  - type: Sprite
+    sprite: Structures/Storage/Crates/generic.rsi
+  - type: Reflect
+    reflects:
+    - Energy
+    reflectProb: 0.2
+    spread: 90
+  - type: Paintable
+    group: null
+  - type: RadiationBlockingContainer
+    resistance: 2.5

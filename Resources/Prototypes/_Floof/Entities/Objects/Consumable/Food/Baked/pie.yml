@@ -1,0 +1,81 @@
+﻿- type: entity
+  name: strawberry pie
+  parent: FoodPieBase
+  id: FoodPieStrawberry
+  description: Tastes good enough to make a grown man cry.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/strawberry_food.rsi
+    state: strawberry-pie
+  - type: SliceableFood
+    slice: FoodPieStrawberrySlice
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+
+- type: entity
+  name: slice of strawberry pie
+  parent: FoodPieSliceBase
+  id: FoodPieStrawberrySlice
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+  - type: Sprite
+    layers:
+    - state: plain-slice
+    - state: alpha-slice-filling
+      color: red
+  - type: Tag
+    tags:
+    - Fruit
+    - Pie
+    - Slice
+
+- type: entity
+  name: strawberry muffin
+  parent: FoodBakedMuffin
+  id: FoodBakedMuffinStrawberry
+  description: Strawberries inside a delicious muffin.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/strawberry_food.rsi
+    state: strawberry-muffin
+  - type: Tag
+    tags:
+    - Fruit
+
+- type: entity
+  parent: FoodSnackBase
+  id: FoodSnackChocolateCoveredStrawberry
+  name: chocolate covered strawberry
+  description: Tastes like a strawberry dipped in chocolate.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - chocolate
+    - strawberry
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/strawberry_food.rsi
+    state: chocolate-strawberry
+  - type: Tag
+    tags:
+    - FoodSnack
+    - ReptilianFood
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: StrawberryJuice
+          Quantity: 2
+        - ReagentId: Theobromine
+          Quantity: 3
+        - ReagentId: CocoaPowder
+          Quantity: 1

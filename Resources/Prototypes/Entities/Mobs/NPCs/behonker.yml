@@ -90,9 +90,7 @@
       solutionOnBody: false
       updateInterval: 0.25
       metabolizerTypes: [ Dragon ]
-      groups:
-        - id: Medicine
-        - id: Poison
+      stages: [ Digestion, Bloodstream ]
     - type: Butcherable
       spawned:
         - id: MaterialBananium1
@@ -119,11 +117,10 @@
       understands:
       - Eldritch
     - type: Bloodstream
-      bloodMaxVolume: 300
-      bloodReagents:
+      bloodReferenceSolution:
         reagents:
         - ReagentId: Laughter
-          Quantity: 1
+          Quantity: 300
 
 - type: entity
   name: behonker

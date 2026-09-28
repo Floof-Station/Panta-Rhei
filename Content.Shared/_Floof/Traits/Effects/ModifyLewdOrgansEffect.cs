@@ -38,9 +38,12 @@ public sealed partial class ModifyLewdOrgansEffect : BaseTraitEffect
             data.ProductionSpeed *= ProductionMultiplier;
 
             // ReSharper disable once CompareOfFloatsByEqualityOperator
-            if (ProductionCapMultiplier != 1 && data.ProducedReagents is not null)
-                for (var i = 0; i < data.ProducedReagents.Length; i++)
+            if (ProductionCapMultiplier != 1 && data.ProducedReagents is not null) {
+                for (var i = 0; i < data.ProducedReagents.Length; i++) {
+                    data.SolutionVolume += data.ProducedReagents[i].Quantity * (ProductionCapMultiplier - 1); // Add volume to accomodate
                     data.ProducedReagents[i] = new(data.ProducedReagents[i].Reagent, data.ProducedReagents[i].Quantity * ProductionCapMultiplier);
+                }
+            }
 
             if (DepositionCapacityBonus != 0)
                 data.SolutionVolume += DepositionCapacityBonus;

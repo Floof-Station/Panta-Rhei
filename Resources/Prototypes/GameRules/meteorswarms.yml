@@ -66,8 +66,12 @@
     minMaxEventTiming:
       min: 750 # 12.5 min
       max: 3600 # 60 min # Floofstation - increased to 60
-    scheduledGameRules: !type:EntSelector # DeltaV: use old event
-      id: MeteorSwarm
+    scheduledGameRules: !type:GroupSelector # Floofstatoin - add rods to the pool
+      children:
+      - id: MeteorSwarm
+        weight: 1
+      - id: ImmovableRodSpawn # Floofstation - 1/10 chance a rod spawns
+        weight: 0.1
 
 - type: entity
   parent: BaseGameRule
@@ -255,6 +259,9 @@
       prob: 0.0075
       orGroup: rodProto
     - id: ImmovableRodWeh
+      prob: 0.0075
+      orGroup: rodProto
+    - id: ImmovableRodDildo # Floofstation - dildo rod
       prob: 0.0075
       orGroup: rodProto
 

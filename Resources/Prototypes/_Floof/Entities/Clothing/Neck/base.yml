@@ -6,6 +6,22 @@
   - type: Clothing
     equipDelay: 1.5
     unequipDelay: 1.5
+    equipSound:
+      path: /Audio/Items/belt_equip.ogg # no more wshlooup sound
+      params:
+        volume: -4
   - type: LeashAnchor
     offset: 0, 0.22
     kind: Clothing
+  - type: EmitSoundOnPickup
+    sound: &collarPickUpSound
+      path: /Audio/Items/belt_equip.ogg # no more wshlooup sound
+      params:
+        volume: -4
+  - type: EmitSoundOnDrop
+    sound: &collarDropSound
+      path: /Audio/Items/belt_equip.ogg # no more wshlooup sound
+      params:
+        volume: -4
+  - type: EmitSoundOnLand
+    sound: *collarDropSound

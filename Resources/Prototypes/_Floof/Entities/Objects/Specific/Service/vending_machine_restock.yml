@@ -13,3 +13,47 @@
     - state: green_bit
       shader: unshaded
     - state: refill_games
+
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockBepis
+  name: bepis restock box
+  description: A cold, clunky container of colliding chilly cylinders. Use only for Bepis brand vending machines.
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - BepisInventory
+  - type: Sprite
+    layers:
+    - state: base
+    - state: green_bit
+      shader: unshaded
+    - state: refill_cola
+
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockLewdVendor
+  name: lewd vendor restock box
+  description: I like to be bound and bind things is what you tell your self or others when buying this restock.
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - LewdVendorInventory
+  - type: Sprite
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_vendor.rsi
+    layers:
+    - state: refill_kink
+
+- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockLewdClothingVendor
+  name: lewd clothing vendor restock box
+  description: I like to be bound and bind things is what you tell your self or others when buying this restock.
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - LewdClothingVendorInventory
+  - type: Sprite
+    sprite: _Floof/Structures/Machines/VendingMachines/lewd_cloths_vendor.rsi
+    layers:
+    - state: refill-lewdclothing

@@ -5,9 +5,9 @@
   description: A sentient machine that can produce Xenoborgs. Without this the Xenoborgs are doomed.
   components:
   - type: InputMover # needs this to pilot the mothership
-  - type: MovementSpeedModifier
-    baseWalkSpeed : 0 # shouldn't move
-    baseSprintSpeed : 0 # shouldn't move
+  - type: BlockMovement # They should never be moving!
+    blockInteraction: false
+    blockUse: false
   - type: Appearance
   - type: WiresVisuals
   - type: Damageable
@@ -22,8 +22,7 @@
         mask:
         - MachineMask
         layer:
-        - MidImpassable
-        - LowImpassable
+        - MachineLayer
   - type: Sprite
     sprite: Mobs/Silicon/mothership_core.rsi
     layers:
@@ -83,13 +82,15 @@
           temperature: 373.15
   - type: Repairable
     doAfterDelay: 30 # you can heal the mothership core, but it takes a while
+    qualityNeeded: Welding # DeltaV
   - type: DamagedSiliconAccent
     enableChargeCorruption: false
-  - type: Explosive
-    explosionType: Default
-    maxIntensity: 100
-    intensitySlope: 2
-    totalIntensity: 200
+  # TODO: make it explosive again once until issue https://github.com/space-wizards/space-station-14/issues/40606 is fixed
+  # - type: Explosive
+  #   explosionType: Default
+  #   maxIntensity: 100
+  #   intensitySlope: 2
+  #   totalIntensity: 200
   - type: SurveillanceCameraSpeaker
   - type: SurveillanceCameraMonitor
   - type: RoboticsConsole
@@ -120,6 +121,8 @@
         type: LatheBoundUserInterface
       enum.ResearchClientUiKey.Key:
         type: ResearchClientBoundUserInterface
+      enum.DeployableTurretControllerUiKey.Key: # DeltaV - Turret Control
+        type: TurretControllerWindowBoundUserInterface
   - type: Pullable
   - type: StaticPrice
     price: 800
@@ -233,9 +236,29 @@
         toggleAction: ActionXenoborgControlMonitor
       enum.SurveillanceCameraMonitorUiKey.Key:
         toggleAction: ActionXenoborgCameraMonitor
+      enum.DeployableTurretControllerUiKey.Key: # DeltaV - Turret Control
+        toggleAction: ActionXenoborgTurretControl
   - type: ShowElectrocutionHUD
   - type: PowerMonitoringCableNetworks
   - type: RadarConsole
+# Begin DeltaV Additions
+  - type: DeployableTurretController
+  - type: DeviceList
+    isAllowList: true
+  - type: MaterialStorageMagnetPickup # Allow the core to suck up materials
+    magnetEnabled: true
+    range: 1
+# End DeltaV Additions
+  # Begin Euphoria additions
+  - type: LanguageKnowledge
+    speaks:
+    - Binary
+    - TauCetiBasic
+    understands:
+    - Binary
+    - TauCetiBasic
+    naturalLanguage: Binary
+  # End Euphoria additions
 
 - type: entity
   parent: BaseAGhostAction

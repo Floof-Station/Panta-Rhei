@@ -2,6 +2,7 @@
   id: Surgeon
   name: job-name-surgeon
   description: job-description-surgeon
+  setPreference: true # Euph - RP role, for now
   playTimeTracker: JobSurgeon
   requirements:
     - !type:DepartmentTimeRequirement
@@ -14,11 +15,6 @@
   - Medical
   - Surgery
   - Maintenance
-  special: # Euphoria
-   - !type:AddComponentSpecial
-    components:
-    - type: SurgerySpeedModifier
-      speedModifier: 2
 
 - type: startingGear
   id: SurgeonGear

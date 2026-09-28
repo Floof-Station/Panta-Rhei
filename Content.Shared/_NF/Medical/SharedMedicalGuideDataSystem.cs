@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Kitchen;
@@ -75,7 +76,7 @@ public sealed partial class MedicalRecipeData
     {
         Identitier = proto.Name;
         Recipe = proto.ID;
-        Result = proto.Result;
+        Result = proto.Results.First(); //Euphoria, changed to use the first result rather than all results
         _outputCount = proto.ResultCount;
     }
 }

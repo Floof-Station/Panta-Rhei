@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformLustroEcclesiaInfernus
   name: lustro ecclesia ceremonial dress
   description: Ceremonial garbs of the Lustro Ecclesia faith. Typically worn by their devotees upon completion of the Fire Rite.
@@ -9,14 +9,9 @@
   - type: Clothing
     slots: [innerclothing]
     sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/infernus.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon
-    - Skirt
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformShirtlessBase
   id: ClothingUniformLustroEcclesiaInfernusAlt
   name: lustro ecclesia ceremonial trousers
   description: Ceremonial garbs of the Lustro Ecclesia faith. Typically worn by their devotees upon completion of the Fire Rite.
@@ -26,10 +21,6 @@
   - type: Clothing
     slots: [innerclothing]
     sprite: _Euphoria/Clothing/Uniforms/Jumpsuit/infernus.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon
 
 - type: entity
   parent: ClothingUniformBase
@@ -48,7 +39,7 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingUniformBase
+  parent: ClothingUniformSkirtBase
   id: ClothingUniformLustroEcclesiaAlt
   name: lustro ecclesia gown
   description: Garbs worn by devotees of the Lustro Ecclesia faith.
@@ -58,8 +49,15 @@
   - type: Clothing
     slots: [innerclothing]
     sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/lustromonk.rsi
-  - type: Tag
-    tags:
-    - ClothMade
-    - WhitelistChameleon
-    - Skirt
+
+- type: entity
+  parent: ClothingUniformJumpskirtClown
+  id: ClothingUniformJumpskirtGeiru
+  name: suggestive clown dress
+  description: Perfect for a clown tending to making their guests happy in multiple ways. Or perhaps for a clown who has witnessed a crime!
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/geiru.rsi
+  - type: Clothing
+    slots: [innerclothing]
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/geiru.rsi

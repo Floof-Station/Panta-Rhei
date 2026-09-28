@@ -27,6 +27,7 @@
       - id: RagItem
     - id: LunchboxServiceFilledRandom # DeltaV Lunchboxes!
       prob: 0.3
+    - id: BaristaVendFlatpack # Euphoria - M3739 - #485 - Temporary way to acquire in-game until it is mapped.
 
 #- type: entity
 #  id: LockerFormalFilled
@@ -47,6 +48,7 @@
   id: FillClosetChef
   table: !type:AllSelector
     children:
+    - id: BoxFolderHotdogRecipes #Euphoria, homdog update
     - id: VariantCubeBox
     - id: SprayBottleWater
     - id: FoodBoxCloth

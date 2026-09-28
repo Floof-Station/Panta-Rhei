@@ -31,11 +31,6 @@
   description: trait-Tradeband-desc
   category: Languages
   cost: 1
-  conditions:
-  - !type:OneOfSpeciesCondition
-    invert: true
-    species:
-    - Harpy
   effects:
   - !type:ModifyLanguagesTraitEffect
     languagesSpoken:

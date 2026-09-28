@@ -1,20 +1,18 @@
 ﻿using Content.Server._CD.Body.Components;
-using Content.Server.Body.Components;
-using Content.Server.Body.Systems;
+using Content.Shared.Body;
 using Content.Shared.Body.Components;
-using Content.Shared.Body.Events;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.GameTicking;
+using Content.Shared.Metabolism;
 using Robust.Shared.Timing;
 
 namespace Content.Server._CD.Body.Systems;
 
 public sealed class AllergySystem : EntitySystem
 {
-    [Dependency] private readonly BodySystem _bodySystem = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
 
@@ -40,8 +38,8 @@ public sealed class AllergySystem : EntitySystem
         if (!TryComp(uid, out BloodstreamComponent? bloodstream))
             return;
         if (!_solutionContainerSystem.ResolveSolution(uid,
-                bloodstream.ChemicalSolutionName,
-                ref bloodstream.ChemicalSolution,
+                bloodstream.BloodSolutionName,
+                ref bloodstream.BloodSolution,
                 out var solution))
             return;
         var quantity = args.ReagentQuantity.Quantity;
@@ -64,17 +62,24 @@ public sealed class AllergySystem : EntitySystem
                 continue;
 
             if (!_solutionContainerSystem.ResolveSolution(uid,
-                    bloodstream.ChemicalSolutionName,
-                    ref bloodstream.ChemicalSolution,
+                    bloodstream.BloodSolutionName,
+                    ref bloodstream.BloodSolution,
                     out var chemstream))
                 continue;
 
+            // Get reactions from the chemstream
             var histamine = GetReaction(allergy, chemstream);
-            foreach (var lung in _bodySystem.GetBodyOrganEntityComps<LungComponent>(uid))
+
+            // Add reactions from organs (currently, only lungs)
+            if (TryComp<BodyComponent>(uid, out var body) && body.Organs is {} organs)
             {
-                if (lung.Comp1.Solution != null)
-                    histamine += GetReaction(allergy, lung.Comp1.Solution!.Value.Comp.Solution);
+                foreach (var organ in organs.ContainedEntities)
+                {
+                    if (TryComp<LungComponent>(organ, out var lung) && lung.Solution != null)
+                        histamine += GetReaction(allergy, lung.Solution!.Value.Comp.Solution);
+                }
             }
+
             chemstream.AddReagent(allergy.ReactionReagent, histamine);
         }
     }

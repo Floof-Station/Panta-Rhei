@@ -49,6 +49,7 @@
       - Bottle
       - Syringe
       - ChemDispensable
+      - ChemicalMedipen # Floofstation - allow for medical pens to be put into the smart fridges
   - type: ActivatableUI
     key: enum.SmartFridgeUiKey.Key
   - type: ActivatableUIRequiresPower

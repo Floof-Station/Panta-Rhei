@@ -4,8 +4,10 @@
   # If item is not in list it will go at the bottom (ties broken by alert type enum value)
   id: BaseAlertOrder
   order:
+    - alertType: IPCBatteryCrit # Far Horizons
     - category: Health
     - category: Stamina
+    - alertType: Shadeskin # Starlight
     - alertType: SuitPower
     - category: Internals
     - alertType: Fire
@@ -26,6 +28,7 @@
     - category: Thirst
     - alertType: Magboots
     - alertType: Rooted
+    - alertType: ClawsProtracted # DeltaV - Felinid Claws
     - alertType: Pacified
     - alertType: Stealthy
     - alertType: Offer # Floofstation - port from EE
@@ -479,6 +482,17 @@
     state: heart-on
   name: alerts-adrenaline-name
   description: alerts-adrenaline-desc
+
+# Making alerts for innate abilities like this should generally be avoided by turning them into actions or giving better UX.
+# This was done this way because several entities currently can pry innately and have no indicator for this whatsoever.
+# The ideal solution would be to clean up actions to handle this sort of thing easier while avoiding bloating the action UI.
+- type: alert
+  id: Prying
+  icons:
+  - sprite: /Textures/Objects/Tools/crowbar.rsi
+    state: icon
+  name: alerts-prying-name
+  description: alerts-prying-desc
 
 - type: alert
   id: Debug1

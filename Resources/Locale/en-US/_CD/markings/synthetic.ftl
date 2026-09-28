@@ -1,0 +1,91 @@
+marking-SyntheticScreen = Synthetic Screen
+marking-SyntheticScreen-synthetic_screen = Synthetic Screen
+
+marking-SyntheticAntennaLeft = Synthetic Antenna (Left)
+marking-SyntheticAntennaLeft-synthtic_antenna_left = Antenna
+
+marking-SyntheticAntennaRight = Synthetic Antenna (Right)
+marking-SyntheticAntennaRight-synthtic_antenna_right = Antenna
+
+marking-LizardTailSynth = Lizard Tail (Synth-Lizard)
+marking-LizardTailSynth-tail_synthliz = Lizard Tail (Synth-Lizard)
+
+marking-LizardSnoutSynth = Synth-Lizard Faceplate
+marking-LizardVisorSynth = Synth-Lizard Visor
+marking-LizardSnoutSynth-synthsnout_frame = Base
+marking-LizardSnoutSynth-synthsnout_snout = Snout
+marking-LizardVisorSynth-synthsnout_visor = Face
+marking-LizardVisorSynth-synthsnout_eyes = Eyes
+marking-LizardSnoutSynth-synthsnout_jaw = Jaw
+
+marking-LizardSnoutSynthAlt = Synth-Lizard Faceplate (Alternate)
+marking-LizardVisorSynthAlt = Synth-Lizard Visor (Alternate)
+marking-LizardSnoutSynthAlt-alt_synthsnout_frame = Base
+marking-LizardSnoutSynthAlt-alt_synthsnout_snout = Snout
+marking-LizardVisorSynthAlt-alt_synthsnout_visor = Face
+marking-LizardVisorSynthAlt-alt_synthsnout_eyes = Eyes
+marking-LizardSnoutSynthAlt-alt_synthsnout_jaw = Jaw
+
+# Euphoria - Added Short Snout Versions
+
+marking-LizardSnoutSynthShort = Synth-Lizard Faceplate (Short)
+marking-LizardVisorSynthShort = Synth-Lizard Visor (Slim)
+marking-LizardSnoutSynthShort-short_synthsnout_frame = Base
+marking-LizardSnoutSynthShort-short_synthsnout_snout = Snout
+marking-LizardVisorSynthShort-short_synthsnout_visor = Face
+marking-LizardVisorSynthShort-short_synthsnout_eyes = Eyes
+marking-LizardSnoutSynthShort-short_synthsnout_jaw = Jaw
+
+marking-LizardSnoutSynthAltShort = Synth-Lizard Faceplate (Alternate/Short)
+marking-LizardVisorSynthAltShort = Synth-Lizard Visor (Alternate/Slim)
+marking-LizardSnoutSynthAltShort-alt_short_synthsnout_frame = Base
+marking-LizardSnoutSynthAltShort-alt_short_synthsnout_snout = Snout
+marking-LizardVisorSynthAltShort-alt_short_synthsnout_visor = Face
+marking-LizardVisorSynthAltShort-alt_short_synthsnout_eyes = Eyes
+marking-LizardSnoutSynthAltShort-alt_short_synthsnout_jaw = Jaw
+
+# Euphoria End
+
+marking-SyntheticHornCurl = Synth-Lizard Antenna (Curl)
+marking-SyntheticHornCurl-horn_antenna_curl = Horn
+
+marking-SyntheticHornShort = Synth-Lizard Antenna (Short)
+marking-SyntheticHornShort-horn_antenna_short = Horn
+
+marking-SyntheticHornSlash = Synth-Lizard Antenna (Slash)
+marking-SyntheticHornSlash-horn_antenna_slash = Horn
+
+marking-SyntheticHornSharp = Synth-Lizard Antenna (Sharp)
+marking-SyntheticHornSharp-horn_antenna_sharp = Horn
+
+marking-SyntheticHornTwin = Synth-Lizard Antenna (Twin)
+marking-SyntheticHornTwin-horn_antenna_twin = Horn
+
+marking-SyntheticHornThick = Synth-Lizard Antenna (Thick)
+marking-SyntheticHornThick-horn_antenna_thick = Horn
+
+marking-SyntheticHornSharpLight = Synth-Lizard Antenna (Sharp L)
+marking-SyntheticHornSharpLight-horn_antenna_sharp = Horn
+marking-SyntheticHornSharpLight-horn_antenna_sharp_light = Light
+
+marking-SyntheticHornTwinLight = Synth-Lizard Antenna (Twin L)
+marking-SyntheticHornTwinLight-horn_antenna_twin = Horn
+marking-SyntheticHornTwinLight-horn_antenna_twin_light = Light
+
+marking-SyntheticHornThickLight = Synth-Lizard Antenna (Thick L)
+marking-SyntheticHornThickLight-horn_antenna_thick = Horn
+marking-SyntheticHornThickLight-horn_antenna_thick_light = Light
+
+marking-SyntheticBodyScute = Synthetic Scutes
+marking-SyntheticBodyScute-body_scute = Scutes
+
+marking-SyntheticBodyPlate = Synthetic Plates
+marking-SyntheticBodyPlate-body_plate = Plates
+
+marking-SyntheticBodyPecs = Synthetic Muscles
+marking-SyntheticBodyPecs-body_pecs_primary = Muscle
+marking-SyntheticBodyPecs-body_pecs_secondary = Lights
+
+marking-SyntheticBodyLights = Synthetic Lights
+marking-SyntheticBodyLights-body_light_primary = Primary
+marking-SyntheticBodyLights-body_light_secondary = Secondary

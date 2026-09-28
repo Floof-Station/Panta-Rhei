@@ -54,7 +54,7 @@ trait-amputee-right-arm-desc =
 
 trait-redshirt-name = Redshirt
 trait-redshirt-desc =
-    Sets your death threshold to 100 damage. You no longer have a critical state.
+    Halves your death threshold (to 100 damage for most). You likely no longer have a critical state.
 
     "They said this air would be breathable.
     Get in, get out again, and no one gets hurt.
@@ -70,3 +70,12 @@ trait-protected-desc = Due to your position, value, or circumstances, your survi
 
 trait-slavic-name = Slavic accent
 trait-slavic-desc = You kome from ze East, and speak vith strong Slavic accent!
+
+trait-no-paradox-clone-name = No Paradox Clone
+trait-no-paradox-clone-desc = For whatever reason, the universe will only ever have one of you. You won't be able to have a paradox clone.
+
+trait-ion-storm-susceptible-name = Susceptible to Ion Storms
+trait-ion-storm-susceptible-desc = Your synthetic body lacks protection against ion storms. You have a high chance of being shocked in an event of an ion storm.
+
+trait-mechanical-synthetic-name = Mechanical Synthetic
+trait-mechanical-synthetic-desc = Your synthetic body is fully mechanical rather than biomechanical.

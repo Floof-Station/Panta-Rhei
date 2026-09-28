@@ -1,0 +1,26 @@
+﻿# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportServiceWorker
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportServiceWorker
+
+- type: loadout
+  id: ServiceWorkerPDA
+  equipment:
+    id: ServiceWorkerPDA
+
+
+# The below are shared with some other service members
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformServiceThong
+  equipment:
+    undergarmentBottom: ClothingUniformServiceThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksService
+  equipment:
+    undergarmentSocks: ClothingUnderSocksService

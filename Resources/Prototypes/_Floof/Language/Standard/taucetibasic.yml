@@ -1,6 +1,10 @@
 # The "Default Language" other than Universal.
 - type: language
   id: TauCetiBasic
+  parent: BaseLanguage
+  chatPrefix: tau # Euphoria/Starlight
+  icon: { state: tauceti }
+  isVisibleLanguage: false
   obfuscation:
     !type:SyllableObfuscation
     minSyllables: 1

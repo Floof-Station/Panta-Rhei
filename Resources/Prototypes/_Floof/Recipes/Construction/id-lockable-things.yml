@@ -17,3 +17,13 @@
   category: construction-category-storage
   description: closet-Steel-ecure-id-lockable-descrption
   objectType: Structure
+
+- type: construction
+  id: GunSafeIDLockable
+  name: gunsafes-steel-secure-id-lockable-name
+  graph: GunSafe # need to change this
+  startNode: start
+  targetNode: idLockable
+  category: construction-category-storage
+  description: gunsafes-steel-secure-id-lockable-desc
+  objectType: Structure

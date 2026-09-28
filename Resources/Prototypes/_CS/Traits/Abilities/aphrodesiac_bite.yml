@@ -1,0 +1,29 @@
+- type: entity
+  id: ActionAphrodesiacBite
+  name: Aphrodesiac Bite
+  parent: BaseAction
+  description: Inject a powerful aphrodesiac venom into someone.
+  components:
+  - type: Action
+    useDelay: 2
+    icon:
+      sprite: _CS/Traits/Abilities.rsi
+      state: aphrodesiac
+  - type: TargetAction
+    checkCanAccess: true
+    range: 2
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:AphrodesiacBiteEvent
+
+- type: trait
+  id: AbilityAphrodesiacBite
+  name: trait-aphrodesiacbite-name
+  description: trait-aphrodesiacbite-desc
+  category: BonusPhysical # Euphoria
+  cost: 0
+  usesSlots: false # Euphoria start
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: AphrodesiacBite # Euphoria end

@@ -1,0 +1,198 @@
+﻿- type: entity
+  parent: FoodBakedBase
+  id: FoodBakedPeanutButterBrownieBatch
+  name: peanut butter brownies
+  description: A pan of peanut butter brownies.
+  components:
+  - type: Item
+    size: Normal
+    storedOffset: 0,-3
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - chocolate
+    - creamy
+    - nutty
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: peanut_butter_brownie_sheet
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 78
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 30
+        - ReagentId: PeanutButter
+          Quantity: 18
+  - type: SliceableFood
+    count: 6
+    slice: FoodBakedPeanutButterBrownie
+
+- type: entity
+  name: peanut butter brownie
+  parent: FoodBakedBase
+  id: FoodBakedPeanutButterBrownie
+  suffix: Fresh
+  description: A fresh baked peanut butter brownie.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - chocolate
+    - creamy
+    - nutty
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: peanut_butter_brownie
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: PeanutButter
+          Quantity: 3
+  - type: Tag
+    tags:
+    - Slice
+
+- type: entity
+  name: peanut butter cup
+  parent: FoodBakedBase
+  id: FoodBakedPeanutButterCup
+  suffix: Fresh
+  description: A fresh baked peanut butter cup.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - chocolate
+    - creamy
+    - nutty
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: peanut_butter_cup
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: PeanutButter
+          Quantity: 5
+
+- type: entity
+  name: peanut butter tart
+  parent: FoodPieBase
+  id: FoodBakedPeanutButterTart
+  suffix: Fresh
+  description: A fresh baked peanut butter tart.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - sweet
+    - chocolate
+    - creamy
+    - nutty
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: crunchy_peanut_butter_tart
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 13
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: PeanutButter
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Pie
+
+- type: entity
+  parent: FoodBakedBase
+  id: FoodBakedPeanutButterJellySandwich
+  name: peanut butter and jelly sandwich
+  description: Bread, peanut butter and jelly, the perfect comfort food.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - nutty
+    - bread
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: peanut_butter_jelly_sandwich
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 21
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: PeanutButter
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 3
+
+- type: entity
+  parent: FoodBakedBase
+  id: FoodBakedPeanutButterBananaSandwich
+  name: peanut butter and banana sandwich
+  description: Bread, peanut butter and bananas, the perfect comfort food.
+  components:
+  - type: Item
+    size: Small
+    shape:
+    - 0,0,1,0
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - nutty
+    - bread
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: peanut_butter_banana_sandwich
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 21
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: PeanutButter
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 3
+
+- type: entity
+  name: peanut butter toast
+  parent: FoodBreadSliceBase
+  id: FoodBreadPeanutButterToast
+  description: Crunchy with a hint of peanut butter.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - creamy
+    - nutty
+    - bread
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Food/peanut_butter_food.rsi
+    state: peanutbutter_toast
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: PeanutButter
+          Quantity: 3

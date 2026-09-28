@@ -1,12 +1,25 @@
+- type: entity
+  id: StationKettle
+  parent: StandardNanotrasenStation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GridSpawn
+    groups:
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
+        paths:
+        - /Maps/Floof/Shuttles/Salvage/pathfinder.yml # Floofstation - change this to change salv shuttle
+        nameGrid: true
+        name: Pathfinder
+
 - type: gameMap
   id: Kettle
   mapName: 'Kettle'
   mapPath: /Maps/Floof/kettle.yml
-  minPlayers: 35
-  maxPlayers: 70
+  minPlayers: 40
+  maxPlayers: 80
   stations:
     Kettle:
-      stationProto: StandardNanotrasenStation
+      stationProto: StationKettle
       components:
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Floof/Shuttles/Evac/NTES_Delta.yml #floofstation
@@ -33,7 +46,7 @@
             SeniorEngineer: [ 1, 1 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            Chemist: [ 2, 3 ]
+            Chemist: [ 2, 2 ]
             MedicalDoctor: [ 3, 4 ]
             Paramedic: [ 2, 2 ]
             MedicalIntern: [ 2, 2 ]
@@ -81,5 +94,4 @@
             Prosecutor: [ 1, 1 ]
             # Silicon
             StationAi: [ 1, 1 ]
-            Borg: [ 1, 2 ]
-            MedicalBorg: [ 1, 2 ]
+            Borg: [ 2, 3 ]

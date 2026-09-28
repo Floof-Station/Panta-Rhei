@@ -45,12 +45,12 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        50: Dead # DeltaV, was 40
+        40: Dead
     - type: MovementSpeedModifier
       baseWalkSpeed: 2.5
       baseSprintSpeed: 3.5
     - type: Stamina
-      critThreshold: 100
+      baseCritThreshold: 100
     - type: DamageStateVisuals
       states:
         Alive:
@@ -92,18 +92,13 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
-    - type: Body # Shitmed: Special carp organs
-      prototype: Carp
-    - type: SurgeryTarget # Shitmed
-    - type: UserInterface # Shitmed
-      interfaces:
-        enum.SurgeryUIKey.Key:
-          type: SurgeryBui
     - type: LanguageKnowledge # Floofstation. Fish don't speak tau ceti, but the dragon does.
       speaks:
       - Xeno
       understands:
       - Xeno
+    - type: NightVision #DeltaV - Added nightvision to animals
+      color: "#808080"
 
 - type: entity
   parent: BaseMobCarp
@@ -213,12 +208,14 @@
       damage:
        types: {}
     - type: Temperature
+    - type: TemperatureDamage
       heatDamageThreshold: 1200
 - type: entity
   id: MobCarpDungeon
   parent: MobCarp
   suffix: Dungeon
   components:
+  - type: AshStormImmune #Euphoria
   - type: MobThresholds
     thresholds:
       0: Alive
@@ -233,7 +230,7 @@
 
 - type: entity
   name: sharkminnow
-  parent: BaseMobCarp
+  parent: [ BaseMobBloodsucker, BaseMobCarp ]
   id: MobShark
   description: A dangerous shark from the blackness of endless space, who loves to drink blood.
   components:
@@ -261,7 +258,7 @@
         0: Alive
         150: Dead
     - type: Stamina
-      critThreshold: 150
+      baseCritThreshold: 150
     - type: DamageStateVisuals
       states:
         Alive:
@@ -270,14 +267,6 @@
         Dead:
           Base: dead
           BaseUnshaded: dead_mouth
-    - type: Body
-      prototype: Bloodsucker
-      requiredLegs: 1
-    - type: SurgeryTarget # Shitmed
-    - type: UserInterface # Shitmed
-      interfaces:
-        enum.SurgeryUIKey.Key:
-          type: SurgeryBui
     - type: Butcherable
       spawned:
         - id: FoodMeatFish

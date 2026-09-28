@@ -1,4 +1,5 @@
 using System.Collections;
+using Content.Shared._Floof.InteractionVerbs;
 using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared._Floof.Lewd.Components;
 using Content.Shared.Verbs;
@@ -12,7 +13,6 @@ namespace Content.Shared._Floof.Lewd.Systems;
 public sealed class LewdInteractionsSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
-    [Dependency] private readonly LewdOrganSystem _lewdOrgan = default!;
 
     // I wasn't sure where to put this, so I put it here.
     // Okay so
@@ -59,7 +59,7 @@ public sealed class LewdInteractionsSystem : EntitySystem
                 if (!_protoMan.Resolve(interactionVerbId, out var interactionVerb))
                     continue;
 
-                ev.Add(interactionVerb);
+                ev.Add(interactionVerb, InteractionVerbSource.TargetVerbs);
             }
         }
     }

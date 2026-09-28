@@ -1,7 +1,7 @@
 - type: entity
   name: basic slime
   id: BaseMobAdultSlimes
-  parent: [ SimpleMobBase, MobCombat ]
+  parent: [ BaseMobSlimes, SimpleMobBase, MobCombat, DVNodeCrawler ] # DeltaV - node crawling
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
@@ -54,10 +54,10 @@
     damageContainer: Biological
     damageModifierSet: Slime
   - type: Bloodstream
-    bloodReagents:
+    bloodReferenceSolution:
       reagents:
       - ReagentId: Slime
-        Quantity: 1
+        Quantity: 150
     bloodlossDamage:
       types:
         Bloodloss:
@@ -85,19 +85,11 @@
       - !type:HealthChange
         damage:
           types:
-            Heat: 2 #Same as slime species
+            Heat: 2 #Same as slime species # Euph - increased
       - !type:PopupMessage
         type: Local
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
-  - type: Body
-    prototype: Slimes
-    requiredLegs: 1
-  - type: SurgeryTarget # Shitmed
-  - type: UserInterface # Shitmed
-    interfaces:
-      enum.SurgeryUIKey.Key:
-        type: SurgeryBui
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
@@ -123,6 +115,8 @@
     - Bubblish
     understands:
     - Bubblish
+  - type: NightVision #DeltaV - Added nightvision to animals
+    color: "#808080"
 
 - type: entity
   name: basic slime

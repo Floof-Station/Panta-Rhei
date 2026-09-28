@@ -64,7 +64,7 @@ public abstract partial class SharedPuddleSystem
             foreach (var (reagent, factor) in reagentProportions)
             {
                 // Floofstation - ensure evaporation is at least 0.05x fast since the above expression can evaluate to 0
-                var reagentTick = FixedPoint2.Max(evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds * evaporationSpeed * factor, 0.1f);
+                var reagentTick = FixedPoint2.Max(evaporation.EvaporationAmount * EvaporationCooldown.TotalSeconds * evaporationSpeed * factor, 0.01f); // Floofstation - changed from 0.1 to 0.01
                 puddleSolution.SplitSolutionWithOnly(reagentTick, reagent);
             }
 
@@ -72,7 +72,8 @@ public abstract partial class SharedPuddleSystem
             if (puddleSolution.Volume == FixedPoint2.Zero)
             {
                 // Spawn a *sparkle*
-                SpawnAttachedTo(evaporation.EvaporationEffect, Transform(uid).Coordinates);
+                if (_net.IsServer) // TODO: Change this once we have entity spawn prediction V2
+                    SpawnAttachedTo(evaporation.EvaporationEffect, Transform(uid).Coordinates);
                 PredictedQueueDel(uid);
             }
 

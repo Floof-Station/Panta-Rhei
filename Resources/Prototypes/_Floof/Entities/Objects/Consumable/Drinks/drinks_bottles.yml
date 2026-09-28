@@ -35,11 +35,18 @@
   - type: Sealable
 
 - type: entity
-  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkEggnogBottleFull
   name: eggnog bottle
   description: A fancy looking bottle of eggnog, with a festive label and sealed cap.
   components:
+  - type: Sprite # Had to override the sprite since it has a different number of fillLevels.
+    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
+    layers:
+    - state: icon_empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -48,19 +55,25 @@
           Quantity: 100
   - type: Label
     currentLabel: eggnog
-  - type: Sprite
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
-    
+    inHandsFillBaseName: null
+
 - type: entity
-  parent: [DrinkVisualsOpenable, DrinkBottleGlassBaseFull]
+  parent: [DrinkVisualsAllFilled, DrinkBottleGlassBaseFull]
   id: DrinkSyndicateEggnogBottleFull
   name: syndicate eggnog bottle
   description: A bottle of eggnog, with a festive label and sealed cap.
   components:
+  - type: Sprite # Had to override the sprite since it has a different number of fillLevels.
+    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
+    layers:
+    - state: icon_empty
+      map: ["enum.OpenableVisuals.Layer"]
+    - state: fill-3
+      map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -69,15 +82,17 @@
           Quantity: 100
   - type: Label
     currentLabel: syndicate eggnog
-  - type: Sprite
-    sprite: _Floof/Objects/Consumable/Drinks/syndicate_eggnog_bottle.rsi
   - type: Sealable
   - type: SolutionContainerVisuals
     maxFillLevels: 3
     fillBaseName: fill-
+    inHandsFillBaseName: null
 
+# TODO SOMEONE FIX THE SPRITE
+# fill-6 is just icon.png with a tint
+# icon and icon_empty are the same
 - type: entity
-  parent: DrinkBottleGlassBaseFull
+  parent: [DrinkVisualsFill, DrinkBottleGlassBaseFull]
   id: DrinkVBLongneckFull
   name: Viktoria Bitter Longneck
   description: A long glass bottle of VB, best drunk 20 to 8 in the morning.
@@ -92,11 +107,12 @@
   - type: Sprite
     sprite: _Floof/Objects/Consumable/Drinks/vblongneck.rsi
     layers:
-    - state: icon_empty
+    - state: icon
       map: ["enum.OpenableVisuals.Layer"]
     - state: fill-6
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: Sealable
   - type: SolutionContainerVisuals
-    maxFillLevels: 6
+    maxFillLevels: 5 # 6th level is bogus
     fillBaseName: fill-
+    inHandsFillBaseName: null

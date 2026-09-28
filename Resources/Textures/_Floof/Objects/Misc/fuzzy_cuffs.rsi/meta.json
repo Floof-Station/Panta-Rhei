@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "States: equipped-BELT, body-overlay-2, body-overlay-4, inhand-left and inhand-right Taken from tgstation at https://github.com/tgstation/tgstation/commit/e1142f20f5e4661cb6845cfcf2dd69f864d67432 and edited by Dunrab (Github), state handcuff taken from VoreStation13 Commit: https://github.com/VOREStation/VOREStation/commit/2113af4ca2cc24d586d6561fa463a5c1030067de",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "handcuff"
+    },
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    },
+	  {
+      "name": "body-overlay-2",
+      "directions": 4
+    },
+	  {
+      "name": "body-overlay-4",
+      "directions": 4
+    },
+    {
+      "name": "inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "inhand-right",
+      "directions": 4
+    }
+  ]
+}

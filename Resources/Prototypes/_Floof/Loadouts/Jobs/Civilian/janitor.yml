@@ -1,9 +1,4 @@
 ﻿# janitor additions
-- type: loadout
-  id: UniformJanitorThong
-  equipment:
-    jumpsuit: ClothingUniformJanitorThong
-
 # gloves
 - type: loadout
   id: ClothingHandsJanitorWarmers
@@ -12,11 +7,26 @@
 
 # shoes
 - type: loadout
-  id: ClothingUnderSocksJanitor
-  equipment:
-    shoes: ClothingUnderSocksJanitor
-
-- type: loadout
   id: ClothingShoesGaloshes
   equipment:
     shoes: ClothingShoesGaloshes
+
+# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportJanitor
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportJanitor
+
+# top undergarment
+
+# bottom undergarment
+- type: loadout
+  id: UniformJanitorThong
+  equipment:
+    undergarmentBottom: ClothingUniformJanitorThong
+
+# socks
+- type: loadout
+  id: ClothingUnderSocksJanitor
+  equipment:
+    undergarmentSocks: ClothingUnderSocksJanitor

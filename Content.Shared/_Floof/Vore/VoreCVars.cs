@@ -10,4 +10,9 @@ public sealed class VoreCVars
     /// </summary>
     public static readonly CVarDef<bool> VoreEnabled =
         CVarDef.Create("game.vore_enabled", true, CVar.SERVER | CVar.REPLICATED);
+    /// <summary>
+    /// Enables or disables digestion verbs and interactions. 
+    /// </summary>
+    public static readonly CVarDef<bool> DigestionEnabled =
+        CVarDef.Create("game.digestion_enabled", true, CVar.SERVER | CVar.REPLICATED);
 }

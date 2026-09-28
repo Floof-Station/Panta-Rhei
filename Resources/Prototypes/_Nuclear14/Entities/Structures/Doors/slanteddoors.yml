@@ -149,19 +149,6 @@
     graph: N14DoorGraph
     node: MetalFence
 
-- type: entity
-  parent: N14DoorMetalBlueWindowSlanted
-  id: N14DoorMetalFenceBarbedSlanted
-  name: barbed fence gate
-  suffix: Slanted, fence barbed
-  description: A metal barbed fence gate.
-  components:
-  - type: Sprite
-    sprite: _Nuclear14/Structures/Doors/SlantedDoors/fence_barbed.rsi
-    layers:
-    - state: closed
-      map: ["enum.DoorVisualLayers.Base"]
-
 #MARK: Wooden
 
 - type: entity

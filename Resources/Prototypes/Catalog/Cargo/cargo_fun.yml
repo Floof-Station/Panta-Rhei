@@ -73,7 +73,10 @@
   icon:
     sprite: Objects/Fun/crayons.rsi
     state: box
-  product: CrateFunArtSupplies
+  product: CrayonBox
+  container:
+    entity: WrappedParcel
+    containerId: contents
   cost: 500
   category: cargoproduct-category-name-fun
   group: market
@@ -234,20 +237,20 @@
     sprite: Structures/Wallmounts/posters.rsi
     state: poster55_legit
   product: CrateFunScurret
-  cost: 25000 # You will surely not regret buying this
+  cost: 10000 # Euphoria, decreased price
   category: cargoproduct-category-name-fun
   group: market
 
-# DeltaV - no gambling
-#- type: cargoProduct
-#  id: FunCrateGambling
-#  icon:
-#    sprite: Objects/Economy/cash.rsi
-#    state: cash_1000000
-#  product: CrateCargoGambling
-#  cost: 10000
-#  category: cargoproduct-category-name-fun
-#  group: market
+# Floofstation - lets go gambling
+- type: cargoProduct
+  id: FunCrateGambling
+  icon:
+    sprite: Objects/Economy/cash.rsi
+    state: cash_1000000
+  product: CrateCargoGambling
+  cost: 10000
+  category: cargoproduct-category-name-fun
+  group: market
 
 - type: cargoProduct
   id: ChurchOrganInstrument

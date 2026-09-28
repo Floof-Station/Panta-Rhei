@@ -1,4 +1,19 @@
 - type: reaction
+  id: Stelloxadone
+  impact: Medium
+  reactants:
+    Stellibinin:
+      amount: 5
+    Cryoxadone:
+      amount: 3
+    Arithrazine:
+      amount: 2
+  products:
+    Stelloxadone: 5
+    Water: 3
+    Fiber: 2
+
+- type: reaction
   id: Philterex
   impact: Medium
   reactants:
@@ -11,4 +26,4 @@
     Benzene:
       amount: 1
   products:
-      Philterex: 5
+    Philterex: 5

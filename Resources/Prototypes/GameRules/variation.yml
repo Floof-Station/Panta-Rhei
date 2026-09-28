@@ -46,6 +46,8 @@
     tilesPerEntityStdDev: 4
     entities:
     - id: RandomSpawner
+    componentBlacklist: # impstation - stop spawning trash near the sm
+    - type: Supermatter
 
 - type: entity
   id: BasicDecalDirtVariationPass
@@ -116,6 +118,13 @@
     - Blood
     - CopperBlood
     - Slime
+    # Euphoria start: Add more blood variants to random tables
+    - AmmoniaBlood
+    - Sap
+    - YellowBlood
+    - BlackBlood
+    - WhiteBlood
+    # Euphoria end
   - quantity: 25
     weight: 1
     reagents:

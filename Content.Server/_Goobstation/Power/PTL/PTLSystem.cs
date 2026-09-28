@@ -32,7 +32,6 @@ public sealed partial class PTLSystem : EntitySystem
     [Dependency] private readonly GunSystem _gun = default!;
     [Dependency] private readonly IGameTiming _time = default!;
     [Dependency] private readonly IPrototypeManager _protMan = default!;
-    [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly TagSystem _tag = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly StackSystem _stack = default!;
@@ -92,7 +91,7 @@ public sealed partial class PTLSystem : EntitySystem
     {
         var megajoule = 1e6;
         var maxSpesos = 5000;//Euphoria
-        var chargeCoeff = 200;//Euphoria
+        var chargeCoeff = 1000;//Euphoria
         var charge = _battery.GetCharge((ent, ent.Comp2)) / megajoule;
         // Euphoria - Modeled after real capacitors.
         var spesos = (int) (maxSpesos * (1 - Math.Exp(charge/-chargeCoeff)));
@@ -112,7 +111,7 @@ public sealed partial class PTLSystem : EntitySystem
 
             var targetCoords = xform.Coordinates.Offset(directionInParentSpace);
 
-            _gun.AttemptShoot(ent, ent, gun, targetCoords);
+            _gun.AttemptShoot(user: ent, gun: (ent.Owner, gun), targetCoords);
         }
 
 

@@ -1,0 +1,47 @@
+# generic modules
+- type: entity
+  id: BorgModulePaperwork
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: paperwork cyborg module
+  description: A universal cyborg module for the management of vast amounts of paperwork.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-pen
+  - type: ItemBorgModule
+    hands:
+    - item: LuxuryPen # Only the best for the dedicated paperwork borg
+    - hand:
+        emptyRepresentative: PaperOffice
+        emptyLabel: borg-slot-paper-folders-empty
+        whitelist:
+          components:
+          - Paper
+          tags:
+          - Folder
+    - item: BoxFolderGreyEmpty
+      hand:
+        emptyRepresentative: BoxFolderGreyEmpty
+        emptyLabel: borg-slot-paper-folders-empty
+        whitelist:
+          components:
+          - Paper
+          tags:
+          - Folder
+    - item: HandLabeler
+    - hand:
+        emptyRepresentative: RubberStampApproved
+        emptyLabel: borg-slot-stamps-empty
+        whitelist:
+          components:
+          - Stamp
+    - hand:
+        emptyRepresentative: RubberStampDenied
+        emptyLabel: borg-slot-stamps-empty
+        whitelist:
+          components:
+          - Stamp
+    - item: CopyMachineHandheldUnpowered
+  - type: BorgModuleIcon
+    icon: { sprite: _Euphoria/Interface/Actions/actions_borg.rsi, state: paperwork-module }

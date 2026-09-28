@@ -20,12 +20,13 @@
     - id: MouseMigration
     - id: PowerGridCheck
     #- id: RandomSentience # DeltaV - replaced with RandomSentienceGlimmer
-    - id: SlimesSpawn
+    - id: SlimesSpawnHorde
     - id: SolarFlare
-    - id: SnakeSpawn
-    - id: SpiderClownSpawn
-    - id: SpiderSpawn
+    - id: SnakeSpawnHorde
+    - id: SpiderClownSpawnHorde
+    - id: SpiderSpawnHorde
     - id: VentClog
+    - id: FoodCriticSpawn # Euphoria - Dunno where exactly to put this so it's here for now, this wasn't a thought-out decision to put it here specifically so if you feel like it should be somewhere else, be my guest.
 
 - type: entityTable
   id: BasicAntagEventsTable
@@ -40,6 +41,7 @@
     - id: RevenantSpawn
     - !type:NestedSelector
       tableId: DerelictBorgEventTable
+    - id: BingleSpawn #Goobstation - Bingle
 
 - type: entityTable
   id: ModerateAntagEventsTable
@@ -111,6 +113,10 @@
     startAudio:
       path: /Audio/_Euphoria/Announcements/anomaly_appear.ogg # Euphoria - New Voice Lines
     weight: 12 # DeltaV - was 8
+    conditions: # Floof - at least one epi member
+    - !type:DepartmentCountCondition
+      department: Epistemics
+      range: { min: 1 }
     duration: 35
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-anomaly-spawn-result-message
@@ -208,7 +214,7 @@
     prototype: MobSkeletonCloset
 # Dragon
 - type: entity
-  parent: BaseGameRule
+  parent: BaseGameRuleSecurityRequirement # Floof - changed parent
   id: DragonSpawn
   components:
   - type: StationEvent
@@ -242,7 +248,7 @@
 
 # Ninja
 - type: entity
-  parent: BaseGameRule
+  parent: BaseGameRuleSecurityRequirement # Floof - changed parent
   id: NinjaSpawn
   components:
   - type: StationEvent
@@ -279,7 +285,7 @@
       pickPlayer: false
       startingGear: SpaceNinjaGear
       roleLoadout:
-      - RoleSurvivalEVA
+      - RoleSurvivalSpaceNinja
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -289,9 +295,12 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
-      - type: AutoImplant
-        implants:
-        - DeathAcidifierImplant
+      #- type: AutoImplant #Euphoria, making the acidifier implant optional.
+      #  implants:
+      #  - DeathAcidifierImplant
+      #- type: RandomHumanoidAppearance # Euphoria, we want people to be able to do recurring Ninja characters.
+      #  randomizeName: false
+      #  keepGender: true
       - type: RandomMetadata
         nameSegments:
         - NamesNinjaTitle
@@ -499,13 +508,15 @@
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-vent-clog-result-message
   - type: VentClogRule
-# Slime Spawn
+
+# Critters
+
 - type: entity
-  id: SlimesSpawn
+  id: SlimesSpawnHorde
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/_Euphoria/Announcements/aliens.ogg # Euphoria - New Voice Lines
     earliestStart: 20
@@ -514,19 +525,20 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-slimes-spawn-result-message
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
       children:
       - id: MobAdultSlimesBlueAngry
       - id: MobAdultSlimesGreenAngry
       - id: MobAdultSlimesYellowAngry
-# Snake Spawns
+
 - type: entity
-  id: SnakeSpawn
-  parent: BaseStationEventShortDelay
+  id: SnakeSpawnHorde
+  parent: [BaseGameRuleSecurityRequirement, BaseStationEventShortDelay] #Euph - reparented
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/_Euphoria/Announcements/aliens.ogg # Euphoria - New Voice Lines
     earliestStart: 20
@@ -535,19 +547,20 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-snake-spawn-result-message
-  - type: VentCrittersRule
-    table: !type:GroupSelector # DeltaV: EntityTable instead of spawn entries
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
       children:
       - id: MobPurpleSnake
       - id: MobSmallPurpleSnake
       - id: MobCobraSpace
-# Spider Spawns
+
 - type: entity
-  id: SpiderSpawn
+  id: SpiderSpawnHorde
   parent: BaseStationEventShortDelay
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/_Euphoria/Announcements/aliens.ogg # Euphoria - New Voice Lines
     earliestStart: 20
@@ -556,16 +569,18 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-spider-spawn-result-message
-  - type: VentCrittersRule
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobGiantSpiderAngry
-# Clown Spider Spawns
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
+      children:
+      - id: MobGiantSpiderAngry
+
 - type: entity
-  id: SpiderClownSpawn
-  parent: BaseStationEventShortDelay
+  id: SpiderClownSpawnHorde
+  parent: BaseGameRuleSecurityRequirement #Euph - reparented
   components:
   - type: StationEvent
-    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAnnouncement: station-event-vent-creatures-start-horde-announcement
     startAudio:
       path: /Audio/_Euphoria/Announcements/aliens.ogg # Euphoria - New Voice Lines
     earliestStart: 45 # DeltaV - was 20
@@ -574,11 +589,12 @@
     duration: 30 # DeltaV: was 60, used as a delay now
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-spider-clown-spawn-result-message
-  - type: VentCrittersRule
-    playerRatio: 35 # DeltaV: Clown spiders are very robust
-    table: # DeltaV: EntityTable instead of spawn entries
-      id: MobClownSpider
-# Zombie outbreak
+  - type: VentHordeRule
+    table: !type:GroupSelector
+      rolls: 4, 8
+      children:
+      - id: MobClownSpider
+
 - type: entity
   id: ZombieOutbreak
   parent: BaseGameRule
@@ -588,6 +604,7 @@
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
+    occursDuringRoundEnd: false
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-zombie-outbreak-result-message
   - type: ZombieRule
@@ -622,6 +639,10 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
+    conditions: #Euphoria
+    - !type:DepartmentCountCondition
+      department: Security
+      range: { min: 3 }
     earliestStart: 45 # DeltaV - was 35
     weight: 3 # DeltaV - was 5.5
     minimumPlayers: 30 # DeltaV - was 20
@@ -646,6 +667,9 @@
       components:
       - type: NukeOperative
       - type: TargetObjectiveImmune # DeltaV - Nukies are no longer targets of kill objectives, this includes lone ops.
+      #- type: RandomHumanoidAppearance # Euphoria, don't want to randomize appearance, as that prevents recurring characters.
+      #  randomizeName: false
+      #  keepGender: true
       - type: RandomMetadata
         nameSegments:
         - NamesSyndicatePrefix
@@ -669,14 +693,14 @@
     weight: 5 # DeltaV - Was 8 now 5
     minimumPlayers: 15
     maxOccurrences: 1 # can only happen once per round
-    startAnnouncement: station-event-communication-interception
-    startAudio:
-      path: /Audio/_Euphoria/Announcements/intercept.ogg # Euphoria - New Voice Lines
+    #startAnnouncement: station-event-communication-interception # DeltaV - Silent Sleepers
+    #startAudio:
+    #  path: /Audio/_DV/Announcements/attention.ogg # DeltaV - Use the generic announcement sound
     duration: null # the rule has to last the whole round not 1 second
     occursDuringRoundEnd: false
   - type: PrecognitionResult # DeltaV - Precogniton
     message: psionic-power-precognition-sleeper-agents-result-message
-  - type: AlertLevelInterceptionRule
+  #- type: AlertLevelInterceptionRule # DeltaV - Silent Sleepers
   - type: AntagSelection
     definitions:
     - prefRoles: [ TraitorSleeper ]
@@ -891,3 +915,4 @@
       min: 1
       max: 1
       pickPlayer: false
+

@@ -1,0 +1,652 @@
+﻿- type: metamorphRecipe
+  id: FoodBurgerAppendix
+  key: Burger
+  result: FoodBurgerAppendix
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 appendix
+    tags:
+    - Appendix
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerBacon
+  key: Burger
+  result: FoodBurgerBacon
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 4
+      max: 5
+  - !type:IngredientsWithTags # 1 cooked bacon
+    tags:
+    - Cooked
+    - Meat
+    - Bacon
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cheese
+    tags:
+    - Cheese
+    count:
+      min: 2
+      max: 3
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerBear
+  key: Burger
+  result: FoodBurgerBear
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cooked bear meat
+    tags:
+    - Cooked
+    - Meat
+    - Bear
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerBaseball
+  key: Burger
+  result: FoodBurgerBaseball
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 baseball bat
+    tags:
+    - BaseballBat
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerBig
+  key: Burger
+  result: FoodBurgerBig
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 7
+      max: 11
+  - !type:IngredientsWithTags # 2 meats
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 cheese
+    tags:
+    - Cheese
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 tomato
+    tags:
+    - Fruit
+    - Vegetable
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 2 onion
+    tags:
+    - Vegetable
+    - Slice
+    count:
+      min: 2
+      max: 3
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCat
+  key: Burger
+  result: FoodBurgerCat
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 5
+  - !type:IngredientsWithTags # 1 cat ears
+    tags:
+    - CatEars
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 meat
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerClown
+  key: Burger
+  result: FoodBurgerClown
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 clown mask
+    tags:
+    - ClownMask
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCorgi
+  key: Burger
+  result: FoodBurgerCorgi
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 corgi meat
+    tags:
+    - Raw
+    - HighRiskItem
+    - Meat
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCrazy
+  key: Burger
+  result: FoodBurgerCrazy
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 9
+      max: 14
+  - !type:IngredientsWithTags # 2 meats
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 2 cheese
+    tags:
+    - Cheese
+    count:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 chili
+    tags:
+    - Vegetable
+    - Chili
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 cabbage
+    tags:
+    - Vegetable
+    - Cabbage
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 crayon green
+    tags:
+    - CrayonGreen
+    count:
+      min: 1
+      max: 2
+  - !type:IngredientsWithTags # 1 flare
+    tags:
+    - Flare
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerEmpowered
+  key: Burger
+  result: FoodBurgerEmpowered
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 4
+  - !type:IngredientsWithTags # 2 plasma
+    tags:
+    - Plasma
+    count:
+      min: 2
+      max: 3
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerCarp
+  key: Burger
+  result: FoodBurgerCarp
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 5
+    - !type:IngredientsWithTags # 1 fish fillet
+      tags:
+        - Raw
+        - Meat
+        - Fish
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 1 cheese
+      tags:
+        - Cheese
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerFive
+  key: Burger
+  result: FoodBurgerFive
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 7
+        max: 9
+    - !type:IngredientsWithTags # 5 chilli
+      tags:
+        - Vegetable
+        - Chili
+      count:
+        min: 5
+        max: 6
+    - !type:IngredientsWithTags # 1 meat
+      tags:
+        - Cooked
+        - Meat
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerGhost
+  key: Burger
+  result: FoodBurgerGhost
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 ectoplasm
+      tags:
+        - Ectoplasm
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerHuman
+  key: Burger
+  result: FoodBurgerHuman
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 human meat
+      tags:
+        - Raw
+        - Meat
+        - Human
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerJelly
+  key: Burger
+  result: FoodBurgerJelly
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 Amanita Jelly
+      tags:
+        - AmanitaJelly
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMcguffin
+  key: Burger
+  result: FoodBurgerMcguffin
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 5
+    - !type:IngredientsWithTags # 1 scrambled eggs
+      tags:
+        - Egg
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 1 cheese
+      tags:
+        - Cheese
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMcrib
+  key: Burger
+  result: FoodBurgerMcrib
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 5
+    - !type:IngredientsWithTags # 1 ribs
+      tags:
+        - Meat
+        - Ribs
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 1 onion slice
+      tags:
+        - Vegetable
+        - Slice
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMime
+  key: Burger
+  result: FoodBurgerMime
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 mime mask
+      tags:
+        - MimeMask
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerRat
+  key: Burger
+  result: FoodBurgerRat
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 dead rat
+      tags:
+        - Raw
+        - Meat
+        - Rat
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerRobot
+  key: Burger
+  result: FoodBurgerRobot
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 3
+        max: 4
+    - !type:IngredientsWithTags # 2 manipulators
+      tags:
+        - Manipulator
+      count:
+        min: 2
+        max: 3
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerSoy
+  key: Burger
+  result: FoodBurgerSoy
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 5
+        max: 7
+    - !type:IngredientsWithTags # 2 cheese
+      tags:
+        - Cheese
+      count:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 2 soy beans
+      tags:
+        - Vegetable
+        - Soybeans
+      count:
+        min: 2
+        max: 3
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerSpell
+  key: Burger
+  result: FoodBurgerSpell
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 1 wizard hat
+      tags:
+        - WizardHat
+      count:
+        min: 1
+        max: 2
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerSuper
+  key: Burger
+  result: FoodBurgerSuper
+  rules:
+    - !type:SequenceLength
+      range:
+        min: 8
+        max: 12
+    - !type:IngredientsWithTags # 1 scrambled eggs
+      tags:
+      - Egg
+      count:
+        min: 1
+        max: 2
+    - !type:IngredientsWithTags # 2 meat
+      tags:
+        - Cooked
+        - Meat
+      count:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 2 meat
+      tags:
+        - Cheese
+      count:
+        min: 2
+        max: 3
+    - !type:IngredientsWithTags # 2 tomato
+      tags:
+        - Fruit
+        - Vegetable
+      count:
+        min: 2
+        max: 3
+    - !type:LastElementHasTags # last bun
+      tags:
+        - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerTofu
+  key: Burger
+  result: FoodBurgerTofu
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 tofu slice
+    tags:
+    - Tofu
+    - Slice
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerXeno
+  key: Burger
+  result: FoodBurgerXeno
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 xeno meat
+    tags:
+    - Meat
+    - Cooked
+    - Xeno
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerMothRoach
+  key: Burger
+  result: FoodBurgerMothRoach
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 3
+  - !type:IngredientsWithTags # 1 xeno meat
+    tags:
+    - Meat
+    - Raw
+    - Mothroach
+    count:
+      min: 1
+      max: 2
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun
+
+- type: metamorphRecipe
+  id: FoodBurgerPlain
+  key: Burger
+  result: FoodBurgerPlain
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 2
+      max: 2
+  - !type:IngredientsWithTags # 1 meat cutlet
+    tags:
+    - Cooked
+    - Meat
+    count:
+      min: 1
+      max: 1
+  - !type:LastElementHasTags # last bun
+    tags:
+    - Bun

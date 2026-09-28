@@ -1,0 +1,42 @@
+- type: reaction
+  id: YellowBloodBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    YellowBlood:
+      amount: 20
+  products:
+    Water: 11
+    Iron: 0.5
+    Sugar: 2
+    CarbonDioxide: 3
+    Protein: 4
+
+- type: reaction
+  id: BlackBloodBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    BlackBlood:
+      amount: 30
+  products:
+    Water: 17
+    Nitrogen: 4.5
+    Chlorine: 2.5
+    Protein: 6
+
+- type: reaction
+  id: WhiteBloodBreakdown
+  source: true
+  requiredMixerCategories:
+  - Centrifuge
+  reactants:
+    WhiteBlood:
+      amount: 30
+  products:
+    Water: 17
+    Nitrogen: 4.5
+    Chlorine: 2.5
+    Protein: 6

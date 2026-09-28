@@ -16,6 +16,7 @@
   - SalvageExpeditionsComputerCircuitboard # DeltaV
   - ClothingMaskWeldingGas
   - ClothingShoesBootsJump
+  - NFWeaponHoloflareGun # DeltaV
 
 - type: technology
   id: SpaceScanning
@@ -165,6 +166,7 @@
   - PortableScrubberMachineCircuitBoard
   - HolofanProjector
   - FireExtinguisherBluespace # DeltaV
+  - HandheldAtmosMonitor # Floofstation - handheld atmos monitor
   technologyPrerequisites:
   - AtmosphericTech
 
@@ -182,6 +184,8 @@
     - PowerDrill
     - JawsOfLife
     - BorgModuleAdvancedTool
+    - TrayGoggles # DeltaV
+    - ExperimentalNaniteApplicator # Monolith
     #- Fulton # DeltaV - seperate tech Aerial Extraction
     #- FultonBeacon # DeltaV - seperate tech Aerial Extraction
 
@@ -199,6 +203,10 @@
     - MiningDrillDiamond
     - AdvancedMineralScannerEmpty
     - BorgModuleAdvancedMining
+    - BorgModuleEnvSurvey # Euphoria Addition
+    - PKAUpgradeDamage
+    - PKAUpgradeRange
+    - PKAUpgradeFireRate
 
 # Tier 3
 

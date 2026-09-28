@@ -62,3 +62,13 @@
   id: UnclonablePhrase
   parent: BaseMedicinePhrase
   text: phrase-unclonable
+
+- type: quickPhrase
+  id: RotPhrase
+  parent: BaseMedicinePhrase
+  text: phrase-rot
+
+- type: quickPhrase
+  id: RottedPhrase
+  parent: BaseMedicinePhrase
+  text: phrase-rotted

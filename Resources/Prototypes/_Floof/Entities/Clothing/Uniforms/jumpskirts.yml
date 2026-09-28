@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtBlazer
+  name: blazer and skirt outfit
+  description: A blazer over a button up shirt, paired with a tie and a plaid skirt.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/blazerskirt.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/blazerskirt.rsi

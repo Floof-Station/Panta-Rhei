@@ -37,7 +37,7 @@
 - type: entity
   parent: [BaseTraitorObjective, BaseLivingObjective]
   id: EscapeShuttleObjective
-  name: Escape to centcomm alive and unrestrained.
+  name: Escape to CentComm alive and unrestrained via the escape shuttle.
   description: One of our undercover agents will debrief you when you arrive. Don't show up in cuffs.
   components:
   - type: Objective
@@ -47,6 +47,7 @@
       state: shuttle
   - type: EscapeShuttleCondition
 
+# Euph - sadly no dadg
 #- type: entity
 #  parent: BaseTraitorObjective
 #  id: DieObjective
@@ -64,10 +65,17 @@
 #      - EscapeShuttleCondition
 #      - StealCondition
 #  - type: DieCondition
-  # The game turns into a massive suicide pact if enough of the traitors have it. Not fun for traitors or security!
-  # Giving it a limit keeps the objective unique and interesting without being overdone.
-#  - type: ObjectiveLimit # Delta-V
-#    limit: 1 # Delta-V
+#  # BEGIN DelatV
+#  # The game turns into a massive suicide pact if enough of the traitors have it. Not fun for traitors or security!
+#  # Giving it a limit keeps the objective unique and interesting without being overdone.
+#  - type: ObjectiveLimit
+#    limit: 1
+#  - type: StoreUnlocker  # Allow DAGD to stay dead
+#    listings:
+#    - UplinkUnrevivableImplanterDAGD
+#    - UplinkAcidifierImplanterDAGD
+#    - UpinkMicrobombImplanterDAGD
+#  # END DeltaV
 
 #- type: entity
 #  parent: [BaseTraitorObjective, BaseLivingObjective]
@@ -96,6 +104,7 @@
     title: objective-condition-maroon-person-title
   - type: PickRandomPerson
     filters:
+    - !type:ObjectiveImmuneFilter # DeltaV
     # Euphoria - Make RR objective targets opt in only
     - !type:MarkedMindFilter
       objType: Remove
@@ -104,7 +113,6 @@
       blacklist:
         components:
         - KillPersonCondition
-        - TargetObjectiveImmune # DeltaV
   - type: KillPersonCondition
     requireMaroon: true
 
@@ -126,6 +134,7 @@
       whitelist:
         components:
         - CommandStaff
+    - !type:ObjectiveImmuneFilter # DeltaV
     # Euphoria - Make RR objective targets opt in only
     - !type:MarkedMindFilter
       objType: Remove
@@ -134,7 +143,6 @@
       blacklist:
         components:
         - KillPersonCondition
-        - TargetObjectiveImmune # DeltaV
   - type: KillPersonCondition
     # don't count missing evac as killing as heads are higher profile, so you really need to do the dirty work
     # if ce flies a shittle to centcom you better find a way onto it
@@ -158,13 +166,13 @@
       whitelist:
         components:
         - TraitorRole
+    - !type:ObjectiveImmuneFilter # DeltaV
     # Can't have multiple objectives to help/save the same person
     - !type:TargetObjectiveMindFilter
       blacklist:
         components:
         - HelpProgressCondition
         - KeepAliveCondition
-        - TargetObjectiveImmune # DeltaV
 
 - type: entity
   parent: [BaseTraitorSocialObjective, BaseHelpProgressObjective]
@@ -188,13 +196,13 @@
       blacklist:
         components:
         - HelpProgressCondition
+    - !type:ObjectiveImmuneFilter # DeltaV
     # Can't have multiple objectives to help/save the same person
     - !type:TargetObjectiveMindFilter
       blacklist:
         components:
         - HelpProgressCondition
         - KeepAliveCondition
-        - TargetObjectiveImmune # DeltaV
 
 # steal
 

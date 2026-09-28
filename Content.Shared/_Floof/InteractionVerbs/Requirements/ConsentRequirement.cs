@@ -7,7 +7,6 @@ namespace Content.Shared._Floof.InteractionVerbs.Requirements;
 /// <summary>
 ///     Requires the target to consent to the action.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed partial class ConsentRequirement : InvertableInteractionRequirement
 {
     [DataField]

@@ -42,8 +42,9 @@
     onlyAffectsMobs: false
     injectOnly: true
     transferAmount: 15 # Explicitly redefined in case parent changes
-  - type: Tag
-    tags: []
+  - type: Tag # Floofstation - give the medipens the base tag from detla-v so we can put them in medical fridges
+    tags:
+    - ChemicalMedipen
 
 - type: entity
   name: hemostasis auto-injector

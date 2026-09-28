@@ -12,7 +12,6 @@ namespace Content.Shared._Floof.InteractionVerbs.Requirements;
 /// <summary>
 ///     Requires the target to meet a certain whitelist and not meet a blacklist.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed partial class EntityWhitelistRequirement : InteractionRequirement
 {
     [DataField] public EntityWhitelist? Whitelist, Blacklist;
@@ -25,7 +24,6 @@ public sealed partial class EntityWhitelistRequirement : InteractionRequirement
 /// <summary>
 ///     Requires the mob to be a mob in a certain state. If inverted, requires the mob to not be in that state.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed partial class MobStateRequirement : InvertableInteractionRequirement
 {
     [DataField] public List<MobState> AllowedStates = new();
@@ -42,7 +40,6 @@ public sealed partial class MobStateRequirement : InvertableInteractionRequireme
 /// <summary>
 ///     Requires the target to be in a specific standing state.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed partial class StandingStateRequirement : InteractionRequirement
 {
     [DataField] public bool AllowStanding, AllowLaying, AllowKnockedDown;
@@ -63,7 +60,6 @@ public sealed partial class StandingStateRequirement : InteractionRequirement
 /// <summary>
 ///     Requires the target to be the user itself.
 /// </summary>
-[Serializable, NetSerializable]
 public sealed partial class SelfTargetRequirement : InvertableInteractionRequirement
 {
     public override bool IsMet(InteractionArgs args, InteractionVerbPrototype proto, InteractionAction.VerbDependencies deps)

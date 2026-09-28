@@ -1,0 +1,17 @@
+- type: species
+  id: IPC
+  name: species-name-ipc
+  roundStart: true
+  prototype: MobIPC
+  dollPrototype: AppearanceIPC
+  skinColoration: Hues
+  minAge: 18 # Euph - added to avoid implying that ipcs can be children
+  maxAge: 240
+  youngAge: 50 # Euph - see above
+  oldAge: 180 # Euph
+  maleFirstNames: IpcFirst
+  femaleFirstNames: IpcFirst
+  lastNames: IpcLast
+  naming: FirstDashLast
+  sexes:
+  - Unsexed

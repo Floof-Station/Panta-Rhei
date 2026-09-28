@@ -33,7 +33,6 @@
     interfaces:
       enum.PenLightUiKey.Key:
         type: PenLightBoundUserInterface
-  - type: ToggleableLightVisuals
   - type: ContainerContainer
     containers:
       cell_slot: !type:ContainerSlot {}

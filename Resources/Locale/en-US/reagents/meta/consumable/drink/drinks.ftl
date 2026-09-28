@@ -67,8 +67,9 @@ reagent-desc-soda-water = A container of club soda. Why not make a scotch and so
 reagent-name-soy-latte = soy latte
 reagent-desc-soy-latte = A coffee drink made with espresso and steamed soy milk.
 
-reagent-name-tea = tea
-reagent-desc-tea = A drink made by boiling leaves of the tea tree, Camellia sinensis.
+# Mono edit
+reagent-name-tea = black tea
+reagent-desc-tea = A classic, robust black tea with a deep, rich flavor.
 
 reagent-name-tonic-water = tonic water
 reagent-desc-tonic-water = It tastes strange but at least the quinine keeps the Space Malaria at bay.

@@ -1,7 +1,7 @@
 - type: entity
   parent: Bible
   id: BibleLustroEcclesia
-  name: ritus ignis
+  name: Ritus Ignis
   description: The holy book of Lustro Ecclesia. Praise be Sol'Magmus...
   components:
   - type: Sprite
@@ -21,3 +21,57 @@
       - state: inhand-right
       - state: inhand-right_lighting
         shader: unshaded
+
+- type: entity
+  parent: Bible
+  id: BibleGorlexGF
+  name: Gorlex Goddess
+  description: The holy book of Lust.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Chapel/gorlex_bible.rsi
+    layers:
+    - state: icon
+  - type: Item
+    sprite: _Euphoria/Objects/Specific/Chapel/gorlex_bible.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+
+- type: entity
+  parent: Bible
+  id: BibleChaddiusThundercockis
+  name: Chaddius Thundercockis's Guide to Getting Laid
+  description: The holy book of Lust.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Chapel/chads_bible.rsi
+    state: icon
+  - type: Item
+    sprite: _Euphoria/Objects/Specific/Chapel/chads_bible.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: unshaded
+      right:
+      - state: inhand-right
+        shader: unshaded
+
+- type: entity
+  parent: Bible
+  id: BibleBreadGod
+  name: mother loaf bread bible
+  description: The motherloaf has blessed this loaf of bread to create miracles.
+  components:
+  - type: Sprite
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    state: plain
+  - type: Item
+    sprite: Objects/Consumable/Food/Baked/bread.rsi
+    inhandVisuals:
+      left:
+      - state: baguette-inhand-left
+      right:
+      - state: baguette-inhand-right

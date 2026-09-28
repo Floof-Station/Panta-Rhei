@@ -97,6 +97,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+#    Hiss: # moved to base
+#      collection: ReptillianHiss # Impstation
     Honk:
       collection: BikeHorn
     Whistle:
@@ -134,6 +136,8 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
     Laugh:
       path: /Audio/Animals/lizard_happy.ogg
+    Hiss: # moved to base
+      collection: ReptillianHiss # Impstation
     Honk:
       collection: BikeHorn
     Whistle:
@@ -262,6 +266,8 @@
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
+    Sneeze:
+      path: /Audio/Voice/Vox/vox_sneeze.ogg
     Cough:
       path: /Audio/Voice/Vox/vox_cough.ogg
     Sigh:
@@ -312,6 +318,8 @@
       path: /Audio/Voice/Diona/diona_scream.ogg
     Laugh:
       collection: DionaLaugh
+    Sneeze:
+      collection: DionaSneeze
     Chirp:
       path: /Audio/Animals/nymph_chirp.ogg
     Honk:
@@ -468,8 +476,20 @@
       collection: Hew
     Honk:
       collection: BikeHorn
+    # Gasp:
+    #   collection: MaleGasp
+    #region Starlight
+    Crying:
+     path: /Audio/_Starlight/Voice/Moth/moth_cry.ogg
+    Cough:
+     path: /Audio/_Starlight/Voice/Moth/moth_cough.ogg
+    Yawn:
+     path: /Audio/_Starlight/Voice/Moth/moth_yawn.ogg
+    Sigh:
+     path: /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
     Gasp:
-      collection: MaleGasp
+      path: /Audio/_Starlight/Voice/Moth/moth_gasp.ogg
+    #endregion Starlight
     DefaultDeathgasp:
       collection: MothDeathGasp
     Gulp: # Goob
@@ -503,6 +523,7 @@
 
 - type: emoteSounds
   id: UnisexSiliconSyndicate
+  parent: UnisexSilicon # Floofstation
   params:
     variation: 0.05
   sounds:
@@ -531,6 +552,7 @@
 
 - type: emoteSounds
   id: UnisexSiliconXenoborg
+  parent: UnisexSilicon # Floofstation
   params:
     variation: 0.05
   sounds:
@@ -561,7 +583,7 @@
 - type: emoteSounds
   id: GeneralBodyEmotes
   sounds:
-    Thump:
+    Thump: # Floof
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
       params:
         variation: 0.125
@@ -616,6 +638,22 @@
       collection: Salutes
     Blink: # Imp
       collection: Blinks # Imp
+
+- type: emoteSounds
+  id: MothBodyEmotes
+  sounds:
+    Flap:
+      path: /Audio/Voice/Moth/moth_flap.ogg
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
 
 # mobs
 - type: emoteSounds

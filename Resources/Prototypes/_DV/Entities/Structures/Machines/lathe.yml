@@ -9,11 +9,11 @@
   - type: Lathe
     staticPacks:
     - BorgModulesSyndicateStatic
-    - RoboticsStaticDeltaV
     - RoboticsStatic
     - BorgModulesStatic
     - BorgLimbsStatic
     - BorgModulesResearched
+    - RoboticsEmagStatic
   - type: Machine
     board: SyndieExosuitFabricatorMachineCircuitboard
 
@@ -24,13 +24,13 @@
   components:
   - type: Sprite
     sprite: Structures/Machines/techfab.rsi
+    snapCardinals: true
   - type: Lathe
     idleState: icon
     runningState: icon
     unlitIdleState: unlit
     unlitRunningState: unlit-building
   - type: EmagLatheRecipes
-
     emagStaticPacks:
     - SecurityAmmoStatic
     # Floof (Why the fuck is this not a thing?)
@@ -86,6 +86,8 @@
     - EVASuit
     - EngineeringStaticDeltaV
     - EngineeringStaticFloof # Floofstation
+    - SuperMatterEngineeringStatic # Floofstation - supermatter board
+    - EngineeringStaticStarlight # Floofstation - RPD empty recpie
     dynamicPacks:
     - AdvancedTools
     - PowerCells
@@ -96,6 +98,9 @@
     - UpgradeKits
     - UpgradeKits_Goob
     - EngineeringHardsuits
+    - AtmosToolsFloofstation # Floofstation - handheld atmos monitor
+    - AdvancedConstruction
+    - LightingEquipment
   - type: Machine
     board: EngineeringTechFabCircuitboard
   - type: StealTarget
@@ -136,6 +141,7 @@
     - Mining
     - SalvageWeapons
     - SalvageHardsuits
+    - LightingEquipment
   - type: Machine
     board: LogisticsTechFabCircuitboard
   - type: StealTarget
@@ -175,7 +181,11 @@
     - EVASuit
     # Floofstation section
     - CollarsAutolatheFloofstation
+    - FloofstationServiceCookingEquipment # static packs for food related storage and cooking items
+    - FloofstationServiceFoodStorage
+    - FloofstationServiceCircuitBoards # service smartfridge
     # Floofstation section end
+    - ServiceJanitorBoardsEuphoria # Put this pack under our namespace, board is from froniter
     dynamicPacks:
     - Janitor
     - Instruments
@@ -186,6 +196,12 @@
     stealGroup: ServiceTechFabCircuitboard
   - type: LatheAnnouncing
     channels: [Service]
+  - type: MaterialStorage # Floofstation - allow cardboard as a material in the lathe
+    whitelist: &StandardMaterialWhitelist
+        tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
 
 - type: entity
   parent: BaseTechFabDepartmental
@@ -217,6 +233,7 @@
     - ReportingStatic
     - SimpleElectronicsStatic
     - EVASuit
+    - EpistemicsStaticDeltaV
     dynamicPacks:
     - ScienceEquipment
     - ScienceClothing

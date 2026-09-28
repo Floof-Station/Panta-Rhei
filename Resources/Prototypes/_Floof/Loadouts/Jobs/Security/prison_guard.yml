@@ -1,0 +1,11 @@
+﻿# emotional support collar
+- type: loadout
+  id: ClothingNeckCollarEmotionalSupportPrisonGuard
+  equipment:
+    neck: ClothingNeckCollarEmotionalSupportPrisonGuard
+
+# needs their regular pda for the loadout group
+- type: loadout
+  id: PrisonGuardPDA
+  equipment:
+    id: PrisonGuardPDA

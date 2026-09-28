@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformJumpskirtDressGothic
+  name: gothic dress
+  description: A black dress with a sheer mesh over it, tastefully old-school goth.
+  components:
+  - type: Sprite
+    sprite: _EE/Clothing/Uniforms/Jumpskirt/gothic.rsi
+  - type: Clothing
+    sprite: _EE/Clothing/Uniforms/Jumpskirt/gothic.rsi

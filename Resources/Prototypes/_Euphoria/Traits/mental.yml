@@ -1,0 +1,10 @@
+- type: trait
+  id: TraitTelepathic
+  name: trait-telepathic-name
+  description: trait-telepathic-desc
+  category: Psionics
+  cost: 1
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Psionic

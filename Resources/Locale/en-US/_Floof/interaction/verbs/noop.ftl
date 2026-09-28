@@ -22,12 +22,6 @@ interaction-Pet-success-self-popup = You pet {THE($target)} on {POSS-ADJ($target
 interaction-Pet-success-target-popup = {THE($user)} pets you on your head.
 interaction-Pet-success-others-popup = {THE($user)} pets {THE($target)}.
 
-interaction-PetAnimal-name = {interaction-Pet-name}
-interaction-PetAnimal-description = Pet an animal.
-interaction-PetAnimal-success-self-popup = {interaction-Pet-success-self-popup}
-interaction-PetAnimal-success-target-popup = {interaction-Pet-success-target-popup}
-interaction-PetAnimal-success-others-popup = {interaction-Pet-success-others-popup}
-
 interaction-KnockOn-name = Knock
 interaction-KnockOn-description = Knock on the target to attract attention.
 interaction-KnockOn-success-self-popup = You knock on {THE($target)}.
@@ -55,6 +49,12 @@ interaction-WaveAt-success-others-popup = {THE($user)} waves {$hasUsed ->
     *[true] {POSS-ADJ($user)} {$used} at {THE($target)}.
 }
 
+interaction-PointGunAt-name = Point gun
+interaction-PointGunAt-description = Point your gun at them, probably in a threatening manner.
+interaction-PointGunAt-success-self-popup = You point your gun at {THE($target)}.
+interaction-PointGunAt-success-target-popup = {THE($user)} is pointing {POSS-ADJ} gun at you!
+interaction-PointGunAt-success-others-popup = {THE($user)} is pointing {POSS-ADJ} gun at {THE($target)}!
+
 interaction-Kiss-name = Kiss
 interaction-Kiss-description = A kiss to melt the pain away. Requires your mouth to be free.
 interaction-Kiss-success-self-popup = You kiss {THE($target)}.
@@ -66,3 +66,14 @@ interaction-Lick-description = Lick your co-worker. Requires your mouth to be fr
 interaction-Lick-success-self-popup = You lick {THE($target)}.
 interaction-Lick-success-target-popup = {THE($user)} licks you.
 interaction-Lick-success-others-popup = {THE($user)} licks {THE($target)}.
+
+interaction-RudeGesture-name = Rude Gesture
+interaction-RudeGesture-description = Give someone a rude gesture for angering you...
+interaction-RudeGesture-success-self-popup = You make a rude gesture at {THE($target)}.
+interaction-RudeGesture-success-target-popup = You think that {THE($user)} might have just made a rude gesture at you...
+interaction-RudeGesture-success-others-popup = You think that {THE($user)} might have made a rude gesture at {THE($target)}...
+
+interaction-SuggestiveGesture-name = Suggestive Gesture
+interaction-SuggestiveGesture-description = Make a suggestive and provocative gesture to someone else...
+interaction-SuggestiveGesture-success-self-popup = You look at {THE($target)} in the eyes and make a very suggestive gesture towards them....
+interaction-SuggestiveGesture-success-target-popup = You think that {THE($user)} might be making a suggestive gesture towards you...

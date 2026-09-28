@@ -1,0 +1,44 @@
+﻿- type: entity
+  parent: [ BaseItem, BaseSportsBall ]
+  id: CarpChewToy
+  name: Carp Chew Toy
+  description: A very bitable toy fish.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/chew_toy.rsi
+    state: icon
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.25
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.5 # a little bouncy
+        friction: 0.2
+  - type: Item
+    size: Small
+    sprite: _Floof/Objects/Fun/chew_toy.rsi
+  - type: EmitSoundOnUse
+    sound:
+      collection: ToySqueak
+      params:
+        volume: -4
+  - type: UseDelay
+  - type: MeleeWeapon
+    wideAnimationRotation: 90
+    angle: 0
+    animation: WeaponArcBite # Rrrr!
+    damage:
+      types:
+        Blunt: 0
+  - type: FoodSequenceElement
+    entries:
+      CottonBurger: CarpPlushie
+  - type: Clothing
+    slots: [mask]
+  - type: Tag
+    tags:
+    - PetWearable
+    - PlushieCarp

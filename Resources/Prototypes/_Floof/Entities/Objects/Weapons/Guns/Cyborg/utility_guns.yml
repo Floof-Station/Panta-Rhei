@@ -1,0 +1,129 @@
+# Generic Module Guns
+- type: entity
+  name: holoflare gun
+  id: WeaponHoloflareGun
+  parent: BaseItem
+  description: A compact, energy-based pistol that fires holographic flares. Literally harmless.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/Cyborg/holoflaregun.rsi
+    layers:
+    - state: icon
+    - state: animation-icon
+      visible: false
+      map: [ "empty-icon" ]
+  - type: Item
+    sprite: _Floof/Objects/Weapons/Guns/Cyborg/holoflaregun.rsi
+    size: Small
+    shape:
+    - 0,0,1,0
+    - 0,1,0,1
+  - type: Gun
+    fireRate: 8
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/flaregun.ogg
+  - type: AmmoCounter
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.AmmoVisuals.HasAmmo:
+        empty-icon:
+          True: { visible: False }
+          False: { visible: True }
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 45
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
+  - type: BasicEntityAmmoProvider
+    proto: PelletHoloFlare
+    capacity: 1
+    count: 1
+
+- type: entity
+  name: Foam Force Cyber Cycler
+  parent: BaseItem
+  id: WeaponRifleFoamBorg
+  description: An premium foam rifle of the highest quality. Contains a foam fabricator.
+  components:
+  - type: Sprite
+    sprite: Objects/Fun/Foam/foam_rifle.rsi
+    layers:
+    - state: icon
+      map: [ "enum.GunVisualLayers.Base" ]
+  - type: Appearance
+  - type: Item
+    size: Huge
+  - type: Battery
+    maxCharge: 500
+    startingCharge: 500
+  - type: BatteryAmmoProvider
+    proto: BulletFoam
+    fireCost: 100
+  - type: AmmoCounter
+  - type: BatterySelfRecharger
+    autoRechargeRate: 20
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Effects/thunk.ogg
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: PacifismAllowedGun
+
+# Science Module Guns
+- type: entity
+  name: integrated A.P.E.
+  parent: BaseWeaponBatterySmall
+  description: A slimmed down and heavily modified A.P.E. Powered by a cyborg's internal battery.
+  id: WeaponAPEBorg
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Weapons/Guns/Cyborg/borgape.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-1
+      visible: false
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Appearance
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
+  - type: Gun
+    projectileSpeed: 4
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: BatteryAmmoProvider
+    proto: AnomalousParticleDelta
+    fireCost: 333
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: AnomalousParticleDelta
+      fireCost: 333
+    - proto: AnomalousParticleEpsilon
+      fireCost: 333
+    - proto: AnomalousParticleZeta
+      fireCost: 333
+    - proto: AnomalousParticleSigma
+      fireCost: 333
+  - type: BatterySelfRecharger
+    autoRechargePauseTime: 5
+    autoRechargeRate: 1500
+
+- type: entity
+  id: WeaponPistolCHIMPBorg
+  parent: WeaponPistolCHIMP
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 20

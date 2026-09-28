@@ -22,7 +22,7 @@ public sealed partial class ModifyTemperatureToleranceEffect : BaseTraitEffect
 
     public override void Apply(TraitEffectContext ctx)
     {
-        if (!ctx.EntMan.TryGetComponent<TemperatureComponent>(ctx.Player, out var tempComp))
+        if (!ctx.EntMan.TryGetComponent<TemperatureDamageComponent>(ctx.Player, out var tempComp))
             return;
 
         tempComp.HeatDamageThreshold += HeatToleranceModifier;

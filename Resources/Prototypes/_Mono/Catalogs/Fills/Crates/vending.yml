@@ -1,0 +1,11 @@
+- type: entity
+  id: CrateVendingMachineRestockBaristaFilled
+  parent: CratePlastic # Euphoria - M3739 - #485 - Originally 'CratePlasticBiodegradable'. We do not have that here.
+  name: BaristaVend Restock Crate
+  description: Contains a restock box for the BaristaVend.
+  components:
+  - type: EntityTableContainerFill # Euphoria - M3739 - #485 - Was 'StorageFill'. Pisses off unit tests, therefore...
+    containers:
+      entity_storage:
+        id: VendingMachineRestockBarista
+        amount: 2

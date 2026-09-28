@@ -15,3 +15,32 @@
 - type: emoteSounds
   id: FemaleArachne
   parent: [FemaleHuman, BaseArachne]
+
+- type: emoteSounds
+  id: BaseResomiUnique
+  abstract: true
+  sounds:
+  #Starlight start
+    Gasp:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_gasp.ogg
+    DefaultDeathgasp:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_deathgrasp.ogg
+    Sigh:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_sigh.ogg
+    Crying:
+      collection: ResomiCry
+    Cough:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_cough.ogg
+    Yawn:
+      path: /Audio/_Starlight/Voice/Resomi/resomi_yawn.ogg
+    Laugh:
+      collection: ResomiLaugh
+#Starlight end
+
+- type: emoteSounds
+  id: MaleResomi
+  parent: [BaseResomiUnique, RMCMaleAvali]
+
+- type: emoteSounds
+  id: FemaleResomi
+  parent: [BaseResomiUnique, RMCFemaleAvali]

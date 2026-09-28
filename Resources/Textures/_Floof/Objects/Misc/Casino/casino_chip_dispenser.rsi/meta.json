@@ -1,0 +1,42 @@
+{
+    "version": 1,
+    "license": "CC-BY-3.0",
+    "copyright": "Taken from VOREStation Commit: https://github.com/VOREStation/VOREStation/commit/3018ff04b5c6f0469bb65b7d542d70315880eee5#diff-ace945ec51bdc34300137e1feb9e9287f0ee04fecc0e6efa6acc550314281d47, chipmachine-deny, chipmachine-broken edited by Dunrab (github)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "chipmachine-on",
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    2.5
+                ]
+            ]
+        },
+        {
+            "name": "chipmachine-off"
+        },
+        {
+            "name": "chipmachine-broken"
+        },
+        {
+            "name": "chipmachine-deny"
+        },
+        {
+            "name": "chipmachine-panel"
+        }
+    ]
+}

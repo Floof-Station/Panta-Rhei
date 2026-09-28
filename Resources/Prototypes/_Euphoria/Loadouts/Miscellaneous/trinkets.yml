@@ -1,0 +1,13 @@
+- type: loadout
+  id: Doctorate
+  storage:
+    back:
+    - PaperDoctorate
+  groupBy: "fancy papers"
+
+- type: loadout
+  id: MedicalLicense
+  storage:
+    back:
+    - PaperMedLicense
+  groupBy: "fancy papers"

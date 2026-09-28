@@ -1,5 +1,6 @@
 using Content.Shared.StationRecords; // DeltaV - triage
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Medical.Components;
@@ -40,12 +41,6 @@ public sealed partial class HealthAnalyzerComponent : Component
     public EntityUid? ScannedEntity;
 
     /// <summary>
-    /// Shitmed Change: The body part that is currently being scanned.
-    /// </summary>
-    [DataField]
-    public EntityUid? CurrentBodyPart;
-
-    /// <summary>
     /// The maximum range in tiles at which the analyzer can receive continuous updates, a value of null will be infinite range
     /// </summary>
     [DataField]
@@ -82,4 +77,12 @@ public sealed partial class HealthAnalyzerComponent : Component
     [DataField]
     public StationRecordKey? StationRecordKey;
     // End DeltaV - Medical Records
+
+    //FarHorizons Start
+    [DataField]
+    public EntProtoId Action = "ActionMedTek";
+
+    [DataField]
+    public EntityUid? ActionEntity;
+    //FarHorizons End
 }

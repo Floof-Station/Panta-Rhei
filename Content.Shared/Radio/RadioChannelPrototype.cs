@@ -24,7 +24,7 @@ public sealed partial class RadioChannelPrototype : IPrototype
     public int Frequency { get; private set; } = 0;
 
     [DataField("color")]
-    public Color Color { get; private set; } = Color.Lime;
+    public Color Color { get; set; } = Color.Lime; // DeltaV - Client-side radio channel colors, no longer private set
 
     [IdDataField, ViewVariables]
     public string ID { get; private set; } = default!;
@@ -35,4 +35,18 @@ public sealed partial class RadioChannelPrototype : IPrototype
     /// </summary>
     [DataField("longRange"), ViewVariables]
     public bool LongRange = false;
+
+    /// <summary>
+    /// If true, the frequency of the message being sent will be appended to the chat message
+    /// </summary>
+    [DataField, ViewVariables]
+    public bool ShowFrequency = false;
+    // End Frontier
+
+    //Euphoria
+    /// <summary>
+    /// If true, the channel will attempt to hide itself from examine events.
+    /// </summary>
+    [DataField("stealth"), ViewVariables]
+    public bool Stealth = false;
 }

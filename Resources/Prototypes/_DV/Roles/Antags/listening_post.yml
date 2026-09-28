@@ -4,14 +4,15 @@
   antagonist: true
   objective: roles-antag-listening-post-objective
   requirements: # Worth considering these numbers for the goal of making sure someone willing to MRP takes this.
-  - !type:OverallPlaytimeRequirement
-    time: 72h
-  - !type:DepartmentTimeRequirement
-    department: Security
-    time: 11.1h
-  - !type:DepartmentTimeRequirement
-    department: Civilian
-    time: 11.1h
-  - !type:DepartmentTimeRequirement
-    department: Command
-    time: 11.1h
+  - !type:OverallPlaytimeRequirement #Euphoria, playtime reduced in line with other ghost roles. They dont need to be so high.
+    time: 48h
+  #- !type:DepartmentTimeRequirement
+  #  department: Security
+  #  time: 11.1h
+  #- !type:DepartmentTimeRequirement
+  #  department: Civilian
+  #  time: 11.1h
+  #- !type:DepartmentTimeRequirement
+  #  department: Command
+  #  time: 11.1h
+  # Euphoria End

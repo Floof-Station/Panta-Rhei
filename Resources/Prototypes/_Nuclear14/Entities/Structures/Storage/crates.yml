@@ -15,11 +15,6 @@
     spread: 90
 
 - type: entity
-  parent: [ N14CrateFootlocker ]
-  id: N14LootCrateFootlocker
-  suffix: Loot, RandomSmall
-
-- type: entity
   parent: CrateGenericSteel
   id: N14CrateAluminium
   name: aluminium crate
@@ -31,11 +26,6 @@
     sprite: _Nuclear14/Structures/Storage/Crates/aluminiumcrate.rsi
 
 - type: entity
-  parent: [ N14CrateFootlocker ]
-  id: N14LootCrateAluminium
-  suffix: Loot, Random
-
-- type: entity
   parent: CrateGenericSteel
   id: N14CrateArmy
   name: army crate
@@ -45,11 +35,6 @@
     sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Crates/armycrate.rsi
-
-- type: entity
-  parent: [ N14CrateFootlocker ]
-  id: N14LootCrateArmy
-  suffix: Loot, RandomMilitary
 
 - type: entity
   parent: N14CrateFootlocker
@@ -64,11 +49,6 @@
     # TODO: Will need an access locked variant.
 
 - type: entity
-  parent: [ N14CrateEnclave ]
-  id: N14LootCrateEnclave
-  suffix: Loot, RandomMilitary
-
-- type: entity
   parent: N14CrateFootlocker
   id: N14CrateEnclaveDirectional
   suffix: directional
@@ -79,11 +59,6 @@
     sprite: _Nuclear14/Structures/Storage/Crates/enclavecrate.rsi
   - type: Sprite
     sprite: _Nuclear14/Structures/Storage/Crates/enclavecrate.rsi
-
-- type: entity
-  parent: [ N14CrateEnclaveDirectional ]
-  id: N14LootCrateEnclaveDirectional
-  suffix: Loot, RandomMilitary
 
 - type: entity
   parent: CrateGenericSteel
@@ -97,14 +72,15 @@
     sprite: _Nuclear14/Structures/Storage/Crates/medicalcrate.rsi
 
 - type: entity
-  parent: [ N14CrateMedical ]
-  id: N14LootCrateMedical
-  suffix: Loot, Medical
-
-- type: entity
-  parent: [ N14CrateMedical ]
-  id: N14CrateMedicalRefilling
-  suffix: Refilling, Medical
+  parent: CrateGenericSteel
+  id: N14LootCrateWastelandBotany
+  name: medical crate
+  description: A metal crate for storing medical equipment.
+  components:
+  - type: Icon
+    sprite: _Nuclear14/Structures/Storage/Crates/hydroponics.rsi
+  - type: Sprite
+    sprite: _Nuclear14/Structures/Storage/Crates/hydroponics.rsi
 
 - type: entity
   parent: CrateGenericSteel
@@ -163,11 +139,6 @@
       map: ["enum.StorageVisualLayers.Door"]
   - type: AntiRottingContainer
 
-- type: entity
-  parent: [ N14CrateFreezer ]
-  id: N14LootCrateFreezer
-  suffix: Loot, Random
-
 # Wooden
 - type: entity
   parent: CrateGeneric
@@ -195,37 +166,6 @@
         - SmallMobMask #this is so they can go under plastic flaps
         layer:
         - MachineLayer
-
-- type: entity
-  parent: [ N14CrateWooden ]
-  id: N14CrateWastelandBotanyRefilling
-  suffix: Refilling, Random Botany
-
-- type: entity
-  parent: [ N14CrateWooden ]
-  id: N14LootCrateWastelandBotany
-  suffix: Loot, Random Botany
-
-- type: entity
-  parent: N14CrateWooden
-  id: N14CrateMilitary
-  name: military crate
-  description: An old wooden crate. Looks like it might have some supplies in.
-  components:
-  - type: Icon
-    sprite: _Nuclear14/Structures/Storage/Crates/cratemilitary.rsi
-  - type: Sprite
-    sprite: _Nuclear14/Structures/Storage/Crates/cratemilitary.rsi
-
-- type: entity
-  parent: [ N14CrateMilitary ]
-  id: N14CrateMilitaryRefilling
-  suffix: Refilling, Random Military
-
-- type: entity
-  parent: [ N14CrateMilitary ]
-  id: N14LootCrateMilitary
-  suffix: Loot,Random Military
 
 # Breakable Crates (deconstruct or destroy)
 - type: entity
@@ -266,59 +206,3 @@
       storagebase: !type:Container
         ents: []
     # TODO: Add crate deconstruction
-
-- type: entity
-  parent: N14CrateBreakBase
-  id: N14CrateBreakWood
-  suffix: wood
-  components:
-  - type: Sprite
-    state: wood_crate
-
-- type: entity
-  parent: N14CrateBreakBase
-  id: N14CrateBreakPlain
-  suffix: plain
-  components:
-  - type: Sprite
-    state: plain_crate
-
-- type: entity
-  parent: N14CrateBreakBase
-  id: N14CrateBreakPlainDamaged
-  suffix: plain damaged
-  components:
-  - type: Sprite
-    state: plain_crate-1 # TODO: Make this random between states -1, -2 and -3
-
-- type: entity
-  parent: N14CrateBreakBase
-  id: N14CrateBreakSarsaparilla
-  name: sunset sarsaparilla crate
-  components:
-  - type: Sprite
-    state: sarsaparilla_crate
-
-- type: entity
-  parent: N14CrateBreakSarsaparilla
-  id: N14CrateBreakSarsaparillaDamaged
-  suffix: damaged
-  components:
-  - type: Sprite
-    state: sarsaparilla_crate-1
-
-- type: entity
-  parent: N14CrateBreakBase
-  id: N14CrateBreakArmy
-  name: army crate
-  components:
-  - type: Sprite
-    state: army_crate
-
-- type: entity
-  parent: N14CrateBreakArmy
-  id: N14CrateBreakArmyDamaged
-  suffix: damaged
-  components:
-  - type: Sprite
-    state: army_crate-1 # TODO: Make this random between states -1 and -2

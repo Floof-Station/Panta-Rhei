@@ -1,0 +1,215 @@
+- type: markingsGroup
+  parent: [Undergarments, EuphoriaCommonMarkingLayers]
+  id: Arachne
+  limits: {} # I'm not even gonna bother. There's no taur markings besides the two default ones
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceArachne
+  name: Arachne appearance
+  components:
+  - type: InitialBody
+    organs:
+      TaurBodyConnector: OrganArachneTaurConnector
+      TaurBody: OrganArachneTaurBody
+      Torso: OrganArachneTorso
+      Head: OrganArachneHead
+      ArmLeft: OrganArachneArmLeft
+      ArmRight: OrganArachneArmRight
+      HandRight: OrganArachneHandRight
+      HandLeft: OrganArachneHandLeft
+      Brain: OrganArachneBrain
+      Eyes: OrganArachneEyes
+      Tongue: OrganArachneTongue
+      Appendix: OrganArachneAppendix
+      Ears: OrganArachneEars
+      Lungs: OrganArachneLungs
+      Heart: OrganArachneHeart
+      Stomach: OrganArachneStomach
+      Liver: OrganArachneLiver
+      Kidneys: OrganArachneKidneys
+  - type: HumanoidProfile
+    species: Arachne
+#    hideLayersOnEquip: # Idk what this was and where it is now. Organs can hide markings depending on what bodyparts are hidden (afaik). If you figure it out, remove this comment.
+#    - Hair
+#    - Snout
+  - type: Inventory
+    templateId: anytaur
+    speciesId: arachne
+    maleDisplacements: &allDisplacements
+      jumpsuit: &defaultDisplacement
+        sizeMaps:
+          32:
+            sprite: _Floof/Mobs/Species/Arachne/displacement.rsi
+            state: jumpsuit
+      outerClothing: *defaultDisplacement # Can't be fucked
+    femaleDisplacements: *allDisplacements
+
+- type: entity
+  parent:
+  - AppearanceArachne
+  - BaseSpeciesMobOrganic
+  id: MobArachne
+  name: Urist McArachne
+  components:
+  - type: Sericulture # the component which lets em make silk
+    productionLength: 2
+    entityProduced: MaterialWebSilk1
+    hungerCost: 4 # Should total to 25 total silk on full hunger
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: Speech # Arachnid Emotes
+    allowedEmotes: ['Click', 'Chitter', 'Hiss']
+  - type: Vocal
+    sounds:
+      Male: MaleArachne
+      Female: FemaleArachne
+      Unsexed: MaleArachne
+  - type: Spider # allows em to place spiderwebs on the ground
+  - type: IgnoreSpiderWeb # allows em to not be slowed by spiderwebs
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - SolCommon
+    understands:
+    - TauCetiBasic
+    - SolCommon
+    naturalLanguage: SolCommon
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+    - SpiderCraft # Added
+
+# Organs
+- type: entity
+  parent: OrganBase
+  id: OrganArachne
+  abstract: true
+  suffix: Arachne
+
+- type: entity
+  id: OrganArachneMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Animal ]
+
+- type: entity
+  parent: [OrganAnimalInternal, OrganArachne] # parent from animal organ for sprites
+  id: OrganArachneInternal
+  abstract: true
+  components: []
+
+- type: entity
+  id: OrganArachneVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Species/Human/parts.rsi # For some fuckass reason, arachne use human sprites for everything except the torso and taur body
+  - type: VisualOrganMarkings
+    markingData:
+      group: Arachne
+
+- type: entity
+  parent: [ OrganArachne, OrganArachneVisual ]
+  id: OrganArachneExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/parts.rsi # Ditto about human sprites
+
+- type: entity
+  parent: [ OrganBaseTaurConnector, OrganArachneExternal ]
+  id: OrganArachneTaurConnector
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Species/Arachne/parts.rsi # Ditto
+  - type: VisualOrgan
+    data:
+      sprite: _Floof/Mobs/Species/Arachne/parts.rsi # Ditto
+
+- type: entity
+  parent: [ OrganBaseTaurBody, OrganArachneExternal ]
+  id: OrganArachneTaurBody
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Species/Arachne/parts.rsi # Ditto
+  - type: VisualOrgan
+    data:
+      sprite: _Floof/Mobs/Species/Arachne/parts.rsi # Ditto
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganArachneExternal ]
+  id: OrganArachneTorso
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganArachneExternal ]
+  id: OrganArachneHead
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganArachneExternal ]
+  id: OrganArachneArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganArachneExternal ]
+  id: OrganArachneArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganArachneExternal ]
+  id: OrganArachneHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganArachneExternal ]
+  id: OrganArachneHandRight
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganSpriteHumanInternal, OrganArachneInternal ]
+  id: OrganArachneBrain
+
+- type: entity
+  parent: [ OrganArachneVisual, OrganBaseEyes, OrganArachneInternal ]
+  id: OrganArachneEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Floof/Mobs/Species/Arachne/eyes.rsi # Different eyes
+      state: eyes
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganArachneInternal ]
+  id: OrganArachneTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganSpriteHumanInternal, OrganArachneInternal ]
+  id: OrganArachneAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganSpriteHumanInternal, OrganArachneInternal ]
+  id: OrganArachneEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganArachneInternal, OrganArachneMetabolizer ]
+  id: OrganArachneLungs
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganArachneInternal, OrganArachneMetabolizer ]
+  id: OrganArachneHeart
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganArachneInternal, OrganArachneMetabolizer ]
+  id: OrganArachneStomach
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganArachneInternal, OrganArachneMetabolizer ]
+  id: OrganArachneLiver
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganSpriteHumanInternal, OrganArachneInternal, OrganArachneMetabolizer ]
+  id: OrganArachneKidneys

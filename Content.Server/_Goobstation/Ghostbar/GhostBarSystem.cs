@@ -6,13 +6,16 @@ using Content.Server.GameTicking.Events;
 using Content.Server.Goobstation.Ghostbar.Components;
 using Content.Server.Mind;
 using Content.Server.Station.Systems;
+using Content.Shared._DV.Psionics.Components;
 using Content.Shared._Floof.Language.Components;
+using Content.Shared._Floof.Traits.Components;
 using Content.Shared._Goobstation.Ghostbar.Events;
 using Content.Shared.Abilities.Psionics;
 using Content.Shared.GameTicking;
 using Content.Shared.Ghost;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mindshield.Components;
+using Content.Shared.Polymorph;
 using Content.Shared.Temperature.Components;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
@@ -45,19 +48,24 @@ public sealed class GhostBarSystem : EntitySystem
         SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
         SubscribeNetworkEvent<GhostBarSpawnEvent>(SpawnPlayer);
         SubscribeLocalEvent<GhostBarPlayerComponent, MindRemovedMessage>(PlayerGhostedFromGhostbar);
+        SubscribeLocalEvent<GhostBarPlayerComponent, PolymorphedEvent>(OnPolymorphed);
     }
 
     private readonly ResPath _mapPath = new("Maps/Floof/Nonstation/Ghostbar/ghostbar.yml");
 
     private void OnRoundStart(RoundStartingEvent ev)
     {
+        // we do not want to load the ghostbar in debug
+        #if DEBUG
+        return;
+        #endif
         if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
             _mapSystem.SetPaused(map.Value.Comp.MapId, false);
     }
 
     public void SpawnPlayer(GhostBarSpawnEvent msg, EntitySessionEventArgs args)
     {
-        if (!EntityManager.HasComponent<GhostComponent>(args.SenderSession.AttachedEntity))
+        if (!HasComp<GhostComponent>(args.SenderSession.AttachedEntity))
         {
             Log.Warning($"User {args.SenderSession.Name} tried to spawn at ghost bar without being a ghost.");
             return;
@@ -67,7 +75,7 @@ public sealed class GhostBarSystem : EntitySystem
         var query = EntityQueryEnumerator<GhostBarSpawnComponent>();
         while (query.MoveNext(out var ent, out _))
         {
-            spawnPoints.Add(EntityManager.GetComponent<TransformComponent>(ent).Coordinates);
+            spawnPoints.Add(Comp<TransformComponent>(ent).Coordinates);
         }
 
         if (spawnPoints.Count == 0)
@@ -80,16 +88,23 @@ public sealed class GhostBarSystem : EntitySystem
         var randomJob = _random.Pick(_jobPrototypes);
         var profile = _ticker.GetPlayerProfile(args.SenderSession);
         var mobUid = _spawningSystem.SpawnPlayerMob(randomSpawnPoint, randomJob, profile, null);
-        RaiseLocalEvent(new PlayerSpawnCompleteEvent(mobUid, args.SenderSession, randomJob, true, true, 0, EntityUid.Invalid, profile)); // we give them their characters traits
 
         RemComp<TemperatureComponent>(mobUid);
         RemComp<RespiratorComponent>(mobUid);
         RemComp<BarotraumaComponent>(mobUid);
+
+        RaiseLocalEvent(new PlayerSpawnCompleteEvent(mobUid, args.SenderSession, randomJob, true, true, 0, EntityUid.Invalid, profile)); // we give them their characters traits
+
         EnsureComp<MindShieldComponent>(mobUid);
         EnsureComp<AntagImmuneComponent>(mobUid); // self explanatory why we dont want players becoming antags at the ghostbar
-		EnsureComp<PsionicInsulationComponent>(mobUid); // we don't want people getting mindswapped
         EnsureComp<UniversalLanguageSpeakerComponent>(mobUid); // giving universal just in case for RP purposes
         EnsureComp<GhostBarPlayerComponent>(mobUid); // give the player mob the ghostbarplayer comp so they can be tracked
+
+        // We need to remove the below comps AFTER the characters traits have been applied to the spawned entity
+        RemComp<PotentialPsionicComponent>(mobUid); // dont want the chance to roll a power
+        RemComp<PsionicComponent>(mobUid); // we don't want people getting mindswapped OR being telepathic in the ghostbar
+        RemComp<MarkedComponent>(mobUid); // dont want people being a target
+
         var targetMind = _mindSystem.GetMind(args.SenderSession.UserId);
 
         if (targetMind != null)
@@ -101,5 +116,16 @@ public sealed class GhostBarSystem : EntitySystem
     private void PlayerGhostedFromGhostbar(Entity<GhostBarPlayerComponent> ent, ref MindRemovedMessage args)
     {
         QueueDel(ent);
+    }
+
+    // This is needed so that when a geras reverts their polymorph in the ghostbar
+    // they will get the ghostbarplayer comp back on their slime person entity.
+    private void OnPolymorphed(Entity<GhostBarPlayerComponent> ent, ref PolymorphedEvent args)
+    {
+        if (!args.IsRevert)
+            return;
+
+        RemComp<GhostBarPlayerComponent>(ent);
+        EnsureComp<GhostBarPlayerComponent>(args.NewEntity);
     }
 }

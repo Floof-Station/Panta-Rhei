@@ -1,0 +1,37 @@
+﻿- type: entity
+  name: handheld atmos monitor
+  categories: [ DoNotMap ]
+  parent: BaseHandheldComputer
+  id: HandheldAtmosMonitor
+  description: A hand-held monitor displaying the status of atmospherics on station.
+  components:
+  - type: Item
+    heldPrefix: scanner
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Atmos/handheld_atmos_monitor.rsi
+    state: scanner
+  - type: ActivatableUI
+    key: enum.AtmosAlertsComputerUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.AtmosAlertsComputerUiKey.Key:
+        type: AtmosAlertsComputerBoundUserInterface
+  - type: AtmosAlertsComputer
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+  - type: StationLimitedNetwork
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+
+- type: entity
+  id: HandheldAtmosMonitorEmpty
+  parent: HandheldAtmosMonitor
+  suffix: Empty
+  components:
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default

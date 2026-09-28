@@ -20,16 +20,16 @@ public sealed partial class ModifyStaminaThresholdEffect : BaseTraitEffect
             return;
         }
 
-        stamina.CritThreshold *= Multiplier;
+        stamina.BaseCritThreshold *= Multiplier;
         stamina.Decay *= Multiplier;
         stamina.AnimationThreshold *= Multiplier;
 
+        // Disabled for now as Wizden changed the field to contain fractions at which thresholds are applied
         // There are several stamina thresholds at which the mob is slowed down, all of which need to be updated
-        var newThresholds = new Dictionary<FixedPoint2, float>();
-        foreach (var (threshold, speedMultiplier) in stamina.StunModifierThresholds)
-            newThresholds[threshold * Multiplier] = speedMultiplier;
-
-        stamina.StunModifierThresholds = newThresholds;
+        // var newThresholds = new Dictionary<FixedPoint2, float>();
+        // foreach (var (threshold, speedMultiplier) in stamina.StunModifierThresholds)
+        //     newThresholds[threshold * Multiplier] = speedMultiplier;
+        // stamina.StunModifierThresholds = newThresholds;
         ctx.EntMan.Dirty(ctx.Player, stamina);
     }
 }

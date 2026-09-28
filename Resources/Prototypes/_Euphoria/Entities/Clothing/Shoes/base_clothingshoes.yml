@@ -1,0 +1,16 @@
+- type: entity
+  abstract: true
+  id: ClothingShoesBaseHeelsNoisy
+  parent: ClothingShoesBase
+  components:
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: FootstepHighHeels
+      params:
+        volume: -6
+        variation: 0.09
+
+- type: entity
+  abstract: true
+  id: ClothingShoesBaseButcherableHeelsNoisy
+  parent: [ClothingShoesBaseButcherable, ClothingShoesBaseHeelsNoisy]

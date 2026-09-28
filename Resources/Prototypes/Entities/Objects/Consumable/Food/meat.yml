@@ -42,6 +42,7 @@
   - type: AtmosExposed
   - type: Temperature
     currentTemperature: 290
+  - type: TemperatureDamage
   # required for cooking to work
   - type: InternalTemperature
     thickness: 0.02
@@ -69,16 +70,6 @@
     entity: FoodMeatRotten
     # once it would say bloated, turn into the rotten prototype
     stage: 1
-
-# bruh
-- type: Tag
-  id: Raw
-
-- type: Tag
-  id: Cooked
-
-- type: Tag
-  id: Cutlet
 
 # Raw
 
@@ -124,6 +115,13 @@
   name: raw human meat
   description: Gross.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: MeatHuman
+      Taco: MeatHuman
+      Hotdog: MeatHuman
+  #Euphoria end
   - type: Sprite
     state: plain
   - type: SolutionContainerManager
@@ -150,6 +148,13 @@
   name: raw carp fillet
   description: Your last words being "Wow, exotic!" are not worth it. The taste itself though? Maybe.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Burger: Fish
+      Taco: Fish
+      Hotdog: Fish
+  #Euphoria end
   - type: FlavorProfile
     flavors:
       - fishy
@@ -350,6 +355,12 @@
   id: FoodMeatCorgi
   description: The tainted gift of an evil crime. The meat may be delicious, but at what cost?
   components:
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: FoodMeatCorgi
+      Taco: FoodMeatCorgi
+  #Euphoria changes end
   - type: Tag
     tags:
     - Raw
@@ -1074,6 +1085,7 @@
     entries:
       Burger: MeatBacon
       Taco: MeatBacon
+      Hotdog: MeatBacon #Euphoria
   - type: Item
     storedOffset: -1,0
     inhandVisuals:
@@ -1114,8 +1126,9 @@
     node: filet migrawr
   - type: FoodSequenceElement
     entries:
-      Burger: MeatBearBurger
+      Burger: MeatBear #Euphoria
       Taco: MeatBear
+      Hotdog: MeatBear #Euphoria
   - type: Item
     storedOffset: -1,1
     heldPrefix: meatball
@@ -1151,6 +1164,7 @@
     entries:
       Burger: MeatPenguinBurger
       Taco: MeatPenguin
+      Hotdog: MeatPenguin #Euphoria
   - type: Item
     storedOffset: -1,1
     inhandVisuals:
@@ -1192,6 +1206,7 @@
     entries:
       Burger: MeatChicken
       Taco: MeatChicken
+      Hotdog: MeatChicken #Euphoria
   - type: Item
     storedOffset: -1,1
     inhandVisuals:
@@ -1233,6 +1248,7 @@
     entries:
       Burger: MeatChicken
       Taco: MeatChicken
+      Hotdog: MeatChicken #Euphoria
   - type: Item
     inhandVisuals:
       left:
@@ -1290,6 +1306,7 @@
     entries:
       Burger: MeatDuck
       Taco: MeatDuck
+      Hotdog: MeatDuck #Euphoria
   - type: Item
     storedOffset: -1,1
     inhandVisuals:
@@ -1331,6 +1348,7 @@
     entries:
       Burger: MeatCrabBurger
       Taco: MeatCrab
+      Hotdog: MeatCrab #Euphoria
   - type: Item
     storedOffset: -1,2
     inhandVisuals:
@@ -1368,6 +1386,7 @@
     entries:
       Burger: MeatGoliathBurger
       Taco: MeatGoliath
+      Hotdog: MeatGoliath #Euphoria
   - type: Item
     storedOffset: -1,0
     inhandVisuals:
@@ -1409,6 +1428,7 @@
     entries:
       Burger: MeatXeno
       Taco: MeatXeno
+      Hotdog: MeatXeno #Euphoria
   - type: Item
     inhandVisuals:
       left:
@@ -1448,6 +1468,7 @@
     entries:
       Burger: MeatLizardBurger
       Taco: MeatLizard
+      Hotdog: MeatLizard #Euphoria
   - type: Item
     storedOffset: -1,1
     inhandVisuals:
@@ -1481,6 +1502,7 @@
     entries:
       Burger: MeatSpiderBurger
       Taco: MeatSpider
+      Hotdog: MeatSpider #Euphoria
   - type: Item
     storedOffset: -1,-1
     inhandVisuals:
@@ -1515,6 +1537,7 @@
     entries:
       Burger: MeatBall
       Taco: MeatBall
+      Hotdog: MeatBall #Euphoria
   - type: Construction
     graph: MeatMeatballCooked
     node: meatball cooked
@@ -1553,6 +1576,7 @@
     entries:
       Burger: MeatPatty
       Taco: MeatPatty
+      Hotdog: MeatPatty #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -1587,6 +1611,7 @@
     entries:
       Burger: MeatSnail
       Taco: MeatSnail
+      Hotdog: MeatSnail #Euphoria
   - type: Item
     storedOffset: -1,-3
     inhandVisuals:
@@ -1669,6 +1694,7 @@
     entries:
       Burger: DragonSteak
       Taco: DragonSteak
+      Hotdog: DragonSteak #Euphoria
   - type: Item
     storedOffset: 0,-1
     inhandVisuals:
@@ -2099,6 +2125,7 @@
     entries:
       Burger: MeatCutlet
       Taco: MeatCutlet
+      Hotdog: MeatCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2143,6 +2170,7 @@
     entries:
       Burger: BearCutletBurger
       Taco: BearCutlet
+      Hotdog: BearCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2185,6 +2213,7 @@
     entries:
       Burger: PenguinCutletBurger
       Taco: PenguinCutlet
+      Hotdog: PenguinCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2227,6 +2256,7 @@
     entries:
       Burger: ChickenCutlet
       Taco: ChickenCutlet
+      Hotdog: ChickenCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2269,6 +2299,7 @@
     entries:
       Burger: DuckCutlet
       Taco: DuckCutlet
+      Hotdog: DuckCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2312,6 +2343,7 @@
     entries:
       Burger: LizardCutletBurger
       Taco: LizardCutlet
+      Hotdog: LizardCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2353,6 +2385,7 @@
     entries:
       Burger: SpiderCutletBurger
       Taco: SpiderCutlet
+      Hotdog: SpiderCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2394,6 +2427,7 @@
     entries:
       Burger: XenoCutlet
       Taco: XenoCutlet
+      Hotdog: XenoCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:
@@ -2437,6 +2471,7 @@
     entries:
       Burger: DragonCutlet
       Taco: DragonCutlet
+      Hotdog: DragonCutlet #Euphoria
   - type: Item
     size: Tiny
     shape:

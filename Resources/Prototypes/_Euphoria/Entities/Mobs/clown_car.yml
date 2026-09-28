@@ -1,0 +1,85 @@
+﻿# For now this will be a silicon mob till we get the vehicle system from upstream
+# This is probably the most cursed yaml ive created - Dunrab
+- type: entity
+  parent: MobSiliconBase
+  id: MobSiliconClownCar
+  name: clown car
+  description: A horrifying creation that is one of the Honk Mothers strongest warriors.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Mobs/Vehicles/clowncar.rsi
+    state: clowncar
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25 # this will have to be tweaked
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: Construction
+    graph: ClownCar
+    node: bot
+  - type: GhostRole
+    makeSentient: true
+    name: ghost-role-information-clowncar-name
+    description: ghost-role-information-clowncar-description
+    rules: ghost-role-information-freeagent-rules
+    mindRoles:
+    - MindRoleGhostRoleFreeAgentHarmless
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: SpamEmitSound
+    minInterval: 5 # make it slightly less annoying
+    maxInterval: 20
+    sound:
+      collection: BikeHorn
+      params:
+        variation: 0.125
+  - type: HTN # fuck it we give it the honkbot htn
+    rootTask:
+      task: HonkbotCompound
+  - type: Strap # let people buckle in them (clown taxi service anyone?)
+    position: Stand
+    rotation: 0
+  - type: IntrinsicRadioReceiver # give these cursed things radio access
+  - type: IntrinsicRadioTransmitter
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 8
+    baseAcceleration: 1 # Slow to start and stop
+    acceleration: 2
+    baseFriction: 0.25
+    friction: 2
+    frictionNoInput: 2
+  - type: TrafficHazard
+    minimumSpeed: 5
+    minimumSpeedDifference: 7
+    stunTime: 0 # Don't stun, just collide with at iny bit of damage
+    collisionDamage:
+      types:
+        Blunt: 3
+  - type: Speech
+    speechVerb: Cluwne
+  - type: Vocal # let them scream
+    sounds:
+      Unsexed: MaleMotorkind
+  - type: Destructible # no butcher since we don't have a dead state since this is a silicon so we use this
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Voice/Cluwne/cluwnelaugh1.ogg
+      - !type:SpawnEntitiesBehavior # spawn 1 to 3 honkbots when broken
+        spawn:
+          MobHonkBot:
+            min: 1
+            max: 3
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

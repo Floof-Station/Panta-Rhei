@@ -7,7 +7,10 @@
   - type: TelecomExempt
   - type: RadioMicrophone
     broadcastChannel: Handheld
+    toggleOnInteract: false # Nuclear-14 - handheld radio
+    frequency: 1330 # Nuclear-14 - handheld radio
   - type: RadioSpeaker
+    toggleOnInteract: false # Nuclear-14 - handheld radio
     channels:
     - Handheld
   - type: Speech
@@ -24,6 +27,12 @@
   - type: Tag
     tags:
     - Radio
+  - type: ActivatableUI # Nuclear-14 - handheld radio
+    key: enum.HandheldRadioUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.HandheldRadioUiKey.Key:
+        type: HandheldRadioBoundUserInterface
 
 - type: entity
   name: security radio

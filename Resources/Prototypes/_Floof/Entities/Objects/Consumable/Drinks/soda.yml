@@ -1,0 +1,15 @@
+﻿- type: reagent
+  id: Bepis
+  name: reagent-name-bepis
+  parent: Cola # Are we fr
+  desc: reagent-desc-bepis
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: soda
+  color: "#6c2828"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/colaglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false

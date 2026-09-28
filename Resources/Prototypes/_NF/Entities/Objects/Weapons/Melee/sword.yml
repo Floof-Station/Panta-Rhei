@@ -17,6 +17,7 @@
     spread: 90
   - type: Item
     sprite: _NF/Objects/Weapons/Melee/armingsword.rsi
+    storedSprite: null # Euphoria - M3739 - #706 - Null out storedSprite complex field as arming sword doesn't have one.
   - type: Clothing
     quickEquip: false
     slots:

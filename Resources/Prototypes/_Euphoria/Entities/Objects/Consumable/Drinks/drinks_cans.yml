@@ -1,0 +1,34 @@
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkDrGibbCreamsodaCan
+  name: Dr. Gibb Creamsoda can
+  description:  That authentic 42 flavors just got creamier!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: DrGibbCreamsoda
+          Quantity: 30
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/dr_gibb_cs.rsi
+
+# Bepis midnight
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkCanBepisMidnight
+  name: Bepis Midnight can
+  description: The great taste of Bepis, mixed with berries for those late night shifts.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: BepisMidnight
+          Quantity: 30
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/bepis_midnight.rsi
+  - type: Item
+    sprite: _Euphoria/Objects/Consumable/Drinks/bepis_midnight.rsi

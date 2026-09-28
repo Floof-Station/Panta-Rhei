@@ -39,8 +39,6 @@
       - Slicing
     useSound:
       path: /Audio/Items/Culinary/chop.ogg
-  - type: Scalpel # Shitmed
-    speed: 0.65
   - type: CosmicTransmutable # DeltaV
     transmutesTo: SwordCosmicCult
     requiredGlyphType: CosmicGlyphBlades
@@ -70,11 +68,13 @@
     fixtures:
       fix1:
         shape: !type:PolygonShape
+          # Begin DeltaV - Scaled down the fixture slightly, so it fits into lockers and crates
           vertices:
-          - -0.475,-0.225
-          - -0.225,-0.475
-          - 0.525,0.275
-          - 0.275,0.525
+          - -0.46,-0.22
+          - -0.22,-0.46
+          - 0.51,0.27
+          - 0.27,0.51
+          # End DeltaV
         density: 20 # derived from base_item
         mask:
         - ItemMask
@@ -107,19 +107,17 @@
     guides:
     - Chef
     - FoodRecipes
-  - type: Scalpel # Shitmed
-    speed: 0.3
-  - type: BoneSaw # Shitmed: Better than tg 25% because its a cleaver its meant to hack off limbs
-    speed: 0.5
   - type: Fixtures
     fixtures:
       fix1:
         shape: !type:PolygonShape
+          # Begin DeltaV - Scaled down the fixture slightly, so it fits into lockers and crates
           vertices:
-          - -0.58,-0.12
-          - -0.34,-0.55
-          - 0.6,-0.075
-          - 0.375,0.375
+          - -0.48,-0.10
+          - -0.28,-0.45
+          - 0.49,-0.06
+          - 0.31,0.31
+          # End DeltaV
         density: 20 # derived from base_item
         mask:
         - ItemMask
@@ -370,6 +368,7 @@
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
     offset: -0.15,0.0
+    removalTime: 1.5
   - type: LandAtCursor
   - type: DamageOtherOnHit
     ignoreResistances: true
@@ -382,22 +381,41 @@
   - type: ThrowingAngle
     angle: 225
   - type: StaticPrice
-    price: 500 # 2000 for a set of 4
+    price: 500 # 4000 for a set of 8
   - type: Fixtures
     fixtures:
       fix1:
         shape: !type:PolygonShape
           radius: 0.01
+          # Begin DeltaV - Scaled down the fixture slightly, so it fits into lockers and crates
           vertices:
-          - -0.475,-0.225
-          - -0.225,-0.475
-          - 0.525,0.275
-          - 0.275,0.525
+          - -0.46,-0.22
+          - -0.22,-0.46
+          - 0.51,0.27
+          - 0.27,0.51
+          # End DeltaV
         density: 20 # derived from base_item
         mask:
         - ItemMask
         restitution: 0.3
         friction: 0.2
+  # DeltaV additions begin - add dipping chemicals
+  - type: SolutionContainerManager
+    solutions:
+      melee:
+        maxVol: 2
+  - type: MeleeChemicalInjector
+    solution: melee
+  - type: RefillableSolution
+    solution: melee
+  - type: InjectableSolution
+    solution: melee
+  - type: SolutionInjectOnEmbed
+    transferAmount: 2
+    solution: melee
+  - type: SolutionTransfer
+    maxTransferAmount: 2
+  # DeltaV additions end
 
 - type: entity
   name: utility knife

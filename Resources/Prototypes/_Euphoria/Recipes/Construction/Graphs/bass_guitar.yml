@@ -1,0 +1,23 @@
+﻿- type: constructionGraph
+  id: FishGuitar
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bassguitar
+      steps:
+      - material: Plastic
+        amount: 1
+      - tag: BassGuitar
+        icon:
+          sprite: Objects/Fun/Instruments/bassguitar.rsi
+          state: icon
+        name: construction-graph-tag-bass-guitar
+      - tag: BassGuitarFish
+        icon:
+          sprite: _Goobstation/Objects/Specific/Fishing/fish.rsi
+          state: bass
+        name: construction-graph-tag-bass-fish
+        doAfter: 2
+  - node: bassguitar
+    entity: BassGuitarInstrumentFihEdition

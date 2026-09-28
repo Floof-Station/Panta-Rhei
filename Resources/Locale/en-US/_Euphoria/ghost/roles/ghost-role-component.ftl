@@ -25,3 +25,10 @@ ghost-role-information-friendly-beast-rules = [color=red]This is an admin spawne
         You are allowed to join the station.
         You have a backpack, headset, PDA, and two hand/pocket slots.
         Listen to admins about any additional rules.
+
+ghost-role-information-pet-spider-name = Pet Spider
+
+ghost-role-information-pet-whimperlet-name = Pet Whimperlet
+
+ghost-role-information-clowncar-name = Clown Car
+ghost-role-information-clowncar-description = An artificial being of pure evil. Make sure the station knowns it yeed its last honk.

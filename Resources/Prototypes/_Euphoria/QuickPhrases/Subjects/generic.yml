@@ -1,3 +1,10 @@
+## Additional Species
+## Couldn't figure out how to make it say Shadowkin in the species file, so here it is
+- type: quickPhrase
+  id: ShadowkinPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-shadowkin
+
 ## Companies
 - type: quickPhrase
   id: HGIPhrase
@@ -68,6 +75,22 @@
   id: GalpolPhrase
   parent: BaseSubjectPhrase
   text: phrase-galpol
+
+- type: quickPhrase
+  id: FederalPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-federal
+
+- type: quickPhrase
+  id: AgentPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-agent
+
+- type: quickPhrase
+  id: ArmyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-army
+
 ## Relations & Identity
 - type: quickPhrase
   id: FriendPhrase
@@ -248,6 +271,16 @@
   id: RelativePhrase
   parent: BaseSubjectPhrase
   text: phrase-relative
+
+- type: quickPhrase
+  id: OffspringPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-offspring
+
+- type: quickPhrase
+  id: FamilyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-family
 ## Misc
 - type: quickPhrase
   id: MoneyPhrase
@@ -303,6 +336,201 @@
   id: MagicPhrase
   parent: BaseSubjectPhrase
   text: phrase-magic
+
+- type: quickPhrase
+  id: PregnantPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pregnant
+
+- type: quickPhrase
+  id: SoPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-so
+
+- type: quickPhrase
+  id: AndPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-and
+
+- type: quickPhrase
+  id: AllDonePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-all-done
+
+- type: quickPhrase
+  id: OrPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-or
+
+- type: quickPhrase
+  id: ButPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-but
+
+- type: quickPhrase
+  id: LikePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-like
+
+- type: quickPhrase
+  id: IsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-is
+
+- type: quickPhrase
+  id: GodPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-god
+
+- type: quickPhrase
+  id: KinkPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-kink
+
+- type: quickPhrase
+  id: BonePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-bone
+
+- type: quickPhrase
+  id: PornographyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-pornography
+
+- type: quickPhrase
+  id: MealPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-meal
+
+- type: quickPhrase
+  id: BreakfastPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-breakfast
+
+- type: quickPhrase
+  id: LunchPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-lunch
+
+- type: quickPhrase
+  id: DinnerPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-dinner
+
+- type: quickPhrase
+  id: SnackPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-snack
+
+- type: quickPhrase
+  id: WasPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-was
+
+- type: quickPhrase
+  id: PlanetPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-planet
+
+- type: quickPhrase
+  id: SystemPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-system
+
+- type: quickPhrase
+  id: TherePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-there
+
+- type: quickPhrase
+  id: StationPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-station
+
+- type: quickPhrase
+  id: CondomPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-condom
+
+- type: quickPhrase
+  id: SkillPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-skill
+
+- type: quickPhrase
+  id: IssuePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-issue
+
+- type: quickPhrase
+  id: HomePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-home
+
+- type: quickPhrase
+  id: RespectPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-respect
+
+- type: quickPhrase
+  id: HonourPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-honour
+
+- type: quickPhrase
+  id: FaithPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-faith
+
+- type: quickPhrase
+  id: ReligionPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-religion
+
+- type: quickPhrase
+  id: AacPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-aac
+
+- type: quickPhrase
+  id: WouldPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-would
+
+- type: quickPhrase
+  id: ThatPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-that
+
+- type: quickPhrase
+  id: ButtonPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-button
+
+- type: quickPhrase
+  id: CanPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-can
+
+- type: quickPhrase
+  id: DrugPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-drug
+
+- type: quickPhrase
+  id: FloorPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-floor
+
+- type: quickPhrase
+  id: WallPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-wall
+
+- type: quickPhrase
+  id: WordPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-word
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase
@@ -424,6 +652,11 @@
   parent: BaseSubjectPhrase
   text: phrase-nipple
 
+- type: quickPhrase
+  id: StomachPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-stomach
+
 ## Vulgarity
 - type: quickPhrase
   id: CockPhrase
@@ -459,6 +692,26 @@
   id: ShitPhrase
   parent: BaseSubjectPhrase
   text: phrase-shit
+
+- type: quickPhrase
+  id: SlutPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-slut
+
+- type: quickPhrase
+  id: TitsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-tits
+
+- type: quickPhrase
+  id: BoobsPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-boobs
+
+- type: quickPhrase
+  id: DickPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-dick
 
 ##Fluids
 - type: quickPhrase

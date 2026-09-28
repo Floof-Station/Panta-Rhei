@@ -1,0 +1,16 @@
+﻿- type: constructionGraph
+  id: BathTub
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: bathtub
+      completed:
+      - !type:SnapToGrid
+        southRotation: true
+      steps:
+      - material: WoodPlank
+        amount: 10
+        doAfter: 4
+  - node: bathtub
+    entity: WoodBathTubEmpty

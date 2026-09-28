@@ -20,7 +20,6 @@ namespace Content.Server.Chat.Systems;
 /// </summary>
 public sealed partial class ChatSystem
 {
-    [Dependency] private readonly LanguageSystem _languages = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly HandsSystem _hands = default!;
 
@@ -80,6 +79,10 @@ public sealed partial class ChatSystem
     {
         foreach (var (session, data) in GetRecipients(source, WhisperClearRange))
         {
+            //Blocks non-admin ghosts from seeing subtle
+            if (!data.Subtle)
+                continue;
+
             if (session.AttachedEntity is not { Valid: true } listener)
                 continue;
 
@@ -123,7 +126,7 @@ public sealed partial class ChatSystem
 
         // TODO harcoded 2 is bad but not like bad bad
         if (language.SpeechOverride.RequireHands &&
-            (!_actionBlocker.CanComplexInteract(entity) || _hands.CountFreeHands(entity) < 2))
+            (!_actionBlocker.CanComplexInteract(entity) || _hands.CountFreeHands(entity) < 1)) //Changed from 2 to 1 to allow one handed signing.
         {
             if (!silent)
                 _popups.PopupEntity(Loc.GetString("chat-manager-language-requires-hands"), entity, entity, PopupType.Medium);
@@ -152,7 +155,7 @@ public sealed partial class ChatSystem
             ("fontSize", fontSize),
             ("textColor", fontColor), // Notice it's $textColor instead of $color
             ("message", FormattedMessage.EscapeText(message)),
-            ("language", LanguageNameForFluent(language)));
+            ("language", language.ID));
 
         var obfuscated = _languages.ObfuscateSpeech(message, language);
         var wrappedObfuscatedMessage = Loc.GetString(locId,
@@ -162,7 +165,7 @@ public sealed partial class ChatSystem
             ("fontSize", fontSize),
             ("textColor", fontColor), // Notice it's $textColor instead of $color
             ("message", FormattedMessage.EscapeText(obfuscated)),
-            ("language", LanguageNameForFluent(language)));
+            ("language", language.ID));
 
         return (new(message, wrappedMessage, language), new(obfuscated, wrappedObfuscatedMessage, language));
     }
@@ -189,7 +192,7 @@ public sealed partial class ChatSystem
             ("entityName", name),
             ("message", finalMsg),
             ("textColor", fontColor), // Notice it's $textColor instead of $color
-            ("language", LanguageNameForFluent(language)));
+            ("language", language.ID));
 
         return new(finalMsg, wrappedMessage, language);
     }
@@ -202,7 +205,7 @@ public sealed partial class ChatSystem
     {
         if (language is not { IsVisibleLanguage: true })
             return "null"; // For use in Fluent case matching
-        return language.ChatName;
+        return language.Name;
     }
 
     public static void ExtractSpeechInfo(SpeechVerbPrototype speechProto,

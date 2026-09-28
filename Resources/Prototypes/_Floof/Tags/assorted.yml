@@ -1,7 +1,4 @@
 - type: Tag
-  id: CakeBase
-
-- type: Tag
   id: Fleshlight
 
 - type: Tag
@@ -14,10 +11,13 @@
   id: EnergySabre
 
 - type: Tag
-  id: IceCream
+  id: ShirtlessClothing
 
 - type: Tag
-  id: ShirtlessClothing
+  id: BottomlessClothing # Different from BottomAccessible which is for slot blocking only; BottomlessClothing allows genitals to be theoretically visible
+
+- type: Tag
+  id: BottomAccessibleClothing # Different purpose than skirt: Skirt allows harpies to wear it, accessible allows underwear slots to be accessed.
 
 - type: Tag
   id: Sterilebag
@@ -37,7 +37,7 @@
 
 - type: Tag
   id: MagazineHighVelocity
- 
+
 - type: Tag
   id: ExperimentalWelder
 
@@ -50,5 +50,6 @@
 - type: Tag
   id: WeldbotFixableStructure # Euphoria - Used by Weldbot
 
+# casino chips
 - type: Tag
-  id: MedicalMisc # Storage whitelist: Medical Belt and Medkits
+  id: CasinoChips

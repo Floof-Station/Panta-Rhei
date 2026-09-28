@@ -1,0 +1,78 @@
+# Euph - base tea powder.
+- type: reagent
+  id: BaseTeaPowder
+  abstract: true
+  physicalDesc: reagent-physical-desc-powdery
+  group: Foods
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: -0.2
+      metabolites:
+        Nutriment: 0.1
+
+- type: reagent
+  id: GreenTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-green
+  desc: reagent-desc-tea-powder-green
+  flavor: teaGreen
+  color: "#6B8E23"
+
+- type: reagent
+  id: ChamomileTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-chamomile
+  desc: reagent-desc-tea-powder-chamomile
+  flavor: teaChamomile
+  color: "#EEDC82"
+
+- type: reagent
+  id: BerryTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-berry
+  desc: reagent-desc-tea-powder-berry
+  flavor: teaBerry
+  color: "#A23E48"
+
+- type: reagent
+  id: FruitTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-fruit
+  desc: reagent-desc-tea-powder-fruit
+  flavor: teaFruit
+  color: "#FFB347"
+
+- type: reagent
+  id: YorkshireTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-yorkshire
+  desc: reagent-desc-tea-powder-yorkshire
+  flavor: teaYorkshire
+  color: "#4B3621"
+
+- type: reagent
+  id: DecafBlackTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-decaf-black
+  desc: reagent-desc-tea-powder-decaf-black
+  flavor: teaDecafBlack
+  color: "#4A3B2F"
+  group: Foods
+
+- type: reagent
+  id: SyndicateTeaPowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-tea-powder-syndie
+  desc: reagent-desc-tea-powder-syndie
+  flavor: teaSyndie
+  color: "#FF0000"
+
+- type: reagent
+  id: DecafCoffeePowder
+  parent: BaseTeaPowder # Euph
+  name: reagent-name-coffee-powder-decaf
+  desc: reagent-desc-coffee-powder-decaf
+  flavor: coffeeDecaf
+  color: "#4A3B2F"

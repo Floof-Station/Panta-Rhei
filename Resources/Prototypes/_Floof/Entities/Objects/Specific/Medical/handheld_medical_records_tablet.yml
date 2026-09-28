@@ -1,0 +1,31 @@
+- type: entity
+  name: handheld medical records tablet
+  parent: BaseItem
+  id: HandheldMedicalRecordsTablet
+  description: A hand-held medical records monitor displaying patient information.
+  components:
+  - type: Item
+    heldPrefix: scanner
+    size: Small
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Medical/handheldmedicalrecords.rsi
+    state: medrecords
+  - type: Icon
+    sprite: _Floof/Objects/Specific/Medical/handheldmedicalrecords.rsi
+    state: medrecords
+  - type: ActivatableUI
+    key: enum.CharacterRecordConsoleKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CharacterRecordConsoleKey.Key:
+        type: CharacterRecordConsoleBoundUserInterface
+  - type: CharacterRecordConsole
+    consoleType: Medical
+  - type: ReverseEngineering
+    difficulty: 2
+    recipes:
+    - HandheldCrewMonitor
+  - type: StaticPrice
+    price: 75
+  - type: StealTarget
+    stealGroup: HandheldCrewMonitor

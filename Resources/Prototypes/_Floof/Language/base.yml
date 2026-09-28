@@ -1,0 +1,15 @@
+- type: language
+  id: BaseLanguage
+  abstract: true
+  isVisibleLanguage: true
+  icon: # Mostly just so inheritors dont have to specify the sprite path
+    sprite: /Textures/_Floof/Interface/Misc/language_icons.rsi
+    state: default
+
+# Base for animalistic languages,
+- type: language
+  id: BaseAnimalLanguage
+  parent: BaseLanguage
+  abstract: true
+  icon:
+    state: animal

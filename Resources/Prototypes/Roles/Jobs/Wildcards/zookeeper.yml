@@ -18,7 +18,7 @@
 - type: startingGear
   id: ZookeeperGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSafari
+    #jumpsuit: ClothingUniformJumpsuitSafari # Euphoria - let loadouts handle this
     head: ClothingHeadSafari
     #shoes: ClothingShoesColorWhite # Floofstation - allow loadouts to handle shoe customization
     id: ZookeeperPDA
@@ -31,10 +31,10 @@
   id: ZookeeperChameleonOutfit
   job: Zookeeper
   equipment:
-    eyes: ClothingEyesGlassesCheapSunglasses
-    mask: ClothingMaskBreath
-    outerClothing: ClothingOuterWinterColorLightBrown
-    neck: ClothingNeckScarfStripedBrown
+#    eyes: ClothingEyesGlassesCheapSunglasses # Floof - loadouts
+#    mask: ClothingMaskBreath # Floof - loadouts
+#    outerClothing: ClothingOuterWinterColorLightBrown # Floof - loadouts
+#    neck: ClothingNeckScarfStripedBrown # Floof - loadouts
     belt: ClothingBeltStorageWaistbag
-    gloves: ClothingHandsGlovesColorBrown
+#    gloves: ClothingHandsGlovesColorBrown # Floof - loadouts
 

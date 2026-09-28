@@ -14,7 +14,7 @@ namespace Content.Shared._Floof.Lewd;
 ///     If there's a combination of organs that this map doesn't provide an interaction verb for, then nothing will be added in that case.
 /// </summary>
 [Prototype]
-public sealed class LewdInteractionMapPrototype : IPrototype, IInheritingPrototype
+public sealed partial class LewdInteractionMapPrototype : IPrototype, IInheritingPrototype
 {
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<LewdInteractionMapPrototype>))]
     public string[]? Parents { get; private set; }

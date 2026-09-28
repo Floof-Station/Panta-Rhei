@@ -1,0 +1,19 @@
+﻿- type: cargoProduct
+  id: CrateNapsackOrder
+  icon:
+    sprite: _DEN/Clothing/Back/napsack.rsi
+    state: icon
+  product: CrateNapsacks
+  cost: 500
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: FunClothingHeels
+  icon:
+    sprite: _Euphoria/Clothing/Shoes/Misc/heels_kitten_crimson.rsi
+    state: icon
+  product: CrateFunClothingHeels
+  cost: 300
+  category: cargoproduct-category-name-fun
+  group: market

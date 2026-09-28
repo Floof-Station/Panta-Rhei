@@ -2,7 +2,10 @@
 # TODO: Replace this with a much better language.
 - type: language
   id: Canilunzt
+  parent: BaseLanguage
+  chatPrefix: can # Euphoria/Starlight
   isVisibleLanguage: true
+  icon: { state: canilunzt }
   speech:
     color: "#d69b3dcc"
   obfuscation:

@@ -963,7 +963,7 @@
         amount: 1
   products:
         MillerMargarita: 3
-    
+
 - type: reaction
   id: HarpySnowfall
   requiredMixerCategories:
@@ -979,3 +979,53 @@
         amount: 1
   products:
         HarpySnowfall: 6
+
+- type: reaction
+  id: PeanutButterWhiskey
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    PeanutButter:
+      amount: 1
+    Whiskey:
+      amount: 1
+  products:
+    PeanutButterWhiskey: 2
+
+- type: reaction
+  id: StrawberryMilk
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    StrawberryJuice:
+      amount: 1
+    Milk:
+      amount: 1
+  products:
+    StrawberryMilk: 2
+
+- type: reaction
+  id: StrawberryPilk
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Cola:
+      amount: 1
+    StrawberryMilk:
+      amount: 1
+  products:
+    StrawberryPilk: 2
+
+- type: reaction
+  id: BepisStrawberry
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    Bepis:
+      amount: 1
+    StrawberryJuice:
+      amount: 1
+    Cream:
+      amount: 1
+  products:
+    BepisStrawberry: 3

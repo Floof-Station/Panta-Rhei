@@ -1,0 +1,21 @@
+- type: entity
+  id: MilkingMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: milking machine board
+  description:  A machine printed circuit board for a milking machine.
+  components:
+  - type: Sprite
+    state: engineering
+  - type: MachineBoard
+    prototype: MilkingMachine
+    stackRequirements:
+      Plastic: 4
+      Glass: 4
+    componentRequirements:
+      GasVolumePump:
+        amount: 1
+        defaultPrototype: GasVolumePump
+    tagRequirements:
+      Bucket:
+        amount: 2
+        defaultPrototype: Bucket

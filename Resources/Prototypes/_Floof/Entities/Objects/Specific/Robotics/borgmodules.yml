@@ -1,0 +1,224 @@
+# Generic Modules
+- type: entity
+  id: BorgModuleFoamForce
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: foam force cyborg module
+  description: Grants a cyborg the most deadly of weapons... foam! Fun for the whole family!
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-foam
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponRifleFoamBorg
+    - item: FoamCutlass
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: foam-module  }
+
+- type: entity
+  id: BorgModuleFurnishing
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: furnishing cyborg module
+  description: A piece of tech that allows cyborgs to partake in simple construction.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-furnish
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - hand:
+        emptyRepresentative: MaterialWoodPlank
+        emptyLabel: borg-slot-construction-empty
+        whitelist:
+          tags:
+          - ConstructionMaterial
+    - hand:
+        emptyRepresentative: SheetSteel
+        emptyLabel: borg-slot-construction-empty
+        whitelist:
+          tags:
+          - ConstructionMaterial
+    - hand:
+        emptyRepresentative: FloorTileItemSteel
+        emptyLabel: borg-slot-tiles-empty
+        whitelist:
+          components:
+          - FloorTile
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: furnishing-module  }
+
+- type: entity
+  id: BorgModuleFluidManip
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: fluid manipulation cyborg module
+  description: A piece of tech that allows cyborgs to manipulate fluids.
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-fluid
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: BorgDropper
+    - item: ChemistryEmptyVial
+      hand:
+        emptyLabel: borg-slot-small-containers-empty
+        emptyRepresentative: ChemistryEmptyVial
+        whitelist:
+          components:
+          - FitsInDispenser
+    - item: ChemistryEmptyVial
+      hand:
+        emptyLabel: borg-slot-small-containers-empty
+        emptyRepresentative: ChemistryEmptyVial
+        whitelist:
+          components:
+          - FitsInDispenser
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: fluid-manipulation-module  }
+
+- type: entity
+  id: BorgModuleEnvSurvey
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: environmental survey cyborg module
+  description: Advanced environmental surveyance technology. Includes a harmless holographic flaregun!
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-survey
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponHoloflareGun
+    - item: GasAnalyzer
+    - item: BorgHandheldGPSBasic
+    - item: HandHeldMassScannerBorg
+    - item: Floodlight
+      hand:
+        emptyRepresentative: Floodlight
+        emptyLabel: borg-slot-floodlight-empty
+        whitelist:
+          components:
+          - HandheldLight
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: survey-module  }
+
+# Science Modules
+- type: entity
+  id: BorgModuleSpecializedArtifact
+  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  name: specialized artifact cyborg module
+  description: A piece of tech that gives cyborgs new abilities. Made for a specialized chassis.
+  components:
+  - type: Sprite
+    layers:
+    - state: science
+    - state: icon-specartifacts
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: NodeScanner
+    - item: SprayBottle
+    - item: GasAnalyzer
+    - item: BorgDropper
+    - item: ChemistryEmptyVial
+      hand:
+        emptyLabel: borg-slot-small-containers-empty
+        emptyRepresentative: ChemistryEmptyVial
+        whitelist:
+          components:
+          - FitsInDispenser
+    - item: GeigerCounter
+    - item: SynthesizerInstrument
+    - item: BorgRadProbe
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: sp-artifact-module  }
+
+- type: entity
+  id: BorgModuleSpecializedAnomaly
+  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  name: specialized anomaly cyborg module
+  description: A piece of tech that gives cyborgs new abilities. Made for a specialized chassis.
+  components:
+  - type: Sprite
+    layers:
+    - state: science
+    - state: icon-specanomalies
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponAPEBorg
+    - item: AnomalyScanner
+    - item: AnomalyLocatorUnpowered
+    - item: AnomalyLocatorWideUnpowered
+    - hand:
+        emptyRepresentative: SheetRGlass
+        emptyLabel: borg-slot-construction-empty
+        whitelist:
+          tags:
+          - ConstructionMaterial
+    - hand:
+        emptyRepresentative: SheetRPGlass
+        emptyLabel: borg-slot-construction-empty
+        whitelist:
+          tags:
+          - ConstructionMaterial
+    - item: HandLabeler
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: sp-anomaly-module  }
+
+- type: entity
+  id: BorgModuleAdvAnomaly
+  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  name: advanced anomaly cyborg module
+  description: A piece of tech that gives cyborgs new abilities. Made for a specialized chassis.
+  components:
+  - type: Sprite
+    layers:
+    - state: science
+    - state: icon-advanomalies
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: WeaponPistolCHIMPBorg
+    - item: WeaponGauntletGorilla
+    - item: AnomalyScanner
+    - item: AnomalyLocatorUnpowered
+    - item: AnomalyLocatorWideUnpowered
+    - hand:
+        emptyRepresentative: AnomalyCoreGravity
+        emptyLabel: borg-slot-anomaly-core-empty
+        whitelist:
+          components:
+          - AnomalyCore
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: adv-anomaly-module  }
+
+- type: entity
+  id: BorgModuleQuantum
+  parent: [ BaseBorgModuleScience, BaseProviderBorgModule ]
+  name: quantum displacement cyborg module
+  description: A piece of tech that allows for instantaneous transportation. Made for a specialized chassis.
+  components:
+  - type: Sprite
+    layers:
+    - state: science
+    - state: icon-quantum
+      sprite: _Floof/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - hand:
+        emptyRepresentative: DeviceQuantumSpinInverter
+        emptyLabel: borg-slot-qsi-empty
+        whitelist:
+          tags:
+          - QuantumSpinInverter
+    - item: DeviceQuantumSpinInverter
+  - type: BorgModuleIcon
+    icon: {  sprite: _Floof/Interface/Actions/actions_borg.rsi, state: quantum-module  }

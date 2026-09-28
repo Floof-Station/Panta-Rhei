@@ -1,6 +1,7 @@
 - type: entity
   parent: BasicHitscan
   id: WispLash
+  name: wisp lash
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicVisuals
@@ -16,12 +17,13 @@
   - type: HitscanBasicDamage
     damage:
       types:
-        Shadow: 8
+        Soul: 8
         Shock: 8
 
 - type: entity
   parent: BasicHitscan
   id: ColdLaser
+  name: cold laser
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicVisuals
@@ -44,6 +46,7 @@
 - type: entity
   parent: BasicHitscan
   id: BeamLaser
+  name: beam laser
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicVisuals
@@ -64,6 +67,7 @@
 - type: entity
   parent: BasicHitscan
   id: BeamDev
+  name: devastator beam
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicVisuals
@@ -85,6 +89,7 @@
 - type: entity
   parent: BasicHitscan
   id: GamblagatorLaser
+  name: gamblagator laser
   categories: [ HideSpawnMenu ]
   components:
   - type: HitscanBasicVisuals
@@ -114,3 +119,26 @@
     damage:
       types:
         Heat: 42
+
+- type: entity
+  parent: BasicHitscan
+  id: XRayLaser
+  name: X-ray laser
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: _DV/Objects/Weapons/Guns/Projectiles/xenoborg.rsi
+      state: muzzle_flash
+    travelFlash:
+      sprite: _DV/Objects/Weapons/Guns/Projectiles/xenoborg.rsi
+      state: laser
+    impactFlash:
+      sprite: _DV/Objects/Weapons/Guns/Projectiles/xenoborg.rsi
+      state: impact
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 50
+        Radiation: 25
+        Structural: 75

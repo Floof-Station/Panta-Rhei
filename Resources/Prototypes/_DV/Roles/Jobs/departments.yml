@@ -3,8 +3,19 @@
   name: department-Justice
   description: department-Justice-description
   color: "#701442"
+  radioChannel: Common # Euphoria - change to common
   roles:
   - ChiefJustice
   - Clerk
   - Prosecutor
   - Lawyer
+
+- type: department
+  id: Incarcerated
+  name: department-Incarcerated
+  description: department-Incarcerated-description
+  radioChannel: Common #Euphoria - change to common # Notifies security on late-join
+  color: "#3b3b3b"
+  roles:
+  - Prisoner
+  - Gladiator

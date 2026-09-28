@@ -1,0 +1,32 @@
+﻿- type: constructionGraph
+  id: WoodenBong
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: woodenBong
+      steps:
+      - tag: Pipe
+        name: construction-graph-tag-pipe
+        icon:
+          sprite: Structures/Piping/Atmospherics/pipe.rsi
+          state: pipeStraight
+        doAfter: 2
+      - material: WoodPlank
+        amount: 2
+        doAfter: 1
+    - to: makeshiftBong
+      steps:
+      - tag: Pipe
+        name: construction-graph-tag-pipe
+        icon:
+          sprite: Structures/Piping/Atmospherics/pipe.rsi
+          state: pipeStraight
+        doAfter: 2
+      - material: Glass
+        amount: 1
+        doAfter: 1
+  - node: woodenBong
+    entity: WoodenBong
+  - node: makeshiftBong
+    entity: MakeShiftBong

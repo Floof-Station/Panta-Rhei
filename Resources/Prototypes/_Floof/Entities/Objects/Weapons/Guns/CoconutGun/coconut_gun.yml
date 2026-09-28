@@ -1,0 +1,40 @@
+﻿- type: entity
+  name: Coconut Gun
+  parent: BaseItem
+  id: WeaponRifleCoconutGun
+  description: Shoot the coconut... but do not aim for the eyes.
+  components:
+  - type: Sprite
+    netsync: false
+    sprite: _Floof/Objects/Weapons/Guns/Silly/coconut_gun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Clothing
+    sprite: _Floof/Objects/Weapons/Guns/Silly/coconut_gun.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/click.ogg
+  - type: BallisticAmmoProvider
+    capacity: 12
+    cycleable: false
+    proto: CoconutPellet
+    whitelist:
+      tags:
+      - CoconutPellet
+    soundInsert:
+      path: /Audio/Weapons/drawbow2.ogg #here
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+  - type: Appearance

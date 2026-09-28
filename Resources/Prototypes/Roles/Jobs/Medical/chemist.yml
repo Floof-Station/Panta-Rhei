@@ -15,13 +15,6 @@
   - Medical
   - Chemistry
   - Maintenance
-  special:
-  # Begin Floof Surgery Additions
-  - !type:AddComponentSpecial # Shitmed change
-    components:
-    - type: SurgerySpeedModifier
-      speedModifier: 1.1
-  # End Floof Surgery Additions
 
 - type: startingGear
   id: ChemistGear

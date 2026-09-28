@@ -1,13 +1,13 @@
 - type: loadout
   id: ClothingCowprintBikini
   equipment:
-    jumpsuit: ClothingUniformCowprintBikini
-  groupBy: "lewdsuit"
+    undergarmentTop: ClothingUniformCowprintBikini
+  groupBy: "bras"
 
 - type: loadout
   id: ClothingSocksCowprint
   equipment:
-    shoes: ClothingUnderCowprintsocks
+    undergarmentSocks: ClothingUnderCowprintsocks
   groupBy: "thigh highs"
 
 # outer clothing
@@ -15,3 +15,105 @@
   id: OuterLustroCoat
   equipment:
     outerClothing: ClothingOuterLustroEcclesiaWinterCoat
+
+# shoes
+
+- type: loadout
+  id: ClothingShoesHeelsKitten
+  equipment:
+    shoes: ClothingShoesHeelsKitten
+  groupBy: "heels"
+
+- type: loadout
+  id: ClothingShoesHeelsKittenBlack
+  equipment:
+    shoes: ClothingShoesHeelsKittenBlack
+  groupBy: "heels"
+
+- type: loadout
+  id: ClothingShoesHeelsKittenCrimson
+  equipment:
+    shoes: ClothingShoesHeelsKittenCrimson
+  groupBy: "heels"
+
+- type: loadout
+  id: ClothingShoesHeelsKittenRose
+  equipment:
+    shoes: ClothingShoesHeelsKittenRose
+  groupBy: "heels"
+
+- type: loadout
+  id: ClothingShoesHeelsBallet
+  equipment:
+    shoes: ClothingShoesHeelsBallet
+  groupBy: "heels"
+
+# face/gasmasks
+- type: loadout
+  id: ClothingMaskFox
+  equipment:
+    mask: ClothingMaskFox
+  groupBy: "animal masks"
+
+- type: loadout
+  id: ClothingMaskBear
+  equipment:
+    mask: ClothingMaskBear
+  groupBy: "animal masks"
+
+- type: loadout
+  id: ClothingMaskJackal
+  equipment:
+    mask: ClothingMaskJackal
+  groupBy: "animal masks"
+
+- type: loadout
+  id: ClothingMaskRaven
+  equipment:
+    mask: ClothingMaskRaven
+  groupBy: "animal masks"
+
+- type: loadout
+  id: ClothingMaskRat
+  equipment:
+    mask: ClothingMaskRat
+  groupBy: "animal masks"
+
+- type: loadout
+  id: ClothingMaskNeckGaiter
+  equipment:
+    mask: ClothingMaskNeckGaiter
+  groupBy: "neckguitar"
+
+- type: loadout
+  id: ClothingMaskNeckGaiterRed
+  equipment:
+    mask: ClothingMaskNeckGaiterRed
+  groupBy: "neckguitar"
+
+- type: loadout
+  id: ClothingMaskJoy
+  equipment:
+    mask: ClothingMaskJoy
+
+- type: loadout
+  id: ClothingMaskPlague
+  equipment:
+    mask: ClothingMaskPlague
+
+- type: loadout
+  id: ClothingMaskGasDrone
+  equipment:
+    mask: ClothingMaskGasDrone
+
+- type: loadout
+  id: ClothingMaskOniBlue
+  equipment:
+    mask: ClothingMaskOniBlue
+  groupBy: "onimask"
+
+- type: loadout
+  id: ClothingMaskOniRed
+  equipment:
+    mask: ClothingMaskOniRed
+  groupBy: "onimask"

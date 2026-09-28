@@ -211,13 +211,7 @@ namespace Content.Server.Medical.BiomassReclaimer
                 _solution.ResolveSolution(toProcess, stream.BloodSolutionName, ref stream.BloodSolution, out var solution))
             {
                 component.BloodReagents = solution.Clone();
-                /* Floofstation change:
-                 * was component.BloodReagents.Volume, changed to component.BloodReagents.MaxVolume
-                 * Was changed due to if a mob has 0% blood, component.BloodReagents.Volume would be 0 this would lead to us dividing by zero and the mob would not be biomassable.
-                 * Changing to component.BloodReagents.MaxVolume stops us from dividing by zero and lets the mob with 0% blood be biomassed again
-                 * I wasted two hours trying to find out why mobs could not be biomassable.
-                 */
-                component.BloodReagents.ScaleSolution(50 / component.BloodReagents.MaxVolume); // Floofstation was component.BloodReagents.Volume
+                //component.BloodReagents.ScaleSolution(50 / component.BloodReagents.Volume); // Delta V - This doesn't need to be here. It just always makes the solution ~50u but also might divide by 0. Just use the current blood level so more blood = more mess.
             }
             if (TryComp<ButcherableComponent>(toProcess, out var butcherableComponent))
             {
@@ -260,7 +254,7 @@ namespace Content.Server.Medical.BiomassReclaimer
 
             // Reject souled bodies in easy mode.
             if (_configManager.GetCVar(CCVars.BiomassEasyMode) &&
-                HasComp<HumanoidAppearanceComponent>(dragged) &&
+                HasComp<HumanoidProfileComponent>(dragged) &&
                 _minds.TryGetMind(dragged, out _, out var mind))
             {
                 if (mind.UserId != null && _playerManager.TryGetSessionById(mind.UserId.Value, out _))

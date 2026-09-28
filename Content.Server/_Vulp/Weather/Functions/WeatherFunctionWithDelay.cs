@@ -1,9 +1,7 @@
 using System.Threading;
 using Content.Shared._Vulp.Weather;
 using Content.Shared.Destructible.Thresholds;
-using Content.Shared.Weather;
 using Robust.Shared.Random;
-
 
 namespace Content.Server._Vulp.Weather.Functions;
 
@@ -14,35 +12,33 @@ public abstract partial class WeatherFunctionWithDelay : WeatherFunction
     [DataField]
     public MinMax DelaySeconds = new(3, 10);
 
-    protected CancellationTokenSource? cts;
+    protected CancellationTokenSource? Cts;
 
-    public override void Invoke(EntityManager entMan, Entity<WeatherComponent> ent, float updateTimeSeconds)
+    public override void Invoke(EntityManager entMan, EntityUid map, float updateTimeSeconds)
     {
-        if (!entMan.TryGetComponent<WeatherCycleComponent>(ent, out var cycle))
+        if (!entMan.TryGetComponent<WeatherCycleComponent>(map, out var cycle))
             return;
 
         var startingWeather = cycle.CurrentState?.Proto;
-        if (cts is not null && !cts.IsCancellationRequested)
-            cts.Cancel();
+        if (Cts is not null && !Cts.IsCancellationRequested)
+            Cts.Cancel();
 
-        cts = new CancellationTokenSource();
+        Cts = new CancellationTokenSource();
         var delay = DelaySeconds.Next(IoCManager.Resolve<IRobustRandom>());
 
         // FIXME: Timers are getting obsoleted, replace this with a custom timer implementation
         Robust.Shared.Timing.Timer.Spawn(TimeSpan.FromSeconds(delay),
             () =>
             {
-                if (entMan.Deleted(ent) || cycle.CurrentState?.Proto != startingWeather)
+                if (entMan.Deleted(map) || cycle.CurrentState?.Proto != startingWeather)
                     return;
 
-                Fire(entMan, (ent.Owner, ent.Comp, cycle), updateTimeSeconds);
-                cts = null;
+                Fire(entMan, (map, cycle), updateTimeSeconds);
+                Cts = null;
             });
     }
 
-    protected abstract void Fire(
-        EntityManager entMan,
-        Entity<WeatherComponent, WeatherCycleComponent> ent,
-        float updateTimeSeconds
-    );
+    protected abstract void Fire(EntityManager entMan,
+        Entity<WeatherCycleComponent> ent,
+        float updateTimeSeconds);
 }
