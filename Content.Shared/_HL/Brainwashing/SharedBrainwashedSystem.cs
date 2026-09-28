@@ -19,4 +19,4 @@ public class SharedBrainwashedSystem : EntitySystem
     }
 }
 
-public sealed partial class OpenCompulsionsMenuAction : InstantActionEvent;
+public sealed partial class ToggleCompulsionsMenuAction : InstantActionEvent;

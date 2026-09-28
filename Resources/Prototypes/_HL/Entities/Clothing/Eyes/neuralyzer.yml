@@ -23,7 +23,7 @@
     - type: Brainwasher
 
 - type: entity
-  id: ActionOpenCompulsionsMenu
+  id: ActionToggleCompulsionsMenu
   name: View Compulsions
   description: Review the warm fuzzy compulsions embracing your mind.
   components:
@@ -35,4 +35,4 @@
         state: compulsions
       useDelay: 0.5
     - type: InstantAction
-      event: !type:OpenCompulsionsMenuAction
+      event: !type:ToggleCompulsionsMenuAction

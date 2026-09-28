@@ -1,5 +1,6 @@
 using Content.Client._HL.Brainwashing.CompulsionsUI;
 using Content.Client.Eui;
+using Content.Client.UserInterface.Controls;
 using Content.Shared._HL.Brainwashing;
 using Content.Shared.Eui;
 

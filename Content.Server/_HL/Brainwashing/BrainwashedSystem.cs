@@ -1,28 +1,41 @@
 using Content.Server.Actions;
 using Content.Server.EUI;
-using Content.Shared._HL.Brainwashing;
+using Content.Server._HL.Brainwashing;
 using Robust.Server.Player;
 
-namespace Content.Server._HL.Brainwashing;
+namespace Content.Shared._HL.Brainwashing;
+//ERROR SO YOU REMEMBER TO MOVE THIS FILE
 
 public sealed class BrainwashedSystem : SharedBrainwashedSystem
 {
     [Dependency] private readonly ActionsSystem _actionsSystem = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly EuiManager _euiManager = default!;
+    private BrainwashViewer _brainwashViewer = new BrainwashViewer();
     public override void Initialize()
     {
         SubscribeLocalEvent<BrainwashedComponent, BrainwashedEvent>(OnBrainwashed);
-        SubscribeLocalEvent<BrainwashedComponent, OpenCompulsionsMenuAction>(OpenCompulsionsMenu);
+        SubscribeLocalEvent<BrainwashedComponent, ToggleCompulsionsMenuAction>(ToggleCompulsionsMenu);
     }
 
-    private void OpenCompulsionsMenu(EntityUid uid, BrainwashedComponent component, OpenCompulsionsMenuAction args)
+    private void ToggleCompulsionsMenu(EntityUid uid, BrainwashedComponent component, ToggleCompulsionsMenuAction args)
     {
         if (!_playerManager.TryGetSessionByEntity(uid, out var session))
             return;
-        var brainwashViewer = new BrainwashViewer();
-        _euiManager.OpenEui(brainwashViewer, session);
-        brainwashViewer.UpdateCompulsions(component);
+        if (!component.ViewingCompulsions)
+        {
+            // brainwashViewer.CompulsionWindow =
+            //the window is opened
+            _euiManager.OpenEui(_brainwashViewer, session);
+            component.ViewingCompulsions = true;
+        }
+        else
+        {
+            //the window is closed
+            _euiManager.CloseEui(_brainwashViewer);
+            component.ViewingCompulsions = false;
+        }
+        _brainwashViewer.UpdateCompulsions(component);
     }
 
     private void OnBrainwashed(EntityUid uid, BrainwashedComponent component, BrainwashedEvent args)
