@@ -1,0 +1,15 @@
+- type: constructionGraph
+  id: WebObjectsFloof
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: ropeWeb
+      steps:
+      - material: WebSilk
+        amount: 10
+        doAfter: 4
+
+  # Deconstruction
+  - node: ropeWeb
+    entity: RopeBundleWeb
