@@ -209,6 +209,7 @@
         Piercing: -10
         Slash: -10
     selfRepairPenalty: 1.5
+    qualityNeeded: Welding # Euph - With upstream/Nubody changes, the default was set to "Applicating" which meant IPCs couldn't be welded. This sets it to "Welding" so they can be welded. Duh.
   - type: HumanoidEMP # HumanoidEMP is needed to receive EMP effects, it may carry its own innate effects, but doesn't have to
     effectCooldown: 2
     baseDamage:

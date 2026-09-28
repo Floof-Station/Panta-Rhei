@@ -4,18 +4,24 @@ using Content.Shared.Popups;
 using Content.Shared._Goobstation.Bingle;
 using Robust.Shared.Map;
 using System.Numerics;
+using Content.Shared.CombatMode;
+using Content.Shared.Flash.Components;
+using Robust.Server.GameObjects;
+
 
 namespace Content.Server._Goobstation.Bingle;
 
 public sealed class BingleSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly AppearanceSystem _appearance = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<BingleComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<BingleComponent, AttackAttemptEvent>(OnAttackAttempt);
+        SubscribeLocalEvent<BingleComponent, ToggleCombatActionEvent>(OnCombatToggle);
     }
 
     private void OnMapInit(EntityUid uid, BingleComponent component, MapInitEvent args)
@@ -59,5 +65,12 @@ public sealed class BingleSystem : EntitySystem
         //Prevent Friendly Bingle fire
         if (HasComp<BinglePitComponent>(args.Target) || HasComp<BingleComponent>(args.Target))
             args.Cancel();
+    }
+
+    private void OnCombatToggle(EntityUid uid, BingleComponent component, ToggleCombatActionEvent args)
+    {
+        if (!TryComp<CombatModeComponent>(uid, out var combat))
+            return;
+        _appearance.SetData(uid, BingleVisual.Combat, combat.IsInCombatMode);
     }
 }

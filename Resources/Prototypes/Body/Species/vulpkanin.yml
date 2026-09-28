@@ -1,62 +1,62 @@
 - type: markingsGroup
   parent: [Undergarments, EuphoriaCommonMarkingLayers]
   id: Vulpkanin
-  limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
-      onlyGroupWhitelisted: true
-      required: false
-    enum.HumanoidVisualLayers.Head:
-      limit: 3
-      required: false
-    enum.HumanoidVisualLayers.HeadTop:
-      limit: 1
+  limits: # Euph - Switch to common markings
+#    enum.HumanoidVisualLayers.Hair:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.FacialHair:
+#      limit: 1
+#      onlyGroupWhitelisted: true
+#      required: false
+#    enum.HumanoidVisualLayers.Head:
+#      limit: 3
+#      required: false
+    enum.HumanoidVisualLayers.HeadTop: # Euph - More marking slots
+      limit: 10
       required: true
       default: [ VulpEar ]
     enum.HumanoidVisualLayers.Snout:
-      limit: 1
+      limit: 10
       required: false # DV - No requirement
       default: [ VulpSnout ]
-    enum.HumanoidVisualLayers.SnoutCover:
-      limit: 3
-      required: false
+#    enum.HumanoidVisualLayers.SnoutCover:
+#      limit: 3
+#      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2 # Euph - Tail slots increased to 2
       required: true
       default: [ VulpTail ]
-    enum.HumanoidVisualLayers.LArm:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RArm:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LHand:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RHand:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LFoot:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RFoot:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.UndergarmentTop:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.UndergarmentBottom:
-      limit: 1
-      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RArm:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LHand:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RHand:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LFoot:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RFoot:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.UndergarmentTop:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.UndergarmentBottom:
+#      limit: 1
+#      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -144,8 +144,8 @@
   id: MobVulpkanin
   name: Urist McArfArf
   components:
-  - type: MessyDrinker
-    spillChance: 0.33
+#  - type: MessyDrinker # Euphoria - Removed due to already existant trait, +customization -annoyance
+#    spillChance: 0.33
   - type: Speech
     speechSounds: Vulpkanin
     speechVerb: Vulpkanin

@@ -6,11 +6,11 @@
   id: Undergarments
   limits:
     enum.HumanoidVisualLayers.UndergarmentTop:
-      limit: 1
+      limit: 10
       required: false
       nudityDefault: [ UndergarmentTopTanktop ]
     enum.HumanoidVisualLayers.UndergarmentBottom:
-      limit: 1
+      limit: 10
       required: false
       nudityDefault: [ UndergarmentBottomBoxers ]
 
@@ -59,6 +59,7 @@
       - UndergarmentTop
       - UndergarmentBottom
       - Special
+      - Wings # Euph
 
 - type: entity
   parent: OrganBase

@@ -1,3 +1,10 @@
+## Additional Species
+## Couldn't figure out how to make it say Shadowkin in the species file, so here it is
+- type: quickPhrase
+  id: ShadowkinPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-shadowkin
+
 ## Companies
 - type: quickPhrase
   id: HGIPhrase
@@ -269,6 +276,11 @@
   id: OffspringPhrase
   parent: BaseSubjectPhrase
   text: phrase-offspring
+
+- type: quickPhrase
+  id: FamilyPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-family
 ## Misc
 - type: quickPhrase
   id: MoneyPhrase
@@ -414,6 +426,111 @@
   id: WasPhrase
   parent: BaseSubjectPhrase
   text: phrase-was
+
+- type: quickPhrase
+  id: PlanetPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-planet
+
+- type: quickPhrase
+  id: SystemPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-system
+
+- type: quickPhrase
+  id: TherePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-there
+
+- type: quickPhrase
+  id: StationPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-station
+
+- type: quickPhrase
+  id: CondomPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-condom
+
+- type: quickPhrase
+  id: SkillPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-skill
+
+- type: quickPhrase
+  id: IssuePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-issue
+
+- type: quickPhrase
+  id: HomePhrase
+  parent: BaseSubjectPhrase
+  text: phrase-home
+
+- type: quickPhrase
+  id: RespectPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-respect
+
+- type: quickPhrase
+  id: HonourPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-honour
+
+- type: quickPhrase
+  id: FaithPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-faith
+
+- type: quickPhrase
+  id: ReligionPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-religion
+
+- type: quickPhrase
+  id: AacPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-aac
+
+- type: quickPhrase
+  id: WouldPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-would
+
+- type: quickPhrase
+  id: ThatPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-that
+
+- type: quickPhrase
+  id: ButtonPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-button
+
+- type: quickPhrase
+  id: CanPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-can
+
+- type: quickPhrase
+  id: DrugPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-drug
+
+- type: quickPhrase
+  id: FloorPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-floor
+
+- type: quickPhrase
+  id: WallPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-wall
+
+- type: quickPhrase
+  id: WordPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-word
 ## Body Parts
 - type: quickPhrase
   id: ArmPhrase
@@ -534,6 +651,11 @@
   id: NipplePhrase
   parent: BaseSubjectPhrase
   text: phrase-nipple
+
+- type: quickPhrase
+  id: StomachPhrase
+  parent: BaseSubjectPhrase
+  text: phrase-stomach
 
 ## Vulgarity
 - type: quickPhrase

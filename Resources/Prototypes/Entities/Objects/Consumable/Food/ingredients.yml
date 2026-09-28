@@ -973,6 +973,14 @@
   - type: Tag
     tags:
     - Trash
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: BurnedMess
+      Taco: BurnedMess
+      Skewer: BurnedMess
+      Hotdog: BurnedMess
+  # Euphoria changes end
 
 - type: entity
   name: cocoa beans

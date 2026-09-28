@@ -277,3 +277,68 @@
   id: TimePhrase
   parent: BaseQualitativePhrase
   text: phrase-time
+
+- type: quickPhrase
+  id: SamePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-same
+
+- type: quickPhrase
+  id: SillyPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-silly
+
+- type: quickPhrase
+  id: FunPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-fun
+
+- type: quickPhrase
+  id: ProblemPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-problem
+
+- type: quickPhrase
+  id: MeanPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-mean
+
+- type: quickPhrase
+  id: EasyPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-easy
+
+- type: quickPhrase
+  id: AfterPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-after
+
+- type: quickPhrase
+  id: RealPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-real
+
+- type: quickPhrase
+  id: FakePhrase
+  parent: BaseQualitativePhrase
+  text: phrase-fake
+
+- type: quickPhrase
+  id: NormalPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-normal
+
+- type: quickPhrase
+  id: CoolPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-cool
+
+- type: quickPhrase
+  id: FatPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-fat
+
+- type: quickPhrase
+  id: ThinPhrase
+  parent: BaseQualitativePhrase
+  text: phrase-thin

@@ -1,3 +1,7 @@
+## Additional Species
+## Couldn't figure out how to make it say Shadowkin in the species file, so here it is
+phrase-shadowkin = Shadowkin
+
 ## Companies
 phrase-hgi = HGI
 phrase-nanotrasen = Nanotrasen
@@ -55,6 +59,7 @@ phrase-sister = sister
 phrase-sibling = sibling
 phrase-relative = relative
 phrase-offspring = offspring
+phrase-family = family
 
 ## Misc
 phrase-understand = understand
@@ -85,6 +90,27 @@ phrase-lunch = lunch
 phrase-dinner = dinner
 phrase-snack = snack
 phrase-was = was
+phrase-planet = planet
+phrase-system = system
+phrase-there = there
+phrase-station = station
+phrase-condom = condom
+phrase-skill = skill
+phrase-issue = issue
+phrase-home = home
+phrase-respect = respect
+phrase-honour = honour
+phrase-faith = faith
+phrase-religion = religion
+phrase-aac = AAC
+phrase-would = would
+phrase-that = that
+phrase-button = button
+phrase-can = can
+phrase-drug = drug
+phrase-wall = wall
+phrase-floor = floor
+phrase-word = word
 
 ## Body Parts
 phrase-arm = arm
@@ -111,6 +137,7 @@ phrase-penis = penis
 phrase-testicles = testicles
 phrase-vagina = vagina
 phrase-nipple = nipple
+phrase-stomach = stomach
 
 ## Vulgarity
 phrase-cock = cock

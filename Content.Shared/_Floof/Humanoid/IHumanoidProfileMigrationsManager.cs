@@ -8,12 +8,22 @@ public interface IHumanoidProfileMigrationsManager
     /// <summary>
     ///     Migrates a profile using predefined migrations.
     /// </summary>
-    public void MigrateProfile(YamlNode profileYaml, HumanoidCharacterProfile profile);
+    public void MigrateProfileBeforeParse(YamlNode profileYaml);
+
+    /// <summary>
+    ///     Migrates a profile using predefined migrations.
+    /// </summary>
+    public void MigrateProfileAfterParse(YamlNode profileYaml, HumanoidCharacterProfile profile);
 
     /// <summary>
     ///     Adds a new simple migration to be executed whenever a profile is being imported.
     /// </summary>
-    public void AddMigration(string path, Action<ProfileMigrationContext> action);
+    public void AddSimpleMigration(string path, Action<ProfileMigrationContext> action);
+
+    /// <summary>
+    ///     Adds a new yaml migration to be executed before a profile is parsed.
+    /// </summary>
+    public void AddYamlMigration(string path, Action<ProfileYamlMigrationContext> action);
 
     /// <summary>
     ///     Tries to retrieve the value at the specified path in the YAML node. Can throw ArgumentException if the path is invalid.

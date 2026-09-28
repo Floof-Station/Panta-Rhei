@@ -70,6 +70,9 @@
     containers:
       - entity_storage
   - type: RequireProjectileTarget
+  - type: Tag # Euph
+    tags:
+    - Crate
 
 - type: entity
   parent: CrateGeneric

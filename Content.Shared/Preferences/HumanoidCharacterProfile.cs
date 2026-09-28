@@ -911,6 +911,11 @@ namespace Content.Shared.Preferences
             yamlStream.Load(reader);
 
             var root = yamlStream.Documents[0].RootNode;
+            // Begin Euphoria additions - profile migrations (before parsing)
+            var migrations = IoCManager.Resolve<IHumanoidProfileMigrationsManager>();
+            migrations.MigrateProfileBeforeParse(root);
+            // End Euphoria additions
+
             HumanoidCharacterProfile profile;
             if (root["version"].Equals(new YamlScalarNode("1")))
             {
@@ -928,8 +933,7 @@ namespace Content.Shared.Preferences
             }
 
             // Begin Euphoria additions - profile migrations (applied before validation)
-            var migrations = IoCManager.Resolve<IHumanoidProfileMigrationsManager>();
-            migrations.MigrateProfile(root, profile);
+            migrations.MigrateProfileAfterParse(root, profile);
             // End Euphoria additions
 
             var collection = IoCManager.Instance;
