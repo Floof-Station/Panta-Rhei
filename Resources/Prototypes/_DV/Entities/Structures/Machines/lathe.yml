@@ -13,6 +13,7 @@
     - BorgModulesStatic
     - BorgLimbsStatic
     - BorgModulesResearched
+    - RoboticsEmagStatic
   - type: Machine
     board: SyndieExosuitFabricatorMachineCircuitboard
 
@@ -85,6 +86,7 @@
     - EVASuit
     - EngineeringStaticDeltaV
     - EngineeringStaticFloof # Floofstation
+    - SuperMatterEngineeringStatic # Floofstation - supermatter board
     - EngineeringStaticStarlight # Floofstation - RPD empty recpie
     dynamicPacks:
     - AdvancedTools
@@ -97,7 +99,8 @@
     - UpgradeKits_Goob
     - EngineeringHardsuits
     - AtmosToolsFloofstation # Floofstation - handheld atmos monitor
-    - LightingEquipment # DeltaV
+    - AdvancedConstruction
+    - LightingEquipment
   - type: Machine
     board: EngineeringTechFabCircuitboard
   - type: StealTarget
@@ -138,7 +141,7 @@
     - Mining
     - SalvageWeapons
     - SalvageHardsuits
-    - LightingEquipment # DeltaV
+    - LightingEquipment
   - type: Machine
     board: LogisticsTechFabCircuitboard
   - type: StealTarget

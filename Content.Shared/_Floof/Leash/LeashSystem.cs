@@ -392,7 +392,7 @@ public sealed partial class LeashSystem : EntitySystem
         if (leash.Comp.LeashSprite is { } sprite)
         {
             _container.EnsureContainer<ContainerSlot>(leashTarget, LeashedComponent.VisualsContainerName);
-            if (EntityManager.TrySpawnInContainer(null, leashTarget, LeashedComponent.VisualsContainerName, out var visualEntity))
+            if (TrySpawnInContainer(null, leashTarget, LeashedComponent.VisualsContainerName, out var visualEntity))
             {
                 var visualComp = EnsureComp<LeashedVisualsComponent>(visualEntity.Value);
                 visualComp.Sprite = sprite;

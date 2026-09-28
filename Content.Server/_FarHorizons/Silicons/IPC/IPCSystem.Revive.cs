@@ -77,7 +77,7 @@ public sealed partial class IPCSystem
 
         if (!TryComp<DamageableComponent>(ent, out var damageableComponent) ||
             !_mobThreshold.TryGetThresholdForState(ent, MobState.Dead, out var thresholdDead) ||
-            _damageable.GetDamage((ent, damageableComponent)).GetTotal() > thresholdDead ||
+            _damageable.GetPositiveDamage((ent, damageableComponent)).GetTotal() > thresholdDead ||
             !BatteryHasCharge(ent))
         {
             _popup.PopupEntity(Loc.GetString(ent.Comp.CantReviveMessage), ent);
@@ -120,7 +120,7 @@ public sealed partial class IPCSystem
             _mobThreshold.TryGetThresholdForState(ent, MobState.Dead, out var thresholdDead) &&
             _mobThreshold.TryGetThresholdForState(ent, MobState.Critical, out var thresholdCrit))
         {
-            var totalDamage = _damageable.GetDamage((ent, damageableComponent)).GetTotal();
+            var totalDamage = _damageable.GetPositiveDamage((ent, damageableComponent)).GetTotal();
             if (totalDamage < thresholdCrit)
                 _state.ChangeMobState(ent, MobState.Alive);
             else if (totalDamage < thresholdDead)
@@ -172,7 +172,7 @@ public sealed partial class IPCSystem
         if (!Resolve(ent, ref damageable))
             return false;
 
-        var totalDamage = _damageable.GetDamage((ent, damageable)).GetTotal();
+        var totalDamage = _damageable.GetPositiveDamage((ent, damageable)).GetTotal();
 
         return totalDamage >= ent.Comp.DamagedThreshold.Min &&
                (ent.Comp.DamagedThreshold.Max == null || totalDamage <= ent.Comp.DamagedThreshold.Max);

@@ -1,6 +1,6 @@
 - type: entity
   name: nuclear operative mouse
-  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # Floofstation - add vent crawling
+  parent: [ SimpleMobBase, MobCombat, DVNodeCrawler ] # DeltaV - node crawling
   id: MobNukieMouse
   description: A Nuclear Operative... MOUSE?!
   suffix: syndicate
@@ -80,7 +80,7 @@
         Base: splat
   - type: Edible
   - type: Hunger
-    baseDecayRate: 0.1
+    baseDecayRate: 0.066 # Euph - * 0.66
   - type: Extractable
     grindableSolutionName: food
   - type: SolutionContainerManager
@@ -138,9 +138,6 @@
         Slash: 5
         Piercing: 3
         Structural: 1.5
-  - type: Body
-    prototype: Rat
-    requiredLegs: 1 # TODO: More than 1 leg
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

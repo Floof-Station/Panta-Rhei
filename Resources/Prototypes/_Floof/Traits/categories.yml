@@ -21,18 +21,24 @@
   name: trait-category-cybernetics
   priority: 10
   accentColor: "#5F081F"  # royal red
-  
+
 - type: traitCategory # Euphoria
   id: Psionics
   name: trait-category-psionic
   priority: 15
   accentColor: "#a855f7" # purple
 
+- type: traitCategory # Euphoria
+  id: Visuals
+  name: trait-category-visuals
+  priority: 20
+  accentColor: "#90D5FF" # lightblue
+
 - type: traitCategory
   id: Languages
   name: trait-category-languages
   # maxTraits: 4 #Allows foreigners to pick up to 3 languages to learn, but restricts non forigners to the same 2 they could pick before.
-  # maxPoints: 2 
+  # maxPoints: 2
   #Removed maxTrait limit to allow more RP. Each language still has costs.
   priority: 1000 # At the bottom
   accentColor: "#418b60"
@@ -58,7 +64,7 @@
   priority: 50 # Under Medical
   accentColor: "#6e304b" # pink
   defaultExpanded: false
-  
+
 - type: traitCategory
   id: Scents
   name: trait-category-scents

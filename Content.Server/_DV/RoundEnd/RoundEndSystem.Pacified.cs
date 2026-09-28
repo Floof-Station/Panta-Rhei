@@ -1,28 +1,21 @@
 using Content.Server.GameTicking;
-using Content.Server.Popups;
-using Content.Server.Store.Systems;
-using Content.Shared.Flash.Components;
-using Content.Shared.Trigger.Components;
+using Content.Shared._DV.CCVars;
 using Content.Shared.CombatMode;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared._DV.CCVars;
-using Content.Shared.Damage.Components;
 using Content.Shared.Explosion.Components;
-using Content.Shared.Projectiles;
+using Content.Shared.Flash.Components;
 using Content.Shared.Store.Components;
+using Content.Shared.Trigger.Components;
 using Content.Shared.Weapons.Melee;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 
-namespace Content.Server.DeltaV.RoundEnd;
+namespace Content.Server._DV.RoundEnd;
 
 public sealed class PacifiedRoundEnd : EntitySystem
 {
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly EntityManager _entityManager = default!;
-    [Dependency] private readonly StoreSystem _storeSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     private bool _enabled;
 

@@ -1,0 +1,59 @@
+# SPDX-FileCopyrightText: 2025 Shaman
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: [ClothingNeckBase, BaseFoldable]
+  id: ClothingNeckCloakMantisDark
+  name: dark mantis cloak
+  description: "A billowing cloak that you can bundle around yourself, if you feel your traditional uniforms are too revealing. The brooch is a Greek psi."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_cloak_dark.rsi
+    layers:
+    - state: icon
+      map: ["unfoldedLayer"]
+    - state: icon-folded
+      map: ["foldedLayer"]
+      visible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_cloak_dark.rsi
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+  - type: Foldable
+    canFoldInsideContainer: true
+    foldVerbText: fold-verb-clothing-cloak
+    unfoldVerbText: unfold-verb-clothing-cloak
+  - type: FoldableClothing
+    foldedEquippedPrefix: folded
+
+- type: entity # So chameleon clothes can select the folded sprite
+  parent: ClothingNeckCloakMantisDark
+  id: ClothingNeckCloakMantisDarkFolded
+  suffix: Bundled
+  components:
+  - type: Foldable
+    folded: true
+  - type: Clothing
+    equippedPrefix: folded
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakMantisShroud
+  name: mantis wolfskin
+  description: "A heavy traveler's cloak adorned with a charm-laden necklace, built to turn wind, rain, and dust alike. The origins of the name are lost to history, but the association with hunting remains."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Neck/Cloaks/mantis_shroud.rsi
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatMantisShroud
+    requiredSlot:
+    - neck
+    slot: head
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable

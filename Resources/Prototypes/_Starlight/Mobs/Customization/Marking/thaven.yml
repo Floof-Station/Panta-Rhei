@@ -3,8 +3,7 @@
 - type: marking
   id: ThavenBasicTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: basic_front
@@ -14,8 +13,7 @@
 - type: marking
   id: ThavenBigTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: big1_behind
@@ -29,8 +27,7 @@
 - type: marking
   id: ThavenTadpoleTail
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: tadpole1_behind
@@ -44,9 +41,7 @@
 - type: marking
   id: ThavenTailEel
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: eel1_behind
@@ -60,8 +55,7 @@
 - type: marking
   id: ThavenTailEelOverlay
   bodyPart: Tail
-  markingCategory: Overlay
-  speciesRestriction: [ Thaven ]
+  groupWhitelist: [ Thaven ]
   coloring:
     default:
       type:
@@ -80,9 +74,7 @@
 - type: marking
   id: ThavenTailNurse
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: nurse1_behind
@@ -96,9 +88,7 @@
 - type: marking
   id: ThavenTailStub
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/taillayers.rsi
     state: stub1_behind
@@ -112,9 +102,7 @@
 - type: marking
   id: ThavenTailThresher
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [ Thaven ]
-  followSkinColor: true
+  groupWhitelist: [ Thaven ]
   sprites:
   - sprite: _Starlight/Mobs/Customization/thaven/tail.rsi
     state: thresher1

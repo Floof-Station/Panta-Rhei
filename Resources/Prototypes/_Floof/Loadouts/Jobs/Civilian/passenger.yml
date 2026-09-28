@@ -765,6 +765,13 @@
   id: LoadoutNapsack
   equipment:
     back: ClothingBackpackNapsack
+  groupBy: "napsack"
+
+- type: loadout
+  id: LoadoutNapsackDuffel
+  equipment:
+    back: ClothingBackpackNapsackDuffel
+  groupBy: "napsack"
 
 # outer clothing (jackets)
 - type: loadout
@@ -2119,6 +2126,42 @@
   equipment:
     undergarmentTop: ClothingUnderTopMiscPasties
   groupBy: "top-misc"
+
+- type: loadout
+  id: ClothingUnderTopBustySleeveless
+  equipment:
+    undergarmentTop: ClothingUnderTopBustySleeveless
+  groupBy: "busty"
+
+- type: loadout
+  id: ClothingUnderTopBustyLongsleeve
+  equipment:
+    undergarmentTop: ClothingUnderTopBustyLongsleeve
+  groupBy: "busty"
+
+- type: loadout
+  id: ClothingUnderTopBustyWindowedTop
+  equipment:
+    undergarmentTop: ClothingUnderTopBustyWindowedTop
+  groupBy: "busty"
+
+- type: loadout
+  id: ClothingUnderTopBustyBra
+  equipment:
+    undergarmentTop: ClothingUnderTopBustyBra
+  groupBy: "busty"
+
+- type: loadout
+  id: ClothingUnderTopBustySportsBra
+  equipment:
+    undergarmentTop: ClothingUnderTopBustySportsBra
+  groupBy: "busty"
+
+- type: loadout
+  id: ClothingUnderTopBustyHalterneck
+  equipment:
+    undergarmentTop: ClothingUnderTopBustyHalterneck
+  groupBy: "busty"
 
 # bottom undergarment
 # thongs

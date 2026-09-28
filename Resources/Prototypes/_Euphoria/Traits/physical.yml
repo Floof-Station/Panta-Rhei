@@ -6,16 +6,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -29,7 +30,7 @@
     - Resomi #AmmoniaBlood
     - SlimePerson #Slime
     - Vox #AmmoniaBlood
-    - Shadowkin #BlackBlood
+    - Shadekin #BlackBlood
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: Blood
@@ -41,16 +42,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -71,16 +73,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -99,16 +102,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -128,16 +132,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -156,16 +161,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -184,16 +190,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodBlack
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -208,23 +215,24 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodWhite
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodWhite
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
   - !type:OneOfSpeciesCondition
     invert: true
     species:
-    - Shadowkin
+    - Shadekin
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: BlackBlood
@@ -236,16 +244,17 @@
   category: BonusPhysical
   cost: 0 # Almost entirely cosmetic
   usesSlots: false
-  conflicts:
-  - ReplaceBloodRed
-  - ReplaceBloodAmmonia
-  - ReplaceBloodCopper
-  - ReplaceBloodInsect
-  - ReplaceBloodSap
-  - ReplaceBloodSlime
-  - ReplaceBloodYellow
-  - ReplaceBloodBlack
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -260,10 +269,11 @@
   description: trait-healing-plus-desc
   category: BonusPhysical
   cost: 4
-  conflicts:
-  - HealingMinus
-  - HealingPlus2
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HealingMinus
+    - HealingPlus2
   - !type:HasCompCondition
     component: Hunger
   - !type:HasCompCondition
@@ -280,12 +290,12 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 50 # +30 over default
       damage:
         types:
           Heat: -0.14 # -0.07 over default
-        groups:
-          Brute: -0.14 # -0.07 over default
+          Blunt: -0.05 # This was split over the entire Brute group
+          Slash: -0.05
+          Piercing: -0.05
   - !type:ModifyHungerDecayEffect
     amount: 0.00833333333 # +50% over default
 
@@ -295,10 +305,11 @@
   description: trait-healing-plus-2-desc
   category: BonusPhysical
   cost: 8
-  conflicts:
-  - HealingMinus
-  - HealingPlus
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HealingMinus
+    - HealingPlus
   - !type:HasCompCondition
     component: Hunger
   - !type:HasCompCondition
@@ -314,13 +325,13 @@
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 60 # +10 over lower trait
       damage:
         types:
           Heat: -0.14 # same as lower trait
           Poison: -0.07 # not present in lower trait
-        groups:
-          Brute: -0.21 # increased 50% over lower trait
+          Blunt: -0.07 # This was split over the entire Brute group
+          Slash: -0.07
+          Piercing: -0.07
   - !type:ModifyHungerDecayEffect
     amount: 0.00833333333 # same as lower trait
   - !type:ModifyThirstDecayEffect
@@ -332,10 +343,11 @@
   description: trait-healing-minus-desc
   category: DisabilitiesPhysical
   cost: -1
-  conflicts:
-  - HealingPlus
-  - HealingPlus2
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - HealingPlus
+    - HealingPlus2
   - !type:HasCompCondition
     component: Hunger
   - !type:HasCompCondition
@@ -351,9 +363,48 @@
     - type: PassiveDamage # Half of base, with 75% of the cap
       allowedStates:
       - Alive
-      damageCap: 15
       damage:
         types:
           Heat: -0.03
-        groups:
-          Brute: -0.03
+          Blunt: -0.03
+          Slash: -0.03
+          Piercing: -0.03
+
+- type: trait
+  id: ArmAmputeeLeft
+  name: trait-amputee-left-arm-name
+  description: trait-amputee-left-arm-desc
+  category: DisabilitiesPhysical # Euphoria
+  cost: -3 #floof
+  effects:
+  - !type:AmputeeTraitEffect
+    removeLimb: ArmLeft
+  - !type:AmputeeTraitEffect
+    removeLimb: HandLeft
+
+- type: trait
+  id: ArmAmputeeRight
+  name: trait-amputee-right-arm-name
+  description: trait-amputee-right-arm-desc
+  category: DisabilitiesPhysical
+  cost: -3 #floof
+  effects:
+  - !type:AmputeeTraitEffect
+    removeLimb: ArmRight
+  - !type:AmputeeTraitEffect
+    removeLimb: HandRight
+
+- type: trait
+  id: Pettable
+  name: trait-pettable-name
+  description: trait-pettable-desc
+  category: BonusPhysical
+  cost: 2
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: InteractionPopup
+      interactSuccessString: petting-success-soft-floofy-kitsune # this message is generic already but can swap if we want
+      interactSuccessSpawn: EffectHearts
+      interactSuccessSound:
+        path: /Audio/Animals/fox_squeak.ogg

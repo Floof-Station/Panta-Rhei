@@ -13,7 +13,10 @@
       path: /Audio/Ambience/Objects/vending_machine_hum.ogg
   - type: LitOnPowered
   - type: ApcPowerReceiver
-    powerLoad: 600
+    powerLoad: 50
+  - type: PowerState # Euph
+    idlePowerDraw: 50
+    workingPowerDraw: 600
   - type: Vocalizer
     minVocalizeInterval: 1m
     maxVocalizeInterval: 5m
@@ -58,7 +61,10 @@
       path: /Audio/Ambience/Objects/vending_machine_hum.ogg
   - type: LitOnPowered
   - type: ApcPowerReceiver
-    powerLoad: 600
+    powerLoad: 50
+  - type: PowerState
+    idlePowerDraw: 50
+    workingPowerDraw: 600
   - type: Vocalizer
     minVocalizeInterval: 1m
     maxVocalizeInterval: 5m

@@ -63,3 +63,18 @@
       - CartridgeAmmo
       - Whistle
       - BalloonPopper
+
+- type: entity
+  id: ClothingBeltCombatUtilityAdvanced
+  parent: ClothingBeltCombatUtility
+  name: advanced combat utility belt
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: CrowbarYellow
+        - id: PowerDrill
+        - id: Wirecutter
+        - id: Welder
+        - id: Multitool
