@@ -6128,3 +6128,86 @@ Entries:
         sounds.
   id: 766
   time: '2026-09-27T05:21:31.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Tweak
+      message: >-
+        People, animals, and pests no longer have 10 mouths: they can only
+        ingest one thing at a time.
+  id: 767
+  time: '2026-09-28T03:37:48.0000000+00:00'
+- author: CastitoWae
+  changes:
+    - type: Fix
+      message: Fixed bounty computer and offer keybind localization issues.
+  id: 768
+  time: '2026-09-28T03:37:59.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: >-
+        Rules for Trash Lizard to clearly place them as an "antag" who can try
+        to be friendly.
+    - type: Tweak
+      message: >-
+        Trash Lizard events now has a cooldown of 30 minutes between new
+        instances.
+    - type: Fix
+      message: >-
+        Lizards now show everyone when they are in combat mode. Previously it
+        was client side only.
+  id: 769
+  time: '2026-09-28T03:39:09.0000000+00:00'
+- author: WhiteLightningTwister
+  changes:
+    - type: Tweak
+      message: Centcomm has been further improved, adding an ERT and Galpol Wing.
+  id: 770
+  time: '2026-09-28T13:47:13.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        You can now select specific species emotes as traits. For the following
+        species: Vulpknain, Kitsune, Felinid and Slime person. Note: These will
+        in fact override your base species emotes.
+  id: 771
+  time: '2026-09-28T15:33:30.0000000+00:00'
+- author: CastitoWae
+  changes:
+    - type: Add
+      message: Added super synthesizer to the prize counter, good luck.
+    - type: Tweak
+      message: Arcade prize max rewards from 10-50 to 20-100.
+  id: 772
+  time: '2026-09-28T15:34:14.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: >-
+        Shadekin are no longer allowed to buy gas station weed. Eye sprites have
+        been tweaked.
+  id: 773
+  time: '2026-09-28T15:37:14.0000000+00:00'
+- author: DrCinnamonroll
+  changes:
+    - type: Add
+      message: Added Fuzzy Handcuffs and Play Handcuffs to Loadouts
+  id: 774
+  time: '2026-09-28T15:38:34.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: >-
+        Ported event conditions from pre-rebase: some high-impact events will
+        not fire unless there are enough members in a relevant department.
+  id: 775
+  time: '2026-09-28T15:39:36.0000000+00:00'
+- author: CastitoWae
+  changes:
+    - type: Add
+      message: >-
+        Glow sticks can now be printed in the engineering, logistics, security
+        and service techfabs.
+  id: 776
+  time: '2026-09-28T15:55:36.0000000+00:00'
