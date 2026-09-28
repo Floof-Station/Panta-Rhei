@@ -8,7 +8,7 @@ public record struct BeforePolymorphedEvent();
 
 
 /// <summary>
-///     Euph - raised BEFORE trying to polymorph it, unlike BeforePolymoprhed.
+///     Euph - raised BEFORE trying to polymorph it, unlike BeforePolymorphed.
 /// </summary>
 public sealed class PolymorphAttemptEvent : CancellableEntityEventArgs
 {
