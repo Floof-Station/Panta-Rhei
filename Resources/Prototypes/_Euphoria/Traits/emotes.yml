@@ -1,0 +1,65 @@
+﻿# We have to give the tag of what we want to add to the player emote wise to replace their emotes,
+# Some of the emotes also don't display properly in the emote wheel but the chat trigger will work.
+- type: trait
+  id: TraitsEmoteVulpkanin
+  name: trait-emote-vulpkanin
+  description: trait-emote-vulpkanin-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
+  - !type:AddTagTraitEffect
+    tagsToAdd: VulpEmotes
+
+# felinid
+- type: trait
+  id: TraitsEmoteFelinid
+  name: trait-emote-felinid
+  description: trait-emote-felinid-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleFelinid
+      Female: FemaleFelinid
+      Unsexed: MaleFelinid
+  - !type:AddTagTraitEffect
+    tagsToAdd: FelinidEmotes
+
+# kitsune
+- type: trait
+  id: TraitsEmoteKitsune
+  name: trait-emote-kitsune
+  description: trait-emote-kitsune-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleKitsune
+      Female: FemaleKitsune
+      Unsexed: MaleKitsune
+  - !type:AddTagTraitEffect
+    tagsToAdd: KitsuneEmotes
+
+# slime person
+- type: trait
+  id: TraitsEmoteSlimePerson
+  name: trait-emote-slime
+  description: trait-emote-slime-description
+  category: Emotes
+  cost: 0
+  effects:
+  - !type:EmoteSoundsEffect
+    sounds:
+      Male: MaleSlime
+      Female: FemaleSlime
+      Unsexed: MaleSlime
+  - !type:AddTagTraitEffect
+    tagsToAdd: SlimeEmotes
+

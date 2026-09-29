@@ -322,7 +322,7 @@
 
 # mushroom men testing
 - type: entity
-  parent: [ MobGnome, DVNodeCrawler ] # we give them vent crawling
+  parent: [ MobBaseAncestorNoShitmed, DVNodeCrawler ] # we give them vent crawling
   id: MobMythicalMushroom
   name: walking mushroom
   description: A cheery fellow. Definitely not a goblin. Or an elf. Or a gnome.
@@ -360,6 +360,15 @@
     butcheringType: knife
     spawned:
     - id: MaterialMushwoodPlank5 # spawn five of our planks
+  # Speech
+  - type: Speech
+    speechSounds: Gnome
+  - type: Emoting
+  - type: Vocal
+    sounds:
+      Male: GnomeSounds
+      Female: GnomeSounds
+      Unsexed: GnomeSounds
   # shroom powers
   - type: Psionic
   - type: MassSleepPower
