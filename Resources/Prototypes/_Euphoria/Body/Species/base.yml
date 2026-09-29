@@ -5,10 +5,10 @@
   limits: # Put common shit in here
     # Hair
     enum.HumanoidVisualLayers.Hair:
-      limit: 1
+      limit: 3
       required: false
     enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
+      limit: 3
       required: false
     # Body parts (except limbs)
     enum.HumanoidVisualLayers.Chest:

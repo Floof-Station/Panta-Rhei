@@ -1,5 +1,18 @@
-﻿# emotional support collar
+# emotional support collar
 - type: loadout
   id: ClothingNeckCollarEmotionalSupportSeniorEngineer
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofSeniorEngineering
   equipment:
     neck: ClothingNeckCollarEmotionalSupportSeniorEngineer
+
+# requirement for Senior Engineer PDAs
+- type: loadoutEffectGroup
+  id: FloofSeniorEngineering
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 40h #Same as the time requirement for the mentor role

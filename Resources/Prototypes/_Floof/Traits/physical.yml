@@ -875,3 +875,21 @@
   - !type:SetInventoryEffect
     speciesId: vulpkanin # for the snooties
 
+- type: trait
+  id: Preening
+  name: trait-very-preening-name
+  description: trait-very-preening-description
+  category: Skills
+  cost: 2
+  conditions:
+  - !type:OneOfSpeciesCondition # only the below species can take the trait
+    invert: false
+    species:
+    - Harpy
+    - Resomi
+    - Allulalo
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Preenable
+      featherPrototype: AvaliFeather

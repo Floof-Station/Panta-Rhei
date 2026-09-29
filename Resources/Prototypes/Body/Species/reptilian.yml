@@ -11,7 +11,7 @@
  #     required: false
     enum.HumanoidVisualLayers.Tail:
       #onlyGroupWhitelisted: true Euph- Common markings
-      limit: 1
+      limit: 2 # Euph - Tail slots increased to 2
       required: true
       default: [ LizardTailSmooth ]
  #   enum.HumanoidVisualLayers.Chest:

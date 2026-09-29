@@ -319,3 +319,58 @@
     name: ghost-role-information-pet-whimperlet-name
     description: ghost-role-information-pet-description
     rules: ghost-role-information-familiar-rules
+
+# mushroom men testing
+- type: entity
+  parent: [ MobGnome, DVNodeCrawler ] # we give them vent crawling
+  id: MobMythicalMushroom
+  name: walking mushroom
+  description: A cheery fellow. Definitely not a goblin. Or an elf. Or a gnome.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive
+      sprite: _Euphoria/Mobs/mythical_mushroom.rsi
+    - map: [ "enum.HumanoidVisualLayers.Handcuffs" ]
+      color: "#ffffff"
+      sprite: Objects/Misc/handcuffs.rsi
+      state: body-overlay-2
+      visible: false
+    - map: [ "clownedon" ]
+      sprite: "Effects/creampie.rsi"
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+      Dead:
+        Base: dead
+  - type: GhostRole
+    name: ghost-role-information-walking-mushroom-name
+    description: ghost-role-information-walking-mushroom-description
+    rules: ghost-role-information-freeagent-rules
+    makeSentient: true
+    allowSpeech: true
+    allowMovement: true
+    mindRoles:
+    - MindRoleGhostRoleFreeAgent
+    raffle:
+      settings: default
+  - type: Butcherable
+    butcheringType: knife
+    spawned:
+    - id: MaterialMushwoodPlank5 # spawn five of our planks
+  # shroom powers
+  - type: Psionic
+  - type: MassSleepPower
+  # language
+  - type: LanguageKnowledge # they are a plant, let them speak rootspeak and basic
+    speaks:
+    - TauCetiBasic
+    - RootSpeak
+    understands:
+    - TauCetiBasic
+    - RootSpeak
+  # leash because it's funny
+  - type: LeashAnchor # there's a specific person that knows who they are that this is for
+    kind: Intrinsic
