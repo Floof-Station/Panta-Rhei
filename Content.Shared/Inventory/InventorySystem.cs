@@ -18,4 +18,12 @@ public partial class InventorySystem
         base.Shutdown();
         ShutdownSlots();
     }
+
+    // Euphoria - Used with SetInventoryEffect so that we can override
+    // species inventory templates for things like gas masks
+     public void SetSpeciesId(Entity<InventoryComponent> entity, string? speciesId)
+    {
+        entity.Comp.SpeciesId = speciesId;
+        Dirty(entity);
+    }
 }

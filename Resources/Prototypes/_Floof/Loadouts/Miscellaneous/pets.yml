@@ -3,54 +3,74 @@
   storage:
     back:
     - MobHamsterPet
+  spawnEffects:
+  - &followUserEffect
+    !type:LoadoutPutUserCoordinatesInBlackboardEffect
+    key: FollowTarget
 
 - type: loadout
   id: MobMousePet
   storage:
     back:
     - MobMousePet
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobMothroachPet
   storage:
     back:
     - MobMothroachPet
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobFrogPet
   storage:
     back:
     - MobFrogPet
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobSnakePet
   storage:
     back:
     - MobSnakePet
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobFerretPet
   storage:
     back:
     - MobFerretPet
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobPetSpiderTarantula
   storage:
     back:
     - MobPetSpiderTarantula
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobPetSpiderPurple
   storage:
     back:
     - MobPetSpiderPurple
+  spawnEffects:
+  - *followUserEffect
 
 - type: loadout
   id: MobWhimperletPet
   storage:
     back:
     - MobWhimperletPet
+  spawnEffects:
+  - *followUserEffect
 
 #- type: loadout
 #  id: MobCorticalBorerPet

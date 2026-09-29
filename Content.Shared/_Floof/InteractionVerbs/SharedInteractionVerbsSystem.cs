@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Floof.Contests;
 using Content.Shared._Floof.InteractionVerbs.Components;
 using Content.Shared._Floof.InteractionVerbs.Events;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Contests;
 using Content.Shared.DoAfter;
 using Content.Shared.Ghost;
 using Content.Shared.Hands.Components;
@@ -34,7 +34,7 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfters = default!;
-    [Dependency] private readonly ContestsSystem _contests = default!;
+    [Dependency] private readonly ContestSystem _contests = default!;
     [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedPopupSystem _popups = default!;
     [Dependency] private readonly IPrototypeManager _protoMan = default!;
@@ -368,12 +368,8 @@ public abstract partial class SharedInteractionVerbsSystem : EntitySystem
             return;
 
         // We don't use EveryContest here because it's straight up bad
-        if (contests.HasFlag(Mass))
-            args.ContestAdvantage *= _contests.MassContest(args.User, args.Target, true, 10f);
-        if (contests.HasFlag(Stamina))
-            args.ContestAdvantage *= _contests.MassContest(args.User, args.Target, true, 10f);
-        if (contests.HasFlag(Health))
-            args.ContestAdvantage *= _contests.MassContest(args.User, args.Target, true, 10f);
+        if (contests.HasFlag(Strength))
+            args.ContestAdvantage *= _contests.StrengthContest(args.User, args.Target);
 
         canPerform = proto.ContestAdvantageRange?.IsInRange(args.ContestAdvantage.Value) ?? true;
         args.ContestAdvantage = proto.ContestAdvantageLimit.Clamp(args.ContestAdvantage.Value);

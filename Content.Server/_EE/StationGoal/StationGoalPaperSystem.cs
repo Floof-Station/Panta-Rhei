@@ -97,7 +97,7 @@ public sealed class StationGoalPaperSystem : EntitySystem
     /// <returns>True if at least one fax received paper</returns>
     public bool SendStationGoal(StationGoalPrototype goal)
     {
-        var enumerator = EntityManager.EntityQueryEnumerator<FaxMachineComponent>();
+        var enumerator = EntityQueryEnumerator<FaxMachineComponent>();
         var wasSent = false;
         var signerName = _prototype.Index<LocalizedDatasetPrototype>(RandomSignature);
 

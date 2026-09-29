@@ -7,3 +7,4 @@ phrase-species-kitty = kitty
 phrase-species-puppy = puppy
 phrase-species-frog = frog
 phrase-species-horse = horse
+phrase-species-ratking = Rat King

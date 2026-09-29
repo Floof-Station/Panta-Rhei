@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingOuterArmorBase
+  id: ClothingOuterArmorGALPOL
+  name: GALPOL armor vest
+  description: A Type III heavy bulletproof vest with GALPOL printed on the front.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/OuterClothing/Armor/GALPOL_Armor_Vest.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/OuterClothing/Armor/GALPOL_Armor_Vest.rsi
+  - type: Armor

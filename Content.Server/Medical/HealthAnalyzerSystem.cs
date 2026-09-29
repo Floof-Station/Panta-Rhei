@@ -19,16 +19,16 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server.Body.Systems;
-using Content.Server._NF.Medical;
 
 // Begin DeltaV
 using Content.Server._DV.MedicalRecords;
 using Content.Shared._DV.MedicalRecords;
+using Content.Shared.Chemistry.Components;
 // End DeltaV
 
 namespace Content.Server.Medical;
 
-public sealed class HealthAnalyzerSystem : EntitySystem
+public sealed partial class HealthAnalyzerSystem : EntitySystem // DeltaV - Made Partial
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly PowerCellSystem _cell = default!;
@@ -56,6 +56,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             subs.Event<HealthAnalyzerTriageClaimMessage>(OnHealthAnalyzerTriageClaimSelected);
         });
         // End DeltaV - Medical Records
+        InitializeReportPrinting(); // DeltaV - MedTek Reports
     }
 
     public override void Update(float frameTime)
@@ -239,7 +240,7 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             || !HasComp<DamageableComponent>(target))
             return;
 
-        var uiState = GetHealthAnalyzerUiState(target, healthAnalyzer); // Floof
+        var uiState = GetHealthAnalyzerUiState(target);
         uiState.ScanMode = scanMode;
 
         _uiSystem.ServerSendUiMessage(
@@ -253,9 +254,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
     /// Creates a HealthAnalyzerState based on the current state of an entity.
     /// </summary>
     /// <param name="target">The entity being scanned</param>
-    /// <param name="healthAnalyzer">Floofstation - health analyzer being used, if any. Do not neglect this.</param>
     /// <returns></returns>
-    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid? target, EntityUid? healthAnalyzer)
+    public HealthAnalyzerUiState GetHealthAnalyzerUiState(EntityUid? target)
     {
         if (!target.HasValue || !HasComp<DamageableComponent>(target))
             return new HealthAnalyzerUiState();
@@ -270,9 +270,11 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         var bleeding = false;
         var unrevivable = false;
 
+        Solution? bloodSolution = null; // DeltaV - Health Analyzer Plus
+
         if (TryComp<BloodstreamComponent>(entity, out var bloodstream) &&
             _solutionContainerSystem.ResolveSolution(entity, bloodstream.BloodSolutionName,
-                ref bloodstream.BloodSolution, out var bloodSolution))
+                ref bloodstream.BloodSolution, out bloodSolution)) // DeltaV - Health Analyzer Plus
         {
             bloodAmount = _bloodstreamSystem.GetBloodLevel(entity);
             bleeding = bloodstream.BleedAmount > 0;
@@ -281,7 +283,6 @@ public sealed class HealthAnalyzerSystem : EntitySystem
         if (TryComp<UnrevivableComponent>(entity, out var unrevivableComp) && unrevivableComp.Analyzable)
             unrevivable = true;
 
-        var printable = HasComp<HealthAnalyzerPrinterComponent>(healthAnalyzer); // Frontier
         return new HealthAnalyzerUiState(
             GetNetEntity(entity),
             bodyTemperature,
@@ -289,8 +290,8 @@ public sealed class HealthAnalyzerSystem : EntitySystem
             null, // Floofstation note: caller overrides this for some fucking fucked up evil reason
             bleeding,
             unrevivable,
-            _medicalRecords.GetMedicalRecords(entity), // DeltaV - Medical Records
-            printable // Frontier
+            bloodSolution, // DeltaV - Health Analyzer Plus
+            _medicalRecords.GetMedicalRecords(entity) // DeltaV - Medical Records
         );
     }
 }

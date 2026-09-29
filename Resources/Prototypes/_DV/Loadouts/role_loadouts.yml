@@ -102,7 +102,7 @@
   - GroupSpeciesBreathTool
 
 - type: roleLoadout
-  id: JobClerk
+  id: JobClerk # TODO: Remove for Justice Rework
   parent: JobBaseLoadout # Floofstation
   groups:
   - GroupTankHarness
@@ -143,6 +143,19 @@
   - Survival
   - GroupSpeciesBreathTool
 
+- type: roleLoadout
+  id: JobAttorney
+  groups:
+  - GroupTankHarness
+  - LawyerNeck
+  - LawyerJumpsuit
+  - CommonBackpack
+  - Glasses
+  - Survival
+  - Trinkets
+  - LawyerJobTrinkets
+  - GroupSpeciesBreathTool
+
 # Epistemics
 - type: roleLoadout
   id: JobRoboticist
@@ -173,6 +186,7 @@
   - AssistantHead # Euphoria
   - Glasses
   - PassengerNeck # Euphoria
+  - EuphoriaZookepperJumpsuits # Euphoria - give them the suities
   - CommonBackpack
   - Survival
   - Trinkets

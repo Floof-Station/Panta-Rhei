@@ -66,7 +66,7 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
         if (sumResearch <= 0)
             return;
 
-        _glimmerSystem.Glimmer += sumGlimmer; // DeltaV - Add glimmer based on extracted points.    
+        _glimmerSystem.Glimmer += sumGlimmer; // DeltaV - Add glimmer based on extracted points.
         _research.ModifyServerPoints(server.Value, sumResearch, serverComponent);
         _audio.PlayPvs(ent.Comp.ExtractSound, artifact.Value);
         _popup.PopupEntity(Loc.GetString("analyzer-artifact-extract-popup"), artifact.Value, PopupType.Large);
@@ -86,7 +86,8 @@ public sealed class ArtifactAnalyzerSystem : SharedArtifactAnalyzerSystem
     {
         float normalizedGlimmer = Math.Clamp(_glimmerSystem.Glimmer / 1000f, 0, 1);
         //DeltaV - Prevents extreme glimmer multipliers
-        return (float)(.5f + Math.Clamp(Math.Pow(normalizedGlimmer, 0.5f) + 1.5f * Math.Pow(normalizedGlimmer, 10f), 0f, 2.5f));
+        //Euphoria - changed formula to cap glimmer mult at 1.5 if there is 1000 glimmer. Formula makes it harder to get to max mult, but makes it reasonable to get some mult
+        return (float)((Math.Log(normalizedGlimmer + 3)/Math.Log(1.6*normalizedGlimmer+4))+((0.975*Math.Pow(normalizedGlimmer,2))/(1+normalizedGlimmer))*(1+Math.Pow(normalizedGlimmer,3))+0.20751875);
 
     }
 }

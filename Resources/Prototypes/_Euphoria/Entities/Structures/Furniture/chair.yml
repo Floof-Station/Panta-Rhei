@@ -1,0 +1,73 @@
+﻿- type: entity
+  name: mushwood chair
+  id: ChairMushWood
+  parent: ChairWood
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Furniture/Chair/mush_chair.rsi
+    state: mushroom_chair
+  - type: Construction
+    graph: MushWoodFurniture
+    node: mushwoodchair
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 25
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMushwoodPlank1:
+            min: 1
+            max: 1
+
+- type: entity
+  parent: DogBed
+  id: MushwoodDogBed
+  name: mushwood dog bed
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Furniture/Chair/mush_bed.rsi
+    state: dogbed_mushwood
+  - type: Construction
+    graph: MushWoodFurniture
+    node: mushwooddogbed
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+    - trigger:
+        !type:DamageTrigger
+        damage: 75
+      behaviors:
+      - !type:DoActsBehavior
+        acts: ["Destruction"]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WoodDestroy
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMushwoodPlank1:
+            min: 1
+            max: 5
