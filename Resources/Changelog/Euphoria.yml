@@ -6211,3 +6211,33 @@ Entries:
         and service techfabs.
   id: 776
   time: '2026-09-28T15:55:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        There is now a fully functional rope system. Ropes are physics entities
+        made from N links and (N+1) distance joints.
+    - type: Add
+      message: >-
+        There is now 10+ new admin commands to create and manipulate ropes under
+        the `rope:` prefix.
+    - type: Tweak
+      message: >-
+        Leash ropes are now real ropes. You can choose the number of links in
+        the right-click menu (set to 0 to use the pre-update behavior, aka "just
+        limit the distance between entities")
+    - type: Add
+      message: >-
+        You can now make/buy a rope bundle, which lets you tie various objects
+        together. The engineering department has yet to find use for this, but
+        you can tie a clown to a shuttle and take them on a wild ride!
+  id: 777
+  time: '2026-09-28T07:44:07.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The "publish changelog" workflow should no longer repost changelogs from
+        weeks ago.
+  id: 778
+  time: '2026-09-29T11:52:33.0000000+00:00'

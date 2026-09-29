@@ -46,14 +46,14 @@ jobs:
           cd "Tools/changelog"
           npm install
         shell: bash
-        continue-on-error: true
+        # ontinue-on-error: true # Euph - no
 
       - name: Generate Changelog
         run: |
           cd "Tools/changelog"
           node changelog.js
         shell: bash
-        continue-on-error: true
+        # continue-on-error: true # Euph - no
 
       - name: Commit Changelog
         run: |
@@ -61,4 +61,4 @@ jobs:
           git commit -m "${{ vars.CHANGELOG_MESSAGE }} (#${{ env.PR_NUMBER }})"
           git push
         shell: bash
-        continue-on-error: true
+        # continue-on-error: true # Euph - no
