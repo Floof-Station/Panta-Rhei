@@ -1,0 +1,18 @@
+﻿using Content.Shared.Body;
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared._Euphoria.Surgery;
+
+[Prototype("surgeryAction")]
+public sealed partial class SurgeryActionPrototype : IPrototype
+{
+    [ViewVariables]
+    [IdDataField]
+    public string ID { get; private set; } = default!;
+
+    [DataField("states")]
+    private Dictionary<ProtoId<OrganCategoryPrototype>, List<Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> _states = new();
+
+    [DataField("effects")]
+    private Dictionary<ProtoId<OrganCategoryPrototype>, List<Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> _effects = new();
+}
