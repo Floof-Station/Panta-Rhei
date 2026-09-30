@@ -1,5 +1,7 @@
 ﻿using Content.Shared.GameTicking;
 using Content.Shared.Body;
+using Content.Shared.Verbs;
+using Robust.Shared.Utility;
 
 namespace Content.Shared._Euphoria.Surgery;
 
@@ -12,6 +14,7 @@ public sealed class SurgerySystem : EntitySystem
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
         SubscribeLocalEvent<SurgeryComponent, OrganInsertedIntoEvent>(OnOrganInserted);
         SubscribeLocalEvent<SurgeryComponent, OrganRemovedFromEvent>(OnOrganRemoved);
+        SubscribeLocalEvent<SurgeryComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
@@ -66,5 +69,33 @@ public sealed class SurgerySystem : EntitySystem
             return;
 
         ent.Comp.DictOrgans[organ.Category.Value].Remove(args.Organ);
+    }
+
+    private void OnGetInteractionVerbs(EntityUid uid, SurgeryComponent component, GetVerbsEvent<InteractionVerb> args)
+    {
+        if (!TryComp<SurgeryToolComponent>(args.Using, out var usingSurgeryComp))
+            return;
+
+        var disabled = false;
+        string? message = null;
+
+        EntityUid surgeryObject = default;
+        if (usingSurgeryComp != null)
+            surgeryObject = args.Using!.Value;
+
+        InteractionVerb verb = new()
+        {
+            Act = () =>
+            {
+                //if (!disabled)
+                //    TryStartSurgeryDoafter(surgeryObject, args.Target, args.User);
+            },
+            Message = message,
+            Disabled = disabled,
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
+            Text = Loc.GetString("surgery-verb-name"),
+        };
+
+        args.Verbs.Add(verb);
     }
 }
