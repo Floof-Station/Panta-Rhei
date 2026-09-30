@@ -5,11 +5,11 @@
   components:
   - type: GridSpawn
     groups:
-      mining: !type:GridSpawnGroup
+      mining: !type:GridSpawnGroup # Floofstation - salvage gets the pathfinder as their shuttle
         paths:
         - /Maps/Floof/Shuttles/Salvage/gausia.yml
         nameGrid: true
-        name: Voyager Salvage
+        name: Gausia
 
 - type: gameMap
   id: Voyager
