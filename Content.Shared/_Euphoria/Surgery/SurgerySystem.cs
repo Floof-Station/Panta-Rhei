@@ -10,8 +10,8 @@ public sealed class SurgerySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
-        SubscribeLocalEvent<SurgeryComponent, OrganGotInsertedEvent>(OnOrganInserted);
-        SubscribeLocalEvent<SurgeryComponent, OrganGotRemovedEvent>(OnOrganRemoved);
+        SubscribeLocalEvent<SurgeryComponent, OrganInsertedIntoEvent>(OnOrganInserted);
+        SubscribeLocalEvent<SurgeryComponent, OrganRemovedFromEvent>(OnOrganRemoved);
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
