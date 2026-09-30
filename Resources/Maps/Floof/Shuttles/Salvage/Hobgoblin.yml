@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 270.1.0
+  engineVersion: 275.2.1
   forkId: ""
   forkVersion: ""
-  time: 08/07/2026 19:07:25
-  entityCount: 477
+  time: 09/30/2026 02:01:16
+  entityCount: 483
 maps: []
 grids:
 - 181
@@ -1988,12 +1988,39 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-13.5
       parent: 181
+- proto: Gyroscope
+  entities:
+  - uid: 478
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -0.5,-16.5
+      parent: 181
 - proto: HolopadCargoShuttle
   entities:
   - uid: 431
     components:
     - type: Transform
       pos: 2.5,5.5
+      parent: 181
+- proto: LootSpawnerIndustrial
+  entities:
+  - uid: 422
+    components:
+    - type: Transform
+      pos: -1.5,0.5
+      parent: 181
+  - uid: 466
+    components:
+    - type: Transform
+      pos: 0.5,2.5
+      parent: 181
+- proto: LootSpawnerIndustrialFluff
+  entities:
+  - uid: 353
+    components:
+    - type: Transform
+      pos: 0.5,0.5
       parent: 181
 - proto: LootSpawnerMaterials
   entities:
@@ -2002,29 +2029,12 @@ entities:
     - type: Transform
       pos: -1.5,2.5
       parent: 181
-  - uid: 422
-    components:
-    - type: Transform
-      pos: 0.5,0.5
-      parent: 181
 - proto: LootSpawnerRandomCrateEngineering
   entities:
   - uid: 432
     components:
     - type: Transform
       pos: 0.5,-13.5
-      parent: 181
-- proto: MaintenanceFluffSpawner
-  entities:
-  - uid: 353
-    components:
-    - type: Transform
-      pos: 0.5,2.5
-      parent: 181
-  - uid: 466
-    components:
-    - type: Transform
-      pos: -1.5,0.5
       parent: 181
 - proto: MaintenanceInsulsSpawner
   entities:
@@ -2506,6 +2516,30 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 0.5,-11.5
       parent: 181
+- proto: RandomPosterAny
+  entities:
+  - uid: 480
+    components:
+    - type: Transform
+      pos: -4.5,-11.5
+      parent: 181
+  - uid: 482
+    components:
+    - type: Transform
+      pos: -1.5,-0.5
+      parent: 181
+- proto: RandomPosterContraband
+  entities:
+  - uid: 481
+    components:
+    - type: Transform
+      pos: 2.5,-14.5
+      parent: 181
+  - uid: 483
+    components:
+    - type: Transform
+      pos: 0.5,-12.5
+      parent: 181
 - proto: RandomSpawner
   entities:
   - uid: 63
@@ -2613,6 +2647,11 @@ entities:
     components:
     - type: Transform
       pos: 2.4642353,-11.465157
+      parent: 181
+  - uid: 479
+    components:
+    - type: Transform
+      pos: 2.734949,-11.550447
       parent: 181
 - proto: ShuttersNormalOpen
   entities:
