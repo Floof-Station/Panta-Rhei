@@ -43,6 +43,7 @@ public sealed class SurgerySystem : EntitySystem
 
     }
 
+    //This is where you would put the damage transfer from the organ into the body
     private void OnOrganInserted(Entity<SurgeryComponent> ent, ref OrganInsertedIntoEvent args)
     {
         if(!TryComp<OrganComponent>(args.Organ, out var organ))
@@ -56,6 +57,7 @@ public sealed class SurgerySystem : EntitySystem
         ent.Comp.DictOrgans[organ.Category.Value].Add(args.Organ);
     }
 
+    //This is where you would put the damage transfer from the body onto the organ
     private void OnOrganRemoved(Entity<SurgeryComponent> ent, ref OrganRemovedFromEvent args)
     {
         if(!TryComp<OrganComponent>(args.Organ, out var organ))

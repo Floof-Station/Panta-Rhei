@@ -2,7 +2,7 @@
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 
-namespace Content.Client._Shitmed.Medical.Surgery;
+namespace Content.Client._Euphoria.Surgery;
 
 [GenerateTypedNameReferences]
 public sealed partial class SurgeryWindow : DefaultWindow
