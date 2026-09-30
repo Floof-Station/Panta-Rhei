@@ -1,7 +1,5 @@
 ﻿using Content.Shared.GameTicking;
 using Content.Shared.Body;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Containers;
 
 namespace Content.Shared._Euphoria.Surgery;
 
@@ -12,6 +10,8 @@ public sealed class SurgerySystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<SurgeryComponent, OrganGotInsertedEvent>(OnOrganInserted);
+        SubscribeLocalEvent<SurgeryComponent, OrganGotRemovedEvent>(OnOrganRemoved);
     }
 
     private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
@@ -41,5 +41,28 @@ public sealed class SurgerySystem : EntitySystem
             surgery.DictOrgans[comp.Category.Value].Add(organ);
         }
 
+    }
+
+    private void OnOrganInserted(Entity<SurgeryComponent> ent, ref OrganInsertedIntoEvent args)
+    {
+        if(!TryComp<OrganComponent>(args.Organ, out var organ))
+            return;
+        if(organ.Category == null)
+            return;
+
+        if (!ent.Comp.DictOrgans.ContainsKey(organ.Category.Value))
+            ent.Comp.DictOrgans[organ.Category.Value] = new List<EntityUid>();
+
+        ent.Comp.DictOrgans[organ.Category.Value].Add(args.Organ);
+    }
+
+    private void OnOrganRemoved(Entity<SurgeryComponent> ent, ref OrganRemovedFromEvent args)
+    {
+        if(!TryComp<OrganComponent>(args.Organ, out var organ))
+            return;
+        if(organ.Category == null)
+            return;
+
+        ent.Comp.DictOrgans[organ.Category.Value].Remove(args.Organ);
     }
 }
