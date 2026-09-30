@@ -1825,6 +1825,20 @@
     - CondomPackPink
   groupBy: "condom"
 
+- type: loadout
+  id: FuzzyHandcuffs
+  storage:
+    back:
+    - FuzzyHandcuffs
+  groupBy: "cuffs"
+
+- type: loadout
+  id: PlayHandcuffs
+  storage:
+    back:
+    - PlayHandcuffs
+  groupBy: "cuffs"
+
 # eyes/glasses
 - type: loadout
   id: ClothingEyesBlindfold

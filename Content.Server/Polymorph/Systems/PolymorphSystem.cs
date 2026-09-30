@@ -204,6 +204,16 @@ public sealed partial class PolymorphSystem : EntitySystem
             _gameTiming.CurTime < polymorphableComponent.LastPolymorphEnd + configuration.Cooldown)
             return null;
 
+        // Euph - check polymorphability
+        var attemptEv = new PolymorphAttemptEvent();
+        RaiseLocalEvent(uid, attemptEv);
+        if (attemptEv.Cancelled)
+        {
+            if (attemptEv.CancelReason is {} reason )
+                _popup.PopupEntity(reason, uid, uid);
+            return null;
+        }
+
         // mostly just for vehicles
         _buckle.TryUnbuckle(uid, uid, true);
 
