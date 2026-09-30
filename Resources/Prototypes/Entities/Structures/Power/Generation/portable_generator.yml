@@ -306,7 +306,7 @@
     - type: SolutionContainerManager
       solutions:
         tank:
-          maxVol: 50
+          maxVol: 250 # Euphoria - I always thought it was weird that the fuel tank was tiny - was 50
     - type: RefillableSolution
       solution: tank
     - type: PortableGenerator
