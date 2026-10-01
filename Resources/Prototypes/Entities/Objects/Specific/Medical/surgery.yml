@@ -5,12 +5,13 @@
   id: BaseToolSurgery
   abstract: true
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
   - type: Sprite
   - type: StaticPrice
     price: 20
-  - type: Tag
-    tags:
-    - SurgeryTool
+  #- type: Tag #Euphoria start
+  #  tags:
+  #  - SurgeryTool #Euphoria end
 
 # Cautery
 
@@ -72,7 +73,6 @@
   parent: BaseToolSurgery
   description: A surgical tool used to make incisions into flesh.
   components:
-  - type: SurgeryTool
   - type: Sharp
     butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
   - type: Tool
