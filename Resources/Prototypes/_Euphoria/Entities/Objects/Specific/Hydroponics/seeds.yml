@@ -41,3 +41,14 @@
     seedId: blueraspberry
   - type: Sprite
     sprite: _Euphoria/Objects/Specific/Hydroponics/blueraspberry.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of walking mushroom seeds
+  description: "Woah shrooms!."
+  id: WalkingMushroomSeeds
+  components:
+  - type: Seed
+    seedId: WalkingMushrooms # need to change
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Hydroponics/walking_mushroom.rsi

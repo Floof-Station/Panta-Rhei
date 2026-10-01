@@ -10,6 +10,7 @@ import itertools
 import os
 from pathlib import Path
 from typing import Any, Iterable
+from datetime import date, datetime, timedelta, timezone # Euph
 
 import requests
 import yaml
@@ -80,7 +81,13 @@ def get_past_runs(sess: requests.Session, current_run: Any) -> Any:
     """
     Get all successful workflow runs before our current one.
     """
-    params = {"status": "success", "created": f"<={current_run['created_at']}"}
+    # Euph - changed to include a date range
+    # Github tends to return stale cached resutls on large repos: https://github.com/orgs/community/discussions/206725
+    # Adding a lower bound to the created_at field seems to mitigate the issue
+    date_range = make_date_range(today=current_run['created_at'])
+    params = {"status": "success", "created": date_range,}
+    print(f"Query params are: {params}")
+
     resp = sess.get(f"{current_run['workflow_url']}/runs", params=params)
     resp.raise_for_status()
     return resp.json()
@@ -98,7 +105,11 @@ def get_last_changelog() -> str:
 
     most_recent = get_most_recent_workflow(session, github_repository, github_run)
     last_sha = most_recent["head_commit"]["id"]
-    print(f"Last successful publish job was {most_recent['id']}: {last_sha}")
+    # Euph start - also print how old it was
+    days_old = (datetime.now(timezone.utc) - datetime.fromisoformat(most_recent["created_at"])).total_seconds() / 60 / 60 / 24
+    print(f"Last successful publish job was {most_recent['id']}: {last_sha} ({days_old:.2f} days ago)")
+    # Euph end
+
     last_changelog_stream = get_last_changelog_by_sha(
         session, last_sha, github_repository
     )
@@ -222,6 +233,16 @@ def send_message_lines(message_lines: list[str]):
         print("Sending final changelog to discord")
         send_discord_webhook(chunk_lines)
 
+# Euph. Builds a filter range in the form of: "<today - 2w>..<today>". Dates are ISO in the UTC timezone.
+def make_date_range(days_back: int = 14, days_forward: int = 0, today: date | str | None = None, ) -> str:
+    if today is None:
+        today = datetime.now(timezone.utc).date()  # GitHub timestamps are UTC
+    if isinstance(today, str):
+        today = datetime.fromisoformat(today).date()
+
+    lower = today - timedelta(days=days_back)
+    upper = today + timedelta(days=days_forward)
+    return f"{lower.isoformat()}..{upper.isoformat()}"
 
 if __name__ == "__main__":
     main()

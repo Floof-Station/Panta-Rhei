@@ -114,3 +114,21 @@
     state: produce
   tags:
   - Fruit
+
+- type: foodSequenceElement
+  id: BurnedMess
+  name: food-sequence-content-burnedmess
+  sprites:
+  - sprite: Objects/Consumable/Food/ingredients.rsi
+    state: badrecipe
+  tags:
+  - Trash
+
+- type: foodSequenceElement
+  id: CucumberSlice
+  name: food-sequence-content-cucumberslice
+  sprites:
+  - sprite: _NF/Objects/Specific/Hydroponics/cucumber.rsi
+    state: pickleslice
+  tags:
+  - Vegetable
