@@ -63,24 +63,6 @@
 
 - type: entity
   parent: BaseHalloweenWallDecoration
-  id: BatBannerHalloweenDecoration
-  name: bat banner
-  description: Sky puppies. Skuppies, if you will.
-  components:
-  - type: Sprite
-    state: HangingBatBanner
-
-- type: entity
-  parent: BaseHalloweenWallDecoration
-  id: JackOLanternBannerHalloweenDecoration
-  name: jack'o'lantern banner
-  description: Always light a fire in every gourd you consume so you can see if gourd gnomes are hiding inside. Or maybe that's what the gourd gnomes want you to think, so you will spend precious candles warming their nefarious little toesies. Use your best judgement.
-  components:
-  - type: Sprite
-    state: Jack'o'lantern-banner
-
-- type: entity
-  parent: BaseHalloweenWallDecoration
   id: HangingSpiderHalloweenDecoration
   name: fake hanging spider
   description: No matter how few Arachne work at HGI, this seems like it calls for some sensitivity training.
@@ -96,3 +78,29 @@
   components:
   - type: Sprite
     state: Hanging-spider-space
+
+- type: entity
+  id: BatBannerHalloweenDecoration
+  parent: BaseBanner
+  name: bat banner
+  description: Sky puppies. Skuppies, if you will.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/halloween_wallmounts.rsi
+    state: HangingBatBanner
+  - type: Construction
+    graph: WallDeco
+    node: WallpaperBannerBlackRed
+
+- type: entity
+  id: JackOLanternBannerHalloweenDecoration
+  parent: BaseBanner
+  name: jack'o'lantern banner
+  description: Always light a fire in every gourd you consume so you can see if gourd gnomes are hiding inside. Or maybe that's what the gourd gnomes want you to think, so you will spend precious candles warming their nefarious little toesies. Use your best judgement.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/halloween_wallmounts.rsi
+    state: Jack'o'lantern-banner
+  - type: Construction
+    graph: WallDeco
+    node: WallpaperBannerBlackRed
