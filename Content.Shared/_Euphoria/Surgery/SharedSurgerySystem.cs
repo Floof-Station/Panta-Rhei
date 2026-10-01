@@ -5,7 +5,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Euphoria.Surgery;
 
-public sealed class SurgerySystem : EntitySystem
+public partial class SharedSurgerySystem : EntitySystem
 {
     public override void Initialize()
     {

@@ -7,7 +7,7 @@ namespace Content.Shared._Euphoria.Surgery;
 ///     Handles all surgery related effects.
 /// </summary>
 [RegisterComponent, NetworkedComponent]
-[Access(typeof(SurgerySystem))]
+[Access(typeof(SharedSurgerySystem))]
 public sealed partial class SurgeryComponent : Component
 {
     [DataField]
