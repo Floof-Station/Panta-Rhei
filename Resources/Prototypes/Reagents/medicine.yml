@@ -1055,6 +1055,22 @@
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
         probability: 0.1
+    Digestion: # Euphoria - Pill compatibility
+      effects: 
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectDrowsiness
+        time: 10
+        type: Remove
+      - !type:ResetNarcolepsy
+        conditions:
+        - !type:ReagentCondition
+          reagent: Diphenylmethylamine
+          min: 5
+      - !type:PopupMessage
+        visualType: Medium
+        messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
+        type: Local
+        probability: 0.1
 
 - type: reagent
   id: Sigynate
@@ -1434,6 +1450,17 @@
   color: "#A0A0A0"
   metabolisms:
     Bloodstream:
+      effects:
+      - !type:PopupMessage
+        conditions:
+        - !type:ReagentCondition
+          reagent: Mannitol
+          min: 15
+        type: Local
+        visualType: Medium
+        messages: [ "mannitol-effect-enlightened" ]
+        probability: 0.2
+    Digestion: # Euphoria - Pill compatibility
       effects:
       - !type:PopupMessage
         conditions:

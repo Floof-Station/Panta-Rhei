@@ -59,6 +59,58 @@
             max: 0.1
           - !type:ConsentCondition
             consent: Aphrodisiacs
+    Digestion: # Euphoria - Pill compatibility
+      metabolismRate : 0.03
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-aphrodisiac-mild1"
+          - "reagent-effect-aphrodisiac-mild2"
+          - "reagent-effect-aphrodisiac-mild3"
+          - "reagent-effect-aphrodisiac-mild4"
+          - "reagent-effect-aphrodisiac-mild5"
+        probability: 0.035
+        conditions:
+          - !type:ReagentCondition
+            reagent: Pomelustine
+            max: 50
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
+      - !type:PopupMessage # Overdose causes nausea and vomiting
+        type: Local
+        visualType: Medium
+        messages:
+          - "reagent-effect-aphrodisiac-mildoverdose"
+        probability: 0.06
+        conditions:
+          - !type:ReagentCondition
+            reagent: Pomelustine
+            min: 50
+      - !type:Drunk
+        conditions:
+        - !type:ReagentCondition
+          reagent: Pomelustine
+          min: 50
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: Pomelustine
+          min: 60
+        probability: 0.05
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+          - "reagent-effect-aphrodisiac-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+        probability: 0.35
+        conditions:
+          - !type:ReagentCondition
+            reagent: Pomelustine
+            max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
 
 - type: reagent
   id: Philterex
@@ -147,6 +199,84 @@
             max: 0.1
           - !type:ConsentCondition
             consent: Aphrodisiacs
+    Digestion: # Euphoria - Pill compatibility
+      metabolismRate : 0.03
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Large
+        messages:
+          - "reagent-effect-aphrodisiac-normal1"
+          - "reagent-effect-aphrodisiac-normal2"
+          - "reagent-effect-aphrodisiac-normal3"
+          - "reagent-effect-aphrodisiac-normal4"
+          - "reagent-effect-aphrodisiac-normal5"
+        probability: 0.04
+        conditions:
+        - !type:ReagentCondition
+          reagent: Philterex
+          max: 16.5
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+      - !type:PopupMessage
+        type: Local
+        visualType: MediumCaution
+        messages:
+          - "reagent-effect-aphrodisiac-normaloverdose1" # overdose makes you tired and forgetful
+          - "reagent-effect-aphrodisiac-normaloverdose2"
+          - "reagent-effect-aphrodisiac-normaloverdose3"
+          - "reagent-effect-aphrodisiac-normaloverdose4"
+          - "reagent-effect-aphrodisiac-normaloverdose5"
+          - "reagent-effect-aphrodisiac-normaloverdose6"
+        probability: 0.06
+        conditions:
+        - !type:ReagentCondition
+          reagent: Philterex
+          min: 16.5
+      - !type:Emote
+        conditions:
+        - !type:ReagentCondition
+          reagent: Philterex
+          min: 16.5
+        emote: Yawn
+        showInChat: true
+        probability: 0.02
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.8
+        sprintSpeedModifier: 0.8
+        conditions:
+        - !type:ReagentCondition
+          reagent: Philterex
+          min: 16.5
+      - !type:GenericStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: Philterex
+          min: 30.0
+        key: ForcedSleep
+        component: ForcedSleeping
+        type: Add
+        probability: 0.1
+      - !type:HealthChange # poisons you if you take way too much
+        conditions:
+        - !type:ReagentCondition
+          reagent: Philterex
+          min: 30
+        damage:
+          types:
+            Poison: 1
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        messages:
+          - "reagent-effect-aphrodisiac-fade" # A decent chance to notify the player when their meds run out, but could happen silently.
+        probability: 0.32
+        conditions:
+          - !type:ReagentCondition
+            reagent: Philterex
+            max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
 
 - type: reagent
   id: Libidozenithizine
@@ -158,6 +288,58 @@
   color: "#c90084"
   metabolisms:
     Bloodstream:
+      metabolismRate : 0.03
+      effects:
+      - !type:PopupMessage
+        type: Local
+        visualType: Medium
+        probability: 0.10
+        messages:
+        - reagent-effect-aphrodisiac-strong1
+        - reagent-effect-aphrodisiac-strong2
+        - reagent-effect-aphrodisiac-strong3
+        conditions:
+        - !type:ReagentCondition
+          reagent: Libidozenithizine
+          max: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+      - !type:HealthChange
+        conditions:
+        - !type:ReagentCondition
+          reagent: Libidozenithizine
+          min: 10.0
+        damage:
+          types:
+            Poison: 0.05
+      - !type:PopupMessage
+        type: Local
+        visualType: LargeCaution
+        probability: 0.2
+        messages:
+        - reagent-effect-aphrodisiac-strongoverdose1
+        - reagent-effect-aphrodisiac-strongoverdose2
+        - reagent-effect-aphrodisiac-strongoverdose3
+        - reagent-effect-aphrodisiac-strongoverdose4
+        conditions:
+        - !type:ReagentCondition
+          reagent: Libidozenithizine
+          min: 10.0
+        - !type:ConsentCondition
+          consent: Aphrodisiacs
+      - !type:PopupMessage
+        type: Local
+        visualType: Small
+        probability: 0.2
+        messages:
+          - "reagent-effect-aphrodisiac-fade"
+        conditions:
+          - !type:ReagentCondition
+            reagent: Libidozenithizine
+            max: 0.1
+          - !type:ConsentCondition
+            consent: Aphrodisiacs
+    Digestion: # Euphoria - Pill compatibility
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage

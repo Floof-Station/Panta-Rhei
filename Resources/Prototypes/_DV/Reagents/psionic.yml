@@ -16,6 +16,15 @@
         - !type:ReagentCondition
           reagent: PureOil
           min: 20
+    Digestion: # Euphoria - Pill compatiblity
+      metabolismRate: 0.2
+      effects:
+      - !type:RollPsionicAbility
+        bonusMultiplier: 2.5
+        conditions:
+        - !type:ReagentCondition
+          reagent: PureOil
+          min: 20
 
 - type: reagent
   id: Claridisol
@@ -27,6 +36,15 @@
   physicalDesc: reagent-physical-desc-clarifying
   metabolisms:
     Bloodstream:
+      metabolismRate: 0.5
+      effects:
+      - !type:RollPsionicAbility
+        bonusMultiplier: 1
+        conditions:
+        - !type:ReagentCondition
+          reagent: Claridisol
+          min: 40
+    Digestion: # Euphoria - Pill compatibility
       metabolismRate: 0.5
       effects:
       - !type:RollPsionicAbility

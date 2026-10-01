@@ -17,3 +17,14 @@
         damage:
           types:
             Poison: -0.3 # Euphoria: -0.3 < -0.2 - Increased to match theobromine damage
+    Digestion: # Euphoria - Pill compatibility, and also you're supposed to eat/drink it.
+      metabolismRate: 0.1 #this should metabolise in the same amount of time as a drink in a 5:1 mix
+      effects:
+      - !type:AdjustReagent
+        reagent: Theobromine
+        amount: -0.25
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: -0.3 # Euphoria: -0.3 < -0.2 - Increased to match theobromine damage
+
