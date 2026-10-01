@@ -1881,7 +1881,7 @@
 
 - type: entity
   parent: [BaseFleshlight, PlushieExperiment]
-  id: PlushieRescueFox 
+  id: PlushieRescueFox
   name: Rescue Fox Plushie
   description: This plushie struggles to stand up straight but still wills itself to do so in order to sit nicely on your shelf. The pin atop the beret is both made of real silver and not removable. Yaps sourced from a real arctic fox!
   components:
@@ -1955,3 +1955,25 @@
     sound: *robot-scream
   - type: MeleeWeapon
     soundHit: *robot-scream
+
+-type: entity
+  parent: [BaseFleshlight, PlushieHuman, Skimmer]
+  id: BubblyNursePlushie
+  name: bubbly nurse plushie
+  description:
+  components:
+  - type: Sprite
+    sprite:
+    state: bubblynurse
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: *slimeBubble
+  - type: EmitSoundOnUse
+    sound: *slimeBubble
+  - type: EmitSoundOnLand
+    sound: *landTired
+  - type: EmitSoundOnCollide
+    sound: *slimeScreamF
+  - type: MeleeWeapon
+    soundHit: *slimeSquish
