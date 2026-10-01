@@ -1,0 +1,45 @@
+- type: entity
+  parent: BaseItem
+  id: FoodShrimpPack
+  name: shrimp pack
+  description: A large pack of shrimps. The greatest delicacy in the universe.
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp_pack.rsi
+      state: pack
+    - type: Item
+      size: Small
+    - type: SpawnItemsOnUse
+      items:
+        - id: FoodShrimpPackTrash
+        - id: FoodMeatShrimp
+          amount: 3
+      sound:
+        path: /Audio/Effects/unwrap.ogg
+
+- type: entity
+  parent: FoodPacketTrash
+  id: FoodShrimpPackTrash
+  name: empty shrimp pack
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp_pack.rsi
+      state: pack-trash
+
+- type: entity
+  parent: BoxCardboard
+  id: FoodBoxShrimpPack
+  name: box of shrimp packs
+  description: A box full of sealed shrimp packs.
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp_pack.rsi
+      state: box
+    - type: Storage
+      grid:
+        - 0,0,3,2
+    - type: EntityTableContainerFill
+      containers:
+        storagebase:
+          id: FoodShrimpPack
+          amount: 6
