@@ -1,0 +1,30 @@
+
+- type: entity
+  id: BloodyCurtains
+  parent: BaseCurtains
+  suffix: Bloody
+  description: That was quite the scene.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Decoration/Curtains/bloody_curtains.rsi
+    layers:
+    - state: closed
+      map: ["enum.DoorVisualLayers.Base"]
+  - type: Construction
+    graph: Curtains
+    node: Curtains
+
+- type: entity
+  id: BloodyCurtainsOpen
+  parent: BloodyCurtains
+  suffix: Open, Bloody
+  components:
+  - type: Door
+    state: Open
+  - type: Occluder
+    enabled: false
+  - type: Construction
+    graph: Curtains
+    node: CurtainsOpen
+  - type: Physics
+    canCollide: false
