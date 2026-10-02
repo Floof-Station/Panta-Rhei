@@ -1,7 +1,7 @@
 ﻿using Content.Shared.Body;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared._Euphoria.Surgery;
+namespace Content.Shared._Euphoria.Surgery.Components;
 
 /// <summary>
 ///     Handles all surgery related effects.
@@ -12,4 +12,6 @@ public sealed partial class SurgeryComponent : Component
 {
     [DataField]
     public Dictionary<string, List<EntityUid>> DictOrgans = new();
+
+
 }

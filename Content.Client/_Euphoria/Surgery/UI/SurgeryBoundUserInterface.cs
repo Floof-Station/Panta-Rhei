@@ -1,18 +1,16 @@
-﻿namespace Content.Client._Euphoria.Surgery.UI;
+﻿using Content.Shared._Euphoria.Surgery;
+using Robust.Client.UserInterface;
 
-public sealed class SurgeryBoundUserInterface : BoundUserInterface
+namespace Content.Client._Euphoria.Surgery.UI;
+
+public sealed partial class SurgeryBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
+    [ViewVariables]
     private SurgeryWindow? _window;
-
-    public SurgeryBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
-    {
-    }
 
     protected override void Open()
     {
-    }
-
-    protected override void UpdateState(BoundUserInterfaceState state)
-    {
+        base.Open();
+        _window = this.CreateWindow<SurgeryWindow>();
     }
 }
