@@ -11,6 +11,12 @@
     - 0,0,4,0
   - type: Gun
     fireRate: 3
+    selectedMode: SemiAuto # Euphoria - Both Barrels
+    shotsPerBurst: 2
+    burstFireRate: 30
+    availableModes:
+    - SemiAuto
+    - Burst
   - type: Sprite
     sprite: _Starlight/Objects/Weapons/Guns/Shotguns/forged_shotgun.rsi
   - type: Clothing

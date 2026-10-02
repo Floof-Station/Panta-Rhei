@@ -124,6 +124,12 @@
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     fireRate: 3
+    selectedMode: SemiAuto # Euphoria - Both Barrels
+    shotsPerBurst: 2
+    burstFireRate: 30
+    availableModes:
+    - SemiAuto
+    - Burst
   - type: GunSpreadModifier
     spread: 0.6
   - type: BallisticAmmoProvider
@@ -206,6 +212,12 @@
     sprite: _DV/Objects/Weapons/Guns/Shotguns/sawn.rsi # Delta-V
   - type: Gun
     fireRate: 3
+    selectedMode: SemiAuto # Euphoria - Both Barrels
+    shotsPerBurst: 2
+    burstFireRate: 30
+    availableModes:
+    - SemiAuto
+    - Burst
   - type: GunSpreadModifier
     spread: 1.4
   - type: BallisticAmmoProvider
