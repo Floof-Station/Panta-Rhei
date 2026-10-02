@@ -25,3 +25,22 @@
     - type: Sprite
       sprite: _Euphoria/Objects/Consumable/Food/shrimp_pack.rsi
       state: pack-trash
+
+- type: entity
+  parent: BoxCardboard
+  id: FoodBoxShrimpPack
+  name: box of shrimp packs
+  description: A box full of sealed shrimp packs.
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp_pack.rsi
+      state: box
+    # The base box grid is 3x3, which only fits four of the 2-wide packs.
+    - type: Storage
+      grid:
+        - 0,0,3,2
+    - type: EntityTableContainerFill
+      containers:
+        storagebase:
+          id: FoodShrimpPack
+          amount: 6
