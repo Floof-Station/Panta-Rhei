@@ -43,7 +43,6 @@ station-ai-icon-liz = Lizard
 station-ai-icon-sparkles = Sparkles
 station-ai-icon-ahasuerus = Ahasuerus
 station-ai-icon-alterego = Alter Ego
-station-ai-icon-child = Child
 station-ai-icon-godfrey = Godfrey
 station-ai-icon-honeycomb = Honeycomb
 station-ai-icon-hourglass = Hourglass
