@@ -198,6 +198,7 @@
   save: false
   components:
   #Euphoria changes start
+  - type: Surgery
   - type: UserInterface
     interfaces:
       enum.SurgeryUiKey.Key:

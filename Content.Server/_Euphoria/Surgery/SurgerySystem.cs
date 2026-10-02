@@ -21,23 +21,23 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         //set up the surgery window
         //InitializeUI();
 
-        SubscribeLocalEvent<PlayerSpawnCompleteEvent>(OnPlayerSpawnComplete);
+        SubscribeLocalEvent<BodyComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<GetVerbsEvent<InteractionVerb>>(AddVerbs);
         SubscribeLocalEvent<SurgeryComponent, OrganInsertedIntoEvent>(OnOrganInserted);
         SubscribeLocalEvent<SurgeryComponent, OrganRemovedFromEvent>(OnOrganRemoved);
     }
 
-    private void OnPlayerSpawnComplete(PlayerSpawnCompleteEvent args)
+    private void OnMapInit(Entity<BodyComponent> ent ,ref MapInitEvent args)
     {
-        if (!TryComp<BodyComponent>(args.Mob, out var body))
+        if (!TryComp<BodyComponent>(ent, out var body))
             return;
 
         if (body.Organs == null)
             return;
 
-        AddComp(args.Mob, new SurgeryComponent());
+        //AddComp(ent, new SurgeryComponent());
 
-        if (!TryComp<SurgeryComponent>(args.Mob, out var surgery))
+        if (!TryComp<SurgeryComponent>(ent, out var surgery))
             return;
 
         foreach (var organ in body.Organs.ContainedEntities)
@@ -60,6 +60,9 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     {
 
         if (!TryComp<SurgeryToolComponent>(args.Using, out var usingSurgeryComp))
+            return;
+
+        if (!TryComp<SurgeryComponent>(args.Target, out var surgery))
             return;
 
         var disabled = false;
