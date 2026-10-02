@@ -1,0 +1,14 @@
+<Control
+    Margin="0,0,0,10"
+    xmlns="https://spacestation14.io">
+    <PanelContainer StyleClasses="BackgroundDark"
+                    VerticalExpand="True">
+        <BoxContainer
+            HorizontalExpand="True"
+            Margin="5,5,5,5"
+            Orientation="Vertical"
+            VerticalExpand="True">
+            <RichTextLabel Name="CompulsionLabel"/>
+        </BoxContainer>
+    </PanelContainer>
+</Control>
