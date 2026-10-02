@@ -187,3 +187,17 @@
   solids:
     FoodTaiyakiPlain: 1
     FoodBlueRaspberry: 3
+
+# tumor bread
+- type: microwaveMealRecipe
+  id: RecipeMonsterLoafBread
+  name: monster loaf recipe
+  result: MobMonsterLoafBread
+  time: 15
+  group: Breads
+  reagents:
+    Cognizine: 5
+  solids:
+    FoodBreadPlain: 1
+    OrganAnimalHeart: 1
+    FoodMeatRotten: 1

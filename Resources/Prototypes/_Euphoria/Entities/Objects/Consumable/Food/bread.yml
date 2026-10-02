@@ -1,0 +1,21 @@
+﻿- type: entity
+  name: monster loaf
+  id: MobMonsterLoafBread
+  parent: MobBreadDog
+  description: This is why you do not teleport mutated bread under any circumstance!
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/evil_bread.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: base
+  - type: GhostRole
+    prob: 1
+    name: ghost-role-information-EvilBread-name
+    allowMovement: true
+    description: ghost-role-information-EvilBread-description
+    rules: ghost-role-information-nonantagonist-rules
+    raffle:
+      settings: short
