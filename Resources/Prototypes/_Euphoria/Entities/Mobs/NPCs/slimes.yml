@@ -91,14 +91,12 @@
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
   - type: Body
-  - type: EntityTableContainerFill
-    containers:
-      body_organs: !type:AllSelector
-        children:
-        - id: OrganSlimePersonHandRight
-        - id: OrganSlimePersonHandLeft
-        - id: OrganSlimePersonCore
-        - id: OrganSlimePersonLungs
+  - type: InitialBody
+    organs:
+      HandRight: OrganSlimePersonHandRight
+      HandLeft: OrganSlimePersonHandLeft
+      Brain: OrganSlimePersonCore
+      Lungs: OrganSlimePersonLungs
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
