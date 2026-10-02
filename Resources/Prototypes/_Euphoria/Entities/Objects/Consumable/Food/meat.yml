@@ -1,0 +1,106 @@
+- type: entity
+  parent: FoodMeatRawBase
+  id: FoodMeatShrimp
+  name: raw shrimp
+  description: The greatest delicacy in the universe.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - shrimp
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: raw
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+            - ReagentId: UncookedAnimalProteins
+              Quantity: 1
+            - ReagentId: Fat
+              Quantity: 2
+    - type: Construction
+      graph: ShrimpCooked
+      node: start
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatShrimpCooked
+  name: cooked shrimp
+  description: The greatest delicacy in the universe.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - shrimp
+    - type: Tag
+      tags:
+        - Cooked
+        - Meat
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: cooked
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 5
+            - ReagentId: Protein
+              Quantity: 5
+    - type: Construction
+      graph: ShrimpCooked
+      node: cooked shrimp
+
+- type: entity
+  parent: FoodMeatRawBase
+  id: FoodMeatShrimpUnusual
+  name: raw unusual shrimp
+  description: Looks like a shrimp but way bigger, like a prawn. It has a blue shell and four eyes.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - shrimp
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: unusual-raw
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+            - ReagentId: UncookedAnimalProteins
+              Quantity: 9
+            - ReagentId: Fat
+              Quantity: 9
+    - type: InternalTemperature
+      conductivity: 0.43
+    - type: Construction
+      graph: UnusualShrimpCooked
+      node: start
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodMeatShrimpUnusualCooked
+  name: cooked unusual shrimp
+  description: Looks like a shrimp but way bigger, like a prawn. It has a blue shell and four eyes.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - shrimp
+    - type: Tag
+      tags:
+        - Cooked
+        - Meat
+        - Steak
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: unusual-cooked
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 10
+            - ReagentId: Protein
+              Quantity: 5
+    - type: Construction
+      graph: UnusualShrimpCooked
+      node: cooked unusual shrimp

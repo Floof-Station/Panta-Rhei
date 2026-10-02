@@ -32,3 +32,22 @@
     sprite: _Euphoria/Objects/Consumable/Drinks/bepis_midnight.rsi
   - type: Item
     sprite: _Euphoria/Objects/Consumable/Drinks/bepis_midnight.rsi
+
+# Shrimp soda
+- type: entity
+  parent: DrinkCanBaseFull
+  id: DrinkCanShrimpSoda
+  name: shrimp soda can
+  description: Shrimp in bubbly liquid form, so you can have shrimp with your shrimp pizza with your side of shrimp and shrimp chips.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: ShrimpSoda
+          Quantity: 30
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/shrimp_soda.rsi
+  - type: Item
+    sprite: _Euphoria/Objects/Consumable/Drinks/shrimp_soda.rsi
