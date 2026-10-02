@@ -1,0 +1,51 @@
+﻿- type: surgeryAction
+  id: removeHeart
+  toolType: 1
+  states:
+    Torso:
+    - skinRetracted: true
+    - muscleRetracted: true
+    - boneRetracted: true
+  remove: Heart
+
+- type: surgeryAction
+  id: retractMusclesTorso
+  toolType: 2
+  states:
+    Torso:
+    - skinRetracted: true
+    - muscleRetracted: false
+  effects:
+    Torso:
+    - muscleRetracted: true
+
+- type: surgeryAction
+  id: replaceMusclesTorso
+  toolType: 2
+  states:
+    Torso:
+    - skinRetracted: true
+    - muscleRetracted: true
+  effects:
+    Torso:
+    - muscleRetracted: false
+
+- type: surgeryAction
+  id: openSkinTorso
+  toolType: 1
+  states:
+    Torso:
+    - skinRetracted: false
+  effects:
+    Torso:
+    - skinRetracted: true
+
+- type: surgeryAction
+  id: closeSkinTorso
+  toolType: 3
+  states:
+    Torso:
+    - skinRetracted: true
+  effects:
+    Torso:
+    - skinRetracted: false
