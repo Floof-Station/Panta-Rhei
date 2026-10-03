@@ -84,9 +84,12 @@ public sealed partial class RopeSystem
 
         // We add a small constant factor to allow e.g. a 1m leash to be created at a distance of 2m.
         // Increasing it any further may lead to non-physical behavior
-        if (GetEffectiveDistance(leftXform, rightXform) > length * MaxLengthMultiplier + 0.5f)
+        var effectiveMaxLength = length * MaxLengthMultiplier + 2f;
+        var dst = GetEffectiveDistance(leftXform, rightXform);
+        if (dst > effectiveMaxLength)
         {
-            Log.Warning($"Refusing to create a rope shorter than the distance between the two entities: {ToPrettyString(left)}, {ToPrettyString(right)}");
+            Log.Warning("Refusing to create a rope shorter than the distance between the two entities: " +
+                        $"{ToPrettyString(left)}, {ToPrettyString(right)}. Effective max length: {effectiveMaxLength}, dst: {dst}");
             return false;
         }
 
