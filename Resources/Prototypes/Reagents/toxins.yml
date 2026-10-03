@@ -361,7 +361,7 @@
   - !type:PlantAdjustToxins
     amount: 10
   metabolisms:
-    Bloodstream:
+    Bloodstream: &MindbreakerToxinMetabolism # Euphoria - Pill Compatibility Patch
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
@@ -377,23 +377,7 @@
             reagent: MindbreakerToxin
             min: 20
       # END DeltaV
-    Digestion: # Euphoria - Pill compatibility
-      effects:
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectSeeingRainbow
-        type: Add
-        time: 10
-      # DeltaV Additions
-      - !type:AdjustReagent
-        reagent: LotophagoiOil # DeltaV: prevent rapid remove/reroll/remove/reroll psionic loop
-        amount: -100
-      - !type:RemovePsionicAbilities # DeltaV - Remove Psionics at 20u
-        conditions:
-          - !type:ReagentCondition
-            reagent: MindbreakerToxin
-            min: 20
-      # END DeltaV
-
+    Digestion: *MindbreakerToxinMetabolism # Euphoria - Pill Compatibility Patch
   # TODO: PROPER hallucinations
 
 - type: reagent

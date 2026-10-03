@@ -1026,7 +1026,7 @@
   flavor: medicine
   color: "#b0abaa"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &DiphenylmethylamineMetabolism # Euphoria - Pill Compatibility Patch
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
@@ -1042,22 +1042,7 @@
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
         probability: 0.1
-    Digestion: # Euphoria - Pill compatibility
-      effects: 
-      - !type:ModifyStatusEffect
-        effectProto: StatusEffectDrowsiness
-        time: 10
-        type: Remove
-      - !type:ResetNarcolepsy
-        conditions:
-        - !type:ReagentCondition
-          reagent: Diphenylmethylamine
-          min: 5
-      - !type:PopupMessage
-        visualType: Medium
-        messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
-        type: Local
-        probability: 0.1
+    Digestion: *DiphenylmethylamineMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Sigynate
@@ -1436,7 +1421,7 @@
   flavor: sweet
   color: "#A0A0A0"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &MannitolMetabolism  # Euphoria - Pill Compatibility Patch
       effects:
       - !type:PopupMessage
         conditions:
@@ -1447,17 +1432,7 @@
         visualType: Medium
         messages: [ "mannitol-effect-enlightened" ]
         probability: 0.2
-    Digestion: # Euphoria - Pill compatibility
-      effects:
-      - !type:PopupMessage
-        conditions:
-        - !type:ReagentCondition
-          reagent: Mannitol
-          min: 15
-        type: Local
-        visualType: Medium
-        messages: [ "mannitol-effect-enlightened" ]
-        probability: 0.2
+    Digestion: *MannitolMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Psicodine
