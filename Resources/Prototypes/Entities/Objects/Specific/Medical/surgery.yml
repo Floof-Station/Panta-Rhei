@@ -5,12 +5,13 @@
   id: BaseToolSurgery
   abstract: true
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
   - type: Sprite
   - type: StaticPrice
     price: 20
-  - type: Tag
-    tags:
-    - SurgeryTool
+  #- type: Tag #Euphoria start
+  #  tags:
+  #  - SurgeryTool #Euphoria end
 
 # Cautery
 
