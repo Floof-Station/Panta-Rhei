@@ -12,12 +12,12 @@ public sealed partial class SurgeryToolComponent : Component
     [ViewVariables]
 
     [DataField]
-    public int Type = (int)ToolType.Cutting;
+    public int ToolType = (int)ToolTypeEnum.Cutting;
 
     [DataField]
     public int Strength = 0;
 
-    public enum ToolType: int
+    public enum ToolTypeEnum: int
     {
         Cutting = 1,
         Retracting = 2,

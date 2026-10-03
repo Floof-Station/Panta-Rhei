@@ -11,7 +11,7 @@ public sealed partial class SurgeryActionPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     [DataField("toolType", required: true)]
-    private SurgeryToolComponent.ToolType _type = default!;
+    private SurgeryToolComponent.ToolTypeEnum _type = default!;
 
     [DataField("states")]
     private Dictionary<ProtoId<OrganCategoryPrototype>, List<Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> _states = new();
