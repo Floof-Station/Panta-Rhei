@@ -369,7 +369,7 @@ public sealed partial class RopeSystem
         if (disabled && shouldEnable)
         {
             // If we can't enable it, it's invalid
-            if (!EnableRope(rope!))
+            if (!EnableRope(rope.AsNullable(), skipChecks: true))
             {
                 Log.Warning($"Rope {ToPrettyString(rope)} cannot be re-enabled. Deleting it.");
                 TryQueueDel(rope);
@@ -424,8 +424,8 @@ public sealed partial class RopeSystem
 
     /// <summary>
     ///     Enables a previously disabled rope and places all of its links either between the two anchors or near the left or right anchor (whichever exists).
+    ///     If skipChecks is true, doesn't check the distance between anchors.
     /// </summary>
-    /// <remarks>Does not check if the anchors are on the same map.</remarks>
     public bool EnableRope(Entity<RopeComponent?> rope, bool skipChecks = false)
     {
         if (!_ropeQuery.Resolve(rope, ref rope.Comp) || !rope.Comp.IsDisabled)

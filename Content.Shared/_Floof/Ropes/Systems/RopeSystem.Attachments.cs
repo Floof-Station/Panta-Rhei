@@ -90,9 +90,10 @@ public sealed partial class RopeSystem
 
         var args = new RopeAttachedComponent.AttachedRopeInfo(rope, null, null);
         if (ropeAttachedComp.IndexOfRope(rope) == -1)
+        {
             ropeAttachedComp.AttachedRopes.Add(args);
-
-        ProcessRelay(connector, args);
+            ProcessRelay(connector, args);
+        }
     }
 
     /// <summary>

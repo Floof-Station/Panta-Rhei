@@ -50,14 +50,6 @@ public sealed partial class RopeSystem
         // So other things don't attempt to queue the rope for re-creation
         ent.Comp.IsDisabled = true;
 
-        // On shutdown, destroy all links
-        foreach (var link in ent.Comp.Links)
-        {
-            // Client can have these set to EntityUid.Invalid during network sync
-            if (link.LinkEntity.Valid)
-                PredictedQueueDel(link.LinkEntity);
-        }
-
         // In case its a linkless rope, also destroy the start anchor joint (which is the same as the last)
         if (ent.Comp.ConnectedStart is {} start)
         {
@@ -68,6 +60,15 @@ public sealed partial class RopeSystem
         {
             _joints.RemoveJoint(end.Anchor, end.JointId);
             OnRopeDetached(ent!, end.Anchor);
+        }
+
+        // Now once detachments are handled, destroy all links.
+        // This must be done AFTER detachments, otherwise OnJointRemoved might cause a race condition
+        foreach (var link in ent.Comp.Links)
+        {
+            // Client can have these set to EntityUid.Invalid during network sync
+            if (link.LinkEntity.Valid)
+                PredictedQueueDel(link.LinkEntity);
         }
     }
 
