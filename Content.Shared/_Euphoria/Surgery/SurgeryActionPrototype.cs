@@ -14,10 +14,10 @@ public sealed partial class SurgeryActionPrototype : IPrototype
     private SurgeryToolComponent.ToolTypeEnum _type = default!;
 
     [DataField("states")]
-    private Dictionary<ProtoId<OrganCategoryPrototype>, List<Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> _states = new();
+    private Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<ProtoId<SurgeryStatePrototype>,bool>> _states = new();
 
     [DataField("effects")]
-    private Dictionary<ProtoId<OrganCategoryPrototype>, List<Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> _effects = new();
+    private Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<ProtoId<SurgeryStatePrototype>,bool>> _effects = new();
 
     [DataField]
     private ProtoId<OrganCategoryPrototype> remove = default!;
