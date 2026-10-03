@@ -66,15 +66,9 @@ public sealed partial class RopeSystem
         foreach (var ropeInfo in ent.Comp.AttachedRopes.ToList())
         {
             QueueUpdate(ropeInfo.Rope);
-
-            // Remove & re-process (if needed) relay on the root anchor
-            var root = (ent.Owner, ropeInfo);
-            if (!TryResolveRootAnchor(ref root))
-                continue;
-
-            // In this case we DO process relays even if the rope is disabled as this could mean that the rope was moved between the person's backpack and inventory or something
-            RemoveRelay(args.Container.Owner, root.ropeInfo);
-            ProcessRelay(root.Owner, root.ropeInfo);
+            // This event is raised BEFORE re-parenting. At this point we have no idea what the new container (if any) is going to be.
+            // But worry not: if this event is caused by a rope anchor being moved between inventory slots, EntGotInserted will be raised right after.
+            RemoveRelay(args.Container.Owner, ropeInfo);
         }
     }
 
