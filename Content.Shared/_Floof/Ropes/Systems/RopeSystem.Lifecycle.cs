@@ -104,13 +104,6 @@ public sealed partial class RopeSystem
 
     private void OnJointBroken(Entity<RopeLinkComponent> link, ref JointBreakEvent args)
     {
-        if (_net.IsClient || TerminatingOrDeleted(link.Comp.Rope))
-            return;
-
-        if (!TryQueueDel(link.Comp.Rope))
-            return;
-
-        if (_xform.TryGetMapOrGridCoordinates(link, out var coords))
-            _popups.PopupCoordinates(Loc.GetString("rope-destroyed-popup", ("rope", link.Comp.Rope)), coords.Value, PopupType.Medium);
+        DestroyRope(link.Comp.Rope);
     }
 }
