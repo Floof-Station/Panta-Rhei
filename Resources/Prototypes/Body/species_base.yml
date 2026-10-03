@@ -199,6 +199,11 @@
   components:
   #Euphoria changes start
   - type: Surgery
+    surgeryActions:
+    - retractMusclesTorso
+    - replaceMusclesTorso
+    - openSkinTorso
+    - closeSkinTorso
   - type: UserInterface
     interfaces:
       enum.SurgeryUiKey.Key:

@@ -27,5 +27,16 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         //UpdateUI(frameTime);
     }
 
+    // <summary>
+    /// Add every surgery to a list
+    /// </summary>
+    public void AddSurgeries(List<ProtoId<SurgeryActionPrototype>> recipes, IEnumerable<ProtoId<SurgeryActionPrototype>> surgeries)
+    {
+        foreach (var id in surgeries)
+        {
+            var surgery = _proto.Index(id);
+            recipes.Add(surgery);
+        }
+    }
 
 }
