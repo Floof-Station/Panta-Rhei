@@ -1,6 +1,9 @@
+### euphoria-marked paint prototypes have been placed here for ease of access, instead of putting them in their own directory in the _Euphoria directory
+
 #Blue
 - type: entity
   parent: PaintBase
+  name: blue paint # euphoria - added name
   id: SprayPaintBlue
   suffix: Blue
   components:
@@ -21,9 +24,35 @@
           True: {state: "spray_colors" , color: "#5890f7"}
           False: {state: "spray_cap_colors" , color: "#5890f7"}
 
+# euphoria - added deep blue paint prototype
+- type: entity
+  parent: PaintBase
+  name: deep blue paint
+  id: SprayPaintDeepBlue
+  suffix: Deep blue
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#0000ff"
+  - type: ColorPaint
+    color: "#0000ff"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#0000ff"}
+          False: {state: "spray_cap_colors" , color: "#0000ff"}
+# euphoria - end
+
 #Red
 - type: entity
   parent: PaintBase
+  name: red paint # euphoria - added name
   id: SprayPaintRed
   suffix: Red
   components:
@@ -44,9 +73,35 @@
           True: {state: "spray_colors" , color: "#ff3b3b"}
           False: {state: "spray_cap_colors" , color: "#ff3b3b"}
 
+# euphoria - added deep red paint prototype
+- type: entity
+  parent: PaintBase
+  name: deep red paint
+  id: SprayPaintDeepRed
+  suffix: Deep red
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#ff0000"
+  - type: ColorPaint
+    color: "#ff0000"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#ff0000"}
+          False: {state: "spray_cap_colors" , color: "#ff0000"}
+# euphoria - end
+
 #Green
 - type: entity
   parent: PaintBase
+  name: green paint # euphoria - added name
   id: SprayPaintGreen
   suffix: Green
   components:
@@ -67,9 +122,35 @@
           True: {state: "spray_colors" , color: "#73f170"}
           False: {state: "spray_cap_colors" , color: "#73f170"}
 
+# euphoria - added deep green paint prototype
+- type: entity
+  parent: PaintBase
+  name: deep green paint
+  id: SprayPaintDeepGreen
+  suffix: Deep green
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#00c800"
+  - type: ColorPaint
+    color: "#00c800"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#00c800"}
+          False: {state: "spray_cap_colors" , color: "#00c800"}
+# euphoria - end
+
 #Black
 - type: entity
   parent: PaintBase
+  name: black paint # euphoria - added name
   id: SprayPaintBlack
   suffix: Black
   components:
@@ -90,9 +171,35 @@
           True: {state: "spray_colors" , color: "#3a3a3a"}
           False: {state: "spray_cap_colors" , color: "#3a3a3a"}
 
+# euphoria - added deep black paint prototype
+- type: entity
+  parent: PaintBase
+  name: deep black paint
+  id: SprayPaintDeepBlack
+  suffix: Deep black
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#000000"
+  - type: ColorPaint
+    color: "#000000"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#000000"}
+          False: {state: "spray_cap_colors" , color: "#000000"}
+# euphoria - end
+
 #Orange
 - type: entity
   parent: PaintBase
+  name: orange paint # euphoria - added name
   id: SprayPaintOrange
   suffix: Orange
   components:
@@ -116,6 +223,7 @@
 #Purple
 - type: entity
   parent: PaintBase
+  name: purple paint # euphoria - added name
   id: SprayPaintPurple
   suffix: Purple
   components:
@@ -136,9 +244,35 @@
           True: {state: "spray_colors" , color: "#c063f5"}
           False: {state: "spray_cap_colors" , color: "#c063f5"}
 
+# euphoria - added deep blue paint prototype
+- type: entity
+  parent: PaintBase
+  name: deep blue paint
+  id: SprayPaintBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#0000ff"
+  - type: ColorPaint
+    color: "#0000ff"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#0000ff"}
+          False: {state: "spray_cap_colors" , color: "#0000ff"}
+# euphoria - end
+
 #White
 - type: entity
   parent: PaintBase
+  name: white paint # euphoria - added name
   id: SprayPaintWhite
   suffix: White
   components:
@@ -158,3 +292,51 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#f2f2f2"}
           False: {state: "spray_cap_colors" , color: "#f2f2f2"}
+
+# euphoria - added deep blue paint prototype
+- type: entity
+  parent: PaintBase
+  name: deep blue paint
+  id: SprayPaintBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#0000ff"
+  - type: ColorPaint
+    color: "#0000ff"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#0000ff"}
+          False: {state: "spray_cap_colors" , color: "#0000ff"}
+
+- type: entity
+  parent: PaintBase
+  name: deep blue paint
+  id: SprayPaintBlue
+  suffix: Blue
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/spraycans.rsi
+    layers:
+    - state: spray
+      map: ["Base"]
+    - state: spray_cap_colors
+      map: ["enum.OpenableVisuals.Layer"]
+      color: "#0000ff"
+  - type: ColorPaint
+    color: "#0000ff"
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: {state: "spray_colors" , color: "#0000ff"}
+          False: {state: "spray_cap_colors" , color: "#0000ff"}
+# euphoria - end
