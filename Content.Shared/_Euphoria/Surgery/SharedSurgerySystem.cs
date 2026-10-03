@@ -3,12 +3,15 @@ using Content.Shared.GameTicking;
 using Content.Shared.Body;
 using Content.Shared.Kitchen.Components;
 using Content.Shared.Verbs;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared._Euphoria.Surgery;
 //This is where to cause the updates to happen from server to client
 public abstract partial class SharedSurgerySystem : EntitySystem
 {
+    [Dependency] private readonly IPrototypeManager _proto = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -23,4 +26,6 @@ public abstract partial class SharedSurgerySystem : EntitySystem
         //UpdateActions(frameTime)
         //UpdateUI(frameTime);
     }
+
+
 }
