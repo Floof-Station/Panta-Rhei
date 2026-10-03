@@ -658,20 +658,14 @@
   flavor: medicine
   color: "#86caf7"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &AmbuzolMetabolism # Euphoria - Compressing Ambuzol code with anchors
       effects:
         - !type:CureZombieInfection
           conditions:
             - !type:ReagentCondition
               reagent: Ambuzol
               min: 10
-    Digestion:
-      effects:
-        - !type:CureZombieInfection
-          conditions:
-            - !type:ReagentCondition
-              reagent: Ambuzol
-              min: 10
+    Digestion: *AmbuzolMetabolism
 
 - type: reagent
   id: AmbuzolPlus
@@ -682,7 +676,7 @@
   flavor: medicine
   color: "#1274b5"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &AmbuzolPlusMetabolism # Euphoria - compressing Ambuzol code with anchors
       effects:
         - !type:CureZombieInfection
           innoculate: true
@@ -690,14 +684,7 @@
             - !type:ReagentCondition
               reagent: AmbuzolPlus
               min: 5
-    Digestion:
-      effects:
-      - !type:CureZombieInfection
-        innoculate: true
-        conditions:
-        - !type:ReagentCondition
-          reagent: AmbuzolPlus
-          min: 5
+    Digestion: *AmbuzolPlusMetabolism
 
 - type: reagent
   id: PulpedBananaPeel
@@ -1039,7 +1026,7 @@
   flavor: medicine
   color: "#b0abaa"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &DiphenylmethylamineMetabolism # Euphoria - Pill Compatibility Patch
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectDrowsiness
@@ -1055,6 +1042,7 @@
         messages: ["ethyloxyephedrine-effect-feeling-awake", "ethyloxyephedrine-effect-clear-mind"]
         type: Local
         probability: 0.1
+    Digestion: *DiphenylmethylamineMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Sigynate
@@ -1433,7 +1421,7 @@
   flavor: sweet
   color: "#A0A0A0"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &MannitolMetabolism  # Euphoria - Pill Compatibility Patch
       effects:
       - !type:PopupMessage
         conditions:
@@ -1444,6 +1432,7 @@
         visualType: Medium
         messages: [ "mannitol-effect-enlightened" ]
         probability: 0.2
+    Digestion: *MannitolMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Psicodine
