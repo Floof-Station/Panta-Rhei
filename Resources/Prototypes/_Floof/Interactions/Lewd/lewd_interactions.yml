@@ -45,6 +45,24 @@
     minRepeatAmount: 5
 
 - type: Interaction
+  id: LewdFillStructurePenis
+  parent: BaseLewdFillContainer
+  priority: 0
+  delay: 20 # 20s for self, dumping all 20 units (1 u/s)
+  requirement:
+    !type:ComplexRequirement
+    requirements:
+    - *onlyMobs
+    - !type:LewdAccessibleRequirement
+      checkTargetUnderwear: true
+    - !type:SelfTargetRequirement
+  action:
+    !type:LewdFillStructureFromTarget
+    organ: Penis
+    maxAmount: 20
+    minRepeatAmount: 5
+
+- type: Interaction
   id: LewdFillContainerVagina
   parent: BaseLewdFillContainer
   priority: 0
