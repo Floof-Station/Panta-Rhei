@@ -9,4 +9,10 @@ public sealed partial class SurgeryStatePrototype : IPrototype
     [IdDataField]
     public string ID { get; private set; } = default!;
 
+    [DataField]
+    public bool State = false;
+
+    [DataField]
+    public EntityUid Organ = default;
+
 }

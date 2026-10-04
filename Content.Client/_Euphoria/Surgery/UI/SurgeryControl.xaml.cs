@@ -15,14 +15,14 @@ public sealed partial class SurgeryControl : Control
     private ProtoId<SurgeryActionPrototype> _surgeryId;
     private SurgerySystem _surgerySystem;
 
-    public SurgeryControl(SurgerySystem surgerySystem, SurgeryActionPrototype surgeryAction, Func<string> tooltipTextSupplier, Control displayControl)
+    public SurgeryControl(SurgerySystem surgerySystem, SurgeryActionPrototype surgeryActionPrototype, Func<string> tooltipTextSupplier, Control displayControl)
     {
         RobustXamlLoader.Load(this);
 
         _surgerySystem = surgerySystem;
-        _surgeryId = surgeryAction.ID;
+        _surgeryId = surgeryActionPrototype.ID;
         TooltipTextSupplier = tooltipTextSupplier;
-        SetAction(surgeryAction);
+        SetAction(surgeryActionPrototype);
         //SetCanProduce(canProduce);
         SetDisplayControl(displayControl);
 
@@ -32,11 +32,11 @@ public sealed partial class SurgeryControl : Control
         };
     }
 
-    public void SetAction(SurgeryActionPrototype surgeryAction)
+    public void SetAction(SurgeryActionPrototype surgeryActionPrototype)
     {
-        SurgeryActionName.Text = surgeryAction.ID;
+        SurgeryActionName.Text = surgeryActionPrototype.ID;
         //SurgeryActionName.Text = _surgerySystem.GetSurgeryName(surgeryAction);
-        _surgeryId = surgeryAction.ID;
+        _surgeryId = surgeryActionPrototype.ID;
     }
 
     public void SetDisplayControl(Control displayControl)

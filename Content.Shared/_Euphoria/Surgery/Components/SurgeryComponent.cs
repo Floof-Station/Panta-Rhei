@@ -15,8 +15,10 @@ public sealed partial class SurgeryComponent : Component
     public List<ProtoId<SurgeryActionPrototype>> SurgeryActions = new();
 
     [DataField]
-    public Dictionary<string, List<EntityUid>> DictOrgans = new();
+    public Dictionary<string, List<SurgeryStatePrototype>> DictOrgans = new();
 
+    [DataField]
+    public List<ProtoId<SurgeryStatePrototype>> SurgeryStates = new();
 
 }
 public sealed class SurgeryGetActionsEvent : EntityEventArgs

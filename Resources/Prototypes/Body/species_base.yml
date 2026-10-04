@@ -199,6 +199,10 @@
   components:
   #Euphoria changes start
   - type: Surgery
+    surgeryStates:
+    - skinRetracted
+    - muscleRetracted
+    - boneRetracted
     surgeryActions:
     - retractMusclesTorso
     - replaceMusclesTorso
