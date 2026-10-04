@@ -23,6 +23,12 @@
       Dead:
         Base: gleeble_dead
         BaseUnshaded: gleeble_dead_glow
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
 
 - type: entity
   name: Gnarp
@@ -49,3 +55,9 @@
       Dead:
         Base: gnarp_dead
         BaseUnshaded: gnarp_dead_glow
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: female
