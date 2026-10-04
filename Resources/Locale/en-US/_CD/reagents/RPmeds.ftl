@@ -101,7 +101,7 @@ reagent-effect-medaddiction-19 = The lights are too bright.
 reagent-effect-medaddiction-20 = Everything you hear keeps echoing through your head.
 reagent-effect-medaddiction-21 = Everything you touch has too much texture.
 reagent-effect-medaddiction-22 = Chills wrack your body.
-reagent-effect-medaddiction-23 = You feel really hot.
+reagent-effect-medaddiction-23 = Your skin feels too hot.
 
 # Mild painkillers
 reagent-effect-painkiller-mild1 = Your body hurts a bit less.
