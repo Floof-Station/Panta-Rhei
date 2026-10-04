@@ -95,8 +95,7 @@ public sealed partial class LeashSystem
                     pulled,
                     leash.Comp.RopeConfig,
                     ropeLength,
-                    out var newRope,
-                    offsetRight: anchorComp.Offset))
+                    out var newRope)) // Not passing in the anchor offset here because the joint would rotate with the player.
             {
                 destroyed.Add(data);
                 continue;
@@ -112,8 +111,6 @@ public sealed partial class LeashSystem
         foreach (var leashData in destroyed)
         {
             var uid = GetEntity(leashData.Pulled);
-
-            _popups.PopupEntity(Loc.GetString("rope-destroyed-popup", ("rope", uid)), uid, PopupType.Medium);
             RemoveLeash(uid, leash!);
         }
 

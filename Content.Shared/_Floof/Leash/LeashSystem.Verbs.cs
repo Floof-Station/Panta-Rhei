@@ -12,7 +12,7 @@ public sealed partial class LeashSystem
         SubscribeLocalEvent<LeashComponent, BeforeConfigurationSelectedEvent>(BeforeConfigSelected);
         SubscribeLocalEvent<LeashComponent, ConfigurationSelectedEvent>(OnConfigSelected);
 
-        SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<InnateVerb>>(OnGetLeashedVerbs);
+        SubscribeLocalEvent<LeashedComponent, GetVerbsEvent<Verb>>(OnGetLeashedVerbs);
         SubscribeLocalEvent<LeashAnchorComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
 
         SubscribeLocalEvent<LeashAnchorComponent, LeashAttachDoAfterEvent>(OnAttachDoAfter);
@@ -43,7 +43,7 @@ public sealed partial class LeashSystem
         }
     }
 
-    private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref GetVerbsEvent<InnateVerb> args)
+    private void OnGetLeashedVerbs(Entity<LeashedComponent> ent, ref GetVerbsEvent<Verb> args)
     {
         if (!args.CanAccess
             || !args.CanInteract

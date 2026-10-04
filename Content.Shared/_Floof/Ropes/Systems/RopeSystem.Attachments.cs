@@ -8,14 +8,12 @@ namespace Content.Shared._Floof.Ropes.Systems;
 
 public sealed partial class RopeSystem
 {
-    // If the distance between two entities is x, then a rope of length AT LEAST (x - tolerance) can be created between them
-    private float _connectionDstTolerance = 2;
-
     private void InitializeRelay()
     {
         SubscribeLocalEvent<RopeAttachedComponent, ComponentShutdown>(OnAnchorShutdown);
         SubscribeLocalEvent<RopeAttachedComponent, EntGotInsertedIntoContainerMessage>(OnAnchorInserted);
         SubscribeLocalEvent<RopeAttachedComponent, EntGotRemovedFromContainerMessage>(OnAnchorRemoved);
+        SubscribeLocalEvent<RopeAttachedComponent, EntParentChangedMessage>(OnParentChanged);
     }
 
     private void OnAnchorShutdown(Entity<RopeAttachedComponent> ent, ref ComponentShutdown args)
@@ -68,16 +66,18 @@ public sealed partial class RopeSystem
         foreach (var ropeInfo in ent.Comp.AttachedRopes.ToList())
         {
             QueueUpdate(ropeInfo.Rope);
-
-            // Remove & re-process (if needed) relay on the root anchor
-            var root = (ent.Owner, ropeInfo);
-            if (!TryResolveRootAnchor(ref root))
-                continue;
-
-            // In this case we DO process relays even if the rope is disabled as this could mean that the rope was moved between the person's backpack and inventory or something
-            RemoveRelay(root.Owner, root.ropeInfo);
-            ProcessRelay(root.Owner, root.ropeInfo);
+            // This event is raised BEFORE re-parenting. At this point we have no idea what the new container (if any) is going to be.
+            // But worry not: if this event is caused by a rope anchor being moved between inventory slots, EntGotInserted will be raised right after.
+            RemoveRelay(args.Container.Owner, ropeInfo);
         }
+    }
+
+    private void OnParentChanged(Entity<RopeAttachedComponent> ent, ref EntParentChangedMessage args)
+    {
+        // This is mainly for carrying, which parents the carried entity onto the carrier
+        // We don't process relays here because unless the attached entity is inside a container, its physics will work just fine
+        foreach (var ropeInfo in ent.Comp.AttachedRopes)
+            _pendingRopeUpdates.Add(ropeInfo.Rope);
     }
 
     /// <summary>
@@ -90,9 +90,10 @@ public sealed partial class RopeSystem
 
         var args = new RopeAttachedComponent.AttachedRopeInfo(rope, null, null);
         if (ropeAttachedComp.IndexOfRope(rope) == -1)
+        {
             ropeAttachedComp.AttachedRopes.Add(args);
-
-        ProcessRelay(connector, args);
+            ProcessRelay(connector, args);
+        }
     }
 
     /// <summary>
