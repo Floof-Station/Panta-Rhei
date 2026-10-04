@@ -28,19 +28,7 @@ public sealed partial class SurgeryWindow : FancyWindow
 
         _surgery = _entityManager.System<SurgerySystem>();
 
-        foreach (var action in Surgeries)
-        {
-            if (!_prototypeManager.Resolve(action, out var proto))
-                continue;
-
-            var tooltipFunction = () => GenerateTooltipText(proto);
-            var control = new SurgeryControl(_surgery, proto, tooltipFunction, GetSurgeryDisplayControl(proto));
-            control.OnButtonPressed += s =>
-            {
-                //do something
-            };
-            SurgeryActions.AddChild(control);
-        }
+        PopulateSurgeries();
     }
 
     public Control GetSurgeryDisplayControl(SurgeryActionPrototype recipe)
@@ -65,5 +53,28 @@ public sealed partial class SurgeryWindow : FancyWindow
     private string GenerateTooltipText(SurgeryActionPrototype prototype)
     {
         return "";
+    }
+
+    public void SetEntity(EntityUid uid)
+    {
+        var ent = uid;
+        this.SetInfoFromEntity(_entityManager, ent);
+    }
+
+    public void PopulateSurgeries()
+    {
+        foreach (var action in Surgeries)
+        {
+            if (!_prototypeManager.Resolve(action, out var proto))
+                continue;
+
+            var tooltipFunction = () => GenerateTooltipText(proto);
+            var control = new SurgeryControl(_surgery, proto, tooltipFunction, GetSurgeryDisplayControl(proto));
+            control.OnButtonPressed += s =>
+            {
+                //do something
+            };
+            SurgeryActions.AddChild(control);
+        }
     }
 }

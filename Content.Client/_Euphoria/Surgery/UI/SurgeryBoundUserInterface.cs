@@ -12,5 +12,20 @@ public sealed partial class SurgeryBoundUserInterface(EntityUid owner, Enum uiKe
     {
         base.Open();
         _window = this.CreateWindow<SurgeryWindow>();
+        _window.SetEntity(Owner);
+    }
+
+    protected override void UpdateState(BoundUserInterfaceState state)
+    {
+        base.UpdateState(state);
+
+        switch (state)
+        {
+            case SurgeryUpdateState msg:
+                if (_window != null)
+                    _window.Surgeries = msg.SurgeryActions;
+                _window?.PopulateSurgeries();
+                break;
+        }
     }
 }
