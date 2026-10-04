@@ -19,6 +19,8 @@ public sealed partial class SurgeryWindow : FancyWindow
 
     private readonly SurgerySystem _surgery;
 
+    public event Action<string>? SurgeryChosen;
+
     public List<ProtoId<SurgeryActionPrototype>> Surgeries = new();
 
     public SurgeryWindow()
@@ -72,7 +74,7 @@ public sealed partial class SurgeryWindow : FancyWindow
             var control = new SurgeryControl(_surgery, proto, tooltipFunction, GetSurgeryDisplayControl(proto));
             control.OnButtonPressed += s =>
             {
-                //do something
+                SurgeryChosen?.Invoke(s);
             };
             SurgeryActions.AddChild(control);
         }

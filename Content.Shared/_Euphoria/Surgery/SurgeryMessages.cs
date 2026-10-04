@@ -13,3 +13,14 @@ public sealed class SurgeryUpdateState : BoundUserInterfaceState
         SurgeryActions = recipes;
     }
 }
+
+[Serializable, NetSerializable]
+public sealed class SurgeryStartMessage : BoundUserInterfaceMessage
+{
+    public readonly string ID;
+
+    public SurgeryStartMessage(string id)
+    {
+        ID = id;
+    }
+}

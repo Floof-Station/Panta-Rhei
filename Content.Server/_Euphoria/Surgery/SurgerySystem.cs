@@ -10,6 +10,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 
+
 namespace Content.Server._Euphoria.Surgery;
 
 public sealed partial class SurgerySystem : SharedSurgerySystem
@@ -26,6 +27,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         SubscribeLocalEvent<GetVerbsEvent<InteractionVerb>>(AddVerbs);
         SubscribeLocalEvent<SurgeryComponent, OrganInsertedIntoEvent>(OnOrganInserted);
         SubscribeLocalEvent<SurgeryComponent, OrganRemovedFromEvent>(OnOrganRemoved);
+        SubscribeLocalEvent<SurgeryComponent, SurgeryStartMessage>(OnSurgeryStartMessage);
     }
 
     private void OnMapInit(Entity<BodyComponent> ent ,ref MapInitEvent args)
@@ -87,5 +89,10 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         AddSurgeries(ev.Surgeries, component.SurgeryActions);
         RaiseLocalEvent(uid, ev);
         return ev.Surgeries.ToList();
+    }
+
+    private void OnSurgeryStartMessage(EntityUid uid, SurgeryComponent component, SurgeryStartMessage args)
+    {
+        //DO THE SURGERY WITH A DOAFTER AND REMOVE THE BITS
     }
 }
