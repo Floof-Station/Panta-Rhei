@@ -61,3 +61,149 @@
       amount: 1
   products:
     BerryNice: 5
+
+# Milk shakes
+- type: reaction
+  id: BlackberryShake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    BlackberrySyrup:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    BlackberryShake: 2
+
+- type: reaction
+  id: BlueberryShake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    BlueberrySyrup:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    BlueberryShake: 2
+
+- type: reaction
+  id: BlueraspberryShake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    BlueRaspberrySyrup:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    BlueraspberryShake: 2
+
+- type: reaction
+  id: ChocolateShake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    ChocolateSyrup:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    ChocolateShake: 2
+
+- type: reaction
+  id: RaspberryShake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    RaspberrySyrup:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    RaspberryShake: 2
+
+- type: reaction
+  id: StrawberryShake
+  requiredMixerCategories:
+  - Shake
+  reactants:
+    StrawberrySyrup:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    StrawberryShake: 2
+
+# Syrups
+- type: reaction
+  id: BlackberrySyrup
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    BlackberryJuice:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    BlackberrySyrup: 2
+
+- type: reaction
+  id: BlueberrySyrup
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    BlueberryJuice:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    BlueberrySyrup: 2
+
+- type: reaction
+  id: BlueraspberrySyrup
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    BlueRaspberryJuice:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    BlueRaspberrySyrup: 2
+
+- type: reaction
+  id: ChocolateSyrup
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    CocoaPowder: # chocolate powder instead of juice smh
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    ChocolateSyrup: 2
+
+- type: reaction
+  id: RaspberrySyrup
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    RaspberryJuice:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    RaspberrySyrup: 2
+
+- type: reaction
+  id: StrawberrySyrup
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    StrawberryJuice:
+      amount: 1
+    Sugar:
+      amount: 1
+  products:
+    StrawberrySyrup: 2

@@ -78,7 +78,10 @@ public sealed partial class RopeSystem
                 continue;
             }
 
-            EnsureComp<PortalTimeoutComponent>(otherSubject).EnteredPortal = args.Portal; // So it doesn't get instantly teleported back
+            if (EnsureComp<PortalTimeoutComponent>(otherSubject, out var portalTimeout))
+                Dirty(otherSubject, portalTimeout); // Dirty if already existed
+            portalTimeout.EnteredPortal = args.Portal; // So it doesn't get instantly teleported back
+
 
             _xform.SetCoordinates(otherSubject, teleportedCoords);
 

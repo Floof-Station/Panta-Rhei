@@ -81,7 +81,7 @@
 - type: Interaction
   id: RudeGesture
   parent: BaseGlobal
-  priority: -98 # Move this down since this will be less used
+  priority: -97 # Move this down since this will be less used
   requiresHands: true
   requiresCanInteract: false
   contactInteraction: false
@@ -97,6 +97,38 @@
   requirement:
     !type:MobStateRequirement
     inverted: true
+
+# ass slap usa
+- type: Interaction
+  id: AssSlapGesture
+  parent: [BaseGlobal, BaseHands]
+  priority: -98 # Due to the nature of this, will keep this subtle
+  delay: 0.4
+  cooldown: 5
+  requiresHands: false # im gonna be evil and let moth roaches slap some ass
+  icon: /Textures/Interface/AdminActions/play.png
+  range: { max: 0.666 }
+  hideByRequirement: true
+  action:
+    !type:ComplexAction
+    requireAll: false
+    actions:
+    - !type:ModifyHealthAction # a little ass slappy damage
+      randomFactor: { min: 0.1, max: 1.5 }
+      damage:
+        types: { Blunt: 1 }
+    - !type:NoOpAction
+  requirement:
+    !type:MobStateRequirement # Walls do not have asses to slap... unless...
+    inverted: true
+  effectSuccess:
+    popup: Subtle
+    sound:
+      path: /Audio/_Euphoria/Announcements/InteractVerbs/buttocks.ogg # ASS SLAP USA BABY
+      params:
+        volume: -1
+    soundPerceivedByOthers: false
+  effectFailure: null
 
 # suggestive gesture, similar to checking out and needs to be subtle and near the bottom
 - type: Interaction

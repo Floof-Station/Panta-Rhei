@@ -212,7 +212,7 @@
 
 - type: entity
   name: chicken
-  parent: SimpleMobBase
+  parent: [ BaseMobRuminant, SimpleMobBase ] # Euphoria - swap these parents around so they get the right stomachs
   id: MobChicken
   description: Comes before an egg, and IS a dinosaur!
   components:
@@ -892,7 +892,7 @@
 
 - type: entity
   name: cow
-  parent: [ SimpleMobBase, BaseMobRuminant ]
+  parent: [ BaseMobRuminant, SimpleMobBase ] # Euphoria - swap these parents around so they get the right stomachs
   id: MobCow
   description: Moo.
   components:
@@ -1059,7 +1059,7 @@
 
 - type: entity
   name: goat
-  parent: [ SimpleMobBase, BaseMobRuminant ]
+  parent: [ BaseMobRuminant, SimpleMobBase ]  # Euphoria - swap these parents around so they get the right stomachs
   id: MobGoat
   description: Her spine consists of long sharp segments, no wonder she is so grumpy.
   components:
@@ -4049,7 +4049,7 @@
 
 - type: entity
   name: pig
-  parent: [SimpleMobBase, StripableInventoryBase]
+  parent: [ BaseMobRuminant, SimpleMobBase, StripableInventoryBase ] # Euphoria - swap these parents around so they get the right stomachs
   id: MobPig
   description: Oink.
   components:

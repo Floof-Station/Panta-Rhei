@@ -6211,3 +6211,136 @@ Entries:
         and service techfabs.
   id: 776
   time: '2026-09-28T15:55:36.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Add
+      message: >-
+        There is now a fully functional rope system. Ropes are physics entities
+        made from N links and (N+1) distance joints.
+    - type: Add
+      message: >-
+        There is now 10+ new admin commands to create and manipulate ropes under
+        the `rope:` prefix.
+    - type: Tweak
+      message: >-
+        Leash ropes are now real ropes. You can choose the number of links in
+        the right-click menu (set to 0 to use the pre-update behavior, aka "just
+        limit the distance between entities")
+    - type: Add
+      message: >-
+        You can now make/buy a rope bundle, which lets you tie various objects
+        together. The engineering department has yet to find use for this, but
+        you can tie a clown to a shuttle and take them on a wild ride!
+  id: 777
+  time: '2026-09-28T07:44:07.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        The "publish changelog" workflow should no longer repost changelogs from
+        weeks ago.
+  id: 778
+  time: '2026-09-29T11:52:33.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        Cows, Pigs and Chickens should not be able to eat wheat and other
+        veggies like they used to be able to.
+  id: 779
+  time: '2026-10-01T02:48:00.0000000+00:00'
+- author: badlanduser
+  changes:
+    - type: Add
+      message: Ported over Starlight's AI faces and holograms
+  id: 780
+  time: '2026-10-01T03:13:05.0000000+00:00'
+- author: badlanduser
+  changes:
+    - type: Fix
+      message: Fixed walking mushroom ghostrole
+  id: 781
+  time: '2026-10-01T03:14:27.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Fix
+      message: Fixed diagnostic HUDs not showing IPC health.
+  id: 782
+  time: '2026-10-02T02:30:32.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Fix
+      message: Security Technician lockers now spawn with the correct tool belt.
+  id: 783
+  time: '2026-10-02T02:32:08.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Add a subtle ass slapping interaction verb.
+  id: 784
+  time: '2026-10-02T04:08:33.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: >-
+        The supermatter console should work again with out making your screen
+        turn into a strobe light.
+  id: 785
+  time: '2026-10-02T04:09:06.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: A colourful variety of breeding mounts have arrived!
+  id: 786
+  time: '2026-10-04T00:37:56.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Fixed a number of minor issues with ropes and leashes. Most notably,
+        kitsune should no longer get stuck unable to polymorph after holding a
+        leash.
+  id: 787
+  time: '2026-10-04T02:21:38.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Chefs can now create monster bread, similar to bread dogs.
+  id: 788
+  time: '2026-10-04T03:00:42.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Remove
+      message: >-
+        The Bwoink Hammer is no longer obtainable from the Prize Counter and
+        maintenance lockers.
+  id: 789
+  time: '2026-10-04T03:05:05.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Added Technician Glasses and their prescription variant.
+    - type: Tweak
+      message: Advanced Flash Protection is now part of Arsenal research.
+    - type: Add
+      message: >-
+        Added researchable lathe recipes for Security, Corpsman, Technician, and
+        Epistemics Glasses.
+    - type: Remove
+      message: >-
+        Research-locked glasses are no longer available in loadouts, lockers,
+        and hand crafting recipes.
+  id: 790
+  time: '2026-10-04T03:08:04.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Bartenders and Chefs can now make berry and chocolate syrups along with
+        new milk shakes.
+    - type: Add
+      message: >-
+        A new Guidebook entry has been created for milkshakes. It can be found
+        under the Drinks section.
+  id: 791
+  time: '2026-10-05T02:41:22.0000000+00:00'
