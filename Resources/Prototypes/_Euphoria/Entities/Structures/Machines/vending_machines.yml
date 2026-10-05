@@ -1,7 +1,7 @@
 ﻿- type: entity
   parent: VendingMachine
   id: VendingMachineSpraypaint
-  name: paint station
+  name: Paint Station # paint station 14
   description: A handy vending machine that sells spray paint. Smells like aerosol.
   components:
   - type: VendingMachine
@@ -14,7 +14,7 @@
   - type: SpeakOnUIClosed
     pack: GenericVendGoodbyes
   - type: Sprite
-    sprite: _Euphoria/Structures/Machines/VendingMachines/paint
+    sprite: _Euphoria/Structures/Machines/VendingMachines/paint.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]

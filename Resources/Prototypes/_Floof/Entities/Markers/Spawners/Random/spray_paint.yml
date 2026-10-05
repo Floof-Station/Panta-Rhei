@@ -20,7 +20,7 @@
     children:
     # Common Group
     - !type:GroupSelector
-      weight: 75
+      weight: 70
       children:
       - !type:EntSelector
         id: SprayPaintRed
@@ -36,6 +36,28 @@
         id: SprayPaintPurple
       - !type:EntSelector
         id: SprayPaintWhite
+      # euphoria start - added entries to expand the roster of random spawn paint varieties
+      - !type:EntSelector
+        id: SprayPaintDeepRed
+      - !type:EntSelector
+        id: SprayPaintDeepBlue
+      - !type:EntSelector
+        id: SprayPaintDeepGreen
+      - !type:EntSelector
+        id: SprayPaintDeepBlack
+      - !type:EntSelector
+        id: SprayPaintDeepPurple
+      - !type:EntSelector
+        id: SprayPaintGrey
+      - !type:EntSelector
+        id: SprayPaintDeepGrey
+      - !type:EntSelector
+        id: SprayPaintYellow
+      - !type:EntSelector
+        id: SprayPaintPink
+      - !type:EntSelector
+        id: SprayPaintBrown
+      # euphoria end
     # Uncommon Group
     - !type:GroupSelector
       weight: 25
@@ -46,4 +68,14 @@
         id: DeathPaintTwo
       - !type:EntSelector
         id: FunnyPaint
-        weight: 0.5
+      - !type:EntSelector # euphoria - added entry to expand the roster of random spawn paint varieties
+        id: FunnyPaintYellow
+    # Rare Group ## euphoria start - added rare paints
+    - !type:GroupSelector
+      weight: 5
+      children:
+      - !type:EntSelector
+        id: SprayPaintSilver
+      - !type:EntSelector
+        id: SprayPaintGold
+    ## euphoria end

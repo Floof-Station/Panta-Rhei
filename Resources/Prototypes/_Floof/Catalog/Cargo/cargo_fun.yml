@@ -1,12 +1,14 @@
-- type: cargoProduct
-  id: FunSprayPaints
-  icon:
-    sprite: _Floof/Objects/Fun/spraycans.rsi
-    state: death2_cap
-  product: CrateFunSprayPaints
-  cost: 2000
-  category: Fun
-  group: market
+## euphoria start - commented out in favour of the paint station vending machine
+#- type: cargoProduct
+#  id: FunSprayPaints
+#  icon:
+#    sprite: _Floof/Objects/Fun/spraycans.rsi
+#    state: death2_cap
+#  product: CrateFunSprayPaints
+#  cost: 2000
+#  category: Fun
+#  group: market
+## euphoria end
 
 - type: cargoProduct
   id: FunMysteryKnifeLootbox

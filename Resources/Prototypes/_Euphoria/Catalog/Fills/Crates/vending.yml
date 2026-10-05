@@ -1,0 +1,10 @@
+﻿- type: entity
+  id: CrateVendingMachineRestockPaintVendFilled
+  parent: CratePlastic
+  name: Paint Station restock crate
+  description: Contains a restock box for the Paint Station vending machine.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: VendingMachineRestockPaintVendor
