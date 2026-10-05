@@ -20,7 +20,7 @@
     children:
     # Common Group
     - !type:GroupSelector
-      weight: 70
+      weight: 70 # euphoria - 75 -> 70, to make room for the rare roll table
       children:
       - !type:EntSelector
         id: SprayPaintRed
