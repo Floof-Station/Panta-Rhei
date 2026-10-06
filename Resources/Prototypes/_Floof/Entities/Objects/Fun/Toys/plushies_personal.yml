@@ -85,12 +85,16 @@
       params:
         volume: 2
         variation: 0.05
+  - type: MeleeWeapon
+    soundHit: &slimeLaugh
+      path: /Audio/_Floof/Voice/Slime/slime_laugh_f1.ogg
+      params:
+        variation: 0.20
+        volume: 4
   - type: EmitSoundOnLand
     sound: *slimeLaugh
   - type: EmitSoundOnActivate
     sound: *slimePop
-  - type: MeleeWeapon
-    soundHit: *slimeLaugh
   - type: EmitSoundOnCollide
     sound: *slimeLaugh
 
@@ -622,7 +626,10 @@
   - type: EmitSoundOnUse
     sound: *metalBreak
   - type: EmitSoundOnLand
-    sound: *slimeSquish
+    sound: &slimeSquish
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1
   - type: MeleeWeapon
     soundHit: *slimeSquish
   - type: EmitSoundOnCollide
