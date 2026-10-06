@@ -20,10 +20,10 @@ public sealed partial class SurgeryActionPrototype : IPrototype
     public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<ProtoId<SurgeryStatePrototype>,bool>> _effects = new();
 
     [DataField]
-    public ProtoId<OrganCategoryPrototype> remove = default!;
+    public ProtoId<OrganCategoryPrototype>? Remove;
 
     [DataField]
-    public ProtoId<OrganCategoryPrototype> insert = default!;
+    public ProtoId<OrganCategoryPrototype>? Insert;
 
 
 }

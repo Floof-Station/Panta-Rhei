@@ -15,7 +15,7 @@ public sealed partial class SurgeryComponent : Component
     public List<ProtoId<SurgeryActionPrototype>> SurgeryActions = new();
 
     [DataField]
-    public Dictionary<string, List<SurgeryStatePrototype>> DictOrgans = new();
+    public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<EntityUid,Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> DictOrgans = new();
 
     [DataField]
     public List<ProtoId<SurgeryStatePrototype>> SurgeryStates = new();

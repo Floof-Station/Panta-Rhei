@@ -15,4 +15,9 @@ public sealed partial class SurgeryOrganStatus
     {
         Organ = organ;
     }
+
+    public void Add(ProtoId<SurgeryStatePrototype> state)
+    {
+        _status.TryAdd(state, false);
+    }
 }

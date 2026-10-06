@@ -8,6 +8,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -18,6 +19,7 @@ namespace Content.Server._Euphoria.Surgery;
 public sealed partial class SurgerySystem : SharedSurgerySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly SharedContainerSystem ContainerSystem = default!;
 
     public override void Initialize()
     {
@@ -55,12 +57,11 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 continue;
 
             if (!surgery.DictOrgans.ContainsKey(comp.Category.Value))
-                surgery.DictOrgans[comp.Category.Value] = new List<SurgeryStatePrototype>();
+                surgery.DictOrgans[comp.Category.Value] = new Dictionary<EntityUid, Dictionary<ProtoId<SurgeryStatePrototype>, bool>>();
 
             foreach(var state in surgery.SurgeryStates)
             {
-                state.Organ = organ;
-                surgery.DictOrgans[comp.Category.Value].Add(state);
+                surgery.DictOrgans[comp.Category.Value][organ].Add(state,false);
             }
 
         }
@@ -76,15 +77,14 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             return;
 
         if (!ent.Comp.DictOrgans.ContainsKey(organ.Category.Value))
-            ent.Comp.DictOrgans[organ.Category.Value] = new List<SurgeryStatePrototype>();
+            ent.Comp.DictOrgans[organ.Category.Value] = new Dictionary<EntityUid, Dictionary<ProtoId<SurgeryStatePrototype>, bool>>();
 
         if (!TryComp<SurgeryComponent>(ent, out var surgery) || surgery == null)
             return;
 
         foreach(var state in surgery.SurgeryStates)
         {
-            var newState =
-            surgery.DictOrgans[organ.Category.Value].Add(newState);
+            surgery.DictOrgans[organ.Category.Value][args.Organ].Add(state,false);
         }
 
     }
@@ -97,20 +97,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if(organ.Category == null)
             return;
 
-        //let's assume one organ per type
-        //YES THIS IS GARBAGE I KNOW
-        if (!TryComp<SurgeryComponent>(ent, out var surgery) || surgery == null)
-            return;
-
-        foreach(var state in surgery.SurgeryStates)
-        {
-            var newState = (SurgeryStatePrototype)state.Clone();
-            newState.Organ = args.Organ;
-            surgery.DictOrgans[organ.Category.Value].Add(newState);
-        }
-
-
-        ent.Comp.DictOrgans[organ.Category.Value] = new List<SurgeryStatePrototype>();
+        ent.Comp.DictOrgans[organ.Category.Value].Remove(args.Organ);
     }
     public List<ProtoId<SurgeryActionPrototype>> GetAvailableSurgeries(EntityUid uid, SurgeryComponent component, bool getUnavailable = false)
     {
@@ -126,21 +113,60 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         Spawn("FoodBreadPlain", uid.ToCoordinates());
     }
 
+    private EntityUid? getTarget(BodyComponent bodyComp, ProtoId<OrganCategoryPrototype> target)
+    {
+
+        if (bodyComp.Organs != null)
+        {
+            var organsToRemove = bodyComp.Organs.ContainedEntities
+                .Select(p => TryComp<OrganComponent>(p, out var organ) ? (Entity<OrganComponent>?)(p, organ) : null)
+                .Where(p => p != null)
+                .Where(p => new ProtoId<OrganCategoryPrototype>(target) == p!.Value.Comp.Category)
+                .ToList();
+
+            return organsToRemove[0];
+        }
+
+        return null;
+    }
+
     private void PerformOperation(EntityUid uid, SurgeryComponent component, SurgeryActionPrototype actionPrototype)
     {
+        if (!TryComp<BodyComponent>(uid,out var body))
+            return;
+
         if (actionPrototype._effects.Count > 0)
         {
             foreach(var part in actionPrototype._effects)
             {
                 foreach (var effect in part.Value)
                 {
-                    //Change the surgery component to also keep track of the status of the organs
-                    //At this point you have the organ (part) and the changes (effects)
-                }
+                    var ent = getTarget(body, part.Key);
+                    if (ent == null)
+                        return;
 
+                    component.DictOrgans[part.Key][ent.Value][effect.Key] = effect.Value;
+                }
 
             }
         }
+
+        if(actionPrototype.Remove != null)
+        {
+            var cutOut = getTarget(body, actionPrototype.Remove.Value);
+
+            if (cutOut == null || body.Organs == null)
+                return;
+
+            ContainerSystem.Remove(cutOut.Value, body.Organs);
+        }
+
+        if (actionPrototype.Insert != null)
+        {
+            //need access to the person performing the surgery to see the organ in their hand
+            //Check if the organ is gone by the end of the surgery, then give message if missing
+        }
+
     }
 
     private void RemoveOrgan(EntityUid uid, SurgeryComponent component, OrganCategoryPrototype args)
