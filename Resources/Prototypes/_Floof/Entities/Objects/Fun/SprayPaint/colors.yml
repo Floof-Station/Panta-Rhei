@@ -3,7 +3,7 @@
 #Blue
 - type: entity
   parent: PaintBase
-  name: blue paint # euphoria - added name
+  name: blue paint
   id: SprayPaintBlue
   suffix: Blue
   components:
@@ -24,7 +24,7 @@
           True: {state: "spray_colors" , color: "#5890f7"}
           False: {state: "spray_cap_colors" , color: "#5890f7"}
 
-# euphoria - added deep blue paint prototype
+#Deep blue
 - type: entity
   parent: PaintBase
   name: deep blue paint
@@ -47,13 +47,12 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#0000AA"}
           False: {state: "spray_cap_colors" , color: "#0000AA"}
-# euphoria - end
 
 #Red
 - type: entity
   parent: PaintBase
-  name: red paint # euphoria - added name
-  description: Paint the town red. # euphoria - added description
+  name: red paint
+  description: Paint the Town Red.
   id: SprayPaintRed
   suffix: Red
   components:
@@ -74,7 +73,7 @@
           True: {state: "spray_colors" , color: "#ff3b3b"}
           False: {state: "spray_cap_colors" , color: "#ff3b3b"}
 
-# euphoria - added deep red paint prototype
+#Deep red
 - type: entity
   parent: PaintBase
   name: deep red paint
@@ -97,12 +96,11 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#AA0000"}
           False: {state: "spray_cap_colors" , color: "#AA0000"}
-# euphoria - end
 
 #Green
 - type: entity
   parent: PaintBase
-  name: green paint # euphoria - added name
+  name: green paint
   id: SprayPaintGreen
   suffix: Green
   components:
@@ -123,7 +121,7 @@
           True: {state: "spray_colors" , color: "#73f170"}
           False: {state: "spray_cap_colors" , color: "#73f170"}
 
-# euphoria - added deep green paint prototype
+#Deep green
 - type: entity
   parent: PaintBase
   name: deep green paint
@@ -146,12 +144,11 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#00AA00"}
           False: {state: "spray_cap_colors" , color: "#00AA00"}
-# euphoria - end
 
 #Black
 - type: entity
   parent: PaintBase
-  name: black paint # euphoria - added name
+  name: black paint
   id: SprayPaintBlack
   suffix: Black
   components:
@@ -172,7 +169,7 @@
           True: {state: "spray_colors" , color: "#3a3a3a"}
           False: {state: "spray_cap_colors" , color: "#3a3a3a"}
 
-# euphoria - added deep black paint prototype
+#Deep black
 - type: entity
   parent: PaintBase
   name: deep black paint
@@ -195,12 +192,11 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#000000"}
           False: {state: "spray_cap_colors" , color: "#000000"}
-# euphoria - end
 
 #Orange
 - type: entity
   parent: PaintBase
-  name: orange paint # euphoria - added name
+  name: orange paint
   id: SprayPaintOrange
   suffix: Orange
   components:
@@ -224,7 +220,7 @@
 #Purple
 - type: entity
   parent: PaintBase
-  name: purple paint # euphoria - added name
+  name: purple paint
   id: SprayPaintPurple
   suffix: Purple
   components:
@@ -245,7 +241,7 @@
           True: {state: "spray_colors" , color: "#c063f5"}
           False: {state: "spray_cap_colors" , color: "#c063f5"}
 
-# euphoria - added deep purple paint prototype
+#Deep purple
 - type: entity
   parent: PaintBase
   name: deep purple paint
@@ -268,12 +264,11 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#AA00AA"}
           False: {state: "spray_cap_colors" , color: "#AA00AA"}
-# euphoria - end
 
 #White
 - type: entity
   parent: PaintBase
-  name: white paint # euphoria - added name
+  name: white paint
   id: SprayPaintWhite
   suffix: White
   components:
@@ -294,7 +289,6 @@
           True: {state: "spray_colors" , color: "#f2f2f2"}
           False: {state: "spray_cap_colors" , color: "#f2f2f2"}
 
-# euphoria - added grey, deep grey, silver, gold, pink, yellow, and brown paint prototypes
 - type: entity
   parent: PaintBase
   name: grey paint
@@ -369,7 +363,7 @@
   parent: PaintBase
   name: gold paint
   id: SprayPaintGold
-  description: Paint so fresh, it's actually dripping.
+  description: Paint so fresh, it's actually dripping.,
   suffix: Gold
   components:
   - type: Sprite
@@ -457,4 +451,3 @@
         enum.OpenableVisuals.Layer:
           True: {state: "spray_colors" , color: "#B4684D"}
           False: {state: "spray_cap_colors" , color: "#B4684D"}
-# euphoria - end

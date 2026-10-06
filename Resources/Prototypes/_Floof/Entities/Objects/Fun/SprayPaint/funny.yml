@@ -1,7 +1,7 @@
 - type: entity
   parent: PaintBase
   id: FunnyPaint
-  name: pink funny paint # euphoria - changed name to include colour
+  name: pink funny paint
   description:  A tin of funny paint, manufactured by Honk! Co.
   components:
   - type: ColorPaint
@@ -19,11 +19,11 @@
 - type: entity
   parent: PaintBase
   id: FunnyPaintYellow
-  name: yellow funny paint # euphoria - changed name to include colour
-  description:  A tin of funny paint, manufactured by Honk! Co. Smells like bananas. # euphoria - added the "smells like" description
+  name: yellow funny paint
+  description:  A tin of funny paint, manufactured by Honk! Co. Smells like bananas.
   components:
   - type: ColorPaint
-    color: "#ffff00" # euphoria - changed hex colour to be less hideous
+    color: "#ffff00"
   - type: Item
     sprite: _Floof/Objects/Fun/spraycans.rsi
     heldPrefix: clown
