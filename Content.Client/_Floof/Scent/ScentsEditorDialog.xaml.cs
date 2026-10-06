@@ -218,11 +218,11 @@ public sealed partial class ScentsEditorDialog : FancyWindow
         public string Name;
         public List<ScentData> Scents;
 
-        // For ICvarSerializable, will be overwritten
+        // For ICvarSerializable
         public ScentPreset()
         {
             Name = "<error>";
-            Scents = null!;
+            Scents = new();
         }
 
         public ScentPreset(string name, List<ScentData> scents)

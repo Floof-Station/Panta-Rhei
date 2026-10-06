@@ -1,12 +1,8 @@
-using System.Numerics;
-using Content.Client._Floof.Language.RichText;
 using Content.Client.Strip;
-using Content.Client.UserInterface.RichText;
 using Content.Shared._Floof.Examine;
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
 using Robust.Client.Player;
-using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
