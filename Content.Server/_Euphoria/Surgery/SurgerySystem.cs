@@ -37,34 +37,6 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     private void OnMapInit(Entity<BodyComponent> ent ,ref MapInitEvent args)
     {
-        if (!TryComp<BodyComponent>(ent, out var body))
-            return;
-
-        if (body.Organs == null)
-            return;
-
-        //AddComp(ent, new SurgeryComponent());
-
-        if (!TryComp<SurgeryComponent>(ent, out var surgery))
-            return;
-
-        foreach (var organ in body.Organs.ContainedEntities)
-        {
-            if (!TryComp<OrganComponent>(organ, out var comp))
-                continue;
-
-            if(comp.Category == null)
-                continue;
-
-            if (!surgery.DictOrgans.ContainsKey(comp.Category.Value))
-                surgery.DictOrgans[comp.Category.Value] = new Dictionary<EntityUid, Dictionary<ProtoId<SurgeryStatePrototype>, bool>>();
-
-            foreach(var state in surgery.SurgeryStates)
-            {
-                surgery.DictOrgans[comp.Category.Value][organ].Add(state,false);
-            }
-
-        }
 
     }
 
@@ -79,12 +51,11 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (!ent.Comp.DictOrgans.ContainsKey(organ.Category.Value))
             ent.Comp.DictOrgans[organ.Category.Value] = new Dictionary<EntityUid, Dictionary<ProtoId<SurgeryStatePrototype>, bool>>();
 
-        if (!TryComp<SurgeryComponent>(ent, out var surgery) || surgery == null)
-            return;
+        ent.Comp.DictOrgans[organ.Category.Value].Add(args.Organ, new Dictionary<ProtoId<SurgeryStatePrototype>, bool>());
 
-        foreach(var state in surgery.SurgeryStates)
+        foreach(var state in ent.Comp.SurgeryStates)
         {
-            surgery.DictOrgans[organ.Category.Value][args.Organ].Add(state,false);
+            ent.Comp.DictOrgans[organ.Category.Value][args.Organ].Add(state,false);
         }
 
     }
@@ -109,7 +80,12 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     private void OnSurgeryStartMessage(EntityUid uid, SurgeryComponent component, SurgeryStartMessage args)
     {
+        if(!_proto.TryIndex<SurgeryActionPrototype>(args.ID,out var proto))
+            return;
+        if(proto == null)
+            return;
         //DO THE SURGERY WITH A DOAFTER AND REMOVE THE BITS
+        PerformOperation(uid, component, proto);
         Spawn("FoodBreadPlain", uid.ToCoordinates());
     }
 
@@ -123,7 +99,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 .Where(p => p != null)
                 .Where(p => new ProtoId<OrganCategoryPrototype>(target) == p!.Value.Comp.Category)
                 .ToList();
-
+            //for now just remove the first one found
+            //Change later to specify WHICH organ if there are multi
             return organsToRemove[0];
         }
 
@@ -135,6 +112,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (!TryComp<BodyComponent>(uid,out var body))
             return;
 
+        //Set the new state of the body
         if (actionPrototype._effects.Count > 0)
         {
             foreach(var part in actionPrototype._effects)
@@ -151,6 +129,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             }
         }
 
+        //Remove organ logic
         if(actionPrototype.Remove != null)
         {
             var cutOut = getTarget(body, actionPrototype.Remove.Value);
@@ -161,21 +140,12 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             ContainerSystem.Remove(cutOut.Value, body.Organs);
         }
 
+        //Insert organ logic
         if (actionPrototype.Insert != null)
         {
             //need access to the person performing the surgery to see the organ in their hand
             //Check if the organ is gone by the end of the surgery, then give message if missing
         }
-
-    }
-
-    private void RemoveOrgan(EntityUid uid, SurgeryComponent component, OrganCategoryPrototype args)
-    {
-
-    }
-
-    private void AddOrgan(EntityUid uid, SurgeryComponent component, OrganCategoryPrototype args)
-    {
 
     }
 }
