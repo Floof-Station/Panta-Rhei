@@ -10,38 +10,6 @@
 
 - type: entity
   parent: PlushieHuman
-  id: PlushieSlimeTider
-  name: Slime tider plushie
-  description: A generic tider, this one seems to be particularly slimy. The label reads 'Product not insulated'
-  components:
-  - type: Sprite
-    sprite: _Floof/Objects/Fun/floof_plush.rsi
-    state: slime
-  - type: UseDelay
-    delay: 3.0
-  - type: EmitSoundOnUse
-    sound: &slimeSquish
-      path: /Audio/Voice/Slime/slime_squish.ogg
-      params:
-        volume: 1
-  - type: EmitSoundOnLand
-    sound: *slimeSquish
-  - type: EmitSoundOnCollide
-    sound: *slimeSquish
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Voice/Human/female_sigh.ogg
-      params:
-        volume: 1
-  - type: MeleeWeapon
-    soundHit: &slimeLaugh
-      path: /Audio/_Floof/Voice/Slime/slime_laugh_f1.ogg
-      params:
-        variation: 0.20
-        volume: 4
-
-- type: entity
-  parent: PlushieHuman
   id: PlushieCentCom
   name: Central Command plushie
   description: Your own personal CentCom Pal!
@@ -117,12 +85,16 @@
       params:
         volume: 2
         variation: 0.05
+  - type: MeleeWeapon
+    soundHit: &slimeLaugh
+      path: /Audio/_Floof/Voice/Slime/slime_laugh_f1.ogg
+      params:
+        variation: 0.20
+        volume: 4
   - type: EmitSoundOnLand
     sound: *slimeLaugh
   - type: EmitSoundOnActivate
     sound: *slimePop
-  - type: MeleeWeapon
-    soundHit: *slimeLaugh
   - type: EmitSoundOnCollide
     sound: *slimeLaugh
 
@@ -654,7 +626,10 @@
   - type: EmitSoundOnUse
     sound: *metalBreak
   - type: EmitSoundOnLand
-    sound: *slimeSquish
+    sound: &slimeSquish
+      path: /Audio/Voice/Slime/slime_squish.ogg
+      params:
+        volume: 1
   - type: MeleeWeapon
     soundHit: *slimeSquish
   - type: EmitSoundOnCollide
