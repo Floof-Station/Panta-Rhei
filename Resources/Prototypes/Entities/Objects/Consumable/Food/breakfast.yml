@@ -32,13 +32,13 @@
   components:
   - type: FlavorProfile # Euphoria: removed food; added meaty, egg, sweetdough
     flavors:
-      # - food
-      - meaty
-      - egg
-      - sweetdough
+      # - food - Removed in favor of a more descriptive description
+      - meaty # Euphoria - Improved flavor profile
+      - egg # Euphoria - Improved flavor profile
+      - sweetdough # Euphoria - Improved flavor profile
   - type: Sprite
     state: fullamerican
-  - type: Tag # added for Euphoria
+  - type: Tag # Euphoria - Added Meat Tag
     tags:
     - Meat
 
@@ -48,14 +48,14 @@
   name: full english breakfast
   description: A huge plate of protein and carbs, more likely to put you back in bed than get you out of it. Don't mention the war!
   components:
-  - type: FlavorProfile # Euphoria: removed food; added savory, smokey, meaty
+  - type: FlavorProfile
     flavors:
-      #  - food
-      - savory
-      - smokey
-      - meaty
+      #  - food - Euphoria - removed in favor of a more descriptive description
+      - savory # Euphoria - Improved flavor profile
+      - smokey # Euphoria - Improved flavor profile
+      - meaty # Euphoria - Improved flavor profile
   - type: Sprite
     state: fullenglish
-  - type: Tag # added for Euphoria
+  - type: Tag # Euphoria - Added Meat Tag
     tags:
     - Meat
