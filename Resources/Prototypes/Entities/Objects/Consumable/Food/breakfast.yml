@@ -30,11 +30,17 @@
   name: full american breakfast
   description: A huge plate of protein and carbs, more likely to put you back in bed than get you out of it. Oh, what fresh hell is this?
   components:
-  - type: FlavorProfile
+  - type: FlavorProfile # Euphoria: removed food; added meaty, egg, sweetdough
     flavors:
-      - food
+      # - food
+      - meaty
+      - egg
+      - sweetdough
   - type: Sprite
     state: fullamerican
+  - type: Tag # added for Euphoria
+    tags:
+    - Meat
 
 - type: entity
   parent: FoodBreakfastBase
@@ -42,8 +48,14 @@
   name: full english breakfast
   description: A huge plate of protein and carbs, more likely to put you back in bed than get you out of it. Don't mention the war!
   components:
-  - type: FlavorProfile
+  - type: FlavorProfile # Euphoria: removed food; added savory, smokey, meaty
     flavors:
-      - food
+      #  - food
+      - savory
+      - smokey
+      - meaty
   - type: Sprite
     state: fullenglish
+  - type: Tag # added for Euphoria
+    tags:
+    - Meat

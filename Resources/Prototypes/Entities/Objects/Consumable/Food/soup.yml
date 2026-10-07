@@ -703,6 +703,9 @@
           Quantity: 10
         - ReagentId: Vitamin
           Quantity: 10
+  - type: Tag # added for Euphoria
+    tags:
+    - Meat
 
 - type: entity
   name: clown's tears
@@ -836,6 +839,7 @@
   - type: Tag
     tags:
     - ChiliBowl
+    - Meat # added for Euphoria
 
 
 - type: entity
@@ -864,6 +868,7 @@
   - type: Tag
     tags:
     - ChiliBowl
+    - Meat # added for Euphoria
 
 - type: entity
   name: chili con carnival
@@ -897,6 +902,7 @@
   - type: Tag
     tags:
     - ChiliBowl
+    - Meat # added for Euphoria
 
 - type: entity
   name: monkey's delight
@@ -1181,6 +1187,7 @@
   - type: FlavorProfile
     flavors:
       - creamy
+      - fishy # added for Euphoria
   - type: Sprite
     layers:
     - state: bowl
@@ -1198,6 +1205,9 @@
             Quantity: 5
           - ReagentId: Water
             Quantity: 5
+  - type: Tag # added for Euphoria
+    tags:
+    - Meat
 # Tastes like crab.
 
 - type: entity
