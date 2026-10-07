@@ -12,17 +12,8 @@
             <Button
                 Name="ResetVoreSettings"
                 Access="Public"
-                Text="Reset"/>
-            <Button
-                Name="ImportVoreSettings"
-                Access="Public"
-                Text="Import"/>
-            <Button
-                Name="ExportVoreSettings"
-                Access="Public"
-                Text="Export"/>
+                Text="Reset" />
         </BoxContainer>
-
         <TabContainer Name="MasterTabContainer">
             <BoxContainer Name="Info" Orientation="Vertical" SeparationOverride="8" VerticalExpand="True">
                 <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False" MinSize="0 500">
@@ -51,9 +42,8 @@
                     <Slider 
                         HorizontalExpand="True" 
                         Name="DigestSpeed" 
-                        MinValue="0" 
-                        MaxValue="100" 
-                        Value="20" />
+                        MinValue="10" 
+                        MaxValue="300"/>
                 </BoxContainer>
             </BoxContainer>
             
@@ -63,7 +53,7 @@
             <BoxContainer Name="Options" Orientation="Vertical" SeparationOverride="6">
                     <CheckBox 
                         Name="AllowSound" 
-                        Text="Stomach sounds (WIP)" />
+                        Text="Stomach sounds" />
             </BoxContainer>
         </TabContainer>
     </BoxContainer>

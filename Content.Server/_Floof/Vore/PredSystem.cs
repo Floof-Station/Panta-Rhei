@@ -40,6 +40,7 @@ public sealed class PredSystem : EntitySystem
     {
         SubscribeLocalEvent<BodyComponent, GetVerbsEvent<Verb>>(OnBodyGetVerbs);
 
+        SubscribeLocalEvent<PredComponent, VoreSettingsChangedEvent>(OnPredSettingsChanged);
         SubscribeLocalEvent<PredComponent, OnVoreDoAfter>(OnVoreDoAfter);
         SubscribeLocalEvent<PredComponent, BeingGibbedEvent>(OnGibbedRemoveContent);
         SubscribeLocalEvent<PredComponent, DestructionEventArgs>(OnDestroyedRemoveContent);
@@ -80,6 +81,7 @@ public sealed class PredSystem : EntitySystem
         args.Verbs.Add(new Verb
             {
                 Text = "Vore Settings",
+                Category = VoreGeneral,
                 Act = () => RaiseNetworkEvent(new OpenVoreMenuEvent(), uid)   
             });
         
@@ -108,6 +110,12 @@ public sealed class PredSystem : EntitySystem
         }
     }
 
+    /// <summary>
+    /// handling changes to component values 
+    /// </summary>
+    private void OnPredSettingsChanged(EntityUid uid, PredComponent comp, VoreSettingsChangedEvent ev){
+        comp.DigestSpeed = ev.DigestSpeed;
+    }
 
     /// <summary>
     /// handles the verbs that control the container such as inserting/removing

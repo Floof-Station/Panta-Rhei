@@ -38,7 +38,8 @@ public sealed class PreySystem : EntitySystem
         SubscribeLocalEvent<PredComponent, EntInsertedIntoContainerMessage>(OnPreyInsertedIntoContainer);
         SubscribeLocalEvent<PredComponent, EntRemovedFromContainerMessage>(OnPreyRemovedFromContainer);
         
-        SubscribeLocalEvent<DevouredComponent, VoreSettingsEvent>(OnVoreSettingsChanged);
+        SubscribeLocalEvent<PreyComponent, VoreSettingsChangedEvent>(OnPreySettingsChanged);
+        SubscribeLocalEvent<DevouredComponent, VoreSettingsChangedEvent>(OnVoreSettingsChanged);
         SubscribeLocalEvent<DevouredComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<DevouredComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
         SubscribeLocalEvent<DevouredComponent, MobStateChangedEvent>(OnPreyMobStateChanged);
@@ -79,7 +80,6 @@ public sealed class PreySystem : EntitySystem
         EnsureComp<DevouredComponent>(prey);
         if (TryComp<PreyComponent>(prey, out var preyComp) && preyComp.AllowSound){
             if(TryComp<DevouredComponent>(prey, out var devouredComp) && _playerManager.TryGetSessionByEntity(prey, out var session)){
-                //TODO IT DOESNT REACH THAT LINE
                 Console.WriteLine($"Playing sound for {prey} in {session}");
                 devouredComp.Stream = _audio.PlayEntity(devouredComp.SoundBelly, session, prey, AudioParams.Default.WithLoop(true))?.Entity;
             }
@@ -104,7 +104,11 @@ public sealed class PreySystem : EntitySystem
     /// <summary>
     /// handling changes to component values if the client system sends changes while being in a container
     /// </summary>
-    private void OnVoreSettingsChanged(EntityUid uid, DevouredComponent comp, VoreSettingsEvent ev){
+    private void OnPreySettingsChanged(EntityUid uid, PreyComponent comp, VoreSettingsChangedEvent ev){
+        comp.AllowSound = ev.AllowSound;
+    }
+
+    private void OnVoreSettingsChanged(EntityUid uid, DevouredComponent comp, VoreSettingsChangedEvent ev){
         if (TryComp<PreyComponent>(uid, out var preyComp)){
             preyComp.AllowSound = ev.AllowSound;
         }

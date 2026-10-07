@@ -7,16 +7,18 @@ using Robust.Client.State;
 using Content.Client.Gameplay;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controllers.Implementations;
-namespace Content.Client._Floof.Vore;
+namespace Content.Client._Floof.Vore.Menu;
 
 [UsedImplicitly]
 public sealed class VoreUIController : UIController, IOnStateChanged<GameplayState>
 {
     private VoreMenu? _menu;
+    private string _settingsYaml = string.Empty;
 
     public void OnStateEntered(GameplayState state)
     {
         _menu = new VoreMenu();
+        _menu.SetSettings(_settingsYaml);
     }
 
     public void OnStateExited(GameplayState state)
@@ -31,5 +33,11 @@ public sealed class VoreUIController : UIController, IOnStateChanged<GameplaySta
             return;
         if (!_menu.IsOpen)
             _menu.OpenCentered();
+    }
+
+    public void SetSettings(string settingsYaml)
+    {
+        _settingsYaml = settingsYaml;
+        _menu?.SetSettings(settingsYaml);
     }
 }
