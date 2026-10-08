@@ -13,6 +13,9 @@ public sealed partial class SurgeryActionPrototype : IPrototype
     [DataField("toolType", required: true)]
     public SurgeryToolComponent.ToolTypeEnum _type = default!;
 
+    [DataField("duration",required: true)]
+    public float _duration;
+
     [DataField("states")]
     public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<ProtoId<SurgeryStatePrototype>,bool>> _states = new();
 

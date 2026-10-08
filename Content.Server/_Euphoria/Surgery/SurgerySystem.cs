@@ -4,7 +4,9 @@ using Content.Shared._Euphoria.Surgery;
 using Content.Shared._Euphoria.Surgery.Components;
 using Content.Shared.Body;
 using Content.Shared.Coordinates;
+using Content.Shared.DoAfter;
 using Content.Shared.GameTicking;
+using Content.Shared.Kitchen;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
@@ -20,6 +22,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 {
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedContainerSystem ContainerSystem = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
 
     public override void Initialize()
     {
@@ -72,10 +75,54 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     }
     public List<ProtoId<SurgeryActionPrototype>> GetAvailableSurgeries(EntityUid uid, SurgeryComponent component, bool getUnavailable = false)
     {
+        var filteredList = new List<ProtoId<SurgeryActionPrototype>>();
+
+        //Add filter system here to only give surgeries that are available at the time.
         var ev = new SurgeryGetActionsEvent((uid, component), getUnavailable);
         AddSurgeries(ev.Surgeries, component.SurgeryActions);
         RaiseLocalEvent(uid, ev);
-        return ev.Surgeries.ToList();
+
+        bool addThis = true;
+
+        //This is pain, I know, I am sorry
+        foreach (var protoId in ev.Surgeries)
+        {
+            if (_proto.TryIndex<SurgeryActionPrototype>(protoId, out var action))
+            {
+                addThis = true;
+                if (action != null)
+                {
+                    foreach (var organ in action._states)
+                    {
+                        if (!component.DictOrgans.ContainsKey(organ.Key))
+                        {
+                            addThis = false;
+                            continue;
+                        }
+                        foreach (var ent in component.DictOrgans[organ.Key])
+                        {
+                            foreach (var condition in organ.Value)
+                            {
+                                if (!component.DictOrgans[organ.Key][ent.Key].ContainsKey(condition.Key))
+                                {
+                                    addThis = false;
+                                    continue;
+                                }
+                                if (component.DictOrgans[organ.Key][ent.Key][condition.Key] != condition.Value)
+                                {
+                                    addThis = false;
+                                    continue;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (addThis)
+                filteredList.Add(protoId);
+        }
+
+        return filteredList;
     }
 
     private void OnSurgeryStartMessage(EntityUid uid, SurgeryComponent component, SurgeryStartMessage args)
@@ -84,7 +131,15 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             return;
         if(proto == null)
             return;
-        //DO THE SURGERY WITH A DOAFTER AND REMOVE THE BITS
+        //The do after is broken, requires proper fields for the actor, target, tool used for recipe etc.
+        var doAfter =
+            new DoAfterArgs(EntityManager,args.Actor,proto._duration,new SurgeryFinishedEvent(),null, uid, null)
+            {
+                BreakOnDamage = true,
+                BreakOnMove = true,
+            };
+        _doAfterSystem.TryStartDoAfter(doAfter);
+
         PerformOperation(uid, component, proto);
         Spawn("FoodBreadPlain", uid.ToCoordinates());
     }

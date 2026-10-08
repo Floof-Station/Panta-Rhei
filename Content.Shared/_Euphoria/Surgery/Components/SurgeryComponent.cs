@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Body;
+using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
@@ -35,4 +36,9 @@ public sealed class SurgeryGetActionsEvent : EntityEventArgs
         (Person, Comp) = person;
         GetUnavailable = forced;
     }
+}
+
+public sealed partial class SurgeryFinishedEvent : SimpleDoAfterEvent
+{
+
 }
