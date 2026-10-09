@@ -2,6 +2,7 @@
 using Content.Shared.DoAfter;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared._Euphoria.Surgery.Components;
 
@@ -38,7 +39,14 @@ public sealed class SurgeryGetActionsEvent : EntityEventArgs
     }
 }
 
-public sealed partial class SurgeryFinishedEvent : SimpleDoAfterEvent
+[Serializable, NetSerializable]
+public sealed partial class SurgeryFinishedEvent : DoAfterEvent
 {
+    [NonSerialized]
+    public ProtoId<SurgeryActionPrototype> ID;
 
+    public override DoAfterEvent Clone()
+    {
+        return this;
+    }
 }

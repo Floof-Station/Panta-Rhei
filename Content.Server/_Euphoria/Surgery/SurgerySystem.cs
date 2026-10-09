@@ -6,7 +6,11 @@ using Content.Shared.Body;
 using Content.Shared.Coordinates;
 using Content.Shared.DoAfter;
 using Content.Shared.GameTicking;
+using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Kitchen;
+using Content.Shared.PDA;
+using Content.Shared.Popups;
+using Content.Shared.Store.Components;
 using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Robust.Server.GameObjects;
@@ -23,6 +27,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedContainerSystem ContainerSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
 
     public override void Initialize()
     {
@@ -36,6 +42,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         SubscribeLocalEvent<SurgeryComponent, OrganInsertedIntoEvent>(OnOrganInserted);
         SubscribeLocalEvent<SurgeryComponent, OrganRemovedFromEvent>(OnOrganRemoved);
         SubscribeLocalEvent<SurgeryComponent, SurgeryStartMessage>(OnSurgeryStartMessage);
+        SubscribeLocalEvent<SurgeryComponent, SurgeryFinishedEvent>(OnSurgeryFinished);
     }
 
     private void OnMapInit(Entity<BodyComponent> ent ,ref MapInitEvent args)
@@ -43,6 +50,19 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     }
 
+    private void OnSurgeryFinished(EntityUid uid, SurgeryComponent component, SurgeryFinishedEvent ev)
+    {
+        if(!_proto.TryIndex<SurgeryActionPrototype>(ev.ID,out var proto))
+            return;
+        if(proto == null)
+            return;
+
+        if (!ev.Cancelled)
+        {
+            PerformOperation(uid, component, proto);
+            Spawn("FoodBreadPlain", uid.ToCoordinates());
+        }
+    }
     //This is where you would put the damage transfer from the organ into the body
     private void OnOrganInserted(Entity<SurgeryComponent> ent, ref OrganInsertedIntoEvent args)
     {
@@ -73,6 +93,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         ent.Comp.DictOrgans[organ.Category.Value].Remove(args.Organ);
     }
+
     public List<ProtoId<SurgeryActionPrototype>> GetAvailableSurgeries(EntityUid uid, SurgeryComponent component, bool getUnavailable = false)
     {
         var filteredList = new List<ProtoId<SurgeryActionPrototype>>();
@@ -127,24 +148,48 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     private void OnSurgeryStartMessage(EntityUid uid, SurgeryComponent component, SurgeryStartMessage args)
     {
-        if(!_proto.TryIndex<SurgeryActionPrototype>(args.ID,out var proto))
+        if (!_proto.TryIndex<SurgeryActionPrototype>(args.ID, out var proto))
             return;
         if(proto == null)
             return;
-        //The do after is broken, requires proper fields for the actor, target, tool used for recipe etc.
+
+        foreach (var item in _handsSystem.EnumerateHeld(args.Actor))
+        {
+            if (TryComp<SurgeryToolComponent>(item, out var tool))
+                if (tool.ToolType == (int)proto._type)
+                {
+                    TrySurgeryStart(uid, component, args.ID, args.Actor);
+                    return;
+                }
+        }
+
+        _popupSystem.PopupEntity(Loc.GetString("surgery-wrong-tool"),args.Actor);
+        return;
+    }
+
+    private bool TrySurgeryStart(EntityUid uid, SurgeryComponent component, ProtoId<SurgeryActionPrototype> id, EntityUid actor)
+    {
+        if(!_proto.TryIndex<SurgeryActionPrototype>(id,out var proto))
+            return false;
+        if(proto == null)
+            return false;
+
+        var doFinished = new SurgeryFinishedEvent
+        {
+            ID = id,
+        };
+
         var doAfter =
-            new DoAfterArgs(EntityManager,args.Actor,proto._duration,new SurgeryFinishedEvent(),null, uid, null)
+            new DoAfterArgs(EntityManager,actor,proto._duration,doFinished,uid, uid, null)
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,
             };
         _doAfterSystem.TryStartDoAfter(doAfter);
-
-        PerformOperation(uid, component, proto);
-        Spawn("FoodBreadPlain", uid.ToCoordinates());
+        return true;
     }
 
-    private EntityUid? getTarget(BodyComponent bodyComp, ProtoId<OrganCategoryPrototype> target)
+    private EntityUid? GetTarget(BodyComponent bodyComp, ProtoId<OrganCategoryPrototype> target)
     {
 
         if (bodyComp.Organs != null)
@@ -174,7 +219,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             {
                 foreach (var effect in part.Value)
                 {
-                    var ent = getTarget(body, part.Key);
+                    var ent = GetTarget(body, part.Key);
                     if (ent == null)
                         return;
 
@@ -187,7 +232,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         //Remove organ logic
         if(actionPrototype.Remove != null)
         {
-            var cutOut = getTarget(body, actionPrototype.Remove.Value);
+            var cutOut = GetTarget(body, actionPrototype.Remove.Value);
 
             if (cutOut == null || body.Organs == null)
                 return;
