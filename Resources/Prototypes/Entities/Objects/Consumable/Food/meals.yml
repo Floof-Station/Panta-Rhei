@@ -47,6 +47,11 @@
   name: space fries
   description: AKA, French Fries, Freedom Fries, etc.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Hotdog: Fries
+  #Euphoria end
   - type: Item
     storedOffset: 0,-3
   - type: FlavorProfile
@@ -400,6 +405,7 @@
     entries:
       Burger: Ribs
       Taco: Ribs
+      Hotdog: Ribs
   #Euphoria end
   - type: Item
     storedOffset: 0,-4

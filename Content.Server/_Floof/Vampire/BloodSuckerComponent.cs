@@ -1,4 +1,10 @@
-﻿namespace Content.Server._Floof.Vampire;
+﻿using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Damage;
+using Content.Shared.Inventory;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+
+namespace Content.Server._Floof.Vampire;
 
 [RegisterComponent]
 public sealed partial class BloodSuckerComponent : Component
@@ -14,6 +20,25 @@ public sealed partial class BloodSuckerComponent : Component
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public TimeSpan Delay = TimeSpan.FromSeconds(4);
+
+    /// <summary>
+    ///     Damage to deal when sucking. When damage in these groups becomes zero, also removes the flavor text.
+    /// </summary>
+    public DamageSpecifier BiteDamage = new DamageSpecifier()
+    {
+        DamageDict = new()
+        {
+            { "Piercing", 5 },
+            { "Airloss", 0 }, // This is just so that BloodSuckedComponent doesn't get removed until bloodloss reaches 0
+        },
+    };
+
+    public SoundSpecifier BiteSound = new SoundPathSpecifier("/Audio/Effects/bite.ogg");
+
+    /// <summary>
+    ///     Which slots to consider when checking mouth obstruction.
+    /// </summary>
+    public SlotFlags RequiredFreeSlot = SlotFlags.MASK;
 
     // ***INJECT WHEN SUCC***
 

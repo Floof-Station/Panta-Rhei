@@ -41,6 +41,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Content.Server.Mobs; // Starlight
 
 namespace Content.Server.Ghost
 {
@@ -214,7 +215,7 @@ namespace Content.Server.Ghost
             }
 
             _eye.RefreshVisibilityMask(uid);
-            var time = _gameTiming.CurTime;
+            var time = _gameTiming.RealTime;
             component.TimeOfDeath = time;
         }
 
@@ -617,10 +618,19 @@ namespace Content.Server.Ghost
                         && TryComp<MobThresholdsComponent>(playerEntity, out var thresholds))
                     {
                         var playerDeadThreshold = _mobThresholdSystem.GetThresholdForState(playerEntity.Value, MobState.Dead, thresholds);
-                        dealtDamage = playerDeadThreshold - damageable.TotalDamage;
+                        dealtDamage = playerDeadThreshold -
+                                      _damageable.GetTotalDamage((playerEntity.Value, damageable));
                     }
 
-                    DamageSpecifier damage = new(_prototypeManager.Index(AsphyxiationDamageType), dealtDamage);
+                    // Starlight - Start
+                    //DamageSpecifier damage = new(_prototypeManager.Index(AsphyxiationDamageType), dealtDamage);
+
+                    var damageType = _prototypeManager.Index(AsphyxiationDamageType);
+                    if (TryComp<DeathgaspComponent>(playerEntity, out var deathgasp))
+                        damageType = _prototypeManager.Index(deathgasp.DamageType);
+
+                    DamageSpecifier damage = new(damageType, dealtDamage);
+                    // Starlight - End
 
                     _damageable.ChangeDamage(playerEntity.Value, damage, true);
                 }

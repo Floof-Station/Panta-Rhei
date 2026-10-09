@@ -1,6 +1,5 @@
 - type: entity
   id: SentientSmileCore
-  parent: SentientSlimesCore
   name: sentient smile core
   components:
   - type: Sprite
@@ -10,6 +9,8 @@
     grindableSolutionName: organ
   - type: SolutionContainerManager
     solutions:
+      stomach:
+        maxVol: 30.0 # floofstation - let smile eat and drink
       food:
         maxVol: 5
         reagents:

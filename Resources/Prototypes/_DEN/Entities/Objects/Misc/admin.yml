@@ -27,9 +27,10 @@
         - id: GeigerCounter
         - id: AccessConfiguratorUniversal
         - id: AdminRCD
+        - id: AdminRPD # Floofstation - give admins the admin RPD in their belts
   - type: Storage
     grid:
-    - 0,0,6,3
+    - 0,0,7,3 # Floofstation - increase admin belt size to fit the RPD
     whitelist: null
     maxItemSize: Normal
 
@@ -61,7 +62,7 @@
 
 - type: entity
   id: AdminRCD
-  parent: RCDExperimental
+  parent: RCDRecharging # Floofstation - changed from RCDExperimental to RCDRecharging
   name: admin RCD
   description: An RCD with a never-ending supply of compressed matter.
   suffix: Admin
@@ -69,4 +70,4 @@
   - type: LimitedCharges
     maxCharges: 100
   - type: AutoRecharge
-    rechargeDuration: 0
+    rechargeDuration: 1 # Floofstatoin - change this from zero to one so it can actually recharge

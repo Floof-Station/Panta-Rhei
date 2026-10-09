@@ -108,19 +108,18 @@
     description: "The real brains behind the Justice department. Your honour my client is not fishy!"
     job: RoleCarpy
   - type: GhostTakeoverAvailable
+  - type: Hands
+  - type: DVInnateTools
+    tools: !type:AllSelector
+      children:
+      - id: LuxuryPenCarpy
+      - id: RubberStampCarpy
   - type: LanguageKnowledge # Floofstation. Pets understand tau-ceti.
     speaks:
     - Xeno
     understands:
     - Xeno
     - TauCetiBasic
-  -  type: Body
-     prototype: Human
-  - type: Hands
-  - type: InnateTool
-    tools:
-      - id: LuxuryPenCarpy
-      - id: RubberStampCarpy
   - type: UserInterface
     interfaces:
       enum.StrippingUiKey.Key:

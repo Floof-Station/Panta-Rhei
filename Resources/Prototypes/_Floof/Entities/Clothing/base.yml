@@ -3,12 +3,37 @@
   id: ClothingUniformShirtlessBase
   abstract: true
   components:
-  - type: Tag #DeltaV, needed for species with nonhuman legs/can only wear skirts
+  - type: Tag
     tags:
     - ClothMade
     - WhitelistChameleon
-    - Skirt
     - ShirtlessClothing # to allow equipping/unequipping under coats and the like
+
+# Base clothing that does not block undergarment slots
+- type: entity
+  id: ClothingUniformShirtlessAccessibleBase
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - Skirt #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    - ShirtlessClothing
+    - BottomAccessibleClothing
+    
+# Base clothing that does not block undergarment slots
+- type: entity
+  id: ClothingUniformNakedBase
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - Skirt #DeltaV, needed for species with nonhuman legs/can only wear skirts
+    - ShirtlessClothing
+    - BottomlessClothing
 
 # Base undergarment. Do not inherit from this directly.
 - type: entity
@@ -79,6 +104,10 @@
       slots:
       - INNERCLOTHING
       - OUTERCLOTHING
+      blacklist:
+        tags:
+        - BottomlessClothing
+        - BottomAccessibleClothing
 
 # Base for top undergarment
 - type: entity
@@ -135,3 +164,6 @@
     blockedBy:
       slots:
       - OUTERCLOTHING
+      blacklist:
+        tags:
+        - ShirtlessClothing

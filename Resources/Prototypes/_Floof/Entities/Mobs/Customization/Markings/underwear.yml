@@ -1,7 +1,6 @@
 - type: marking
   id: UnderwearBoxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -12,22 +11,8 @@
     state: snow_boxers
 
 - type: marking
-  id: UnderwearLowriders
-  bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
-  sprites:
-  - sprite: _Floof/Mobs/Customization/underwear.rsi
-    state: snow_lowriders
-
-- type: marking
   id: UnderwearBriefs
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -40,7 +25,6 @@
 - type: marking
   id: UnderwearSatin
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -51,22 +35,8 @@
     state: snow_satin
 
 - type: marking
-  id: UnderwearTanga
-  bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
-  coloring:
-    default:
-      type:
-        !type:SimpleColoring
-          color: "#FFFFFF"
-  sprites:
-  - sprite: _Floof/Mobs/Customization/underwear.rsi
-    state: snow_tanga
-
-- type: marking
   id: UnderwearClassicbriefs
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -79,7 +49,6 @@
 - type: marking
   id: UnderwearClassicjockstrap
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -92,7 +61,6 @@
 - type: marking
   id: UnderwearClassicmankini
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -105,7 +73,6 @@
 - type: marking
   id: UnderwearClassicboxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -118,7 +85,6 @@
 - type: marking
   id: UnderwearClassicheartboxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -131,7 +97,6 @@
 - type: marking
   id: UnderwearClassicukboxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -144,7 +109,6 @@
 - type: marking
   id: UnderwearClassicassblastusaboxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -157,7 +121,6 @@
 - type: marking
   id: UnderwearClassiccommieboxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -170,7 +133,6 @@
 - type: marking
   id: UnderwearClassicstripedboxers
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -183,7 +145,6 @@
 - type: marking
   id: UnderwearClassicboxerbriefs
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -196,7 +157,6 @@
 - type: marking
   id: UnderwearClassicbeeshorts
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -209,7 +169,6 @@
 - type: marking
   id: UnderwearClassicpanties
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -222,7 +181,6 @@
 - type: marking
   id: UnderwearClassicpantiesalt
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -235,7 +193,6 @@
 - type: marking
   id: UnderwearClassicpantiesslim
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -248,7 +205,6 @@
 - type: marking
   id: UnderwearClassicpantiesthin
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -261,7 +217,6 @@
 - type: marking
   id: UnderwearClassicpantiesneko
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -274,7 +229,6 @@
 - type: marking
   id: UnderwearClassicpantiesswimming
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -287,7 +241,6 @@
 - type: marking
   id: UnderwearClassicthong
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -300,7 +253,6 @@
 - type: marking
   id: UnderwearClassicthongbabydoll
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -313,7 +265,6 @@
 - type: marking
   id: UnderwearFishnetlower
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -326,7 +277,6 @@
 - type: marking
   id: UnderwearClassicpantiesassblastusa
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -339,7 +289,6 @@
 - type: marking
   id: UnderwearClassicpantiesbeekini
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -352,7 +301,6 @@
 - type: marking
   id: UnderwearClassicpantiescommie
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -365,7 +313,6 @@
 - type: marking
   id: UnderwearClassicpantiesuk
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -378,7 +325,6 @@
 - type: marking
   id: UnderwearClassicpantiesstriped
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -391,7 +337,6 @@
 - type: marking
   id: UnderwearClassicpantiesbow
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -404,7 +349,6 @@
 - type: marking
   id: UnderwearClassicpantiesbowslim
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -417,7 +361,6 @@
 - type: marking
   id: UnderwearClassicthongbow
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -430,7 +373,6 @@
 - type: marking
   id: UnderwearClassicthongbowbabydoll
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:
@@ -443,7 +385,6 @@
 - type: marking
   id: UnderwearClassicpantiescow
   bodyPart: UndergarmentBottom
-  markingCategory: UndergarmentBottom
   coloring:
     default:
       type:

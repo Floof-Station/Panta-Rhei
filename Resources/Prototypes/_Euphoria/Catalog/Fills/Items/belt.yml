@@ -13,3 +13,25 @@
         - id: Wirecutter
         - id: Welder
         - id: Multitool
+
+# paramed advanced topical belt
+- type: entity
+  id: ClothingBeltMedicalEMTAdvancedFilled
+  name: EMT belt Advanced
+  parent: ClothingBeltMedicalEMT
+  suffix: Paramedic,Filled
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MedicatedSuture
+        - id: RegenerativeMesh
+        - id: Bloodpack
+        - id: Gauze
+        - id: Portafib # DeltaV - Add PortaFib to EMT belt
+          # all this may be a bit strong we shall see but one of each pen to be onpar with regular doctor belts
+        - id: EmergencyMedipen
+        - id: BruteAutoInjector
+        - id: BurnAutoInjector
+        - id: AntiPoisonMedipen

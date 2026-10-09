@@ -12,6 +12,7 @@ using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared._DV.CCVars;
 using Content.Shared._DV.Curation;
+using Content.Shared._Floof.CCVar;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Input;
@@ -49,6 +50,7 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
     private bool _discordRelayActive;
     private bool _hasUnreadCHelp;
     private bool _cwoinkSoundEnabled;
+    private bool _chelpSoundEnabled; // Floofstation - toggleable chelp sounds
     private SoundPathSpecifier? _cHelpSound;
 
     public override void Initialize()
@@ -61,6 +63,7 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
         _config.OnValueChanged(DCCVars.CHelpSound, v => _cHelpSound = v, true);
         _config.OnValueChanged(CCVars.BwoinkSoundEnabled, v => _cwoinkSoundEnabled = v, true);
+        _config.OnValueChanged(FloofCCVars.ChelpSoundEnabled, v => _chelpSoundEnabled = v, true); // Floofstation - toggleable chelp sounds
     }
 
     public void UnloadButton()
@@ -146,7 +149,7 @@ public sealed class CHelpUIController : UIController, IOnSystemChanged<CwoinkSys
         }
         if (message.PlaySound && localPlayer.UserId != message.TrueSender)
         {
-            if (_cHelpSound != null && (_cwoinkSoundEnabled || !_adminManager.IsActive()))
+            if (_cHelpSound != null && (_chelpSoundEnabled  || !_adminManager.IsActive())) // Floofsattion changed from _cwoinkSoundEnabled
                 _audio.PlayGlobal(_cHelpSound, Filter.Local(), false);
             _clyde.RequestWindowAttention();
         }

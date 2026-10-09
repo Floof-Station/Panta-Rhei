@@ -62,6 +62,11 @@
     - Arsenal
     - Experimental
     - CivilianServices
+  - type: ApcPowerReceiver
+    powerLoad: 150
+  - type: PowerState
+    idlePowerDraw: 150
+    workingPowerDraw: 1000
   # Begin DeltaV additions
   - type: Wires
     boardName: wires-board-name-autolathe
@@ -248,6 +253,7 @@
     # Floofstation section - add your recipes here
     - AdvancedTranslation
     - UpgradeKits_Goob
+    - AdvancedFlashProtectionEpi
     # Floofstation section end
   - type: EmagLatheRecipes
     emagDynamicPacks:
@@ -309,7 +315,8 @@
     - ShuttleBoards
     - EngineeringBoardsGoob #Goob Factorio port
     - ServiceAssemblerPack # Frontier Service Assembler
-    - MedicalAssemblerPack # Frontier Medical Assembler
+    - MedicalAssemblerBoardOnlyPack # Frontier Medical Assembler
+    - ServiceJanitorBoardsEuphoria # Put this pack under our namespace, board is from froniter
     - ReactorCircuitboards # FH edit
   - type: EmagLatheRecipes
     emagDynamicPacks:
@@ -464,6 +471,7 @@
     - SimpleToolsStaticDeltaV
     - BorgModulesSecurityDeltaVStatic
     # End DeltaV Additions
+    - CraftableGlowsticksFloof # Floofstation
     dynamicPacks:
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
@@ -473,6 +481,7 @@
     - SecurityAmmo
     - SecurityWeapons
     - SpecOpsGoogles # DeltaV
+    - AdvancedFlashProtectionSec # Euphoria
     #- SecurityDisablers # DeltaV - made roundstart
   - type: EmagLatheRecipes
     emagStaticPacks:
@@ -621,7 +630,10 @@
   - type: Machine
     board: UniformPrinterMachineCircuitboard
   - type: Lathe
-    producingSound: /Audio/Machines/uniformprinter.ogg
+    producingSound:
+      path: /Audio/Machines/uniformprinter.ogg
+      params:
+        volume: -10 # Euph - make 2x quieter
     idleState: icon
     runningState: building
     staticPacks:

@@ -56,3 +56,17 @@
   equipment:
     undergarmentSocks: ClothingUnderSocksParaMedic
 
+# belt
+- type: loadout
+  id: ClothingBeltMedicalEMTFilled
+  equipment:
+    belt: ClothingBeltMedicalEMTFilled
+
+
+- type: loadout
+  id: ClothingBeltMedicalEMTAdvancedFilled
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofBeltMedicalAdvancedTimer # going to reuse the timer for doctors medical b elts
+  equipment:
+    belt: ClothingBeltMedicalEMTAdvancedFilled

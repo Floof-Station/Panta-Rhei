@@ -52,14 +52,16 @@
   parent: CrateEngineeringSecure
   id: CrateEngineeringSingularityCollector
   name: radiation collector crate
-  description: A radiation collector, best used for singularity engines. Plasma is included.
+  description: Two radiation collectors, best used for singularity engines. Plasma is included.
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:AllSelector
         children:
         - id: RadiationCollectorFlatpack
+          amount: 2 # Euphoria - Comes with 2 collectors instead of 1.
         - id: PlasmaTankFilled
+          amount: 2 # Euphoria - Comes with 2 plasma tanks instead of 1.
 
 - type: entity
   parent: CrateEngineeringSecure

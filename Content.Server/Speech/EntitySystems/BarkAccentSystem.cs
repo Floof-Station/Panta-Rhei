@@ -35,7 +35,7 @@ namespace Content.Server.Speech.EntitySystems
             }
 
             return message.Replace("!", _random.Pick(Barks))
-                .Replace("l", "r").Replace("L", "R");
+                .Replace("l", "l").Replace("L", "L"); //Euphoria, changed to remove the stereotype without messing with too much; Being remade
         }
 
         private void OnAccent(Entity<BarkAccentComponent> entity, ref AccentGetEvent args)

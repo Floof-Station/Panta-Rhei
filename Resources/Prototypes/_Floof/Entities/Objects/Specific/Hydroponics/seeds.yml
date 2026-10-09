@@ -61,3 +61,14 @@
     seedId: peanuts
   - type: Sprite
     sprite: _Floof/Objects/Specific/Hydroponics/peanut.rsi
+
+- type: entity
+  parent: SeedBase
+  name: packet of strawberry seeds
+  description: "So berry good."
+  id: StrawberrySeeds
+  components:
+  - type: Seed
+    seedId: strawberry
+  - type: Sprite
+    sprite: _Floof/Objects/Specific/Hydroponics/strawberry.rsi

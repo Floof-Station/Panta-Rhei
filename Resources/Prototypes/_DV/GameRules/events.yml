@@ -5,6 +5,7 @@
     - id: MothroachSpawn
     - id: XenoVents
     - id: MalignRiftSpawn
+    - id: GnomeSpawn
     - id: PitbullMigration # FETCH ME THEIR SOULS
 
 - type: entityTable
@@ -28,6 +29,10 @@
     earliestStart: 30
     weight: 7.5
     minimumPlayers: 10 #Enough to hopefully have at least one engineering guy
+    conditions: # Floof
+    - !type:DepartmentCountCondition
+      department: Engineering
+      range: { min: 2 }
     startAnnouncement: station-event-meteor-swarm-start-announcement
     endAnnouncement: station-event-meteor-swarm-end-announcement
     startAudio:
@@ -38,6 +43,7 @@
   - type: PrecognitionResult
     message: psionic-power-precognition-meteor-swarm-result-message
   - type: MeteorSwarmRule
+
 # Xeno Vents
 - type: entity
   parent: BaseGameRule
@@ -187,6 +193,8 @@
     weight: 5
     minimumPlayers: 20
     reoccurrenceDelay: 30
+  - type: MidRoundAntagRule
+    preferVentSpawns: true
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointGhostRatKing
@@ -242,6 +250,7 @@
     reoccurrenceDelay: 30
     duration: null # so it shows up in round end
     maxOccurrences: 1
+    earliestStart: 30 # Euphoria | No showing up round start
   - type: RuleGrids
   - type: LoadMapRule
     gridPath: /Maps/_DV/Shuttles/Event/haibu.yml # was /Maps/_DV/Shuttles/Admin/roboneuroticist_ship.yml
@@ -250,10 +259,16 @@
   - type: AntagObjectives
     objectives:
     - RoboNeuroticistSurviveObjective
-    - RoboNeuroticistBorgObjective
+    #- RoboNeuroticistBorgObjective #Euphoria | No borging random crew
     - RoboNeuroticistKillObjective
     - RoboNeuroticistPlutoniumCoreStealObjective
     - RoboNeuroticistUploadAILawObjective
+    - RoboNeuroticistKillObjective #Euphoria | Giving a mass amount of targets to list everyone that qualifies on station
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective
+    - RoboNeuroticistKillObjective #Euphoria | End
   - type: AntagSelection
     agentName: roboneuroticist-round-end-agent-name
     definitions:
@@ -342,6 +357,8 @@
     message: psionic-power-precognition-skia-result-message
   - type: AntagSpawner
     prototype: MobSkia
+  - type: MidRoundAntagRule
+    preferVentSpawns: true
   - type: AntagObjectives
     objectives:
     - SkiaReapObjective
@@ -419,7 +436,6 @@
         implants:
         - HitmanCardImplant
 
-
 # nt agent sleeper event
 - type: entity
   id: NTAgentSleeper
@@ -459,6 +475,35 @@
         implants:
         - RadioImplantCentcomm
         - NanolinkSubImplant
+
+# Gnomes
+- type: entity
+  parent: BaseMidRoundAntag
+  id: GnomeSpawn
+  components:
+  - type: StationEvent
+    earliestStart: 15
+    minimumPlayers: 5
+    weight: 2
+    duration: null
+  - type: PrecognitionResult
+    message: psionic-power-precognition-gnome-spawn-result-message
+  - type: AntagSpawner
+    prototype: MobGnome
+  - type: AntagSelection
+    agentName: gnome-round-end-name
+    definitions:
+    - spawnerPrototype: SpawnPointGnome
+      min: 1
+      max: 2
+      pickPlayer: false
+      mindRoles:
+      - MindRoleGhostRoleFreeAgent
+      components:
+        - type: EmitSoundOnSpawn
+          sound: /Audio/Effects/bodyfall3.ogg
+        - type: SpawnOnTrigger
+          proto: EffectFlashBluespace
 
 # NT Pest Control via Pitbulls
 - type: entity

@@ -1,5 +1,5 @@
 using Content.Shared.Atmos.Rotting;
-using Content.Shared.Body.Organ;
+using Content.Shared.Body;
 
 namespace Content.Shared._Floof.Body.Systems;
 

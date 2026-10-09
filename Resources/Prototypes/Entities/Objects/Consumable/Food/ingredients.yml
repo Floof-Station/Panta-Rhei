@@ -371,6 +371,7 @@
   - type: Tag
     tags:
     - Slice
+    - DoughSlice #Euphoria
   - type: Construction
     graph: DoughRope
     node: start
@@ -819,6 +820,7 @@
       Taco: CheeseTaco
       Burger: CheeseBurger
       Nachos: CheeseTaco # DeltaV
+      Hotdog: CheeseBurger # Euphoria
   - type: Item
     size: Tiny
     storedOffset: 0,-3
@@ -926,6 +928,7 @@
     entries:
       Burger: TofuSlice
       Taco: TofuSlice
+      Hotdog: TofuSlice
   #Euphoria end
   - type: Item
     size: Tiny
@@ -970,6 +973,14 @@
   - type: Tag
     tags:
     - Trash
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: BurnedMess
+      Taco: BurnedMess
+      Skewer: BurnedMess
+      Hotdog: BurnedMess
+  # Euphoria changes end
 
 - type: entity
   name: cocoa beans

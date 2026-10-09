@@ -307,6 +307,9 @@
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     state: sausagecooked
+  - type: FoodSequenceElement #Euprhia edits start
+    entries:
+      Hotdog: SausageHotdog #Euphoria edits end
   - type: SolutionContainerManager
     solutions:
       food:

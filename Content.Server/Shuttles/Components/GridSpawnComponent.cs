@@ -16,9 +16,9 @@ public sealed partial class GridSpawnComponent : Component
     /// Dictionary of groups where each group will have entries selected.
     /// String is just an identifier to make yaml easier.
     /// </summary>
+    [AlwaysPushInheritance] // Floofstation - salv shuttles different based on map, Mnemotechnican is a fishy fox
     [DataField(required: true)] public Dictionary<string, IGridSpawnGroup> Groups = new();
 }
-
 public interface IGridSpawnGroup
 {
     /// <summary>

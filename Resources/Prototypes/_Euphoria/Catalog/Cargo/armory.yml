@@ -1,0 +1,19 @@
+﻿- type: cargoProduct
+  id: ArmoryVulcan
+  icon:
+    sprite: _DV/Objects/Weapons/Guns/Rifles/vulcan.rsi
+    state: icon
+  product: CrateArmoryVulcan
+  cost: 17500
+  category: cargoproduct-category-name-armory
+  group: market
+
+- type: cargoProduct
+  id: ArmorySubMachineGunPatos
+  icon:
+    sprite: _DV/Objects/Weapons/Guns/SMGs/patos.rsi
+    state: icon
+  product: CrateArmoryPatos
+  cost: 9000
+  category: cargoproduct-category-name-armory
+  group: market

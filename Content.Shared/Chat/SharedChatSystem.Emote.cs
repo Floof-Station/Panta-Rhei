@@ -158,6 +158,12 @@ public abstract partial class SharedChatSystem
 
         // optional override params > general params for all sounds in set > individual sound params
         var param = audioParams ?? proto.GeneralParams ?? sound.Params;
+        // Begin Euphoria additions
+        var volumeEv = new GetEmoteVolumeEvent();
+        RaiseLocalEvent(uid, volumeEv);
+        param.Volume += volumeEv.Volume;
+        // End Euphoria additions
+
         _audio.PlayPvs(sound, uid, param);
         return true;
     }
@@ -324,3 +330,13 @@ public abstract partial class SharedChatSystem
         return textInput[trimStart..trimEnd];
     }
 }
+
+// Begin Euphoria additions
+/// <summary>
+///     Raised on a vocal entity to get its emote volume modifiers
+/// </summary>
+public sealed class GetEmoteVolumeEvent : EntityEventArgs
+{
+    public float Volume = 0; // In dB
+}
+// End Euphoria additions
