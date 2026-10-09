@@ -48,7 +48,7 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
             return;
 
         if (ev.SettingsYaml.Length > MaxSettingsLength
-            || !TryNormalizeSettings(ev.SettingsYaml, out var yaml, out var allowSound, out var digestSpeed))
+            || !TryNormalizeSettings(ev.SettingsYaml, out var yaml, out var allowSound, out var digestSpeed, out var stomachColor))
         {
             _sawmill.Warning($"Rejected invalid Vore settings from {session.UserId}.");
             RaiseNetworkEvent(new VoreSettingsEvent { SettingsYaml = LoadSettings(session.UserId) }, session);
@@ -60,7 +60,7 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
 
         _settings[session.UserId] = yaml;
         RaiseNetworkEvent(new VoreSettingsEvent { SettingsYaml = yaml }, session);
-        ApplyToAttachedPlayer(session, allowSound, digestSpeed);
+        ApplyToAttachedPlayer(session, allowSound, digestSpeed, stomachColor);
     }
 
     private void OnPreyStartup(EntityUid uid, PreyComponent comp, ComponentStartup args)
@@ -73,20 +73,21 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
 
     private void ApplyToAttachedPlayer(ICommonSession session, string yaml)
     {
-        if (!TryNormalizeSettings(yaml, out _, out var allowSound, out var digestSpeed))
+        if (!TryNormalizeSettings(yaml, out _, out var allowSound, out var digestSpeed, out var stomachColor))
             return;
 
-        ApplyToAttachedPlayer(session, allowSound, digestSpeed);
+        ApplyToAttachedPlayer(session, allowSound, digestSpeed, stomachColor);
     }
 
-    private void ApplyToAttachedPlayer(ICommonSession session, bool allowSound, float digestSpeed)
+    private void ApplyToAttachedPlayer(ICommonSession session, bool allowSound, float digestSpeed, Color stomachColor)
     {
         if (session.AttachedEntity is not { } uid)
             return;
 
         RaiseLocalEvent(uid, new VoreSettingsChangedEvent { 
             AllowSound = allowSound,
-            DigestSpeed = digestSpeed
+            DigestSpeed = digestSpeed,
+            StomachColor = stomachColor,
             });
     }
 
@@ -102,7 +103,7 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
         try
         {
             var yaml = _resources.UserData.ReadAllText(path);
-            if (!TryNormalizeSettings(yaml, out var normalized, out _, out _))
+            if (!TryNormalizeSettings(yaml, out var normalized, out _, out _, out _))
                 throw new InvalidDataException("Settings file is not a valid mapping.");
 
             return _settings[userId] = normalized;
@@ -128,11 +129,17 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
         }
     }
 
-    private static bool TryNormalizeSettings(string yaml, out string normalized, out bool allowSound, out float digestSpeed)
+    private static bool TryNormalizeSettings(
+        string yaml,
+        out string normalized,
+        out bool allowSound,
+        out float digestSpeed,
+        out Color stomachColor)
     {
         normalized = string.Empty;
         allowSound = false;
         digestSpeed = 100f;
+        stomachColor = new(0.35f, 0.01f, 0.06f);
 
         try
         {
@@ -161,6 +168,17 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
                 digestSpeed = Math.Clamp(digestSpeed, 10f, 300f);
             }
 
+            if (mapping.TryGet("stomachColor", out var colorNode))
+            {
+                if (colorNode is not ValueDataNode colorValue
+                    || Color.TryFromHex(colorValue.Value) is not { } parsedColor)
+                {
+                    return false;
+                }
+
+                stomachColor = parsedColor;
+            }
+
             using var writer = new StringWriter();
             mapping.Write(writer);
             normalized = writer.ToString();
@@ -174,7 +192,7 @@ public sealed class VoreSettingsNetworkSystem : EntitySystem
 
     private static bool TryGetAllowSound(string yaml)
     {
-        return TryNormalizeSettings(yaml, out _, out var allowSound, out _) && allowSound;
+        return TryNormalizeSettings(yaml, out _, out var allowSound, out _, out _) && allowSound;
     }
 
     private static ResPath GetSettingsPath(NetUserId userId)

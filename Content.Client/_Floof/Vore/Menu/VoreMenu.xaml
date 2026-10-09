@@ -15,9 +15,10 @@
                 Text="Reset" />
         </BoxContainer>
         <TabContainer Name="MasterTabContainer">
-            <BoxContainer Name="Info" Orientation="Vertical" SeparationOverride="8" VerticalExpand="True">
-                <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False" MinSize="0 500">
-                    <RichTextLabel Name="InfoText" VerticalExpand="True" HorizontalExpand="True"/>
+            
+            <BoxContainer Name="Info" Orientation="Vertical" SeparationOverride="8">
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="False" ReturnMeasure="True" MaxWidth="1000" MaxHeight="400" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <RichTextLabel Name="InfoText" HorizontalExpand="True" VerticalAlignment="Top"/>
                 </ScrollContainer>
             </BoxContainer>
             
@@ -30,7 +31,7 @@
             
             <BoxContainer Name="Customization" Orientation="Vertical" SeparationOverride="8">
                 <BoxContainer Orientation="Vertical" SeparationOverride="6">
-                    <Label Text="Stomach rgb (WIP)" VerticalAlignment="Center" />
+                    <Label Text="Stomach rgb" VerticalAlignment="Center" />
                     <BoxContainer 
                         Name="RgbStomachColorContainer" 
                         Visible="True" Orientation="Vertical" 
@@ -38,23 +39,26 @@
                     </BoxContainer>
                 </BoxContainer>
                 <BoxContainer Orientation="Horizontal" SeparationOverride="6">
-                    <Label Text="Digestion speed (WIP)" VerticalAlignment="Center" />
+                    <Label Text="Digestion speed" VerticalAlignment="Center" />
                     <Slider 
                         HorizontalExpand="True" 
                         Name="DigestSpeed" 
                         MinValue="10" 
                         MaxValue="300"/>
+                    <Label Name="DigestSpeedLabel" />
                 </BoxContainer>
             </BoxContainer>
             
             <BoxContainer Name="Container" Orientation="Vertical" SeparationOverride="6">
                 <Label Text="IN FUTURE PATCHES" VerticalAlignment="Center" />
             </BoxContainer>
+            
             <BoxContainer Name="Options" Orientation="Vertical" SeparationOverride="6">
                     <CheckBox 
                         Name="AllowSound" 
                         Text="Stomach sounds" />
             </BoxContainer>
+
         </TabContainer>
     </BoxContainer>
 </DefaultWindow>

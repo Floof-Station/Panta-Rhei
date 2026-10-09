@@ -6,6 +6,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Client.UserInterface.CustomControls;
+using Robust.Client.UserInterface.RichText;
 using Robust.Shared.Utility;
 using Robust.Shared.GameObjects;
 using Content.Shared._Floof.Vore;
@@ -46,12 +47,12 @@ public sealed partial class VoreMenu : DefaultWindow
         
 
         var info = new FormattedMessage();
-        info.AddText(@"
+        info.AddMarkupOrThrow(@"
 Menu heavily WIP. Feedback is always welcome
 
-# Vore Wiki
+[head=1]Vore Menu[/head]
 
-## How to interact
+[head=2]How to interact[/head]
 Currently there are three ways to start a vore interaction:
 - by inserting yourself
 - getting devoured
@@ -62,7 +63,7 @@ After a loading bar lasting seconds that allows you to cancel the action by walk
 Currently a hard limit only allows you to contain [bold]3 preys maximum[/bold] not including nested vore. 
 If you decide to escape you can either struggle free using a verb through self interaction or have the pred eject you also through self interaction.
 
-## Consent
+[head=2]Consent[/head]
 The System automatically attempts to deal with most consent issues such as:
 - not allowing interactions with disconnected players, entities that lack BodyComponent or aren't player controlled at all
 - giving prey immunities such as against space, lack of air and temperature
@@ -72,13 +73,13 @@ Turning off the related consent will also eject you from containers and vice ver
 But [bold]remember[/bold], you are still hearable from inside with your emotes and will visually vanish during the insertion so make sure to watch out for your coworkers!
 
 
-# Types of vore
+[head=1]Types of vore[/head]
 
-## Endo
+[head=2]Endo[/head]
 The default interaction for each scene.
 Prey can safely be held indefinitely inside until they either escape on their own or are ejected.
 
-## Digestion
+[head=2]Digestion[/head]
 If you contain a prey with an active digest consent you will be able to slowly digest them over time.
 During that you will slowly fill your own hunger up by removing part of their artificial health (to avoid consent breach).
 It's possible to stop digestion the entire time after which the prey slowly regains health using their own hunger.
@@ -87,11 +88,21 @@ For others it will be like they cryoed: removal of crew manifest, reopening the 
 Only you will know their fate.
 
             ");
-        InfoText.SetMessage(info);
+        InfoText.SetMessage(info, [typeof(HeadingTag)]);
         InfoText.HorizontalExpand = true;
         AllowSound.OnToggled += _ => UnsavedChanges();
-        DigestSpeed.OnValueChanged += _ => UnsavedChanges();
+        DigestSpeed.OnValueChanged += _ =>
+        {
+            UpdateDigestSpeedLabel();
+            UnsavedChanges();
+        };
+        UpdateDigestSpeedLabel();
         _stomachColorSelector.OnColorChanged += _ => UnsavedChanges();
+    }
+
+    private void UpdateDigestSpeedLabel()
+    {
+        DigestSpeedLabel.Text = ((int) MathF.Round(DigestSpeed.Value)).ToString(CultureInfo.InvariantCulture) + "%";
     }
 
     private void UnsavedChanges()

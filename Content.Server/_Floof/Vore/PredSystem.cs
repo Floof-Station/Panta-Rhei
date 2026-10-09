@@ -115,6 +115,8 @@ public sealed class PredSystem : EntitySystem
     /// </summary>
     private void OnPredSettingsChanged(EntityUid uid, PredComponent comp, VoreSettingsChangedEvent ev){
         comp.DigestSpeed = ev.DigestSpeed;
+        comp.StomachColor = ev.StomachColor;
+        Dirty(uid, comp);
     }
 
     /// <summary>
