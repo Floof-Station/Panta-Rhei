@@ -1,0 +1,37 @@
+﻿# pka variants
+- type: latheRecipe
+  id: WeaponProtoKineticPistol
+  result: WeaponProtoKineticPistol
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 100
+    Plasma: 500
+
+- type: latheRecipe
+  id: WeaponProtoKineticRepeater # strongest one so most expensive
+  result: WeaponProtoKineticRepeater
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 100
+    Plasma: 500
+    Uranium: 500
+
+- type: latheRecipe
+  id: WeaponProtoKineticShotgun
+  result: WeaponProtoKineticShotgun
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 1000
+    Glass: 500
+    Silver: 100
+    Plasma: 500
