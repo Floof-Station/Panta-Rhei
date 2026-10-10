@@ -1,7 +1,7 @@
 ﻿- type: entity
   name: basic slime NoAI
   id: BaseMobAdultSlimesNoAi
-  parent: [ SimpleMobBaseNoAi, MobCombat, BaseMobSlimes ]
+  parent: [ SimpleMobBaseNoAi, MobCombat ]
   abstract: true
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
@@ -91,6 +91,12 @@
         messages: [ "slime-hurt-by-water-popup" ]
         probability: 0.25
   - type: Body
+  - type: InitialBody
+    organs:
+      HandRight: OrganSlimePersonHandRight
+      HandLeft: OrganSlimePersonHandLeft
+      Brain: OrganSlimePersonCore
+      Lungs: OrganSlimePersonLungs
   - type: MeleeWeapon
     altDisarm: false
     soundHit:
