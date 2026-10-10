@@ -1,0 +1,31 @@
+<controls:CustomExaminePresetEntry
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._Floof.Examine"
+    xmlns:controls1="clr-namespace:Content.Client.UserInterface.Controls"
+    Orientation="Horizontal">
+
+    <RichTextLabel Name="TitleLabel" HorizontalExpand="True"/>
+
+    <Button
+        Name="LoadOverrideButton"
+        ToolTip="{Loc 'custom-exam-load-tooltip'}"
+        Text="="
+        SetWidth="24"
+        StyleClasses="OpenRight"/>
+
+    <Button
+        Name="LoadAppendButton"
+        ToolTip="{Loc 'custom-exam-append-tooltip'}"
+        Text="+"
+        SetWidth="24"
+        StyleClasses="OpenBoth"/>
+
+    <controls1:ConfirmButton
+        Name="DeleteButton"
+        ToolTip="{Loc 'custom-exam-delete-tooltip'}"
+        Text="X"
+        ConfirmationText="X?"
+        SetWidth="24"
+        StyleClasses="OpenLeft"/>
+
+</controls:CustomExaminePresetEntry>

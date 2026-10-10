@@ -31,7 +31,7 @@
     - id: WeaponTaser
     - id: ClothingBeltSecurityFilled
     - id: Flash
-    - id: ClothingEyesGlassesSecurity
+    #- id: ClothingEyesGlassesSecurity # Euph - Research locked
     - id: ClothingHandsGlovesCombat
     #- id: ClothingShoesBootsJack # DeltaV - Moved to dresser
     #- id: ClothingOuterCoatWarden # DeltaV - removed for incongruence
@@ -95,7 +95,7 @@
     - id: ClothingBeltSecurityFilled
     - id: Flash
     #  prob: 0.5 # DeltaV - standardise spare flash
-    - id: ClothingEyesGlassesSecurity
+    #- id: ClothingEyesGlassesSecurity # Euph - Research locked
     - id: ClothingHeadsetSecurity
     - id: ClothingHandsGlovesColorBlack
     - id: ClothingShoesBootsJack
@@ -124,7 +124,8 @@
     - !type:NestedSelector # DeltaV - Adds our modifications.
       tableId: FillLockerBrigmedicDeltaV
     - id: WeaponTaser
-    - id: ClothingEyesGlassesCorpsman
+    #- id: ClothingEyesGlassesCorpsman # Euph - research locked
+    - id: ClothingEyesGlassesSunglasses # Euph - replacement glasses
     - id: WeaponDisabler
     - id: TrackingImplanter
       amount: 2

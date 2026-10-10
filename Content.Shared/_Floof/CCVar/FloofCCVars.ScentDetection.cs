@@ -13,7 +13,7 @@ public sealed partial class FloofCCVars
     /// <summary>
     ///     Stores scent presets for the scent editor. Client-only.
     /// </summary>
-    /// <seealso cref="Content.Client.ScentEditorDialog.ScentPreset"/>
+    /// <seealso cref="Content.Client._Floof.Scent.ScentEditorDialog.ScentPreset"/>
     /// <remarks>Examples are "unwashed fox" and "dog washed with aloe shampoo". For the funny because this system is making me go want to pull my fucking hair out, and this is the first time into the 3 hour coding session that I can feel some relief.</remarks>
     public static readonly CVarDef<string> ScentPresets =
         CVarDef.Create("client.scent_presets", "Example,UnwashedFox;Example2,WetDog,Aloe", CVar.CLIENTONLY | CVar.ARCHIVE);

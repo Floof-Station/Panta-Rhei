@@ -80,13 +80,13 @@
     sprite: _NF/Objects/Storage/Pouches/pouch_small.rsi
     layers:
     - state: base
-      color: "#3e3e48"
+      color: "#ca4545"
     - state: closed
       map: [ "closeLayer" ]
-      color: "#3e3e48"
+      color: "#ca4545"
     - state: open
       map: [ "openLayer" ]
-      color: "#3e3e48"
+      color: "#ca4545"
       visible: false
     - state: inside
       map: ["insideLayer"]
@@ -105,7 +105,7 @@
       visible: false
     - state: decal-line-01
       map: [ "decal1" ]
-      color: "#ca4545"
+      color: "#3e3e48"
     - state: decal-med-cross
       map: [ "decal2" ]
       color: "#ede984"
@@ -114,20 +114,20 @@
     clothingVisuals:
       belt:
       - state: equipped-BELT
-        color: "#3e3e48"
+        color: "#ca4545"
       pocket:
       - state: equipped-BELT
-        color: "#3e3e48"
+        color: "#ca4545"
   - type: Item
     size: Small
     sprite: _NF/Objects/Storage/Pouches/pouch_small.rsi
     inhandVisuals:
       left:
       - state: inhand-left
-        color: "#3e3e48"
+        color: "#ca4545"
       right:
       - state: inhand-right
-        color: "#3e3e48"
+        color: "#ca4545"
   - type: Storage
     grid:
     - 0,0,4,2 #syndie stuffs always bigger
