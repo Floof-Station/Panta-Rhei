@@ -6445,3 +6445,15 @@ Entries:
       message: Two types of carpet crates orderable from logistics.
   id: 802
   time: '2026-10-10T11:01:44.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Add
+      message: >-
+        Added an IPC Repair Kit to the Orders console! This has the necessary
+        supplies to repair basic damage to IPCs.
+    - type: Add
+      message: Added an IPC Oil Pack delivery to the Orders console!
+    - type: Tweak
+      message: IPC welding repairs are much more reasonable.
+  id: 803
+  time: '2026-10-10T21:33:27.0000000+00:00'
