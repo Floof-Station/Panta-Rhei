@@ -19,3 +19,19 @@
         Pomelustine: 0.16
         Libidozenithizine: 0.08
         Cum: 0.25
+
+- type: reagent
+  id: BerryNice
+  name: reagent-name-berrynice
+  parent: BaseDrink
+  desc: reagent-desc-berrynice
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#7F00FF"
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/pilk.rsi # re-use dasboot till we get a better sprite
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  fizziness: 0.3

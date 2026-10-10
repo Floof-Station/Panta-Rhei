@@ -10,8 +10,8 @@
 #      limit: 0
 #      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
-      required: true
+      limit: 2
+      required: false
       default: [ MothWingsDefault ]
 #    enum.HumanoidVisualLayers.Chest:
 #      limit: 2
@@ -334,6 +334,7 @@
       - ClothMade
       - Paper
       - Pill
+      - Fruit # Euphoria - let moths eat fruit
 
 - type: entity
   parent: [ OrganBaseLiver, OrganSpriteHumanInternal, OrganMothInternal, OrganAnimalMetabolizer ]

@@ -9,7 +9,7 @@
 #      limit: 1
 #      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2 # Euph - Tail slots increased to 2
       required: true
       default: [ FelinidTailBasic ]
     enum.HumanoidVisualLayers.HeadTop:

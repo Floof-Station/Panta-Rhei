@@ -11,7 +11,7 @@
         icon:
           sprite: Objects/Consumable/Food/ingredients.rsi
           state: dough-slice
-        doAfter: 5
+        doAfter: 0.5
     - to: hotdogBun
       steps:
       - tag: DoughSlice
@@ -19,7 +19,7 @@
         icon:
           sprite: Objects/Consumable/Food/ingredients.rsi
           state: dough-slice
-        doAfter: 5
+        doAfter: 0.5
   - node: burgerBun
     entity: FoodUncookedBun
   - node: hotdogBun

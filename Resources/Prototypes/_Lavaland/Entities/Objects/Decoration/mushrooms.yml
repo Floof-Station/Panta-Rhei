@@ -41,3 +41,10 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+      # Euphoria changes start - make these drop mushwood
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          MaterialMushwoodPlank1:
+            min: 1
+            max: 5
+      # Euphoria changes end
