@@ -113,6 +113,20 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 addThis = true;
                 if (action != null)
                 {
+                    if (action.Remove != null)
+                    {
+                        //Don't add the action to remove an organ if they don't have that organ
+                        if (!component.DictOrgans.ContainsKey(action.Remove.Value))
+                            continue;
+                    }
+                    if (action.Insert != null)
+                    {
+                        //only allow one organ of each type to be inserted (FOR NOW)
+                        if (component.DictOrgans.ContainsKey(action.Insert.Value))
+                            if (component.DictOrgans[action.Insert.Value].Count > 0)
+                                continue;
+                    }
+
                     foreach (var organ in action._states)
                     {
                         if (!component.DictOrgans.ContainsKey(organ.Key))
@@ -153,18 +167,40 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if(proto == null)
             return;
 
+        var foundTool = false;
+        var foundOrgan = false;
+
+        if(proto.Insert == null)
+            foundOrgan = true;
+
         foreach (var item in _handsSystem.EnumerateHeld(args.Actor))
         {
             if (TryComp<SurgeryToolComponent>(item, out var tool))
-                if (tool.ToolType == (int)proto._type)
+                if (tool.ToolType == proto._type)
                 {
-                    TrySurgeryStart(uid, component, args.ID, args.Actor);
-                    return;
+                    foundTool = true;
                 }
+
+            if (!foundOrgan)
+            {
+                if (TryComp<OrganComponent>(item, out var organ))
+                    if (organ.Category == proto.Insert)
+                        foundOrgan = true;
+            }
+
         }
 
-        _popupSystem.PopupEntity(Loc.GetString("surgery-wrong-tool"),args.Actor);
-        return;
+        if(foundTool && foundOrgan)
+        {
+            TrySurgeryStart(uid, component, args.ID, args.Actor);
+        }
+        if(!foundTool)
+            _popupSystem.PopupEntity(Loc.GetString("surgery-wrong-tool"),args.Actor);
+
+        if(!foundOrgan)
+            if(proto.Insert != null)
+                _popupSystem.PopupEntity(Loc.GetString("surgery-no-organ",("organType",proto.Insert.Value)),args.Actor);
+
     }
 
     private bool TrySurgeryStart(EntityUid uid, SurgeryComponent component, ProtoId<SurgeryActionPrototype> id, EntityUid actor)

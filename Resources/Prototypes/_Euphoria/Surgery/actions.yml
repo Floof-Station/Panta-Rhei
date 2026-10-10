@@ -1,18 +1,111 @@
-﻿- type: surgeryAction
-  id: removeHeart
-  toolType: 1
+﻿#Times for surgeries
+- type: surgeryAction
+  abstract: true
+  id: longSurgery
+  duration: 60
+
+- type: surgeryAction
+  abstract: true
+  id: averageSurgery
   duration: 30
+
+- type: surgeryAction
+  abstract: true
+  id: shortSurgery
+  duration: 10
+
+#abstract common states
+- type: surgeryAction
+  abstract: true
+  id: torsoOrganAccessState
   states:
     Torso:
       skinRetracted: true
       muscleRetracted: true
       boneRetracted: true
+
+#Icons and types of surgeries to inherit from
+- type: surgeryAction
+  abstract: true
+  id: cuttingSurgery
+  toolType: 1
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+
+- type: surgeryAction
+  abstract: true
+  id: retractionSurgery
+  toolType: 2
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/scissors.rsi
+    state: hemostat
+
+- type: surgeryAction
+  abstract: true
+  id: sealingSurgery
+  toolType: 3
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/cautery.rsi
+    state: cautery
+
+- type: surgeryAction
+  abstract: true
+  id: sawingSurgery
+  toolType: 4
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/saw.rsi
+    state: saw
+
+- type: surgeryAction
+  abstract: true
+  id: drillingSurgery
+  toolType: 5
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/drill.rsi
+    state: drill
+
+#Actual Surgery Actions
+
+#Heart surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery]
+  id: removeHeart
   remove: Heart
 
 - type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery]
+  id: insertHeart
+  insert: Heart
+
+#Lung surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery]
+  id: removeLungs
+  remove: Lungs
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery]
+  id: insertLungs
+  insert: Lungs
+
+#Stomach surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery]
+  id: removeStomach
+  remove: Stomach
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery]
+  id: insertStomach
+  insert: Stomach
+
+#State changing surgeries. Requires one that sets the condition to true, and one to false
+
+#Torso Muscles
+- type: surgeryAction
+  parent: [retractionSurgery, averageSurgery]
   id: retractMusclesTorso
-  toolType: 2
-  duration: 30
   states:
     Torso:
       skinRetracted: true
@@ -22,9 +115,8 @@
       muscleRetracted: true
 
 - type: surgeryAction
+  parent: [retractionSurgery, averageSurgery]
   id: replaceMusclesTorso
-  toolType: 2
-  duration: 30
   states:
     Torso:
       skinRetracted: true
@@ -33,10 +125,10 @@
     Torso:
       muscleRetracted: false
 
+#Torso Skin
 - type: surgeryAction
+  parent: [cuttingSurgery, shortSurgery]
   id: openSkinTorso
-  toolType: 1
-  duration: 30
   states:
     Torso:
       skinRetracted: false
@@ -45,12 +137,31 @@
       skinRetracted: true
 
 - type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
   id: closeSkinTorso
-  toolType: 3
-  duration: 30
   states:
     Torso:
       skinRetracted: true
   effects:
     Torso:
       skinRetracted: false
+
+#Torso Bones
+- type: surgeryAction
+  parent: [drillingSurgery, longSurgery]
+  id: moveBonesTorso
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: true
+      boneRetracted: false
+  effects:
+    Torso:
+      boneRetracted: true
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, retractionSurgery, averageSurgery]
+  id: replaceBonesTorso
+  effects:
+    Torso:
+      boneRetracted: false
