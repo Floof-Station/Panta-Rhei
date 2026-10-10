@@ -8,79 +8,81 @@
   id: BasicFishingLootTable
   table: !type:GroupSelector
     children:
-    # 75% chance of scrap of some kind
-    - !type:GroupSelector
-      weight: 75
-      children:
+      # 75% chance of scrap of some kind
+      - !type:GroupSelector
+        weight: 75
+        children:
+          - !type:NestedSelector
+            tableId: SalvageScrapLowValue
+            weight: 65
+          - !type:NestedSelector
+            tableId: SalvageScrapHighValue
+            weight: 35
+      # 15% chance of some trash
       - !type:NestedSelector
-        tableId: SalvageScrapLowValue
-        weight: 65
-      - !type:NestedSelector
-        tableId: SalvageScrapHighValue
-        weight: 35
-    # 15% chance of some trash
-    - !type:NestedSelector
-      tableId: GenericTrashItems
-      weight: 15
-    # 10% chance of low-value treasure or maintenance tools
-    - !type:GroupSelector
-      weight: 10
-      children:
-      - !type:NestedSelector
-        tableId: SalvageTreasureCommon
-      - !type:NestedSelector
-        tableId: MaintToolsTable
+        tableId: GenericTrashItems
+        weight: 15
+      # 10% chance of low-value treasure or maintenance tools
+      - !type:GroupSelector
+        weight: 10
+        children:
+          - !type:NestedSelector
+            tableId: SalvageTreasureCommon
+          - !type:NestedSelector
+            tableId: MaintToolsTable
 
 # All types of the rare and unique fishes
 - type: entityTable
   id: RareFishTable
   table: !type:GroupSelector
     children:
-    - id: FishAlien
-    - id: FishBingle
-    - id: FishBoyFisher
-    - id: FishNukeDisk
-    - id: FishGib
-    - id: FishMutant
-    - id: FishNuker
-    - id: FishToxic
-    - id: FishIan
-    # Floofstation fish additions start
-    - id: FishArmored
-    - id: FishBoneMass
-    - id: FishMonk
-    - id: FishRat
-    - id: FishSludge
-    - id: FishStingray
-    - id: FishLava
-    - id: FishJumperCable
-    - id: FishPlasma
-    - id: FishSquid
-      # Floofstation fish additions end
+      - id: FishAlien
+      - id: FishBingle
+      - id: FishBoyFisher
+      - id: FishNukeDisk
+      - id: FishGib
+      - id: FishMutant
+      - id: FishNuker
+      - id: FishToxic
+      - id: FishIan
+      # Floofstation fish additions start
+      - id: FishArmored
+      - id: FishBoneMass
+      - id: FishMonk
+      - id: FishRat
+      - id: FishSludge
+      - id: FishStingray
+      - id: FishLava
+      - id: FishJumperCable
+      - id: FishPlasma
+      - id: FishSquid
+      - id: FoodMeatShrimpUnusual
+        # Floofstation fish additions end
 
 # Fish from water
 - type: entityTable
   id: WaterFishTable
   table: !type:GroupSelector
     children:
-    - id: FishAngler
-    - id: FishBass
-    - id: FishBlob
-    - id: FishBlueFintuna
-    - id: FishCat
-    - id: FishTropicalClown
-    - id: FishPuffer
-    - id: FishSilver
-    - id: FishTropicalSun
-    - id: FishTropical
-      # Floofstation fish additions start
-    - id: FishAngel
-    - id: FishArticChar
-    - id: FishFire
-    - id: FishGuppy
-    - id: FishSandSurfer
-    - id: FishThreeEyes
-      # Floofstation fish additions end
+      - id: FishAngler
+      - id: FishBass
+      - id: FishBlob
+      - id: FishBlueFintuna
+      - id: FishCat
+      - id: FishTropicalClown
+      - id: FishPuffer
+      - id: FishSilver
+      - id: FishTropicalSun
+      - id: FishTropical
+        # Floofstation fish additions start
+      - id: FishAngel
+      - id: FishArticChar
+      - id: FishFire
+      - id: FishGuppy
+      - id: FishSandSurfer
+      - id: FishThreeEyes
+      - id: FoodMeatShrimp
+        # Floofstation fish additions end
 
 # Items from Water
 - type: entityTable
@@ -111,7 +113,7 @@
   id: PlasmaFishingLootTable
   table: !type:GroupSelector
     children:
-    # TODO: lava/plasma fish
+      # TODO: lava/plasma fish
       - !type:NestedSelector
         tableId: BasicFishingLootTable
 
