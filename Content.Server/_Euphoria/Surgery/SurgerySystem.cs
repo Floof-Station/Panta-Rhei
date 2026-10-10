@@ -59,7 +59,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         if (!ev.Cancelled)
         {
-            PerformOperation(uid, component, proto);
+            PerformOperation(uid, component, proto, ev.User);
             Spawn("FoodBreadPlain", uid.ToCoordinates());
         }
     }
@@ -117,14 +117,26 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                     {
                         //Don't add the action to remove an organ if they don't have that organ
                         if (!component.DictOrgans.ContainsKey(action.Remove.Value))
+                        {
+                            addThis = false;
                             continue;
+                        }
+                        //Don't add the action to remove an organ if they don't have that organ
+                        else if (component.DictOrgans[action.Remove.Value].Count == 0)
+                        {
+                            addThis = false;
+                            continue;
+                        }
                     }
                     if (action.Insert != null)
                     {
                         //only allow one organ of each type to be inserted (FOR NOW)
                         if (component.DictOrgans.ContainsKey(action.Insert.Value))
                             if (component.DictOrgans[action.Insert.Value].Count > 0)
+                            {
+                                addThis = false;
                                 continue;
+                            }
                     }
 
                     foreach (var organ in action._states)
@@ -243,9 +255,11 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         return null;
     }
 
-    private void PerformOperation(EntityUid uid, SurgeryComponent component, SurgeryActionPrototype actionPrototype)
+    private void PerformOperation(EntityUid uid, SurgeryComponent component, SurgeryActionPrototype actionPrototype, EntityUid surgeon)
     {
         if (!TryComp<BodyComponent>(uid,out var body))
+            return;
+        if (body.Organs == null)
             return;
 
         //Set the new state of the body
@@ -279,8 +293,25 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         //Insert organ logic
         if (actionPrototype.Insert != null)
         {
+            EntityUid? insertEntity = null;
             //need access to the person performing the surgery to see the organ in their hand
             //Check if the organ is gone by the end of the surgery, then give message if missing
+            foreach (var item in _handsSystem.EnumerateHeld(surgeon))
+            {
+                if (TryComp<OrganComponent>(item, out var organ))
+                    if(organ.Category == actionPrototype.Insert)
+                    {
+                        insertEntity = item;
+                        break;
+                    }
+            }
+
+            if (insertEntity == null)
+                _popupSystem.PopupEntity(Loc.GetString("surgery-organ-gone",("organType",actionPrototype.Insert.Value)),surgeon);
+            else
+            {
+                ContainerSystem.Insert(insertEntity.Value, body.Organs);
+            }
         }
 
     }

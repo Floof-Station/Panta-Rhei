@@ -43,6 +43,8 @@
   parent: BaseToolSurgery
   description: A surgical drill for making holes into hard material.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Drilling
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/drill.rsi
     state: drill

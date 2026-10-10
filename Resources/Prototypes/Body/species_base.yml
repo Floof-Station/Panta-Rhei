@@ -208,6 +208,10 @@
     - replaceMusclesTorso
     - openSkinTorso
     - closeSkinTorso
+    - removeHeart
+    - insertHeart
+    - moveBonesTorso
+    - replaceBonesTorso
   - type: UserInterface
     interfaces:
       enum.SurgeryUiKey.Key:
