@@ -6360,3 +6360,88 @@ Entries:
         presets.
   id: 793
   time: '2026-10-07T04:53:30.0000000+00:00'
+- author: P4nnant
+  changes:
+    - type: Add
+      message: >-
+        added Gnarp and Gleeble, funny alien cats that have a chance to spawn in
+        place of the CMO's cats
+  id: 794
+  time: '2026-10-10T00:57:55.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Fix
+      message: >-
+        Several chemicals work with pills, drinks, and food again, including
+        Aphrodisiacs, Painkillers, and Antidepressants
+    - type: Fix
+      message: Narcoleptics no longer are required to inject their medicine
+    - type: Fix
+      message: Caramexinin should work when mixed into drinks and food again
+    - type: Fix
+      message: Ambuzol and Ambuzol Plus now use YAML anchors instead of repeating code
+  id: 795
+  time: '2026-10-10T01:01:01.0000000+00:00'
+- author: deltaSpawn0040
+  changes: []
+  id: 796
+  time: '2026-10-10T10:52:01.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Add
+      message: Smoking and Drinking now satisfy addictions!
+    - type: Add
+      message: Added over 20 new addiction messages
+    - type: Remove
+      message: Removed the old, stereotyped addiction messages
+    - type: Fix
+      message: Fixed Nicotine not metabolizing properly
+    - type: Fix
+      message: Nicotine does damage again
+  id: 797
+  time: '2026-10-10T10:53:39.0000000+00:00'
+- author: PaperShadow
+  changes:
+    - type: Tweak
+      message: >-
+        The following food has gained the "Meat" tag and can now be eaten by
+        carnivorous crew: Bisque; Bowl of Hot Chili; Carp Sushi Roll; Carp Sushi
+        Roll Slice; Chili Con Carnival; Cold Chili; Donk Fish Stew; Full
+        American Breakfast; Full English Breakfast; Mulan Congee; Salmon Sushi
+        Roll; Salmon Sushi Roll Slice; Wing Fang Chu.
+    - type: Remove
+      message: Moth People can no longer eat Mulan Congee.
+    - type: Tweak
+      message: >-
+        Changed the flavor profile of the Bisque, the Full American Breakfast,
+        and the Full English Breakfast.
+  id: 798
+  time: '2026-10-10T10:54:57.0000000+00:00'
+- author: Barheru
+  changes:
+    - type: Tweak
+      message: >-
+        Ballet Heel Sprites are now more in line with other heels. They also
+        make you look taller now!
+  id: 799
+  time: '2026-10-10T10:55:43.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: >-
+        Portable Particle Decelerators slow you down less, shoot more quickly
+        and are much more effective at nullifying Singulooses and Teslooses. 
+  id: 800
+  time: '2026-10-10T10:59:39.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Medical pouch in corpsman's colours.
+  id: 801
+  time: '2026-10-10T11:00:20.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Two types of carpet crates orderable from logistics.
+  id: 802
+  time: '2026-10-10T11:01:44.0000000+00:00'

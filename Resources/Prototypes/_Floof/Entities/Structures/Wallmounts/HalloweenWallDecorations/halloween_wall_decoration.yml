@@ -1,0 +1,106 @@
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingGhostSorrywHalloweenDecoration
+  name: fake hanging sorrowful ghost
+  description: Tormented poltergeists are bad for employee retention.
+  components:
+  - type: Sprite
+    state: Hanging-ghost-sorrow
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingGhostBallHalloweenDecoration
+  name: fake hanging ghost
+  description: I got a rock.
+  components:
+  - type: Sprite
+    state: Hanging-ghost-ball
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingGhostSpermHalloweenDecoration
+  name: fake hanging... snake ghost
+  description: It's a snake ghost. See, it's got the tail and the head and... okay, I can't do this, it's a sperm. It looks like sperm.
+  components:
+  - type: Sprite
+    state: Hanging-ghost-sperm
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingGhostRevinentHalloweenDecoration
+  name: fake hanging cloaked figure
+  description: Either it's a halloween decoration or someone left their weirdly stiff coat here.
+  components:
+  - type: Sprite
+    state: Hanging-ghost-revinent
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingGhostReaerHalloweenDecoration
+  name: fake hanging reaper
+  description: Ermm acktually a scythe is a terrible weapon, it's used for harvesting wheat and stuff. They say you reap what you sow. If that's true, then death is your father. But like, a god. A godfather, you could say.
+  components:
+  - type: Sprite
+    state: Hanging-ghost-reaper
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingGhostReaperHalloweenDecoration
+  name: fake hanging revenant
+  description: Don't erase its trees. Just leave the tree alone.
+  components:
+  - type: Sprite
+    state: Hanging-ghost-revanant # yeah, I know it's spelled wrong.
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingBatHalloweenDecoration
+  name: fake hanging bat
+  description: Why are these scary again? It's just a puppy that can fly and screams at you.
+  components:
+  - type: Sprite
+    state: Hanging-bat
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingSpiderHalloweenDecoration
+  name: fake hanging spider
+  description: No matter how few Arachne work at HGI, this seems like it calls for some sensitivity training.
+  components:
+  - type: Sprite
+    state: Hanging-spider
+
+- type: entity
+  parent: BaseHalloweenWallDecoration
+  id: HangingSpiderSpaceHalloweenDecoration
+  name: fake hanging spider
+  description: Aren't spiders supposed to be bigger than this?
+  components:
+  - type: Sprite
+    state: Hanging-spider-space
+
+- type: entity
+  id: BatBannerHalloweenDecoration
+  parent: BaseBanner
+  name: bat banner
+  description: Sky puppies. Skuppies, if you will.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/halloween_wallmounts.rsi
+    state: HangingBatBanner
+  - type: Construction
+    graph: WallDeco
+    node: WallpaperBannerBlackRed
+
+- type: entity
+  id: JackOLanternBannerHalloweenDecoration
+  parent: BaseBanner
+  name: jack'o'lantern banner
+  description: Always light a fire in every gourd you consume so you can see if gourd gnomes are hiding inside. Or maybe that's what the gourd gnomes want you to think, so you will spend precious candles warming their nefarious little toesies. Use your best judgement.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Wallmounts/halloween_wallmounts.rsi
+    state: Jack'o'lantern-banner
+  - type: Construction
+    graph: WallDeco
+    node: WallpaperBannerBlackRed

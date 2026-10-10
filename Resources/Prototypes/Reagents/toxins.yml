@@ -361,7 +361,7 @@
   - !type:PlantAdjustToxins
     amount: 10
   metabolisms:
-    Bloodstream:
+    Bloodstream: &MindbreakerToxinMetabolism # Euphoria - Pill Compatibility Patch
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
@@ -377,7 +377,7 @@
             reagent: MindbreakerToxin
             min: 20
       # END DeltaV
-
+    Digestion: *MindbreakerToxinMetabolism # Euphoria - Pill Compatibility Patch
   # TODO: PROPER hallucinations
 
 - type: reagent

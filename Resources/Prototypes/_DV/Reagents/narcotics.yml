@@ -7,7 +7,7 @@
   color: "#FFBF00"
   physicalDesc: reagent-physical-desc-overpowering
   metabolisms:
-    Bloodstream:
+    Bloodstream: &LotophagoiOilMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate: 0.2
       effects:
       - !type:ModifyStatusEffect
@@ -26,6 +26,7 @@
         - !type:ReagentCondition
           reagent: LotophagoiOil
           min: 20
+    Digestion: *LotophagoiOilMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Amnestizine

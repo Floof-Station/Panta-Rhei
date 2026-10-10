@@ -294,15 +294,16 @@
   - !type:PlantAdjustHealth
     amount: -5
   metabolisms: # DeltaV - nicotine gives you the smallest amount of cell damage just like real life :D
-    Bloodstream:
+    Bloodstream: &NicotineMetablism # Euphoria - YAML Anchor to make smoking "work". 
       effects:
       - !type:HealthChange
         damage:
           types:
-            Cellular: 0.01
-    Digestion:
-      effects:
-      - !type:SatiateHunger
+            Cellular: 0.05 # Euphoria - Original value of 0.01, but because of weird metabolism stuff that actualy does literally 0 damage while smoking. Now deals 0.01 damage per three seconds.
+      - !type:SatiateHunger # ciggies suppress hunger IRL, as it turns out
+      - !type:SuppressAddiction # Euphoria - Somehow they didn't have this
+    Digestion: *NicotineMetablism # Euphoria You could alwyas eat raw Nicotine, this just makes it function consistently. 
+    Respiration: *NicotineMetablism # Euphoria - smoking didn't actually metabolize a cig because it was in the lungs and faded too quick, pretty much. 
 
 # TODO: Replace these nonstandardized effects with generic brain damage
 - type: reagent
