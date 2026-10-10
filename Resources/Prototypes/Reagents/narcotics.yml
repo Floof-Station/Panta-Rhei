@@ -262,7 +262,7 @@
   - !type:PlantAdjustHealth
     amount: -1
   metabolisms:
-    Bloodstream:
+    Bloodstream: &THCMetabolism # Euphoria - YAML anchor to make THC smoking and edibles function properly.
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
@@ -281,6 +281,8 @@
         time: 25 # 4.16 minutes of pain suppression per 5u (5u / 0.5 * 25 / 60)
         type: Add
       # END DeltaV
+    Digestion: *THCMetabolism # Euphoria - Edibles now make you high
+    Respiration: *THCMetabolism # Euphoria - Smoke weed every day
 
 - type: reagent
   id: Nicotine
