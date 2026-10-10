@@ -1,0 +1,43 @@
+- type: entity
+  id: HalloweenSkeletonMannequin
+  parent: Mannequin
+  name: skelequin
+  description: You hear the distant trousle of bones...
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Decoration/Mannequins/skeleton_mannequin.rsi
+    state: Fake-skeleton
+    noRot: true
+    layers:
+    - map: [ "mannequin" ]
+      sprite: _Euphoria/Structures/Decoration/Mannequins/skeleton_mannequin.rsi
+      state: Fake-skeleton
+    - map: [ "jumpsuit" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]
+
+- type: entity
+  id: HalloweenArtMannequin
+  parent: Mannequin
+  name: art mannequin
+  description: Is it moving?
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Structures/Decoration/Mannequins/art-mannequin.rsi
+    state: Art-manniquen
+    noRot: true
+    layers:
+    - map: [ "mannequin" ]
+      sprite: _Euphoria/Structures/Decoration/Mannequins/art-mannequin.rsi
+      state: Art-manniquen
+    - map: [ "jumpsuit" ]
+    - map: [ "outerClothing" ]
+    - map: [ "eyes" ]
+    - map: [ "neck" ]
+    - map: [ "back" ]
+    - map: [ "mask" ]
+    - map: [ "head" ]

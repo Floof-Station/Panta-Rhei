@@ -1,0 +1,33 @@
+- type: entity
+  id: CrateIPCRepairKit
+  parent: CrateElectrical
+  name: IPC Repair Supplies
+  description: A crate packed with basic repair supplies for IPC crewmembers.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: WelderMini
+          amount: 2
+        - id: JerryCanWeldingFuel
+        - id: ClothingHeadHatWelding
+          amount: 2
+        - id: CableApcStack
+          amount: 2
+        - id: CableMVStack
+        - id: BloodpackOil
+          amount: 3
+
+- type: entity
+  id: CrateIPCBlood
+  parent: CrateElectrical
+  name: IPC Oil Packs
+  description: A crate with several oil packs, useful for repairing any IPC.
+  components:
+  - type: EntityTableContainerFill
+    containers: 
+      entity_storage: !type:AllSelector
+        children:
+        - id: BloodpackOil
+          amount: 3

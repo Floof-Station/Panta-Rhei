@@ -79,5 +79,5 @@
   - type: TimedDespawn
     lifetime: 0.6
   - type: SinguloFood
-    energy: -10
-    energyFactor: 0.97
+    energy: -100 # Euphoria - Increased "damage" from 10 to 100, should make killing Teslas and small Singulos actually possible.
+    energyFactor: 0.95 # Euphoria - Reduces energy by 5% instead of 3%. Should make large singulos more containable.

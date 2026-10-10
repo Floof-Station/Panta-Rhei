@@ -1,18 +1,26 @@
 {
   "version": 1,
-  "license": "CC-BY-NC-3.0",
-  "copyright": "Sprites by Github KittenColony / Discord kittencolony (297865728374210561) ported from (https://github.com/Bubberstation/Bubberstation/commit/968de8f8970833bbd0096e2362f3c6d3e98742a5)",
+  "license": "CC-BY-SA-4.0",
+  "copyright": "Icon and equipped sprites by Github KittenColony / Discord kittencolony (297865728374210561) ported from (https://github.com/Bubberstation/Bubberstation/commit/968de8f8970833bbd0096e2362f3c6d3e98742a5), modified by Barheru (GitHub and Discord). Inhand sprites by Barheru.",
   "size": {
     "x": 32,
     "y": 32
   },
-  "states": [
-    {
-      "name": "icon"
-    },
-    {
-      "name": "equipped-FEET",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "icon"
+        },
+        {
+            "name": "equipped-FEET",
+            "directions": 4
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
 }

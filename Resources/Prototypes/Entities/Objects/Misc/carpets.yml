@@ -18,6 +18,13 @@
     prototype: Carpet
     doAfter: 0.5
     removeOnInteract: true
+# Euphoria start: Carpet is recyclable and has a price, in order to help with arbitrage tests.
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+  - type: StackPrice
+    price: 3.5
+# Euphoria end
 
 - type: entity
   parent: FloorCarpetItemRed
