@@ -1931,24 +1931,70 @@
   - type: MeleeWeapon
     soundHit: *robot-scream
 
--type: entity
-  parent: [BaseFleshlight, PlushieHuman, Skimmer]
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman]
   id: BubblyNursePlushie
   name: bubbly nurse plushie
-  description:
+  description: A plushie depicting a boiling orange slime in a nurse outfit. It always seems to fall over no matter how you prop it up. It rumbles slightly when you squeeze it.
   components:
   - type: Sprite
-    sprite:
-    state: bubblynurse
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    state: icon
   - type: UseDelay
-    delay: 2.0
+    delay: 1.0
   - type: EmitSoundOnActivate
-    sound: *slimeBubble
+    sound: *slimeLaugh
   - type: EmitSoundOnUse
-    sound: *slimeBubble
+    sound: &slimeBubble
+      path: /Audio/_Floof/Voice/Slime/s_bubble.ogg
   - type: EmitSoundOnLand
-    sound: *landTired
+    sound: &fallTired
+      path: /Audio/Effects/bodyfall4.ogg
   - type: EmitSoundOnCollide
-    sound: *slimeScreamF
+    sound: &slimeScreamF
+      path: /Audio/_Floof/Voice/Slime/slime_scream_f1.ogg
   - type: MeleeWeapon
     soundHit: *slimeSquish
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 5
+      fleshlight:
+        maxVol: 10
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+    useSound:
+      collection: Bubbles
+  - type: Injector
+    ignoreMobs: true
+    targetSmallest: true
+    ignoreClosed: false
+    activeModeProtoId: DropperDrawMode
+    allowedModes:
+    - DropperDrawMode
+    - DropperInjectMode
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    slots:
+    - HEAD
