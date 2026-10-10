@@ -9,6 +9,18 @@
     sprite: _DV/Objects/Weapons/Guns/Pistols/viperwood.rsi
   - type: Clothing
     sprite: _DV/Objects/Weapons/Guns/Pistols/viperwood.rsi
+  - type: ItemSlots # Euph - Security can take the Wood Viper as a loadout item, which can take HighCap Magazines as it is parented off of the Viper. Why would you ever want to take the other one? Parity change.
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazinePistol
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - MagazinePistol
+          whitelistFailPopup: gun-magazine-whitelist-fail
 
 - type: entity
   name: Pollock
