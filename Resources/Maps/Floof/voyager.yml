@@ -4,7 +4,7 @@ meta:
   engineVersion: 275.2.1
   forkId: ""
   forkVersion: ""
-  time: 10/03/2026 14:58:32
+  time: 10/11/2026 13:23:31
   entityCount: 19014
 maps:
 - 1
@@ -8212,7 +8212,7 @@ entities:
       pos: 27.5,-47.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -320840.5
+      secondsUntilStateChange: -320929.06
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 1
@@ -8742,13 +8742,15 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 50.5,-5.5
       parent: 2
-- proto: AirlockExternalGlassShuttleMining
+- proto: AirlockExternalGlassShuttleMiningFilled
   entities:
   - uid: 804
     components:
     - type: Transform
       pos: -20.5,29.5
       parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
 - proto: AirlockFreezerLocked
   entities:
   - uid: 6815
@@ -9732,7 +9734,7 @@ entities:
       pos: -30.5,-22.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -28862.068
+      secondsUntilStateChange: -28950.629
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9759,7 +9761,7 @@ entities:
       pos: -46.5,-21.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -321457.6
+      secondsUntilStateChange: -321546.16
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9802,7 +9804,7 @@ entities:
       pos: -22.5,-18.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -236220.75
+      secondsUntilStateChange: -236309.31
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9924,7 +9926,7 @@ entities:
       pos: -15.5,-42.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -273068.1
+      secondsUntilStateChange: -273156.66
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -95968,6 +95970,12 @@ entities:
     - type: Transform
       pos: 13.5,-36.5
       parent: 2
+  - uid: 19013
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 26.5,-51.5
+      parent: 2
 - proto: PoweredSmallLightMaintenance
   entities:
   - uid: 4101
@@ -101124,13 +101132,6 @@ entities:
     - type: Transform
       pos: 10.49417,-69.49947
       parent: 2
-- proto: SheetSteel1
-  entities:
-  - uid: 19013
-    components:
-    - type: Transform
-      pos: 26.5,-51.5
-      parent: 2
 - proto: ShelfKitchen
   entities:
   - uid: 9545
@@ -101644,6 +101645,11 @@ entities:
     - type: Transform
       pos: 39.5,-44.5
       parent: 2
+    - type: DeviceLinkSource
+      linkedPorts:
+        2575:
+        - - Pressed
+          - Toggle
     - type: Fixtures
       fixtures: {}
   - uid: 12279
