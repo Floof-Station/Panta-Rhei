@@ -1,4 +1,6 @@
-﻿using Content.Shared.Whitelist;
+﻿using Content.Shared._Euphoria.EntityEffects.Effects;
+using Content.Shared.EntityEffects;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -46,4 +48,8 @@ public sealed partial class PopUpOnUseComponent : Component
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public EntityWhitelist? Blacklist;
+
+    // Entity effect list
+    [DataField]
+    public List<EntityEffect> Effects = new();
 }
