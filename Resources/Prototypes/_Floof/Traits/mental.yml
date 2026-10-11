@@ -4,9 +4,10 @@
   description: trait-dispel-desc
   category: Psionics
   cost: 5
-  conflicts:
-    - NoPsionicPotential
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - NoPsionicPotential
   - !type:HasJobCondition
     invert: true
     job: ResearchDirector
@@ -22,7 +23,9 @@
   description: trait-precognition-desc
   category: Psionics
   cost: 4
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - NoPsionicPotential
   effects:
   - !type:AddCompsEffect
@@ -36,9 +39,10 @@
   description: trait-metapsionic-desc
   category: Psionics
   cost: 2
-  conflicts:
-    - NoPsionicPotential
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - NoPsionicPotential
   - !type:HasJobCondition
     invert: true
     job: ForensicMantis
@@ -54,7 +58,9 @@
   description: trait-psychokinetic-scream-desc
   category: Psionics
   cost: 6
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - NoPsionicPotential
   effects:
   - !type:AddCompsEffect
@@ -98,12 +104,13 @@
   description: trait-nopsionicpotential-desc
   category: Psionics
   cost: -1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - TraitDispel
     - TraitPrecognition
     - TraitMetapsionic
     - TraitPsychokineticScream
-  conditions:
   - !type:HasJobCondition
     invert: true
     job: ForensicMantis
