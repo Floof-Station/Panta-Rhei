@@ -3,6 +3,9 @@ using Content.Shared._Euphoria.Surgery;
 using Content.Shared._Euphoria.Surgery.Components;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
@@ -115,11 +118,29 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (!ent.Comp.DictOrgans.ContainsKey(organ.Category.Value))
             ent.Comp.DictOrgans[organ.Category.Value] = new Dictionary<EntityUid, Dictionary<ProtoId<SurgeryStatePrototype>, bool>>();
 
+
         ent.Comp.DictOrgans[organ.Category.Value].Add(args.Organ, new Dictionary<ProtoId<SurgeryStatePrototype>, bool>());
 
         foreach(var state in ent.Comp.SurgeryStates)
         {
             ent.Comp.DictOrgans[organ.Category.Value][args.Organ].Add(state,false);
+        }
+
+        //Duplicate from OnOrganRemoved -> consider taking this logic and making a function for this
+        if (TryComp<SurgeryOrganDamageComponent>(args.Organ, out var damageContainer))
+        {
+            if (TryComp<DamageableComponent>(ent, out var damageable) &&
+                _damage.GetAllDamage((ent.Owner, damageable)).DamageDict.TryGetValue(damageContainer.damageType, out var transferDamage))
+            {
+                if(!_proto.TryIndex(damageContainer.damageType, out var damageProto))
+                    return;
+                if (damageProto == null)
+                    return;
+
+                var tmp = damageContainer.Damage;
+                damageContainer.Damage = 0;
+                _damage.TryChangeDamage(ent.Owner, new DamageSpecifier(damageProto, tmp));
+            }
         }
 
     }
@@ -131,6 +152,21 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             return;
         if(organ.Category == null)
             return;
+
+        if (TryComp<SurgeryOrganDamageComponent>(args.Organ, out var damageContainer))
+        {
+            if (TryComp<DamageableComponent>(ent, out var damageable) &&
+                _damage.GetAllDamage((ent.Owner, damageable)).DamageDict.TryGetValue(damageContainer.damageType, out var transferDamage))
+            {
+                if(!_proto.TryIndex(damageContainer.damageType, out var damageProto))
+                    return;
+                if (damageProto == null)
+                    return;
+
+                damageContainer.Damage = transferDamage;
+                _damage.SetDamage(ent.Owner, new DamageSpecifier(damageProto, 0));
+            }
+        }
 
         ent.Comp.DictOrgans[organ.Category.Value].Remove(args.Organ);
     }

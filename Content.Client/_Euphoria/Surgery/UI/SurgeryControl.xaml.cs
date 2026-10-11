@@ -35,7 +35,19 @@ public sealed partial class SurgeryControl : Control
 
     public void SetAction(SurgeryActionPrototype surgeryActionPrototype)
     {
-        SurgeryActionName.Text = Loc.GetString(surgeryActionPrototype.Description,("bodyPart",surgeryActionPrototype.getTargets()[0]));
+        var targets = surgeryActionPrototype.getTargets();
+        if (targets.Length == 0)
+            SurgeryActionName.Text = surgeryActionPrototype.ID;
+        else if (surgeryActionPrototype.Remove != null)
+        {
+            SurgeryActionName.Text = Loc.GetString(surgeryActionPrototype.Description,("bodyPart",surgeryActionPrototype.Remove));
+        }
+        else if (surgeryActionPrototype.Insert != null)
+        {
+            SurgeryActionName.Text = Loc.GetString(surgeryActionPrototype.Description,("bodyPart",surgeryActionPrototype.Insert));
+        }
+        else
+            SurgeryActionName.Text = Loc.GetString(surgeryActionPrototype.Description,("bodyPart",surgeryActionPrototype.getTargets()[0]));
 
         //SurgeryActionName.Text = _surgerySystem.GetSurgeryName(surgeryAction);
         _surgeryId = surgeryActionPrototype.ID;

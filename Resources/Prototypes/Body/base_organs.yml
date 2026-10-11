@@ -410,6 +410,8 @@
   name: liver
   abstract: true
   components:
+  - type: SurgeryOrganDamage #Euphoria - needed for surgery to move damage to organs and vice versa
+    damageType: Poison
   - type: GibbableOrgan
   - type: Organ
     category: Liver
