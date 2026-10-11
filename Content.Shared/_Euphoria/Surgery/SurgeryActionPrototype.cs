@@ -45,4 +45,13 @@ public sealed partial class SurgeryActionPrototype : IPrototype, IInheritingProt
     public bool Abstract { get; private set; }
 
 
+    public string[] getTargets()
+    {
+        var targets = new List<string>();
+
+        foreach(var organ in _effects.Keys)
+            targets.Add(organ.ToString());
+
+        return targets.ToArray();
+    }
 }
