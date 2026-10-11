@@ -6457,3 +6457,23 @@ Entries:
       message: IPC welding repairs are much more reasonable.
   id: 803
   time: '2026-10-10T21:33:27.0000000+00:00'
+- author: P4nnant
+  changes:
+    - type: Add
+      message: >-
+        added the Paint Station, a vending machine exclusively designed to sell
+        spraypaint (restock box included)
+    - type: Add
+      message: added several new colours of spraypaint
+    - type: Remove
+      message: removed the spraypaint gamba crate from cargo's catalouge
+    - type: Fix
+      message: fixed a few minor typos
+    - type: Tweak
+      message: added the colour of paint to every spraypaint can's name
+    - type: Add
+      message: added the spraypainter and compressed paint to the paint station
+    - type: Tweak
+      message: doubled the number of charges spraypaint cans have
+  id: 804
+  time: '2026-10-10T23:12:16.0000000+00:00'
