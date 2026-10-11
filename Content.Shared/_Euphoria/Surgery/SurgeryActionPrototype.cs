@@ -16,6 +16,9 @@ public sealed partial class SurgeryActionPrototype : IPrototype, IInheritingProt
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<SurgeryActionPrototype>))]
     public string[]? Parents { get; private set; }
 
+    [DataField]
+    public LocId Description = default;
+
     [DataField("toolType")]
     public SurgeryToolComponent.ToolTypeEnum _type = default!;
 

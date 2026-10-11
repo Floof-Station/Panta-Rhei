@@ -70,6 +70,8 @@ public sealed partial class SurgeryWindow : FancyWindow
 
     public void PopulateSurgeries()
     {
+        if(SurgeryActions.ChildCount > 0)
+            SurgeryActions.RemoveAllChildren();
         foreach (var action in Surgeries)
         {
             if (!_prototypeManager.Resolve(action, out var proto))

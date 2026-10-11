@@ -60,8 +60,9 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (!ev.Cancelled)
         {
             PerformOperation(uid, component, proto, ev.User);
-            Spawn("FoodBreadPlain", uid.ToCoordinates());
         }
+
+        RefreshInterface(uid,component);
     }
     //This is where you would put the damage transfer from the organ into the body
     private void OnOrganInserted(Entity<SurgeryComponent> ent, ref OrganInsertedIntoEvent args)

@@ -14,6 +14,17 @@
   id: shortSurgery
   duration: 10
 
+#surgery common descriptions
+- type: surgeryAction
+  abstract: true
+  id: removeOrgan
+  description: surgery-remove-organ
+
+- type: surgeryAction
+  abstract: true
+  id: insertOrgan
+  description: surgery-insert-organ
+
 #abstract common states
 - type: surgeryAction
   abstract: true
@@ -23,6 +34,14 @@
       skinRetracted: true
       muscleRetracted: true
       boneRetracted: true
+
+- type: surgeryAction
+  abstract: true
+  id: torsoPlasticSurgeryStates
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: true
 
 #Icons and types of surgeries to inherit from
 - type: surgeryAction
@@ -69,36 +88,114 @@
 
 #Heart surgery
 - type: surgeryAction
-  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery]
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
   id: removeHeart
+  description: surgery-remove-organ
   remove: Heart
 
 - type: surgeryAction
-  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery]
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
   id: insertHeart
   insert: Heart
 
 #Lung surgery
 - type: surgeryAction
-  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery]
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
   id: removeLungs
   remove: Lungs
 
 - type: surgeryAction
-  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery]
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
   id: insertLungs
   insert: Lungs
 
 #Stomach surgery
 - type: surgeryAction
-  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery]
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
   id: removeStomach
   remove: Stomach
 
 - type: surgeryAction
-  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery]
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
   id: insertStomach
   insert: Stomach
+
+#Liver surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeLiver
+  remove: Liver
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertLiver
+  insert: Liver
+
+#Kidney surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeKidneys
+  remove: Kidneys
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertKidneys
+  insert: Kidneys
+
+#Appendix surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeAppendix
+  remove: Appendix
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertAppendix
+  insert: Appendix
+
+#Breasts surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeBreasts
+  remove: MammaryGlands
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertBreasts
+  insert: MammaryGlands
+
+#Penis surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removePenis
+  remove: Penis
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertPenis
+  insert: Penis
+
+#Rectum surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeRectum
+  remove: Rectum
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertRectum
+  insert: Rectum
+
+#Vagina surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeVagina
+  remove: Vagina
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertVagina
+  insert: Vagina
 
 #State changing surgeries. Requires one that sets the condition to true, and one to false
 
@@ -106,6 +203,7 @@
 - type: surgeryAction
   parent: [retractionSurgery, averageSurgery]
   id: retractMusclesTorso
+  description: surgery-muscle-retract
   states:
     Torso:
       skinRetracted: true
@@ -117,6 +215,7 @@
 - type: surgeryAction
   parent: [retractionSurgery, averageSurgery]
   id: replaceMusclesTorso
+  description: surgery-muscle-replace
   states:
     Torso:
       skinRetracted: true
@@ -129,6 +228,7 @@
 - type: surgeryAction
   parent: [cuttingSurgery, shortSurgery]
   id: openSkinTorso
+  description: surgery-skin-cut
   states:
     Torso:
       skinRetracted: false
@@ -139,6 +239,7 @@
 - type: surgeryAction
   parent: [sealingSurgery, shortSurgery]
   id: closeSkinTorso
+  description: surgery-skin-cauter
   states:
     Torso:
       skinRetracted: true

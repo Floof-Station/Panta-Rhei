@@ -22,6 +22,8 @@
   name: mammary glands
   description: A mammalian organ that produces milk typically used for feeding offsprings. Placeholder sprite.
   components:
+  - type: Organ
+    category: MammaryGlands
   - type: LewdOrgan
     data:
       organKind: Breasts
@@ -39,6 +41,8 @@
   name: penis
   description: An appendage used by the majority of animal species to fertilize egg cells. Testicular glands included. Placeholder sprite.
   components:
+  - type: Organ
+    category: Penis
   - type: LewdOrgan
     data:
       organKind: Penis
@@ -59,6 +63,8 @@
   name: vagina
   description: An organ housing the female reproductive system. Placeholder sprite.
   components:
+  - type: Organ
+    category: Vagina
   - type: LewdOrgan
     data:
       organKind: Vagina
@@ -78,6 +84,8 @@
   name: rectum
   description: Why are you holding this? Placeholder sprite.
   components:
+  - type: Organ
+    category: Rectum
   - type: LewdOrgan
     data:
       organKind: Rectum

@@ -25,6 +25,11 @@ public sealed partial class SurgerySystem
 
     }
 
+    public void RefreshInterface(EntityUid uid, SurgeryComponent? component = null)
+    {
+        UpdateUserInterfaceState(uid, component);
+    }
+
     public void UpdateUserInterfaceState(EntityUid uid, SurgeryComponent? component = null)
     {
         if (!Resolve(uid, ref component))
