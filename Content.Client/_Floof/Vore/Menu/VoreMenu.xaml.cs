@@ -23,6 +23,9 @@ namespace Content.Client._Floof.Vore.Menu;
 [GenerateTypedNameReferences]
 public sealed partial class VoreMenu : DefaultWindow
 {
+    private const float DefaultDigestSpeed = 100f;
+    private static readonly Color DefaultStomachColor = new(0.35f, 0.01f, 0.06f);
+
     [Dependency] private readonly IEntityManager _entityManager = default!;
     
     private ColorSelectorSliders _stomachColorSelector; 
@@ -129,12 +132,7 @@ Only you will know their fate.
 
     private void Reset()
     {
-        _loadingSettings = true;
-        _settings = new MappingDataNode();
-        AllowSound.Pressed = false;
-        DigestSpeed.Value = 100;
-        _stomachColorSelector.Color = new(0.35f, 0.01f, 0.06f);
-        _loadingSettings = false;
+        SetSettings(string.Empty);
         UnsavedChanges();
     }
 
@@ -155,30 +153,31 @@ Only you will know their fate.
 
         _loadingSettings = true;
         _settings = settings;
-        
+        AllowSound.Pressed = false;
+        DigestSpeed.Value = DefaultDigestSpeed;
+        _stomachColorSelector.Color = DefaultStomachColor;
+
         if (_settings.TryGet("allowSound", out var soundNode)
-            && soundNode is ValueDataNode valueNode
-            && bool.TryParse(valueNode.Value, out var allowSound)){
+            && soundNode is ValueDataNode soundValue
+            && bool.TryParse(soundValue.Value, out var allowSound))
+        {
             AllowSound.Pressed = allowSound;
         }
-        else{
-            AllowSound.Pressed = false;
-        }
+
         if (_settings.TryGet("digestSpeed", out var speedNode)
             && speedNode is ValueDataNode speedValue
-            && float.TryParse(speedValue.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var digestSpeed)){
-            DigestSpeed.Value = Math.Clamp(digestSpeed, 10, 300);
+            && float.TryParse(speedValue.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var speed)
+            && float.IsFinite(speed))
+        {
+            DigestSpeed.Value = Math.Clamp(speed, 10f, 300f);
         }
-        else{
-            DigestSpeed.Value = 100;
-        }
+
         if (_settings.TryGet("stomachColor", out var colorNode)
-            && colorNode is ValueDataNode colorValue){
-            _stomachColorSelector.Color = Color.FromHex(colorValue.Value, new(0.35f, 0.01f, 0.06f));
+            && colorNode is ValueDataNode colorValue)
+        {
+            _stomachColorSelector.Color = Color.FromHex(colorValue.Value, DefaultStomachColor);
         }
-        else{
-            _stomachColorSelector.Color = new(0.35f, 0.01f, 0.06f);
-        }
+
         _loadingSettings = false;
         SaveVoreSettings.Disabled = true;
     }

@@ -75,8 +75,7 @@ public sealed class DevouredOverlay : Overlay
         var stomachWallColor = StomachWallColor;
         if (playerEntity != null
             && _containerSystem.TryGetContainingContainer((playerEntity.Value, null, null), out var container)
-            && _entityManager.TryGetComponent(container.Owner, out PredComponent? predComp))
-        {
+            && _entityManager.TryGetComponent(container.Owner, out PredComponent? predComp)){
             stomachWallColor = new(predComp.StomachColor.R, predComp.StomachColor.G, predComp.StomachColor.B);
         }
 
