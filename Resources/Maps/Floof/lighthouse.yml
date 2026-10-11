@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Map
-  engineVersion: 268.0.0
+  engineVersion: 275.2.1
   forkId: ""
   forkVersion: ""
-  time: 05/15/2026 16:13:22
-  entityCount: 23175
+  time: 10/11/2026 10:42:37
+  entityCount: 23173
 maps:
 - 1
 grids:
@@ -7492,6 +7492,9 @@ entities:
       shakeTimes: 10
     - type: NavMap
     - type: ImplicitRoof
+    - type: TileHistory
+      chunkHistory: {}
+    - type: ExplosionAirtightGrid
 - proto: AcousticGuitarInstrument
   entities:
   - uid: 3
@@ -10184,7 +10187,7 @@ entities:
       pos: -49.5,31.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -31440.662
+      secondsUntilStateChange: -31732.158
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -14601,13 +14604,6 @@ entities:
     components:
     - type: Transform
       pos: -8.5,-56.5
-      parent: 2
-- proto: Autoclave
-  entities:
-  - uid: 23110
-    components:
-    - type: Transform
-      pos: -20.5,48.5
       parent: 2
 - proto: Autolathe
   entities:
@@ -91639,18 +91635,6 @@ entities:
     - type: Transform
       pos: -14.5,-17.5
       parent: 2
-- proto: GlowstickBase
-  entities:
-  - uid: 11729
-    components:
-    - type: Transform
-      pos: 27.384964,-44.359894
-      parent: 2
-  - uid: 11730
-    components:
-    - type: Transform
-      pos: 27.603714,-44.422394
-      parent: 2
 - proto: GlowstickBlue
   entities:
   - uid: 11731
@@ -91662,6 +91646,18 @@ entities:
     components:
     - type: Transform
       pos: 25.663635,-44.48702
+      parent: 2
+- proto: GlowstickGreen
+  entities:
+  - uid: 11729
+    components:
+    - type: Transform
+      pos: 27.384964,-44.359894
+      parent: 2
+  - uid: 11730
+    components:
+    - type: Transform
+      pos: 27.603714,-44.422394
       parent: 2
 - proto: GlowstickRed
   entities:
@@ -99064,13 +99060,6 @@ entities:
     - type: Transform
       pos: 35.558083,44.613426
       parent: 2
-- proto: HatSpawner
-  entities:
-  - uid: 12999
-    components:
-    - type: Transform
-      pos: 43.5,35.5
-      parent: 2
 - proto: HeatExchanger
   entities:
   - uid: 13001
@@ -100378,17 +100367,17 @@ entities:
     - type: Transform
       pos: 15.5,-7.5
       parent: 2
-- proto: LockerAtmosphericsFilled
+- proto: LockerAtmosphericsFilledHardsuit
   entities:
   - uid: 13135
     components:
     - type: Transform
-      pos: -9.5,-49.5
+      pos: -8.5,-49.5
       parent: 2
   - uid: 13136
     components:
     - type: Transform
-      pos: -8.5,-49.5
+      pos: -9.5,-49.5
       parent: 2
 - proto: LockerBooze
   entities:
@@ -101439,13 +101428,6 @@ entities:
     components:
     - type: Transform
       pos: -15.5,-33.5
-      parent: 2
-- proto: MedicalBiofabricator
-  entities:
-  - uid: 23111
-    components:
-    - type: Transform
-      pos: -22.5,43.5
       parent: 2
 - proto: MedicalScanner
   entities:
@@ -110648,6 +110630,13 @@ entities:
     components:
     - type: Transform
       pos: -31.5,12.5
+      parent: 2
+- proto: RandomHatSpawner
+  entities:
+  - uid: 12999
+    components:
+    - type: Transform
+      pos: 43.5,35.5
       parent: 2
 - proto: RandomInstruments
   entities:
@@ -122433,7 +122422,7 @@ entities:
     - type: Transform
       pos: 7.5,47.5
       parent: 2
-- proto: SpawnMobSmileCore
+- proto: SpawnMobSmile
   entities:
   - uid: 23129
     components:
@@ -122510,6 +122499,16 @@ entities:
     components:
     - type: Transform
       pos: -34.5,30.5
+      parent: 2
+  - uid: 16668
+    components:
+    - type: Transform
+      pos: -7.5,42.5
+      parent: 2
+  - uid: 16669
+    components:
+    - type: Transform
+      pos: -9.5,36.5
       parent: 2
 - proto: SpawnPointBotanist
   entities:
@@ -122896,18 +122895,6 @@ entities:
     components:
     - type: Transform
       pos: 18.5,-9.5
-      parent: 2
-- proto: SpawnPointMedicalBorg
-  entities:
-  - uid: 16668
-    components:
-    - type: Transform
-      pos: -7.5,42.5
-      parent: 2
-  - uid: 16669
-    components:
-    - type: Transform
-      pos: -9.5,36.5
       parent: 2
 - proto: SpawnPointMedicalDoctor
   entities:
