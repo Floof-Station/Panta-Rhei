@@ -34,12 +34,14 @@
   metamorphicChangeColor: false
   metabolisms:
     Digestion:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.2
+      metabolites:
+        Ethanol: 0.2
+#      effects:
+#      - !type:SatiateThirst
+#        factor: 2
+#      - !type:AdjustReagent
+#        reagent: Ethanol
+#        amount: 0.2
 
 - type: reagent
   id: MnatsaCollins
@@ -57,12 +59,14 @@
   metamorphicChangeColor: false
   metabolisms:
     Digestion:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
+      metabolites:
+        Ethanol: 0.07
+#      effects:
+#      - !type:SatiateThirst
+#        factor: 2
+#      - !type:AdjustReagent
+#        reagent: Ethanol
+#        amount: 0.07
   fizziness: 0.4
 
 - type: reagent
@@ -81,12 +85,14 @@
   metamorphicChangeColor: false
   metabolisms:
     Digestion:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
+      metabolites:
+        Ethanol: 0.07
+#      effects:
+#      - !type:SatiateThirst
+#        factor: 2
+#      - !type:AdjustReagent
+#        reagent: Ethanol
+#        amount: 0.07
 
 - type: reagent
   id: FiveOClock
@@ -104,12 +110,14 @@
   metamorphicChangeColor: false
   metabolisms:
     Digestion:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.07
+      metabolites:
+        Ethanol: 0.07
+#      effects:
+#      - !type:SatiateThirst
+#        factor: 2
+#      - !type:AdjustReagent
+#        reagent: Ethanol
+#        amount: 0.07
 
 - type: reagent
   id: Mliko
@@ -127,12 +135,14 @@
   metamorphicChangeColor: false
   metabolisms:
     Digestion:
-      effects:
-      - !type:SatiateThirst
-        factor: 1
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.02
+      metabolites:
+        Ethanol: 0.02
+#      effects:
+#      - !type:SatiateThirst
+#        factor: 1
+#      - !type:AdjustReagent
+#        reagent: Ethanol
+#        amount: 0.02
 
 - type: reagent
   id: Firebolt
@@ -150,9 +160,11 @@
   metamorphicChangeColor: true
   metabolisms:
     Digestion:
-      effects:
-      - !type:SatiateThirst
-        factor: 2
-      - !type:AdjustReagent
-        reagent: Ethanol
-        amount: 0.2
+      metabolites:
+        Ethanol: 0.2
+#      effects:
+#      - !type:SatiateThirst
+#       factor: 2
+#      - !type:AdjustReagent
+#        reagent: Ethanol
+#        amount: 0.2
