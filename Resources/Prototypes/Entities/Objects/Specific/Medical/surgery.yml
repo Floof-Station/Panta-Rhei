@@ -8,9 +8,9 @@
   - type: Sprite
   - type: StaticPrice
     price: 20
-  - type: Tag
-    tags:
-    - SurgeryTool
+  #- type: Tag #Euphoria start
+  #  tags:
+  #  - SurgeryTool #Euphoria end
 
 # Cautery
 
@@ -20,6 +20,8 @@
   parent: BaseToolSurgery
   description: A surgical tool used to cauterize open wounds.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cauterising
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
@@ -41,6 +43,8 @@
   parent: BaseToolSurgery
   description: A surgical drill for making holes into hard material.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Drilling
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
@@ -72,6 +76,8 @@
   parent: BaseToolSurgery
   description: A surgical tool used to make incisions into flesh.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
   - type: Sharp
     butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
   - type: Tool
@@ -160,6 +166,8 @@
   parent: BaseToolSurgery
   description: A surgical tool used to hold open incisions.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Retracting
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor
@@ -192,6 +200,8 @@
   parent: BaseToolSurgery
   description: For cutting wood and other objects to pieces. Or sawing bones, in case of emergency.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
   - type: Sharp
   - type: Utensil
     types:

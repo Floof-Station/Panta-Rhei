@@ -197,6 +197,29 @@
   id: BaseSpeciesMobOrganic
   save: false
   components:
+  #Euphoria changes start
+  - type: Surgery
+    surgeryStates:
+    - skinRetracted
+    - muscleRetracted
+    - boneRetracted
+    surgeryActions:
+    - retractMusclesTorso
+    - replaceMusclesTorso
+    - openSkinTorso
+    - closeSkinTorso
+    - removeHeart
+    - insertHeart
+    - moveBonesTorso
+    - replaceBonesTorso
+  - type: UserInterface
+    interfaces:
+      enum.SurgeryUiKey.Key:
+        type: SurgeryBoundUserInterface
+  - type: ActivatableUI
+    verbOnly: true
+    key: enum.SurgeryUiKey.Key
+  #Euphoria changes end+
   - type: Hunger
   - type: Thirst
   - type: Barotrauma
