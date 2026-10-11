@@ -2,3 +2,8 @@
   id: QuestionPhrase
   parent: BaseQuestionPhrase
   text: phrase-question
+
+- type: quickPhrase
+  id: SuggestionPhrase
+  parent: BaseQuestionPhrase
+  text: phrase-suggestion

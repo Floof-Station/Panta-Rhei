@@ -17,7 +17,7 @@
   id: BaseHands
   abstract: true
   requiresHands: true
-  requiresCanInteract: true
+  requiresCanAccess: true
   contactInteraction: true
   range:
     max: 1.2
@@ -46,7 +46,7 @@
   id: BaseMouth
   abstract: true
   priority: -15
-  requiresCanInteract: true # Do check CanAccess
-  checkInteractionBlocker: false # Don't check CanInteract
+  requiresCanAccess: true # Do check CanAccess, but not CanInteract
+  requiresCanInteract: false
   requiresHands: false
   requiresConsciousness: true

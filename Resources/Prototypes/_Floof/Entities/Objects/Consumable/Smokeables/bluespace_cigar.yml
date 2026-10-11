@@ -1,0 +1,34 @@
+﻿- type: entity
+  id: CigarBluespace
+  parent: Cigar
+  name: bluespace cigar
+  description: A cigar designed using bluespace technology for nicotine addicts and the most hedonistic of smokers.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Smokeables/cigar-bluespace.rsi
+    state: unlit-icon
+  - type: Clothing
+    sprite: _Floof/Objects/Consumable/Smokeables/cigar-bluespace.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Tiny
+    sprite: _Floof/Objects/Consumable/Smokeables/cigar-bluespace.rsi
+    heldPrefix: lit-inhand
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 6480
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 6480 # 12 hours
+
+- type: entity
+  id: CigarBluespaceSpent
+  parent: CigarBluespace
+  suffix: spent
+  components:
+  - type: Sprite
+    state: burnt-icon
+  - type: Smokable
+    state: Burnt

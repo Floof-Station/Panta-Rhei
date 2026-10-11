@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Shared.Atmos;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
+using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -18,13 +19,25 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+
+// BEGIN DeltaV
+using Content.Client._DV.Traits.Assorted;
+using Content.Shared._DV.Traits.Assorted;
+using Content.Shared._DV.Medical; // Uncloneable
+using Content.Shared._DV.MedicalRecords; // Medical Records
+
+// Health Analyzer Plus
+using Content.Shared.Chemistry.Components;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Body.Systems;
+using Content.Client.Body.Systems;
+using Content.Shared.Chemistry.EntitySystems;
+using Content.Client.Chemistry.Containers.EntitySystems;
+using Content.Shared.Body.Components;
+// END DeltaV
 namespace Content.Client.HealthAnalyzer.UI;
 
-using Content.Client._DV.Traits.Assorted; // DeltaV
-using Content.Shared._DV.Traits.Assorted; // DeltaV
-using Content.Shared._DV.Medical; // DeltaV - Uncloneable
-using Content.Shared._DV.MedicalRecords; // DeltaV - Medical Records
-using Content.Shared._Shitmed.Targeting; // Shitmed
+
 
 // Health analyzer UI is split from its window because it's used by both the
 // health analyzer item and the cryo pod UI.
@@ -32,24 +45,19 @@ using Content.Shared._Shitmed.Targeting; // Shitmed
 [GenerateTypedNameReferences]
 public sealed partial class HealthAnalyzerControl : BoxContainer
 {
+    private const string REAGENT_GROUP_MEDICINE = "Medicine"; // DeltaV - Health Analyzer
+
     private readonly IEntityManager _entityManager;
     private readonly SpriteSystem _spriteSystem;
     private readonly IPrototypeManager _prototypes;
     private readonly IResourceCache _cache;
+    private readonly DamageableSystem _damageable;
 
     private readonly UnborgableSystem _unborgable; // DeltaV
     private readonly RedshirtSystem _redshirt; // DeltaV
     private readonly UncloneableSystem _uncloneable; // DeltaV
-
-    // Shitmed Change Start
-    public event Action<TargetBodyPart?, EntityUid>? OnBodyPartSelected;
-    private EntityUid _spriteViewEntity;
-
-    private readonly EntProtoId _bodyView = "AlertSpriteView";
-
-    private readonly Dictionary<TargetBodyPart, TextureButton> _bodyPartControls;
-    private EntityUid? _target;
-    // Shitmed Change End
+    private readonly SharedBloodstreamSystem _bloodstream; // DeltaV
+    private readonly SharedSolutionContainerSystem _solutionContainer; // DeltaV
 
     // Begin DeltaV - Medical Records
     private readonly ButtonGroup _triageStatusGroup = new();
@@ -58,8 +66,8 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     public event Action<TriageStatus>? OnTriageStatusChanged;
     public event Action? OnClaimPatient;
     // End DeltaV - Medical Records
+    public Action? OnPrintMedTekRecord; // DeltaV - MedTek Reports
 
-    public Action? OnPrintPatientRecord; // Frontier: Allow printing hardcopy of patient information
 
     public HealthAnalyzerControl()
     {
@@ -70,33 +78,13 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         _spriteSystem = _entityManager.System<SpriteSystem>();
         _prototypes = dependencies.Resolve<IPrototypeManager>();
         _cache = dependencies.Resolve<IResourceCache>();
+        _damageable = _entityManager.System<DamageableSystem>();
 
         _unborgable = _entityManager.System<UnborgableSystem>(); // DeltaV
         _redshirt = _entityManager.System<RedshirtSystem>(); // DeltaV
         _uncloneable = _entityManager.System<UncloneableSystem>(); // DeltaV
-        // Shitmed Change Start
-        _bodyPartControls = new Dictionary<TargetBodyPart, TextureButton>
-        {
-            { TargetBodyPart.Head, HeadButton },
-            { TargetBodyPart.Torso, ChestButton },
-            { TargetBodyPart.Groin, GroinButton },
-            { TargetBodyPart.LeftArm, LeftArmButton },
-            { TargetBodyPart.LeftHand, LeftHandButton },
-            { TargetBodyPart.RightArm, RightArmButton },
-            { TargetBodyPart.RightHand, RightHandButton },
-            { TargetBodyPart.LeftLeg, LeftLegButton },
-            { TargetBodyPart.LeftFoot, LeftFootButton },
-            { TargetBodyPart.RightLeg, RightLegButton },
-            { TargetBodyPart.RightFoot, RightFootButton },
-        };
-
-        foreach (var bodyPartButton in _bodyPartControls)
-        {
-            bodyPartButton.Value.MouseFilter = MouseFilterMode.Stop;
-            bodyPartButton.Value.OnPressed += _ => SetActiveBodyPart(bodyPartButton.Key, bodyPartButton.Value);
-        }
-        ReturnButton.OnPressed += _ => ResetBodyPart();
-        // Shitmed Change End
+        _bloodstream = _entityManager.System<BloodstreamSystem>(); // DeltaV
+        _solutionContainer = _entityManager.System<SolutionContainerSystem>(); // DeltaV
 
         // Begin DeltaV - Medical Records
         foreach (var item in Enum.GetValues<TriageStatus>())
@@ -117,36 +105,19 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         StatusBox.Children.Last().RemoveStyleClass("ButtonSquare");
         ClaimButton.OnPressed += _ => OnClaimPatient?.Invoke();
         // End DeltaV - Medical Records
-
-        PrintRecordButton.OnPressed += (_) => OnPrintPatientRecord?.Invoke(); // Frontier
+        PrintReportButton.OnPressed += (_) => OnPrintMedTekRecord?.Invoke(); // DeltaV - MedTek Reports
     }
 
     public void Populate(HealthAnalyzerUiState state)
     {
         var target = _entityManager.GetEntity(state.TargetEntity);
-        // Begin Shitmed
-        _target = target;
-        EntityUid? part = state.Part != null ? _entityManager.GetEntity(state.Part.Value) : null;
-        var isPart = part != null;
-        // End Shitmed
 
         if (target == null
-            || !_entityManager.TryGetComponent<DamageableComponent>(isPart ? part : target, out var damageable)) // Shitmed
+            || !_entityManager.TryGetComponent<DamageableComponent>(target, out var damageable))
         {
             NoPatientDataText.Visible = true;
-            PrintButtonsContainer.Visible = false; // Frontier
             return;
         }
-
-        // Begin Shitmed
-        ReturnButton.Visible = isPart;
-        PartNameLabel.Visible = isPart;
-
-        if (part != null)
-            PartNameLabel.Text = _entityManager.HasComponent<MetaDataComponent>(part)
-                ? Identity.Name(part.Value, _entityManager)
-                : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
-        // End Shitmed
 
         NoPatientDataText.Visible = false;
 
@@ -160,13 +131,11 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         ScanModeLabel.FontColorOverride = state.ScanMode.HasValue && state.ScanMode.Value ? Color.Green : Color.Red;
 
-        PrintButtonsContainer.Visible = state is { Printable: true, ScanMode: true }; // Frontier
+        PrintReportButton.Disabled = state is { ScanMode: false }; // DeltaV
 
         // Patient Information
-
-        SpriteView.SetEntity(SetupIcon(state.Body) ?? target.Value); // Shitmed Change
+        SpriteView.SetEntity(target.Value);
         SpriteView.Visible = state.ScanMode.HasValue && state.ScanMode.Value;
-        PartView.Visible = SpriteView.Visible; // Shitmed Change
         NoDataTex.Visible = !SpriteView.Visible;
 
         var name = new FormattedMessage();
@@ -177,9 +146,9 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         NameLabel.SetMessage(name);
 
         SpeciesLabel.Text =
-            _entityManager.TryGetComponent<HumanoidAppearanceComponent>(target.Value,
-                out var humanoidAppearanceComponent)
-                ? Loc.GetString(_prototypes.Index<SpeciesPrototype>(humanoidAppearanceComponent.Species).Name)
+            _entityManager.TryGetComponent<HumanoidProfileComponent>(target.Value,
+                out var humanoidComponent)
+                ? Loc.GetString(_prototypes.Index(humanoidComponent.Species).Name)
                 : Loc.GetString("health-analyzer-window-entity-unknown-species-text");
 
         // Basic Diagnostic
@@ -188,9 +157,13 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
             ? $"{state.Temperature - Atmospherics.T0C:F1} °C ({state.Temperature:F1} K)"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
 
+        // Begin DeltaV - Health Analyzer Plus
+        /*
         BloodLabel.Text = !float.IsNaN(state.BloodLevel)
             ? $"{state.BloodLevel * 100:F1} %"
             : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+        */
+        // End DeltaV - Health Analyzer Plus
 
         StatusLabel.Text =
             _entityManager.TryGetComponent<MobStateComponent>(target.Value, out var mobStateComponent)
@@ -199,7 +172,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
         // Total Damage
 
-        DamageLabel.Text = damageable.TotalDamage.ToString();
+        // DamageLabel.Text = _damageable.GetTotalDamage(target.Value).ToString(); // DeltaV - Health Analyzer Plus
 
         // Alerts
         // DeltaV traits - This is going to be horrid if we just keep adding things like this.
@@ -259,12 +232,14 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         // Damage Groups
 
         var damageSortedGroups =
-            damageable.DamagePerGroup.OrderByDescending(damage => damage.Value)
+            _damageable.GetDamagePerGroup(target.Value)
+                .OrderByDescending(damage => damage.Value)
                 .ToDictionary(x => x.Key, x => x.Value);
 
-        IReadOnlyDictionary<string, FixedPoint2> damagePerType = damageable.Damage.DamageDict;
+        var damagePerType = _damageable.GetAllDamage(target.Value).DamageDict;
 
         DrawDiagnosticGroups(damageSortedGroups, damagePerType);
+        DrawBloodstreamInfo(target.Value, state.BloodSolution, state.BloodLevel); // End DeltaV - Health Analyzer Plus
 
         // Begin DeltaV - Medical Records
         if (state.MedicalRecord is not { } records)
@@ -300,10 +275,18 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
     }
 
     private void DrawDiagnosticGroups(
-        Dictionary<string, FixedPoint2> groups,
-        IReadOnlyDictionary<string, FixedPoint2> damageDict)
+        Dictionary<ProtoId<DamageGroupPrototype>, FixedPoint2> groups,
+        IReadOnlyDictionary<ProtoId<DamageTypePrototype>, FixedPoint2> damageDict)
     {
-        GroupsContainer.RemoveAllChildren();
+        // Begin DeltaV - Health Analyzer Plus
+        // GroupsContainer.RemoveAllChildren();
+        DamageGroupsContainer.RemoveAllChildren();
+
+        // Begin DeltaV - Health Analyzer Plus
+        var totalDamage = damageDict.Sum(x => x.Value.Double());
+        TotalDamageLabel.Text = Loc.GetString("health-analyzer-plus-window-entity-total-damage-text", ("amount", Math.Round(totalDamage, 2)));
+        NoDamageLabel.Visible = totalDamage == 0;
+        // End DeltaV - Health Analyzer Plus
 
         foreach (var (damageGroupId, damageAmount) in groups)
         {
@@ -312,7 +295,7 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
             var groupTitleText = $"{Loc.GetString(
                 "health-analyzer-window-damage-group-text",
-                ("damageGroup", _prototypes.Index<DamageGroupPrototype>(damageGroupId).LocalizedName),
+                ("damageGroup", _prototypes.Index(damageGroupId).LocalizedName),
                 ("amount", damageAmount)
             )}";
 
@@ -324,10 +307,11 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
 
             groupContainer.AddChild(CreateDiagnosticGroupTitle(groupTitleText, damageGroupId));
 
-            GroupsContainer.AddChild(groupContainer);
+            // GroupsContainer.AddChild(groupContainer); // DeltaV - Health Analyzer Plus
+            DamageGroupsContainer.AddChild(groupContainer); // DeltaV - Health Analyzer Plus
 
             // Show the damage for each type in that group.
-            var group = _prototypes.Index<DamageGroupPrototype>(damageGroupId);
+            var group = _prototypes.Index(damageGroupId);
 
             foreach (var type in group.DamageTypes)
             {
@@ -345,64 +329,115 @@ public sealed partial class HealthAnalyzerControl : BoxContainer
         }
     }
 
-    // Shitmed Change Start
-    public void SetActiveBodyPart(TargetBodyPart part, TextureButton button)
+    // Begin DeltaV - Health Analyzer Plus
+    private void DrawBloodstreamInfo(EntityUid target, Solution? bloodSolution, float bloodlevel)
     {
-        if (_target == null)
-            return;
+        BloodstreamReagentListContainer.RemoveAllChildren();
 
-        // Bit of the ole shitcode until we have Groins in the prototypes.
-        OnBodyPartSelected?.Invoke(part == TargetBodyPart.Groin ? TargetBodyPart.Torso : part, _target.Value);
-    }
-
-    public void ResetBodyPart()
-    {
-        if (_target == null)
-            return;
-
-        OnBodyPartSelected?.Invoke(null, _target.Value);
-    }
-
-    public void SetActiveButtons(bool isHumanoid)
-    {
-        foreach (var button in _bodyPartControls)
-            button.Value.Visible = isHumanoid;
-    }
-
-    /// <summary>
-    /// Sets up the Body Doll using Alert Entity to use in Health Analyzer.
-    /// </summary>
-    private EntityUid? SetupIcon(Dictionary<TargetBodyPart, TargetIntegrity>? body)
-    {
-        if (body is null)
-            return null;
-
-        if (!_entityManager.Deleted(_spriteViewEntity))
-            _entityManager.QueueDeleteEntity(_spriteViewEntity);
-
-        _spriteViewEntity = _entityManager.Spawn(_bodyView);
-
-        if (!_entityManager.TryGetComponent<SpriteComponent>(_spriteViewEntity, out var sprite))
-            return null;
-
-        int layer = 0;
-        foreach (var (bodyPart, integrity) in body)
+        List<ReagentQuantity> bloodstream = new();
+        double totalReagentQuantity = 0;
+        double unknownReagents = 0;
+        // Make sure we can access the bloodtype and reagents before trying to use them
+        if (bloodSolution is not null)
         {
-            // TODO: PartStatusUIController and make it use layers instead of TextureRects when EE refactors alerts.
-            string enumName = Enum.GetName(typeof(TargetBodyPart), bodyPart) ?? "Unknown";
-            int enumValue = (int) integrity;
-            var rsi = new SpriteSpecifier.Rsi(new ResPath($"/Textures/_Shitmed/Interface/Targeting/Status/{enumName.ToLowerInvariant()}.rsi"), $"{enumName.ToLowerInvariant()}_{enumValue}");
-            // Shitcode with love from Russia :)
-            if (!_spriteSystem.TryGetLayer(_spriteViewEntity, layer, out _, false))
-                _spriteSystem.AddTextureLayer(_spriteViewEntity, _spriteSystem.Frame0(rsi));
-            else
-                _spriteSystem.LayerSetTexture(_spriteViewEntity, layer, _spriteSystem.Frame0(rsi));
-            _spriteSystem.LayerSetScale(_spriteViewEntity, layer, new Vector2(3f, 3f));
-            layer++;
+            if (!_entityManager.TryGetComponent<BloodstreamComponent>(target, out var bloodstreamComp) ||
+                !_solutionContainer.ResolveSolution(target, bloodstreamComp.BloodSolutionName, ref bloodstreamComp.BloodSolution, out var bloodReagentSolution))
+                return;
+
+            // Get the blood reagent IDs to ignore in the scan
+            var bloodReagentIds = bloodstreamComp.BloodReferenceSolution.Select(b => b.Reagent);
+
+            // Get all of the medicines in the bloodstream
+            foreach (var reagent in bloodSolution!.Contents)
+            {
+                if (bloodReagentIds.Contains(reagent.Reagent))
+                    continue;
+
+                if (_prototypes.Index<ReagentPrototype>(reagent.Reagent.Prototype).Group == REAGENT_GROUP_MEDICINE)
+                {
+                    bloodstream.Add(reagent);
+                    totalReagentQuantity += reagent.Quantity.Double();
+                }
+                else
+                {
+                    unknownReagents += reagent.Quantity.Double();
+                }
+            }
         }
-        return _spriteViewEntity;
+
+        var bloodQuantityPercent = !float.IsNaN(bloodlevel)
+            ? $"{bloodlevel * 100:F1} %"
+            : Loc.GetString("health-analyzer-window-entity-unknown-value-text");
+
+        // Display the percent and amount of blood in the system
+        // Normal health scanner is percent only, this one adds the actual units too
+        BloodLevelLabel.Text = Loc.GetString(
+            "health-analyzer-plus-window-entity-blood-level-quantity-text",
+            ("percent", bloodQuantityPercent)
+       );
+
+        // Display the total amount of reagents in the bloodstream, 0 is valid
+        TotalReagentQuantityLabel.Text = Loc.GetString(
+            "health-analyzer-plus-window-entity-total-reagents-text",
+            ("amount", Math.Round(totalReagentQuantity, 1).ToString("0.0"))
+       );
+
+        // If the bloodstream was empty, display a message instead to fill the space with something
+        NoReagentsLabel.Visible = bloodstream.Count == 0 && unknownReagents == 0;
+
+        // For each of the reagents in the bloodstream, add them to the list of reagents
+        // If there are none, this loop will simply do nothing
+        foreach (var (reagentID, reagentQuantity) in bloodstream)
+        {
+            var reagentPrototype = _prototypes.Index<ReagentPrototype>(reagentID.Prototype);
+
+            // Make a new container for each reagent we add to the list
+            var reagentContainer = new BoxContainer
+            {
+                Align = AlignMode.Begin,
+                Orientation = LayoutOrientation.Vertical
+            };
+
+            // Add the string "[] <reagent_name>: <reagent_amount>u" for the current reagent
+            // The [] is a unicode block character, and is colored with the reagent color
+            // to make it easier to identify
+            reagentContainer.AddChild(
+                new RichTextLabel
+                {
+                    Text = Loc.GetString("health-analyzer-plus-window-reagent-text",
+                        ("reagentColor", reagentPrototype.SubstanceColor),
+                        ("reagentName", reagentPrototype.LocalizedName),
+                        ("amount", Math.Round(reagentQuantity.Double(), 1).ToString("0.0"))
+                    )
+                }
+            );
+
+            BloodstreamReagentListContainer.AddChild(reagentContainer);
+        }
+
+        // Add unknown reagents (if any)
+        if (unknownReagents > 0)
+        {
+            var unknownReagentContainer = new BoxContainer
+            {
+                Align = AlignMode.Begin,
+                Orientation = LayoutOrientation.Vertical
+            };
+
+            unknownReagentContainer.AddChild(
+                    new RichTextLabel
+                    {
+                        Text = Loc.GetString("health-analyzer-plus-window-unknown-reagents-text",
+                            ("amount", Math.Round(unknownReagents, 1).ToString("0.0"))
+                        )
+                    }
+                );
+            BloodstreamReagentListContainer.AddChild(unknownReagentContainer);
+        }
+
+        return;
     }
-    // Shitmed Change End
+    // End DeltaV - Health Analyzer Plus
 
     private Texture GetTexture(string texture)
     {

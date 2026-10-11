@@ -2,6 +2,7 @@
 - type: language
   id: NewKinPidgin
   parent: BaseLanguage
+  chatPrefix: kar # Euphoria/Starlight
   speech:
     color: "#a489a0"
     fontId: LeckerliOne
@@ -41,6 +42,7 @@
 - type: language
   id: OldKinPidgin
   parent: BaseLanguage
+  chatPrefix: zhr # Euphoria/Starlight
   speech:
     color: "#a489a0"
     fontId: StrawSerif

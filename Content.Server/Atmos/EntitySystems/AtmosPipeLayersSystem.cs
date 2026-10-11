@@ -7,6 +7,8 @@ using Content.Shared.Atmos.EntitySystems;
 using Content.Shared.Construction.Components;
 using Content.Shared.NodeContainer;
 using Content.Shared.Popups;
+using Content.Shared._Starlight.Atmos.EntitySystems;
+using Content.Shared._Starlight.Atmos.Components;
 
 namespace Content.Server.Atmos.EntitySystems;
 
@@ -65,7 +67,7 @@ public sealed partial class AtmosPipeLayersSystem : SharedAtmosPipeLayersSystem
         // Unanchor the pipe if its new layer overlaps with another pipe
         var xform = Transform(ent);
 
-        if (!HasComp<PipeRestrictOverlapComponent>(ent) || !_pipeRestrictOverlap.CheckOverlap((ent, nodeContainer, xform)))
+        if (!HasComp<Components.PipeRestrictOverlapComponent>(ent) || !_pipeRestrictOverlap.CheckOverlap((ent, nodeContainer, xform)))
             return;
 
         RaiseLocalEvent(ent, new BeforeUnanchoredEvent(user.Value, used.Value));

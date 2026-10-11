@@ -1,0 +1,285 @@
+﻿- type: entity
+  parent: FoodBreadSliceBase
+  id: FoodUncookedHotdogBun
+  name: uncooked hotdog bun
+  description: Dough shaped into a hotdog bun.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: uncooked-hotdog-bun
+  - type: Construction
+    graph: DoughBuns
+    node: hotdogBun
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6.66 # 1/3 of a loaf of bread, technically losing 0.01 nutriment per batch of three buns over making bread loaves/slices
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodHotdogBun
+  name: hotdog bun
+  description: A perfect warm bun for a juicy sausage.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: hotdog-bun
+    - map: [ "foodSequenceLayers" ]
+    - state: hotdog-bun
+  - type: FoodSequenceStartPoint
+    key: Hotdog
+    maxLayers: 6
+    startPosition: -0.15, 0
+    offset: 0.15, 0
+    minLayerOffset: 0, 0
+    maxLayerOffset: 0, 0.05
+    nameGeneration: food-sequence-hotdog-gen
+  - type: Appearance
+  - type: FoodMetamorphableByAdding
+    onlyFinal: false
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6.66 # 1/3 of a loaf of bread, technically losing 0.01 nutriment per batch of three buns over making bread loaves/slices
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogLA
+  name: los angeles
+  description: The dog is wrapped in bacon, served with a charred pepper. Heathens skip the mayo.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: la
+  - type: FlavorProfile
+    flavors:
+    - spicy
+    - meaty
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogChicago
+  name: chicago
+  description: Pickled peppers served with fresh tomato slices along side the namesake dog.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: chicago
+  - type: FlavorProfile
+    flavors:
+    - spicy
+    - meaty
+    - fresh
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogChili
+  name: Chilidog
+  description: Legend says that eating these will make you run very fast.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: chili
+  - type: FlavorProfile
+    flavors:
+    - spicy
+    - meaty
+    - cheesy
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogCondom
+  name: Condog
+  description: Ribbed for your consumption.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: condog
+  - type: FlavorProfile
+    flavors:
+    - safe
+    - meaty
+    - rubbery
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogConey
+  name: Coney Island
+  description: A dog covered in chili gravy, topped with onions. Best eaten with an old friend on a pier.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: coney-island
+  - type: FlavorProfile
+    flavors:
+    - spicy
+    - meaty
+    - oniony
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogDildo
+  name: Dildog
+  description: When the standard dog isn't big enough, some turn to something more dragon shaped.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: dildog
+  - type: FlavorProfile
+    flavors:
+    - artifical
+    - girthy
+    - rubbery
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogDirty
+  name: Dirty Water
+  description: A dog boiled in a spiced broth, served with whatever preserves you prefer.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: dirty-water
+  - type: FlavorProfile
+    flavors:
+    - pickled
+    - spiced
+    - meaty
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogFish
+  name: Fishdog
+  description: Fish preserve in a hotdog bun. At this point, is it a hotdog?
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: fih
+  - type: FlavorProfile
+    flavors:
+    - fishy
+    - bun
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogHalfSmoke
+  name: Half Smoke
+  description: Heavy chopped, and overly spiced meat on top of a smoked dog. A chilidog turned to 11.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: half-smoke
+  - type: FlavorProfile
+    flavors:
+    - smokey
+    - meaty
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogPolish
+  name: Polish Boy
+  description: A dog served with french fries, coleslaw, and your choice of toppings.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: polish-boy
+  - type: FlavorProfile
+    flavors:
+    - potatoey
+    - cabbagey
+    - meaty
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogRod
+  name: Roddog
+  description: A heavy meal that is harsh on the teeth, and the stomach.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: roddog
+  - type: FlavorProfile
+    flavors:
+    - metallic
+    - bun
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogSushi
+  name: Sushidog
+  description: How high are you?
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: sushi-dog
+  - type: FlavorProfile
+    flavors:
+    - cucumber
+    - fishy
+    - bun
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogTofu
+  name: Tofudog
+  description: If you imagine really hard, you might remember what flavor is like.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: tofu
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - tofu
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogHuman
+  name: Humadog
+  description: Not the kind of meat you usually get from a person.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: urist-mc-hotdog
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - people
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodHotdogBacon
+  name: Bacon Supreme
+  description: A long piece of meat to pork you.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/hotdog.rsi
+    layers:
+    - state: bacon-supreme
+  - type: FlavorProfile
+    flavors:
+    - bun
+    - bacon
+    - meaty

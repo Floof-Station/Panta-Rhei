@@ -32,9 +32,15 @@
   components:
   - type: FlavorProfile
     flavors:
-      - food
+      # - food - Euphoria - Removed in favor of a more descriptive flavor profile
+      - meaty # Euphoria - Improved flavor profile
+      - egg # Euphoria - Improved flavor profile
+      - sweetdough # Euphoria - Improved flavor profile
   - type: Sprite
     state: fullamerican
+  - type: Tag # Euphoria - Added Meat Tag
+    tags:
+    - Meat
 
 - type: entity
   parent: FoodBreakfastBase
@@ -44,6 +50,12 @@
   components:
   - type: FlavorProfile
     flavors:
-      - food
+      # - food - Euphoria - Removed in favor of a more descriptive flavor profile
+      - savory # Euphoria - Improved flavor profile
+      - smokey # Euphoria - Improved flavor profile
+      - meaty # Euphoria - Improved flavor profile
   - type: Sprite
     state: fullenglish
+  - type: Tag # Euphoria - Added Meat Tag
+    tags:
+    - Meat

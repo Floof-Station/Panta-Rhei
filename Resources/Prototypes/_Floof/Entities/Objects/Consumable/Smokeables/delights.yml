@@ -1,0 +1,25 @@
+﻿- type: entity
+  id: DelightsPackMixed
+  parent: CigPackBase
+  name: Delights pack
+  suffix: Mixed
+  description: Hestia's first foray into confectionary development started in a repurposed cigarette factory. Can't beat the classics, unless you're looking for a smoke; then, there's a sucker born every minute.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Smokeables/delights.rsi
+  - type: Item
+    sprite: _Floof/Objects/Consumable/Smokeables/delights.rsi
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:NestedSelector
+        rolls: !type:RangeNumberSelector
+          range: 2, 10 # random amount per pack between 2 and 10
+        tableId: RandomDelightsTable
+
+# Entity tables
+- type: entityTable
+  id: RandomDelightsTable # lollipops
+  table: !type:GroupSelector
+    children:
+    - id: FoodDelightsLollipop
+      weight: 1

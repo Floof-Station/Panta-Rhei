@@ -8,7 +8,7 @@
   physicalDesc: reagent-physical-desc-powdery
   recognizable: true # "Waiter, there seems to be grounds in my coffee."
   metabolisms:
-    Drink:
+    Digestion:
       effects:
         - !type:SatiateHunger
           factor: 0.1
@@ -28,7 +28,7 @@
   boilingPoint: 299.0
   recognizable: true
   metabolisms:
-    Food:
+    Digestion:
       effects:
       - !type:SatiateHunger
         conditions:
@@ -39,6 +39,7 @@
 
 - type: reagent
   id: Honey
+  parent: BaseViscous
   name: reagent-name-honey
   group: Foods
   desc: reagent-desc-honey
@@ -49,7 +50,7 @@
   viscosity: 0.5
   recognizable: true
   metabolisms:
-    Food:
+    Digestion:
       effects:
       - !type:SatiateHunger
         conditions:
@@ -57,7 +58,3 @@
           reagent: Nutriment
           min: 0.1
         factor: 1
-  footstepSound:
-    collection: FootstepSticky
-    params:
-      volume: 6

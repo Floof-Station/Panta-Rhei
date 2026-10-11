@@ -230,10 +230,9 @@
 # mime additions
 - type: loadoutGroup
   id: EuphoriaMimeShoes
+  abstract: true
   name: loadout-group-service-mime-shoes
   parent: [PassengerShoes]
-  minLimit: 1
-  maxLimit: 1
   loadouts:
   - WhiteShoes
   - ClothingShoesBootsWinterMime

@@ -2,3 +2,15 @@
   id: BorgModulesStaticEuphoria
   recipes:
   - BorgModulePaperwork
+  - BorgModuleFluidManip
+  - BorgModuleFurnishing
+  - BorgModuleAnomaly
+  - BorgModuleArtifact
+
+- type: latheRecipePack
+  id: BorgModulesEuphoria
+  recipes:
+  - BorgModuleFoamForce
+  - BorgModuleEnvSurvey
+  - BorgModuleAdvAnomaly
+  - BorgModuleQuantum

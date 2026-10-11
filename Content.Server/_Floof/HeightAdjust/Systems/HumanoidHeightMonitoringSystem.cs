@@ -6,11 +6,11 @@ namespace Content.Server._Floof.HeightAdjust.Systems;
 
 public sealed class HumanoidHeightMonitoringSystem : EntitySystem
 {
-    private EntityQuery<HumanoidAppearanceComponent> _humanoidQuery;
+    private EntityQuery<HumanoidProfileComponent> _humanoidQuery;
 
     public override void Initialize()
     {
-        _humanoidQuery = GetEntityQuery<HumanoidAppearanceComponent>();
+        _humanoidQuery = GetEntityQuery<HumanoidProfileComponent>();
 
         SubscribeLocalEvent<HumanoidHeightMonitoringComponent, AppearanceLoadedEvent>(OnAppearenceLoaded);
     }

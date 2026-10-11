@@ -74,7 +74,8 @@
 
 - type: entity
   parent: MobCorgiBase # Floofstation - changed to be parented from MobCorgiBase (MobDog when)
-  id: MobSecDog
+  abstract: true
+  id: MobSecDogBase
   name: security dog
   description: Funnily enough, this pig is actually a dog.
   components:
@@ -181,7 +182,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: Blood
-        Quantity: 300 # BIG DOG. MUCH BLOOD :3
+        Quantity: 150 # BIG DOG. MUCH BLOOD :3 - About half as much as a human
   - type: Puller
     needsHands: false
   - type: MobPrice
@@ -191,6 +192,11 @@
     - DoorBumpOpener
     - VimPilot
     - K9
+  - type: MindOnlyAccess
+  - type: AutoImplant
+    implants:
+    - TrackingImplant
+    - K9IDCardImplant
   - type: Vocal
     sounds:
       Unsexed: MobDog
@@ -213,14 +219,20 @@
             Slash: 5
             Piercing: 10
 
+# Split from MobSecDog for random names, allows Laika to be Laika
+- type: entity
+  parent: MobSecDogBase
+  id: MobSecDog
+  components:
+  - type: RandomMetadata
+    nameSegments: [NamesSecDogs]
+
 - type: entity
   parent: MobMouse
   id: MobWhimperlet
   name: scrimpering whimperlet
   description: A pitiful creature. It loses a lot of salt through its tears.
   components:
-  - type: Body
-    prototype: Animal
   - type: GhostRole
     name: ghost-role-information-whimperlet-name
     description: ghost-role-information-whimperlet-description
@@ -270,7 +282,7 @@
       30: Critical # Whimpier than mothroaches (40/60)
       50: Dead
   - type: Hunger
-    baseDecayRate: 0.15 # slower than mouse (0.5), even if they will act similarly
+    baseDecayRate: 0.11 # slower than mouse (0.5), even if they will act similarly # Euph - * 0.66
   - type: Butcherable
     spawned:
     - id: FoodMeat
@@ -381,7 +393,7 @@
     size: Normal
   - type: Clothing
     quickEquip: false
-    sprite: Mobs/Animals/mothroach/mothroach.rsi
+    sprite: Mobs/Animals/mothroach.rsi
     equippedPrefix: 0
     slots:
     - HEAD
@@ -448,9 +460,6 @@
     - CannotSuicide
     - VimPilot
   - type: CanEscapeInventory
-  - type: Body
-    prototype: Mothroach
-  - type: SurgeryTarget # Shitmed
   - type: TypingIndicator
     proto: moth
   - type: Destructible
@@ -470,8 +479,6 @@
     interfaces:
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
-      enum.SurgeryUIKey.Key: # Shitmed
-        type: SurgeryBui
   - type: InventorySlots
   - type: Inventory
     speciesId: hamster

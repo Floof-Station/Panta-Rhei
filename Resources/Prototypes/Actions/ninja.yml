@@ -48,6 +48,7 @@
   description: Disable any nearby technology with an electro-magnetic pulse.
   components:
   - type: Action
+    useDelay: 5 # DeltaV - missing action delay
     icon:
       sprite: Objects/Weapons/Grenades/empgrenade.rsi
       state: icon
@@ -81,10 +82,11 @@
       sprite: Objects/Magic/magicactions.rsi
       state: blink
     itemIconStyle: NoItem
-    sound:
-      path: /Audio/Magic/blink.ogg
-      params:
-        volume: 5
+    #Euphoria | Dash handling changed for do after
+#    sound:
+#      path: /Audio/Magic/blink.ogg
+#      params:
+#        volume: 5
     priority: -12
   - type: TargetAction
     checkCanAccess: false

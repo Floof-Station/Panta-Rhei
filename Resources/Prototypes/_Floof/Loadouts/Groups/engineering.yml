@@ -44,18 +44,18 @@
 
 - type: loadoutGroup
   id: FloofUndergarmentTopCE
-  parent: FloofUndergarmentTopPassenger
+  parent: FloofUndergarmentTopEngineer
   loadouts: [] # Nuthing here yet
 
 - type: loadoutGroup
   id: FloofUndergarmentBottomCE
-  parent: FloofUndergarmentBottomPassenger
+  parent: FloofUndergarmentBottomEngineer
   loadouts:
   - UniformChiefEngiThong
 
 - type: loadoutGroup
   id: FloofSocksCE
-  parent: FloofSocksPassenger
+  parent: FloofSocksEngineer
   loadouts:
   - UnderSocksChiefEngi
 

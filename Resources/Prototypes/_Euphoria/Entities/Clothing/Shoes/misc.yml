@@ -62,7 +62,22 @@
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_ballet.rsi
   - type: Clothing
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_ballet.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.0275"
   - type: MeleeWeapon
     damage:
       types:
         Piercing: 6
+
+- type: entity
+  parent: ClothingShoesJester
+  id: ClothingShoesGeiru
+  name: pretty clown shoes
+  description: Go on you clown! There is more to see! More courtrooms to walk down!
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Shoes/Misc/geiru_clown_shoes.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Shoes/Misc/geiru_clown_shoes.rsi

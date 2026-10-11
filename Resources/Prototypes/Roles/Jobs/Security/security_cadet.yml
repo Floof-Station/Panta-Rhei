@@ -24,9 +24,10 @@
 - type: startingGear
   id: SecurityCadetGear
   equipment:
-    #shoes: ClothingShoesBootsJackFilled # Floofstation - let loadouts handle this
-    #outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets # Floofstation - let loadouts handle this
-    #id: SecurityCadetPDA # Floofstation - let loadouts handle this
+    # shoes: ClothingShoesBootsJackFilled # Euph - loadouts
+    # neck: ClothingNeckNoviceMark # imp # Euph - loadouts
+    # outerClothing: ClothingOuterArmorDuraVest # DeltaV - ClothingOuterArmorBasic replaced in favour of stab vest. Sucks to suck, cadets # Euph - loadouts
+    # id: SecurityCadetPDA  # Euph - loadouts
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltSecurityFilled
     #pocket1: WeaponDisabler # DeltaV - loadouts, Security Cadet doesn't spawn with a gun # Floofstation - let loadouts handle this

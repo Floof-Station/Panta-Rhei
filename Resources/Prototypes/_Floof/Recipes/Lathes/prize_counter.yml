@@ -647,14 +647,6 @@
     PrizeTicket: 50
 
 - type: latheRecipe
-  id: PlushieSlimeTider
-  result: PlushieSlimeTider
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 50
-
-- type: latheRecipe
   id: PlushieChillHuman
   result: PlushieChillHuman
   applyMaterialDiscount: false
@@ -665,22 +657,6 @@
 - type: latheRecipe
   id: PlushieSapphicHarpyPlushie
   result: PlushieSapphicHarpyPlushie
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 50
-
-- type: latheRecipe
-  id: PlushieAvaliHOP
-  result: PlushieAvaliHOP
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 50
-
-- type: latheRecipe
-  id: PlushieKoboldCefJustice
-  result: PlushieKoboldCefJustice
   applyMaterialDiscount: false
   completetime: 0.1
   materials:
@@ -1103,14 +1079,6 @@
     PrizeTicket: 200
 
 - type: latheRecipe
-  id: BwoinkHammer
-  result: BwoinkHammer
-  applyMaterialDiscount: false
-  completetime: 0.1
-  materials:
-    PrizeTicket: 200
-
-- type: latheRecipe
   id: PlushieThrongler
   result: PlushieThrongler
   applyMaterialDiscount: false
@@ -1333,3 +1301,43 @@
   completetime: 0.1
   materials:
     PrizeTicket: 100
+
+- type: latheRecipe
+  id: CJTajaranPlushie
+  result: CJTajaranPlushie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 100
+
+- type: latheRecipe
+  id: WhiteManPlushie
+  result: WhiteManPlushie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 100
+
+- type: latheRecipe
+  id: SleepyMGPlushie
+  result: SleepyMGPlushie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 100
+
+- type: latheRecipe
+  id: AngryOfficerPlushie
+  result: AngryOfficerPlushie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 100
+
+- type: latheRecipe
+  id: SuperSynthesizerInstrument
+  result: SuperSynthesizerInstrument
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 750

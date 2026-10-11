@@ -16,12 +16,12 @@
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: BoxingDay
-    prototype: ClothingHandsGlovesBoxingRigged
+    prototype: ClothingHandsGlovesBoxingRiggedRed
 
 - type: startingGear
   id: BoxerGear
   equipment:
-    id: BoxerPDA
+    #id: BoxerPDA - Euphroia - let loadouts handle pdas
     ears: ClothingHeadsetService
     #shoes: ClothingShoesColorRed # Floofstation - allow loadouts to handle shoe customization
     belt: ClothingBeltChampion

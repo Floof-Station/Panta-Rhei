@@ -4,6 +4,7 @@
 - type: language
   id: Universal
   parent: BaseLanguage
+  chatPrefix: uni # Euphoria/Starlight
   isVisibleLanguage: false
   obfuscation:
     !type:ReplacementObfuscation
@@ -15,6 +16,7 @@
 # Used by robots. Note: this used to be called RobotTalk pre-rebase. Update your references.
 - type: language
   id: Binary
+  chatPrefix: bin # Euphoria/Starlight
   parent: BaseLanguage
   icon: { state: "binary" }
   speech:
@@ -31,6 +33,7 @@
 - type: language
   id: Sign
   parent: BaseLanguage
+  chatPrefix: sgn # Euphoria/Starlight
   icon: { state: "sign" }
   speech:
     allowRadio: false

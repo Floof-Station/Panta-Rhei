@@ -1,0 +1,43 @@
+﻿# mushwood floor
+- type: entity
+  name: mushwood floor
+  parent: FloorTileItemBase
+  id: FloorTileItemMushWood
+  components:
+  - type: Sprite # need to change
+    sprite: _Euphoria/Objects/Misc/Tiles/mush_floor.rsi
+    state: mushwood_tile
+  - type: Item
+    heldPrefix: mushwood
+  - type: FloorTile
+    outputs:
+    - MushWoodFloor
+  - type: Stack
+    stackType: FloorTileMushWood
+  - type: Construction
+    graph: TileMushWood
+    node: mushwoodtile
+
+- type: tile
+  id: MushWoodFloor
+  name: mushwood floor
+  sprite: /Textures/_Euphoria/Tiles/mushwood-floor.png
+  variants: 1
+  placementVariants:
+  - 1.0
+  baseTurf: Plating
+  isSubfloor: false
+  deconstructTools: [ Prying ]
+  footstepSounds:
+    collection: N14FootstepWood # gonna re-use this sound because i like it
+  friction: 1.25
+  itemDrop: FloorTileItemMushWood
+  thermalConductivity: 0.04
+  heatCapacity: 10000
+  weather: false
+
+- type: tile
+  parent: MushWoodFloor
+  id: MushWoodFloorBroken
+  name: mushwood floor broken
+  sprite: /Textures/_Euphoria/Tiles/mushwood-floor-broken.png

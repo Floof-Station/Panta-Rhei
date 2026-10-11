@@ -9,4 +9,7 @@ public sealed partial class FloofCCVars
     /// </summary>
     public static readonly CVarDef<bool> AccessibilityFullLanguageNames =
         CVarDef.Create("accessibility.full_language_names", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    public static readonly CVarDef<bool> GreyNightVision =
+        CVarDef.Create("accessibility.grey_night_vision", false, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

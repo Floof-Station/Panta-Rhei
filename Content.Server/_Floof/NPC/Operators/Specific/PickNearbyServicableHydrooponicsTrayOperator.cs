@@ -14,7 +14,6 @@ namespace Content.Server._Floof.NPC.Operators.Specific;
 public sealed partial class PickNearbyServicableHydroponicsTrayOperator : HTNOperator
 {
     [Dependency] private readonly IEntityManager _entManager = default!;
-    [Dependency] private readonly IPrototypeManager _PrototypeManager = default!;
 
     private EntityLookupSystem _lookup = default!;
     private PathfindingSystem _pathfinding = default!;

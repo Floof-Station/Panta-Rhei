@@ -34,7 +34,6 @@ public sealed class RadioDeviceSystem : SharedRadioDeviceSystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly LanguageSystem _languages = default!; // Floofstation
     [Dependency] private readonly UserInterfaceSystem _ui = default!; // NC - handheld radio
-    [Dependency] private readonly INetManager _netMan = default!; // NC - handheld radio
 
     // Used to prevent a shitter from using a bunch of radios to spam chat.
     private HashSet<(string, EntityUid, RadioChannelPrototype)> _recentlySent = new();

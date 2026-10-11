@@ -202,7 +202,7 @@
   suffix: Kitchen, Locked
   components:
   - type: AccessReader
-    access: [ [ "Kitchen" ] ]
+    access: [ [ "Maintenance" ] ] # Euphoria - This allows people to actually open the pathfinder freezer.
 
 # Botanist
 - type: entity
@@ -339,6 +339,7 @@
   id: LockerWarden
   parent: LockerBaseSecureDeltaV # DeltaV - resprite security lockers
   name: warden's locker
+  suffix: Security # DeltaV
   components:
   - type: Appearance
   - type: EntityStorageVisuals

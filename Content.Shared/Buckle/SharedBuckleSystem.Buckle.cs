@@ -367,7 +367,9 @@ public abstract partial class SharedBuckleSystem
 
         var xform = Transform(buckle);
         var coords = new EntityCoordinates(strap, strap.Comp.BuckleOffset);
-        _transform.SetCoordinates(buckle, xform, coords, rotation: Angle.Zero);
+        //_transform.SetCoordinates(buckle, xform, coords, rotation: Angle.Zero);
+        //Euphoria | Let furniture set custom starting rotations
+        _transform.SetCoordinates(buckle, xform, coords, rotation: strap.Comp.Facing);
 
         _joints.SetRelay(buckle, strap);
 
@@ -377,7 +379,7 @@ public abstract partial class SharedBuckleSystem
                 _standing.Stand(buckle, force: true);
                 break;
             case StrapPosition.Down:
-                _standing.Down(buckle, false, false);
+                _standing.Down(buckle, false, false, force: true);
                 break;
         }
 
@@ -392,7 +394,6 @@ public abstract partial class SharedBuckleSystem
         if (TryComp<PhysicsComponent>(buckle, out var physics))
             _physics.ResetDynamics(buckle, physics);
 
-        // TOOD: DV - This fails when you try to buckle the entity you're carrying to something. Figure out why later.
         DebugTools.AssertEqual(xform.ParentUid, strap.Owner);
     }
 

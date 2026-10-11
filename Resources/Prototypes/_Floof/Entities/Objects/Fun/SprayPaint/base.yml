@@ -13,7 +13,7 @@
     - state: clown_cap
       map: ["enum.OpenableVisuals.Layer"]
   - type: ColorPaint
-    consumptionUnit: 10
+    consumptionUnit: 5
     whitelist:
       components:
       - Clothing
@@ -24,7 +24,7 @@
     blacklist:
       components:
       - CargoSellBlacklist
-      - HumanoidAppearance
+      - HumanoidProfile
       - SubFloorHide
   - type: Item
     sprite: _Floof/Objects/Fun/spraycans.rsi

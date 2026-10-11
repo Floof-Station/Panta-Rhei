@@ -54,7 +54,7 @@ public sealed class FootPrintsSystem : EntitySystem
     {
         component.StepSize = Math.Max(0f, component.StepSize + _random.NextFloat(-0.05f, 0.05f));
         // Floofstation - multiply by humanoid height
-        if (TryComp<HumanoidAppearanceComponent>(uid, out var hum))
+        if (TryComp<HumanoidProfileComponent>(uid, out var hum))
             component.StepSize *= hum.Height;
     }
 

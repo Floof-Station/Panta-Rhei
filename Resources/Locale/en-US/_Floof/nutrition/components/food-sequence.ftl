@@ -14,4 +14,4 @@ food-sequence-content-mimemask = mime mask
 food-sequence-content-manipulator = modular machine part
 food-sequence-content-wizardhat = wizard hat
 food-sequence-burger-content-mothroach = mothroach
-
+food-sequence-content-strawberry = strawberry

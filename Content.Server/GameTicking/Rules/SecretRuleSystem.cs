@@ -1,21 +1,24 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Administration.Logs;
-using Content.Server.Chat.Managers;
 using Content.Server.GameTicking.Presets;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Shared._DV.CCVars; // DeltaV
-using Content.Shared.GameTicking.Components;
-using Content.Shared.Random;
+using Content.Shared._DV.CCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
-using Robust.Server.Player; // DeltaV
+using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Components;
+using Content.Shared.Random;
+using Robust.Server.Player;
+using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
-using Robust.Shared.Configuration;
 using Robust.Shared.Utility;
-using Content.Shared.GameTicking; // imp
-using Robust.Server.Player; // imp
+// DeltaV
+// DeltaV
+// imp
+
+// imp
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -55,7 +58,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
         Log.Info($"Selected {preset.ID} as the secret preset.");
         _adminLogger.Add(LogType.EventStarted, $"Selected {preset.ID} as the secret preset.");
 
-        if (_configurationManager.GetCVar(DCCVars.EnableBacktoBack) == true) // DeltaV
+        if (_configurationManager.GetCVar(DCCVars.EnablePresetCooldowns)) // DeltaV
         {
             if (preset.Cooldown > 0) // Begin Imp
             {
@@ -211,7 +214,7 @@ public sealed class SecretRuleSystem : GameRuleSystem<SecretRuleComponent>
             if (ruleComp.MinTotalPlayers > totalPlayers) return false; // DeltaV
         }
 
-        if (_configurationManager.GetCVar(DCCVars.EnableBacktoBack) == true) // DeltaV
+        if (_configurationManager.GetCVar(DCCVars.EnablePresetCooldowns)) // DeltaV
         {
             if (_nextRoundAllowed.ContainsKey(selected.ID) && _nextRoundAllowed[selected.ID] > _ticker.RoundId) // Begin Imp
             {

@@ -3,6 +3,7 @@
   id: AtmosDeviceFanTiny
   name: tiny fan
   description: A tiny fan, releasing a thin gust of air.
+  categories: [ HideSpawnMenu ] # Euph - deprecated
   placement:
     mode: SnapgridCenter
   components:

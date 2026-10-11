@@ -1,0 +1,1 @@
+clothing-belt-jaunter = Jaunter

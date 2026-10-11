@@ -1,8 +1,7 @@
 #- type: marking
 #  id: TailDebug
 #  bodyPart: Tail
-#  markingCategory: Tail
-#  speciesRestriction: [Reptilian, SlimePerson, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
+##  groupWhitelist: [Reptilian, Slime, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
 #  layering:
 #    overtop: Tail
 #    underall: Chest
@@ -15,8 +14,7 @@
 #- type: marking
 #  id: TailDebugPro
 #  bodyPart: Tail
-#  markingCategory: Tail
-#  speciesRestriction: [Reptilian, SlimePerson, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
+##  groupWhitelist: [Reptilian, Slime, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
 #  layering:
 #    tail_oversuit: TailOversuit
 #    tail_behind: TailBehind
@@ -29,8 +27,7 @@
 #- type: marking
 #  id: TailDebugPro2
 #  bodyPart: Tail
-#  markingCategory: Tail
-#  speciesRestriction: [Reptilian, SlimePerson, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
+##  groupWhitelist: [Reptilian, Slime, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
 #  layering:
 #    tail_oversuit: TailOversuit
 #    tail_behind: TailBehind
@@ -45,8 +42,7 @@
 #- type: marking
 #  id: TailDebugPro3
 #  bodyPart: TailBehind
-#  markingCategory: Tail
-#  speciesRestriction: [Reptilian, SlimePerson, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
+##  groupWhitelist: [Reptilian, Slime, IPC, Rodentia, Vulpkanin, Felinid, Human, Oni]
 #  sprites:
 #  - sprite: Floof/Mobs/Customization/debug.rsi
 #    state: tail_oversuit

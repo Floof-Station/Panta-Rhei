@@ -21,12 +21,6 @@
     <ProjectReference Include="..\Content.Shared.Database\Content.Shared.Database.csproj" />
     <ProjectReference Include="..\Content.Shared\Content.Shared.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="_EE\FootPrint\" />
-    <Folder Include="_Euphoria\" />
-    <Folder Include="_Floof\Lewd\" />
-    <Folder Include="_Goobstation\Power\" />
-  </ItemGroup>
   <Import Project="..\RobustToolbox\MSBuild\Robust.Properties.targets" />
 
   <Import Project="..\RobustToolbox\Imports\Lidgren.props" />

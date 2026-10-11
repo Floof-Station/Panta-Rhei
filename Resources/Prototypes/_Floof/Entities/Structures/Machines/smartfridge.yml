@@ -5,6 +5,6 @@
   description: A refrigerated storage unit for keeping plants, food and beverages cold and fresh.
   components:
   - type: AccessReader
-    access: [["Service"], ["Bar"], ["Kitchen"], ["Hydroponics"]]
+    access: [["Service"], ["Bar"], ["Kitchen"], ["Hydroponics"], ["Maintenance"]] # need maints access so passengers can take things out when public facing
   - type: Machine
     board: SmartFridgeServiceCircuitboard

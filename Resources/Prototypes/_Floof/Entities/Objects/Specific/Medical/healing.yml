@@ -15,3 +15,12 @@
   - type: Stack
     stackType: Bloodpack
     count: 10
+
+- type: entity
+  parent: BaseSyringe
+  id: SyringeComicallyLarge
+  name: very large syringe
+  description: Used to draw blood samples from mobs, or to inject them with reagents. This one seems extra large for those big owies...
+  components:
+  - type: Sprite
+    scale: 1.5, 1.5

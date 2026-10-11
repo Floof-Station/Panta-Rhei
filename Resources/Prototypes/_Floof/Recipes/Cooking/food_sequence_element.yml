@@ -164,9 +164,18 @@
   id: Mothroach
   name: food-sequence-burger-content-mothroach
   sprites:
-  - sprite: Mobs/Animals/mothroach/mothroach.rsi
+  - sprite: Mobs/Animals/mothroach.rsi
     state: mothroach_dead
   tags:
   - Meat
   - Raw
   - Mothroach
+
+- type: foodSequenceElement
+  id: Strawberry
+  name: food-sequence-content-strawberry
+  sprites:
+  - sprite: _Floof/Objects/Specific/Hydroponics/strawberry.rsi
+    state: produce
+  tags:
+  - Fruit

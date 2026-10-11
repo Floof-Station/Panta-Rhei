@@ -3,6 +3,11 @@
   id: BaseDildo
   abstract: true
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Hotdog: FoodDildo
+  #Euphoria end
   - type: PhysicalComposition
     materialComposition:
       Plastic: 100

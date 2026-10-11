@@ -1,11 +1,11 @@
 meta:
   format: 7
   category: Grid
-  engineVersion: 270.1.0
+  engineVersion: 270.1.1
   forkId: ""
   forkVersion: ""
-  time: 06/02/2026 11:44:09
-  entityCount: 2131
+  time: 09/01/2026 21:41:20
+  entityCount: 2133
 maps: []
 grids:
 - 1
@@ -1608,12 +1608,6 @@ entities:
     - type: Transform
       pos: 12.5,-12.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -321.1877
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 103
     components:
     - type: Transform
@@ -1635,12 +1629,6 @@ entities:
     - type: Transform
       pos: 12.5,-10.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -317.82108
-      state: Opening
-    - type: DeviceLinkSource
-      lastSignals:
-        DoorStatus: True
   - uid: 333
     components:
     - type: Transform
@@ -3955,6 +3943,16 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-36.5
+      parent: 1
+  - uid: 2132
+    components:
+    - type: Transform
+      pos: -3.5,-19.5
+      parent: 1
+  - uid: 2133
+    components:
+    - type: Transform
+      pos: 10.5,-19.5
       parent: 1
 - proto: CableHV
   entities:
@@ -14766,9 +14764,6 @@ entities:
     - type: Transform
       pos: -0.5,11.5
       parent: 1
-    - type: Door
-      secondsUntilStateChange: -1856.1934
-      state: Opening
   - uid: 1907
     components:
     - type: Transform

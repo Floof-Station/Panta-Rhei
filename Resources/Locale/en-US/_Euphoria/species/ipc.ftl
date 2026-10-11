@@ -1,0 +1,11 @@
+marking-MobIPCHeadStandard = Standard Robotic Monitor
+marking-MobIPCTorsoStandard = Standard Robotic Chassis
+marking-MobIPCLArmStandard = Standard Robotic Left Arm
+marking-MobIPCLHandStandard = Standard Robotic Left Hand
+marking-MobIPCRArmStandard = Standard Robotic Right Arm
+marking-MobIPCRHandStandard = Standard Robotic Right Hand
+marking-MobIPCLLegStandard = Standard Robotic Left Leg
+marking-MobIPCLFootStandard = Standard Robotic Left Foot
+marking-MobIPCRLegStandard = Standard Robotic Right Leg
+marking-MobIPCRFootStandard = Standard Robotic Right Foot
+marking-MobIPCTorsoStandardAlt = Standard Alternate Robotic Chassis

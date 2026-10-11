@@ -1,0 +1,18 @@
+- type: entity
+  parent: ClothingMaskMuzzle
+  id: ClothingMaskMuzzleBasket
+  name: basket muzzle
+  description: A muzzle used to prevent an animal from biting while still allowing it to breathe, pant, and make noises through the mouth.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Mask/muzzle_basket.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Mask/muzzle_basket.rsi
+  - type: AddMuzzleAccentClothing # Vulpstation/Floofstation - better muzzle. If we get more mumble accents, we need to add a way to choose the proto here.
+    prototype: BasketMuzzle
+  - type: EmoteBlocker
+    blocksEmotes: []
+    blocksCategories: [] # Allows emotes unlike the regular muzzle.
+  - type: Construction
+    graph: MuzzleBasket
+    node: muzzle

@@ -15,8 +15,9 @@
   groups:
   - GroupTankHarness
   - StationEngineerHead
-  - StationEngineerNeck # DeltaV
   - FloofEngineeringGlasses # Floofstation glasses
+  - StationEngineerNeck # DeltaV
+  - PassengerFaceEuphoria # Euphoria
   - SeniorEngineerJumpsuit # floofstation
   - StationEngineerGloves # floostation
   - StationEngineerBelts # floofstation
@@ -38,6 +39,7 @@
   groups:
   - GroupTankHarness
   - MedicalDoctorHead
+  - MedicalEyewear
   - MedicalDoctorNeck # DeltaV
   - MedicalMask
   - SeniorPhysicianJumpsuits #floofstation
@@ -47,7 +49,6 @@
   - MedicalBackpack
   - MedicalDoctorOuterClothing
   - MedicalShoes
-  - MedicalEyewear
   - SurvivalMedical
   - Smokeables
   - MedicalDoctorJobTrinkets
@@ -62,14 +63,15 @@
   groups:
   - GroupTankHarness
   - ScientistHead
+  - Glasses
   - ScientistNeck
+  - PassengerFaceEuphoria # Euphoria
   - SeniorResearcherJumpsuits #floofstation
   - ScientistBackpack
   - ScientistOuterClothing
   - ScientistGloves
   - ScientistShoes
   - FloofSeniorResearcherPdas # Floofstation let senior research choose pda
-  - Glasses
   - Survival
   - Smokeables
   - ScientistJobTrinkets
@@ -83,7 +85,9 @@
   parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
+  - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SecurityNeck # DeltaV
+  - PassengerFaceEuphoria # Euphoria
   - SeniorOfficerJumpsuits # floofstation
   - SecurityBackpack
   - SecurityOuterClothingDeltaV # DeltaV - Switched to DeltaV version, was SecurityOuterClothing
@@ -91,7 +95,6 @@
   - SecurityShoes
   - FloofSecuritySeniorOfficerPdas
   - SecurityBelt
-  - SecurityEyewear # DeltaV - Security eyewear with prescription options
   - SurvivalSecurity
   - Smokeables
   - SecurityJobTrinkets
@@ -108,7 +111,9 @@
   groups:
   - GroupTankHarness
   - CargoTechnicianHead
+  - Glasses
   - CargoTechnicianNeck # DeltaV
+  - PassengerFaceEuphoria # Euphoria
   - CargoTechnicianJumpsuit # floofstation - there are no special jumpsuits/skirts for inventory spec so we will use cargo techs to make it easier
   - InventorySpecialistMisc # floofstation
   - PassengerGloves #floofstation
@@ -116,7 +121,6 @@
   - CargoTechnicianOuterClothing
   - InventorySpecialistPDA # Euphoria
   - CargoTechnicianShoes
-  - Glasses
   - Survival
   - Smokeables
   - CargoTechnicianJobTrinkets
@@ -130,14 +134,16 @@
   parent: JobBaseLoadout # Euphoria
   groups:
   - SecurityHead
+  - RoboticistGlasses
   - SecurityNeck
+  - PassengerFaceEuphoria # Euphoria
   - SecurityJumpsuit
   - SecurityBackpack
+  - FloofSecurityTechnicianBelts
   - SecurityOuterClothingDeltaV
   - StationEngineerGloves
   - SecurityShoes
   - FloofSecurityTechnicianPdas
-  - RoboticistGlasses
   - SurvivalSecurity
   - Smokeables
   - SecurityJobTrinkets

@@ -68,3 +68,21 @@
           Quantity: 20
         - ReagentId: JuiceCherry
           Quantity: 10
+
+- type: entity
+  parent: DrinkCanBepis
+  id: DrinkCanBepisStrawberry
+  name: Bepis Strawberries "N" Cream
+  description: The great taste of Bepis! Now with strwaberry juice and cream!
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: BepisStrawberry
+          Quantity: 30
+  - type: Sprite
+    sprite: _Floof/Objects/Consumable/Drinks/bepis_strawberry_can.rsi
+  - type: Item
+    sprite: _Floof/Objects/Consumable/Drinks/bepis_strawberry_can.rsi

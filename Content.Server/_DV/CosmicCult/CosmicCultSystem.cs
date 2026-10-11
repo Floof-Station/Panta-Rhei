@@ -12,7 +12,6 @@ using Content.Server.Radio;
 using Content.Server.Station.Systems;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._DV.CosmicCult;
-using Content.Server._EE.Radio;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.Eye;
@@ -48,7 +47,6 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     [Dependency] private readonly CosmicCultRuleSystem _cultRule = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MapLoaderSystem _mapLoader = default!;
     [Dependency] private readonly MonumentSystem _monument = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movementSpeed = default!;
     [Dependency] private readonly NavMapSystem _navMap = default!;
@@ -57,7 +55,6 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedEyeSystem _eye = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
@@ -75,7 +72,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart);
+        // SubscribeLocalEvent<RoundStartingEvent>(OnRoundStart); // Euphoria - lazyload
 
         SubscribeLocalEvent<CosmicCultComponent, ComponentInit>(OnStartCultist);
         SubscribeLocalEvent<CosmicCultLeadComponent, ComponentInit>(OnStartCultLead);
@@ -93,8 +90,6 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
         SubscribeLocalEvent<CosmicImposingComponent, ComponentInit>(OnStartImposition);
         SubscribeLocalEvent<CosmicImposingComponent, ComponentRemove>(OnEndImposition);
         SubscribeLocalEvent<CosmicImposingComponent, RefreshMovementSpeedModifiersEvent>(OnImpositionMoveSpeed);
-
-        SubscribeLocalEvent<CosmicCultComponent, EncryptionChannelsChangedEvent>(OnTransmitterChannelsChangedCult, after: new[] { typeof(IntrinsicRadioKeySystem) });
 
         SubscribeLocalEvent<RadioSendAttemptEvent>(OnRadioSendAttempt);
         SubscribeLocalEvent<CosmicJammerComponent, AnchorStateChangedEvent>(OnJammerAnchorStateChange);
@@ -120,11 +115,11 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     /// <summary>
     /// Creates the Cosmic Void pocket dimension map.
     /// </summary>
-    private void OnRoundStart(RoundStartingEvent ev)
-    {
-        if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
-            _map.SetPaused(map.Value.Comp.MapId, false);
-    }
+    // private void OnRoundStart(RoundStartingEvent ev) // Euphoria: AFAICT, we don't have rogue ascendants - couldn't find them in the codebase, so we don't need to load this.
+    // {
+    //     if (_mapLoader.TryLoadMap(_mapPath, out var map, out _, new DeserializationOptions { InitializeMaps = true }))
+    //         _map.SetPaused(map.Value.Comp.MapId, false);
+    // }
 
     #endregion
 
@@ -137,7 +132,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
         _eye.RefreshVisibilityMask(ent.Owner);
         _alerts.ShowAlert(ent.Owner, ent.Comp.EntropyAlert);
 
-        if (!HasComp<HumanoidAppearanceComponent>(ent)) return; // Non-humanoids don't get abilities
+        if (!HasComp<HumanoidProfileComponent>(ent)) return; // Non-humanoids don't get abilities
         foreach (var actionId in ent.Comp.CosmicCultActions)
         {
             var actionEnt = _actions.AddAction(ent, actionId);
@@ -152,7 +147,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     {
         if (_cultRule.AssociatedGamerule(ent) is not { } cult)
             return;
-        if (!HasComp<HumanoidAppearanceComponent>(ent)) return; // Non-humanoids don't get abilities
+        if (!HasComp<HumanoidProfileComponent>(ent)) return; // Non-humanoids don't get abilities
 
         if (!cult.Comp.MonumentPlaced) // There's no monument, grant them an action to place one
             _actions.AddAction(ent, ref ent.Comp.CosmicMonumentPlaceActionEntity, ent.Comp.CosmicMonumentPlaceAction, ent);
@@ -177,7 +172,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
         if (!EntityIsCultist(args.Equipee))
         {
             _statusEffects.TryAddStatusEffect<CosmicEntropyDebuffComponent>(args.Equipee, EntropicDegen, TimeSpan.FromDays(1), true); // TimeSpan.MaxValue causes a crash here, so we use FromDays(1) instead.
-            if (TryComp<CosmicEntropyDebuffComponent>(args.Equipee, out var comp)) comp.Degen = new(){DamageDict = new(){{"Cold", 0.5}, {"Asphyxiation", 1.5}, {"Ion", 1.5}}};
+            if (TryComp<CosmicEntropyDebuffComponent>(args.Equipee, out var comp)) comp.Degen = new(){DamageDict = new(){{"Cold", 0.5}, {"Asphyxiation", 1.5}}};
         }
     }
 
@@ -191,7 +186,7 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
         if (!EntityIsCultist(args.User))
         {
             _statusEffects.TryAddStatusEffect<CosmicEntropyDebuffComponent>(args.User, EntropicDegen, TimeSpan.FromDays(1), true);
-            if (TryComp<CosmicEntropyDebuffComponent>(args.User, out var comp)) comp.Degen = new(){DamageDict = new(){{"Cold", 0.5}, {"Asphyxiation", 1.5}, {"Ion", 1.5}}};
+            if (TryComp<CosmicEntropyDebuffComponent>(args.User, out var comp)) comp.Degen = new(){DamageDict = new(){{"Cold", 0.5}, {"Asphyxiation", 1.5}}};
             _popup.PopupEntity(Loc.GetString("cosmiccult-gear-pickup", ("ITEM", args.Equipped)), args.User, args.User, PopupType.MediumCaution);
         }
     }
@@ -250,23 +245,6 @@ public sealed partial class CosmicCultSystem : SharedCosmicCultSystem
     #endregion
 
     #region Edge cases
-    /// <summary>
-    /// Edge Case to handle IPCs losing astral murmur after panel operations.
-    /// </summary>
-    private void OnTransmitterChannelsChangedCult(EntityUid uid, CosmicCultComponent component, EncryptionChannelsChangedEvent args)
-    {
-        if (!TryComp<IntrinsicRadioTransmitterComponent>(uid, out IntrinsicRadioTransmitterComponent? transmitter) || !TryComp<ActiveRadioComponent>(uid, out ActiveRadioComponent? activeRadio))
-            return;
-
-        if (transmitter.Channels.Contains(CosmicRadio) && activeRadio.Channels.Contains(CosmicRadio))
-            return;
-
-        transmitter.Channels.Add(CosmicRadio);
-        activeRadio.Channels.Add(CosmicRadio);
-
-
-    }
-
     /// <summary>
     /// When a cultist gets polymorphed, ensure that the resulting entity has all the necessary components. Mostly there for kitsune my behated.
     /// </summary>

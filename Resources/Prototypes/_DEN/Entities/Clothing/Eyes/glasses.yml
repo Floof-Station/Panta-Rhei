@@ -1,0 +1,80 @@
+
+- type: entity
+  parent: ClothingEyesGlassesEpistemics
+  id: ClothingEyesGlassesEpistemicsMantis
+  name: mantis psionics pince-nez
+  description: "A pince-nez that provides flash immunity. Comes with prescription eidolite lenses, if requested."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis.rsi
+  - type: VisionCorrection
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+
+- type: entity
+  parent: ClothingEyesGlassesEpistemicsMantis
+  id: ClothingEyesGlassesEpistemicsMantisTinted
+  name: mantis psionics pince-nez (tinted)
+  description: "A tinted pince-nez that provides flash immunity. Comes with prescription eidolite lenses, if requested."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_dark.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_dark.rsi
+  - type: VisionCorrection
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+
+- type: entity
+  parent: ClothingEyesGlassesEpistemicsMantis
+  id: ClothingEyesGlassesEpistemicsMantisMirrored
+  name: mantis psionics pince-nez (mirrored)
+  description: "A mirrored pince-nez that provides flash immunity. Comes with prescription eidolite lenses, if requested."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_mirrored.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_mirrored.rsi
+  - type: VisionCorrection
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+
+- type: entity
+  parent: ClothingEyesGlassesEpistemicsMantis
+  id: ClothingEyesGlassesEpistemicsMantisVeil
+  name: mantis psionics blindfold
+  description: "A sheer blindfold decorated with an electrum eye that provides flash immunity."
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_alt.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses_mantis_alt.rsi
+  - type: Tag
+    tags:
+    - MantisBeltStorable
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesGlassesEpistemics
+  name: epi psionics glasses
+  description: Upgraded sunglasses that provide flash immunity.
+  components:
+  - type: Sprite
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses.rsi
+  - type: Clothing
+    sprite: _DEN/Clothing/Eyes/Glasses/epiglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+  - type: Tag
+    tags:
+    - WhitelistChameleon
+    - MantisBeltStorable
+  - type: IdentityBlocker
+    coverage: EYES
+

@@ -1,0 +1,12 @@
+﻿- type: entity
+  parent: ImmovableRodKeepTiles
+  id: ImmovableRodDildo
+  name: immovable rod dildo
+  description: Who thought it would be a good idea to fire a dildo out of a PTL!?
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/Lewd/Toys/Dildos/dildo_canine_red.rsi
+    state: icon
+    scale: 2.5 , 2.5
+    rotation: 90
+    noRot: false

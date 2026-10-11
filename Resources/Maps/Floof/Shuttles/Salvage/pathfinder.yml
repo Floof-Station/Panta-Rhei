@@ -319,6 +319,9 @@ entities:
     - type: BecomesStation
       id: Pathfinder
     - type: ImplicitRoof
+    - type: Tag
+      tags:
+      - SalvShuttleFTL
 - proto: AirAlarm
   entities:
   - uid: 3

@@ -53,3 +53,19 @@
   values:
     prefix: milker-popup-
     count: 16
+
+# Rope
+- type: ropeConfiguration
+  id: MilkingMachine10
+  parent: BaseRopeConfig
+  links: 10
+  linkPrototype: RopeLinkLeash
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: rope-transparent
+
+- type: entity
+  parent: RopeLinkLeash
+  id: RopeLinkMilkingMachine
+  name: milking machine rope link
+  categories: [ HideSpawnMenu ]

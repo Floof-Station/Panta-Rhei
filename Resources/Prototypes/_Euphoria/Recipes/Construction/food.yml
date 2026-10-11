@@ -1,0 +1,15 @@
+﻿- type: construction
+  id: BurgerBun
+  graph: DoughBuns
+  startNode: start
+  targetNode: burgerBun
+  category: construction-category-tools
+  objectType: Item
+
+- type: construction
+  id: HotdogBun
+  graph: DoughBuns
+  startNode: start
+  targetNode: hotdogBun
+  category: construction-category-tools
+  objectType: Item

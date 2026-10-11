@@ -47,6 +47,11 @@
   name: space fries
   description: AKA, French Fries, Freedom Fries, etc.
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Hotdog: Fries
+  #Euphoria end
   - type: Item
     storedOffset: 0,-3
   - type: FlavorProfile
@@ -114,8 +119,20 @@
   - type: FlavorProfile
     flavors:
       - nachos
+  #- type: Sprite # DeltaV - replaced below to add foodSequenceLayers slot for sequence system
+  #  state: nachos
+  # Begin DeltaV additions - nachos can be topped with cheese or chili to metamorph into variants
   - type: Sprite
-    state: nachos
+    sprite: Objects/Consumable/Food/meals.rsi
+    layers:
+    - state: nachos
+    - map: ["foodSequenceLayers"]
+  - type: Appearance
+  - type: FoodSequenceStartPoint
+    key: Nachos
+  - type: FoodMetamorphableByAdding
+    onlyFinal: false
+  # End DeltaV additions
   - type: SolutionContainerManager
     solutions:
       food:
@@ -388,6 +405,7 @@
     entries:
       Burger: Ribs
       Taco: Ribs
+      Hotdog: Ribs
   #Euphoria end
   - type: Item
     storedOffset: 0,-4

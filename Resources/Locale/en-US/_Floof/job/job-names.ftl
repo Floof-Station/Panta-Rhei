@@ -80,6 +80,7 @@ job-alt-title-command-emotional-support-hos = Emotional Support HOS
 job-alt-title-command-emotional-support-lo = Emotional Support LO
 job-alt-title-command-emotional-support-hop = Emotional Support HOP
 job-alt-title-command-emotional-support-cj = Emotional Support CJ
+job-alt-title-sapper = Security Sapper
 
 loadout-group-captain-pdas = Captain pda
 loadout-group-hos-pdas = Head of Security pda
@@ -114,3 +115,5 @@ loadout-group-prisoner-pda = Prisoner pda
 loadout-group-lawyer-pda = Lawyer pda
 loadout-group-prosecutor-pda = Prosecutor pda
 loadout-group-clerk-pda = Clerk pda
+
+loadout-group-security-technician-belts = Security belts

@@ -44,6 +44,14 @@ public sealed partial class RCDPrototype : IPrototype
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public string? Prototype { get; private set; }
 
+    // Starlight Start: RPD
+    /// <summary>
+    /// If the entity can be flipped, this prototype is available as an alternate (mode dependent)
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public string? MirrorPrototype { get; private set; } = string.Empty;
+    // Starlight End: RPD
+
     /// <summary>
     /// If true, allows placing the entity once per direction (North, West, South and East)
     /// </summary>
@@ -119,6 +127,14 @@ public sealed partial class RCDPrototype : IPrototype
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadOnly)]
     public RcdRotation Rotation { get; private set; } = RcdRotation.User;
+
+    // Starlight Start: RPD
+    /// <summary>
+    /// Determines whether this prototype uses layered placement (true for traditional placement, false for layered). Only applies to RPD.
+    /// </summary>
+    [DataField, ViewVariables(VVAccess.ReadOnly)]
+    public bool HasLayers { get; private set; } = false;
+    // Starlight End: RPD
 }
 
 public enum RcdMode : byte

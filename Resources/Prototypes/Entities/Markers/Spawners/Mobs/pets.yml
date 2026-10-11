@@ -2,7 +2,7 @@
   parent: MarkerBase
   id: SpawnMobAlexander
   name: Alexander Spawner
-  suffix: Chef Pet
+  suffix: Botany Pet # DeltaV - Change from chef pet to botany pet
   components:
   - type: Sprite
     layers:
@@ -16,7 +16,7 @@
   parent: MarkerBase
   id: SpawnMobBandito
   name: Bandito Spawner
-  suffix: RD Pet
+  suffix: Perma Pet # DeltaV - Change from RD pet to perma pet
   components:
   - type: Sprite
     layers:
@@ -30,7 +30,7 @@
   parent: MarkerBase
   id: SpawnMobCat
   name: Random Cat Spawner
-  suffix: CMO Pet
+  #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
@@ -47,7 +47,7 @@
   parent: MarkerBase
   id: SpawnMobCatBingus
   name: Bingus Spawner
-  suffix: CMO Pet
+  #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
@@ -60,22 +60,33 @@
 - type: entity
   parent: MarkerBase
   id: SpawnMobCatException
-  name: Exception Spawner
-  suffix: CMO Pet
+  name: Exception/Gleeble Spawner (4:1 odds) # euphoria - updated name to include new spawn entry, and added odds of each spawning
+  #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
     - state: green
     - state: ai
-  - type: ConditionalSpawner
-    prototypes:
-    - MobCatException
+  # euphoria start - swapped out ConditionalSpawner for EntityTableSpawner to allow for a chance at either cat (the previous default being exception)
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 80
+        children:
+        - id: MobCatException
+      - !type:GroupSelector
+        weight: 20
+        children:
+        - id: MobCatGleeble
+# euphoria end
 
 - type: entity
   parent: MarkerBase
   id: SpawnMobCatFloppa
   name: Floppa Spawner
-  suffix: CMO Pet
+  #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
@@ -88,16 +99,27 @@
 - type: entity
   parent: MarkerBase
   id: SpawnMobCatRuntime
-  name: Runtime Spawner
-  suffix: CMO Pet
+  name: Runtime/Gnarp Spawner (4:1 odds) # euphoria - updated name to include new spawn entry, and added odds of each spawning
+  #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
     - state: green
     - state: ai
-  - type: ConditionalSpawner
-    prototypes:
-    - MobCatRuntime
+# euphoria start - swapped out ConditionalSpawner for EntityTableSpawner to allow for a chance at either cat (the previous default being runtime)
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 80
+        children:
+        - id: MobCatRuntime
+      - !type:GroupSelector
+        weight: 20
+        children:
+        - id: MobCatGnarp
+# euphoria end
 
 - type: entity
   parent: MarkerBase
@@ -162,7 +184,7 @@
   parent: MarkerBase
   id: SpawnMobMcGriff
   name:  McGriff Spawner
-  suffix: Warden Pet
+  suffix: Armorer or Detective Pet # DeltaV - Change from Warden pet to Armorer or Detective pet
   components:
   - type: Sprite
     layers:
@@ -217,6 +239,7 @@
   - type: ConditionalSpawner
     prototypes:
     - MobMonkeyPunpun
+    - MobScurretBaba # DeltaV - Add Baba as an alternative to Pun Pun
 
 - type: entity
   parent: MarkerBase
@@ -251,7 +274,7 @@
   parent: MarkerBase
   id: SpawnMobRaccoonMorticia
   name: Raccoon Morticia Spawner
-  suffix: QM Pet
+  suffix: QM or Disposals Pet # DeltaV - Change from QM pet to QM or Disposals pet
   components:
   - type: Sprite
     layers:
@@ -265,7 +288,7 @@
   parent: MarkerBase
   id: SpawnMobShiva
   name: Shiva Spawner
-  suffix: Security Pet
+  suffix: HoS Pet # DeltaV - Change from Security pet to HoS pet
   components:
   - type: Sprite
     layers:
@@ -294,7 +317,7 @@
   parent: MarkerBase
   id: SpawnMobSmile
   name: Smile Spawner
-  suffix: Science Pet
+  suffix: Epistemics Pet # DeltaV - Epistemics Department replacing Science
   components:
   - type: Sprite
     layers:

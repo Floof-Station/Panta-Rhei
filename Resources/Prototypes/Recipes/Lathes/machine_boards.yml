@@ -301,7 +301,8 @@
 
 ## Supply
 
-- type: latheRecipe
+- type: latheRecipe # DeltaV - Telepad removed for benefit of cargo pilots + logi gameplay flow.
+# Euph - Haha no. Readding them.
   parent: [ BaseGoldCircuitboardRecipe, BaseSupplyMachineRecipeCategory ]
   id: CargoTelepadMachineCircuitboard
   result: CargoTelepadMachineCircuitboard

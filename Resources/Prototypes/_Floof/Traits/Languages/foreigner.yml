@@ -6,10 +6,12 @@
   category: Languages
   cost: -2
   priority: -1 # Give way for natural language traits
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - Foreigner
     - Muted # If you are muted, losing the ability to speak the common tongue has literally no effect
-  conditions:
+    - ForeignOrigin
   - !type:HasCompCondition
     component: LanguageKnowledge
   effects:
@@ -25,9 +27,11 @@
   category: Languages
   cost: -4
   priority: -1 # Give way for natural language traits
-  conflicts:
-    - ForeignerLight
   conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ForeignerLight
+    - ForeignOrigin
   - !type:HasCompCondition
     component: LanguageKnowledge
   effects:
@@ -42,10 +46,11 @@
   category: Languages
   cost: -1
   priority: 1
-  conflicts:
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
     - Foreigner
     - ForeignerLight
-  conditions:
   - !type:HasCompCondition
     component: LanguageKnowledge
   effects:

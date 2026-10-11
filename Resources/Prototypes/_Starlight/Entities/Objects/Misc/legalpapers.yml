@@ -1,0 +1,29 @@
+- type: entity
+  name: doctorate
+  parent: [ BasePaper ]
+  id: PaperDoctorate
+  components:
+  - type: Tag
+    tags:
+    - Document
+    - Paper
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/legalpapers/rd-diploma.rsi
+    state: rd-diploma
+  - type: Item
+    size: Small
+
+- type: entity
+  name: medical license
+  parent: [ BasePaper ]
+  id: PaperMedLicense
+  components:
+  - type: Tag
+    tags:
+    - Document
+    - Paper
+  - type: Sprite
+    sprite: _Starlight/Objects/Specific/legalpapers/cmo-license.rsi
+    state: cmo-license
+  - type: Item
+    size: Small

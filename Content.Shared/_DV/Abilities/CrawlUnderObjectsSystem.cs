@@ -45,7 +45,8 @@ public sealed class CrawlUnderObjectsSystem : EntitySystem
         if (ent.Comp.ToggleHideAction != null)
             return;
 
-        _actions.AddAction(ent, ref ent.Comp.ToggleHideAction, ent.Comp.ActionProto);
+        // Euph - disabled, all mobs can do this
+        // _actions.AddAction(ent, ref ent.Comp.ToggleHideAction, ent.Comp.ActionProto);
     }
 
     private void OnToggleCrawling(Entity<CrawlUnderObjectsComponent> ent, ref ToggleCrawlingStateEvent args)
@@ -53,7 +54,8 @@ public sealed class CrawlUnderObjectsSystem : EntitySystem
         if (args.Handled)
             return;
 
-        args.Handled = TryToggle(ent);
+        // Euph - disabled, all mobs can do this
+        // args.Handled = TryToggle(ent);
     }
 
     private void OnAttemptClimb(Entity<CrawlUnderObjectsComponent> ent, ref AttemptClimbEvent args)

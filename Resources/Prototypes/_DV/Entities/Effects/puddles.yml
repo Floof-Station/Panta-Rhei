@@ -22,7 +22,11 @@
     - AmmoniaBlood
     - Ichor
     - SynthBlood
-    - YellowBlood # Euphoria: Add more blood variants to random tables
+    # Euphoria start: Add more blood variants to random tables
+    - YellowBlood
+    - BlackBlood
+    - WhiteBlood
+    #Euphoria end
 
 - type: entity
   id: PuddleRandomDrinks
@@ -107,7 +111,7 @@
     - UnstableMutagen
     - MindbreakerToxin
     - Histamine
-    - Romerol
+    #- Romerol #Euphoria, no zombies
     - SalicylicAcid
 
 - type: entity

@@ -2,6 +2,7 @@
 - type: entity
   id: BaseGunWieldable
   abstract: true
+  parent: BaseGun # Euph
   components:
   - type: Wieldable
     unwieldOnUse: false
@@ -10,7 +11,7 @@
     maxAngle: -30
   - type: Gun
     minAngle: 21
-    maxAngle: 32   
+    maxAngle: 32
   - type: EmitSoundOnPickup # Euphoria - Port over Goob's interaction sounds.
     sound:
       collection: RiflesPickUp

@@ -14,7 +14,6 @@ public sealed class SlotBlockerSystem : EntitySystem
 {
     public static SlotFlags IgnoredSlots = SlotFlags.POCKET;
 
-    [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
 
     private EntityQuery<SlotBlockerComponent> _blockerQuery = default!;

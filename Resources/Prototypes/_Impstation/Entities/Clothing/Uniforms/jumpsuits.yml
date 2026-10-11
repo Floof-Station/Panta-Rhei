@@ -108,3 +108,36 @@
     sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brosblazer.rsi
   - type: Clothing
     sprite: _Impstation/Clothing/Uniforms/Jumpsuit/brosblazer.rsi
+
+- type: entity
+  parent: [ClothingUniformBase]
+  id: ClothingUniformCircusClown
+  name: circus clown jumpsuit
+  description: A replica of the regalia of the great Googoo Funnyball, who tragically disappeared in a mysterious circus fire.
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/circusclown.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/circusclown.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMimeCropped
+  name: cropped mime suit
+  description: ...?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimecropped.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimecropped.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMimeNouveau
+  name: nouveau mime suit
+  description: ...!?
+  components:
+  - type: Sprite
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimenouveau.rsi
+  - type: Clothing
+    sprite: _Impstation/Clothing/Uniforms/Jumpsuit/mimenouveau.rsi

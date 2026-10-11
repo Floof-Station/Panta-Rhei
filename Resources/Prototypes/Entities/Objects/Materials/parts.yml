@@ -29,6 +29,11 @@
   name: metal rod
   suffix: Full
   components:
+  #Euphoria start
+  - type: FoodSequenceElement
+    entries:
+      Hotdog: Rod
+  #Euphoria end
   - type: PhysicalComposition
     materialComposition:
       Steel: 50 #Half of a regular steel sheet to reflect the crafting recipe

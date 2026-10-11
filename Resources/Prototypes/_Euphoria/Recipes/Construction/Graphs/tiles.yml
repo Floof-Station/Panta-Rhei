@@ -1,0 +1,15 @@
+﻿- type: constructionGraph
+  id: TileMushWood
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: mushwoodtile
+      completed:
+      - !type:SetStackCount
+        amount: 4
+      steps:
+      - material: MushwoodPlank
+        amount: 1
+  - node: mushwoodtile
+    entity: FloorTileItemMushWood

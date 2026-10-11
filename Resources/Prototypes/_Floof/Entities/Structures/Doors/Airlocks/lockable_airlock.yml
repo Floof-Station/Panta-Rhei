@@ -22,3 +22,47 @@
   description: It opens, it closes, and it can be locked to your ID card.
   suffix: ID lockable
   parent: AirlockLockableBase
+
+# Command
+- type: entity
+  id: AirlockCommandLockable
+  name: dorms airlock
+  description: It opens, it closes, and it can be locked to your ID card.
+  suffix: Command, ID lockable
+  parent: [AirlockCommandLocked, AirlockLockableDorms]
+  components:
+  - type: IdLock
+    masterAccesses: [ CentralCommand, Captain ]
+
+# Engineering
+- type: entity
+  id: AirlockEngineeringLockable
+  name: dorms airlock
+  description: It opens, it closes, and it can be locked to your ID card.
+  suffix: Engineering, ID lockable
+  parent: [AirlockEngineeringLocked, AirlockLockableDorms]
+  components:
+  - type: IdLock
+    masterAccesses: [ CentralCommand, Captain, ChiefEngineer ]
+
+- type: entity
+  id: AirlockAtmosphericsLockable
+  name: dorms airlock
+  description: It opens, it closes, and it can be locked to your ID card.
+  suffix: Atmospherics, ID lockable
+  parent: [AirlockAtmosphericsLocked, AirlockLockableDorms]
+  components:
+  - type: IdLock
+    masterAccesses: [ CentralCommand, Captain, ChiefEngineer ]
+
+# Security
+
+- type: entity
+  id: AirlockSecurityLockable
+  name: dorms airlock
+  description: It opens, it closes, and it can be locked to your ID card.
+  suffix: Security, ID lockable
+  parent: [AirlockSecurityLocked, AirlockLockableDorms]
+  components:
+  - type: IdLock
+    masterAccesses: [ CentralCommand, Captain, HeadOfSecurity ]

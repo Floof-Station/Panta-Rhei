@@ -1,6 +1,5 @@
 using Content.Shared._DV.Traits.Conditions;
 using Content.Shared._DV.Traits.Effects;
-using Content.Shared._Coyote.SniffAndSmell;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._DV.Traits;
@@ -37,7 +36,7 @@ public sealed partial class TraitPrototype : IPrototype
     /// How many trait points this trait costs (positive) or grants (negative).
     /// </summary>
     [DataField]
-    public int Cost = 1;
+    public int Cost = 0;
 
     /// <summary>
     /// Conditions that must be met for this trait to be selectable and applied.
@@ -59,13 +58,13 @@ public sealed partial class TraitPrototype : IPrototype
     [DataField]
     public List<ProtoId<TraitPrototype>> Conflicts = new();
 
-    // Floofstation section
     /// <summary>
     /// The priority of this trait. Higher priority traits are applied first.
     /// </summary>
     [DataField]
     public int Priority = 0;
 
+    // Floofstation section
     /// <summary>
     /// If false, this trait doesn't affect the total number of traits.
     /// </summary>

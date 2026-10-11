@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: ActionCatJump
+  id: ActionPounce
+  name: Pounce
+  components:
+  - type: Action
+    useDelay: 30
+

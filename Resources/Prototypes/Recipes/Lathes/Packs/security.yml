@@ -75,7 +75,6 @@
   parent:
   - SecurityEquipmentDeltaV # DeltaV
   - BorgModulesSecurityDeltaV # DeltaV
-  - SecurityCybernetics # Shitmed change
   id: SecurityEquipment
   recipes:
   - ClothingBackpackElectropack
@@ -86,6 +85,7 @@
   - PowerCageSmall
   - TelescopicShield
   #- ClothingBackpackHarmpack # DeltaV - HARMPACKS deemed harmful
+  - SecurityMedicalPouch # Euphoria
 
 - type: latheRecipePack
   id: SecurityBoards

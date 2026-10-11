@@ -38,7 +38,11 @@ def main():
     print("Publish successfully started, adding files...")
 
     for file in get_files_to_publish():
-        print(f"Publishing {file}")
+
+        file_size = os.path.getsize(file) # Euphoria
+        file_size_mib = file_size / (1024 * 1024) # Euphoria
+
+        print(f"Publishing {file} ({file_size_mib:.2f} MiB)") # Euphoria - print file size in MiB
         with open(file, "rb") as f:
             headers = {
                 "Content-Type": "application/octet-stream",

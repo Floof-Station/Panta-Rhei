@@ -1,0 +1,43 @@
+## Recipes
+
+# Generic
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleAnomaly
+  result: BorgModuleAnomaly
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleArtifact
+  result: BorgModuleArtifact
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleFurnishing
+  result: BorgModuleFurnishing
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleFluidManip
+  result: BorgModuleFluidManip
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleFoamForce
+  result: BorgModuleFoamForce
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleEnvSurvey
+  result: BorgModuleEnvSurvey
+
+# Science
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleAdvAnomaly
+  result: BorgModuleAdvAnomaly
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleQuantum
+  result: BorgModuleQuantum

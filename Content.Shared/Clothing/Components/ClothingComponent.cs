@@ -82,9 +82,11 @@ public sealed partial class ClothingComponent : Component
     // And when doing this, combine InSlot and InSlotFlag, as it'd be a breaking change for downstreams anyway
 
     [DataField]
+    [Access(Other=AccessPermissions.ReadWrite)] // Euph - needed in integration tests
     public TimeSpan EquipDelay = TimeSpan.Zero;
 
     [DataField]
+    [Access(Other=AccessPermissions.ReadWrite)] // Euph - needed in integration tests
     public TimeSpan UnequipDelay = TimeSpan.Zero;
 
     /// <summary>

@@ -1,0 +1,22 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformGALPOLSuit
+  name: GALPOL Uniform
+  description: Seeing someone in one of these usually means you're getting an award or someone really messed up.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/GALPOL_Uniform.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/GALPOL_Uniform.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformGALPOLSkirt
+  name: GALPOL Skirt
+  description: Seeing someone in one of these usually means you're getting an award or someone really messed up.
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Uniforms/GALPOL_skirt.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Uniforms/GALPOL_skirt.rsi
+

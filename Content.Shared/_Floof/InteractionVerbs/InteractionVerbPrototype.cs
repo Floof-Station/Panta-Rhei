@@ -106,7 +106,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public float SelfInteractDelayFactor = 1f;
 
     /// <summary>
-    ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and before the do-after.
+    ///     Cooldown between uses of this verb. Applied per user or per user-target pair (see <see cref="GlobalCooldown"/>) and checked before the do-after.
     /// </summary>
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromSeconds(0.5f);
@@ -119,7 +119,7 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
 
     /// <summary>
     ///     If true, the cooldown of this verb will be applied regardless of the verb target,
-    ///     i.e. a user won't be able to apply the same verb to any different entity until the cooldown ends.
+    ///     i.e. after using the verb, the user won't be able to use it again on another entity until the cooldown ends.
     /// </summary>
     [DataField]
     public bool GlobalCooldown = false;
@@ -164,6 +164,13 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     public ContestType AllowedContests = ContestType.None;
 
     /// <summary>
+    ///     Flags of allowed sources. This determines which of the entities participating in an interaction can facilitate this verb (user, target, used)...
+    ///     By default, only excludes tools as including those would allow you to e.g. hold a plushie and hug any entity.
+    /// </summary>
+    [DataField]
+    public InteractionVerbSource AllowedSource = InteractionVerbSource.AllExceptTools;
+
+    /// <summary>
     ///     Whether this interaction implies direct body contact (transfer of fibers, fingerprints, etc).
     /// </summary>
     [DataField("contactInteraction")]
@@ -172,22 +179,20 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     [DataField]
     public bool RequiresHands = false;
 
-    // Floofstation section
     [DataField]
     public bool RequiresConsciousness = true;
 
     /// <summary>
     ///     The true "requires can interact", checks if the user is not cuffed and is not otherwise incapacitated.
     /// </summary>
-    [DataField("checkInteractionBlocker")]
+    [DataField]
     public bool RequiresCanInteract = true;
-    // Floofstation section end
 
     /// <summary>
     ///     Whether this verb requires the user to be able to access the target normally (with their hands or otherwise).
     /// </summary>
-    /// <remarks>The misleading yml name is kept for backwards compatibility with downstreams.</remarks>
-    [DataField("requiresCanInteract")]
+    /// <remarks>This used to be named "requiresCanInteract" in yaml. The misleading name was kept was backwards compatibility.</remarks>
+    [DataField]
     public bool RequiresCanAccess = true;
 
     /// <summary>
@@ -284,10 +289,8 @@ public sealed partial class InteractionVerbPrototype : IPrototype, IInheritingPr
     [Serializable, Flags]
     public enum ContestType : byte
     {
-        Mass = 1,
-        Stamina = 1 << 1,
-        Health = 1 << 2,
-        All = Mass | Stamina | Health,
+        Strength = 1,
+        All = Strength,
         None = 0
     }
 }

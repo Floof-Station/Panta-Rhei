@@ -54,6 +54,22 @@
   - type: BorgSwitchableType
     selectedBorgType: quadengineering
 
+- type: entity
+  id: BorgChassisResearch
+  parent: BorgChassisSelectable
+  name: research cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: research
+
+- type: entity
+  id: QuadChassisResearch
+  parent: BorgChassisSelectable
+  name: research quad cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: quadresearch
+
 # Admin Spawnable - Floofstation
 
 - type: entity

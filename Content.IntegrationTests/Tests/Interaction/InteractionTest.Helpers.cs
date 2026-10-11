@@ -11,6 +11,7 @@ using Content.Server.Construction.Components;
 using Content.Server.Gravity;
 using Content.Server.Power.Components;
 using Content.Shared.Atmos;
+using Content.Shared.Clothing.Components;
 using Content.Shared.CombatMode;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Gravity;
@@ -289,6 +290,11 @@ public abstract partial class InteractionTest
             Assert.Fail("Not holding any entity");
             return;
         }
+
+        // Euph - evil hack because whoever designed these tests on wizden if fucking dumb
+        // Seriously whose fucking idea was it to rely on UseInHand to equip clothing?
+        if (SEntMan.TryGetComponent<ClothingComponent>(target, out var clothing))
+            clothing.EquipDelay = clothing.UnequipDelay = TimeSpan.Zero;
 
         await Server.WaitPost(() =>
         {

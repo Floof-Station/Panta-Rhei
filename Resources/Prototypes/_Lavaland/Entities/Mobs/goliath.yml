@@ -39,12 +39,12 @@
     soundHit:
       path: "/Audio/Weapons/smash.ogg"
     angle: 0
-    attackRate: 0.75
+    attackRate: 0.5 #Euphoria. Was 0.75, decreased to mitigate issue where Goliaths can completely stunlock someone.
     animation: WeaponArcPunch
     damage:
-      types:
-        Piercing: 10
-        Slash: 15
+      types: #Euphoria. Was 10 and 15. Increased by 33% since attackRate decreased by 33%.
+        Piercing: 13
+        Slash: 20
   #- type: MobThresholds
   #  thresholds:
   #    0: Alive

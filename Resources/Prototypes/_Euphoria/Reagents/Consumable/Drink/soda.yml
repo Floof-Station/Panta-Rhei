@@ -1,0 +1,14 @@
+- type: reagent
+  id: DrGibbCreamsoda
+  name: reagent-name-dr-gibb-creamsoda
+  parent: BaseSoda
+  desc: reagent-desc-dr-gibb-creamsoda
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: drgibbcreamsoda
+  color: "#A17D69"
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/dr_gibb_cs_glass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false

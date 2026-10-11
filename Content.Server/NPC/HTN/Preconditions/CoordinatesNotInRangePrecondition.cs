@@ -27,7 +27,7 @@ public sealed partial class CoordinatesNotInRangePrecondition : HTNPrecondition
             return false;
 
         if (!blackboard.TryGetValue<EntityCoordinates>(TargetKey, out var target, _entManager))
-            return false;
+            return true; // Euph - if target is not specified, it only makes sense that it's unreachable
 
         return !_transformSystem.InRange(coordinates, target, blackboard.GetValueOrDefault<float>(RangeKey, _entManager));
     }

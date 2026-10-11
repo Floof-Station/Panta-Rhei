@@ -1,0 +1,20 @@
+- type: trait
+  id: HardSkin
+  name: trait-hardskin-name
+  description: trait-hardskin-desc
+  category: DisabilitiesPhysical
+  cost: -2
+  conditions:
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+    - Chitinid
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: BlockInjection
+      reasonLocId: injector-component-deny-hardskin

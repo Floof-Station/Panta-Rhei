@@ -39,7 +39,6 @@
   - type: RequireProjectileTarget
     active: False
   - type: AnimatedEmotes # goob edit - animated emotes
-  #- type: StunVisuals # DeltaV - No stars
   - type: LanguageSpeaker # Floofstation - all mobs are language speakers
   - type: LanguageKnowledge # Floofstation. Mobs by default understand tau-ceti. This should ideally be overridden for each kind of mob.
     speaks:
@@ -126,7 +125,7 @@
       - !type:VomitBehavior
   - type: RadiationReceiver
   - type: Stamina
-  #- type: StunVisuals # DeltaV - No stars
+  - type: StunVisuals
   - type: MobState
   - type: MobThresholds
     thresholds:
@@ -162,7 +161,8 @@
   - type: LightningTarget
     priority: 2
     lightningExplode: false
-  - type: SurgeryContaminable # DeltaV - surgery cross contamination
+  - type: GhostOnMove
+    mustBeDead: true
 
 # Used for mobs that can enter combat mode and can attack.
 - type: entity
@@ -176,8 +176,8 @@
     soundHit:
       collection: MetalThud
     damage:
-      groups:
-        Brute: 5
+      types:
+        Blunt: 5
 
 # Used for mobs that are affected by atmospherics, pressure, and heat
 - type: entity

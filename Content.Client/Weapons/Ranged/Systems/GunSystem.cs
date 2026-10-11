@@ -206,6 +206,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
         Log.Debug($"Sending shoot request tick {Timing.CurTick} / {Timing.CurTime}");
 
+
         RaisePredictiveEvent(new RequestShootEvent
         {
             Target = target,
@@ -284,7 +285,10 @@ public sealed partial class GunSystem : SharedGunSystem
         if (!Timing.IsFirstTimePredicted || user == null || recoil == Vector2.Zero || recoilScalar == 0)
             return;
 
-        _recoil.KickCamera(user.Value, recoil.Normalized() * 0.5f * recoilScalar);
+        // ES START
+        // reduce recoil even further
+        _recoil.KickCamera(user.Value, recoil.Normalized() * 0.13f * recoilScalar);
+        // ES END
     }
 
     protected override void Popup(string message, EntityUid? uid, EntityUid? user)

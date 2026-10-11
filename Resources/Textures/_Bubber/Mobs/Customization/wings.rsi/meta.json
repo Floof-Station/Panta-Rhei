@@ -1,0 +1,356 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Taken from Bubberstation at https://github.com/Bubberstation/Bubberstation/blob/fd10a0c6082e3a35afe94f2a765216c0429fe23b/modular_skyrat/master_files/icons/mob/sprite_accessory/wings.dmi",
+    "size": {
+        "x": 45,
+        "y": 34
+    },
+    "states": [
+        {
+            "name": "m_wings_bee_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_fairy_behind",
+            "directions": 4,
+            "delays": [
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ],
+                [
+                    0.1,
+                    0.1,
+                    0.1,
+                    0.1
+                ]
+            ]
+        },
+        {
+            "name": "m_wings_feathery_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_feathery_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_feathery_behind_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_bat_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_extra_succubus_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_succubus_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_dragonsynth_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_dragonsynth_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_dragonsynth_behind_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "colorpalette_matrixcolors"
+        },
+        {
+            "name": "m_wings_dragonalt1_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_dragonalt1_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_dragonalt2_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_dragonalt2_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpy_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpyalt_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_behind_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_fluffless_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_fluffless_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_top_front_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_top_front_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_top_front_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_fluffless_top_front_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_fluffless_top_front_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpy_top_front",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpyalt_top_front",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpybat_top_front",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_featheryalt1_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_featheryalt1_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_featheryalt1_behind_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_featheryalt2_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_featheryalt2_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_adj",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_top_adj",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_top_front",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_behind_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_adj_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_adj_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_adj_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_top_adj_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_top_adj_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_top_adj_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_top_front_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_top_front_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_tri_top_front_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_behind_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_adj_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_adj_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_adj_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_top_adj_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_top_adj_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_top_adj_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_top_front_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_top_front_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_low_jewel_top_front_tertiary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_spider_legs_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_robowing_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_robowing_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_minibat_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_minifeather_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_tinybat_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_tinyfeather_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_insect_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_beetle_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_arfelharpy_top_front",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpyalt_fluffless_behind",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_harpyalt_fluffless_top_front",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_pterodactyl_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_pterodactyl_behind_secondary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_renamon_behind_primary",
+            "directions": 4
+        },
+        {
+            "name": "m_wings_renamon_behind_secondary",
+            "directions": 4
+        }
+    ]
+}

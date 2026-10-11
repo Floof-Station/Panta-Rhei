@@ -1,0 +1,21 @@
+- type: entity
+  parent: BaseItem
+  id: BorgRadProbe
+  name: Radiation Probe
+  suffix: Borg
+  description: A small device capable of delivering miniscule doses of radiation. Keep away from organics.
+  components:
+    - type: Sprite
+      sprite: _Floof/Objects/Weapons/Melee/radprobe.rsi
+      state: icon
+    - type: Item
+      sprite: _Floof/Objects/Weapons/Melee/radprobe.rsi
+    - type: MeleeWeapon
+      wideAnimationRotation: -90
+      attackRate: 1.35
+      damage:
+        types:
+          Radiation: 2
+      angle: 5
+      soundHit:
+        path: /Audio/Effects/sparks1.ogg

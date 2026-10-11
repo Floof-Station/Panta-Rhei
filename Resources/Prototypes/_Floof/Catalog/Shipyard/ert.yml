@@ -1,0 +1,50 @@
+﻿# floof specific ert shuttles for the centcomm shipyard
+# descriptions can be more ooc since these are only seen by admins who need to know whats spawning on the ship
+# Ships put in here still need to have a price associated with them due to the arbitrage tests.
+# The CentComm console won't charge for them so just put like a million spesos or something
+# The stations shipyard will not show these shuttles unless somoene gives the station shipyard access to see them in which case utoh.
+
+- type: vessel
+  id: FloofERTCargo
+  name: HGI ERT Cargo
+  description: ERT Cargo shuttle, 3 ghost roles will be created.
+  price: 10000000
+  path: /Maps/Floof/Shuttles/CentralCommand/ERTships/Shipyard/ert-cargo.yml
+  categories:
+  - ERTFilled
+
+- type: vessel
+  id: FloofERTMedical
+  name: HGI ERT Medical, 4 ghost roles will be created.
+  description: ERT medical ship.
+  price: 10000000
+  path: /Maps/Floof/Shuttles/CentralCommand/ERTships/Shipyard/ert-medical.yml
+  categories:
+  - ERTFilled
+
+- type: vessel
+  id: FloofERTEngineering
+  name: HGI ERT Engineering
+  description: ERT Engineering Shuttle for most repairs, 5 ghost roles will be created.
+  price: 10000000
+  path: /Maps/Floof/Shuttles/CentralCommand/ERTships/Shipyard/ert-engi.yml
+  categories:
+  - ERTFilled
+
+- type: vessel
+  id: FloofERTSecurity
+  name: HGI ERT Security
+  description: ERT Security Shuttle for station side combat, 5 ghost roles will be created may need more weapons given.
+  price: 10000000
+  path: /Maps/Floof/Shuttles/CentralCommand/ERTships/Shipyard/ert-security.yml
+  categories:
+  - ERTFilled
+
+- type: vessel
+  id: FloofERTJanitor
+  name: HGI ERT Janitor
+  description: ERT Janitor Shuttle for station mess cleanup, 4 ghost roles will be created.
+  price: 10000000
+  path: /Maps/Floof/Shuttles/CentralCommand/ERTships/Shipyard/ert-janitor.yml
+  categories:
+  - ERTFilled
