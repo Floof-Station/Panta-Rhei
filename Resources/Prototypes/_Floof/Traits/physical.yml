@@ -1,4 +1,4 @@
-﻿# =================     Bionics    ================== #
+# =================     Bionics    ================== #
 - type: trait
   id: CyberEyesFlare
   name: trait-name-CyberEyesFlare
@@ -893,3 +893,24 @@
     components:
     - type: Preenable
       featherPrototype: AvaliFeather
+
+- type: trait
+  id: Vampirism
+  name: trait-name-vampirism
+  description: trait-description-vampirism
+  category: Skills
+  cost: 4
+  #conflicts:
+  #  - VampirismLite #Lite trait doesn't exist due to how ingestion works rn
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+      - type: BloodSucker
+        unitsToSucc: 40
+  - !type:ReplaceStomachEffect
+    stomachProto: OrganBloodStomach

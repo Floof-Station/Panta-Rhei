@@ -1,0 +1,20 @@
+- type: entity
+  parent: [ OrganBaseStomach, OrganHumanInternal ]
+  id: OrganBloodStomach
+  components:
+  - type: Stomach
+    specialDigestible: # Vampires cannot eat food chat is that real
+      tags:
+      - IceCream
+      - Pill
+      - Crayon
+      - Paper
+    isSpecialDigestibleExclusive: true
+  - type: Metabolizer
+    maxReagents: 3
+    stages: [ Digestion ]
+    metabolizerTypes: [ Vampiric ]
+  - type: SolutionContainerManager
+    solutions:
+      stomach:
+        maxVol: 1000
