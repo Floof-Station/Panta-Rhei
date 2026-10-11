@@ -22,6 +22,10 @@ public sealed partial class SurgeryComponent : Component
     [DataField]
     public List<ProtoId<SurgeryStatePrototype>> SurgeryStates = new();
 
+    //Chance of causing a ruptured bleed as a decimal
+    [DataField]
+    public double ChanceOfBleeder = 0.05;
+
 }
 public sealed class SurgeryGetActionsEvent : EntityEventArgs
 {

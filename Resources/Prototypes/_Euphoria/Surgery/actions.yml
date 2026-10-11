@@ -90,7 +90,6 @@
 - type: surgeryAction
   parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
   id: removeHeart
-  description: surgery-remove-organ
   remove: Heart
 
 - type: surgeryAction
@@ -251,6 +250,7 @@
 - type: surgeryAction
   parent: [drillingSurgery, longSurgery]
   id: moveBonesTorso
+  description: surgery-bone-drill
   states:
     Torso:
       skinRetracted: true
@@ -263,6 +263,7 @@
 - type: surgeryAction
   parent: [torsoOrganAccessState, retractionSurgery, averageSurgery]
   id: replaceBonesTorso
+  description: surgery-bone-replace
   effects:
     Torso:
       boneRetracted: false

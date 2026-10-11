@@ -9,6 +9,8 @@ surgery-skin-cut = Make an incision into the {$bodyPart}.
 surgery-skin-cautery = Seal the skin on the {$bodyPart}.
 surgery-muscle-retract = Bypass the muscles located inside the {$bodyPart}.
 surgery-muscle-replace = Return the muscles of the {$bodyPart} to their original connections.
+surgery-bone-drill = Drill the bone connections inside the {$bodyPart}.
+surgery-bone-replace = Piece together the bone structure inside the {$bodyPart}.
 
 surgery-remove-organ = Remove the {$bodyPart}.
 surgery-insert-organ = Insert the {$bodyPart}.

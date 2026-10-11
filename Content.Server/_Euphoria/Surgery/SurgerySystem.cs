@@ -1,25 +1,16 @@
 ﻿using System.Linq;
-using Content.Server.Construction.Completions;
 using Content.Shared._Euphoria.Surgery;
 using Content.Shared._Euphoria.Surgery.Components;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
-using Content.Shared.Coordinates;
 using Content.Shared.DoAfter;
-using Content.Shared.GameTicking;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.Kitchen;
-using Content.Shared.PDA;
 using Content.Shared.Popups;
-using Content.Shared.Store.Components;
-using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
-using Robust.Server.GameObjects;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
-
-
+using Content.Shared.Damage.Systems;
+using Robust.Shared.Random;
 
 namespace Content.Server._Euphoria.Surgery;
 
@@ -30,6 +21,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
+    [Dependency] private readonly DamageableSystem _damage = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     public override void Initialize()
     {
@@ -64,6 +57,42 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             if (comp == null)
                 return;
         }
+
+        var bodyParts = proto.getTargets();
+
+        double bleederRoll;
+
+        foreach(var bodyPart in bodyParts)
+        {
+            bleederRoll = _random.NextDouble();
+
+            if (bleederRoll < component.ChanceOfBleeder)
+            {
+                if (!TryComp<BodyComponent>(uid, out var bodyComponent))
+                    return;
+                if (bodyComponent == null)
+                    return;
+
+                if(!_proto.TryIndex<OrganCategoryPrototype>(bodyPart, out var orgProto))
+                    return;
+
+                var orgEnt = GetTarget(bodyComponent, orgProto);
+
+                if (orgEnt == null)
+                    return;
+
+                string bleedingId = "bleeding";
+
+                if(!_proto.TryIndex<SurgeryStatePrototype>(bleedingId, out var state))
+                    return;
+
+                //RAISE AN EVENT TO START BLEEDING
+                //FIND SOME WAY TO KEEP RAISING IT IF NOT FIXED
+                component.DictOrgans[bodyPart][orgEnt.Value][state] = true;
+            }
+        }
+
+        //This is where damage from cross contamination would happen
 
         //allows for cross contamination
         comp.LastUsedOn = uid;
