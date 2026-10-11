@@ -17,6 +17,9 @@ public sealed partial class SurgeryToolComponent : Component
     [DataField]
     public float Strength = 1;
 
+    [DataField]
+    public EntityUid? LastUsedOn = null;
+
     public enum ToolTypeEnum: int
     {
         Cutting = 1,

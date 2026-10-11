@@ -51,9 +51,9 @@ public sealed partial class SurgerySystem
         var disabled = false;
         string? message = null;
 
-        EntityUid surgeryObject = default;
-        if (usingSurgeryComp != null)
-            surgeryObject = args.Using!.Value;
+        //self surgery is kill (for now)
+        if (args.User == args.Target)
+            return;
 
         InteractionVerb verb = new()
         {

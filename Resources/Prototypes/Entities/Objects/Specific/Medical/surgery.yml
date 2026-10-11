@@ -109,6 +109,9 @@
   parent: Scalpel
   description: A pointy piece of glass, abraded to an edge and wrapped in tape for a handle. # Could become a decent tool or weapon with right tool mods.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    Strength: 0.5
   - type: Sprite
     state: shiv
   - type: Item
@@ -131,6 +134,9 @@
   parent: Scalpel
   description: Made of more expensive materials, sharper and generally more reliable.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    Strength: 1.5
   - type: Sprite
     state: advanced
   - type: Item
@@ -146,6 +152,9 @@
   parent: Scalpel
   description: A scalpel which uses a directed laser to slice instead of a blade, for more precise surgery while also cauterizing as it cuts.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    Strength: 2
   - type: Sprite
     state: laser
   - type: Item
@@ -224,6 +233,9 @@
   parent: Saw
   description: A wicked serrated blade made of whatever nasty sharp things you could find. # It would make a pretty decent weapon, given there are more space for some tool mods too.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    Strength: 0.5
   - type: Sprite
     state: improv
   - type: Item
@@ -245,6 +257,9 @@
   parent: Saw
   description: For heavy duty cutting.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    Strength: 1.5
   - type: Sprite
     state: electric
   - type: Item
@@ -272,6 +287,9 @@
   parent: [ SawElectric, BaseSyndicateContraband ]
   description: Interdyne's state-of-the-art surgical saw. Guaranteed to stay spotless and sterile, no matter how messy the job.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    Strength: 2
   - type: Sprite
     state: advanced
   - type: Item

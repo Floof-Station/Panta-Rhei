@@ -45,6 +45,9 @@ public sealed partial class SurgeryFinishedEvent : DoAfterEvent
     [NonSerialized]
     public ProtoId<SurgeryActionPrototype> ID;
 
+    [NonSerialized]
+    public EntityUid Tool;
+
     public override DoAfterEvent Clone()
     {
         return this;

@@ -2,6 +2,7 @@
 using Content.Server.Construction.Completions;
 using Content.Shared._Euphoria.Surgery;
 using Content.Shared._Euphoria.Surgery.Components;
+using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
 using Content.Shared.Coordinates;
 using Content.Shared.DoAfter;
@@ -56,6 +57,16 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             return;
         if(proto == null)
             return;
+        var tool = ev.Tool;
+
+        if (!TryComp<SurgeryToolComponent>(tool, out var comp))
+        {
+            if (comp == null)
+                return;
+        }
+
+        //allows for cross contamination
+        comp.LastUsedOn = uid;
 
         if (!ev.Cancelled)
         {
@@ -180,7 +191,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if(proto == null)
             return;
 
-        var foundTool = false;
+        EntityUid? foundTool = null;
         var foundOrgan = false;
 
         if(proto.Insert == null)
@@ -191,7 +202,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             if (TryComp<SurgeryToolComponent>(item, out var tool))
                 if (tool.ToolType == proto._type)
                 {
-                    foundTool = true;
+                    foundTool = item;
                 }
 
             if (!foundOrgan)
@@ -203,11 +214,11 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         }
 
-        if(foundTool && foundOrgan)
+        if(foundTool != null && foundOrgan)
         {
-            TrySurgeryStart(uid, component, args.ID, args.Actor);
+            TrySurgeryStart(uid, component, args.ID, args.Actor, foundTool.Value);
         }
-        if(!foundTool)
+        if(foundTool == null)
             _popupSystem.PopupEntity(Loc.GetString("surgery-wrong-tool"),args.Actor);
 
         if(!foundOrgan)
@@ -216,8 +227,10 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     }
 
-    private bool TrySurgeryStart(EntityUid uid, SurgeryComponent component, ProtoId<SurgeryActionPrototype> id, EntityUid actor)
+    private bool TrySurgeryStart(EntityUid uid, SurgeryComponent component, ProtoId<SurgeryActionPrototype> id, EntityUid actor, EntityUid tool)
     {
+        if (!TryComp<SurgeryToolComponent>(tool, out var toolComp))
+            return false;
         if(!_proto.TryIndex<SurgeryActionPrototype>(id,out var proto))
             return false;
         if(proto == null)
@@ -226,10 +239,18 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         var doFinished = new SurgeryFinishedEvent
         {
             ID = id,
+            Tool = tool,
         };
 
+        var sleepingScale = 1;
+
+        if(!TryComp<SleepingComponent>(uid, out var sleeping))
+            sleepingScale = 2;
+
+        var surgerySpeed = (sleepingScale*proto._duration) / toolComp.Strength;
+
         var doAfter =
-            new DoAfterArgs(EntityManager,actor,proto._duration,doFinished,uid, uid, null)
+            new DoAfterArgs(EntityManager,actor,surgerySpeed,doFinished,uid, uid, tool)
             {
                 BreakOnDamage = true,
                 BreakOnMove = true,
