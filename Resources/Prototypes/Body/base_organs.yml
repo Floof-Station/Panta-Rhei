@@ -347,6 +347,8 @@
   name: lungs
   abstract: true
   components:
+  - type: SurgeryOrganDamage #Euphoria - needed for surgery to move damage to organs and vice versa
+    damageType: Asphyxiation
   - type: GibbableOrgan
   - type: Organ
     category: Lungs

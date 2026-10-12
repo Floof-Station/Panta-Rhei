@@ -1,11 +1,11 @@
 ﻿using System.Linq;
+using Content.Shared._DV.Surgery;
 using Content.Shared._Euphoria.Surgery;
 using Content.Shared._Euphoria.Surgery.Components;
 using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
@@ -13,6 +13,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Mobs.Systems;
 using Robust.Shared.Random;
 
 namespace Content.Server._Euphoria.Surgery;
@@ -26,6 +27,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -307,12 +309,18 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             Tool = tool,
         };
 
-        var sleepingScale = 1;
+        var anesthesiaScale = 1;
 
-        if(!TryComp<SleepingComponent>(uid, out var sleeping))
-            sleepingScale = 2;
 
-        var surgerySpeed = (sleepingScale*proto._duration) / toolComp.Strength;
+        //Are they under for surgery?
+        if(!TryComp<AnesthesiaComponent>(uid, out var anesthesia))
+            anesthesiaScale = 2;
+
+        //Irrelevant of any other facts, the dead won't squirm
+        if (_mobState.IsDead(uid))
+            anesthesiaScale = 1;
+
+        var surgerySpeed = (anesthesiaScale*proto._duration) / toolComp.Strength;
 
         var doAfter =
             new DoAfterArgs(EntityManager,actor,surgerySpeed,doFinished,uid, uid, tool)
