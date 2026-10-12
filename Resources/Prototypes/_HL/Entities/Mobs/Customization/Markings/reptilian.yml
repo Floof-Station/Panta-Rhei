@@ -2,7 +2,7 @@
   id: ReptilianTailNaga
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Skrell, Reptilian, Human]
+  speciesRestriction: [Reptilian] #Euphoria change
   sprites:
     - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
       state: naga_primary
@@ -13,7 +13,7 @@
   id: ReptilianTailNagaStriped
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Skrell, Reptilian, Human]
+  speciesRestriction: [] #Euphoria change
   sprites:
     - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
       state: naga_striped_primary
@@ -26,7 +26,7 @@
   id: ReptilianTailNagaRattlesnake
   bodyPart: Tail
   markingCategory: Tail
-  speciesRestriction: [Skrell, Reptilian, Human]
+  speciesRestriction: [] #Euphoria change
   sprites:
     - sprite: _HL/Mobs/Customization/Reptilian/naga.rsi
       state: naga_rattlesnake_primary
