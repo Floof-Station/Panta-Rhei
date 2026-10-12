@@ -86,6 +86,25 @@
 
 #Actual Surgery Actions
 
+#Brain surgery
+- type: surgeryAction
+  parent: [cuttingSurgery, longSurgery, removeOrgan]
+  id: removeBrain
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: true
+  remove: Brain
+
+- type: surgeryAction
+  parent: [retractionSurgery, longSurgery, insertOrgan]
+  id: insertBrain
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: true
+  insert: Brain
+
 #Heart surgery
 - type: surgeryAction
   parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
@@ -267,6 +286,54 @@
   effects:
     Torso:
       boneRetracted: false
+
+#Head skin
+- type: surgeryAction
+  parent: [cuttingSurgery, shortSurgery]
+  id: openSkinHead
+  description: surgery-skin-cut
+  states:
+    Head:
+      skinRetracted: false
+  effects:
+    Head:
+      skinRetracted: true
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: closeSkinHead
+  description: surgery-skin-cautery
+  states:
+    Head:
+      skinRetracted: false
+  effects:
+    Head:
+      skinRetracted: true
+
+#Head bone
+- type: surgeryAction
+  parent: [sawingSurgery, longSurgery]
+  id: moveBonesHead
+  description: surgery-bone-saw
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: false
+  effects:
+    Head:
+      boneRetracted: true
+
+- type: surgeryAction
+  parent: [sawingSurgery, longSurgery]
+  id: replaceBonesHead
+  description: surgery-bone-replace
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: false
+  effects:
+    Head:
+      boneRetracted: true
 
 #Slime stuff
 - type: surgeryAction

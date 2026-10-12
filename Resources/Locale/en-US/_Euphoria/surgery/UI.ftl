@@ -11,6 +11,7 @@ surgery-muscle-retract = Bypass the muscles located inside the {$bodyPart}.
 surgery-muscle-replace = Return the muscles of the {$bodyPart} to their original connections.
 surgery-bone-drill = Drill the bone connections inside the {$bodyPart}.
 surgery-bone-replace = Piece together the bone structure inside the {$bodyPart}.
+surgery-bone-saw = You saw away at the bones inside the {$bodyPart}.
 
 surgery-slime-core-remove = Reach on in and grab that core.
 surgery-slime-core-insert = Just put the core in anywhere really.
