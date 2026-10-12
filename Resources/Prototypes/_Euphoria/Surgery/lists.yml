@@ -1,0 +1,23 @@
+﻿- type: surgeryList
+  id: humanoidDefault
+  actions:
+  - retractMusclesTorso
+  - replaceMusclesTorso
+  - openSkinTorso
+  - closeSkinTorso
+  - removeHeart
+  - insertHeart
+  - removeLiver
+  - insertLiver
+  - moveBonesTorso
+  - replaceBonesTorso
+
+- type: surgeryList
+  id: slime
+  actions:
+  - slimeBypassedTorso
+  - slimeSolidifiedTorso
+  - removeCore
+  - insertCore
+  - removeSacs
+  - insertSacs

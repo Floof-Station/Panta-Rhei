@@ -267,3 +267,68 @@
   effects:
     Torso:
       boneRetracted: false
+
+#Slime stuff
+- type: surgeryAction
+  parent: [cuttingSurgery, shortSurgery]
+  id: slimeBypassedTorso
+  description: surgery-slime-bypass
+  states:
+    Torso:
+      slimeBypassed: false
+  effects:
+    Torso:
+      slimeBypassed: true
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: slimeSolidifiedTorso
+  description: surgery-slime-solidify
+  states:
+    Torso:
+      slimeBypassed: true
+  effects:
+    Torso:
+      slimeBypassed: false
+
+- type: surgeryAction
+  parent: [retractionSurgery, shortSurgery]
+  id: removeCore
+  description: surgery-slime-core-remove
+  states:
+    Torso:
+      slimeBypassed: true
+  remove: Brain
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: insertCore
+  description: surgery-slime-core-insert
+  states:
+    Torso:
+      slimeBypassed: true
+  effects:
+    Torso:
+      slimeBypassed: false
+  insert: Brain
+
+- type: surgeryAction
+  parent: [retractionSurgery, shortSurgery]
+  id: removeSacs
+  description: surgery-slime-sac-remove
+  states:
+    Torso:
+      slimeBypassed: true
+  remove: Lungs
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: insertSacs
+  description: surgery-slime-sac-insert
+  states:
+    Torso:
+      slimeBypassed: true
+  effects:
+    Torso:
+      slimeBypassed: false
+  insert: Lungs
