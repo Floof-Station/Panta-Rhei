@@ -1,4 +1,6 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Robust.Shared.Audio;
+using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Euphoria.Surgery;
 
@@ -6,7 +8,7 @@ namespace Content.Shared._Euphoria.Surgery;
 /// Contains what surgery qualities the tool has such as "cutting" or "retracting".
 /// Maybe also put in how good the tool is as well
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SurgeryToolComponent : Component
 {
     [ViewVariables]
@@ -16,6 +18,12 @@ public sealed partial class SurgeryToolComponent : Component
 
     [DataField]
     public float Strength = 1;
+
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? StartSound;
+
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier? EndSound;
 
     [DataField]
     public EntityUid? LastUsedOn = null;

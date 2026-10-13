@@ -14,6 +14,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs.Systems;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
 
 namespace Content.Server._Euphoria.Surgery;
@@ -28,6 +29,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -62,6 +64,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             if (comp == null)
                 return;
         }
+
+        _audio.PlayPvs(comp.EndSound, ev.User);
 
         var bodyParts = proto.getTargets();
 
@@ -328,7 +332,11 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                 BreakOnDamage = true,
                 BreakOnMove = true,
             };
+
+        _audio.PlayPvs(toolComp.StartSound, actor);
+
         _doAfterSystem.TryStartDoAfter(doAfter);
+
         return true;
     }
 
