@@ -15,7 +15,8 @@ public abstract class SharedColorPaintSystem : EntitySystem
             || _whitelist.IsWhitelistPass(blacklist, target))
             return;
 
-        EnsureComp<ColorPaintedComponent>(target, out var paint);
+        var paintAlreadyExisted = EnsureComp<ColorPaintedComponent>(target, out var paint);
+        var oldColor = paintAlreadyExisted ? paint.Color : Color.White;
         EnsureComp<AppearanceComponent>(target);
 
         paint.Color = color;
@@ -40,6 +41,8 @@ public abstract class SharedColorPaintSystem : EntitySystem
 
         _appearanceSystem.SetData(target, PaintVisuals.Painted, true);
         Dirty(target, paint);
+
+        RaiseLocalEvent(target, new ColorPaintChangedEvent(oldColor, color));
     }
 
     public void ClearPaint(EntityUid target)
@@ -47,10 +50,22 @@ public abstract class SharedColorPaintSystem : EntitySystem
         if (target is not { Valid: true } || !TryComp<ColorPaintedComponent>(target, out var paint))
             return;
 
+        var oldColor = paint.Color;
+
         paint.Enabled = false;
         _appearanceSystem.RemoveData(target, PaintVisuals.Painted);
         RemComp<ColorPaintedComponent>(target);
         Dirty(target, paint);
+
+        RaiseLocalEvent(target, new ColorPaintChangedEvent(oldColor, null));
+    }
+
+    public Color? GetEffectiveColor(EntityUid target)
+    {
+        if (!TryComp<ColorPaintedComponent>(target, out var paint))
+            return null;
+
+        return paint.Color;
     }
 
     /// <summary>

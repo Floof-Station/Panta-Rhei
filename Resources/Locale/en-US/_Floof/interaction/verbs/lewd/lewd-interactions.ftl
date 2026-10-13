@@ -23,6 +23,14 @@ interaction-LewdFillContainerPenis-success-self-popup = You finish inside {THE($
 interaction-LewdFillContainerPenis-delayed-others-popup = {interaction-LewdFillContainerBreast-delayed-others-popup}
 interaction-LewdFillContainerPenis-success-others-popup = {interaction-LewdFillContainerBreast-success-others-popup}
 
+interaction-LewdFillStructurePenis-name = Cum (into structure)
+# User == Target
+interaction-LewdFillStructurePenis-delayed-self-popup = {interaction-LewdFillContainerPenis-delayed-self-popup}
+interaction-LewdFillStructurePenis-success-self-popup = {interaction-LewdFillContainerPenis-success-self-popup}
+# Others.
+interaction-LewdFillStructurePenis-delayed-others-popup = {interaction-LewdFillContainerBreast-delayed-others-popup}
+interaction-LewdFillStructurePenis-success-others-popup = {interaction-LewdFillContainerBreast-success-others-popup}
+
 # Frankly idfk what you call this, I'm only adding this because there are recipes that need natural lubricant.
 interaction-LewdFillContainerVagina-name = Squirt (into container)
 # User == Target

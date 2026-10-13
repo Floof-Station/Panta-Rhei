@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Server._Floof.GameTicking;
 using Content.Server.GameTicking;
 using Content.Server.RoundEnd;
 using Content.Server.StationEvents.Components;
@@ -29,6 +30,8 @@ public sealed class EventManagerSystem : EntitySystem
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
 
+    private StationEventCondition.Dependencies _eventConditionDeps = default!; // Floof
+
     public Dictionary<EntityPrototype, StationEventComponent>? AllEventCache;
 
     public override void Initialize()
@@ -38,6 +41,9 @@ public sealed class EventManagerSystem : EntitySystem
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         Subs.CVar(_configurationManager, CCVars.EventsEnabled, SetEnabled, true);
+
+        _eventConditionDeps = new(EntityManager, GameTicker, this); // Floof
+        _eventConditionDeps.Initialize();
     }
 
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
@@ -272,6 +278,8 @@ public sealed class EventManagerSystem : EntitySystem
 
         var result = new Dictionary<EntityPrototype, StationEventComponent>();
 
+        _eventConditionDeps.Update(); // Floof
+
         foreach (var (proto, stationEvent) in AllEvents())
         {
             if (CanRun(proto, stationEvent, playerCount, currentTime))
@@ -370,6 +378,13 @@ public sealed class EventManagerSystem : EntitySystem
             return false;
         }
         // Nyano - End modified code block.
+
+        // Floof section - custom conditions
+        if (stationEvent.Conditions is { } conditions
+            && conditions.Any(it => it.Inverted ^ !it.IsMet(prototype, stationEvent, _eventConditionDeps))
+           )
+            return false;
+        // Floof section end
 
         if (_roundEnd.IsRoundEndRequested() && !stationEvent.OccursDuringRoundEnd)
         {

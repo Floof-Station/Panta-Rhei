@@ -62,9 +62,11 @@
 - type: loadout
   id: CorpsmanGlasses
   equipment:
-    eyes: ClothingEyesGlassesCorpsman
+    #eyes: ClothingEyesGlassesCorpsman # Euph - research locked
+    eyes: ClothingEyesGlassesSunglasses # Euph - replacement glasses
 
-- type: loadout
-  id: PrescriptionCorpsmanGlasses
-  equipment:
-    eyes: ClothingEyesPrescriptionCorpsmanGlasses
+# Euph - research locked | replace with presc sunglasses later
+#- type: loadout
+#  id: PrescriptionCorpsmanGlasses
+#  equipment:
+#    eyes: ClothingEyesPrescriptionCorpsmanGlasses

@@ -121,3 +121,112 @@
         reagents:
         - ReagentId: PeanutButter
           Quantity: 100 # DeltaV - More reagents for chefs
+
+# Syrups
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerBlackberrySyrup
+  name: blackberry syrup bottle
+  description: A bottle of blackberry syrup.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/syrup.rsi
+    state: syrup_blackberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: BlackberrySyrup
+          Quantity: 100
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerBlueberrySyrup
+  name: blueberry syrup bottle
+  description: A bottle of blueberry syrup.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/syrup.rsi
+    state: syrup_blueberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: BlueberrySyrup
+          Quantity: 100
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerBlueRaspberrySyrup
+  name: blue raspberry syrup bottle
+  description: A bottle of blue raspberry syrup.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/syrup.rsi
+    state: syrup_blue_raspberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: BlueRaspberrySyrup
+          Quantity: 100
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerChocolateSyrup
+  name: chocolate syrup bottle
+  description: A bottle of chocolate syrup.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/syrup.rsi
+    state: syrup_chocolate
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: ChocolateSyrup
+          Quantity: 100
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerRaspberrySyrup
+  name: raspberry syrup bottle
+  description: A bottle of raspberry syrup.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/syrup.rsi
+    state: syrup_raspberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: RaspberrySyrup
+          Quantity: 100
+
+- type: entity
+  parent: [ReagentPacketBase, ItemHeftyBase]
+  id: ReagentContainerStrawberrySyrup
+  name: strawberry syrup bottle
+  description: A bottle of strawberry syrup.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/syrup.rsi
+    state: syrup_strawberry
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 100
+        reagents:
+        - ReagentId: StrawberrySyrup
+          Quantity: 100
