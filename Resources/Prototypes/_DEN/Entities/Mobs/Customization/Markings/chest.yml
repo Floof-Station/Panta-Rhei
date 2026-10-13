@@ -1,0 +1,20 @@
+- type: marking
+  id: BustyChest
+  bodyPart: Chest
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+    layers:
+      busty_breasts:
+        type:
+          !type:SkinColoring
+      busty_nipples:
+        type:
+          !type:SimpleColoring
+            color: "#f29835"
+  sprites:
+    - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+      state: busty_breasts
+    - sprite: _DEN/Mobs/Customization/Undershirt/busty_bosom.rsi
+      state: busty_nipples

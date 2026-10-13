@@ -367,7 +367,9 @@ public abstract partial class SharedBuckleSystem
 
         var xform = Transform(buckle);
         var coords = new EntityCoordinates(strap, strap.Comp.BuckleOffset);
-        _transform.SetCoordinates(buckle, xform, coords, rotation: Angle.Zero);
+        //_transform.SetCoordinates(buckle, xform, coords, rotation: Angle.Zero);
+        //Euphoria | Let furniture set custom starting rotations
+        _transform.SetCoordinates(buckle, xform, coords, rotation: strap.Comp.Facing);
 
         _joints.SetRelay(buckle, strap);
 

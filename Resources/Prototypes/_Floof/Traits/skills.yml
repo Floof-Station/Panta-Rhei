@@ -24,9 +24,15 @@
   category: Skills
   cost: 2
   conditions:
-  - !type:HasCompCondition
+  - !type:OneOfSpeciesCondition # These species are innately capable of this already.
     invert: true
-    component: PseudoItem
+    species:
+      - Felinid
+      - Tajaran
+      - Allulalo
+      - Resomi
+      - Kitsune
+      - Rodentia
   effects:
     - !type:OverrideCompsEffect
       components:

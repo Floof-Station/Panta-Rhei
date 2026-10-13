@@ -1,0 +1,73 @@
+﻿# technically taiyaki are cakes but they should have thier own file
+- type: entity
+  parent: FoodMealBase
+  id: FoodTaiyakiBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30 # 5u extra room for any sauce or toppings
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: IceCream
+          Quantity: 10
+  - type: Item
+
+- type: entity
+  parent: FoodTaiyakiBase
+  id: FoodTaiyakiPlain # this is the base for the other flavors
+  name: Plain Taiyaki
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+    state: taiyaki-plain
+
+# these will use the plain taiyaki with berries or other items to make the other flavors
+- type: entity
+  parent: FoodTaiyakiBase
+  id: FoodTaiyakiBlueberry
+  name: Blueberry Taiyaki
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+    state: taiyaki-blueberry
+
+- type: entity
+  parent: FoodTaiyakiBase
+  id: FoodTaiyakiStrawberry
+  name: Strawberry Taiyaki
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+    state: taiyaki-strawberry
+
+- type: entity
+  parent: FoodTaiyakiBase
+  id: FoodTaiyakiRaspberry
+  name: Raspberry Taiyaki
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+    state: taiyaki-raspberry
+
+- type: entity
+  parent: FoodTaiyakiBase
+  id: FoodTaiyakiChocolate
+  name: Chocolate Taiyaki
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+    state: taiyaki-chocolate
+
+- type: entity
+  parent: FoodTaiyakiBase
+  id: FoodTaiyakiBlueRaspberry
+  name: Blue Raspberry Taiyaki
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/taiyaki.rsi
+    state: taiyaki-blueraspberry

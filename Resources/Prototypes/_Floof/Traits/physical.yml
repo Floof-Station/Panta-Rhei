@@ -1,4 +1,4 @@
-# =================     Bionics    ================== #
+﻿# =================     Bionics    ================== #
 - type: trait
   id: CyberEyesFlare
   name: trait-name-CyberEyesFlare
@@ -192,6 +192,7 @@
       - Harpy # Harpies already have talons
       - Arachnid # Apparently they have a "piercing" bite
       - Feroxi # Floof - They bite. Piercing damage. Nuff said.
+      - Allulalo # Euphoria - They also bite. Piercing damage as well. Nuff said.
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
@@ -223,6 +224,7 @@
       - Rodentia # Floof - Rodentia already has it
       - Resomi # Floof - they have claws after port of Goob changes
       - Feroxi # Floof - They bite. Nuff said.
+      - Allulalo # Euphoria - They also bite. Nuff said.
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
@@ -254,6 +256,7 @@
       - Arachne
       - IPC # Other species could justify getting this trait for Blunt stamina damage,
               # but 6 blunt -> 5 blunt is a straight up downgrade.
+      - Allulalo # Euphoria - No punching, only biting. Unlike the Feroxi, they literally can only bite for the most part.
   effects:
     - !type:ModifyUnarmedTraitEffect
       soundHit:
@@ -872,3 +875,21 @@
   - !type:SetInventoryEffect
     speciesId: vulpkanin # for the snooties
 
+- type: trait
+  id: Preening
+  name: trait-very-preening-name
+  description: trait-very-preening-description
+  category: Skills
+  cost: 2
+  conditions:
+  - !type:OneOfSpeciesCondition # only the below species can take the trait
+    invert: false
+    species:
+    - Harpy
+    - Resomi
+    - Allulalo
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: Preenable
+      featherPrototype: AvaliFeather

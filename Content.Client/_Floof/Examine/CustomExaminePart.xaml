@@ -14,7 +14,8 @@
             <TextEdit
                 Name="Content"
                 HorizontalExpand="True"
-                SetHeight="150"
+                VerticalExpand="True"
+                MinHeight="150"
                 ToolTip="{Loc 'custom-exam-part-content-tooltip'}"
                 TooltipDelay="0.5"/>
 

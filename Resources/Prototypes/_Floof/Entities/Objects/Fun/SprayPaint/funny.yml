@@ -1,7 +1,7 @@
 - type: entity
   parent: PaintBase
   id: FunnyPaint
-  name: funny paint
+  name: pink funny paint
   description:  A tin of funny paint, manufactured by Honk! Co.
   components:
   - type: ColorPaint
@@ -19,11 +19,11 @@
 - type: entity
   parent: PaintBase
   id: FunnyPaintYellow
-  name: funny paint
-  description:  A tin of funny paint, manufactured by Honk! Co.
+  name: yellow funny paint
+  description:  A tin of funny paint, manufactured by Honk! Co. Smells like bananas.
   components:
   - type: ColorPaint
-    color: "#d5e028"
+    color: "#ffff00"
   - type: Item
     sprite: _Floof/Objects/Fun/spraycans.rsi
     heldPrefix: clown

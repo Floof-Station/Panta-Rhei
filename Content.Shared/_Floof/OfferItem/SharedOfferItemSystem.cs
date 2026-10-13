@@ -16,7 +16,7 @@ using Robust.Shared.Timing;
 // If you ever happen to touch this again, please do your best to document your changes and try to resolve mysteries surrounding this code.
 // I did what I could to document the parts I managed to understand, but there is still more truth to be unveiled.
 //
-// HOURS_WASTED_HERE_FLOOFSTATION = 10
+// HOURS_WASTED_HERE_FLOOFSTATION = 12
 // HOURS_WASTED_HERE_DELTAV = 1
 
 namespace Content.Shared._Floof.OfferItem;
@@ -48,6 +48,9 @@ public abstract partial class SharedOfferItemSystem : EntitySystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
+
+        if (_net.IsClient) // Euph - client can't predict for shit
+            return;
 
         var query = EntityQueryEnumerator<OfferItemComponent, HandsComponent>();
         while (query.MoveNext(out var uid, out var offerItem, out var hands))

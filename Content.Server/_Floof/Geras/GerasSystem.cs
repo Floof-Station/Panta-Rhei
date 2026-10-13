@@ -1,5 +1,6 @@
 using Content.Server.Actions;
 using Content.Server.Body;
+using Content.Server.Goobstation.Ghostbar.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Shared._Floof.Geras;
@@ -45,11 +46,22 @@ public sealed class GerasSystem : EntitySystem
             return; // i hate zomber.
 
         var colors = GrabHumanoidColors(uid); // begin imp
+
+        var isGhostbarPlayer = HasComp<GhostBarPlayerComponent>(uid);
+        if (isGhostbarPlayer)
+            RemComp<GhostBarPlayerComponent>(uid);
+
         var ent = _polymorphSystem.PolymorphEntity(uid, component.GerasPolymorphId);
+
+        if (ent is null)
+            return;
+
+        if (isGhostbarPlayer)
+            EnsureComp<GhostBarPlayerComponent>(ent.Value);
 
         if (colors is {} colorsfr) // Match Geras to Humanoid Skin color
         {
-            (var skinColor, var eyeColor) = (colorsfr.SkinColor, colorsfr.SkinColor);
+            (var skinColor, var eyeColor) = (colorsfr.SkinColor, colorsfr.EyeColor);
             if (TryComp<RandomSpriteComponent>(ent, out var randomSprite)) // has to use random sprite
             {
                 foreach (var entry in randomSprite.Selected)
@@ -66,8 +78,6 @@ public sealed class GerasSystem : EntitySystem
                 Dirty(ent.Value, randomSprite);
             }
         } // end imp
-
-
 
         if (!ent.HasValue)
             return;

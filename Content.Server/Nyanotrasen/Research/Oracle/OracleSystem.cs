@@ -184,7 +184,8 @@ public sealed class OracleSystem : EntitySystem
 
         while (i != 0)
         {
-            var entityToSpawn = _random.Next(0, 2) == 0 ? "MaterialBluespace1" : "CrystalNormality";
+            // Euph - chance of normality lowered 10-fold
+            var entityToSpawn = _random.Next(0, 20) == 0 ? "CrystalNormality" : "MaterialBluespace1";
             Spawn(entityToSpawn, Transform(user).Coordinates);
             i--;
         }

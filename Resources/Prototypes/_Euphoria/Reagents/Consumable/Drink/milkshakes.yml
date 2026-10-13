@@ -1,0 +1,174 @@
+﻿- type: reagent
+  abstract: true
+  parent: BaseDrink
+  id: BaseDrinkMilkShake
+  group: MilkShakes
+  metamorphicMaxFillLevels: 4
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  footstepSound:
+    collection: FootstepSlime
+
+- type: reagent
+  id: BlackberryShake
+  name: reagent-name-blackberry-milkshake
+  parent: BaseDrinkMilkShake
+  desc: reagent-desc-blackberry-milkshake
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#3e0930"
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/blackberry_shake.rsi
+    state: icon-empty
+
+- type: reagent
+  id: BlueberryShake
+  name: reagent-name-blueberry-milkshake
+  parent: BaseDrinkMilkShake
+  desc: reagent-desc-blueberry-milkshake
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#312581"
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/blueberry_shake.rsi
+    state: icon-empty
+
+- type: reagent
+  id: BlueraspberryShake
+  name: reagent-name-blueraspberry-milkshake
+  parent: BaseDrinkMilkShake
+  desc: reagent-desc-blueraspberry-milkshake
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#0cbfe9"
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/blueraspberry_shake.rsi
+    state: icon-empty
+
+- type: reagent
+  id: ChocolateShake
+  name: reagent-name-chocolate-milkshake
+  parent: BaseDrinkMilkShake
+  desc: reagent-desc-chocolate-milkshake
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#713600"
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/chocolate_shake.rsi
+    state: icon-empty
+
+- type: reagent
+  id: RaspberryShake
+  name: reagent-name-raspberry-milkshake
+  parent: BaseDrinkMilkShake
+  desc: reagent-desc-raspberry-milkshake
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#872657"
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/raspberry_shake.rsi
+    state: icon-empty
+
+- type: reagent
+  id: StrawberryShake
+  name: reagent-name-strawberry-milkshake
+  parent: BaseDrinkMilkShake
+  desc: reagent-desc-strawberry-milkshake
+  physicalDesc: reagent-physical-desc-aromatic
+  flavor: sweet
+  color: "#FA5053"
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 6
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/Milkshakes/strawberry_shake.rsi
+    state: icon-empty
+
+# Syrup for the iscream
+
+- type: reagent
+  id: BlackberrySyrup
+  name: reagent-name-blackberry-syrup
+  parent: BaseJuice
+  desc: reagent-desc-blackberry-syrup
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#3e0930"
+  group: MilkShakes
+
+- type: reagent
+  id: BlueberrySyrup
+  name: reagent-name-blueberry-syrup
+  parent: BaseJuice
+  desc: reagent-desc-blueberry-syrup
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#312581"
+  group: MilkShakes
+
+- type: reagent
+  id: RaspberrySyrup
+  name: reagent-name-raspberry-syrup
+  parent: BaseJuice
+  desc: reagent-desc-raspberry-syrup
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#872657"
+  group: MilkShakes
+
+- type: reagent
+  id: BlueRaspberrySyrup
+  name: reagent-name-blueraspberry-syrup
+  parent: BaseJuice
+  desc: reagent-desc-blueraspberry-syrup
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#0cbfe9"
+  group: MilkShakes
+
+- type: reagent
+  id: StrawberrySyrup
+  name: reagent-name-strawberry-syrup
+  parent: BaseJuice
+  desc: reagent-desc-strawberry-syrup
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#FA5053"
+  group: MilkShakes
+
+- type: reagent
+  id: ChocolateSyrup
+  name: reagent-name-chocolate-syrup
+  parent: BaseJuice
+  desc: reagent-desc-chocolate-syrup
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: sweet
+  color: "#713600"
+  group: MilkShakes

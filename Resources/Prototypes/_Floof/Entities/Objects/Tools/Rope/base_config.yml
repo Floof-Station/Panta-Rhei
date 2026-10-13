@@ -1,0 +1,49 @@
+# Base configuration
+- type: ropeConfiguration
+  id: BaseRopeConfig
+  abstract: true
+  dataPrototype: RopeDataBase
+
+# Base entity prototype for rope links
+- type: entity
+  id: RopeLinkBase
+  name: rope link
+  description: You shouldn't see this.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: CollisionWake
+  - type: GravityAffected
+  - type: Physics
+    bodyType: Dynamic
+    fixedRotation: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.15 # This should be plenty enough to avoid phasing through walls, i think.
+          position: 0,0
+        density: 10 # A 10-segment leash will weigh something below 6 kg
+        mask:
+        - ItemMask
+        layer: [] # nothing can collide with it, mostly for performance reasons
+        restitution: 0.3
+        friction: 0.2
+  - type: Pullable # You can try.
+  - type: PortalBlock # Best not.
+  - type: CargoSellBlacklist
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+
+# Base rope data entity
+- type: entity
+  id: RopeDataBase
+  name: rope data entity
+  description: You shouldn't see this.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Tag
+    tags:
+    - HideContextMenu

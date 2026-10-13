@@ -101,7 +101,7 @@
   - type: DrainableSolution
     solution: drainBuffer
   - type: AdvDrain
-    unitsDestroyedThreshold: 600
+    #unitsDestroyedThreshold: 600 # Euphoria - no longer exists since we have it capped instead
   - type: DumpableSolution
     solution: drainBuffer
   - type: PowerCellSlot

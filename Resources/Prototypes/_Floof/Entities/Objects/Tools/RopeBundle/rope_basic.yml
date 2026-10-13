@@ -1,0 +1,34 @@
+- type: entity
+  id: RopeBundleBasic
+  parent: RopeBundleBase
+  name: rope bundle
+  description: A bundle of rope used to connect objects together.
+  components:
+  - type: Sprite
+    state: icon
+  - type: RopeConnector
+    ropePrototype: RopeBasic20
+
+# Rope configuration
+- type: ropeConfiguration
+  id: RopeBasic20
+  links: 20
+  linkPrototype: RopeLinkBasic
+  dataPrototype: RopeDataBasic
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: rope
+
+# Link entity
+- type: entity
+  id: RopeLinkBasic
+  parent: RopeLinkStandardRope
+  name: basic rope link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataBasic
+  parent: RopeDataStandardRope
+  name: basic rope
+  categories: [ HideSpawnMenu ]

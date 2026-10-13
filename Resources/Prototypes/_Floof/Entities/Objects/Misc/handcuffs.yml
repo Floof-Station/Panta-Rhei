@@ -5,9 +5,18 @@
   parent: Handcuffs
   components:
   - type: Handcuff
-    breakoutTime: 3 # allow for easily breaking out since these aren't meant for security use
+    breakoutTime: 1 # allow for easily breaking out since these aren't meant for security use
     cuffedRSI: _Floof/Objects/Misc/fuzzy_cuffs.rsi
     bodyIconState: body-overlay
   - type: Sprite
     sprite: _Floof/Objects/Misc/fuzzy_cuffs.rsi
     state: handcuff
+
+- type: entity
+  name: play cuffs
+  description: Used to detain "criminals".
+  id: PlayHandcuffs
+  parent: Handcuffs
+  components:
+  - type: Handcuff
+    breakoutTime: 1

@@ -1,0 +1,17 @@
+﻿- type: loadout
+  id: ClothingBeltCombatUtilityAdvanced
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: FloofAdvancedSecTechTimer
+  equipment:
+    belt: ClothingBeltCombatUtilityAdvanced
+
+# timers for special options
+- type: loadoutEffectGroup
+  id: FloofAdvancedSecTechTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSecurityTechnician
+      time: 15h # Match Engineers Powertool belts

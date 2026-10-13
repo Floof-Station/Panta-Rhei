@@ -1,5 +1,6 @@
 using Content.Server.Access.Systems;
 using Content.Server.Actions;
+using Content.Server.Goobstation.Ghostbar.Components;
 using Content.Server.Polymorph.Systems;
 using Content.Server.Popups;
 using Content.Shared._DV.Abilities.Kitsune;
@@ -41,6 +42,13 @@ public sealed class KitsuneSystem : SharedKitsuneSystem
         newKitsune.Color = oldKitsune.Color;
         newKitsune.ColorLight = oldKitsune.ColorLight;
         _appearance.SetData(newEntity, KitsuneColorVisuals.Color, newKitsune.Color ?? Color.Orange);
+
+        // Euphoria addition start:
+        // We need to pass the ghostbarplayercomp to track polymophred kistune in the ghostbar
+        // this will make it so if they ghost when in fox form, the fox form gets deleted
+        if (HasComp<GhostBarPlayerComponent>(oldEntity))
+            EnsureComp<GhostBarPlayerComponent>(newEntity);
+        // Euphoria additions end
 
         // Ensure that the fox fire action state is transferred properly.
         newKitsune.ActiveFoxFires = oldKitsune.ActiveFoxFires;

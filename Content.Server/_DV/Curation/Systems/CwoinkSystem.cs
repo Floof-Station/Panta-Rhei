@@ -40,7 +40,7 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
 
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IAdminManager _adminManager = default!;
-    [Dependency] private readonly IBanManager _banManager = default!; // Starlight
+   // [Dependency] private readonly IBanManager _banManager = default!; // Starlight //Euphoria, Unused.
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly IPlayerLocator _playerLocator = default!;
@@ -79,7 +79,7 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
     // Should be shorter than DescriptionMax
     private const ushort MessageLengthCap = 3000;
 
-    private readonly TimeSpan _messageCooldown = TimeSpan.FromSeconds(2);
+    private readonly TimeSpan _messageCooldown = TimeSpan.FromSeconds(0); //Euphoria, Everyone is getting tired of dropped messages cause of this.
 
     private readonly Queue<(NetUserId Channel, string Text, TimeSpan Timestamp)> _recentMessages = new();
     private const int MaxRecentMessages = 10;
@@ -728,8 +728,9 @@ public sealed partial class CwoinkSystem : SharedCwoinkSystem
         if (IsOnCooldown(message.UserId, currentTime))
             return;
 
-        if (IsSpam(message.UserId, message.Text))
-            _banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 0, NoteSeverity.High, "Automatic AHELP Antispam system Ban, If this ban is wrong, file an appeal.");
+        //if (IsSpam(message.UserId, message.Text))
+            //_banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 0, NoteSeverity.High, "Automatic AHELP Antispam system Ban, If this ban is wrong, file an appeal.");
+            //Euphoria, Since we are a invite only server we dont need a autoban for raiders.
 
         AddToRecentMessages(message.UserId, message.Text, currentTime);
         // End Starlight Changes

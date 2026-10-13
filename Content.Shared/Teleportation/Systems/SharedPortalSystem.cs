@@ -96,6 +96,10 @@ public abstract class SharedPortalSystem : EntitySystem
         if (Transform(subject).Anchored)
             return;
 
+        // Euph
+        if (HasComp<PortalBlockComponent>(subject))
+            return;
+
         // break pulls before portal enter so we don't break shit
         if (TryComp<PullableComponent>(subject, out var pullable) && pullable.BeingPulled)
         {
@@ -232,6 +236,18 @@ public abstract class SharedPortalSystem : EntitySystem
             return;
         }
 
+        // Begin Euphoria additions
+        var beforeEv = new BeforeTeleportedEvent { Subject = subject, Portal = ent };
+        RaiseLocalEvent(subject, beforeEv); // Euph
+
+        if (beforeEv.Cancelled)
+        {
+            if (beforeEv.CancelReason is {} cancelReason && _netMan.IsServer)
+                _popup.PopupEntity(cancelReason, subject);
+            return;
+        }
+        // End Euphoria additions
+
         var arrivalSound = CompOrNull<PortalComponent>(targetEntity)?.ArrivalSound ?? ent.Comp.ArrivalSound;
         var departureSound = ent.Comp.DepartureSound;
 
@@ -246,7 +262,7 @@ public abstract class SharedPortalSystem : EntitySystem
         LogTeleport(ent, subject, Transform(subject).Coordinates, target);
 
         _transform.SetCoordinates(subject, target);
-        RaiseLocalEvent(subject, new TeleportedEvent { Subject = subject }, true); // Floofstation. Note that this is raised broadcast.
+        RaiseLocalEvent(subject, new TeleportedEvent { Subject = subject, Portal = ent }); // Euph
 
         if (!playSound)
             return;
@@ -287,9 +303,27 @@ public abstract class SharedPortalSystem : EntitySystem
     }
 }
 
-// Floofstation - remove when upstream adds something similar
-// This is needed to let the leash system know the entity has been teleported and break the leash joint if necessary
+//Begin Euphoria additions
+/// <summary>
+///     Raised on an entity before it is teleported.
+/// </summary>
+public sealed class BeforeTeleportedEvent : CancellableEntityEventArgs
+{
+    public EntityUid Subject;
+    public EntityUid Portal;
+
+    /// <summary>
+    ///     If the event is not null and this field is set, a popup will be shown above the portal.
+    /// </summary>
+    public string? CancelReason;
+}
+
+/// <summary>
+///     Raised on an entity after it is teleported.
+/// </summary>
 public sealed class TeleportedEvent : EntityEventArgs
 {
     public EntityUid Subject;
+    public EntityUid Portal;
 }
+// End Euphoria additions

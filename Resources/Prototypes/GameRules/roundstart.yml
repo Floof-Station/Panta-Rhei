@@ -633,7 +633,7 @@
       min: 1200 # 20 mins
       max: 7200 # 120 mins # you probably arent getting a second visitor shuttle in one round, but it is possible.
     scheduledGameRules: !type:NestedSelector
-      prob: 0.05 # Only 1 in 20 rounds...
+      prob: 0.5 # Only 1 in 20 rounds... # Euph - increased 10-fold
       tableId: SpaceTrafficControlTable
 
 # variation passes

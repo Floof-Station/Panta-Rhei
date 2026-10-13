@@ -349,46 +349,46 @@
   id: Allulalo
   onlyGroupWhitelisted: false # Euph - species can use common markings
   limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 0
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 0
-      required: false
-    enum.HumanoidVisualLayers.Head:
-      limit: 3
-      required: false
+#    enum.HumanoidVisualLayers.Hair:
+#      limit: 0
+#      required: false
+#    enum.HumanoidVisualLayers.FacialHair:
+#      limit: 0
+#      required: false
+#    enum.HumanoidVisualLayers.Head:
+#      limit: 3
+#      required: false
     enum.HumanoidVisualLayers.Eyes:
-      limit: 1
+      limit: 10
       required: true
       default: [ AllulaloEyesDefault ]
-    enum.HumanoidVisualLayers.HeadTop:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.Snout:
-      limit: 1
-      required: false
+#    enum.HumanoidVisualLayers.HeadTop:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.Snout:
+#      limit: 1
+#      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2
       required: true
       default: [ AllulaloTailDefault ]
-    enum.HumanoidVisualLayers.LArm:
-      limit: 2
-      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      limit: 2
+#      required: false
     enum.HumanoidVisualLayers.RArm:
-      limit: 1
+      limit: 10
       required: true
       default: [ AllulaloWingsDefault ]
-    enum.HumanoidVisualLayers.LLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LFoot:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.RFoot:
-      limit: 2
-      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LFoot:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.RFoot:
+#      limit: 2
+#      required: false
 # End Delta V Additions

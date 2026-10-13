@@ -32,6 +32,7 @@
   description: trait-no-paradox-clone-desc
   category: Meta
   # Euphoria changes start - any role can take this trait
+  usesSlots: false
   #conditions:
   #- !type:InDepartmentCondition
   #  department: Command

@@ -65,8 +65,6 @@ namespace Content.Shared.Humanoid
                     yield return HumanoidVisualLayers.RFoot;
                     break;
                 case HumanoidVisualLayers.Chest:
-                    yield return HumanoidVisualLayers.ChestBelow1; // Euph
-                    yield return HumanoidVisualLayers.ChestBelow2; // Euph
                     yield return HumanoidVisualLayers.Chest;
                     yield return HumanoidVisualLayers.Tail;
                     yield return HumanoidVisualLayers.TailBehind; // Euph

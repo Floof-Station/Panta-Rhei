@@ -1,39 +1,39 @@
 - type: markingsGroup
   id: Kitsune
-  parent: Undergarments
-  limits:
-    enum.HumanoidVisualLayers.Hair:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.FacialHair:
-      limit: 1
-      required: false
-    enum.HumanoidVisualLayers.Snout:
-      limit: 1
-      required: false
+  parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
+  limits: # Euph - Switch to common markings
+#    enum.HumanoidVisualLayers.Hair:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.FacialHair:
+#      limit: 1
+#      required: false
+#    enum.HumanoidVisualLayers.Snout:
+#      limit: 1
+#      required: false
     enum.HumanoidVisualLayers.Tail:
-      limit: 1
+      limit: 2 # Euph - Tail slots increased to 2
       required: true
       default: [ KitsuneTailDefault ]
     enum.HumanoidVisualLayers.HeadTop:
       limit: 1
       required: true
       default: [ KitsuneEarsDefault ]
-    enum.HumanoidVisualLayers.Chest:
-      limit: 2
-      required: false
-    enum.HumanoidVisualLayers.LLeg:
-      limit: 4
-      required: false
-    enum.HumanoidVisualLayers.RLeg:
-      limit: 4
-      required: false
-    enum.HumanoidVisualLayers.LArm:
-      limit: 4
-      required: false
-    enum.HumanoidVisualLayers.RArm:
-      limit: 4
-      required: false
+#    enum.HumanoidVisualLayers.Chest:
+#      limit: 2
+#      required: false
+#    enum.HumanoidVisualLayers.LLeg:
+#      limit: 4
+#      required: false
+#    enum.HumanoidVisualLayers.RLeg:
+#      limit: 4
+#      required: false
+#    enum.HumanoidVisualLayers.LArm:
+#      limit: 4
+#      required: false
+#    enum.HumanoidVisualLayers.RArm:
+#      limit: 4
+#      required: false
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -111,11 +111,13 @@
       Unsexed: MaleKitsune
   - type: TypingIndicator
     proto: kitsune
-  - type: InteractionPopup
-    interactSuccessString: petting-success-soft-floofy-kitsune
-    interactSuccessSpawn: EffectHearts
-    interactSuccessSound:
-      path: /Audio/Animals/fox_squeak.ogg
+  # Euphroia change start - we made this a trait so its opt in
+  #- type: InteractionPopup
+  #  interactSuccessString: petting-success-soft-floofy-kitsune
+  #  interactSuccessSpawn: EffectHearts
+  #  interactSuccessSound:
+  #    path: /Audio/Animals/fox_squeak.ogg
+  # Euphoria change end
   - type: Kitsune
   - type: PotentialPsionic
     speciesBonusChance: 0.05 # Additional 5% chance to roll a psionic power.

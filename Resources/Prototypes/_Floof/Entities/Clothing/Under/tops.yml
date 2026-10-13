@@ -560,3 +560,95 @@
     clothingVisuals:
       undergarmentTop:
       - state: striped_bra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBustySleeveless
+  name: busty sleeveless top
+  description: "A sleeveless top for the more endowed."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    state: busty_shortsleeve
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: busty_shortsleeve
+      - state: busty_collar
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBustyLongsleeve
+  name: busty longsleeved top
+  description: "A longsleeved top for the more endowed."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    state: busty_longsleeve
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: busty_longsleeve
+      - state: busty_collar
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBustyWindowedTop
+  name: busty windowed top
+  description: "A sleeveless top with a window for cleavage."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    state: busty_windowedtop
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: busty_windowedtop
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBustyBra
+  name: busty bra
+  description: "A bra for the big-breasted."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    state: busty_bra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: busty_bra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBustySportsBra
+  name: busty bra
+  description: "A sports bra to keep those knockers from bouncing."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    state: busty_sportsbra
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: busty_sportsbra
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBustyHalterneck
+  name: busty bra
+  description: "A halterneck bra. It's barely keeping those things in."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    state: busty_halterneck
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Tops/busty_tops.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: busty_halterneck

@@ -50,11 +50,15 @@ public sealed class ColorPaintRemoverSystem : EntitySystem
             || !TryComp(target, out ColorPaintedComponent? paint))
             return;
 
+        var oldColor = paint.Color;
+
         paint.Enabled = false;
         _audio.PlayPredicted(component.Sound, target, args.User);
         _popup.PopupClient(Loc.GetString("paint-removed", ("target", target)), args.User, args.User, PopupType.Medium);
         _appearanceSystem.RemoveData(target, PaintVisuals.Painted);
         RemComp<ColorPaintedComponent>(target);
+
+        RaiseLocalEvent(target, new ColorPaintChangedEvent(oldColor, null));
 
         args.Handled = true;
     }

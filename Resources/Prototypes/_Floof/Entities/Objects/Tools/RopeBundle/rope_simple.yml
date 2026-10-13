@@ -1,0 +1,34 @@
+- type: entity
+  id: RopeBundleDurathread
+  parent: RopeBundleBase
+  name: simple rope bundle
+  description: A bundle of rope used to connect objects together.
+  components:
+  - type: Sprite
+    state: icon-simple
+  - type: RopeConnector
+    ropePrototype: RopeDurathread20
+
+# Rope configuration
+- type: ropeConfiguration
+  id: RopeDurathread20
+  links: 20
+  linkPrototype: RopeLinkDurathread
+  dataPrototype: RopeDataDurathread
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: rope-simple
+
+# Link entity
+- type: entity
+  id: RopeLinkDurathread
+  parent: RopeLinkStandardRope
+  name: durathread rope link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataDurathread
+  parent: RopeDataStandardRope
+  name: durathread rope
+  categories: [ HideSpawnMenu ]
