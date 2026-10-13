@@ -14,7 +14,7 @@ namespace Content.Shared._Euphoria.Surgery.Components;
 public sealed partial class SurgeryComponent : Component
 {
     [DataField]
-    public List<ProtoId<SurgeryActionPrototype>> SurgeryActions = new();
+    public ProtoId<SurgeryListPrototype> SurgeryList = default!;
 
     [DataField]
     public Dictionary<ProtoId<OrganCategoryPrototype>, Dictionary<EntityUid,Dictionary<ProtoId<SurgeryStatePrototype>,bool>>> DictOrgans = new();

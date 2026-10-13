@@ -183,7 +183,9 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         //Add filter system here to only give surgeries that are available at the time.
         var ev = new SurgeryGetActionsEvent((uid, component), getUnavailable);
-        AddSurgeries(ev.Surgeries, component.SurgeryActions);
+        var surgeries = getSurgeries(component);
+        if (surgeries != null)
+            AddSurgeries(ev.Surgeries, surgeries);
         RaiseLocalEvent(uid, ev);
 
         bool addThis = true;
@@ -417,5 +419,13 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             }
         }
 
+    }
+
+    public List<ProtoId<SurgeryActionPrototype>>? getSurgeries(SurgeryComponent surgery)
+    {
+        if (_proto.TryIndex(surgery.SurgeryList, out var proto))
+            return proto.Actions;
+        else
+            return null;
     }
 }
