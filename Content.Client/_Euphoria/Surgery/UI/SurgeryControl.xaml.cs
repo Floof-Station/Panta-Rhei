@@ -37,7 +37,10 @@ public sealed partial class SurgeryControl : Control
     {
         var targets = surgeryActionPrototype.getTargets();
         if (targets.Length == 0)
-            SurgeryActionName.Text = surgeryActionPrototype.ID;
+            if(surgeryActionPrototype.treatment != null)
+                SurgeryActionName.Text = Loc.GetString(surgeryActionPrototype.Description);
+            else
+                SurgeryActionName.Text = surgeryActionPrototype.ID;
         else if (surgeryActionPrototype.Remove != null)
         {
             SurgeryActionName.Text = Loc.GetString(surgeryActionPrototype.Description,("bodyPart",surgeryActionPrototype.Remove));

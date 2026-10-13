@@ -13,6 +13,7 @@ using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Systems;
+using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
@@ -362,7 +363,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
     private void PerformOperation(EntityUid uid, SurgeryComponent component, SurgeryActionPrototype actionPrototype, EntityUid surgeon)
     {
-        if (!TryComp<BodyComponent>(uid,out var body))
+        if (!TryComp<BodyComponent>(uid, out var body))
             return;
         if (body.Organs == null)
             return;
@@ -370,7 +371,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         //Set the new state of the body
         if (actionPrototype._effects.Count > 0)
         {
-            foreach(var part in actionPrototype._effects)
+            foreach (var part in actionPrototype._effects)
             {
                 foreach (var effect in part.Value)
                 {
@@ -385,7 +386,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         }
 
         //Remove organ logic
-        if(actionPrototype.Remove != null)
+        if (actionPrototype.Remove != null)
         {
             var cutOut = GetTarget(body, actionPrototype.Remove.Value);
 
@@ -404,7 +405,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             foreach (var item in _handsSystem.EnumerateHeld(surgeon))
             {
                 if (TryComp<OrganComponent>(item, out var organ))
-                    if(organ.Category == actionPrototype.Insert)
+                    if (organ.Category == actionPrototype.Insert)
                     {
                         insertEntity = item;
                         break;
@@ -412,14 +413,20 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             }
 
             if (insertEntity == null)
-                _popupSystem.PopupEntity(Loc.GetString("surgery-organ-gone",("organType",actionPrototype.Insert.Value)),surgeon);
+                _popupSystem.PopupEntity(Loc.GetString("surgery-organ-gone", ("organType", actionPrototype.Insert.Value)), surgeon);
             else
             {
                 ContainerSystem.Insert(insertEntity.Value, body.Organs);
             }
         }
 
-    }
+        if (actionPrototype.treatment != null)
+        {
+            if (_proto.TryIndex(actionPrototype.treatment.Value, out var damageType))
+                _damage.TryChangeDamage(uid, new DamageSpecifier(damageType,-5.0));
+        }
+
+}
 
     public List<ProtoId<SurgeryActionPrototype>>? getSurgeries(SurgeryComponent surgery)
     {

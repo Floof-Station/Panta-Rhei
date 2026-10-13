@@ -14,6 +14,11 @@
   id: shortSurgery
   duration: 10
 
+- type: surgeryAction
+  abstract: true
+  id: treatmentSurgery
+  duration: 2
+
 #surgery common descriptions
 - type: surgeryAction
   abstract: true
@@ -85,6 +90,18 @@
     state: drill
 
 #Actual Surgery Actions
+
+#Damage repair surgeries
+- type: surgeryAction
+  parent: [retractionSurgery, treatmentSurgery]
+  id: treatBurns
+  description: surgery-treat-burns
+  states:
+    Torso:
+      skinRetracted: true
+    Head:
+      skinRetracted: true
+  treatment: Heat
 
 #Brain surgery
 - type: surgeryAction
@@ -305,10 +322,10 @@
   description: surgery-skin-cautery
   states:
     Head:
-      skinRetracted: false
+      skinRetracted: true
   effects:
     Head:
-      skinRetracted: true
+      skinRetracted: false
 
 #Head bone
 - type: surgeryAction
@@ -330,10 +347,10 @@
   states:
     Head:
       skinRetracted: true
-      boneRetracted: false
+      boneRetracted: true
   effects:
     Head:
-      boneRetracted: true
+      boneRetracted: false
 
 #Slime stuff
 - type: surgeryAction

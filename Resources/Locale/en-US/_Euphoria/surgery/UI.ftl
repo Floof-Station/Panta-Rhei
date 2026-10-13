@@ -13,6 +13,8 @@ surgery-bone-drill = Drill the bone connections inside the {$bodyPart}.
 surgery-bone-replace = Piece together the bone structure inside the {$bodyPart}.
 surgery-bone-saw = You saw away at the bones inside the {$bodyPart}.
 
+surgery-treat-burns = Remove burnt muscle and skin.
+
 surgery-slime-core-remove = Reach on in and grab that core.
 surgery-slime-core-insert = Just put the core in anywhere really.
 surgery-slime-sac-remove = Stick your hand in and pull the sacs free.

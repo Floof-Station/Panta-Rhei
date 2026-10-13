@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Body;
+using Content.Shared.Damage.Prototypes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
@@ -39,6 +40,9 @@ public sealed partial class SurgeryActionPrototype : IPrototype, IInheritingProt
 
     [DataField]
     public ProtoId<OrganCategoryPrototype>? Insert;
+
+    [DataField]
+    public ProtoId<DamageTypePrototype>? treatment;
 
     [NeverPushInheritance]
     [AbstractDataField]
