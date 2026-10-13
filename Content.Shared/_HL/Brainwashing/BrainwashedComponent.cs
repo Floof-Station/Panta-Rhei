@@ -9,7 +9,7 @@ public sealed partial class BrainwashedComponent : Component
     public bool ViewingCompulsions = false;
 
     [DataField, ViewVariables, AutoNetworkedField]
-    public List<string> Compulsions = [];
+    public List<string> Compulsions = new List<string> { "eat egg" };
 
     [DataField]
     public EntProtoId ActionPrototype = "ActionToggleCompulsionsMenu";
