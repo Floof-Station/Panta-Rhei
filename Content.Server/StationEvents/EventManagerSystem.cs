@@ -34,7 +34,7 @@ public sealed class EventManagerSystem : EntitySystem
     private void SetEnabled(bool value) => EventsEnabled = value;
 
     private StationEventCondition.Dependencies _eventConditionDeps = default!; // Floof
-    private Ticker _eventConditionsUpdateTicker = new(TimeSpan.FromSeconds(10)); // Also floof - recalculate event conditions at most every 10s.
+    private Ticker _eventConditionsUpdateTicker = new(TimeSpan.FromSeconds(30)); // Also floof - recalculate event conditions at most every 30s.
 
     public Dictionary<EntityPrototype, StationEventComponent>? AllEventCache;
 
