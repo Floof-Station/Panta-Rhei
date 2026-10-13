@@ -20,6 +20,7 @@ public sealed partial class PreyComponent : Component
     public bool ActiveDigesting;
     public float Timer;
     public int DigestPopupStage;
+    [DataField("allowSound")]
     public bool AllowSound = false;
     
 }

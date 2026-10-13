@@ -19,6 +19,7 @@ public sealed class VoreUIController : UIController, IOnStateChanged<GameplaySta
     {
         _menu = new VoreMenu();
         _menu.SetSettings(_settingsYaml);
+        _menu.SendSettingsChangedEvent();
     }
 
     public void OnStateExited(GameplayState state)

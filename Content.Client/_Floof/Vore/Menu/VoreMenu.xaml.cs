@@ -13,9 +13,9 @@ using Content.Shared._Floof.Vore;
 using System.IO;
 using YamlDotNet.RepresentationModel;
 using Robust.Shared.Serialization.Markdown;
-
 using Robust.Shared.IoC; 
 using Robust.Shared.Log; 
+using Robust.Shared.ContentPack;
 using Robust.Shared.Serialization.Markdown.Mapping; 
 using Robust.Shared.Serialization.Markdown.Value;
 namespace Content.Client._Floof.Vore.Menu;
@@ -25,8 +25,10 @@ public sealed partial class VoreMenu : DefaultWindow
 {
     private const float DefaultDigestSpeed = 100f;
     private static readonly Color DefaultStomachColor = new(0.35f, 0.01f, 0.06f);
+    private static readonly ResPath SettingsPath = new("/vore_settings.yml");
 
     [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private readonly IResourceManager _resources = default!;
     
     private ColorSelectorSliders _stomachColorSelector; 
     private readonly ISawmill _sawmill;
@@ -37,15 +39,11 @@ public sealed partial class VoreMenu : DefaultWindow
     {
         IoCManager.InjectDependencies(this); 
         RobustXamlLoader.Load(this);
-        _sawmill = Logger.GetSawmill("vore.menu");
-
-        _stomachColorSelector = new ColorSelectorSliders{
-            SelectorType = ColorSelectorSliders.ColorSelectorType.Rgb
-        };
-        RgbStomachColorContainer.AddChild(_stomachColorSelector);
+        _sawmill = Logger.GetSawmill("vore.menu");     
 
         CloseButton.OnPressed += _ => Close();
         SaveVoreSettings.OnPressed += _ => Save();
+        SaveVoreSettings.Disabled = true;
         ResetVoreSettings.OnPressed += _ => Reset();
         
 
@@ -56,24 +54,24 @@ Menu heavily WIP. Feedback is always welcome
 [head=1]Vore Menu[/head]
 
 [head=2]How to interact[/head]
-Currently there are three ways to start a vore interaction:
+Currently there are three ways to start a vore interaction with a right click:
 - by inserting yourself
 - getting devoured
 - inserting someone else by either carrying or pulling them
 If you are a prey inside another container such as for example duffelbags or by being carried you will be automatically ejected and dropped. 
-This also will allow interaction with prey inside the same vorecontainer such as yourself. 
-After a loading bar lasting seconds that allows you to cancel the action by walking away the prey will be transported inside the container with a gulp only hearable for the 2 involved entities.
-Currently a hard limit only allows you to contain [bold]3 preys maximum[/bold] not including nested vore. 
-If you decide to escape you can either struggle free using a verb through self interaction or have the pred eject you also through self interaction.
+This also will allow interaction with prey inside the same container such as yourself. 
+After a loading bar lasting seconds which allows either side to cancel the action by walking away the prey will be transported inside the container with a gulp only hearable for the 2 involved entities.
+Currently a hard limit only allows you to contain [bold]3 preys maximum[/bold] (not including nested vore). 
+If you decide to escape you can either struggle free using a verb through self interaction or have the pred eject you by using also self interaction.
 
 [head=2]Consent[/head]
 The System automatically attempts to deal with most consent issues such as:
 - not allowing interactions with disconnected players, entities that lack BodyComponent or aren't player controlled at all
 - giving prey immunities such as against space, lack of air and temperature
 - turning off prey's cords inside a container and returning them into their previous state once ejected
-- autoejecting crit or dead prey and making them not nommable in the first place 
-Turning off the related consent will also eject you from containers and vice versa empty plus remove your container.
-But [bold]remember[/bold], you are still hearable from inside with your emotes and will visually vanish during the insertion so make sure to watch out for your coworkers!
+- autoejecting crit or dead prey and making them not devourable in the first place 
+Turning off the related consent will also eject you from containers and vice versa empty plus and your container.
+But [bold]remember[/bold], you are still hearable from inside verbally and through emotes and will visually vanish during the insertion so make sure to watch out for your coworkers!
 
 
 [head=1]Types of vore[/head]
@@ -88,32 +86,46 @@ During that you will slowly fill your own hunger up by removing part of their ar
 It's possible to stop digestion the entire time after which the prey slowly regains health using their own hunger.
 But once their health reaches 0 the prey will be fully digested. 
 For others it will be like they cryoed: removal of crew manifest, reopening the job, getting rid of their belongings and the cryo announcement.
-Only you will know their fate.
+[italic]Only you will know their fate.[/italic]
 
             ");
-        InfoText.SetMessage(info, [typeof(HeadingTag)]);
+        InfoText.SetMessage(info, [typeof(HeadingTag), typeof(BoldTag), typeof(ItalicTag)]);
         InfoText.HorizontalExpand = true;
+
+        // customization buttons begin here for future additions
         AllowSound.OnToggled += _ => UnsavedChanges();
         DigestSpeed.OnValueChanged += _ =>
         {
             UpdateDigestSpeedLabel();
             UnsavedChanges();
         };
+        //double for loading value from yaml
         UpdateDigestSpeedLabel();
+        _stomachColorSelector = new ColorSelectorSliders{
+            SelectorType = ColorSelectorSliders.ColorSelectorType.Rgb
+        };
+        RgbStomachColorContainer.AddChild(_stomachColorSelector);
         _stomachColorSelector.OnColorChanged += _ => UnsavedChanges();
     }
 
-    private void UpdateDigestSpeedLabel()
-    {
+    /// <summary>
+    /// textbox inside the menu will show the updated percentage value
+    /// </summary>
+    private void UpdateDigestSpeedLabel(){
         DigestSpeedLabel.Text = ((int) MathF.Round(DigestSpeed.Value)).ToString(CultureInfo.InvariantCulture) + "%";
     }
 
-    private void UnsavedChanges()
-    {
+    /// <summary>
+    /// any changes will enable save button
+    /// </summary>
+    private void UnsavedChanges(){
         if (!_loadingSettings)
             SaveVoreSettings.Disabled = false;
     }
 
+    /// <summary>
+    /// saves settings into yaml, calling event method and disables save button
+    /// </summary>
     private void Save(){
         if (_loadingSettings)
             return;
@@ -121,21 +133,48 @@ Only you will know their fate.
         _settings["allowSound"] = new ValueDataNode(AllowSound.Pressed.ToString().ToLowerInvariant());
         _settings["digestSpeed"] = new ValueDataNode(((int) MathF.Round(DigestSpeed.Value)).ToString(CultureInfo.InvariantCulture));
         _settings["stomachColor"] = new ValueDataNode(_stomachColorSelector.Color.ToHex());
+
         using var writer = new StringWriter();
         _settings.Write(writer);
-        _entityManager.EntityNetManager.SendSystemNetworkMessage(new VoreSettingsEvent
+        try
         {
-            SettingsYaml = writer.ToString(),
-        });
+            _resources.UserData.WriteAllText(SettingsPath, writer.ToString());
+        }
+        catch (Exception e)
+        {
+            _sawmill.Error($"Failed to save local vore settings: {e}");
+        }
+
+        SendSettingsChangedEvent();
         SaveVoreSettings.Disabled = true;
     }
 
-    private void Reset()
-    {
-        SetSettings(string.Empty);
+    /// <summary>
+    /// sending the settings to server to apply to the pred and prey components alike
+    /// </summary>
+    public void SendSettingsChangedEvent(){
+        _entityManager.EntityNetManager.SendSystemNetworkMessage(new VoreSettingsChangedEvent
+        {
+            AllowSound = AllowSound.Pressed,
+            DigestSpeed = DigestSpeed.Value,
+            StomachColor = _stomachColorSelector.Color,
+        });
+    }
+
+    /// <summary>
+    /// restets settings to default and enables save button
+    /// </summary>
+    private void Reset(){
+        _settings = new MappingDataNode();
+        AllowSound.Pressed = false;
+        DigestSpeed.Value = DefaultDigestSpeed;
+        _stomachColorSelector.Color = DefaultStomachColor;
         UnsavedChanges();
     }
 
+    /// <summary>
+    /// loads settings from yaml and if invalid uses default values
+    /// </summary>
     public void SetSettings(string settingsYaml){
         var settings = new MappingDataNode();
         try{
@@ -151,6 +190,7 @@ Only you will know their fate.
             _sawmill.Error($"Error loading Vore settings: {e}");
         }
 
+        //default values if broken 
         _loadingSettings = true;
         _settings = settings;
         AllowSound.Pressed = false;
@@ -159,26 +199,20 @@ Only you will know their fate.
 
         if (_settings.TryGet("allowSound", out var soundNode)
             && soundNode is ValueDataNode soundValue
-            && bool.TryParse(soundValue.Value, out var allowSound))
-        {
+            && bool.TryParse(soundValue.Value, out var allowSound)){
             AllowSound.Pressed = allowSound;
         }
-
         if (_settings.TryGet("digestSpeed", out var speedNode)
             && speedNode is ValueDataNode speedValue
             && float.TryParse(speedValue.Value, NumberStyles.Float, CultureInfo.InvariantCulture, out var speed)
-            && float.IsFinite(speed))
-        {
+            && float.IsFinite(speed)){
             DigestSpeed.Value = Math.Clamp(speed, 10f, 300f);
         }
-
         if (_settings.TryGet("stomachColor", out var colorNode)
-            && colorNode is ValueDataNode colorValue)
-        {
+            && colorNode is ValueDataNode colorValue){
             _stomachColorSelector.Color = Color.FromHex(colorValue.Value, DefaultStomachColor);
         }
 
         _loadingSettings = false;
-        SaveVoreSettings.Disabled = true;
     }
 }

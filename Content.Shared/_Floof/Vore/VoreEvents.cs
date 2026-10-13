@@ -2,16 +2,8 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._Floof.Vore;
 
+// settings sent from content.client to update components
 [Serializable, NetSerializable]
-public sealed class VoreSettingsRequestEvent : EntityEventArgs {}
-
-[Serializable, NetSerializable]
-public sealed class VoreSettingsEvent : EntityEventArgs
-{
-    public string SettingsYaml { get; set; } = string.Empty;
-}
-
-[Serializable]
 public sealed class VoreSettingsChangedEvent : EntityEventArgs
 {
     public bool AllowSound { get; set; }
@@ -19,5 +11,6 @@ public sealed class VoreSettingsChangedEvent : EntityEventArgs
     public Color StomachColor { get; set; }
 }
 
+// to open the menu from content.server
 [Serializable, NetSerializable]
 public sealed class OpenVoreMenuEvent : EntityEventArgs {}

@@ -18,9 +18,9 @@ public sealed partial class PredComponent : Component
     public string ContainerId = "vore_container";
     [DataField]
     public SoundSpecifier SoundDevour = new SoundPathSpecifier("/Audio/_Floof/Vore/gulp.ogg");
-    [DataField]
+    [DataField("digestSpeed")]
     public float DigestSpeed = 100f;
-    [DataField, AutoNetworkedField]
+    [DataField("stomachColor"), AutoNetworkedField]
     public Color StomachColor = new(0.35f, 0.01f, 0.06f);
 }
 
