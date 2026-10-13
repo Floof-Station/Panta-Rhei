@@ -105,3 +105,7 @@ trait-description-BadShooting = Due to a lack of training or simply a lack of sk
 
 trait-rrrolling-accent-name = Rrrolling Accent
 trait-rrrolling-accent-desc = Whether it's from culture, physicality, or just an affectation you roll your 'r's.
+
+trait-nopsionicpotential-name = Psionically Insensitive
+trait-nopsionicpotential-desc =
+    You lack any connection to the Noosphere. You cannot get Noospheric powers.
