@@ -197,10 +197,11 @@
   parent: Retractor
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
-  - type: Sprite
-    state: hemostat
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
     startSound: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
     endSound: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
+  - type: Sprite
+    state: hemostat
   - type: Item
     heldPrefix: hemostat
     storedRotation: 90
