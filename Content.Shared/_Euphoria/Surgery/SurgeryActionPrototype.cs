@@ -17,7 +17,7 @@ namespace Content.Shared._Euphoria.Surgery;
 ///     It is entirely possible to create surgeries that make no sense. In order to make a prototype that is very manipulatable, it was difficult to avoid.
 /// </remarks>
 
-[Prototype("surgeryAction")]
+[Prototype]
 public sealed partial class SurgeryActionPrototype : IPrototype, IInheritingPrototype
 {
     [ViewVariables]

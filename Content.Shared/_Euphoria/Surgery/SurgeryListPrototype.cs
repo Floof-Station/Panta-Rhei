@@ -10,7 +10,7 @@ namespace Content.Shared._Euphoria.Surgery;
 ///     This is a wrapper that allows for groups of <see cref="SurgeryActionPrototype"/> to be assigned to mobs easier
 ///
 /// </remarks>
-[Prototype("surgeryList")]
+[Prototype]
 public sealed partial class SurgeryListPrototype : IPrototype, IInheritingPrototype
 {
     [ViewVariables]
