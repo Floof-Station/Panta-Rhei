@@ -6489,3 +6489,43 @@ Entries:
       message: The Wood Viper can no longer take high capacity pistol magazines.
   id: 806
   time: '2026-10-11T04:23:12.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted the metabolisms of some drinks so that they're more consistent
+        with their ingredients.
+  id: 807
+  time: '2026-10-13T07:27:11.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Meteor swarms and other job count-guarded events should now correctly
+        count jobs.
+    - type: Tweak
+      message: >-
+        Station traffic control events (unknown shuttles) now have a 50% chance
+        to spawn every 15-45 minutes (instead of 5%)
+  id: 808
+  time: '2026-10-13T12:36:28.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: 'Added naga tail markings, so you can turn your character into a naga. '
+  id: 809
+  time: '2026-10-13T07:27:51.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Remove
+      message: Removed speedboots from T3 Service.
+  id: 810
+  time: '2026-10-13T07:28:18.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added Psionic Insensitivity trait. Prevents you from rolling or
+        receiving psionic powers. 
+  id: 811
+  time: '2026-10-13T07:30:17.0000000+00:00'

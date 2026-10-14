@@ -22,7 +22,7 @@
 - type: reagent
   id: ABLustine
   name: reagent-name-ablustine
-  parent: BaseAlcohol
+  parent: BaseJuice
   desc: reagent-desc-ablustine
   physicalDesc: reagent-physical-desc-syrupy
   flavor: ablustine
@@ -36,8 +36,7 @@
   metabolisms:
     Digestion:
       metabolites:
-        Ethanol: 0.12
-        Pomelustine: 0.5
+        Pomelustine: 0.3
 
 - type: reagent
   id: Anisette
@@ -556,7 +555,7 @@
 - type: reagent
   id: LemonPopsicle
   name: reagent-name-lemonpopsicle
-  parent: BaseAlcohol
+  parent: BaseJuice
   desc: reagent-desc-lemonpopsicle
   physicalDesc: reagent-physical-desc-lemony-fresh
   flavor: lemonpopsicle
@@ -585,7 +584,7 @@
   metabolisms:
     Digestion:
       metabolites:
-        Ethanol: 0.006
+        Ethanol: 0.08
         Pomelustine: 0.3
 
 - type: reagent
@@ -748,7 +747,7 @@
 - type: reagent
   id: PomTwist
   name: reagent-name-pomtwist
-  parent: BaseAlcohol
+  parent: BaseJuice
   desc: reagent-desc-pomtwist
   physicalDesc: reagent-physical-desc-tart
   flavor: pomtwist
@@ -1035,7 +1034,7 @@
 - type: reagent
   id: TripleCitrus
   name: reagent-name-triplecitrus
-  parent: BaseAlcohol
+  parent: BaseJuice
   desc: reagent-desc-triplecitrus
   physicalDesc: reagent-physical-desc-acrid
   flavor: triplecitrus
@@ -1149,7 +1148,7 @@
 - type: reagent
   id: TheCuteCaptain
   name: reagent-name-the-cute-captain
-  parent: BaseAlcohol
+  parent: BaseJuice
   desc: reagent-desc-the-cute-captain
   physicalDesc: reagent-physical-desc-starry
   flavor: thecutecaptain
@@ -1163,8 +1162,7 @@
   metabolisms:
     Digestion:
       metabolites:
-        Ethanol: 0.12
-        Pomelustine: 0.25
+        Pomelustine: 0.3
 
 - type: reagent
   id: AxelsAle
