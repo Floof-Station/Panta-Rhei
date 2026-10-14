@@ -16,6 +16,13 @@ custom-exam-subtle-title = Subtle examine
 custom-exam-reset = Reset
 custom-exam-save = Save changes
 
+custom-exam-preset-header = Presets
+custom-exam-preset-save-header = Save current
+custom-exam-preset-name-placeholder = Enter name...
+custom-exam-load-tooltip = Load and overwrite current
+custom-exam-append-tooltip = Load and add to current
+custom-exam-delete-tooltip = Delete
+
 custom-exam-part-content-tooltip = What other people will see when examining your character. Example: "They look tired of their job."
 custom-exam-part-distance-tooltip = From how far away (in meters) will this tooltip category will be visible.
 custom-exam-part-expiration-tooltip = How long (in minutes) until this tooltip expires. The last saved description will expire in {$minutes} minutes (unless you hit save).

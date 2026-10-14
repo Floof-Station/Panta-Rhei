@@ -544,6 +544,8 @@
       - bananium_1
   - type: RadiationSource #Delta V - Adds radiation
     intensity: 0.1
+  - type: StackDecay # Euphoria - bananium half-decays in 47 minutes
+    halfLifeTime: 2585
   - type: FlavorProfile
     flavors:
       - banana

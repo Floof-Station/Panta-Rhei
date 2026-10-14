@@ -20,6 +20,7 @@ using Robust.Shared.Containers;
 using Content.Shared._Floof.Leash.Components;
 using Robust.Shared.Network;
 using System.Linq;
+using Content.Shared._Floof.Ropes.Systems;
 
 namespace Content.Shared._Floof.Lewd.Milker;
 
@@ -38,8 +39,9 @@ public sealed class MilkerSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedAmbientSoundSystem _ambient = default!;
-    [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly RopeSystem _rope = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -133,17 +135,10 @@ public sealed class MilkerSystem : EntitySystem
         entity.Comp.MilkedSolution = _solution.EnumerateSolutions(target).First((solution) => entity.Comp.MilkedSolutionWhitelist.Contains(solution.Name)).Name;
         entity.Comp.MilkedEntity = target;
 
-        if (entity.Comp.TubeSprite is { } sprite)
-        {
-            _container.EnsureContainer<ContainerSlot>(entity, MilkerComponent.VisualsContainerName);
-            if (TrySpawnInContainer(null, entity, MilkerComponent.VisualsContainerName, out var visualEntity))
-            {
-                var visualComp = EnsureComp<LeashedVisualsComponent>(visualEntity.Value);
-                visualComp.Sprite = sprite;
-                visualComp.Source = entity;
-                visualComp.Target = target;
-            }
-        }
+        // We intentionally make the rope a bit longer than the limit so this system can destroy it if the entity gets too far away
+        if (_rope.TryCreateRope(entity, target, entity.Comp.RopePrototype, entity.Comp.TubeLength + 1, out var rope))
+            entity.Comp.RopeEntity = rope;
+
         Dirty(entity);
     }
 
@@ -164,8 +159,13 @@ public sealed class MilkerSystem : EntitySystem
             _ambient.SetAmbience(entity, false);
             entity.Comp.MilkedSolution = null;
             entity.Comp.MilkedEntity = null;
-            if (_container.TryGetContainer(entity, MilkerComponent.VisualsContainerName, out var visualsContainer))
-                _container.CleanContainer(visualsContainer);
+
+            if (entity.Comp.RopeEntity != null)
+            {
+                QueueDel(entity.Comp.RopeEntity);
+                entity.Comp.RopeEntity = null;
+            }
+
             Dirty(entity);
         }
     }

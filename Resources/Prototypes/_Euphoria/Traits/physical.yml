@@ -393,3 +393,18 @@
     removeLimb: ArmRight
   - !type:AmputeeTraitEffect
     removeLimb: HandRight
+
+- type: trait
+  id: Pettable
+  name: trait-pettable-name
+  description: trait-pettable-desc
+  category: BonusPhysical
+  cost: 2
+  effects:
+  - !type:AddCompsEffect
+    components:
+    - type: InteractionPopup
+      interactSuccessString: petting-success-soft-floofy-kitsune # this message is generic already but can swap if we want
+      interactSuccessSpawn: EffectHearts
+      interactSuccessSound:
+        path: /Audio/Animals/fox_squeak.ogg

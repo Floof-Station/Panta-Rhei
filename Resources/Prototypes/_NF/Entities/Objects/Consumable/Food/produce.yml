@@ -187,6 +187,14 @@
     tags:
     - Vegetable
     - Slice
+  #Euphoria changes start
+  - type: FoodSequenceElement
+    entries:
+      Burger: CucumberSlice
+      Taco: CucumberSlice
+      Skewer: CucumberSlice
+      Hotdog: CucumberSlice
+  # Euphoria changes end
 
 - type: entity
   name: pickle

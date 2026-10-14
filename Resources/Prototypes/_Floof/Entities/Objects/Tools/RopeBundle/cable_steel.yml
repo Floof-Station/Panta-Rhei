@@ -1,0 +1,35 @@
+- type: entity
+  id: RopeBundleCableSteel
+  parent: RopeBundleBase
+  name: steel cable bundle
+  description: A bundle of steel cables that can be used to connect entities together
+  components:
+  - type: Sprite
+    state: icon-cable
+  - type: RopeConnector
+    ropePrototype: CableSteel20
+
+# Rope configuration
+- type: ropeConfiguration
+  id: CableSteel20
+  links: 20
+  linkPrototype: RopeLinkCableSteel
+  dataPrototype: RopeDataCableSteel
+  stiffness: 100000 # 100 kN/m
+  sprite:
+    sprite: _Floof/Objects/Tools/rope.rsi
+    state: cable-steel
+
+# Link entity
+- type: entity
+  id: RopeLinkCableSteel
+  parent: RopeLinkStandardRope
+  name: steel cable link
+  categories: [ HideSpawnMenu ]
+
+# Data entity
+- type: entity
+  id: RopeDataCableSteel
+  parent: RopeDataStandardRope
+  name: steel cable
+  categories: [ HideSpawnMenu ]

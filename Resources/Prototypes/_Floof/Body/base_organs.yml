@@ -41,7 +41,7 @@
   - type: Sprite
     state: taur_body_connector
   - type: VisualOrgan
-    layer: enum.HumanoidVisualLayers.ChestBelow1 # I have no fucking clue
+    layer: enum.HumanoidVisualLayers.TailOverlay
     data:
       state: taur_body_connector
   - type: VisualOrganMarkings
@@ -59,7 +59,7 @@
   - type: Sprite
     state: taur_body
   - type: VisualOrgan
-    layer: enum.HumanoidVisualLayers.ChestBelow2 # I have no fucking clue
+    layer: enum.HumanoidVisualLayers.TailBehind
     data:
       state: taur_body
   - type: VisualOrganMarkings

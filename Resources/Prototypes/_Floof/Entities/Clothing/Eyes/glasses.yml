@@ -1,0 +1,36 @@
+﻿- type: entity
+  parent: [ClothingEyesBase, BaseSecurityContraband, ClothingEyesHudDiagnostic]
+  id: ClothingEyesGlassesTechnician
+  name: technician glasses
+  description: Security glasses designed for the Technician for diagnostic needs. Now with a cool golden hue*
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Eyes/Glasses/technicianglasses.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Eyes/Glasses/technicianglasses.rsi
+  - type: FlashImmunity
+  - type: EyeProtection
+    protectionTime: 5
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+    - SecDogWearable
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+    - Robotics
+  - type: IdentityBlocker
+    coverage: EYES
+
+- type: entity
+  parent: [ClothingEyesPrescriptionBaseSecGlasses, ClothingEyesGlassesTechnician]
+  id: ClothingEyesPrescriptionTechnicianGlasses
+  name: prescription technician glasses
+  description: A pair of technician glasses with what appears to be a... prescription lens glued on top?
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Eyes/Glasses/presctechnicianglasses.rsi
+  - type: Clothing
+    sprite: _Floof/Clothing/Eyes/Glasses/presctechnicianglasses.rsi

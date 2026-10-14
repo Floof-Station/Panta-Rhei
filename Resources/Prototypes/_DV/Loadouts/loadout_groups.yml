@@ -75,6 +75,7 @@
 ## Clown
 - type: loadoutGroup
   id: ClownMask
+  parent: PassengerFaceEuphoria # Euphoria - so every job has most mask options
   name: loadout-group-clown-mask
   loadouts:
   - ClownMask
@@ -346,7 +347,7 @@
   maxLimit: 1
   loadouts:
   - CorpsmanGlasses
-  - PrescriptionCorpsmanGlasses
+  #- PrescriptionCorpsmanGlasses # Euph - research locked | replace with presc sunglasses later
   - MedicalHud
   - MedicalEyePatchHud
   - PrescriptionMedHud
@@ -510,7 +511,7 @@
   maxLimit: 1
   loadouts:
   - SecurityGlasses
-  - PrescriptionSecurityGlasses
+  #- PrescriptionSecurityGlasses # Euph - research locked | replace with presc sunglasses later
   - SecurityHud
   - SecurityEyePatchHud
   - PrescriptionSecurityHud

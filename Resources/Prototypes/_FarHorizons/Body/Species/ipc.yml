@@ -200,7 +200,7 @@
     damagedThreshold:
       min: 85
   - type: Repairable # So welder is just a special little snowflake in the code. I tried making healing with welder work through ConditionalHealing component, but it would require too many changes in too many places. So we will keep on the trend and have brute healing defined here. /shrug
-    doAfterDelay: 10 # Euph - same as borgs, we dont have insta-heal topicals that the original comment refers to
+    doAfterDelay: 3 # Euph - Still longer than Borgs, but not nearly as long as it used to be. Repairing doafter also slows down with more damage, even though it repairs the same amount each time. We dont have insta-heal topicals that the original comment refers to
     allowSelfRepair: true
     fuelCost: 5
     damage:
@@ -228,7 +228,7 @@
         damage: 400
       behaviors:
       - !type:GibBehavior { }
-    - trigger:
+    - trigger: 
         !type:DamageTypeTrigger
         damageType: Heat
         damage: 2500 # Due to being extremely ash prone as a result of tempature mechanics. Also it's metal, that takes longer to melt.

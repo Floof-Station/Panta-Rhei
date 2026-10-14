@@ -682,3 +682,11 @@
       state: SecurityTechnician
   - type: PresetIdCard
     job: SecurityTechnician
+
+- type: entity
+  parent: [SecurityTechnicianIDCard]
+  id: SecuritySapperIDCard
+  name: Security Sapper ID Card
+  components:
+  - type: IdCard
+    jobTitle: job-alt-title-sapper
