@@ -2,7 +2,6 @@
 using Content.Shared._DV.Surgery;
 using Content.Shared._Euphoria.Surgery;
 using Content.Shared._Euphoria.Surgery.Components;
-using Content.Shared.Bed.Sleep;
 using Content.Shared.Body;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -13,7 +12,6 @@ using Content.Shared.Verbs;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Content.Shared.Damage.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Random;
@@ -104,7 +102,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
 
         //This is where damage from cross contamination would happen
 
-        //allows for cross contamination
+        //allows for cross contamination. Currently not functionally implemented.
         comp.LastUsedOn = uid;
 
         if (!ev.Cancelled)
@@ -178,12 +176,12 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         ent.Comp.DictOrgans[organ.Category.Value].Remove(args.Organ);
     }
 
-    public List<ProtoId<SurgeryActionPrototype>> GetAvailableSurgeries(EntityUid uid, SurgeryComponent component, bool getUnavailable = false)
+    public List<ProtoId<SurgeryActionPrototype>> GetAvailableSurgeries(EntityUid uid, SurgeryComponent component)
     {
         var filteredList = new List<ProtoId<SurgeryActionPrototype>>();
 
         //Add filter system here to only give surgeries that are available at the time.
-        var ev = new SurgeryGetActionsEvent((uid, component), getUnavailable);
+        var ev = new SurgeryGetActionsEvent((uid, component));
         var surgeries = getSurgeries(component);
         if (surgeries != null)
             AddSurgeries(ev.Surgeries, surgeries);
@@ -192,6 +190,9 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         bool addThis = true;
 
         //This is pain, I know, I am sorry
+        //I can justify why it is nested. We need to read every state which is at the end of the data tree. We would need to do this
+        //no matter what at least once. If I really wanted this to be efficient, it should be an NxM table of states and organs
+        //however that would make it difficult for organs to have very different states to each other.
         foreach (var protoId in ev.Surgeries)
         {
             if (_proto.TryIndex<SurgeryActionPrototype>(protoId, out var action))
@@ -361,6 +362,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         return null;
     }
 
+    //Method that actually applies the SurgeryAction. Bleeders could be put in here too.
     private void PerformOperation(EntityUid uid, SurgeryComponent component, SurgeryActionPrototype actionPrototype, EntityUid surgeon)
     {
         if (!TryComp<BodyComponent>(uid, out var body))
@@ -400,8 +402,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
         if (actionPrototype.Insert != null)
         {
             EntityUid? insertEntity = null;
-            //need access to the person performing the surgery to see the organ in their hand
-            //Check if the organ is gone by the end of the surgery, then give message if missing
+
             foreach (var item in _handsSystem.EnumerateHeld(surgeon))
             {
                 if (TryComp<OrganComponent>(item, out var organ))
@@ -412,6 +413,7 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
                     }
             }
 
+            //check if the organ was eaten/rotted/is gone
             if (insertEntity == null)
                 _popupSystem.PopupEntity(Loc.GetString("surgery-organ-gone", ("organType", actionPrototype.Insert.Value)), surgeon);
             else
@@ -420,14 +422,16 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
             }
         }
 
-        if (actionPrototype.treatment != null)
+        //Logic for treating damage
+        if (actionPrototype.Treatment != null)
         {
-            if (_proto.TryIndex(actionPrototype.treatment.Value, out var damageType))
+            if (_proto.TryIndex(actionPrototype.Treatment.Value, out var damageType))
                 _damage.TryChangeDamage(uid, new DamageSpecifier(damageType,-5.0));
         }
 
 }
 
+    //method to help unpack SurgeryList(s)
     public List<ProtoId<SurgeryActionPrototype>>? getSurgeries(SurgeryComponent surgery)
     {
         if (_proto.TryIndex(surgery.SurgeryList, out var proto))

@@ -1,10 +1,15 @@
-﻿using Content.Shared.Body;
-using Robust.Shared.Prototypes;
+﻿using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
-using Robust.Shared.Utility;
 
 namespace Content.Shared._Euphoria.Surgery;
 
+/// <summary>
+///     A container that allows for groups of surgery actions to be made.
+/// </summary>
+/// <remarks>
+///     This is a wrapper that allows for groups of <see cref="SurgeryActionPrototype"/> to be assigned to mobs easier
+///
+/// </remarks>
 [Prototype("surgeryList")]
 public sealed partial class SurgeryListPrototype : IPrototype, IInheritingPrototype
 {

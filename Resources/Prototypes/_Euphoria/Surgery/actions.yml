@@ -1,4 +1,8 @@
-﻿#Times for surgeries
+﻿#all states should have some way to be obtained, like getters and setters, they should come in pairs.
+#I recommend you plan out your states first, then build your actions from there.
+#Don't forget to add your actions to a SurgeryList so you can assign them to the surgery target.
+
+#Times for surgeries
 - type: surgeryAction
   abstract: true
   id: longSurgery

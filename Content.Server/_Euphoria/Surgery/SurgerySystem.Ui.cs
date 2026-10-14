@@ -12,13 +12,8 @@ public sealed partial class SurgerySystem
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
     private void InitializeUI()
     {
-
         SubscribeLocalEvent<SurgeryUserInterfaceComponent, BoundUIOpenedEvent>(OnUIOpened);
-
-        //This is where a bleeder event should be subscribed to
-
     }
-
 
     private void OnUIOpened(Entity<SurgeryUserInterfaceComponent> ent, ref BoundUIOpenedEvent args)
     {
@@ -39,6 +34,7 @@ public sealed partial class SurgerySystem
         _ui.SetUiState(uid, SurgeryUiKey.Key, state);
     }
 
+    //Only allow surgery to take place if the conditions are right. If this fails, there are few safeguards further down the line.
     private void AddVerbs(GetVerbsEvent<InteractionVerb> args)
     {
 
@@ -64,15 +60,13 @@ public sealed partial class SurgerySystem
                 if (uiKey.Key == null)
                     return;
 
-                //if (!disabled)
-                //    TryStartSurgeryDoafter(surgeryObject, args.Target, args.User);
                 UpdateUserInterfaceState(args.Target, surgery);
                 _ui.TryOpenUi(args.Target, uiKey.Key,args.User);
 
             },
             Message = message,
             Disabled = disabled,
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/cutlery.svg.192dpi.png")),
+            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png")),
             Text = Loc.GetString("surgery-verb-name"),
         };
 

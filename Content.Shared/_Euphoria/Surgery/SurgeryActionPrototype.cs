@@ -6,6 +6,17 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Euphoria.Surgery;
 
+/// <summary>
+///     Actions that can be taken during surgery that can include repairing damage, changing the state of a body, or inserting/removing organs.
+/// </summary>
+/// <remarks>
+///     This prototype does a lot of work, but is designed so that you can create
+///     any kind of surgery you can imagine. It relies on certain <see cref="SurgeryStatePrototype"/> to be instantiated inside <see cref="SurgeryComponent"/>
+///     otherwise the processes will fail. Do not assign SurgeryActions directly to a mob, instead use <see cref="SurgeryListPrototype"/> as a collection.
+///
+///     It is entirely possible to create surgeries that make no sense. In order to make a prototype that is very manipulatable, it was difficult to avoid.
+/// </remarks>
+
 [Prototype("surgeryAction")]
 public sealed partial class SurgeryActionPrototype : IPrototype, IInheritingPrototype
 {
@@ -42,7 +53,7 @@ public sealed partial class SurgeryActionPrototype : IPrototype, IInheritingProt
     public ProtoId<OrganCategoryPrototype>? Insert;
 
     [DataField]
-    public ProtoId<DamageTypePrototype>? treatment;
+    public ProtoId<DamageTypePrototype>? Treatment;
 
     [NeverPushInheritance]
     [AbstractDataField]

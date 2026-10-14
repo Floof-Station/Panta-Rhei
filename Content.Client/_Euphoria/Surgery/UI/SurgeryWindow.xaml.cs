@@ -11,7 +11,7 @@ using Robust.Shared.Prototypes;
 namespace Content.Client._Euphoria.Surgery.UI;
 /// <summary>
 /// Client-side UI used to control a <see cref="SurgeryComponent"/>
-/// Made in reference to ChemMasterWindow
+/// Made in reference to LatheMenu
 /// </summary>
 [GenerateTypedNameReferences]
 public sealed partial class SurgeryWindow : FancyWindow
@@ -45,14 +45,6 @@ public sealed partial class SurgeryWindow : FancyWindow
             textRect.Texture = _spriteSystem.Frame0(action.Icon);
             return textRect;
         }
-        /*
-
-        if (recipe.Result is { } result)
-        {
-            var entProtoView = new EntityPrototypeView();
-            entProtoView.SetPrototype(result);
-            return entProtoView;
-        }*/
 
         return new Control();
     }

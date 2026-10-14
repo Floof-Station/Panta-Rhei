@@ -9,6 +9,10 @@ namespace Content.Shared._Euphoria.Surgery.Components;
 /// <summary>
 ///     Handles all surgery related effects.
 /// </summary>
+/// <remarks>
+///     The main guts of this is DictOrgans. I wanted a structure that allows navigation without needing to search the duffle bag of organs that people are.
+///     Every organ is given a set of states that can be checked against. These states are what makes surgery work.
+/// </remarks>
 [RegisterComponent, NetworkedComponent]
 [Access(typeof(SharedSurgerySystem))]
 public sealed partial class SurgeryComponent : Component
@@ -22,7 +26,7 @@ public sealed partial class SurgeryComponent : Component
     [DataField]
     public List<ProtoId<SurgeryStatePrototype>> SurgeryStates = new();
 
-    //Chance of causing a ruptured bleed as a decimal
+    //Chance of causing a ruptured bleed as a decimal. Currently not functionally implemented.
     [DataField]
     public double ChanceOfBleeder = 0.05;
 
@@ -32,14 +36,11 @@ public sealed class SurgeryGetActionsEvent : EntityEventArgs
     public readonly EntityUid Person;
     public readonly SurgeryComponent Comp;
 
-    public bool GetUnavailable;
-
     public List<ProtoId<SurgeryActionPrototype>> Surgeries = new();
 
-    public SurgeryGetActionsEvent(Entity<SurgeryComponent> person, bool forced)
+    public SurgeryGetActionsEvent(Entity<SurgeryComponent> person)
     {
         (Person, Comp) = person;
-        GetUnavailable = forced;
     }
 }
 

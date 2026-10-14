@@ -1,12 +1,11 @@
 ﻿using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Euphoria.Surgery;
 
 /// <summary>
 /// Contains what surgery qualities the tool has such as "cutting" or "retracting".
-/// Maybe also put in how good the tool is as well
+/// The stronger the tool, the faster the surgery. This also contains the sounds for the tool.
 /// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SurgeryToolComponent : Component
@@ -25,6 +24,8 @@ public sealed partial class SurgeryToolComponent : Component
     [DataField, AutoNetworkedField]
     public SoundSpecifier? EndSound;
 
+    //This specifies who the tool was last used on. Currently unused functionally.
+    //Could be used for cross contamination logic.
     [DataField]
     public EntityUid? LastUsedOn = null;
 
