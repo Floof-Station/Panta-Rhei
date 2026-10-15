@@ -1,0 +1,75 @@
+﻿- type: entity
+  parent: BaseCartridge
+  id: CartridgeAntiMaterielInactive
+  name: inactive cartridge (.60 anti-material)
+  description: An inactive high-power cartridge used by high-precision rifles.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    state: base
+  - type: Appearance
+
+- type: entity
+  parent: BaseCartridge
+  id: BaseCartridgePistolInactive
+  name: inactive cartridge (.35 auto)
+  description: A inactive low-power cartridge used by pistols.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    state: base
+  - type: Appearance
+
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeAntiMaterielSpent
+  name: spent cartridge (.60 anti-material)
+  description: A spent high-power cartridge used by high-precision rifles.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    state: base-spent
+  - type: Appearance
+
+- type: entity
+  parent: BaseCartridge
+  id: BaseCartridgePistolSpent
+  name: spent cartridge (.35 auto)
+  description: A spent low-power cartridge used by pistols.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    state: base-spent
+  - type: Appearance
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkMikeBottleBlue
+  suffix: Full
+  name: Mike sports drink bottle
+  description: A sick ass Mike squeeze bottle, perfect for spraying your friends with.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/MikeSportsBottle/blue.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 50
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkMikeBottleRed
+  suffix: Full
+  name: Mike sports drink bottle
+  description: A sick ass Mike squeeze bottle, perfect for spraying your friends with.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/MikeSportsBottle/red.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 50

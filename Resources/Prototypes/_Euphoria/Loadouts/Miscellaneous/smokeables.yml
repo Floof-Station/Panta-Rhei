@@ -6,8 +6,14 @@
   groupBy: "smokeables"
 
 - type: loadout
-  id: JointLarge
+  id: BluntLarge
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 36000 # 10hr
   storage:
     back:
-    - JointLarge
+    - BluntLarge
   groupBy: "smokeables"
