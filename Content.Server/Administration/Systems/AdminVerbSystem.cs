@@ -643,7 +643,7 @@ namespace Content.Server.Administration.Systems
             // Cryo - Instantly cryo's the target.
             args.Verbs.Add(new Verb()
             {
-                Text = Loc.GetString("admin-player-actions-cryo"),
+                Text = Loc.GetString("admin-verbs-send-to-cryo"),
                 Category = VerbCategory.Admin,
                 Act = () =>
                 {
