@@ -1,0 +1,89 @@
+  # Default parts for IPCs. needed so we can make them removable via marking menu. taken from PR #927
+
+- type: marking
+  id: MobIPCHeadStandard
+  bodyPart: Head
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: head_m
+
+  # Torso
+- type: marking
+  id: MobIPCTorsoStandardAlt
+  bodyPart: Chest
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: torso_f
+
+
+- type: marking
+  id: MobIPCTorsoStandard
+  bodyPart: Chest
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: torso_m
+
+
+  # Left Limbs
+
+
+- type: marking
+  id: MobIPCLLegStandard
+  bodyPart: LLeg
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_leg
+
+
+- type: marking
+  id: MobIPCLArmStandard
+  bodyPart: LArm
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_arm
+
+
+- type: marking
+  id: MobIPCLHandStandard
+  bodyPart: LHand
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_hand
+
+
+- type: marking
+  id: MobIPCLFootStandard
+  bodyPart: LFoot
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: l_foot
+
+  # Right Limbs
+
+- type: marking
+  id: MobIPCRLegStandard
+  bodyPart: RLeg
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_leg
+
+- type: marking
+  id: MobIPCRArmStandard
+  bodyPart: RArm
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_arm
+
+- type: marking
+  id: MobIPCRHandStandard
+  bodyPart: RHand
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_hand
+
+- type: marking
+  id: MobIPCRFootStandard
+  bodyPart: RFoot
+  sprites:
+  - sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+    state: r_foot
