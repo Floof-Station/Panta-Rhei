@@ -10,6 +10,7 @@ using Content.Server.Mind;
 using Content.Server.Prayer;
 using Content.Server.Silicons.Laws;
 using Content.Server.Station.Systems;
+using Content.Server.Bed.Cryostorage;
 using Content.Shared._Impstation.Thaven.Components; // DeltaV
 using Content.Shared.Administration;
 using Content.Shared.Administration.Systems;
@@ -26,7 +27,6 @@ using Content.Shared.Popups;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Verbs;
-using Content.Server.Bed.Cryostorage;
 using Content.Shared.Bed.Cryostorage;
 using Robust.Server.Console;
 using Robust.Server.GameObjects;
