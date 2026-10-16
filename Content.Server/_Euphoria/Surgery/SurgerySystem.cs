@@ -153,6 +153,8 @@ public sealed partial class SurgerySystem : SharedSurgerySystem
     //This is where you would put the damage transfer from the body onto the organ
     private void OnOrganRemoved(Entity<SurgeryComponent> ent, ref OrganRemovedFromEvent args)
     {
+        if (TerminatingOrDeleted(ent))
+            return;
         if(!TryComp<OrganComponent>(args.Organ, out var organ))
             return;
         if(organ.Category == null)
