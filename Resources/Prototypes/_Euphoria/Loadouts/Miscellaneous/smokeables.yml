@@ -17,3 +17,17 @@
     back:
     - BluntLarge
   groupBy: "smokeables"
+
+- type: loadout
+  id: CigPackRollie
+  storage:
+    back:
+    - CigPackRollie
+  groupBy: "smokeables"
+
+- type: loadout
+  id: CigPackMedRollie
+  storage:
+    back:
+    - CigPackMedRollie
+  groupBy: "smokeables"
