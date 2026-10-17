@@ -22,6 +22,10 @@
   name: mammary glands
   description: A mammalian organ that produces milk typically used for feeding offsprings. Placeholder sprite.
   components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Surgery/breasts.rsi
+    state: breasts
+    scale: 0.7,0.7
   - type: Organ
     category: MammaryGlands
   - type: LewdOrgan
