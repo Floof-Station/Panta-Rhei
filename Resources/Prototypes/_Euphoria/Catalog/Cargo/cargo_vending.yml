@@ -1,0 +1,19 @@
+﻿- type: cargoProduct
+  id: CrateVendingMachineRestockPaintStation
+  icon:
+    sprite: _Euphoria/Structures/Machines/VendingMachines/paint.rsi
+    state: refill-paint
+  product: CrateVendingMachineRestockPaintVendFilled
+  cost: 1000
+  category: cargoproduct-category-name-service
+  group: market
+
+- type: cargoProduct
+  id: CargoPurchasablePaintStationVendingMachine
+  icon:
+    sprite: _Euphoria/Structures/Machines/VendingMachines/paint.rsi
+    state: off
+  product: VendingMachineSpraypaint
+  cost: 2000
+  category: cargoproduct-category-name-vending-machines
+  group: market

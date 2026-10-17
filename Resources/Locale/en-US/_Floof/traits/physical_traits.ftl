@@ -158,3 +158,8 @@ trait-species-gas-mask-description = Take this trait if your character is using 
 
 trait-very-preening-name = Preening
 trait-very-preening-description = Sometimes you have feathers that you need to just remove.
+
+trait-name-vampirism = Vampiric
+trait-description-vampirism =
+    You have fangs capable of piercing and draining blood from beings that contain it.
+    Blood can and must provide all the sustainance you need, as you are incapable of digesting most regular food.

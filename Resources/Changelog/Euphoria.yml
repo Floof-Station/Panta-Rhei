@@ -6457,3 +6457,165 @@ Entries:
       message: IPC welding repairs are much more reasonable.
   id: 803
   time: '2026-10-10T21:33:27.0000000+00:00'
+- author: P4nnant
+  changes:
+    - type: Add
+      message: >-
+        added the Paint Station, a vending machine exclusively designed to sell
+        spraypaint (restock box included)
+    - type: Add
+      message: added several new colours of spraypaint
+    - type: Remove
+      message: removed the spraypaint gamba crate from cargo's catalouge
+    - type: Fix
+      message: fixed a few minor typos
+    - type: Tweak
+      message: added the colour of paint to every spraypaint can's name
+    - type: Add
+      message: added the spraypainter and compressed paint to the paint station
+    - type: Tweak
+      message: doubled the number of charges spraypaint cans have
+  id: 804
+  time: '2026-10-10T23:12:16.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Fix
+      message: THC now metabolizes more properly, go get high on edibles and blunts!
+  id: 805
+  time: '2026-10-11T04:22:28.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Tweak
+      message: The Wood Viper can no longer take high capacity pistol magazines.
+  id: 806
+  time: '2026-10-11T04:23:12.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted the metabolisms of some drinks so that they're more consistent
+        with their ingredients.
+  id: 807
+  time: '2026-10-13T07:27:11.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Meteor swarms and other job count-guarded events should now correctly
+        count jobs.
+    - type: Tweak
+      message: >-
+        Station traffic control events (unknown shuttles) now have a 50% chance
+        to spawn every 15-45 minutes (instead of 5%)
+  id: 808
+  time: '2026-10-13T12:36:28.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: 'Added naga tail markings, so you can turn your character into a naga. '
+  id: 809
+  time: '2026-10-13T07:27:51.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Remove
+      message: Removed speedboots from T3 Service.
+  id: 810
+  time: '2026-10-13T07:28:18.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added Psionic Insensitivity trait. Prevents you from rolling or
+        receiving psionic powers. 
+  id: 811
+  time: '2026-10-13T07:30:17.0000000+00:00'
+- author: Katarn1933
+  changes:
+    - type: Fix
+      message: Lighthouse bought hardsuits for atmos techs!
+  id: 812
+  time: '2026-10-14T04:04:46.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Add
+      message: Vampirism trait.
+  id: 813
+  time: '2026-10-14T09:45:17.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: Reduced the number of security slots available on most stations
+  id: 814
+  time: '2026-10-14T09:46:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Ported Wizdens AFK Kick to help stop high pop maps from being the only
+        votes when there isn't actually enough active players to play those
+        maps.
+  id: 815
+  time: '2026-10-14T09:48:45.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Centcomm has allowed for the sale of various perfumes in the sector.
+    - type: Add
+      message: >-
+        Various colors of lipstick have been seen in the sector and will apply a
+        lipstick marking when you used on your self or others.
+  id: 816
+  time: '2026-10-15T09:21:42.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Sec roles should now have access to their senior outfits again.
+  id: 817
+  time: '2026-10-15T09:22:37.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: Calico Sunrise no longer contains alcohol when it shouldn't
+  id: 818
+  time: '2026-10-16T02:36:38.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: The swimsuit can now be worn under clothes.
+  id: 819
+  time: '2026-10-16T07:50:12.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: >-
+        Changed IPC yaml so their default sprites are done with ingame
+        changeable markings rather than hardcoded external organs.
+    - type: Add
+      message: >-
+        A set of default markings for IPCs, so you can change the color of every
+        limb you could possibly imagine having.
+  id: 820
+  time: '2026-10-16T07:51:00.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Fix
+      message: voresystem fix regarding breathing issues
+  id: 821
+  time: '2026-10-17T01:51:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        New PKA and Crusher variants can be found on debris, lavaland and in the
+        Salvage Vendor.
+  id: 822
+  time: '2026-10-17T02:25:12.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: >-
+        Split the synthetic trait into two traits, one that lets you see ion
+        storms and one that changes your blood using the same system as other
+        blood traits.
+  id: 823
+  time: '2026-10-17T04:10:23.0000000+00:00'

@@ -1,7 +1,49 @@
 - type: markingsGroup
   parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
   id: IPC
-  limits: {} # Everything is common
+  limits:
+    enum.HumanoidVisualLayers.Head:
+      limit: 10
+      required: true
+      default: [ MobIPCHeadStandard ]
+    enum.HumanoidVisualLayers.Chest:
+      limit: 10
+      required: true
+      default: [ MobIPCTorsoStandard ]
+    enum.HumanoidVisualLayers.LArm:
+      limit: 10
+      required: true
+      default: [ MobIPCLArmStandard ]
+    enum.HumanoidVisualLayers.RArm:
+      limit: 10
+      required: true
+      default: [ MobIPCRArmStandard ]
+    enum.HumanoidVisualLayers.LHand:
+      limit: 10
+      required: true
+      default: [ MobIPCLHandStandard ]
+    enum.HumanoidVisualLayers.RHand:
+      limit: 10
+      required: true
+      default: [ MobIPCRHandStandard ]
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 10
+      required: true
+      default: [ MobIPCLLegStandard ]
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 10
+      required: true
+      default: [ MobIPCRLegStandard ]
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 10
+      required: true
+      default: [ MobIPCLFootStandard ]
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 10
+      required: true
+      default: [ MobIPCRFootStandard ]
+   # Everything is common
+   # Euphoria: all categories that IPCs had an external organ sprite for are changed to required with a default marking to allow for the default sprites to be removed.
 
 - type: entity
   parent: BaseSpeciesAppearance
@@ -421,6 +463,7 @@
   - type: VisualOrgan
     data:
       sprite: _FarHorizons/Mobs/Species/IPC/parts.rsi
+      visible: false # Euphoria: Marked as not visible so other markings can be used in place of the default ones.
   - type: VisualOrganMarkings
     markingData:
       group: IPC
