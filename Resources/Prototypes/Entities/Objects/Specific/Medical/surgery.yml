@@ -20,6 +20,10 @@
   parent: BaseToolSurgery
   description: A surgical tool used to cauterize open wounds.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cauterising
+    startSound: /Audio/_Shitmed/Medical/Surgery/cautery1.ogg
+    endSound: /Audio/_Shitmed/Medical/Surgery/cautery2.ogg #Euphoria end
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/cautery.rsi
     state: cautery
@@ -41,6 +45,9 @@
   parent: BaseToolSurgery
   description: A surgical drill for making holes into hard material.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Drilling
+    startSound: /Audio/Items/drill_hit.ogg
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/drill.rsi
     state: drill
@@ -72,6 +79,10 @@
   parent: BaseToolSurgery
   description: A surgical tool used to make incisions into flesh.
   components:
+  - type: SurgeryTool #Euphoria start, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    startSound: /Audio/_Shitmed/Medical/Surgery/scalpel1.ogg
+    endSound: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg #Euphoria end
   - type: Sharp
     butcherDelayModifier: 1.5 # Butchering with a scalpel, regardless of the type, will take 50% longer
   - type: Tool
@@ -103,6 +114,9 @@
   parent: Scalpel
   description: A pointy piece of glass, abraded to an edge and wrapped in tape for a handle. # Could become a decent tool or weapon with right tool mods.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    strength: 0.5
   - type: Sprite
     state: shiv
   - type: Item
@@ -125,6 +139,9 @@
   parent: Scalpel
   description: Made of more expensive materials, sharper and generally more reliable.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    strength: 1.5
   - type: Sprite
     state: advanced
   - type: Item
@@ -140,6 +157,9 @@
   parent: Scalpel
   description: A scalpel which uses a directed laser to slice instead of a blade, for more precise surgery while also cauterizing as it cuts.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Cutting
+    strength: 2
   - type: Sprite
     state: laser
   - type: Item
@@ -160,6 +180,10 @@
   parent: BaseToolSurgery
   description: A surgical tool used to hold open incisions.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Retracting
+    startSound: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+    endSound: /Audio/_Shitmed/Medical/Surgery/retractor2.ogg #Euphoria end
   - type: Sprite
     sprite: Objects/Specific/Medical/Surgery/scissors.rsi
     state: retractor
@@ -173,6 +197,9 @@
   parent: Retractor
   description: A surgical tool used to compress blood vessels to prevent bleeding.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    startSound: /Audio/_Shitmed/Medical/Surgery/retractor1.ogg
+    endSound: /Audio/_Shitmed/Medical/Surgery/hemostat1.ogg
   - type: Sprite
     state: hemostat
   - type: Item
@@ -192,6 +219,9 @@
   parent: BaseToolSurgery
   description: For cutting wood and other objects to pieces. Or sawing bones, in case of emergency.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    startSound: /Audio/_Shitmed/Medical/Surgery/saw.ogg
   - type: Sharp
   - type: Utensil
     types:
@@ -214,6 +244,9 @@
   parent: Saw
   description: A wicked serrated blade made of whatever nasty sharp things you could find. # It would make a pretty decent weapon, given there are more space for some tool mods too.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    strength: 0.5
   - type: Sprite
     state: improv
   - type: Item
@@ -235,6 +268,9 @@
   parent: Saw
   description: For heavy duty cutting.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    strength: 1.5
   - type: Sprite
     state: electric
   - type: Item
@@ -262,6 +298,9 @@
   parent: [ SawElectric, BaseSyndicateContraband ]
   description: Interdyne's state-of-the-art surgical saw. Guaranteed to stay spotless and sterile, no matter how messy the job.
   components:
+  - type: SurgeryTool #Euphoria, move to allow for items to be given stats/uses in surgery
+    toolType: Sawing
+    strength: 2
   - type: Sprite
     state: advanced
   - type: Item
