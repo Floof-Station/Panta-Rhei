@@ -1,3 +1,4 @@
+using Content.Server._Impstation.Thaven; // DeltaV
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Administration.UI;
@@ -9,6 +10,8 @@ using Content.Server.Mind;
 using Content.Server.Prayer;
 using Content.Server.Silicons.Laws;
 using Content.Server.Station.Systems;
+using Content.Server.Bed.Cryostorage;
+using Content.Shared._Impstation.Thaven.Components; // DeltaV
 using Content.Shared.Administration;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -24,6 +27,7 @@ using Content.Shared.Popups;
 using Content.Shared.Silicons.Laws.Components;
 using Content.Shared.Silicons.StationAi;
 using Content.Shared.Verbs;
+using Content.Shared.Bed.Cryostorage;
 using Robust.Server.Console;
 using Robust.Server.GameObjects;
 using Robust.Server.Player;
@@ -37,8 +41,6 @@ using Robust.Shared.Toolshed;
 using Robust.Shared.Utility;
 using System.Linq;
 using static Content.Shared.Configurable.ConfigurationComponent;
-using Content.Shared._Impstation.Thaven.Components; // DeltaV
-using Content.Server._Impstation.Thaven; // DeltaV
 
 namespace Content.Server.Administration.Systems
 {
@@ -71,6 +73,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly SiliconLawSystem _siliconLawSystem = default!;
 	    [Dependency] private readonly ThavenMoodsSystem _moods = default!; // DeltaV
         [Dependency] private AfkConfirmSystem _afkConfirm = default!;
+        [Dependency] private readonly CryostorageSystem _cryo = default!;
 
         private readonly Dictionary<ICommonSession, List<EditSolutionsEui>> _openSolutionUis = new();
 
@@ -636,6 +639,41 @@ namespace Content.Server.Administration.Systems
                 };
                 args.Verbs.Add(verb);
             }
+
+            // Cryo - Instantly cryo's the target.
+            args.Verbs.Add(new Verb()
+            {
+                Text = Loc.GetString("admin-verbs-send-to-cryo"),
+                Category = VerbCategory.Admin,
+                Act = () =>
+                {
+                    // find any cryostorage machine and pick the first one
+                    var query = EntityQueryEnumerator<CryostorageComponent>();
+                    EntityUid? cryoUnit = null;
+                    while (query.MoveNext(out var uid, out _))
+                    {
+                        cryoUnit = uid;
+                        break;
+                    }
+
+                    //in rare case there is no cryostorage machine just return and delete the person
+                    if (cryoUnit == null)
+                    {
+                        QueueDel(args.Target);
+                        return;
+                    }
+
+                    // put the person in cryostorage and apply the required effects
+                    var contained = EnsureComp<CryostorageContainedComponent>(args.Target);
+                    contained.Cryostorage = cryoUnit.Value;
+                    _mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp);
+                    var userId = mindComp?.UserId;
+                    _cryo.HandleEnterCryostorage((args.Target, contained), userId);
+
+                },
+                ConfirmationPopup = true,
+                Impact = LogImpact.High,
+            });
         }
 
         #region SolutionsEui
