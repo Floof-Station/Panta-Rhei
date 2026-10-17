@@ -1,0 +1,59 @@
+﻿# Fish
+- type: entity
+  parent: [ BaseAnomalite ]
+  id: MobAnomaliteFish
+  suffix: Fish
+  description: A sopping little sprite, born from the leftover energies of an anomaly core.
+  components:
+  - type: Icon
+    sprite: _Impstation/Mobs/Anomalites/reagent.rsi
+    state: anom
+  - type: Sprite
+    sprite: _Impstation/Mobs/Anomalites/reagent.rsi
+    layers:
+    - state: anom
+      map: [ "enum.AnomalyVisualLayers.Base", "enum.DamageStateVisualLayers.Base" ]
+    - state: pulse
+      map: [ "enum.AnomalyVisualLayers.Animated" ]
+      visible: false
+    noRot: true
+    drawdepth: Mobs
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: anom
+      Dead:
+        Base: dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Poison: 1 # reduced cus they inject their solution into you
+    angle: 0
+    animation: WeaponArcBite
+  - type: Damageable
+    damageModifierSet: AnomaliteLiquid # we can just reuse this to
+  - type: PointLight
+    radius: 2
+    energy: 1
+    softness: 10
+    color: "#ffffff"
+  - type: NameIdentifier
+    group: AnomaliteFish
+  # Anomaly functionality
+  - type: InnerBodyAnomaly
+    injectionProto: AnomalyInjectionFish # our fishy wata
+    skipStun: true
+  - type: SolutionContainerManager
+    solutions:
+      anomaly:
+        maxVol: 1500
+  - type: MeleeChemicalInjector
+    solution: anomaly
+    transferAmount: 6
+  - type: RandomSprite
+    selected:
+      enum.AnomalyVisualLayers.Base:
+        anom: "#ffffff"
+      enum.AnomalyVisualLayers.Animated:
+        pulse: "#ffffff"
+  - type: SolutionScanner # i think it's fun for them to be able to scan their solutions
