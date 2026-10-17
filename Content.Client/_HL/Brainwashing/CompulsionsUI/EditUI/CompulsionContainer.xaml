@@ -1,0 +1,45 @@
+<BoxContainer
+    HorizontalExpand="True"
+    Orientation="Vertical"
+    Margin="10 10"
+    xmlns="https://spacestation14.io"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
+    <PanelContainer>
+        <PanelContainer.PanelOverride>
+            <graphics:StyleBoxFlat BackgroundColor="#1B1B1B" />
+        </PanelContainer.PanelOverride>
+        <TextEdit
+            Access="Public"
+            Editable="True"
+            HorizontalExpand="True"
+            VerticalExpand="True"
+            MinHeight="80"
+            Name="CompulsionContent">
+        </TextEdit>
+    </PanelContainer>
+    <customControls:HSeparator />
+    <BoxContainer
+        Margin="0,5,0,0"
+        MaxHeight="64"
+        HorizontalExpand="True"
+        Orientation="Horizontal">
+        <Button
+            Access="Public"
+            Name="MoveUp"
+            StyleClasses="OpenRight"
+            Text="Up"/>
+        <Button
+            Access="Public"
+            Name="MoveDown"
+            StyleClasses="OpenLeft"
+            Text="Down"/>
+        <Button
+            Access="Public"
+            ModulateSelfOverride="Red"
+            HorizontalAlignment="Right"
+            HorizontalExpand="True"
+            Name="Delete"
+            Text="Delete"/>
+    </BoxContainer>
+</BoxContainer>
