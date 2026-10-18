@@ -476,7 +476,7 @@ namespace Content.Server.Administration.Systems
                 {
                     Text = Loc.GetString("delete-verb-get-data-text"),
                     Category = VerbCategory.Debug,
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/delete_transparent.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/delete_transparent.svg.192dpi.png")),
                     Act = () => Del(args.Target),
                     Impact = LogImpact.Medium,
                     ConfirmationPopup = true
@@ -491,7 +491,7 @@ namespace Content.Server.Administration.Systems
                 {
                     Text = Loc.GetString("rejuvenate-verb-get-data-text"),
                     Category = VerbCategory.Debug,
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/rejuvenate.svg.192dpi.png")),
                     Act = () => _rejuvenate.PerformRejuvenate(args.Target),
                     Impact = LogImpact.Medium
                 };
@@ -526,7 +526,7 @@ namespace Content.Server.Administration.Systems
                 {
                     Text = Loc.GetString("make-sentient-verb-get-data-text"),
                     Category = VerbCategory.Debug,
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/sentient.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/sentient.svg.192dpi.png")),
                     Act = () => _mindSystem.MakeSentient(args.Target),
                     Impact = LogImpact.Medium
                 };
@@ -555,7 +555,7 @@ namespace Content.Server.Administration.Systems
                     {
                         Text = Loc.GetString("set-outfit-verb-get-data-text"),
                         Category = VerbCategory.Debug,
-                        Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/outfit.svg.192dpi.png")),
+                        Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/outfit.svg.192dpi.png")),
                         Act = () => _euiManager.OpenEui(new SetOutfitEui(GetNetEntity(args.Target)), player),
                         Impact = LogImpact.Medium
                     };
@@ -570,7 +570,7 @@ namespace Content.Server.Administration.Systems
                 {
                     Text = Loc.GetString("in-range-unoccluded-verb-get-data-text"),
                     Category = VerbCategory.Debug,
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
                     Act = () =>
                     {
 
@@ -592,7 +592,7 @@ namespace Content.Server.Administration.Systems
                 {
                     Text = Loc.GetString("tube-direction-verb-get-data-text"),
                     Category = VerbCategory.Debug,
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/information.svg.192dpi.png")),
                     Act = () => _disposalTubes.PopupDirections(args.Target, tube, args.User)
                 };
                 args.Verbs.Add(verb);
@@ -618,7 +618,7 @@ namespace Content.Server.Administration.Systems
                 Verb verb = new()
                 {
                     Text = Loc.GetString("configure-verb-get-data-text"),
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/settings.svg.192dpi.png")),
                     Category = VerbCategory.Debug,
                     Act = () => _uiSystem.OpenUi(args.Target, ConfigurationUiKey.Key, actor.PlayerSession)
                 };
@@ -633,7 +633,7 @@ namespace Content.Server.Administration.Systems
                 {
                     Text = Loc.GetString("edit-solutions-verb-get-data-text"),
                     Category = VerbCategory.Debug,
-                    Icon = new SpriteSpecifier.Texture(new ("/Textures/Interface/VerbIcons/spill.svg.192dpi.png")),
+                    Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/spill.svg.192dpi.png")),
                     Act = () => OpenEditSolutionsEui(player, args.Target),
                     Impact = LogImpact.Medium // maybe high depending on WHAT reagents they add...
                 };
@@ -641,39 +641,42 @@ namespace Content.Server.Administration.Systems
             }
 
             // Cryo - Instantly cryo's the target.
-            args.Verbs.Add(new Verb()
+            if (HasComp<MindContainerComponent>(args.Target))
             {
-                Text = Loc.GetString("admin-verbs-send-to-cryo"),
-                Category = VerbCategory.Admin,
-                Act = () =>
+                args.Verbs.Add(new Verb()
                 {
-                    // find any cryostorage machine and pick the first one
-                    var query = EntityQueryEnumerator<CryostorageComponent>();
-                    EntityUid? cryoUnit = null;
-                    while (query.MoveNext(out var uid, out _))
+                    Text = Loc.GetString("admin-verbs-send-to-cryo"),
+                    Category = VerbCategory.Admin,
+                    Act = () =>
                     {
-                        cryoUnit = uid;
-                        break;
-                    }
+                        // find any cryostorage machine and pick the first one
+                        var query = EntityQueryEnumerator<CryostorageComponent>();
+                        EntityUid? cryoUnit = null;
+                        while (query.MoveNext(out var uid, out _))
+                        {
+                            cryoUnit = uid;
+                            break;
+                        }
 
-                    //in rare case there is no cryostorage machine just return and delete the person
-                    if (cryoUnit == null)
-                    {
-                        QueueDel(args.Target);
-                        return;
-                    }
+                        //in rare case there is no cryostorage machine, show a failure message and break out
+                        if (cryoUnit == null)
+                        {
+                            _popupSystem.PopupEntity(Loc.GetString("admin-verbs-cant-send-to-cryo"), args.User);
+                            return;
+                        }
 
-                    // put the person in cryostorage and apply the required effects
-                    var contained = EnsureComp<CryostorageContainedComponent>(args.Target);
-                    contained.Cryostorage = cryoUnit.Value;
-                    _mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp);
-                    var userId = mindComp?.UserId;
-                    _cryo.HandleEnterCryostorage((args.Target, contained), userId);
+                        // put the person in cryostorage and apply the required effects
+                        var contained = EnsureComp<CryostorageContainedComponent>(args.Target);
+                        contained.Cryostorage = cryoUnit.Value;
+                        _mindSystem.TryGetMind(args.Target, out var mindId, out var mindComp);
+                        var userId = mindComp?.UserId;
+                        _cryo.HandleEnterCryostorage((args.Target, contained), userId);
 
-                },
-                ConfirmationPopup = true,
-                Impact = LogImpact.High,
-            });
+                    },
+                    ConfirmationPopup = true,
+                    Impact = LogImpact.High,
+                });
+            }
         }
 
         #region SolutionsEui
