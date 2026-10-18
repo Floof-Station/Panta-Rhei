@@ -1058,11 +1058,6 @@ marking-SnoutLCanidStripe-snout_lcanidstripe_primary = Husky Snout L (Primary)
 marking-SnoutLCanidStripe-snout_lcanidstripe_secondary = Husky Snout L (Secondary)
 marking-SnoutLCanidStripe = Husky Snout L
 
-# Euphoria
-# Brimcon
-m_ears_oval_FRONT_primary = Oval Ears
-m_ears_oval_FRONT_secondary = Oval Ears
-marking-EarsOval = Oval Ears
 
 
 
