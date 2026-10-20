@@ -1,0 +1,12 @@
+- type: marking
+  id: EarsOval
+  bodyPart: HeadTop
+  colorLinks:
+    m_ears_oval_ADJ_primary: m_ears_oval_FRONT_primary
+    m_ears_oval_ADJ_secondary: m_ears_oval_FRONT_secondary
+  sprites:
+  - sprite: _Euphoria/Mobs/Customization/tall_round_poon_ears.rsi
+    state: tall_oval_base
+  - sprite: _Euphoria/Mobs/Customization/tall_round_poon_ears.rsi
+    state: tall_oval_tips
+
