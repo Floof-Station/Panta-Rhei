@@ -45,6 +45,10 @@
   name: penis
   description: An appendage used by the majority of animal species to fertilize egg cells. Testicular glands included. Placeholder sprite.
   components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Surgery/penis.rsi
+    state: penis
+    scale: 0.7,0.7
   - type: Organ
     category: Penis
   - type: LewdOrgan
