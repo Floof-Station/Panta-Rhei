@@ -44,9 +44,10 @@ public sealed class TooShortForUI : EntitySystem
         if (TryComp<ClimbingComponent>(ent, out var climbing) && climbing.IsClimbing)
             return;
 
-        //A friend is holding you up so you can push the buttons :)
+        //Euphoria Start - A friend is holding you up so you can push the buttons :)
         if (TryComp<BeingCarriedComponent>(ent, out var beingCarried))
             return;
+        //Euphoria End
 
         // finally, if the target entity is on the whitelist, return if true
         if (_whitelist.IsWhitelistPass(ent.Comp.Whitelist, args.Target))
