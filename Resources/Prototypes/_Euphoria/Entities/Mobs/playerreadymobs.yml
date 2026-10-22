@@ -480,3 +480,19 @@
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
+
+- type: entity
+  name: skia
+  id: MobSkialayable
+  parent: [BasePlayableFeralMob, MobSkia, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
