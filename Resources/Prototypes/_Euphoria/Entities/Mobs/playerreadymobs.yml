@@ -36,6 +36,7 @@
       raffle:
         settings: short
     - type: GhostTakeoverAvailable
+    - type: Stripping
 
 - type: entity
   name: laser raptor
@@ -255,10 +256,6 @@
   id: MobRunnerPlayable
   parent: [BasePlayableFeralMob, MobXenoRunner, StripableInventoryBase]
   components:
-    layers:
-    - map: [ "enum.DamageStateVisualLayers.Base" ]
-      state: alive
-    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -267,10 +264,217 @@
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
-    - Kobold
+    - Xeno
     understands:
     - TauCetiBasic
-    - Kobold
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: drone
+  id: MobDronePlayable
+  parent: [BasePlayableFeralMob, MobXenoDrone, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: ravager
+  id: MobRavagerPlayable
+  parent: [BasePlayableFeralMob, MobXenoRavager, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: praetorian
+  id: MobPraetorianPlayable
+  parent: [BasePlayableFeralMob, MobXenoPraetorian, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: queen
+  id: MobQueenPlayable
+  parent: [BasePlayableFeralMob, MobXenoQueen, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: runner
+  id: MobRounyPlayable
+  parent: [BasePlayableFeralMob, MobXenoRouny, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: burrower
+  id: MobBurrowerPlayable
+  parent: [BasePlayableFeralMob, MobXenoPlayer, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: spitter
+  id: MobSpitterPlayable
+  parent: [BasePlayableFeralMob, MobXenoSpitter, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: goliath
+  id: MobGoliathPlayable
+  parent: [BasePlayableFeralMob, MobGoliath, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Xeno
+    understands:
+    - TauCetiBasic
+    - Xeno
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
+
+- type: entity
+  name: tarantula
+  id: MobTarantulaPlayable
+  parent: [BasePlayableFeralMob, MobGiantSpider, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Arachnic
+    understands:
+    - TauCetiBasic
+    - Arachnic
   - type: Vocal
     sounds:
       Male: MaleReptilian
