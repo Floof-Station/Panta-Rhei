@@ -249,3 +249,30 @@
       Male: MaleReptilian
       Female: FemaleReptilian
       Unsexed: MaleReptilian
+
+- type: entity
+  name: runner
+  id: MobRunnerPlayable
+  parent: [BasePlayableFeralMob, MobXenoRunner, StripableInventoryBase]
+  components:
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Kobold
+    understands:
+    - TauCetiBasic
+    - Kobold
+  - type: Vocal
+    sounds:
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
