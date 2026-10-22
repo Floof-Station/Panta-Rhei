@@ -10,6 +10,7 @@ namespace Content.Shared.Placeable;
 /// </summary>
 public sealed class ItemPlacerSystem : EntitySystem
 {
+    #pragma warning disable once CS0414 // Euph: Field is assigned but its value is never used
     [Dependency] private readonly CollisionWakeSystem _wake = default!;
     [Dependency] private readonly PlaceableSurfaceSystem _placeableSurface = default!;
     [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
