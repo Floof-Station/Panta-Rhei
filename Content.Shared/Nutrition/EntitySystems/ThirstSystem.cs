@@ -10,6 +10,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using System.Diagnostics.CodeAnalysis;
+using Content.Shared.StatusEffect;
 
 namespace Content.Shared.Nutrition.EntitySystems;
 
@@ -22,10 +23,15 @@ public sealed class ThirstSystem : EntitySystem
     [Dependency] private readonly AlertsSystem _alerts = default!;
     [Dependency] private readonly MovementSpeedModifierSystem _movement = default!;
     [Dependency] private readonly SharedJetpackSystem _jetpack = default!;
+    [Dependency] private readonly StatusEffectNew.StatusEffectsSystem _effectsSystem = default!; //Euphoria | Awareness status and trait
 
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconOverhydratedId = "ThirstIconOverhydrated";
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconThirstyId = "ThirstIconThirsty";
     private static readonly ProtoId<SatiationIconPrototype> ThirstIconParchedId = "ThirstIconParched";
+    //Euphoria | Thrist blindness status effects
+    private static readonly EntProtoId  ThirstBlindnessTrait = "ThirstBlindnessTraitStatusEffect";
+    private static readonly EntProtoId  ThirstBlindness = "StatusEffectThirstBlind";
+    //Euphoria | End
 
     public override void Initialize()
     {
@@ -162,6 +168,12 @@ public sealed class ThirstSystem : EntitySystem
         {
             _alerts.ClearAlertCategory(uid, component.ThirstyCategory);
         }
+
+        //Euphoria | To make this as merge friendly as possible I'm putting this as a separate block rather than altering the above check
+        //Checks if entity has an awareness status effect for thirst
+        if (_effectsSystem.HasStatusEffect(uid, ThirstBlindnessTrait) || _effectsSystem.HasStatusEffect(uid, ThirstBlindness))
+            _alerts.ClearAlertCategory(uid, component.ThirstyCategory);
+        //Euphoria | End
 
         DirtyField(uid, component, nameof(ThirstComponent.LastThirstThreshold));
         DirtyField(uid, component, nameof(ThirstComponent.ActualDecayRate));
