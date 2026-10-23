@@ -32,3 +32,5 @@ ghost-role-information-pet-whimperlet-name = Pet Whimperlet
 
 ghost-role-information-clowncar-name = Clown Car
 ghost-role-information-clowncar-description = An artificial being of pure evil. Make sure the station knowns it yeed its last honk.
+
+ghost-role-information-fishanomalite-name = FIsh Anomalite
