@@ -8,4 +8,4 @@ marking-ElysianSmall-small_top = Elysian Wings (Top)
 
 m_ears_oval_FRONT_primary = Oval Ears (primary)
 m_ears_oval_FRONT_secondary = Oval Ears (secondary)
-marking-EarsOval = Oval Ears
+marking-EarsOval = Tall Oval Ears
