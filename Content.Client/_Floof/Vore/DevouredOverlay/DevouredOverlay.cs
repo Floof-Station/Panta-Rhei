@@ -1,6 +1,7 @@
 using System.Numerics;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Containers;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -14,6 +15,7 @@ public sealed class DevouredOverlay : Overlay
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
+    private readonly SharedContainerSystem _containerSystem;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpace;
 
@@ -26,6 +28,7 @@ public sealed class DevouredOverlay : Overlay
     public DevouredOverlay()
     {
         IoCManager.InjectDependencies(this);
+        _containerSystem = _entityManager.System<SharedContainerSystem>();
         _stomachShader = _prototypeManager.Index(CircleMaskShader).InstanceUnique();
     }
 
@@ -69,8 +72,15 @@ public sealed class DevouredOverlay : Overlay
 
         // simulating pulses of circle movement and coloring
         var pulsing = MathF.Cos(time * 0.5f - 1.5f) + 1f;
+        var stomachWallColor = StomachWallColor;
+        if (playerEntity != null
+            && _containerSystem.TryGetContainingContainer((playerEntity.Value, null, null), out var container)
+            && _entityManager.TryGetComponent(container.Owner, out PredComponent? predComp)){
+            stomachWallColor = new(predComp.StomachColor.R, predComp.StomachColor.G, predComp.StomachColor.B);
+        }
+
         _stomachShader.SetParameter("time", pulsing);
-        _stomachShader.SetParameter("color", StomachWallColor); 
+        _stomachShader.SetParameter("color", stomachWallColor);
         _stomachShader.SetParameter("darknessAlphaOuter", 0.90f);
 
         // drawing of the actual circles

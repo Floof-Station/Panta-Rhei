@@ -1,7 +1,7 @@
 using Robust.Shared.GameObjects;
 using Robust.Shared.GameStates;
 using Content.Shared.Medical.SuitSensor;
-
+using Robust.Shared.Audio;
 namespace Content.Shared._Floof.Vore;
 
 
@@ -20,13 +20,16 @@ public sealed partial class PreyComponent : Component
     public bool ActiveDigesting;
     public float Timer;
     public int DigestPopupStage;
+    [DataField("allowSound")]
+    public bool AllowSound = false;
+    
 }
 
 
 /// <summary>
 /// Active Component for prey that is devoured for immunites, overlays and sensors
 /// </summary>
-[RegisterComponent, NetworkedComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class DevouredComponent : Component
 {
     public bool AddedPressure;
@@ -35,6 +38,10 @@ public sealed partial class DevouredComponent : Component
     public bool AddedRadiation;
     public bool AddedFlash;
 
+    public EntityUid? Stream;
+    [DataField, AutoNetworkedField]
+    public SoundSpecifier SoundBelly = new SoundPathSpecifier("/Audio/_Floof/Vore/stomach_loop.ogg");
+    
     [DataField("originalSensorModes")]
     public Dictionary<EntityUid, SuitSensorMode> OriginalSensorModes = new(); 
 }

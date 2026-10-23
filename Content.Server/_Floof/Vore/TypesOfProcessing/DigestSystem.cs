@@ -168,21 +168,22 @@ public sealed class DigestSystem : EntitySystem
 
                 /* digestion process, reduces health of prey and increases hunger/charge of predator every second
                 also show a popup to the prey as a way of feedback */
-                comp.Health -= 0.5f;
+                Console.WriteLine(predComp.DigestSpeed);
+                comp.Health -= 0.5f * predComp.DigestSpeed / 100f;
                 ShowDigestPopup(prey, comp);
 
                 if (TryComp<HungerComponent>(container.Owner, out var hunger)){
-                    _hunger.ModifyHunger(container.Owner, 1, hunger);
+                    _hunger.ModifyHunger(container.Owner, predComp.DigestSpeed / 100f, hunger);
                 }
                 else if (TryComp<BatteryComponent>(container.Owner, out var battery)){
-                    _battery.SetCharge((container.Owner, battery), battery.CurrentCharge + 2f);
+                    _battery.SetCharge((container.Owner, battery), battery.CurrentCharge + 2f * predComp.DigestSpeed / 100f);
                 }
                 else if (TryComp<PowerCellSlotComponent>(container.Owner, out var batterySlot)
                 && _itemSlots.TryGetSlot(container.Owner, batterySlot.CellSlotId, out var itemSlot)
                 && itemSlot.Item is { } cellUid
                 && TryComp<BatteryComponent>(cellUid, out var batteryComp)){
                     var predCharge = _battery.GetCharge(cellUid);
-                    _battery.SetCharge((cellUid, batteryComp), predCharge + 2f);
+                    _battery.SetCharge((cellUid, batteryComp), predCharge + 2f * predComp.DigestSpeed / 100f);
                 }
 
                 if (comp.Health <= 0){

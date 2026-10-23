@@ -1,0 +1,64 @@
+<DefaultWindow
+    xmlns="https://spacestation14.io"
+    Title="Vore Settings"
+    MinSize="1000 500">
+    <BoxContainer Orientation="Vertical" SeparationOverride="8">
+        <BoxContainer Orientation="Horizontal" SeparationOverride="8">
+            <Button
+                Name="SaveVoreSettings"
+                Access="Public"
+                Text="Save"
+                Disabled="True" />
+            <Button
+                Name="ResetVoreSettings"
+                Access="Public"
+                Text="Reset" />
+        </BoxContainer>
+        <TabContainer Name="MasterTabContainer">
+            
+            <BoxContainer Name="Info" Orientation="Vertical" SeparationOverride="8">
+                <ScrollContainer HorizontalExpand="True" HScrollEnabled="False" ReturnMeasure="True" MaxWidth="1000" MaxHeight="400" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <RichTextLabel Name="InfoText" HorizontalExpand="True" VerticalAlignment="Top"/>
+                </ScrollContainer>
+            </BoxContainer>
+            
+            <BoxContainer Name="Consent" Orientation="Vertical" SeparationOverride="8">
+                <BoxContainer Orientation="Vertical" SeparationOverride="6">
+                    <Label Text="Vore Types" />
+                    <CheckBox Name="Digest" Text="Classic digestion (WIP)" />
+                </BoxContainer>
+            </BoxContainer>
+            
+            <BoxContainer Name="Customization" Orientation="Vertical" SeparationOverride="8">
+                <BoxContainer Orientation="Vertical" SeparationOverride="6">
+                    <Label Text="Stomach rgb" VerticalAlignment="Center" />
+                    <BoxContainer 
+                        Name="RgbStomachColorContainer" 
+                        Visible="True" Orientation="Vertical" 
+                        HorizontalExpand="True">
+                    </BoxContainer>
+                </BoxContainer>
+                <BoxContainer Orientation="Horizontal" SeparationOverride="6">
+                    <Label Text="Digestion speed" VerticalAlignment="Center" />
+                    <Slider 
+                        HorizontalExpand="True" 
+                        Name="DigestSpeed" 
+                        MinValue="10" 
+                        MaxValue="300"/>
+                    <Label Name="DigestSpeedLabel" />
+                </BoxContainer>
+            </BoxContainer>
+            
+            <BoxContainer Name="Container" Orientation="Vertical" SeparationOverride="6">
+                <Label Text="IN FUTURE PATCHES" VerticalAlignment="Center" />
+            </BoxContainer>
+            
+            <BoxContainer Name="Options" Orientation="Vertical" SeparationOverride="6">
+                    <CheckBox 
+                        Name="AllowSound" 
+                        Text="Stomach sounds" />
+            </BoxContainer>
+
+        </TabContainer>
+    </BoxContainer>
+</DefaultWindow>

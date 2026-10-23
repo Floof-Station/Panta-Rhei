@@ -1,5 +1,6 @@
 using System;
 using Robust.Shared.GameObjects;
+using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
@@ -8,7 +9,7 @@ namespace Content.Shared._Floof.Vore;
 /// <summary>
 /// Handling of predator component for customization
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class PredComponent : Component
 {
     /// The ID of the container used for vore mechanics.
@@ -17,6 +18,10 @@ public sealed partial class PredComponent : Component
     public string ContainerId = "vore_container";
     [DataField]
     public SoundSpecifier SoundDevour = new SoundPathSpecifier("/Audio/_Floof/Vore/gulp.ogg");
+    [DataField("digestSpeed")]
+    public float DigestSpeed = 100f;
+    [DataField("stomachColor"), AutoNetworkedField]
+    public Color StomachColor = new(0.35f, 0.01f, 0.06f);
 }
 
 /// <summary>
