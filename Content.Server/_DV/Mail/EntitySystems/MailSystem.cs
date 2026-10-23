@@ -266,6 +266,7 @@ public sealed class MailSystem : SharedMailSystem
 
         mailComp.RecipientJob = recipient.Job;
         mailComp.Recipient = recipient.Name;
+        mailComp.RecipientUID = recipient.RecieverUID; //Euphoria - Mail Tracker
 
         var mailEntityStrings = mailComp.IsLarge ? MailConstants.MailLarge : MailConstants.Mail;
         if (mailComp.IsLarge)
