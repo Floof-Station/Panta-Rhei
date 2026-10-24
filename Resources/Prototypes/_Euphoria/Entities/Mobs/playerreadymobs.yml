@@ -367,7 +367,7 @@
       Unsexed: MaleReptilian
 
 - type: entity
-  name: runner
+  name: rouny
   id: MobRounyPlayable
   parent: [BasePlayableFeralMob, MobXenoRouny, StripableInventoryBase]
   components:
@@ -467,7 +467,6 @@
     tags:
     - CannotSuicide
     - DoorBumpOpener
-    - UnathiEmotes
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
@@ -477,20 +476,108 @@
     - Arachnic
   - type: Vocal
     sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Unsexed: MaleReptilian
+      Male: UnisexArachnid
+      Female: UnisexArachnid
+      Unsexed: UnisexArachnid
+
+- type: entity
+  name: clown spider
+  id: MobClownSpiderPlayable
+  parent: [BasePlayableFeralMob, MobClownSpider, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Arachnic
+    understands:
+    - TauCetiBasic
+    - Arachnic
+  - type: Vocal
+    sounds:
+      Male: UnisexArachnid
+      Female: UnisexArachnid
+      Unsexed: UnisexArachnid
 
 - type: entity
   name: skia
-  id: MobSkialayable
+  id: MobSkiaPlayable
   parent: [BasePlayableFeralMob, MobSkia, StripableInventoryBase]
   components:
   - type: Tag
     tags:
     - CannotSuicide
     - DoorBumpOpener
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+
+- type: entity
+  name: behonker
+  id: MobBehonkerPlayable
+  parent: [BasePlayableFeralMob, MobBehonkerArtifact, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Eldritch
+    understands:
+    - TauCetiBasic
+    - Eldritch
+
+- type: entity
+  name: trash lizard
+  id: MobTrashLizardPlayable
+  parent: [BasePlayableFeralMob, MobBingle, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
     - UnathiEmotes
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Draconic
+    understands:
+    - TauCetiBasic
+    - Draconic
+
+- type: entity
+  name: rat king
+  id: MobRatKingPlayable
+  parent: [BasePlayableFeralMob, MobRatKing, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Mouse
+    understands:
+    - TauCetiBasic
+    - Mouse
+
+- type: entity
+  name: colossus
+  id: MobColossusPlayable
+  parent: [BasePlayableFeralMob, MobCosmicColossus, StripableInventoryBase]
+  components:
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
   - type: LanguageKnowledge
     speaks:
     - TauCetiBasic
