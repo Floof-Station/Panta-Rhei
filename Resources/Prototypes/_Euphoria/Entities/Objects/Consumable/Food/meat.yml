@@ -35,6 +35,7 @@
       tags:
         - Cooked
         - Meat
+        - Shrimp
     - type: Sprite
       sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
       state: cooked
@@ -49,6 +50,11 @@
     - type: Construction
       graph: ShrimpCooked
       node: cooked shrimp
+    - type: FoodSequenceElement
+      entries:
+        Burger: MeatShrimpBurger
+        Taco: MeatShrimp
+        Hotdog: MeatShrimp
 
 - type: entity
   parent: FoodMeatRawBase
@@ -90,6 +96,7 @@
         - Cooked
         - Meat
         - Steak
+        - Shrimp
     - type: Sprite
       sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
       state: unusual-cooked
@@ -104,3 +111,8 @@
     - type: Construction
       graph: UnusualShrimpCooked
       node: cooked unusual shrimp
+    - type: FoodSequenceElement
+      entries:
+        Burger: MeatShrimpUnusualBurger
+        Taco: MeatShrimpUnusual
+        Hotdog: MeatShrimpUnusual
