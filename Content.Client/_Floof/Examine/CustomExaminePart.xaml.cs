@@ -72,7 +72,7 @@ public sealed partial class CustomExaminePart : Control
         NsfwCheckbox.Pressed = data.RequiresConsent;
         DistanceSpin.Value = data.VisibilityRange;
         ExpirationSpin.Value = data.ExpireTime.Ticks == 0 || data.ExpireTime < _timing.CurTime
-            ? 60 // Texts last for 30 minutes by default
+            ? (int) CustomExamineData.DefaultLifetime.TotalMinutes // Texts last for 30 minutes by default
             : (int) Math.Round((data.ExpireTime - _timing.CurTime).TotalMinutes); // TODO rounding is bad
     }
 

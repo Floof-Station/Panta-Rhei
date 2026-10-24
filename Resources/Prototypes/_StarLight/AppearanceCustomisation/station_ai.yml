@@ -616,21 +616,6 @@
 
 - type: stationAiCustomization
   parent: StationAiIconBase
-  id: StationAiIconChild
-  name: station-ai-icon-child
-  layerData:
-    Occupied:
-      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
-      state: ai_child
-    Dead:
-      sprite: _Starlight/Mobs/Silicon/station_ai.rsi
-      state: ai_dead
-    Intellicard:
-      sprite: _Starlight/Objects/Devices/ai_card.rsi
-      state: child_card
-
-- type: stationAiCustomization
-  parent: StationAiIconBase
   id: StationAiIconGodfrey
   name: station-ai-icon-godfrey
   layerData:
@@ -818,24 +803,6 @@
     Hologram:
       sprite: _Starlight/Mobs/Silicon/holograms.rsi
       state: ai_cloudkat
-
-- type: stationAiCustomization
-  id: StationAiHologramBoy
-  name: station-ai-hologram-boy
-  previewKey: Hologram
-  layerData:
-    Hologram:
-      sprite: _Starlight/Mobs/Silicon/holograms.rsi
-      state: boy_holo
-
-- type: stationAiCustomization
-  id: StationAiHologramGirl
-  name: station-ai-hologram-girl
-  previewKey: Hologram
-  layerData:
-    Hologram:
-      sprite: _Starlight/Mobs/Silicon/holograms.rsi
-      state: girl_holo
 
 - type: stationAiCustomization
   id: StationAiHologramMono

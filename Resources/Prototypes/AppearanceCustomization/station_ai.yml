@@ -53,7 +53,6 @@
   - StationAiIconSparkles
   - StationAiIconAhasuerus
   - StationAiIconAlterEgo
-  - StationAiIconChild
   - StationAiIconGodfrey
   - StationAiIconHoneycomb
   - StationAiIconHourglass
@@ -86,8 +85,6 @@
   - StationAiHologramSemi
   - StationAiHologramCy
   - StationAiHologramcloudkat
-  - StationAiHologramBoy
-  - StationAiHologramGirl
   - StationAiHologramMono
   - StationAiHologramPunkFemale
   - StationAiHologramPunkMale
@@ -97,7 +94,7 @@
 
 # Iconography
 
-# floofstation Start - Upstream -> Starlight 
+# floofstation Start - Upstream -> Starlight
 - type: stationAiCustomization
   abstract: true
   id: StationAiIconBase
@@ -189,7 +186,7 @@
     Dead:
       sprite: _Starlight/Mobs/Silicon/station_ai.rsi
       state: "ai_dead"
-# floofstation End - Upstream -> Starlight 
+# floofstation End - Upstream -> Starlight
 
 # Holograms
 - type: stationAiCustomization

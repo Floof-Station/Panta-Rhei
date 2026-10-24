@@ -85,7 +85,7 @@ public sealed partial class SupermatterGasBarContainer : BoxContainer
         GasBar.ForegroundStyleBoxOverride = new StyleBoxFlat();
         GasBarBorder.PanelOverride = new StyleBoxFlat();
 
-        var color = Color.FromHex("#" + gasProto.Color);
+        var color = gasProto.Color; // Euphoria - just use the color directly from the proto
 
         var barOverride = (StyleBoxFlat)GasBar.ForegroundStyleBoxOverride;
         barOverride.BackgroundColor = color;

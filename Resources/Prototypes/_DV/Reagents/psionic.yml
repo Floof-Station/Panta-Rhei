@@ -7,7 +7,7 @@
   color: "#fffefb"
   physicalDesc: reagent-physical-desc-pure
   metabolisms:
-    Bloodstream:
+    Bloodstream: &PureOilMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate: 0.2
       effects:
       - !type:RollPsionicAbility
@@ -16,6 +16,7 @@
         - !type:ReagentCondition
           reagent: PureOil
           min: 20
+    Digestion: *PureOilMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Claridisol
@@ -26,7 +27,7 @@
   color: "#ae7ccf"
   physicalDesc: reagent-physical-desc-clarifying
   metabolisms:
-    Bloodstream:
+    Bloodstream: &ClaridisolMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate: 0.5
       effects:
       - !type:RollPsionicAbility
@@ -35,3 +36,4 @@
         - !type:ReagentCondition
           reagent: Claridisol
           min: 40
+    Digestion: *ClaridisolMetabolism # Euphoria - Pill Compatibility Patch

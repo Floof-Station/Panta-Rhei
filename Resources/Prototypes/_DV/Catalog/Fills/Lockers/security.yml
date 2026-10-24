@@ -210,6 +210,7 @@
     - id: ClothingOuterArmorDuraVest
     - id: ClothingOuterArmorBasicSlim
     - id: TicketPad
+    - id: ClothingEyesGlassesSunglasses
 
 - type: entityTable
   id: FillLockerBrigmedicDeltaV
@@ -281,7 +282,8 @@
     - id: WeaponTaser
     - id: ClothingBeltSecurityFilled
     - id: Flash
-    - id: ClothingEyesGlassesSecurity
+    #- id: ClothingEyesGlassesSecurity # Euph - Research locked
+    - id: ClothingEyesGlassesSunglasses # Euph - replacement glasses
     - id: ClothingHandsGlovesCombat
     - id: RubberStampArmorer
     - id: DoorRemoteArmory

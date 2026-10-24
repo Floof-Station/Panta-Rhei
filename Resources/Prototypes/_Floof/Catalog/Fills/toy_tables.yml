@@ -122,7 +122,6 @@
   id: RandomPersonalPlushieTable
   table: !type:GroupSelector
     children:
-    - id: PlushieSlimeTider
     - id: PlushieSapphicHarpyPlushie
     - id: PlushieRatLogisticsOfficer
     - id: PlushieBunnyChiefMedicalOfficer
@@ -224,8 +223,6 @@
       weight: 0.15
       children:
       - id: ToyHammer
-      - id: BwoinkHammer
-        weight: 0.3
       - id: PlushieThrongler
         weight: 0.03
     - !type:GroupSelector # Clown

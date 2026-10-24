@@ -4,6 +4,7 @@ using System.Numerics;
 using Content.Shared._Floof.Ropes.Components;
 using Content.Shared._Floof.Ropes.Events;
 using Content.Shared._Floof.Ropes.Prototypes;
+using Content.Shared.Popups;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -81,9 +82,14 @@ public sealed partial class RopeSystem
         if (leftXform.MapID != rightXform.MapID)
             return false;
 
-        if (GetEffectiveDistance(leftXform, rightXform) > length + _connectionDstTolerance)
+        // We add a small constant factor to allow e.g. a 1m leash to be created at a distance of 2m.
+        // Increasing it any further may lead to non-physical behavior
+        var effectiveMaxLength = length * MaxLengthMultiplier + 2f;
+        var dst = GetEffectiveDistance(leftXform, rightXform);
+        if (dst > effectiveMaxLength)
         {
-            Log.Warning($"Refusing to create a rope shorter than the distance between the two entities: {ToPrettyString(left)}, {ToPrettyString(right)}");
+            Log.Warning("Refusing to create a rope shorter than the distance between the two entities: " +
+                        $"{ToPrettyString(left)}, {ToPrettyString(right)}. Effective max length: {effectiveMaxLength}, dst: {dst}");
             return false;
         }
 
@@ -106,11 +112,12 @@ public sealed partial class RopeSystem
             return true;
 
         // Or if one of them directly or indirectly contains the other
-        if (_xform.ContainsEntity(left, (right, rightXform))
-            || _xform.ContainsEntity(right, (left, leftXform)))
+        if (_xform.ContainsEntity(leftContainer?.Owner ?? left, (right, rightXform))
+            || _xform.ContainsEntity(rightContainer?.Owner ?? right, (left, leftXform)))
             return true;
 
         // Or if the outer container of either is a non-physics entity
+        // Note: even if the entity has CollisionWakeComponent, it won't go to sleep so long as it has at least one joint attached to it. So this check is mostly safe.
         if (leftContainer != null
             && (!_physicsQuery.TryComp(leftContainer?.Owner, out var leftContainerPhysics) || !leftContainerPhysics.CanCollide))
             return true;
@@ -324,6 +331,20 @@ public sealed partial class RopeSystem
     }
 
     /// <summary>
+    ///     Deletes the rope and sends an informative popup.
+    /// </summary>
+    public void DestroyRope(Entity<RopeComponent?> rope)
+    {
+        if (_net.IsClient || TerminatingOrDeleted(rope))
+            return;
+
+        if (_xform.TryGetMapOrGridCoordinates(rope, out var coords))
+            _popups.PopupCoordinates(Loc.GetString("rope-destroyed-popup", ("rope", rope.Owner)), coords.Value, PopupType.Medium);
+
+        QueueDel(rope);
+    }
+
+    /// <summary>
     ///     Enables or disables the rope based on whether it can or can not exist.
     /// </summary>
     public void UpdateRope(Entity<RopeComponent> rope)
@@ -333,6 +354,13 @@ public sealed partial class RopeSystem
 
         var has1Anchor = rope.Comp.ConnectedStart != null || rope.Comp.ConnectedEnd != null;
         var has2Anchors = rope.Comp.ConnectedStart != null && rope.Comp.ConnectedEnd != null;
+
+        // If it has two anchors, destroy it if they are too far apart (e.g. an entity has just exited a disposal pipe and its too far away from the other one)
+        if (has2Anchors && !CanRopeExistBetween(rope.Comp.ConnectedStart!.Value.Anchor, rope.Comp.ConnectedEnd!.Value.Anchor, rope.Comp.RopeLength))
+        {
+            DestroyRope(rope.AsNullable());
+            return;
+        }
 
         // We can enable the rope in one of the two following scenarios:
         // 1. It's attached to exactly 1 anchor
@@ -344,7 +372,7 @@ public sealed partial class RopeSystem
         if (disabled && shouldEnable)
         {
             // If we can't enable it, it's invalid
-            if (!EnableRope(rope!))
+            if (!EnableRope(rope.AsNullable(), skipChecks: true))
             {
                 Log.Warning($"Rope {ToPrettyString(rope)} cannot be re-enabled. Deleting it.");
                 TryQueueDel(rope);
@@ -399,8 +427,8 @@ public sealed partial class RopeSystem
 
     /// <summary>
     ///     Enables a previously disabled rope and places all of its links either between the two anchors or near the left or right anchor (whichever exists).
+    ///     If skipChecks is true, doesn't check the distance between anchors.
     /// </summary>
-    /// <remarks>Does not check if the anchors are on the same map.</remarks>
     public bool EnableRope(Entity<RopeComponent?> rope, bool skipChecks = false)
     {
         if (!_ropeQuery.Resolve(rope, ref rope.Comp) || !rope.Comp.IsDisabled)

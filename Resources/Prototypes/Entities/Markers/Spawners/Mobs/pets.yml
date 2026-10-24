@@ -60,16 +60,27 @@
 - type: entity
   parent: MarkerBase
   id: SpawnMobCatException
-  name: Exception Spawner
+  name: Exception/Gleeble Spawner (4:1 odds) # euphoria - updated name to include new spawn entry, and added odds of each spawning
   #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
     - state: green
     - state: ai
-  - type: ConditionalSpawner
-    prototypes:
-    - MobCatException
+  # euphoria start - swapped out ConditionalSpawner for EntityTableSpawner to allow for a chance at either cat (the previous default being exception)
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 80
+        children:
+        - id: MobCatException
+      - !type:GroupSelector
+        weight: 20
+        children:
+        - id: MobCatGleeble
+# euphoria end
 
 - type: entity
   parent: MarkerBase
@@ -88,16 +99,27 @@
 - type: entity
   parent: MarkerBase
   id: SpawnMobCatRuntime
-  name: Runtime Spawner
+  name: Runtime/Gnarp Spawner (4:1 odds) # euphoria - updated name to include new spawn entry, and added odds of each spawning
   #suffix: CMO Pet # DeltaV - Change from CMO pet to anybody's pet
   components:
   - type: Sprite
     layers:
     - state: green
     - state: ai
-  - type: ConditionalSpawner
-    prototypes:
-    - MobCatRuntime
+# euphoria start - swapped out ConditionalSpawner for EntityTableSpawner to allow for a chance at either cat (the previous default being runtime)
+  - type: EntityTableSpawner
+    offset: 0
+    table: !type:GroupSelector
+      children:
+      - !type:GroupSelector
+        weight: 80
+        children:
+        - id: MobCatRuntime
+      - !type:GroupSelector
+        weight: 20
+        children:
+        - id: MobCatGnarp
+# euphoria end
 
 - type: entity
   parent: MarkerBase
