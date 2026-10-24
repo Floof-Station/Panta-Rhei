@@ -49,8 +49,6 @@ admin-verbs-pause-map = Pause Map
 admin-verbs-snap-joints = Snap Joints
 admin-verbs-make-minigun = Make Minigun
 admin-verbs-set-bullet-amount = Set Bullet Amount
-admin-verbs-send-to-cryo = Send Instantly To Cryo
-admin-verbs-cant-send-to-cryo = Can't send to cryo, make a cryostorage pod and try again
 
 # Toggles verbs
 admin-verbs-bolt = Bolt
