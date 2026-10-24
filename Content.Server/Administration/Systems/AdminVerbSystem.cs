@@ -641,7 +641,8 @@ namespace Content.Server.Administration.Systems
             }
 
             // Cryo - Instantly cryo's the target.
-            if (HasComp<MindContainerComponent>(args.Target))
+            if (_groupController.CanCommand(player, "respawn")
+                && HasComp<MindContainerComponent>(args.Target))
             {
                 args.Verbs.Add(new Verb()
                 {
