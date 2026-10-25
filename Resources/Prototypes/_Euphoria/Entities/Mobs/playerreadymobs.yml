@@ -6,9 +6,14 @@
   categories: [ HideSpawnMenu ]
   components:
     - type: Hands
-      activeHandId: Hand
+      activeHandId: Right
+      sortedHands:
+      - Right
+      - Left
       hands:
-        Hand:
+        Right:
+          location: Right
+        Left:
           location: Left
     - type: ComplexInteraction
     - type: Inventory
@@ -256,6 +261,14 @@
   id: MobRunnerPlayable
   parent: [BasePlayableFeralMob, MobXenoRunner, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/runner.rsi # DeltaV - Port RMC Sprites
+    offset: 0,0.6
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -279,6 +292,14 @@
   id: MobDronePlayable
   parent: [BasePlayableFeralMob, MobXenoDrone, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/drone.rsi # DeltaV - Port RMC Sprites
+    offset: 0,0.2
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -302,6 +323,14 @@
   id: MobRavagerPlayable
   parent: [BasePlayableFeralMob, MobXenoRavager, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/ravager.rsi # DeltaV - Port RMC Sprites
+    offset: 0,0.5
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -325,6 +354,14 @@
   id: MobPraetorianPlayable
   parent: [BasePlayableFeralMob, MobXenoPraetorian, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/praetorian.rsi # DeltaV - Port RMC Sprites
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -348,6 +385,14 @@
   id: MobQueenPlayable
   parent: [BasePlayableFeralMob, MobXenoQueen, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/queen.rsi # DeltaV - Port RMC Sprites
+    offset: 0,0.4
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -371,6 +416,14 @@
   id: MobRounyPlayable
   parent: [BasePlayableFeralMob, MobXenoRouny, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Aliens/Xenos/rouny.rsi
+    offset: 0,0.6
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -394,6 +447,13 @@
   id: MobBurrowerPlayable
   parent: [BasePlayableFeralMob, MobXenoPlayer, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/burrower.rsi # DeltaV - Port RMC Sprites
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -417,6 +477,14 @@
   id: MobSpitterPlayable
   parent: [BasePlayableFeralMob, MobXenoSpitter, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _RMC14/Mobs/Xenos/spitter.rsi # DeltaV - Port RMC Sprites
+    offset: 0,0.3
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: running
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -440,6 +508,12 @@
   id: MobGoliathPlayable
   parent: [BasePlayableFeralMob, MobGoliath, StripableInventoryBase]
   components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/goliath.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: goliath
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -463,6 +537,13 @@
   id: MobTarantulaPlayable
   parent: [BasePlayableFeralMob, MobGiantSpider, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: Mobs/Animals/spider.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: tarantula
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -485,6 +566,13 @@
   id: MobClownSpiderPlayable
   parent: [BasePlayableFeralMob, MobClownSpider, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: clown
+      sprite: Mobs/Animals/clownspider.rsi
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -507,6 +595,13 @@
   id: MobSkiaPlayable
   parent: [BasePlayableFeralMob, MobSkia, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _DV/Mobs/Animals/skia.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: skia
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -522,6 +617,12 @@
   id: MobBehonkerPlayable
   parent: [BasePlayableFeralMob, MobBehonkerArtifact, StripableInventoryBase]
   components:
+  - type: Sprite
+    sprite: Mobs/Demons/behonker.rsi
+    layers:
+      - map: [ "enum.DamageStateVisualLayers.Base" ]
+        state: alive
+      - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -539,6 +640,19 @@
   id: MobTrashLizardPlayable
   parent: [BasePlayableFeralMob, MobBingle, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Bingle/bingle.rsi #Euphoria
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: alive
+    - map: ["enum.BingleVisual.Upgraded"]
+      state: Upgraded
+      visible: false
+    - map: ["enum.BingleVisual.Combat"]
+      state: combat
+      visible: false
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -557,6 +671,16 @@
   id: MobRatKingPlayable
   parent: [BasePlayableFeralMob, MobRatKing, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: Mobs/Animals/regalrat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: regalrat
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: eyes
+      shader: unshaded
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
@@ -574,6 +698,30 @@
   id: MobColossusPlayable
   parent: [BasePlayableFeralMob, MobCosmicColossus, StripableInventoryBase]
   components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _DV/CosmicCult/Mobs/colossus.rsi
+    layers:
+    - state: unshaded_bg
+      shader: unshaded
+      map: ["underlay"]
+    - state: colossus
+      map: ["base"]
+    - state: dead
+      visible: false
+      map: ["corpse"]
+    - state: unshaded_fg
+      shader: unshaded
+      map: ["overlay"]
+    - state: attacking
+      shader: unshaded
+      visible: false
+      map: ["attack"]
+    - state: hibernate
+      shader: unshaded
+      visible: false
+      map: ["hibernating"]
+    - map: ["enum.HumanoidVisualLayers.Handcuffs"]
   - type: Tag
     tags:
     - CannotSuicide
