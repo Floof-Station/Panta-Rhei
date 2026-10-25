@@ -8,9 +8,9 @@
     ClothingShoesBootsJack: 3
     ClothingShoesBootsJackHeels: 2 # Moffstation - High-Heeled Jackboots
     ClothingHeadHatBeretSecurity: 3
+    ClothingHeadHatCapSec: 3 # DeltaV - add security cap to secdrobe
     ClothingHeadHatBeretSecurityGrey: 3 # DeltaV - add grey security beret to secdrobe
     ClothingHeadHatBeretCadet: 3 # DeltaV - add cadet beret to secdrobe
-    ClothingHeadHatCapSec: 3 # DeltaV - add security cap to secdrobe
     ClothingMaskNeckGaiter: 3 # DeltaV - add neck gaiters to secdrobe
 #    ClothingMaskGasSecurity: 3 # DeltaV - 1984 secmasks from secdrobe, you can make them in the lathe now.
 #    ClothingHeadHatSecsoft: 3 # DeltaV - removed from SecDrobe due to inconsistency with art direction
@@ -43,16 +43,10 @@
     ClothingOuterCoatStasecCorpsman: 2 # DeltaV - added corpsman uniform to secdrobe
 #    ClothingOuterWinterSec: 2 # DeltaV - removed this
     ClothingNeckCWPSec: 3 # DeltaV - add cold weather ponchos
-    # Euph - Readded the SecPoncho after DV killed it.
-    ClothingUniformJumpsuitPrisoner: 3
-    ClothingUniformJumpskirtPrisoner: 3
-    ClothingHeadsetPrison: 3
-    # End DeltaV Additions
-    ClothingHeadsetSecurity: 3
-  #  ClothingOuterWinterSec: 2 # DeltaV - Replaced by ClothingOuterCoatStasec
-  #  ClothingOuterArmorBasic: 2 # DeltaV - Moved to SecTech
-    ClothingNeckScarfStripedBlue: 3 # DeltaV - Was ClothingNeckScarfStripedRed
-  #  ClothingOuterArmorBasicSlim: 2 # DeltaV - Removed
+##    ClothingOuterArmorBasic: 2 # DeltaV - moved body armour from SecDrobe to SecTech
+##    ClothingOuterArmorBasicSlim: 2
+    ClothingNeckScarfStripedBlue: 3 # DeltaV - blue instead of red scarf. Was ClothingNeckScarfStripedRed
+    # ClothingOuterArmorBasicSlim: 2 # DeltaV - this was gone at one point no idea where it went
     ClothingEyesBlindfold: 1
     ClothingShoesBootsCombat: 1
     ClothingShoesBootsWinterSec: 2

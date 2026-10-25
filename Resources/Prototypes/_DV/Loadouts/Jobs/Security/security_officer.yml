@@ -16,11 +16,6 @@
     pocket1: WeaponPistolMk58
 
 - type: loadout
-  id: SecurityFirearmWeaponPistolSV213
-  equipment:
-    pocket1: WeaponLaserSvalinnSecurity
-
-- type: loadout
   id: SecurityFirearmWeaponDisabler
   equipment:
     pocket1: WeaponDisabler
@@ -30,6 +25,11 @@
   storage:
     back:
     - Truncheon
+
+- type: loadout
+  id: SecurityFirearmWeaponPistolSV213
+  equipment:
+    pocket1: WeaponLaserSvalinnSecurity
 
 # Ammo
 

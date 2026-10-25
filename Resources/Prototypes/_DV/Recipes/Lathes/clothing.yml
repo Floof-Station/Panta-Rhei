@@ -2,8 +2,8 @@
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpsuitSecBlue
-  result: ClothingUniformJumpsuitSecBlue
+  id: ClothingUniformJumpsuitSecWhite
+  result: ClothingUniformJumpsuitSecWhite
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
@@ -22,8 +22,8 @@
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpsuitWardenBlue
-  result: ClothingUniformJumpsuitWardenBlue
+  id: ClothingUniformJumpsuitWardenWhite
+  result: ClothingUniformJumpsuitWardenWhite
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
@@ -44,8 +44,8 @@
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpskirtSecBlue
-  result: ClothingUniformJumpskirtSecBlue
+  id: ClothingUniformJumpskirtSecWhite
+  result: ClothingUniformJumpskirtSecWhite
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
@@ -53,12 +53,12 @@
   result: ClothingUniformJumpskirtSecGrey
 
 - type: latheRecipe
-  parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpskirtHoSBlue
-  result: ClothingUniformJumpskirtHoSBlue
+  parent: BaseCommandJumpsuitRecipe
+  id: ClothingUniformJumpskirtHoSWhite
+  result: ClothingUniformJumpskirtHoSWhite
 
 - type: latheRecipe
-  parent: BaseJumpsuitRecipe
+  parent: BaseCommandJumpsuitRecipe
   id: ClothingUniformJumpskirtHoSGrey
   result: ClothingUniformJumpskirtHoSGrey
 
@@ -69,8 +69,8 @@
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpskirtWardenBlue
-  result: ClothingUniformJumpskirtWardenBlue
+  id: ClothingUniformJumpskirtWardenWhite
+  result: ClothingUniformJumpskirtWardenWhite
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
@@ -269,13 +269,13 @@
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadHatBeretSecurityGrey
-  result: ClothingHeadHatBeretSecurityGrey
+  id: ClothingHeadHatCapSec
+  result: ClothingHeadHatCapSec
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadHatCapSec
-  result: ClothingHeadHatCapSec
+  id: ClothingHeadHatBeretSecurityGrey
+  result: ClothingHeadHatBeretSecurityGrey
 
 #Centcomm Clothing
 

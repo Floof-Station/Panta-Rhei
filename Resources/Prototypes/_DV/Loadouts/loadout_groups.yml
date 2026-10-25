@@ -311,11 +311,10 @@
   name: loadout-group-brig-medic-neck
   minLimit: 0
   loadouts:
-  - ScarfRed
   - ScarfBlack
   - ScarfBlue
   - ScarfLightBlue
-  - SecurityPoncho # Euph - Readded the SecPoncho after DV killed it.
+  - SecurityPoncho
 
 - type: loadoutGroup
   id: BrigMedicJumpsuit
@@ -391,7 +390,8 @@
   name: loadout-group-security-cadet-head
   minLimit: 0
   loadouts:
-  - MimeHead
+  - SecurityCadetBeret
+  - SecurityCadetCap
 
 ## Security Guns
 - type: loadoutGroup
@@ -526,7 +526,7 @@
   name: loadout-group-security-neck
   minLimit: 0
   loadouts:
-  - ScarfRed
+  - ScarfBlue
   - ScarfBlack
   - SecurityPoncho # Euph - Readded the SecPoncho after DV killed it.
 
