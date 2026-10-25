@@ -44,3 +44,35 @@
   effects:
   - !type:ModifyDensityEffect
     factor: 1.4
+
+- type: trait
+  id: HungerBlind
+  name: trait-hungerblind-name
+  description: trait-hungerblind-desc
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ApplyStatusEffect
+    statusEffects:
+    - HungerBlindnessTraitStatusEffect
+
+- type: trait
+  id: ThirstBlind
+  name: trait-thirstblind-name
+  description: trait-thirstblind-desc
+  category: DisabilitiesPhysical
+  cost: -1
+  conditions:
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ApplyStatusEffect
+    statusEffects:
+    - ThirstBlindnessTraitStatusEffect

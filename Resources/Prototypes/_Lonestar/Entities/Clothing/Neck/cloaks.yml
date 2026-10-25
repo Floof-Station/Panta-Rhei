@@ -1,0 +1,21 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSolarianOfficerCloak
+  name: Solarian Officer's cloak
+  description: A cloak worn by Officers of high standing within the Solarian Military.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Neck/tsfcaptaincloak.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Neck/tsfcaptaincloak.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckSolarianAdmiralCloak
+  name: Solarian Admiralty cloak
+  description: A cloak worn by the highest ranking officers within the Solarian Military.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Neck/tsfcolonelcloak.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Neck/tsfcolonelcloak.rsi
