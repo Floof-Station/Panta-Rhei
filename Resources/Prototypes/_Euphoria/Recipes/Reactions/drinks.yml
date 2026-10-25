@@ -207,3 +207,15 @@
       amount: 1
   products:
     StrawberrySyrup: 2
+
+# IceCreams
+
+- type: reaction
+  id: IceCreamStrawberry
+  reactants:
+    StrawberryJuice:
+      amount: 1
+    IceCream:
+      amount: 1
+  products:
+    IceCreamStrawberry: 2
