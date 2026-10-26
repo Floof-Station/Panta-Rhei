@@ -35,3 +35,18 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   fizziness: 0.3
+
+- type: reagent
+  id: BaxShots
+  name: reagent-name-baxshots
+  parent: BaseDrink
+  desc: reagent-desc-baxshots
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: baxshots
+  color: "#f4615e"
+  metamorphicSprite:
+    sprite: _DV/Objects/Consumable/Drinks/pilk.rsi # re-use dasboot till we get a better sprite
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
