@@ -13,9 +13,9 @@
   - Male
   - Female
   - Unsexed
-# baseScale: "1, 1.05" # DeltaV - make sure Thaven are still scaled w/ CD records
-# Begin Euphoria changes - species use height
-  minHeight: 0.63
-  maxHeight: 1.12
-  defaultHeight: 0.8
-# End Euphoria changes - species use height
+  # Begin Euphoria changes
+  # baseScale: "1, 1.05" # DeltaV - make sure Thaven are still scaled w/ CD records
+  minHeight: 0.56
+  maxHeight: 1.32
+  defaultHeight: 1
+  # End Euphoria changes!

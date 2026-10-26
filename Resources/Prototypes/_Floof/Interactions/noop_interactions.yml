@@ -124,7 +124,7 @@
   effectSuccess:
     popup: Subtle
     sound:
-      path: /Audio/_Euphoria/Announcements/InteractVerbs/buttocks.ogg # ASS SLAP USA BABY
+      path: /Audio/_Euphoria/InteractVerbs/buttocks.ogg # ASS SLAP USA BABY
       params:
         volume: -1
     soundPerceivedByOthers: false
@@ -167,3 +167,27 @@
   requirement:
     !type:MobStateRequirement # Target must be a mob
     inverted: true
+
+# big sniffer
+- type: Interaction
+  id: SniffingGesture
+  parent: [BaseGlobal, BaseMouth]
+  priority: -90 # im stinkin we keeps this lower in the prio
+  delay: 0.2
+  cooldown: 2
+  icon: /Textures/Interface/VerbIcons/examine.svg.192dpi.png
+  range: { max: 1.0 }
+  hideByRequirement: true
+  action:
+    !type:ComplexAction
+    requireAll: false
+    actions:
+    - !type:NoOpAction
+  effectSuccess:
+    popup: Subtle
+    sound:
+      path: /Audio/_Euphoria/InteractVerbs/sniffing.ogg
+      params:
+        volume: -1
+        variation: 0.125
+    soundPerceivedByOthers: false
