@@ -62,6 +62,10 @@
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_ballet.rsi
   - type: Clothing
     sprite: _Euphoria/Clothing/Shoes/Misc/heels_ballet.rsi
+    clothingVisuals:
+      shoes:
+      - state: equipped-FEET
+        offset: "0, -0.0275"
   - type: MeleeWeapon
     damage:
       types:

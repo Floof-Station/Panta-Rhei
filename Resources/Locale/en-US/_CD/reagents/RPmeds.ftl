@@ -70,15 +70,38 @@ reagent-effect-anxietymed-strong7 = You feel like you can take on the world!
 # Anxiety meds fade
 reagent-effect-anxietymed-fade = The calming effects start to fade...
 
-# Addiction popups
-reagent-effect-medaddiction-1 = You're yearning for another high.
-reagent-effect-medaddiction-2 = You really need some more drugs.
-reagent-effect-medaddiction-3 = You feel empty. Find another fix.
-reagent-effect-medaddiction-4 = Go get some drugs, you can quit later.
-reagent-effect-medaddiction-5 = You feel desperate for your next high.
-reagent-effect-medaddiction-6 = You can feel your hands shaking.
-reagent-effect-medaddiction-7 = You could use another hit right now
-reagent-effect-medaddiction-8 = One more fix couldn't hurt, right?
+# Addiction popups      # Euphoria - Changing popup messages to be less stereotypical, more faithful to what dependency feels like. Commenting out the old strings and adding new ones.
+# reagent-effect-medaddiction-1 = You're yearning for another high.
+# reagent-effect-medaddiction-2 = You really need some more drugs.
+# reagent-effect-medaddiction-3 = You feel empty. Find another fix.
+# reagent-effect-medaddiction-4 = Go get some drugs, you can quit later.
+# reagent-effect-medaddiction-5 = You feel desperate for your next high.
+# reagent-effect-medaddiction-6 = You can feel your hands shaking.
+# reagent-effect-medaddiction-7 = You could use another hit right now
+# reagent-effect-medaddiction-8 = One more fix couldn't hurt, right?
+reagent-effect-medaddiction-1 = Your hands shake.
+reagent-effect-medaddiction-2 = You feel tremors in your legs and arms.
+reagent-effect-medaddiction-3 = Your legs feel weak.
+reagent-effect-medaddiction-4 = Your heart starts racing for a moment.
+reagent-effect-medaddiction-5 = Your nerves feel like they're on fire.
+reagent-effect-medaddiction-6 = It's hard to think straight.
+reagent-effect-medaddiction-7 = You can't remember what you were just talking about.
+reagent-effect-medaddiction-8 = Your head spins.
+reagent-effect-medaddiction-9 = Everything feels like it's tumbling around.
+reagent-effect-medaddiction-10 = You feel sick for a moment.
+reagent-effect-medaddiction-11 = A wave of nausea washes over you.
+reagent-effect-medaddiction-12 = Your mouth feels dry.
+reagent-effect-medaddiction-13 = Your eyes sting.
+reagent-effect-medaddiction-14 = You can't focus on anything far away.
+reagent-effect-medaddiction-15 = You suddenly feel the urge to cry.
+reagent-effect-medaddiction-16 = You suddenly feel irritable.
+reagent-effect-medaddiction-17 = You have the strong urge to hit something.
+reagent-effect-medaddiction-18 = Everything is funny - you just have to laugh!
+reagent-effect-medaddiction-19 = The lights are too bright.
+reagent-effect-medaddiction-20 = Everything you hear keeps echoing through your head.
+reagent-effect-medaddiction-21 = Everything you touch has too much texture.
+reagent-effect-medaddiction-22 = Chills wrack your body.
+reagent-effect-medaddiction-23 = Your skin feels too hot.
 
 # Mild painkillers
 reagent-effect-painkiller-mild1 = Your body hurts a bit less.

@@ -35,3 +35,48 @@
           amount: 2
         - id: ClothingShoesHighheelBoots
           amount: 2
+
+- type: entity
+  id: CrateFunCarpetBulk
+  parent: CrateGenericSteel
+  name: bulk carpet crate
+  description: 120 square meters of carpet in an assortment of colours.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        rolls: 4
+        children:
+        - id: FloorCarpetItemRedFull
+          weight: 1
+        - id: FloorCarpetItemBlackFull
+          weight: 1
+        - id: FloorCarpetItemBlueFull
+          weight: 1
+        - id: FloorCarpetItemGreenFull
+          weight: 1
+        - id: FloorCarpetItemOrangeFull
+          weight: 1
+        - id: FloorCarpetItemSkyBlueFull
+          weight: 1
+        - id: FloorCarpetItemPurpleFull
+          weight: 1
+        - id: FloorCarpetItemPinkFull
+          weight: 1
+        - id: FloorCarpetItemCyanFull
+          weight: 1
+        - id: FloorCarpetItemWhiteFull
+          weight: 1
+
+- type: entity
+  id: CrateFunCarpetMetamorphic
+  parent: CrateGenericSteel
+  name: metamorphic carpet crate
+  description: 60 square meters of metamorphic carpet to let you choose the perfect colour.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: FloorCarpetItemMetamorphic
+          amount: 2

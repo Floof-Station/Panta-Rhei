@@ -1,0 +1,13 @@
+﻿- type: constructionGraph
+  id: MakeupCloth
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: makeupcloth
+      steps:
+      - material: Cloth
+        amount: 1
+        doAfter: 2
+  - node: makeupcloth
+    entity: LipStickMakeupCloth

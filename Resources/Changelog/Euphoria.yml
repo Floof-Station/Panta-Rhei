@@ -6360,3 +6360,375 @@ Entries:
         presets.
   id: 793
   time: '2026-10-07T04:53:30.0000000+00:00'
+- author: P4nnant
+  changes:
+    - type: Add
+      message: >-
+        added Gnarp and Gleeble, funny alien cats that have a chance to spawn in
+        place of the CMO's cats
+  id: 794
+  time: '2026-10-10T00:57:55.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Fix
+      message: >-
+        Several chemicals work with pills, drinks, and food again, including
+        Aphrodisiacs, Painkillers, and Antidepressants
+    - type: Fix
+      message: Narcoleptics no longer are required to inject their medicine
+    - type: Fix
+      message: Caramexinin should work when mixed into drinks and food again
+    - type: Fix
+      message: Ambuzol and Ambuzol Plus now use YAML anchors instead of repeating code
+  id: 795
+  time: '2026-10-10T01:01:01.0000000+00:00'
+- author: deltaSpawn0040
+  changes: []
+  id: 796
+  time: '2026-10-10T10:52:01.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Add
+      message: Smoking and Drinking now satisfy addictions!
+    - type: Add
+      message: Added over 20 new addiction messages
+    - type: Remove
+      message: Removed the old, stereotyped addiction messages
+    - type: Fix
+      message: Fixed Nicotine not metabolizing properly
+    - type: Fix
+      message: Nicotine does damage again
+  id: 797
+  time: '2026-10-10T10:53:39.0000000+00:00'
+- author: PaperShadow
+  changes:
+    - type: Tweak
+      message: >-
+        The following food has gained the "Meat" tag and can now be eaten by
+        carnivorous crew: Bisque; Bowl of Hot Chili; Carp Sushi Roll; Carp Sushi
+        Roll Slice; Chili Con Carnival; Cold Chili; Donk Fish Stew; Full
+        American Breakfast; Full English Breakfast; Mulan Congee; Salmon Sushi
+        Roll; Salmon Sushi Roll Slice; Wing Fang Chu.
+    - type: Remove
+      message: Moth People can no longer eat Mulan Congee.
+    - type: Tweak
+      message: >-
+        Changed the flavor profile of the Bisque, the Full American Breakfast,
+        and the Full English Breakfast.
+  id: 798
+  time: '2026-10-10T10:54:57.0000000+00:00'
+- author: Barheru
+  changes:
+    - type: Tweak
+      message: >-
+        Ballet Heel Sprites are now more in line with other heels. They also
+        make you look taller now!
+  id: 799
+  time: '2026-10-10T10:55:43.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: >-
+        Portable Particle Decelerators slow you down less, shoot more quickly
+        and are much more effective at nullifying Singulooses and Teslooses. 
+  id: 800
+  time: '2026-10-10T10:59:39.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Medical pouch in corpsman's colours.
+  id: 801
+  time: '2026-10-10T11:00:20.0000000+00:00'
+- author: Eagle0600
+  changes:
+    - type: Add
+      message: Two types of carpet crates orderable from logistics.
+  id: 802
+  time: '2026-10-10T11:01:44.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Add
+      message: >-
+        Added an IPC Repair Kit to the Orders console! This has the necessary
+        supplies to repair basic damage to IPCs.
+    - type: Add
+      message: Added an IPC Oil Pack delivery to the Orders console!
+    - type: Tweak
+      message: IPC welding repairs are much more reasonable.
+  id: 803
+  time: '2026-10-10T21:33:27.0000000+00:00'
+- author: P4nnant
+  changes:
+    - type: Add
+      message: >-
+        added the Paint Station, a vending machine exclusively designed to sell
+        spraypaint (restock box included)
+    - type: Add
+      message: added several new colours of spraypaint
+    - type: Remove
+      message: removed the spraypaint gamba crate from cargo's catalouge
+    - type: Fix
+      message: fixed a few minor typos
+    - type: Tweak
+      message: added the colour of paint to every spraypaint can's name
+    - type: Add
+      message: added the spraypainter and compressed paint to the paint station
+    - type: Tweak
+      message: doubled the number of charges spraypaint cans have
+  id: 804
+  time: '2026-10-10T23:12:16.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Fix
+      message: THC now metabolizes more properly, go get high on edibles and blunts!
+  id: 805
+  time: '2026-10-11T04:22:28.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Tweak
+      message: The Wood Viper can no longer take high capacity pistol magazines.
+  id: 806
+  time: '2026-10-11T04:23:12.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: >-
+        Adjusted the metabolisms of some drinks so that they're more consistent
+        with their ingredients.
+  id: 807
+  time: '2026-10-13T07:27:11.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Meteor swarms and other job count-guarded events should now correctly
+        count jobs.
+    - type: Tweak
+      message: >-
+        Station traffic control events (unknown shuttles) now have a 50% chance
+        to spawn every 15-45 minutes (instead of 5%)
+  id: 808
+  time: '2026-10-13T12:36:28.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: 'Added naga tail markings, so you can turn your character into a naga. '
+  id: 809
+  time: '2026-10-13T07:27:51.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Remove
+      message: Removed speedboots from T3 Service.
+  id: 810
+  time: '2026-10-13T07:28:18.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added Psionic Insensitivity trait. Prevents you from rolling or
+        receiving psionic powers. 
+  id: 811
+  time: '2026-10-13T07:30:17.0000000+00:00'
+- author: Katarn1933
+  changes:
+    - type: Fix
+      message: Lighthouse bought hardsuits for atmos techs!
+  id: 812
+  time: '2026-10-14T04:04:46.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Add
+      message: Vampirism trait.
+  id: 813
+  time: '2026-10-14T09:45:17.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: Reduced the number of security slots available on most stations
+  id: 814
+  time: '2026-10-14T09:46:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        Ported Wizdens AFK Kick to help stop high pop maps from being the only
+        votes when there isn't actually enough active players to play those
+        maps.
+  id: 815
+  time: '2026-10-14T09:48:45.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Centcomm has allowed for the sale of various perfumes in the sector.
+    - type: Add
+      message: >-
+        Various colors of lipstick have been seen in the sector and will apply a
+        lipstick marking when you used on your self or others.
+  id: 816
+  time: '2026-10-15T09:21:42.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Fix
+      message: Sec roles should now have access to their senior outfits again.
+  id: 817
+  time: '2026-10-15T09:22:37.0000000+00:00'
+- author: ASaltySeabass
+  changes:
+    - type: Tweak
+      message: Calico Sunrise no longer contains alcohol when it shouldn't
+  id: 818
+  time: '2026-10-16T02:36:38.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Tweak
+      message: The swimsuit can now be worn under clothes.
+  id: 819
+  time: '2026-10-16T07:50:12.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: >-
+        Changed IPC yaml so their default sprites are done with ingame
+        changeable markings rather than hardcoded external organs.
+    - type: Add
+      message: >-
+        A set of default markings for IPCs, so you can change the color of every
+        limb you could possibly imagine having.
+  id: 820
+  time: '2026-10-16T07:51:00.0000000+00:00'
+- author: JaDiDo
+  changes:
+    - type: Fix
+      message: voresystem fix regarding breathing issues
+  id: 821
+  time: '2026-10-17T01:51:14.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: >-
+        New PKA and Crusher variants can be found on debris, lavaland and in the
+        Salvage Vendor.
+  id: 822
+  time: '2026-10-17T02:25:12.0000000+00:00'
+- author: Aureuix
+  changes:
+    - type: Tweak
+      message: >-
+        Split the synthetic trait into two traits, one that lets you see ion
+        storms and one that changes your blood using the same system as other
+        blood traits.
+  id: 823
+  time: '2026-10-17T04:10:23.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Add
+      message: Added oil pack sprites.
+    - type: Remove
+      message: Removed IPCs ashing.
+  id: 824
+  time: '2026-10-17T22:32:56.0000000+00:00'
+- author: cyberjoel
+  changes:
+    - type: Add
+      message: Tall Oval Ears
+  id: 825
+  time: '2026-10-20T12:25:36.0000000+00:00'
+- author: LillRatties
+  changes:
+    - type: Remove
+      message: Removed the technological progress lobby art
+  id: 826
+  time: '2026-10-21T09:24:36.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Add
+      message: Partial Vampirism trait that lets you eat food.
+    - type: Add
+      message: Individual Blood Drinker and Siphon Fangs traits.
+    - type: Tweak
+      message: Vampires' stomachs remain the same size as the species'.
+    - type: Tweak
+      message: Vampires don't spill blood they try to drink while full.
+    - type: Fix
+      message: Slime People can take Vampirism traits.
+  id: 827
+  time: '2026-10-21T09:26:59.0000000+00:00'
+- author: sprkl
+  changes:
+    - type: Add
+      message: Added hunger and thirst blindness traits.
+  id: 828
+  time: '2026-10-21T10:22:36.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Remove
+      message: Disabled the Glimmer Restyle rule from rolling.
+  id: 829
+  time: '2026-10-21T11:58:45.0000000+00:00'
+- author: IcarusianFolly
+  changes:
+    - type: Add
+      message: Solarian Alliance hardsuits and uniforms for events.
+    - type: Tweak
+      message: Changed some Deathsquad suit sprites, gave them thermals + nightvision.
+  id: 830
+  time: '2026-10-21T12:00:16.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: 'Added admin verb for instantly sending people to cryo. '
+  id: 831
+  time: '2026-10-21T12:01:11.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: Rodentia can now eat chocolate and drink red bool.
+  id: 832
+  time: '2026-10-21T12:02:41.0000000+00:00'
+- author: Dunrab
+  changes:
+    - type: Add
+      message: Sniffing interact verb to sniff food, walls, your fellow crewmates etc.
+  id: 833
+  time: '2026-10-22T10:42:19.0000000+00:00'
+- author: SyaoranFox
+  changes:
+    - type: Tweak
+      message: >-
+        Allulalo can now be picked up to help access computers and vending
+        machines. Give your friends uppies.
+  id: 834
+  time: '2026-10-23T07:37:43.0000000+00:00'
+- author: Brimcon
+  changes:
+    - type: Tweak
+      message: Adjusted oval ear sprites and fixed an associated error
+  id: 835
+  time: '2026-10-23T22:52:06.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Fix
+      message: >-
+        Touching a hotplate/electric range should no longer make you unable to
+        have any ropes attached to you.
+    - type: Fix
+      message: Airlocks will no longer close on top of ropes.
+  id: 836
+  time: '2026-10-23T22:52:53.0000000+00:00'
+- author: Mnemotechnician
+  changes:
+    - type: Remove
+      message: reverted the "send to cryo" verb PR.
+  id: 837
+  time: '2026-10-24T02:53:29.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added friendly versions (with hands and inventories) of the following
+        creatures to the spawn list for admins: All Xenos, Goliath, Tarantula,
+        Skia, Behonker, Trash Lizard, Rat King, Colossus, Clown Spider
+    - type: Tweak
+      message: 'Changed existing admeme creatures to be able to strip people. '
+  id: 838
+  time: '2026-10-26T08:45:11.0000000+00:00'
