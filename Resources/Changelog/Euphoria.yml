@@ -6721,3 +6721,14 @@ Entries:
       message: reverted the "send to cryo" verb PR.
   id: 837
   time: '2026-10-24T02:53:29.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added friendly versions (with hands and inventories) of the following
+        creatures to the spawn list for admins: All Xenos, Goliath, Tarantula,
+        Skia, Behonker, Trash Lizard, Rat King, Colossus, Clown Spider
+    - type: Tweak
+      message: 'Changed existing admeme creatures to be able to strip people. '
+  id: 838
+  time: '2026-10-26T08:45:11.0000000+00:00'
