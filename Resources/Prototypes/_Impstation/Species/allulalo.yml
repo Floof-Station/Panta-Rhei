@@ -13,4 +13,9 @@
   - Male
   - Female
   - Unsexed
-  baseScale: 0.5, 0.5 # they smol
+  # Begin Euphoria changes - species use height
+  #  baseScale: "0.5, 0.5" # they smol
+  minHeight: 0.63
+  maxHeight: 1.12
+  defaultHeight: 0.8
+  # End Euphoria changes - species use height
