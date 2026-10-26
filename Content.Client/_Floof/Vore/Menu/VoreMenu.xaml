@@ -18,7 +18,7 @@
             
             <BoxContainer Name="Info" Orientation="Vertical" SeparationOverride="8">
                 <ScrollContainer HorizontalExpand="True" HScrollEnabled="False" ReturnMeasure="True" MaxWidth="1000" MaxHeight="400" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <RichTextLabel Name="InfoText" HorizontalExpand="True" VerticalAlignment="Top"/>
+                    <RichTextLabel Name="InfoText" Text="{Loc 'vore-menu-info'}" HorizontalExpand="True" VerticalAlignment="Top"/>
                 </ScrollContainer>
             </BoxContainer>
             

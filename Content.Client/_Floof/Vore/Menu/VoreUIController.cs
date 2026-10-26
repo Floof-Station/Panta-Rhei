@@ -13,12 +13,11 @@ namespace Content.Client._Floof.Vore.Menu;
 public sealed class VoreUIController : UIController, IOnStateChanged<GameplayState>
 {
     private VoreMenu? _menu;
-    private string _settingsYaml = string.Empty;
 
     public void OnStateEntered(GameplayState state)
     {
         _menu = new VoreMenu();
-        _menu.SetSettings(_settingsYaml);
+        _menu.LoadSettings();
         _menu.SendSettingsChangedEvent();
     }
 
@@ -36,9 +35,4 @@ public sealed class VoreUIController : UIController, IOnStateChanged<GameplaySta
             _menu.OpenCentered();
     }
 
-    public void SetSettings(string settingsYaml)
-    {
-        _settingsYaml = settingsYaml;
-        _menu?.SetSettings(settingsYaml);
-    }
 }
