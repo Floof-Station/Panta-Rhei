@@ -95,17 +95,10 @@
   groupBy: "drank"
 
 - type: loadout
-  id: DrinkMikeBottleBlue
+  id: DrinkMikeBottle
   storage:
     back:
-    - DrinkMikeBottleBlue
-  groupBy: "drank"
-
-- type: loadout
-  id: DrinkMikeBottleRed
-  storage:
-    back:
-    - DrinkMikeBottleRed
+    - DrinkMikeBottle
   groupBy: "drank"
 
 - type: loadout
@@ -310,4 +303,76 @@
     back:
     - AvaliFeather
 
+- type: loadout
+  id: ClothingShoesSkates
+  storage:
+    back:
+    - ClothingShoesSkates
 
+- type: loadout
+  id: BikeHornImplanter
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 10h
+  storage:
+    back:
+    - BikeHornImplanter
+  groupBy: "implanters"
+
+- type: loadout
+  id: SadTromboneImplanter
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobClown
+      time: 10h
+  storage:
+    back:
+    - SadTromboneImplanter
+  groupBy: "implanters"
+
+- type: loadout
+  id: NewtonCradle
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobHeadOfPersonnel
+      time: 10h
+  storage:
+    back:
+    - NewtonCradle
+
+- type: loadout
+  id: Basketball
+  storage:
+    back:
+    - Basketball
+
+- type: loadout
+  id: ToyRubberDuck
+  storage:
+    back:
+    - ToyRubberDuck
+
+- type: loadout
+  id: MysteryFigureBox
+  storage:
+    back:
+    - MysteryFigureBox
+
+- type: loadout
+  id: PonderingOrb
+  storage:
+    back:
+    - PonderingOrb
+
+- type: loadout
+  id: DiceBag
+  storage:
+    back:
+    - DiceBag

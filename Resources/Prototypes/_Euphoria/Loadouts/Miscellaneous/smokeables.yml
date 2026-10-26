@@ -31,3 +31,11 @@
     back:
     - CigPackMedRollie
   groupBy: "smokeables"
+
+- type: loadout
+  id: MysteryLighterBox
+  storage:
+    back:
+    - MysteryLighterBox
+  groupBy: "lighters"
+
