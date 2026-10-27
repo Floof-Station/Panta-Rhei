@@ -1,0 +1,28 @@
+- type: entity
+  parent: FoodNoodlesBase
+  id: FoodNoodlesShrimpAlfredo
+  name: shrimp alfredo
+  description: Noodles in a creamy alfredo sauce, topped with shrimp.
+  components:
+    - type: Item
+      storedOffset: 0,-4
+    - type: FlavorProfile
+      flavors:
+        - pasta
+        - creamy
+        - shrimp
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: alfredo
+    - type: SolutionContainerManager
+      solutions:
+        food:
+          maxVol: 30
+          reagents:
+            - ReagentId: Nutriment
+              Quantity: 20
+            - ReagentId: Protein
+              Quantity: 5
+    - type: Tag
+      tags:
+        - Meat

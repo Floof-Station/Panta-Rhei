@@ -900,21 +900,134 @@
   description: trait-description-vampirism
   category: Skills
   cost: 4
-  #conflicts:
-  #  - VampirismLite #Lite trait doesn't exist due to how ingestion works rn
   conditions:
+  - !type:TraitDependencyCondition
+      conflicts:
+      - VampirismPartial
+      - BloodDrinkerExclusive
+      - BloodDrinkerInclusive
+      - SiphonFangs
   - !type:OneOfSpeciesCondition
     invert: true
     species:
     - IPC
-  - !type:OneOfSpeciesCondition
-    invert: true
-    species:
-    - SlimePerson # As of October 12, 2026, a slime having their "stomach" replaced would also mean having their brain replaced, because it's the same organ in slimes. Taking this trait would delete a slime's brain.
   effects:
   - !type:AddCompsEffect
     components:
       - type: BloodSucker
         unitsToSucc: 40
-  - !type:ReplaceStomachEffect
-    stomachProto: OrganBloodStomach
+        spillIfTransferFails: false
+  - !type:ModifySpecialDigestibleWhitelists
+    newIsSpecialDigestibleExclusive: true
+    newSpecialDigestible:
+      tags:
+      - IceCream
+      - Pill
+      - Crayon
+      - Paper
+  - !type:ModifyStomachMetabolizerEffect
+    newMetabolizerTypes: [ Vampiric ]
+    replace: true
+
+- type: trait
+  id: VampirismPartial
+  name: trait-name-partial-vampirism
+  description: trait-description-partial-vampirism
+  category: Skills
+  cost: 6
+  conditions:
+  - !type:TraitDependencyCondition
+      conflicts:
+      - Vampirism
+      - BloodDrinkerExclusive
+      - BloodDrinkerInclusive
+      - SiphonFangs
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+      - type: BloodSucker
+        unitsToSucc: 40
+        spillIfTransferFails: false
+  - !type:ModifyStomachMetabolizerEffect
+    newMetabolizerTypes: [ Vampiric ]
+    replace: false
+
+- type: trait
+  id: BloodDrinkerInclusive
+  name: trait-name-blood-drinker-inclusive
+  description: trait-description-blood-drinker-inclusive
+  category: Skills
+  cost: 3
+  conditions:
+  - !type:TraitDependencyCondition
+      conflicts:
+      - BloodDrinkerExclusive
+      - Vampirism
+      - VampirismPartial
+      - SiphonFangs
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyStomachMetabolizerEffect
+    newMetabolizerTypes: [ Vampiric ]
+    replace: false
+
+- type: trait
+  id: BloodDrinkerExclusive
+  name: trait-name-blood-drinker-exclusive
+  description: trait-description-blood-drinker-exclusive
+  category: Skills
+  cost: 1
+  conditions:
+  - !type:TraitDependencyCondition
+      conflicts:
+      - BloodDrinkerInclusive
+      - Vampirism
+      - VampirismPartial
+      - SiphonFangs
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyStomachMetabolizerEffect
+    newMetabolizerTypes: [ Vampiric ]
+    replace: true
+  - !type:ModifySpecialDigestibleWhitelists
+    newIsSpecialDigestibleExclusive: true
+    newSpecialDigestible:
+      tags:
+      - IceCream # I'm not a monster
+      - Pill
+      - Crayon
+      - Paper
+
+- type: trait
+  id: SiphonFangs
+  name: trait-name-siphon-fangs
+  description: trait-description-siphon-fangs
+  category: Skills
+  cost: 2
+  conditions:
+  - !type:TraitDependencyCondition
+      conflicts:
+      - BloodDrinkerInclusive
+      - BloodDrinkerExclusive
+      - Vampirism
+      - VampirismPartial
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:AddCompsEffect
+    components:
+      - type: BloodSucker
+        unitsToSucc: 40
+        spillIfTransferFails: false

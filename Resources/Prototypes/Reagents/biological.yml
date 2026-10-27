@@ -38,13 +38,13 @@
         - !type:MetabolizerTypeCondition
           type: [ Vampiric ]
         reagent: Water
-        amount: 0.1
+        amount: 0.5
       - !type:AdjustReagent
         conditions:
         - !type:MetabolizerTypeCondition
           type: [ Vampiric ]
-        reagent: Protein
-        amount: 0.1
+        reagent: Nutriment
+        amount: 0.5
         # -------------------------------- END Euphoria changes
       - !type:EvenHealthChange
         conditions:

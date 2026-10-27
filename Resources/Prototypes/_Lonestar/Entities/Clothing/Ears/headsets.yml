@@ -1,0 +1,18 @@
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetSolarian
+  name: Solarian Military headset
+  description: A headset used by the Solarian Military.
+  components:
+   - type: ContainerFill
+     containers:
+      key_slots:
+      - EncryptionKeyTraffic
+      - EncryptionKeyCommon
+      - EncryptionKeyCentCom
+      - EncryptionKeyAdmeme2
+   - type: Sprite
+     sprite: _Lonestar/Clothing/Ears/mieyo.rsi
+   - type: Clothing
+     sprite: _Lonestar/Clothing/Ears/mieyo.rsi
