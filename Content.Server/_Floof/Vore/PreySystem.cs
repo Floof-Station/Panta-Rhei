@@ -79,7 +79,9 @@ public sealed class PreySystem : EntitySystem
         }
 
         EnsureComp<DevouredComponent>(prey);
-        if(TryComp<DevouredComponent>(prey, out var devouredComp) && _playerManager.TryGetSessionByEntity(prey, out var session))
+        if(TryComp<DevouredComponent>(prey, out var devouredComp) 
+            && _playerManager.TryGetSessionByEntity(prey, out var session)
+            && _netConfig.GetClientCVar(session.Channel, VoreCVars.AllowSound))
             devouredComp.Stream = _audio.PlayEntity(devouredComp.SoundBelly, session, prey, AudioParams.Default.WithLoop(true))?.Entity;
     }
 
