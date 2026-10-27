@@ -20,7 +20,6 @@ using Robust.Shared.Configuration;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Body;
 using Robust.Server.Player;
-using Robust.Shared.Configuration; 
 using System.Linq;
 namespace Content.Server._Floof.Vore;
 
