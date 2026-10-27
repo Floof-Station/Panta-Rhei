@@ -35,14 +35,20 @@
   id: PackPaperRollingFilters
   description: A pack of filters and thin pieces of paper used to make fine smokeables.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: PaperRolling
-          amount: 2
-        - id: CigaretteFilter
-          amount: 2
+  - type: StorageFill # Euphoria
+    contents:
+    - id: PaperRolling
+      amount: 2
+    - id: CigaretteFilter
+      amount: 2
+#  - type: EntityTableContainerFill ## Euphoria - commented out in favour of StorageFill, so rolling papers don't spawn in the rollie kits
+#    containers:
+#      storagebase: !type:AllSelector
+#        children:
+#        - id: PaperRolling
+#          amount: 2
+#        - id: CigaretteFilter
+#          amount: 2
 
 - type: entity
   id: PaperRolling

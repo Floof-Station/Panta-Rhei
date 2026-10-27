@@ -88,7 +88,7 @@
   description: This thing is the size of your forearm, it's a wonder you can even hold it, let alone smoke it. Try not to green out.
   components:
   - type: Sprite
-    sprite: _Euphoria/Objects/Consumable/Smokeable/big_ass_blunt.rsi/icon.rsi
+    sprite: _Euphoria/Objects/Consumable/Smokeable/big_ass_blunt/icon.rsi
     state: unlit-icon
   - type: Tag
     tags:
@@ -96,7 +96,7 @@
     - Trash
   - type: SpaceGarbage
   - type: Clothing
-    sprite: _Euphoria/Objects/Consumable/Smokeable/big_ass_blunt.rsi/worn_inhands.rsi
+    sprite: _Euphoria/Objects/Consumable/Smokeable/big_ass_blunt/worn_inhands.rsi
     slots: [ mask ]
     equippedPrefix: unlit
   - type: Item
