@@ -376,3 +376,31 @@
   storage:
     back:
     - DiceBag
+
+- type: loadout
+  id: PaperStickyNoteStackFilled
+  storage:
+    back:
+    - PaperStickyNoteStackFilled
+  groupBy: "stickynotes"
+
+- type: loadout
+  id: PaperStickyNoteStackFilledPink
+  storage:
+    back:
+    - PaperStickyNoteStackFilledPink
+  groupBy: "stickynotes"
+
+- type: loadout
+  id: PaperStickyNoteStackFilledGreen
+  storage:
+    back:
+    - PaperStickyNoteStackFilledGreen
+  groupBy: "stickynotes"
+
+- type: loadout
+  id: PaperStickyNoteStackFilledBlue
+  storage:
+    back:
+    - PaperStickyNoteStackFilledBlue
+  groupBy: "stickynotes"
