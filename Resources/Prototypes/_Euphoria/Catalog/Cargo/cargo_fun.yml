@@ -17,3 +17,23 @@
   cost: 300
   category: cargoproduct-category-name-fun
   group: market
+
+- type: cargoProduct
+  id: FunCarpetBulk
+  icon:
+    sprite: Objects/Tiles/tile.rsi
+    state: carpet-red
+  product: CrateFunCarpetBulk
+  cost: 500
+  category: cargoproduct-category-name-fun
+  group: market
+
+- type: cargoProduct
+  id: FunCarpetMetamorphic
+  icon:
+    sprite: Objects/Tiles/tile.rsi
+    state: carpetclown
+  product: CrateFunCarpetMetamorphic
+  cost: 380
+  category: cargoproduct-category-name-fun
+  group: market

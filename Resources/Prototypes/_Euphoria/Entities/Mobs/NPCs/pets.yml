@@ -1,0 +1,63 @@
+﻿- type: entity
+  name: Gleeble
+  parent: MobCatRuntime
+  id: MobCatGleeble
+  description: Gleeble zarp? A cute kitten from outer space. Little brother of Gnarp.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Mobs/alien_cats.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: gleeble
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: gleeble_glow
+      shader: unshaded
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: gleeble
+        BaseUnshaded: gleeble_glow
+      Critical:
+        Base: gleeble_dead
+        BaseUnshaded: gleeble_dead_glow
+      Dead:
+        Base: gleeble_dead
+        BaseUnshaded: gleeble_dead_glow
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+
+- type: entity
+  name: Gnarp
+  id: MobCatGnarp
+  parent: MobCatException
+  description: Gnarp zorp! A pretty kitty from out of this world. Big sister of Gleeble.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Mobs/alien_cats.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: gnarp
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: gnarp_glow
+      shader: unshaded
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: gnarp
+        BaseUnshaded: gnarp_glow
+      Critical:
+        Base: gnarp_dead
+        BaseUnshaded: gnarp_dead_glow
+      Dead:
+        Base: gnarp_dead
+        BaseUnshaded: gnarp_dead_glow
+  - type: StealTarget
+    stealGroup: AnimalNamedCat
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: female
