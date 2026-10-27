@@ -146,7 +146,7 @@
   boilingPoint: 2862.0
   meltingPoint: 1538.0
   metabolisms:
-    Bloodstream:
+    Bloodstream: &IronMetabolism # Euphoria - Cigarette Compatibility Patch
       metabolismRate: 0.1
       effects:
       - !type:HealthChange
@@ -162,6 +162,7 @@
           type: [ Arachnid ]
           inverted: true
         amount: 0.4
+    Respiration: *IronMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Lithium
@@ -331,12 +332,13 @@
     probability: 0.2
     amount: 0.1
   metabolisms:
-    Bloodstream:
+    Bloodstream: &UraniumMetabolism  # Euphoria - Cigarette Compatibility Patch. Also, Radium is literally just Uranium why is it like this?
       effects:
       - !type:HealthChange
         damage:
           types:
             Radiation: 2
+    Respiration: *UraniumMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Zinc
