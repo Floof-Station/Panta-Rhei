@@ -18,9 +18,9 @@ public sealed class VoreCVars
 
     //client side cvars for customization
     public static readonly CVarDef<bool> AllowSound =
-        CVarDef.Create("client.vore_allow_sound", false, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("vore.vore_allow_sound", false, CVar.CLIENT | CVar.REPLICATED |  CVar.ARCHIVE);
     public static readonly CVarDef<float> DigestSpeed =
-        CVarDef.Create("client.vore_digest_speed", 100f, CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("vore.vore_digest_speed", 100f, CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
     public static readonly CVarDef<string> StomachColor =
-        CVarDef.Create("client.vore_stomach_color", "#59030F", CVar.CLIENTONLY | CVar.ARCHIVE);
+        CVarDef.Create("vore.vore_stomach_color", "#59030F", CVar.CLIENT | CVar.REPLICATED | CVar.ARCHIVE);
 }

@@ -85,8 +85,6 @@ public sealed partial class VoreMenu : DefaultWindow
     public void SendSettingsChangedEvent(){
         _entityManager.EntityNetManager.SendSystemNetworkMessage(new VoreSettingsChangedEvent
         {
-            AllowSound = AllowSound.Pressed,
-            DigestSpeed = DigestSpeed.Value,
             StomachColor = _stomachColorSelector.Color,
         });
     }

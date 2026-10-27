@@ -19,6 +19,8 @@ using Content.Shared.Bed.Cryostorage;
 using Robust.Shared.Configuration;
 using Content.Shared.Containers.ItemSlots;
 using Content.Shared.Body;
+using Robust.Server.Player;
+using Robust.Shared.Configuration; 
 using System.Linq;
 namespace Content.Server._Floof.Vore;
 
@@ -32,6 +34,8 @@ public sealed class DigestSystem : EntitySystem
     [Dependency] private readonly BatterySystem _battery = default!;
     [Dependency] private readonly CryostorageSystem _cryo = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly INetConfigurationManager _netConfig = default!;
 
     /// <summary>
     /// main method of digestion, will start the digestion process and apply the required effects to the prey and predator
@@ -168,22 +172,25 @@ public sealed class DigestSystem : EntitySystem
 
                 /* digestion process, reduces health of prey and increases hunger/charge of predator every second
                 also show a popup to the prey as a way of feedback */
-                Console.WriteLine(predComp.DigestSpeed);
-                comp.Health -= 0.5f * predComp.DigestSpeed / 100f;
+                var digestSpeed = 100f;
+                if (_playerManager.TryGetSessionByEntity(container.Owner, out var session)){
+                    digestSpeed = _netConfig.GetClientCVar(session.Channel, VoreCVars.DigestSpeed); 
+                }
+                comp.Health -= 0.5f * digestSpeed / 100f;
                 ShowDigestPopup(prey, comp);
 
                 if (TryComp<HungerComponent>(container.Owner, out var hunger)){
-                    _hunger.ModifyHunger(container.Owner, predComp.DigestSpeed / 100f, hunger);
+                    _hunger.ModifyHunger(container.Owner, digestSpeed / 100f, hunger);
                 }
                 else if (TryComp<BatteryComponent>(container.Owner, out var battery)){
-                    _battery.SetCharge((container.Owner, battery), battery.CurrentCharge + 2f * predComp.DigestSpeed / 100f);
+                    _battery.SetCharge((container.Owner, battery), battery.CurrentCharge + 2f * digestSpeed / 100f);
                 }
                 else if (TryComp<PowerCellSlotComponent>(container.Owner, out var batterySlot)
                 && _itemSlots.TryGetSlot(container.Owner, batterySlot.CellSlotId, out var itemSlot)
                 && itemSlot.Item is { } cellUid
                 && TryComp<BatteryComponent>(cellUid, out var batteryComp)){
                     var predCharge = _battery.GetCharge(cellUid);
-                    _battery.SetCharge((cellUid, batteryComp), predCharge + 2f * predComp.DigestSpeed / 100f);
+                    _battery.SetCharge((cellUid, batteryComp), predCharge + 2f * digestSpeed / 100f);
                 }
 
                 if (comp.Health <= 0){

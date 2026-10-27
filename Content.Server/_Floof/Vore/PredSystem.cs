@@ -40,7 +40,7 @@ public sealed class PredSystem : EntitySystem
     {
         SubscribeLocalEvent<BodyComponent, GetVerbsEvent<Verb>>(OnBodyGetVerbs);
 
-        SubscribeLocalEvent<PredComponent, VoreSettingsChangedEvent>(OnPredSettingsChanged);
+        SubscribeLocalEvent<PredComponent, VoreSettingsChangedEvent>(OnVoreSettingsChanged);
         SubscribeLocalEvent<PredComponent, OnVoreDoAfter>(OnVoreDoAfter);
         SubscribeLocalEvent<PredComponent, BeingGibbedEvent>(OnGibbedRemoveContent);
         SubscribeLocalEvent<PredComponent, DestructionEventArgs>(OnDestroyedRemoveContent);
@@ -64,28 +64,18 @@ public sealed class PredSystem : EntitySystem
 
         if (HasComp<PredComponent>(user) || HasComp<PreyComponent>(user)){
             BuildVoreContainerVerbs(user, args);
-        }
+            if (user == target){
+                BuildMenuVerb(user, args);
+                if(TryComp<PredComponent>(user, out var predComp)){
+                    BuildSelfInteractionVerbs(user, predComp, args);
 
-        if (user == target){
-            BuildMenuVerb(user, args);
-            if(TryComp<PredComponent>(user, out var predComp)){
-                BuildSelfInteractionVerbs(user, predComp, args);
-                if (_cfg.GetCVar(VoreCVars.DigestionEnabled)){
-                    BuildDigestVerbs(user, predComp, args);
+                    if (_cfg.GetCVar(VoreCVars.DigestionEnabled)){
+                        BuildDigestVerbs(user, predComp, args);
+                    }
                 }
             }
         }
     }
-
-    /// <summary>
-    /// handling changes to component values 
-    /// </summary>
-    private void OnPredSettingsChanged(EntityUid uid, PredComponent comp, VoreSettingsChangedEvent ev){
-        comp.DigestSpeed = ev.DigestSpeed;
-        comp.StomachColor = ev.StomachColor;
-        Dirty(uid, comp);
-    }
-
 
     /// <summary>
     /// handles the verbs that control the container such as inserting/removing
@@ -232,6 +222,14 @@ public sealed class PredSystem : EntitySystem
             return;
         _popupSystem.PopupEntity("You are devouring someone!", user, user);
         _popupSystem.PopupEntity("You are being devoured!", target, target, PopupType.LargeCaution);
+    }
+
+    /// <summary>
+    /// handling changes to component values 
+    /// </summary>
+    private void OnVoreSettingsChanged(EntityUid uid, PredComponent comp, VoreSettingsChangedEvent ev){
+        comp.StomachColor = ev.StomachColor;
+        Dirty(uid, comp);
     }
 
     /// <summary>

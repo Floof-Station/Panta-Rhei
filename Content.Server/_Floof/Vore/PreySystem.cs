@@ -19,6 +19,7 @@ using Robust.Shared.Containers;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Audio;
 using Robust.Server.Player;
+using Robust.Shared.Configuration;
 namespace Content.Server._Floof.Vore;
 
 public sealed class PreySystem : EntitySystem
@@ -30,7 +31,8 @@ public sealed class PreySystem : EntitySystem
     [Dependency] private readonly LeashSystem _leash = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    
+    [Dependency] private readonly INetConfigurationManager _netConfig = default!;
+
     private readonly HashSet<EntityUid> _pendingImmunityUpdates = new();
 
     public override void Initialize()
@@ -38,7 +40,6 @@ public sealed class PreySystem : EntitySystem
         SubscribeLocalEvent<PredComponent, EntInsertedIntoContainerMessage>(OnPreyInsertedIntoContainer);
         SubscribeLocalEvent<PredComponent, EntRemovedFromContainerMessage>(OnPreyRemovedFromContainer);
         
-        SubscribeLocalEvent<PreyComponent, VoreSettingsChangedEvent>(OnPreySettingsChanged);
         SubscribeLocalEvent<DevouredComponent, VoreSettingsChangedEvent>(OnVoreSettingsChanged);
         SubscribeLocalEvent<DevouredComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<DevouredComponent, GetVerbsEvent<Verb>>(OnGetVerbs);
@@ -78,12 +79,8 @@ public sealed class PreySystem : EntitySystem
         }
 
         EnsureComp<DevouredComponent>(prey);
-        if (TryComp<PreyComponent>(prey, out var preyComp) && preyComp.AllowSound){
-            if(TryComp<DevouredComponent>(prey, out var devouredComp) && _playerManager.TryGetSessionByEntity(prey, out var session)){
-                Console.WriteLine($"Playing sound for {prey} in {session}");
-                devouredComp.Stream = _audio.PlayEntity(devouredComp.SoundBelly, session, prey, AudioParams.Default.WithLoop(true))?.Entity;
-            }
-        }
+        if(TryComp<DevouredComponent>(prey, out var devouredComp) && _playerManager.TryGetSessionByEntity(prey, out var session))
+            devouredComp.Stream = _audio.PlayEntity(devouredComp.SoundBelly, session, prey, AudioParams.Default.WithLoop(true))?.Entity;
     }
 
     /// <summary>
@@ -102,24 +99,21 @@ public sealed class PreySystem : EntitySystem
     }
 
     /// <summary>
-    /// handling changes to component values if the client system sends changes while being in a container
+    /// incase the menu has changed to update while being inside someone 
     /// </summary>
-    private void OnPreySettingsChanged(EntityUid uid, PreyComponent comp, VoreSettingsChangedEvent ev){
-        comp.AllowSound = ev.AllowSound;
-    }
-
     private void OnVoreSettingsChanged(EntityUid uid, DevouredComponent comp, VoreSettingsChangedEvent ev){
-        if (TryComp<PreyComponent>(uid, out var preyComp)){
-            preyComp.AllowSound = ev.AllowSound;
+        if (!_playerManager.TryGetSessionByEntity(uid, out var session)){
+            return;
         }
-        if (!ev.AllowSound){
+        var allowSound = _netConfig.GetClientCVar(session.Channel, VoreCVars.AllowSound);
+        if (!allowSound){
             if (comp.Stream != null){
                 _audio.Stop(comp.Stream.Value);
                 comp.Stream = null;
             }
             return;
         }
-        if (ev.AllowSound&& comp.Stream == null && _playerManager.TryGetSessionByEntity(uid, out var session)){
+        if (allowSound && comp.Stream == null){
             comp.Stream = _audio.PlayEntity(comp.SoundBelly, session, uid, AudioParams.Default.WithLoop(true))?.Entity;
         }
     }
