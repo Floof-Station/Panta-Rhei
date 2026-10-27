@@ -1941,6 +1941,14 @@
     sprite: _Floof/Objects/Fun/bubblynurse.rsi
     layers:
     - state: icon
+    - state: icon1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visibile: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: icon
+    inHandsMaxFillLevels: 1
+    inHandsFillBaseName: -fill-
   - type: UseDelay
     delay: 1.0
   - type: EmitSoundOnActivate
