@@ -198,6 +198,115 @@
       undergarmentTop:
       - state: swimtop
 
+# begin euphoria changes, we're getting more swim tops
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBra
+  name: swimming bra
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_swimming
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_swimming
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBraAlt
+  name: swimming bra
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_swimming_alt
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_swimming_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBraRed
+  name: red swimming bra
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: swimming_red
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: swimming_red
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBraBlue
+  name: blue swimming bra
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: swimming_blue
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: swimming_blue
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBraBlack
+  name: black swimming bra
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: swimming_black
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: swimming_black
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBraBow
+  name: swimming bra with bow
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbra_swimming
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bowbra_swimming
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscSwimBraBowAlt
+  name: swimming bra with bow
+  description: "A nice top to keep your top half covered (or not). Water approved!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bowbra_swimming_alt
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bowbra_swimming_alt
+
+# end euph changes
+
 # undershirt
 - type: entity
   parent: ClothingUndergarmentTopSwitchableBase
@@ -258,6 +367,384 @@
     clothingVisuals:
       undergarmentTop:
       - state: t-shirt_midriff_shoulders
+
+# begin euph changes(therees a lot this time)
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtPolo
+  name: polo
+  description: "A nice polo shirt to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: polo
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: polo
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtNT
+  name: i <3 nt undershirt
+  description: "A nice top to keep your top half covered (or not). Now representing Nanotrasen!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: ilovent
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: ilovent
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtLover
+  name: lover undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: lover
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: lover
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtIan
+  name: ian undershirt
+  description: "A nice top to keep your top half covered (or not). Now representing the Head Of Personnel's favorite pup!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: ian
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: ian
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtUnitedKingdom
+  name: uk undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: uk
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: uk
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtBand
+  name: band undershirt
+  description: "A nice top to keep your top half covered (or not). Rock out!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: band
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: band
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtPogoman
+  name: pogoman undershirt
+  description: "A nice top to keep your top half covered (or not). We are POGO-MAN! WAKA-WAKA!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: pogoman
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: pogoman
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtMatroska
+  name: matroska
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: matroska
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: matroska
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtSportGreen
+  name: green sports shirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: greenshirtsport
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: greenshirtsport
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtSportBlue
+  name: blue sports shirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: blueshirtsport
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: blueshirtsport
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtSportRed
+  name: red sports shirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: redshirtsport
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: redshirtsport
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtSS13
+  name: ss13 undershirt
+  description: "A nice top to keep your top half covered (or not). A look into our past."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_ss13
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_ss13
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtQuestion
+  name: question mark undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_question
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_question
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtSkull
+  name: skull undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_skull
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_skull
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtStripes
+  name: striped undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_stripes
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_stripes
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtCommie
+  name: commie undershirt
+  description: "A nice top to keep your top half covered (or not). Remember to share!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_commie
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_commie
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtNano
+  name: nanotrasen undershirt
+  description: "A nice top to keep your top half covered (or not). Glorty to NT!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_nano
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_nano
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtMeat
+  name: meat undershirt
+  description: "A nice top to keep your top half covered (or not). Many different definitions of meat around here."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_meat
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_meat
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtTieDye
+  name: tiedye undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_tiedye
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_tiedye
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtAlien
+  name: alien undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: shirt_alien
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: shirt_alien
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtPeace
+  name: peace undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: peace
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: peace
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtLong
+  name: long sleeved undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: t_long_undershirt
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: t_long_undershirt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtLongSleeveless
+  name: sleeveless undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: t_undershirt_sleeveless
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: t_undershirt_sleeveless
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtRolled
+  name: rolled up undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: t_rolled_undershirt
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: t_rolled_undershirt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopMiscUndershirtRolledSleeveless
+  name: rolled up sleeveless undershirt
+  description: "A nice top to keep your top half covered (or not)."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: t_rolled_undershirt_sleeveless
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: t_rolled_undershirt_sleeveless
+
+# end euph changes
 
 # tanktops (top slot)
 - type: entity
@@ -441,6 +928,38 @@
       undergarmentTop:
       - state: bra
 
+#begin euph changies
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraAlt
+  name: bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_alt
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraThin
+  name: thin bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_thin
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_thin
+#end euph changes for now
+
 - type: entity
   parent: ClothingUndergarmentTopSwitchableBase
   id: ClothingUnderTopBraNeko
@@ -560,6 +1079,82 @@
     clothingVisuals:
       undergarmentTop:
       - state: striped_bra
+
+#begin euph changes 2: electric boogaloo
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraStrapless
+  name: strapless bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_strapless
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_strapless
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraStraplessAlt
+  name: strapless bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_strapless_alt
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_strapless_alt
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraAssBlastUSA
+  name: ass blast usa bra
+  description: "A nice PATRIOTIC bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_assblastusa
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_assblastusa
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraCommie
+  name: commie bra
+  description: "A nice bra to keep your top half covered. Remember to share!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_commie
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_commie
+
+- type: entity
+  parent: ClothingUndergarmentTopSwitchableBase
+  id: ClothingUnderTopBraUnitedKingdom
+  name: uk bra
+  description: "A nice bra to keep your top half covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    state: bra_uk
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/undershirt.rsi
+    clothingVisuals:
+      undergarmentTop:
+      - state: bra_uk
 
 - type: entity
   parent: ClothingUndergarmentTopSwitchableBase
