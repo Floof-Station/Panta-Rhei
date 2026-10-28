@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using Content.Server._CD.Records;
 using Content.Server.Administration.Logs;
 using Content.Shared._CD.Records;
+using Content.Shared._CD.Body;
+using Content.Shared.FixedPoint;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared._Common.Consent;
 using Content.Shared._DV.Tips;
 using Content.Shared.Administration.Logs;
@@ -298,7 +301,8 @@ namespace Content.Server.Database
                 new CDModel.CharacterAllergy
                 {
                     Allergen = entry.Key,
-                    Intensity = entry.Value.Value,
+                    Intensity = entry.Value.Intensity.Value,
+                    ReactionReagent = entry.Value.ReactionReagent
                 }));
 
             // End CD - Character Records
