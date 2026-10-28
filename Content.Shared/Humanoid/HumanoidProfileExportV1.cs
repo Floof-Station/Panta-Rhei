@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._CD.Body;
 using Content.Shared._CD.Records;
 using Content.Shared._DV.Traits;
 using Content.Shared.FixedPoint;
@@ -94,7 +95,7 @@ public sealed partial class HumanoidCharacterProfileV1
 
     // Euph - port from CD
     [DataField("cosmaticDriftAllergies")]
-    public Dictionary<string, FixedPoint2> CDAllergies = new();
+    public Dictionary<string, AllergyData> CDAllergies = new();
     // End CD - Character Records
 
 
