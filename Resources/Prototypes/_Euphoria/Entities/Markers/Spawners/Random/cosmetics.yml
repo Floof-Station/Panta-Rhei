@@ -1,0 +1,60 @@
+﻿# perfume random spawner and table
+- type: entity
+  name: perfume spawner
+  id: RandomPerfumeSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Euphoria/Objects/Misc/perfume.rsi
+      state: base
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: PerfumeTable
+      rolls: 4
+
+- type: entityTable
+  id: PerfumeTable
+  table: !type:GroupSelector
+    children:
+    - id: PerfumeBlueberry
+    - id: PerfumeApple
+    - id: PerfumeBlackTea
+    - id: PerfumeCinnamon
+    - id: PerfumeLemonZest
+    - id: PerfumePine
+    - id: PerfumeRoseWater
+    - id: PerfumeHoney
+    - id: PerfumeFlowers
+
+# lipstick random spawner and table
+- type: entity
+  name: lipstick spawner
+  id: RandomLipstickSpawner
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: _Euphoria/Objects/Misc/lipstick.rsi
+      state: random_lipstick
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: LipstickTable
+      rolls: 4
+
+- type: entityTable
+  id: LipstickTable
+  table: !type:GroupSelector
+    children:
+    - id: LipStickRed
+    - id: LipStickBlue
+    - id: LipStickGreen
+    - id: LipStickYellow
+    - id: LipStickOrange
+    - id: LipStickPurple
+    - id: LipStickPink
+    - id: LipStickLightBlue
+    - id: LipStickBlack
+    - id: LipStickMakeupCloth

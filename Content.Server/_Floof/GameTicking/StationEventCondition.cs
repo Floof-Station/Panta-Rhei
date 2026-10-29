@@ -25,6 +25,7 @@ namespace Content.Server._Floof.GameTicking;
 /// </remarks>
 [Serializable, ImplicitDataDefinitionForInheritors]
 public abstract partial class StationEventCondition
+
 {
     /// <summary>
     ///     If true, the event will only be run if this condition is NOT met.
@@ -75,6 +76,7 @@ public abstract partial class StationEventCondition
             // We cannot use entity system dependencies outside of ESC context.
             IdCard = EntMan.System<SharedIdCardSystem>();
             Minds = EntMan.System<MindSystem>();
+            Rolesystem = EntMan.System<SharedRoleSystem>();
 
             // Build the inverse lookups - SharedJobSystem contains methods that iterate over all of those lists each time,
             // Resulting in an O(n^2 * m) performance cost for each update() call.
@@ -135,10 +137,8 @@ public abstract partial class StationEventCondition
                 }
             }
 
-            #if DEBUG
-                Log.Debug($"Event conditions data: Job counts: {string.Join(", ", JobCounts)}");
-                Log.Debug($"Dept counts: {string.Join(", ", DeptCounts)}");
-            #endif
+            Log.Debug($"Event conditions data: Job counts: {string.Join(", ", JobCounts)}");
+            Log.Debug($"Dept counts: {string.Join(", ", DeptCounts)}");
         }
     }
 }

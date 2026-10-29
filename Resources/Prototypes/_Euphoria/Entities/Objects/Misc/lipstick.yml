@@ -1,0 +1,322 @@
+- type: entity
+  parent: BaseItem
+  id: BaseLipStick
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  name: base lip stick
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#E3D7E3"
+    - state: lipstick_uncap
+  - type: Sealable
+  - type: Openable
+    sound:
+      path: /Audio/Effects/pop_high.ogg
+    closeable: true
+    closeSound:
+      path: /Audio/Effects/pop_high.ogg
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#E3D7E3" }
+          False: { state: "lipstick" , color: "#E3D7E3" }
+  - type: PopUpOnUse
+    popUpDoAfterTime: 5
+    userPopUpMsg: lipstick-self-success
+    targetPopUpMsg: lipstick-target-success
+    popUpDoAfterSound:
+      path: /Audio/Items/Paper/paper_scribble1.ogg
+      params:
+        pitch: 0.7
+        variation: 0.08
+    repeat: false
+    whitelist:
+      components:
+      - MobState
+      - Clothing
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#FF0000"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickRed
+  name: lip stick
+  description: Red lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#FF0000"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#FF0000" }
+          False: { state: "lipstick" , color: "#FF0000" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#FF0000"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickBlue
+  name: lip stick
+  description: Blue lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#2742F5"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#2742F5" }
+          False: { state: "lipstick" , color: "#2742F5" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#2742F5"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickGreen
+  name: lip stick
+  description: Green lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#27F531"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#27F531" }
+          False: { state: "lipstick" , color: "#27F531" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#27F531"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickYellow
+  name: lip stick
+  description: Yellow lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#F5D627"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#F5D627" }
+          False: { state: "lipstick" , color: "#F5D627" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#F5D627"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickOrange
+  name: lip stick
+  description: Orange lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#F59827"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#F59827" }
+          False: { state: "lipstick" , color: "#F59827" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#F59827"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickPurple
+  name: lip stick
+  description: Purple lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#8E27F5"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#8E27F5" }
+          False: { state: "lipstick" , color: "#8E27F5" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#8E27F5"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickPink
+  name: lip stick
+  description: Pink lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#EB27F5"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#EB27F5" }
+          False: { state: "lipstick" , color: "#EB27F5" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#EB27F5"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickLightBlue
+  name: lip stick
+  description: Light Blue lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#27F5E0"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#27F5E0" }
+          False: { state: "lipstick" , color: "#27F5E0" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#27F5E0"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseLipStick
+  id: LipStickBlack
+  name: lip stick
+  description: Black lipstick.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/lipstick.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: lipstick_uncap_color
+      color: "#000000"
+    - state: lipstick_uncap
+  - type: GenericVisualizer
+    visuals:
+      enum.OpenableVisuals.Opened:
+        enum.OpenableVisuals.Layer:
+          True: { state: "lipstick_uncap_color" , color: "#000000" }
+          False: { state: "lipstick" , color: "#000000" }
+  - type: PopUpOnUse
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      color: "#000000"
+      organ: Head
+      layer: Face
+
+- type: entity
+  parent: BaseItem
+  id: LipStickMakeupCloth
+  name: Makeup Cloth
+  description: A small cloth used to remove makeup.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Janitorial/rag.rsi
+    state: rag
+  - type: PopUpOnUse
+    popUpDoAfterTime: 5
+    userPopUpMsg: lipstick-removal-self-success
+    targetPopUpMsg: lipstick-removal-target-success
+    popUpDoAfterSound:
+      path: /Audio/Effects/Fluids/splat.ogg
+    repeat: false
+    whitelist:
+      components:
+      - MobState
+      - Clothing
+    effects:
+    - !type:AddFaceMarkingEffect
+      marking: LipStick
+      remove: true
+      organ: Head
+      layer: Face
+  - type: Construction
+    graph: MakeupCloth
+    node: makeupcloth
+#MaterialCloth1

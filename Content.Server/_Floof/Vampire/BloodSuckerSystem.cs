@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using Content.Server._Floof.InteractionVerbs.Actions.Lewd;
 using Content.Server.DoAfter;
 using Content.Server.Fluids.EntitySystems;
@@ -171,7 +171,10 @@ public sealed class BloodSuckerSystem : EntitySystem
             || !_stomachSystem.CanTransferSolution(stomach, suckedBloodSol, stomach))
         {
             _popups.PopupEntity(Loc.GetString("drink-component-try-use-drink-had-enough"), bloodsucker, bloodsucker, PopupType.MediumCaution);
-            _puddles.TrySpillAt(bloodsucker, suckedBloodSol, out _);
+
+            if (bloodsuckerComp.SpillIfTransferFails)
+                _puddles.TrySpillAt(bloodsucker, suckedBloodSol, out _);
+
             return false;
         }
 

@@ -1,0 +1,70 @@
+
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterHardsuitSolarianM86Hardsuit
+  name: TSMC M86 combat hardsuit
+  description: A standard issue combat hardsuit for Solarian Marines, designed for survivability in the harshest conditions.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/OuterClothing/Hardsuits/m86.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/OuterClothing/Hardsuits/m86.rsi
+    clothingVisuals: 
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-harpy:
+      - sprite: _Lonestar/Clothing/OuterClothing/Hardsuits/m86.rsi
+        state: equipped-OUTERCLOTHING-harpy
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+  - type: PressureProtection
+    highPressureMultiplier: 0.05
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: StaminaResistance 
+    damageCoefficient: 0.2 
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.4
+        Piercing: 0.3
+        Heat: 0.5
+        Radiation: 0.25
+        Caustic: 0.4
+        Cold: 0.8 
+  - type: DamageOnShootProtection
+    slots: OUTERCLOTHING
+    damageProtection:
+      flatReductions:
+        Blunt: 10
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSolarianM86
+  - type: Tag
+    tags:
+    - Hardsuit
+    - HidesHarpyWings 
+
+#TSN Hardsuit - carbon copy of the above.
+- type: entity
+  parent: ClothingOuterHardsuitSolarianM86Hardsuit
+  id: ClothingOuterHardsuitSolarianMK4Hardsuit
+  name: TSN M86 Mark Four hardsuit
+  description: A hardsuit used by the Solarian Navy, specifically designed for EVA operations above all.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/OuterClothing/Hardsuits/m86_mk4.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/OuterClothing/Hardsuits/m86_mk4.rsi
+    clothingVisuals: 
+      outerClothing:
+      - state: equipped-OUTERCLOTHING
+      outerClothing-vox:
+      - state: equipped-OUTERCLOTHING-vox
+  - type: Tag
+    tags:
+    - Hardsuit

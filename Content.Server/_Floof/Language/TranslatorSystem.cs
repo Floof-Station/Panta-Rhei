@@ -30,11 +30,8 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
         SubscribeLocalEvent<HandheldTranslatorComponent, EntGotInsertedIntoContainerMessage>(OnTranslatorInserted);
         SubscribeLocalEvent<HandheldTranslatorComponent, EntParentChangedMessage>(OnTranslatorParentChanged);
-        SubscribeLocalEvent<HandheldTranslatorComponent, ActivateInWorldEvent>(OnTranslatorToggle);
         SubscribeLocalEvent<HandheldTranslatorComponent, PowerCellSlotEmptyEvent>(OnPowerCellSlotEmpty);
-        // Floofstation - commented out
-        // SubscribeLocalEvent<HandheldTranslatorComponent, PowerCellChangedEvent>(OnPowerCellChanged);
-        // SubscribeLocalEvent<HandheldTranslatorComponent, ItemToggledEvent>(OnItemToggled);
+        SubscribeLocalEvent<HandheldTranslatorComponent, ItemToggledEvent>(OnItemToggled);
     }
 
     private void OnDetermineLanguages(EntityUid uid, IntrinsicTranslatorComponent component, DetermineEntityLanguagesEvent ev)
@@ -94,9 +91,21 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         });
     }
 
-    private void OnTranslatorToggle(EntityUid translator, HandheldTranslatorComponent translatorComp, ActivateInWorldEvent args)
+    private void OnPowerCellSlotEmpty(EntityUid translator, HandheldTranslatorComponent component, PowerCellSlotEmptyEvent args)
+    {
+        component.Enabled = false;
+        _powerCell.SetDrawEnabled(translator, false);
+        OnAppearanceChange(translator, component);
+
+        if (_containers.TryGetContainingContainer(translator, out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))
+            _language.UpdateEntityLanguages(holderCont.Owner);
+    }
+
+    private void OnItemToggled(EntityUid translator, HandheldTranslatorComponent translatorComp, ItemToggledEvent args)
     {
         if (!translatorComp.ToggleOnInteract)
+            return;
+        if (args.User == null)
             return;
 
         // This will show a popup if false
@@ -105,9 +114,6 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
 
         translatorComp.Enabled = isEnabled;
         _powerCell.SetDrawEnabled(translator, isEnabled);
-
-        if (TryComp<ItemToggleComponent>(translator, out var itemToggle)) // Floofstation - sync this useless ItemToggle that the PowerCellDraw system requires for some reason
-            itemToggle.Activated = isEnabled;
 
         if (_containers.TryGetContainingContainer(translator, out var holderCont)
             && holderCont.Owner is var holder
@@ -128,40 +134,10 @@ public sealed class TranslatorSystem : SharedTranslatorSystem
         {
             var loc = isEnabled ? "translator-component-turnon" : "translator-component-shutoff";
             var message = Loc.GetString(loc, ("translator", translator));
-            _popup.PopupEntity(message, translator, args.User);
+            _popup.PopupEntity(message, translator,args.User.Value);
         }
+
     }
-
-    private void OnPowerCellSlotEmpty(EntityUid translator, HandheldTranslatorComponent component, PowerCellSlotEmptyEvent args)
-    {
-        component.Enabled = false;
-        _powerCell.SetDrawEnabled(translator, false);
-        OnAppearanceChange(translator, component);
-
-        if (_containers.TryGetContainingContainer(translator, out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))
-            _language.UpdateEntityLanguages(holderCont.Owner);
-    }
-
-    // Floofstation - commented all of this out, this is bullshit.
-    // private void OnPowerCellChanged(EntityUid translator, HandheldTranslatorComponent component, PowerCellChangedEvent args)
-    // {
-    //     component.Enabled = !args.Ejected && component.Enabled; // Floofstation - don't automatically turn it on.
-    //     _powerCell.SetDrawEnabled(translator, component.Enabled);
-    //     OnAppearanceChange(translator, component);
-    //
-    //     if (_containers.TryGetContainingContainer((translator, null, null), out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))
-    //         _language.UpdateEntityLanguages(holderCont.Owner);
-    // }
-    //
-    // private void OnItemToggled(EntityUid translator, HandheldTranslatorComponent component, ItemToggledEvent args)
-    // {
-    //     component.Enabled = args.Activated;
-    //     _powerCell.SetDrawEnabled(translator, args.Activated);
-    //     OnAppearanceChange(translator, component);
-    //
-    //     if (_containers.TryGetContainingContainer((translator, null, null), out var holderCont) && HasComp<LanguageSpeakerComponent>(holderCont.Owner))
-    //         _language.UpdateEntityLanguages(holderCont.Owner);
-    // }
 
     private void CopyLanguages(BaseTranslatorComponent from, DetermineEntityLanguagesEvent to, LanguageKnowledgeComponent knowledge)
     {

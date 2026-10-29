@@ -352,12 +352,12 @@
   flavor: bitter
   color: "#63806e"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &SpaceDrugsMetabolism # Euphoria - Cigarette/Pill Compatibility Patch
       effects:
       - !type:ModifyStatusEffect
         effectProto: StatusEffectSeeingRainbow
         type: Add
-        time: 5
+        time: 20 # Euphoria - explicitly described as "illegal", but was tied for being the weakest hallucinogen. Now it's mildly stronger than THC/Weed.
       # DeltaV Additions
       - !type:RollPsionicAbility # DeltaV - Roll for psionics
         conditions:
@@ -372,6 +372,8 @@
           min: 0.25
       - !type:SuppressAddiction
       # END DeltaV
+    Digestion: *SpaceDrugsMetabolism # Euphoria - Pill Compatibility Patch
+    Respiration: *SpaceDrugsMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Bananadine

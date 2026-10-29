@@ -236,18 +236,19 @@
 
 # Tier 3
 
-- type: technology # Euphoria Speed Boots Back
-  id: QuantumFiberWeaving
-  name: research-technology-quantum-fiber-weaving
-  icon:
-    sprite: Clothing/Shoes/Boots/speedboots.rsi
-    state: icon
-  discipline: CivilianServices
-  tier: 3
-  cost: 10000
-  recipeUnlocks:
-  - ClothingShoesBootsSpeed
-
+# Euph - Killing Speed Boots Again
+# - type: technology # Euphoria Speed Boots Back
+ # id: QuantumFiberWeaving
+ # name: research-technology-quantum-fiber-weaving
+ # icon:
+ #   sprite: Clothing/Shoes/Boots/speedboots.rsi
+ #   state: icon
+ # discipline: CivilianServices
+ # tier: 3
+  #cost: 10000
+ # recipeUnlocks:
+ # - ClothingShoesBootsSpeed
+ 
 - type: technology
   id: BluespaceChemistry
   name: research-technology-bluespace-chemistry

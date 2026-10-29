@@ -11,8 +11,10 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.EntityTable;
-using Content.Server.Psionics.Glimmer; // DeltaV
-using Content.Shared.Psionics.Glimmer; // DeltaV
+using Content.Server.Psionics.Glimmer;
+using Content.Shared._Floof.Util; // DeltaV
+using Content.Shared.Psionics.Glimmer;
+using Robust.Shared.Timing; // DeltaV
 
 namespace Content.Server.StationEvents;
 
@@ -26,11 +28,13 @@ public sealed class EventManagerSystem : EntitySystem
     [Dependency] public readonly GameTicker GameTicker = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly GlimmerSystem _glimmer = default!; //Nyano - Summary: pulls in the glimmer system.
+    [Dependency] private readonly IGameTiming _timing = default!; // Floof
 
     public bool EventsEnabled { get; private set; }
     private void SetEnabled(bool value) => EventsEnabled = value;
 
     private StationEventCondition.Dependencies _eventConditionDeps = default!; // Floof
+    private Ticker _eventConditionsUpdateTicker = new(TimeSpan.FromSeconds(30)); // Also floof - recalculate event conditions at most every 30s.
 
     public Dictionary<EntityPrototype, StationEventComponent>? AllEventCache;
 
@@ -278,8 +282,6 @@ public sealed class EventManagerSystem : EntitySystem
 
         var result = new Dictionary<EntityPrototype, StationEventComponent>();
 
-        _eventConditionDeps.Update(); // Floof
-
         foreach (var (proto, stationEvent) in AllEvents())
         {
             if (CanRun(proto, stationEvent, playerCount, currentTime))
@@ -380,9 +382,14 @@ public sealed class EventManagerSystem : EntitySystem
         // Nyano - End modified code block.
 
         // Floof section - custom conditions
+        // Update if needed
+        if (_eventConditionsUpdateTicker.TryUpdate(_timing))
+            _eventConditionDeps.Update();
+
+        // Check
         if (stationEvent.Conditions is { } conditions
             && conditions.Any(it => it.Inverted ^ !it.IsMet(prototype, stationEvent, _eventConditionDeps))
-           )
+        )
             return false;
         // Floof section end
 

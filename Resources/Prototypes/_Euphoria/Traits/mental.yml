@@ -4,6 +4,10 @@
   description: trait-telepathic-desc
   category: Psionics
   cost: 1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - NoPsionicPotential
   effects:
   - !type:AddCompsEffect
     components:

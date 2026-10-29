@@ -1,0 +1,273 @@
+﻿# perfumes, we won't cover any but just a couple of em
+- type: entity
+  parent: BaseItem
+  id: BasePerfume
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  name: base perfume
+  components:
+  - type: PopUpOnUse # we can set our pop up on use here so we can stop duplicating
+    popUpDoAfterTime: 2
+    userPopUpMsg: perfume-self-success
+    targetPopUpMsg: perfume-target-success
+    popUpDoAfterSound:
+      path: /Audio/Effects/spray3.ogg
+    repeat: false
+    whitelist:
+      components:
+      - MobState
+      - Clothing
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeBlueberry
+  name: blueberry perfume
+  description: A bottle of blueberry-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumealtfill
+      color: "#703BE7"
+    - state: perfumealt
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Blueberry
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeApple
+  name: apple perfume
+  description: A bottle of apple-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: fill
+      color: "#49A942"
+    - state: base
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Apples
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeBlackTea
+  name: black tea perfume
+  description: A bottle of black tea-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumealtfill
+      color: "#A58885"
+    - state: perfumealt
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: BlackTea
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeCinnamon
+  name: cinnamon perfume
+  description: A bottle of cinnamon-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: fill
+      color: "#9E4624"
+    - state: base
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Cinnamon
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeLemonZest
+  name: lemon zest perfume
+  description: A bottle of lemon zest-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumealtfill
+      color: "#F9D857"
+    - state: perfumealt
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Lemon
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumePine
+  name: pine perfume
+  description: A bottle of pine-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: fill
+      color: "#2C4C3B"
+    - state: base
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Pine
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeRoseWater
+  name: rosewater perfume
+  description: A bottle of rosewater-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumealtfill
+      color: "#F6DBD8"
+    - state: perfumealt
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: RoseWater
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeHoney
+  name: honey perfume
+  description: A bottle of honey-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: fill
+      color: "#BA9238"
+    - state: base
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Warm
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeFlowers
+  name: flower perfume
+  description: A bottle of flower-scented perfume.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/perfume.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumealtfill
+      color: "#E3D7E3"
+    - state: perfumealt
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Wildflowers
+
+# a few colognes
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeCologneFancy
+  name: fancy cologne
+  description: A bottle of "fancy" cologne.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/cologne.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumefancyfill
+      color: "#C08D65"
+    - state: perfumefancy
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: ExpensiveCologne
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeCologneCheap
+  name: cheap cologne
+  description: A bottle of "cheap" cologne.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/cologne.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumedaggerfill
+      color: "#C08D65"
+    - state: perfumedaggerbottle
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: CheapCologne
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeCologneCedarwood
+  name: cedarwood cologne
+  description: A bottle of Cedarwood scented cologne.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/cologne.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumedaggerfill
+      color: "#957941"
+    - state: perfumedaggerbottle
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Cedarwood
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeCologneLeather
+  name: leather cologne
+  description: A bottle of Leather scented cologne.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/cologne.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumefancyfill
+      color: "#4D361F"
+    - state: perfumefancy
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Leather
+
+- type: entity
+  parent: BasePerfume
+  id: PerfumeCologneGrass
+  name: grass cologne
+  description: A bottle of Grass scented cologne.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Misc/cologne.rsi
+    scale: 0.7, 0.7
+    layers:
+    - state: perfumedaggerfill
+      color: "#5A6F1A"
+    - state: perfumedaggerbottle
+  - type: PopUpOnUse
+    effects:
+    - !type:ApplyScentEffect
+      scent: Grass

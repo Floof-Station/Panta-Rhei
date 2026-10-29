@@ -17,12 +17,12 @@ public sealed class SynthSystem : EntitySystem
 {
     // Begin DeltaV - make strings static readonly
     private static readonly ProtoId<TypingIndicatorPrototype> RobotTypingIndicator = "robot";
-    private static readonly ProtoId<ReagentPrototype> SynthBloodReagent = "SynthBlood";
+    //private static readonly ProtoId<ReagentPrototype> SynthBloodReagent = "SynthBlood"; Euphoria - not needed
     private static readonly ProtoId<EmoteSoundsPrototype> SyntheticEmoteSounds = "SyntheticEmoteSounds";
     private static readonly ProtoId<EmotePrototype>[] SiliconEmotes = ["Beep", "Chime", "Buzz", "Buzz-Two", "Ping"];
     // End DeltaV
 
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
+    //[Dependency] private readonly BloodstreamSystem _bloodstream = default!; Euphoria - not needed
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
 
@@ -42,11 +42,11 @@ public sealed class SynthSystem : EntitySystem
             Dirty(uid, indicator);
         }
 
-        if (TryComp<BloodstreamComponent>(uid, out var bloodstream))
+        /*if (TryComp<BloodstreamComponent>(uid, out var bloodstream))
         {
             // Give them synth blood. Ion storm notif is handled in that system
             _bloodstream.ChangeBloodReagents((uid, bloodstream), new([new(SynthBloodReagent, bloodstream.BloodReferenceSolution.Volume)]));
-        }
+        }*/ //Euphoria - Removed blood changing as we have a trait system for that already.
 
         // Add the silicon emotes to the allow list so we can ignore the emote whitelist/blacklist. This just allows the emote event to
         // be sent but it does not associate a sound with the emote. We'll intercept that event in OnEmote and play the sound manually there

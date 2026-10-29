@@ -17,6 +17,7 @@
     - ReplaceBloodYellow
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -53,6 +54,7 @@
     - ReplaceBloodYellow
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -84,6 +86,7 @@
     - ReplaceBloodYellow
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -113,6 +116,7 @@
     - ReplaceBloodYellow
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -143,6 +147,7 @@
     - ReplaceBloodYellow
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -172,6 +177,7 @@
     - ReplaceBloodYellow
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -201,6 +207,7 @@
     - ReplaceBloodSlime
     - ReplaceBloodBlack
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -226,6 +233,7 @@
     - ReplaceBloodSlime
     - ReplaceBloodYellow
     - ReplaceBloodWhite
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -255,12 +263,39 @@
     - ReplaceBloodSlime
     - ReplaceBloodYellow
     - ReplaceBloodBlack
+    - ReplaceBloodSynth
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
   effects:
   - !type:ReplaceBloodReagentTraitEffect
     reagent: WhiteBlood
+
+- type: trait
+  id: ReplaceBloodSynth
+  name: trait-replace-blood-synth-name
+  description: trait-blood-desc
+  category: BonusPhysical
+  cost: 0 # Almost entirely cosmetic
+  usesSlots: false
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - ReplaceBloodRed
+    - ReplaceBloodAmmonia
+    - ReplaceBloodCopper
+    - ReplaceBloodInsect
+    - ReplaceBloodSap
+    - ReplaceBloodSlime
+    - ReplaceBloodYellow
+    - ReplaceBloodBlack
+    - ReplaceBloodWhite
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ReplaceBloodReagentTraitEffect
+    reagent: SynthBlood
 
 # Regeneration
 - type: trait

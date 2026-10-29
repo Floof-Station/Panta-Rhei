@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent: MobStatusEffectBase
+  id: HungerBlindnessTraitStatusEffect
+  name: hunger blind trait
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - Hunger
+  - type: AwarenessStatusEffect
+    awarenessType: Hunger
+
+- type: entity
+  parent: MobStatusEffectBase
+  id: ThirstBlindnessTraitStatusEffect
+  name: thirst blind trait
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - Thirst
+  - type: AwarenessStatusEffect
+    awarenessType: Thirst
+
+- type: entity
+  parent: [ HungerBlindnessTraitStatusEffect, MobStatusEffectDebuff ]
+  id: StatusEffectHungerBlind
+  name: hunger blind
+
+- type: entity
+  parent: [ ThirstBlindnessTraitStatusEffect, MobStatusEffectDebuff ]
+  id: StatusEffectThirstBlind
+  name: thirst blind

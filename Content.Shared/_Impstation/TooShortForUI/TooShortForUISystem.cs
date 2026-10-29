@@ -1,3 +1,4 @@
+using Content.Shared._DV.Carrying;
 using Content.Shared.Buckle.Components;
 using Content.Shared.Climbing.Components;
 using Content.Shared.Gravity;
@@ -42,6 +43,11 @@ public sealed class TooShortForUI : EntitySystem
         // check if we're on a table.
         if (TryComp<ClimbingComponent>(ent, out var climbing) && climbing.IsClimbing)
             return;
+
+        //Euphoria Start - A friend is holding you up so you can push the buttons :)
+        if (TryComp<BeingCarriedComponent>(ent, out var beingCarried))
+            return;
+        //Euphoria End
 
         // finally, if the target entity is on the whitelist, return if true
         if (_whitelist.IsWhitelistPass(ent.Comp.Whitelist, args.Target))

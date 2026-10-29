@@ -1,4 +1,5 @@
 using Content.Server.Atmos.Components;
+using Content.Shared._Goobstation.Body.Components;
 using Content.Server.Radiation.Components;
 using Content.Shared._DV.CosmicCult.Components;
 using Content.Shared._Floof.Vore;
@@ -163,8 +164,14 @@ public sealed class PreySystem : EntitySystem
         should prevent possible exploitation of the system*/
         if (!IsInVoreContainer(prey))
            return;
+
         if (!TryComp<DevouredComponent>(prey, out var tracker))
             return;
+
+        if (!HasComp<SpecialBreathingImmunityComponent>(prey)){
+            EnsureComp<SpecialBreathingImmunityComponent>(prey);
+            tracker.AddedBreathing = true;
+        }
 
         if (!HasComp<PressureImmunityComponent>(prey)){
             EnsureComp<PressureImmunityComponent>(prey);
@@ -205,6 +212,11 @@ public sealed class PreySystem : EntitySystem
             return;
         if (!TryComp<DevouredComponent>(prey, out var tracker))
             return;
+
+        if (tracker.AddedBreathing){
+            RemComp<SpecialBreathingImmunityComponent>(prey);
+            tracker.AddedBreathing = false;
+        }
 
         if (tracker.AddedPressure){
             RemComp<PressureImmunityComponent>(prey);

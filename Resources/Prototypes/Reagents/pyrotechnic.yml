@@ -76,7 +76,7 @@
   flavor: bitter
   color: "#D4872A"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &PhlogistonMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
@@ -88,6 +88,7 @@
       - !type:AdjustTemperature
         amount: 6000
       - !type:Ignite
+    Respiration: *PhlogistonMetabolism # Euphoria - Cigarette Compatibility Patch
   reactiveEffects:
     Flammable:
       methods: [ Touch ]
@@ -165,7 +166,7 @@
   tileReactions:
   - !type:FlammableTileReaction {}
   metabolisms:
-    Bloodstream:
+    Bloodstream: &WeldingFuelMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:SatiateThirst
         factor: 1
@@ -188,6 +189,8 @@
             Poison: 1
       - !type:Flammable
         multiplier: 0.4
+    Digestion: *WeldingFuelMetabolism # Euphoria - Cigarette Compatibility Patch. Also allows you to drink it again (with consequences)
+    Respiration: *WeldingFuelMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Fluorosurfactant

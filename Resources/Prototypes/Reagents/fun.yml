@@ -163,7 +163,7 @@
   flavor: shocking
   color: "#FDD023"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &LicoxideMetabolism # Euphoria - Cigarette Compatibility Patch
       metabolismRate: 3.00 # DeltaV - licoxide is cheaper now, so adjust it accordingly
       effects:
       - !type:Emote # DeltaV - licoxide makes you scream now
@@ -175,6 +175,7 @@
             Shock: 4
       - !type:Electrocute
         probability: 0.15 # DeltaV - was 0.35, this should not be guaranteed for a cheaper chem
+    Respiration: *LicoxideMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Razorium
@@ -320,7 +321,7 @@
   slipData:
     requiredSlipSpeed: 3.5 #clown juice gotta slip
   metabolisms:
-    Bloodstream:
+    Bloodstream: &LaughterMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:Emote
         emote: Laugh
@@ -331,6 +332,7 @@
         visualType: Large
         messages: [ "laughter-effect-control-laughter" ]
         probability: 0.2
+    Respiration: *LaughterMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: JuiceThatMakesYouWeh

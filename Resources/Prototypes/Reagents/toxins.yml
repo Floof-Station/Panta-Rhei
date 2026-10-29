@@ -126,12 +126,13 @@
   recognizable: true
   physicalDesc: reagent-physical-desc-fuzzy
   metabolisms:
-    Bloodstream:
+    Bloodstream: &MoldMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
           types:
             Poison: 1
+    Respiration: *MoldMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: PolytrinicAcid
@@ -654,13 +655,14 @@
   contrabandSeverity: Major
   color: "#5C6274"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &LeadMetabolism # Euphoria - Cigarette compatibility patch.
       metabolismRate: 0.03 # Effectively once every 30 seconds.
       effects:
       - !type:HealthChange
         damage:
           types:
             Poison: 0.6 # Makes it 20 damage per unit.
+    Digestion: *LeadMetabolism # Euphoria - Cigrarette compatibility patch.
 
 - type: reagent
   id: Bungotoxin
@@ -738,7 +740,7 @@
   flavor: mothballs #why does weightloss juice taste like mothballs
   color: "#F0FFF0"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &LipolicideMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         conditions:
@@ -749,6 +751,7 @@
             Poison: 2
       - !type:SatiateHunger
         factor: -6
+    Respiration: *LipolicideMetabolism # Euphoria - Cigarette Compatibility Patch
 
 # inspired by the spider neurotoxin GsMtx-4
 # poisons non-spiders and slows you down at high doses

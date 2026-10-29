@@ -6,7 +6,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Body.Systems;
 
-public sealed class StomachSystem : EntitySystem
+public sealed partial class StomachSystem : EntitySystem // Euphoria - Converted to partial so that fields on StomachComponent could be set by setters
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutionContainerSystem = default!;
 

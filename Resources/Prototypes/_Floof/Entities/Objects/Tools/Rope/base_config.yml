@@ -11,7 +11,6 @@
   description: You shouldn't see this.
   categories: [ HideSpawnMenu ]
   components:
-  - type: CollisionWake
   - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
@@ -26,6 +25,7 @@
         density: 10 # A 10-segment leash will weigh something below 6 kg
         mask:
         - ItemMask
+        - LowImpassable # The airlock system is hardcoded to let airlocks close over anything with LowImpassable
         layer: [] # nothing can collide with it, mostly for performance reasons
         restitution: 0.3
         friction: 0.2
