@@ -179,7 +179,7 @@
   physicalDesc: reagent-physical-desc-grainy
   color: "#F0F0F0"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &SodiumPolyacrylateMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:SatiateThirst
         factor: -5 # This is basically industrial dessicant
@@ -188,6 +188,7 @@
         type: Local
         messages: [ "generic-reagent-effect-parched" ]
         probability: 0.1
+    Respiration: *SodiumPolyacrylateMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Cellulose

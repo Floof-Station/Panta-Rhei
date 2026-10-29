@@ -122,7 +122,7 @@
       amount: 1
     - !type:RobustHarvest {}
   metabolisms:
-    Bloodstream:
+    Bloodstream: &RobustHarvestMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
@@ -154,6 +154,7 @@
           - !type:ReagentCondition
             reagent: RobustHarvest
             min: 80
+    Respiration: *RobustHarvestMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Sedin

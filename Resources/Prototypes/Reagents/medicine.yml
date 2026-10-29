@@ -27,7 +27,7 @@
   flavor: medicine
   color: "#3a1d8a"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &DyloveneMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
@@ -66,6 +66,7 @@
         - !type:ReagentCondition
           reagent: Dylovene
           min: 15
+    Respiration: *DyloveneMetabolism # Euphoria - Cigarette Compatibility Patch
   plantMetabolism:
   - !type:PlantAdjustToxins
     amount: -10
@@ -127,13 +128,14 @@
   flavor: medicine
   color: "#bd5902"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &ArithrazineMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
           types:
             Radiation: -3
             Blunt: 0.5
+    Respiration: *ArithrazineMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Bicaridine
@@ -144,7 +146,7 @@
   flavor: medicine
   color: "#ffaa00"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &BicaridineMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:EvenHealthChange
         damage:
@@ -170,6 +172,7 @@
           reagent: Bicaridine
           min: 15
       - !type:Drunk
+    Respiration: *BicaridineMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Cryoxadone
@@ -229,7 +232,7 @@
   flavor: medicine
   color: "#215263"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &DermalineMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
@@ -252,6 +255,7 @@
         - !type:ReagentCondition
           reagent: Dermaline
           min: 10
+    Respiration: *DermalineMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Dexalin
@@ -262,7 +266,7 @@
   flavor: medicine
   color: "#0041a8"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &DexalinMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:HealthChange
         damage:
@@ -278,6 +282,7 @@
           types:
             Asphyxiation: 3
             Cold: 1
+    Respiration: *DexalinMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: DexalinPlus
@@ -709,7 +714,7 @@
   flavor: salty
   color: "#0064C8"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &SalineMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
         - !type:SatiateThirst
           conditions: # DeltaV nerf of saline for Feroxi
@@ -724,6 +729,7 @@
           factor: 2
         - !type:ModifyBloodLevel
           amount: 6
+    Respiration: *SalineMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Siderlac
@@ -827,7 +833,7 @@
   flavor: medicine
   color: "#00e5ff"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &TricordrazineMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:EvenHealthChange
         conditions:
@@ -849,6 +855,7 @@
             Cold: -0.33
             Radiation: -0.05 # To stop medibots from constantly injecting people with 0.01 rads
             # End Euphoria additions
+    Respiration: *TricordrazineMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Lipozine
@@ -877,7 +884,7 @@
   flavor: medicine
   color: "#fcf7f9"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &OmnizineMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:EvenHealthChange
         damage:
@@ -898,6 +905,7 @@
           types:
             Cellular: 1 # 2 per u
       # End DeltaV changes
+    Respiration: *OmnizineMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Ultravasculine
@@ -1512,7 +1520,7 @@
   flavor: medicine
   color: "#27870a"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &HaloperidolMetabolism # Euphoria - Cigarette/Pill Compatibility Patch
       effects:
       - !type:Emote
         emote: Yawn
@@ -1554,6 +1562,8 @@
       - !type:AdjustReagent
         reagent: MindbreakerToxin
         amount: -3.0
+    Digestion: *HaloperidolMetabolism # Euphoria - Cigarette/Pill Compatibility Patch. Also buffs eating the funny oranges from Botany.
+    Respiration: *HaloperidolMetabolism # Euphoria - Cigarette Compatibility Patch
 
 - type: reagent
   id: Warfarin
