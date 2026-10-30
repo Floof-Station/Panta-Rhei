@@ -9,6 +9,15 @@
   - type: Inventory
     templateId: gerasinv
   - type: Hands
+    activeHandId: Right
+    sortedHands:
+    - Right
+    - Left
+    hands:
+      Right:
+        location: Right
+      Left:
+        location: Left
   - type: MultiHandedItem
   - type: Stripping
   - type: ComplexInteraction

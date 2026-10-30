@@ -3,6 +3,9 @@
   parent: [BaseItem, BaseGun] # Euph - base gun parent
   abstract: true
   components:
+  - type: Tag # Euphoria - Setting up a tag.
+    tags:
+    - WeaponEnergyLong
   - type: Sprite
   - type: Item
     size: Large # DeltaV - was Huge
@@ -655,6 +658,7 @@
   - type: Tag
     tags:
       - Taser
+      - WeaponSMG # Euphoria - It's called an SMG, we're giving it the SMG tag.
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
     layers:
@@ -878,6 +882,9 @@
     node: start
   - type: StaticPrice
     price: 100
+  - type: Tag # Euphoria - Tagged as a Science Tool, like anomaly scanners.
+    tags:
+    - ScienceTool
 
 - type: entity
   parent: [WeaponPistolCHIMP, BaseSyndicateContraband]
