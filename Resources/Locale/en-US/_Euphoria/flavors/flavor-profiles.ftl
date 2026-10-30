@@ -4,5 +4,6 @@ flavor-complex-blackberry = like a sweet and very tart berry
 flavor-complex-blueberry = like a very sweet and lightly tart berry
 flavor-complex-raspberry = like natures candy
 flavor-complex-blueraspberry = like natures candy mixed with blueberries
+flavor-complex-baxshots = warm and gentle
 flavor-complex-shrimp = like shrimps
 flavor-complex-shrimp-soda = like fizzy, bubbly shrimp

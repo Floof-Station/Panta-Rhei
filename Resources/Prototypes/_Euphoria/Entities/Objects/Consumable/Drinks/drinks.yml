@@ -1,0 +1,15 @@
+- type: entity
+  parent: DrinkGlass
+  id: DrinkBaxShotsGlass
+  suffix: bax shots
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: BaxShots
+          Quantity: 30
+  - type: Icon
+    sprite: _Euphoria/Objects/Consumable/Drinks/baxshots.rsi
+    state: icon

@@ -174,7 +174,7 @@
     Yawn:
       path: /Audio/_Impstation/Allulalo/allulalo_say.ogg
     Honk:
-      collection: BikeHorn
+      path: /Audio/Animals/goose_honk.ogg # Euphoria - swapped to goose honk
     Sigh:
       path: /Audio/_Impstation/Allulalo/allulalo_say.ogg #placeholder
     Whistle:
@@ -193,6 +193,22 @@
       /Audio/_Impstation/Allulalo/allulalo_deathgasp.ogg
     Gulp: # Delta V
       path: /Audio/_Goobstation/Voice/gulpexotic.ogg
+    # Begin Euphoria - bird noises expansion
+    HarpyCaw:
+      collection: HarpyCaws
+    Chirp:
+      collection: ResomiChirps
+    HarpySquawk: 
+      collection: ResomiSquawk
+    Coo:
+      collection: HarpyCoos 
+    Call:
+      collection: ResomiCalls
+    Scree:
+      collection: ResomiScrees
+    HarpyQuack:
+      collection: HarpyQuacks
+    # End Euphoria
       
 - type: emoteSounds
   id: Suppy

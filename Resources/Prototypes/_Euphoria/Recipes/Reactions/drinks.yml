@@ -62,6 +62,20 @@
   products:
     BerryNice: 5
 
+- type: reaction
+  id: BaxShots
+  requiredMixerCategories:
+  - Stir
+  reactants:
+    LoversKiss:
+      amount: 3
+    JuiceWatermelon:
+      amount: 2
+    Cream:
+      amount: 1
+  products:
+    BaxShots: 6
+
 # Milk shakes
 - type: reaction
   id: BlackberryShake
