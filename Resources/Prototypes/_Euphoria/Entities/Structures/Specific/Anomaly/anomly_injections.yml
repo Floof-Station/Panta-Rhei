@@ -1,0 +1,37 @@
+﻿# Imp. This is only used for Anomalites
+- type: entity
+  parent: AnomalyInjectionBase
+  id: AnomalyInjectionFish
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: PointLight
+    color: "#ffffff"
+  - type: PuddleCreateAnomaly
+    solution: anomaly
+  - type: InjectionAnomaly
+    solution: anomaly
+    superCriticalInjectRadius: 10
+  - type: ReagentProducerAnomaly
+    solution: anomaly
+    needRecolor: true
+    dangerousChemicals:
+    - Holywater # kitsune and allergies, also its fucking lowercase
+    usefulChemicals:
+    - Water
+    funChemicals:
+    - CoconutWater
+    - SodaWater
+    - TonicWater
+  - type: Edible
+    edible: Drink
+    solution: anomaly
+  - type: DrainableSolution
+    solution: anomaly
+  - type: DrawableSolution
+    solution: anomaly
+  - type: ExaminableSolution
+    solution: anomaly
+  - type: RefillableSolution
+    solution: anomaly
+  - type: InjectableSolution
+    solution: beaker
