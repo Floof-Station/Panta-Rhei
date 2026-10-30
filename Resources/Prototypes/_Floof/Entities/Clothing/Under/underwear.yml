@@ -227,6 +227,22 @@
       undergarmentBottom:
       - state: thong
 
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearJockstrap
+  name: jockstrap
+  description: "A comfy jockstrap to keep that thing snug."
+  components:
+  - type: Sprite
+    sprite: _Floof/Clothing/Under/Underwear/jockstrap.rsi
+    state: jockstrap
+  - type: Clothing
+    sprite: _Floof/Clothing/Under/Underwear/jockstrap.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: jockstrap
+
+
 # panyhose (sock slot)
 - type: entity
   parent: ClothingUndergarmentSocksBase
