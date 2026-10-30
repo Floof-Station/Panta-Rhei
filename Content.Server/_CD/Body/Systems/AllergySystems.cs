@@ -4,8 +4,10 @@ using Content.Shared.Body.Components;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
-using Content.Shared.FixedPoint;
+using Content.Shared.Chemistry.Reagent;
+using Content.Shared._CD.Body;
 using Content.Shared.GameTicking;
+using Robust.Shared.Prototypes;
 using Content.Shared.Metabolism;
 using Robust.Shared.Timing;
 
@@ -33,7 +35,7 @@ public sealed class AllergySystem : EntitySystem
 
     private void OnReaction(EntityUid uid, AllergyComponent allergy, ref ReactionEntityEvent args)
     {
-        if (!allergy.Reagents.TryGetValue(args.Reagent.ID, out var reaction))
+        if (!allergy.Reagents.TryGetValue(args.Reagent.ID, out var allergyData))
             return;
         if (!TryComp(uid, out BloodstreamComponent? bloodstream))
             return;
@@ -43,7 +45,7 @@ public sealed class AllergySystem : EntitySystem
                 out var solution))
             return;
         var quantity = args.ReagentQuantity.Quantity;
-        solution.AddReagent(allergy.ReactionReagent, reaction * quantity);
+        solution.AddReagent(allergyData.ReactionReagent, allergyData.Intensity * quantity);
     }
 
     public override void Update(float frameTime)
@@ -68,7 +70,7 @@ public sealed class AllergySystem : EntitySystem
                 continue;
 
             // Get reactions from the chemstream
-            var histamine = GetReaction(allergy, chemstream);
+            ApplyReaction(allergy, chemstream, chemstream);
 
             // Add reactions from organs (currently, only lungs)
             if (TryComp<BodyComponent>(uid, out var body) && body.Organs is {} organs)
@@ -76,21 +78,20 @@ public sealed class AllergySystem : EntitySystem
                 foreach (var organ in organs.ContainedEntities)
                 {
                     if (TryComp<LungComponent>(organ, out var lung) && lung.Solution != null)
-                        histamine += GetReaction(allergy, lung.Solution!.Value.Comp.Solution);
+                        ApplyReaction(allergy, lung.Solution!.Value.Comp.Solution, chemstream);
                 }
             }
-
-            chemstream.AddReagent(allergy.ReactionReagent, histamine);
         }
     }
 
-    private FixedPoint2 GetReaction(AllergyComponent allergy, Solution solution)
+    private void ApplyReaction(AllergyComponent allergy, Solution source, Solution destination)
     {
-        var reaction = new FixedPoint2();
-        foreach (var reagent in solution.Contents)
+        foreach (var reagent in source.Contents)
         {
-            reaction += allergy.Reagents.GetValueOrDefault(reagent.Reagent.Prototype) * reagent.Quantity;
+            if (!allergy.Reagents.TryGetValue(reagent.Reagent.Prototype, out var allergyData))
+            continue;
+
+            destination.AddReagent(allergyData.ReactionReagent, allergyData.Intensity * reagent.Quantity);
         }
-        return reaction;
     }
 }
