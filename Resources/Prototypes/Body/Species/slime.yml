@@ -86,6 +86,10 @@
   id: MobSlimePerson
   name: Urist McWobble
   components:
+  - type: Surgery #Euphoria start - override the default states and surgery list
+    surgeryStates:
+    - slimeBypassed
+    surgeryList: slime #Euphoria end - override the default states and surgery list
   - type: Storage
     clickInsert: false
     grid:
