@@ -139,6 +139,8 @@
       - Plunger
       - GoldenPlunger
       - WireBrush
+      - Screwdriver # Euphoria - Janitor can restock vending machines, this would help
+      - Crowbar # Euphoria - Pry up the floor tiles for those REALLY tough stains
       components:
       - LightReplacer
       - SmokeOnTrigger
@@ -157,6 +159,14 @@
         whitelist:
           tags:
           - Wrench
+      crowbar: # Euphoria - Crowbar in the belt can be seen on its sprite
+        whitelist:
+          tags:
+          - Crowbar
+      screwdriver_nuke: # Euphoria - We LOVE this system and whoever made it, that's very cool.
+        whitelist:
+          tags:
+          - Screwdriver
   - type: Appearance
 
 - type: entity
