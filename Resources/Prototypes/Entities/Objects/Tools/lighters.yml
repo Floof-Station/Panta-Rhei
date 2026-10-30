@@ -93,6 +93,7 @@
   - type: Tag # DeltaV
     tags:
       - WeldingTool
+      - Lighters # Euphoria
 
 - type: entity
   name: cheap lighter
@@ -218,6 +219,7 @@
   - type: Tag # DeltaV
     tags:
     - WeldingTool
+    - Lighters # Euphoria
 
 - type: entity
   name: flippo engraved lighter
@@ -322,6 +324,9 @@
   - type: UseDelay
   - type: IgnitionSource
     ignited: false
+  - type: Tag # Euphoria
+    tags:
+    - Lighters
 
 - type: entity
   parent: [BaseBrandedLighter, BaseSyndicateContraband]
@@ -621,6 +626,7 @@
     tags:
     - DonkPocket
     - Meat
+    - Lighters # Euphoria
   - type: SolutionContainerManager
     solutions:
       Welder:

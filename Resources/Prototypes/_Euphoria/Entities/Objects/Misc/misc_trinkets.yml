@@ -1,0 +1,104 @@
+﻿- type: entity
+  parent: BaseCartridge
+  id: CartridgeAntiMaterielInactive
+  name: inactive cartridge (.60 anti-material)
+  description: An inactive high-power cartridge used by high-precision rifles.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    state: base
+  - type: Appearance
+
+- type: entity
+  parent: BaseCartridge
+  id: BaseCartridgePistolInactive
+  name: inactive cartridge (.35 auto)
+  description: A inactive low-power cartridge used by pistols.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    state: base
+  - type: Appearance
+
+- type: entity
+  parent: BaseCartridge
+  id: CartridgeAntiMaterielSpent
+  name: spent cartridge (.60 anti-material)
+  description: A spent high-power cartridge used by high-precision rifles.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/large_casing.rsi
+    state: base-spent
+  - type: Appearance
+
+- type: entity
+  parent: BaseCartridge
+  id: BaseCartridgePistolSpent
+  name: spent cartridge (.35 auto)
+  description: A spent low-power cartridge used by pistols.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    state: base-spent
+  - type: Appearance
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkMikeBottle
+  suffix: Full
+  name: Mike sports drink bottle
+  description: A sick ass Mike squeeze bottle, perfect for spraying your friends with.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Drinks/MikeSportsBottle/white.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 50
+
+- type: entity
+  parent: ClothingMaskBase
+  id: ClothingMaskBubblePipe
+  name: bubble pipe
+  description: A silly little pipe for those who don't smoke. Try to avoid breathing the bubbles in.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Mask/bubble_pipe.rsi
+    layers:
+    - state: icon
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: Clothing
+    equippedPrefix: off
+    sprite: _Euphoria/Clothing/Mask/bubble_pipe.rsi
+  - type: ToggleableVisuals
+    spriteLayer: enum.ToggleableVisuals.Layer
+    clothingVisuals:
+      mask:
+      - state: on-equipped-MASK
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: ItemToggle
+    predictable: true
+    soundActivate:
+      path: /Audio/Items/flashlight_on.ogg
+    soundDeactivate:
+      path: /Audio/Items/flashlight_off.ogg
+  - type: Tag
+    tags:
+    - PetWearable
+    - CorgiWearable
+  - type: Item
+    sprite: _Euphoria/Clothing/Mask/bubble_pipe.rsi
+    size: Small
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right

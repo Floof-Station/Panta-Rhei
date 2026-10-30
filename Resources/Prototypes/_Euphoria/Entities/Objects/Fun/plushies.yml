@@ -1,0 +1,17 @@
+﻿- type: entity
+  parent: BaseShadekinPlushie
+  id: PlushieShadekinAlt
+  name: Shadekin Plushie
+  description: A plushie of a Shadekin. It's very soft.
+  components:
+  - type: Item
+    size: Small
+    sprite: _Euphoria/Objects/Fun/plushies/shadekin_plushie.rsi
+  - type: Sprite
+    sprite: _Euphoria/Objects/Fun/plushies/shadekin_plushie.rsi
+    state: icon
+  - type: Clothing
+    quickEquip: false
+    sprite: _Euphoria/Objects/Fun/plushies/shadekin_plushie.rsi
+    slots:
+    - HEAD

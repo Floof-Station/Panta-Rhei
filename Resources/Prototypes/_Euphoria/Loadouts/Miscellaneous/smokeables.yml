@@ -1,0 +1,41 @@
+﻿- type: loadout
+  id: CigPackBub
+  storage:
+    back:
+    - CigPackBub
+  groupBy: "smokeables"
+
+- type: loadout
+  id: BluntLarge
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobBotanist
+      time: 36000 # 10hr
+  storage:
+    back:
+    - BluntLarge
+  groupBy: "smokeables"
+
+- type: loadout
+  id: CigPackRollie
+  storage:
+    back:
+    - CigPackRollie
+  groupBy: "smokeables"
+
+- type: loadout
+  id: CigPackMedRollie
+  storage:
+    back:
+    - CigPackMedRollie
+  groupBy: "smokeables"
+
+- type: loadout
+  id: MysteryLighterBox
+  storage:
+    back:
+    - MysteryLighterBox
+  groupBy: "lighters"
+

@@ -1,0 +1,10 @@
+﻿- type: construction
+  id: BigAssBlunt
+  graph: BigAssBlunt
+  startNode: start
+  targetNode: BluntLarge
+  category: construction-category-misc
+  entityWhitelist:
+    tags:
+    - BigAssBluntCrafter
+  objectType: Item

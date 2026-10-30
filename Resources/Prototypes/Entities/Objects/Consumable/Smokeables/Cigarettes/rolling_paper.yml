@@ -6,16 +6,23 @@
   components:
   - type: Storage
     grid:
-    - 0,0,3,1
+    - 0,0,4,1 # Euphoria - made it 1 wider
     whitelist:
       tags:
       - RollingPaper
       - CigFilter
-  - type: EntityTableContainerFill
-    containers:
-      storagebase:
-        id: PaperRolling
-        amount: 4
+      - Smokable # Euphoria
+      - Cigarette # Euphoria
+      - Lighters # Euphoria
+#  - type: EntityTableContainerFill ## Euphoria - commented out in favour of StorageFill, so rolling papers don't spawn in the rollie kits
+#    containers:
+#      storagebase:
+#        id: PaperRolling
+#        amount: 4
+  - type: StorageFill # Euphoria
+    contents:
+    - id: PaperRolling
+      amount: 4
   - type: Sprite
     sprite: Objects/Consumable/Smokeables/Cigarettes/paper.rsi
     state: cigpapers
@@ -28,14 +35,20 @@
   id: PackPaperRollingFilters
   description: A pack of filters and thin pieces of paper used to make fine smokeables.
   components:
-  - type: EntityTableContainerFill
-    containers:
-      storagebase: !type:AllSelector
-        children:
-        - id: PaperRolling
-          amount: 2
-        - id: CigaretteFilter
-          amount: 2
+  - type: StorageFill # Euphoria
+    contents:
+    - id: PaperRolling
+      amount: 2
+    - id: CigaretteFilter
+      amount: 2
+#  - type: EntityTableContainerFill ## Euphoria - commented out in favour of StorageFill, so rolling papers don't spawn in the rollie kits
+#    containers:
+#      storagebase: !type:AllSelector
+#        children:
+#        - id: PaperRolling
+#          amount: 2
+#        - id: CigaretteFilter
+#          amount: 2
 
 - type: entity
   id: PaperRolling

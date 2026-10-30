@@ -1,0 +1,180 @@
+﻿- type: entity
+  id: CigPackBub
+  parent: CigPackBase
+  name: greyman's specials pack
+  description: An old cigarette packet full of Greyman's Specials cigarettes. You feel more surgically inclined while smoking them.
+  components:
+  - type: Storage
+    grid:
+    - 0,0,4,1
+    whitelist:
+      tags:
+      - RollingPaper
+      - CigFilter
+      - Smokable
+      - Cigarette
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: CigaretteBub
+        amount: 10
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Smokeable/greymans.rsi
+    layers:
+    - state: closed
+      map: ["closeLayer"]
+    - state: open
+      map: ["openLayer"]
+      visible: false
+    - state: cig1
+      map: ["cig1"]
+      visible: false
+    - state: cig2
+      map: ["cig2"]
+      visible: false
+    - state: cig3
+      map: ["cig3"]
+      visible: false
+    - state: cig4
+      map: ["cig4"]
+      visible: false
+    - state: cig5
+      map: ["cig5"]
+      visible: false
+    - state: cig6
+      map: ["cig6"]
+      visible: false
+  - type: Item
+    sprite: _Euphoria/Objects/Consumable/Smokeable/greymans.rsi
+
+- type: entity
+  id: CigaretteBub
+  parent: Cigarette
+  name: greyman's specials cigarette
+  components:
+  - type: Sprite
+    color: gray
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: Water
+          Quantity: 5
+
+- type: entity
+  id: CigaretteLead
+  parent: SoakedCigarette
+  name: Metal Head
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nicotine
+          Quantity: 10
+        - ReagentId: Lead
+          Quantity: 10
+
+- type: entity
+  id: BluntLarge
+  parent: BaseCigar
+  name: comedically large blunt
+  description: This thing is the size of your forearm, it's a wonder you can even hold it, let alone smoke it. Try not to green out.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Smokeable/big_ass_blunt/icon.rsi
+    state: unlit-icon
+  - type: Tag
+    tags:
+    - Cigarette
+    - Trash
+  - type: SpaceGarbage
+  - type: Clothing
+    sprite: _Euphoria/Objects/Consumable/Smokeable/big_ass_blunt/worn_inhands.rsi
+    slots: [ mask ]
+    equippedPrefix: unlit
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,0,3
+    storedRotation: -45
+    inhandVisuals:
+      left:
+      - state: unlit-inhand-left
+      right:
+      - state: unlit-inhand-right
+  - type: Construction
+    graph: BigAssBlunt
+    node: BluntLarge
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 350
+        reagents:
+        - ReagentId: THC
+          Quantity: 300
+
+- type: entity
+  id: CigPackRollie
+  parent: PackPaperRolling
+  name: Rollie Packet
+  description: An old rolling paper packet full of things to make rollies with.
+  components:
+  - type: StorageFill
+    contents:
+    - id: CigaretteFilter
+      amount: 2
+    - id: PaperRolling
+      amount: 2
+    - id: GroundTobacco5
+      amount: 2
+    - id: CigaretteSyndicate
+      amount: 2
+
+- type: entity
+  id: CigPackMedRollie
+  parent: PackPaperRolling
+  name: medicinal blunt packet
+  description: An old rolling paper packet full of things to make blunts with. Its purely medicinal man..
+  components:
+  - type: StorageFill
+    contents:
+    - id: LeavesTobaccoDried5
+      amount: 2
+    - id: GroundCannabis5
+      amount: 2
+    - id: Blunt
+      amount: 2
+
+- type: entity
+  parent: GroundTobacco
+  id: GroundTobacco5
+  suffix: 5
+  components:
+  - type: Stack
+    stackType: GroundTobacco
+    count: 5
+
+- type: entity
+  parent: LeavesTobaccoDried
+  id: LeavesTobaccoDried5
+  suffix: 5
+  components:
+  - type: Stack
+    stackType: LeavesTobaccoDried
+    count: 5
+
+- type: entity
+  parent: GroundCannabis
+  id: GroundCannabis5
+  suffix: 5
+  components:
+  - type: Stack
+    stackType: GroundCannabis
+    count: 5
