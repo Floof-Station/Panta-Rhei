@@ -40,6 +40,7 @@ public sealed class PredSystem : EntitySystem
     {
         SubscribeLocalEvent<BodyComponent, GetVerbsEvent<Verb>>(OnBodyGetVerbs);
 
+        SubscribeLocalEvent<PredComponent, VoreSettingsChangedEvent>(OnVoreSettingsChanged);
         SubscribeLocalEvent<PredComponent, OnVoreDoAfter>(OnVoreDoAfter);
         SubscribeLocalEvent<PredComponent, BeingGibbedEvent>(OnGibbedRemoveContent);
         SubscribeLocalEvent<PredComponent, DestructionEventArgs>(OnDestroyedRemoveContent);
@@ -63,44 +64,18 @@ public sealed class PredSystem : EntitySystem
 
         if (HasComp<PredComponent>(user) || HasComp<PreyComponent>(user)){
             BuildVoreContainerVerbs(user, args);
-        }
+            if (user == target){
+                BuildMenuVerb(user, args);
+                if(TryComp<PredComponent>(user, out var predComp)){
+                    BuildSelfInteractionVerbs(user, predComp, args);
 
-        if (TryComp<PredComponent>(user, out var predComp) && user == target){
-            BuildSelfInteractionVerbs(user, predComp, args);
-            if (_cfg.GetCVar(VoreCVars.DigestionEnabled)){
-                BuildDigestVerbs(user, predComp, args);
+                    if (_cfg.GetCVar(VoreCVars.DigestionEnabled)){
+                        BuildDigestVerbs(user, predComp, args);
+                    }
+                }
             }
         }
     }
-
-    /// <summary>
-    /// handles the verbs that control self inspection not including the different voretypes
-    /// </summary>
-    public void BuildSelfInteractionVerbs(EntityUid uid, PredComponent comp, GetVerbsEvent<Verb> args){
-        if (!_containerSystem.TryGetContainer(uid, comp.ContainerId, out var container))
-            return;
-        if (container.ContainedEntities.Count > 0){
-            args.Verbs.Add(new Verb
-            {
-                Text = "Release all prey",
-                Category = VoreGeneral,
-                Act = () => TryReleaseAllPrey(uid, comp)
-            });
-
-            foreach (var prey in container.ContainedEntities){
-                if (!HasComp<BodyComponent>(prey))
-                    continue;
-                var preyName = Name(prey);
-                args.Verbs.Add(new Verb
-                {
-                    Text = $"Release {preyName}",
-                    Category = VoreGeneral,
-                    Act = () => TryReleasePrey(uid, comp, prey)
-                });
-            }
-        }
-    }
-
 
     /// <summary>
     /// handles the verbs that control the container such as inserting/removing
@@ -108,7 +83,7 @@ public sealed class PredSystem : EntitySystem
     private void BuildVoreContainerVerbs(EntityUid uid, GetVerbsEvent<Verb> args){
         var user = args.User;
         var target = args.Target;
-        
+
         // 1. devour (pred → prey)
         if (IsDevourable(user, target))
         {
@@ -150,6 +125,47 @@ public sealed class PredSystem : EntitySystem
                         Act = () => TryVore(target, prey)
                     });
                 }
+            }
+        }
+    }
+
+    /// <summary>
+    /// opening up the menu for settings 
+    /// </summary>
+    private void BuildMenuVerb(EntityUid uid, GetVerbsEvent<Verb> args){
+        args.Verbs.Add(new Verb
+        {
+            Text = "Vore Settings",
+            Category = VoreGeneral,
+            Act = () => RaiseNetworkEvent(new OpenVoreMenuEvent(), uid)   
+        });
+    }
+
+    /// <summary>
+    /// handles the verbs that control self inspection not including the different voretypes
+    /// </summary>
+    private void BuildSelfInteractionVerbs(EntityUid uid, PredComponent comp, GetVerbsEvent<Verb> args){
+        if (!_containerSystem.TryGetContainer(uid, comp.ContainerId, out var container))
+            return;
+
+        if (container.ContainedEntities.Count > 0){
+            args.Verbs.Add(new Verb
+            {
+                Text = "Release all prey",
+                Category = VoreGeneral,
+                Act = () => TryReleaseAllPrey(uid, comp)
+            });
+
+            foreach (var prey in container.ContainedEntities){
+                if (!HasComp<BodyComponent>(prey))
+                    continue;
+                var preyName = Name(prey);
+                args.Verbs.Add(new Verb
+                {
+                    Text = $"Release {preyName}",
+                    Category = VoreGeneral,
+                    Act = () => TryReleasePrey(uid, comp, prey)
+                });
             }
         }
     }
@@ -206,6 +222,14 @@ public sealed class PredSystem : EntitySystem
             return;
         _popupSystem.PopupEntity("You are devouring someone!", user, user);
         _popupSystem.PopupEntity("You are being devoured!", target, target, PopupType.LargeCaution);
+    }
+
+    /// <summary>
+    /// handling changes to component values 
+    /// </summary>
+    private void OnVoreSettingsChanged(EntityUid uid, PredComponent comp, VoreSettingsChangedEvent ev){
+        comp.StomachColor = ev.StomachColor;
+        Dirty(uid, comp);
     }
 
     /// <summary>
