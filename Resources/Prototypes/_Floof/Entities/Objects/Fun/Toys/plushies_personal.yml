@@ -2038,7 +2038,7 @@
       right:
       - state: inhand-right
         shader: shaded
-    heldPrefix: plushie
+    heldPrefix: plushielizard
   - type: EmitSoundOnActivate
     sound: &mothSigh
       path: /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
@@ -2058,7 +2058,6 @@
         shader: shaded
     quickEquip: false
     sprite: Objects/Fun/toys.rsi
-    equippedPrefix: mothplushie
     slots:
     - HEAD
 
