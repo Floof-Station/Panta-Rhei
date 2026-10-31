@@ -2046,8 +2046,8 @@
     sound: *mothSigh
   - type: EmitSoundOnLand
     sound: *mothScream
- # - type: EmitSoundOnCollide - Commenting out for testing.
-#    sound: *mothScream
+  - type: EmitSoundOnCollide - Commenting out for testing.
+    sound: *mothScream
   - type: MeleeWeapon
     soundHit: &mothExclaim
       path: /Audio/_Starlight/Voice/Moth/moth_exclaim.ogg 
