@@ -171,6 +171,32 @@
     solution: fleshlight
     useSound:
       sound: *useDJ
+  - type: SolutionContainerManager
+    solutions:
+      fleshlight:
+        maxVol: 10
+  - type: SolutionTransfer
+    transferAmount: 5
+    maxTransferAmount: 10
+    minTransferAmount: 1
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
 
 - type: entity
   parent: PlushieHuman
