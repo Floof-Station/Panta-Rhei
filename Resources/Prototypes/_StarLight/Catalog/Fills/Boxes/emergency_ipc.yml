@@ -4,6 +4,8 @@
   description: It's a box with survival supplies for IPCs.
   suffix: IPC
   components:
+  - type: Storage
+    maxItemSize: Normal
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
