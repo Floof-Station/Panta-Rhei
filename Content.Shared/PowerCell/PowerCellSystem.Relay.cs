@@ -33,8 +33,15 @@ public sealed partial class PowerCellSystem
     private void RelayToCellSlot<T>(Entity<PowerCellComponent> ent, ref T args) where T : notnull
     {
         var parent = Transform(ent).ParentUid;
+        // Only relay while actually slotted, a held or pocketed cell shares the same parent
+        if (!TryComp<PowerCellSlotComponent>(parent, out var slotComp) ||
+            !_itemSlots.TryGetSlot(parent, slotComp.CellSlotId, out var slot) ||
+            slot.Item != ent.Owner)
+            return;
+
         // Relay the event to the slot entity.
         if (HasComp<PowerCellSlotComponent>(parent))
             RaiseLocalEvent(parent, ref args);
+        RaiseLocalEvent(parent, ref args);
     }
 }

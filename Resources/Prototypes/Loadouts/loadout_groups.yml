@@ -120,6 +120,7 @@
   - EmergencyOxygen
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVapor # DeltaV
+  - EmergencyIPC # Starlight
 
 # nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
@@ -846,6 +847,7 @@
   - EmergencyOxygenClown
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVaporClown # DeltaV
+  - EmergencyIPC # Starlight
 
 - type: loadoutGroup
   id: ClownJobTrinkets
@@ -942,6 +944,7 @@
   - EmergencySpeciesMothMime
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVaporMime # DeltaV
+  - EmergencyIPC # Starlight
 
 - type: loadoutGroup
   id: MimeJobTrinkets
@@ -1382,6 +1385,7 @@
   - EmergencyOxygenExtended
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVaporExtended # DeltaV
+  - EmergencyIPC # Starlight
 
 # Science
 - type: loadoutGroup
@@ -1826,6 +1830,7 @@
   - EmergencyOxygenSecurity
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVaporSecurity # DeltaV
+  - EmergencyIPC # Starlight
 
 # Medical
 - type: loadoutGroup
@@ -2165,6 +2170,7 @@
   - EmergencyOxygenMedical
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVaporMedical # DeltaV
+  - EmergencyIPC # Starlight
 
 # Wildcards
 - type: loadoutGroup
@@ -2235,6 +2241,7 @@
   - EmergencyOxygenSyndicate
   - LoadoutSpeciesVoxNitrogen
   - EmergencyWaterVaporSyndicate # DeltaV
+  - EmergencyIPC # Starlight
 
 - type: loadoutGroup
   id: SurvivalMilitaryDouble
@@ -2244,6 +2251,7 @@
   loadouts:
   - EmergencyNitrogenMilitaryDouble
   - EmergencyOxygenMilitaryDouble
+  - EmergencyIPC # Starlight
 
 - type: loadoutGroup
   id: GroupSpeciesBreathTool

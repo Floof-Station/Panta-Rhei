@@ -2,6 +2,9 @@
   parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
   id: IPC
   limits:
+    enum.HumanoidVisualLayers.Eyes:
+      limit: 10
+      required: false
     enum.HumanoidVisualLayers.Head:
       limit: 10
       required: true
@@ -191,8 +194,10 @@
     - APCHighCapacity
     - APCSuperCapacity
     - APCHyperCapacity
+    - APCConstructed
     - SubstationBasic
     - SubstationWallBasic
+    - WallWeaponCapacitorRecharger
     noPowerDeathEmote: SiliconDeathgasp # Euph - from EE
   - type: Deathgasp
     prototype: SiliconDeathgasp # Euph - from EE

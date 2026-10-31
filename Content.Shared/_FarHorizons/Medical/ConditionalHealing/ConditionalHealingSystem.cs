@@ -1,6 +1,5 @@
 using System.Linq;
 using Content.Shared.DoAfter;
-using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
@@ -26,7 +25,6 @@ public sealed class ConditionalHealingSystem : EntitySystem
     [Dependency] private readonly SharedVirtualItemSystem _virtualItems = default!; // Euph
     [Dependency] private readonly SharedStackSystem _stacks = default!; // Euph
     [Dependency] private readonly MetaDataSystem _meta = default!; // Euph
-    [Dependency] private readonly BlindableSystem _blindables = default!;
 
     public override void Initialize()
     {
@@ -63,11 +61,6 @@ public sealed class ConditionalHealingSystem : EntitySystem
 
     private void OnHealing(Entity<ConditionalHealingVirtualItemComponent> ent, ref HealingDoAfterEvent args)
     {
-        // If it's handled, that means the healing has succeeded
-        // The healing system doesn't account for eye damage healing so we need to do a little fucking in here
-        if (args.Handled && ent.Comp.HealingData is { } healingData)
-            _blindables.AdjustEyeDamage(args.Target!.Value, healingData.AdjustEyeDamage);
-
         // Doesn't give you back the materials even if cancelled, idc
         // This is mostly to avoid leaving the virtual item lingering if the do-after is cancelled
         PredictedQueueDel(ent);

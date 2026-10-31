@@ -6,6 +6,8 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Database;
 using Content.Shared.DoAfter;
+using Content.Shared.Eye.Blinding.Components;
+using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
@@ -25,6 +27,7 @@ public sealed class HealingSystem : EntitySystem
     [Dependency] private readonly ISharedAdminLogManager _adminLogger = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedBloodstreamSystem _bloodstreamSystem = default!;
+    [Dependency] private readonly BlindableSystem _blindable = default!; // Far Horizons
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly SharedStackSystem _stacks = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
@@ -76,6 +79,10 @@ public sealed class HealingSystem : EntitySystem
         // Restores missing blood
         if (healing.ModifyBloodLevel != 0 && bloodstream != null)
             _bloodstreamSystem.TryModifyBloodLevel((target.Owner, bloodstream), healing.ModifyBloodLevel);
+
+        // Far Horizons eye healing, ported from ss14Starlight@5d4ff27
+        if (healing.AdjustEyeDamage != 0 && TryComp(target, out BlindableComponent? blindable))
+            _blindable.AdjustEyeDamage((target, blindable), healing.AdjustEyeDamage);
 
         if (!_damageable.TryChangeDamage(target.Owner, healing.Damage * _damageable.UniversalTopicalsHealModifier, out var healed, true, origin: args.Args.User) && healing.BloodlossModifier != 0)
             return;
@@ -152,6 +159,12 @@ public sealed class HealingSystem : EntitySystem
                 return true;
             }
         }
+
+        // Far Horizons eye healing, ported from ss14Starlight@5d4ff27
+        if (healing.Comp.AdjustEyeDamage != 0 &&
+            TryComp<BlindableComponent>(target, out var blindableTarget) &&
+            blindableTarget.EyeDamage != 0)
+            return true;
 
         return false;
     }
