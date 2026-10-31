@@ -48,17 +48,14 @@
 
 - type: trait
   id: Tiny
-  name: trait-tiny-name
-  description: trait-tiny-desc
+  name: trait-name-tiny
+  description: trait-desc-tiny
   category: Skills
   cost: 1
   conditions:
   - !type:TraitDependencyCondition
     conflicts:
     - Small # PseudoItem Change Conflicts
-  - !type:HasJobCondition
-    invert: true
-    job: Captain # You can and will be stolen quickly by rogue entities
   - !type:OneOfSpeciesCondition
     invert: true
     species:
@@ -82,7 +79,7 @@
     - type: BonusStaminaDamage
       multiplier: 0.8
     - type: PseudoItem
-      size: Normal
+      size: Huge
     - type: Carriable
       freeHandsRequired: 1 # Tiny ahh character
     - type: CanEscapeInventory
