@@ -133,7 +133,7 @@
         volume: 1
 
 - type: entity
-  parent: PlushieHuman
+  parent: [BaseFleshlight, PlushieHuman]
   id: PlushieHardcoreDj
   name: Hardcore DJ plushie
   description: You're not sure how, you're not sure why, but you're overwhelmed with the urge to deepfry this thing.
