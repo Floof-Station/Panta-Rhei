@@ -144,7 +144,7 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
-    sound:
+    sound: &useDJ
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
       params:
         volume: 1
@@ -158,6 +158,8 @@
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
       params:
         volume: 1
+  - type: EmitSoundOnTrigger
+    sound: *useDJ
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
