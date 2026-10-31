@@ -47,7 +47,9 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Replays;
 using Robust.Shared.Utility;
-using Content.Shared._DV.Chat; // DeltaV - chat enhancements
+using Content.Shared._DV.Chat;
+using Content.Shared._Floof.Language;
+using Content.Shared._Floof.Language.Components; // DeltaV - chat enhancements
 
 namespace Content.Server.Chat.Systems;
 
@@ -215,7 +217,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // DeltaV - Hushed trait logic
         // This needs to happen after prefix removal to avoid bug
-        if (desiredType == InGameICChatType.Speak && HasComp<HushedComponent>(source))
+        if (desiredType == InGameICChatType.Speak && HasComp<HushedComponent>(source) && TryComp<LanguageSpeakerComponent>(source, out var languageComp) && languageComp.CurrentLanguage != "Sign") // Sign language should not be hushed
         {
             // hushed players cannot speak on local chat so will be sent as whisper instead
             desiredType = InGameICChatType.Whisper;
