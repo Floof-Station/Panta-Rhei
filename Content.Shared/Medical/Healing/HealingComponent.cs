@@ -51,6 +51,10 @@ public sealed partial class HealingComponent : Component
     [DataField, AutoNetworkedField]
     public float SelfHealPenaltyMultiplier = 3f;
 
+    // Far Horizons eye healing, ported from ss14Starlight@5d4ff27
+    [DataField, AutoNetworkedField]
+    public int AdjustEyeDamage = 0;
+
     /// <summary>
     /// Sound played on healing begin.
     /// </summary>
