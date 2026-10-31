@@ -217,7 +217,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         // DeltaV - Hushed trait logic
         // This needs to happen after prefix removal to avoid bug
-        if (desiredType == InGameICChatType.Speak && HasComp<HushedComponent>(source) && TryComp<LanguageSpeakerComponent>(source, out var languageComp) && languageComp.CurrentLanguage != "Sign") // Sign language should not be hushed
+        if (desiredType == InGameICChatType.Speak && HasComp<HushedComponent>(source) && TryComp<LanguageSpeakerComponent>(source, out var languageComp) && languageComp.CurrentLanguage != "Sign") // Euphoria - Sign language should not be hushed
         {
             // hushed players cannot speak on local chat so will be sent as whisper instead
             desiredType = InGameICChatType.Whisper;
