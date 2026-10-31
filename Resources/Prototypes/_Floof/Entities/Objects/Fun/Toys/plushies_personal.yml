@@ -158,14 +158,19 @@
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
       params:
         volume: 1
-  - type: EmitSoundOnTrigger
-    sound: *useDJ
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_meow3.ogg
       params:
         variation: 0.05
         volume: 4
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+    useSound:
+      sound: *useDJ
 
 - type: entity
   parent: PlushieHuman
