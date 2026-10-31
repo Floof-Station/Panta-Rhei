@@ -2046,7 +2046,7 @@
     sound: *mothSigh
   - type: EmitSoundOnLand
     sound: *mothScream
-  - type: EmitSoundOnCollide - Commenting out for testing.
+  - type: EmitSoundOnCollide
     sound: *mothScream
   - type: MeleeWeapon
     soundHit: &mothExclaim
