@@ -1,0 +1,15 @@
+- type: loadoutEffectGroup
+  id: IPC
+  effects:
+  - !type:SpeciesLoadoutEffect
+    species:
+    - IPC
+
+- type: loadout
+  id: EmergencyIPC
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: IPC
+  storage:
+    back:
+    - BoxSurvivalIPC

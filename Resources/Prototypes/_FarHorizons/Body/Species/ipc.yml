@@ -2,6 +2,9 @@
   parent: [ Undergarments, EuphoriaCommonMarkingLayers ] # Floof
   id: IPC
   limits:
+    enum.HumanoidVisualLayers.Eyes:
+      limit: 10
+      required: false
     enum.HumanoidVisualLayers.Head:
       limit: 10
       required: true

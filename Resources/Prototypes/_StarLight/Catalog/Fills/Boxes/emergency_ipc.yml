@@ -1,0 +1,16 @@
+- type: entity
+  parent: BoxSurvival
+  id: BoxSurvivalIPC
+  description: It's a box with survival supplies for IPCs.
+  suffix: IPC
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: EmergencyCoolingUnit
+        - id: Flare
+        - id: PowerCellSmall
+  - type: Sprite
+    layers:
+    - state: internals
