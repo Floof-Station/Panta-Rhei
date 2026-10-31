@@ -1985,3 +1985,47 @@
     sprite: _Floof/Objects/Fun/bubblynurse.rsi
     slots:
     - HEAD
+    
+- type: entity
+  parent: PlushieHuman
+  id: MoodyChemistPlushie
+  name: moody chemist plushie
+  description: You get a feeling that this plush doesn't want you holding it. If you address it calmly, you might just hear back a "greetings". The antennae and wings are made of a soft faux fur.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/moodychemist.rsi
+    state: icon
+  - type: Item
+    sprite: _Floof/Objects/Fun/moodychemist.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushie # TESTING IF THIS BREAKS, REVERT TO plushielizard
+  - type: EmitSoundOnActivate
+    sound: &mothSigh
+      path: /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
+  - type: EmitSoundOnUse
+    sound: *mothSigh
+  - type: EmitSoundOnLand
+    sound: *mothScream
+  - type: EmitSoundOnCollide
+    sound: *mothScream
+  - type: MeleeWeapon
+    soundHit: &mothExclaim
+      path: /Audio/_Starlight/Voice/Moth/moth_exclaim.ogg 
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    equippedPrefix: mothplushie #if this breaks, remove this; Julia's doesn't have this. REMOVE THIS NOTE.
+    slots:
+    - HEAD
+
+    
