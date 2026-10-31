@@ -1995,6 +1995,8 @@
   - type: Sprite
     sprite: _Floof/Objects/Fun/moodychemist.rsi
     state: icon
+  - type: UseDelay
+    delay: 1.0
   - type: Item
     sprite: _Floof/Objects/Fun/moodychemist.rsi
     inhandVisuals:
@@ -2004,7 +2006,7 @@
       right:
       - state: inhand-right
         shader: shaded
-    heldPrefix: plushie # TESTING IF THIS BREAKS, REVERT TO plushielizard
+    heldPrefix: plushie
   - type: EmitSoundOnActivate
     sound: &mothSigh
       path: /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
@@ -2024,7 +2026,7 @@
         shader: shaded
     quickEquip: false
     sprite: Objects/Fun/toys.rsi
-    equippedPrefix: mothplushie #if this breaks, remove this; Julia's doesn't have this. REMOVE THIS NOTE.
+    equippedPrefix: mothplushie
     slots:
     - HEAD
 
