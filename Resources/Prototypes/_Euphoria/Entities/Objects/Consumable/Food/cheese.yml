@@ -1,15 +1,11 @@
 ﻿- type: entity
   name: mother's cheese wheel
-  parent: FoodBakingBase
+  parent: FoodCheese
   id: FoodMothersCheese
   description: A big wheel of fresh Mother's cheese. Made with love <3.
   components:
-  - type: FlavorProfile
-    flavors:
-    - cheesy
   - type: Sprite
     sprite: _Euphoria/Objects/Consumable/Food/mothers_cheese.rsi
-    state: cheesewheel
   - type: SliceableFood
     count: 3
     slice: FoodMothersCheeseSlice
@@ -24,17 +20,13 @@
           Quantity: 5
 
 - type: entity
-  parent: FoodBakingBase
+  parent: FoodCheeseSlice
   id: FoodMothersCheeseSlice
   name: mother's cheese wedge
   description: A wedge of fresh Mother's cheese. The cheese wheel it was cut from can't have gone far. Made with love <3.
   components:
-  - type: FlavorProfile
-    flavors:
-    - cheesy
   - type: Sprite
     sprite: _Euphoria/Objects/Consumable/Food/mothers_cheese.rsi
-    state: cheesewedge
   - type: SolutionContainerManager
     solutions:
       food:
@@ -44,20 +36,3 @@
           Quantity: 3
         - ReagentId: BreastMilk
           Quantity: 2
-  - type: Tag
-    tags:
-    - Slice
-  - type: FoodSequenceElement
-    entries:
-      Taco: CheeseTaco
-      Burger: CheeseBurger
-      Nachos: CheeseTaco # DeltaV
-      Hotdog: CheeseBurger # Euphoria
-  - type: Item
-    size: Tiny
-    storedOffset: 0,-3
-    inhandVisuals:
-      left:
-      - state: cheesewedge-inhand-left
-      right:
-      - state: cheesewedge-inhand-right
