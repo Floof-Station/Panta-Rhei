@@ -72,8 +72,25 @@
   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityandJusticeRegulations.xml
   priority: 1
   children:
-  - SecurityJurisdiction
-  - ProbableCause
+
+  # Euphoria - Begin Changes
+
+  # Remove DeltaV SOP articles
+  # - SecurityJurisdiction
+  # - ProbableCause
+
+  # Add Euphoria SOP articles
+  - SecurityQuickReferenceGuide
+  - ParametersAndDefinitions
+  - SearchAndArrestProcedures
+  - SecurityAlertProcedure
+  - ProbableCauseAndMethodOfEscalation
+  - EquipmentAndUniform
+  - SuspectAndPrisonerTreatment
+  - RoleSpecificSOP
+
+  # Euphoria - End Changes
+
   - RulesOfEngagement
   - MartialLaw
   - ArmoryProcedure
@@ -217,16 +234,16 @@
 
 
 ## Security And Justice Regulations entries
-- type: guideEntry
-  id: SecurityJurisdiction
-  name: sop-sec-jurisdiction-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityJurisdiction.xml
+# - type: guideEntry # Euphoria - We're replacing DV's SOP with our own SOP, all of these that are commented out we've made equivalents of under our namespace.
+#   id: SecurityJurisdiction
+#   name: sop-sec-jurisdiction-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityJurisdiction.xml
 
 
-- type: guideEntry
-  id: ProbableCause
-  name: sop-probable-cause-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ProbableCause.xml
+# - type: guideEntry
+#   id: ProbableCause
+#   name: sop-probable-cause-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ProbableCause.xml
 
 
 - type: guideEntry
