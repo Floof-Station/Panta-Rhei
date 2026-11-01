@@ -3,6 +3,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Shared._DV.Humanoid;
 using Content.Shared._Floof.Humanoid; // DeltaV
+using Content.Server._Floof.HeightAdjust; // Euphoria
 using Content.Shared.CCVar;
 using Content.Shared.Decals;
 using Content.Shared.Examine;
@@ -383,6 +384,24 @@ public abstract class SharedHumanoidAppearanceSystem : EntitySystem
         {
             Dirty(uid, humanoid);
         }
+    }
+    
+    /// <summary>
+    /// Euphoria - Set a humanoid mob's height.
+    /// </summary>
+    public void SetHeight(Entity<HumanoidAppearanceComponent?> ent, float newHeight)
+    {
+        // maybe instead of adding this function here I should extend SharedHumanoidAppearanceSystem or something in Floof/Euphoria namespace?
+        if (!Resolve(ent, ref ent.Comp))
+            return;
+        
+        var oldHeight = ent.Comp.Height;
+        var ratio = newHeight / oldHeight; // verify this is the correct way to do the math, mirroring HumanoidHeightMonitoringSystem currently
+        
+        ent.Comp.Height = newHeight;
+        RaiseLocalEvent(ent, new HeightChangedEvent(oldHeight, newHeight, ratio)); // this still doesn't fix the issue of not updating HumanoidHeightMonitoringComponent LastHeight... a bit annoying. Maybe I can integrate directly somehow. Perhaps make a UpdateLastHeight function and call that? Can I just load and update the component directly here or in the trait system effect?
+        
+        Dirty(ent);
     }
 
     /// <summary>

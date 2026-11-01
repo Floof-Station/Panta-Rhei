@@ -73,6 +73,8 @@
               Piercing: 0.9
     - !type:ModifyStaminaThresholdEffect 
       multiplier: 0.8 #Have less stamina. Takes 1 less shot with a disabler to stun, compared to human Urist. Could mitigate with Vigor trait if you want to use the points.
+    - !type:ModifyHeightEffect
+      factor: 0.7 #30% reduction in height
 
 # =================================================== #
 
