@@ -1,0 +1,20 @@
+- type: metamorphRecipe
+  id: FoodBurgerShrimp
+  key: Burger
+  result: FoodBurgerShrimp
+  rules:
+  - !type:SequenceLength
+    range:
+      min: 3
+      max: 4
+  - !type:IngredientsWithTags
+    tags:
+    - Cooked
+    - Meat
+    - Shrimp
+    count:
+      min: 2
+      max: 3
+  - !type:LastElementHasTags
+    tags:
+    - Bun

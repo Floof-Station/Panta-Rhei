@@ -1,0 +1,59 @@
+- type: entity
+  name: shrimp chips
+  parent: FoodSnackBase
+  id: FoodSnackShrimpChips
+  description: Crispy potatoes flavored with arguably the best flavor in the universe.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - oily
+        - salty
+        - potatoes
+        - shrimp
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: chips
+    - type: Item
+      heldPrefix: chips
+    - type: Edible
+      trash:
+        - FoodPacketShrimpChipsTrash
+
+- type: entity
+  categories: [HideSpawnMenu]
+  parent: FoodPacketTrash
+  id: FoodPacketShrimpChipsTrash
+  name: shrimp chips
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      state: chips-trash
+
+- type: entity
+  name: Ariral yogurt
+  parent: FoodSnackBase
+  id: FoodSnackAriralYogurt
+  description: A tub of yogurt.
+  suffix: Admeme
+  components:
+    - type: FlavorProfile
+      flavors:
+        - creamy
+        - milk
+        - shrimp
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/yogurt.rsi
+      state: ariral
+    - type: Edible
+      trash:
+        - FoodPacketAriralYogurtTrash
+
+- type: entity
+  categories: [HideSpawnMenu]
+  parent: FoodPacketTrash
+  id: FoodPacketAriralYogurtTrash
+  name: empty yogurt tub
+  components:
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/yogurt.rsi
+      state: ariral-trash

@@ -35,3 +35,23 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   fizziness: 0.3
+
+- type: reagent
+  id: BaxShots
+  name: reagent-name-baxshots
+  parent: BaseAlcohol
+  desc: reagent-desc-baxshots
+  physicalDesc: reagent-physical-desc-smooth
+  flavor: baxshots
+  color: "#f4615e"
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/baxshots.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 3
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.08
+        Pomelustine: 0.2

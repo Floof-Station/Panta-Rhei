@@ -1856,7 +1856,7 @@
 
 - type: entity
   parent: [BaseFleshlight, PlushieExperiment]
-  id: PlushieRescueFox 
+  id: PlushieRescueFox
   name: Rescue Fox Plushie
   description: This plushie struggles to stand up straight but still wills itself to do so in order to sit nicely on your shelf. The pin atop the beret is both made of real silver and not removable. Yaps sourced from a real arctic fox!
   components:
@@ -1930,3 +1930,58 @@
     sound: *robot-scream
   - type: MeleeWeapon
     soundHit: *robot-scream
+
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman, Dropper]
+  id: BubblyNursePlushie
+  name: bubbly nurse plushie
+  description: A plushie depicting a boiling orange slime in a nurse outfit. It always seems to fall over no matter how you prop it up. It rumbles slightly when you squeeze it.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    layers:
+    - state: icon
+    - state: icon1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visibile: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: icon
+    inHandsMaxFillLevels: 1
+    inHandsFillBaseName: -fill-
+  - type: UseDelay
+    delay: 1.0
+  - type: EmitSoundOnActivate
+    sound: *slimeLaugh
+  - type: EmitSoundOnUse
+    sound: &slimeBubble
+      path: /Audio/_Floof/Voice/Slime/s_bubble.ogg
+  - type: EmitSoundOnLand
+    sound: &fallTired
+      path: /Audio/Effects/bodyfall4.ogg
+  - type: EmitSoundOnCollide
+    sound: &slimeScreamF
+      path: /Audio/_Floof/Voice/Slime/slime_scream_f1.ogg
+  - type: MeleeWeapon
+    soundHit: *slimeSquish
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 5
+      fleshlight:
+        maxVol: 10
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+    useSound:
+      collection: Bubbles
+  - type: Item
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    size: Tiny
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    slots:
+    - HEAD
