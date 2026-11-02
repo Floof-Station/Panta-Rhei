@@ -226,11 +226,6 @@
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityDetectiveReportRecipe
-  result: PaperTemplateSecurityDetectiveReport
-
-- type: latheRecipe
-  parent: BasePaperTemplateSecurityRecipe
   id: PaperTemplateSecurityImplantSearchWarrantRecipe
   result: PaperTemplateSecurityImplantSearchWarrant
 
