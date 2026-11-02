@@ -11,7 +11,7 @@ paperwork-security-arrest-warrant =
         {"["}color=gray][italic]If no Head of Security is present during the issuing of this arrest warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold]
         {"["}bold]SHIFT TIME:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]CHIEF JUSTICE:[/bold]
@@ -31,7 +31,7 @@ paperwork-security-arrest-warrant =
         
         {"["}bold]PROSECUTOR SIGNATURE AND STAMP:[/bold]
         {"["}bold]CLERK SIGNATURE AND STAMP:[/bold]
-        {"["}bold]bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
     
         {"["}italic]SECONDARY SIGNATURES IF THE JUSTICE DEPARTMENT IS NOT AVAILABLE:[/italic]
     
@@ -48,7 +48,7 @@ paperwork-security-search-warrant =
         {"["}color=gray][italic]If no Head of Security is present during the issuing of this arrest warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold]
         {"["}bold]SHIFT TIME:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]CHIEF JUSTICE:[/bold]
@@ -68,7 +68,7 @@ paperwork-security-search-warrant =
         
         {"["}bold]PROSECUTOR SIGNATURE AND STAMP:[/bold]
         {"["}bold]CLERK SIGNATURE AND STAMP:[/bold]
-        {"["}bold]bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
     
         {"["}italic]SECONDARY SIGNATURES IF THE JUSTICE DEPARTMENT IS NOT AVAILABLE:[/italic]
     
@@ -85,7 +85,7 @@ paperwork-security-departmental-search-warrant =
         {"["}color=gray][italic]If no Head of Security is present during the issuing of this arrest warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold] 
         {"["}bold]SHIFT TIME:[/bold]
         {"["}bold]CAPTAIN:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
@@ -104,7 +104,7 @@ paperwork-security-departmental-search-warrant =
         {"["}head=3]Section C[/head]
         {"["}color=gray][italic]The Chief Justice must sign off on this warrant for it to be valid. If the Chief Justice is not available, the Clerk may sign off; in the absence of the Justice Department or Captain, the Head of Security may sign off on the Departmental Search Warrant.[/color][/italic]
 
-        {"["}bold]bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
     
         {"["}italic]SECONDARY SIGNATURES IF THE CHIEF JUSTICE IS NOT AVAILABLE:[/italic]
     
@@ -121,7 +121,7 @@ paperwork-security-implant-search-warrant =
         {"["}color=gray][italic]If no Head of Security is present during the issuing of this search warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold] 
         {"["}bold]SHIFT TIME:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]CHIEF MEDICAL OFFICER:[/bold]
@@ -157,7 +157,7 @@ paperwork-security-warden-appointment =
         {"["}head=3]Section A[/head]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold] 
         {"["}bold]CAPTAIN:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
         
@@ -166,7 +166,7 @@ paperwork-security-warden-appointment =
         
         {"["}bold]OFFICER PROMOTED TO ACTING WARDEN:[/bold]
         
-        {"["}PROMOTING COMMAND MEMBER:[/bold]
+        {"["}bold]PROMOTING COMMAND MEMBER:[/bold]
         
     { paperwork-separator-security }
         {"["}head=3]Section C[/head]
@@ -183,7 +183,7 @@ paperwork-security-do-not-resuscitate =
         {"["}head=3]Section A[/head]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold] 
         {"["}bold]CAPTAIN:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]CHIEF MEDICAL OFFICER:[/bold]
@@ -217,7 +217,7 @@ paperwork-security-interrogation-authorization =
         {"["}head=3]Section A[/head]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold] 
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]WARDEN:[/bold]
         
@@ -246,7 +246,7 @@ security-paperwork-stasis-order =
         {"["}head=3]Section A[/head]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold]
         {"["}bold]CAPTAIN:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold] 
         {"["}bold]CHIEF JUSTICE:[/bold]
@@ -262,19 +262,19 @@ security-paperwork-stasis-order =
         
         {"["}bold]REQUESTED METHOD OF STASIS:[/bold]
         
-        {"["}\[ ] Lethal Injection
-        {"["}\[ ] Electrocution
-        {"["}\[ ] Spacing
+        {"\["} ] Lethal Injection
+        {"\["} ] Electrocution
+        {"\["} ] Spacing
         
         {"["}bold]NITROUS OXIDE REQUESTED:[/bold]
         
-        {"["}\[ ] Y
-        {"["}\[ ] N
+        {"\["} ] Y
+        {"\["} ] N
 
         {"["}bold]NITROUS OXIDE REQUESTED:[/bold]
         
-        {"["}\[ ] Chaplain
-        {"["}\[ ] Psychologist
+        {"\["} ] Chaplain
+        {"\["} ] Psychologist
         
         {"["}color=gray][italic]Please see Security Standard Operating Procedure for further requirements for stasis.[/color][/italic]
     { paperwork-separator-security }
@@ -295,7 +295,7 @@ paperwork-security-visitation-form =
         {"["}head=3]Section A[/head]
         
         {"["}bold]SECTOR:[/bold] Esin-14
-        {"["}bold]STATION:[/bold] {$stationName}
+        {"["}bold]STATION:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
         {"["}bold]WARDEN:[/bold]
         
