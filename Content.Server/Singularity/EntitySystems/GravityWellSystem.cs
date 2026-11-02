@@ -109,7 +109,7 @@ public sealed class GravityWellSystem : SharedGravityWellSystem
             return;
 
         gravWell.NextPulseTime += gravWell.TargetPulsePeriod;
-        if (gravWell.MaxRange < 0.0f || !Resolve(uid, ref xform))
+        if (gravWell.MaxRange <= 0.0f || !Resolve(uid, ref xform))
             return;
 
         var scale = (float)frameTime.TotalSeconds;
