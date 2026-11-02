@@ -72,12 +72,21 @@
   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityandJusticeRegulations.xml
   priority: 1
   children:
+  - AppealsParolePardons
+  - PressingCriminalCharges
+  - Injunctions
 
-  # Euphoria - Begin Changes
+# Euphoria - Begin Changes
 
   # Remove DeltaV SOP articles
   # - SecurityJurisdiction
   # - ProbableCause
+  # - RulesOfEngagement
+  # - MartialLaw
+  # - ArmoryProcedure
+  # - TreatmentOfPrisoners
+  # - ArrestandSentencing
+  # - Warrants
 
   # Add Euphoria SOP articles
   - SecurityQuickReferenceGuide
@@ -90,16 +99,6 @@
   - RoleSpecificSOP
 
   # Euphoria - End Changes
-
-  - RulesOfEngagement
-  - MartialLaw
-  - ArmoryProcedure
-  - TreatmentOfPrisoners
-  - ArrestandSentencing
-  - AppealsParolePardons
-  - PressingCriminalCharges
-  - Warrants
-  - Injunctions
 
 # Hearings Main Directory
 - type: guideEntry
