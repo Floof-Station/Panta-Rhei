@@ -36,3 +36,27 @@
           Quantity: 3
         - ReagentId: BreastMilk
           Quantity: 2
+  - type: FoodSequenceElement
+    entries:
+      Taco: MothersCheeseTaco
+      Burger: MothersCheeseBurger
+      Nachos: MothersCheeseTaco # DeltaV
+      Hotdog: MothersCheeseBurger # Euphoria
+
+- type: foodSequenceElement
+  id: MothersCheeseBurger
+  name: food-sequence-content-mothers-cheese
+  sprites:
+  - sprite: _Euphoria/Objects/Consumable/Food/mothers_cheese.rsi
+    state: cheeseburger
+  tags:
+  - Cheese
+
+- type: foodSequenceElement
+  id: MothersCheeseTaco
+  name: food-sequence-content-mothers-cheese
+  sprites:
+  - sprite: _Euphoria/Objects/Consumable/Food/mothers_cheese.rsi
+    state: cheesetaco
+  tags:
+  - Cheese
