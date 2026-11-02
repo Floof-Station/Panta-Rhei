@@ -4,6 +4,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Jittering;
 using Content.Server.Mind;
 using Content.Server.Stunnable;
+using Content.Shared.Actions;
 using Content.Shared.Anomaly;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Anomaly.Effects;
@@ -25,6 +26,7 @@ public sealed class InnerBodyAnomalySystem : SharedInnerBodyAnomalySystem
 {
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
     [Dependency] private readonly AnomalySystem _anomaly = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly GibbingSystem _gibbing = default!;
     [Dependency] private readonly IChatManager _chat = default!;
@@ -94,8 +96,21 @@ public sealed class InnerBodyAnomalySystem : SharedInnerBodyAnomalySystem
             return;
 
         ent.Comp.Injected = true;
+		
+		// Begin Euph Changes
+		// EntityManager.AddComponents(ent, injectedAnom.Components);
+		
+		// sets owner for injected anom, so only it is removed when the anom is
+        AddInjectedComponents(ent, injectedAnom.Components);
 
-        EntityManager.AddComponents(ent, injectedAnom.Components);
+        if (_actions.AddAction(ent.Owner,
+                ref ent.Comp.PulseActionEntity,
+                ent.Comp.PulseAction) &&
+            ent.Comp.PulseActionEntity is { } pulseAction)
+        {
+            _actions.SetTemporary(pulseAction, true);
+        }
+		// End Euph Changes
 
         if (!ent.Comp.SkipStun) // imp. added this check for anomalites
         {
@@ -212,9 +227,21 @@ public sealed class InnerBodyAnomalySystem : SharedInnerBodyAnomalySystem
     {
         if (!ent.Comp.Injected)
             return;
+		
+		// begin euph changes
+		
+//		if (_proto.Resolve(ent.Comp.InjectionProto, out var injectedAnom))
+//            EntityManager.RemoveComponents(ent, injectedAnom.Components);
 
-        if (_proto.Resolve(ent.Comp.InjectionProto, out var injectedAnom))
-            EntityManager.RemoveComponents(ent, injectedAnom.Components);
+        if (ent.Comp.PulseActionEntity is { } pulseAction)
+        {
+            _actions.RemoveAction(ent.Owner, pulseAction);
+            ent.Comp.PulseActionEntity = null;
+        }
+
+        RemoveInjectedComponents(ent);
+		
+		// end euph changes
 
         if (!ent.Comp.SkipStun) // imp. added this check for anomalites
             _stun.TryUpdateParalyzeDuration(ent, TimeSpan.FromSeconds(ent.Comp.StunDuration));
@@ -241,5 +268,34 @@ public sealed class InnerBodyAnomalySystem : SharedInnerBodyAnomalySystem
 
         ent.Comp.Injected = false;
         RemCompDeferred<AnomalyComponent>(ent);
+    }
+
+    // Euph below
+    private void AddInjectedComponents(Entity<InnerBodyAnomalyComponent> ent, ComponentRegistry components)
+    {
+        ent.Comp.AddedComponents.Clear();
+
+        foreach (var (name, entry) in components)
+        {
+            var componentType = entry.Component.GetType();
+            if (HasComp(ent.Owner, componentType))
+                continue;
+
+            EntityManager.AddComponent(ent.Owner, entry);
+            ent.Comp.AddedComponents.Add(name, entry);
+        }
+    }
+
+    // Removes only the components introduced by AddInjectedComponents above
+    private void RemoveInjectedComponents(Entity<InnerBodyAnomalyComponent> ent)
+    {
+        foreach (var (_, entry) in ent.Comp.AddedComponents)
+        {
+            var componentType = entry.Component.GetType();
+            if (HasComp(ent.Owner, componentType))
+                RemComp(ent.Owner, componentType);
+        }
+
+        ent.Comp.AddedComponents.Clear();
     }
 }
