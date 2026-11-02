@@ -39,7 +39,7 @@ paperwork-security-arrest-warrant =
         {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
         {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
 
-paperwork-security-search-warrant:
+paperwork-security-search-warrant =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]SEARCH WARRANT[/head]
     { paperwork-separator-security }
@@ -76,7 +76,7 @@ paperwork-security-search-warrant:
         {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
         {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
     
-paperwork-security-departmental-search-warrant:
+paperwork-security-departmental-search-warrant =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]DEPARTMENTAL SEARCH WARRANT[/head]
     { paperwork-separator-security }
@@ -112,7 +112,7 @@ paperwork-security-departmental-search-warrant:
         {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
         {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
         
-paperwork-security-implant-search-warrant:
+paperwork-security-implant-search-warrant =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]IMPLANT SEARCH WARRANT[/head]
     { paperwork-separator-security }
@@ -150,7 +150,7 @@ paperwork-security-implant-search-warrant:
         {"["}bold]WARDEN OF SECURITY SIGNATURE AND STAMP:[/bold]
         {"["}bold]MEDICAL SIGNATURE AND STAMP:[/bold]
     
-paperwork-security-warden-appointment
+paperwork-security-warden-appointment =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]APPOINTMENT OF ACTING WARDEN[/head]
     { paperwork-separator-security }
@@ -176,7 +176,7 @@ paperwork-security-warden-appointment
         {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
         {"["}bold]ACTING WARDEN SIGNATURE AND STAMP:[/bold]
         
-paperwork-security-do-not-resuscitate:
+paperwork-security-do-not-resuscitate =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]DO NOT RESUSCITATE ORDER (SECURITY)[/head]
     { paperwork-separator-security }
@@ -210,7 +210,7 @@ paperwork-security-do-not-resuscitate:
         {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
         {"["}bold]CORPSMAN SIGNATURE:[/bold]
         
-paperwork-security-interrogation-authorization:
+paperwork-security-interrogation-authorization =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]INTERROGATION AUTHORIZATION[/head]
     { paperwork-separator-security }
@@ -239,7 +239,7 @@ paperwork-security-interrogation-authorization:
         {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
         {"["}bold]INTERROGATING OFFICER(S) SIGNATURES:[/bold]
 
-security-paperwork-stasis-order:
+security-paperwork-stasis-order =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]STASIS ORDER[/head]
     { paperwork-separator-security }
@@ -288,7 +288,7 @@ security-paperwork-stasis-order:
         {"["}italic]OPTIONAL SIGNATURES FOR EMERGENCY STASIS:[/italic]
         {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
         
-paperwork-security-visitation-form:
+paperwork-security-visitation-form =
     { paperwork-header-security }
         {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]PRISONER VISITATION REQUEST FORM[/head]
     { paperwork-separator-security }
