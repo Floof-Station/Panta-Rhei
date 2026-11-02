@@ -5,6 +5,9 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+  - type: Tag # Euphoria - Setting up a tag.
+    tags:
+    - WeaponSniper
   - type: Sprite
     layers:
     - state: base

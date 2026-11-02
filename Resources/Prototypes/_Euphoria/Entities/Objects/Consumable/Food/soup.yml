@@ -1,0 +1,29 @@
+- type: entity
+  name: shrimp-fried rice
+  parent: FoodBowlBase
+  id: FoodShrimpFriedRice
+  description: A bowl of rice with shrimps.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - rice
+    - shrimp
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+    layers:
+    - state: fried-rice
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 35
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 25
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Protein
+          Quantity: 4
+  - type: Tag
+    tags:
+    - Meat
+    - Soup

@@ -1,0 +1,47 @@
+- type: microwaveMealRecipe
+  id: RecipeShrimpFriedRice
+  name: shrimp-fried rice recipe
+  result: FoodShrimpFriedRice
+  time: 15
+  group: Savory
+  reagents:
+    Egg: 6
+  solids:
+    FoodRiceBoiled: 1
+    FoodMeatShrimp: 2
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpPizza
+  name: shrimp pizza recipe
+  result: FoodPizzaShrimp
+  time: 30
+  group: Pizza
+  solids:
+    FoodDoughFlat: 1
+    FoodMeatShrimp: 3
+    FoodCheeseSlice: 1
+    FoodTomato: 1
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpBurger
+  name: shrimp burger recipe
+  result: FoodBurgerShrimp
+  time: 10
+  group: Savory
+  solids:
+    FoodBreadBun: 1
+    FoodMeatShrimp: 2
+
+- type: microwaveMealRecipe
+  id: RecipeShrimpAlfredo
+  name: shrimp alfredo recipe
+  result: FoodNoodlesShrimpAlfredo
+  time: 10
+  group: Pasta
+  reagents:
+    Cream: 5
+  solids:
+    FoodNoodlesBoiled: 1
+    FoodMeatShrimp: 2
+    FoodButterSlice: 1
+    FoodCheeseSlice: 1

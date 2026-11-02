@@ -93,13 +93,14 @@
   color: black
   recognizable: true
   metabolisms:
-    Digestion:
+    Digestion: &BlackpepperMetabolism # Euphoria - Cigarette Compatibility Patch
       effects:
       - !type:Emote
         emote: Cough
         showInChat: true
         showInGuidebook: true
         probability: 0.05
+    Respiration: *BlackpepperMetabolism # Euphoria - Cigarette Compatibility Patch
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
@@ -194,7 +195,7 @@
   meltingPoint: 146
   boilingPoint: 410 # Really high boiling point compared to its melting
   metabolisms:
-    Digestion:
+    Digestion: &CapsaicinOilMetabolism # Euphoria - Cigarette Compatibility Patch. Blame Dan's Soaked Smokes.
       metabolites:
         Nutriment: 1.5
       effects:
@@ -212,6 +213,7 @@
         type: Local
         messages: [ "capsaicin-effect-light-burn" ]
         probability: 0.2
+    Respiration: *CapsaicinOilMetabolism # Euphoria - Cigarette Compatibility Patch. Someone smart could probably weaponize this now.
 
 - type: reagent
   id: CocoaPowder #Candy and chocolate

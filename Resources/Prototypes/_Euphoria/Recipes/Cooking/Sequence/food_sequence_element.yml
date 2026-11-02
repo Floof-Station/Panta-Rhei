@@ -132,3 +132,49 @@
     state: pickleslice
   tags:
   - Vegetable
+
+# Shrimp, based on the crab meat elements
+
+- type: foodSequenceElement
+  id: MeatShrimp
+  name: food-sequence-content-shrimp
+  sprites:
+  - sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+    state: cooked
+  tags:
+  - Cooked
+  - Meat
+  - Shrimp
+
+- type: foodSequenceElement
+  id: MeatShrimpBurger
+  name: food-sequence-burger-content-shrimp
+  sprites:
+  - sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+    state: cooked
+  tags:
+  - Cooked
+  - Meat
+  - Shrimp
+
+- type: foodSequenceElement
+  id: MeatShrimpUnusual
+  name: food-sequence-content-shrimp-unusual
+  sprites:
+  - sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+    state: unusual-cooked
+  tags:
+  - Cooked
+  - Meat
+  - Shrimp
+
+- type: foodSequenceElement
+  id: MeatShrimpUnusualBurger
+  name: food-sequence-burger-content-shrimp-unusual
+  sprites:
+  - sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+    state: unusual-cooked
+  tags:
+  - Cooked
+  - Meat
+  - Shrimp
