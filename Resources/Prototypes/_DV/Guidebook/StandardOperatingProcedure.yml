@@ -233,7 +233,11 @@
 
 
 ## Security And Justice Regulations entries
-# - type: guideEntry # Euphoria - We're replacing DV's SOP with our own SOP, all of these that are commented out we've made equivalents of under our namespace.
+
+# We've replaced all of these entries with entries for our own version of SOP on Euphoria.
+# Euphoria - Begin Removals
+
+# - type: guideEntry
 #   id: SecurityJurisdiction
 #   name: sop-sec-jurisdiction-name
 #   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityJurisdiction.xml
@@ -245,35 +249,36 @@
 #   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ProbableCause.xml
 
 
-- type: guideEntry
-  id: RulesOfEngagement
-  name: sop-roe-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/RulesOfEngagement.xml
+# - type: guideEntry
+#   id: RulesOfEngagement
+#   name: sop-roe-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/RulesOfEngagement.xml
 
 
-- type: guideEntry
-  id: MartialLaw
-  name: sop-martial-law-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/MartialLaw.xml
+# - type: guideEntry
+#   id: MartialLaw
+#   name: sop-martial-law-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/MartialLaw.xml
 
 
-- type: guideEntry
-  id: ArmoryProcedure
-  name: sop-armory-procedure-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ArmoryProcedure.xml
+# - type: guideEntry
+#   id: ArmoryProcedure
+#   name: sop-armory-procedure-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ArmoryProcedure.xml
 
 
-- type: guideEntry
-  id: TreatmentOfPrisoners
-  name: sop-treatment-prisoners-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/TreatmentOfPrisoners.xml
+# - type: guideEntry
+#   id: TreatmentOfPrisoners
+#   name: sop-treatment-prisoners-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/TreatmentOfPrisoners.xml
 
 
-- type: guideEntry
-  id: ArrestandSentencing
-  name: sop-arrest-sentencing-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ArrestandSentencing.xml
+# - type: guideEntry
+#   id: ArrestandSentencing
+#   name: sop-arrest-sentencing-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/ArrestandSentencing.xml
 
+# Euphoria - End Removals
 
 - type: guideEntry
   id: AppealsParolePardons
@@ -286,11 +291,11 @@
   name: sop-press-charges-name
   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/PressingCriminalCharges.xml
 
-
-- type: guideEntry
-  id: Warrants
-  name: sop-warrants-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/Warrants.xml
+# Euphoria - We now have our own SOP regarding warrants.
+# - type: guideEntry
+#   id: Warrants
+#   name: sop-warrants-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/Warrants.xml
 
 
 - type: guideEntry
