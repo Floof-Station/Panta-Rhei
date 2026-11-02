@@ -133,7 +133,7 @@
         volume: 1
 
 - type: entity
-  parent: PlushieHuman
+  parent: [BaseFleshlight, PlushieHuman]
   id: PlushieHardcoreDj
   name: Hardcore DJ plushie
   description: You're not sure how, you're not sure why, but you're overwhelmed with the urge to deepfry this thing.
@@ -144,7 +144,7 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
-    sound:
+    sound: &useDJ
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
       params:
         volume: 1
@@ -164,6 +164,38 @@
       params:
         variation: 0.05
         volume: 4
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+    useSound: *useDJ
+  - type: SolutionContainerManager
+    solutions:
+      fleshlight:
+        maxVol: 10
+  - type: SolutionTransfer
+    transferAmount: 5
+    maxTransferAmount: 10
+    minTransferAmount: 1
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
 
 - type: entity
   parent: PlushieHuman
@@ -1985,3 +2017,48 @@
     sprite: _Floof/Objects/Fun/bubblynurse.rsi
     slots:
     - HEAD
+    
+- type: entity
+  parent: PlushieHuman
+  id: MoodyChemistPlushie
+  name: moody chemist plushie
+  description: You get a feeling that this plush doesn't want you holding it. If you address it calmly, you might just hear back a "greetings". The antennae and wings are made of a soft faux fur.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/moodychemist.rsi
+    state: icon
+  - type: UseDelay
+    delay: 1.0
+  - type: Item
+    sprite: _Floof/Objects/Fun/moodychemist.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: EmitSoundOnActivate
+    sound: &mothSigh
+      path: /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
+  - type: EmitSoundOnUse
+    sound: *mothSigh
+  - type: EmitSoundOnLand
+    sound: *mothScream
+  - type: EmitSoundOnCollide
+    sound: *mothScream
+  - type: MeleeWeapon
+    soundHit: &mothExclaim
+      path: /Audio/_Starlight/Voice/Moth/moth_exclaim.ogg 
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    slots:
+    - HEAD
+
+    

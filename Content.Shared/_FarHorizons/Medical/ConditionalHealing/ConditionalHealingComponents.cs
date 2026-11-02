@@ -50,6 +50,7 @@ public sealed partial class ConditionalHealingData
             SelfHealPenaltyMultiplier = SelfHealPenaltyMultiplier,
             HealingBeginSound = HealingBeginSound,
             HealingEndSound = HealingEndSound,
+            AdjustEyeDamage = AdjustEyeDamage,
         };
 }
 
