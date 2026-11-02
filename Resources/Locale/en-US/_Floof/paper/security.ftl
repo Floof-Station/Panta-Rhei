@@ -262,19 +262,19 @@ security-paperwork-stasis-order =
         
         {"["}bold]REQUESTED METHOD OF STASIS:[/bold]
         
-        {"\["} ] Lethal Injection
-        {"\["} ] Electrocution
-        {"\["} ] Spacing
+        {"\"}[ ] Lethal Injection
+        {"\"}[ ] Electrocution
+        {"\"}[ ] Spacing
         
         {"["}bold]NITROUS OXIDE REQUESTED:[/bold]
         
-        {"\["} ] Y
-        {"\["} ] N
+        {"\"}[ ] Y
+        {"\"}[ ] N
 
         {"["}bold]NITROUS OXIDE REQUESTED:[/bold]
         
-        {"\["} ] Chaplain
-        {"\["} ] Psychologist
+        {"\"}[ ] Chaplain
+        {"\"}[ ] Psychologist
         
         {"["}color=gray][italic]Please see Security Standard Operating Procedure for further requirements for stasis.[/color][/italic]
     { paperwork-separator-security }
