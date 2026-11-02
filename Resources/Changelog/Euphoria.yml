@@ -6814,3 +6814,27 @@ Entries:
       message: The Hardcore DJ plushie can now be filled with liquid.
   id: 848
   time: '2026-11-02T06:09:48.0000000+00:00'
+- author: Suraru
+  changes:
+    - type: Add
+      message: Coolant units from SL/FH so IPCs can now survive going outside
+    - type: Remove
+      message: >-
+        the blacklist that prevented silicons from laughing, crying, or
+        whistling
+    - type: Tweak
+      message: (Optional) Moths can now blink too
+    - type: Tweak
+      message: APCConstruct to IPC drain targets, so they can drain midround built APCs
+    - type: Tweak
+      message: Also added wall chargers to IPC drain targets (easier to map in perma)
+    - type: Fix
+      message: >-
+        IPCs being unable to heal welding eye damage with glass (finished port
+        from SL/FH)
+    - type: Fix
+      message: multiple IPC eye overlays (screens) missing due to a bad locale
+    - type: Fix
+      message: 'power cells draining when you removed them from an IPC '
+  id: 849
+  time: '2026-11-02T06:10:15.0000000+00:00'
