@@ -23,6 +23,7 @@ namespace Content.Client.Options.UI
             Tabs.SetTabTitle(5, Loc.GetString("ui-options-tab-admin"));
             Tabs.SetTabTitle(6, Loc.GetString("ui-options-tab-radio")); // DeltaV - Radio Channel Colors
             Tabs.SetTabTitle(7, Loc.GetString("ui-options-tab-deltav")); // DeltaV specific settings
+            Tabs.SetTabTitle(8, Loc.GetString("rmc-ui-options-tab-voicelines")); // Euph, RMC14 species sfx muting from Harmony@#963
 
             UpdateTabs();
         }
@@ -39,6 +40,7 @@ namespace Content.Client.Options.UI
             AdminOptionsTab.Control.ReloadValues();
             RadioTab.Control.ReloadValues(); // DeltaV - Radio Channel Colors
             DeltaTab.Control.ReloadValues(); // DeltaV
+            VoicelinesTab.Control.ReloadValues(); // Euph, RMC14 species sfx muting from Harmony@#963
         }
     }
 }
