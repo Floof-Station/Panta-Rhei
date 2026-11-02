@@ -126,16 +126,18 @@
   name: Rollie Packet
   description: An old rolling paper packet full of things to make rollies with.
   components:
-  - type: StorageFill
-    contents:
-    - id: CigaretteFilter
-      amount: 2
-    - id: PaperRolling
-      amount: 2
-    - id: GroundTobacco5
-      amount: 2
-    - id: CigaretteSyndicate
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+          - id: CigaretteFilter
+            amount: 2
+          - id: PaperRolling
+            amount: 2
+          - id: GroundTobacco5
+            amount: 2
+          - id: CigaretteSyndicate
+            amount: 2
 
 - type: entity
   id: CigPackMedRollie
@@ -143,14 +145,16 @@
   name: medicinal blunt packet
   description: An old rolling paper packet full of things to make blunts with. Its purely medicinal man..
   components:
-  - type: StorageFill
-    contents:
-    - id: LeavesTobaccoDried5
-      amount: 2
-    - id: GroundCannabis5
-      amount: 2
-    - id: Blunt
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+          - id: LeavesTobaccoDried5
+            amount: 2
+          - id: GroundCannabis5
+            amount: 2
+          - id: Blunt
+            amount: 2
 
 - type: entity
   parent: GroundTobacco
