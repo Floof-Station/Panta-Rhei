@@ -10,6 +10,23 @@
   id: OrganAnimal
   abstract: true
   suffix: Animal
+  components:
+  - type: Edible # Euphoria
+  - type: Extractable # Euphoria
+    juiceSolution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5
+  - type: SolutionContainerManager # Euphoria
+    solutions:
+      meat:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: Nutriment
+          Quantity: 5
 
 - type: entity
   parent: OrganAnimal
