@@ -107,7 +107,15 @@
   name: janitor nika cyborg
   components:
   - type: BorgSwitchableType
-    selectedBorgType: nikaengineering
+    selectedBorgType: nikaborgjanitor
+
+- type: entity
+  id: NikoChassisJanitor
+  parent: BorgChassisSelectable
+  name: janitor niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgjanitor
 
 # Research
 - type: entity

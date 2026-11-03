@@ -707,7 +707,117 @@
   pdaAccentVerticalColor: "#00cc35"
 
 # Janitor
+# NiKa
+- type: borgType
+  id: nikaborgjanitor
+  # Description
+  dummyPrototype: NikaChassisJanitor
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  radioChannels:
+  - Science
+  - Service
+  lawset: Janitor
+  job: Janitor
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-purple
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Janitor"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikajani
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikajani_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikajani_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikajani
+  spriteBodyMovementState: nikajani_m
+  spriteHasMindState: nikajani_e
+  spriteNoMindState: nikajani_e_r
+  spriteToggleLightState: nikajani_l
+  # Pet
+  petSuccessString: petting-success-janitor-cyborg
+  petFailureString: petting-failure-janitor-cyborg
+  # Borg PDA
+  pdaBorderColor: "#5D2D56"
 
+# NiKo
+- type: borgType
+  id: nikoborgjanitor
+  # Description
+  dummyPrototype: NikoChassisJanitor
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  radioChannels:
+  - Science
+  - Service
+  lawset: Janitor
+  job: Janitor
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-purple
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Janitor"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Floof/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikojani
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikojani_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikojani_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikojani
+  spriteBodyMovementState: nikojani_m
+  spriteHasMindState: nikojani_e
+  spriteNoMindState: nikojani_e_r
+  spriteToggleLightState: nikojani_l
+  # Pet
+  petSuccessString: petting-success-janitor-cyborg
+  petFailureString: petting-failure-janitor-cyborg
+  # Borg PDA
+  pdaBorderColor: "#5D2D56"
 
 # Research
 
