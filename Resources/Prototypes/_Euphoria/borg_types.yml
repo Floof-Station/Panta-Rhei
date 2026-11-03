@@ -145,9 +145,9 @@
 
 #Niko
 - type: borgType
-  id: quadengineering
+  id: nikoborgengineering
   # Description
-  dummyPrototype: QuadChassisEngineer
+  dummyPrototype: NikoChassisEngineer
   # Functional
   extraModuleCount: 3
   moduleWhitelist:
@@ -178,21 +178,21 @@
     drawdepth: Mobs
     sprite: _Euphoria/Mobs/Silicon/chassis.rsi
     layers:
-    - state: quadengi
+    - state: nikoengi
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: quadengi_e_r
+    - state: nikoengi_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: quadengi_l
+    - state: nikoengi_l
       shader: unshaded
       map: ["light","enum.BorgVisualLayers.LightStatus"]
       visible: false
   inventoryTemplateId: borgShort
-  spriteBodyState: quadengi
-  spriteHasMindState: quadengi_e
-  spriteNoMindState: quadengi_e_r
-  spriteToggleLightState: quadengi_l
+  spriteBodyState: nikoengi
+  spriteHasMindState: nikoengi_e
+  spriteNoMindState: nikoengi_e_r
+  spriteToggleLightState: nikoengi_l
   # Pet
   petSuccessString: petting-success-engineer-cyborg
   petFailureString: petting-failure-engineer-cyborg
