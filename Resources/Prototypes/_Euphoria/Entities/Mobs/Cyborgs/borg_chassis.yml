@@ -5,3 +5,11 @@
   components:
   - type: BorgSwitchableType
     selectedBorgType: nikaborggeneric
+
+- type: entity
+  id: NikoChassisGeneric
+  parent: BorgChassisSelectable
+  name: generic niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborggeneric

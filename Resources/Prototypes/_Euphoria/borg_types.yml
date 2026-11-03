@@ -1,4 +1,5 @@
-# Generic NiKa Borg
+# Generic Borgs
+# NiKa
 - type: borgType
   id: nikaborggeneric
   # Description
@@ -37,6 +38,49 @@
   spriteHasMindState: nikagen_e
   spriteNoMindState: nika_e_r
   spriteToggleLightState: nikagen_l
+  # Pet
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+# NiKo
+- type: borgType
+  id: nikoborggeneric
+  # Description
+  dummyPrototype: NikoChassisGeneric
+  # Functional
+  extraModuleCount: 5
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  radioChannels:
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikogen
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: niko_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikogen_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikogen
+  spriteHasMindState: nikogen_e
+  spriteNoMindState: niko_e_r
+  spriteToggleLightState: nikogen_l
   # Pet
   petSuccessString: petting-success-generic-cyborg
   petFailureString: petting-failure-generic-cyborg
