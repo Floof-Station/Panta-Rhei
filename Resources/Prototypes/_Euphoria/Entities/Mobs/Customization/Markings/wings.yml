@@ -15,3 +15,188 @@
     state: small_bottom
   - sprite: _Euphoria/Mobs/Customization/Wings/elysian.rsi
     state: small_top
+
+- type: marking
+  id: HarpyWingDefaultHuescaleCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: huescale_harpy
+
+- type: marking
+  id: HarpyWingDefaultWhitescaleCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: whitescale_harpy
+
+- type: marking
+  id: HarpyWingClassicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: classic_harpy
+
+- type: marking
+  id: HarpyWingFoldedHuescaleCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: huescale_harpy_folded
+
+- type: marking
+  id: HarpyWingFoldedWhitescaleCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: whitescale_harpy_folded
+
+- type: marking
+  id: HarpyWingOwlHuescaleCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: huescale_harpy_wing_owl
+
+- type: marking
+  id: HarpyWingOwlWhitescaleCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  coloring:
+    default:
+      type:
+        !type:CategoryColoring
+        category: Hair
+      fallbackTypes:
+      - !type:SimpleColoring
+        color: "#964b00"
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: whitescale_harpy_wing_owl
+
+- type: marking
+  id: HarpyWing2ToneClassicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_2tone_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_2tone_2
+
+- type: marking
+  id: HarpyWing3ToneClassicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_3tone_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_3tone_2
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_3tone_3
+
+- type: marking
+  id: HarpyWingSpeckledClassicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_speckled_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_speckled_2
+
+- type: marking
+  id: HarpyWingUndertoneClassicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_undertone_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_undertone_2
+
+- type: marking
+  id: HarpyWingTipsClassicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_wingtip_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: harpy_wingtip_2
+
+- type: marking
+  id: HarpyWingBatCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: bat_wings_tone_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: bat_wings_tone_2
+
+- type: marking
+  id: HarpyWingBionicCommon
+  bodyPart: Wings # Frontier: RArm<RArmExtension
+  # groupWhitelist: [Harpy] # Euph - free markings
+  sprites:
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: bionic_wings_tone_1
+  - sprite: _EE/Mobs/Customization/Harpy/harpy_wings.rsi
+    state: bionic_wings_tone_2
+    shader: unshaded
