@@ -45,3 +45,35 @@
     - type: Tag
       tags:
         - Meat
+
+- type: entity
+  parent: FoodBakedBase
+  id: FoodPattyMelt
+  name: patty melt
+  description: If a burger and a cheese toasty had a kid together, this would be it. Smells amazing.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - oily
+    - cheesy
+    - bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 20
+        - ReagentId: Protein
+          Quantity: 10
+        - ReagentId: Butter
+          Quantity: 2
+        - ReagentId: Vitamin
+          Quantity: 3
+  - type: Sprite
+    sprite: _Euphoria/Objects/Consumable/Food/patty_melt.rsi
+    state: icon
+  - type: Tag
+    tags:
+    - Meat
