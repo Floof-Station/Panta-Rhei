@@ -90,7 +90,15 @@
   name: Service nika cyborg
   components:
   - type: BorgSwitchableType
-    selectedBorgType: nikaengineering
+    selectedBorgType: nikaborgservice
+
+- type: entity
+  id: NikoChassisService
+  parent: BorgChassisSelectable
+  name: Service niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgservice
 
 # Janitor
 - type: entity

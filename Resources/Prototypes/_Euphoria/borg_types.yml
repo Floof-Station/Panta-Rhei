@@ -596,7 +596,115 @@
   pdaAccentVerticalColor: "#447987"
 
 # Service
+# NiKa
+- type: borgType
+  id: nikaborgservice
+  # Description
+  dummyPrototype: NikaChassisService
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - Science
+  - Service
+  job: Bartender
+  addComponents:
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikaserv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikaserv_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikaserv_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikaserv
+  spriteHasMindState: nikaserv_e
+  spriteNoMindState: nikaserv_e_r
+  spriteToggleLightState: nikaserv_l
+  # Pet
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg
+  # Borg PDA
+  pdaBorderColor: "#717059"
+  pdaAccentVerticalColor: "#00cc35"
 
+# NiKo
+- type: borgType
+  id: nikoborgservice
+  # Description
+  dummyPrototype: NikoChassisService
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - Science
+  - Service
+  job: Bartender
+  addComponents:
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikoserv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikoserv_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikoserv_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikoserv
+  spriteHasMindState: nikoserv_e
+  spriteNoMindState: nikoserv_e_r
+  spriteToggleLightState: nikoserv_l
+  # Pet
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg
+  # Borg PDA
+  pdaBorderColor: "#717059"
+  pdaAccentVerticalColor: "#00cc35"
 
 # Janitor
 
