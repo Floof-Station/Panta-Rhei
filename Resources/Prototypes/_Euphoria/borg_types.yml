@@ -1,4 +1,4 @@
-# Generic Nika model
+# Generic NiKa borg
 - type: borgType
   id: nikaborggeneric
   # Description
@@ -15,19 +15,16 @@
   - BorgModuleAnomaly
   radioChannels:
   - Science
-  addComponents:
-  - type: Crawler
   # Visual
   clientComponents:
   - type: Sprite
-    scale: 0.75, 0.75
     noRot: true
     drawdepth: Mobs
     sprite: _Euphoria/Mobs/Silicon/chassis.rsi
     layers:
     - state: nikagen
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: nikagen_e
+    - state: nika_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
@@ -35,18 +32,10 @@
       shader: unshaded
       map: ["light","enum.BorgVisualLayers.LightStatus"]
       visible: false
-  - type: DamageStateVisuals
-    states:
-      Alive:
-        Base: nikagen
-      Critical:
-        Base: nikagen_wreck
-      Dead:
-        Base: nikagen_wreck
   inventoryTemplateId: borgShort
   spriteBodyState: nikagen
   spriteHasMindState: nikagen_e
-  spriteNoMindState: nikagen_e_r
+  spriteNoMindState: nika_e_r
   spriteToggleLightState: nikagen_l
   # Pet
   petSuccessString: petting-success-generic-cyborg
