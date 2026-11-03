@@ -453,7 +453,147 @@
   pdaAccentVerticalColor: "#8900c9"
 
 # Medical
+# NiKa
+- type: borgType
+  id: nikaborgmedical
+  # Description
+  dummyPrototype: NikaChassisMedical
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  lawset: Medical
+  job: MedicalDoctor
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowTriageIcons
+  - type: FabricateCandy
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: Fiber # white plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-white
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikamed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikamed_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikamed_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikamed
+  spriteHasMindState: nikamed_e
+  spriteNoMindState: nikamed_e_r
+  spriteToggleLightState: nikamed_l
+  # Pet
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#447987"
 
+# NiKo
+- type: borgType
+  id: nikoborgmedical
+  # Description
+  dummyPrototype: NikoChassisMedical
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  lawset: Medical
+  job: MedicalDoctor
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowTriageIcons
+  - type: FabricateCandy
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: Fiber # white plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-white
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikomed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikomed_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikomed_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikomed
+  spriteHasMindState: nikomed_e
+  spriteNoMindState: nikomed_e_r
+  spriteToggleLightState: nikomed_l
+  # Pet
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#447987"
 
 # Service
 
