@@ -201,7 +201,141 @@
   pdaAccentVerticalColor: "#A32D26"
 
 # Security
+# NiKa
+- type: borgType
+  id: nikaborgsecurity
+  # Description
+  dummyPrototype: NikaChassisSecurity
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+  defaultModules:
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+  lawset: SiliconPolice
+  job: SecurityOfficer
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: Fiber # red plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-red
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  radioChannels:
+  - Science
+  - Security
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikasec
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikasec_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikasec_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikasec
+  spriteHasMindState: nikasec_e
+  spriteNoMindState: nikasec_e_r
+  spriteToggleLightState: nikasec_l
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+  # Borg PDA
+  pdaBorderColor: "#A32D26"
 
+# NiKa
+- type: borgType
+  id: nikoborgsecurity
+  # Description
+  dummyPrototype: NikoChassisSecurity
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+  defaultModules:
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+  lawset: SiliconPolice
+  job: SecurityOfficer
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: Fiber # red plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-red
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  radioChannels:
+  - Science
+  - Security
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikosec
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikosec_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikosec_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikosec
+  spriteHasMindState: nikosec_e
+  spriteNoMindState: nikosec_e_r
+  spriteToggleLightState: nikosec_l
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+  # Borg PDA
+  pdaBorderColor: "#A32D26"
 
 # Salvage
 

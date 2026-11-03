@@ -39,7 +39,15 @@
   name: security nika cyborg
   components:
   - type: BorgSwitchableType
-    selectedBorgType: nikaengineering
+    selectedBorgType: nikaborgsecurity
+
+- type: entity
+  id: NikoChassisSecurity
+  parent: BorgChassisSelectable
+  name: security niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgsecurity
 
 # Salvage
 - type: entity
