@@ -56,7 +56,15 @@
   name: salvage nika cyborg
   components:
   - type: BorgSwitchableType
-    selectedBorgType: nikaengineering
+    selectedBorgType: nikaborgsalvage
+
+- type: entity
+  id: NikoChassisSalvage
+  parent: BorgChassisSelectable
+  name: salvage niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgsalvage
 
 # Medical
 - type: entity

@@ -338,7 +338,119 @@
   pdaBorderColor: "#A32D26"
 
 # Salvage
+# NiKa
+- type: borgType
+  id: nikaborgmining
+  # Description
+  dummyPrototype: NikaChassisMining
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  lawset: Salvage
+  job: SalvageSpecialist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-brown
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  radioChannels:
+  - Supply
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikacargo
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikacargo_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikacargo_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikacargo
+  spriteHasMindState: nikacargo_e
+  spriteNoMindState: nikacargo_e_r
+  spriteToggleLightState: nikacargo_l
+  # Pet
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg
+  # Borg PDA
+  pdaBorderColor: "#af9366"
+  pdaAccentVerticalColor: "#8900c9"
 
+# NiKo
+- type: borgType
+  id: nikoborgmining
+  # Description
+  dummyPrototype: NikoChassisMining
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  lawset: Salvage
+  job: SalvageSpecialist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-brown
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  radioChannels:
+  - Supply
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikocargo
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikocargo_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikocargo_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikocargo
+  spriteHasMindState: nikocargo_e
+  spriteNoMindState: nikocargo_e_r
+  spriteToggleLightState: nikocargo_l
+  # Pet
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg
+  # Borg PDA
+  pdaBorderColor: "#af9366"
+  pdaAccentVerticalColor: "#8900c9"
 
 # Medical
 
