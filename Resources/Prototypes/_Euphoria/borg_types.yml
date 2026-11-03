@@ -25,7 +25,7 @@
     layers:
     - state: nikagen
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: nika_e_r
+    - state: nikagen_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
@@ -68,7 +68,7 @@
     layers:
     - state: nikogen
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: niko_e_r
+    - state: nikogen_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
@@ -121,21 +121,21 @@
     drawdepth: Mobs
     sprite: _Euphoria/Mobs/Silicon/chassis.rsi
     layers:
-    - state: nikaengi
+    - state: nikaeng
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: nika_e_r
+    - state: nikaeng_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: nikaengi_l
+    - state: nikaeng_l
       shader: unshaded
       map: ["light","enum.BorgVisualLayers.LightStatus"]
       visible: false
   inventoryTemplateId: borgShort
-  spriteBodyState: nikaengi
-  spriteHasMindState: nikaengi_e
-  spriteNoMindState: nikaengi_e_r
-  spriteToggleLightState: nikaengi_l
+  spriteBodyState: nikaeng
+  spriteHasMindState: nikaeng_e
+  spriteNoMindState: nikaeng_e_r
+  spriteToggleLightState: nikaeng_l
   # Pet
   petSuccessString: petting-success-engineer-cyborg
   petFailureString: petting-failure-engineer-cyborg
@@ -178,21 +178,21 @@
     drawdepth: Mobs
     sprite: _Euphoria/Mobs/Silicon/chassis.rsi
     layers:
-    - state: nikoengi
+    - state: nikoeng
       map: ["enum.BorgVisualLayers.Body", "movement"]
-    - state: nikoengi_e_r
+    - state: nikoeng_e_r
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: nikoengi_l
+    - state: nikoeng_l
       shader: unshaded
       map: ["light","enum.BorgVisualLayers.LightStatus"]
       visible: false
   inventoryTemplateId: borgShort
-  spriteBodyState: nikoengi
-  spriteHasMindState: nikoengi_e
-  spriteNoMindState: nikoengi_e_r
-  spriteToggleLightState: nikoengi_l
+  spriteBodyState: nikoeng
+  spriteHasMindState: nikoeng_e
+  spriteNoMindState: nikoeng_e_r
+  spriteToggleLightState: nikoeng_l
   # Pet
   petSuccessString: petting-success-engineer-cyborg
   petFailureString: petting-failure-engineer-cyborg
@@ -753,7 +753,6 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: nikajani
-  spriteBodyMovementState: nikajani_m
   spriteHasMindState: nikajani_e
   spriteNoMindState: nikajani_e_r
   spriteToggleLightState: nikajani_l
@@ -809,7 +808,6 @@
       visible: false
   inventoryTemplateId: borgShort
   spriteBodyState: nikojani
-  spriteBodyMovementState: nikojani_m
   spriteHasMindState: nikojani_e
   spriteNoMindState: nikojani_e_r
   spriteToggleLightState: nikojani_l
