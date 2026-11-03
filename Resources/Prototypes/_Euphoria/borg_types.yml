@@ -820,4 +820,112 @@
   pdaBorderColor: "#5D2D56"
 
 # Research
+# NiKa
+- type: borgType
+  id: nikaborgresearch
+  # Description
+  dummyPrototype: NikaChassisResearch
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleSpecializedArtifact
+  - BorgModuleSpecializedAnomaly
+  radioChannels:
+  - Science
+  lawset: Research
+  job: Scientist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-grey
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikasci
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikasci_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikasci_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikasci
+  spriteHasMindState: nikasci_e
+  spriteNoMindState: nikasci_e_r
+  spriteToggleLightState: nikasci_l
+  # Pet
+  petSuccessString: petting-success-research-cyborg
+  petFailureString: petting-failure-research-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#8900c9"
 
+# NiKo
+- type: borgType
+  id: nikoborgresearch
+  # Description
+  dummyPrototype: NikoChassisResearch
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleSpecializedArtifact
+  - BorgModuleSpecializedAnomaly
+  radioChannels:
+  - Science
+  lawset: Research
+  job: Scientist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-grey
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikosci
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikosci_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikosci_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikosci
+  spriteHasMindState: nikosci_e
+  spriteNoMindState: nikosci_e_r
+  spriteToggleLightState: nikosci_l
+  # Pet
+  petSuccessString: petting-success-research-cyborg
+  petFailureString: petting-failure-research-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#8900c9"

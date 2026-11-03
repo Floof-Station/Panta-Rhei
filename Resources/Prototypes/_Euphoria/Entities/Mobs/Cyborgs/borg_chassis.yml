@@ -124,4 +124,12 @@
   name: research nika cyborg
   components:
   - type: BorgSwitchableType
-    selectedBorgType: nikaresearch
+    selectedBorgType: nikaborgresearch
+
+- type: entity
+  id: NikoChassisResearch
+  parent: BorgChassisSelectable
+  name: research niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgresearch
