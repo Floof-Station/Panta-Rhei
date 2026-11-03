@@ -8,3 +8,25 @@ borg-type-nikaborggeneric-desc = Jack of all trades, master of none. Do various 
 borg-type-nikaborggeneric-transponder = generic cyborg
 
 # Engineering
+
+
+# Engineer
+
+
+# Security
+
+
+# Salvage
+
+
+# Medical
+
+
+# Service
+
+
+# Janitor
+
+
+# Research
+
