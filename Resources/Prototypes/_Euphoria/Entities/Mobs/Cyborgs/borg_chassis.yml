@@ -1,0 +1,7 @@
+- type: entity
+  id: NikachassisGeneric
+  parent: BorgChassisSelectable
+  name: generic nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborggeneric

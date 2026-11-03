@@ -1,0 +1,53 @@
+# Generic Nika model
+- type: borgType
+  id: nikaborggeneric
+  # Description
+  dummyPrototype: NikaChassisGeneric
+  # Functional
+  extraModuleCount: 5
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  radioChannels:
+  - Science
+  addComponents:
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    scale: 0.75, 0.75
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikagen
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikagen_e
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikagen_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: nikagen
+      Critical:
+        Base: nikagen_wreck
+      Dead:
+        Base: nikagen_wreck
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikagen
+  spriteHasMindState: nikagen_e
+  spriteNoMindState: nikagen_e_r
+  spriteToggleLightState: nikagen_l
+  # Pet
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
