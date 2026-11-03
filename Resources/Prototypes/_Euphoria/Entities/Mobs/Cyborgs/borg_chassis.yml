@@ -22,7 +22,15 @@
   name: engineer nika cyborg
   components:
   - type: BorgSwitchableType
-    selectedBorgType: nikaengineering
+    selectedBorgType: nikaborgengineering
+
+- type: entity
+  id: NikoChassisEngineer
+  parent: BorgChassisSelectable
+  name: engineer niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgengineering
 
 # Security
 - type: entity

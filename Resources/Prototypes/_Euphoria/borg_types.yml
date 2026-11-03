@@ -86,7 +86,119 @@
   petFailureString: petting-failure-generic-cyborg
 
 # Engineer
+# Nika
+- type: borgType
+  id: nikaborgengineering
+  # Description
+  dummyPrototype: NikaChassisEngineer
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Science
+  - Engineering
+  lawset: Engineer
+  job: StationEngineer
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-orange
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Engineering"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikaengi
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nika_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikaengi_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: nikaengi
+  spriteHasMindState: nikaengi_e
+  spriteNoMindState: nikaengi_e_r
+  spriteToggleLightState: nikaengi_l
+  # Pet
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+  # Borg PDA
+  pdaBorderColor: "#949137"
+  pdaAccentVerticalColor: "#A32D26"
 
+#Niko
+- type: borgType
+  id: quadengineering
+  # Description
+  dummyPrototype: QuadChassisEngineer
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Science
+  - Engineering
+  lawset: Engineer
+  job: StationEngineer
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-orange
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Engineering"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: quadengi
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: quadengi_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: quadengi_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgShort
+  spriteBodyState: quadengi
+  spriteHasMindState: quadengi_e
+  spriteNoMindState: quadengi_e_r
+  spriteToggleLightState: quadengi_l
+  # Pet
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+  # Borg PDA
+  pdaBorderColor: "#949137"
+  pdaAccentVerticalColor: "#A32D26"
 
 # Security
 
