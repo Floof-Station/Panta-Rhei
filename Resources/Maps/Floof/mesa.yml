@@ -4,8 +4,8 @@ meta:
   engineVersion: 275.2.1
   forkId: ""
   forkVersion: ""
-  time: 11/01/2026 20:48:29
-  entityCount: 27943
+  time: 11/03/2026 03:28:53
+  entityCount: 27953
 maps:
 - 1
 grids:
@@ -4140,7 +4140,8 @@ entities:
           10,0:
             0: 28799
           10,1:
-            0: 61559
+            0: 61527
+            2: 32
           10,2:
             0: 65280
           10,-1:
@@ -4515,19 +4516,19 @@ entities:
             0: 4095
           -5,-7:
             0: 1023
-            2: 32768
+            3: 32768
           -5,-5:
             0: 154
           -5,-9:
             0: 63487
           -5,-6:
             0: 43520
-            2: 136
+            3: 136
           -4,-7:
             0: 255
-            2: 61440
+            3: 61440
           -4,-6:
-            2: 243
+            3: 243
             0: 62208
           -16,-13:
             0: 65535
@@ -4859,7 +4860,7 @@ entities:
             0: 2299
           -16,-19:
             0: 45269
-            3: 16384
+            4: 16384
             1: 8
           -17,-19:
             0: 30527
@@ -5082,40 +5083,40 @@ entities:
             0: 30583
           -4,-20:
             0: 16177
-            4: 12
+            5: 12
             1: 32768
           -4,-21:
             0: 4415
-            4: 52224
+            5: 52224
           -5,-20:
             0: 65516
-            5: 1
+            6: 1
           -4,-19:
             0: 4415
-            5: 52224
+            6: 52224
           -5,-19:
             0: 36079
-            5: 4352
+            6: 4352
           -4,-18:
             0: 16177
-            5: 12
+            6: 12
             1: 16384
           -5,-18:
             0: 53228
-            5: 1
+            6: 1
           -3,-20:
-            4: 1
+            5: 1
             0: 61420
           -3,-19:
             0: 36079
-            5: 4352
+            6: 4352
           -3,-18:
-            5: 1
+            6: 1
             0: 61420
           -3,-17:
             0: 15
           -3,-21:
-            4: 4352
+            5: 4352
             0: 36075
             1: 4
           -2,-20:
@@ -5147,7 +5148,7 @@ entities:
             0: 65533
           0,-21:
             0: 65296
-            5: 14
+            6: 14
           1,-20:
             1: 16
             0: 59118
@@ -5188,13 +5189,13 @@ entities:
           -1,-24:
             0: 64767
           0,-23:
-            5: 3822
+            6: 3822
             0: 4096
           -1,-23:
             0: 36735
           0,-22:
             0: 31
-            5: 60928
+            6: 60928
           -1,-22:
             0: 32751
           0,-25:
@@ -5244,27 +5245,27 @@ entities:
             1: 512
           -4,-23:
             0: 4415
-            5: 52224
+            6: 52224
           -5,-23:
             0: 36079
-            5: 4352
+            6: 4352
           -4,-22:
             0: 65329
-            5: 12
+            6: 12
           -5,-22:
             0: 65516
-            5: 1
+            6: 1
           -5,-21:
             0: 36079
-            5: 4352
+            6: 4352
           -3,-24:
             0: 62447
             1: 1040
           -3,-23:
             0: 36079
-            5: 4352
+            6: 4352
           -3,-22:
-            5: 1
+            6: 1
             0: 65516
           -2,-24:
             0: 159
@@ -5295,19 +5296,19 @@ entities:
           -6,-20:
             0: 65073
             1: 256
-            5: 12
+            6: 12
           -6,-19:
             0: 4415
-            5: 52224
+            6: 52224
           -6,-18:
             0: 3377
             1: 4608
-            5: 12
+            6: 12
           -6,-17:
             0: 239
           -6,-21:
             0: 4415
-            5: 52224
+            6: 52224
           -8,-24:
             0: 31
           -8,-25:
@@ -5337,11 +5338,11 @@ entities:
             0: 255
           -6,-23:
             0: 4414
-            5: 52224
+            6: 52224
           -6,-22:
             0: 3633
             1: 256
-            5: 12
+            6: 12
           -6,-25:
             0: 61440
           -5,-25:
@@ -5488,7 +5489,7 @@ entities:
           5,-23:
             0: 43775
           5,-22:
-            6: 30576
+            7: 30576
             0: 2
           6,-24:
             0: 32767
@@ -6520,6 +6521,11 @@ entities:
           moles:
             Oxygen: 21.824879
             Nitrogen: 82.10312
+        - volume: 2500
+          temperature: 293.15
+          moles:
+            Oxygen: 21.823984
+            Nitrogen: 82.09976
         - volume: 2500
           temperature: 293.15
           moles:
@@ -7700,7 +7706,7 @@ entities:
       pos: -14.5,-59.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -247501.98
+      secondsUntilStateChange: -249451.08
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9251,7 +9257,7 @@ entities:
       pos: 51.5,-35.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -210273.14
+      secondsUntilStateChange: -212222.23
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -49465,7 +49471,7 @@ entities:
       pos: 58.5,-15.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -163213.34
+      secondsUntilStateChange: -165162.44
       state: Closing
 - proto: CurtainsRedOpen
   entities:
@@ -63614,6 +63620,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 105.5,-68.5
       parent: 2
+- proto: FenceMetalEnd
+  entities:
+  - uid: 27948
+    components:
+    - type: Transform
+      pos: -68.5,-110.5
+      parent: 2
+  - uid: 27949
+    components:
+    - type: Transform
+      pos: -62.5,-97.5
+      parent: 2
 - proto: FenceMetalGate
   entities:
   - uid: 9299
@@ -67808,6 +67826,24 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -29.666548,-64.34247
+      parent: 2
+- proto: FoodAloe
+  entities:
+  - uid: 27946
+    components:
+    - type: Transform
+      pos: -25.813889,-3.3417358
+      parent: 2
+  - uid: 27951
+    components:
+    - type: Transform
+      pos: 38.16005,6.7022576
+      parent: 2
+  - uid: 27952
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -25.132536,-3.6549869
       parent: 2
 - proto: FoodBanana
   entities:
@@ -111416,27 +111452,27 @@ entities:
         immutable: False
         temperature: 293.14673
         moles:
-          Oxygen: 1.8968438
-          Nitrogen: 7.1357465
+          Oxygen: 1.8977377
+          Nitrogen: 7.139109
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
           showEnts: False
           occludes: True
           ents:
-          - 26705
+          - 26718
+          - 6454
+          - 26710
+          - 26711
+          - 26712
+          - 26713
+          - 26714
+          - 26715
+          - 26716
+          - 26717
           - 26707
           - 6227
-          - 26717
-          - 26718
-          - 26716
-          - 26715
-          - 26714
-          - 26713
-          - 26712
-          - 26711
-          - 26710
-          - 6454
+          - 26705
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -119255,7 +119291,8 @@ entities:
   - uid: 17184
     components:
     - type: Transform
-      pos: -63.425385,-100.81151
+      rot: 0.0005331977154128253 rad
+      pos: -63.425385,-100.597206
       parent: 2
     - type: Paper
       content: DO NOT ENTER
@@ -123327,6 +123364,12 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -6.5,-16.5
+      parent: 2
+  - uid: 27953
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -37.5,-76.5
       parent: 2
 - proto: PoweredSmallLightEmpty
   entities:
@@ -140407,6 +140450,29 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -56.5,-93.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+- proto: SignDangerMed
+  entities:
+  - uid: 27944
+    components:
+    - type: Transform
+      pos: -68.5,-110.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 27947
+    components:
+    - type: Transform
+      pos: -62.5,-97.5
+      parent: 2
+    - type: Fixtures
+      fixtures: {}
+  - uid: 27950
+    components:
+    - type: Transform
+      pos: -70.5,-99.5
       parent: 2
     - type: Fixtures
       fixtures: {}
@@ -168618,6 +168684,13 @@ entities:
     - type: Transform
       pos: 13.5,-34.5
       parent: 2
+- proto: WarpPointDisposals
+  entities:
+  - uid: 25119
+    components:
+    - type: Transform
+      pos: 91.5,-32.5
+      parent: 2
 - proto: WarpPointEngineering
   entities:
   - uid: 25077
@@ -168709,12 +168782,12 @@ entities:
   - uid: 25089
     components:
     - type: Transform
-      pos: -58.5,-105.5
+      pos: -64.5,-104.5
       parent: 2
   - uid: 25090
     components:
     - type: Transform
-      pos: -64.5,-104.5
+      pos: -58.5,-105.5
       parent: 2
 - proto: WaterCooler
   entities:
@@ -168752,11 +168825,6 @@ entities:
     - type: Transform
       pos: -59.5,-66.5
       parent: 2
-  - uid: 25095
-    components:
-    - type: Transform
-      pos: -23.5,-44.5
-      parent: 2
   - uid: 25096
     components:
     - type: Transform
@@ -168766,6 +168834,13 @@ entities:
     components:
     - type: Transform
       pos: 19.5,-0.5
+      parent: 2
+- proto: WaterTankHighCapacity
+  entities:
+  - uid: 25095
+    components:
+    - type: Transform
+      pos: -23.5,-44.5
       parent: 2
 - proto: WaterVaporCanister
   entities:
@@ -168956,6 +169031,14 @@ entities:
       rot: 3.141592653589793 rad
       pos: -32.64019,-16.248163
       parent: 2
+- proto: WeaponRevolverImprovised
+  entities:
+  - uid: 27945
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 94.444145,-62.569176
+      parent: 2
 - proto: WeaponRevolverInspector
   entities:
   - uid: 19621
@@ -169023,14 +169106,6 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 6789
-- proto: WeaponShotgunSawnEmpty
-  entities:
-  - uid: 25119
-    components:
-    - type: Transform
-      rot: -1.5701760808613638 rad
-      pos: 94.481186,-62.572075
-      parent: 2
 - proto: WeaponTurretAllHostile
   entities:
   - uid: 25120
