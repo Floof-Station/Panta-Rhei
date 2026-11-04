@@ -1,5 +1,7 @@
 using Content.Shared._Common.Consent;
 using Content.Shared.DoAfter;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Verbs;
@@ -67,7 +69,7 @@ public abstract class SharedBrainwasherSystem : EntitySystem // HL: Move verbs t
             || HasComp<BorgChassisComponent>(args.Target))
             return;
 
-        if (uid != args.Target && _consentSystem.HasConsent(args.Target, "MindControl"))
+        if (uid != args.Target && HasComp<MindContainerComponent>(args.Target) && _consentSystem.HasConsent(args.Target, "MindControl"))
         {
             args.Verbs.Add(new InnateVerb
             {

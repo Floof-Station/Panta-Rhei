@@ -25,5 +25,11 @@
                     VerticalExpand="True"/>
             </ScrollContainer>
         </PanelContainer>
+        <Button
+            Access="Public"
+            ModulateSelfOverride="Red"
+            HorizontalAlignment="Center"
+            Name="BreakBrainwashing"
+            Text="Snap out of it!"/>
     </BoxContainer>
 </controls:FancyWindow>

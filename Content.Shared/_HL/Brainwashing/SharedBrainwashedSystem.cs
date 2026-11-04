@@ -2,7 +2,7 @@ using Content.Shared.Actions;
 
 namespace Content.Shared._HL.Brainwashing;
 
-public class SharedBrainwashedSystem : EntitySystem
+public abstract class SharedBrainwashedSystem : EntitySystem
 {
     public bool SetCompulsions(EntityUid uid, BrainwashedComponent brainwashedComponent, List<string> compulsions)
     {
