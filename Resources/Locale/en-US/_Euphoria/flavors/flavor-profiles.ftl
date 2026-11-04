@@ -7,3 +7,8 @@ flavor-complex-blueraspberry = like natures candy mixed with blueberries
 flavor-complex-baxshots = warm and gentle
 flavor-complex-shrimp = like shrimps
 flavor-complex-shrimp-soda = like fizzy, bubbly shrimp
+flavor-complex-gibtonite-froth = like simultaneous knockout punches to the liver and head
+flavor-complex-leafguard = like an insult to dwarfkind, and buzzkilling
+
+reagent-physical-desc-impossibly-strong = impossibly strong
+reagent-physical-desc-buzzkilling = buzzkilling
