@@ -1,0 +1,68 @@
+## Justice SOP
+
+- type: guideEntry
+  id: EuphoriaJusticeRegulations
+  name: sop-euphoria-justice-name
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/Placeholder_Justice_Sop_Category_Top.xml
+  priority: 1
+  children:
+  - AppealsParolePardons
+  - PressingCriminalCharges
+  - Injunctions
+
+## Security SOP
+
+- type: guideEntry
+  id: EuphoriaSecurityRegulations
+  name: sop-euphoria-security-name
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/0_Euphoria_Security_SOP_Top_Entry.xml
+  priority: 1
+  children:
+  - SecurityQuickReferenceGuide
+  - ParametersAndDefinitions
+  - SearchAndArrestProcedures
+  - SecurityAlertProcedure
+  - ProbableCauseAndMethodOfEscalation
+  - EquipmentAndUniform
+  - SuspectAndPrisonerTreatment
+  - RoleSpecificSOP
+
+- type: guideEntry
+  id: SecurityQuickReferenceGuide
+  name: sop-Security-Quick-Reference-Guide
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/1_Security_Quick_Reference_Guide.xml
+
+- type: guideEntry
+  id: ParametersAndDefinitions
+  name: sop-Parameters-and-Definitions
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/2_Parameters_and_Definitions.xml
+
+- type: guideEntry
+  id: SearchAndArrestProcedures
+  name: sop-Search-and-Arrest-Procedures
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/3_Search_and_Arrest_Procedures.xml
+
+- type: guideEntry
+  id: SecurityAlertProcedure
+  name: sop-security-alert-procedure
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/4_Security_Alert_Procedure.xml
+
+- type: guideEntry
+  id: ProbableCauseAndMethodOfEscalation
+  name: sop-probable-cause-and-method-of-escalation
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/5_Probable_Cause_and_Method_of_Escalation.xml
+
+- type: guideEntry
+  id: EquipmentAndUniform
+  name: sop-equipment-and-uniforms
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/6_Equipment_and_Uniforms.xml
+
+- type: guideEntry
+  id: SuspectAndPrisonerTreatment
+  name: sop-suspect-and-prisoner-treatment
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/7_Suspect_and_Prisoner_Treatment.xml
+
+- type: guideEntry
+  id: RoleSpecificSOP
+  name: sop-role-specific-sop
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/8_Role_Specific_SOP.xml

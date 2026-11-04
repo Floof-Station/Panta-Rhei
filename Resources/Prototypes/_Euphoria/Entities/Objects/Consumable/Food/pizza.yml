@@ -1,0 +1,47 @@
+- type: entity
+  name: shrimp pizza
+  parent: FoodPizzaBase
+  id: FoodPizzaShrimp
+  description: It's shrimp, and it's pizza. You are living the high life.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - shrimp
+        - cheesy
+        - oily
+        - bread
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      layers:
+        - state: pizza
+    - type: SliceableFood
+      slice: FoodPizzaShrimpSlice
+    - type: Tag
+      tags:
+        - Meat
+        - Pizza
+
+- type: entity
+  name: slice of shrimp pizza
+  parent: FoodPizzaSliceBase
+  id: FoodPizzaShrimpSlice
+  description: It's shrimp, and it's pizza. You are living the high life.
+  components:
+    - type: FlavorProfile
+      flavors:
+        - shrimp
+        - cheesy
+        - oily
+        - bread
+    - type: Sprite
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      layers:
+        - state: pizza-slice
+    - type: Item
+      sprite: _Euphoria/Objects/Consumable/Food/shrimp.rsi
+      heldPrefix: pizza-slice
+    - type: Tag
+      tags:
+        - Meat
+        - Pizza
+        - Slice
