@@ -660,6 +660,9 @@
     proto: BulletRadiation
     fireCost: 100
   - type: Appearance
+  - type: Tag # Euphoria - Setting up a tag.
+    tags:
+    - ScienceTool
 
 - type: entity
   parent: WeaponLaserSvalinn

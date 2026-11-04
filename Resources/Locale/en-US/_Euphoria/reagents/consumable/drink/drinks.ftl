@@ -1,4 +1,4 @@
-﻿reagent-name-blackberryjuice = blackberry juice
+reagent-name-blackberryjuice = blackberry juice
 reagent-desc-blackberryjuice = A sweet, refreshing and very tart extract from blackberries.
 
 reagent-name-blueberryjuice = blueberry juice
@@ -15,3 +15,6 @@ reagent-desc-bepismidnight = Bepis mixed with berries for those late night shift
 
 reagent-name-berrynice = berry nice
 reagent-desc-berrynice = All the berries in one tall glass...
+
+reagent-name-baxshots = bax shots
+reagent-desc-baxshots = A drink named after the famed tajaran weiner master himself.
