@@ -1,4 +1,31 @@
+## Justice SOP
+
+- type: guideEntry
+  id: EuphoriaJusticeRegulations
+  name: sop-euphoria-justice-name
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/Placeholder_Justice_Sop_Category_Top.xml
+  priority: 1
+  children:
+  - AppealsParolePardons
+  - PressingCriminalCharges
+  - Injunctions
+
 ## Security SOP
+
+- type: guideEntry
+  id: EuphoriaSecurityRegulations
+  name: sop-euphoria-security-name
+  text: /ServerInfo/Guidebook/_Euphoria/SpaceLaw/0_Euphoria_Security_SOP_Top_Entry.xml
+  priority: 1
+  children:
+  - SecurityQuickReferenceGuide
+  - ParametersAndDefinitions
+  - SearchAndArrestProcedures
+  - SecurityAlertProcedure
+  - ProbableCauseAndMethodOfEscalation
+  - EquipmentAndUniform
+  - SuspectAndPrisonerTreatment
+  - RoleSpecificSOP
 
 - type: guideEntry
   id: SecurityQuickReferenceGuide

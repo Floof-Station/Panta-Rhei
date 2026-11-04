@@ -9,7 +9,9 @@
   - GeneralRegulations
   - ControlledISA
   - CommandingOfficer
-  - SecurityandJusticeRegulations
+  # - SecurityandJusticeRegulations # Euphoria - We're adding our own SOP categories to replace this one.
+  - EuphoriaSecurityRegulations # Euphoria - See above.
+  - EuphoriaJusticeRegulations # Euphoria - See above.
   - Hearings
   - MedicalRegulations
   - EngineeringRegulations
@@ -66,39 +68,24 @@
 
 # Security And Justice Regulations Directories
 
-- type: guideEntry
-  id: SecurityandJusticeRegulations
-  name: sop-security-and-justice-name
-  text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityandJusticeRegulations.xml
-  priority: 1
-  children:
-  - AppealsParolePardons
-  - PressingCriminalCharges
-  - Injunctions
-
-# Euphoria - Begin Changes
-
-  # Remove DeltaV SOP articles
-  # - SecurityJurisdiction
-  # - ProbableCause
-  # - RulesOfEngagement
-  # - MartialLaw
-  # - ArmoryProcedure
-  # - TreatmentOfPrisoners
-  # - ArrestandSentencing
-  # - Warrants
-
-  # Add Euphoria SOP articles
-  - SecurityQuickReferenceGuide
-  - ParametersAndDefinitions
-  - SearchAndArrestProcedures
-  - SecurityAlertProcedure
-  - ProbableCauseAndMethodOfEscalation
-  - EquipmentAndUniform
-  - SuspectAndPrisonerTreatment
-  - RoleSpecificSOP
-
-  # Euphoria - End Changes
+## Euphoria - We're replacing this with our own Security SOP and dedicated Justice category
+# - type: guideEntry
+#   id: SecurityandJusticeRegulations
+#   name: sop-security-and-justice-name
+#   text: /ServerInfo/Guidebook/_DV/SpaceLaw/SecurityandJusticeRegulations/SecurityandJusticeRegulations.xml
+#   priority: 1
+#   children:
+#   - SecurityJurisdiction
+#   - ProbableCause
+#   - RulesOfEngagement
+#   - MartialLaw
+#   - ArmoryProcedure
+#   - TreatmentOfPrisoners
+#   - ArrestandSentencing
+#   - AppealsParolePardons
+#   - PressingCriminalCharges
+#   - Warrants
+#   - Injunctions
 
 # Hearings Main Directory
 - type: guideEntry
