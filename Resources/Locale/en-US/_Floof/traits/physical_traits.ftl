@@ -110,6 +110,12 @@ trait-illfated-desc =
     Bad things tend to happen to you, and you'll likely die sooner than others.
     Your damage threshold for becoming Dead is decreased by 25%.
 
+trait-footinthegrave-name = Foot In The Grave
+trait-footinthegrave-desc =
+    For some reason or another, your body is perpetually at the brink of death.
+    Your damage threshold for becoming Critical is decreased by 90%.
+    Your damage threshold for becoming Dead is decreased by 90%.
+
 trait-nosebleed-name = Nosebleed
 trait-nosebleed-description =
     Due to a prior accident, genetic misfortune, or some other reason, your body suffers from periodic nosebleeds.
