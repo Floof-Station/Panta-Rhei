@@ -206,7 +206,7 @@ reagent-name-manhattan-project = Manhattan Project
 reagent-desc-manhattan-project = A scientist's drink of choice, for pondering ways to blow up the ship.
 
 reagent-name-manly-dorf = Manly Dorf
-reagent-desc-manly-dorf = Beer and Ale, brought together in a delicious mix. Intended for stout dwarves only. Known as Oily Oaf amongst the mining elite.
+reagent-desc-manly-dorf = The Manly Dorf. A classic. While one of the lighter drinks available, the rich, buttery aftertaste coupled with the low price tag means the Dorf is here to stay. Known as Oily Oaf amongst the mining elite.
 
 reagent-name-margarita = margarita
 reagent-desc-margarita = On the rocks with salt on the rim. Arriba~!
@@ -308,7 +308,7 @@ reagent-name-vodka-red-bool = vodka red bool
 reagent-desc-vodka-red-bool = Because heart failure and liver failure go hand in hand.
 
 reagent-name-xeno-basher = Xeno Basher
-reagent-desc-xeno-basher = The perfect drink before an expedition. Known as Glyphid Slammer amongst the mining elite.
+reagent-desc-xeno-basher = An adventurous mix of a cheap, powerful ale with an equally cheap, powerful energy drink. The result is almost, but not quite, entirely undrinkable. But it sure does put a spring in your step. Known as Glyphid Slammer amongst the mining elite.
 
 reagent-name-irish-bool = Irish bool
 reagent-desc-irish-bool = Like a bool in a Ireland shop.
