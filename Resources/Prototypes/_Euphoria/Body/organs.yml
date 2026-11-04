@@ -4,7 +4,6 @@
   abstract: true
   suffix: Animal, Meaty
   components:
-  - type: Edible
   - type: Extractable
     juiceSolution:
       reagents:
@@ -12,14 +11,6 @@
         Quantity: 5
       - ReagentId: UncookedAnimalProteins
         Quantity: 5
-  - type: SolutionContainerManager
-    solutions:
-      food:
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
-        - ReagentId: Nutriment
-          Quantity: 5
 
 - type: entity
   parent: OrganAnimalMeaty
