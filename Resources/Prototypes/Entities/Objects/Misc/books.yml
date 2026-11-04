@@ -388,7 +388,8 @@
     openOnActivation: true
     guides:
     - SpaceLaw
-    - SecurityandJusticeRegulations
+    # - SecurityandJusticeRegulations # Euphoria - Replace Security SOP with our own.
+    - EuphoriaSecurityRegulations
     - SOP
     - companyPolicies
     - Survival
