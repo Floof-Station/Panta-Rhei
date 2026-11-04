@@ -6862,3 +6862,11 @@ Entries:
       message: Guidebook now has proper Security SOP.
   id: 853
   time: '2026-11-04T10:43:21.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added the "Send to Cryo" admin command back in, but now with a check to
+        actually make sure you're an admin.
+  id: 854
+  time: '2026-11-04T10:51:30.0000000+00:00'
