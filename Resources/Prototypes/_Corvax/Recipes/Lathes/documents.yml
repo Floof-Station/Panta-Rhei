@@ -24,14 +24,17 @@
   - PaperTemplateLogisticsCargoRequestRecipe
   - PaperTemplateMedicalOrderOfDismissalRecipe
   - PaperTemplateMedicalDeathCertificateRecipe
-  - PaperTemplateSecurityArrestReportRecipe
+# Euphoria - Begin Security Documents
   - PaperTemplateSecurityArrestWarrantRecipe
-  - PaperTemplateSecurityDepartSearchWarrantRecipe
-  - PaperTemplateSecurityDetectiveReportRecipe
-  - PaperTemplateSecurityFurloughRequestRecipe
-  - PaperTemplateSecurityIndividualSearchWarrantRecipe
-  - PaperTemplateSecurityInmateRequestRecipe
+  - PaperTemplateSecuritySearchWarrantRecipe
+  - PaperTemplateSecurityDepartmentalSearchWarrantRecipe
+  - PaperTemplateSecurityImplantSearchWarrantRecipe
+  - PaperTemplateSecurityActingWardenAuthorizationRecipe
+  - PaperTemplateSecurityDoNotResuscitateRecipe
+  - PaperTemplateSecurityInterrogationAuthorizationRecipe
+  - PaperTemplateSecurityStasisOrderRecipe
   - PaperTemplateSecurityVisitationRequestRecipe
+# End Euphoria Security
   - PaperTemplateServiceBotanyRequestRecipe
   - PaperTemplateServiceRestrictedPlantPermitRecipe
   - PaperEnvelope # Floofstation

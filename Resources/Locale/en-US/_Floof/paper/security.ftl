@@ -1,282 +1,315 @@
-paperwork-header-security = {"["}color=#cb0000] ◥[bold]N[/bold]◣ [head=3][bold]SECURITY[/bold][/head][/color]
-paperwork-separator-security = {"["}color=#cb0000]‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/color]
-
-paperwork-security-arrest-report =
-    { paperwork-header-security }
-    { paperwork-separator-security }
-        {"["}head=2]ARREST REPORT[/head]
-    { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
-        {"["}bold]STATION:[/bold] {$stationName}
-        {"["}bold]SHIFT TIME:[/bold] XX:XX
-        {"["}bold]HEAD OF SECURITY:[/bold]
-        {"["}bold]ARRESTING OFFICER:[/bold]
-        {"["}bold]ARRESTED PERSON:[/bold]
-        {"["}bold]JOB:[/bold]
-    { paperwork-separator-security }
-    • Reason for arrest:
-    { paperwork-separator-security }
-    {"["}head=3]Charges:[/head]
-    1XX Misdemeanor Crimes:
-    \[  ] Code:SL1-01 (Fearmongering) - 5mins Max
-    \[  ] Code:SL1-03 (Animal Cruelty) - 3mins
-    \[  ] Code:SL1-04 (Theft) - 2mins
-    \[  ] Code:SL1-06 (Vandalism) - 2mins
-    \[  ] Code:SL1-09 (Brandishing) - 2mins
-    \[  ] Code:SL1-11 (Possession) - 5mins Max
-    \[  ] Code:SL1-12 (Trespass) - 2mins
-    \[  ] Code:SL1-15 (Hooliganism) - 'As Determined'
-    \[  ] Code:SL1-17 (Failure To Comply) - 2mins
-    {"["}color=gray]Warnings may be issued for a first misdemeanor offense.[/color]
-    { paperwork-separator-security }
-    2XX Felony Crimes:
-    \[  ] Code:SL2-01 (Perjury or False Report) - 3 mins
-    \[  ] Code:SL2-03 (Manslaughter) - 8mins
-    \[  ] Code:SL2-04 (Grand Theft) - 8mins
-    \[  ] Code:SL2-05 (Black Marketeering) - 6mins
-    \[  ] Code:SL2-06 (Sabotage) - 6mins
-    \[  ] Code:SL2-07 (Mindbreaking) - 5mins
-    \[  ] Code:SL2-08 (Kidnapping) - 8mins
-    \[  ] Code:SL2-09 (Assault)- 5mins
-    \[  ] Code:SL2-10 (Abuse of Power) - 5mins
-    \[  ] Code:SL2-11 (Felony Possession) - 10mins Max
-    \[  ] Code:SL2-12 (Secure Trespass) - 4mins
-    \[  ] Code:SL2-13 (Endangerment) - 4mins
-    \[  ] Code:SL2-14 (Harassment) - 4mins
-    \[  ] Code:SL2-15 (Rioting) - 4mins
-    \[  ] Code:SL2-16 (Contempt of Court) - 4mins
-    \[  ] Code:SL2-17 (Obstruction of Justice) - 2mins
-    { paperwork-separator-security }
-    3XX Capital Crimes:
-    \[  ] Code:SL3-01 (Terrorism)
-    \[  ] Code:SL3-03 (Murder)
-    \[  ] Code:SL3-06 (Grand Sabotage)
-    \[  ] Code:SL3-07 (Decorporealization)
-    \[  ] Code:SL3-08 (Hostage Taking)
-    \[  ] Code:SL3-13 (Grand Endangerment)
-    \[  ] Code:SL3-15 (Sedition)
-    {"["}color=gray]All Capital crimes necessitate a mandatory trial.[/color]
-    { paperwork-separator-security }
-    Crime Modifiers:
-    {"["}color=gray]Time matches crimes commited or attempted.[/color]
-    \[  ] Solicitation
-    \[  ] Accessory
-    \[  ] Attempt
-    \[  ] Conspiracy
-    {"["}color=gray]150% max additional modifier of original sentence.[/color]
-    \[  ] Deadly Weapon
-    \[  ] Aggravation
-    \[  ] Discriminatory Intent
-    {"["}color=gray]200% max additional modifier of original sentence.[/color]
-    \[  ] Recidivism
-    {"["}color=gray]Sentence reduction or pardon.[/color]
-    \[  ] Cooperation - 50% reduction of original sentence.
-    \[  ] Dire Emergency - Sentence reduction or full pardon.
-    \[  ] Self-Defence - Sentence reduction or full pardon.
-
-    {"["}color=red]This document is not valid unless stamped by at least one of the required personnel.[/color]
-    {"["}color=gray]This form follows NT space law.[/color]
-    {"["}color=gray]Those who abuse granted permission can be fined up to 5000 Spesos.[/color]
-    {"["}bold]Warden or Head of Securiy's Signature:[/bold]
-    {"["}bold]Attorney's Signature:[/bold]
-    {"["}bold]Prosecutor's Signature:[/bold]
-
-
+paperwork-header-security = {"["}color=red][mono] █▄█ █▀▀ ▀█▀ [/mono][bold]SECURITY[/bold]
+paperwork-separator-security = {"["}color=#334e6d]──────────────────────────────────[/color]
+paperwork-duplication-notice = {"["}color=OrangeRed][bold]THIS FORM MUST BE DUPLICATED UPON COMPLETION[/color]
 
 paperwork-security-arrest-warrant =
     { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]ARREST WARRANT[/head]
     { paperwork-separator-security }
-        {"["}head=2]ARREST WARRANT [/head]
-    { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
-        {"["}bold]STATION:[/bold] {$stationName}
-        {"["}bold]SHIFT TIME:[/bold] XX:XX
-        {"["}bold]ARRESTING OFFICER: [/bold]
-        {"["}bold]HEAD OF SECURITY: [/bold]
-        {"["}bold]PROSECUTOR: [/bold]
-        {"["}bold]WARRANT TARGET: [/bold]
-        {"["}bold]JOB: [/bold]
-    { paperwork-separator-security }
-    • Reason for arrest:
-    { paperwork-separator-security }
-    {"["}color=gray]Warrants are only valid when issued by either the Chief Justice or the Clerk of Court, or in their absence, the Commanding Officer, the Head of Security, or the Warden.[/color]
-    {"["}color=#cb0000]This document is not valid unless stamped by at least one of the required personnel.[/color]
-
-    {"["}color=gray]This form follows NT space law.[/color]
-    {"["}color=gray]Those who abuse granted permission can be fined up to 5000 Spesos.[/color]
-
-    { paperwork-separator-security }
-    {"["}bold]Issuer's Signature:[/bold]
-
-paperwork-security-department-search-warrant =
-    { paperwork-header-security }
-    { paperwork-separator-security }
-        {"["}head=2]DEPARTMENT SEARCH WARRANT [/head]
-    { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
-        {"["}bold]STATION:[/bold] {$stationName}
-        {"["}bold]SHIFT TIME:[/bold] XX:XX
-        {"["}bold]PROSECUTOR:[/bold]
+    { paperwork-duplication-notice }
+        {"["}head=3]Section A[/head]
+        {"["}color=gray][italic]If no Head of Security is present during the issuing of this arrest warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold]
+        {"["}bold]SHIFT TIME:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
-        {"["}bold]TARGET OF WARRANT: [/bold]
+        {"["}bold]CHIEF JUSTICE:[/bold]
+        
     { paperwork-separator-security }
-    • Requesting Officer:
-
-    • Reason for the search:
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]NAME OF SUSPECT TO BE ARRESTED:[/bold]
+        
+        {"["}bold]CAUSE OF ARREST:[/bold]
+        
+        {"["}bold]SUPPORTING EVIDENCE:[/bold]
+        
     { paperwork-separator-security }
-    If illegal items are found in the searched department they will be confiscated and the owner of these items may be detained at the officer's discretion. Search Warrants should include an area, a brief description of the probable cause, and a list of individuals if applicable.
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]Either the Prosecutor, or the Clerk, or Chief Justice must sign off on this warrant for it to be valid. If none are available or there are extenuating circumstances, the Warden or Head of Security may sign off instead.[/color][/italic]
+        
+        {"["}bold]PROSECUTOR SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CLERK SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+    
+        {"["}italic]SECONDARY SIGNATURES IF THE JUSTICE DEPARTMENT IS NOT AVAILABLE:[/italic]
+    
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
 
-    {"["}bold]Warrants are only valid when issued by either the Chief Justice or the Clerk of Court, or in their absence, the Commanding Officer, the Head of Security, or the Warden.[/bold]
-    {"["}color=#cb0000]This document is not valid unless stamped by at least one of the required personnel.[/color]
-
-    {"["}color=gray]This form follows NT space law.[/color]
-    {"["}color=gray]Those who abuse granted permission can be fined up to 5000 Spesos.[/color]
-
-    { paperwork-separator-security }
-    {"["}bold]Issuer's Signature:[/bold]
-
-paperwork-security-detective-report =
+paperwork-security-search-warrant =
     { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]SEARCH WARRANT[/head]
     { paperwork-separator-security }
-    {"["}head=2]DETECTIVE'S REPORT [/head]
-    { paperwork-separator-security }
-    {"["}bold]CASE:[/bold] STATION SECURITY v. (DEFENDANT)
-    {"["}bold]PROSECUTOR:[/bold]
-    { paperwork-separator-security }
-    Details of the Case:
-
-    Evidence Collected:
-
-    { paperwork-separator-security }
-    {"["}color=red]This document is not valid unless stamped by at least one of the required personnel.[/color]
-
-    {"["}color=gray]Evidence not provided to the Clerk of Court for certification prior to the court proceedings, if available, will not be accepted into the record. All evidence collected should be shared with the Defendant's Attorney.[/color]
-
-    {"["}color=gray]Failure to appear to a Court Summons is a violation of Space Law and will be considered Contempt of Court.[/color]
-
-    { paperwork-separator-security }
-    {"["}bold]Prosecutor's Signature:[/bold]
-    {"["}bold]Detective's Signature:[/bold]
-
-paperwork-security-furlough-request =
-    { paperwork-header-security }
-    { paperwork-separator-security }
-        {"["}head=2]FURLOUGH REQUEST[/head]
-    { paperwork-separator-security }
-    This document if approved, allows an inmate to leave his cell under direct supervision of security personnel for no more than 20 minutes. Inmate agrees to a strip search after furlough has concluded to ensure there is no contraband.
-    {"["}color=red][bold]This document must be approved and stamped by the Warden or Head of Security, and signed by the inmate to be valid![/bold][/color]
-
-    Inmate:  [color=#002AAF]Name Here[/color]
-                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    Warden: [color=#002AAF]Name Here[/color]
-                 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    Head of Security:   [color=#002AAF]Name Here[/color]
-                               ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    If contraband is discovered or given to the inmate, sentences may be applied or extended.
-    Furlough may end early at the Warden's discretion, for the safety of employees and inmates. Public displays of affection must be limited to single kiss, or hug.
-    { paperwork-separator-security }
-    {"["}bold]Inmate's reason for furlough:[/bold]
-
-
-    {"["}color=red][bold]DO NOT SIGN UNTIL WARDEN/HoS REVIEWS!!![/color][/bold]
-    { paperwork-separator-security }
-    {"["}bold]Reason for denial (if denied):[/bold]
-
-
-
-    { paperwork-separator-security }
-    {"["}color=#aaaaaa]This document is not valid unless stamped by at least one of the listed required personnel.
-    This form follows NT Space Law.
-    Those who abuse granted permission can be fined up to 5000 spesos pursuant NT Handbook §16-8.7c[/color]
-
-    { paperwork-separator-security }
-    {"["}color=red][italic]By signing here, the Inmate agrees to adheare to the conditions listed within this form.[/color][/italic]
-    {"["}bold]Approver's Signature:[/bold]
-    {"["}bold]Inmate's Signature:[/bold]
-
-
-paperwork-security-individual-search-warrant =
-    { paperwork-header-security }
-    { paperwork-separator-security }
-        {"["}head=2]INDIVIDUAL SEARCH WARRANT [/head]
-    { paperwork-separator-security }
-        {"["}bold]SECTOR:[/bold] Floof Station
-        {"["}bold]STATION:[/bold] {$stationName}
-        {"["}bold]SHIFT TIME:[/bold] XX:XX
-        {"["}bold]PROSECUTOR:[/bold]
+    { paperwork-duplication-notice }
+        {"["}head=3]Section A[/head]
+        {"["}color=gray][italic]If no Head of Security is present during the issuing of this arrest warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold]
+        {"["}bold]SHIFT TIME:[/bold]
         {"["}bold]HEAD OF SECURITY:[/bold]
-        {"["}bold]TARGET OF WARRANT:[/bold]
-        {"["}bold]JOB:[/bold]
+        {"["}bold]CHIEF JUSTICE:[/bold]
+        
     { paperwork-separator-security }
-    • Requesting Officer:
-
-    • Reason for the search:
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]NAME OF SUSPECT TO BE SEARCHED:[/bold]
+        
+        {"["}bold]CAUSE OF SEARCH:[/bold]
+        
+        {"["}bold]SUPPORTING EVIDENCE:[/bold]
+        
     { paperwork-separator-security }
-    If illegal items are found in the posession of the searched individual they will be confiscated and the owner of these items may be detained at the officer's discretion.
-
-    {"["}bold]Warrants are only valid when issued by either the Chief Justice or the Clerk of Court, or in their absence, the Commanding Officer, the Head of Security, or the Warden.[/bold]
-    {"["}color=#cb0000]This document is not valid unless stamped by at least one of the required personnel.[/color]
-
-    {"["}color=gray]This form follows NT space law.[/color]
-    {"["}color=gray]Those who abuse granted permission can be fined up to 5000 Spesos.[/color]
-
-    { paperwork-separator-security }
-    {"["}bold]Issuer's Signature:[/bold]
-
-
-paperwork-security-inmate-request =
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]Either the Prosecutor, or the Clerk, or Chief Justice must sign off on this warrant for it to be valid. If none are available or there are extenuating circumstances, the Warden or Head of Security may sign off instead.[/color][/italic]
+        
+        {"["}bold]PROSECUTOR SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CLERK SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+    
+        {"["}italic]SECONDARY SIGNATURES IF THE JUSTICE DEPARTMENT IS NOT AVAILABLE:[/italic]
+    
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
+    
+paperwork-security-departmental-search-warrant =
     { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]DEPARTMENTAL SEARCH WARRANT[/head]
     { paperwork-separator-security }
-        {"["}head=2]Inmate Request form [/head]
+    { paperwork-duplication-notice }
+        {"["}head=3]Section A[/head]
+        {"["}color=gray][italic]If no Head of Security is present during the issuing of this arrest warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold] 
+        {"["}bold]SHIFT TIME:[/bold]
+        {"["}bold]CAPTAIN:[/bold]
+        {"["}bold]HEAD OF SECURITY:[/bold]
+        {"["}bold]CHIEF JUSTICE:[/bold]
+        
     { paperwork-separator-security }
-        {"["}bold]  SECTOR:[/bold] Floof Station
-        {"["}bold]  STATION:[/bold] {$stationName}
-        {"["}bold]  SHIFT TIME:[/bold] XX:XX
-        {"["}bold]  WARDEN:[/bold]
-        {"["}bold]  INMATE:[/bold]
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]NAME OF DEPARTMENT TO BE SEARCHED:[/bold]
+        
+        {"["}bold]CAUSE OF SEARCH:[/bold]
+        
+        {"["}bold]SUPPORTING EVIDENCE:[/bold]
+        
     { paperwork-separator-security }
-    • Items Requested:
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]The Chief Justice must sign off on this warrant for it to be valid. If the Chief Justice is not available, the Clerk may sign off; in the absence of the Justice Department or Captain, the Head of Security may sign off on the Departmental Search Warrant.[/color][/italic]
 
-
-
-    {"["}italic]NOTE: Please place an X with the number of items desired.[/italic]
-    { paperwork-separator-security }
-    {"["}color=red]This document is not valid unless stamped by either the Warden or Head of Security.[/color]
-
-    {"["}color=gray]Your request will be considered and approved within reason.[/color]
-    { paperwork-separator-security }
-    {"["}bold]Inmate's Signature:[/bold]
-    {"["}bold]Approver's Signature:[/bold]
-
-paperwork-security-visitation-request =
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+    
+        {"["}italic]SECONDARY SIGNATURES IF THE CHIEF JUSTICE IS NOT AVAILABLE:[/italic]
+    
+        {"["}bold]CLERK SIGNATURE AND STAMP:[/bold]
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
+        
+paperwork-security-implant-search-warrant =
     { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]IMPLANT SEARCH WARRANT[/head]
     { paperwork-separator-security }
-        {"["}head=2]VISITATION REQUEST[/head]
+    { paperwork-duplication-notice }
+        {"["}head=3]Section A[/head]
+        {"["}color=gray][italic]If no Head of Security is present during the issuing of this search warrant, please note down the highest ranking officer of the Security Department at the time the warrant is issued.[/italic][/color]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold] 
+        {"["}bold]SHIFT TIME:[/bold]
+        {"["}bold]HEAD OF SECURITY:[/bold]
+        {"["}bold]CHIEF MEDICAL OFFICER:[/bold]
+        
     { paperwork-separator-security }
-    This document, if approved, allows the one time visitation between an inmate and an employee of NanoTressen stations. Visitor agrees to be searched before entering the vistation area. The inmate also agrees to be strip searched after the visitation has concluded.
-    {"["}color=red][bold]This document must be approved and stamped by the Warden, and signed by both the visitor and inmate to be valid![/bold][/color]
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]NAME OF SUSPECT TO BE SEARCHED:[/bold]
+        
+        {"["}bold]CAUSE OF SEARCH:[/bold]
+        
+        {"["}bold]SUPPORTING EVIDENCE:[/bold]
+        
+    { paperwork-separator-security }
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]The Chief Medical Officer and Head of Security must sign off on this warrant for it to be valid. In the absence of the Chief Medical Officer, the Captain may sign off in their place; in lieu of Captain or Chief Medical Officer, any member of medical may sign off. If the Head of Security is unavailable, the Warden may sign off in their place.[/color][/italic]
+        
+        {"["}bold][color=OrangeRed]This search warrant always requires two signatures in order to be valid.[/color][/bold]
+        
+        {"["}bold]CHIEF MEDICAL OFFICER SIGNATURE AND STAMP:[/bold]
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+    
+        {"["}italic]SECONDARY SIGNATURES IN CASE OF ABSENCE:[/italic]
+    
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]WARDEN OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]MEDICAL SIGNATURE AND STAMP:[/bold]
+    
+paperwork-security-warden-appointment =
+    { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]APPOINTMENT OF ACTING WARDEN[/head]
+    { paperwork-separator-security }
+        {"["}head=3]Section A[/head]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold] 
+        {"["}bold]CAPTAIN:[/bold]
+        {"["}bold]HEAD OF SECURITY:[/bold]
+        
+    { paperwork-separator-security }
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]OFFICER PROMOTED TO ACTING WARDEN:[/bold]
+        
+        {"["}bold]PROMOTING COMMAND MEMBER:[/bold]
+        
+    { paperwork-separator-security }
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]Either the Captain or the Head of Security must sign off on this authorization for it to be valid.[/color][/italic]
+        
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]ACTING WARDEN SIGNATURE AND STAMP:[/bold]
+        
+paperwork-security-do-not-resuscitate =
+    { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]DO NOT RESUSCITATE ORDER (SECURITY)[/head]
+    { paperwork-separator-security }
+        {"["}head=3]Section A[/head]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold] 
+        {"["}bold]CAPTAIN:[/bold]
+        {"["}bold]HEAD OF SECURITY:[/bold]
+        {"["}bold]CHIEF MEDICAL OFFICER:[/bold]
+        
+    { paperwork-separator-security }
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]TARGET OF DO NOT RESUSCITATE ORDER:[/bold]
+        
+        {"["}bold]ISSUING COMMAND MEMBER:[/bold]
+        
+        {"["}bold]REASON FOR ORDER:[/bold]
+        
+        {"["}color=gray][italic]Do Not Resuscitate Orders can only be issued by either the Captain or Head of Security. Do Not Resuscitate Orders must be signed off on by the Chief Medical Officer. Emergency DNRs can be issued by the Warden (or, in their absence, the Corpsman) during times of emergency; these Emergency DNRs must be reviewed by the Head of Security or Captain at the earliest opportunity.[/color][/italic]
+    { paperwork-separator-security }
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]Either the Head of Security or the Warden must sign off on this authorization for it to be valid. All interrogating officers must sign this form.[/color][/italic]
+        
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF MEDICAL OFFICER SIGNATURE AND STAMP:[/bold]
+        
+        {"["}italic]OPTIONAL SIGNATURES FOR EMERGENCY DNRs:[/italic]
+        {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CORPSMAN SIGNATURE:[/bold]
+        
+paperwork-security-interrogation-authorization =
+    { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]INTERROGATION AUTHORIZATION[/head]
+    { paperwork-separator-security }
+        {"["}head=3]Section A[/head]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold] 
+        {"["}bold]HEAD OF SECURITY:[/bold]
+        {"["}bold]WARDEN:[/bold]
+        
+    { paperwork-separator-security }
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]CONVICT'S NAME:[/bold]
+        
+        {"["}bold]INTERROGATING OFFICER(S):[/bold]
+        
+        {"["}bold]JUSTICE PERSONNEL PRESENT (OPTIONAL):[/bold]
+        
+        {"["}color=gray][italic]No more than three security officers may be present during interrogation. Interrogation must not exceed twenty minutes.[/color][/italic]
+    { paperwork-separator-security }
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]Either the Head of Security or the Warden must sign off on this authorization for it to be valid. All interrogating officers must sign this form.[/color][/italic]
+        
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]INTERROGATING OFFICER(S) SIGNATURES:[/bold]
 
-    Inmate: [color=#002AAF]Name Here[/color]
-                  ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    Warden: [color=#002AAF]Name Here[/color]
-                   ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    Visitor: [color=#002AAF]Name Here[/color]
-                ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
-    {"["}bold]General visitation will not exceed 10 minutes. If contraband is discovered on the vistior or inmate, sentences may be applied or extended.[/bold]
+security-paperwork-stasis-order =
+    { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]STASIS ORDER[/head]
+    { paperwork-separator-security }
+        {"["}head=3]Section A[/head]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold]
+        {"["}bold]CAPTAIN:[/bold]
+        {"["}bold]HEAD OF SECURITY:[/bold] 
+        {"["}bold]CHIEF JUSTICE:[/bold]
+        
+    { paperwork-separator-security }
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]TARGET OF STASIS ORDER:[/bold]
+        
+        {"["}bold]ISSUING COMMAND MEMBER:[/bold]
+        
+        {"["}bold]REASON FOR ORDER:[/bold]
+        
+        {"["}bold]REQUESTED METHOD OF STASIS:[/bold]
+        
+        \{"["} ] Lethal Injection
+        \{"["} ] Electrocution
+        \{"["} ] Spacing
+        
+        {"["}bold]NITROUS OXIDE REQUESTED:[/bold]
+        
+        \{"["} ] Y
+        \{"["} ] N
 
+        {"["}bold]NITROUS OXIDE REQUESTED:[/bold]
+        
+        \{"["} ] Chaplain
+        \{"["} ] Psychologist
+        
+        {"["}color=gray][italic]Please see Security Standard Operating Procedure for further requirements for stasis.[/color][/italic]
     { paperwork-separator-security }
-    {"["}bold]Guest's reason for visitation:[/bold]
-
-    /[ ]Conjugal - [color=red]STRICTLY 1HR MAX[/color]
-    {"["}color=red][bold]DO NOT SIGN UNTIL INMATE SIGNS!!![/color][/bold]
+        {"["}head=3]Section C[/head]
+        {"["}color=gray][italic]Either the Captain, or the Chief Justice, or the Chief Justice must sign off on this order for it to be valid. All interrogating officers must sign this form.[/color][/italic]
+        
+        {"["}bold]CAPTAIN SIGNATURE AND STAMP:[/bold]
+        {"["}bold]HEAD OF SECURITY SIGNATURE AND STAMP:[/bold]
+        {"["}bold]CHIEF JUSTICE SIGNATURE AND STAMP:[/bold]
+        
+        {"["}italic]OPTIONAL SIGNATURES FOR EMERGENCY STASIS:[/italic]
+        {"["}bold]WARDEN SIGNATURE AND STAMP:[/bold]
+        
+paperwork-security-visitation-form =
+    { paperwork-header-security }
+        {"["}mono] █ █ █▄█ ▄█▄ [/mono][/color][head=2]PRISONER VISITATION REQUEST FORM[/head]
     { paperwork-separator-security }
-    {"["}bold]Inmate's reason for denial (if denied):[/bold]
-
+        {"["}head=3]Section A[/head]
+        
+        {"["}bold]SECTOR:[/bold] Esin-14
+        {"["}bold]STATION:[/bold]
+        {"["}bold]HEAD OF SECURITY:[/bold]
+        {"["}bold]WARDEN:[/bold]
+        
     { paperwork-separator-security }
-    {"["}color=#aaaaaa]This document is not valid unless stamped by at least one of the listed required personnel.
-    This form follows NT Space Law.
-    Those who abuse granted permission can be fined up to 5000 spesos pursuant NT Handbook §16-8.7c[/color]
+        {"["}head=3]Section B[/head]
+        
+        {"["}bold]PRISONER'S NAME:[/bold]
+        
+        {"["}bold]VISITOR'S NAME:[/bold]
+        
+        {"["}color=gray][italic]By filling out this form, you understand that you can only visit with prisoner consent. Emergencies may cut visitation short. You will be searched upon visitation; non contraband weapons and tools will be returned upon the conclusion of the visit.[/color][/italic]
     { paperwork-separator-security }
-    {"["}color=red][italic]By signing here, the visitor and Inmate agree to adheare to the conditions listed within this form.[/color][/italic]
-    {"["}bold]Requesting Visitor's Signature:[/bold]
-    {"["}bold]Inmate's Signature:[/bold]
+        {"["}head=3]Section C[/head]
+        
+        {"["}bold]WARDEN STAMP AND SIGNATURE:[/bold]
+        {"["}bold]VISITOR SIGNATURE:[/bold]
+        {"["}bold]PRISONER SIGNATURE:[/bold]
