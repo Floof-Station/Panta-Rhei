@@ -1,79 +1,91 @@
 - type: entity
-  name: arrest report
-  parent: PaperTemplate
-  id: PaperTemplateSecurityArrestReport
-  description: 'report why somebody was arrested'
-  components:
-  - type: Paper
-    contentSize: 10000
-    content: paperwork-security-arrest-report
-
-- type: entity
   name: arrest warrant
   parent: PaperTemplate
   id: PaperTemplateSecurityArrestWarrant
-  description: 'a warrant for somebodies arrest'
+  description: 'A warrant for the arrest of a suspect.'
   components:
   - type: Paper
     contentSize: 10000
     content: paperwork-security-arrest-warrant
 
 - type: entity
-  name: department search warrant
+  name: search warrant
   parent: PaperTemplate
-  id: PaperTemplateSecurityDepartSearchWarrant
-  description: 'a search warrant for an entire department.'
+  id: PaperTemplateSecuritySearchWarrant
+  description: 'A warrant for the search of a suspect.'
   components:
   - type: Paper
     contentSize: 10000
-    content: paperwork-security-department-search-warrant
+    content: paperwork-security-search-warrant
 
 - type: entity
-  name: detective report
+  name: departmental search warrant
   parent: PaperTemplate
-  id: PaperTemplateSecurityDetectiveReport
-  description: 'reports the detectives findings'
+  id: PaperTemplateSecurityDepartmentalSearchWarrant
+  description: 'A warrant for a departmental search.'
   components:
   - type: Paper
     contentSize: 10000
-    content: paperwork-security-detective-report
+    content: paperwork-security-departmental-search-warrant
 
 - type: entity
-  name: furlough request
+  name: implant search warrant
   parent: PaperTemplate
-  id: PaperTemplateSecurityFurloughRequest
-  description: 'let s an inmate walk free for a period of time'
+  id: PaperTemplateSecurityImplantSearchWarrant
+  description: 'A warrant for an implant search.'
   components:
   - type: Paper
     contentSize: 10000
-    content: paperwork-security-furlough-request
+    content: paperwork-security-implant-search-warrant
 
 - type: entity
-  name: individual search warrant
+  name: acting warden appointment
   parent: PaperTemplate
-  id: PaperTemplateSecurityIndividualSearchWarrant
-  description: 'Search warrant for an individual'
+  id: PaperTemplateSecurityActingWardenAuthorization
+  description: 'An authorization for the appointment of an Acting Warden.'
   components:
   - type: Paper
     contentSize: 10000
-    content: paperwork-security-individual-search-warrant
+    content: paperwork-security-warden-appointment
 
 - type: entity
-  name: inmate request
+  name: security do not resuscitate order
   parent: PaperTemplate
-  id: PaperTemplateSecurityInmateRequest
-  description: 'He is dead Jim.'
+  id: PaperTemplateSecurityDoNotResuscitate
+  description: 'An order from security preventing resuscitation.'
   components:
   - type: Paper
     contentSize: 10000
-    content: paperwork-security-inmate-request
+    content: paperwork-security-do-not-resuscitate
 
+- type: entity
+  name: interrogation authorization
+  parent: PaperTemplate
+  id: PaperTemplateSecurityInterrogationAuthorization
+  description: 'An authorization for the interrogation of a suspect.'
+  components:
+  - type: Paper
+    contentSize: 10000
+    content: paperwork-security-interrogation-authorization
+  
+- type: entity
+  name: stasis order
+  parent: PaperTemplate
+  id: PaperTemplateSecurityStasisOrder
+  description: 'An order for putting a prisoner in stasis.'
+  components:
+  - type: Paper
+    contentSize: 10000
+    content: security-paperwork-stasis-order
+    
 - type: entity
   name: visitation request
   parent: PaperTemplate
   id: PaperTemplateSecurityVisitationRequest
-  description: Let's you visit a prisoner for a period of time.
+  description: 'A request to visit a prisoner in permanent confinement.'
   components:
   - type: Paper
     contentSize: 10000
-    content: paperwork-security-visitation-request
+    content: paperwork-security-visitation-form
+    
+  
