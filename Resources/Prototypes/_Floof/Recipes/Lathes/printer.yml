@@ -211,38 +211,43 @@
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityArrestReportRecipe
-  result: PaperTemplateSecurityArrestReport
-
-- type: latheRecipe
-  parent: BasePaperTemplateSecurityRecipe
   id: PaperTemplateSecurityArrestWarrantRecipe
   result: PaperTemplateSecurityArrestWarrant
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityDepartSearchWarrantRecipe
-  result: PaperTemplateSecurityDepartSearchWarrant
+  id: PaperTemplateSecuritySearchWarrantRecipe
+  result: PaperTemplateSecuritySearchWarrant
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityDetectiveReportRecipe
-  result: PaperTemplateSecurityDetectiveReport
+  id:  PaperTemplateSecurityDepartmentalSearchWarrantRecipe
+  result:  PaperTemplateSecurityDepartmentalSearchWarrant
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityFurloughRequestRecipe
-  result: PaperTemplateSecurityFurloughRequest
+  id: PaperTemplateSecurityImplantSearchWarrantRecipe
+  result: PaperTemplateSecurityImplantSearchWarrant
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityIndividualSearchWarrantRecipe
-  result: PaperTemplateSecurityIndividualSearchWarrant
+  id: PaperTemplateSecurityActingWardenAuthorizationRecipe
+  result: PaperTemplateSecurityActingWardenAuthorization
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
-  id: PaperTemplateSecurityInmateRequestRecipe
-  result: PaperTemplateSecurityInmateRequest
+  id: PaperTemplateSecurityDoNotResuscitateRecipe
+  result: PaperTemplateSecurityDoNotResuscitate
+
+- type: latheRecipe
+  parent: BasePaperTemplateSecurityRecipe
+  id: PaperTemplateSecurityInterrogationAuthorizationRecipe
+  result: PaperTemplateSecurityInterrogationAuthorization
+  
+- type: latheRecipe
+  parent: BasePaperTemplateSecurityRecipe
+  id: PaperTemplateSecurityStasisOrderRecipe
+  result: PaperTemplateSecurityStasisOrder
 
 - type: latheRecipe
   parent: BasePaperTemplateSecurityRecipe
