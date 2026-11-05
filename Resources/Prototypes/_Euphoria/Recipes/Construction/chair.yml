@@ -21,16 +21,3 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
-
-- type: construction
-  id: HumanLeatherArmchair
-  name: chair-comfy-human-leather
-  graph: HumanLeatherArmchair
-  startNode: start
-  targetNode: HumanLeatherArmchair
-  category: construction-category-furniture
-  objectType: Structure
-  placementMode: SnapgridCenter
-  canBuildInImpassable: false
-  conditions:
-  - !type:TileNotBlocked
