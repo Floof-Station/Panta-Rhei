@@ -10,7 +10,7 @@
     usesCharges: true
     signWhitelist:
       components:
-      - Holobarrier
+#      - Holobarrier
       - LabeledHolosign
   - type: Sprite
     sprite: _DEN/Objects/Devices/Holoprojectors/adult.rsi
@@ -32,6 +32,6 @@
     rechargeDuration: 60
   - type: Tag
     tags:
-    - HolofanProjector
+    - HolosignProjector      # Changed from barrier to sign, so people and air can pass through it
   - type: StaticPrice
     price: 80

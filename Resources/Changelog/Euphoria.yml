@@ -6804,3 +6804,83 @@ Entries:
         glass!
   id: 847
   time: '2026-10-30T11:58:48.0000000+00:00'
+- author: Barheru
+  changes:
+    - type: Add
+      message: >-
+        Moody Chemist plushie has been added to the prize machine and plushie
+        crate.
+    - type: Tweak
+      message: The Hardcore DJ plushie can now be filled with liquid.
+  id: 848
+  time: '2026-11-02T06:09:48.0000000+00:00'
+- author: Suraru
+  changes:
+    - type: Add
+      message: Coolant units from SL/FH so IPCs can now survive going outside
+    - type: Remove
+      message: >-
+        the blacklist that prevented silicons from laughing, crying, or
+        whistling
+    - type: Tweak
+      message: (Optional) Moths can now blink too
+    - type: Tweak
+      message: APCConstruct to IPC drain targets, so they can drain midround built APCs
+    - type: Tweak
+      message: Also added wall chargers to IPC drain targets (easier to map in perma)
+    - type: Fix
+      message: >-
+        IPCs being unable to heal welding eye damage with glass (finished port
+        from SL/FH)
+    - type: Fix
+      message: multiple IPC eye overlays (screens) missing due to a bad locale
+    - type: Fix
+      message: 'power cells draining when you removed them from an IPC '
+  id: 849
+  time: '2026-11-02T06:10:15.0000000+00:00'
+- author: ScarlettJFG
+  changes:
+    - type: Add
+      message: A shadow of the Tiny Trait now Exists!
+  id: 850
+  time: '2026-11-02T06:11:58.0000000+00:00'
+- author: Arbitrated
+  changes:
+    - type: Tweak
+      message: Janitor Belts can now hold screwdrivers and crowbars.
+  id: 851
+  time: '2026-11-02T06:12:40.0000000+00:00'
+- author: M3739
+  changes:
+    - type: Remove
+      message: Some jukebox songs have been removed.
+  id: 852
+  time: '2026-11-02T06:25:07.0000000+00:00'
+- author: deltaSpawn0040
+  changes:
+    - type: Fix
+      message: Guidebook now has proper Security SOP.
+  id: 853
+  time: '2026-11-04T10:43:21.0000000+00:00'
+- author: kivdon
+  changes:
+    - type: Add
+      message: >-
+        Added the "Send to Cryo" admin command back in, but now with a check to
+        actually make sure you're an admin.
+  id: 854
+  time: '2026-11-04T10:51:30.0000000+00:00'
+- author: 2tothepower
+  changes:
+    - type: Add
+      message: Stoic Psionic plushie
+  id: 855
+  time: '2026-11-05T10:40:25.0000000+00:00'
+- author: Barheru
+  changes:
+    - type: Add
+      message: New paperwork for security, compliant with new SOP.
+    - type: Remove
+      message: Old paperwork that was neither SOP nor lore compliant.
+  id: 856
+  time: '2026-11-05T10:42:25.0000000+00:00'
