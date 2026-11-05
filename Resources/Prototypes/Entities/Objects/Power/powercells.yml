@@ -125,6 +125,9 @@
   - type: Battery
     maxCharge: 720
     startingCharge: 720
+  - type: Tag
+    tags:
+      - PowerCellMedium # Euphoria
 
 - type: entity
   id: PowerCellMediumPrinted
@@ -164,6 +167,9 @@
     difficulty: 3
     recipes:
     - PowerCellHyper
+  - type: Tag
+    tags:
+      - PowerCellHigh # Euphoria
 
 - type: entity
   id: PowerCellHighPrinted

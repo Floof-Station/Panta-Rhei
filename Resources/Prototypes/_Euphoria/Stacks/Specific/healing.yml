@@ -4,3 +4,28 @@
   id: BloodpackOil
   name: stack-bloodpack-oil
   spawn: BloodpackOil
+
+# Me neither
+- type: stack
+  parent: BaseSmallStack
+  id: Cablerepairkit
+  name: stack-cablerepairkit
+  spawn: Cablerepairkit
+
+- type: stack
+  parent: BaseSmallStack
+  id: AdCablerepairkit
+  name: stack-adcablerepairkit
+  spawn: AdCablerepairkit
+
+- type: stack
+  parent: BaseSmallStack
+  id: Plasmarepairkit
+  name: stack-plasmarepairkit
+  spawn: Plasmarepairkit
+
+- type: stack
+  parent: BloodpackOil
+  id: BloodpackSynth
+  name: stack-bloodpack-synth
+  spawn: BloodpackSynth

@@ -1,0 +1,75 @@
+- type: construction
+  id: cablerepairkit
+  graph: Cablerepairkit
+  startNode: start
+  targetNode: cablerepairkit
+  category: construction-category-tools
+  objectType: Item
+
+# - type: construction
+#   id: adcablerepairkit
+#   graph: AdCablerepairkit
+#   startNode: start
+#   targetNode: adcablerepairkit
+#   category: construction-category-tools
+#   objectType: Item
+
+- type: construction
+  id: plasmarepairkit
+  graph: Plasmarepairkit
+  startNode: start
+  targetNode: plasmarepairkit
+  category: construction-category-tools
+  objectType: Item
+
+# Graphs, tried to put them in a subfolder, won't work >:(
+
+- type: constructionGraph
+  id: Cablerepairkit
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cablerepairkit
+      steps:
+      - material: Cable
+        amount: 1
+      - material: CableMV
+        amount: 1
+        doAfter: 4
+  - node: cablerepairkit
+    entity: Cablerepairkit1
+
+# - type: constructionGraph
+#   id: AdCablerepairkit
+#   start: start
+#   graph:
+#   - node: start
+#     edges:
+#     - to: adcablerepairkit
+#       steps:
+#       - material: CableMV
+#         amount: 1
+#       - material: CableHV
+#         amount: 1
+#         doAfter: 5
+#   - node: adcablerepairkit
+#     entity: AdCablerepairkit1
+
+- type: constructionGraph
+  id: Plasmarepairkit
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: plasmarepairkit
+      steps:
+      - material: Plasma
+        amount: 1
+      - material: Glass
+        amount: 1
+      - material: Steel
+        amount: 1
+        doAfter: 7
+  - node: plasmarepairkit
+    entity: Plasmarepairkit1

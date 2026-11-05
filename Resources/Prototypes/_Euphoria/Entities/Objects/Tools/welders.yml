@@ -1,0 +1,31 @@
+- type: entity
+  name: travel emergency welding tool
+  parent: Welder
+  id: WelderTravel
+  description: "A travel emergency welder used during emergencies that fits within strict contenance regulations for travel. Disposable."
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Tools/welder_travel.rsi
+  - type: Item
+    size: Tiny
+    sprite: _Euphoria/Objects/Tools/welder_travel.rsi
+  - type: RefillableSolution
+    solution: Welder
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 20
+        maxVol: 20
+  - type: Tool
+    speedModifier: 0.6
+  - type: PointLight
+    enabled: false
+    radius: 1.0
+    color: orange
+  - type: RequiresEyeProtection
+    statusEffectTime: 5  # Safety first, as a civilian welder, non refuelable, barely able to weld a single door, it better be safe! That's what the orange cap is for.
+  - type: Tag
+    tags:
+      - EmergencyWelder #Starlight, distinction needed for use in crafting recipies.

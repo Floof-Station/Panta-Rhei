@@ -176,6 +176,7 @@
     - id: OxygenTankFilled
     - id: ClothingMaskBreath
     - id: ClothingShoesBootsMag # DeltaV - Give atmos techs boots and insuls
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   id: LockerEngineerFilledHardsuit
@@ -226,6 +227,7 @@
     - id: OxygenTankFilled
     - id: ClothingShoesBootsMag
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   id: ClosetRadiationSuitFilled
@@ -243,6 +245,7 @@
     children:
     - id: ClothingOuterSuitRad
       amount: 2
+    - id: Plasmarepairkit5
     - id: GeigerCounter
       amount: !type:ConstantNumberSelector
         value: 2

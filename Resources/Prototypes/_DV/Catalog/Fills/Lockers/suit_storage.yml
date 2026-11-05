@@ -15,6 +15,7 @@
       amount: 2
     - id: HandheldGPSBasic
       amount: 2
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   id: SuitStorageSecDeltaV
@@ -46,6 +47,7 @@
     - id: OxygenTankFilled
     - id: ClothingOuterHardsuitVoidParamed
     - id: ClothingMaskBreathMedical
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   parent: SuitStorageBase
@@ -81,6 +83,7 @@
     - id: ClothingMaskBreath
     - id: ClothingShoesBootsSecurityMagboots #Added security magboots.
     - id: JetpackSecurityFilled #Sec hardsuits get jetpacks
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   parent: SuitStorageBase
@@ -118,6 +121,7 @@
     - id: DoubleEmergencyOxygenTankFilled
     - id: DoubleEmergencyNitrogenTankFilled
     - id: DoubleEmergencyWaterVaporTankFilled
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   parent: SuitStorageBase
@@ -274,6 +278,7 @@
     - id: ClothingHeadHelmetEVAScience
     - id: ClothingMaskBreath
     - id: GeigerCounter
+    - id: CoolingUnit # Euphoria
 
 - type: entity
   parent: SuitStorageBase

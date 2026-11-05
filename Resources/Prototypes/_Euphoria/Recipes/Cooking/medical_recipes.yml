@@ -1,0 +1,103 @@
+# Only way to craft advanced cable repair kits, hand recipe disabled
+- type: microwaveMealRecipe
+  id: RecipeAdCablerepairkit10
+  name: Advanced Cable Repair Kit
+  result: AdCablerepairkit
+  time: 5
+  group: Medicinal
+  solids:
+    SheetPlastic1: 1
+    # Cablerepairkit: 1
+    SheetSteel1: 4
+  reagents:
+    Carbon: 30
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: RecipeAdCablerepairkit5
+  name: Advanced Cable Repair Kit
+  result: AdCablerepairkit5
+  time: 3
+  group: Medicinal
+  solids:
+    SheetPlastic1: 1
+    # Cablerepairkit: 1
+    SheetSteel1: 3
+  reagents:
+    Carbon: 20
+  recipeType: MedicalAssembler
+
+# Better way to craft plasma applicators, way cheaper than hand crafting
+- type: microwaveMealRecipe
+  id: Plasmarepairkit10
+  name: Plasma Applicator Kit
+  result: Plasmarepairkit
+  time: 6
+  group: Medicinal
+  solids:
+    SheetGlass1: 5
+    SheetSteel1: 5
+  reagents:
+    Plasma: 70
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: Plasmarepairkit5
+  name: Plasma Applicator Kit
+  result: Plasmarepairkit5
+  time: 4
+  group: Medicinal
+  solids:
+    SheetGlass1: 3
+    SheetSteel1: 3
+  reagents:
+    Plasma: 40
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: Oilpack10
+  name: Oilpack
+  result: BloodpackOil
+  time: 6
+  group: Medicinal
+  solids:
+    SterileBag: 2
+  reagents:
+    Oil: 100
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: Oilpack5
+  name: Oilpack
+  result: BloodpackOil5
+  time: 3
+  group: Medicinal
+  solids:
+    SterileBag: 1
+  reagents:
+    Oil: 60
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: BloodpackSynth10
+  name: Synthetic Bloodpack
+  result: BloodpackSynth
+  time: 6
+  group: Medicinal
+  solids:
+    SterileBag: 2
+  reagents:
+    SynthBlood: 100
+  recipeType: MedicalAssembler
+
+- type: microwaveMealRecipe
+  id: BloodpackSynth5
+  name: Synthetic Bloodpack
+  result: BloodpackSynth5
+  time: 3
+  group: Medicinal
+  solids:
+    SterileBag: 1
+  reagents:
+    SynthBlood: 60
+  recipeType: MedicalAssembler

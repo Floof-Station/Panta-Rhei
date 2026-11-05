@@ -57,3 +57,40 @@
           amount: 2
         - id: ChemistryBottleEphedrine
           amount: 2
+
+- type: entity
+  name: silicon advanced first aid kit
+  description: "An advanced kit to help deal with damaged synthetics."
+  parent: Medkit
+  id: IPCMedkitAdvanced
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Specific/Medical/firstaidkits.rsi
+    state: IPCadv
+  - type: Storage
+    whitelist:
+      tags:
+        - IPCrepairkit
+        - WeldingTool
+        - Screwdriver
+    maxItemSize: Small
+    grid:
+    - 0,0,3,1
+  - type: Item
+    size: Large
+    sprite: _Euphoria/Objects/Specific/Medical/firstaidkits.rsi
+    heldPrefix: IPCadv
+
+- type: entity
+  id: IPCMedkitAdvancedFilled
+  suffix: Filled
+  parent: IPCMedkitAdvanced
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: AdCablerepairkit
+        - id: Plasmarepairkit
+        - id: BloodpackOil
+        - id: BloodpackSynth5

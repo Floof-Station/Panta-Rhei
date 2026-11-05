@@ -4,7 +4,7 @@
     sprite: Structures/Storage/Crates/electrical.rsi
     state: icon
   product: CrateIPCRepairKit
-  cost: 900
+  cost: 500
   category: Epistemics
   group: market
 
@@ -15,5 +15,45 @@
     state: jerrycan
   product: CrateIPCBlood
   cost: 250
+  category: Epistemics
+  group: market
+
+- type: cargoProduct
+  id: CrateIPCBloodSynth
+  icon:
+    sprite: _NF/Objects/Specific/Chemistry/jerrycan.rsi
+    state: jerrycan
+  product: CrateIPCBloodSynth
+  cost: 400
+  category: Epistemics
+  group: market
+
+- type: cargoProduct
+  id: CrateIPCIntRepairKit
+  icon:
+    sprite: Structures/Storage/Crates/electrical.rsi
+    state: icon
+  product: CrateIPCIntRepairKit
+  cost: 750
+  category: Epistemics
+  group: market
+
+- type: cargoProduct
+  id: CrateIPCAdRepairKit
+  icon:
+    sprite: _Euphoria/Objects/Specific/Medical/firstaidkits.rsi
+    state: IPCadv
+  product: CrateIPCAdRepairKit
+  cost: 1000
+  category: Epistemics
+  group: market
+
+- type: cargoProduct
+  id: CrateIPCVIPAdRepairKit
+  icon:
+    sprite: _Euphoria/Objects/Specific/Medical/firstaidkits.rsi
+    state: IPCadv
+  product: CrateIPCVIPAdRepairKit
+  cost: 2200
   category: Epistemics
   group: market

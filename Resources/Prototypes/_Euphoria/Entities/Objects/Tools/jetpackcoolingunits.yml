@@ -1,0 +1,150 @@
+- type: entity
+  parent: CoolingUnit
+  abstract: true
+  id: JetCoolingUnitBase
+  name: jetpack cooling unit
+  description: It's a jetpack cooling unit. It can hold 3.5 L of gas, that you probably don't breathe. It needs power.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Tanks/jetpackcoolingunits/cyan.rsi
+    layers:
+    - state: icon
+    - state: battery-0
+      shader: unshaded
+      visible: false
+      map: ["power"]
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 150
+      mvcable: 5
+      lvcable: 5
+  #imports from the GasTankBase and BaseJetpack
+  - type: UseDelay
+    delays:
+      gasTank:
+        length: 1.0
+  - type: ActivatableUI
+    key: enum.SharedGasTankUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.SharedGasTankUiKey.Key:
+        type: GasTankBoundUserInterface
+  # imports from BaseJetpack
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,3,3 # 4x4
+  - type: Clothing
+    quickEquip: false
+    sprite: _Euphoria/Objects/Tanks/jetpackcoolingunits/cyan.rsi
+    slots:
+      - Back
+      - SuitStorage
+  - type: GasTank
+    outputPressure: 21.3
+    air:
+      volume: 3.5
+      temperature: 293.15
+  - type: Jetpack
+    moleUsage: 0.00085
+  - type: Appearance
+  - type: StaticPrice
+    price: 125
+  - type: ReverseEngineering
+    difficulty: 3
+    recipes:
+    - JetpackVoid
+
+#Empty large
+- type: entity
+  id: JetCoolingUnit
+  parent: JetCoolingUnitBase
+  name: jetpack cooling unit
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Tanks/jetpackcoolingunits/cyan.rsi
+    layers:
+    - state: icon
+    - state: battery-0
+      shader: unshaded
+      visible: false
+      map: ["power"]
+
+# Filled large
+- type: entity
+  id: JetCoolingUnitFilled
+  parent: JetCoolingUnit
+  name: jetpack cooling unit
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 9 minutes of thrust
+      volume: 3.5
+      temperature: 293.15
+      moles:
+        Oxygen: 0.7179826675 # oxygen
+        Nitrogen: 0.7179826675 # nitrogen
+
+#Empty mini
+- type: entity
+  id: JetpackMiniCoolingUnit
+  parent: JetCoolingUnitBase
+  name: mini jetpack cooling unit
+  description: It's a jetpack. It can hold 1.2 L of gas.
+  suffix: Empty
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Objects/Tanks/jetpackcoolingunits/mini.rsi
+    layers:
+    - state: icon
+    - state: battery-0
+      shader: unshaded
+      visible: false
+      map: ["power"]
+  - type: Clothing
+    quickEquip: false
+    sprite: _Euphoria/Objects/Tanks/jetpackcoolingunits/mini.rsi
+    slots:
+      - Back
+      - suitStorage
+      - Belt
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+        whitelist:
+          tags:
+          - PowerCellSmall
+          - PotatoBattery # I had to.
+          - PowerCellMedium
+          - PowerCellHigh # It's a mini jetpack, no hypercell, no microcell, and no antique cell.
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      volume: 1.2
+
+# Filled mini
+- type: entity
+  id: JetpackMiniCoolingUnitFilled
+  parent: JetpackMiniCoolingUnit
+  name: mini jetpack cooling unit
+  suffix: Filled
+  components:
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 3 minutes of thrust
+      volume: 1.2
+      temperature: 293.15
+      moles:
+        Oxygen: 0.246165486 # oxygen
+        Nitrogen: 0.246165486 # nitrogen

@@ -1,0 +1,23 @@
+- type: entity
+  parent: CrateEngineering
+  id: CrateEngineeringMiniJetpacks
+  name: Mini Jetpack CoolingUnits
+  description: Two mini jetpacks cooling units for those who want an extra challenge.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: JetpackMiniCoolingUnit
+        amount: 2
+
+- type: entity
+  parent: CrateEngineering
+  id: CrateEngineeringJetpacks
+  name: Jetpack CoolingUnits
+  description: Two jetpacks cooling units for those who want an extra challenge.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage:
+        id: JetCoolingUnit
+        amount: 2
