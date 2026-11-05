@@ -2017,6 +2017,86 @@
     sprite: _Floof/Objects/Fun/bubblynurse.rsi
     slots:
     - HEAD
+
+
+
+- type: entity
+  parent: [BasePlushie, BaseFleshlight]
+  id: StoicPsionicPlushie
+  name: Stoic psionic plushie
+  description: A plushie resembling a mute telepath. The ears are bobbleheads, and there's fake telekinetic hands made out of lace strips that dangle from it like tassels.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/twoplushie.rsi
+    layers:
+    - state: icon
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &toysqueak3
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        volume: 1.6
+        variation: 0.08
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 1
+        variation: 0.08
+  - type: EmitSoundOnLand
+    sound: &toysqueakC
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        volume: 1.6
+        variation: 0.08
+  - type: EmitSoundOnCollide
+    sound: *toysqueakC
+  - type: MeleeWeapon
+    soundHit: *toysqueakC
+  - type: PointLight
+    color: '#E1BAFFFF'
+    radius: 1.8
+    energy: 0.75
+  - type: SolutionContainerManager
+    solutions:
+      fleshlight:
+        maxVol: 30
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+  - type: SolutionTransfer
+    transferAmount: 5
+    maxTransferAmount: 10
+    minTransferAmount: 1
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
+  - type: Item
+    sprite: _Floof/Objects/Fun/twoplushie.rsi
+    size: Tiny
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/twoplushie.rsi
+    slots:
+    - HEAD
     
 - type: entity
   parent: PlushieHuman
@@ -2060,5 +2140,3 @@
     sprite: Objects/Fun/toys.rsi
     slots:
     - HEAD
-
-    
