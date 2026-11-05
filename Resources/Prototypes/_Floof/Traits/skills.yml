@@ -33,6 +33,9 @@
       - Resomi
       - Kitsune
       - Rodentia
+  - !type:TraitDependencyCondition # Floof
+    conflicts:
+      - Tiny # PseudoItem issues
   effects:
     - !type:OverrideCompsEffect
       components:
@@ -42,6 +45,50 @@
             - 0,0,1,4
             - 0,2,3,4
             - 4,0,5,4
+
+- type: trait
+  id: Tiny
+  name: trait-name-tiny
+  description: trait-desc-tiny
+  category: Skills
+  cost: 1
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Small # PseudoItem Change Conflicts
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - Oni # Incompatible cause of damage changes to Oni
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 0.8 # -20%
+  - !type:OverrideCompsEffect
+    components:
+    - type: PlayerToolModifier
+      pryTimeMultiplier: 1.4 # 40% longer Pry time
+    - type: BonusMeleeDamage
+      damageModifierSet:
+        coefficients:
+          Blunt: 0.8
+          Slash: 0.8
+          Piercing: 0.8
+    - type: BonusStaminaDamage
+      multiplier: 0.8
+    - type: PseudoItem
+      size: Huge
+    - type: Carriable
+      freeHandsRequired: 1 # Tiny ahh character
+    - type: CanEscapeInventory
+      baseResistTime: 8 # Takes longer cause you're tiny
+  - !type:ModifyCritDeadThresholdEffect
+    deadModifier: 0.8 # You are dead, No big surprise -20%
+    critModifier: 0.8 # You are tiny. Of course you shall be easy to be sent to medical -20%
+  #- type: Damageable # Not sure how to get this working. The Modifier is *there* but it isn't *taking* so...I give up for now.
+    #damageModifierSet: TinyTrait # Increase physical damage taken
 
 # =================================================== #
 

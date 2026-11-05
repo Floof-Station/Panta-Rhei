@@ -1,5 +1,6 @@
 using Content.Shared.Temperature.Components;
 using Content.Shared._FarHorizons.Silicons.IPC.Components;
+using Content.Shared._Starlight.CoolingUnit;
 using Content.Shared.Alert;
 using Content.Shared.Atmos;
 using Robust.Shared.Prototypes;
@@ -56,9 +57,12 @@ public sealed partial class IPCSystem
             return false;
 
         foreach (var slotID in ent.Comp.ExternalCoolingCheckSlots)
-            if (_container.TryGetContainer(ent, slotID, out var container) && container.ContainedEntities.Count == 1 && (_tag.HasTag(container.ContainedEntities[0], ent.Comp.ExternalCoolingTag)
-                // Euph - no cooling units.
-                /*|| (HasComp<CoolingUnitComponent>(container.ContainedEntities[0]) && TryComp<ItemToggleComponent>(container.ContainedEntities[0], out var itemtoggle) && itemtoggle.Activated)*/ ))
+            if (_container.TryGetContainer(ent, slotID, out var container) &&
+                container.ContainedEntities.Count == 1 &&
+                (_tag.HasTag(container.ContainedEntities[0], ent.Comp.ExternalCoolingTag) ||
+                 HasComp<CoolingUnitComponent>(container.ContainedEntities[0]) &&
+                 TryComp<ItemToggleComponent>(container.ContainedEntities[0], out var itemToggle) &&
+                 itemToggle.Activated))
             {
                 ent.Comp.FansCurrentlyOff = false;
                 ent.Comp.CanSwitchModeIn = TimeSpan.Zero;

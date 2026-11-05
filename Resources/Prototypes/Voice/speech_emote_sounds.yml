@@ -502,6 +502,12 @@
   sounds:
     Scream:
       collection: SiliconScreams
+    Laugh:
+      path: /Audio/_EE/Voice/IPC/robot-laugh_3.ogg
+    Crying:
+      path: /Audio/_EE/Voice/IPC/cry_robot_1.ogg
+    Whistle:
+      path: /Audio/_EE/Voice/IPC/pai_whistle.ogg
     Beep:
       path: /Audio/Machines/twobeep.ogg
     Chime:
@@ -654,6 +660,8 @@
         volume: -6
     Salute:
       collection: Salutes
+    Blink: # Imp
+      collection: Blinks # Imp - Sura: Technically moths don't have eyelids, could be why it was excluded. 
 
 # mobs
 - type: emoteSounds
