@@ -49,8 +49,8 @@
     - id: DiamondOre1
       amount: 1
   - type: MovementSpeedModifier
-    baseWalkSpeed: 5
-    baseSprintSpeed: 7
+    baseWalkSpeed: 3 # Euph - was 5.
+    baseSprintSpeed: 5 # Euph - was 7.
   - type: BatteryAmmoProvider
     proto: WatcherBolt
     fireCost: 50
