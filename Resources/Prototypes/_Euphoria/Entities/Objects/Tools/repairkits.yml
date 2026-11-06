@@ -1,0 +1,242 @@
+- type: entity
+  parent: BaseItem
+  id: Basekititem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - IPCrepairkit
+  - type: Sprite
+    sprite: _Euphoria/Objects/Tools/repairkit.rsi
+  - type: Item
+    size: Small
+    sprite: _Euphoria/Objects/Tools/repairkit.rsi
+    heldPrefix: cablerepairkit
+  - type: StaticPrice
+    price: 0
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 15
+
+- type: entity
+  name: cable repair kit
+  description: A bundle of pre-managed cables designed to rewire an IPC or borg more efficiently.
+  parent: Basekititem
+  id: Cablerepairkit
+  suffix: Full
+  components:
+  - type: Sprite
+    state: cablerepairkit
+  - type: Item
+    heldPrefix: cablerepairkit
+  - type: Construction
+    graph: Cablerepairkit
+    node: cablerepairkit
+  - type: Extractable
+    grindableSolutionName: cablerepairkit
+  - type: SolutionContainerManager
+    solutions:
+      cablerepairkit:
+        reagents:
+        - ReagentId: Iron
+          Quantity: 3
+        - ReagentId: Copper
+          Quantity: 2
+  - type: ConditionalHealing
+    healingDefinitions:
+      - allowedTags: [ IPC ]
+        healing:
+          damageContainers:
+          - Robotic
+          - Silicon
+          delay: 2.3
+          damage:
+            types:
+              Heat: -5
+              Cold: -5
+              Shock: -5
+              Caustic: -1.5
+          healingBeginSound:
+            # path: "/Audio/Items/multitool_drop.ogg"
+            path: "/Audio/Items/Medical/brutepack_begin.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+          healingEndSound:
+            # path: "/Audio/Items/wirecutter.ogg"
+            path: "/Audio/Items/Medical/brutepack_end.ogg"
+            params:
+              volume: 1.0
+  - type: Stack
+    stackType: Cablerepairkit
+    count: 10
+  - type: StackPrice
+    price: 2.5
+
+- type: entity
+  id: Cablerepairkit1
+  parent: Cablerepairkit
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: Cablerepairkit
+    count: 1
+
+- type: entity
+  id: Cablerepairkit5
+  parent: Cablerepairkit
+  suffix: Half-Full
+  components:
+  - type: Stack
+    stackType: Cablerepairkit
+    count: 5
+
+- type: entity
+  name: advanced cable repair kit
+  description: A bundle of pre-managed cables designed to rewire an IPC or borg more efficiently.
+  parent: Basekititem
+  id: AdCablerepairkit
+  suffix: Full
+  components:
+  - type: Sprite
+    state: adcablerepairkit
+  - type: Item
+    heldPrefix: adcablerepairkit
+  # - type: Construction   # disabled handcrafting
+  #   graph: AdCablerepairkit
+  #   node: adcablerepairkit
+  - type: Extractable
+    grindableSolutionName: adcablerepairkit
+  - type: SolutionContainerManager
+    solutions:
+      adcablerepairkit:
+        reagents:
+        - ReagentId: Iron
+          Quantity: 5
+        - ReagentId: Copper
+          Quantity: 3
+        - ReagentId: Carbon
+          Quantity: 1
+  - type: ConditionalHealing
+    healingDefinitions:
+      - allowedTags: [ IPC ]
+        healing:
+          damageContainers:
+          - Robotic
+          - Silicon
+          delay: 4
+          damage:
+            types:
+              Heat: -10
+              Cold: -10
+              Shock: -10
+              Caustic: -8
+          healingBeginSound:
+            # path: "/Audio/Items/multitool_drop.ogg"
+            path: "/Audio/Items/Medical/brutepack_begin.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+          healingEndSound:
+            # path: "/Audio/Items/wirecutter.ogg"
+            path: "/Audio/Items/Medical/brutepack_end.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+  - type: Stack
+    stackType: AdCablerepairkit
+    count: 10
+  - type: StackPrice
+    price: 4
+
+- type: entity
+  name: advanced cable repair kit
+  id: AdCablerepairkit1
+  parent: AdCablerepairkit
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: AdCablerepairkit
+    count: 1
+
+- type: entity
+  id: AdCablerepairkit5
+  parent: AdCablerepairkit
+  suffix: Half-Full
+  components:
+  - type: Stack
+    stackType: AdCablerepairkit
+    count: 5
+
+- type: entity
+  name: plasma applicator kit
+  description: A neat applicator that applies plasma to an IPC or borg without having to handle a dangerous material bare-handed.
+  parent: Basekititem
+  id: Plasmarepairkit
+  suffix: Full
+  components:
+  - type: Sprite
+    state: plasmarepairkit
+  - type: Item
+    heldPrefix: plasmarepairkit
+  - type: Construction
+    graph: Plasmarepairkit
+    node: plasmarepairkit
+  - type: Extractable
+    grindableSolutionName: plasmarepairkit
+  - type: SolutionContainerManager
+    solutions:
+      plasmarepairkit:
+        reagents:
+        - ReagentId: Plasma
+          Quantity: 3
+        - ReagentId: Fersilicite
+          Quantity: 2
+  - type: ConditionalHealing
+    healingDefinitions:
+      - allowedTags: [ IPC ]
+        healing:
+          damageContainers:
+          - Robotic
+          - Silicon
+          delay: 1.2
+          damage:
+            types:
+              Poison: -20
+              Radiation: -20
+          adjustEyeDamage: -1
+          healingBeginSound:
+            # path: "/Audio/Items/Flare/flare_on.ogg"
+            path: "/Audio/Items/Medical/brutepack_begin.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+          healingEndSound:
+            # path: "/Audio/Items/Stamp/automatic_stamp.ogg"
+            path: "/Audio/Items/Medical/brutepack_end.ogg"
+            params:
+              volume: 1.0
+              variation: 0.125
+  - type: Stack
+    stackType: Plasmarepairkit
+    count: 10
+  - type: StackPrice
+    price: 10
+
+- type: entity
+  id: Plasmarepairkit1
+  parent: Plasmarepairkit
+  suffix: Single
+  components:
+  - type: Stack
+    stackType: Plasmarepairkit
+    count: 1
+
+- type: entity
+  id: Plasmarepairkit5
+  parent: Plasmarepairkit
+  suffix: Half-Full
+  components:
+  - type: Stack
+    stackType: Plasmarepairkit
+    count: 5

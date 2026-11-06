@@ -13,10 +13,14 @@
       visible: false
       map: ["power"]
   - type: Appearance
-  - type: Item
-    size: Large
+  - type: Item #euphoria - So the normal cooling unit doesn't take as much as a jetpack, but more like a normal gas tank
+    size: Normal
     shape:
-    - 0,0,2,2 # 3x3
+    - 0,0,1,1 # 2x2
+  # - type: Item
+    # size: Large
+    # shape:
+    # - 0,0,2,2 # 3x3
   - type: Clothing
     quickEquip: false
     sprite: _Starlight/Objects/Tanks/coolingunit.rsi
@@ -61,9 +65,13 @@
     layers:
     - state: eicon
   - type: Item
-    size: Normal
+    size: Normal #euphoria - So the small cooling unit doesn't take as much as a large gas tank, but is like an emergency gas tank.
     shape:
-    - 0,0,1,1 # 2x2
+    - 0,0,1,0
+    # size: Normal
+    # shape:
+    # - 0,0,1,0
+    # - 0,1,0,1 # 2x2
   - type: Clothing
     sprite: null
     slots:
@@ -78,6 +86,7 @@
         whitelist:
           tags:
           - PowerCellSmall
+          - PotatoBattery # I had to.
   - type: PhysicalComposition
     materialComposition:
       Steel: 100

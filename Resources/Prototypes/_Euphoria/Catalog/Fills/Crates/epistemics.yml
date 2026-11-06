@@ -9,25 +9,87 @@
       entity_storage: !type:AllSelector
         children:
         - id: WelderMini
-          amount: 2
+          amount: 1
         - id: JerryCanWeldingFuel
         - id: ClothingHeadHatWelding
-          amount: 2
+          amount: 1
         - id: CableApcStack
           amount: 2
         - id: CableMVStack
         - id: BloodpackOil
-          amount: 3
+          amount: 2
 
 - type: entity
   id: CrateIPCBlood
   parent: CrateElectrical
   name: IPC Oil Packs
-  description: A crate with several oil packs, useful for repairing any IPC.
+  description: A crate with several oil packs, useful for repairing most IPCs.
   components:
   - type: EntityTableContainerFill
     containers: 
       entity_storage: !type:AllSelector
         children:
         - id: BloodpackOil
+          amount: 3
+
+- type: entity
+  id: CrateIPCBloodSynth
+  parent: CrateElectrical
+  name: IPC Synthblood Packs
+  description: A crate with several synthblood packs, useful for repairing some IPCs and organics.
+  components:
+  - type: EntityTableContainerFill
+    containers: 
+      entity_storage: !type:AllSelector
+        children:
+        - id: BloodpackSynth
+          amount: 3
+
+- type: entity
+  id: CrateIPCIntRepairKit
+  parent: CrateElectrical
+  name: IPC Intermediary Repair Supplies
+  description: A crate packed with intermediary repair supplies for IPC crewmembers, with proper repair kits instead of entangled cable coils.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: WelderMini
+          amount: 2
+        - id: JerryCanWeldingFuel
+        - id: ClothingHeadHatWeldingMaskFlame
+          amount: 2
+        - id: Cablerepairkit
+          amount: 3
+        - id: BloodpackOil
+          amount: 3
+
+- type: entity
+  id: CrateIPCAdRepairKit
+  parent: CrateElectrical
+  name: Silicon Repair Supplies - Advanced
+  description: A crate for advanced repair supplies for IPC crewmembers. Single silicon advanced first aid kit. No Welder.
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: IPCMedkitAdvancedFilled
+
+
+- type: entity
+  id: CrateIPCVIPAdRepairKit
+  parent: CrateElectrical
+  name: Silicon Repair Supplies - Premium
+  description: A crate packed with advanced repair supplies for IPC crewmembers. Three silicon advanced first aid kit and high  quality welding supplies!
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: WelderIndustrial
+        - id: JerryCanWeldingFuel
+        - id: ClothingHeadHatWeldingMaskFlameBlue
+        - id: IPCMedkitAdvancedFilled
           amount: 3

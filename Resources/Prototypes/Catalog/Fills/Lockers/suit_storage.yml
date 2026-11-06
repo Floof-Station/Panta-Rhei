@@ -19,6 +19,7 @@
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVA
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
 
 #Basic EVA (Big Ass Helmet)
 - type: entity
@@ -39,6 +40,7 @@
     - id: ClothingOuterHardsuitEVA
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
 
 #Emergency EVA
 - type: entity
@@ -58,6 +60,7 @@
     - id: OxygenTankFilled
     - id: ClothingOuterSuitEmergency
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
 
 #Prisoner EVA
 - type: entity
@@ -78,6 +81,7 @@
     - id: ClothingOuterHardsuitEVAPrisoner
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
 
 #Syndicate EVA
 - type: entity
@@ -98,6 +102,7 @@
     - id: ClothingOuterEVASuitSyndicate
     - id: ClothingHeadHelmetSyndicate
     - id: ClothingMaskGasSyndicate
+    - id: CoolingUnit # Euphoria
 
 #Pirate EVA
 - type: entity
@@ -117,6 +122,7 @@
     - id: OxygenTankFilled
     - id: ClothingOuterHardsuitPirateEVA
     - id: ClothingMaskGas
+    - id: CoolingUnit # Euphoria
 
 #NTSRA Voidsuit
 - type: entity
@@ -187,6 +193,7 @@
     - id: NitrogenTankFilled
     - id: ClothingOuterHardsuitSecurity
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
 
 #CE's hardsuit
 - type: entity
@@ -298,6 +305,7 @@
     - id: ClothingOuterHardsuitSyndie
     - id: ClothingShoesBootsMagSyndie
     - id: ClothingMaskGasSyndicate
+    - id: CoolingUnit # Euphoria
 
 #Pirate Captain's hardsuit
 - type: entity
@@ -317,6 +325,7 @@
     - id: OxygenTankFilled
     - id: ClothingOuterHardsuitPirateCap
     - id: ClothingMaskGas
+    - id: CoolingUnit # Euphoria
 
 #Wizard
 - type: entity
@@ -335,6 +344,7 @@
     children:
     - id: OxygenTankFilled
     - id: ClothingMaskBreath
+    - id: CoolingUnit # Euphoria
     # TODO: Gone until reworked to have no space protection
     #- id: ClothingOuterHardsuitWizard
     #- id: JetpackVoidFilled

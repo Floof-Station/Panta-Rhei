@@ -1,0 +1,21 @@
+#More economic way than to use cable and handcraft. Faster too.
+- type: latheRecipe
+  id: Cablerepairkit
+  result: Cablerepairkit1
+  categories:
+  - Parts
+  completetime: 0.25
+  materials:
+    Steel: 45
+
+#The safe non-tider welder, the plastic knife of sparks. Cheap too!
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: WelderTravel
+  result: WelderTravel
+  categories:
+  - Tools
+  completetime: 1.5
+  materials:
+    Steel: 150
+    Plastic: 50

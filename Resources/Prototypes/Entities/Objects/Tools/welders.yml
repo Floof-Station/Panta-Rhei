@@ -221,6 +221,7 @@
   - type: Tag
     tags:
       - EmergencyWelder #Starlight, distinction needed for use in crafting recipies.
+      - WeldingTool # Euphoria, tag got overriden by this^
 
 - type: entity
   parent: [ Welder, BaseXenoborgContraband ]
