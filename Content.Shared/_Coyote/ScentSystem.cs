@@ -75,29 +75,7 @@ public sealed class ScentSystem : EntitySystem
             return;
         if (!TryComp<SmellerComponent>(args.User, out var smellerComp))
             return;
-        if (args.CanInteract)
-        {
-            InnateVerb verb = new() // Floofstation - changed to InnateVerb
-            {
-                Text = "Smell",
-                Priority = -19, // Floofstation - there's no way you want to randomly do this to your co-worker.
-                Category = SharedInteractionVerbsSystem.InteractionCategory, // Floofstation - this doesn't belong here, but we'll leave it to avoid cluttering the verb ui
-                Disabled = !_interact.InRangeUnobstructed(
-                    args.User,
-                    args.Target,
-                    2f,
-                    CollisionGroup.InteractImpassable),
-                Act = () =>
-                {
-                    DirectSmellScent(
-                        args.User,
-                        args.Target,
-                        smellerComp,
-                        scentComp);
-                }
-            };
-            args.Verbs.Add(verb);
-        }
+
         // and a verb to toggle being able to smell this smelly beast
         // trust me, its needed
         if (args.User == args.Target)

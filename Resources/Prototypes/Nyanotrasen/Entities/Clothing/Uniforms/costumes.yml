@@ -125,7 +125,8 @@
     #femaleMask: NoMask
 
 - type: entity
-  parent: ClothingUniformBase
+  #parent: ClothingUniformBase
+  parent: ClothingUndergarmentTopSwitchableBase #Euphoria | Swimsuit switchable
   id: ClothingUniformSwimsuitBlue
   name: blue swimsuit
   description: A form-fitting, hydrodynamic blue swimsuit.
@@ -134,6 +135,11 @@
     sprite: Nyanotrasen/Clothing/Uniforms/Costume/swimsuit.rsi
   - type: Clothing
     sprite: Nyanotrasen/Clothing/Uniforms/Costume/swimsuit.rsi
+    clothingVisuals: #Euphoria | Swimsuit under clothes good
+      undergarmentTop:
+      - state: equipped-INNERCLOTHING
+      innerClothing:
+      - state: equipped-INNERCLOTHING
     #femaleMask: UniformTop
 
 ## old schoolgirl uniforms

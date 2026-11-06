@@ -7,7 +7,7 @@
   flavor: fruity
   color: "#45072f"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &PomelustineMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -59,6 +59,7 @@
             max: 0.1
           - !type:ConsentCondition
             consent: Aphrodisiacs
+    Digestion: *PomelustineMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Philterex
@@ -69,7 +70,7 @@
   flavor: sweet
   color: "#ae0072"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &PhilterexMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -147,6 +148,7 @@
             max: 0.1
           - !type:ConsentCondition
             consent: Aphrodisiacs
+    Digestion: *PhilterexMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Libidozenithizine
@@ -157,7 +159,7 @@
   flavor: spooky
   color: "#c90084"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &LibidozenithizineMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -209,3 +211,4 @@
             max: 0.1
           - !type:ConsentCondition
             consent: Aphrodisiacs
+    Digestion: *LibidozenithizineMetabolism # Euphoria - Pill Compatibility Patch

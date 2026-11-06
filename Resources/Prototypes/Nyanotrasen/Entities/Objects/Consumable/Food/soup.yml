@@ -241,7 +241,8 @@
           Quantity: 8
   - type: Tag
     tags:
-      - ClothMade # Mothic Food
+      # - ClothMade # Mothic Food - Euphoria - Removed ClothMade so this food can get the Meat tag without being able to feed everyone
+      - Meat # Euphoria - Added so Meat Eaters can eat the dish with meat
 
 - type: entity
   name: cornmeal porridge

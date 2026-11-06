@@ -1,4 +1,4 @@
-﻿using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage;
 using Content.Shared.Inventory;
 using Robust.Shared.Audio;
@@ -65,4 +65,14 @@ public sealed partial class BloodSuckerComponent : Component
     /// </summary>
     [DataField("webRequired")]
     public bool WebRequired = false;
+
+    // ***END INJECT WHEN SUCC***
+
+    /// <summary>
+    /// Should the the solution be spilled on the floor if we
+    /// can't put it in a stomach for some reason?
+    /// </summary>
+    [DataField("spillIfTransferFails")]
+    public bool SpillIfTransferFails = true;
+
 }

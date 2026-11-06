@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://github.com/tgstation/tgstation/commit/53d1f1477d22a11a99c6c6924977cd431075761b, adapted by @themageofmicrosoftpaints on discord",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "gleeble",
+            "directions": 4
+        },
+        {
+            "name": "gleeble_dead"
+        },
+        {
+            "name": "gleeble_glow",
+            "directions": 4
+        },
+        {
+            "name": "gleeble_dead_glow"
+        },
+        {
+            "name": "gnarp",
+            "directions": 4
+        },
+        {
+            "name": "gnarp_dead"
+        },
+        {
+            "name": "gnarp_glow",
+            "directions": 4
+        },
+        {
+            "name": "gnarp_dead_glow"
+        }
+    ]
+}

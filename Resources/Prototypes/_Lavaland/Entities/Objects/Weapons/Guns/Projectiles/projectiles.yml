@@ -1,0 +1,40 @@
+- type: entity
+  id: RapidBulletKinetic # Used for PK repeater and pistol
+  name: rapid kinetic bolt
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 8
+  - type: TimedDespawn
+    lifetime: 0.22 # roughly 5.5 tiles
+
+- type: entity
+  id: WeakBulletKinetic # Used for PK shotgun
+  categories: [ HideSpawnMenu ]
+  parent: RapidBulletKinetic
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+
+- type: entity
+  id: PelletKinetic
+  categories: [ HideSpawnMenu ]
+  parent: WeakBulletKinetic
+  components:
+  - type: GatheringProjectile
+    probability: 0.5
+
+- type: entity
+  id: PelletKineticSpread
+  categories: [ HideSpawnMenu ]
+  parent: PelletKinetic
+  components:
+  - type: ProjectileSpread
+    proto: PelletKinetic
+    count: 4
+    spread: 20

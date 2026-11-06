@@ -7,7 +7,7 @@
   flavor: medicine
   color: "#ebbce9"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &SerenitolMetabolism  # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -43,6 +43,7 @@
           - !type:ReagentCondition
             reagent: Serenitol
             max: 0.1
+    Digestion: *SerenitolMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Neurozenium
@@ -53,7 +54,7 @@
   flavor: metallic
   color: "#382f6b"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &NeurozeniumMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.02
       effects:
       - !type:PopupMessage
@@ -112,6 +113,7 @@
         - !type:ReagentCondition
           reagent: Neurozenium
           max: 0.1
+    Digestion: *NeurozeniumMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Blissifylovene
@@ -122,7 +124,7 @@
   flavor: bitter
   color: "#f2ff00"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &BlissifyloveneMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.01
       effects:
       - !type:SuppressAddiction
@@ -226,6 +228,7 @@
           - !type:ReagentCondition
             reagent: Blissifylovene
             max: 0.1
+    Digestion: *BlissifyloveneMetabolism # Euphoria - Pill Compatibility Patch
 
 
 - type: reagent
@@ -237,7 +240,7 @@
   flavor: bitter
   color: "#634e3a"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &CalmafluxineMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.03
       effects:
       - !type:PopupMessage
@@ -267,6 +270,7 @@
           - !type:ReagentCondition
             reagent: Calmafluxine
             max: 0.1
+    Digestion: *CalmafluxineMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Tranquinase
@@ -277,7 +281,7 @@
   flavor: sweet
   color: "#2e3b52"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &TranquinaseMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.02
       effects:
       - !type:PopupMessage
@@ -349,6 +353,7 @@
           - !type:ReagentCondition
             reagent: Tranquinase
             max: 0.1
+    Digestion: *TranquinaseMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Equilibrazine
@@ -359,7 +364,7 @@
   flavor: metallic
   color: "#291816"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &EquilibrazineMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.01
       effects:
       - !type:PopupMessage
@@ -433,6 +438,7 @@
           - !type:ReagentCondition
             reagent: Equilibrazine
             max: 0.1
+    Digestion: *EquilibrazineMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Stubantazine
@@ -443,7 +449,7 @@
   flavor: sour
   color: "#6bb3b5"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &StubantazineMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.02
       effects:
       - !type:ModifyStatusEffect
@@ -493,6 +499,7 @@
           - !type:ReagentCondition
             reagent: Stubantazine
             max: 0.2
+    Digestion: *StubantazineMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Soretizone
@@ -503,7 +510,7 @@
   flavor: tingly
   color: "#2e2c2c"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &SoretizoneMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.01
       effects:
       - !type:ModifyStatusEffect
@@ -543,6 +550,7 @@
           - !type:ReagentCondition
             reagent: Soretizone
             max: 0.1
+    Digestion: *SoretizoneMetabolism # Euphoria - Pill Compatibility Patch
 
 - type: reagent
   id: Agonolexyne
@@ -553,7 +561,7 @@
   flavor: nothing
   color: "#ffc7c7"
   metabolisms:
-    Bloodstream:
+    Bloodstream: &AgonolexyneMetabolism # Euphoria - Pill Compatibility Patch
       metabolismRate : 0.01
       effects:
       - !type:GenericStatusEffect
@@ -613,3 +621,4 @@
           - !type:ReagentCondition
             reagent: Agonolexyne
             max: 0.1
+    Digestion: *AgonolexyneMetabolism # Euphoria - Pill Compatibility Patch

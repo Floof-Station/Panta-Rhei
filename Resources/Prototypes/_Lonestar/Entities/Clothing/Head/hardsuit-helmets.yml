@@ -1,0 +1,43 @@
+
+- type: entity
+  parent: ClothingHeadHelmetHardsuitSyndieCommander
+  id: ClothingHeadHelmetHardsuitSolarianM86
+  name: TSMC M86 combat hardsuit helmet
+  description: Stare into the industrial complex, and it stares back.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Head/HardsuitHelmets/m86.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Head/HardsuitHelmets/m86.rsi
+  - type: ToggleableVisuals 
+    spriteLayer: light
+    clothingVisuals:
+      head:
+      - sprite: _Lonestar/Clothing/Head/HardsuitHelmets/m86.rsi
+        state: on-equipped-HELMET-light
+        shader: unshaded
+      head-vox:
+      - sprite: _Lonestar/Clothing/Head/HardsuitHelmets/m86.rsi
+        state: on-equipped-HELMET-vox-light
+        shader: unshaded
+      head-reptilian:
+      - sprite: _Lonestar/Clothing/Head/HardsuitHelmets/m86.rsi
+        state: on-equipped-HELMET-reptilian-light
+        shader: unshaded
+  - type: PointLight
+    color: orange
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+  - type: NightVision
+    color: "#FFFFFF"
+    isEquipment: true
+  - type: ThermalVision
+    isEquipment: true

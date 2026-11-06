@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadSolarianBeret
+  name: Solarian Armed Forces beret
+  description: A beret worn by Officers and Solarian Special Forces.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Head/tsfberet.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Head/tsfberet.rsi

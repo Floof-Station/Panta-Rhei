@@ -1,0 +1,13 @@
+﻿- type: entity
+  parent: BaseVendingMachineRestock
+  id: VendingMachineRestockPaintVendor
+  name: paint station restock box
+  description: More paint for more huffing. You can paint stuff with it as well, I guess.
+  components:
+  - type: VendingMachineRestock
+    canRestock:
+    - PaintVendInventory
+  - type: Sprite
+    sprite: _Euphoria/Structures/Machines/VendingMachines/paint.rsi
+    layers:
+    - state: refill-paint

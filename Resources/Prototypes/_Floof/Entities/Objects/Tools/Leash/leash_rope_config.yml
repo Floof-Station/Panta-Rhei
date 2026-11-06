@@ -46,6 +46,7 @@
         density: 30 # Has to weigh much more to lower jittering. Leashes are used to move specifically kinemic controllers which like to create jitters when moving.
         mask:
         - ItemMask
+        - LowImpassable # Ditto about airlocks in the parent
         restitution: 0.3
         friction: 0.2
 

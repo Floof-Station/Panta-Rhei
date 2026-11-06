@@ -1,0 +1,32 @@
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSolarianMarine
+  name: Solarian Marine jumpsuit
+  description: A combat jumpsuit worn by Solarian Marines.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Uniforms/tsfmc_digital.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Uniforms/tsfmc_digital.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSolarianNavy
+  name: Solarian Navy jumpsuit
+  description: A jumpsuit worn by the Solarian Navy.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Uniforms/tsfmc.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Uniforms/tsfmc.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformSolarianEngineerNavy
+  name: Solarian Engineer's jumpsuit
+  description: Worn by Naval Engineers within the Solarian Military.
+  components:
+  - type: Sprite
+    sprite: _Lonestar/Clothing/Uniforms/tsfmcengi.rsi
+  - type: Clothing
+    sprite: _Lonestar/Clothing/Uniforms/tsfmcengi.rsi

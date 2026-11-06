@@ -1,5 +1,6 @@
 - type: entity
   parent: PaintBase
+  name: pink death paint
   id: DeathPaint
   components:
   - type: ColorPaint
@@ -22,6 +23,7 @@
 
 - type: entity
   parent: PaintBase
+  name: red death paint
   id: DeathPaintTwo
   components:
   - type: ColorPaint

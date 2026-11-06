@@ -133,7 +133,7 @@
         volume: 1
 
 - type: entity
-  parent: PlushieHuman
+  parent: [BaseFleshlight, PlushieHuman]
   id: PlushieHardcoreDj
   name: Hardcore DJ plushie
   description: You're not sure how, you're not sure why, but you're overwhelmed with the urge to deepfry this thing.
@@ -144,7 +144,7 @@
   - type: UseDelay
     delay: 3.0
   - type: EmitSoundOnUse
-    sound:
+    sound: &useDJ
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_purr1.ogg
       params:
         volume: 1
@@ -164,6 +164,38 @@
       params:
         variation: 0.05
         volume: 4
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+    useSound: *useDJ
+  - type: SolutionContainerManager
+    solutions:
+      fleshlight:
+        maxVol: 10
+  - type: SolutionTransfer
+    transferAmount: 5
+    maxTransferAmount: 10
+    minTransferAmount: 1
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
 
 - type: entity
   parent: PlushieHuman
@@ -1856,7 +1888,7 @@
 
 - type: entity
   parent: [BaseFleshlight, PlushieExperiment]
-  id: PlushieRescueFox 
+  id: PlushieRescueFox
   name: Rescue Fox Plushie
   description: This plushie struggles to stand up straight but still wills itself to do so in order to sit nicely on your shelf. The pin atop the beret is both made of real silver and not removable. Yaps sourced from a real arctic fox!
   components:
@@ -1930,3 +1962,181 @@
     sound: *robot-scream
   - type: MeleeWeapon
     soundHit: *robot-scream
+
+- type: entity
+  parent: [BaseFleshlight, PlushieHuman, Dropper]
+  id: BubblyNursePlushie
+  name: bubbly nurse plushie
+  description: A plushie depicting a boiling orange slime in a nurse outfit. It always seems to fall over no matter how you prop it up. It rumbles slightly when you squeeze it.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    layers:
+    - state: icon
+    - state: icon1
+      map: ["enum.SolutionContainerLayers.Fill"]
+      visibile: false
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    fillBaseName: icon
+    inHandsMaxFillLevels: 1
+    inHandsFillBaseName: -fill-
+  - type: UseDelay
+    delay: 1.0
+  - type: EmitSoundOnActivate
+    sound: *slimeLaugh
+  - type: EmitSoundOnUse
+    sound: &slimeBubble
+      path: /Audio/_Floof/Voice/Slime/s_bubble.ogg
+  - type: EmitSoundOnLand
+    sound: &fallTired
+      path: /Audio/Effects/bodyfall4.ogg
+  - type: EmitSoundOnCollide
+    sound: &slimeScreamF
+      path: /Audio/_Floof/Voice/Slime/slime_scream_f1.ogg
+  - type: MeleeWeapon
+    soundHit: *slimeSquish
+  - type: SolutionContainerManager
+    solutions:
+      injector:
+        maxVol: 5
+      fleshlight:
+        maxVol: 10
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+    useSound:
+      collection: Bubbles
+  - type: Item
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    size: Tiny
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/bubblynurse.rsi
+    slots:
+    - HEAD
+
+
+
+- type: entity
+  parent: [BasePlushie, BaseFleshlight]
+  id: StoicPsionicPlushie
+  name: Stoic psionic plushie
+  description: A plushie resembling a mute telepath. The ears are bobbleheads, and there's fake telekinetic hands made out of lace strips that dangle from it like tassels.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/twoplushie.rsi
+    layers:
+    - state: icon
+  - type: UseDelay
+    delay: 2.0
+  - type: EmitSoundOnActivate
+    sound: &toysqueak3
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        volume: 1.6
+        variation: 0.08
+  - type: EmitSoundOnUse
+    sound:
+      path: /Audio/Items/Toys/toysqueak1.ogg
+      params:
+        volume: 1
+        variation: 0.08
+  - type: EmitSoundOnLand
+    sound: &toysqueakC
+      path: /Audio/Items/Toys/toysqueak2.ogg
+      params:
+        volume: 1.6
+        variation: 0.08
+  - type: EmitSoundOnCollide
+    sound: *toysqueakC
+  - type: MeleeWeapon
+    soundHit: *toysqueakC
+  - type: PointLight
+    color: '#E1BAFFFF'
+    radius: 1.8
+    energy: 0.75
+  - type: SolutionContainerManager
+    solutions:
+      fleshlight:
+        maxVol: 30
+  - type: Edible
+    edible: Drink
+    destroyOnEmpty: false
+    utensil: None
+    solution: fleshlight
+  - type: SolutionTransfer
+    transferAmount: 5
+    maxTransferAmount: 10
+    minTransferAmount: 1
+    canChangeTransferAmount: true
+  - type: UserInterface
+    interfaces:
+      enum.TransferAmountUiKey.Key:
+        type: TransferAmountBoundUserInterface
+  - type: Spillable
+    solution: fleshlight
+  - type: DrawableSolution
+    solution: fleshlight
+  - type: RefillableSolution
+    solution: fleshlight
+  - type: DrainableSolution
+    solution: fleshlight
+  - type: ExaminableSolution
+    solution: fleshlight
+  - type: Tag
+    tags:
+    - Fleshlight
+  - type: Item
+    sprite: _Floof/Objects/Fun/twoplushie.rsi
+    size: Tiny
+  - type: Clothing
+    quickEquip: false
+    sprite: _Floof/Objects/Fun/twoplushie.rsi
+    slots:
+    - HEAD
+    
+- type: entity
+  parent: PlushieHuman
+  id: MoodyChemistPlushie
+  name: moody chemist plushie
+  description: You get a feeling that this plush doesn't want you holding it. If you address it calmly, you might just hear back a "greetings". The antennae and wings are made of a soft faux fur.
+  components:
+  - type: Sprite
+    sprite: _Floof/Objects/Fun/moodychemist.rsi
+    state: icon
+  - type: UseDelay
+    delay: 1.0
+  - type: Item
+    sprite: _Floof/Objects/Fun/moodychemist.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        shader: shaded
+      right:
+      - state: inhand-right
+        shader: shaded
+    heldPrefix: plushielizard
+  - type: EmitSoundOnActivate
+    sound: &mothSigh
+      path: /Audio/_Starlight/Voice/Moth/moth_sigh.ogg
+  - type: EmitSoundOnUse
+    sound: *mothSigh
+  - type: EmitSoundOnLand
+    sound: *mothScream
+  - type: EmitSoundOnCollide
+    sound: *mothScream
+  - type: MeleeWeapon
+    soundHit: &mothExclaim
+      path: /Audio/_Starlight/Voice/Moth/moth_exclaim.ogg 
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        shader: shaded
+    quickEquip: false
+    sprite: Objects/Fun/toys.rsi
+    slots:
+    - HEAD

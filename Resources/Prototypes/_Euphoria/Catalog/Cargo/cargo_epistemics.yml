@@ -1,0 +1,19 @@
+- type: cargoProduct
+  id: CrateIPCRepairKit
+  icon:
+    sprite: Structures/Storage/Crates/electrical.rsi
+    state: icon
+  product: CrateIPCRepairKit
+  cost: 900
+  category: Epistemics
+  group: market
+
+- type: cargoProduct
+  id: CrateIPCBlood
+  icon:
+    sprite: _NF/Objects/Specific/Chemistry/jerrycan.rsi # If we get a new sprite for IPC Oil Packs, replace this with that sprite instead.
+    state: jerrycan
+  product: CrateIPCBlood
+  cost: 250
+  category: Epistemics
+  group: market

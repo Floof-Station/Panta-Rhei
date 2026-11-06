@@ -90,6 +90,9 @@
   - type: SliceableFood
     count: 5
     slice: FoodMealCarpSushiSlice
+  - type: Tag # Euphoria - Added Meat Tag
+    tags:
+    - Meat
 
 - type: entity
   name: carp sushi roll slice
@@ -117,3 +120,6 @@
         #  Quantity: 1
         - ReagentId: CucumberWater
           Quantity: .4
+  - type: Tag # Euphoria - Added Meat Tag
+    tags:
+    - Meat

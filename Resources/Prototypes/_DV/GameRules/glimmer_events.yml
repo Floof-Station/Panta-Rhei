@@ -19,7 +19,7 @@
     - id: PsionicNosebleedEvent
     - id: MinorMassMindSwap
     - id: GlimmerFoxfireSpawn
-    - id: GlimmerRestyle
+#    - id: GlimmerRestyle # Euph - Disabled because people don't like their hair getting changed without consent.
     - id: GlimmerResearchStealer # Euphoria
 
 - type: entity
@@ -241,6 +241,7 @@
 - type: entity
   id: GlimmerRestyle
   parent: BaseGlimmerSignaturesEvent
+  abstract: true # Euph - Disabled because people don't like their hair getting changed without consent. 
   components:
   - type: GlimmerEvent
     minimumGlimmer: 300

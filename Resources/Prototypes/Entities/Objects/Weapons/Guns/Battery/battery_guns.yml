@@ -3,6 +3,9 @@
   parent: [BaseItem, BaseGun] # Euph - base gun parent
   abstract: true
   components:
+  - type: Tag # Euphoria - Setting up a tag.
+    tags:
+    - WeaponEnergyLong
   - type: Sprite
   - type: Item
     size: Large # DeltaV - was Huge
@@ -514,8 +517,8 @@
       size: Ginormous
     - type: MultiHandedItem
     - type: ClothingSpeedModifier
-      walkModifier: 0.6
-      sprintModifier: 0.6
+      walkModifier: 0.8 # Euphoria - Engi suits are slow enough, you can barely outrun the tesla when you're carrying this thing around, while in the Voidsuit. And that's before teleportation.
+      sprintModifier: 0.8 # Euphoria - See above. Did you know that the PPD slows down admin ghosts?
     - type: HeldSpeedModifier
     - type: Sprite
       sprite: Objects/Weapons/Guns/Battery/particle_decelerator.rsi
@@ -523,7 +526,7 @@
         - state: base
           map: ["enum.GunVisualLayers.Base"]
     - type: Gun
-      fireRate: 0.5
+      fireRate: 0.75 # Euphoria - Improved the ROF moderately.
       cameraRecoilScalar: 1.0 # DeltaV
       soundGunshot:
         path: /Audio/Weapons/emitter.ogg
@@ -655,6 +658,7 @@
   - type: Tag
     tags:
       - Taser
+      - WeaponSMG # Euphoria - It's called an SMG, we're giving it the SMG tag.
   - type: Sprite
     sprite: Objects/Weapons/Guns/Battery/disabler_smg.rsi
     layers:
@@ -878,6 +882,9 @@
     node: start
   - type: StaticPrice
     price: 100
+  - type: Tag # Euphoria - Tagged as a Science Tool, like anomaly scanners.
+    tags:
+    - ScienceTool
 
 - type: entity
   parent: [WeaponPistolCHIMP, BaseSyndicateContraband]
@@ -931,7 +938,7 @@
   description: A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+    sprite: _DV/Objects/Weapons/Guns/Battery/energy_shotgun.rsi #DeltaV - Adjust for blue shotgun
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
@@ -944,7 +951,7 @@
     zeroVisible: false
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/energy_shotgun.rsi
+    sprite: _DV/Objects/Weapons/Guns/Battery/energy_shotgun.rsi #DeltaV - Adjust for blue shotgun
   - type: Gun
     fireRate: 2
     cameraRecoilScalar: 1.0 # DeltaV
@@ -962,7 +969,7 @@
       pacifismAllowedMode: true
   - type: Item
     size: Large
-    sprite: Objects/Weapons/Guns/Battery/inhands_64x.rsi
+    sprite: _DV/Objects/Weapons/Guns/Battery/inhands_64x.rsi #DeltaV - Adjust for blue shotgun
     heldPrefix: energy
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Battery
@@ -981,7 +988,7 @@
   description: A high powered self-charging energy pistol designed for elite security personnel. It has has three firing modes allowing for either high damage, window piercing, or non-lethal disabling.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    sprite: _DV/Objects/Weapons/Guns/Battery/energy_magnum.rsi #DeltaV - Blue sprite for the magnum
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"] # Euphoria start
@@ -997,7 +1004,7 @@
     zeroVisible: true
   - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Battery/energy_magnum.rsi
+    sprite: _DV/Objects/Weapons/Guns/Battery/energy_magnum.rsi #DeltaV - Blue sprite for the magnum
   - type: Tag
     tags:
     - HighRiskItem
