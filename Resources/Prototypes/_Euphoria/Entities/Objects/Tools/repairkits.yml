@@ -102,9 +102,9 @@
     state: adcablerepairkit
   - type: Item
     heldPrefix: adcablerepairkit
-  - type: Construction
-    graph: AdCablerepairkit
-    node: adcablerepairkit
+  # - type: Construction   # disabled handcrafting
+  #   graph: AdCablerepairkit
+  #   node: adcablerepairkit
   - type: Extractable
     grindableSolutionName: adcablerepairkit
   - type: SolutionContainerManager
