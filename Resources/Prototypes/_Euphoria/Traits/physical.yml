@@ -443,3 +443,44 @@
       interactSuccessSpawn: EffectHearts
       interactSuccessSound:
         path: /Audio/Animals/fox_squeak.ogg
+
+# ================IPC/Borg/MechSynth================= #
+#  needs the re-implementation of conditional logic from old floof (Content.Shared/Customization/Systems)
+
+ #- !type:TraitDependencyCondition #would need to be added the traits: weakness, lethargy, vigor, glassjaw, frail, tenacity, brittlebones, lightweight.
+  # conflicts:
+  #  - SyntheticMechanical
+
+- type: trait
+  id: Weakservos
+  name: trait-weakservos-name
+  description: trait-weakservos-desc
+  category: DisabilitiesPhysical
+  cost: -5 # Getting stunned from just a few stunbaton or disabler hits is worth a lot, along with hitting like a wet mop
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Weakness
+    - HeavyMachinery
+  - !type:OneOfSpeciesCondition
+    invert: false
+    species:
+    - IPC
+  #- !type:TraitDependencyCondition  -  needs old trait logic
+  #  - SyntheticMechanical
+  effects:
+  - !type:ModifyStaminaThresholdEffect
+    multiplier: 0.67 #-33%
+  - !type:OverrideCompsEffect
+    components:
+    - type: PlayerToolModifier
+      pryTimeMultiplier: 1.2 #+20% longer Pry time
+    - type: BonusMeleeDamage
+      damageModifierSet:
+        coefficients:
+          Blunt: 0.85
+          Slash: 0.9
+          Piercing: 0.9
+          Asphyxiation: 0.8
+    - type: BonusStaminaDamage
+      multiplier: 0.9

@@ -18,3 +18,10 @@ trait-healing-plus-2-name = Regeneration: Superior
 trait-healing-plus-2-desc = Your ability to heal is even better, but you have increased thirst and hunger.
 trait-pettable-name = Pettable
 trait-pettable-desc = You are very pettable, you find that crew members have a much easier time petting you on the top of your floofy head...
+
+trait-weakservos-name = Weak Servos
+trait-weakservos-desc = 
+    Your servo motors and actuators are either ancient, cheap or damaged, or your hydraulics' pressure is low... or you're just built underpowered.
+    One thing is sure, you're weak.
+    Your stamina pool reduced by a third, making you quite vulnerable to shoving and stunning attacks. 
+    You also deal 10% less slash, piercing, 15% less blunt and 20% less asphyxiation melee damage, and your prying time is 20% higher.
