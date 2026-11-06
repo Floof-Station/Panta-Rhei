@@ -109,3 +109,10 @@ trait-rrrolling-accent-desc = Whether it's from culture, physicality, or just an
 trait-nopsionicpotential-name = Psionically Insensitive
 trait-nopsionicpotential-desc =
     You lack any connection to the Noosphere. You cannot get Noospheric powers.
+
+trait-name-tiny = Tiny
+trait-desc-tiny = Due to a mutation, transformation, or other metaphysical circumstance you are significantly smaller than even the tiniest of your species.
+    You can quickly be picked up with one hand, and you easily fit in most bags (though you find it takes longer to escape them).
+    Due to your size, you struggle to move things (40% longer pry times) and can't put as much force in your swings (20% reduced melee and stamina damage).
+    You also are more vulnerable ( 20% reduced crit and death thresholds) and have to exert more effort (20% reduced stamina).
+

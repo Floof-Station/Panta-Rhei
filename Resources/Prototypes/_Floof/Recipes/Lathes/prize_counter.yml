@@ -1341,6 +1341,14 @@
   completetime: 0.1
   materials:
     PrizeTicket: 100
+    
+- type: latheRecipe
+  id: MoodyChemistPlushie
+  result: MoodyChemistPlushie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 100
 
 - type: latheRecipe
   id: SuperSynthesizerInstrument
@@ -1349,3 +1357,11 @@
   completetime: 0.1
   materials:
     PrizeTicket: 750
+
+- type: latheRecipe
+  id: StoicPsionicPlushie
+  result: StoicPsionicPlushie
+  applyMaterialDiscount: false
+  completetime: 0.1
+  materials:
+    PrizeTicket: 100
