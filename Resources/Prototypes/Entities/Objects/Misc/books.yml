@@ -233,9 +233,9 @@
     layers:
     - state: paper
     - state: cover_base
-      color: "#ab1515"
+      color: "#173e92" #DeltaV - was #ab1515, changed to blue
     - state: decor_wingette
-      color: "#e05334"
+      color: "#3945b3" #DeltaV - was #e05334, changed to blue
     - state: icon_stunbaton
   - type: MeleeWeapon
     wideAnimationRotation: 180
@@ -247,7 +247,8 @@
     - Security
     - Antagonists
     # Begin DeltaV - More guidebooks
-    - SecurityandJusticeRegulations
+    # - SecurityandJusticeRegulations # Euphoria - Replace DeltaV SOP.
+    - EuphoriaSecurityRegulations # Euphoria - See above.
     - AlertProcedure
     - Survival
     - companyPolicies
@@ -387,7 +388,8 @@
     openOnActivation: true
     guides:
     - SpaceLaw
-    - SecurityandJusticeRegulations
+    # - SecurityandJusticeRegulations # Euphoria - Replace Security SOP with our own.
+    - EuphoriaSecurityRegulations
     - SOP
     - companyPolicies
     - Survival

@@ -311,11 +311,10 @@
   name: loadout-group-brig-medic-neck
   minLimit: 0
   loadouts:
-  - ScarfRed
   - ScarfBlack
   - ScarfBlue
   - ScarfLightBlue
-  - SecurityPoncho # Euph - Readded the SecPoncho after DV killed it.
+  - SecurityPoncho
 
 - type: loadoutGroup
   id: BrigMedicJumpsuit
@@ -391,7 +390,8 @@
   name: loadout-group-security-cadet-head
   minLimit: 0
   loadouts:
-  - MimeHead
+  - SecurityCadetBeret
+  - SecurityCadetCap
 
 ## Security Guns
 - type: loadoutGroup
@@ -511,13 +511,13 @@
   maxLimit: 1
   loadouts:
   - SecurityGlasses
-  #- PrescriptionSecurityGlasses # Euph - research locked | replace with presc sunglasses later
+  - PrescriptionSecurityGlasses
   - SecurityHud
   - SecurityEyePatchHud
   - PrescriptionSecurityHud
-  #- Glasses # Euphoria | In parent loadout
-  #- GlassesJamjar # Euphoria | In parent loadout
-  #- GlassesJensen # Euphoria | In parent loadout
+  - Glasses
+  - GlassesJamjar
+  - GlassesJensen
 
 ## Security Officer
 - type: loadoutGroup
@@ -526,9 +526,9 @@
   name: loadout-group-security-neck
   minLimit: 0
   loadouts:
-  - ScarfRed
+  - ScarfBlue
   - ScarfBlack
-  - SecurityPoncho # Euph - Readded the SecPoncho after DV killed it.
+  - SecurityPoncho
 
 - type: loadoutGroup
   id: SecurityOuterClothingDeltaV
@@ -555,7 +555,7 @@
   - StasecWinterCoatWarden
   - BomberSecurity
   - ArmorVestSlim
-  - WardenArmoredWinterCoat
+  # - WardenArmoredWinterCoat #Disabled during bluesec testing
 
 ## Head of Security
 - type: loadoutGroup
