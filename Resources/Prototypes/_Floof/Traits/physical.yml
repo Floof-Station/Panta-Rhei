@@ -643,6 +643,12 @@
     conflicts:
     - Tenacity
     - WillToLive
+  - !type:InDepartmentCondition
+    department: Command
+    invert: true
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
