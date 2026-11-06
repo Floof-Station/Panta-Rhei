@@ -24,9 +24,8 @@
     damageContainers:
     - Robotic
     damage:
-      types:
-        # Bloodloss: -10 # Since IPCs do not naturally heal from bloodloss
-        Bloodloss: -5 # They do, when above 70-75% "oil" level and not shutdown(dead), but let's be nice
+      # types:# Bloodloss: -10 # Since IPCs do not naturally heal from bloodloss
+      Bloodloss: -7.5 # Welding should be what stops bloodloss, and IPCs (at least mine?) do heal a bit of bloodloss damage about 70-75% oil level, but let's be nice.
     modifyBloodLevel: 30 # about 1/0 of the blood pool of an average humanoid
     delay: 6 # about 2x than long as normal ones
   - type: Stack
@@ -84,8 +83,8 @@
       - Robotic
     damage:
       types:
-        Bloodloss: -2 #lowers bloodloss damage
-    modifyBloodLevel: 20 #restores about 7.5% blood per use on standard humanoids.
+        Bloodloss: -5 #lowers bloodloss damage 
+    modifyBloodLevel: 25 #restores about 8% blood per use on standard humanoids.
     delay: 5 # near 2x than long as normal ones
   - type: Tag
     tags:
