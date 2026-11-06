@@ -117,7 +117,7 @@ ent-ClothingOuterHardsuitCombatRiot = FPA-93 - "Sulde MK II" Tacsuit
 ent-ClothingOuterHardsuitCombatWarden = FPA-93SW - "Sulde MK II" Tacsuit
     .desc = A specialized tactical combat hardsuit produced by Five-Points Armory, painted with the colors of Station Security and Warden's rank markings. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels EXTREMELY heavy.
 
-ent-ClothingOuterHardsuitCombatAdvanced = FPA-99 - "Dayicin MK II Tacsuit"
+ent-ClothingOuterHardsuitCombatAdvanced = FPA-99 - "Dayicin MK II" Tacsuit
     .desc = A top-of-the-line tactical combat hardsuit produced by Five-Points Armory. The tags on the suit indicate that it's rated for moderate amounts of physical and explosive damage. It feels somewhat light.
 
 ent-ClothingOuterHardsuitCombatHoS = FPA-99SC - "Dayicin MK II" Tacsuit
