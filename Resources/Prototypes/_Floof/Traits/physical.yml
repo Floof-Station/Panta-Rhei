@@ -547,6 +547,7 @@
     conflicts:
     - GlassJaw
     - BrittleBones
+    - FootInTheGrave
   - !type:HasCompCondition
     component: BorgChassis
     invert: true
@@ -570,6 +571,7 @@
     - WillToDie
     - Redshirt
     - IllFated
+    - FootInTheGrave
   effects:
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 1.05 #+5%
@@ -629,6 +631,35 @@
   effects:
   - !type:ModifyCritDeadThresholdEffect
     deadModifier: 0.75 #-25%
+
+- type: trait
+  id: FootInTheGrave
+  name: trait-footinthegrave-name
+  description: trait-footinthegrave-desc
+  category: Skills
+  cost: -15
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Tenacity
+    - WillToLive
+  - !type:InDepartmentCondition
+    department: Command
+    invert: true
+  - !type:InDepartmentCondition
+    department: Security
+    invert: true
+  - !type:HasCompCondition
+    component: BorgChassis
+    invert: true
+  - !type:OneOfSpeciesCondition
+    invert: true
+    species:
+    - IPC
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.1 #-90%
+    deadModifier: 0.1 #-90%
 # =================================================== #
 
 - type: trait
