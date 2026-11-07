@@ -31,6 +31,7 @@ holopad-engineering-reception = Engineering - Reception
 # Security
 holopad-security-equipment = Security - Equipment
 holopad-security-firing-range = Security - Firing Range
+holopad-security-holding-cells = Security - Holding Cells
 holopad-security-perma-reception = Security - Perma Reception
 holopad-security-reception = Security - Reception
 holopad-security-operations = Security - Operations
