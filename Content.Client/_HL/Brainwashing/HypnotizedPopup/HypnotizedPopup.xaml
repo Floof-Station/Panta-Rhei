@@ -1,0 +1,38 @@
+<controls:FancyWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+    Title="You've been brainwashed!"
+    MinSize="600 550"
+    MaxSize="600 570">
+    <BoxContainer
+        Orientation="Vertical"
+        Margin="0">
+        <BoxContainer
+            HorizontalAlignment="Center"
+            Orientation="Vertical"
+            VerticalExpand="True"
+            Margin="0">
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="You have been [bold][color=#FFC0CB]mesmerized![/color][/bold] The soft pulsating lights from the visor have sunk into your mind as a set of hypnotic compulsions!"/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="Compulsions are akin to 'soft' silicon laws - RP-guiding thoughts that your character feels the urge to follow. [bold]However, they are strictly [color=#FFC0CB]suggestions or urges[/color], not binding laws.[/bold] Compulsions only have as much control over your character as you (or they) are willing, and you do not have to follow any compulsions that you do not consent to or feel uncomfortable with."/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="[bold]Remember that your role and job come first:[/bold] compulsions may be temporarily ignored if they threaten to get in the way of your duties, and they do [bold]not[/bold] override server rules in cases where they apply. [bold]You cannot be hypnotised into becoming an antagonist - doing so is still considered self-antagging.[/bold]"/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="Your compulsions may dictate whether or not you know or remember that you are being hypnotised. How you interpret your character being hypnotised is up to you, but remember - to you, every compulsion you have is to you entirely [italic]your[/italic] ideas and thoughts, things that feel [italic]right[/italic] to do. Most importantly... enjoy the experience~!"/>
+            <RichTextLabel
+                Margin="15 15 15 0"
+                Text="[font size=8]P.S. Regardless of your consent settings or consent given, remember that consent can be withdrawn at any time.[/font]"/>
+        </BoxContainer>
+        <Button
+            Name="AcknowledgeButton"
+            Text="Sounds Good!"
+            HorizontalAlignment="Center"
+            Margin="10"
+            MinWidth="150" />
+    </BoxContainer>
+</controls:FancyWindow>

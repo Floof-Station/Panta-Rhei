@@ -148,6 +148,8 @@
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
+      enum.CompulsionsUiKey.Key:
+        type: BrainwashViewerBui
   - type: Puller
   - type: Speech
     speechSounds: Alto
@@ -261,3 +263,4 @@
   - type: FootPrints # Floof
   - type: RevealRevenantOnCollide # DeltaV - passing through people reveal revenant
     revealTime: 1
+  - type: Brainwashed
