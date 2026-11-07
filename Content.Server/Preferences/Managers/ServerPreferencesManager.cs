@@ -5,11 +5,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using Content.Server._CD.Records;
 using Content.Server.Database;
+using Content.Shared._CD.Body;
 using Content.Shared._CD.Records;
 using Content.Shared._DV.Species;
 using Content.Shared._DV.Traits; // Delta-V Hidden species
 using Content.Shared.Body;
 using Content.Shared.CCVar;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.FixedPoint;
 using Content.Shared.Humanoid;
@@ -183,7 +185,7 @@ namespace Content.Server.Preferences.Managers
             // Euph - CD allergies
             var cdAllergies = profile.CDProfile?.CharacterAllergies != null
                 ? profile.CDProfile.CharacterAllergies
-                    .Select(allergy => (allergy.Allergen, FixedPoint2.FromCents(allergy.Intensity)))
+                    .Select(allergy => (allergy.Allergen, new AllergyData{Intensity = FixedPoint2.FromCents(allergy.Intensity), ReactionReagent = new ProtoId<ReagentPrototype>(allergy.ReactionReagent)}))
                     .ToDictionary()
                 : new();
             // End CD - Character Records

@@ -21,7 +21,7 @@ namespace Content.Server.Database.Migrations.Postgres
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.0")
+                .HasAnnotation("ProductVersion", "10.0.6")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -835,6 +835,11 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Property<int>("Intensity")
                         .HasColumnType("integer")
                         .HasColumnName("intensity");
+
+                    b.Property<string>("ReactionReagent")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("reaction_reagent");
 
                     b.HasKey("CDProfileId", "Allergen")
                         .HasName("PK_cd_character_allergies");

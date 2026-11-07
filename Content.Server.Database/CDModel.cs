@@ -50,6 +50,8 @@ public static class CDModel
         // in 100ths (FixedPoint2)
         public int Intensity { get; set; } = 100;
 
+        public string ReactionReagent { get; set; } = "Histamine";
+
         public int CDProfileId { get; set; }
 
         public CDProfile CDProfile { get; set; } = null!;

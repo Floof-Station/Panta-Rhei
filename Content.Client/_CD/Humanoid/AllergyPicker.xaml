@@ -25,5 +25,8 @@
         <Label Text="{Loc 'cd-allergies-editor-intensity'}" />
         <Control HorizontalExpand="True" />
         <OptionButton Name="CIntensityButton" StyleClasses="OpenLeft" />
+
+        <Label Text="Reaction Reagent" />
+        <OptionButton Name="CReactionReagentButton" />
     </BoxContainer>
 </BoxContainer>

@@ -1,4 +1,5 @@
 ﻿using Content.Server._CD.Body.Systems;
+using Content.Shared._CD.Body;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.FixedPoint;
 using Robust.Shared.Prototypes;
@@ -21,11 +22,5 @@ public sealed partial class AllergyComponent : Component
     public TimeSpan NextUpdate;
 
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public Dictionary<string, FixedPoint2> Reagents = new();
-
-    /// <summary>
-    /// The reagent to generate on exposure to allergens.
-    /// </summary>
-    [ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<ReagentPrototype> ReactionReagent { get; private set; } = new("Histamine");
+    public Dictionary<string, AllergyData> Reagents = new();
 }
