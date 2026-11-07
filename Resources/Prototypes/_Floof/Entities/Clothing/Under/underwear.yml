@@ -59,6 +59,143 @@
       undergarmentBottom:
       - state: hyper_boxers
 
+# Begin Euphoria changes. MORE UNDIES!!!!
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersAssBlastUSA
+  name: ass blast usa boxers
+  description: "A comfy pair of boxers to keep those PATRIOTIC things in check."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_assblastusa
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: boxers_assblastusa
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersUnitedKingdom
+  name: uk boxers
+  description: "A comfy pair of boxers to keep those things in check."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_uk
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: boxers_uk
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersCommie
+  name: commie boxers
+  description: "A comfy pair of boxers to keep those things in check. Remember to share!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: boxers_commie
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: boxers_commie
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersBeeShorts
+  name: bee shorts
+  description: "A comfy pair of shorts to keep those buzzy things in check."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bee_shorts
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: bee_shorts
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersMankini
+  name: mankini
+  description: "A striking, but probably embarrassing mankini."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: mankini
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: mankini
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersJockstrap
+  name: jockstrap
+  description: "A comfy, probably skimpy Jockstrap to keep those things in check. Just dont let anyone see the backside!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: jockstrap
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: jockstrap
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersSnow
+  name: snow boxers
+  description: "A comfy pair of Boxers to keep those things in check. Rated for cold weather!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: snow_boxers
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: snow_boxers
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersSnowLowriders
+  name: snow lowriders
+  description: "A comfy pair of Lowriders to keep those things in check. Rated for cold weather!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: snow_lowriders
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: snow_lowriders
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBoxersFishnet
+  name: fishnet boxers
+  description: "A comfy pair of fishnets to keep those things in check."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: fishnet_lower
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: fishnet_lower
+#End Euphoria changes.
+
 # boxer breifs (underwear slot)
 - type: entity
   parent: ClothingUndergarmentBottomBase
@@ -104,6 +241,24 @@
     clothingVisuals:
       undergarmentBottom:
       - state: compression_shorts
+
+#Begin Euphoria changes!
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearBriefSnow
+  name: snow briefs
+  description: "A comfy pair of briefs to keep those things in check. Rated for cold weather!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: snow_briefs
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: snow_briefs
+#End Euphoria changes!!
 
 # panties (underwear slot)
 - type: entity
@@ -181,6 +336,158 @@
       undergarmentBottom:
       - state: thinpanties
 
+#Begin Euphoria Changes.
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesBee-Kini
+  name: bee-kini
+  description: "A comfy pair of panties to keep that buzzy thing covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_bee-kini
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: panties_bee-kini
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesAssBlastUsa
+  name: ass blast usa panties
+  description: "A comfy pair of panties to keep that PATRIOTIC thing covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_assblastusa
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: panties_assblastusa
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesCommie
+  name: commie panties
+  description: "A comfy pair of panties to keep that thing covered. Remember to share!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_commie
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: panties_commie
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesUk
+  name: uk panties
+  description: "A comfy pair of panties to keep that thing covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_uk
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: panties_uk
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesSwimming
+  name: swimming panties
+  description: "A comfy pair of panties to keep that thing covered. Tested to be waterproof!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_swimming
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: panties_swimming
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesSnowSatin
+  name: snow satins
+  description: "A comfy pair of panties to keep that thing covered. Rated for cold weather!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: snow_satin
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: snow_satin
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesSnowTanga
+  name: snow tanga
+  description: "A comfy pair of panties to keep that thing covered. Rated for cold weather!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: snow_tanga
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: snow_tanga
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesCow
+  name: cow panties
+  description: "A comfy pair of panties to keep that thing covered. Moo!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: panties_cow
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: panties_cow
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesBow
+  name: bow panties
+  description: "A comfy pair of panties to keep that thing covered. Now with a bow!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowpanties
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: bowpanties
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearPantiesBowSlim
+  name: slim bow panties
+  description: "A comfy pair of panties to keep that thing covered. Now with a bow!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowpanties_slim
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: bowpanties_slim
+#End Euphoria changes.
+
 # thongs (underwear slot)
 - type: entity
   parent: ClothingUndergarmentBottomBase
@@ -226,6 +533,68 @@
     clothingVisuals:
       undergarmentBottom:
       - state: thong
+
+#Begin Euphoria changes.
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearThong
+  name: thong
+  description: "A comfy thong to keep that thing covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: thong
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: thong
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearThongBabydoll
+  name: babydoll thong
+  description: "A comfy thong to keep that thing covered."
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: thong_babydoll
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: thong_babydoll
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearThongBow
+  name: bow thong
+  description: "A comfy thong to keep that thing covered. Now with a bow!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowthong
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: bowthong
+
+- type: entity
+  parent: ClothingUndergarmentBottomBase
+  id: ClothingUnderUnderwearThongBowBabydoll
+  name: babydoll bow thong
+  description: "A comfy thong to keep that thing covered. Now with a bow!"
+  components:
+  - type: Sprite
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    state: bowthong_babydoll
+  - type: Clothing
+    sprite: _Floof/Mobs/Customization/underwear.rsi
+    clothingVisuals:
+      undergarmentBottom:
+      - state: bowthong_babydoll
+#End Euphoria changes.
 
 # panyhose (sock slot)
 - type: entity
