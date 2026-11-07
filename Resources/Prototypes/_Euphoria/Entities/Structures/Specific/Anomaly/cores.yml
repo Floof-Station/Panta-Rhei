@@ -1,0 +1,33 @@
+﻿- type: entity
+  parent: BaseAnomalyCore
+  id: AnomalyCoreFish
+  suffix: Fish
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/liquid_core.rsi # re-using for now with a new name
+  - type: PointLight
+    radius: 1.5
+    energy: 3.5
+    color: "#ffffff"
+    castShadows: false
+  - type: Summonable # imp
+    requiresBibleUser: false
+    specialItem: SpawnPointGhostAnomaliteFish
+    lives: 1 #DeltaV - Anomalite Limited Respawns
+
+- type: entity
+  parent: BaseAnomalyInertCore
+  id: AnomalyCoreFishInert
+  suffix: Fish, Inert
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/liquid_core.rsi
+  - type: PointLight
+    radius: 1.5
+    energy: 3.5
+    color: "#ffffff"
+    castShadows: false
+  - type: Summonable # imp
+    requiresBibleUser: false
+    specialItem: SpawnPointGhostAnomaliteFish
+    lives: 1 #DeltaV - Anomalite Limited Respawns

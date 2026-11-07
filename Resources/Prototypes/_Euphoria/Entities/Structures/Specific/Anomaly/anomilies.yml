@@ -1,0 +1,121 @@
+﻿- type: entity
+  id: AnomalyFish
+  parent: BaseAnomaly
+  suffix: Fish
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/liquid_anom.rsi # we are gonna reuse this for now fishy
+    layers:
+    - state: anom
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: RandomSprite
+    selected: # Initialized layer values. Edited through the ReagentProducerAnomalySystem
+      enum.AnomalyVisualLayers.Base:
+        anom: "#ffffff"
+      enum.AnomalyVisualLayers.Animated:
+        pulse: "#ffffff"
+  - type: PointLight
+    radius: 4.0
+    energy: 3.5
+    color: "#bbbbbb"
+  - type: BadFood
+  - type: Anomaly
+    corePrototype: AnomalyCoreFish
+    coreInertPrototype: AnomalyCoreFishInert
+    minPulseLength: 60
+    maxPulseLength: 120
+    supercriticalSoundAtAnimationStart:
+      collection: AnomalyFluidSupercritical
+  - type: EntitySpawnAnomaly
+    entries:
+    - settings:
+        spawnOnPulse: true
+        minAmount: 1
+        maxAmount: 4
+        minRange: 1.5
+        maxRange: 2.5
+      spawns:
+      - Kudzu
+    - settings:
+        spawnOnPulse: true
+        maxAmount: 3
+        minRange: 3
+        maxRange: 4.5
+      spawns:
+      - MobCarp
+      - MobCarpMagic
+    - settings:
+        spawnOnSuperCritical: true
+        minAmount: 10
+        maxAmount: 15
+        minRange: 5
+        maxRange: 15
+      spawns:
+      - Kudzu
+    - settings:
+        spawnOnSuperCritical: true
+        minAmount: 5
+        maxAmount: 10
+        maxRange: 8
+      spawns:
+      - MobCarp
+      - MobCarpMagic
+      - MobCarpHolo
+      - MobCarpRainbow
+    - settings:
+        spawnOnSuperCritical: true
+        minAmount: 1
+        maxAmount: 2
+        maxRange: 10
+      spawns:
+      - MobSharkColored
+    - settings:
+        spawnOnShutdown: true
+        maxAmount: 2
+        maxRange: 1
+      spawns:
+      - MobCarp
+      - MobCarpMagic
+      - MobCarpHolo
+      - MobCarpRainbow
+      - Kudzu
+  - type: SolutionContainerManager
+    solutions:
+      anomaly:
+        maxVol: 1500
+  - type: PuddleCreateAnomaly
+    solution: anomaly
+  - type: InjectionAnomaly
+    solution: anomaly
+    superCriticalInjectRadius: 10
+  - type: ReagentProducerAnomaly
+    solution: anomaly
+    needRecolor: true
+    dangerousChemicals:
+    - Holywater # kitsune and allergies, also its fucking lowercase
+    usefulChemicals:
+    - Water
+    funChemicals:
+    - CoconutWater
+    - SodaWater
+    - TonicWater
+  - type: Edible
+    edible: Drink
+    solution: anomaly
+    destroyOnEmpty: false
+    utensil: Spoon
+  - type: DrainableSolution
+    solution: anomaly
+  - type: DrawableSolution
+    solution: anomaly
+  - type: ExaminableSolution
+    solution: anomaly
+    exactVolume: true
+    locVolume: "examinable-solution-on-examine-volume-no-max"
+  - type: RefillableSolution
+    solution: anomaly
+  - type: InjectableSolution
+    solution: beaker
