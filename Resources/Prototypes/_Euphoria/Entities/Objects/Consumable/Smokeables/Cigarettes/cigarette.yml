@@ -1,0 +1,19 @@
+﻿- type: entity
+  id: CigaretteSyndicateFake
+  suffix: herbal
+  parent: Cigarette
+  name: cigarette
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      smokable:
+        maxVol: 45
+        reagents:
+        - ReagentId: Ash
+          Quantity: 45
+      cigaretteash:
+        reagents:
+        - ReagentId: Ash
+          Quantity: 10
+  - type: Extractable
+    grindableSolutionName: cigaretteash

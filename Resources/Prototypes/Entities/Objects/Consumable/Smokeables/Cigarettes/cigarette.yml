@@ -88,7 +88,8 @@
     # Begin DeltaV additions
       omnizinecigarette:
         reagents:
-        - ReagentId: Nicotine
+        #- ReagentId: Nicotine #Euph - This cigarette has no nicotine, but giving the reagents would be too much, giving ash instead
+        - ReagentId: Ash
           Quantity: 10
   - type: Extractable
     grindableSolutionName: omnizinecigarette
