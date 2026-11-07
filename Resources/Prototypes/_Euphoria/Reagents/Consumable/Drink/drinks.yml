@@ -55,3 +55,70 @@
       metabolites:
         Ethanol: 0.08
         Pomelustine: 0.2
+
+- type: reagent
+  id: GibtoniteFroth
+  name: reagent-name-gibtonite-froth
+  parent: BaseAlcohol
+  desc: reagent-desc-gibtonite-froth
+  physicalDesc: reagent-physical-desc-impossibly-strong
+  flavor: gibtonitefroth
+  color: "#a29fae"
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/gibtonitefroth.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.5 # this shit will fuck you up
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:Vomit
+        conditions:
+        - !type:ReagentCondition
+          reagent: GibtoniteFroth
+          min: 20
+        probability: 0.02
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: GibtoniteFroth
+          min: 25
+        effectProto: StatusEffectForcedSleeping
+        time: 9
+        delay: 15
+  fizziness: 0.15
+
+- type: reagent
+  id: Leafguard
+  name: reagent-name-leafguard
+  parent: BaseAlcohol
+  desc: reagent-desc-leafguard
+  physicalDesc: reagent-physical-desc-buzzkilling
+  flavor: leafguard
+  color: "#f9e6b1"
+  metamorphicSprite:
+    sprite: _Euphoria/Objects/Consumable/Drinks/leafguard.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 2
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.05
+      effects:
+      - !type:SatiateThirst
+        factor: 1
+      - !type:AdjustReagent
+        conditions:
+        - !type:ReagentCondition
+          reagent: Ethanol
+          min: 5
+        reagent: Ethanol
+        amount: -5
+  fizziness: 0.15

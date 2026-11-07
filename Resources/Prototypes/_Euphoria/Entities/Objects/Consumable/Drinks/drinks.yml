@@ -13,3 +13,35 @@
   - type: Icon
     sprite: _Euphoria/Objects/Consumable/Drinks/baxshots.rsi
     state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkGibtoniteFrothGlass
+  suffix: gibtonite froth
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: GibtoniteFroth
+          Quantity: 30
+  - type: Icon
+    sprite: _Euphoria/Objects/Consumable/Drinks/gibtonitefroth.rsi
+    state: icon
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkLeafguardGlass
+  suffix: leafguard
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: Leafguard
+          Quantity: 30
+  - type: Icon
+    sprite: _Euphoria/Objects/Consumable/Drinks/leafguard.rsi
+    state: icon

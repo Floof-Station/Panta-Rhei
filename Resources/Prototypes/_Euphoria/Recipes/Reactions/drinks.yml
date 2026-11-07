@@ -221,3 +221,25 @@
       amount: 1
   products:
     StrawberrySyrup: 2
+
+- type: reaction
+  id: GibtoniteFroth
+  reactants:
+    ManlyDorf:
+      amount: 1
+    Ethanol:
+      amount: 1
+    HealthViolation:
+      amount: 1
+  products:
+    GibtoniteFroth: 3
+
+- type: reaction
+  id: Leafguard
+  reactants:
+    ManlyDorf:
+      amount: 1
+    Water:
+      amount: 2
+  products:
+    Leafguard: 3
