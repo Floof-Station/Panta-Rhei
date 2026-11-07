@@ -71,3 +71,38 @@
           MaterialMushwoodPlank1:
             min: 1
             max: 5
+
+- type: entity
+  name: human leather armchair
+  suffix: human leather
+  id: HumanLeatherArmchair
+  parent: [ ChairBase, BaseHighlyIllegalContraband ]
+  description: A comfortable armchair made out of tanned human skin, how horrifying. Something of an icon of lawless worlds out on the rim of known space.
+  components:
+  - type: Strap
+    buckleSound:
+      collection: MaleScreams
+  - type: Sprite
+    sprite: _Euphoria/Structures/Furniture/Chair/human_leather_armchair.rsi
+    layers:
+    - state: base
+    noRot: true
+  - type: Icon
+    sprite: _Euphoria/Structures/Furniture/Chair/human_leather_armchair.rsi
+    state: base
+  - type: LanguageSpeaker
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    understands:
+    - TauCetiBasic
+  - type: UseDelay
+    delay: 1200
+  - type: SpeakOnTrigger
+    pack: HumanLeatherArmchair
+  - type: TriggerOnActivate
+  - type: Speech
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
