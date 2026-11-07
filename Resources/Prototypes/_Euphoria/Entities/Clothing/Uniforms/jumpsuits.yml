@@ -61,3 +61,69 @@
   - type: Clothing
     slots: [innerclothing]
     sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/geiru.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformCaptainLongJumpskirt
+  name: captain's long jumpskirt
+  description: This captain's jumpskirt has added length, for hiding all those pesky government secrets.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/captainlong.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/captainlong.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformCargoTechLongJumpskirt
+  name: cargo technicians's long jumpskirt
+  description: Why did you decide to wear this to move boxes in? Fashion baby, that's why.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/cargotechlong.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/cargotechlong.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformEngineerLongJumpskirt
+  name: engineering long jumpskirt
+  description: Breathability, function, what more could you want? Maybe to be a little more safety compliant...
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/engineeringlong.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/engineeringlong.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformMedicalLongJumpskirt
+  name: medical doctor's long jumpskirt
+  description: A prim and proper jumpskirt for prim and proper doctors.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/medicallong.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/medicallong.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformScientistLongJumpskirt
+  name: scientist's long jumpskirt
+  description: A dignified jumpskirt. Those pesky artifacts will have to chew through more fabric before burning you to a crisp.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/scientistlong.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/scientistlong.rsi
+
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: ClothingUniformSecurityLongJumpskirt
+  name: security's long jumpskirt
+  description: You're going to be kicking someone in the face while wearing this, and it will be glorious.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/securitylong.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Uniforms/Jumpskirt/securitylong.rsi
