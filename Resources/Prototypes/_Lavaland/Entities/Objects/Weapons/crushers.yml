@@ -26,7 +26,7 @@
     damage:
       types:
         Blunt: 13
-        Structural: 15 # Breaks weak rocks effectively
+        Structural: 30 # Breaks weak rocks effectively # Euph - was 15.
   - type: Item
     size: Ginormous
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_hammer-inhands.rsi
@@ -65,7 +65,7 @@
       types:
         Piercing: 3
         Slash: 3
-        Structural: 15 # Breaks weak rocks effectively
+        Structural: 30 # Breaks weak rocks effectively # Euph - was 15.
   - type: Clothing
     sprite: _Lavaland/Objects/Weapons/Crushers/crusher_halberd.rsi
     quickEquip: false
