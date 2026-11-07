@@ -1,0 +1,23 @@
+- type: damageModifierSet #unused for now as there is no method ported yet to apply damageModifierSets from a trait afaik
+  id: AestheticSkutrait
+  coefficients:
+    Blunt: 1.05
+    Slash: 1.05
+    Piercing: 1.05
+    Shock: 1.15
+
+- type: damageModifierSet #unused for now as there is no method ported yet to apply damageModifierSets from a trait afaik
+  id: Porcelaindolltrait
+  coefficients:
+    Blunt: 1.1
+    Slash: 1.1
+    Piercing: 1.1
+    Radiation: 1.30
+    Shock: 1.25
+
+- type: damageModifierSet #unused for now as there is no method ported yet to apply damageModifierSets from a trait afaik
+  id: HeavyMachinerytrait
+  coefficients:
+    Heat: 0.95
+    Radiation: 0.8
+    Shock: 0.9

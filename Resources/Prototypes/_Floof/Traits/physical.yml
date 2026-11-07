@@ -167,6 +167,8 @@
   - !type:TraitDependencyCondition
     conflicts:
     - Vigor
+    - Weakservos # Euphoria
+    - HeavyMachinery # Euphoria
   - !type:HasCompCondition
     component: BorgChassis
     invert: true

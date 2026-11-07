@@ -1,0 +1,107 @@
+# ================IPC/Borg/MechSynth================= #
+#  needs the re-implementation of conditional logic from old floof (Content.Shared/Customization/Systems)
+
+ #- !type:TraitDependencyCondition #would need to be added the traits: weakness, lethargy, vigor, glassjaw, frail, tenacity, brittlebones, lightweight.
+  # conflicts:
+  #  - SyntheticMechanical
+
+- type: trait
+  id: Aestheticsku
+  name: trait-aestheticsku-name
+  description: trait-aestheticsku-desc
+  category: Skills
+  cost: -4 #raised from -6 due to the lack of modifier vulnerability set
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Porcelaindoll
+    - HeavyMachinery
+    - Heavyweight
+  - !type:OneOfSpeciesCondition
+    invert: false
+    species:
+    - IPC
+  #- !type:TraitDependencyCondition  -  needs old trait logic
+  #  - SyntheticMechanical
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.90 #-10% / -10hp to crit
+    deadModifier: 0.95 #-5% / on 200 total base, -10hp total to die
+  - !type:ModifyDensityEffect
+    factor: 0.9 #-10%
+  #- !type:ModifyDamageable #unused for now as there is no method ported yet to apply damageModifierSets from a trait afaik
+  #  damageModifierSet: Aestheticskutrait
+  # With a damage modifier set, this trait is meant to make slightly more vulnerable to shocks, 
+  # due to lesser electro-magnetic shielding and grounding of circuitery, beyond the lighter frame.
+
+- type: trait
+  id: Porcelaindoll
+  name: trait-porcelaindoll-name
+  description: trait-porcelaindoll-desc
+  category: Skills
+  cost: -7 #raised from -9 due to the lack of modifier vulnerability set
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Aestheticsku
+    - HeavyMachinery
+    - Heavyweight
+  - !type:OneOfSpeciesCondition
+    invert: false
+    species:
+    - IPC
+  #- !type:TraitDependencyCondition  -  needs old trait logic
+  #  - SyntheticMechanical
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 0.90 #-10% / -10hp to crit, if also tiny, crits at 72dmg.
+    deadModifier: 0.85 #-15% / on 200 total base, -30hp total to die. If also tiny, -64hp, dies at 136dmg.
+  - !type:ModifyDensityEffect
+    factor: 0.70 #-30%
+  #- !type:ModifyDamageable #unused for now as there is no method ported yet to apply damageModifierSets from a trait afaik
+  #  damageModifierSet: Porcelaindolltrait
+  # With a damage modifier set, this trait is meant to make way more vulnerable to shocks and rads, 
+  # due to the near complete lack of shielding against harsh environements, beyond the lighter frame.
+
+- type: trait
+  id: HeavyMachinery
+  name: trait-heavymachinery-name
+  description: trait-heavymachinery-desc
+  category: Skills
+  cost: 8 #cost reduced from 9 because of the lack of modifier resistance set
+  conditions:
+  - !type:TraitDependencyCondition
+    conflicts:
+    - Weakservos
+    - Aestheticsku
+    - Porcelaindoll
+    - Heavyweight
+  - !type:OneOfSpeciesCondition
+    invert: false
+    species:
+    - IPC
+  #- !type:TraitDependencyCondition  -  needs old trait logic
+  #  - SyntheticMechanical
+  effects:
+  - !type:ModifyCritDeadThresholdEffect
+    critModifier: 1.10 #+10% / +10hp
+    deadModifier: 0.95 #-5% / -10hp same total HP, just crits a bit later
+  - !type:ModifyDensityEffect
+    factor: 1.50 #+50%  BRICC
+  - !type:OverrideCompsEffect
+    components:
+    - type: PlayerToolModifier
+      pryTimeMultiplier: 0.9 #-10% Pry time
+    - type: BonusMeleeDamage
+      damageModifierSet:
+        coefficients:
+          Blunt: 1.15
+          Slash: 1.1
+          Piercing: 1.1
+          Asphyxiation: 1.15
+    - type: BonusStaminaDamage
+      multiplier: 1.1
+  #- !type:ModifyDamageable #unused for now as there is no method ported yet to apply damageModifierSets from a trait afaik
+  #  damageModifierSet: HeavyMachinerytrait
+  # With a damage modifier set, this trait is meant to give slight heat, radiation and shock resistance, 
+  # as they would have shielding for harsher conditions, beyond a stockier build for shear general durability.
