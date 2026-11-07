@@ -1,0 +1,135 @@
+# Generic
+- type: entity
+  id: NikaChassisGeneric
+  parent: BorgChassisSelectable
+  name: generic nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborggeneric
+
+- type: entity
+  id: NikoChassisGeneric
+  parent: BorgChassisSelectable
+  name: generic niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborggeneric
+
+# Engineer
+- type: entity
+  id: NikaChassisEngineer
+  parent: BorgChassisSelectable
+  name: engineer nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgengineering
+
+- type: entity
+  id: NikoChassisEngineer
+  parent: BorgChassisSelectable
+  name: engineer niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgengineering
+
+# Security
+- type: entity
+  id: NikaChassisSecurity
+  parent: BorgChassisSelectable
+  name: security nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgsecurity
+
+- type: entity
+  id: NikoChassisSecurity
+  parent: BorgChassisSelectable
+  name: security niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgsecurity
+
+# Salvage
+- type: entity
+  id: NikaChassisSalvage
+  parent: BorgChassisSelectable
+  name: salvage nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgsalvage
+
+- type: entity
+  id: NikoChassisSalvage
+  parent: BorgChassisSelectable
+  name: salvage niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgsalvage
+
+# Medical
+- type: entity
+  id: NikaChassisMedical
+  parent: BorgChassisSelectable
+  name: medical nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgmedical
+
+- type: entity
+  id: NikoChassisMedical
+  parent: BorgChassisSelectable
+  name: medical niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgmedical
+
+# Service
+- type: entity
+  id: NikaChassisService
+  parent: BorgChassisSelectable
+  name: Service nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgservice
+
+- type: entity
+  id: NikoChassisService
+  parent: BorgChassisSelectable
+  name: Service niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgservice
+
+# Janitor
+- type: entity
+  id: NikaChassisJanitor
+  parent: BorgChassisSelectable
+  name: janitor nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgjanitor
+
+- type: entity
+  id: NikoChassisJanitor
+  parent: BorgChassisSelectable
+  name: janitor niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgjanitor
+
+# Research
+- type: entity
+  id: NikaChassisResearch
+  parent: BorgChassisSelectable
+  name: research nika cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikaborgresearch
+
+- type: entity
+  id: NikoChassisResearch
+  parent: BorgChassisSelectable
+  name: research niko cyborg
+  components:
+  - type: BorgSwitchableType
+    selectedBorgType: nikoborgresearch

@@ -1,0 +1,929 @@
+# Generic Borgs
+# NiKa
+- type: borgType
+  id: nikaborggeneric
+  # Description
+  dummyPrototype: NikaChassisGeneric
+  # Functional
+  extraModuleCount: 5
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  radioChannels:
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikagen
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikagen_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikagen_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikagen
+  spriteHasMindState: nikagen_e
+  spriteNoMindState: nikagen_e_r
+  spriteToggleLightState: nikagen_l
+  # Pet
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+# NiKo
+- type: borgType
+  id: nikoborggeneric
+  # Description
+  dummyPrototype: NikoChassisGeneric
+  # Functional
+  extraModuleCount: 5
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
+  radioChannels:
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikogen
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikogen_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikogen_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikogen
+  spriteHasMindState: nikogen_e
+  spriteNoMindState: nikogen_e_r
+  spriteToggleLightState: nikogen_l
+  # Pet
+  petSuccessString: petting-success-generic-cyborg
+  petFailureString: petting-failure-generic-cyborg
+
+# Engineer
+# NiKa
+- type: borgType
+  id: nikaborgengineering
+  # Description
+  dummyPrototype: NikaChassisEngineer
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Science
+  - Engineering
+  lawset: Engineer
+  job: StationEngineer
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-orange
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Engineering"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikaeng
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikaeng_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikaeng_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikaeng
+  spriteHasMindState: nikaeng_e
+  spriteNoMindState: nikaeng_e_r
+  spriteToggleLightState: nikaeng_l
+  # Pet
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+  # Borg PDA
+  pdaBorderColor: "#949137"
+  pdaAccentVerticalColor: "#A32D26"
+
+#NiKo
+- type: borgType
+  id: nikoborgengineering
+  # Description
+  dummyPrototype: NikoChassisEngineer
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleEngineering
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleConstruction
+  - BorgModuleRCD
+  - BorgModuleCable
+  radioChannels:
+  - Science
+  - Engineering
+  lawset: Engineer
+  job: StationEngineer
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-orange
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Engineering"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikoeng
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikoeng_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikoeng_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikoeng
+  spriteHasMindState: nikoeng_e
+  spriteNoMindState: nikoeng_e_r
+  spriteToggleLightState: nikoeng_l
+  # Pet
+  petSuccessString: petting-success-engineer-cyborg
+  petFailureString: petting-failure-engineer-cyborg
+  # Borg PDA
+  pdaBorderColor: "#949137"
+  pdaAccentVerticalColor: "#A32D26"
+
+# Security
+# NiKa
+- type: borgType
+  id: nikaborgsecurity
+  # Description
+  dummyPrototype: NikaChassisSecurity
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+  defaultModules:
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+  lawset: SiliconPolice
+  job: SecurityOfficer
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: Fiber # red plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-red
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  radioChannels:
+  - Science
+  - Security
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikasec
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikasec_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikasec_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikasec
+  spriteHasMindState: nikasec_e
+  spriteNoMindState: nikasec_e_r
+  spriteToggleLightState: nikasec_l
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+  # Borg PDA
+  pdaBorderColor: "#A32D26"
+
+# NiKo
+- type: borgType
+  id: nikoborgsecurity
+  # Description
+  dummyPrototype: NikoChassisSecurity
+  # Functional
+  extraModuleCount: 2
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleSecurity
+  defaultModules:
+  - BorgModuleSecurityDeescalate
+  - BorgModuleSecurityPatrol
+  lawset: SiliconPolice
+  job: SecurityOfficer
+  addComponents:
+  - type: FlashImmunity
+  - type: ShowMindShieldIcons
+  - type: ShowCriminalRecordIcons
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Critical: BorgCrit
+      Dead: BorgDead
+    showOverlays: false
+    allowRevives: true
+  - type: Fiber # red plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-red
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Security"]]
+  - type: Crawler
+  radioChannels:
+  - Science
+  - Security
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikosec
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikosec_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikosec_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikosec
+  spriteHasMindState: nikosec_e
+  spriteNoMindState: nikosec_e_r
+  spriteToggleLightState: nikosec_l
+  # Pet
+  petSuccessString: petting-success-security-cyborg
+  petFailureString: petting-failure-security-cyborg
+  # Borg PDA
+  pdaBorderColor: "#A32D26"
+
+# Salvage
+# NiKa
+- type: borgType
+  id: nikaborgsalvage
+  # Description
+  dummyPrototype: NikaChassisSalvage
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  lawset: Salvage
+  job: SalvageSpecialist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-brown
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  radioChannels:
+  - Supply
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikacargo
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikacargo_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikacargo_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikacargo
+  spriteHasMindState: nikacargo_e
+  spriteNoMindState: nikacargo_e_r
+  spriteToggleLightState: nikacargo_l
+  # Pet
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg
+  # Borg PDA
+  pdaBorderColor: "#af9366"
+  pdaAccentVerticalColor: "#8900c9"
+
+# NiKo
+- type: borgType
+  id: nikoborgsalvage
+  # Description
+  dummyPrototype: NikoChassisSalvage
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleCargo
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMining
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  lawset: Salvage
+  job: SalvageSpecialist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-brown
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Salvage"]]
+  - type: Crawler
+  radioChannels:
+  - Supply
+  - Science
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikocargo
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikocargo_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikocargo_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikocargo
+  spriteHasMindState: nikocargo_e
+  spriteNoMindState: nikocargo_e_r
+  spriteToggleLightState: nikocargo_l
+  # Pet
+  petSuccessString: petting-success-salvage-cyborg
+  petFailureString: petting-failure-salvage-cyborg
+  # Borg PDA
+  pdaBorderColor: "#af9366"
+  pdaAccentVerticalColor: "#8900c9"
+
+# Medical
+# NiKa
+- type: borgType
+  id: nikaborgmedical
+  # Description
+  dummyPrototype: NikaChassisMedical
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  lawset: Medical
+  job: MedicalDoctor
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowTriageIcons
+  - type: FabricateCandy
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: Fiber # white plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-white
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikamed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikamed_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikamed_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikamed
+  spriteHasMindState: nikamed_e
+  spriteNoMindState: nikamed_e_r
+  spriteToggleLightState: nikamed_l
+  # Pet
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#447987"
+
+# NiKo
+- type: borgType
+  id: nikoborgmedical
+  # Description
+  dummyPrototype: NikoChassisMedical
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleMedical
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
+  radioChannels:
+  - Science
+  - Medical
+  lawset: Medical
+  job: MedicalDoctor
+  addComponents:
+  - type: SolutionScanner
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+    - BiologicalMetaphysical
+  - type: ShowTriageIcons
+  - type: FabricateCandy
+    actions:
+    - ActionFabricateLollipop
+    - ActionFabricateGumball
+  - type: Fiber # white plasteel fibers
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-white
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Medical"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikomed
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikomed_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikomed_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikomed
+  spriteHasMindState: nikomed_e
+  spriteNoMindState: nikomed_e_r
+  spriteToggleLightState: nikomed_l
+  # Pet
+  petSuccessString: petting-success-medical-cyborg
+  petFailureString: petting-failure-medical-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#447987"
+
+# Service
+# NiKa
+- type: borgType
+  id: nikaborgservice
+  # Description
+  dummyPrototype: NikaChassisService
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - Science
+  - Service
+  job: Bartender
+  addComponents:
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikaserv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikaserv_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikaserv_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikaserv
+  spriteHasMindState: nikaserv_e
+  spriteNoMindState: nikaserv_e_r
+  spriteToggleLightState: nikaserv_l
+  # Pet
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg
+  # Borg PDA
+  pdaBorderColor: "#717059"
+  pdaAccentVerticalColor: "#00cc35"
+
+# NiKo
+- type: borgType
+  id: nikoborgservice
+  # Description
+  dummyPrototype: NikoChassisService
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleService
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleMusique
+  - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
+  radioChannels:
+  - Science
+  - Service
+  job: Bartender
+  addComponents:
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Service"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikoserv
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikoserv_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikoserv_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikoserv
+  spriteHasMindState: nikoserv_e
+  spriteNoMindState: nikoserv_e_r
+  spriteToggleLightState: nikoserv_l
+  # Pet
+  petSuccessString: petting-success-service-cyborg
+  petFailureString: petting-failure-service-cyborg
+  # Borg PDA
+  pdaBorderColor: "#717059"
+  pdaAccentVerticalColor: "#00cc35"
+
+# Janitor
+# NiKa
+- type: borgType
+  id: nikaborgjanitor
+  # Description
+  dummyPrototype: NikaChassisJanitor
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  radioChannels:
+  - Science
+  - Service
+  lawset: Janitor
+  job: Janitor
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-purple
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Janitor"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikajani
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikajani_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikajani_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikajani
+  spriteHasMindState: nikajani_e
+  spriteNoMindState: nikajani_e_r
+  spriteToggleLightState: nikajani_l
+  # Pet
+  petSuccessString: petting-success-janitor-cyborg
+  petFailureString: petting-failure-janitor-cyborg
+  # Borg PDA
+  pdaBorderColor: "#5D2D56"
+
+# NiKo
+- type: borgType
+  id: nikoborgjanitor
+  # Description
+  dummyPrototype: NikoChassisJanitor
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleJanitor
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleCleaning
+  - BorgModuleCustodial
+  radioChannels:
+  - Science
+  - Service
+  lawset: Janitor
+  job: Janitor
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-purple
+  - type: AccessReader
+    access: [["Command"], ["Robotics"], ["Janitor"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikojani
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikojani_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikojani_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikojani
+  spriteHasMindState: nikojani_e
+  spriteNoMindState: nikojani_e_r
+  spriteToggleLightState: nikojani_l
+  # Pet
+  petSuccessString: petting-success-janitor-cyborg
+  petFailureString: petting-failure-janitor-cyborg
+  # Borg PDA
+  pdaBorderColor: "#5D2D56"
+
+# Research
+# NiKa
+- type: borgType
+  id: nikaborgresearch
+  # Description
+  dummyPrototype: NikaChassisResearch
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleSpecializedArtifact
+  - BorgModuleSpecializedAnomaly
+  radioChannels:
+  - Science
+  lawset: Research
+  job: Scientist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-grey
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikasci
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikasci_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikasci_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikasci
+  spriteHasMindState: nikasci_e
+  spriteNoMindState: nikasci_e_r
+  spriteToggleLightState: nikasci_l
+  # Pet
+  petSuccessString: petting-success-research-cyborg
+  petFailureString: petting-failure-research-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#8900c9"
+
+# NiKo
+- type: borgType
+  id: nikoborgresearch
+  # Description
+  dummyPrototype: NikoChassisResearch
+  # Functional
+  extraModuleCount: 3
+  moduleWhitelist:
+    tags:
+    - BorgModuleGeneric
+    - BorgModuleScience
+  defaultModules:
+  - BorgModuleTool
+  - BorgModuleSpecializedArtifact
+  - BorgModuleSpecializedAnomaly
+  radioChannels:
+  - Science
+  lawset: Research
+  job: Scientist
+  addComponents:
+  - type: Fiber
+    fiberMaterial: fibers-plasteel
+    fiberColor: fibers-grey
+  - type: AccessReader
+    access: [["Command"], ["Robotics"]]
+  - type: Crawler
+  # Visual
+  clientComponents:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Euphoria/Mobs/Silicon/chassis.rsi
+    layers:
+    - state: nikosci
+      map: ["enum.BorgVisualLayers.Body", "movement"]
+    - state: nikosci_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: nikosci_l
+      shader: unshaded
+      map: ["light","enum.BorgVisualLayers.LightStatus"]
+      visible: false
+  inventoryTemplateId: borgTallBorg
+  spriteBodyState: nikosci
+  spriteHasMindState: nikosci_e
+  spriteNoMindState: nikosci_e_r
+  spriteToggleLightState: nikosci_l
+  # Pet
+  petSuccessString: petting-success-research-cyborg
+  petFailureString: petting-failure-research-cyborg
+  # Borg PDA
+  pdaBorderColor: "#d7d7d0"
+  pdaAccentVerticalColor: "#8900c9"
