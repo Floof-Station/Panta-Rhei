@@ -1,0 +1,22 @@
+﻿- type: constructionGraph
+  id: BigAssBlunt
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: BluntLarge
+      steps:
+      - material: PaperRolling
+        amount: 5
+        doAfter: 2
+      - material: GroundCannabis
+        amount: 5
+        doAfter: 2
+      - material: GroundCannabis
+        amount: 5
+        doAfter: 2
+
+  # Deconstruction
+  - node: BluntLarge
+    entity: BluntLarge
+

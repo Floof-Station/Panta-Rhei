@@ -1,0 +1,40 @@
+﻿{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Base sprite made by @wassuythefourth_47721 on discord, adapted into different states by @P3nnant on discord",
+    "size": {
+        "x": 48,
+        "y": 48
+    },
+    "states": [
+        {
+            "name": "burnt-icon"
+        },
+        {
+            "name": "unlit-icon"
+        },
+        {
+            "name": "lit-icon",
+            "delays": [
+                [
+                    0.25,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.2,
+                    0.25,
+                    0.25,
+                    0.25
+                ]
+            ]
+        },
+        {
+            "name": "unlit-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "unlit-inhand-right",
+            "directions": 4
+        }
+    ]
+}

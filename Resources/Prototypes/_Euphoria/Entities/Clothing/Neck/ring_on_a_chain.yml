@@ -1,0 +1,11 @@
+﻿- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckRingOnChain
+  name: diamond ring on a string
+  description: A small band for a special bond encrusted with a well cut diamond, strung on a piece of string for safe keeping.
+  components:
+  - type: Sprite
+    sprite: _Euphoria/Clothing/Neck/ring_on_a_chain.rsi
+  - type: Clothing
+    sprite: _Euphoria/Clothing/Neck/ring_on_a_chain.rsi
+  - type: Engraveable

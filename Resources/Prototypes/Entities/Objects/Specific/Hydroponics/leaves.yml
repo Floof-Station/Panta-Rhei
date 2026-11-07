@@ -17,6 +17,9 @@
         reagents:
         - ReagentId: THC
           Quantity: 15
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
 
 
 - type: entity
@@ -37,6 +40,11 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/tobacco.rsi
     state: dried
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
+  - type: Item # Euphoria
+    size: Tiny
 
 - type: entity
   name: ground cannabis
@@ -101,6 +109,9 @@
 #         Quantity: 1
         - ReagentId: Psicodine
           Quantity: 0.6
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
 
 - type: entity
   name: dried rainbow cannabis leaves
@@ -131,6 +142,11 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/rainbow_cannabis.rsi
     state: dried
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
+  - type: Item # Euphoria
+    size: Tiny
 
 - type: entity
   name: ground rainbow cannabis
@@ -164,6 +180,9 @@
   - type: Construction
     graph: smokeableGroundCannabisRainbow
     node: groundRainbow
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
 
 - type: entity
   name: tea leaves
@@ -214,6 +233,9 @@
         reagents:
         - ReagentId: Nicotine
           Quantity: 2
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
 
 - type: entity
   name: dried tobacco leaves
@@ -233,6 +255,11 @@
   - type: Sprite
     sprite: Objects/Specific/Hydroponics/tobacco.rsi
     state: dried
+  - type: Tag # Euphoria
+    tags:
+    - Smokable
+  - type: Item # Euphoria
+    size: Tiny
 
 - type: entity
   name: ground tobacco
