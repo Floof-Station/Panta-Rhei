@@ -21,6 +21,18 @@ public sealed partial class InnerBodyAnomalyComponent : Component
     /// </summary>
     [DataField(required: true)]
     public EntProtoId? InjectionProto;
+	
+	/// BEGIN EUPH CHANGES
+	[DataField]
+	public EntProtoId PulseAction = "ActionAnomalyPulse";
+
+	[DataField]
+	public EntityUid? PulseActionEntity;
+
+	/// Adds a new string so removing anom doesn't also remove other ActionGrants
+	[DataField]
+	public ComponentRegistry AddedComponents = new();
+	/// END EUPH CHANGES
 
     /// <summary>
     /// Duration of stun from the effect of the anomaly
