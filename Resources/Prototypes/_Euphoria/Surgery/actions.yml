@@ -1,0 +1,422 @@
+﻿#all states should have some way to be obtained, like getters and setters, they should come in pairs.
+#I recommend you plan out your states first, then build your actions from there.
+#Don't forget to add your actions to a SurgeryList so you can assign them to the surgery target.
+
+#Times for surgeries
+- type: surgeryAction
+  abstract: true
+  id: longSurgery
+  duration: 60
+
+- type: surgeryAction
+  abstract: true
+  id: averageSurgery
+  duration: 30
+
+- type: surgeryAction
+  abstract: true
+  id: shortSurgery
+  duration: 10
+
+- type: surgeryAction
+  abstract: true
+  id: treatmentSurgery
+  duration: 2
+
+#surgery common descriptions
+- type: surgeryAction
+  abstract: true
+  id: removeOrgan
+  description: surgery-remove-organ
+
+- type: surgeryAction
+  abstract: true
+  id: insertOrgan
+  description: surgery-insert-organ
+
+#abstract common states
+- type: surgeryAction
+  abstract: true
+  id: torsoOrganAccessState
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: true
+      boneRetracted: true
+
+- type: surgeryAction
+  abstract: true
+  id: torsoPlasticSurgeryStates
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: true
+
+#Icons and types of surgeries to inherit from
+- type: surgeryAction
+  abstract: true
+  id: cuttingSurgery
+  toolType: Cutting
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/scalpel.rsi
+    state: scalpel
+
+- type: surgeryAction
+  abstract: true
+  id: retractionSurgery
+  toolType: Retracting
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/scissors.rsi
+    state: hemostat
+
+- type: surgeryAction
+  abstract: true
+  id: sealingSurgery
+  toolType: Cauterising
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/cautery.rsi
+    state: cautery
+
+- type: surgeryAction
+  abstract: true
+  id: sawingSurgery
+  toolType: Sawing
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/saw.rsi
+    state: saw
+
+- type: surgeryAction
+  abstract: true
+  id: drillingSurgery
+  toolType: Drilling
+  icon:
+    sprite: /Textures/Objects/Specific/Medical/Surgery/drill.rsi
+    state: drill
+
+#Actual Surgery Actions
+
+#Damage repair surgeries
+- type: surgeryAction
+  parent: [retractionSurgery, treatmentSurgery]
+  id: treatBurns
+  description: surgery-treat-burns
+  states:
+    Torso:
+      skinRetracted: true
+    Head:
+      skinRetracted: true
+  treatment: Heat
+
+#Brain surgery
+- type: surgeryAction
+  parent: [cuttingSurgery, longSurgery, removeOrgan]
+  id: removeBrain
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: true
+  remove: Brain
+
+- type: surgeryAction
+  parent: [retractionSurgery, longSurgery, insertOrgan]
+  id: insertBrain
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: true
+  insert: Brain
+
+#Heart surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeHeart
+  remove: Heart
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertHeart
+  insert: Heart
+
+#Lung surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeLungs
+  remove: Lungs
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertLungs
+  insert: Lungs
+
+#Stomach surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeStomach
+  remove: Stomach
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertStomach
+  insert: Stomach
+
+#Liver surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeLiver
+  remove: Liver
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertLiver
+  insert: Liver
+
+#Kidney surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeKidneys
+  remove: Kidneys
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertKidneys
+  insert: Kidneys
+
+#Appendix surgery
+- type: surgeryAction
+  parent: [torsoOrganAccessState, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeAppendix
+  remove: Appendix
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertAppendix
+  insert: Appendix
+
+#Breasts surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeBreasts
+  remove: MammaryGlands
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertBreasts
+  insert: MammaryGlands
+
+#Penis surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removePenis
+  remove: Penis
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertPenis
+  insert: Penis
+
+#Rectum surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeRectum
+  remove: Rectum
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertRectum
+  insert: Rectum
+
+#Vagina surgery
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, cuttingSurgery, averageSurgery, removeOrgan]
+  id: removeVagina
+  remove: Vagina
+
+- type: surgeryAction
+  parent: [torsoPlasticSurgeryStates, sealingSurgery, averageSurgery, insertOrgan]
+  id: insertVagina
+  insert: Vagina
+
+#State changing surgeries. Requires one that sets the condition to true, and one to false
+
+#Torso Muscles
+- type: surgeryAction
+  parent: [retractionSurgery, averageSurgery]
+  id: retractMusclesTorso
+  description: surgery-muscle-retract
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: false
+  effects:
+    Torso:
+      muscleRetracted: true
+
+- type: surgeryAction
+  parent: [retractionSurgery, averageSurgery]
+  id: replaceMusclesTorso
+  description: surgery-muscle-replace
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: true
+  effects:
+    Torso:
+      muscleRetracted: false
+
+#Torso Skin
+- type: surgeryAction
+  parent: [cuttingSurgery, shortSurgery]
+  id: openSkinTorso
+  description: surgery-skin-cut
+  states:
+    Torso:
+      skinRetracted: false
+  effects:
+    Torso:
+      skinRetracted: true
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: closeSkinTorso
+  description: surgery-skin-cautery
+  states:
+    Torso:
+      skinRetracted: true
+  effects:
+    Torso:
+      skinRetracted: false
+
+#Torso Bones
+- type: surgeryAction
+  parent: [drillingSurgery, longSurgery]
+  id: moveBonesTorso
+  description: surgery-bone-drill
+  states:
+    Torso:
+      skinRetracted: true
+      muscleRetracted: true
+      boneRetracted: false
+  effects:
+    Torso:
+      boneRetracted: true
+
+- type: surgeryAction
+  parent: [torsoOrganAccessState, retractionSurgery, averageSurgery]
+  id: replaceBonesTorso
+  description: surgery-bone-replace
+  effects:
+    Torso:
+      boneRetracted: false
+
+#Head skin
+- type: surgeryAction
+  parent: [cuttingSurgery, shortSurgery]
+  id: openSkinHead
+  description: surgery-skin-cut
+  states:
+    Head:
+      skinRetracted: false
+  effects:
+    Head:
+      skinRetracted: true
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: closeSkinHead
+  description: surgery-skin-cautery
+  states:
+    Head:
+      skinRetracted: true
+  effects:
+    Head:
+      skinRetracted: false
+
+#Head bone
+- type: surgeryAction
+  parent: [sawingSurgery, longSurgery]
+  id: moveBonesHead
+  description: surgery-bone-saw
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: false
+  effects:
+    Head:
+      boneRetracted: true
+
+- type: surgeryAction
+  parent: [sawingSurgery, longSurgery]
+  id: replaceBonesHead
+  description: surgery-bone-replace
+  states:
+    Head:
+      skinRetracted: true
+      boneRetracted: true
+  effects:
+    Head:
+      boneRetracted: false
+
+#Slime stuff
+- type: surgeryAction
+  parent: [cuttingSurgery, shortSurgery]
+  id: slimeBypassedTorso
+  description: surgery-slime-bypass
+  states:
+    Torso:
+      slimeBypassed: false
+  effects:
+    Torso:
+      slimeBypassed: true
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: slimeSolidifiedTorso
+  description: surgery-slime-solidify
+  states:
+    Torso:
+      slimeBypassed: true
+  effects:
+    Torso:
+      slimeBypassed: false
+
+- type: surgeryAction
+  parent: [retractionSurgery, shortSurgery]
+  id: removeCore
+  description: surgery-slime-core-remove
+  states:
+    Torso:
+      slimeBypassed: true
+  remove: Brain
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: insertCore
+  description: surgery-slime-core-insert
+  states:
+    Torso:
+      slimeBypassed: true
+  effects:
+    Torso:
+      slimeBypassed: false
+  insert: Brain
+
+- type: surgeryAction
+  parent: [retractionSurgery, shortSurgery]
+  id: removeSacs
+  description: surgery-slime-sac-remove
+  states:
+    Torso:
+      slimeBypassed: true
+  remove: Lungs
+
+- type: surgeryAction
+  parent: [sealingSurgery, shortSurgery]
+  id: insertSacs
+  description: surgery-slime-sac-insert
+  states:
+    Torso:
+      slimeBypassed: true
+  effects:
+    Torso:
+      slimeBypassed: false
+  insert: Lungs
