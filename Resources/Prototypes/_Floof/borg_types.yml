@@ -117,7 +117,7 @@
     - BorgModuleSecurity
   defaultModules:
   - BorgModuleSecurityDeescalate
-  - BorgModuleSecurityPatrol
+  - BorgModuleSecurityKill # Euphoria
   lawset: SiliconPolice
   job: SecurityOfficer
   addComponents:

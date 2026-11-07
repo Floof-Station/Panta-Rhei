@@ -1,0 +1,17 @@
+- type: entity
+  name: cyborg laser pistol
+  parent: [WeaponAdvancedLaser]
+  id: BorgWeaponAdvancedLaser
+  description: An advanced laser pistol designed for security cyborgs
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50
+
+
+- type: entity
+  name: x-ray cannon
+  parent: [ WeaponXrayCannon ]
+  id: BorgWeaponXrayCannon
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 25
