@@ -1,9 +1,11 @@
 using System.Collections.Frozen;
 using System.Collections.Immutable;
 using Content.Shared._DV.Chat; // DeltaV - chat
+using Content.Shared._RMC14.Voicelines; // Euph, RMC14 species sfx muting from Harmony@#963
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
+using Robust.Shared.Player; // Euph, RMC14 species sfx muting from Harmony@#963
 using Robust.Shared.Random;
 
 namespace Content.Shared.Chat;
@@ -11,6 +13,8 @@ namespace Content.Shared.Chat;
 public abstract partial class SharedChatSystem
 {
     private FrozenDictionary<string, EmotePrototype> _wordEmoteDict = FrozenDictionary<string, EmotePrototype>.Empty;
+
+    [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!; // Euph, RMC14 species sfx muting from Harmony@#963
 
     private void CacheEmotes()
     {
@@ -164,7 +168,12 @@ public abstract partial class SharedChatSystem
         param.Volume += volumeEv.Volume;
         // End Euphoria additions
 
-        _audio.PlayPvs(sound, uid, param);
+        // Euph, RMC14 species sfx muting from Harmony@#963, skips listeners who muted this species' emotes
+        var filter = Filter.Pvs(uid, entityManager: EntityManager).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayEmote(uid, s));
+        // still return true so other handlers don't play an unmuted sound
+        if (filter.Count > 0)
+            _audio.PlayEntity(sound, filter, uid, true, param);
+
         return true;
     }
     /// <summary>

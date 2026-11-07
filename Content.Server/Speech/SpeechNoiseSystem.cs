@@ -1,7 +1,9 @@
+using Content.Shared._RMC14.Voicelines; // Euph, RMC14 species sfx muting from Harmony@#963
 using Content.Shared.Chat;
 using Content.Shared.Speech;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Player; // Euph, RMC14 species sfx muting from Harmony@#963
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -14,6 +16,7 @@ namespace Content.Server.Speech
         [Dependency] private readonly IPrototypeManager _protoManager = default!;
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly SharedAudioSystem _audio = default!;
+        [Dependency] private readonly HumanoidVoicelinesSystem _humanoidVoicelines = default!; // Euph, RMC14 species sfx muting from Harmony@#963
 
         public override void Initialize()
         {
@@ -70,7 +73,13 @@ namespace Content.Server.Speech
 
             var sound = GetSpeechSound((uid, component), args.Message);
             component.LastTimeSoundPlayed = currentTime;
-            _audio.PlayPvs(sound, uid);
+            // Euph, RMC14 species sfx muting from Harmony@#963
+			// _audio.PlayPvs(sound, uid);
+            var filter = Filter.Pvs(uid, entityManager: EntityManager).RemoveWhere(s => !_humanoidVoicelines.ShouldPlayVoiceline(uid, s));
+            if (filter.Count == 0)
+                return;
+
+            _audio.PlayEntity(sound, filter, uid, true);
         }
     }
 }
