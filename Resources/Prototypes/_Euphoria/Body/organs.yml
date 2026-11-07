@@ -1,0 +1,41 @@
+﻿- type: entity
+  parent: OrganAnimal
+  id: OrganAnimalMeaty
+  abstract: true
+  suffix: Animal, Meaty
+  components:
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Nutriment
+        Quantity: 5
+      - ReagentId: UncookedAnimalProteins
+        Quantity: 5
+
+- type: entity
+  parent: OrganAnimalMeaty
+  id: OrganAnimalMeatyInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Mobs/Species/Human/organs.rsi
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganAnimalMeatyInternal, OrganAnimalMetabolizer ]
+  id: OrganAnimalLungsMeaty
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganAnimalMeatyInternal, OrganAnimalMetabolizer ]
+  id: OrganAnimalHeartMeaty
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganAnimalMeatyInternal, OrganAnimalMetabolizer ]
+  id: OrganAnimalStomachMeaty
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganAnimalMeatyInternal, OrganAnimalMetabolizer ]
+  id: OrganAnimalLiverMeaty
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganAnimalMeatyInternal, OrganAnimalMetabolizer ]
+  id: OrganAnimalKidneysMeaty

@@ -48,8 +48,8 @@
     containers:
       body_organs: !type:AllSelector
         children:
-        - id: OrganAnimalLungs
-        - id: OrganAnimalHeart
-        - id: OrganAnimalStomach
-        - id: OrganAnimalLiver
-        - id: OrganAnimalKidneys
+        - id: OrganAnimalLungsMeaty # Euphoria - swapped out OrganAnimalLungs for OrganAnimalLungsMeaty
+        - id: OrganAnimalHeartMeaty # Euphoria - swapped out OrganAnimalHeart for OrganAnimalHeartMeaty
+        - id: OrganAnimalStomachMeaty # Euphoria - swapped out OrganAnimalStomach for OrganAnimalStomachMeaty
+        - id: OrganAnimalLiverMeaty # Euphoria - swapped out OrganAnimalLiver for OrganAnimalLiverMeaty
+        - id: OrganAnimalKidneysMeaty # Euphoria - swapped out OrganAnimalKidneys for OrganAnimalKidneyscan youMeaty
